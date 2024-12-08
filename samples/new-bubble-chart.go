@@ -34,6 +34,6 @@ func NewBubbleChart() {
 	series.SetBubbleSizes("B2:D2")
 	series.SetXValues("B3:D3")
 	series.SetValues("B1:D1")
-	workbook.Save_String("../Data/Output/NewBubbleChart.xlsx")
+	workbook.Save_String("Data/Output/NewBubbleChart.xlsx")
 	println("New Bubble Chart, and save as NewBubbleChart.xlsx.")
 }

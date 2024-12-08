@@ -15,6 +15,7 @@ import (
 )
 
 /**************Enum SmartTagShowType *****************/
+// Represents the show type of the smart tag.
 type SmartTagShowType int32
 
 const(

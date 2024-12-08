@@ -15,6 +15,7 @@ import (
 )
 
 /**************Enum ActiveXPersistenceType *****************/
+// Represents the persistence method to persist an ActiveX control.
 type ActiveXPersistenceType int32
 
 const(
@@ -43,6 +44,7 @@ func Int32ToActiveXPersistenceType(value int32)(ActiveXPersistenceType ,error){
 }
 
 /**************Enum ControlBorderType *****************/
+// Represents the border type of the ActiveX control.
 type ControlBorderType int32
 
 const(
@@ -63,6 +65,7 @@ func Int32ToControlBorderType(value int32)(ControlBorderType ,error){
 }
 
 /**************Enum ControlCaptionAlignmentType *****************/
+// Represents the position of the Caption relative to the control.
 type ControlCaptionAlignmentType int32
 
 const(
@@ -83,6 +86,7 @@ func Int32ToControlCaptionAlignmentType(value int32)(ControlCaptionAlignmentType
 }
 
 /**************Enum ControlListStyle *****************/
+// Represents the visual appearance of the list in a ListBox or ComboBox.
 type ControlListStyle int32
 
 const(
@@ -103,6 +107,7 @@ func Int32ToControlListStyle(value int32)(ControlListStyle ,error){
 }
 
 /**************Enum ControlMatchEntryType *****************/
+// Represents how a ListBox or ComboBox searches its list as the user types.
 type ControlMatchEntryType int32
 
 const(
@@ -128,6 +133,7 @@ func Int32ToControlMatchEntryType(value int32)(ControlMatchEntryType ,error){
 }
 
 /**************Enum ControlMousePointerType *****************/
+// Represents the type of icon displayed as the mouse pointer for the control.
 type ControlMousePointerType int32
 
 const(
@@ -200,6 +206,7 @@ func Int32ToControlMousePointerType(value int32)(ControlMousePointerType ,error)
 }
 
 /**************Enum ControlPictureAlignmentType *****************/
+// Represents the alignment of the picture inside the Form or Image.
 type ControlPictureAlignmentType int32
 
 const(
@@ -232,6 +239,7 @@ func Int32ToControlPictureAlignmentType(value int32)(ControlPictureAlignmentType
 }
 
 /**************Enum ControlPicturePositionType *****************/
+// Represents the location of the control's picture relative to its caption.
 type ControlPicturePositionType int32
 
 const(
@@ -309,6 +317,7 @@ func Int32ToControlPicturePositionType(value int32)(ControlPicturePositionType ,
 }
 
 /**************Enum ControlPictureSizeMode *****************/
+// Represents how to display the picture.
 type ControlPictureSizeMode int32
 
 const(
@@ -334,6 +343,7 @@ func Int32ToControlPictureSizeMode(value int32)(ControlPictureSizeMode ,error){
 }
 
 /**************Enum ControlScrollBarType *****************/
+// Represents the type of scroll bar.
 type ControlScrollBarType int32
 
 const(
@@ -362,6 +372,7 @@ func Int32ToControlScrollBarType(value int32)(ControlScrollBarType ,error){
 }
 
 /**************Enum ControlScrollOrientation *****************/
+// Represents type of scroll orientation
 type ControlScrollOrientation int32
 
 const(
@@ -387,6 +398,7 @@ func Int32ToControlScrollOrientation(value int32)(ControlScrollOrientation ,erro
 }
 
 /**************Enum ControlSpecialEffectType *****************/
+// Represents the type of special effect.
 type ControlSpecialEffectType int32
 
 const(
@@ -419,6 +431,7 @@ func Int32ToControlSpecialEffectType(value int32)(ControlSpecialEffectType ,erro
 }
 
 /**************Enum ControlType *****************/
+// Represents all type of ActiveX control.
 type ControlType int32
 
 const(
@@ -483,6 +496,7 @@ func Int32ToControlType(value int32)(ControlType ,error){
 }
 
 /**************Enum DropButtonStyle *****************/
+// Represents the symbol displayed on the drop button.
 type DropButtonStyle int32
 
 const(
@@ -511,6 +525,7 @@ func Int32ToDropButtonStyle(value int32)(DropButtonStyle ,error){
 }
 
 /**************Enum InputMethodEditorMode *****************/
+// Represents the default run-time mode of the Input Method Editor.
 type InputMethodEditorMode int32
 
 const(
@@ -575,6 +590,7 @@ func Int32ToInputMethodEditorMode(value int32)(InputMethodEditorMode ,error){
 }
 
 /**************Enum ShowDropButtonType *****************/
+// Specifies when to show the drop button
 type ShowDropButtonType int32
 
 const(

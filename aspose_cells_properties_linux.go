@@ -15,6 +15,7 @@ import (
 )
 
 /**************Enum PropertyType *****************/
+// Specifies data type of a document property.
 type PropertyType int32
 
 const(

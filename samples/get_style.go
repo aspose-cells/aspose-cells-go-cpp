@@ -5,7 +5,7 @@ import (
 )
 
 func GetStyle() {
-	workbook, err1 := NewWorkbook_String("../Data/Input/Book1.xlsx")
+	workbook, err1 := NewWorkbook_String("Data/Input/Book1.xlsx")
 	if err1 != nil {
 		println(err1)
 	}

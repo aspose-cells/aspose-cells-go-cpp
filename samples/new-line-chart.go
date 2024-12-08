@@ -22,6 +22,6 @@ func NewLineChart() {
 	chart, _ := charts.Get_Int(0)
 	nseries, _ := chart.GetNSeries()
 	nseries.Add_String_Bool("A1:B3", true)
-	workbook.Save_String("../Data/Output/NewLineChart.xlsx")
+	workbook.Save_String("Data/Output/NewLineChart.xlsx")
 	println("New Line Chart, and save as NewLineChart.xlsx.")
 }

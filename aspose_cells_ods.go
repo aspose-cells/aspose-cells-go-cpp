@@ -4,7 +4,7 @@ package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
-// #cgo LDFLAGS: -L./lib/win_x86_64 -lAspose.Cells.CWrapper
+// #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/win_x86_64" -L"${SRCDIR}/lib/win_x86_64" -lAspose.Cells.CWrapper
 // #include <AsposeCellsCWrapper.h>
 import "C"
 import (
@@ -15,6 +15,8 @@ import (
 )
 
 /**************Enum OdsCellFieldType *****************/
+
+// Represents the cell field type of ods.
 type OdsCellFieldType int32
 
 const(
@@ -39,6 +41,8 @@ func Int32ToOdsCellFieldType(value int32)(OdsCellFieldType ,error){
 }
 
 /**************Enum OdsGeneratorType *****************/
+
+// Represents the type of ODS generator.
 type OdsGeneratorType int32
 
 const(
@@ -59,6 +63,8 @@ func Int32ToOdsGeneratorType(value int32)(OdsGeneratorType ,error){
 }
 
 /**************Enum OdsPageBackgroundGraphicPositionType *****************/
+
+// Represents the position.
 type OdsPageBackgroundGraphicPositionType int32
 
 const(
@@ -107,6 +113,8 @@ func Int32ToOdsPageBackgroundGraphicPositionType(value int32)(OdsPageBackgroundG
 }
 
 /**************Enum OdsPageBackgroundGraphicType *****************/
+
+// Represents the type of formatting page background with image.
 type OdsPageBackgroundGraphicType int32
 
 const(
@@ -131,6 +139,8 @@ func Int32ToOdsPageBackgroundGraphicType(value int32)(OdsPageBackgroundGraphicTy
 }
 
 /**************Enum OdsPageBackgroundType *****************/
+
+// Represents the page background type of ods.
 type OdsPageBackgroundType int32
 
 const(
@@ -155,6 +165,8 @@ func Int32ToOdsPageBackgroundType(value int32)(OdsPageBackgroundType ,error){
 }
 
 /**************Enum OpenDocumentFormatVersionType *****************/
+
+// Open Document Format version type.
 type OpenDocumentFormatVersionType int32
 
 const(

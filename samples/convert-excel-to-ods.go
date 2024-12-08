@@ -15,6 +15,6 @@ func ConvertExcelToOds() {
 	cell.PutValue_Int(15)
 	cell, _ = cells.Get_String("A3")
 	cell.PutValue_Int(25)
-	workbook.Save_String("../Data/Output/HELLO_Convert.ods")
+	workbook.Save_String("Data/Output/HELLO_Convert.ods")
 	println("Finish to convert to ODS , check .pdf file in output folder.")
 }

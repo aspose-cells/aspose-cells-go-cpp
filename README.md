@@ -1,6 +1,15 @@
 # Aspose.Cells for Go via C++
 
-## Supported platforms: Windows, Linux
+Aspose.Cells for Go via C++ is a native Go library designed for Go developers to programmatically create, manipulate, and convert spreadsheets without needing Office Automation or Microsoft Excel. It supports a variety of spreadsheet formats, including MS Excel 97-2003 (XLS), MS Excel 2007-2016 (XLSX, XLSM, XLSB), Open Office XML, and more. With Aspose.Cells for Go via C++, you can also extract images from worksheets and convert Excel files to PDF. The library further enables the creation and manipulation of charts and shapes. Additionally, it offers robust formula calculation capabilities, providing you with a comprehensive solution for spreadsheet management.
+
+## Supported platforms
+
+- *Windows x64*  
+- *Linux x64*
+
+## Environments and versions
+
+- Go 1.13 or greater
 
 ## Support file format
 
@@ -40,8 +49,21 @@
 |[DOCX](https://docs.fileformat.com/word-processing/docx/)|A well-known format for Microsoft Word documents that is a combination of XML and binary files.||&radic;|
 |[PPTX](https://docs.fileformat.com/presentation/pptx/)|The PPTX format is based on the Microsoft PowerPoint open XML presentation file format.||&radic;|
 
+# Run Aspose.Cells for Go via C++ in production
+A commercial license key is required for use in a production environment. Please <a href="https://purchase.aspose.com/buy">contact us to purchase a commercial license</a> if you do not have a valid license key.
+
 ## Quick Start Guide
 
+## Running Aspose.Cells for Go via C++ in your project
+
+1. Import `github.com/aspose-cells/aspose-cells-go-cpp/v2` into your project
+   a. On **Windows**, you will have to locate the DLLs for running the project and append them to your path.
+   ```
+   set PATH=%GOPATH%/pkg/mod/github.com/aspose-cells/aspose-cells-go-cpp/v2@your_version/libs/win/Lib/win_x86_64
+   ```
+   You may also copy these directly to your project directory.
+
+2. Create a main.go in your project directory
 ```go
 
 package main
@@ -51,15 +73,17 @@ import (
 )
 
 func main() {
- workbook, _ := NewWorkbook()
- worksheets, _ := workbook.GetWorksheets()
- worksheet, _ := worksheets.Get_Int(0)
- cells, _ := worksheet.GetCells()
- cell, _ := cells.Get_String("A1")
- cell.PutValue_Int(5)
- cell, _ = cells.Get_String("A2")
- cell.PutValue_String("HolloWorld")
- workbook.Save_String("HolloWorld.xlsx")
+	lic, _ := NewLicense()
+	lic.SetLicense_String(os.Getenv("LicensePath"))
+    workbook, _ := NewWorkbook()
+    worksheets, _ := workbook.GetWorksheets()
+    worksheet, _ := worksheets.Get_Int(0)
+    cells, _ := worksheet.GetCells()
+    cell, _ := cells.Get_String("A1")
+    cell.PutValue_Int(5)
+    cell, _ = cells.Get_String("A2")
+    cell.PutValue_String("Hollo World")
+    workbook.Save_String("HolloWorld.xlsx")
 }
 
 

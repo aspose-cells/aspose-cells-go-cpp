@@ -6,7 +6,7 @@ import (
 
 func HideRowsInPivotTable() {
 	println("LicensePath.")
-	workbook, _ := NewWorkbook_String("../Data/Input/TestCase.xlsx")
+	workbook, _ := NewWorkbook_String("Data/Input/TestCase.xlsx")
 	println("NewWorkbook_String.")
 	worksheets, _ := workbook.GetWorksheets()
 	worksheet, _ := worksheets.Get_Int(1)
@@ -28,6 +28,6 @@ func HideRowsInPivotTable() {
 		}
 	}
 	println(rowsUsed)
-	workbook.Save_String("../Data/Output/HELLO_HideRow.xlsx")
+	workbook.Save_String("Data/Output/HELLO_HideRow.xlsx")
 	println("Finish to set value , check HELLO_HideRow.xlsx file in output folder.")
 }

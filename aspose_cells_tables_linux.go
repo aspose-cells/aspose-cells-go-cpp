@@ -15,6 +15,7 @@ import (
 )
 
 /**************Enum TableDataSourceType *****************/
+// Represents the table's data source type.
 type TableDataSourceType int32
 
 const(
@@ -43,6 +44,7 @@ func Int32ToTableDataSourceType(value int32)(TableDataSourceType ,error){
 }
 
 /**************Enum TableStyleElementType *****************/
+// Represents the Table or PivotTable style element type.
 type TableStyleElementType int32
 
 const(
@@ -175,6 +177,7 @@ func Int32ToTableStyleElementType(value int32)(TableStyleElementType ,error){
 }
 
 /**************Enum TableStyleType *****************/
+// Represents the built-in table style type.
 type TableStyleType int32
 
 const(
@@ -434,6 +437,7 @@ func Int32ToTableStyleType(value int32)(TableStyleType ,error){
 }
 
 /**************Enum TotalsCalculation *****************/
+// Determines the type of calculation in the Totals row of the list column.
 type TotalsCalculation int32
 
 const(

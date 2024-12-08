@@ -6,7 +6,7 @@ import (
 
 func GetCellValue() {
 
-	workbook, err1 := NewWorkbook_String("../Data/Input/Book1.xlsx")
+	workbook, err1 := NewWorkbook_String("Data/Input/Book1.xlsx")
 	if err1 != nil {
 		println(err1)
 	}

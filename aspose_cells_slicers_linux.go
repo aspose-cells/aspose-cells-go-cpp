@@ -15,6 +15,7 @@ import (
 )
 
 /**************Enum SlicerCacheCrossFilterType *****************/
+// Represent the type of SlicerCacheCrossFilterType
 type SlicerCacheCrossFilterType int32
 
 const(
@@ -45,6 +46,7 @@ func Int32ToSlicerCacheCrossFilterType(value int32)(SlicerCacheCrossFilterType ,
 }
 
 /**************Enum SlicerCacheItemSortType *****************/
+// Specify the sort type of SlicerCacheItem
 type SlicerCacheItemSortType int32
 
 const(
@@ -69,6 +71,7 @@ func Int32ToSlicerCacheItemSortType(value int32)(SlicerCacheItemSortType ,error)
 }
 
 /**************Enum SlicerStyleType *****************/
+// Specify the style of slicer view
 type SlicerStyleType int32
 
 const(

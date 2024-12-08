@@ -24,7 +24,7 @@ func NewLineChartInOds() {
 	nseries.Add_String_Bool("A1:B4", true)
 	series, _ := nseries.Get(0)
 	series.SetType(ChartType_Line)
-	workbook.Save_String("../Data/Output/NewColumnChart.xlsx")
+	workbook.Save_String("Data/Output/NewColumnChart.xlsx")
 	println("New Column Chart, and save as NewColumnChart.xlsx.")
 
 }

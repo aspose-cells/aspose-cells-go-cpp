@@ -5,7 +5,7 @@ import (
 )
 
 func ConvertTableToRange() {
-	workbook, err1 := NewWorkbook_String("../Data/Input/BookPivotTable.xlsx")
+	workbook, err1 := NewWorkbook_String("Data/Input /BookPivotTable.xlsx")
 	if err1 != nil {
 		println(err1)
 	}
@@ -30,7 +30,7 @@ func ConvertTableToRange() {
 	}
 
 	listobject.ConvertToRange()
-	workbook.Save_String("../Data/Output/ConvertToRange.xlsx")
+	workbook.Save_String("Data/Output/ConvertToRange.xlsx")
 
 	println("Convert To Range, and save as ConvertToRange.xlsx.")
 }

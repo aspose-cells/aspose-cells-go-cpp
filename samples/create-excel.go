@@ -15,6 +15,6 @@ func CreateExcel() {
 	cell.PutValue_Int(15)
 	cell, _ = cells.Get_String("A3")
 	cell.PutValue_Int(25)
-	workbook.Save_String("../Data/Output/HELLO_Create.xlsx")
+	workbook.Save_String("Data/Output/HELLO_Create.xlsx")
 	println("Finish to set value , check .xlsx file in output folder.")
 }

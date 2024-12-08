@@ -12,6 +12,7 @@ import (
 )
 
 /**************Enum AdjustFontSizeForRowType *****************/
+// Represents which kind of rows should be ajusted.
 type AdjustFontSizeForRowType int32
 
 const(
@@ -32,6 +33,7 @@ func Int32ToAdjustFontSizeForRowType(value int32)(AdjustFontSizeForRowType ,erro
 }
 
 /**************Enum SlideViewType *****************/
+// Represents the type when exporting to slides.
 type SlideViewType int32
 
 const(

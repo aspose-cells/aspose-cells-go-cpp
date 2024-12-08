@@ -15,6 +15,7 @@ import (
 )
 
 /**************Enum XAdESType *****************/
+// Type of XML Advanced Electronic Signature (XAdES).
 type XAdESType int32
 
 const(

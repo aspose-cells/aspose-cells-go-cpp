@@ -4,7 +4,7 @@ package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
-// #cgo LDFLAGS: -L./lib/win_x86_64 -lAspose.Cells.CWrapper
+// #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/win_x86_64" -L"${SRCDIR}/lib/win_x86_64" -lAspose.Cells.CWrapper
 // #include <AsposeCellsCWrapper.h>
 import "C"
 import (
@@ -15,6 +15,8 @@ import (
 )
 
 /**************Enum EquationCharacterPositionType *****************/
+
+// Specifies the position of a particular subobject within its parent
 type EquationCharacterPositionType int32
 
 const(
@@ -35,6 +37,8 @@ func Int32ToEquationCharacterPositionType(value int32)(EquationCharacterPosition
 }
 
 /**************Enum EquationCombiningCharacterType *****************/
+
+// Type of combining characters.
 type EquationCombiningCharacterType int32
 
 const(
@@ -171,6 +175,8 @@ func Int32ToEquationCombiningCharacterType(value int32)(EquationCombiningCharact
 }
 
 /**************Enum EquationDelimiterShapeType *****************/
+
+// This specifies the shape of delimiters in the delimiter object.
 type EquationDelimiterShapeType int32
 
 const(
@@ -191,6 +197,8 @@ func Int32ToEquationDelimiterShapeType(value int32)(EquationDelimiterShapeType ,
 }
 
 /**************Enum EquationFractionType *****************/
+
+// This specifies the display style of the fraction bar.
 type EquationFractionType int32
 
 const(
@@ -219,6 +227,8 @@ func Int32ToEquationFractionType(value int32)(EquationFractionType ,error){
 }
 
 /**************Enum EquationHorizontalJustificationType *****************/
+
+// This specifies the default horizontal justification of equations in the document.
 type EquationHorizontalJustificationType int32
 
 const(
@@ -247,6 +257,8 @@ func Int32ToEquationHorizontalJustificationType(value int32)(EquationHorizontalJ
 }
 
 /**************Enum EquationLimitLocationType *****************/
+
+// Specifies the limit location on an operator.
 type EquationLimitLocationType int32
 
 const(
@@ -267,6 +279,8 @@ func Int32ToEquationLimitLocationType(value int32)(EquationLimitLocationType ,er
 }
 
 /**************Enum EquationMathematicalOperatorType *****************/
+
+// Mathematical Operators Type
 type EquationMathematicalOperatorType int32
 
 const(
@@ -423,6 +437,12 @@ func Int32ToEquationMathematicalOperatorType(value int32)(EquationMathematicalOp
 }
 
 /**************Enum EquationNodeType *****************/
+
+// Equation node type.
+// Notice:
+// (1)[1-99] Currently there is only one node in the scope, and its enumeration value is 1. The node it specifies is used to store mathematical text.
+// (2)[100-199] Indicates that the node is a component of some special function nodes.
+// (3)[200-] Indicates that the node has some special functions.
 type EquationNodeType int32
 
 const(
@@ -559,6 +579,8 @@ func Int32ToEquationNodeType(value int32)(EquationNodeType ,error){
 }
 
 /**************Enum EquationVerticalJustificationType *****************/
+
+// This specifies the default vertical justification of equations in the document.
 type EquationVerticalJustificationType int32
 
 const(

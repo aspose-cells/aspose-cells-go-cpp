@@ -15,6 +15,7 @@ import (
 )
 
 /**************Enum PowerQueryFormulaType *****************/
+// Represents the type of power query formula.
 type PowerQueryFormulaType int32
 
 const(

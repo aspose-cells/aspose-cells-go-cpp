@@ -15,6 +15,7 @@ import (
 )
 
 /**************Enum MetadataType *****************/
+// Represents the type of metadata.
 type MetadataType int32
 
 const(

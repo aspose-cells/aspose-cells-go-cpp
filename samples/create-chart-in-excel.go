@@ -26,5 +26,5 @@ func CreateChartInExcel() {
 	chart, _ := charts.Get_Int(chartIndex)
 	series, _ := chart.GetNSeries()
 	series.Add_String_Bool("A1:B3", true)
-	workbook.Save_String("../Data/Output/Hello_CreateChart.xlsx")
+	workbook.Save_String("Data/Output/Hello_CreateChart.xlsx")
 }

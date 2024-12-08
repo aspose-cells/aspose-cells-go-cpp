@@ -22,6 +22,6 @@ func AddDataToExcel() {
 	style, _ := cell.GetStyle()
 	style.SetNumber(11)
 	cell.SetStyle_Style(style)
-	workbook.Save_String("../Data/Output/HELLO_AddData.xlsx")
+	workbook.Save_String("Data/Output/HELLO_AddData.xlsx")
 	println("Finish to set value , check HELLO_AddData.xlsx file in output folder.")
 }

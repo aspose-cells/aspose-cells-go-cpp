@@ -4,7 +4,7 @@ package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
-// #cgo LDFLAGS: -L./lib/win_x86_64 -lAspose.Cells.CWrapper
+// #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/win_x86_64" -L"${SRCDIR}/lib/win_x86_64" -lAspose.Cells.CWrapper
 // #include <AsposeCellsCWrapper.h>
 import "C"
 import (
@@ -15,6 +15,8 @@ import (
 )
 
 /**************Enum PivotAreaType *****************/
+
+// Indicates the type of rule being used to describe an area or aspect of the PivotTable.
 type PivotAreaType int32
 
 const(
@@ -55,6 +57,8 @@ func Int32ToPivotAreaType(value int32)(PivotAreaType ,error){
 }
 
 /**************Enum PivotConditionFormatRuleType *****************/
+
+// Represents PivotTable condition formatting rule type.
 type PivotConditionFormatRuleType int32
 
 const(
@@ -85,6 +89,8 @@ func Int32ToPivotConditionFormatRuleType(value int32)(PivotConditionFormatRuleTy
 }
 
 /**************Enum PivotConditionFormatScopeType *****************/
+
+// Represents PivotTable condition formatting scope type.
 type PivotConditionFormatScopeType int32
 
 const(
@@ -109,6 +115,8 @@ func Int32ToPivotConditionFormatScopeType(value int32)(PivotConditionFormatScope
 }
 
 /**************Enum PivotFieldDataDisplayFormat *****************/
+
+// Represents data display format in the PivotTable data field.
 type PivotFieldDataDisplayFormat int32
 
 const(
@@ -181,6 +189,8 @@ func Int32ToPivotFieldDataDisplayFormat(value int32)(PivotFieldDataDisplayFormat
 }
 
 /**************Enum PivotFieldGroupType *****************/
+
+// Represents the group type of pivot field.
 type PivotFieldGroupType int32
 
 const(
@@ -209,6 +219,8 @@ func Int32ToPivotFieldGroupType(value int32)(PivotFieldGroupType ,error){
 }
 
 /**************Enum PivotFieldSubtotalType *****************/
+
+// Summary description for PivotFieldSubtotalType.
 type PivotFieldSubtotalType int32
 
 const(
@@ -273,6 +285,8 @@ func Int32ToPivotFieldSubtotalType(value int32)(PivotFieldSubtotalType ,error){
 }
 
 /**************Enum PivotFieldType *****************/
+
+// Represents PivotTable field type.
 type PivotFieldType int32
 
 const(
@@ -305,6 +319,8 @@ func Int32ToPivotFieldType(value int32)(PivotFieldType ,error){
 }
 
 /**************Enum PivotFilterType *****************/
+
+// Represents PivotTable Filter type.
 type PivotFilterType int32
 
 const(
@@ -581,6 +597,8 @@ func Int32ToPivotFilterType(value int32)(PivotFilterType ,error){
 }
 
 /**************Enum PivotGroupByType *****************/
+
+// Represents group by type.
 type PivotGroupByType int32
 
 const(
@@ -625,6 +643,8 @@ func Int32ToPivotGroupByType(value int32)(PivotGroupByType ,error){
 }
 
 /**************Enum PivotItemPosition *****************/
+
+// Represents base item Next/Previous/All position in the base field .
 type PivotItemPosition int32
 
 const(
@@ -649,6 +669,8 @@ func Int32ToPivotItemPosition(value int32)(PivotItemPosition ,error){
 }
 
 /**************Enum PivotItemPositionType *****************/
+
+// Represents the position type of the pivot base item in the base field when the ShowDataAs calculation is in use.
 type PivotItemPositionType int32
 
 const(
@@ -673,6 +695,8 @@ func Int32ToPivotItemPositionType(value int32)(PivotItemPositionType ,error){
 }
 
 /**************Enum PivotLineType *****************/
+
+// Specifies the type of the PivotLine.
 type PivotLineType int32
 
 const(
@@ -701,6 +725,8 @@ func Int32ToPivotLineType(value int32)(PivotLineType ,error){
 }
 
 /**************Enum PivotMissingItemLimitType *****************/
+
+// Represents number of items to retain per field.
 type PivotMissingItemLimitType int32
 
 const(
@@ -725,6 +751,8 @@ func Int32ToPivotMissingItemLimitType(value int32)(PivotMissingItemLimitType ,er
 }
 
 /**************Enum PivotRefreshState *****************/
+
+// The state for refreshing pivot tables.
 type PivotRefreshState int32
 
 const(
@@ -745,6 +773,8 @@ func Int32ToPivotRefreshState(value int32)(PivotRefreshState ,error){
 }
 
 /**************Enum PivotTableAutoFormatType *****************/
+
+// Represents PivotTable auto format type.
 type PivotTableAutoFormatType int32
 
 const(
@@ -845,6 +875,9 @@ func Int32ToPivotTableAutoFormatType(value int32)(PivotTableAutoFormatType ,erro
 }
 
 /**************Enum PivotTableSelectionType *****************/
+
+// Specifies what can be selected in a PivotTable during a structured selection.
+// These constants can be combined to select multiple types.
 type PivotTableSelectionType int32
 
 const(
@@ -869,6 +902,8 @@ func Int32ToPivotTableSelectionType(value int32)(PivotTableSelectionType ,error)
 }
 
 /**************Enum PivotTableSourceType *****************/
+
+// Represents data source type of the pivot table.
 type PivotTableSourceType int32
 
 const(
@@ -901,6 +936,8 @@ func Int32ToPivotTableSourceType(value int32)(PivotTableSourceType ,error){
 }
 
 /**************Enum PivotTableStyleType *****************/
+
+// Represents the pivot table style type.
 type PivotTableStyleType int32
 
 const(
@@ -1256,6 +1293,8 @@ func Int32ToPivotTableStyleType(value int32)(PivotTableStyleType ,error){
 }
 
 /**************Enum ReserveMissingPivotItemType *****************/
+
+// Represents how to keep the missing pivot items.
 type ReserveMissingPivotItemType int32
 
 const(

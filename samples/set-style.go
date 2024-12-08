@@ -16,6 +16,6 @@ func SetStyle() {
 	style, _ := cell.GetStyle()
 	style.SetHorizontalAlignment(TextAlignmentType_Right)
 	cell.SetStyle_Style(style)
-	workbook.Save_String("../Data/Output/HELLO_Style.xlsx")
+	workbook.Save_String("Data/Output/HELLO_Style.xlsx")
 	println("Finish to set style, check HELLO.xlsx file in output folder.")
 }

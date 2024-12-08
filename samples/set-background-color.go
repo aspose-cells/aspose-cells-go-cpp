@@ -43,7 +43,7 @@ func SetBackgroundColor() {
 		println(err7)
 	}
 	cell.SetStyle_Style(style)
-	workbook.Save_String("../Data/Output/Coloer.xlsx")
+	workbook.Save_String("Data/Output/Coloer.xlsx")
 
 	println("New workbook, set color, and save as HELLO.xlsx.")
 }

@@ -4,7 +4,7 @@ package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
-// #cgo LDFLAGS: -L./lib/win_x86_64 -lAspose.Cells.CWrapper
+// #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/win_x86_64" -L"${SRCDIR}/lib/win_x86_64" -lAspose.Cells.CWrapper
 // #include <AsposeCellsCWrapper.h>
 import "C"
 import (

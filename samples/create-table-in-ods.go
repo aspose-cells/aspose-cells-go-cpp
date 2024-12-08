@@ -60,5 +60,5 @@ func CreateTableInOds() {
 	listObject.SetTableStyleType(TableStyleType_TableStyleMedium10)
 	listObject.SetShowTotals(true)
 	listObject.SetTableStyleType(TableStyleType_TableStyleMedium10)
-	workbook.Save_String("../Data/Output/CreateTable.ods")
+	workbook.Save_String("Data/Output/CreateTable.ods")
 }

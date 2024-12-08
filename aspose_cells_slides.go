@@ -4,7 +4,7 @@ package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
-// #cgo LDFLAGS: -L./lib/win_x86_64 -lAspose.Cells.CWrapper
+// #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/win_x86_64" -L"${SRCDIR}/lib/win_x86_64" -lAspose.Cells.CWrapper
 // #include <AsposeCellsCWrapper.h>
 import "C"
 import (
@@ -12,6 +12,8 @@ import (
 )
 
 /**************Enum AdjustFontSizeForRowType *****************/
+
+// Represents which kind of rows should be ajusted.
 type AdjustFontSizeForRowType int32
 
 const(
@@ -32,6 +34,8 @@ func Int32ToAdjustFontSizeForRowType(value int32)(AdjustFontSizeForRowType ,erro
 }
 
 /**************Enum SlideViewType *****************/
+
+// Represents the type when exporting to slides.
 type SlideViewType int32
 
 const(

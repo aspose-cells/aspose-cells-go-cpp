@@ -15,6 +15,7 @@ import (
 )
 
 /**************Enum RevisionActionType *****************/
+// Represents the type of revision action.
 type RevisionActionType int32
 
 const(
@@ -51,6 +52,7 @@ func Int32ToRevisionActionType(value int32)(RevisionActionType ,error){
 }
 
 /**************Enum RevisionType *****************/
+// Represents the revision type.
 type RevisionType int32
 
 const(

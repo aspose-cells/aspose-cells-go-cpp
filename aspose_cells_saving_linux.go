@@ -15,6 +15,7 @@ import (
 )
 
 /**************Enum SqlScriptOperatorType *****************/
+// Represents the type of operating data.
 type SqlScriptOperatorType int32
 
 const(

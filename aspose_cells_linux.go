@@ -15,6 +15,7 @@ import (
 )
 
 /**************Enum AccessCacheOptions *****************/
+// Cache options for data access. Can be combined with | operator for multiple options together.
 type AccessCacheOptions int32
 
 const(
@@ -85,6 +86,7 @@ func Int32ToAccessCacheOptions(value int32)(AccessCacheOptions ,error){
 }
 
 /**************Enum AutoFillType *****************/
+// Represents the auto fill type.
 type AutoFillType int32
 
 const(
@@ -117,6 +119,7 @@ func Int32ToAutoFillType(value int32)(AutoFillType ,error){
 }
 
 /**************Enum AutoFitMergedCellsType *****************/
+// Represents the type of auto fitting merged cells.
 type AutoFitMergedCellsType int32
 
 const(
@@ -145,6 +148,7 @@ func Int32ToAutoFitMergedCellsType(value int32)(AutoFitMergedCellsType ,error){
 }
 
 /**************Enum AutoFitWrappedTextType *****************/
+// Represents the type of auto fitting wrapped text.
 type AutoFitWrappedTextType int32
 
 const(
@@ -165,6 +169,7 @@ func Int32ToAutoFitWrappedTextType(value int32)(AutoFitWrappedTextType ,error){
 }
 
 /**************Enum BackgroundType *****************/
+// Enumerates cell background pattern types.
 type BackgroundType int32
 
 const(
@@ -253,6 +258,7 @@ func Int32ToBackgroundType(value int32)(BackgroundType ,error){
 }
 
 /**************Enum BorderType *****************/
+// Enumerates the border line and diagonal line types.
 type BorderType int32
 
 const(
@@ -297,6 +303,7 @@ func Int32ToBorderType(value int32)(BorderType ,error){
 }
 
 /**************Enum BuiltinStyleType *****************/
+// Represents all built-in style types.
 type BuiltinStyleType int32
 
 const(
@@ -512,6 +519,7 @@ func Int32ToBuiltinStyleType(value int32)(BuiltinStyleType ,error){
 }
 
 /**************Enum CalcModeType *****************/
+// Represents the mode type of calculating formulas.
 type CalcModeType int32
 
 const(
@@ -535,6 +543,10 @@ func Int32ToCalcModeType(value int32)(CalcModeType ,error){
 }
 
 /**************Enum CalculationPrecisionStrategy *****************/
+// Enumerates strategies for handling calculation precision.
+// Because of the precision issue of IEEE 754 Floating-Point Arithmetic, some "seemingly simple" formulas may not be calculated as the expected result.
+// Such as formula "=-0.45+0.43+0.02", when calculating operands by '+' operator directly, the result is not zero. For such kind of precision issue,
+// some special strategies may give the expected result.
 type CalculationPrecisionStrategy int32
 
 const(
@@ -562,6 +574,7 @@ func Int32ToCalculationPrecisionStrategy(value int32)(CalculationPrecisionStrate
 }
 
 /**************Enum CellBorderType *****************/
+// Enumerates a cell's border type.
 type CellBorderType int32
 
 const(
@@ -630,6 +643,7 @@ func Int32ToCellBorderType(value int32)(CellBorderType ,error){
 }
 
 /**************Enum CellsUnitType *****************/
+// Specifies the unit of measurement.
 type CellsUnitType int32
 
 const(
@@ -662,6 +676,7 @@ func Int32ToCellsUnitType(value int32)(CellsUnitType ,error){
 }
 
 /**************Enum CellValueFormatStrategy *****************/
+// Specifies how to apply style for the value of the cell.
 type CellValueFormatStrategy int32
 
 const(
@@ -693,6 +708,7 @@ func Int32ToCellValueFormatStrategy(value int32)(CellValueFormatStrategy ,error)
 }
 
 /**************Enum CellValueType *****************/
+// Specifies a cell value type.
 type CellValueType int32
 
 const(
@@ -733,6 +749,7 @@ func Int32ToCellValueType(value int32)(CellValueType ,error){
 }
 
 /**************Enum ColorType *****************/
+// Represents all color type
 type ColorType int32
 
 const(
@@ -765,6 +782,7 @@ func Int32ToColorType(value int32)(ColorType ,error){
 }
 
 /**************Enum ConsolidationFunction *****************/
+// Represents consolidation function.
 type ConsolidationFunction int32
 
 const(
@@ -825,6 +843,7 @@ func Int32ToConsolidationFunction(value int32)(ConsolidationFunction ,error){
 }
 
 /**************Enum ContentDisposition *****************/
+// The content disposition type.
 type ContentDisposition int32
 
 const(
@@ -844,6 +863,7 @@ func Int32ToContentDisposition(value int32)(ContentDisposition ,error){
 }
 
 /**************Enum CopyFormatType *****************/
+// Represents type of copying format when inserting rows.
 type CopyFormatType int32
 
 const(
@@ -868,6 +888,7 @@ func Int32ToCopyFormatType(value int32)(CopyFormatType ,error){
 }
 
 /**************Enum CountryCode *****************/
+// Represents Excel country identifiers.
 type CountryCode int32
 
 const(
@@ -1079,6 +1100,7 @@ func Int32ToCountryCode(value int32)(CountryCode ,error){
 }
 
 /**************Enum DataBarAxisPosition *****************/
+// Specifies the axis position for a range of cells with conditional formatting as data bars.
 type DataBarAxisPosition int32
 
 const(
@@ -1108,6 +1130,7 @@ func Int32ToDataBarAxisPosition(value int32)(DataBarAxisPosition ,error){
 }
 
 /**************Enum DataBarBorderType *****************/
+// Specifies the border type of a data bar.
 type DataBarBorderType int32
 
 const(
@@ -1128,6 +1151,7 @@ func Int32ToDataBarBorderType(value int32)(DataBarBorderType ,error){
 }
 
 /**************Enum DataBarFillType *****************/
+// Specifies how a data bar is filled with color.
 type DataBarFillType int32
 
 const(
@@ -1148,6 +1172,7 @@ func Int32ToDataBarFillType(value int32)(DataBarFillType ,error){
 }
 
 /**************Enum DataBarNegativeColorType *****************/
+// Specifies whether to use the same border and fill color as positive data bars.
 type DataBarNegativeColorType int32
 
 const(
@@ -1169,6 +1194,7 @@ func Int32ToDataBarNegativeColorType(value int32)(DataBarNegativeColorType ,erro
 }
 
 /**************Enum DateTimeGroupingType *****************/
+// Specifies how to group dateTime values.
 type DateTimeGroupingType int32
 
 const(
@@ -1205,6 +1231,7 @@ func Int32ToDateTimeGroupingType(value int32)(DateTimeGroupingType ,error){
 }
 
 /**************Enum DefaultEditLanguage *****************/
+// Represents the default edit language.
 type DefaultEditLanguage int32
 
 const(
@@ -1229,6 +1256,7 @@ func Int32ToDefaultEditLanguage(value int32)(DefaultEditLanguage ,error){
 }
 
 /**************Enum DirectoryType *****************/
+// Represents the directory  type of the file name.
 type DirectoryType int32
 
 const(
@@ -1258,6 +1286,7 @@ func Int32ToDirectoryType(value int32)(DirectoryType ,error){
 }
 
 /**************Enum DisplayDrawingObjects *****************/
+// Represents whether and how to show objects in the workbook.
 type DisplayDrawingObjects int32
 
 const(
@@ -1282,6 +1311,7 @@ func Int32ToDisplayDrawingObjects(value int32)(DisplayDrawingObjects ,error){
 }
 
 /**************Enum DynamicFilterType *****************/
+// Dynamic filter type.
 type DynamicFilterType int32
 
 const(
@@ -1434,6 +1464,7 @@ func Int32ToDynamicFilterType(value int32)(DynamicFilterType ,error){
 }
 
 /**************Enum EmfRenderSetting *****************/
+// Setting for rendering Emf metafile.
 type EmfRenderSetting int32
 
 const(
@@ -1454,6 +1485,7 @@ func Int32ToEmfRenderSetting(value int32)(EmfRenderSetting ,error){
 }
 
 /**************Enum EncodingType *****************/
+// Enums supported encoding types.
 type EncodingType int32
 
 const(
@@ -1482,6 +1514,9 @@ func Int32ToEncodingType(value int32)(EncodingType ,error){
 }
 
 /**************Enum EncryptionType *****************/
+// Encryption Type.
+// Only used by excel2003.
+// We will encrypt 2007/2010 workbook using SHA AES the same as Excel does, and this EncryptionType will be ignored.
 type EncryptionType int32
 
 const(
@@ -1510,6 +1545,7 @@ func Int32ToEncryptionType(value int32)(EncryptionType ,error){
 }
 
 /**************Enum ErrorCellValueType *****************/
+// Represents a cell value which contains an error.
 type ErrorCellValueType int32
 
 const(
@@ -1562,6 +1598,7 @@ func Int32ToErrorCellValueType(value int32)(ErrorCellValueType ,error){
 }
 
 /**************Enum ErrorCheckType *****************/
+// Represents all error check type.
 type ErrorCheckType int32
 
 const(
@@ -1610,6 +1647,7 @@ func Int32ToErrorCheckType(value int32)(ErrorCheckType ,error){
 }
 
 /**************Enum ExceptionType *****************/
+// Represents custom exception type code.
 type ExceptionType int32
 
 const(
@@ -1722,6 +1760,7 @@ func Int32ToExceptionType(value int32)(ExceptionType ,error){
 }
 
 /**************Enum ExternalLinkType *****************/
+// Represents the type of external link.
 type ExternalLinkType int32
 
 const(
@@ -1742,6 +1781,7 @@ func Int32ToExternalLinkType(value int32)(ExternalLinkType ,error){
 }
 
 /**************Enum FileFormatType *****************/
+// Represents the file format types.
 type FileFormatType int32
 
 const(
@@ -2054,6 +2094,7 @@ func Int32ToFileFormatType(value int32)(FileFormatType ,error){
 }
 
 /**************Enum FilterOperatorType *****************/
+// Custom Filter operator type.
 type FilterOperatorType int32
 
 const(
@@ -2110,6 +2151,7 @@ func Int32ToFilterOperatorType(value int32)(FilterOperatorType ,error){
 }
 
 /**************Enum FilterType *****************/
+// The filter type.
 type FilterType int32
 
 const(
@@ -2151,6 +2193,7 @@ func Int32ToFilterType(value int32)(FilterType ,error){
 }
 
 /**************Enum FontSchemeType *****************/
+// Represents the scheme type of the font.
 type FontSchemeType int32
 
 const(
@@ -2175,6 +2218,7 @@ func Int32ToFontSchemeType(value int32)(FontSchemeType ,error){
 }
 
 /**************Enum FontSourceType *****************/
+// Specifies the type of a font source.
 type FontSourceType int32
 
 const(
@@ -2199,6 +2243,7 @@ func Int32ToFontSourceType(value int32)(FontSourceType ,error){
 }
 
 /**************Enum FontUnderlineType *****************/
+// Enumerates the font underline types.
 type FontUnderlineType int32
 
 const(
@@ -2291,6 +2336,7 @@ func Int32ToFontUnderlineType(value int32)(FontUnderlineType ,error){
 }
 
 /**************Enum FormatConditionType *****************/
+// Conditional format rule type.
 type FormatConditionType int32
 
 const(
@@ -2415,6 +2461,7 @@ func Int32ToFormatConditionType(value int32)(FormatConditionType ,error){
 }
 
 /**************Enum FormatConditionValueType *****************/
+// Condition value type.
 type FormatConditionValueType int32
 
 const(
@@ -2470,6 +2517,7 @@ func Int32ToFormatConditionValueType(value int32)(FormatConditionValueType ,erro
 }
 
 /**************Enum GridlineType *****************/
+// Enumerates grid line Type.
 type GridlineType int32
 
 const(
@@ -2490,6 +2538,7 @@ func Int32ToGridlineType(value int32)(GridlineType ,error){
 }
 
 /**************Enum HeaderFooterCommandType *****************/
+// Represents the command type of header and footer.
 type HeaderFooterCommandType int32
 
 const(
@@ -2538,6 +2587,7 @@ func Int32ToHeaderFooterCommandType(value int32)(HeaderFooterCommandType ,error)
 }
 
 /**************Enum HtmlCrossType *****************/
+// Represents five types of html cross string.
 type HtmlCrossType int32
 
 const(
@@ -2571,6 +2621,7 @@ func Int32ToHtmlCrossType(value int32)(HtmlCrossType ,error){
 }
 
 /**************Enum HtmlExportDataOptions *****************/
+// Represents the options for exporting html data.
 type HtmlExportDataOptions int32
 
 const(
@@ -2591,6 +2642,7 @@ func Int32ToHtmlExportDataOptions(value int32)(HtmlExportDataOptions ,error){
 }
 
 /**************Enum HtmlHiddenColDisplayType *****************/
+// Represents two types of showing the hidden columns in html.
 type HtmlHiddenColDisplayType int32
 
 const(
@@ -2611,6 +2663,7 @@ func Int32ToHtmlHiddenColDisplayType(value int32)(HtmlHiddenColDisplayType ,erro
 }
 
 /**************Enum HtmlHiddenRowDisplayType *****************/
+// Represents two types of showing the hidden rows in html.
 type HtmlHiddenRowDisplayType int32
 
 const(
@@ -2631,6 +2684,7 @@ func Int32ToHtmlHiddenRowDisplayType(value int32)(HtmlHiddenRowDisplayType ,erro
 }
 
 /**************Enum HtmlLinkTargetType *****************/
+// Represents the type of target attribute in HTML <a/> tag.
 type HtmlLinkTargetType int32
 
 const(
@@ -2659,6 +2713,7 @@ func Int32ToHtmlLinkTargetType(value int32)(HtmlLinkTargetType ,error){
 }
 
 /**************Enum HtmlOfficeMathOutputType *****************/
+// Represents how export OfficeMath to HTML.
 type HtmlOfficeMathOutputType int32
 
 const(
@@ -2679,6 +2734,9 @@ func Int32ToHtmlOfficeMathOutputType(value int32)(HtmlOfficeMathOutputType ,erro
 }
 
 /**************Enum IconSetType *****************/
+// Icon set type for conditional formatting.
+// The threshold values for triggering the different icons within a set are
+// configurable, and the icon order is reversible.
 type IconSetType int32
 
 const(
@@ -2790,6 +2848,7 @@ func Int32ToIconSetType(value int32)(IconSetType ,error){
 }
 
 /**************Enum LoadDataFilterOptions *****************/
+// Represents the options to filter data when loading workbook from template.
 type LoadDataFilterOptions int32
 
 const(
@@ -2922,6 +2981,7 @@ func Int32ToLoadDataFilterOptions(value int32)(LoadDataFilterOptions ,error){
 }
 
 /**************Enum LoadFormat *****************/
+// Represents the load file format.
 type LoadFormat int32
 
 const(
@@ -3018,6 +3078,7 @@ func Int32ToLoadFormat(value int32)(LoadFormat ,error){
 }
 
 /**************Enum LookAtType *****************/
+// Represents look at type.
 type LookAtType int32
 
 const(
@@ -3046,6 +3107,7 @@ func Int32ToLookAtType(value int32)(LookAtType ,error){
 }
 
 /**************Enum LookInType *****************/
+// Represents look in type.
 type LookInType int32
 
 const(
@@ -3082,6 +3144,7 @@ func Int32ToLookInType(value int32)(LookInType ,error){
 }
 
 /**************Enum MemorySetting *****************/
+// Memory usage options.
 type MemorySetting int32
 
 const(
@@ -3104,6 +3167,7 @@ func Int32ToMemorySetting(value int32)(MemorySetting ,error){
 }
 
 /**************Enum MergedCellsShrinkType *****************/
+// Represents the strategy to shrink merged cells for operations such as deleting blank rows/column.
 type MergedCellsShrinkType int32
 
 const(
@@ -3129,6 +3193,7 @@ func Int32ToMergedCellsShrinkType(value int32)(MergedCellsShrinkType ,error){
 }
 
 /**************Enum MergeEmptyTdType *****************/
+// Represents the merge type for empty TD element when exporting file to html.
 type MergeEmptyTdType int32
 
 const(
@@ -3157,6 +3222,7 @@ func Int32ToMergeEmptyTdType(value int32)(MergeEmptyTdType ,error){
 }
 
 /**************Enum NameScopeType *****************/
+// Represents the scope type of defined names.
 type NameScopeType int32
 
 const(
@@ -3181,6 +3247,7 @@ func Int32ToNameScopeType(value int32)(NameScopeType ,error){
 }
 
 /**************Enum NumberCategoryType *****************/
+// Represents category type of cell's number formatting.
 type NumberCategoryType int32
 
 const(
@@ -3221,6 +3288,7 @@ func Int32ToNumberCategoryType(value int32)(NumberCategoryType ,error){
 }
 
 /**************Enum ObjectType *****************/
+// Represents the type of the number.
 type ObjectType int32
 
 const(
@@ -3309,6 +3377,7 @@ func Int32ToObjectType(value int32)(ObjectType ,error){
 }
 
 /**************Enum OoxmlCompliance *****************/
+// Allows to specify which OOXML specification will be used when saving in the Xlsx format.
 type OoxmlCompliance int32
 
 const(
@@ -3329,6 +3398,7 @@ func Int32ToOoxmlCompliance(value int32)(OoxmlCompliance ,error){
 }
 
 /**************Enum OoxmlCompressionType *****************/
+// The Ooxml compression type
 type OoxmlCompressionType int32
 
 const(
@@ -3378,6 +3448,7 @@ func Int32ToOoxmlCompressionType(value int32)(OoxmlCompressionType ,error){
 }
 
 /**************Enum OperatorType *****************/
+// Represents the operator type of conditional format and data validation.
 type OperatorType int32
 
 const(
@@ -3426,6 +3497,7 @@ func Int32ToOperatorType(value int32)(OperatorType ,error){
 }
 
 /**************Enum PageLayoutAlignmentType *****************/
+// Enumerates page layout alignment types.
 type PageLayoutAlignmentType int32
 
 const(
@@ -3458,6 +3530,7 @@ func Int32ToPageLayoutAlignmentType(value int32)(PageLayoutAlignmentType ,error)
 }
 
 /**************Enum PageOrientationType *****************/
+// Represents print orientation constants.
 type PageOrientationType int32
 
 const(
@@ -3478,6 +3551,7 @@ func Int32ToPageOrientationType(value int32)(PageOrientationType ,error){
 }
 
 /**************Enum PaneStateType *****************/
+// Represents state of the sheet's pane.
 type PaneStateType int32
 
 const(
@@ -3506,6 +3580,7 @@ func Int32ToPaneStateType(value int32)(PaneStateType ,error){
 }
 
 /**************Enum PaperSizeType *****************/
+// Represents paper size constants.
 type PaperSizeType int32
 
 const(
@@ -3998,6 +4073,7 @@ func Int32ToPaperSizeType(value int32)(PaperSizeType ,error){
 }
 
 /**************Enum ParameterType *****************/
+// Represents all parameters' type or return value type of function.
 type ParameterType int32
 
 const(
@@ -4021,6 +4097,7 @@ func Int32ToParameterType(value int32)(ParameterType ,error){
 }
 
 /**************Enum PasteOperationType *****************/
+// Represents operation type when pasting range.
 type PasteOperationType int32
 
 const(
@@ -4053,6 +4130,7 @@ func Int32ToPasteOperationType(value int32)(PasteOperationType ,error){
 }
 
 /**************Enum PasteType *****************/
+// Represents the paste special type.
 type PasteType int32
 
 const(
@@ -4121,6 +4199,7 @@ func Int32ToPasteType(value int32)(PasteType ,error){
 }
 
 /**************Enum PrintCommentsType *****************/
+// Represents the way comments are printed with the sheet.
 type PrintCommentsType int32
 
 const(
@@ -4149,6 +4228,7 @@ func Int32ToPrintCommentsType(value int32)(PrintCommentsType ,error){
 }
 
 /**************Enum PrintErrorsType *****************/
+// Represents print errors constants.
 type PrintErrorsType int32
 
 const(
@@ -4177,6 +4257,7 @@ func Int32ToPrintErrorsType(value int32)(PrintErrorsType ,error){
 }
 
 /**************Enum PrintingPageType *****************/
+// Indicates which pages will not be printed.
 type PrintingPageType int32
 
 const(
@@ -4201,6 +4282,7 @@ func Int32ToPrintingPageType(value int32)(PrintingPageType ,error){
 }
 
 /**************Enum PrintOrderType *****************/
+// Represent print order constants.
 type PrintOrderType int32
 
 const(
@@ -4221,6 +4303,7 @@ func Int32ToPrintOrderType(value int32)(PrintOrderType ,error){
 }
 
 /**************Enum PrintSizeType *****************/
+// Represents the printed chart size.
 type PrintSizeType int32
 
 const(
@@ -4245,6 +4328,7 @@ func Int32ToPrintSizeType(value int32)(PrintSizeType ,error){
 }
 
 /**************Enum ProtectionType *****************/
+// Represents workbook/worksheet protection type.
 type ProtectionType int32
 
 const(
@@ -4285,6 +4369,7 @@ func Int32ToProtectionType(value int32)(ProtectionType ,error){
 }
 
 /**************Enum RenameStrategy *****************/
+// Strategy option for duplicate names of columns.
 type RenameStrategy int32
 
 const(
@@ -4309,6 +4394,7 @@ func Int32ToRenameStrategy(value int32)(RenameStrategy ,error){
 }
 
 /**************Enum ResourceLoadingType *****************/
+// Represents how to loading the linked resource.
 type ResourceLoadingType int32
 
 const(
@@ -4333,6 +4419,7 @@ func Int32ToResourceLoadingType(value int32)(ResourceLoadingType ,error){
 }
 
 /**************Enum SaveFormat *****************/
+// Represents the format in which the workbook is saved.
 type SaveFormat int32
 
 const(
@@ -4506,6 +4593,7 @@ func Int32ToSaveFormat(value int32)(SaveFormat ,error){
 }
 
 /**************Enum SheetType *****************/
+// Specifies the worksheet type.
 type SheetType int32
 
 const(
@@ -4546,6 +4634,7 @@ func Int32ToSheetType(value int32)(SheetType ,error){
 }
 
 /**************Enum ShiftType *****************/
+// Represent the shift options when deleting a range of cells.
 type ShiftType int32
 
 const(
@@ -4578,6 +4667,7 @@ func Int32ToShiftType(value int32)(ShiftType ,error){
 }
 
 /**************Enum SortOnType *****************/
+// Sorted value type.
 type SortOnType int32
 
 const(
@@ -4606,6 +4696,7 @@ func Int32ToSortOnType(value int32)(SortOnType ,error){
 }
 
 /**************Enum SortOrder *****************/
+// Represents sort order for the data range.
 type SortOrder int32
 
 const(
@@ -4630,6 +4721,7 @@ func Int32ToSortOrder(value int32)(SortOrder ,error){
 }
 
 /**************Enum StyleModifyFlag *****************/
+// The style modified flags.
 type StyleModifyFlag int32
 
 const(
@@ -4846,6 +4938,7 @@ func Int32ToStyleModifyFlag(value int32)(StyleModifyFlag ,error){
 }
 
 /**************Enum TargetModeType *****************/
+// Represents the type of target mode.
 type TargetModeType int32
 
 const(
@@ -4874,6 +4967,7 @@ func Int32ToTargetModeType(value int32)(TargetModeType ,error){
 }
 
 /**************Enum TextAlignmentType *****************/
+// Enumerates text alignment types.
 type TextAlignmentType int32
 
 const(
@@ -4934,6 +5028,7 @@ func Int32ToTextAlignmentType(value int32)(TextAlignmentType ,error){
 }
 
 /**************Enum TextCapsType *****************/
+// This type specifies the cap types of the text.
 type TextCapsType int32
 
 const(
@@ -4958,6 +5053,7 @@ func Int32ToTextCapsType(value int32)(TextCapsType ,error){
 }
 
 /**************Enum TextCrossType *****************/
+// Enumerates displaying text type when the text width is larger than cell width.
 type TextCrossType int32
 
 const(
@@ -4986,6 +5082,7 @@ func Int32ToTextCrossType(value int32)(TextCrossType ,error){
 }
 
 /**************Enum TextDirectionType *****************/
+// Represents the direction of the text flow for this paragraph.
 type TextDirectionType int32
 
 const(
@@ -5009,6 +5106,7 @@ func Int32ToTextDirectionType(value int32)(TextDirectionType ,error){
 }
 
 /**************Enum TextOrientationType *****************/
+// Enumerates text orientation types.
 type TextOrientationType int32
 
 const(
@@ -5037,6 +5135,7 @@ func Int32ToTextOrientationType(value int32)(TextOrientationType ,error){
 }
 
 /**************Enum TextStrikeType *****************/
+// This type specifies the strike type.
 type TextStrikeType int32
 
 const(
@@ -5062,6 +5161,7 @@ func Int32ToTextStrikeType(value int32)(TextStrikeType ,error){
 }
 
 /**************Enum ThemeColorType *****************/
+// Enumerates  the theme color types.
 type ThemeColorType int32
 
 const(
@@ -5126,6 +5226,9 @@ func Int32ToThemeColorType(value int32)(ThemeColorType ,error){
 }
 
 /**************Enum TimePeriodType *****************/
+// Used in a FormatConditionType.TimePeriod conditional formatting rule.
+// These are dynamic time periods, which change based on
+// the date the conditional formatting is refreshed / applied.
 type TimePeriodType int32
 
 const(
@@ -5193,6 +5296,7 @@ func Int32ToTimePeriodType(value int32)(TimePeriodType ,error){
 }
 
 /**************Enum TxtLoadStyleStrategy *****************/
+// Specifies how to apply style for parsed values when converting string value to number or datetime.
 type TxtLoadStyleStrategy int32
 
 const(
@@ -5217,6 +5321,7 @@ func Int32ToTxtLoadStyleStrategy(value int32)(TxtLoadStyleStrategy ,error){
 }
 
 /**************Enum TxtValueQuoteType *****************/
+// Specifies the type of using quotation marks for values in text format files.
 type TxtValueQuoteType int32
 
 const(
@@ -5246,6 +5351,7 @@ func Int32ToTxtValueQuoteType(value int32)(TxtValueQuoteType ,error){
 }
 
 /**************Enum UpdateLinksType *****************/
+// Represents how to update links to other workbooks when the workbook is opened.
 type UpdateLinksType int32
 
 const(
@@ -5270,6 +5376,7 @@ func Int32ToUpdateLinksType(value int32)(UpdateLinksType ,error){
 }
 
 /**************Enum ValidationAlertType *****************/
+// Represents the data validation alert style.
 type ValidationAlertType int32
 
 const(
@@ -5294,6 +5401,7 @@ func Int32ToValidationAlertType(value int32)(ValidationAlertType ,error){
 }
 
 /**************Enum ValidationType *****************/
+// Represents data validation type.
 type ValidationType int32
 
 const(
@@ -5338,6 +5446,7 @@ func Int32ToValidationType(value int32)(ValidationType ,error){
 }
 
 /**************Enum ViewType *****************/
+// Represents the view type of the worksheet.
 type ViewType int32
 
 const(
@@ -5361,6 +5470,7 @@ func Int32ToViewType(value int32)(ViewType ,error){
 }
 
 /**************Enum VisibilityType *****************/
+// Represents the states for sheet visibility.
 type VisibilityType int32
 
 const(
@@ -5386,6 +5496,7 @@ func Int32ToVisibilityType(value int32)(VisibilityType ,error){
 }
 
 /**************Enum WarningType *****************/
+// WaringType
 type WarningType int32
 
 const(
@@ -5443,6 +5554,7 @@ func Int32ToWarningType(value int32)(WarningType ,error){
 }
 // Struct Color 
 
+// Represents an ARGB (alpha, red, green, blue) color.
 type Color struct {
 	ptr unsafe.Pointer
 }
@@ -5525,6 +5637,7 @@ func DeleteColor(color *Color){
 }
 // Struct Date 
 
+// Represents a date and time.
 type Date struct {
 	ptr unsafe.Pointer
 }

@@ -12,6 +12,7 @@ import (
 )
 
 /**************Enum JsonExportHyperlinkType *****************/
+// Represents type of exporting hyperlinks to json.
 type JsonExportHyperlinkType int32
 
 const(

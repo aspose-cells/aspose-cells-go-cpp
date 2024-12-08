@@ -5,7 +5,7 @@ import (
 )
 
 func SetListobjectComment() {
-	workbook, err1 := NewWorkbook_String("../Data/Input/BookPivotTable.xlsx")
+	workbook, err1 := NewWorkbook_String("Data/Input/BookPivotTable.xlsx")
 	if err1 != nil {
 		println(err1)
 	}
@@ -31,7 +31,7 @@ func SetListobjectComment() {
 
 	listobject.SetComment("This is Aspose.Cells comment.")
 
-	workbook.Save_String("../Data/Output/BookPivotTableSetComment.xlsx")
+	workbook.Save_String("Data/Output/BookPivotTableSetComment.xlsx")
 
 	println("Set comment, and save as BookPivotTableSetComment.xlsx.")
 }

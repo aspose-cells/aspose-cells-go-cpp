@@ -59,5 +59,5 @@ func CreateTableInExcel() {
 	listObject.SetTableStyleType(TableStyleType_TableStyleMedium10)
 	listObject.SetShowTotals(true)
 
-	workbook.Save_String("../Data/Output/CreateTable.xlsx")
+	workbook.Save_String("Data/Output/CreateTable.xlsx")
 }

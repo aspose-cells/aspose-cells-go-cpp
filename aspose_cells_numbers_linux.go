@@ -15,6 +15,7 @@ import (
 )
 
 /**************Enum LoadNumbersTableType *****************/
+// Indicates type of loading tables when some tables are in a sheet.
 type LoadNumbersTableType int32
 
 const(

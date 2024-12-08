@@ -4,7 +4,7 @@ package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
-// #cgo LDFLAGS: -L./lib/win_x86_64 -lAspose.Cells.CWrapper
+// #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/win_x86_64" -L"${SRCDIR}/lib/win_x86_64" -lAspose.Cells.CWrapper
 // #include <AsposeCellsCWrapper.h>
 import "C"
 import (
@@ -15,6 +15,8 @@ import (
 )
 
 /**************Enum AxisType *****************/
+
+// Represents the axis type.
 type AxisType int32
 
 const(
@@ -39,6 +41,8 @@ func Int32ToAxisType(value int32)(AxisType ,error){
 }
 
 /**************Enum BackgroundMode *****************/
+
+// Represents the display mode of the background.
 type BackgroundMode int32
 
 const(
@@ -63,6 +67,8 @@ func Int32ToBackgroundMode(value int32)(BackgroundMode ,error){
 }
 
 /**************Enum Bar3DShapeType *****************/
+
+// Represents the shape used with the 3-D bar or column chart.
 type Bar3DShapeType int32
 
 const(
@@ -99,6 +105,8 @@ func Int32ToBar3DShapeType(value int32)(Bar3DShapeType ,error){
 }
 
 /**************Enum BubbleSizeRepresents *****************/
+
+// Represents what the bubble size represents on a bubble chart.
 type BubbleSizeRepresents int32
 
 const(
@@ -119,6 +127,8 @@ func Int32ToBubbleSizeRepresents(value int32)(BubbleSizeRepresents ,error){
 }
 
 /**************Enum CategoryType *****************/
+
+// Represents the category axis type.
 type CategoryType int32
 
 const(
@@ -143,6 +153,8 @@ func Int32ToCategoryType(value int32)(CategoryType ,error){
 }
 
 /**************Enum ChartLineFormattingType *****************/
+
+// Represents line format type of chart line.
 type ChartLineFormattingType int32
 
 const(
@@ -171,6 +183,8 @@ func Int32ToChartLineFormattingType(value int32)(ChartLineFormattingType ,error)
 }
 
 /**************Enum ChartMarkerType *****************/
+
+// Represents the marker style in a line chart, scatter chart, or radar chart.
 type ChartMarkerType int32
 
 const(
@@ -231,6 +245,8 @@ func Int32ToChartMarkerType(value int32)(ChartMarkerType ,error){
 }
 
 /**************Enum ChartSplitType *****************/
+
+// Represents the way the two sections of either a pie of pie chart or a bar of pie chart are split.
 type ChartSplitType int32
 
 const(
@@ -273,6 +289,8 @@ func Int32ToChartSplitType(value int32)(ChartSplitType ,error){
 }
 
 /**************Enum ChartTextDirectionType *****************/
+
+// Represents the text direction type of the chart.
 type ChartTextDirectionType int32
 
 const(
@@ -305,6 +323,8 @@ func Int32ToChartTextDirectionType(value int32)(ChartTextDirectionType ,error){
 }
 
 /**************Enum ChartType *****************/
+
+// Enumerates all chart types used in Excel.
 type ChartType int32
 
 const(
@@ -645,6 +665,8 @@ func Int32ToChartType(value int32)(ChartType ,error){
 }
 
 /**************Enum CrossType *****************/
+
+// Represents the axis cross type.
 type CrossType int32
 
 const(
@@ -673,6 +695,8 @@ func Int32ToCrossType(value int32)(CrossType ,error){
 }
 
 /**************Enum DataLabelsSeparatorType *****************/
+
+// Represents the separator type of DataLabels.
 type DataLabelsSeparatorType int32
 
 const(
@@ -713,6 +737,8 @@ func Int32ToDataLabelsSeparatorType(value int32)(DataLabelsSeparatorType ,error)
 }
 
 /**************Enum DisplayUnitType *****************/
+
+// Represents the type of display unit of chart's axis.
 type DisplayUnitType int32
 
 const(
@@ -777,6 +803,8 @@ func Int32ToDisplayUnitType(value int32)(DisplayUnitType ,error){
 }
 
 /**************Enum ErrorBarDisplayType *****************/
+
+// Represents error bar display type.
 type ErrorBarDisplayType int32
 
 const(
@@ -805,6 +833,8 @@ func Int32ToErrorBarDisplayType(value int32)(ErrorBarDisplayType ,error){
 }
 
 /**************Enum ErrorBarType *****************/
+
+// Represents error bar amount type.
 type ErrorBarType int32
 
 const(
@@ -837,6 +867,8 @@ func Int32ToErrorBarType(value int32)(ErrorBarType ,error){
 }
 
 /**************Enum FormattingType *****************/
+
+// Represents the type of formatting applied to an <see cref="Area"/> object or a <see cref="Line"/> object.
 type FormattingType int32
 
 const(
@@ -861,6 +893,8 @@ func Int32ToFormattingType(value int32)(FormattingType ,error){
 }
 
 /**************Enum LabelPositionType *****************/
+
+// Represents data label position type.
 type LabelPositionType int32
 
 const(
@@ -913,6 +947,8 @@ func Int32ToLabelPositionType(value int32)(LabelPositionType ,error){
 }
 
 /**************Enum LegendPositionType *****************/
+
+// Enumerates the legend position types.
 type LegendPositionType int32
 
 const(
@@ -949,6 +985,8 @@ func Int32ToLegendPositionType(value int32)(LegendPositionType ,error){
 }
 
 /**************Enum MapChartLabelLayout *****************/
+
+// Represents the layout of map chart's labels.
 type MapChartLabelLayout int32
 
 const(
@@ -973,6 +1011,8 @@ func Int32ToMapChartLabelLayout(value int32)(MapChartLabelLayout ,error){
 }
 
 /**************Enum MapChartProjectionType *****************/
+
+// Represents projection type of the map chart.
 type MapChartProjectionType int32
 
 const(
@@ -1001,6 +1041,8 @@ func Int32ToMapChartProjectionType(value int32)(MapChartProjectionType ,error){
 }
 
 /**************Enum MapChartRegionType *****************/
+
+// Represents the region type of the map chart.
 type MapChartRegionType int32
 
 const(
@@ -1029,6 +1071,8 @@ func Int32ToMapChartRegionType(value int32)(MapChartRegionType ,error){
 }
 
 /**************Enum PlotDataByType *****************/
+
+// Represents the type of data plot by row or column.
 type PlotDataByType int32
 
 const(
@@ -1049,6 +1093,8 @@ func Int32ToPlotDataByType(value int32)(PlotDataByType ,error){
 }
 
 /**************Enum PlotEmptyCellsType *****************/
+
+// Represents all plot empty cells type of a chart.
 type PlotEmptyCellsType int32
 
 const(
@@ -1073,6 +1119,8 @@ func Int32ToPlotEmptyCellsType(value int32)(PlotEmptyCellsType ,error){
 }
 
 /**************Enum QuartileCalculationType *****************/
+
+// Represents quartile calculation methods.
 type QuartileCalculationType int32
 
 const(
@@ -1093,6 +1141,8 @@ func Int32ToQuartileCalculationType(value int32)(QuartileCalculationType ,error)
 }
 
 /**************Enum SparklineAxisMinMaxType *****************/
+
+// Represents the minimum and maximum value types for the sparkline vertical axis.
 type SparklineAxisMinMaxType int32
 
 const(
@@ -1117,6 +1167,8 @@ func Int32ToSparklineAxisMinMaxType(value int32)(SparklineAxisMinMaxType ,error)
 }
 
 /**************Enum SparklinePresetStyleType *****************/
+
+// Represents the preset style types for sparkline.
 type SparklinePresetStyleType int32
 
 const(
@@ -1277,6 +1329,8 @@ func Int32ToSparklinePresetStyleType(value int32)(SparklinePresetStyleType ,erro
 }
 
 /**************Enum SparklineType *****************/
+
+// Represents the sparkline types.
 type SparklineType int32
 
 const(
@@ -1301,6 +1355,8 @@ func Int32ToSparklineType(value int32)(SparklineType ,error){
 }
 
 /**************Enum TickLabelAlignmentType *****************/
+
+// Represents the text alignment type for the tick labels on the axis
 type TickLabelAlignmentType int32
 
 const(
@@ -1325,6 +1381,8 @@ func Int32ToTickLabelAlignmentType(value int32)(TickLabelAlignmentType ,error){
 }
 
 /**************Enum TickLabelPositionType *****************/
+
+// Represents the position type of tick-mark labels on the specified axis.
 type TickLabelPositionType int32
 
 const(
@@ -1353,6 +1411,8 @@ func Int32ToTickLabelPositionType(value int32)(TickLabelPositionType ,error){
 }
 
 /**************Enum TickMarkType *****************/
+
+// Represents the tick mark type for the specified axis.
 type TickMarkType int32
 
 const(
@@ -1381,6 +1441,8 @@ func Int32ToTickMarkType(value int32)(TickMarkType ,error){
 }
 
 /**************Enum TimeUnit *****************/
+
+// Represents the base unit for the category axis.
 type TimeUnit int32
 
 const(
@@ -1405,6 +1467,8 @@ func Int32ToTimeUnit(value int32)(TimeUnit ,error){
 }
 
 /**************Enum TrendlineType *****************/
+
+// Represents the trendline type.
 type TrendlineType int32
 
 const(

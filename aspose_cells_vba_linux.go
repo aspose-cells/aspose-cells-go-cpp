@@ -15,6 +15,7 @@ import (
 )
 
 /**************Enum VbaProjectReferenceType *****************/
+// Represents the type of VBA project reference.
 type VbaProjectReferenceType int32
 
 const(

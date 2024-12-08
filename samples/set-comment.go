@@ -13,6 +13,6 @@ func SetComment() {
 	println("Get comment index:")
 	comment, _ := comments.Get_Int(comment_index)
 	comment.SetNote("Hello, World!")
-	workbook.Save_String("../Data/Output/HELLO_Comment.xlsx")
+	workbook.Save_String("Data/Output/HELLO_Comment.xlsx")
 	println("Finish to set comment, check HELLO_Comment.xlsx file in output folder.")
 }

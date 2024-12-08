@@ -4,7 +4,7 @@ package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
-// #cgo LDFLAGS: -L./lib/win_x86_64 -lAspose.Cells.CWrapper
+// #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/win_x86_64" -L"${SRCDIR}/lib/win_x86_64" -lAspose.Cells.CWrapper
 // #include <AsposeCellsCWrapper.h>
 import "C"
 import (
@@ -15,6 +15,8 @@ import (
 )
 
 /**************Enum BulletType *****************/
+
+// Represents the type of the bullet.
 type BulletType int32
 
 const(
@@ -43,6 +45,8 @@ func Int32ToBulletType(value int32)(BulletType ,error){
 }
 
 /**************Enum LineSpaceSizeType *****************/
+
+// Represents the unit type of line space size.
 type LineSpaceSizeType int32
 
 const(
@@ -63,6 +67,8 @@ func Int32ToLineSpaceSizeType(value int32)(LineSpaceSizeType ,error){
 }
 
 /**************Enum ShapeTextVerticalAlignmentType *****************/
+
+// It corresponds to "Format Shape - Text Options - Text Box - Vertical Alignment" in Excel.
 type ShapeTextVerticalAlignmentType int32
 
 const(
@@ -122,6 +128,8 @@ func Int32ToShapeTextVerticalAlignmentType(value int32)(ShapeTextVerticalAlignme
 }
 
 /**************Enum TextAutonumberScheme *****************/
+
+// Represents all automatic number scheme.
 type TextAutonumberScheme int32
 
 const(
@@ -301,6 +309,8 @@ func Int32ToTextAutonumberScheme(value int32)(TextAutonumberScheme ,error){
 }
 
 /**************Enum TextFontAlignType *****************/
+
+// Represents the different types of font alignment.
 type TextFontAlignType int32
 
 const(
@@ -334,6 +344,8 @@ func Int32ToTextFontAlignType(value int32)(TextFontAlignType ,error){
 }
 
 /**************Enum TextNodeType *****************/
+
+// Represents the node type.
 type TextNodeType int32
 
 const(
@@ -358,6 +370,8 @@ func Int32ToTextNodeType(value int32)(TextNodeType ,error){
 }
 
 /**************Enum TextTabAlignmentType *****************/
+
+// Represents the text tab alignment types.
 type TextTabAlignmentType int32
 
 const(
@@ -386,6 +400,8 @@ func Int32ToTextTabAlignmentType(value int32)(TextTabAlignmentType ,error){
 }
 
 /**************Enum TextVerticalType *****************/
+
+// Represents the text direct type.
 type TextVerticalType int32
 
 const(

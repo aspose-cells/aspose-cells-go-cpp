@@ -30,7 +30,7 @@ func New_Workbook() {
 	}
 
 	cell.PutValue_String_Bool("Hello", true)
-	workbook.Save_String("../Data/Output/HELLO.xlsx")
+	workbook.Save_String("Data/Output/HELLO.xlsx")
 
 	println("New workbook, and save as HELLO.xlsx.")
 }

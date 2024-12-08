@@ -4,7 +4,7 @@ package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
-// #cgo LDFLAGS: -L./lib/win_x86_64 -lAspose.Cells.CWrapper
+// #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/win_x86_64" -L"${SRCDIR}/lib/win_x86_64" -lAspose.Cells.CWrapper
 // #include <AsposeCellsCWrapper.h>
 import "C"
 import (
@@ -15,6 +15,8 @@ import (
 )
 
 /**************Enum ConnectionDataSourceType *****************/
+
+// Specifies external database source type
 type ConnectionDataSourceType int32
 
 const(
@@ -79,6 +81,8 @@ func Int32ToConnectionDataSourceType(value int32)(ConnectionDataSourceType ,erro
 }
 
 /**************Enum ConnectionParameterType *****************/
+
+// Specifies the parameter type of external connection
 type ConnectionParameterType int32
 
 const(
@@ -103,6 +107,8 @@ func Int32ToConnectionParameterType(value int32)(ConnectionParameterType ,error)
 }
 
 /**************Enum CredentialsMethodType *****************/
+
+// Specifies Credentials method used for server access.
 type CredentialsMethodType int32
 
 const(
@@ -131,6 +137,8 @@ func Int32ToCredentialsMethodType(value int32)(CredentialsMethodType ,error){
 }
 
 /**************Enum ExternalConnectionClassType *****************/
+
+// Represents the type of connection
 type ExternalConnectionClassType int32
 
 const(
@@ -163,6 +171,8 @@ func Int32ToExternalConnectionClassType(value int32)(ExternalConnectionClassType
 }
 
 /**************Enum HtmlFormatHandlingType *****************/
+
+// Specifies how to handle formatting from the HTML source
 type HtmlFormatHandlingType int32
 
 const(
@@ -187,6 +197,8 @@ func Int32ToHtmlFormatHandlingType(value int32)(HtmlFormatHandlingType ,error){
 }
 
 /**************Enum OLEDBCommandType *****************/
+
+// Specifies the OLE DB command type.
 type OLEDBCommandType int32
 
 const(
@@ -227,6 +239,8 @@ func Int32ToOLEDBCommandType(value int32)(OLEDBCommandType ,error){
 }
 
 /**************Enum ReConnectionMethodType *****************/
+
+// Specifies what the spreadsheet application should do when a connection fails.
 type ReConnectionMethodType int32
 
 const(
@@ -255,6 +269,8 @@ func Int32ToReConnectionMethodType(value int32)(ReConnectionMethodType ,error){
 }
 
 /**************Enum SqlDataType *****************/
+
+// Specifies SQL data type of the parameter. Only valid for ODBC sources.
 type SqlDataType int32
 
 const(

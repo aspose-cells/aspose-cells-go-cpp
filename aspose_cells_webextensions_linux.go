@@ -15,6 +15,7 @@ import (
 )
 
 /**************Enum WebExtensionStoreType *****************/
+// Represents the store type of web extension.
 type WebExtensionStoreType int32
 
 const(

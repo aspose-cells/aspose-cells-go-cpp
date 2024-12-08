@@ -15,6 +15,6 @@ func ConvertExcelToPdf() {
 	cell.PutValue_Int(15)
 	cell, _ = cells.Get_String("A3")
 	cell.PutValue_Int(25)
-	workbook.Save_String("../Data/Output/HELLO_Convert.pdf")
+	workbook.Save_String("Data/Output/HELLO_Convert.pdf")
 	println("Finish to convert to PDF , check .pdf file in output folder.")
 }

@@ -22,6 +22,6 @@ func NewPyramidChart() {
 	chart, _ := charts.Get_Int(0)
 	nseries, _ := chart.GetNSeries()
 	nseries.Add_String_Bool("A1:B3", true)
-	workbook.Save_String("../Data/Output/NewPyramidChart.xlsx")
+	workbook.Save_String("Data/Output/NewPyramidChart.xlsx")
 	println("New Pyramid Chart, and save as NewPyramidChart.xlsx.")
 }

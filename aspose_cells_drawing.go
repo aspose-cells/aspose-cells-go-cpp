@@ -4,7 +4,7 @@ package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
-// #cgo LDFLAGS: -L./lib/win_x86_64 -lAspose.Cells.CWrapper
+// #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/win_x86_64" -L"${SRCDIR}/lib/win_x86_64" -lAspose.Cells.CWrapper
 // #include <AsposeCellsCWrapper.h>
 import "C"
 import (
@@ -15,6 +15,8 @@ import (
 )
 
 /**************Enum AutoShapeType *****************/
+
+// Represents all built-in auto shape type.
 type AutoShapeType int32
 
 const(
@@ -1042,6 +1044,8 @@ func Int32ToAutoShapeType(value int32)(AutoShapeType ,error){
 }
 
 /**************Enum BevelPresetType *****************/
+
+// Represents a preset for a type of bevel which can be applied to a shape in 3D.
 type BevelPresetType int32
 
 const(
@@ -1106,6 +1110,8 @@ func Int32ToBevelPresetType(value int32)(BevelPresetType ,error){
 }
 
 /**************Enum BevelType *****************/
+
+// Represents a preset for a type of bevel which can be applied to a shape in 3D.
 type BevelType int32
 
 const(
@@ -1170,6 +1176,8 @@ func Int32ToBevelType(value int32)(BevelType ,error){
 }
 
 /**************Enum CheckValueType *****************/
+
+// Represents the check value type of the check box.
 type CheckValueType int32
 
 const(
@@ -1194,6 +1202,8 @@ func Int32ToCheckValueType(value int32)(CheckValueType ,error){
 }
 
 /**************Enum DataLabelShapeType *****************/
+
+// Specifies the preset shape geometry that is to be used for a chart.
 type DataLabelShapeType int32
 
 const(
@@ -1266,6 +1276,8 @@ func Int32ToDataLabelShapeType(value int32)(DataLabelShapeType ,error){
 }
 
 /**************Enum FillPattern *****************/
+
+// Enumerates shape fill pattern types.
 type FillPattern int32
 
 const(
@@ -1482,6 +1494,8 @@ func Int32ToFillPattern(value int32)(FillPattern ,error){
 }
 
 /**************Enum FillPictureType *****************/
+
+// Represents the picture fill type.
 type FillPictureType int32
 
 const(
@@ -1506,6 +1520,8 @@ func Int32ToFillPictureType(value int32)(FillPictureType ,error){
 }
 
 /**************Enum FillType *****************/
+
+// Fill format type.
 type FillType int32
 
 const(
@@ -1546,6 +1562,8 @@ func Int32ToFillType(value int32)(FillType ,error){
 }
 
 /**************Enum FormatSetType *****************/
+
+// Fill format set type.
 type FormatSetType int32
 
 const(
@@ -1574,6 +1592,8 @@ func Int32ToFormatSetType(value int32)(FormatSetType ,error){
 }
 
 /**************Enum GradientColorType *****************/
+
+// Represents the gradient color type for the specified fill.
 type GradientColorType int32
 
 const(
@@ -1602,6 +1622,8 @@ func Int32ToGradientColorType(value int32)(GradientColorType ,error){
 }
 
 /**************Enum GradientDirectionType *****************/
+
+// Represents all direction type of gradient.
 type GradientDirectionType int32
 
 const(
@@ -1638,6 +1660,8 @@ func Int32ToGradientDirectionType(value int32)(GradientDirectionType ,error){
 }
 
 /**************Enum GradientFillType *****************/
+
+// Represents all Gradient fill type.
 type GradientFillType int32
 
 const(
@@ -1666,6 +1690,8 @@ func Int32ToGradientFillType(value int32)(GradientFillType ,error){
 }
 
 /**************Enum GradientPresetType *****************/
+
+// Represents gradient preset color type.
 type GradientPresetType int32
 
 const(
@@ -1779,6 +1805,8 @@ func Int32ToGradientPresetType(value int32)(GradientPresetType ,error){
 }
 
 /**************Enum GradientStyleType *****************/
+
+// Represents gradient shading style.
 type GradientStyleType int32
 
 const(
@@ -1819,6 +1847,8 @@ func Int32ToGradientStyleType(value int32)(GradientStyleType ,error){
 }
 
 /**************Enum ImageType *****************/
+
+// Specifies the type (format) of an image.
 type ImageType int32
 
 const(
@@ -1887,6 +1917,8 @@ func Int32ToImageType(value int32)(ImageType ,error){
 }
 
 /**************Enum LightRigDirectionType *****************/
+
+// Represents the light rig direction type.
 type LightRigDirectionType int32
 
 const(
@@ -1931,6 +1963,8 @@ func Int32ToLightRigDirectionType(value int32)(LightRigDirectionType ,error){
 }
 
 /**************Enum LightRigType *****************/
+
+// Represents a preset light right that can be applied to a shape
 type LightRigType int32
 
 const(
@@ -2055,6 +2089,8 @@ func Int32ToLightRigType(value int32)(LightRigType ,error){
 }
 
 /**************Enum LineCapType *****************/
+
+// Represents the caps of a line
 type LineCapType int32
 
 const(
@@ -2083,6 +2119,8 @@ func Int32ToLineCapType(value int32)(LineCapType ,error){
 }
 
 /**************Enum LineJoinType *****************/
+
+// Represents the join styles of a line.
 type LineJoinType int32
 
 const(
@@ -2111,6 +2149,8 @@ func Int32ToLineJoinType(value int32)(LineJoinType ,error){
 }
 
 /**************Enum LineType *****************/
+
+// Enumerates the type of <see cref="Picture"/> border or <see cref="Chart"/> line.
 type LineType int32
 
 const(
@@ -2155,6 +2195,8 @@ func Int32ToLineType(value int32)(LineType ,error){
 }
 
 /**************Enum MirrorType *****************/
+
+// Represents mirror type of texture fill
 type MirrorType int32
 
 const(
@@ -2183,6 +2225,8 @@ func Int32ToMirrorType(value int32)(MirrorType ,error){
 }
 
 /**************Enum MsoArrowheadLength *****************/
+
+// Enumerates the line end width of the shape border line.
 type MsoArrowheadLength int32
 
 const(
@@ -2207,6 +2251,8 @@ func Int32ToMsoArrowheadLength(value int32)(MsoArrowheadLength ,error){
 }
 
 /**************Enum MsoArrowheadStyle *****************/
+
+// Enumerates the line end type of the shape border line.
 type MsoArrowheadStyle int32
 
 const(
@@ -2243,6 +2289,8 @@ func Int32ToMsoArrowheadStyle(value int32)(MsoArrowheadStyle ,error){
 }
 
 /**************Enum MsoArrowheadWidth *****************/
+
+// Enumerates the line end width of the shape border line.
 type MsoArrowheadWidth int32
 
 const(
@@ -2267,6 +2315,8 @@ func Int32ToMsoArrowheadWidth(value int32)(MsoArrowheadWidth ,error){
 }
 
 /**************Enum MsoDrawingType *****************/
+
+// Represents office drawing objects type.
 type MsoDrawingType int32
 
 const(
@@ -2395,6 +2445,8 @@ func Int32ToMsoDrawingType(value int32)(MsoDrawingType ,error){
 }
 
 /**************Enum MsoLineDashStyle *****************/
+
+// Represents style of dash drawing lines.
 type MsoLineDashStyle int32
 
 const(
@@ -2443,6 +2495,8 @@ func Int32ToMsoLineDashStyle(value int32)(MsoLineDashStyle ,error){
 }
 
 /**************Enum MsoLineStyle *****************/
+
+// Represents style of drawing lines.
 type MsoLineStyle int32
 
 const(
@@ -2475,6 +2529,8 @@ func Int32ToMsoLineStyle(value int32)(MsoLineStyle ,error){
 }
 
 /**************Enum MsoPresetTextEffect *****************/
+
+// Represents preset text effect type of WordArt.
 type MsoPresetTextEffect int32
 
 const(
@@ -2607,6 +2663,8 @@ func Int32ToMsoPresetTextEffect(value int32)(MsoPresetTextEffect ,error){
 }
 
 /**************Enum MsoPresetTextEffectShape *****************/
+
+// Represents preset text effect shape type of WordArt.
 type MsoPresetTextEffectShape int32
 
 const(
@@ -2783,6 +2841,8 @@ func Int32ToMsoPresetTextEffectShape(value int32)(MsoPresetTextEffectShape ,erro
 }
 
 /**************Enum PlacementType *****************/
+
+// Represents the way the drawing object is attached to the cells below it.
 type PlacementType int32
 
 const(
@@ -2807,6 +2867,8 @@ func Int32ToPlacementType(value int32)(PlacementType ,error){
 }
 
 /**************Enum PresetCameraType *****************/
+
+// Represent different algorithmic methods for setting all camera properties, including position.
 type PresetCameraType int32
 
 const(
@@ -3066,6 +3128,8 @@ func Int32ToPresetCameraType(value int32)(PresetCameraType ,error){
 }
 
 /**************Enum PresetMaterialType *****************/
+
+// Describes surface appearance of a shape.
 type PresetMaterialType int32
 
 const(
@@ -3138,6 +3202,8 @@ func Int32ToPresetMaterialType(value int32)(PresetMaterialType ,error){
 }
 
 /**************Enum PresetShadowType *****************/
+
+// Represents preset shadow type.
 type PresetShadowType int32
 
 const(
@@ -3250,6 +3316,8 @@ func Int32ToPresetShadowType(value int32)(PresetShadowType ,error){
 }
 
 /**************Enum PresetThemeGradientType *****************/
+
+// Represents the preset theme gradient type.
 type PresetThemeGradientType int32
 
 const(
@@ -3282,6 +3350,8 @@ func Int32ToPresetThemeGradientType(value int32)(PresetThemeGradientType ,error)
 }
 
 /**************Enum PresetWordArtStyle *****************/
+
+// Represents the preset WordArt styles.
 type PresetWordArtStyle int32
 
 const(
@@ -3374,6 +3444,8 @@ func Int32ToPresetWordArtStyle(value int32)(PresetWordArtStyle ,error){
 }
 
 /**************Enum RectangleAlignmentType *****************/
+
+// Represents how to position two rectangles relative to each other.
 type RectangleAlignmentType int32
 
 const(
@@ -3422,6 +3494,8 @@ func Int32ToRectangleAlignmentType(value int32)(RectangleAlignmentType ,error){
 }
 
 /**************Enum ReflectionEffectType *****************/
+
+// Represents the effect type of reflection.
 type ReflectionEffectType int32
 
 const(
@@ -3478,6 +3552,8 @@ func Int32ToReflectionEffectType(value int32)(ReflectionEffectType ,error){
 }
 
 /**************Enum SelectionType *****************/
+
+// The selection type of list box.
 type SelectionType int32
 
 const(
@@ -3502,6 +3578,8 @@ func Int32ToSelectionType(value int32)(SelectionType ,error){
 }
 
 /**************Enum ShapeAnchorType *****************/
+
+// Represents the anchor type.
 type ShapeAnchorType int32
 
 const(
@@ -3522,6 +3600,8 @@ func Int32ToShapeAnchorType(value int32)(ShapeAnchorType ,error){
 }
 
 /**************Enum ShapeLockType *****************/
+
+// Represents type of the property to be locked.
 type ShapeLockType int32
 
 const(
@@ -3586,6 +3666,8 @@ func Int32ToShapeLockType(value int32)(ShapeLockType ,error){
 }
 
 /**************Enum ShapePathType *****************/
+
+// Represents path segment type.
 type ShapePathType int32
 
 const(
@@ -3631,6 +3713,8 @@ func Int32ToShapePathType(value int32)(ShapePathType ,error){
 }
 
 /**************Enum SignatureType *****************/
+
+// Specifies the signature type.
 type SignatureType int32
 
 const(
@@ -3655,6 +3739,8 @@ func Int32ToSignatureType(value int32)(SignatureType ,error){
 }
 
 /**************Enum TextOverflowType *****************/
+
+// Represents the way the text vertical or horizontal overflow.
 type TextOverflowType int32
 
 const(
@@ -3682,6 +3768,8 @@ func Int32ToTextOverflowType(value int32)(TextOverflowType ,error){
 }
 
 /**************Enum TextureType *****************/
+
+// Represents the preset texture type.
 type TextureType int32
 
 const(
@@ -3794,6 +3882,8 @@ func Int32ToTextureType(value int32)(TextureType ,error){
 }
 
 /**************Enum WeightType *****************/
+
+// Enumerates the weight types for a picture border or a chart line.
 type WeightType int32
 
 const(

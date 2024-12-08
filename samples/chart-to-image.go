@@ -21,6 +21,6 @@ func ChartToImage() {
 	charts, _ := worksheet.GetCharts()
 	charts.AddFloatingChart(ChartType_Pyramid, 5, 0, 20, 8)
 	chart, _ := charts.Get_Int(0)
-	chart.ToImage_String_ImageType("../Data/Output/ChartToImage.png", ImageType_Png)
+	chart.ToImage_String_ImageType("Data/Output/ChartToImage.png", ImageType_Png)
 	println("Chart to png, and save as ChartToImage.png.")
 }

@@ -4,7 +4,7 @@ package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
-// #cgo LDFLAGS: -L./lib/win_x86_64 -lAspose.Cells.CWrapper
+// #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/win_x86_64" -L"${SRCDIR}/lib/win_x86_64" -lAspose.Cells.CWrapper
 // #include <AsposeCellsCWrapper.h>
 import "C"
 import (
@@ -15,6 +15,8 @@ import (
 )
 
 /**************Enum ColorDepth *****************/
+
+// Enumerates Bit Depth Type for tiff image.
 type ColorDepth int32
 
 const(
@@ -51,6 +53,8 @@ func Int32ToColorDepth(value int32)(ColorDepth ,error){
 }
 
 /**************Enum CommentTitleType *****************/
+
+// Represents comment title type while rendering when comment is set to display at end of sheet.
 type CommentTitleType int32
 
 const(
@@ -79,6 +83,8 @@ func Int32ToCommentTitleType(value int32)(CommentTitleType ,error){
 }
 
 /**************Enum DrawObjectEnum *****************/
+
+// Indicate Cell or Image of DrawObject.
 type DrawObjectEnum int32
 
 const(
@@ -99,6 +105,8 @@ func Int32ToDrawObjectEnum(value int32)(DrawObjectEnum ,error){
 }
 
 /**************Enum ImageBinarizationMethod *****************/
+
+// Specifies the method used to binarize image.
 type ImageBinarizationMethod int32
 
 const(
@@ -119,6 +127,8 @@ func Int32ToImageBinarizationMethod(value int32)(ImageBinarizationMethod ,error)
 }
 
 /**************Enum PdfCompliance *****************/
+
+// Allowing user to set PDF conversion's Compatibility
 type PdfCompliance int32
 
 const(
@@ -179,6 +189,8 @@ func Int32ToPdfCompliance(value int32)(PdfCompliance ,error){
 }
 
 /**************Enum PdfCompressionCore *****************/
+
+// Specifies a type of compression applied to all content in the PDF file except images.
 type PdfCompressionCore int32
 
 const(
@@ -207,6 +219,8 @@ func Int32ToPdfCompressionCore(value int32)(PdfCompressionCore ,error){
 }
 
 /**************Enum PdfCustomPropertiesExport *****************/
+
+// Specifies the way <see cref="CustomDocumentPropertyCollection"/> are exported to PDF file.
 type PdfCustomPropertiesExport int32
 
 const(
@@ -227,6 +241,8 @@ func Int32ToPdfCustomPropertiesExport(value int32)(PdfCustomPropertiesExport ,er
 }
 
 /**************Enum PdfFontEncoding *****************/
+
+// Represents pdf embedded font encoding.
 type PdfFontEncoding int32
 
 const(
@@ -248,6 +264,8 @@ func Int32ToPdfFontEncoding(value int32)(PdfFontEncoding ,error){
 }
 
 /**************Enum PdfOptimizationType *****************/
+
+// Specifies a type of optimization.
 type PdfOptimizationType int32
 
 const(
@@ -268,6 +286,8 @@ func Int32ToPdfOptimizationType(value int32)(PdfOptimizationType ,error){
 }
 
 /**************Enum TiffCompression *****************/
+
+// Specifies what type of compression to apply when saving images into TIFF format file.
 type TiffCompression int32
 
 const(
