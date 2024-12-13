@@ -4,7 +4,7 @@ package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
-// #cgo LDFLAGS: -L./lib/linux_x86_64 -lAspose.Cells.CWrapper
+// #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/linux_x86_64" -L"${SRCDIR}/lib/linux_x86_64" -lAspose.Cells.CWrapper
 // #include <AsposeCellsCWrapper.h>
 import "C"
 import (
@@ -100,6 +100,19 @@ func (instance *PowerQueryFormula) IsNull()  (bool,  error)  {
 		return  true, err
 	}
 	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Gets the name of group which contains this power query formula.
+// Returns:
+//   string  
+func (instance *PowerQueryFormula) GetGroupName()  (string,  error)  {
+	CGoReturnPtr := C.PowerQueryFormula_GetGroupName( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -336,6 +349,19 @@ func (instance *PowerQueryFormulaFunction) SetF(value string)  error {
 	}
 
 	return nil 
+}
+// Gets the name of group which contains this power query formula.
+// Returns:
+//   string  
+func (instance *PowerQueryFormulaFunction) GetGroupName()  (string,  error)  {
+	CGoReturnPtr := C.PowerQueryFormulaFunction_GetGroupName( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
 }
 // Gets and sets the name of the power query formula.
 // Returns:
@@ -629,6 +655,19 @@ func (instance *PowerQueryFormulaParameter) SetValue(value string)  error {
 //   string  
 func (instance *PowerQueryFormulaParameter) GetFormulaDefinition()  (string,  error)  {
 	CGoReturnPtr := C.PowerQueryFormulaParameter_GetFormulaDefinition( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the name of group which contains this power query formula.
+// Returns:
+//   string  
+func (instance *PowerQueryFormulaParameter) GetGroupName()  (string,  error)  {
+	CGoReturnPtr := C.PowerQueryFormulaParameter_GetGroupName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err

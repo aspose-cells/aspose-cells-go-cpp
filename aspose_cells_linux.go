@@ -4,7 +4,7 @@ package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
-// #cgo LDFLAGS: -L./lib/linux_x86_64 -lAspose.Cells.CWrapper
+// #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/linux_x86_64" -L"${SRCDIR}/lib/linux_x86_64" -lAspose.Cells.CWrapper
 // #include <AsposeCellsCWrapper.h>
 import "C"
 import (
@@ -1725,6 +1725,19 @@ ExceptionType_FileCorrupted ExceptionType = 23
 
 // Internal exception.
 ExceptionType_Internal ExceptionType = 24 
+
+// Invalid defined name
+ExceptionType_DefinedName ExceptionType = 25 
+
+// Invalid font
+ExceptionType_Font ExceptionType = 26 
+
+// Invalid auto filter setting.
+ExceptionType_AutoFilter ExceptionType = 27 
+
+// Font substitution warning type
+// when a font has not been found, this warning type can be get.
+ExceptionType_FontSubstitution ExceptionType = 28 
 )
 
 func Int32ToExceptionType(value int32)(ExceptionType ,error){
@@ -1754,6 +1767,10 @@ func Int32ToExceptionType(value int32)(ExceptionType ,error){
 		case 22:  return ExceptionType_UndisclosedInformation, nil  
 		case 23:  return ExceptionType_FileCorrupted, nil  
 		case 24:  return ExceptionType_Internal, nil  
+		case 25:  return ExceptionType_DefinedName, nil  
+		case 26:  return ExceptionType_Font, nil  
+		case 27:  return ExceptionType_AutoFilter, nil  
+		case 28:  return ExceptionType_FontSubstitution, nil  
 		default:
 			return 0 ,fmt.Errorf("invalid ExceptionType value: %d", value)
 	}
@@ -2093,6 +2110,39 @@ func Int32ToFileFormatType(value int32)(FileFormatType ,error){
 	}
 }
 
+/**************Enum FilterCategory *****************/
+// Represents the category of the filter.
+type FilterCategory int32
+
+const(
+// No Filter.
+FilterCategory_None FilterCategory = 0 
+
+// Caption Filter.
+FilterCategory_Label FilterCategory = 1 
+
+// Number Value Filter.
+FilterCategory_NumberValue FilterCategory = 2 
+
+// Date Value Filter.
+FilterCategory_Date FilterCategory = 3 
+
+// Top10 Value Filter.
+FilterCategory_Top10 FilterCategory = 4 
+)
+
+func Int32ToFilterCategory(value int32)(FilterCategory ,error){
+	switch value {
+		case 0:  return FilterCategory_None, nil  
+		case 1:  return FilterCategory_Label, nil  
+		case 2:  return FilterCategory_NumberValue, nil  
+		case 3:  return FilterCategory_Date, nil  
+		case 4:  return FilterCategory_Top10, nil  
+		default:
+			return 0 ,fmt.Errorf("invalid FilterCategory value: %d", value)
+	}
+}
+
 /**************Enum FilterOperatorType *****************/
 // Custom Filter operator type.
 type FilterOperatorType int32
@@ -2130,6 +2180,12 @@ FilterOperatorType_Contains FilterOperatorType = 9
 
 // Not contains the text.
 FilterOperatorType_NotContains FilterOperatorType = 10 
+
+// Not begins with the text.
+FilterOperatorType_NotBeginsWith FilterOperatorType = 11 
+
+// Not ends with the text.
+FilterOperatorType_NotEndsWith FilterOperatorType = 12 
 )
 
 func Int32ToFilterOperatorType(value int32)(FilterOperatorType ,error){
@@ -2145,6 +2201,8 @@ func Int32ToFilterOperatorType(value int32)(FilterOperatorType ,error){
 		case 8:  return FilterOperatorType_EndsWith, nil  
 		case 9:  return FilterOperatorType_Contains, nil  
 		case 10:  return FilterOperatorType_NotContains, nil  
+		case 11:  return FilterOperatorType_NotBeginsWith, nil  
+		case 12:  return FilterOperatorType_NotEndsWith, nil  
 		default:
 			return 0 ,fmt.Errorf("invalid FilterOperatorType value: %d", value)
 	}
@@ -5981,6 +6039,51 @@ func DeleteAbstractCalculationEngine(abstractcalculationengine *AbstractCalculat
 	runtime.SetFinalizer(abstractcalculationengine, nil)
 	C.Delete_AbstractCalculationEngine(abstractcalculationengine.ptr)
 	abstractcalculationengine.ptr = nil
+}
+
+// Class AbstractFormulaChangeMonitor 
+
+// Monitor for user to track the change of formulas during certain operations.
+type AbstractFormulaChangeMonitor struct {
+	ptr unsafe.Pointer
+}
+
+
+// Checks whether the implementation object is nullptr.
+// Returns:
+//   bool  
+func (instance *AbstractFormulaChangeMonitor) IsNull()  (bool,  error)  {
+	CGoReturnPtr := C.AbstractFormulaChangeMonitor_IsNull( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// The event that will be triggered when the formula in a cell is changed.
+// Parameters:
+//   sheetIndex - int32 
+//   rowIndex - int32 
+//   columnIndex - int32 
+// Returns:
+//   void  
+func (instance *AbstractFormulaChangeMonitor) OnCellFormulaChanged(sheetindex int32, rowindex int32, columnindex int32)  error {
+	CGoReturnPtr := C.AbstractFormulaChangeMonitor_OnCellFormulaChanged( instance.ptr, C.int(sheetindex), C.int(rowindex), C.int(columnindex))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+
+
+func DeleteAbstractFormulaChangeMonitor(abstractformulachangemonitor *AbstractFormulaChangeMonitor){
+	runtime.SetFinalizer(abstractformulachangemonitor, nil)
+	C.Delete_AbstractFormulaChangeMonitor(abstractformulachangemonitor.ptr)
+	abstractformulachangemonitor.ptr = nil
 }
 
 // Class AbstractInterruptMonitor 
@@ -11473,8 +11576,24 @@ func (instance *Cells) DeleteColumn_Int(columnindex int32)  error {
 //   updateReference - bool 
 // Returns:
 //   void  
-func (instance *Cells) DeleteColumns(columnindex int32, totalcolumns int32, updatereference bool)  error {
-	CGoReturnPtr := C.Cells_DeleteColumns( instance.ptr, C.int(columnindex), C.int(totalcolumns), C.bool(updatereference))
+func (instance *Cells) DeleteColumns_Int_Int_Bool(columnindex int32, totalcolumns int32, updatereference bool)  error {
+	CGoReturnPtr := C.Cells_DeleteColumns_Integer_Integer_Boolean( instance.ptr, C.int(columnindex), C.int(totalcolumns), C.bool(updatereference))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Deletes several columns.
+// Parameters:
+//   columnIndex - int32 
+//   totalColumns - int32 
+//   options - DeleteOptions 
+// Returns:
+//   void  
+func (instance *Cells) DeleteColumns_Int_Int_DeleteOptions(columnindex int32, totalcolumns int32, options *DeleteOptions)  error {
+	CGoReturnPtr := C.Cells_DeleteColumns_Integer_Integer_DeleteOptions( instance.ptr, C.int(columnindex), C.int(totalcolumns), options.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11514,22 +11633,6 @@ func (instance *Cells) DeleteRow_Int(rowindex int32)  error {
 
 	return nil 
 }
-// Deletes several rows.
-// Parameters:
-//   rowIndex - int32 
-//   totalRows - int32 
-// Returns:
-//   bool  
-func (instance *Cells) DeleteRows_Int_Int(rowindex int32, totalrows int32)  (bool,  error)  {
-	CGoReturnPtr := C.Cells_DeleteRows_Integer_Integer( instance.ptr, C.int(rowindex), C.int(totalrows))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  true, err
-	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
-
-	return result, nil 
-}
 // Deletes a row.
 // Parameters:
 //   rowIndex - int32 
@@ -11545,6 +11648,22 @@ func (instance *Cells) DeleteRow_Int_Bool(rowindex int32, updatereference bool) 
 
 	return nil 
 }
+// Deletes multiple rows.
+// Parameters:
+//   rowIndex - int32 
+//   totalRows - int32 
+// Returns:
+//   bool  
+func (instance *Cells) DeleteRows_Int_Int(rowindex int32, totalrows int32)  (bool,  error)  {
+	CGoReturnPtr := C.Cells_DeleteRows_Integer_Integer( instance.ptr, C.int(rowindex), C.int(totalrows))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
 // Deletes multiple rows in the worksheet.
 // Parameters:
 //   rowIndex - int32 
@@ -11554,6 +11673,23 @@ func (instance *Cells) DeleteRow_Int_Bool(rowindex int32, updatereference bool) 
 //   bool  
 func (instance *Cells) DeleteRows_Int_Int_Bool(rowindex int32, totalrows int32, updatereference bool)  (bool,  error)  {
 	CGoReturnPtr := C.Cells_DeleteRows_Integer_Integer_Boolean( instance.ptr, C.int(rowindex), C.int(totalrows), C.bool(updatereference))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Deletes multiple rows in the worksheet.
+// Parameters:
+//   rowIndex - int32 
+//   totalRows - int32 
+//   options - DeleteOptions 
+// Returns:
+//   bool  
+func (instance *Cells) DeleteRows_Int_Int_DeleteOptions(rowindex int32, totalrows int32, options *DeleteOptions)  (bool,  error)  {
+	CGoReturnPtr := C.Cells_DeleteRows_Integer_Integer_DeleteOptions( instance.ptr, C.int(rowindex), C.int(totalrows), options.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -11653,6 +11789,22 @@ func (instance *Cells) InsertColumns_Int_Int(columnindex int32, totalcolumns int
 //   void  
 func (instance *Cells) InsertColumns_Int_Int_Bool(columnindex int32, totalcolumns int32, updatereference bool)  error {
 	CGoReturnPtr := C.Cells_InsertColumns_Integer_Integer_Boolean( instance.ptr, C.int(columnindex), C.int(totalcolumns), C.bool(updatereference))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Inserts some columns into the worksheet.
+// Parameters:
+//   columnIndex - int32 
+//   totalColumns - int32 
+//   options - InsertOptions 
+// Returns:
+//   void  
+func (instance *Cells) InsertColumns_Int_Int_InsertOptions(columnindex int32, totalcolumns int32, options *InsertOptions)  error {
+	CGoReturnPtr := C.Cells_InsertColumns_Integer_Integer_InsertOptions( instance.ptr, C.int(columnindex), C.int(totalcolumns), options.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17412,6 +17564,35 @@ func (instance *DeleteBlankOptions) SetUpdateReference(value bool)  error {
 
 	return nil 
 }
+// Gets/sets the monitor for tracking changes caused by the deletion.
+// Returns:
+//   AbstractFormulaChangeMonitor  
+func (instance *DeleteBlankOptions) GetFormulaChangeMonitor()  (*AbstractFormulaChangeMonitor,  error)  {
+	CGoReturnPtr := C.DeleteBlankOptions_GetFormulaChangeMonitor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &AbstractFormulaChangeMonitor{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteAbstractFormulaChangeMonitor) 
+
+	return result, nil 
+}
+// Gets/sets the monitor for tracking changes caused by the deletion.
+// Parameters:
+//   value - AbstractFormulaChangeMonitor 
+// Returns:
+//   void  
+func (instance *DeleteBlankOptions) SetFormulaChangeMonitor(value *AbstractFormulaChangeMonitor)  error {
+	CGoReturnPtr := C.DeleteBlankOptions_SetFormulaChangeMonitor( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 
 
 func DeleteDeleteBlankOptions(deleteblankoptions *DeleteBlankOptions){
@@ -17475,6 +17656,35 @@ func (instance *DeleteOptions) GetUpdateReference()  (bool,  error)  {
 //   void  
 func (instance *DeleteOptions) SetUpdateReference(value bool)  error {
 	CGoReturnPtr := C.DeleteOptions_SetUpdateReference( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets/sets the monitor for tracking changes caused by the deletion.
+// Returns:
+//   AbstractFormulaChangeMonitor  
+func (instance *DeleteOptions) GetFormulaChangeMonitor()  (*AbstractFormulaChangeMonitor,  error)  {
+	CGoReturnPtr := C.DeleteOptions_GetFormulaChangeMonitor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &AbstractFormulaChangeMonitor{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteAbstractFormulaChangeMonitor) 
+
+	return result, nil 
+}
+// Gets/sets the monitor for tracking changes caused by the deletion.
+// Parameters:
+//   value - AbstractFormulaChangeMonitor 
+// Returns:
+//   void  
+func (instance *DeleteOptions) SetFormulaChangeMonitor(value *AbstractFormulaChangeMonitor)  error {
+	CGoReturnPtr := C.DeleteOptions_SetFormulaChangeMonitor( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17766,6 +17976,37 @@ func (instance *DifSaveOptions) GetRefreshChartCache()  (bool,  error)  {
 //   void  
 func (instance *DifSaveOptions) SetRefreshChartCache(value bool)  error {
 	CGoReturnPtr := C.DifSaveOptions_SetRefreshChartCache( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *DifSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	CGoReturnPtr := C.DifSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DifSaveOptions) SetCheckExcelRestriction(value bool)  error {
+	CGoReturnPtr := C.DifSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -25380,6 +25621,35 @@ func (instance *HtmlSaveOptions) SetCellNameAttribute(value string)  error {
 
 	return nil 
 }
+// Indicates whether only inline styles are applied, without relying on CSS.
+// The default value is false.
+// Returns:
+//   bool  
+func (instance *HtmlSaveOptions) GetDisableCss()  (bool,  error)  {
+	CGoReturnPtr := C.HtmlSaveOptions_GetDisableCss( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Indicates whether only inline styles are applied, without relying on CSS.
+// The default value is false.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *HtmlSaveOptions) SetDisableCss(value bool)  error {
+	CGoReturnPtr := C.HtmlSaveOptions_SetDisableCss( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Gets the save file format.
 // Returns:
 //   int32  
@@ -25605,6 +25875,37 @@ func (instance *HtmlSaveOptions) GetRefreshChartCache()  (bool,  error)  {
 //   void  
 func (instance *HtmlSaveOptions) SetRefreshChartCache(value bool)  error {
 	CGoReturnPtr := C.HtmlSaveOptions_SetRefreshChartCache( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *HtmlSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	CGoReturnPtr := C.HtmlSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *HtmlSaveOptions) SetCheckExcelRestriction(value bool)  error {
+	CGoReturnPtr := C.HtmlSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -26964,6 +27265,37 @@ func (instance *ImageSaveOptions) SetRefreshChartCache(value bool)  error {
 
 	return nil 
 }
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *ImageSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	CGoReturnPtr := C.ImageSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *ImageSaveOptions) SetCheckExcelRestriction(value bool)  error {
+	CGoReturnPtr := C.ImageSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Indicates whether updating smart art setting.
 // The default value is false.
 // Returns:
@@ -27511,6 +27843,35 @@ func (instance *InsertOptions) GetUpdateReference()  (bool,  error)  {
 //   void  
 func (instance *InsertOptions) SetUpdateReference(value bool)  error {
 	CGoReturnPtr := C.InsertOptions_SetUpdateReference( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets/sets the monitor for tracking changes caused by the insertion.
+// Returns:
+//   AbstractFormulaChangeMonitor  
+func (instance *InsertOptions) GetFormulaChangeMonitor()  (*AbstractFormulaChangeMonitor,  error)  {
+	CGoReturnPtr := C.InsertOptions_GetFormulaChangeMonitor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &AbstractFormulaChangeMonitor{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteAbstractFormulaChangeMonitor) 
+
+	return result, nil 
+}
+// Gets/sets the monitor for tracking changes caused by the insertion.
+// Parameters:
+//   value - AbstractFormulaChangeMonitor 
+// Returns:
+//   void  
+func (instance *InsertOptions) SetFormulaChangeMonitor(value *AbstractFormulaChangeMonitor)  error {
+	CGoReturnPtr := C.InsertOptions_SetFormulaChangeMonitor( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -28862,6 +29223,37 @@ func (instance *JsonSaveOptions) SetRefreshChartCache(value bool)  error {
 
 	return nil 
 }
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *JsonSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	CGoReturnPtr := C.JsonSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *JsonSaveOptions) SetCheckExcelRestriction(value bool)  error {
+	CGoReturnPtr := C.JsonSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Indicates whether updating smart art setting.
 // The default value is false.
 // Returns:
@@ -30066,6 +30458,37 @@ func (instance *MarkdownSaveOptions) GetRefreshChartCache()  (bool,  error)  {
 //   void  
 func (instance *MarkdownSaveOptions) SetRefreshChartCache(value bool)  error {
 	CGoReturnPtr := C.MarkdownSaveOptions_SetRefreshChartCache( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *MarkdownSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	CGoReturnPtr := C.MarkdownSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *MarkdownSaveOptions) SetCheckExcelRestriction(value bool)  error {
+	CGoReturnPtr := C.MarkdownSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32674,6 +33097,37 @@ func (instance *OdsSaveOptions) SetRefreshChartCache(value bool)  error {
 
 	return nil 
 }
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *OdsSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	CGoReturnPtr := C.OdsSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *OdsSaveOptions) SetCheckExcelRestriction(value bool)  error {
+	CGoReturnPtr := C.OdsSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Indicates whether updating smart art setting.
 // The default value is false.
 // Returns:
@@ -33178,6 +33632,37 @@ func (instance *OoxmlSaveOptions) GetRefreshChartCache()  (bool,  error)  {
 //   void  
 func (instance *OoxmlSaveOptions) SetRefreshChartCache(value bool)  error {
 	CGoReturnPtr := C.OoxmlSaveOptions_SetRefreshChartCache( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *OoxmlSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	CGoReturnPtr := C.OoxmlSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *OoxmlSaveOptions) SetCheckExcelRestriction(value bool)  error {
+	CGoReturnPtr := C.OoxmlSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35509,6 +35994,37 @@ func (instance *PaginatedSaveOptions) GetRefreshChartCache()  (bool,  error)  {
 //   void  
 func (instance *PaginatedSaveOptions) SetRefreshChartCache(value bool)  error {
 	CGoReturnPtr := C.PaginatedSaveOptions_SetRefreshChartCache( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *PaginatedSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	CGoReturnPtr := C.PaginatedSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PaginatedSaveOptions) SetCheckExcelRestriction(value bool)  error {
+	CGoReturnPtr := C.PaginatedSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -41142,6 +41658,37 @@ func (instance *SaveOptions) SetRefreshChartCache(value bool)  error {
 
 	return nil 
 }
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *SaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	CGoReturnPtr := C.SaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SaveOptions) SetCheckExcelRestriction(value bool)  error {
+	CGoReturnPtr := C.SaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Indicates whether updating smart art setting.
 // The default value is false.
 // Returns:
@@ -43186,6 +43733,37 @@ func (instance *SpreadsheetML2003SaveOptions) GetRefreshChartCache()  (bool,  er
 //   void  
 func (instance *SpreadsheetML2003SaveOptions) SetRefreshChartCache(value bool)  error {
 	CGoReturnPtr := C.SpreadsheetML2003SaveOptions_SetRefreshChartCache( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *SpreadsheetML2003SaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	CGoReturnPtr := C.SpreadsheetML2003SaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SpreadsheetML2003SaveOptions) SetCheckExcelRestriction(value bool)  error {
+	CGoReturnPtr := C.SpreadsheetML2003SaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -47615,6 +48193,37 @@ func (instance *TxtSaveOptions) SetRefreshChartCache(value bool)  error {
 
 	return nil 
 }
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *TxtSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	CGoReturnPtr := C.TxtSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TxtSaveOptions) SetCheckExcelRestriction(value bool)  error {
+	CGoReturnPtr := C.TxtSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Indicates whether updating smart art setting.
 // The default value is false.
 // Returns:
@@ -49059,13 +49668,13 @@ func (instance *WarningInfo) IsNull()  (bool,  error)  {
 // Get warning type.
 // Returns:
 //   int32  
-func (instance *WarningInfo) GetWarningType()  (WarningType,  error)  {
-	CGoReturnPtr := C.WarningInfo_GetWarningType( instance.ptr)
+func (instance *WarningInfo) GetType()  (ExceptionType,  error)  {
+	CGoReturnPtr := C.WarningInfo_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result , err := Int32ToWarningType(int32(CGoReturnPtr.return_value)) 
+	result , err := Int32ToExceptionType(int32(CGoReturnPtr.return_value)) 
 	if err != nil {
 		return 0, err
 	}
@@ -55219,6 +55828,37 @@ func (instance *XlsbSaveOptions) SetRefreshChartCache(value bool)  error {
 
 	return nil 
 }
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *XlsbSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	CGoReturnPtr := C.XlsbSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *XlsbSaveOptions) SetCheckExcelRestriction(value bool)  error {
+	CGoReturnPtr := C.XlsbSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Indicates whether updating smart art setting.
 // The default value is false.
 // Returns:
@@ -55631,6 +56271,37 @@ func (instance *XlsSaveOptions) GetRefreshChartCache()  (bool,  error)  {
 //   void  
 func (instance *XlsSaveOptions) SetRefreshChartCache(value bool)  error {
 	CGoReturnPtr := C.XlsSaveOptions_SetRefreshChartCache( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *XlsSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	CGoReturnPtr := C.XlsSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *XlsSaveOptions) SetCheckExcelRestriction(value bool)  error {
+	CGoReturnPtr := C.XlsSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -57178,6 +57849,37 @@ func (instance *XmlSaveOptions) GetRefreshChartCache()  (bool,  error)  {
 //   void  
 func (instance *XmlSaveOptions) SetRefreshChartCache(value bool)  error {
 	CGoReturnPtr := C.XmlSaveOptions_SetRefreshChartCache( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *XmlSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	CGoReturnPtr := C.XmlSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *XmlSaveOptions) SetCheckExcelRestriction(value bool)  error {
+	CGoReturnPtr := C.XmlSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

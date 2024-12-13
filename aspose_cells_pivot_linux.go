@@ -4,7 +4,7 @@ package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
-// #cgo LDFLAGS: -L./lib/linux_x86_64 -lAspose.Cells.CWrapper
+// #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/linux_x86_64" -L"${SRCDIR}/lib/linux_x86_64" -lAspose.Cells.CWrapper
 // #include <AsposeCellsCWrapper.h>
 import "C"
 import (
@@ -367,11 +367,11 @@ PivotFilterType_DateBetween PivotFilterType = 15
 // Indicates the "equals" filter for date values.
 PivotFilterType_DateEqual PivotFilterType = 16 
 
-// Indicates the "newer than" filter for date values.
-PivotFilterType_DateNewerThan PivotFilterType = 17 
+// Indicates the "after" filter for date values.
+PivotFilterType_DateAfter PivotFilterType = 17 
 
-// Indicates the "newer than or equal to" filter for date values.
-PivotFilterType_DateNewerThanOrEqual PivotFilterType = 18 
+// Indicates the "after or equal to" filter for date values.
+PivotFilterType_DateAfterOrEqual PivotFilterType = 18 
 
 // Indicates the "not between" filter for date values.
 PivotFilterType_DateNotBetween PivotFilterType = 19 
@@ -379,11 +379,11 @@ PivotFilterType_DateNotBetween PivotFilterType = 19
 // Indicates the "does not equal" filter for date values.
 PivotFilterType_DateNotEqual PivotFilterType = 20 
 
-// Indicates the "older than" filter for date values.
-PivotFilterType_DateOlderThan PivotFilterType = 21 
+// Indicates the "before" filter for date values.
+PivotFilterType_DateBefore PivotFilterType = 21 
 
-// Indicates the "older than or equal to" filter for date values.
-PivotFilterType_DateOlderThanOrEqual PivotFilterType = 22 
+// Indicates the "before or equal to" filter for date values.
+PivotFilterType_DateBeforeOrEqual PivotFilterType = 22 
 
 // Indicates the "last month" filter for date values.
 PivotFilterType_LastMonth PivotFilterType = 23 
@@ -398,40 +398,40 @@ PivotFilterType_LastWeek PivotFilterType = 25
 PivotFilterType_LastYear PivotFilterType = 26 
 
 // Indicates the "January" filter for date values.
-PivotFilterType_M1 PivotFilterType = 27 
+PivotFilterType_January PivotFilterType = 27 
 
 // Indicates the "February" filter for date values.
-PivotFilterType_M2 PivotFilterType = 28 
+PivotFilterType_February PivotFilterType = 28 
 
 // Indicates the "March" filter for date values.
-PivotFilterType_M3 PivotFilterType = 29 
+PivotFilterType_March PivotFilterType = 29 
 
 // Indicates the "April" filter for date values.
-PivotFilterType_M4 PivotFilterType = 30 
+PivotFilterType_April PivotFilterType = 30 
 
 // Indicates the "May" filter for date values.
-PivotFilterType_M5 PivotFilterType = 31 
+PivotFilterType_May PivotFilterType = 31 
 
 // Indicates the "June" filter for date values.
-PivotFilterType_M6 PivotFilterType = 32 
+PivotFilterType_June PivotFilterType = 32 
 
 // Indicates the "July" filter for date values.
-PivotFilterType_M7 PivotFilterType = 33 
+PivotFilterType_July PivotFilterType = 33 
 
 // Indicates the "August" filter for date values.
-PivotFilterType_M8 PivotFilterType = 34 
+PivotFilterType_August PivotFilterType = 34 
 
 // Indicates the "September" filter for date values.
-PivotFilterType_M9 PivotFilterType = 35 
+PivotFilterType_September PivotFilterType = 35 
 
 // Indicates the "October" filter for date values.
-PivotFilterType_M10 PivotFilterType = 36 
+PivotFilterType_October PivotFilterType = 36 
 
 // Indicates the "November" filter for date values.
-PivotFilterType_M11 PivotFilterType = 37 
+PivotFilterType_November PivotFilterType = 37 
 
 // Indicates the "December" filter for date values.
-PivotFilterType_M12 PivotFilterType = 38 
+PivotFilterType_December PivotFilterType = 38 
 
 // Indicates the "next month" filter for date values.
 PivotFilterType_NextMonth PivotFilterType = 39 
@@ -449,16 +449,16 @@ PivotFilterType_NextYear PivotFilterType = 42
 PivotFilterType_Percent PivotFilterType = 43 
 
 // Indicates the "first quarter" filter for date values.
-PivotFilterType_Q1 PivotFilterType = 44 
+PivotFilterType_Quarter1 PivotFilterType = 44 
 
 // Indicates the "second quarter" filter for date values.
-PivotFilterType_Q2 PivotFilterType = 45 
+PivotFilterType_Quarter2 PivotFilterType = 45 
 
 // Indicates the "third quarter" filter for date values.
-PivotFilterType_Q3 PivotFilterType = 46 
+PivotFilterType_Quarter3 PivotFilterType = 46 
 
 // Indicates the "fourth quarter" filter for date values.
-PivotFilterType_Q4 PivotFilterType = 47 
+PivotFilterType_Quarter4 PivotFilterType = 47 
 
 // Indicates the "sum" filter for numeric values.
 PivotFilterType_Sum PivotFilterType = 48 
@@ -513,6 +513,9 @@ PivotFilterType_YearToDate PivotFilterType = 64
 
 // Indicates the "yesterday" filter for date values.
 PivotFilterType_Yesterday PivotFilterType = 65 
+
+// No filter.
+PivotFilterType_None PivotFilterType = 255 
 )
 
 func Int32ToPivotFilterType(value int32)(PivotFilterType ,error){
@@ -534,37 +537,37 @@ func Int32ToPivotFilterType(value int32)(PivotFilterType ,error){
 		case 14:  return PivotFilterType_Count, nil  
 		case 15:  return PivotFilterType_DateBetween, nil  
 		case 16:  return PivotFilterType_DateEqual, nil  
-		case 17:  return PivotFilterType_DateNewerThan, nil  
-		case 18:  return PivotFilterType_DateNewerThanOrEqual, nil  
+		case 17:  return PivotFilterType_DateAfter, nil  
+		case 18:  return PivotFilterType_DateAfterOrEqual, nil  
 		case 19:  return PivotFilterType_DateNotBetween, nil  
 		case 20:  return PivotFilterType_DateNotEqual, nil  
-		case 21:  return PivotFilterType_DateOlderThan, nil  
-		case 22:  return PivotFilterType_DateOlderThanOrEqual, nil  
+		case 21:  return PivotFilterType_DateBefore, nil  
+		case 22:  return PivotFilterType_DateBeforeOrEqual, nil  
 		case 23:  return PivotFilterType_LastMonth, nil  
 		case 24:  return PivotFilterType_LastQuarter, nil  
 		case 25:  return PivotFilterType_LastWeek, nil  
 		case 26:  return PivotFilterType_LastYear, nil  
-		case 27:  return PivotFilterType_M1, nil  
-		case 28:  return PivotFilterType_M2, nil  
-		case 29:  return PivotFilterType_M3, nil  
-		case 30:  return PivotFilterType_M4, nil  
-		case 31:  return PivotFilterType_M5, nil  
-		case 32:  return PivotFilterType_M6, nil  
-		case 33:  return PivotFilterType_M7, nil  
-		case 34:  return PivotFilterType_M8, nil  
-		case 35:  return PivotFilterType_M9, nil  
-		case 36:  return PivotFilterType_M10, nil  
-		case 37:  return PivotFilterType_M11, nil  
-		case 38:  return PivotFilterType_M12, nil  
+		case 27:  return PivotFilterType_January, nil  
+		case 28:  return PivotFilterType_February, nil  
+		case 29:  return PivotFilterType_March, nil  
+		case 30:  return PivotFilterType_April, nil  
+		case 31:  return PivotFilterType_May, nil  
+		case 32:  return PivotFilterType_June, nil  
+		case 33:  return PivotFilterType_July, nil  
+		case 34:  return PivotFilterType_August, nil  
+		case 35:  return PivotFilterType_September, nil  
+		case 36:  return PivotFilterType_October, nil  
+		case 37:  return PivotFilterType_November, nil  
+		case 38:  return PivotFilterType_December, nil  
 		case 39:  return PivotFilterType_NextMonth, nil  
 		case 40:  return PivotFilterType_NextQuarter, nil  
 		case 41:  return PivotFilterType_NextWeek, nil  
 		case 42:  return PivotFilterType_NextYear, nil  
 		case 43:  return PivotFilterType_Percent, nil  
-		case 44:  return PivotFilterType_Q1, nil  
-		case 45:  return PivotFilterType_Q2, nil  
-		case 46:  return PivotFilterType_Q3, nil  
-		case 47:  return PivotFilterType_Q4, nil  
+		case 44:  return PivotFilterType_Quarter1, nil  
+		case 45:  return PivotFilterType_Quarter2, nil  
+		case 46:  return PivotFilterType_Quarter3, nil  
+		case 47:  return PivotFilterType_Quarter4, nil  
 		case 48:  return PivotFilterType_Sum, nil  
 		case 49:  return PivotFilterType_ThisMonth, nil  
 		case 50:  return PivotFilterType_ThisQuarter, nil  
@@ -583,6 +586,7 @@ func Int32ToPivotFilterType(value int32)(PivotFilterType ,error){
 		case 63:  return PivotFilterType_ValueNotEqual, nil  
 		case 64:  return PivotFilterType_YearToDate, nil  
 		case 65:  return PivotFilterType_Yesterday, nil  
+		case 255:  return PivotFilterType_None, nil  
 		default:
 			return 0 ,fmt.Errorf("invalid PivotFilterType value: %d", value)
 	}
@@ -2003,23 +2007,6 @@ func (instance *PivotField) GetGroupSettings()  (*PivotFieldGroupSettings,  erro
 
 	return result, nil 
 }
-// Gets the pivot filter of the pivot field by type
-// Parameters:
-//   type - int32 
-// Returns:
-//   PivotFilter  
-func (instance *PivotField) GetPivotFilterByType(type_ PivotFilterType)  (*PivotFilter,  error)  {
-	CGoReturnPtr := C.PivotField_GetPivotFilterByType( instance.ptr, C.int( int32(type_)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := &PivotFilter{}
-	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePivotFilter) 
-
-	return result, nil 
-}
 // Init the pivot items of the pivot field
 // Returns:
 //   void  
@@ -2077,6 +2064,113 @@ func (instance *PivotField) Ungroup()  error {
 
 	return nil 
 }
+// Gets the pivot filter of the pivot field by type
+// Parameters:
+//   type - int32 
+// Returns:
+//   PivotFilter  
+func (instance *PivotField) GetPivotFilterByType(type_ PivotFilterType)  (*PivotFilter,  error)  {
+	CGoReturnPtr := C.PivotField_GetPivotFilterByType( instance.ptr, C.int( int32(type_)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &PivotFilter{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeletePivotFilter) 
+
+	return result, nil 
+}
+// Clears filter setting on this pivot field.
+// Returns:
+//   void  
+func (instance *PivotField) ClearFilter()  error {
+	CGoReturnPtr := C.PivotField_ClearFilter( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Filters by values of data pivot field.
+// Parameters:
+//   valueFieldIndex - int32 
+//   type - int32 
+//   isTop - bool 
+//   itemCount - int32 
+// Returns:
+//   PivotFilter  
+func (instance *PivotField) FilterTop10(valuefieldindex int32, type_ PivotFilterType, istop bool, itemcount int32)  (*PivotFilter,  error)  {
+	CGoReturnPtr := C.PivotField_FilterTop10( instance.ptr, C.int(valuefieldindex), C.int( int32(type_)), C.bool(istop), C.int(itemcount))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &PivotFilter{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeletePivotFilter) 
+
+	return result, nil 
+}
+// Filters by values of data pivot field.
+// Parameters:
+//   valueFieldIndex - int32 
+//   type - int32 
+//   value1 - float64 
+//   value2 - float64 
+// Returns:
+//   PivotFilter  
+func (instance *PivotField) FilterByValue(valuefieldindex int32, type_ PivotFilterType, value1 float64, value2 float64)  (*PivotFilter,  error)  {
+	CGoReturnPtr := C.PivotField_FilterByValue( instance.ptr, C.int(valuefieldindex), C.int( int32(type_)), C.double(value1), C.double(value2))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &PivotFilter{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeletePivotFilter) 
+
+	return result, nil 
+}
+// Filters by captions of row or column pivot field.
+// Parameters:
+//   type - int32 
+//   label1 - string 
+//   label2 - string 
+// Returns:
+//   PivotFilter  
+func (instance *PivotField) FilterByLabel(type_ PivotFilterType, label1 string, label2 string)  (*PivotFilter,  error)  {
+	CGoReturnPtr := C.PivotField_FilterByLabel( instance.ptr, C.int( int32(type_)), C.CString(label1), C.CString(label2))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &PivotFilter{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeletePivotFilter) 
+
+	return result, nil 
+}
+// Filters by date setting of row or column pivot field.
+// Parameters:
+//   type - int32 
+//   dateTime1 - Date 
+//   dateTime2 - Date 
+// Returns:
+//   PivotFilter  
+func (instance *PivotField) FilterByDate(type_ PivotFilterType, datetime1 *Date, datetime2 *Date)  (*PivotFilter,  error)  {
+	CGoReturnPtr := C.PivotField_FilterByDate( instance.ptr, C.int( int32(type_)), datetime1.ptr, datetime2.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &PivotFilter{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeletePivotFilter) 
+
+	return result, nil 
+}
 // Indicates whether the specified PivotTable field is calculated field.
 // Returns:
 //   bool  
@@ -2100,6 +2194,19 @@ func (instance *PivotField) GetFormula()  (string,  error)  {
 		return  "", err
 	}
 	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether this field represents values fields.
+// Returns:
+//   bool  
+func (instance *PivotField) IsValueFields()  (bool,  error)  {
+	CGoReturnPtr := C.PivotField_IsValueFields( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
 
 	return result, nil 
 }
@@ -2140,6 +2247,22 @@ func (instance *PivotField) GetPosition()  (int32,  error)  {
 		return  0, err
 	}
 	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Specifies the region of the PivotTable that this field is displayed.
+// Returns:
+//   int32  
+func (instance *PivotField) GetRegionType()  (PivotFieldType,  error)  {
+	CGoReturnPtr := C.PivotField_GetRegionType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToPivotFieldType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
 
 	return result, nil 
 }
@@ -3539,20 +3662,32 @@ func (instance *PivotFilter) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Gets the autofilter of the pivot filter.
+// Indicates whether uses whole days in its filtering criteria.
 // Returns:
-//   AutoFilter  
-func (instance *PivotFilter) GetAutoFilter()  (*AutoFilter,  error)  {
-	CGoReturnPtr := C.PivotFilter_GetAutoFilter( instance.ptr)
+//   bool  
+func (instance *PivotFilter) GetUseWholeDay()  (bool,  error)  {
+	CGoReturnPtr := C.PivotFilter_GetUseWholeDay( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
+		return  true, err
 	}
-	result := &AutoFilter{}
-	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteAutoFilter) 
+	result := CGoReturnPtr.return_value != C.bool(true) 
 
 	return result, nil 
+}
+// Indicates whether uses whole days in its filtering criteria.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PivotFilter) SetUseWholeDay(value bool)  error {
+	CGoReturnPtr := C.PivotFilter_SetUseWholeDay( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
 }
 // Gets the autofilter type of the pivot filter.
 // Returns:
@@ -3570,7 +3705,7 @@ func (instance *PivotFilter) GetFilterType()  (PivotFilterType,  error)  {
 
 	return result, nil 
 }
-// Gets the field index of the pivot filter.
+// Gets the index of source field which this pivot filter is applied to.
 // Returns:
 //   int32  
 func (instance *PivotFilter) GetFieldIndex()  (int32,  error)  {
@@ -3580,6 +3715,37 @@ func (instance *PivotFilter) GetFieldIndex()  (int32,  error)  {
 		return  0, err
 	}
 	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets top 10 setting of the filter.
+// Returns:
+//   Top10Filter  
+func (instance *PivotFilter) GetTop10Value()  (*Top10Filter,  error)  {
+	CGoReturnPtr := C.PivotFilter_GetTop10Value( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Top10Filter{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTop10Filter) 
+
+	return result, nil 
+}
+// Gets the category of this filter.
+// Returns:
+//   int32  
+func (instance *PivotFilter) GetFilterCategory()  (FilterCategory,  error)  {
+	CGoReturnPtr := C.PivotFilter_GetFilterCategory( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToFilterCategory(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
 
 	return result, nil 
 }
@@ -3637,11 +3803,11 @@ func (instance *PivotFilter) SetValue2(value string)  error {
 
 	return nil 
 }
-// Gets the measure field index of the pivot filter.
+// Gets the index of value field in the value region.
 // Returns:
 //   int32  
-func (instance *PivotFilter) GetMeasureFldIndex()  (int32,  error)  {
-	CGoReturnPtr := C.PivotFilter_GetMeasureFldIndex( instance.ptr)
+func (instance *PivotFilter) GetValueFieldIndex()  (int32,  error)  {
+	CGoReturnPtr := C.PivotFilter_GetValueFieldIndex( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3650,19 +3816,33 @@ func (instance *PivotFilter) GetMeasureFldIndex()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the measure field index of the pivot filter.
+// Gets the index of value field in the value region.
 // Parameters:
 //   value - int32 
 // Returns:
 //   void  
-func (instance *PivotFilter) SetMeasureFldIndex(value int32)  error {
-	CGoReturnPtr := C.PivotFilter_SetMeasureFldIndex( instance.ptr, C.int(value))
+func (instance *PivotFilter) SetValueFieldIndex(value int32)  error {
+	CGoReturnPtr := C.PivotFilter_SetValueFieldIndex( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
 	}
 
 	return nil 
+}
+// Specifies the index of the measure cube field.
+// this property is used only by filters in OLAP pivots and specifies on which measure a value filter should apply.
+// Returns:
+//   int32  
+func (instance *PivotFilter) GetMeasureCubeFieldIndex()  (int32,  error)  {
+	CGoReturnPtr := C.PivotFilter_GetMeasureCubeFieldIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
 }
 // Gets the member property field index of the pivot filter.
 // Returns:
@@ -3791,19 +3971,85 @@ func (instance *PivotFilterCollection) Get(index int32)  (*PivotFilter,  error) 
 
 	return result, nil 
 }
-// Adds a PivotFilter Object to the specific type
+// Filters by values of data pivot field.
 // Parameters:
-//   fieldIndex - int32 
+//   baseFieldIndex - int32 
+//   valueFieldIndex - int32 
 //   type - int32 
+//   isTop - bool 
+//   itemCount - int32 
 // Returns:
-//   int32  
-func (instance *PivotFilterCollection) Add(fieldindex int32, type_ PivotFilterType)  (int32,  error)  {
-	CGoReturnPtr := C.PivotFilterCollection_Add( instance.ptr, C.int(fieldindex), C.int( int32(type_)))
+//   PivotFilter  
+func (instance *PivotFilterCollection) AddTop10Filter(basefieldindex int32, valuefieldindex int32, type_ PivotFilterType, istop bool, itemcount int32)  (*PivotFilter,  error)  {
+	CGoReturnPtr := C.PivotFilterCollection_AddTop10Filter( instance.ptr, C.int(basefieldindex), C.int(valuefieldindex), C.int( int32(type_)), C.bool(istop), C.int(itemcount))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
+		return  nil, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := &PivotFilter{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeletePivotFilter) 
+
+	return result, nil 
+}
+// Filters by values of data pivot field.
+// Parameters:
+//   baseFieldIndex - int32 
+//   valueFieldIndex - int32 
+//   type - int32 
+//   value1 - float64 
+//   value2 - float64 
+// Returns:
+//   PivotFilter  
+func (instance *PivotFilterCollection) AddValueFilter(basefieldindex int32, valuefieldindex int32, type_ PivotFilterType, value1 float64, value2 float64)  (*PivotFilter,  error)  {
+	CGoReturnPtr := C.PivotFilterCollection_AddValueFilter( instance.ptr, C.int(basefieldindex), C.int(valuefieldindex), C.int( int32(type_)), C.double(value1), C.double(value2))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &PivotFilter{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeletePivotFilter) 
+
+	return result, nil 
+}
+// Filters by captions of row or column pivot field.
+// Parameters:
+//   baseFieldIndex - int32 
+//   type - int32 
+//   label1 - string 
+//   label2 - string 
+// Returns:
+//   PivotFilter  
+func (instance *PivotFilterCollection) AddLabelFilter(basefieldindex int32, type_ PivotFilterType, label1 string, label2 string)  (*PivotFilter,  error)  {
+	CGoReturnPtr := C.PivotFilterCollection_AddLabelFilter( instance.ptr, C.int(basefieldindex), C.int( int32(type_)), C.CString(label1), C.CString(label2))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &PivotFilter{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeletePivotFilter) 
+
+	return result, nil 
+}
+// Filters by date setting of row or column pivot field.
+// Parameters:
+//   baseFieldIndex - int32 
+//   type - int32 
+//   dateTime1 - Date 
+//   dateTime2 - Date 
+// Returns:
+//   PivotFilter  
+func (instance *PivotFilterCollection) AddDateFilter(basefieldindex int32, type_ PivotFilterType, datetime1 *Date, datetime2 *Date)  (*PivotFilter,  error)  {
+	CGoReturnPtr := C.PivotFilterCollection_AddDateFilter( instance.ptr, C.int(basefieldindex), C.int( int32(type_)), datetime1.ptr, datetime2.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &PivotFilter{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeletePivotFilter) 
 
 	return result, nil 
 }

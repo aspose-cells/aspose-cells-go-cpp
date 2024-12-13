@@ -1,7 +1,7 @@
 package main
 
 import (
-	. "asposecells"
+	. "github.com/aspose-cells/aspose-cells-go-cpp/v2"
 )
 
 func SaveasWorkbook() {

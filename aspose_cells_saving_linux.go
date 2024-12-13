@@ -4,7 +4,7 @@ package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
-// #cgo LDFLAGS: -L./lib/linux_x86_64 -lAspose.Cells.CWrapper
+// #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/linux_x86_64" -L"${SRCDIR}/lib/linux_x86_64" -lAspose.Cells.CWrapper
 // #include <AsposeCellsCWrapper.h>
 import "C"
 import (
@@ -1883,6 +1883,35 @@ func (instance *EbookSaveOptions) SetCellNameAttribute(value string)  error {
 
 	return nil 
 }
+// Indicates whether only inline styles are applied, without relying on CSS.
+// The default value is false.
+// Returns:
+//   bool  
+func (instance *EbookSaveOptions) GetDisableCss()  (bool,  error)  {
+	CGoReturnPtr := C.EbookSaveOptions_GetDisableCss( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Indicates whether only inline styles are applied, without relying on CSS.
+// The default value is false.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *EbookSaveOptions) SetDisableCss(value bool)  error {
+	CGoReturnPtr := C.EbookSaveOptions_SetDisableCss( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 
 
 func DeleteEbookSaveOptions(ebooksaveoptions *EbookSaveOptions){
@@ -2621,6 +2650,37 @@ func (instance *SqlScriptSaveOptions) GetRefreshChartCache()  (bool,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetRefreshChartCache(value bool)  error {
 	CGoReturnPtr := C.SqlScriptSaveOptions_SetRefreshChartCache( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *SqlScriptSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	CGoReturnPtr := C.SqlScriptSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := CGoReturnPtr.return_value != C.bool(true) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SqlScriptSaveOptions) SetCheckExcelRestriction(value bool)  error {
+	CGoReturnPtr := C.SqlScriptSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

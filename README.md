@@ -31,7 +31,6 @@ Aspose.Cells for Go via C++ is a native Go library designed for Go developers to
 |[MHTML](https://docs.fileformat.com/web/mhtml/)|MHTML file.|&radic;|&radic;|
 |[ODS](https://docs.fileformat.com/spreadsheet/ods/)|ODS (OpenDocument Spreadsheet).|&radic;|&radic;|
 |SpreadsheetML|Excel 2003 XML file.|&radic;|&radic;|
-|[Numbers](https://docs.fileformat.com/spreadsheet/numbers/)|The document is created by Apple's "Numbers" application which forms part of Apple's iWork office suite, a set of applications which run on the Mac OS X and iOS operating systems.|&radic;||
 |[JSON](https://docs.fileformat.com/web/json/)|JavaScript Object Notation|&radic;|&radic;|
 |[DIF](https://docs.fileformat.com/spreadsheet/dif/)|Data Interchange Format.| |&radic;|
 |[PDF](https://docs.fileformat.com/pdf/)|Adobe Portable Document Format.| |&radic;|

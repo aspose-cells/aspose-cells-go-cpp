@@ -113,6 +113,15 @@ extern "C" {
 
    ASPOSE_CELLS_API void Delete_AbstractCalculationEngine( void* instance_ptr);
 
+   /**************Class AbstractFormulaChangeMonitor *****************/
+
+
+   ASPOSE_CELLS_API c_return_bool_value* AbstractFormulaChangeMonitor_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* AbstractFormulaChangeMonitor_OnCellFormulaChanged(void* instance_ptr, int sheetindex, int rowindex, int columnindex);
+
+
+   ASPOSE_CELLS_API void Delete_AbstractFormulaChangeMonitor( void* instance_ptr);
+
    /**************Class AbstractInterruptMonitor *****************/
 
 
@@ -570,12 +579,14 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* Cells_GroupRows_Integer_Integer(void* instance_ptr, int firstindex, int lastindex);
    ASPOSE_CELLS_API c_return_void_value* Cells_DeleteColumn_Integer_Boolean(void* instance_ptr, int columnindex, bool updatereference);
    ASPOSE_CELLS_API c_return_void_value* Cells_DeleteColumn_Integer(void* instance_ptr, int columnindex);
-   ASPOSE_CELLS_API c_return_void_value* Cells_DeleteColumns(void* instance_ptr, int columnindex, int totalcolumns, bool updatereference);
+   ASPOSE_CELLS_API c_return_void_value* Cells_DeleteColumns_Integer_Integer_Boolean(void* instance_ptr, int columnindex, int totalcolumns, bool updatereference);
+   ASPOSE_CELLS_API c_return_void_value* Cells_DeleteColumns_Integer_Integer_DeleteOptions(void* instance_ptr, int columnindex, int totalcolumns, void* options);
    ASPOSE_CELLS_API c_return_bool_value* Cells_IsDeletingRangeEnabled(void* instance_ptr, int startrow, int startcolumn, int totalrows, int totalcolumns);
    ASPOSE_CELLS_API c_return_void_value* Cells_DeleteRow_Integer(void* instance_ptr, int rowindex);
-   ASPOSE_CELLS_API c_return_bool_value* Cells_DeleteRows_Integer_Integer(void* instance_ptr, int rowindex, int totalrows);
    ASPOSE_CELLS_API c_return_void_value* Cells_DeleteRow_Integer_Boolean(void* instance_ptr, int rowindex, bool updatereference);
+   ASPOSE_CELLS_API c_return_bool_value* Cells_DeleteRows_Integer_Integer(void* instance_ptr, int rowindex, int totalrows);
    ASPOSE_CELLS_API c_return_bool_value* Cells_DeleteRows_Integer_Integer_Boolean(void* instance_ptr, int rowindex, int totalrows, bool updatereference);
+   ASPOSE_CELLS_API c_return_bool_value* Cells_DeleteRows_Integer_Integer_DeleteOptions(void* instance_ptr, int rowindex, int totalrows, void* options);
    ASPOSE_CELLS_API c_return_void_value* Cells_DeleteBlankColumns(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* Cells_DeleteBlankColumns_DeleteOptions(void* instance_ptr, void* options);
    ASPOSE_CELLS_API c_return_bool_value* Cells_IsBlankColumn(void* instance_ptr, int columnindex);
@@ -583,6 +594,7 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* Cells_DeleteBlankRows_DeleteOptions(void* instance_ptr, void* options);
    ASPOSE_CELLS_API c_return_void_value* Cells_InsertColumns_Integer_Integer(void* instance_ptr, int columnindex, int totalcolumns);
    ASPOSE_CELLS_API c_return_void_value* Cells_InsertColumns_Integer_Integer_Boolean(void* instance_ptr, int columnindex, int totalcolumns, bool updatereference);
+   ASPOSE_CELLS_API c_return_void_value* Cells_InsertColumns_Integer_Integer_InsertOptions(void* instance_ptr, int columnindex, int totalcolumns, void* options);
    ASPOSE_CELLS_API c_return_void_value* Cells_InsertColumn_Integer_Boolean(void* instance_ptr, int columnindex, bool updatereference);
    ASPOSE_CELLS_API c_return_void_value* Cells_InsertColumn_Integer(void* instance_ptr, int columnindex);
    ASPOSE_CELLS_API c_return_void_value* Cells_InsertRows_Integer_Integer_Boolean(void* instance_ptr, int rowindex, int totalrows, bool updatereference);
@@ -1155,6 +1167,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* DeleteBlankOptions_SetEndIndex(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_bool_value* DeleteBlankOptions_GetUpdateReference(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* DeleteBlankOptions_SetUpdateReference(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_ptr_value* DeleteBlankOptions_GetFormulaChangeMonitor(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* DeleteBlankOptions_SetFormulaChangeMonitor(void* instance_ptr, void* value);
 
 
    ASPOSE_CELLS_API void Delete_DeleteBlankOptions( void* instance_ptr);
@@ -1166,6 +1180,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_bool_value* DeleteOptions_IsNull(void* instance_ptr);
    ASPOSE_CELLS_API c_return_bool_value* DeleteOptions_GetUpdateReference(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* DeleteOptions_SetUpdateReference(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_ptr_value* DeleteOptions_GetFormulaChangeMonitor(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* DeleteOptions_SetFormulaChangeMonitor(void* instance_ptr, void* value);
 
 
    ASPOSE_CELLS_API void Delete_DeleteOptions( void* instance_ptr);
@@ -1193,6 +1209,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* DifSaveOptions_SetSortExternalNames(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* DifSaveOptions_GetRefreshChartCache(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* DifSaveOptions_SetRefreshChartCache(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* DifSaveOptions_GetCheckExcelRestriction(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* DifSaveOptions_SetCheckExcelRestriction(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* DifSaveOptions_GetUpdateSmartArt(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* DifSaveOptions_SetUpdateSmartArt(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* DifSaveOptions_GetEncryptDocumentProperties(void* instance_ptr);
@@ -1888,6 +1906,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* HtmlSaveOptions_SetOfficeMathOutputMode(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_string_value* HtmlSaveOptions_GetCellNameAttribute(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* HtmlSaveOptions_SetCellNameAttribute(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_bool_value* HtmlSaveOptions_GetDisableCss(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* HtmlSaveOptions_SetDisableCss(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_int_value* HtmlSaveOptions_GetSaveFormat(void* instance_ptr);
    ASPOSE_CELLS_API c_return_bool_value* HtmlSaveOptions_GetClearData(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* HtmlSaveOptions_SetClearData(void* instance_ptr, bool value);
@@ -1905,6 +1925,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* HtmlSaveOptions_SetSortExternalNames(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* HtmlSaveOptions_GetRefreshChartCache(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* HtmlSaveOptions_SetRefreshChartCache(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* HtmlSaveOptions_GetCheckExcelRestriction(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* HtmlSaveOptions_SetCheckExcelRestriction(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* HtmlSaveOptions_GetUpdateSmartArt(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* HtmlSaveOptions_SetUpdateSmartArt(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* HtmlSaveOptions_GetEncryptDocumentProperties(void* instance_ptr);
@@ -2040,6 +2062,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* ImageSaveOptions_SetSortExternalNames(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* ImageSaveOptions_GetRefreshChartCache(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* ImageSaveOptions_SetRefreshChartCache(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* ImageSaveOptions_GetCheckExcelRestriction(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageSaveOptions_SetCheckExcelRestriction(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* ImageSaveOptions_GetUpdateSmartArt(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* ImageSaveOptions_SetUpdateSmartArt(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* ImageSaveOptions_GetEncryptDocumentProperties(void* instance_ptr);
@@ -2098,6 +2122,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* InsertOptions_SetCopyFormatType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_bool_value* InsertOptions_GetUpdateReference(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* InsertOptions_SetUpdateReference(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_ptr_value* InsertOptions_GetFormulaChangeMonitor(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* InsertOptions_SetFormulaChangeMonitor(void* instance_ptr, void* value);
 
 
    ASPOSE_CELLS_API void Delete_InsertOptions( void* instance_ptr);
@@ -2211,6 +2237,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* JsonSaveOptions_SetSortExternalNames(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* JsonSaveOptions_GetRefreshChartCache(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* JsonSaveOptions_SetRefreshChartCache(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* JsonSaveOptions_GetCheckExcelRestriction(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* JsonSaveOptions_SetCheckExcelRestriction(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* JsonSaveOptions_GetUpdateSmartArt(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* JsonSaveOptions_SetUpdateSmartArt(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* JsonSaveOptions_GetEncryptDocumentProperties(void* instance_ptr);
@@ -2320,6 +2348,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* MarkdownSaveOptions_SetSortExternalNames(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* MarkdownSaveOptions_GetRefreshChartCache(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* MarkdownSaveOptions_SetRefreshChartCache(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* MarkdownSaveOptions_GetCheckExcelRestriction(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownSaveOptions_SetCheckExcelRestriction(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* MarkdownSaveOptions_GetUpdateSmartArt(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* MarkdownSaveOptions_SetUpdateSmartArt(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* MarkdownSaveOptions_GetEncryptDocumentProperties(void* instance_ptr);
@@ -2550,6 +2580,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* OdsSaveOptions_SetSortExternalNames(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* OdsSaveOptions_GetRefreshChartCache(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* OdsSaveOptions_SetRefreshChartCache(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* OdsSaveOptions_GetCheckExcelRestriction(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* OdsSaveOptions_SetCheckExcelRestriction(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* OdsSaveOptions_GetUpdateSmartArt(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* OdsSaveOptions_SetUpdateSmartArt(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* OdsSaveOptions_GetEncryptDocumentProperties(void* instance_ptr);
@@ -2592,6 +2624,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* OoxmlSaveOptions_SetSortExternalNames(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* OoxmlSaveOptions_GetRefreshChartCache(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* OoxmlSaveOptions_SetRefreshChartCache(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* OoxmlSaveOptions_GetCheckExcelRestriction(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* OoxmlSaveOptions_SetCheckExcelRestriction(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* OoxmlSaveOptions_GetUpdateSmartArt(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* OoxmlSaveOptions_SetUpdateSmartArt(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* OoxmlSaveOptions_GetEncryptDocumentProperties(void* instance_ptr);
@@ -2774,6 +2808,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* PaginatedSaveOptions_SetSortExternalNames(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* PaginatedSaveOptions_GetRefreshChartCache(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PaginatedSaveOptions_SetRefreshChartCache(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* PaginatedSaveOptions_GetCheckExcelRestriction(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PaginatedSaveOptions_SetCheckExcelRestriction(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* PaginatedSaveOptions_GetUpdateSmartArt(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PaginatedSaveOptions_SetUpdateSmartArt(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* PaginatedSaveOptions_GetEncryptDocumentProperties(void* instance_ptr);
@@ -3274,6 +3310,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* SaveOptions_SetSortExternalNames(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* SaveOptions_GetRefreshChartCache(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* SaveOptions_SetRefreshChartCache(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SaveOptions_GetCheckExcelRestriction(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SaveOptions_SetCheckExcelRestriction(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* SaveOptions_GetUpdateSmartArt(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* SaveOptions_SetUpdateSmartArt(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* SaveOptions_GetEncryptDocumentProperties(void* instance_ptr);
@@ -3468,6 +3506,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* SpreadsheetML2003SaveOptions_SetSortExternalNames(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* SpreadsheetML2003SaveOptions_GetRefreshChartCache(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* SpreadsheetML2003SaveOptions_SetRefreshChartCache(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SpreadsheetML2003SaveOptions_GetCheckExcelRestriction(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SpreadsheetML2003SaveOptions_SetCheckExcelRestriction(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* SpreadsheetML2003SaveOptions_GetUpdateSmartArt(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* SpreadsheetML2003SaveOptions_SetUpdateSmartArt(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* SpreadsheetML2003SaveOptions_GetEncryptDocumentProperties(void* instance_ptr);
@@ -3866,6 +3906,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* TxtSaveOptions_SetSortExternalNames(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* TxtSaveOptions_GetRefreshChartCache(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* TxtSaveOptions_SetRefreshChartCache(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* TxtSaveOptions_GetCheckExcelRestriction(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TxtSaveOptions_SetCheckExcelRestriction(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* TxtSaveOptions_GetUpdateSmartArt(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* TxtSaveOptions_SetUpdateSmartArt(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* TxtSaveOptions_GetEncryptDocumentProperties(void* instance_ptr);
@@ -4001,7 +4043,7 @@ extern "C" {
 
 
    ASPOSE_CELLS_API c_return_bool_value* WarningInfo_IsNull(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_int_value* WarningInfo_GetWarningType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* WarningInfo_GetType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_string_value* WarningInfo_GetDescription(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* WarningInfo_GetErrorObject(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* WarningInfo_GetCorrectedObject(void* instance_ptr);
@@ -4466,6 +4508,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* XlsbSaveOptions_SetSortExternalNames(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* XlsbSaveOptions_GetRefreshChartCache(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* XlsbSaveOptions_SetRefreshChartCache(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* XlsbSaveOptions_GetCheckExcelRestriction(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* XlsbSaveOptions_SetCheckExcelRestriction(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* XlsbSaveOptions_GetUpdateSmartArt(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* XlsbSaveOptions_SetUpdateSmartArt(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* XlsbSaveOptions_GetEncryptDocumentProperties(void* instance_ptr);
@@ -4502,6 +4546,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* XlsSaveOptions_SetSortExternalNames(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* XlsSaveOptions_GetRefreshChartCache(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* XlsSaveOptions_SetRefreshChartCache(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* XlsSaveOptions_GetCheckExcelRestriction(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* XlsSaveOptions_SetCheckExcelRestriction(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* XlsSaveOptions_GetUpdateSmartArt(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* XlsSaveOptions_SetUpdateSmartArt(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* XlsSaveOptions_GetEncryptDocumentProperties(void* instance_ptr);
@@ -4647,6 +4693,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* XmlSaveOptions_SetSortExternalNames(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* XmlSaveOptions_GetRefreshChartCache(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* XmlSaveOptions_SetRefreshChartCache(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* XmlSaveOptions_GetCheckExcelRestriction(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* XmlSaveOptions_SetCheckExcelRestriction(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* XmlSaveOptions_GetUpdateSmartArt(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* XmlSaveOptions_SetUpdateSmartArt(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* XmlSaveOptions_GetEncryptDocumentProperties(void* instance_ptr);
@@ -13864,16 +13912,23 @@ extern "C" {
    ASPOSE_CELLS_API c_return_bool_value* PivotField_IsNull(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* PivotField_GetPivotItems(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* PivotField_GetGroupSettings(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_ptr_value* PivotField_GetPivotFilterByType(void* instance_ptr, int type_);
    ASPOSE_CELLS_API c_return_void_value* PivotField_InitPivotItems(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PivotField_GroupBy_Double_Boolean(void* instance_ptr, double interval, bool newfield);
    ASPOSE_CELLS_API c_return_bool_value* PivotField_GroupBy_Double_Double_Double_Boolean(void* instance_ptr, double start, double end, double interval, bool newfield);
    ASPOSE_CELLS_API c_return_void_value* PivotField_Ungroup(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* PivotField_GetPivotFilterByType(void* instance_ptr, int type_);
+   ASPOSE_CELLS_API c_return_void_value* PivotField_ClearFilter(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* PivotField_FilterTop10(void* instance_ptr, int valuefieldindex, int type_, bool istop, int itemcount);
+   ASPOSE_CELLS_API c_return_ptr_value* PivotField_FilterByValue(void* instance_ptr, int valuefieldindex, int type_, double value1, double value2);
+   ASPOSE_CELLS_API c_return_ptr_value* PivotField_FilterByLabel(void* instance_ptr, int type_, char* label1, char* label2);
+   ASPOSE_CELLS_API c_return_ptr_value* PivotField_FilterByDate(void* instance_ptr, int type_, void* datetime1, void* datetime2);
    ASPOSE_CELLS_API c_return_bool_value* PivotField_IsCalculatedField(void* instance_ptr);
    ASPOSE_CELLS_API c_return_string_value* PivotField_GetFormula(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* PivotField_IsValueFields(void* instance_ptr);
    ASPOSE_CELLS_API c_return_int_value* PivotField_GetBaseIndex(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PivotField_SetBaseIndex(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_int_value* PivotField_GetPosition(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* PivotField_GetRegionType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_string_value* PivotField_GetName(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PivotField_SetName(void* instance_ptr, char* value);
    ASPOSE_CELLS_API c_return_string_value* PivotField_GetDisplayName(void* instance_ptr);
@@ -13995,15 +14050,19 @@ extern "C" {
 
 
    ASPOSE_CELLS_API c_return_bool_value* PivotFilter_IsNull(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_ptr_value* PivotFilter_GetAutoFilter(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* PivotFilter_GetUseWholeDay(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PivotFilter_SetUseWholeDay(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_int_value* PivotFilter_GetFilterType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_int_value* PivotFilter_GetFieldIndex(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* PivotFilter_GetTop10Value(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* PivotFilter_GetFilterCategory(void* instance_ptr);
    ASPOSE_CELLS_API c_return_string_value* PivotFilter_GetValue1(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PivotFilter_SetValue1(void* instance_ptr, char* value);
    ASPOSE_CELLS_API c_return_string_value* PivotFilter_GetValue2(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PivotFilter_SetValue2(void* instance_ptr, char* value);
-   ASPOSE_CELLS_API c_return_int_value* PivotFilter_GetMeasureFldIndex(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* PivotFilter_SetMeasureFldIndex(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* PivotFilter_GetValueFieldIndex(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PivotFilter_SetValueFieldIndex(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* PivotFilter_GetMeasureCubeFieldIndex(void* instance_ptr);
    ASPOSE_CELLS_API c_return_int_value* PivotFilter_GetMemberPropertyFieldIndex(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PivotFilter_SetMemberPropertyFieldIndex(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_string_value* PivotFilter_GetName(void* instance_ptr);
@@ -14019,7 +14078,10 @@ extern "C" {
 
    ASPOSE_CELLS_API c_return_bool_value* PivotFilterCollection_IsNull(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* PivotFilterCollection_Get(void* instance_ptr, int index);
-   ASPOSE_CELLS_API c_return_int_value* PivotFilterCollection_Add(void* instance_ptr, int fieldindex, int type_);
+   ASPOSE_CELLS_API c_return_ptr_value* PivotFilterCollection_AddTop10Filter(void* instance_ptr, int basefieldindex, int valuefieldindex, int type_, bool istop, int itemcount);
+   ASPOSE_CELLS_API c_return_ptr_value* PivotFilterCollection_AddValueFilter(void* instance_ptr, int basefieldindex, int valuefieldindex, int type_, double value1, double value2);
+   ASPOSE_CELLS_API c_return_ptr_value* PivotFilterCollection_AddLabelFilter(void* instance_ptr, int basefieldindex, int type_, char* label1, char* label2);
+   ASPOSE_CELLS_API c_return_ptr_value* PivotFilterCollection_AddDateFilter(void* instance_ptr, int basefieldindex, int type_, void* datetime1, void* datetime2);
    ASPOSE_CELLS_API c_return_void_value* PivotFilterCollection_ClearFilter(void* instance_ptr, int fieldindex);
    ASPOSE_CELLS_API c_return_int_value* PivotFilterCollection_GetCount(void* instance_ptr);
 
@@ -14497,6 +14559,7 @@ extern "C" {
 
 
    ASPOSE_CELLS_API c_return_bool_value* PowerQueryFormula_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* PowerQueryFormula_GetGroupName(void* instance_ptr);
    ASPOSE_CELLS_API c_return_string_value* PowerQueryFormula_GetName(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PowerQueryFormula_SetName(void* instance_ptr, char* value);
    ASPOSE_CELLS_API c_return_ptr_value* PowerQueryFormula_GetPowerQueryFormulaItems(void* instance_ptr);
@@ -14525,6 +14588,7 @@ extern "C" {
    ASPOSE_CELLS_API c_return_int_value* PowerQueryFormulaFunction_GetType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_string_value* PowerQueryFormulaFunction_GetF(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PowerQueryFormulaFunction_SetF(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_string_value* PowerQueryFormulaFunction_GetGroupName(void* instance_ptr);
    ASPOSE_CELLS_API c_return_string_value* PowerQueryFormulaFunction_GetName(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PowerQueryFormulaFunction_SetName(void* instance_ptr, char* value);
    ASPOSE_CELLS_API c_return_ptr_value* PowerQueryFormulaFunction_GetPowerQueryFormulaItems(void* instance_ptr);
@@ -14564,6 +14628,7 @@ extern "C" {
    ASPOSE_CELLS_API c_return_string_value* PowerQueryFormulaParameter_GetValue(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PowerQueryFormulaParameter_SetValue(void* instance_ptr, char* value);
    ASPOSE_CELLS_API c_return_string_value* PowerQueryFormulaParameter_GetFormulaDefinition(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* PowerQueryFormulaParameter_GetGroupName(void* instance_ptr);
    ASPOSE_CELLS_API c_return_string_value* PowerQueryFormulaParameter_GetName(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PowerQueryFormulaParameter_SetName(void* instance_ptr, char* value);
    ASPOSE_CELLS_API c_return_ptr_value* PowerQueryFormulaParameter_GetPowerQueryFormulaItems(void* instance_ptr);
@@ -15041,6 +15106,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* EbookSaveOptions_SetOfficeMathOutputMode(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_string_value* EbookSaveOptions_GetCellNameAttribute(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* EbookSaveOptions_SetCellNameAttribute(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_bool_value* EbookSaveOptions_GetDisableCss(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* EbookSaveOptions_SetDisableCss(void* instance_ptr, bool value);
 
 
    ASPOSE_CELLS_API void Delete_EbookSaveOptions( void* instance_ptr);
@@ -15107,6 +15174,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* SqlScriptSaveOptions_SetSortExternalNames(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* SqlScriptSaveOptions_GetRefreshChartCache(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* SqlScriptSaveOptions_SetRefreshChartCache(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SqlScriptSaveOptions_GetCheckExcelRestriction(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SqlScriptSaveOptions_SetCheckExcelRestriction(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* SqlScriptSaveOptions_GetUpdateSmartArt(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* SqlScriptSaveOptions_SetUpdateSmartArt(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* SqlScriptSaveOptions_GetEncryptDocumentProperties(void* instance_ptr);
@@ -16188,6 +16257,9 @@ extern "C" {
 
 
    /**************Enum FileFormatType *****************/
+
+
+   /**************Enum FilterCategory *****************/
 
 
    /**************Enum FilterOperatorType *****************/
