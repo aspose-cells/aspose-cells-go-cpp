@@ -1,3 +1,3 @@
-module github.com/aspose-cells/aspose-cells-go-cpp/v0
+module github.com/aspose-cells/aspose-cells-go-cpp
 
 go 1.13
