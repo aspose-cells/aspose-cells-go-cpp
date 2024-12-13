@@ -55,10 +55,10 @@ A commercial license key is required for use in a production environment. Please
 
 ## Running Aspose.Cells for Go via C++ in your project
 
-1. Import `github.com/aspose-cells/aspose-cells-go-cpp/v2` into your project
+1. Import `github.com/aspose-cells/aspose-cells-go-cpp/v24` into your project
    a. On **Windows**, you will have to locate the DLLs for running the project and append them to your path.
    ```
-   set PATH=%GOPATH%/pkg/mod/github.com/aspose-cells/aspose-cells-go-cpp/v2@your_version/libs/win/Lib/win_x86_64
+   set PATH=%GOPATH%/pkg/mod/github.com/aspose-cells/aspose-cells-go-cpp/v24@your_version/libs/win/Lib/win_x86_64
    ```
    You may also copy these directly to your project directory.
 
@@ -68,7 +68,7 @@ A commercial license key is required for use in a production environment. Please
 package main
 
 import (
- . github.com/aspose-cells/aspose-cells-go-cpp/v2
+ . github.com/aspose-cells/aspose-cells-go-cpp/v24
 )
 
 func main() {
