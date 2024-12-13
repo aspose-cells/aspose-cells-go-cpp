@@ -1,7 +1,7 @@
 package main
 
 import (
-	. "github.com/aspose-cells/aspose-cells-go-cpp/v2"
+	. "github.com/aspose-cells/aspose-cells-go-cpp"
 )
 
 func HideRowsInPivotTable() {
