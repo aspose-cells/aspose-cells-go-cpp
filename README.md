@@ -53,22 +53,28 @@ A commercial license key is required for use in a production environment. Please
 
 ## Quick Start Guide
 
-## Running Aspose.Cells for Go via C++ in your project
+### Running Aspose.Cells for Go via C++ in your project
 
 1. Import `github.com/aspose-cells/aspose-cells-go-cpp/v24` into your project
    a. On **Windows**, you will have to locate the DLLs for running the project and append them to your path.
    ```
+   $env:PATH = $env:Path + ";$env:GOPATH\pkg\mod\github.com\aspose-cells\aspose-cells-go-cpp@v0.1.0\lib\win_x86_64" 
+   ```
+   b. On **Linux**, you will have to locate the DLLs for running the project and append them to your path.
+   ```
    set PATH=%GOPATH%/pkg/mod/github.com/aspose-cells/aspose-cells-go-cpp/v24@your_version/libs/win/Lib/win_x86_64
    ```
+   
    You may also copy these directly to your project directory.
 
 2. Create a main.go in your project directory
+
 ```go
 
 package main
 
 import (
- . github.com/aspose-cells/aspose-cells-go-cpp/v24
+ . github.com/aspose-cells/aspose-cells-go-cpp
 )
 
 func main() {
@@ -85,5 +91,119 @@ func main() {
     workbook.Save_String("HolloWorld.xlsx")
 }
 
+```
+
+### Create a table in excel 
+
+```go
+
+package main
+
+import (
+ . github.com/aspose-cells/aspose-cells-go-cpp
+)
+
+func main() {
+    workbook, _ := NewWorkbook()
+	worksheets, _ := workbook.GetWorksheets()
+	worksheet, _ := worksheets.Get_Int(0)
+	cells, _ := worksheet.GetCells()
+	set_cell_string_value(cells, "A1", "Employee")
+	set_cell_string_value(cells, "B1", "Quarter")
+	set_cell_string_value(cells, "C1", "Product")
+	set_cell_string_value(cells, "D1", "Continent")
+	set_cell_string_value(cells, "E1", "Country")
+	set_cell_string_value(cells, "F1", "Sale")
+
+	set_cell_string_value(cells, "A2", "David")
+	set_cell_string_value(cells, "A3", "David")
+	set_cell_string_value(cells, "A4", "David")
+	set_cell_string_value(cells, "A5", "David")
+	set_cell_string_value(cells, "A6", "James")
+
+	set_cell_int_value(cells, "B2", 1)
+	set_cell_int_value(cells, "B3", 2)
+	set_cell_int_value(cells, "B4", 3)
+	set_cell_int_value(cells, "B5", 4)
+	set_cell_int_value(cells, "B6", 1)
+
+	set_cell_string_value(cells, "C2", "Maxilaku")
+	set_cell_string_value(cells, "C3", "Maxilaku")
+	set_cell_string_value(cells, "C4", "Chai")
+	set_cell_string_value(cells, "C5", "Maxilaku")
+	set_cell_string_value(cells, "C6", "Chang")
+
+	set_cell_string_value(cells, "D2", "Asia")
+	set_cell_string_value(cells, "D3", "Asia")
+	set_cell_string_value(cells, "D4", "Asia")
+	set_cell_string_value(cells, "D5", "Asia")
+	set_cell_string_value(cells, "D6", "Europe")
+
+	set_cell_string_value(cells, "E2", "China")
+	set_cell_string_value(cells, "E3", "India")
+	set_cell_string_value(cells, "E4", "Korea")
+	set_cell_string_value(cells, "E5", "India")
+	set_cell_string_value(cells, "E6", "France")
+
+	set_cell_int_value(cells, "F2", 2000)
+	set_cell_int_value(cells, "F3", 500)
+	set_cell_int_value(cells, "F4", 1200)
+	set_cell_int_value(cells, "F5", 1500)
+	set_cell_int_value(cells, "F6", 500)
+
+	listObjects, _ := worksheet.GetListObjects()
+	index, _ := listObjects.Add_String_String_Bool("A1", "F6", true)
+	listObject, _ := listObjects.Get_Int(index)
+	listObject.SetShowHeaderRow(true)
+	listObject.SetTableStyleType(TableStyleType_TableStyleMedium10)
+	listObject.SetShowTotals(true)
+
+	workbook.Save_String("CreateTable.xlsx")
+}
+```
+
+### Create bubble chart in excel 
+
+```go
+
+package main
+
+import (
+ . github.com/aspose-cells/aspose-cells-go-cpp
+)
+
+func main() {
+   workbook, _ := NewWorkbook()
+   worksheets, _ := workbook.GetWorksheets()
+   worksheet, _ := worksheets.Get_Int(0)
+   cells, _ := worksheet.GetCells()
+   set_cell_string_value_2(cells, 0, 0, "Values")
+   set_cell_int_value_2(cells, 0, 1, 2)
+   set_cell_int_value_2(cells, 0, 2, 4)
+   set_cell_int_value_2(cells, 0, 3, 6)
+
+   set_cell_string_value_2(cells, 1, 0, "Bubble Size")
+   set_cell_int_value_2(cells, 1, 1, 2)
+   set_cell_int_value_2(cells, 1, 2, 3)
+   set_cell_int_value_2(cells, 1, 3, 1)
+
+   set_cell_string_value_2(cells, 1, 0, "X Values")
+   set_cell_int_value_2(cells, 2, 1, 1)
+   set_cell_int_value_2(cells, 2, 2, 2)
+   set_cell_int_value_2(cells, 2, 3, 3)
+   cells.SetColumnWidth(0, 12)
+
+   charts, _ := worksheet.GetCharts()
+   charts.AddFloatingChart(ChartType_Bubble, 5, 0, 20, 8)
+   chart, _ := charts.Get_Int(0)
+   nSeries, _ := chart.GetNSeries()
+   nSeries.Add_String_Bool("B1:D1", true)
+   series, _ := nSeries.Get(0)
+   series.SetBubbleSizes("B2:D2")
+   series.SetXValues("B3:D3")
+   series.SetValues("B1:D1")
+   workbook.Save_String("CreateBubbleChart.xlsx")
+
+}
 
 ```
