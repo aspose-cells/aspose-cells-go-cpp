@@ -1,8 +1,9 @@
 package main
 
 import (
-	. "github.com/aspose-cells/aspose-cells-go-cpp"
 	"os"
+
+	. "github.com/aspose-cells/aspose-cells-go-cpp/v24"
 )
 
 func set_cell_int_value(cells *Cells, cell_name string, value int32) {

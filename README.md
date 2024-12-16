@@ -47,6 +47,7 @@ Aspose.Cells for Go via C++ is a native Go library designed for Go developers to
 |[PPTX](https://docs.fileformat.com/presentation/pptx/)|The PPTX format is based on the Microsoft PowerPoint open XML presentation file format.||&radic;|
 
 # Run Aspose.Cells for Go via C++ in production
+
 A commercial license key is required for use in a production environment. Please <a href="https://purchase.aspose.com/buy">contact us to purchase a commercial license</a> if you do not have a valid license key.
 
 ## Quick Start Guide
@@ -55,14 +56,17 @@ A commercial license key is required for use in a production environment. Please
 
 1. Import `github.com/aspose-cells/aspose-cells-go-cpp/v24` into your project
    a. On **Windows**, you will have to locate the DLLs for running the project and append them to your path.
+
    ```
-   $env:PATH = $env:Path + ";$env:GOPATH\pkg\mod\github.com\aspose-cells\aspose-cells-go-cpp@v0.1.0\lib\win_x86_64" 
+       $env:PATH = $env:Path + ";$env:GOPATH\github.com\aspose-cells\aspose-cells-go-cpp\v24@v24.12.0\lib\win_x86_64" 
    ```
+
    b. On **Linux**, you will have to locate the DLLs for running the project and append them to your path.
+
    ```
-   set PATH=%GOPATH%/pkg/mod/github.com/aspose-cells/aspose-cells-go-cpp/v24@your_version/libs/win/Lib/win_x86_64
+   set PATH=%GOPATH%/github.com/aspose-cells/aspose-cells-go-cpp/v24@your_version/libs/win/Lib/linux_x86_64
    ```
-   
+
    You may also copy these directly to your project directory.
 
 2. Create a main.go in your project directory
@@ -76,8 +80,8 @@ import (
 )
 
 func main() {
-	lic, _ := NewLicense()
-	lic.SetLicense_String(os.Getenv("LicensePath"))
+ lic, _ := NewLicense()
+ lic.SetLicense_String(os.Getenv("LicensePath"))
     workbook, _ := NewWorkbook()
     worksheets, _ := workbook.GetWorksheets()
     worksheet, _ := worksheets.Get_Int(0)
@@ -91,7 +95,7 @@ func main() {
 
 ```
 
-### Create a table in excel 
+### Create a table in excel
 
 ```go
 
@@ -103,64 +107,64 @@ import (
 
 func main() {
     workbook, _ := NewWorkbook()
-	worksheets, _ := workbook.GetWorksheets()
-	worksheet, _ := worksheets.Get_Int(0)
-	cells, _ := worksheet.GetCells()
-	set_cell_string_value(cells, "A1", "Employee")
-	set_cell_string_value(cells, "B1", "Quarter")
-	set_cell_string_value(cells, "C1", "Product")
-	set_cell_string_value(cells, "D1", "Continent")
-	set_cell_string_value(cells, "E1", "Country")
-	set_cell_string_value(cells, "F1", "Sale")
+ worksheets, _ := workbook.GetWorksheets()
+ worksheet, _ := worksheets.Get_Int(0)
+ cells, _ := worksheet.GetCells()
+ set_cell_string_value(cells, "A1", "Employee")
+ set_cell_string_value(cells, "B1", "Quarter")
+ set_cell_string_value(cells, "C1", "Product")
+ set_cell_string_value(cells, "D1", "Continent")
+ set_cell_string_value(cells, "E1", "Country")
+ set_cell_string_value(cells, "F1", "Sale")
 
-	set_cell_string_value(cells, "A2", "David")
-	set_cell_string_value(cells, "A3", "David")
-	set_cell_string_value(cells, "A4", "David")
-	set_cell_string_value(cells, "A5", "David")
-	set_cell_string_value(cells, "A6", "James")
+ set_cell_string_value(cells, "A2", "David")
+ set_cell_string_value(cells, "A3", "David")
+ set_cell_string_value(cells, "A4", "David")
+ set_cell_string_value(cells, "A5", "David")
+ set_cell_string_value(cells, "A6", "James")
 
-	set_cell_int_value(cells, "B2", 1)
-	set_cell_int_value(cells, "B3", 2)
-	set_cell_int_value(cells, "B4", 3)
-	set_cell_int_value(cells, "B5", 4)
-	set_cell_int_value(cells, "B6", 1)
+ set_cell_int_value(cells, "B2", 1)
+ set_cell_int_value(cells, "B3", 2)
+ set_cell_int_value(cells, "B4", 3)
+ set_cell_int_value(cells, "B5", 4)
+ set_cell_int_value(cells, "B6", 1)
 
-	set_cell_string_value(cells, "C2", "Maxilaku")
-	set_cell_string_value(cells, "C3", "Maxilaku")
-	set_cell_string_value(cells, "C4", "Chai")
-	set_cell_string_value(cells, "C5", "Maxilaku")
-	set_cell_string_value(cells, "C6", "Chang")
+ set_cell_string_value(cells, "C2", "Maxilaku")
+ set_cell_string_value(cells, "C3", "Maxilaku")
+ set_cell_string_value(cells, "C4", "Chai")
+ set_cell_string_value(cells, "C5", "Maxilaku")
+ set_cell_string_value(cells, "C6", "Chang")
 
-	set_cell_string_value(cells, "D2", "Asia")
-	set_cell_string_value(cells, "D3", "Asia")
-	set_cell_string_value(cells, "D4", "Asia")
-	set_cell_string_value(cells, "D5", "Asia")
-	set_cell_string_value(cells, "D6", "Europe")
+ set_cell_string_value(cells, "D2", "Asia")
+ set_cell_string_value(cells, "D3", "Asia")
+ set_cell_string_value(cells, "D4", "Asia")
+ set_cell_string_value(cells, "D5", "Asia")
+ set_cell_string_value(cells, "D6", "Europe")
 
-	set_cell_string_value(cells, "E2", "China")
-	set_cell_string_value(cells, "E3", "India")
-	set_cell_string_value(cells, "E4", "Korea")
-	set_cell_string_value(cells, "E5", "India")
-	set_cell_string_value(cells, "E6", "France")
+ set_cell_string_value(cells, "E2", "China")
+ set_cell_string_value(cells, "E3", "India")
+ set_cell_string_value(cells, "E4", "Korea")
+ set_cell_string_value(cells, "E5", "India")
+ set_cell_string_value(cells, "E6", "France")
 
-	set_cell_int_value(cells, "F2", 2000)
-	set_cell_int_value(cells, "F3", 500)
-	set_cell_int_value(cells, "F4", 1200)
-	set_cell_int_value(cells, "F5", 1500)
-	set_cell_int_value(cells, "F6", 500)
+ set_cell_int_value(cells, "F2", 2000)
+ set_cell_int_value(cells, "F3", 500)
+ set_cell_int_value(cells, "F4", 1200)
+ set_cell_int_value(cells, "F5", 1500)
+ set_cell_int_value(cells, "F6", 500)
 
-	listObjects, _ := worksheet.GetListObjects()
-	index, _ := listObjects.Add_String_String_Bool("A1", "F6", true)
-	listObject, _ := listObjects.Get_Int(index)
-	listObject.SetShowHeaderRow(true)
-	listObject.SetTableStyleType(TableStyleType_TableStyleMedium10)
-	listObject.SetShowTotals(true)
+ listObjects, _ := worksheet.GetListObjects()
+ index, _ := listObjects.Add_String_String_Bool("A1", "F6", true)
+ listObject, _ := listObjects.Get_Int(index)
+ listObject.SetShowHeaderRow(true)
+ listObject.SetTableStyleType(TableStyleType_TableStyleMedium10)
+ listObject.SetShowTotals(true)
 
-	workbook.Save_String("CreateTable.xlsx")
+ workbook.Save_String("CreateTable.xlsx")
 }
 ```
 
-### Create bubble chart in excel 
+### Create bubble chart in excel
 
 ```go
 

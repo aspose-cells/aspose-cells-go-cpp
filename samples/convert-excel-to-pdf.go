@@ -1,7 +1,7 @@
 package main
 
 import (
-	. "github.com/aspose-cells/aspose-cells-go-cpp"
+	. "github.com/aspose-cells/aspose-cells-go-cpp/v24"
 )
 
 func ConvertExcelToPdf() {
