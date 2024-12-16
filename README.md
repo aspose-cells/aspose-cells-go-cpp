@@ -76,7 +76,7 @@ A commercial license key is required for use in a production environment. Please
 package main
 
 import (
- . github.com/aspose-cells/aspose-cells-go-cpp
+ . github.com/aspose-cells/aspose-cells-go-cpp/v24
 )
 
 func main() {
@@ -102,7 +102,7 @@ func main() {
 package main
 
 import (
- . github.com/aspose-cells/aspose-cells-go-cpp
+ . github.com/aspose-cells/aspose-cells-go-cpp/v24
 )
 
 func main() {
@@ -171,7 +171,7 @@ func main() {
 package main
 
 import (
- . github.com/aspose-cells/aspose-cells-go-cpp
+ . github.com/aspose-cells/aspose-cells-go-cpp/v24
 )
 
 func main() {
