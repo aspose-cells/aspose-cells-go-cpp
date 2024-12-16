@@ -80,8 +80,8 @@ import (
 )
 
 func main() {
- lic, _ := NewLicense()
- lic.SetLicense_String(os.Getenv("LicensePath"))
+    lic, _ := NewLicense()
+    lic.SetLicense_String(os.Getenv("LicensePath"))
     workbook, _ := NewWorkbook()
     worksheets, _ := workbook.GetWorksheets()
     worksheet, _ := worksheets.Get_Int(0)
@@ -106,7 +106,7 @@ import (
 )
 
 func main() {
-    workbook, _ := NewWorkbook()
+ workbook, _ := NewWorkbook()
  worksheets, _ := workbook.GetWorksheets()
  worksheet, _ := worksheets.Get_Int(0)
  cells, _ := worksheet.GetCells()
