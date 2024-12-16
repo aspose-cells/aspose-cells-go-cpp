@@ -68,18 +68,15 @@ extern "C" {
         int error_no;
         char* error_message;
     } c_return_long_value;
-
     ASPOSE_CELLS_API typedef struct {
         int error_no;
         char* error_message;
     } c_return_void_value;
-
     ASPOSE_CELLS_API typedef struct {
         char* return_value;
         int error_no;
         char* error_message;
     } c_return_string_value;
-
     ASPOSE_CELLS_API typedef struct {
         void* return_value;
         int error_no;
@@ -106,34 +103,30 @@ extern "C" {
         int error_no;
         char* error_message;
     } ASPOSE_CELLS_API c_return_float_value;    
-    ASPOSE_CELLS_API typedef struct {
+    typedef struct {
         double return_value;
         int error_no;
         char* error_message;
-    } c_return_double_value;
+    } ASPOSE_CELLS_API c_return_double_value;
     typedef struct {
         long return_value;
         int error_no;
         char* error_message;
     } ASPOSE_CELLS_API c_return_long_value;
-
     typedef struct {
         int error_no;
         char* error_message;
     } ASPOSE_CELLS_API c_return_void_value;
-
     typedef struct {
         char* return_value;
         int error_no;
         char* error_message;
     } ASPOSE_CELLS_API c_return_string_value;
-
     typedef struct {
         void* return_value;
         int error_no;
         char* error_message;
     } ASPOSE_CELLS_API c_return_ptr_value;
-
 #endif
     ASPOSE_CELLS_API void Startup();
 

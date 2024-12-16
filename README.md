@@ -25,12 +25,10 @@ Aspose.Cells for Go via C++ is a native Go library designed for Go developers to
 |[XLAM](https://docs.fileformat.com/spreadsheet/xlam/)|An Excel Macro-Enabled Add-In file that's used to add new functions to Excel.| |&radic;|
 |[CSV](https://docs.fileformat.com/spreadsheet/csv/)|CSV (Comma Separated Value) file.|&radic;|&radic;|
 |[TSV](https://docs.fileformat.com/spreadsheet/tsv/)|TSV (Tab-separated values) file.|&radic;|&radic;|
-|TabDelimited|Tab-delimited text file, same with TSV file.|&radic;|&radic;|
 |[TXT](https://docs.fileformat.com/word-processing/txt/)|Delimited plain text file.|&radic;|&radic;|
 |[HTML](https://docs.fileformat.com/web/html/)|HTML format.|&radic;|&radic;|
 |[MHTML](https://docs.fileformat.com/web/mhtml/)|MHTML file.|&radic;|&radic;|
 |[ODS](https://docs.fileformat.com/spreadsheet/ods/)|ODS (OpenDocument Spreadsheet).|&radic;|&radic;|
-|SpreadsheetML|Excel 2003 XML file.|&radic;|&radic;|
 |[JSON](https://docs.fileformat.com/web/json/)|JavaScript Object Notation|&radic;|&radic;|
 |[DIF](https://docs.fileformat.com/spreadsheet/dif/)|Data Interchange Format.| |&radic;|
 |[PDF](https://docs.fileformat.com/pdf/)|Adobe Portable Document Format.| |&radic;|
