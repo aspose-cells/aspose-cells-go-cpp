@@ -1,5 +1,7 @@
 // +build windows
 
+// Copyright (c) 2001-2024 Aspose Pty Ltd. All Rights Reserved.
+// Powered by Aspose.Cells.
 package asposecells
 
 // #cgo CXXFLAGS: -std=c++11

@@ -1,3 +1,5 @@
+// Copyright (c) 2001-2024 Aspose Pty Ltd. All Rights Reserved.
+// Powered by Aspose.Cells.
 #include <stdint.h>
 #include <stdbool.h>
 #ifdef _WIN32
