@@ -1,3 +1,4 @@
+//go:build windows
 // +build windows
 
 // Copyright (c) 2001-2024 Aspose Pty Ltd. All Rights Reserved.
@@ -12,7 +13,9 @@ import "C"
 import (
 	"unsafe"
 )
+
 var GlobalVar bool = false
+
 func init() {
 	if GlobalVar == false {
 		GlobalVar = true
@@ -21,8 +24,9 @@ func init() {
 }
 
 func Version() {
-	println("---Version: v24.12.0---")
-} 
+	println("---Version: v24.12.1---")
+}
+
 type UUID struct {
 	ptr unsafe.Pointer
 }
@@ -32,11 +36,11 @@ type Stream struct {
 }
 
 type Vector struct {
-	ptr unsafe.Pointer
+	ptr       unsafe.Pointer
 	data_type string
 }
 
 type Enumerator struct {
-	ptr unsafe.Pointer
+	ptr       unsafe.Pointer
 	data_type string
 }
