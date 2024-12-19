@@ -5,7 +5,7 @@ import (
 )
 
 func ConvertTableToRange() {
-	workbook, err1 := NewWorkbook_String("Data/Input /BookPivotTable.xlsx")
+	workbook, err1 := NewWorkbook_String("Data/Input/BookPivotTable.xlsx")
 	if err1 != nil {
 		println(err1)
 	}
