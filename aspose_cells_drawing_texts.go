@@ -1,6 +1,6 @@
 // +build windows
 
-// Copyright (c) 2001-2024 Aspose Pty Ltd. All Rights Reserved.
+// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
 // Powered by Aspose.Cells.
 package asposecells
 
@@ -484,6 +484,7 @@ func NewAutoNumberedBulletValue_BulletValue(src *BulletValue) ( *AutoNumberedBul
 // Returns:
 //   bool  
 func (instance *AutoNumberedBulletValue) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.AutoNumberedBulletValue_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -497,6 +498,7 @@ func (instance *AutoNumberedBulletValue) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *AutoNumberedBulletValue) GetType()  (BulletType,  error)  {
+	
 	CGoReturnPtr := C.AutoNumberedBulletValue_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -513,6 +515,7 @@ func (instance *AutoNumberedBulletValue) GetType()  (BulletType,  error)  {
 // Returns:
 //   int32  
 func (instance *AutoNumberedBulletValue) GetStartAt()  (int32,  error)  {
+	
 	CGoReturnPtr := C.AutoNumberedBulletValue_GetStartAt( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -528,6 +531,7 @@ func (instance *AutoNumberedBulletValue) GetStartAt()  (int32,  error)  {
 // Returns:
 //   void  
 func (instance *AutoNumberedBulletValue) SetStartAt(value int32)  error {
+	
 	CGoReturnPtr := C.AutoNumberedBulletValue_SetStartAt( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -540,6 +544,7 @@ func (instance *AutoNumberedBulletValue) SetStartAt(value int32)  error {
 // Returns:
 //   int32  
 func (instance *AutoNumberedBulletValue) GetAutonumberScheme()  (TextAutonumberScheme,  error)  {
+	
 	CGoReturnPtr := C.AutoNumberedBulletValue_GetAutonumberScheme( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -558,6 +563,7 @@ func (instance *AutoNumberedBulletValue) GetAutonumberScheme()  (TextAutonumberS
 // Returns:
 //   void  
 func (instance *AutoNumberedBulletValue) SetAutonumberScheme(value TextAutonumberScheme)  error {
+	
 	CGoReturnPtr := C.AutoNumberedBulletValue_SetAutonumberScheme( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -586,6 +592,7 @@ type Bullet struct {
 // Returns:
 //   bool  
 func (instance *Bullet) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.Bullet_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -599,6 +606,7 @@ func (instance *Bullet) IsNull()  (bool,  error)  {
 // Returns:
 //   BulletValue  
 func (instance *Bullet) GetBulletValue()  (*BulletValue,  error)  {
+	
 	CGoReturnPtr := C.Bullet_GetBulletValue( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -614,6 +622,7 @@ func (instance *Bullet) GetBulletValue()  (*BulletValue,  error)  {
 // Returns:
 //   int32  
 func (instance *Bullet) GetType()  (BulletType,  error)  {
+	
 	CGoReturnPtr := C.Bullet_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -632,6 +641,7 @@ func (instance *Bullet) GetType()  (BulletType,  error)  {
 // Returns:
 //   void  
 func (instance *Bullet) SetType(value BulletType)  error {
+	
 	CGoReturnPtr := C.Bullet_SetType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -644,6 +654,7 @@ func (instance *Bullet) SetType(value BulletType)  error {
 // Returns:
 //   string  
 func (instance *Bullet) GetFontName()  (string,  error)  {
+	
 	CGoReturnPtr := C.Bullet_GetFontName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -659,6 +670,7 @@ func (instance *Bullet) GetFontName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *Bullet) SetFontName(value string)  error {
+	
 	CGoReturnPtr := C.Bullet_SetFontName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -687,6 +699,7 @@ type BulletValue struct {
 // Returns:
 //   bool  
 func (instance *BulletValue) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.BulletValue_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -700,6 +713,7 @@ func (instance *BulletValue) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *BulletValue) GetType()  (BulletType,  error)  {
+	
 	CGoReturnPtr := C.BulletValue_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -762,6 +776,7 @@ func NewCharacterBulletValue_BulletValue(src *BulletValue) ( *CharacterBulletVal
 // Returns:
 //   bool  
 func (instance *CharacterBulletValue) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.CharacterBulletValue_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -775,6 +790,7 @@ func (instance *CharacterBulletValue) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *CharacterBulletValue) GetType()  (BulletType,  error)  {
+	
 	CGoReturnPtr := C.CharacterBulletValue_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -791,6 +807,7 @@ func (instance *CharacterBulletValue) GetType()  (BulletType,  error)  {
 // Returns:
 //   byte  
 func (instance *CharacterBulletValue) GetCharacter()  (byte,  error)  {
+	
 	CGoReturnPtr := C.CharacterBulletValue_GetCharacter( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -806,6 +823,7 @@ func (instance *CharacterBulletValue) GetCharacter()  (byte,  error)  {
 // Returns:
 //   void  
 func (instance *CharacterBulletValue) SetCharacter(value byte)  error {
+	
 	CGoReturnPtr := C.CharacterBulletValue_SetCharacter( instance.ptr, C.char(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -834,6 +852,7 @@ type FontSettingCollection struct {
 // Returns:
 //   bool  
 func (instance *FontSettingCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.FontSettingCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -849,6 +868,7 @@ func (instance *FontSettingCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *FontSettingCollection) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
 	CGoReturnPtr := C.FontSettingCollection_SetWordArtStyle( instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -861,6 +881,7 @@ func (instance *FontSettingCollection) SetWordArtStyle(style PresetWordArtStyle)
 // Returns:
 //   ShapeTextAlignment  
 func (instance *FontSettingCollection) GetTextAlignment()  (*ShapeTextAlignment,  error)  {
+	
 	CGoReturnPtr := C.FontSettingCollection_GetTextAlignment( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -876,6 +897,7 @@ func (instance *FontSettingCollection) GetTextAlignment()  (*ShapeTextAlignment,
 // Returns:
 //   TextParagraphCollection  
 func (instance *FontSettingCollection) GetTextParagraphs()  (*TextParagraphCollection,  error)  {
+	
 	CGoReturnPtr := C.FontSettingCollection_GetTextParagraphs( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -891,6 +913,7 @@ func (instance *FontSettingCollection) GetTextParagraphs()  (*TextParagraphColle
 // Returns:
 //   string  
 func (instance *FontSettingCollection) GetText()  (string,  error)  {
+	
 	CGoReturnPtr := C.FontSettingCollection_GetText( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -906,6 +929,7 @@ func (instance *FontSettingCollection) GetText()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *FontSettingCollection) SetText(value string)  error {
+	
 	CGoReturnPtr := C.FontSettingCollection_SetText( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -920,6 +944,7 @@ func (instance *FontSettingCollection) SetText(value string)  error {
 // Returns:
 //   void  
 func (instance *FontSettingCollection) AppendText(text string)  error {
+	
 	CGoReturnPtr := C.FontSettingCollection_AppendText( instance.ptr, C.CString(text))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -935,6 +960,7 @@ func (instance *FontSettingCollection) AppendText(text string)  error {
 // Returns:
 //   void  
 func (instance *FontSettingCollection) InsertText(index int32, text string)  error {
+	
 	CGoReturnPtr := C.FontSettingCollection_InsertText( instance.ptr, C.int(index), C.CString(text))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -951,6 +977,7 @@ func (instance *FontSettingCollection) InsertText(index int32, text string)  err
 // Returns:
 //   void  
 func (instance *FontSettingCollection) Replace_Int_Int_String(index int32, count int32, text string)  error {
+	
 	CGoReturnPtr := C.FontSettingCollection_Replace_Integer_Integer_String( instance.ptr, C.int(index), C.int(count), C.CString(text))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -966,6 +993,7 @@ func (instance *FontSettingCollection) Replace_Int_Int_String(index int32, count
 // Returns:
 //   void  
 func (instance *FontSettingCollection) Replace_String_String(oldvalue string, newvalue string)  error {
+	
 	CGoReturnPtr := C.FontSettingCollection_Replace_String_String( instance.ptr, C.CString(oldvalue), C.CString(newvalue))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -981,6 +1009,7 @@ func (instance *FontSettingCollection) Replace_String_String(oldvalue string, ne
 // Returns:
 //   void  
 func (instance *FontSettingCollection) DeleteText(index int32, count int32)  error {
+	
 	CGoReturnPtr := C.FontSettingCollection_DeleteText( instance.ptr, C.int(index), C.int(count))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -993,6 +1022,7 @@ func (instance *FontSettingCollection) DeleteText(index int32, count int32)  err
 // Returns:
 //   string  
 func (instance *FontSettingCollection) GetHtmlString()  (string,  error)  {
+	
 	CGoReturnPtr := C.FontSettingCollection_GetHtmlString( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1008,6 +1038,7 @@ func (instance *FontSettingCollection) GetHtmlString()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *FontSettingCollection) SetHtmlString(value string)  error {
+	
 	CGoReturnPtr := C.FontSettingCollection_SetHtmlString( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1025,6 +1056,7 @@ func (instance *FontSettingCollection) SetHtmlString(value string)  error {
 // Returns:
 //   void  
 func (instance *FontSettingCollection) Format(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
+	
 	CGoReturnPtr := C.FontSettingCollection_Format( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1039,6 +1071,7 @@ func (instance *FontSettingCollection) Format(startindex int32, length int32, fo
 // Returns:
 //   FontSetting  
 func (instance *FontSettingCollection) Get(index int32)  (*FontSetting,  error)  {
+	
 	CGoReturnPtr := C.FontSettingCollection_Get( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1054,6 +1087,7 @@ func (instance *FontSettingCollection) Get(index int32)  (*FontSetting,  error) 
 // Returns:
 //   void  
 func (instance *FontSettingCollection) Clear()  error {
+	
 	CGoReturnPtr := C.FontSettingCollection_Clear( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1067,6 +1101,7 @@ func (instance *FontSettingCollection) Clear()  error {
 // Returns:
 //   bool  
 func (instance *FontSettingCollection) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.FontSettingCollection_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1079,6 +1114,7 @@ func (instance *FontSettingCollection) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *FontSettingCollection) GetHashCode()  (int32,  error)  {
+	
 	CGoReturnPtr := C.FontSettingCollection_GetHashCode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1091,6 +1127,7 @@ func (instance *FontSettingCollection) GetHashCode()  (int32,  error)  {
 // Returns:
 //   int32  
 func (instance *FontSettingCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.FontSettingCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1150,6 +1187,7 @@ func NewNoneBulletValue_BulletValue(src *BulletValue) ( *NoneBulletValue, error)
 // Returns:
 //   bool  
 func (instance *NoneBulletValue) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.NoneBulletValue_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1163,6 +1201,7 @@ func (instance *NoneBulletValue) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *NoneBulletValue) GetType()  (BulletType,  error)  {
+	
 	CGoReturnPtr := C.NoneBulletValue_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1225,6 +1264,7 @@ func NewPictureBulletValue_BulletValue(src *BulletValue) ( *PictureBulletValue, 
 // Returns:
 //   bool  
 func (instance *PictureBulletValue) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.PictureBulletValue_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1238,6 +1278,7 @@ func (instance *PictureBulletValue) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *PictureBulletValue) GetType()  (BulletType,  error)  {
+	
 	CGoReturnPtr := C.PictureBulletValue_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1249,6 +1290,36 @@ func (instance *PictureBulletValue) GetType()  (BulletType,  error)  {
 	}
 
 	return result, nil 
+}
+// Gets and sets image data of the bullet.
+// Returns:
+//   []byte  
+func (instance *PictureBulletValue) GetImageData()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.PictureBulletValue_GetImageData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Gets and sets image data of the bullet.
+// Parameters:
+//   value - []byte 
+// Returns:
+//   void  
+func (instance *PictureBulletValue) SetImageData(value []byte)  error {
+	
+	CGoReturnPtr := C.PictureBulletValue_SetImageData( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
 }
 
 
@@ -1270,6 +1341,7 @@ type ShapeTextAlignment struct {
 // Returns:
 //   bool  
 func (instance *ShapeTextAlignment) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1283,6 +1355,7 @@ func (instance *ShapeTextAlignment) IsNull()  (bool,  error)  {
 // Returns:
 //   bool  
 func (instance *ShapeTextAlignment) IsTextWrapped()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_IsTextWrapped( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1298,6 +1371,7 @@ func (instance *ShapeTextAlignment) IsTextWrapped()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *ShapeTextAlignment) SetIsTextWrapped(value bool)  error {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_SetIsTextWrapped( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1310,6 +1384,7 @@ func (instance *ShapeTextAlignment) SetIsTextWrapped(value bool)  error {
 // Returns:
 //   bool  
 func (instance *ShapeTextAlignment) GetRotateTextWithShape()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_GetRotateTextWithShape( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1325,6 +1400,7 @@ func (instance *ShapeTextAlignment) GetRotateTextWithShape()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *ShapeTextAlignment) SetRotateTextWithShape(value bool)  error {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_SetRotateTextWithShape( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1337,6 +1413,7 @@ func (instance *ShapeTextAlignment) SetRotateTextWithShape(value bool)  error {
 // Returns:
 //   int32  
 func (instance *ShapeTextAlignment) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_GetTextVerticalOverflow( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1355,6 +1432,7 @@ func (instance *ShapeTextAlignment) GetTextVerticalOverflow()  (TextOverflowType
 // Returns:
 //   void  
 func (instance *ShapeTextAlignment) SetTextVerticalOverflow(value TextOverflowType)  error {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_SetTextVerticalOverflow( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1367,6 +1445,7 @@ func (instance *ShapeTextAlignment) SetTextVerticalOverflow(value TextOverflowTy
 // Returns:
 //   int32  
 func (instance *ShapeTextAlignment) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_GetTextHorizontalOverflow( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1385,6 +1464,7 @@ func (instance *ShapeTextAlignment) GetTextHorizontalOverflow()  (TextOverflowTy
 // Returns:
 //   void  
 func (instance *ShapeTextAlignment) SetTextHorizontalOverflow(value TextOverflowType)  error {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_SetTextHorizontalOverflow( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1397,6 +1477,7 @@ func (instance *ShapeTextAlignment) SetTextHorizontalOverflow(value TextOverflow
 // Returns:
 //   float64  
 func (instance *ShapeTextAlignment) GetRotationAngle()  (float64,  error)  {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_GetRotationAngle( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1412,6 +1493,7 @@ func (instance *ShapeTextAlignment) GetRotationAngle()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *ShapeTextAlignment) SetRotationAngle(value float64)  error {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_SetRotationAngle( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1424,6 +1506,7 @@ func (instance *ShapeTextAlignment) SetRotationAngle(value float64)  error {
 // Returns:
 //   int32  
 func (instance *ShapeTextAlignment) GetTextVerticalType()  (TextVerticalType,  error)  {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_GetTextVerticalType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1442,6 +1525,7 @@ func (instance *ShapeTextAlignment) GetTextVerticalType()  (TextVerticalType,  e
 // Returns:
 //   void  
 func (instance *ShapeTextAlignment) SetTextVerticalType(value TextVerticalType)  error {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_SetTextVerticalType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1454,6 +1538,7 @@ func (instance *ShapeTextAlignment) SetTextVerticalType(value TextVerticalType) 
 // Returns:
 //   bool  
 func (instance *ShapeTextAlignment) IsLockedText()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_IsLockedText( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1469,6 +1554,7 @@ func (instance *ShapeTextAlignment) IsLockedText()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *ShapeTextAlignment) SetIsLockedText(value bool)  error {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_SetIsLockedText( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1481,6 +1567,7 @@ func (instance *ShapeTextAlignment) SetIsLockedText(value bool)  error {
 // Returns:
 //   bool  
 func (instance *ShapeTextAlignment) GetAutoSize()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_GetAutoSize( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1496,6 +1583,7 @@ func (instance *ShapeTextAlignment) GetAutoSize()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *ShapeTextAlignment) SetAutoSize(value bool)  error {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_SetAutoSize( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1508,6 +1596,7 @@ func (instance *ShapeTextAlignment) SetAutoSize(value bool)  error {
 // Returns:
 //   int32  
 func (instance *ShapeTextAlignment) GetTextShapeType()  (AutoShapeType,  error)  {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_GetTextShapeType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1526,6 +1615,7 @@ func (instance *ShapeTextAlignment) GetTextShapeType()  (AutoShapeType,  error) 
 // Returns:
 //   void  
 func (instance *ShapeTextAlignment) SetTextShapeType(value AutoShapeType)  error {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_SetTextShapeType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1538,6 +1628,7 @@ func (instance *ShapeTextAlignment) SetTextShapeType(value AutoShapeType)  error
 // Returns:
 //   float64  
 func (instance *ShapeTextAlignment) GetTopMarginPt()  (float64,  error)  {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_GetTopMarginPt( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1553,6 +1644,7 @@ func (instance *ShapeTextAlignment) GetTopMarginPt()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *ShapeTextAlignment) SetTopMarginPt(value float64)  error {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_SetTopMarginPt( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1565,6 +1657,7 @@ func (instance *ShapeTextAlignment) SetTopMarginPt(value float64)  error {
 // Returns:
 //   float64  
 func (instance *ShapeTextAlignment) GetBottomMarginPt()  (float64,  error)  {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_GetBottomMarginPt( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1580,6 +1673,7 @@ func (instance *ShapeTextAlignment) GetBottomMarginPt()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *ShapeTextAlignment) SetBottomMarginPt(value float64)  error {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_SetBottomMarginPt( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1592,6 +1686,7 @@ func (instance *ShapeTextAlignment) SetBottomMarginPt(value float64)  error {
 // Returns:
 //   float64  
 func (instance *ShapeTextAlignment) GetLeftMarginPt()  (float64,  error)  {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_GetLeftMarginPt( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1607,6 +1702,7 @@ func (instance *ShapeTextAlignment) GetLeftMarginPt()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *ShapeTextAlignment) SetLeftMarginPt(value float64)  error {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_SetLeftMarginPt( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1619,6 +1715,7 @@ func (instance *ShapeTextAlignment) SetLeftMarginPt(value float64)  error {
 // Returns:
 //   float64  
 func (instance *ShapeTextAlignment) GetRightMarginPt()  (float64,  error)  {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_GetRightMarginPt( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1634,6 +1731,7 @@ func (instance *ShapeTextAlignment) GetRightMarginPt()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *ShapeTextAlignment) SetRightMarginPt(value float64)  error {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_SetRightMarginPt( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1646,6 +1744,7 @@ func (instance *ShapeTextAlignment) SetRightMarginPt(value float64)  error {
 // Returns:
 //   bool  
 func (instance *ShapeTextAlignment) IsAutoMargin()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_IsAutoMargin( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1661,6 +1760,7 @@ func (instance *ShapeTextAlignment) IsAutoMargin()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *ShapeTextAlignment) SetIsAutoMargin(value bool)  error {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_SetIsAutoMargin( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1673,6 +1773,7 @@ func (instance *ShapeTextAlignment) SetIsAutoMargin(value bool)  error {
 // Returns:
 //   int32  
 func (instance *ShapeTextAlignment) GetNumberOfColumns()  (int32,  error)  {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_GetNumberOfColumns( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1688,6 +1789,7 @@ func (instance *ShapeTextAlignment) GetNumberOfColumns()  (int32,  error)  {
 // Returns:
 //   void  
 func (instance *ShapeTextAlignment) SetNumberOfColumns(value int32)  error {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_SetNumberOfColumns( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1702,6 +1804,7 @@ func (instance *ShapeTextAlignment) SetNumberOfColumns(value int32)  error {
 // Returns:
 //   bool  
 func (instance *ShapeTextAlignment) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1714,6 +1817,7 @@ func (instance *ShapeTextAlignment) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *ShapeTextAlignment) GetHashCode()  (int32,  error)  {
+	
 	CGoReturnPtr := C.ShapeTextAlignment_GetHashCode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1743,6 +1847,7 @@ type TextBoxOptions struct {
 // Returns:
 //   bool  
 func (instance *TextBoxOptions) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.TextBoxOptions_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1756,6 +1861,7 @@ func (instance *TextBoxOptions) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *TextBoxOptions) GetShapeTextVerticalAlignment()  (ShapeTextVerticalAlignmentType,  error)  {
+	
 	CGoReturnPtr := C.TextBoxOptions_GetShapeTextVerticalAlignment( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1774,6 +1880,7 @@ func (instance *TextBoxOptions) GetShapeTextVerticalAlignment()  (ShapeTextVerti
 // Returns:
 //   void  
 func (instance *TextBoxOptions) SetShapeTextVerticalAlignment(value ShapeTextVerticalAlignmentType)  error {
+	
 	CGoReturnPtr := C.TextBoxOptions_SetShapeTextVerticalAlignment( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1786,6 +1893,7 @@ func (instance *TextBoxOptions) SetShapeTextVerticalAlignment(value ShapeTextVer
 // Returns:
 //   bool  
 func (instance *TextBoxOptions) GetResizeToFitText()  (bool,  error)  {
+	
 	CGoReturnPtr := C.TextBoxOptions_GetResizeToFitText( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1801,6 +1909,7 @@ func (instance *TextBoxOptions) GetResizeToFitText()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *TextBoxOptions) SetResizeToFitText(value bool)  error {
+	
 	CGoReturnPtr := C.TextBoxOptions_SetResizeToFitText( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1814,6 +1923,7 @@ func (instance *TextBoxOptions) SetResizeToFitText(value bool)  error {
 // Returns:
 //   int32  
 func (instance *TextBoxOptions) GetShapeTextDirection()  (TextVerticalType,  error)  {
+	
 	CGoReturnPtr := C.TextBoxOptions_GetShapeTextDirection( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1833,6 +1943,7 @@ func (instance *TextBoxOptions) GetShapeTextDirection()  (TextVerticalType,  err
 // Returns:
 //   void  
 func (instance *TextBoxOptions) SetShapeTextDirection(value TextVerticalType)  error {
+	
 	CGoReturnPtr := C.TextBoxOptions_SetShapeTextDirection( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1845,6 +1956,7 @@ func (instance *TextBoxOptions) SetShapeTextDirection(value TextVerticalType)  e
 // Returns:
 //   float64  
 func (instance *TextBoxOptions) GetLeftMarginPt()  (float64,  error)  {
+	
 	CGoReturnPtr := C.TextBoxOptions_GetLeftMarginPt( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1860,6 +1972,7 @@ func (instance *TextBoxOptions) GetLeftMarginPt()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *TextBoxOptions) SetLeftMarginPt(value float64)  error {
+	
 	CGoReturnPtr := C.TextBoxOptions_SetLeftMarginPt( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1872,6 +1985,7 @@ func (instance *TextBoxOptions) SetLeftMarginPt(value float64)  error {
 // Returns:
 //   float64  
 func (instance *TextBoxOptions) GetRightMarginPt()  (float64,  error)  {
+	
 	CGoReturnPtr := C.TextBoxOptions_GetRightMarginPt( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1887,6 +2001,7 @@ func (instance *TextBoxOptions) GetRightMarginPt()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *TextBoxOptions) SetRightMarginPt(value float64)  error {
+	
 	CGoReturnPtr := C.TextBoxOptions_SetRightMarginPt( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1899,6 +2014,7 @@ func (instance *TextBoxOptions) SetRightMarginPt(value float64)  error {
 // Returns:
 //   float64  
 func (instance *TextBoxOptions) GetTopMarginPt()  (float64,  error)  {
+	
 	CGoReturnPtr := C.TextBoxOptions_GetTopMarginPt( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1914,6 +2030,7 @@ func (instance *TextBoxOptions) GetTopMarginPt()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *TextBoxOptions) SetTopMarginPt(value float64)  error {
+	
 	CGoReturnPtr := C.TextBoxOptions_SetTopMarginPt( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1926,6 +2043,7 @@ func (instance *TextBoxOptions) SetTopMarginPt(value float64)  error {
 // Returns:
 //   float64  
 func (instance *TextBoxOptions) GetBottomMarginPt()  (float64,  error)  {
+	
 	CGoReturnPtr := C.TextBoxOptions_GetBottomMarginPt( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1941,6 +2059,7 @@ func (instance *TextBoxOptions) GetBottomMarginPt()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *TextBoxOptions) SetBottomMarginPt(value float64)  error {
+	
 	CGoReturnPtr := C.TextBoxOptions_SetBottomMarginPt( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1953,6 +2072,7 @@ func (instance *TextBoxOptions) SetBottomMarginPt(value float64)  error {
 // Returns:
 //   bool  
 func (instance *TextBoxOptions) GetAllowTextToOverflow()  (bool,  error)  {
+	
 	CGoReturnPtr := C.TextBoxOptions_GetAllowTextToOverflow( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1968,6 +2088,7 @@ func (instance *TextBoxOptions) GetAllowTextToOverflow()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *TextBoxOptions) SetAllowTextToOverflow(value bool)  error {
+	
 	CGoReturnPtr := C.TextBoxOptions_SetAllowTextToOverflow( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1982,6 +2103,7 @@ func (instance *TextBoxOptions) SetAllowTextToOverflow(value bool)  error {
 // Returns:
 //   bool  
 func (instance *TextBoxOptions) GetWrapTextInShape()  (bool,  error)  {
+	
 	CGoReturnPtr := C.TextBoxOptions_GetWrapTextInShape( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1999,6 +2121,7 @@ func (instance *TextBoxOptions) GetWrapTextInShape()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *TextBoxOptions) SetWrapTextInShape(value bool)  error {
+	
 	CGoReturnPtr := C.TextBoxOptions_SetWrapTextInShape( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2043,6 +2166,7 @@ func NewTextOptions(src *Font) ( *TextOptions, error) {
 // Returns:
 //   bool  
 func (instance *TextOptions) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.TextOptions_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2056,6 +2180,7 @@ func (instance *TextOptions) IsNull()  (bool,  error)  {
 // Returns:
 //   string  
 func (instance *TextOptions) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.TextOptions_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2071,6 +2196,7 @@ func (instance *TextOptions) GetName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *TextOptions) SetName(value string)  error {
+	
 	CGoReturnPtr := C.TextOptions_SetName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2083,6 +2209,7 @@ func (instance *TextOptions) SetName(value string)  error {
 // Returns:
 //   int32  
 func (instance *TextOptions) GetLanguageCode()  (CountryCode,  error)  {
+	
 	CGoReturnPtr := C.TextOptions_GetLanguageCode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2101,6 +2228,7 @@ func (instance *TextOptions) GetLanguageCode()  (CountryCode,  error)  {
 // Returns:
 //   void  
 func (instance *TextOptions) SetLanguageCode(value CountryCode)  error {
+	
 	CGoReturnPtr := C.TextOptions_SetLanguageCode( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2113,6 +2241,7 @@ func (instance *TextOptions) SetLanguageCode(value CountryCode)  error {
 // Returns:
 //   string  
 func (instance *TextOptions) GetLatinName()  (string,  error)  {
+	
 	CGoReturnPtr := C.TextOptions_GetLatinName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2128,6 +2257,7 @@ func (instance *TextOptions) GetLatinName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *TextOptions) SetLatinName(value string)  error {
+	
 	CGoReturnPtr := C.TextOptions_SetLatinName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2140,6 +2270,7 @@ func (instance *TextOptions) SetLatinName(value string)  error {
 // Returns:
 //   string  
 func (instance *TextOptions) GetFarEastName()  (string,  error)  {
+	
 	CGoReturnPtr := C.TextOptions_GetFarEastName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2155,6 +2286,7 @@ func (instance *TextOptions) GetFarEastName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *TextOptions) SetFarEastName(value string)  error {
+	
 	CGoReturnPtr := C.TextOptions_SetFarEastName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2167,6 +2299,7 @@ func (instance *TextOptions) SetFarEastName(value string)  error {
 // Returns:
 //   FillFormat  
 func (instance *TextOptions) GetFill()  (*FillFormat,  error)  {
+	
 	CGoReturnPtr := C.TextOptions_GetFill( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2182,6 +2315,7 @@ func (instance *TextOptions) GetFill()  (*FillFormat,  error)  {
 // Returns:
 //   LineFormat  
 func (instance *TextOptions) GetOutline()  (*LineFormat,  error)  {
+	
 	CGoReturnPtr := C.TextOptions_GetOutline( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2197,6 +2331,7 @@ func (instance *TextOptions) GetOutline()  (*LineFormat,  error)  {
 // Returns:
 //   ShadowEffect  
 func (instance *TextOptions) GetShadow()  (*ShadowEffect,  error)  {
+	
 	CGoReturnPtr := C.TextOptions_GetShadow( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2212,6 +2347,7 @@ func (instance *TextOptions) GetShadow()  (*ShadowEffect,  error)  {
 // Returns:
 //   CellsColor  
 func (instance *TextOptions) GetUnderlineColor()  (*CellsColor,  error)  {
+	
 	CGoReturnPtr := C.TextOptions_GetUnderlineColor( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2229,6 +2365,7 @@ func (instance *TextOptions) GetUnderlineColor()  (*CellsColor,  error)  {
 // Returns:
 //   void  
 func (instance *TextOptions) SetUnderlineColor(value *CellsColor)  error {
+	
 	CGoReturnPtr := C.TextOptions_SetUnderlineColor( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2241,6 +2378,7 @@ func (instance *TextOptions) SetUnderlineColor(value *CellsColor)  error {
 // Returns:
 //   float64  
 func (instance *TextOptions) GetKerning()  (float64,  error)  {
+	
 	CGoReturnPtr := C.TextOptions_GetKerning( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2256,6 +2394,7 @@ func (instance *TextOptions) GetKerning()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *TextOptions) SetKerning(value float64)  error {
+	
 	CGoReturnPtr := C.TextOptions_SetKerning( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2268,6 +2407,7 @@ func (instance *TextOptions) SetKerning(value float64)  error {
 // Returns:
 //   float64  
 func (instance *TextOptions) GetSpacing()  (float64,  error)  {
+	
 	CGoReturnPtr := C.TextOptions_GetSpacing( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2283,6 +2423,7 @@ func (instance *TextOptions) GetSpacing()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *TextOptions) SetSpacing(value float64)  error {
+	
 	CGoReturnPtr := C.TextOptions_SetSpacing( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2327,6 +2468,7 @@ func NewTextParagraph(src *FontSetting) ( *TextParagraph, error) {
 // Returns:
 //   bool  
 func (instance *TextParagraph) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2340,6 +2482,7 @@ func (instance *TextParagraph) IsNull()  (bool,  error)  {
 // Returns:
 //   Bullet  
 func (instance *TextParagraph) GetBullet()  (*Bullet,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetBullet( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2355,6 +2498,7 @@ func (instance *TextParagraph) GetBullet()  (*Bullet,  error)  {
 // Returns:
 //   int32  
 func (instance *TextParagraph) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2371,6 +2515,7 @@ func (instance *TextParagraph) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *TextParagraph) GetLineSpaceSizeType()  (LineSpaceSizeType,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetLineSpaceSizeType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2389,6 +2534,7 @@ func (instance *TextParagraph) GetLineSpaceSizeType()  (LineSpaceSizeType,  erro
 // Returns:
 //   void  
 func (instance *TextParagraph) SetLineSpaceSizeType(value LineSpaceSizeType)  error {
+	
 	CGoReturnPtr := C.TextParagraph_SetLineSpaceSizeType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2401,6 +2547,7 @@ func (instance *TextParagraph) SetLineSpaceSizeType(value LineSpaceSizeType)  er
 // Returns:
 //   float64  
 func (instance *TextParagraph) GetLineSpace()  (float64,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetLineSpace( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2416,6 +2563,7 @@ func (instance *TextParagraph) GetLineSpace()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *TextParagraph) SetLineSpace(value float64)  error {
+	
 	CGoReturnPtr := C.TextParagraph_SetLineSpace( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2428,6 +2576,7 @@ func (instance *TextParagraph) SetLineSpace(value float64)  error {
 // Returns:
 //   int32  
 func (instance *TextParagraph) GetSpaceAfterSizeType()  (LineSpaceSizeType,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetSpaceAfterSizeType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2446,6 +2595,7 @@ func (instance *TextParagraph) GetSpaceAfterSizeType()  (LineSpaceSizeType,  err
 // Returns:
 //   void  
 func (instance *TextParagraph) SetSpaceAfterSizeType(value LineSpaceSizeType)  error {
+	
 	CGoReturnPtr := C.TextParagraph_SetSpaceAfterSizeType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2458,6 +2608,7 @@ func (instance *TextParagraph) SetSpaceAfterSizeType(value LineSpaceSizeType)  e
 // Returns:
 //   float64  
 func (instance *TextParagraph) GetSpaceAfter()  (float64,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetSpaceAfter( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2473,6 +2624,7 @@ func (instance *TextParagraph) GetSpaceAfter()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *TextParagraph) SetSpaceAfter(value float64)  error {
+	
 	CGoReturnPtr := C.TextParagraph_SetSpaceAfter( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2485,6 +2637,7 @@ func (instance *TextParagraph) SetSpaceAfter(value float64)  error {
 // Returns:
 //   int32  
 func (instance *TextParagraph) GetSpaceBeforeSizeType()  (LineSpaceSizeType,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetSpaceBeforeSizeType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2503,6 +2656,7 @@ func (instance *TextParagraph) GetSpaceBeforeSizeType()  (LineSpaceSizeType,  er
 // Returns:
 //   void  
 func (instance *TextParagraph) SetSpaceBeforeSizeType(value LineSpaceSizeType)  error {
+	
 	CGoReturnPtr := C.TextParagraph_SetSpaceBeforeSizeType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2515,6 +2669,7 @@ func (instance *TextParagraph) SetSpaceBeforeSizeType(value LineSpaceSizeType)  
 // Returns:
 //   float64  
 func (instance *TextParagraph) GetSpaceBefore()  (float64,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetSpaceBefore( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2530,6 +2685,7 @@ func (instance *TextParagraph) GetSpaceBefore()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *TextParagraph) SetSpaceBefore(value float64)  error {
+	
 	CGoReturnPtr := C.TextParagraph_SetSpaceBefore( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2542,6 +2698,7 @@ func (instance *TextParagraph) SetSpaceBefore(value float64)  error {
 // Returns:
 //   TextTabStopCollection  
 func (instance *TextParagraph) GetStops()  (*TextTabStopCollection,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetStops( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2557,6 +2714,7 @@ func (instance *TextParagraph) GetStops()  (*TextTabStopCollection,  error)  {
 // Returns:
 //   bool  
 func (instance *TextParagraph) IsLatinLineBreak()  (bool,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_IsLatinLineBreak( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2572,6 +2730,7 @@ func (instance *TextParagraph) IsLatinLineBreak()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *TextParagraph) SetIsLatinLineBreak(value bool)  error {
+	
 	CGoReturnPtr := C.TextParagraph_SetIsLatinLineBreak( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2584,6 +2743,7 @@ func (instance *TextParagraph) SetIsLatinLineBreak(value bool)  error {
 // Returns:
 //   bool  
 func (instance *TextParagraph) IsEastAsianLineBreak()  (bool,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_IsEastAsianLineBreak( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2599,6 +2759,7 @@ func (instance *TextParagraph) IsEastAsianLineBreak()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *TextParagraph) SetIsEastAsianLineBreak(value bool)  error {
+	
 	CGoReturnPtr := C.TextParagraph_SetIsEastAsianLineBreak( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2611,6 +2772,7 @@ func (instance *TextParagraph) SetIsEastAsianLineBreak(value bool)  error {
 // Returns:
 //   bool  
 func (instance *TextParagraph) IsHangingPunctuation()  (bool,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_IsHangingPunctuation( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2626,6 +2788,7 @@ func (instance *TextParagraph) IsHangingPunctuation()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *TextParagraph) SetIsHangingPunctuation(value bool)  error {
+	
 	CGoReturnPtr := C.TextParagraph_SetIsHangingPunctuation( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2638,6 +2801,7 @@ func (instance *TextParagraph) SetIsHangingPunctuation(value bool)  error {
 // Returns:
 //   float64  
 func (instance *TextParagraph) GetRightMargin()  (float64,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetRightMargin( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2653,6 +2817,7 @@ func (instance *TextParagraph) GetRightMargin()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *TextParagraph) SetRightMargin(value float64)  error {
+	
 	CGoReturnPtr := C.TextParagraph_SetRightMargin( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2665,6 +2830,7 @@ func (instance *TextParagraph) SetRightMargin(value float64)  error {
 // Returns:
 //   float64  
 func (instance *TextParagraph) GetLeftMargin()  (float64,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetLeftMargin( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2680,6 +2846,7 @@ func (instance *TextParagraph) GetLeftMargin()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *TextParagraph) SetLeftMargin(value float64)  error {
+	
 	CGoReturnPtr := C.TextParagraph_SetLeftMargin( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2692,6 +2859,7 @@ func (instance *TextParagraph) SetLeftMargin(value float64)  error {
 // Returns:
 //   float64  
 func (instance *TextParagraph) GetFirstLineIndent()  (float64,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetFirstLineIndent( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2707,6 +2875,7 @@ func (instance *TextParagraph) GetFirstLineIndent()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *TextParagraph) SetFirstLineIndent(value float64)  error {
+	
 	CGoReturnPtr := C.TextParagraph_SetFirstLineIndent( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2720,6 +2889,7 @@ func (instance *TextParagraph) SetFirstLineIndent(value float64)  error {
 // Returns:
 //   int32  
 func (instance *TextParagraph) GetFontAlignType()  (TextFontAlignType,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetFontAlignType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2739,6 +2909,7 @@ func (instance *TextParagraph) GetFontAlignType()  (TextFontAlignType,  error)  
 // Returns:
 //   void  
 func (instance *TextParagraph) SetFontAlignType(value TextFontAlignType)  error {
+	
 	CGoReturnPtr := C.TextParagraph_SetFontAlignType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2751,6 +2922,7 @@ func (instance *TextParagraph) SetFontAlignType(value TextFontAlignType)  error 
 // Returns:
 //   int32  
 func (instance *TextParagraph) GetAlignmentType()  (TextAlignmentType,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetAlignmentType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2769,6 +2941,7 @@ func (instance *TextParagraph) GetAlignmentType()  (TextAlignmentType,  error)  
 // Returns:
 //   void  
 func (instance *TextParagraph) SetAlignmentType(value TextAlignmentType)  error {
+	
 	CGoReturnPtr := C.TextParagraph_SetAlignmentType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2781,6 +2954,7 @@ func (instance *TextParagraph) SetAlignmentType(value TextAlignmentType)  error 
 // Returns:
 //   float64  
 func (instance *TextParagraph) GetDefaultTabSize()  (float64,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetDefaultTabSize( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2796,6 +2970,7 @@ func (instance *TextParagraph) GetDefaultTabSize()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *TextParagraph) SetDefaultTabSize(value float64)  error {
+	
 	CGoReturnPtr := C.TextParagraph_SetDefaultTabSize( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2804,10 +2979,33 @@ func (instance *TextParagraph) SetDefaultTabSize(value float64)  error {
 
 	return nil 
 }
+// Gets all text runs in this paragraph.
+// If this paragraph is empty, return paragraph itself.
+// Returns:
+//   []FontSetting  
+func (instance *TextParagraph) GetChildren()  ([]FontSetting,  error)  {
+	
+	CGoReturnPtr := C.TextParagraph_GetChildren( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result:= make([]FontSetting, CGoReturnPtr.column_length)
+	for i := 0; i < int(CGoReturnPtr.column_length); i++ {
+	   offset := uintptr(C.size_t(i)) * uintptr(CGoReturnPtr.size)
+	   goObject := &FontSetting{}
+	   goObject.ptr =unsafe.Pointer(uintptr( unsafe.Pointer(CGoReturnPtr.return_value)) + offset)
+	   result[i] = *goObject
+	}
+	 
+
+	return result, nil 
+}
 // Gets the start index of the characters.
 // Returns:
 //   int32  
 func (instance *TextParagraph) GetStartIndex()  (int32,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetStartIndex( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2821,6 +3019,7 @@ func (instance *TextParagraph) GetStartIndex()  (int32,  error)  {
 // Returns:
 //   int32  
 func (instance *TextParagraph) GetLength()  (int32,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetLength( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2834,6 +3033,7 @@ func (instance *TextParagraph) GetLength()  (int32,  error)  {
 // Returns:
 //   Font  
 func (instance *TextParagraph) GetFont()  (*Font,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetFont( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2851,6 +3051,7 @@ func (instance *TextParagraph) GetFont()  (*Font,  error)  {
 // Returns:
 //   void  
 func (instance *TextParagraph) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
 	CGoReturnPtr := C.TextParagraph_SetWordArtStyle( instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2863,6 +3064,7 @@ func (instance *TextParagraph) SetWordArtStyle(style PresetWordArtStyle)  error 
 // Returns:
 //   TextOptions  
 func (instance *TextParagraph) GetTextOptions()  (*TextOptions,  error)  {
+	
 	CGoReturnPtr := C.TextParagraph_GetTextOptions( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2894,6 +3096,7 @@ type TextParagraphCollection struct {
 // Returns:
 //   bool  
 func (instance *TextParagraphCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.TextParagraphCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2907,6 +3110,7 @@ func (instance *TextParagraphCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *TextParagraphCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.TextParagraphCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2922,6 +3126,7 @@ func (instance *TextParagraphCollection) GetCount()  (int32,  error)  {
 // Returns:
 //   TextParagraph  
 func (instance *TextParagraphCollection) Get(index int32)  (*TextParagraph,  error)  {
+	
 	CGoReturnPtr := C.TextParagraphCollection_Get( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2953,6 +3158,7 @@ type TextTabStop struct {
 // Returns:
 //   bool  
 func (instance *TextTabStop) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.TextTabStop_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2966,6 +3172,7 @@ func (instance *TextTabStop) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *TextTabStop) GetTabAlignment()  (TextTabAlignmentType,  error)  {
+	
 	CGoReturnPtr := C.TextTabStop_GetTabAlignment( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2984,6 +3191,7 @@ func (instance *TextTabStop) GetTabAlignment()  (TextTabAlignmentType,  error)  
 // Returns:
 //   void  
 func (instance *TextTabStop) SetTabAlignment(value TextTabAlignmentType)  error {
+	
 	CGoReturnPtr := C.TextTabStop_SetTabAlignment( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2996,6 +3204,7 @@ func (instance *TextTabStop) SetTabAlignment(value TextTabAlignmentType)  error 
 // Returns:
 //   float64  
 func (instance *TextTabStop) GetTabPosition()  (float64,  error)  {
+	
 	CGoReturnPtr := C.TextTabStop_GetTabPosition( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3011,6 +3220,7 @@ func (instance *TextTabStop) GetTabPosition()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *TextTabStop) SetTabPosition(value float64)  error {
+	
 	CGoReturnPtr := C.TextTabStop_SetTabPosition( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3053,6 +3263,7 @@ func NewTextTabStopCollection() ( *TextTabStopCollection, error) {
 // Returns:
 //   bool  
 func (instance *TextTabStopCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.TextTabStopCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3069,6 +3280,7 @@ func (instance *TextTabStopCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *TextTabStopCollection) Add(tabalignment TextTabAlignmentType, tabposition float64)  (int32,  error)  {
+	
 	CGoReturnPtr := C.TextTabStopCollection_Add( instance.ptr, C.int( int32(tabalignment)), C.double(tabposition))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3084,6 +3296,7 @@ func (instance *TextTabStopCollection) Add(tabalignment TextTabAlignmentType, ta
 // Returns:
 //   TextTabStop  
 func (instance *TextTabStopCollection) Get(index int32)  (*TextTabStop,  error)  {
+	
 	CGoReturnPtr := C.TextTabStopCollection_Get( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3098,6 +3311,7 @@ func (instance *TextTabStopCollection) Get(index int32)  (*TextTabStop,  error) 
 // Returns:
 //   int32  
 func (instance *TextTabStopCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.TextTabStopCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	

@@ -1,6 +1,6 @@
 // +build windows
 
-// Copyright (c) 2001-2024 Aspose Pty Ltd. All Rights Reserved.
+// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
 // Powered by Aspose.Cells.
 package asposecells
 
@@ -159,6 +159,7 @@ type Slicer struct {
 // Returns:
 //   bool  
 func (instance *Slicer) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.Slicer_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -174,6 +175,7 @@ func (instance *Slicer) IsNull()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) AddPivotConnection(pivot *PivotTable)  error {
+	
 	CGoReturnPtr := C.Slicer_AddPivotConnection( instance.ptr, pivot.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -188,6 +190,7 @@ func (instance *Slicer) AddPivotConnection(pivot *PivotTable)  error {
 // Returns:
 //   void  
 func (instance *Slicer) RemovePivotConnection(pivot *PivotTable)  error {
+	
 	CGoReturnPtr := C.Slicer_RemovePivotConnection( instance.ptr, pivot.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -200,6 +203,7 @@ func (instance *Slicer) RemovePivotConnection(pivot *PivotTable)  error {
 // Returns:
 //   string  
 func (instance *Slicer) GetTitle()  (string,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetTitle( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -215,6 +219,7 @@ func (instance *Slicer) GetTitle()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetTitle(value string)  error {
+	
 	CGoReturnPtr := C.Slicer_SetTitle( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -227,6 +232,7 @@ func (instance *Slicer) SetTitle(value string)  error {
 // Returns:
 //   string  
 func (instance *Slicer) GetAlternativeText()  (string,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetAlternativeText( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -242,6 +248,7 @@ func (instance *Slicer) GetAlternativeText()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetAlternativeText(value string)  error {
+	
 	CGoReturnPtr := C.Slicer_SetAlternativeText( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -254,6 +261,7 @@ func (instance *Slicer) SetAlternativeText(value string)  error {
 // Returns:
 //   bool  
 func (instance *Slicer) IsPrintable()  (bool,  error)  {
+	
 	CGoReturnPtr := C.Slicer_IsPrintable( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -269,6 +277,7 @@ func (instance *Slicer) IsPrintable()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetIsPrintable(value bool)  error {
+	
 	CGoReturnPtr := C.Slicer_SetIsPrintable( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -281,6 +290,7 @@ func (instance *Slicer) SetIsPrintable(value bool)  error {
 // Returns:
 //   bool  
 func (instance *Slicer) IsLocked()  (bool,  error)  {
+	
 	CGoReturnPtr := C.Slicer_IsLocked( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -296,6 +306,7 @@ func (instance *Slicer) IsLocked()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetIsLocked(value bool)  error {
+	
 	CGoReturnPtr := C.Slicer_SetIsLocked( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -309,6 +320,7 @@ func (instance *Slicer) SetIsLocked(value bool)  error {
 // Returns:
 //   int32  
 func (instance *Slicer) GetPlacement()  (PlacementType,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetPlacement( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -328,6 +340,7 @@ func (instance *Slicer) GetPlacement()  (PlacementType,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetPlacement(value PlacementType)  error {
+	
 	CGoReturnPtr := C.Slicer_SetPlacement( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -340,6 +353,7 @@ func (instance *Slicer) SetPlacement(value PlacementType)  error {
 // Returns:
 //   bool  
 func (instance *Slicer) GetLockedAspectRatio()  (bool,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetLockedAspectRatio( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -355,6 +369,7 @@ func (instance *Slicer) GetLockedAspectRatio()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetLockedAspectRatio(value bool)  error {
+	
 	CGoReturnPtr := C.Slicer_SetLockedAspectRatio( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -367,6 +382,7 @@ func (instance *Slicer) SetLockedAspectRatio(value bool)  error {
 // Returns:
 //   bool  
 func (instance *Slicer) GetLockedPosition()  (bool,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetLockedPosition( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -382,6 +398,7 @@ func (instance *Slicer) GetLockedPosition()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetLockedPosition(value bool)  error {
+	
 	CGoReturnPtr := C.Slicer_SetLockedPosition( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -394,6 +411,7 @@ func (instance *Slicer) SetLockedPosition(value bool)  error {
 // Returns:
 //   void  
 func (instance *Slicer) Refresh()  error {
+	
 	CGoReturnPtr := C.Slicer_Refresh( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -406,6 +424,7 @@ func (instance *Slicer) Refresh()  error {
 // Returns:
 //   SlicerCache  
 func (instance *Slicer) GetSlicerCache()  (*SlicerCache,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetSlicerCache( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -421,6 +440,7 @@ func (instance *Slicer) GetSlicerCache()  (*SlicerCache,  error)  {
 // Returns:
 //   Worksheet  
 func (instance *Slicer) GetParent()  (*Worksheet,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetParent( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -437,6 +457,7 @@ func (instance *Slicer) GetParent()  (*Worksheet,  error)  {
 // Returns:
 //   int32  
 func (instance *Slicer) GetStyleType()  (SlicerStyleType,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetStyleType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -456,6 +477,7 @@ func (instance *Slicer) GetStyleType()  (SlicerStyleType,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetStyleType(value SlicerStyleType)  error {
+	
 	CGoReturnPtr := C.Slicer_SetStyleType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -468,6 +490,7 @@ func (instance *Slicer) SetStyleType(value SlicerStyleType)  error {
 // Returns:
 //   string  
 func (instance *Slicer) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -483,6 +506,7 @@ func (instance *Slicer) GetName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetName(value string)  error {
+	
 	CGoReturnPtr := C.Slicer_SetName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -495,6 +519,7 @@ func (instance *Slicer) SetName(value string)  error {
 // Returns:
 //   string  
 func (instance *Slicer) GetCaption()  (string,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetCaption( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -510,6 +535,7 @@ func (instance *Slicer) GetCaption()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetCaption(value string)  error {
+	
 	CGoReturnPtr := C.Slicer_SetCaption( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -523,6 +549,7 @@ func (instance *Slicer) SetCaption(value string)  error {
 // Returns:
 //   bool  
 func (instance *Slicer) GetCaptionVisible()  (bool,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetCaptionVisible( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -539,6 +566,7 @@ func (instance *Slicer) GetCaptionVisible()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetCaptionVisible(value bool)  error {
+	
 	CGoReturnPtr := C.Slicer_SetCaptionVisible( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -551,6 +579,7 @@ func (instance *Slicer) SetCaptionVisible(value bool)  error {
 // Returns:
 //   int32  
 func (instance *Slicer) GetNumberOfColumns()  (int32,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetNumberOfColumns( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -566,6 +595,7 @@ func (instance *Slicer) GetNumberOfColumns()  (int32,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetNumberOfColumns(value int32)  error {
+	
 	CGoReturnPtr := C.Slicer_SetNumberOfColumns( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -578,6 +608,7 @@ func (instance *Slicer) SetNumberOfColumns(value int32)  error {
 // Returns:
 //   int32  
 func (instance *Slicer) GetLeftPixel()  (int32,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetLeftPixel( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -593,6 +624,7 @@ func (instance *Slicer) GetLeftPixel()  (int32,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetLeftPixel(value int32)  error {
+	
 	CGoReturnPtr := C.Slicer_SetLeftPixel( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -605,6 +637,7 @@ func (instance *Slicer) SetLeftPixel(value int32)  error {
 // Returns:
 //   int32  
 func (instance *Slicer) GetTopPixel()  (int32,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetTopPixel( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -620,6 +653,7 @@ func (instance *Slicer) GetTopPixel()  (int32,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetTopPixel(value int32)  error {
+	
 	CGoReturnPtr := C.Slicer_SetTopPixel( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -632,6 +666,7 @@ func (instance *Slicer) SetTopPixel(value int32)  error {
 // Returns:
 //   float64  
 func (instance *Slicer) GetWidth()  (float64,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetWidth( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -647,6 +682,7 @@ func (instance *Slicer) GetWidth()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetWidth(value float64)  error {
+	
 	CGoReturnPtr := C.Slicer_SetWidth( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -659,6 +695,7 @@ func (instance *Slicer) SetWidth(value float64)  error {
 // Returns:
 //   int32  
 func (instance *Slicer) GetWidthPixel()  (int32,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetWidthPixel( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -674,6 +711,7 @@ func (instance *Slicer) GetWidthPixel()  (int32,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetWidthPixel(value int32)  error {
+	
 	CGoReturnPtr := C.Slicer_SetWidthPixel( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -686,6 +724,7 @@ func (instance *Slicer) SetWidthPixel(value int32)  error {
 // Returns:
 //   float64  
 func (instance *Slicer) GetHeight()  (float64,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetHeight( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -701,6 +740,7 @@ func (instance *Slicer) GetHeight()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetHeight(value float64)  error {
+	
 	CGoReturnPtr := C.Slicer_SetHeight( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -713,6 +753,7 @@ func (instance *Slicer) SetHeight(value float64)  error {
 // Returns:
 //   int32  
 func (instance *Slicer) GetHeightPixel()  (int32,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetHeightPixel( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -728,6 +769,7 @@ func (instance *Slicer) GetHeightPixel()  (int32,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetHeightPixel(value int32)  error {
+	
 	CGoReturnPtr := C.Slicer_SetHeightPixel( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -740,6 +782,7 @@ func (instance *Slicer) SetHeightPixel(value int32)  error {
 // Returns:
 //   int32  
 func (instance *Slicer) GetColumnWidthPixel()  (int32,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetColumnWidthPixel( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -755,6 +798,7 @@ func (instance *Slicer) GetColumnWidthPixel()  (int32,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetColumnWidthPixel(value int32)  error {
+	
 	CGoReturnPtr := C.Slicer_SetColumnWidthPixel( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -767,6 +811,7 @@ func (instance *Slicer) SetColumnWidthPixel(value int32)  error {
 // Returns:
 //   float64  
 func (instance *Slicer) GetColumnWidth()  (float64,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetColumnWidth( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -782,6 +827,7 @@ func (instance *Slicer) GetColumnWidth()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetColumnWidth(value float64)  error {
+	
 	CGoReturnPtr := C.Slicer_SetColumnWidth( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -794,6 +840,7 @@ func (instance *Slicer) SetColumnWidth(value float64)  error {
 // Returns:
 //   int32  
 func (instance *Slicer) GetRowHeightPixel()  (int32,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetRowHeightPixel( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -809,6 +856,7 @@ func (instance *Slicer) GetRowHeightPixel()  (int32,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetRowHeightPixel(value int32)  error {
+	
 	CGoReturnPtr := C.Slicer_SetRowHeightPixel( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -821,6 +869,7 @@ func (instance *Slicer) SetRowHeightPixel(value int32)  error {
 // Returns:
 //   float64  
 func (instance *Slicer) GetRowHeight()  (float64,  error)  {
+	
 	CGoReturnPtr := C.Slicer_GetRowHeight( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -836,6 +885,7 @@ func (instance *Slicer) GetRowHeight()  (float64,  error)  {
 // Returns:
 //   void  
 func (instance *Slicer) SetRowHeight(value float64)  error {
+	
 	CGoReturnPtr := C.Slicer_SetRowHeight( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -864,6 +914,7 @@ type SlicerCache struct {
 // Returns:
 //   bool  
 func (instance *SlicerCache) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.SlicerCache_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -878,6 +929,7 @@ func (instance *SlicerCache) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *SlicerCache) GetCrossFilterType()  (SlicerCacheCrossFilterType,  error)  {
+	
 	CGoReturnPtr := C.SlicerCache_GetCrossFilterType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -897,6 +949,7 @@ func (instance *SlicerCache) GetCrossFilterType()  (SlicerCacheCrossFilterType, 
 // Returns:
 //   void  
 func (instance *SlicerCache) SetCrossFilterType(value SlicerCacheCrossFilterType)  error {
+	
 	CGoReturnPtr := C.SlicerCache_SetCrossFilterType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -909,6 +962,7 @@ func (instance *SlicerCache) SetCrossFilterType(value SlicerCacheCrossFilterType
 // Returns:
 //   bool  
 func (instance *SlicerCache) GetList()  (bool,  error)  {
+	
 	CGoReturnPtr := C.SlicerCache_GetList( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -922,6 +976,7 @@ func (instance *SlicerCache) GetList()  (bool,  error)  {
 // Returns:
 //   SlicerCacheItemCollection  
 func (instance *SlicerCache) GetSlicerCacheItems()  (*SlicerCacheItemCollection,  error)  {
+	
 	CGoReturnPtr := C.SlicerCache_GetSlicerCacheItems( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -937,6 +992,7 @@ func (instance *SlicerCache) GetSlicerCacheItems()  (*SlicerCacheItemCollection,
 // Returns:
 //   string  
 func (instance *SlicerCache) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.SlicerCache_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -950,6 +1006,7 @@ func (instance *SlicerCache) GetName()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *SlicerCache) GetSourceName()  (string,  error)  {
+	
 	CGoReturnPtr := C.SlicerCache_GetSourceName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -979,6 +1036,7 @@ type SlicerCacheItem struct {
 // Returns:
 //   bool  
 func (instance *SlicerCacheItem) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.SlicerCacheItem_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -992,6 +1050,7 @@ func (instance *SlicerCacheItem) IsNull()  (bool,  error)  {
 // Returns:
 //   bool  
 func (instance *SlicerCacheItem) GetSelected()  (bool,  error)  {
+	
 	CGoReturnPtr := C.SlicerCacheItem_GetSelected( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1007,6 +1066,7 @@ func (instance *SlicerCacheItem) GetSelected()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *SlicerCacheItem) SetSelected(value bool)  error {
+	
 	CGoReturnPtr := C.SlicerCacheItem_SetSelected( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1019,6 +1079,7 @@ func (instance *SlicerCacheItem) SetSelected(value bool)  error {
 // Returns:
 //   string  
 func (instance *SlicerCacheItem) GetValue()  (string,  error)  {
+	
 	CGoReturnPtr := C.SlicerCacheItem_GetValue( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1048,6 +1109,7 @@ type SlicerCacheItemCollection struct {
 // Returns:
 //   bool  
 func (instance *SlicerCacheItemCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.SlicerCacheItemCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1063,6 +1125,7 @@ func (instance *SlicerCacheItemCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   SlicerCacheItem  
 func (instance *SlicerCacheItemCollection) Get(index int32)  (*SlicerCacheItem,  error)  {
+	
 	CGoReturnPtr := C.SlicerCacheItemCollection_Get( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1078,6 +1141,7 @@ func (instance *SlicerCacheItemCollection) Get(index int32)  (*SlicerCacheItem, 
 // Returns:
 //   int32  
 func (instance *SlicerCacheItemCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.SlicerCacheItemCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1107,6 +1171,7 @@ type SlicerCollection struct {
 // Returns:
 //   bool  
 func (instance *SlicerCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.SlicerCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1122,6 +1187,7 @@ func (instance *SlicerCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   Slicer  
 func (instance *SlicerCollection) Get_Int(index int32)  (*Slicer,  error)  {
+	
 	CGoReturnPtr := C.SlicerCollection_Get_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1139,6 +1205,7 @@ func (instance *SlicerCollection) Get_Int(index int32)  (*Slicer,  error)  {
 // Returns:
 //   Slicer  
 func (instance *SlicerCollection) Get_String(name string)  (*Slicer,  error)  {
+	
 	CGoReturnPtr := C.SlicerCollection_Get_String( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1156,6 +1223,7 @@ func (instance *SlicerCollection) Get_String(name string)  (*Slicer,  error)  {
 // Returns:
 //   void  
 func (instance *SlicerCollection) Remove(slicer *Slicer)  error {
+	
 	CGoReturnPtr := C.SlicerCollection_Remove( instance.ptr, slicer.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1170,6 +1238,7 @@ func (instance *SlicerCollection) Remove(slicer *Slicer)  error {
 // Returns:
 //   void  
 func (instance *SlicerCollection) RemoveAt(index int32)  error {
+	
 	CGoReturnPtr := C.SlicerCollection_RemoveAt( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1182,6 +1251,7 @@ func (instance *SlicerCollection) RemoveAt(index int32)  error {
 // Returns:
 //   void  
 func (instance *SlicerCollection) Clear()  error {
+	
 	CGoReturnPtr := C.SlicerCollection_Clear( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1198,6 +1268,7 @@ func (instance *SlicerCollection) Clear()  error {
 // Returns:
 //   int32  
 func (instance *SlicerCollection) Add_PivotTable_String_String(pivot *PivotTable, destcellname string, basefieldname string)  (int32,  error)  {
+	
 	CGoReturnPtr := C.SlicerCollection_Add_PivotTable_String_String( instance.ptr, pivot.ptr, C.CString(destcellname), C.CString(basefieldname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1216,6 +1287,7 @@ func (instance *SlicerCollection) Add_PivotTable_String_String(pivot *PivotTable
 // Returns:
 //   int32  
 func (instance *SlicerCollection) Add_PivotTable_Int_Int_String(pivot *PivotTable, row int32, column int32, basefieldname string)  (int32,  error)  {
+	
 	CGoReturnPtr := C.SlicerCollection_Add_PivotTable_Integer_Integer_String( instance.ptr, pivot.ptr, C.int(row), C.int(column), C.CString(basefieldname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1234,6 +1306,7 @@ func (instance *SlicerCollection) Add_PivotTable_Int_Int_String(pivot *PivotTabl
 // Returns:
 //   int32  
 func (instance *SlicerCollection) Add_PivotTable_Int_Int_Int(pivot *PivotTable, row int32, column int32, basefieldindex int32)  (int32,  error)  {
+	
 	CGoReturnPtr := C.SlicerCollection_Add_PivotTable_Integer_Integer_Integer( instance.ptr, pivot.ptr, C.int(row), C.int(column), C.int(basefieldindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1251,6 +1324,7 @@ func (instance *SlicerCollection) Add_PivotTable_Int_Int_Int(pivot *PivotTable, 
 // Returns:
 //   int32  
 func (instance *SlicerCollection) Add_PivotTable_String_Int(pivot *PivotTable, destcellname string, basefieldindex int32)  (int32,  error)  {
+	
 	CGoReturnPtr := C.SlicerCollection_Add_PivotTable_String_Integer( instance.ptr, pivot.ptr, C.CString(destcellname), C.int(basefieldindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1269,6 +1343,7 @@ func (instance *SlicerCollection) Add_PivotTable_String_Int(pivot *PivotTable, d
 // Returns:
 //   int32  
 func (instance *SlicerCollection) Add_PivotTable_Int_Int_PivotField(pivot *PivotTable, row int32, column int32, basefield *PivotField)  (int32,  error)  {
+	
 	CGoReturnPtr := C.SlicerCollection_Add_PivotTable_Integer_Integer_PivotField( instance.ptr, pivot.ptr, C.int(row), C.int(column), basefield.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1286,6 +1361,7 @@ func (instance *SlicerCollection) Add_PivotTable_Int_Int_PivotField(pivot *Pivot
 // Returns:
 //   int32  
 func (instance *SlicerCollection) Add_PivotTable_String_PivotField(pivot *PivotTable, destcellname string, basefield *PivotField)  (int32,  error)  {
+	
 	CGoReturnPtr := C.SlicerCollection_Add_PivotTable_String_PivotField( instance.ptr, pivot.ptr, C.CString(destcellname), basefield.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1303,6 +1379,7 @@ func (instance *SlicerCollection) Add_PivotTable_String_PivotField(pivot *PivotT
 // Returns:
 //   int32  
 func (instance *SlicerCollection) Add_ListObject_Int_String(table *ListObject, index int32, destcellname string)  (int32,  error)  {
+	
 	CGoReturnPtr := C.SlicerCollection_Add_ListObject_Integer_String( instance.ptr, table.ptr, C.int(index), C.CString(destcellname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1320,6 +1397,7 @@ func (instance *SlicerCollection) Add_ListObject_Int_String(table *ListObject, i
 // Returns:
 //   int32  
 func (instance *SlicerCollection) Add_ListObject_ListColumn_String(table *ListObject, listcolumn *ListColumn, destcellname string)  (int32,  error)  {
+	
 	CGoReturnPtr := C.SlicerCollection_Add_ListObject_ListColumn_String( instance.ptr, table.ptr, listcolumn.ptr, C.CString(destcellname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1338,6 +1416,7 @@ func (instance *SlicerCollection) Add_ListObject_ListColumn_String(table *ListOb
 // Returns:
 //   int32  
 func (instance *SlicerCollection) Add_ListObject_ListColumn_Int_Int(table *ListObject, listcolumn *ListColumn, row int32, column int32)  (int32,  error)  {
+	
 	CGoReturnPtr := C.SlicerCollection_Add_ListObject_ListColumn_Integer_Integer( instance.ptr, table.ptr, listcolumn.ptr, C.int(row), C.int(column))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1350,6 +1429,7 @@ func (instance *SlicerCollection) Add_ListObject_ListColumn_Int_Int(table *ListO
 // Returns:
 //   int32  
 func (instance *SlicerCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.SlicerCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	

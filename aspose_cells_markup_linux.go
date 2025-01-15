@@ -1,6 +1,6 @@
 // +build linux
 
-// Copyright (c) 2001-2024 Aspose Pty Ltd. All Rights Reserved.
+// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
 // Powered by Aspose.Cells.
 package asposecells
 
@@ -17,6 +17,7 @@ import (
 )
 
 /**************Enum SmartTagShowType *****************/
+
 // Represents the show type of the smart tag.
 type SmartTagShowType int32
 
@@ -52,6 +53,7 @@ type CustomXmlPart struct {
 // Returns:
 //   bool  
 func (instance *CustomXmlPart) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.CustomXmlPart_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -61,10 +63,71 @@ func (instance *CustomXmlPart) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
+// Gets or sets the XML content of this Custom XML Data Storage Part.
+// Returns:
+//   []byte  
+func (instance *CustomXmlPart) GetData()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.CustomXmlPart_GetData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Gets or sets the XML content of this Custom XML Data Storage Part.
+// Parameters:
+//   value - []byte 
+// Returns:
+//   void  
+func (instance *CustomXmlPart) SetData(value []byte)  error {
+	
+	CGoReturnPtr := C.CustomXmlPart_SetData( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the XML content of this Custom XML Schema Data Storage Part.
+// Returns:
+//   []byte  
+func (instance *CustomXmlPart) GetSchemaData()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.CustomXmlPart_GetSchemaData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Gets or sets the XML content of this Custom XML Schema Data Storage Part.
+// Parameters:
+//   value - []byte 
+// Returns:
+//   void  
+func (instance *CustomXmlPart) SetSchemaData(value []byte)  error {
+	
+	CGoReturnPtr := C.CustomXmlPart_SetSchemaData( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Gets and sets the id of the custom xml part.
 // Returns:
 //   string  
 func (instance *CustomXmlPart) GetID()  (string,  error)  {
+	
 	CGoReturnPtr := C.CustomXmlPart_GetID( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -80,6 +143,7 @@ func (instance *CustomXmlPart) GetID()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *CustomXmlPart) SetID(value string)  error {
+	
 	CGoReturnPtr := C.CustomXmlPart_SetID( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -108,6 +172,7 @@ type CustomXmlPartCollection struct {
 // Returns:
 //   bool  
 func (instance *CustomXmlPartCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.CustomXmlPartCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -117,12 +182,30 @@ func (instance *CustomXmlPartCollection) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
+// Adds an item to the collection.
+// Parameters:
+//   data - []byte 
+//   shemaData - []byte 
+// Returns:
+//   int32  
+func (instance *CustomXmlPartCollection) Add(data []byte, shemadata []byte)  (int32,  error)  {
+	
+	CGoReturnPtr := C.CustomXmlPartCollection_Add( instance.ptr, unsafe.Pointer(&data[0]), C.int( len(data)), unsafe.Pointer(&shemadata[0]), C.int( len(shemadata)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
 // Gets an item at the specified index.
 // Parameters:
 //   index - int32 
 // Returns:
 //   CustomXmlPart  
 func (instance *CustomXmlPartCollection) Get(index int32)  (*CustomXmlPart,  error)  {
+	
 	CGoReturnPtr := C.CustomXmlPartCollection_Get( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -140,6 +223,7 @@ func (instance *CustomXmlPartCollection) Get(index int32)  (*CustomXmlPart,  err
 // Returns:
 //   CustomXmlPart  
 func (instance *CustomXmlPartCollection) SelectByID(id string)  (*CustomXmlPart,  error)  {
+	
 	CGoReturnPtr := C.CustomXmlPartCollection_SelectByID( instance.ptr, C.CString(id))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -154,6 +238,7 @@ func (instance *CustomXmlPartCollection) SelectByID(id string)  (*CustomXmlPart,
 // Returns:
 //   int32  
 func (instance *CustomXmlPartCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.CustomXmlPartCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -183,6 +268,7 @@ type SmartTag struct {
 // Returns:
 //   bool  
 func (instance *SmartTag) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.SmartTag_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -196,6 +282,7 @@ func (instance *SmartTag) IsNull()  (bool,  error)  {
 // Returns:
 //   bool  
 func (instance *SmartTag) GetDeleted()  (bool,  error)  {
+	
 	CGoReturnPtr := C.SmartTag_GetDeleted( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -211,6 +298,7 @@ func (instance *SmartTag) GetDeleted()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *SmartTag) SetDeleted(value bool)  error {
+	
 	CGoReturnPtr := C.SmartTag_SetDeleted( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -223,6 +311,7 @@ func (instance *SmartTag) SetDeleted(value bool)  error {
 // Returns:
 //   SmartTagPropertyCollection  
 func (instance *SmartTag) GetProperties()  (*SmartTagPropertyCollection,  error)  {
+	
 	CGoReturnPtr := C.SmartTag_GetProperties( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -240,6 +329,7 @@ func (instance *SmartTag) GetProperties()  (*SmartTagPropertyCollection,  error)
 // Returns:
 //   void  
 func (instance *SmartTag) SetProperties(value *SmartTagPropertyCollection)  error {
+	
 	CGoReturnPtr := C.SmartTag_SetProperties( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -252,6 +342,7 @@ func (instance *SmartTag) SetProperties(value *SmartTagPropertyCollection)  erro
 // Returns:
 //   string  
 func (instance *SmartTag) GetUri()  (string,  error)  {
+	
 	CGoReturnPtr := C.SmartTag_GetUri( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -265,6 +356,7 @@ func (instance *SmartTag) GetUri()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *SmartTag) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.SmartTag_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -281,6 +373,7 @@ func (instance *SmartTag) GetName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *SmartTag) SetLink(uri string, name string)  error {
+	
 	CGoReturnPtr := C.SmartTag_SetLink( instance.ptr, C.CString(uri), C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -309,6 +402,7 @@ type SmartTagCollection struct {
 // Returns:
 //   bool  
 func (instance *SmartTagCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.SmartTagCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -322,6 +416,7 @@ func (instance *SmartTagCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *SmartTagCollection) GetRow()  (int32,  error)  {
+	
 	CGoReturnPtr := C.SmartTagCollection_GetRow( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -335,6 +430,7 @@ func (instance *SmartTagCollection) GetRow()  (int32,  error)  {
 // Returns:
 //   int32  
 func (instance *SmartTagCollection) GetColumn()  (int32,  error)  {
+	
 	CGoReturnPtr := C.SmartTagCollection_GetColumn( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -350,6 +446,7 @@ func (instance *SmartTagCollection) GetColumn()  (int32,  error)  {
 // Returns:
 //   SmartTag  
 func (instance *SmartTagCollection) Get(index int32)  (*SmartTag,  error)  {
+	
 	CGoReturnPtr := C.SmartTagCollection_Get( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -368,6 +465,7 @@ func (instance *SmartTagCollection) Get(index int32)  (*SmartTag,  error)  {
 // Returns:
 //   int32  
 func (instance *SmartTagCollection) Add(uri string, name string)  (int32,  error)  {
+	
 	CGoReturnPtr := C.SmartTagCollection_Add( instance.ptr, C.CString(uri), C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -380,6 +478,7 @@ func (instance *SmartTagCollection) Add(uri string, name string)  (int32,  error
 // Returns:
 //   int32  
 func (instance *SmartTagCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.SmartTagCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -423,6 +522,7 @@ func NewSmartTagOptions() ( *SmartTagOptions, error) {
 // Returns:
 //   bool  
 func (instance *SmartTagOptions) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.SmartTagOptions_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -436,6 +536,7 @@ func (instance *SmartTagOptions) IsNull()  (bool,  error)  {
 // Returns:
 //   bool  
 func (instance *SmartTagOptions) GetEmbedSmartTags()  (bool,  error)  {
+	
 	CGoReturnPtr := C.SmartTagOptions_GetEmbedSmartTags( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -451,6 +552,7 @@ func (instance *SmartTagOptions) GetEmbedSmartTags()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *SmartTagOptions) SetEmbedSmartTags(value bool)  error {
+	
 	CGoReturnPtr := C.SmartTagOptions_SetEmbedSmartTags( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -463,6 +565,7 @@ func (instance *SmartTagOptions) SetEmbedSmartTags(value bool)  error {
 // Returns:
 //   int32  
 func (instance *SmartTagOptions) GetShowType()  (SmartTagShowType,  error)  {
+	
 	CGoReturnPtr := C.SmartTagOptions_GetShowType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -481,6 +584,7 @@ func (instance *SmartTagOptions) GetShowType()  (SmartTagShowType,  error)  {
 // Returns:
 //   void  
 func (instance *SmartTagOptions) SetShowType(value SmartTagShowType)  error {
+	
 	CGoReturnPtr := C.SmartTagOptions_SetShowType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -509,6 +613,7 @@ type SmartTagProperty struct {
 // Returns:
 //   bool  
 func (instance *SmartTagProperty) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.SmartTagProperty_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -522,6 +627,7 @@ func (instance *SmartTagProperty) IsNull()  (bool,  error)  {
 // Returns:
 //   string  
 func (instance *SmartTagProperty) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.SmartTagProperty_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -537,6 +643,7 @@ func (instance *SmartTagProperty) GetName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *SmartTagProperty) SetName(value string)  error {
+	
 	CGoReturnPtr := C.SmartTagProperty_SetName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -549,6 +656,7 @@ func (instance *SmartTagProperty) SetName(value string)  error {
 // Returns:
 //   string  
 func (instance *SmartTagProperty) GetValue()  (string,  error)  {
+	
 	CGoReturnPtr := C.SmartTagProperty_GetValue( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -564,6 +672,7 @@ func (instance *SmartTagProperty) GetValue()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *SmartTagProperty) SetValue(value string)  error {
+	
 	CGoReturnPtr := C.SmartTagProperty_SetValue( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -606,6 +715,7 @@ func NewSmartTagPropertyCollection() ( *SmartTagPropertyCollection, error) {
 // Returns:
 //   bool  
 func (instance *SmartTagPropertyCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.SmartTagPropertyCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -621,6 +731,7 @@ func (instance *SmartTagPropertyCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   SmartTagProperty  
 func (instance *SmartTagPropertyCollection) Get_Int(index int32)  (*SmartTagProperty,  error)  {
+	
 	CGoReturnPtr := C.SmartTagPropertyCollection_Get_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -638,6 +749,7 @@ func (instance *SmartTagPropertyCollection) Get_Int(index int32)  (*SmartTagProp
 // Returns:
 //   SmartTagProperty  
 func (instance *SmartTagPropertyCollection) Get_String(name string)  (*SmartTagProperty,  error)  {
+	
 	CGoReturnPtr := C.SmartTagPropertyCollection_Get_String( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -656,6 +768,7 @@ func (instance *SmartTagPropertyCollection) Get_String(name string)  (*SmartTagP
 // Returns:
 //   int32  
 func (instance *SmartTagPropertyCollection) Add(name string, value string)  (int32,  error)  {
+	
 	CGoReturnPtr := C.SmartTagPropertyCollection_Add( instance.ptr, C.CString(name), C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -668,6 +781,7 @@ func (instance *SmartTagPropertyCollection) Add(name string, value string)  (int
 // Returns:
 //   int32  
 func (instance *SmartTagPropertyCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.SmartTagPropertyCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -697,6 +811,7 @@ type SmartTagSetting struct {
 // Returns:
 //   bool  
 func (instance *SmartTagSetting) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.SmartTagSetting_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -713,6 +828,7 @@ func (instance *SmartTagSetting) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *SmartTagSetting) Add_Int_Int(row int32, column int32)  (int32,  error)  {
+	
 	CGoReturnPtr := C.SmartTagSetting_Add_Integer_Integer( instance.ptr, C.int(row), C.int(column))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -728,6 +844,7 @@ func (instance *SmartTagSetting) Add_Int_Int(row int32, column int32)  (int32,  
 // Returns:
 //   int32  
 func (instance *SmartTagSetting) Add_String(cellname string)  (int32,  error)  {
+	
 	CGoReturnPtr := C.SmartTagSetting_Add_String( instance.ptr, C.CString(cellname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -743,6 +860,7 @@ func (instance *SmartTagSetting) Add_String(cellname string)  (int32,  error)  {
 // Returns:
 //   SmartTagCollection  
 func (instance *SmartTagSetting) Get_Int(index int32)  (*SmartTagCollection,  error)  {
+	
 	CGoReturnPtr := C.SmartTagSetting_Get_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -761,6 +879,7 @@ func (instance *SmartTagSetting) Get_Int(index int32)  (*SmartTagCollection,  er
 // Returns:
 //   SmartTagCollection  
 func (instance *SmartTagSetting) Get_Int_Int(row int32, column int32)  (*SmartTagCollection,  error)  {
+	
 	CGoReturnPtr := C.SmartTagSetting_Get_Integer_Integer( instance.ptr, C.int(row), C.int(column))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -778,6 +897,7 @@ func (instance *SmartTagSetting) Get_Int_Int(row int32, column int32)  (*SmartTa
 // Returns:
 //   SmartTagCollection  
 func (instance *SmartTagSetting) Get_String(cellname string)  (*SmartTagCollection,  error)  {
+	
 	CGoReturnPtr := C.SmartTagSetting_Get_String( instance.ptr, C.CString(cellname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -792,6 +912,7 @@ func (instance *SmartTagSetting) Get_String(cellname string)  (*SmartTagCollecti
 // Returns:
 //   int32  
 func (instance *SmartTagSetting) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.SmartTagSetting_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	

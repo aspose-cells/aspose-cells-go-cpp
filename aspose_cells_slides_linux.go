@@ -1,6 +1,6 @@
 // +build linux
 
-// Copyright (c) 2001-2024 Aspose Pty Ltd. All Rights Reserved.
+// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
 // Powered by Aspose.Cells.
 package asposecells
 
@@ -14,6 +14,7 @@ import (
 )
 
 /**************Enum AdjustFontSizeForRowType *****************/
+
 // Represents which kind of rows should be ajusted.
 type AdjustFontSizeForRowType int32
 
@@ -35,6 +36,7 @@ func Int32ToAdjustFontSizeForRowType(value int32)(AdjustFontSizeForRowType ,erro
 }
 
 /**************Enum SlideViewType *****************/
+
 // Represents the type when exporting to slides.
 type SlideViewType int32
 

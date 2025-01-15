@@ -1,6 +1,6 @@
 // +build linux
 
-// Copyright (c) 2001-2024 Aspose Pty Ltd. All Rights Reserved.
+// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
 // Powered by Aspose.Cells.
 package asposecells
 
@@ -17,6 +17,7 @@ import (
 )
 
 /**************Enum XAdESType *****************/
+
 // Type of XML Advanced Electronic Signature (XAdES).
 type XAdESType int32
 
@@ -45,13 +46,32 @@ type DigitalSignature struct {
 
 // Constructor of DigitalSignature.
 // Parameters:
+//   rawData - []byte 
+//   password - string 
+//   comments - string 
+//   signTime - Date 
+func NewDigitalSignature_Stream_String_String_Date(rawdata []byte, password string, comments string, signtime *Date) ( *DigitalSignature, error) {
+	digitalsignature := &DigitalSignature{}
+	CGoReturnPtr := C.New_DigitalSignature_Stream_String_String_Date(unsafe.Pointer(&rawdata[0]), C.int( len(rawdata)), C.CString(password), C.CString(comments), signtime.ptr)
+	if CGoReturnPtr.error_no == 0 {
+		digitalsignature.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(digitalsignature, DeleteDigitalSignature)
+		return digitalsignature, nil
+	} else {
+		digitalsignature.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return digitalsignature, err
+	}	
+}
+// Constructor of DigitalSignature.
+// Parameters:
 //   fileName - string 
 //   password - string 
 //   comments - string 
 //   signTime - Date 
-func NewDigitalSignature(filename string, password string, comments string, signtime *Date) ( *DigitalSignature, error) {
+func NewDigitalSignature_String_String_String_Date(filename string, password string, comments string, signtime *Date) ( *DigitalSignature, error) {
 	digitalsignature := &DigitalSignature{}
-	CGoReturnPtr := C.New_DigitalSignature(C.CString(filename), C.CString(password), C.CString(comments), signtime.ptr)
+	CGoReturnPtr := C.New_DigitalSignature_String_String_String_Date(C.CString(filename), C.CString(password), C.CString(comments), signtime.ptr)
 	if CGoReturnPtr.error_no == 0 {
 		digitalsignature.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(digitalsignature, DeleteDigitalSignature)
@@ -67,6 +87,7 @@ func NewDigitalSignature(filename string, password string, comments string, sign
 // Returns:
 //   bool  
 func (instance *DigitalSignature) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DigitalSignature_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -80,6 +101,7 @@ func (instance *DigitalSignature) IsNull()  (bool,  error)  {
 // Returns:
 //   string  
 func (instance *DigitalSignature) GetComments()  (string,  error)  {
+	
 	CGoReturnPtr := C.DigitalSignature_GetComments( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -95,6 +117,7 @@ func (instance *DigitalSignature) GetComments()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DigitalSignature) SetComments(value string)  error {
+	
 	CGoReturnPtr := C.DigitalSignature_SetComments( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -107,6 +130,7 @@ func (instance *DigitalSignature) SetComments(value string)  error {
 // Returns:
 //   Date  
 func (instance *DigitalSignature) GetSignTime()  (*Date,  error)  {
+	
 	CGoReturnPtr := C.DigitalSignature_GetSignTime( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -123,6 +147,7 @@ func (instance *DigitalSignature) GetSignTime()  (*Date,  error)  {
 // Returns:
 //   void  
 func (instance *DigitalSignature) SetSignTime(value *Date)  error {
+	
 	CGoReturnPtr := C.DigitalSignature_SetSignTime( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -138,6 +163,7 @@ func (instance *DigitalSignature) SetSignTime(value *Date)  error {
 // Returns:
 //   void  
 func (instance *DigitalSignature) GetId(uuid *UUID)  error {
+	
 	CGoReturnPtr := C.DigitalSignature_GetId( instance.ptr, uuid.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -153,6 +179,7 @@ func (instance *DigitalSignature) GetId(uuid *UUID)  error {
 // Returns:
 //   void  
 func (instance *DigitalSignature) SetId(value *UUID)  error {
+	
 	CGoReturnPtr := C.DigitalSignature_SetId( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -166,6 +193,7 @@ func (instance *DigitalSignature) SetId(value *UUID)  error {
 // Returns:
 //   string  
 func (instance *DigitalSignature) GetText()  (string,  error)  {
+	
 	CGoReturnPtr := C.DigitalSignature_GetText( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -182,7 +210,40 @@ func (instance *DigitalSignature) GetText()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DigitalSignature) SetText(value string)  error {
+	
 	CGoReturnPtr := C.DigitalSignature_SetText( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Specifies an image for the digital signature.
+// Default value is null.
+// Returns:
+//   []byte  
+func (instance *DigitalSignature) GetImage()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.DigitalSignature_GetImage( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Specifies an image for the digital signature.
+// Default value is null.
+// Parameters:
+//   value - []byte 
+// Returns:
+//   void  
+func (instance *DigitalSignature) SetImage(value []byte)  error {
+	
+	CGoReturnPtr := C.DigitalSignature_SetImage( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -197,6 +258,7 @@ func (instance *DigitalSignature) SetText(value string)  error {
 // Returns:
 //   void  
 func (instance *DigitalSignature) GetProviderId(uuid *UUID)  error {
+	
 	CGoReturnPtr := C.DigitalSignature_GetProviderId( instance.ptr, uuid.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -212,6 +274,7 @@ func (instance *DigitalSignature) GetProviderId(uuid *UUID)  error {
 // Returns:
 //   void  
 func (instance *DigitalSignature) SetProviderId(value *UUID)  error {
+	
 	CGoReturnPtr := C.DigitalSignature_SetProviderId( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -225,6 +288,7 @@ func (instance *DigitalSignature) SetProviderId(value *UUID)  error {
 // Returns:
 //   bool  
 func (instance *DigitalSignature) IsValid()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DigitalSignature_IsValid( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -239,6 +303,7 @@ func (instance *DigitalSignature) IsValid()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *DigitalSignature) GetXAdESType()  (XAdESType,  error)  {
+	
 	CGoReturnPtr := C.DigitalSignature_GetXAdESType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -258,6 +323,7 @@ func (instance *DigitalSignature) GetXAdESType()  (XAdESType,  error)  {
 // Returns:
 //   void  
 func (instance *DigitalSignature) SetXAdESType(value XAdESType)  error {
+	
 	CGoReturnPtr := C.DigitalSignature_SetXAdESType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -300,6 +366,7 @@ func NewDigitalSignatureCollection() ( *DigitalSignatureCollection, error) {
 // Returns:
 //   bool  
 func (instance *DigitalSignatureCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DigitalSignatureCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -315,6 +382,7 @@ func (instance *DigitalSignatureCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *DigitalSignatureCollection) Add(digitalsignature *DigitalSignature)  error {
+	
 	CGoReturnPtr := C.DigitalSignatureCollection_Add( instance.ptr, digitalsignature.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	

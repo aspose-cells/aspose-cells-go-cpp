@@ -1,6 +1,6 @@
 // +build windows
 
-// Copyright (c) 2001-2024 Aspose Pty Ltd. All Rights Reserved.
+// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
 // Powered by Aspose.Cells.
 package asposecells
 
@@ -53,6 +53,7 @@ type DataMashup struct {
 // Returns:
 //   bool  
 func (instance *DataMashup) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DataMashup_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -66,6 +67,7 @@ func (instance *DataMashup) IsNull()  (bool,  error)  {
 // Returns:
 //   PowerQueryFormulaCollection  
 func (instance *DataMashup) GetPowerQueryFormulas()  (*PowerQueryFormulaCollection,  error)  {
+	
 	CGoReturnPtr := C.DataMashup_GetPowerQueryFormulas( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -97,6 +99,7 @@ type PowerQueryFormula struct {
 // Returns:
 //   bool  
 func (instance *PowerQueryFormula) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormula_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -110,6 +113,7 @@ func (instance *PowerQueryFormula) IsNull()  (bool,  error)  {
 // Returns:
 //   string  
 func (instance *PowerQueryFormula) GetGroupName()  (string,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormula_GetGroupName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -123,6 +127,7 @@ func (instance *PowerQueryFormula) GetGroupName()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *PowerQueryFormula) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormula_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -138,6 +143,7 @@ func (instance *PowerQueryFormula) GetName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *PowerQueryFormula) SetName(value string)  error {
+	
 	CGoReturnPtr := C.PowerQueryFormula_SetName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -150,6 +156,7 @@ func (instance *PowerQueryFormula) SetName(value string)  error {
 // Returns:
 //   PowerQueryFormulaItemCollection  
 func (instance *PowerQueryFormula) GetPowerQueryFormulaItems()  (*PowerQueryFormulaItemCollection,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormula_GetPowerQueryFormulaItems( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -165,6 +172,7 @@ func (instance *PowerQueryFormula) GetPowerQueryFormulaItems()  (*PowerQueryForm
 // Returns:
 //   int32  
 func (instance *PowerQueryFormula) GetType()  (PowerQueryFormulaType,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormula_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -181,6 +189,7 @@ func (instance *PowerQueryFormula) GetType()  (PowerQueryFormulaType,  error)  {
 // Returns:
 //   string  
 func (instance *PowerQueryFormula) GetFormulaDefinition()  (string,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormula_GetFormulaDefinition( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -210,6 +219,7 @@ type PowerQueryFormulaCollection struct {
 // Returns:
 //   bool  
 func (instance *PowerQueryFormulaCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -225,6 +235,7 @@ func (instance *PowerQueryFormulaCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   PowerQueryFormula  
 func (instance *PowerQueryFormulaCollection) Get_Int(index int32)  (*PowerQueryFormula,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaCollection_Get_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -242,6 +253,7 @@ func (instance *PowerQueryFormulaCollection) Get_Int(index int32)  (*PowerQueryF
 // Returns:
 //   PowerQueryFormula  
 func (instance *PowerQueryFormulaCollection) Get_String(name string)  (*PowerQueryFormula,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaCollection_Get_String( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -256,6 +268,7 @@ func (instance *PowerQueryFormulaCollection) Get_String(name string)  (*PowerQue
 // Returns:
 //   int32  
 func (instance *PowerQueryFormulaCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -301,6 +314,7 @@ func NewPowerQueryFormulaFunction(src *PowerQueryFormula) ( *PowerQueryFormulaFu
 // Returns:
 //   bool  
 func (instance *PowerQueryFormulaFunction) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaFunction_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -314,6 +328,7 @@ func (instance *PowerQueryFormulaFunction) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *PowerQueryFormulaFunction) GetType()  (PowerQueryFormulaType,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaFunction_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -330,6 +345,7 @@ func (instance *PowerQueryFormulaFunction) GetType()  (PowerQueryFormulaType,  e
 // Returns:
 //   string  
 func (instance *PowerQueryFormulaFunction) GetF()  (string,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaFunction_GetF( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -345,6 +361,7 @@ func (instance *PowerQueryFormulaFunction) GetF()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *PowerQueryFormulaFunction) SetF(value string)  error {
+	
 	CGoReturnPtr := C.PowerQueryFormulaFunction_SetF( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -357,6 +374,7 @@ func (instance *PowerQueryFormulaFunction) SetF(value string)  error {
 // Returns:
 //   string  
 func (instance *PowerQueryFormulaFunction) GetGroupName()  (string,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaFunction_GetGroupName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -370,6 +388,7 @@ func (instance *PowerQueryFormulaFunction) GetGroupName()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *PowerQueryFormulaFunction) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaFunction_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -385,6 +404,7 @@ func (instance *PowerQueryFormulaFunction) GetName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *PowerQueryFormulaFunction) SetName(value string)  error {
+	
 	CGoReturnPtr := C.PowerQueryFormulaFunction_SetName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -397,6 +417,7 @@ func (instance *PowerQueryFormulaFunction) SetName(value string)  error {
 // Returns:
 //   PowerQueryFormulaItemCollection  
 func (instance *PowerQueryFormulaFunction) GetPowerQueryFormulaItems()  (*PowerQueryFormulaItemCollection,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaFunction_GetPowerQueryFormulaItems( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -412,6 +433,7 @@ func (instance *PowerQueryFormulaFunction) GetPowerQueryFormulaItems()  (*PowerQ
 // Returns:
 //   string  
 func (instance *PowerQueryFormulaFunction) GetFormulaDefinition()  (string,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaFunction_GetFormulaDefinition( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -441,6 +463,7 @@ type PowerQueryFormulaItem struct {
 // Returns:
 //   bool  
 func (instance *PowerQueryFormulaItem) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaItem_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -454,6 +477,7 @@ func (instance *PowerQueryFormulaItem) IsNull()  (bool,  error)  {
 // Returns:
 //   string  
 func (instance *PowerQueryFormulaItem) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaItem_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -467,6 +491,7 @@ func (instance *PowerQueryFormulaItem) GetName()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *PowerQueryFormulaItem) GetValue()  (string,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaItem_GetValue( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -482,6 +507,7 @@ func (instance *PowerQueryFormulaItem) GetValue()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *PowerQueryFormulaItem) SetValue(value string)  error {
+	
 	CGoReturnPtr := C.PowerQueryFormulaItem_SetValue( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -510,6 +536,7 @@ type PowerQueryFormulaItemCollection struct {
 // Returns:
 //   bool  
 func (instance *PowerQueryFormulaItemCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaItemCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -525,6 +552,7 @@ func (instance *PowerQueryFormulaItemCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   PowerQueryFormulaItem  
 func (instance *PowerQueryFormulaItemCollection) Get_Int(index int32)  (*PowerQueryFormulaItem,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaItemCollection_Get_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -542,6 +570,7 @@ func (instance *PowerQueryFormulaItemCollection) Get_Int(index int32)  (*PowerQu
 // Returns:
 //   PowerQueryFormulaItem  
 func (instance *PowerQueryFormulaItemCollection) Get_String(name string)  (*PowerQueryFormulaItem,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaItemCollection_Get_String( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -556,6 +585,7 @@ func (instance *PowerQueryFormulaItemCollection) Get_String(name string)  (*Powe
 // Returns:
 //   int32  
 func (instance *PowerQueryFormulaItemCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaItemCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -601,6 +631,7 @@ func NewPowerQueryFormulaParameter(src *PowerQueryFormula) ( *PowerQueryFormulaP
 // Returns:
 //   bool  
 func (instance *PowerQueryFormulaParameter) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaParameter_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -614,6 +645,7 @@ func (instance *PowerQueryFormulaParameter) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *PowerQueryFormulaParameter) GetType()  (PowerQueryFormulaType,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaParameter_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -630,6 +662,7 @@ func (instance *PowerQueryFormulaParameter) GetType()  (PowerQueryFormulaType,  
 // Returns:
 //   string  
 func (instance *PowerQueryFormulaParameter) GetValue()  (string,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaParameter_GetValue( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -645,6 +678,7 @@ func (instance *PowerQueryFormulaParameter) GetValue()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *PowerQueryFormulaParameter) SetValue(value string)  error {
+	
 	CGoReturnPtr := C.PowerQueryFormulaParameter_SetValue( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -657,6 +691,7 @@ func (instance *PowerQueryFormulaParameter) SetValue(value string)  error {
 // Returns:
 //   string  
 func (instance *PowerQueryFormulaParameter) GetFormulaDefinition()  (string,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaParameter_GetFormulaDefinition( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -670,6 +705,7 @@ func (instance *PowerQueryFormulaParameter) GetFormulaDefinition()  (string,  er
 // Returns:
 //   string  
 func (instance *PowerQueryFormulaParameter) GetGroupName()  (string,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaParameter_GetGroupName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -683,6 +719,7 @@ func (instance *PowerQueryFormulaParameter) GetGroupName()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *PowerQueryFormulaParameter) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaParameter_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -698,6 +735,7 @@ func (instance *PowerQueryFormulaParameter) GetName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *PowerQueryFormulaParameter) SetName(value string)  error {
+	
 	CGoReturnPtr := C.PowerQueryFormulaParameter_SetName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -710,6 +748,7 @@ func (instance *PowerQueryFormulaParameter) SetName(value string)  error {
 // Returns:
 //   PowerQueryFormulaItemCollection  
 func (instance *PowerQueryFormulaParameter) GetPowerQueryFormulaItems()  (*PowerQueryFormulaItemCollection,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaParameter_GetPowerQueryFormulaItems( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -755,6 +794,7 @@ func NewPowerQueryFormulaParameterCollection() ( *PowerQueryFormulaParameterColl
 // Returns:
 //   bool  
 func (instance *PowerQueryFormulaParameterCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaParameterCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -770,6 +810,7 @@ func (instance *PowerQueryFormulaParameterCollection) IsNull()  (bool,  error)  
 // Returns:
 //   PowerQueryFormulaParameter  
 func (instance *PowerQueryFormulaParameterCollection) Get_Int(index int32)  (*PowerQueryFormulaParameter,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaParameterCollection_Get_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -787,6 +828,7 @@ func (instance *PowerQueryFormulaParameterCollection) Get_Int(index int32)  (*Po
 // Returns:
 //   PowerQueryFormulaParameter  
 func (instance *PowerQueryFormulaParameterCollection) Get_String(name string)  (*PowerQueryFormulaParameter,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaParameterCollection_Get_String( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -801,6 +843,7 @@ func (instance *PowerQueryFormulaParameterCollection) Get_String(name string)  (
 // Returns:
 //   int32  
 func (instance *PowerQueryFormulaParameterCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.PowerQueryFormulaParameterCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	

@@ -1,6 +1,6 @@
 // +build windows
 
-// Copyright (c) 2001-2024 Aspose Pty Ltd. All Rights Reserved.
+// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
 // Powered by Aspose.Cells.
 package asposecells
 
@@ -81,6 +81,7 @@ func NewBuiltInDocumentPropertyCollection(src *DocumentPropertyCollection) ( *Bu
 // Returns:
 //   bool  
 func (instance *BuiltInDocumentPropertyCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -96,6 +97,7 @@ func (instance *BuiltInDocumentPropertyCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   DocumentProperty  
 func (instance *BuiltInDocumentPropertyCollection) Get_String(name string)  (*DocumentProperty,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_Get_String( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -113,6 +115,7 @@ func (instance *BuiltInDocumentPropertyCollection) Get_String(name string)  (*Do
 // Returns:
 //   DocumentProperty  
 func (instance *BuiltInDocumentPropertyCollection) Get_Int(index int32)  (*DocumentProperty,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_Get_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -128,6 +131,7 @@ func (instance *BuiltInDocumentPropertyCollection) Get_Int(index int32)  (*Docum
 // Returns:
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetLanguage()  (string,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetLanguage( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -143,6 +147,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetLanguage()  (string,  erro
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetLanguage(value string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetLanguage( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -155,6 +160,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetLanguage(value string)  er
 // Returns:
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetAuthor()  (string,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetAuthor( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -170,6 +176,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetAuthor()  (string,  error)
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetAuthor(value string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetAuthor( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -182,6 +189,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetAuthor(value string)  erro
 // Returns:
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetComments()  (string,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetComments( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -197,6 +205,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetComments()  (string,  erro
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetComments(value string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetComments( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -209,6 +218,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetComments(value string)  er
 // Returns:
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetCategory()  (string,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetCategory( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -224,6 +234,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetCategory()  (string,  erro
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetCategory(value string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetCategory( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -236,6 +247,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetCategory(value string)  er
 // Returns:
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetContentType()  (string,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetContentType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -251,6 +263,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetContentType()  (string,  e
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetContentType(value string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetContentType( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -263,6 +276,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetContentType(value string) 
 // Returns:
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetContentStatus()  (string,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetContentStatus( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -278,6 +292,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetContentStatus()  (string, 
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetContentStatus(value string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetContentStatus( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -290,6 +305,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetContentStatus(value string
 // Returns:
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetCompany()  (string,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetCompany( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -305,6 +321,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetCompany()  (string,  error
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetCompany(value string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetCompany( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -317,6 +334,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetCompany(value string)  err
 // Returns:
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetHyperlinkBase()  (string,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetHyperlinkBase( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -332,6 +350,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetHyperlinkBase()  (string, 
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetHyperlinkBase(value string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetHyperlinkBase( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -344,6 +363,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetHyperlinkBase(value string
 // Returns:
 //   Date  
 func (instance *BuiltInDocumentPropertyCollection) GetCreatedTime()  (*Date,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetCreatedTime( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -360,6 +380,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetCreatedTime()  (*Date,  er
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetCreatedTime(value *Date)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetCreatedTime( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -372,6 +393,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetCreatedTime(value *Date)  
 // Returns:
 //   Date  
 func (instance *BuiltInDocumentPropertyCollection) GetCreatedUniversalTime()  (*Date,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetCreatedUniversalTime( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -388,6 +410,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetCreatedUniversalTime()  (*
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetCreatedUniversalTime(value *Date)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetCreatedUniversalTime( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -400,6 +423,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetCreatedUniversalTime(value
 // Returns:
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetKeywords()  (string,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetKeywords( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -415,6 +439,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetKeywords()  (string,  erro
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetKeywords(value string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetKeywords( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -427,6 +452,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetKeywords(value string)  er
 // Returns:
 //   Date  
 func (instance *BuiltInDocumentPropertyCollection) GetLastPrinted()  (*Date,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetLastPrinted( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -443,6 +469,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetLastPrinted()  (*Date,  er
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetLastPrinted(value *Date)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetLastPrinted( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -455,6 +482,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetLastPrinted(value *Date)  
 // Returns:
 //   Date  
 func (instance *BuiltInDocumentPropertyCollection) GetLastPrintedUniversalTime()  (*Date,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetLastPrintedUniversalTime( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -471,6 +499,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetLastPrintedUniversalTime()
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetLastPrintedUniversalTime(value *Date)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetLastPrintedUniversalTime( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -483,6 +512,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetLastPrintedUniversalTime(v
 // Returns:
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetLastSavedBy()  (string,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetLastSavedBy( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -498,6 +528,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetLastSavedBy()  (string,  e
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetLastSavedBy(value string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetLastSavedBy( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -510,6 +541,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetLastSavedBy(value string) 
 // Returns:
 //   Date  
 func (instance *BuiltInDocumentPropertyCollection) GetLastSavedTime()  (*Date,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetLastSavedTime( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -526,6 +558,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetLastSavedTime()  (*Date,  
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetLastSavedTime(value *Date)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetLastSavedTime( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -538,6 +571,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetLastSavedTime(value *Date)
 // Returns:
 //   Date  
 func (instance *BuiltInDocumentPropertyCollection) GetLastSavedUniversalTime()  (*Date,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetLastSavedUniversalTime( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -554,6 +588,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetLastSavedUniversalTime()  
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetLastSavedUniversalTime(value *Date)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetLastSavedUniversalTime( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -566,6 +601,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetLastSavedUniversalTime(val
 // Returns:
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetManager()  (string,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetManager( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -581,6 +617,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetManager()  (string,  error
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetManager(value string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetManager( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -593,6 +630,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetManager(value string)  err
 // Returns:
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetNameOfApplication()  (string,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetNameOfApplication( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -608,6 +646,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetNameOfApplication()  (stri
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetNameOfApplication(value string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetNameOfApplication( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -620,6 +659,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetNameOfApplication(value st
 // Returns:
 //   int32  
 func (instance *BuiltInDocumentPropertyCollection) GetPages()  (int32,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetPages( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -635,6 +675,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetPages()  (int32,  error)  
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetPages(value int32)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetPages( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -647,6 +688,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetPages(value int32)  error 
 // Returns:
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetRevisionNumber()  (string,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetRevisionNumber( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -662,6 +704,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetRevisionNumber()  (string,
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetRevisionNumber(value string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetRevisionNumber( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -674,6 +717,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetRevisionNumber(value strin
 // Returns:
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetSubject()  (string,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetSubject( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -689,6 +733,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetSubject()  (string,  error
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetSubject(value string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetSubject( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -701,6 +746,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetSubject(value string)  err
 // Returns:
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetTemplate()  (string,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetTemplate( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -716,6 +762,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetTemplate()  (string,  erro
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetTemplate(value string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetTemplate( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -728,6 +775,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetTemplate(value string)  er
 // Returns:
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetTitle()  (string,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetTitle( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -743,6 +791,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetTitle()  (string,  error) 
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetTitle(value string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetTitle( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -755,6 +804,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetTitle(value string)  error
 // Returns:
 //   float64  
 func (instance *BuiltInDocumentPropertyCollection) GetTotalEditingTime()  (float64,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetTotalEditingTime( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -770,6 +820,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetTotalEditingTime()  (float
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetTotalEditingTime(value float64)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetTotalEditingTime( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -782,6 +833,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetTotalEditingTime(value flo
 // Returns:
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetVersion()  (string,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetVersion( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -797,6 +849,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetVersion()  (string,  error
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetVersion(value string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetVersion( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -809,6 +862,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetVersion(value string)  err
 // Returns:
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetDocumentVersion()  (string,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetDocumentVersion( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -824,6 +878,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetDocumentVersion()  (string
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetDocumentVersion(value string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetDocumentVersion( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -836,6 +891,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetDocumentVersion(value stri
 // Returns:
 //   bool  
 func (instance *BuiltInDocumentPropertyCollection) GetScaleCrop()  (bool,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetScaleCrop( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -851,6 +907,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetScaleCrop()  (bool,  error
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetScaleCrop(value bool)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetScaleCrop( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -863,6 +920,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetScaleCrop(value bool)  err
 // Returns:
 //   bool  
 func (instance *BuiltInDocumentPropertyCollection) GetLinksUpToDate()  (bool,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetLinksUpToDate( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -878,6 +936,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetLinksUpToDate()  (bool,  e
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetLinksUpToDate(value bool)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetLinksUpToDate( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -890,6 +949,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetLinksUpToDate(value bool) 
 // Returns:
 //   int32  
 func (instance *BuiltInDocumentPropertyCollection) GetWords()  (int32,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetWords( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -905,6 +965,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetWords()  (int32,  error)  
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetWords(value int32)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_SetWords( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -919,6 +980,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetWords(value int32)  error 
 // Returns:
 //   bool  
 func (instance *BuiltInDocumentPropertyCollection) Contains(name string)  (bool,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_Contains( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -934,6 +996,7 @@ func (instance *BuiltInDocumentPropertyCollection) Contains(name string)  (bool,
 // Returns:
 //   int32  
 func (instance *BuiltInDocumentPropertyCollection) IndexOf(name string)  (int32,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_IndexOf( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -949,6 +1012,7 @@ func (instance *BuiltInDocumentPropertyCollection) IndexOf(name string)  (int32,
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) Remove(name string)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_Remove( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -963,6 +1027,7 @@ func (instance *BuiltInDocumentPropertyCollection) Remove(name string)  error {
 // Returns:
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) RemoveAt(index int32)  error {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_RemoveAt( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -974,6 +1039,7 @@ func (instance *BuiltInDocumentPropertyCollection) RemoveAt(index int32)  error 
 // Returns:
 //   int32  
 func (instance *BuiltInDocumentPropertyCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.BuiltInDocumentPropertyCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1003,6 +1069,7 @@ type ContentTypeProperty struct {
 // Returns:
 //   bool  
 func (instance *ContentTypeProperty) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ContentTypeProperty_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1016,6 +1083,7 @@ func (instance *ContentTypeProperty) IsNull()  (bool,  error)  {
 // Returns:
 //   string  
 func (instance *ContentTypeProperty) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.ContentTypeProperty_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1031,6 +1099,7 @@ func (instance *ContentTypeProperty) GetName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *ContentTypeProperty) SetName(value string)  error {
+	
 	CGoReturnPtr := C.ContentTypeProperty_SetName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1043,6 +1112,7 @@ func (instance *ContentTypeProperty) SetName(value string)  error {
 // Returns:
 //   string  
 func (instance *ContentTypeProperty) GetValue()  (string,  error)  {
+	
 	CGoReturnPtr := C.ContentTypeProperty_GetValue( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1058,6 +1128,7 @@ func (instance *ContentTypeProperty) GetValue()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *ContentTypeProperty) SetValue(value string)  error {
+	
 	CGoReturnPtr := C.ContentTypeProperty_SetValue( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1070,6 +1141,7 @@ func (instance *ContentTypeProperty) SetValue(value string)  error {
 // Returns:
 //   string  
 func (instance *ContentTypeProperty) GetType()  (string,  error)  {
+	
 	CGoReturnPtr := C.ContentTypeProperty_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1085,6 +1157,7 @@ func (instance *ContentTypeProperty) GetType()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *ContentTypeProperty) SetType(value string)  error {
+	
 	CGoReturnPtr := C.ContentTypeProperty_SetType( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1097,6 +1170,7 @@ func (instance *ContentTypeProperty) SetType(value string)  error {
 // Returns:
 //   bool  
 func (instance *ContentTypeProperty) IsNillable()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ContentTypeProperty_IsNillable( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1112,6 +1186,7 @@ func (instance *ContentTypeProperty) IsNillable()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *ContentTypeProperty) SetIsNillable(value bool)  error {
+	
 	CGoReturnPtr := C.ContentTypeProperty_SetIsNillable( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1140,6 +1215,7 @@ type ContentTypePropertyCollection struct {
 // Returns:
 //   bool  
 func (instance *ContentTypePropertyCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ContentTypePropertyCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1156,6 +1232,7 @@ func (instance *ContentTypePropertyCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *ContentTypePropertyCollection) Add_String_String(name string, value string)  (int32,  error)  {
+	
 	CGoReturnPtr := C.ContentTypePropertyCollection_Add_String_String( instance.ptr, C.CString(name), C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1173,6 +1250,7 @@ func (instance *ContentTypePropertyCollection) Add_String_String(name string, va
 // Returns:
 //   int32  
 func (instance *ContentTypePropertyCollection) Add_String_String_String(name string, value string, type_ string)  (int32,  error)  {
+	
 	CGoReturnPtr := C.ContentTypePropertyCollection_Add_String_String_String( instance.ptr, C.CString(name), C.CString(value), C.CString(type_))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1188,6 +1266,7 @@ func (instance *ContentTypePropertyCollection) Add_String_String_String(name str
 // Returns:
 //   ContentTypeProperty  
 func (instance *ContentTypePropertyCollection) Get_Int(index int32)  (*ContentTypeProperty,  error)  {
+	
 	CGoReturnPtr := C.ContentTypePropertyCollection_Get_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1205,6 +1284,7 @@ func (instance *ContentTypePropertyCollection) Get_Int(index int32)  (*ContentTy
 // Returns:
 //   ContentTypeProperty  
 func (instance *ContentTypePropertyCollection) Get_String(name string)  (*ContentTypeProperty,  error)  {
+	
 	CGoReturnPtr := C.ContentTypePropertyCollection_Get_String( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1219,6 +1299,7 @@ func (instance *ContentTypePropertyCollection) Get_String(name string)  (*Conten
 // Returns:
 //   int32  
 func (instance *ContentTypePropertyCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.ContentTypePropertyCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1264,6 +1345,7 @@ func NewCustomDocumentPropertyCollection(src *DocumentPropertyCollection) ( *Cus
 // Returns:
 //   bool  
 func (instance *CustomDocumentPropertyCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.CustomDocumentPropertyCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1280,6 +1362,7 @@ func (instance *CustomDocumentPropertyCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   DocumentProperty  
 func (instance *CustomDocumentPropertyCollection) Add_String_String(name string, value string)  (*DocumentProperty,  error)  {
+	
 	CGoReturnPtr := C.CustomDocumentPropertyCollection_Add_String_String( instance.ptr, C.CString(name), C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1298,6 +1381,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_String(name string,
 // Returns:
 //   DocumentProperty  
 func (instance *CustomDocumentPropertyCollection) Add_String_Int(name string, value int32)  (*DocumentProperty,  error)  {
+	
 	CGoReturnPtr := C.CustomDocumentPropertyCollection_Add_String_Integer( instance.ptr, C.CString(name), C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1316,6 +1400,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_Int(name string, va
 // Returns:
 //   DocumentProperty  
 func (instance *CustomDocumentPropertyCollection) Add_String_Date(name string, value *Date)  (*DocumentProperty,  error)  {
+	
 	CGoReturnPtr := C.CustomDocumentPropertyCollection_Add_String_Date( instance.ptr, C.CString(name), value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1334,6 +1419,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_Date(name string, v
 // Returns:
 //   DocumentProperty  
 func (instance *CustomDocumentPropertyCollection) Add_String_Bool(name string, value bool)  (*DocumentProperty,  error)  {
+	
 	CGoReturnPtr := C.CustomDocumentPropertyCollection_Add_String_Boolean( instance.ptr, C.CString(name), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1352,6 +1438,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_Bool(name string, v
 // Returns:
 //   DocumentProperty  
 func (instance *CustomDocumentPropertyCollection) Add_String_Double(name string, value float64)  (*DocumentProperty,  error)  {
+	
 	CGoReturnPtr := C.CustomDocumentPropertyCollection_Add_String_Double( instance.ptr, C.CString(name), C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1370,6 +1457,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_Double(name string,
 // Returns:
 //   DocumentProperty  
 func (instance *CustomDocumentPropertyCollection) AddLinkToContent(name string, source string)  (*DocumentProperty,  error)  {
+	
 	CGoReturnPtr := C.CustomDocumentPropertyCollection_AddLinkToContent( instance.ptr, C.CString(name), C.CString(source))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1385,6 +1473,7 @@ func (instance *CustomDocumentPropertyCollection) AddLinkToContent(name string, 
 // Returns:
 //   void  
 func (instance *CustomDocumentPropertyCollection) UpdateLinkedPropertyValue()  error {
+	
 	CGoReturnPtr := C.CustomDocumentPropertyCollection_UpdateLinkedPropertyValue( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1397,6 +1486,7 @@ func (instance *CustomDocumentPropertyCollection) UpdateLinkedPropertyValue()  e
 // Returns:
 //   void  
 func (instance *CustomDocumentPropertyCollection) UpdateLinkedRange()  error {
+	
 	CGoReturnPtr := C.CustomDocumentPropertyCollection_UpdateLinkedRange( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1411,6 +1501,7 @@ func (instance *CustomDocumentPropertyCollection) UpdateLinkedRange()  error {
 // Returns:
 //   DocumentProperty  
 func (instance *CustomDocumentPropertyCollection) Get_Int(index int32)  (*DocumentProperty,  error)  {
+	
 	CGoReturnPtr := C.CustomDocumentPropertyCollection_Get_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1428,6 +1519,7 @@ func (instance *CustomDocumentPropertyCollection) Get_Int(index int32)  (*Docume
 // Returns:
 //   bool  
 func (instance *CustomDocumentPropertyCollection) Contains(name string)  (bool,  error)  {
+	
 	CGoReturnPtr := C.CustomDocumentPropertyCollection_Contains( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1443,6 +1535,7 @@ func (instance *CustomDocumentPropertyCollection) Contains(name string)  (bool, 
 // Returns:
 //   int32  
 func (instance *CustomDocumentPropertyCollection) IndexOf(name string)  (int32,  error)  {
+	
 	CGoReturnPtr := C.CustomDocumentPropertyCollection_IndexOf( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1458,6 +1551,7 @@ func (instance *CustomDocumentPropertyCollection) IndexOf(name string)  (int32, 
 // Returns:
 //   void  
 func (instance *CustomDocumentPropertyCollection) Remove(name string)  error {
+	
 	CGoReturnPtr := C.CustomDocumentPropertyCollection_Remove( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1472,6 +1566,7 @@ func (instance *CustomDocumentPropertyCollection) Remove(name string)  error {
 // Returns:
 //   void  
 func (instance *CustomDocumentPropertyCollection) RemoveAt(index int32)  error {
+	
 	CGoReturnPtr := C.CustomDocumentPropertyCollection_RemoveAt( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1486,6 +1581,7 @@ func (instance *CustomDocumentPropertyCollection) RemoveAt(index int32)  error {
 // Returns:
 //   DocumentProperty  
 func (instance *CustomDocumentPropertyCollection) Get_String(name string)  (*DocumentProperty,  error)  {
+	
 	CGoReturnPtr := C.CustomDocumentPropertyCollection_Get_String( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1500,6 +1596,7 @@ func (instance *CustomDocumentPropertyCollection) Get_String(name string)  (*Doc
 // Returns:
 //   int32  
 func (instance *CustomDocumentPropertyCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.CustomDocumentPropertyCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1543,6 +1640,7 @@ func NewCustomProperty() ( *CustomProperty, error) {
 // Returns:
 //   bool  
 func (instance *CustomProperty) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.CustomProperty_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1556,6 +1654,7 @@ func (instance *CustomProperty) IsNull()  (bool,  error)  {
 // Returns:
 //   string  
 func (instance *CustomProperty) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.CustomProperty_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1571,6 +1670,7 @@ func (instance *CustomProperty) GetName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *CustomProperty) SetName(value string)  error {
+	
 	CGoReturnPtr := C.CustomProperty_SetName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1583,6 +1683,7 @@ func (instance *CustomProperty) SetName(value string)  error {
 // Returns:
 //   string  
 func (instance *CustomProperty) GetValue()  (string,  error)  {
+	
 	CGoReturnPtr := C.CustomProperty_GetValue( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1598,6 +1699,7 @@ func (instance *CustomProperty) GetValue()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *CustomProperty) SetValue(value string)  error {
+	
 	CGoReturnPtr := C.CustomProperty_SetValue( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1626,6 +1728,7 @@ type CustomPropertyCollection struct {
 // Returns:
 //   bool  
 func (instance *CustomPropertyCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.CustomPropertyCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1642,6 +1745,7 @@ func (instance *CustomPropertyCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *CustomPropertyCollection) Add(name string, value string)  (int32,  error)  {
+	
 	CGoReturnPtr := C.CustomPropertyCollection_Add( instance.ptr, C.CString(name), C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1657,6 +1761,7 @@ func (instance *CustomPropertyCollection) Add(name string, value string)  (int32
 // Returns:
 //   CustomProperty  
 func (instance *CustomPropertyCollection) Get_Int(index int32)  (*CustomProperty,  error)  {
+	
 	CGoReturnPtr := C.CustomPropertyCollection_Get_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1674,6 +1779,7 @@ func (instance *CustomPropertyCollection) Get_Int(index int32)  (*CustomProperty
 // Returns:
 //   CustomProperty  
 func (instance *CustomPropertyCollection) Get_String(name string)  (*CustomProperty,  error)  {
+	
 	CGoReturnPtr := C.CustomPropertyCollection_Get_String( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1688,6 +1794,7 @@ func (instance *CustomPropertyCollection) Get_String(name string)  (*CustomPrope
 // Returns:
 //   int32  
 func (instance *CustomPropertyCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.CustomPropertyCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1717,6 +1824,7 @@ type DocumentProperty struct {
 // Returns:
 //   bool  
 func (instance *DocumentProperty) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DocumentProperty_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1730,6 +1838,7 @@ func (instance *DocumentProperty) IsNull()  (bool,  error)  {
 // Returns:
 //   string  
 func (instance *DocumentProperty) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.DocumentProperty_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1743,6 +1852,7 @@ func (instance *DocumentProperty) GetName()  (string,  error)  {
 // Returns:
 //   Object  
 func (instance *DocumentProperty) GetValue()  (*Object,  error)  {
+	
 	CGoReturnPtr := C.DocumentProperty_GetValue( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1760,6 +1870,7 @@ func (instance *DocumentProperty) GetValue()  (*Object,  error)  {
 // Returns:
 //   void  
 func (instance *DocumentProperty) SetValue(value *Object)  error {
+	
 	CGoReturnPtr := C.DocumentProperty_SetValue( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1772,6 +1883,7 @@ func (instance *DocumentProperty) SetValue(value *Object)  error {
 // Returns:
 //   bool  
 func (instance *DocumentProperty) IsLinkedToContent()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DocumentProperty_IsLinkedToContent( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1785,6 +1897,7 @@ func (instance *DocumentProperty) IsLinkedToContent()  (bool,  error)  {
 // Returns:
 //   string  
 func (instance *DocumentProperty) GetSource()  (string,  error)  {
+	
 	CGoReturnPtr := C.DocumentProperty_GetSource( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1798,6 +1911,7 @@ func (instance *DocumentProperty) GetSource()  (string,  error)  {
 // Returns:
 //   int32  
 func (instance *DocumentProperty) GetType()  (PropertyType,  error)  {
+	
 	CGoReturnPtr := C.DocumentProperty_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1815,6 +1929,7 @@ func (instance *DocumentProperty) GetType()  (PropertyType,  error)  {
 // Returns:
 //   bool  
 func (instance *DocumentProperty) IsGeneratedName()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DocumentProperty_IsGeneratedName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1828,6 +1943,7 @@ func (instance *DocumentProperty) IsGeneratedName()  (bool,  error)  {
 // Returns:
 //   string  
 func (instance *DocumentProperty) ToString()  (string,  error)  {
+	
 	CGoReturnPtr := C.DocumentProperty_ToString( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1841,6 +1957,7 @@ func (instance *DocumentProperty) ToString()  (string,  error)  {
 // Returns:
 //   int32  
 func (instance *DocumentProperty) ToInt()  (int32,  error)  {
+	
 	CGoReturnPtr := C.DocumentProperty_ToInt( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1854,6 +1971,7 @@ func (instance *DocumentProperty) ToInt()  (int32,  error)  {
 // Returns:
 //   float64  
 func (instance *DocumentProperty) ToDouble()  (float64,  error)  {
+	
 	CGoReturnPtr := C.DocumentProperty_ToDouble( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1867,6 +1985,7 @@ func (instance *DocumentProperty) ToDouble()  (float64,  error)  {
 // Returns:
 //   Date  
 func (instance *DocumentProperty) ToDateTime()  (*Date,  error)  {
+	
 	CGoReturnPtr := C.DocumentProperty_ToDateTime( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1881,6 +2000,7 @@ func (instance *DocumentProperty) ToDateTime()  (*Date,  error)  {
 // Returns:
 //   bool  
 func (instance *DocumentProperty) ToBool()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DocumentProperty_ToBool( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1910,6 +2030,7 @@ type DocumentPropertyCollection struct {
 // Returns:
 //   bool  
 func (instance *DocumentPropertyCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DocumentPropertyCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1925,6 +2046,7 @@ func (instance *DocumentPropertyCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   DocumentProperty  
 func (instance *DocumentPropertyCollection) Get_Int(index int32)  (*DocumentProperty,  error)  {
+	
 	CGoReturnPtr := C.DocumentPropertyCollection_Get_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1942,6 +2064,7 @@ func (instance *DocumentPropertyCollection) Get_Int(index int32)  (*DocumentProp
 // Returns:
 //   bool  
 func (instance *DocumentPropertyCollection) Contains(name string)  (bool,  error)  {
+	
 	CGoReturnPtr := C.DocumentPropertyCollection_Contains( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1957,6 +2080,7 @@ func (instance *DocumentPropertyCollection) Contains(name string)  (bool,  error
 // Returns:
 //   int32  
 func (instance *DocumentPropertyCollection) IndexOf(name string)  (int32,  error)  {
+	
 	CGoReturnPtr := C.DocumentPropertyCollection_IndexOf( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1972,6 +2096,7 @@ func (instance *DocumentPropertyCollection) IndexOf(name string)  (int32,  error
 // Returns:
 //   void  
 func (instance *DocumentPropertyCollection) Remove(name string)  error {
+	
 	CGoReturnPtr := C.DocumentPropertyCollection_Remove( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1986,6 +2111,7 @@ func (instance *DocumentPropertyCollection) Remove(name string)  error {
 // Returns:
 //   void  
 func (instance *DocumentPropertyCollection) RemoveAt(index int32)  error {
+	
 	CGoReturnPtr := C.DocumentPropertyCollection_RemoveAt( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2000,6 +2126,7 @@ func (instance *DocumentPropertyCollection) RemoveAt(index int32)  error {
 // Returns:
 //   DocumentProperty  
 func (instance *DocumentPropertyCollection) Get_String(name string)  (*DocumentProperty,  error)  {
+	
 	CGoReturnPtr := C.DocumentPropertyCollection_Get_String( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2014,6 +2141,7 @@ func (instance *DocumentPropertyCollection) Get_String(name string)  (*DocumentP
 // Returns:
 //   int32  
 func (instance *DocumentPropertyCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.DocumentPropertyCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	

@@ -1,6 +1,6 @@
 // +build linux
 
-// Copyright (c) 2001-2024 Aspose Pty Ltd. All Rights Reserved.
+// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
 // Powered by Aspose.Cells.
 package asposecells
 
@@ -28,6 +28,7 @@ type DataModel struct {
 // Returns:
 //   bool  
 func (instance *DataModel) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DataModel_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -41,6 +42,7 @@ func (instance *DataModel) IsNull()  (bool,  error)  {
 // Returns:
 //   DataModelRelationshipCollection  
 func (instance *DataModel) GetRelationships()  (*DataModelRelationshipCollection,  error)  {
+	
 	CGoReturnPtr := C.DataModel_GetRelationships( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -56,6 +58,7 @@ func (instance *DataModel) GetRelationships()  (*DataModelRelationshipCollection
 // Returns:
 //   DataModelTableCollection  
 func (instance *DataModel) GetTables()  (*DataModelTableCollection,  error)  {
+	
 	CGoReturnPtr := C.DataModel_GetTables( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -87,6 +90,7 @@ type DataModelRelationship struct {
 // Returns:
 //   bool  
 func (instance *DataModelRelationship) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DataModelRelationship_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -100,6 +104,7 @@ func (instance *DataModelRelationship) IsNull()  (bool,  error)  {
 // Returns:
 //   string  
 func (instance *DataModelRelationship) GetForeignKeyTable()  (string,  error)  {
+	
 	CGoReturnPtr := C.DataModelRelationship_GetForeignKeyTable( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -113,6 +118,7 @@ func (instance *DataModelRelationship) GetForeignKeyTable()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *DataModelRelationship) GetPrimaryKeyTable()  (string,  error)  {
+	
 	CGoReturnPtr := C.DataModelRelationship_GetPrimaryKeyTable( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -126,6 +132,7 @@ func (instance *DataModelRelationship) GetPrimaryKeyTable()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *DataModelRelationship) GetForeignKeyColumn()  (string,  error)  {
+	
 	CGoReturnPtr := C.DataModelRelationship_GetForeignKeyColumn( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -139,6 +146,7 @@ func (instance *DataModelRelationship) GetForeignKeyColumn()  (string,  error)  
 // Returns:
 //   string  
 func (instance *DataModelRelationship) GetPrimaryKeyColumn()  (string,  error)  {
+	
 	CGoReturnPtr := C.DataModelRelationship_GetPrimaryKeyColumn( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -168,6 +176,7 @@ type DataModelRelationshipCollection struct {
 // Returns:
 //   bool  
 func (instance *DataModelRelationshipCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DataModelRelationshipCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -183,6 +192,7 @@ func (instance *DataModelRelationshipCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   DataModelRelationship  
 func (instance *DataModelRelationshipCollection) Get(index int32)  (*DataModelRelationship,  error)  {
+	
 	CGoReturnPtr := C.DataModelRelationshipCollection_Get( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -197,6 +207,7 @@ func (instance *DataModelRelationshipCollection) Get(index int32)  (*DataModelRe
 // Returns:
 //   int32  
 func (instance *DataModelRelationshipCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.DataModelRelationshipCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -226,6 +237,7 @@ type DataModelTable struct {
 // Returns:
 //   bool  
 func (instance *DataModelTable) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DataModelTable_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -239,6 +251,7 @@ func (instance *DataModelTable) IsNull()  (bool,  error)  {
 // Returns:
 //   string  
 func (instance *DataModelTable) GetId()  (string,  error)  {
+	
 	CGoReturnPtr := C.DataModelTable_GetId( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -252,6 +265,7 @@ func (instance *DataModelTable) GetId()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *DataModelTable) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.DataModelTable_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -265,6 +279,7 @@ func (instance *DataModelTable) GetName()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *DataModelTable) GetConnectionName()  (string,  error)  {
+	
 	CGoReturnPtr := C.DataModelTable_GetConnectionName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -294,6 +309,7 @@ type DataModelTableCollection struct {
 // Returns:
 //   bool  
 func (instance *DataModelTableCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DataModelTableCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -309,6 +325,7 @@ func (instance *DataModelTableCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   DataModelTable  
 func (instance *DataModelTableCollection) Get(index int32)  (*DataModelTable,  error)  {
+	
 	CGoReturnPtr := C.DataModelTableCollection_Get( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -323,6 +340,7 @@ func (instance *DataModelTableCollection) Get(index int32)  (*DataModelTable,  e
 // Returns:
 //   int32  
 func (instance *DataModelTableCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.DataModelTableCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	

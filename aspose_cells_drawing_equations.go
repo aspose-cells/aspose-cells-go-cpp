@@ -1,6 +1,6 @@
 // +build windows
 
-// Copyright (c) 2001-2024 Aspose Pty Ltd. All Rights Reserved.
+// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
 // Powered by Aspose.Cells.
 package asposecells
 
@@ -633,6 +633,7 @@ func NewAccentEquationNode(src *EquationNode) ( *AccentEquationNode, error) {
 // Returns:
 //   bool  
 func (instance *AccentEquationNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.AccentEquationNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -648,6 +649,7 @@ func (instance *AccentEquationNode) IsNull()  (bool,  error)  {
 // Returns:
 //   string  
 func (instance *AccentEquationNode) GetAccentCharacter()  (string,  error)  {
+	
 	CGoReturnPtr := C.AccentEquationNode_GetAccentCharacter( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -665,6 +667,7 @@ func (instance *AccentEquationNode) GetAccentCharacter()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *AccentEquationNode) SetAccentCharacter(value string)  error {
+	
 	CGoReturnPtr := C.AccentEquationNode_SetAccentCharacter( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -677,6 +680,7 @@ func (instance *AccentEquationNode) SetAccentCharacter(value string)  error {
 // Returns:
 //   int32  
 func (instance *AccentEquationNode) GetAccentCharacterType()  (EquationCombiningCharacterType,  error)  {
+	
 	CGoReturnPtr := C.AccentEquationNode_GetAccentCharacterType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -695,6 +699,7 @@ func (instance *AccentEquationNode) GetAccentCharacterType()  (EquationCombining
 // Returns:
 //   void  
 func (instance *AccentEquationNode) SetAccentCharacterType(value EquationCombiningCharacterType)  error {
+	
 	CGoReturnPtr := C.AccentEquationNode_SetAccentCharacterType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -709,6 +714,7 @@ func (instance *AccentEquationNode) SetAccentCharacterType(value EquationCombini
 // Returns:
 //   bool  
 func (instance *AccentEquationNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.AccentEquationNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -722,6 +728,7 @@ func (instance *AccentEquationNode) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *AccentEquationNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.AccentEquationNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -739,6 +746,7 @@ func (instance *AccentEquationNode) GetParentNode()  (*EquationNode,  error)  {
 // Returns:
 //   void  
 func (instance *AccentEquationNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.AccentEquationNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -751,6 +759,7 @@ func (instance *AccentEquationNode) SetParentNode(value *EquationNode)  error {
 // Returns:
 //   string  
 func (instance *AccentEquationNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.AccentEquationNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -764,6 +773,7 @@ func (instance *AccentEquationNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *AccentEquationNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.AccentEquationNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -779,6 +789,7 @@ func (instance *AccentEquationNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *AccentEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.AccentEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -796,6 +807,7 @@ func (instance *AccentEquationNode) AddChild_EquationNodeType(equationtype Equat
 // Returns:
 //   void  
 func (instance *AccentEquationNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.AccentEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -811,6 +823,7 @@ func (instance *AccentEquationNode) AddChild_EquationNode(node *EquationNode)  e
 // Returns:
 //   EquationNode  
 func (instance *AccentEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.AccentEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -828,6 +841,7 @@ func (instance *AccentEquationNode) InsertChild(index int32, equationtype Equati
 // Returns:
 //   EquationNode  
 func (instance *AccentEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.AccentEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -845,6 +859,7 @@ func (instance *AccentEquationNode) InsertAfter(equationtype EquationNodeType)  
 // Returns:
 //   EquationNode  
 func (instance *AccentEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.AccentEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -862,6 +877,7 @@ func (instance *AccentEquationNode) InsertBefore(equationtype EquationNodeType) 
 // Returns:
 //   EquationNode  
 func (instance *AccentEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.AccentEquationNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -877,6 +893,7 @@ func (instance *AccentEquationNode) GetChild(index int32)  (*EquationNode,  erro
 // Returns:
 //   void  
 func (instance *AccentEquationNode) Remove()  error {
+	
 	CGoReturnPtr := C.AccentEquationNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -891,6 +908,7 @@ func (instance *AccentEquationNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *AccentEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.AccentEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -905,6 +923,7 @@ func (instance *AccentEquationNode) RemoveChild_EquationNode(node *EquationNode)
 // Returns:
 //   void  
 func (instance *AccentEquationNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.AccentEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -917,6 +936,7 @@ func (instance *AccentEquationNode) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *AccentEquationNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.AccentEquationNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -929,6 +949,7 @@ func (instance *AccentEquationNode) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *AccentEquationNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.AccentEquationNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -945,6 +966,7 @@ func (instance *AccentEquationNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *AccentEquationNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.AccentEquationNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -965,6 +987,7 @@ func (instance *AccentEquationNode) GetEquationType()  (EquationNodeType,  error
 // Returns:
 //   EquationNode  
 func AccentEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.AccentEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1012,6 +1035,7 @@ func NewArrayEquationNode(src *EquationNode) ( *ArrayEquationNode, error) {
 // Returns:
 //   bool  
 func (instance *ArrayEquationNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ArrayEquationNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1027,6 +1051,7 @@ func (instance *ArrayEquationNode) IsNull()  (bool,  error)  {
 // Returns:
 //   bool  
 func (instance *ArrayEquationNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.ArrayEquationNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1040,6 +1065,7 @@ func (instance *ArrayEquationNode) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *ArrayEquationNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.ArrayEquationNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1057,6 +1083,7 @@ func (instance *ArrayEquationNode) GetParentNode()  (*EquationNode,  error)  {
 // Returns:
 //   void  
 func (instance *ArrayEquationNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.ArrayEquationNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1069,6 +1096,7 @@ func (instance *ArrayEquationNode) SetParentNode(value *EquationNode)  error {
 // Returns:
 //   string  
 func (instance *ArrayEquationNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.ArrayEquationNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1082,6 +1110,7 @@ func (instance *ArrayEquationNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *ArrayEquationNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.ArrayEquationNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1097,6 +1126,7 @@ func (instance *ArrayEquationNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *ArrayEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.ArrayEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1114,6 +1144,7 @@ func (instance *ArrayEquationNode) AddChild_EquationNodeType(equationtype Equati
 // Returns:
 //   void  
 func (instance *ArrayEquationNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.ArrayEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1129,6 +1160,7 @@ func (instance *ArrayEquationNode) AddChild_EquationNode(node *EquationNode)  er
 // Returns:
 //   EquationNode  
 func (instance *ArrayEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.ArrayEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1146,6 +1178,7 @@ func (instance *ArrayEquationNode) InsertChild(index int32, equationtype Equatio
 // Returns:
 //   EquationNode  
 func (instance *ArrayEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.ArrayEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1163,6 +1196,7 @@ func (instance *ArrayEquationNode) InsertAfter(equationtype EquationNodeType)  (
 // Returns:
 //   EquationNode  
 func (instance *ArrayEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.ArrayEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1180,6 +1214,7 @@ func (instance *ArrayEquationNode) InsertBefore(equationtype EquationNodeType)  
 // Returns:
 //   EquationNode  
 func (instance *ArrayEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.ArrayEquationNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1195,6 +1230,7 @@ func (instance *ArrayEquationNode) GetChild(index int32)  (*EquationNode,  error
 // Returns:
 //   void  
 func (instance *ArrayEquationNode) Remove()  error {
+	
 	CGoReturnPtr := C.ArrayEquationNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1209,6 +1245,7 @@ func (instance *ArrayEquationNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *ArrayEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.ArrayEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1223,6 +1260,7 @@ func (instance *ArrayEquationNode) RemoveChild_EquationNode(node *EquationNode) 
 // Returns:
 //   void  
 func (instance *ArrayEquationNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.ArrayEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1235,6 +1273,7 @@ func (instance *ArrayEquationNode) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *ArrayEquationNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.ArrayEquationNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1247,6 +1286,7 @@ func (instance *ArrayEquationNode) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *ArrayEquationNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.ArrayEquationNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1263,6 +1303,7 @@ func (instance *ArrayEquationNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *ArrayEquationNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.ArrayEquationNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1283,6 +1324,7 @@ func (instance *ArrayEquationNode) GetEquationType()  (EquationNodeType,  error)
 // Returns:
 //   EquationNode  
 func ArrayEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.ArrayEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1330,6 +1372,7 @@ func NewBarEquationNode(src *EquationNode) ( *BarEquationNode, error) {
 // Returns:
 //   bool  
 func (instance *BarEquationNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.BarEquationNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1343,6 +1386,7 @@ func (instance *BarEquationNode) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *BarEquationNode) GetBarPosition()  (EquationCharacterPositionType,  error)  {
+	
 	CGoReturnPtr := C.BarEquationNode_GetBarPosition( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1361,6 +1405,7 @@ func (instance *BarEquationNode) GetBarPosition()  (EquationCharacterPositionTyp
 // Returns:
 //   void  
 func (instance *BarEquationNode) SetBarPosition(value EquationCharacterPositionType)  error {
+	
 	CGoReturnPtr := C.BarEquationNode_SetBarPosition( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1375,6 +1420,7 @@ func (instance *BarEquationNode) SetBarPosition(value EquationCharacterPositionT
 // Returns:
 //   bool  
 func (instance *BarEquationNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.BarEquationNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1388,6 +1434,7 @@ func (instance *BarEquationNode) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *BarEquationNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BarEquationNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1405,6 +1452,7 @@ func (instance *BarEquationNode) GetParentNode()  (*EquationNode,  error)  {
 // Returns:
 //   void  
 func (instance *BarEquationNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.BarEquationNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1417,6 +1465,7 @@ func (instance *BarEquationNode) SetParentNode(value *EquationNode)  error {
 // Returns:
 //   string  
 func (instance *BarEquationNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.BarEquationNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1430,6 +1479,7 @@ func (instance *BarEquationNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *BarEquationNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.BarEquationNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1445,6 +1495,7 @@ func (instance *BarEquationNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *BarEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BarEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1462,6 +1513,7 @@ func (instance *BarEquationNode) AddChild_EquationNodeType(equationtype Equation
 // Returns:
 //   void  
 func (instance *BarEquationNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.BarEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1477,6 +1529,7 @@ func (instance *BarEquationNode) AddChild_EquationNode(node *EquationNode)  erro
 // Returns:
 //   EquationNode  
 func (instance *BarEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BarEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1494,6 +1547,7 @@ func (instance *BarEquationNode) InsertChild(index int32, equationtype EquationN
 // Returns:
 //   EquationNode  
 func (instance *BarEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BarEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1511,6 +1565,7 @@ func (instance *BarEquationNode) InsertAfter(equationtype EquationNodeType)  (*E
 // Returns:
 //   EquationNode  
 func (instance *BarEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BarEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1528,6 +1583,7 @@ func (instance *BarEquationNode) InsertBefore(equationtype EquationNodeType)  (*
 // Returns:
 //   EquationNode  
 func (instance *BarEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BarEquationNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1543,6 +1599,7 @@ func (instance *BarEquationNode) GetChild(index int32)  (*EquationNode,  error) 
 // Returns:
 //   void  
 func (instance *BarEquationNode) Remove()  error {
+	
 	CGoReturnPtr := C.BarEquationNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1557,6 +1614,7 @@ func (instance *BarEquationNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *BarEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.BarEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1571,6 +1629,7 @@ func (instance *BarEquationNode) RemoveChild_EquationNode(node *EquationNode)  e
 // Returns:
 //   void  
 func (instance *BarEquationNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.BarEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1583,6 +1642,7 @@ func (instance *BarEquationNode) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *BarEquationNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.BarEquationNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1595,6 +1655,7 @@ func (instance *BarEquationNode) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *BarEquationNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.BarEquationNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1611,6 +1672,7 @@ func (instance *BarEquationNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *BarEquationNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.BarEquationNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1631,6 +1693,7 @@ func (instance *BarEquationNode) GetEquationType()  (EquationNodeType,  error)  
 // Returns:
 //   EquationNode  
 func BarEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BarEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1678,6 +1741,7 @@ func NewBorderBoxEquationNode(src *EquationNode) ( *BorderBoxEquationNode, error
 // Returns:
 //   bool  
 func (instance *BorderBoxEquationNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1693,6 +1757,7 @@ func (instance *BorderBoxEquationNode) IsNull()  (bool,  error)  {
 // Returns:
 //   bool  
 func (instance *BorderBoxEquationNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1706,6 +1771,7 @@ func (instance *BorderBoxEquationNode) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *BorderBoxEquationNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1723,6 +1789,7 @@ func (instance *BorderBoxEquationNode) GetParentNode()  (*EquationNode,  error) 
 // Returns:
 //   void  
 func (instance *BorderBoxEquationNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1735,6 +1802,7 @@ func (instance *BorderBoxEquationNode) SetParentNode(value *EquationNode)  error
 // Returns:
 //   string  
 func (instance *BorderBoxEquationNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1748,6 +1816,7 @@ func (instance *BorderBoxEquationNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *BorderBoxEquationNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1763,6 +1832,7 @@ func (instance *BorderBoxEquationNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *BorderBoxEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1780,6 +1850,7 @@ func (instance *BorderBoxEquationNode) AddChild_EquationNodeType(equationtype Eq
 // Returns:
 //   void  
 func (instance *BorderBoxEquationNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1795,6 +1866,7 @@ func (instance *BorderBoxEquationNode) AddChild_EquationNode(node *EquationNode)
 // Returns:
 //   EquationNode  
 func (instance *BorderBoxEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1812,6 +1884,7 @@ func (instance *BorderBoxEquationNode) InsertChild(index int32, equationtype Equ
 // Returns:
 //   EquationNode  
 func (instance *BorderBoxEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1829,6 +1902,7 @@ func (instance *BorderBoxEquationNode) InsertAfter(equationtype EquationNodeType
 // Returns:
 //   EquationNode  
 func (instance *BorderBoxEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1846,6 +1920,7 @@ func (instance *BorderBoxEquationNode) InsertBefore(equationtype EquationNodeTyp
 // Returns:
 //   EquationNode  
 func (instance *BorderBoxEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1861,6 +1936,7 @@ func (instance *BorderBoxEquationNode) GetChild(index int32)  (*EquationNode,  e
 // Returns:
 //   void  
 func (instance *BorderBoxEquationNode) Remove()  error {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1875,6 +1951,7 @@ func (instance *BorderBoxEquationNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *BorderBoxEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1889,6 +1966,7 @@ func (instance *BorderBoxEquationNode) RemoveChild_EquationNode(node *EquationNo
 // Returns:
 //   void  
 func (instance *BorderBoxEquationNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1901,6 +1979,7 @@ func (instance *BorderBoxEquationNode) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *BorderBoxEquationNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1913,6 +1992,7 @@ func (instance *BorderBoxEquationNode) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *BorderBoxEquationNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1929,6 +2009,7 @@ func (instance *BorderBoxEquationNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *BorderBoxEquationNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1949,6 +2030,7 @@ func (instance *BorderBoxEquationNode) GetEquationType()  (EquationNodeType,  er
 // Returns:
 //   EquationNode  
 func BorderBoxEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BorderBoxEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1996,6 +2078,7 @@ func NewBoxEquationNode(src *EquationNode) ( *BoxEquationNode, error) {
 // Returns:
 //   bool  
 func (instance *BoxEquationNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.BoxEquationNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2011,6 +2094,7 @@ func (instance *BoxEquationNode) IsNull()  (bool,  error)  {
 // Returns:
 //   bool  
 func (instance *BoxEquationNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.BoxEquationNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2024,6 +2108,7 @@ func (instance *BoxEquationNode) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *BoxEquationNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BoxEquationNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2041,6 +2126,7 @@ func (instance *BoxEquationNode) GetParentNode()  (*EquationNode,  error)  {
 // Returns:
 //   void  
 func (instance *BoxEquationNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.BoxEquationNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2053,6 +2139,7 @@ func (instance *BoxEquationNode) SetParentNode(value *EquationNode)  error {
 // Returns:
 //   string  
 func (instance *BoxEquationNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.BoxEquationNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2066,6 +2153,7 @@ func (instance *BoxEquationNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *BoxEquationNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.BoxEquationNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2081,6 +2169,7 @@ func (instance *BoxEquationNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *BoxEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BoxEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2098,6 +2187,7 @@ func (instance *BoxEquationNode) AddChild_EquationNodeType(equationtype Equation
 // Returns:
 //   void  
 func (instance *BoxEquationNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.BoxEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2113,6 +2203,7 @@ func (instance *BoxEquationNode) AddChild_EquationNode(node *EquationNode)  erro
 // Returns:
 //   EquationNode  
 func (instance *BoxEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BoxEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2130,6 +2221,7 @@ func (instance *BoxEquationNode) InsertChild(index int32, equationtype EquationN
 // Returns:
 //   EquationNode  
 func (instance *BoxEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BoxEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2147,6 +2239,7 @@ func (instance *BoxEquationNode) InsertAfter(equationtype EquationNodeType)  (*E
 // Returns:
 //   EquationNode  
 func (instance *BoxEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BoxEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2164,6 +2257,7 @@ func (instance *BoxEquationNode) InsertBefore(equationtype EquationNodeType)  (*
 // Returns:
 //   EquationNode  
 func (instance *BoxEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BoxEquationNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2179,6 +2273,7 @@ func (instance *BoxEquationNode) GetChild(index int32)  (*EquationNode,  error) 
 // Returns:
 //   void  
 func (instance *BoxEquationNode) Remove()  error {
+	
 	CGoReturnPtr := C.BoxEquationNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2193,6 +2288,7 @@ func (instance *BoxEquationNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *BoxEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.BoxEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2207,6 +2303,7 @@ func (instance *BoxEquationNode) RemoveChild_EquationNode(node *EquationNode)  e
 // Returns:
 //   void  
 func (instance *BoxEquationNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.BoxEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2219,6 +2316,7 @@ func (instance *BoxEquationNode) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *BoxEquationNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.BoxEquationNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2231,6 +2329,7 @@ func (instance *BoxEquationNode) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *BoxEquationNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.BoxEquationNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2247,6 +2346,7 @@ func (instance *BoxEquationNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *BoxEquationNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.BoxEquationNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2267,6 +2367,7 @@ func (instance *BoxEquationNode) GetEquationType()  (EquationNodeType,  error)  
 // Returns:
 //   EquationNode  
 func BoxEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.BoxEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2315,6 +2416,7 @@ func NewDelimiterEquationNode(src *EquationNode) ( *DelimiterEquationNode, error
 // Returns:
 //   bool  
 func (instance *DelimiterEquationNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2328,6 +2430,7 @@ func (instance *DelimiterEquationNode) IsNull()  (bool,  error)  {
 // Returns:
 //   string  
 func (instance *DelimiterEquationNode) GetBeginChar()  (string,  error)  {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_GetBeginChar( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2343,6 +2446,7 @@ func (instance *DelimiterEquationNode) GetBeginChar()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DelimiterEquationNode) SetBeginChar(value string)  error {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_SetBeginChar( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2355,6 +2459,7 @@ func (instance *DelimiterEquationNode) SetBeginChar(value string)  error {
 // Returns:
 //   string  
 func (instance *DelimiterEquationNode) GetEndChar()  (string,  error)  {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_GetEndChar( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2370,6 +2475,7 @@ func (instance *DelimiterEquationNode) GetEndChar()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DelimiterEquationNode) SetEndChar(value string)  error {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_SetEndChar( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2381,6 +2487,7 @@ func (instance *DelimiterEquationNode) SetEndChar(value string)  error {
 // Returns:
 //   bool  
 func (instance *DelimiterEquationNode) GetNaryGrow()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_GetNaryGrow( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2395,6 +2502,7 @@ func (instance *DelimiterEquationNode) GetNaryGrow()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *DelimiterEquationNode) SetNaryGrow(value bool)  error {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_SetNaryGrow( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2407,6 +2515,7 @@ func (instance *DelimiterEquationNode) SetNaryGrow(value bool)  error {
 // Returns:
 //   string  
 func (instance *DelimiterEquationNode) GetSeparatorChar()  (string,  error)  {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_GetSeparatorChar( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2422,6 +2531,7 @@ func (instance *DelimiterEquationNode) GetSeparatorChar()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DelimiterEquationNode) SetSeparatorChar(value string)  error {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_SetSeparatorChar( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2434,6 +2544,7 @@ func (instance *DelimiterEquationNode) SetSeparatorChar(value string)  error {
 // Returns:
 //   int32  
 func (instance *DelimiterEquationNode) GetDelimiterShape()  (EquationDelimiterShapeType,  error)  {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_GetDelimiterShape( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2452,6 +2563,7 @@ func (instance *DelimiterEquationNode) GetDelimiterShape()  (EquationDelimiterSh
 // Returns:
 //   void  
 func (instance *DelimiterEquationNode) SetDelimiterShape(value EquationDelimiterShapeType)  error {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_SetDelimiterShape( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2466,6 +2578,7 @@ func (instance *DelimiterEquationNode) SetDelimiterShape(value EquationDelimiter
 // Returns:
 //   bool  
 func (instance *DelimiterEquationNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2479,6 +2592,7 @@ func (instance *DelimiterEquationNode) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *DelimiterEquationNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2496,6 +2610,7 @@ func (instance *DelimiterEquationNode) GetParentNode()  (*EquationNode,  error) 
 // Returns:
 //   void  
 func (instance *DelimiterEquationNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2508,6 +2623,7 @@ func (instance *DelimiterEquationNode) SetParentNode(value *EquationNode)  error
 // Returns:
 //   string  
 func (instance *DelimiterEquationNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2521,6 +2637,7 @@ func (instance *DelimiterEquationNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *DelimiterEquationNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2536,6 +2653,7 @@ func (instance *DelimiterEquationNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *DelimiterEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2553,6 +2671,7 @@ func (instance *DelimiterEquationNode) AddChild_EquationNodeType(equationtype Eq
 // Returns:
 //   void  
 func (instance *DelimiterEquationNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2568,6 +2687,7 @@ func (instance *DelimiterEquationNode) AddChild_EquationNode(node *EquationNode)
 // Returns:
 //   EquationNode  
 func (instance *DelimiterEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2585,6 +2705,7 @@ func (instance *DelimiterEquationNode) InsertChild(index int32, equationtype Equ
 // Returns:
 //   EquationNode  
 func (instance *DelimiterEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2602,6 +2723,7 @@ func (instance *DelimiterEquationNode) InsertAfter(equationtype EquationNodeType
 // Returns:
 //   EquationNode  
 func (instance *DelimiterEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2619,6 +2741,7 @@ func (instance *DelimiterEquationNode) InsertBefore(equationtype EquationNodeTyp
 // Returns:
 //   EquationNode  
 func (instance *DelimiterEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2634,6 +2757,7 @@ func (instance *DelimiterEquationNode) GetChild(index int32)  (*EquationNode,  e
 // Returns:
 //   void  
 func (instance *DelimiterEquationNode) Remove()  error {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2648,6 +2772,7 @@ func (instance *DelimiterEquationNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *DelimiterEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2662,6 +2787,7 @@ func (instance *DelimiterEquationNode) RemoveChild_EquationNode(node *EquationNo
 // Returns:
 //   void  
 func (instance *DelimiterEquationNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2674,6 +2800,7 @@ func (instance *DelimiterEquationNode) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *DelimiterEquationNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2686,6 +2813,7 @@ func (instance *DelimiterEquationNode) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *DelimiterEquationNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2702,6 +2830,7 @@ func (instance *DelimiterEquationNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *DelimiterEquationNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2722,6 +2851,7 @@ func (instance *DelimiterEquationNode) GetEquationType()  (EquationNodeType,  er
 // Returns:
 //   EquationNode  
 func DelimiterEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.DelimiterEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2772,6 +2902,7 @@ func NewEquationComponentNode(src *EquationNode) ( *EquationComponentNode, error
 // Returns:
 //   bool  
 func (instance *EquationComponentNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.EquationComponentNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2787,6 +2918,7 @@ func (instance *EquationComponentNode) IsNull()  (bool,  error)  {
 // Returns:
 //   bool  
 func (instance *EquationComponentNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.EquationComponentNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2800,6 +2932,7 @@ func (instance *EquationComponentNode) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *EquationComponentNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationComponentNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2817,6 +2950,7 @@ func (instance *EquationComponentNode) GetParentNode()  (*EquationNode,  error) 
 // Returns:
 //   void  
 func (instance *EquationComponentNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.EquationComponentNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2829,6 +2963,7 @@ func (instance *EquationComponentNode) SetParentNode(value *EquationNode)  error
 // Returns:
 //   string  
 func (instance *EquationComponentNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.EquationComponentNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2842,6 +2977,7 @@ func (instance *EquationComponentNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *EquationComponentNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.EquationComponentNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2857,6 +2993,7 @@ func (instance *EquationComponentNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *EquationComponentNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationComponentNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2874,6 +3011,7 @@ func (instance *EquationComponentNode) AddChild_EquationNodeType(equationtype Eq
 // Returns:
 //   void  
 func (instance *EquationComponentNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.EquationComponentNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2889,6 +3027,7 @@ func (instance *EquationComponentNode) AddChild_EquationNode(node *EquationNode)
 // Returns:
 //   EquationNode  
 func (instance *EquationComponentNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationComponentNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2906,6 +3045,7 @@ func (instance *EquationComponentNode) InsertChild(index int32, equationtype Equ
 // Returns:
 //   EquationNode  
 func (instance *EquationComponentNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationComponentNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2923,6 +3063,7 @@ func (instance *EquationComponentNode) InsertAfter(equationtype EquationNodeType
 // Returns:
 //   EquationNode  
 func (instance *EquationComponentNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationComponentNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2940,6 +3081,7 @@ func (instance *EquationComponentNode) InsertBefore(equationtype EquationNodeTyp
 // Returns:
 //   EquationNode  
 func (instance *EquationComponentNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationComponentNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2955,6 +3097,7 @@ func (instance *EquationComponentNode) GetChild(index int32)  (*EquationNode,  e
 // Returns:
 //   void  
 func (instance *EquationComponentNode) Remove()  error {
+	
 	CGoReturnPtr := C.EquationComponentNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2969,6 +3112,7 @@ func (instance *EquationComponentNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *EquationComponentNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.EquationComponentNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2983,6 +3127,7 @@ func (instance *EquationComponentNode) RemoveChild_EquationNode(node *EquationNo
 // Returns:
 //   void  
 func (instance *EquationComponentNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.EquationComponentNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2995,6 +3140,7 @@ func (instance *EquationComponentNode) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *EquationComponentNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.EquationComponentNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3007,6 +3153,7 @@ func (instance *EquationComponentNode) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *EquationComponentNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.EquationComponentNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3023,6 +3170,7 @@ func (instance *EquationComponentNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *EquationComponentNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.EquationComponentNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3043,6 +3191,7 @@ func (instance *EquationComponentNode) GetEquationType()  (EquationNodeType,  er
 // Returns:
 //   EquationNode  
 func EquationComponentNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationComponentNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3090,6 +3239,7 @@ func NewEquationNode(src *FontSetting) ( *EquationNode, error) {
 // Returns:
 //   bool  
 func (instance *EquationNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.EquationNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3103,6 +3253,7 @@ func (instance *EquationNode) IsNull()  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *EquationNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3120,6 +3271,7 @@ func (instance *EquationNode) GetParentNode()  (*EquationNode,  error)  {
 // Returns:
 //   void  
 func (instance *EquationNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.EquationNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3132,6 +3284,7 @@ func (instance *EquationNode) SetParentNode(value *EquationNode)  error {
 // Returns:
 //   string  
 func (instance *EquationNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.EquationNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3145,6 +3298,7 @@ func (instance *EquationNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *EquationNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.EquationNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3160,6 +3314,7 @@ func (instance *EquationNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *EquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3177,6 +3332,7 @@ func (instance *EquationNode) AddChild_EquationNodeType(equationtype EquationNod
 // Returns:
 //   void  
 func (instance *EquationNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.EquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3192,6 +3348,7 @@ func (instance *EquationNode) AddChild_EquationNode(node *EquationNode)  error {
 // Returns:
 //   EquationNode  
 func (instance *EquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3209,6 +3366,7 @@ func (instance *EquationNode) InsertChild(index int32, equationtype EquationNode
 // Returns:
 //   EquationNode  
 func (instance *EquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3226,6 +3384,7 @@ func (instance *EquationNode) InsertAfter(equationtype EquationNodeType)  (*Equa
 // Returns:
 //   EquationNode  
 func (instance *EquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3243,6 +3402,7 @@ func (instance *EquationNode) InsertBefore(equationtype EquationNodeType)  (*Equ
 // Returns:
 //   EquationNode  
 func (instance *EquationNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3258,6 +3418,7 @@ func (instance *EquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 // Returns:
 //   void  
 func (instance *EquationNode) Remove()  error {
+	
 	CGoReturnPtr := C.EquationNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3272,6 +3433,7 @@ func (instance *EquationNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *EquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.EquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3286,6 +3448,7 @@ func (instance *EquationNode) RemoveChild_EquationNode(node *EquationNode)  erro
 // Returns:
 //   void  
 func (instance *EquationNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.EquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3298,6 +3461,7 @@ func (instance *EquationNode) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *EquationNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.EquationNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3312,6 +3476,7 @@ func (instance *EquationNode) RemoveAllChildren()  error {
 // Returns:
 //   bool  
 func (instance *EquationNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.EquationNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3325,6 +3490,7 @@ func (instance *EquationNode) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *EquationNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.EquationNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3341,6 +3507,7 @@ func (instance *EquationNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *EquationNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.EquationNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3361,6 +3528,7 @@ func (instance *EquationNode) GetEquationType()  (EquationNodeType,  error)  {
 // Returns:
 //   EquationNode  
 func EquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3376,6 +3544,7 @@ func EquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, 
 // Returns:
 //   int32  
 func (instance *EquationNode) GetStartIndex()  (int32,  error)  {
+	
 	CGoReturnPtr := C.EquationNode_GetStartIndex( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3389,6 +3558,7 @@ func (instance *EquationNode) GetStartIndex()  (int32,  error)  {
 // Returns:
 //   int32  
 func (instance *EquationNode) GetLength()  (int32,  error)  {
+	
 	CGoReturnPtr := C.EquationNode_GetLength( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3402,6 +3572,7 @@ func (instance *EquationNode) GetLength()  (int32,  error)  {
 // Returns:
 //   Font  
 func (instance *EquationNode) GetFont()  (*Font,  error)  {
+	
 	CGoReturnPtr := C.EquationNode_GetFont( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3419,6 +3590,7 @@ func (instance *EquationNode) GetFont()  (*Font,  error)  {
 // Returns:
 //   void  
 func (instance *EquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
 	CGoReturnPtr := C.EquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3431,6 +3603,7 @@ func (instance *EquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 // Returns:
 //   TextOptions  
 func (instance *EquationNode) GetTextOptions()  (*TextOptions,  error)  {
+	
 	CGoReturnPtr := C.EquationNode_GetTextOptions( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3478,6 +3651,7 @@ func NewEquationNodeParagraph(src *EquationNode) ( *EquationNodeParagraph, error
 // Returns:
 //   bool  
 func (instance *EquationNodeParagraph) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3491,6 +3665,7 @@ func (instance *EquationNodeParagraph) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *EquationNodeParagraph) GetJustification()  (EquationHorizontalJustificationType,  error)  {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_GetJustification( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3509,6 +3684,7 @@ func (instance *EquationNodeParagraph) GetJustification()  (EquationHorizontalJu
 // Returns:
 //   void  
 func (instance *EquationNodeParagraph) SetJustification(value EquationHorizontalJustificationType)  error {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_SetJustification( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3523,6 +3699,7 @@ func (instance *EquationNodeParagraph) SetJustification(value EquationHorizontal
 // Returns:
 //   bool  
 func (instance *EquationNodeParagraph) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3536,6 +3713,7 @@ func (instance *EquationNodeParagraph) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *EquationNodeParagraph) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3553,6 +3731,7 @@ func (instance *EquationNodeParagraph) GetParentNode()  (*EquationNode,  error) 
 // Returns:
 //   void  
 func (instance *EquationNodeParagraph) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3565,6 +3744,7 @@ func (instance *EquationNodeParagraph) SetParentNode(value *EquationNode)  error
 // Returns:
 //   string  
 func (instance *EquationNodeParagraph) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3578,6 +3758,7 @@ func (instance *EquationNodeParagraph) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *EquationNodeParagraph) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3593,6 +3774,7 @@ func (instance *EquationNodeParagraph) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *EquationNodeParagraph) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3610,6 +3792,7 @@ func (instance *EquationNodeParagraph) AddChild_EquationNodeType(equationtype Eq
 // Returns:
 //   void  
 func (instance *EquationNodeParagraph) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3625,6 +3808,7 @@ func (instance *EquationNodeParagraph) AddChild_EquationNode(node *EquationNode)
 // Returns:
 //   EquationNode  
 func (instance *EquationNodeParagraph) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3642,6 +3826,7 @@ func (instance *EquationNodeParagraph) InsertChild(index int32, equationtype Equ
 // Returns:
 //   EquationNode  
 func (instance *EquationNodeParagraph) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3659,6 +3844,7 @@ func (instance *EquationNodeParagraph) InsertAfter(equationtype EquationNodeType
 // Returns:
 //   EquationNode  
 func (instance *EquationNodeParagraph) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3676,6 +3862,7 @@ func (instance *EquationNodeParagraph) InsertBefore(equationtype EquationNodeTyp
 // Returns:
 //   EquationNode  
 func (instance *EquationNodeParagraph) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3691,6 +3878,7 @@ func (instance *EquationNodeParagraph) GetChild(index int32)  (*EquationNode,  e
 // Returns:
 //   void  
 func (instance *EquationNodeParagraph) Remove()  error {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3705,6 +3893,7 @@ func (instance *EquationNodeParagraph) Remove()  error {
 // Returns:
 //   void  
 func (instance *EquationNodeParagraph) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3719,6 +3908,7 @@ func (instance *EquationNodeParagraph) RemoveChild_EquationNode(node *EquationNo
 // Returns:
 //   void  
 func (instance *EquationNodeParagraph) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3731,6 +3921,7 @@ func (instance *EquationNodeParagraph) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *EquationNodeParagraph) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3743,6 +3934,7 @@ func (instance *EquationNodeParagraph) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *EquationNodeParagraph) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3759,6 +3951,7 @@ func (instance *EquationNodeParagraph) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *EquationNodeParagraph) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3779,6 +3972,7 @@ func (instance *EquationNodeParagraph) GetEquationType()  (EquationNodeType,  er
 // Returns:
 //   EquationNode  
 func EquationNodeParagraph_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.EquationNodeParagraph_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3826,6 +4020,7 @@ func NewFractionEquationNode(src *EquationNode) ( *FractionEquationNode, error) 
 // Returns:
 //   bool  
 func (instance *FractionEquationNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.FractionEquationNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3839,6 +4034,7 @@ func (instance *FractionEquationNode) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *FractionEquationNode) GetFractionType()  (EquationFractionType,  error)  {
+	
 	CGoReturnPtr := C.FractionEquationNode_GetFractionType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3857,6 +4053,7 @@ func (instance *FractionEquationNode) GetFractionType()  (EquationFractionType, 
 // Returns:
 //   void  
 func (instance *FractionEquationNode) SetFractionType(value EquationFractionType)  error {
+	
 	CGoReturnPtr := C.FractionEquationNode_SetFractionType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3871,6 +4068,7 @@ func (instance *FractionEquationNode) SetFractionType(value EquationFractionType
 // Returns:
 //   bool  
 func (instance *FractionEquationNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.FractionEquationNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3884,6 +4082,7 @@ func (instance *FractionEquationNode) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *FractionEquationNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.FractionEquationNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3901,6 +4100,7 @@ func (instance *FractionEquationNode) GetParentNode()  (*EquationNode,  error)  
 // Returns:
 //   void  
 func (instance *FractionEquationNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.FractionEquationNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3913,6 +4113,7 @@ func (instance *FractionEquationNode) SetParentNode(value *EquationNode)  error 
 // Returns:
 //   string  
 func (instance *FractionEquationNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.FractionEquationNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3926,6 +4127,7 @@ func (instance *FractionEquationNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *FractionEquationNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.FractionEquationNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3941,6 +4143,7 @@ func (instance *FractionEquationNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *FractionEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.FractionEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3958,6 +4161,7 @@ func (instance *FractionEquationNode) AddChild_EquationNodeType(equationtype Equ
 // Returns:
 //   void  
 func (instance *FractionEquationNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.FractionEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3973,6 +4177,7 @@ func (instance *FractionEquationNode) AddChild_EquationNode(node *EquationNode) 
 // Returns:
 //   EquationNode  
 func (instance *FractionEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.FractionEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3990,6 +4195,7 @@ func (instance *FractionEquationNode) InsertChild(index int32, equationtype Equa
 // Returns:
 //   EquationNode  
 func (instance *FractionEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.FractionEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4007,6 +4213,7 @@ func (instance *FractionEquationNode) InsertAfter(equationtype EquationNodeType)
 // Returns:
 //   EquationNode  
 func (instance *FractionEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.FractionEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4024,6 +4231,7 @@ func (instance *FractionEquationNode) InsertBefore(equationtype EquationNodeType
 // Returns:
 //   EquationNode  
 func (instance *FractionEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.FractionEquationNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4039,6 +4247,7 @@ func (instance *FractionEquationNode) GetChild(index int32)  (*EquationNode,  er
 // Returns:
 //   void  
 func (instance *FractionEquationNode) Remove()  error {
+	
 	CGoReturnPtr := C.FractionEquationNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4053,6 +4262,7 @@ func (instance *FractionEquationNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *FractionEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.FractionEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4067,6 +4277,7 @@ func (instance *FractionEquationNode) RemoveChild_EquationNode(node *EquationNod
 // Returns:
 //   void  
 func (instance *FractionEquationNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.FractionEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4079,6 +4290,7 @@ func (instance *FractionEquationNode) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *FractionEquationNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.FractionEquationNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4091,6 +4303,7 @@ func (instance *FractionEquationNode) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *FractionEquationNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.FractionEquationNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4107,6 +4320,7 @@ func (instance *FractionEquationNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *FractionEquationNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.FractionEquationNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4127,6 +4341,7 @@ func (instance *FractionEquationNode) GetEquationType()  (EquationNodeType,  err
 // Returns:
 //   EquationNode  
 func FractionEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.FractionEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4175,6 +4390,7 @@ func NewFunctionEquationNode(src *EquationNode) ( *FunctionEquationNode, error) 
 // Returns:
 //   bool  
 func (instance *FunctionEquationNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.FunctionEquationNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4190,6 +4406,7 @@ func (instance *FunctionEquationNode) IsNull()  (bool,  error)  {
 // Returns:
 //   bool  
 func (instance *FunctionEquationNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.FunctionEquationNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4203,6 +4420,7 @@ func (instance *FunctionEquationNode) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *FunctionEquationNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.FunctionEquationNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4220,6 +4438,7 @@ func (instance *FunctionEquationNode) GetParentNode()  (*EquationNode,  error)  
 // Returns:
 //   void  
 func (instance *FunctionEquationNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.FunctionEquationNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4232,6 +4451,7 @@ func (instance *FunctionEquationNode) SetParentNode(value *EquationNode)  error 
 // Returns:
 //   string  
 func (instance *FunctionEquationNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.FunctionEquationNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4245,6 +4465,7 @@ func (instance *FunctionEquationNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *FunctionEquationNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.FunctionEquationNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4260,6 +4481,7 @@ func (instance *FunctionEquationNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *FunctionEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.FunctionEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4277,6 +4499,7 @@ func (instance *FunctionEquationNode) AddChild_EquationNodeType(equationtype Equ
 // Returns:
 //   void  
 func (instance *FunctionEquationNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.FunctionEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4292,6 +4515,7 @@ func (instance *FunctionEquationNode) AddChild_EquationNode(node *EquationNode) 
 // Returns:
 //   EquationNode  
 func (instance *FunctionEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.FunctionEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4309,6 +4533,7 @@ func (instance *FunctionEquationNode) InsertChild(index int32, equationtype Equa
 // Returns:
 //   EquationNode  
 func (instance *FunctionEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.FunctionEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4326,6 +4551,7 @@ func (instance *FunctionEquationNode) InsertAfter(equationtype EquationNodeType)
 // Returns:
 //   EquationNode  
 func (instance *FunctionEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.FunctionEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4343,6 +4569,7 @@ func (instance *FunctionEquationNode) InsertBefore(equationtype EquationNodeType
 // Returns:
 //   EquationNode  
 func (instance *FunctionEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.FunctionEquationNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4358,6 +4585,7 @@ func (instance *FunctionEquationNode) GetChild(index int32)  (*EquationNode,  er
 // Returns:
 //   void  
 func (instance *FunctionEquationNode) Remove()  error {
+	
 	CGoReturnPtr := C.FunctionEquationNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4372,6 +4600,7 @@ func (instance *FunctionEquationNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *FunctionEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.FunctionEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4386,6 +4615,7 @@ func (instance *FunctionEquationNode) RemoveChild_EquationNode(node *EquationNod
 // Returns:
 //   void  
 func (instance *FunctionEquationNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.FunctionEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4398,6 +4628,7 @@ func (instance *FunctionEquationNode) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *FunctionEquationNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.FunctionEquationNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4410,6 +4641,7 @@ func (instance *FunctionEquationNode) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *FunctionEquationNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.FunctionEquationNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4426,6 +4658,7 @@ func (instance *FunctionEquationNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *FunctionEquationNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.FunctionEquationNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4446,6 +4679,7 @@ func (instance *FunctionEquationNode) GetEquationType()  (EquationNodeType,  err
 // Returns:
 //   EquationNode  
 func FunctionEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.FunctionEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4493,6 +4727,7 @@ func NewGroupCharacterEquationNode(src *EquationNode) ( *GroupCharacterEquationN
 // Returns:
 //   bool  
 func (instance *GroupCharacterEquationNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4508,6 +4743,7 @@ func (instance *GroupCharacterEquationNode) IsNull()  (bool,  error)  {
 // Returns:
 //   string  
 func (instance *GroupCharacterEquationNode) GetGroupChr()  (string,  error)  {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_GetGroupChr( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4525,6 +4761,7 @@ func (instance *GroupCharacterEquationNode) GetGroupChr()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *GroupCharacterEquationNode) SetGroupChr(value string)  error {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_SetGroupChr( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4537,6 +4774,7 @@ func (instance *GroupCharacterEquationNode) SetGroupChr(value string)  error {
 // Returns:
 //   int32  
 func (instance *GroupCharacterEquationNode) GetChrType()  (EquationCombiningCharacterType,  error)  {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_GetChrType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4555,6 +4793,7 @@ func (instance *GroupCharacterEquationNode) GetChrType()  (EquationCombiningChar
 // Returns:
 //   void  
 func (instance *GroupCharacterEquationNode) SetChrType(value EquationCombiningCharacterType)  error {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_SetChrType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4567,6 +4806,7 @@ func (instance *GroupCharacterEquationNode) SetChrType(value EquationCombiningCh
 // Returns:
 //   int32  
 func (instance *GroupCharacterEquationNode) GetPosition()  (EquationCharacterPositionType,  error)  {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_GetPosition( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4585,6 +4825,7 @@ func (instance *GroupCharacterEquationNode) GetPosition()  (EquationCharacterPos
 // Returns:
 //   void  
 func (instance *GroupCharacterEquationNode) SetPosition(value EquationCharacterPositionType)  error {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_SetPosition( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4597,6 +4838,7 @@ func (instance *GroupCharacterEquationNode) SetPosition(value EquationCharacterP
 // Returns:
 //   int32  
 func (instance *GroupCharacterEquationNode) GetVertJc()  (EquationCharacterPositionType,  error)  {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_GetVertJc( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4615,6 +4857,7 @@ func (instance *GroupCharacterEquationNode) GetVertJc()  (EquationCharacterPosit
 // Returns:
 //   void  
 func (instance *GroupCharacterEquationNode) SetVertJc(value EquationCharacterPositionType)  error {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_SetVertJc( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4629,6 +4872,7 @@ func (instance *GroupCharacterEquationNode) SetVertJc(value EquationCharacterPos
 // Returns:
 //   bool  
 func (instance *GroupCharacterEquationNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4642,6 +4886,7 @@ func (instance *GroupCharacterEquationNode) Equals(obj *Object)  (bool,  error) 
 // Returns:
 //   EquationNode  
 func (instance *GroupCharacterEquationNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4659,6 +4904,7 @@ func (instance *GroupCharacterEquationNode) GetParentNode()  (*EquationNode,  er
 // Returns:
 //   void  
 func (instance *GroupCharacterEquationNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4671,6 +4917,7 @@ func (instance *GroupCharacterEquationNode) SetParentNode(value *EquationNode)  
 // Returns:
 //   string  
 func (instance *GroupCharacterEquationNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4684,6 +4931,7 @@ func (instance *GroupCharacterEquationNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *GroupCharacterEquationNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4699,6 +4947,7 @@ func (instance *GroupCharacterEquationNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *GroupCharacterEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4716,6 +4965,7 @@ func (instance *GroupCharacterEquationNode) AddChild_EquationNodeType(equationty
 // Returns:
 //   void  
 func (instance *GroupCharacterEquationNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4731,6 +4981,7 @@ func (instance *GroupCharacterEquationNode) AddChild_EquationNode(node *Equation
 // Returns:
 //   EquationNode  
 func (instance *GroupCharacterEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4748,6 +4999,7 @@ func (instance *GroupCharacterEquationNode) InsertChild(index int32, equationtyp
 // Returns:
 //   EquationNode  
 func (instance *GroupCharacterEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4765,6 +5017,7 @@ func (instance *GroupCharacterEquationNode) InsertAfter(equationtype EquationNod
 // Returns:
 //   EquationNode  
 func (instance *GroupCharacterEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4782,6 +5035,7 @@ func (instance *GroupCharacterEquationNode) InsertBefore(equationtype EquationNo
 // Returns:
 //   EquationNode  
 func (instance *GroupCharacterEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4797,6 +5051,7 @@ func (instance *GroupCharacterEquationNode) GetChild(index int32)  (*EquationNod
 // Returns:
 //   void  
 func (instance *GroupCharacterEquationNode) Remove()  error {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4811,6 +5066,7 @@ func (instance *GroupCharacterEquationNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *GroupCharacterEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4825,6 +5081,7 @@ func (instance *GroupCharacterEquationNode) RemoveChild_EquationNode(node *Equat
 // Returns:
 //   void  
 func (instance *GroupCharacterEquationNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4837,6 +5094,7 @@ func (instance *GroupCharacterEquationNode) RemoveChild_Int(index int32)  error 
 // Returns:
 //   void  
 func (instance *GroupCharacterEquationNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4849,6 +5107,7 @@ func (instance *GroupCharacterEquationNode) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *GroupCharacterEquationNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4865,6 +5124,7 @@ func (instance *GroupCharacterEquationNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *GroupCharacterEquationNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4885,6 +5145,7 @@ func (instance *GroupCharacterEquationNode) GetEquationType()  (EquationNodeType
 // Returns:
 //   EquationNode  
 func GroupCharacterEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.GroupCharacterEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4932,6 +5193,7 @@ func NewLimLowUppEquationNode(src *EquationNode) ( *LimLowUppEquationNode, error
 // Returns:
 //   bool  
 func (instance *LimLowUppEquationNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4947,6 +5209,7 @@ func (instance *LimLowUppEquationNode) IsNull()  (bool,  error)  {
 // Returns:
 //   bool  
 func (instance *LimLowUppEquationNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4960,6 +5223,7 @@ func (instance *LimLowUppEquationNode) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *LimLowUppEquationNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4977,6 +5241,7 @@ func (instance *LimLowUppEquationNode) GetParentNode()  (*EquationNode,  error) 
 // Returns:
 //   void  
 func (instance *LimLowUppEquationNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4989,6 +5254,7 @@ func (instance *LimLowUppEquationNode) SetParentNode(value *EquationNode)  error
 // Returns:
 //   string  
 func (instance *LimLowUppEquationNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5002,6 +5268,7 @@ func (instance *LimLowUppEquationNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *LimLowUppEquationNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5017,6 +5284,7 @@ func (instance *LimLowUppEquationNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *LimLowUppEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5034,6 +5302,7 @@ func (instance *LimLowUppEquationNode) AddChild_EquationNodeType(equationtype Eq
 // Returns:
 //   void  
 func (instance *LimLowUppEquationNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5049,6 +5318,7 @@ func (instance *LimLowUppEquationNode) AddChild_EquationNode(node *EquationNode)
 // Returns:
 //   EquationNode  
 func (instance *LimLowUppEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5066,6 +5336,7 @@ func (instance *LimLowUppEquationNode) InsertChild(index int32, equationtype Equ
 // Returns:
 //   EquationNode  
 func (instance *LimLowUppEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5083,6 +5354,7 @@ func (instance *LimLowUppEquationNode) InsertAfter(equationtype EquationNodeType
 // Returns:
 //   EquationNode  
 func (instance *LimLowUppEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5100,6 +5372,7 @@ func (instance *LimLowUppEquationNode) InsertBefore(equationtype EquationNodeTyp
 // Returns:
 //   EquationNode  
 func (instance *LimLowUppEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5115,6 +5388,7 @@ func (instance *LimLowUppEquationNode) GetChild(index int32)  (*EquationNode,  e
 // Returns:
 //   void  
 func (instance *LimLowUppEquationNode) Remove()  error {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5129,6 +5403,7 @@ func (instance *LimLowUppEquationNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *LimLowUppEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5143,6 +5418,7 @@ func (instance *LimLowUppEquationNode) RemoveChild_EquationNode(node *EquationNo
 // Returns:
 //   void  
 func (instance *LimLowUppEquationNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5155,6 +5431,7 @@ func (instance *LimLowUppEquationNode) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *LimLowUppEquationNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5167,6 +5444,7 @@ func (instance *LimLowUppEquationNode) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *LimLowUppEquationNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5183,6 +5461,7 @@ func (instance *LimLowUppEquationNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *LimLowUppEquationNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5203,6 +5482,7 @@ func (instance *LimLowUppEquationNode) GetEquationType()  (EquationNodeType,  er
 // Returns:
 //   EquationNode  
 func LimLowUppEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.LimLowUppEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5250,6 +5530,7 @@ func NewMathematicalEquationNode(src *EquationNode) ( *MathematicalEquationNode,
 // Returns:
 //   bool  
 func (instance *MathematicalEquationNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5265,6 +5546,7 @@ func (instance *MathematicalEquationNode) IsNull()  (bool,  error)  {
 // Returns:
 //   bool  
 func (instance *MathematicalEquationNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5278,6 +5560,7 @@ func (instance *MathematicalEquationNode) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *MathematicalEquationNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5295,6 +5578,7 @@ func (instance *MathematicalEquationNode) GetParentNode()  (*EquationNode,  erro
 // Returns:
 //   void  
 func (instance *MathematicalEquationNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5307,6 +5591,7 @@ func (instance *MathematicalEquationNode) SetParentNode(value *EquationNode)  er
 // Returns:
 //   string  
 func (instance *MathematicalEquationNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5320,6 +5605,7 @@ func (instance *MathematicalEquationNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *MathematicalEquationNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5335,6 +5621,7 @@ func (instance *MathematicalEquationNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *MathematicalEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5352,6 +5639,7 @@ func (instance *MathematicalEquationNode) AddChild_EquationNodeType(equationtype
 // Returns:
 //   void  
 func (instance *MathematicalEquationNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5367,6 +5655,7 @@ func (instance *MathematicalEquationNode) AddChild_EquationNode(node *EquationNo
 // Returns:
 //   EquationNode  
 func (instance *MathematicalEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5384,6 +5673,7 @@ func (instance *MathematicalEquationNode) InsertChild(index int32, equationtype 
 // Returns:
 //   EquationNode  
 func (instance *MathematicalEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5401,6 +5691,7 @@ func (instance *MathematicalEquationNode) InsertAfter(equationtype EquationNodeT
 // Returns:
 //   EquationNode  
 func (instance *MathematicalEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5418,6 +5709,7 @@ func (instance *MathematicalEquationNode) InsertBefore(equationtype EquationNode
 // Returns:
 //   EquationNode  
 func (instance *MathematicalEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5433,6 +5725,7 @@ func (instance *MathematicalEquationNode) GetChild(index int32)  (*EquationNode,
 // Returns:
 //   void  
 func (instance *MathematicalEquationNode) Remove()  error {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5447,6 +5740,7 @@ func (instance *MathematicalEquationNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *MathematicalEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5461,6 +5755,7 @@ func (instance *MathematicalEquationNode) RemoveChild_EquationNode(node *Equatio
 // Returns:
 //   void  
 func (instance *MathematicalEquationNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5473,6 +5768,7 @@ func (instance *MathematicalEquationNode) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *MathematicalEquationNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5485,6 +5781,7 @@ func (instance *MathematicalEquationNode) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *MathematicalEquationNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5501,6 +5798,7 @@ func (instance *MathematicalEquationNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *MathematicalEquationNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5521,6 +5819,7 @@ func (instance *MathematicalEquationNode) GetEquationType()  (EquationNodeType, 
 // Returns:
 //   EquationNode  
 func MathematicalEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.MathematicalEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5568,6 +5867,7 @@ func NewMatrixEquationNode(src *EquationNode) ( *MatrixEquationNode, error) {
 // Returns:
 //   bool  
 func (instance *MatrixEquationNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.MatrixEquationNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5581,6 +5881,7 @@ func (instance *MatrixEquationNode) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *MatrixEquationNode) GetBaseJc()  (EquationVerticalJustificationType,  error)  {
+	
 	CGoReturnPtr := C.MatrixEquationNode_GetBaseJc( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5599,6 +5900,7 @@ func (instance *MatrixEquationNode) GetBaseJc()  (EquationVerticalJustificationT
 // Returns:
 //   void  
 func (instance *MatrixEquationNode) SetBaseJc(value EquationVerticalJustificationType)  error {
+	
 	CGoReturnPtr := C.MatrixEquationNode_SetBaseJc( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5611,6 +5913,7 @@ func (instance *MatrixEquationNode) SetBaseJc(value EquationVerticalJustificatio
 // Returns:
 //   bool  
 func (instance *MatrixEquationNode) IsHidePlaceholder()  (bool,  error)  {
+	
 	CGoReturnPtr := C.MatrixEquationNode_IsHidePlaceholder( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5626,6 +5929,7 @@ func (instance *MatrixEquationNode) IsHidePlaceholder()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *MatrixEquationNode) SetIsHidePlaceholder(value bool)  error {
+	
 	CGoReturnPtr := C.MatrixEquationNode_SetIsHidePlaceholder( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5640,6 +5944,7 @@ func (instance *MatrixEquationNode) SetIsHidePlaceholder(value bool)  error {
 // Returns:
 //   bool  
 func (instance *MatrixEquationNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.MatrixEquationNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5653,6 +5958,7 @@ func (instance *MatrixEquationNode) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *MatrixEquationNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.MatrixEquationNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5670,6 +5976,7 @@ func (instance *MatrixEquationNode) GetParentNode()  (*EquationNode,  error)  {
 // Returns:
 //   void  
 func (instance *MatrixEquationNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.MatrixEquationNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5682,6 +5989,7 @@ func (instance *MatrixEquationNode) SetParentNode(value *EquationNode)  error {
 // Returns:
 //   string  
 func (instance *MatrixEquationNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.MatrixEquationNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5695,6 +6003,7 @@ func (instance *MatrixEquationNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *MatrixEquationNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.MatrixEquationNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5710,6 +6019,7 @@ func (instance *MatrixEquationNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *MatrixEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.MatrixEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5727,6 +6037,7 @@ func (instance *MatrixEquationNode) AddChild_EquationNodeType(equationtype Equat
 // Returns:
 //   void  
 func (instance *MatrixEquationNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.MatrixEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5742,6 +6053,7 @@ func (instance *MatrixEquationNode) AddChild_EquationNode(node *EquationNode)  e
 // Returns:
 //   EquationNode  
 func (instance *MatrixEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.MatrixEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5759,6 +6071,7 @@ func (instance *MatrixEquationNode) InsertChild(index int32, equationtype Equati
 // Returns:
 //   EquationNode  
 func (instance *MatrixEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.MatrixEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5776,6 +6089,7 @@ func (instance *MatrixEquationNode) InsertAfter(equationtype EquationNodeType)  
 // Returns:
 //   EquationNode  
 func (instance *MatrixEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.MatrixEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5793,6 +6107,7 @@ func (instance *MatrixEquationNode) InsertBefore(equationtype EquationNodeType) 
 // Returns:
 //   EquationNode  
 func (instance *MatrixEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.MatrixEquationNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5808,6 +6123,7 @@ func (instance *MatrixEquationNode) GetChild(index int32)  (*EquationNode,  erro
 // Returns:
 //   void  
 func (instance *MatrixEquationNode) Remove()  error {
+	
 	CGoReturnPtr := C.MatrixEquationNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5822,6 +6138,7 @@ func (instance *MatrixEquationNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *MatrixEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.MatrixEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5836,6 +6153,7 @@ func (instance *MatrixEquationNode) RemoveChild_EquationNode(node *EquationNode)
 // Returns:
 //   void  
 func (instance *MatrixEquationNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.MatrixEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5848,6 +6166,7 @@ func (instance *MatrixEquationNode) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *MatrixEquationNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.MatrixEquationNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5860,6 +6179,7 @@ func (instance *MatrixEquationNode) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *MatrixEquationNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.MatrixEquationNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5876,6 +6196,7 @@ func (instance *MatrixEquationNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *MatrixEquationNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.MatrixEquationNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5896,6 +6217,7 @@ func (instance *MatrixEquationNode) GetEquationType()  (EquationNodeType,  error
 // Returns:
 //   EquationNode  
 func MatrixEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.MatrixEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5943,6 +6265,7 @@ func NewNaryEquationNode(src *EquationNode) ( *NaryEquationNode, error) {
 // Returns:
 //   bool  
 func (instance *NaryEquationNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5956,6 +6279,7 @@ func (instance *NaryEquationNode) IsNull()  (bool,  error)  {
 // Returns:
 //   bool  
 func (instance *NaryEquationNode) IsHideSubscript()  (bool,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_IsHideSubscript( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5971,6 +6295,7 @@ func (instance *NaryEquationNode) IsHideSubscript()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *NaryEquationNode) SetIsHideSubscript(value bool)  error {
+	
 	CGoReturnPtr := C.NaryEquationNode_SetIsHideSubscript( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5983,6 +6308,7 @@ func (instance *NaryEquationNode) SetIsHideSubscript(value bool)  error {
 // Returns:
 //   bool  
 func (instance *NaryEquationNode) IsHideSuperscript()  (bool,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_IsHideSuperscript( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -5998,6 +6324,7 @@ func (instance *NaryEquationNode) IsHideSuperscript()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *NaryEquationNode) SetIsHideSuperscript(value bool)  error {
+	
 	CGoReturnPtr := C.NaryEquationNode_SetIsHideSuperscript( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6010,6 +6337,7 @@ func (instance *NaryEquationNode) SetIsHideSuperscript(value bool)  error {
 // Returns:
 //   int32  
 func (instance *NaryEquationNode) GetLimitLocation()  (EquationLimitLocationType,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_GetLimitLocation( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6028,6 +6356,7 @@ func (instance *NaryEquationNode) GetLimitLocation()  (EquationLimitLocationType
 // Returns:
 //   void  
 func (instance *NaryEquationNode) SetLimitLocation(value EquationLimitLocationType)  error {
+	
 	CGoReturnPtr := C.NaryEquationNode_SetLimitLocation( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6042,6 +6371,7 @@ func (instance *NaryEquationNode) SetLimitLocation(value EquationLimitLocationTy
 // Returns:
 //   string  
 func (instance *NaryEquationNode) GetNaryOperator()  (string,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_GetNaryOperator( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6059,6 +6389,7 @@ func (instance *NaryEquationNode) GetNaryOperator()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *NaryEquationNode) SetNaryOperator(value string)  error {
+	
 	CGoReturnPtr := C.NaryEquationNode_SetNaryOperator( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6071,6 +6402,7 @@ func (instance *NaryEquationNode) SetNaryOperator(value string)  error {
 // Returns:
 //   int32  
 func (instance *NaryEquationNode) GetNaryOperatorType()  (EquationMathematicalOperatorType,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_GetNaryOperatorType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6089,6 +6421,7 @@ func (instance *NaryEquationNode) GetNaryOperatorType()  (EquationMathematicalOp
 // Returns:
 //   void  
 func (instance *NaryEquationNode) SetNaryOperatorType(value EquationMathematicalOperatorType)  error {
+	
 	CGoReturnPtr := C.NaryEquationNode_SetNaryOperatorType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6101,6 +6434,7 @@ func (instance *NaryEquationNode) SetNaryOperatorType(value EquationMathematical
 // Returns:
 //   bool  
 func (instance *NaryEquationNode) GetNaryGrow()  (bool,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_GetNaryGrow( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6116,6 +6450,7 @@ func (instance *NaryEquationNode) GetNaryGrow()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *NaryEquationNode) SetNaryGrow(value bool)  error {
+	
 	CGoReturnPtr := C.NaryEquationNode_SetNaryGrow( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6130,6 +6465,7 @@ func (instance *NaryEquationNode) SetNaryGrow(value bool)  error {
 // Returns:
 //   bool  
 func (instance *NaryEquationNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6143,6 +6479,7 @@ func (instance *NaryEquationNode) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *NaryEquationNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6160,6 +6497,7 @@ func (instance *NaryEquationNode) GetParentNode()  (*EquationNode,  error)  {
 // Returns:
 //   void  
 func (instance *NaryEquationNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.NaryEquationNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6172,6 +6510,7 @@ func (instance *NaryEquationNode) SetParentNode(value *EquationNode)  error {
 // Returns:
 //   string  
 func (instance *NaryEquationNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6185,6 +6524,7 @@ func (instance *NaryEquationNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *NaryEquationNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6200,6 +6540,7 @@ func (instance *NaryEquationNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *NaryEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6217,6 +6558,7 @@ func (instance *NaryEquationNode) AddChild_EquationNodeType(equationtype Equatio
 // Returns:
 //   void  
 func (instance *NaryEquationNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.NaryEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6232,6 +6574,7 @@ func (instance *NaryEquationNode) AddChild_EquationNode(node *EquationNode)  err
 // Returns:
 //   EquationNode  
 func (instance *NaryEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6249,6 +6592,7 @@ func (instance *NaryEquationNode) InsertChild(index int32, equationtype Equation
 // Returns:
 //   EquationNode  
 func (instance *NaryEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6266,6 +6610,7 @@ func (instance *NaryEquationNode) InsertAfter(equationtype EquationNodeType)  (*
 // Returns:
 //   EquationNode  
 func (instance *NaryEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6283,6 +6628,7 @@ func (instance *NaryEquationNode) InsertBefore(equationtype EquationNodeType)  (
 // Returns:
 //   EquationNode  
 func (instance *NaryEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6298,6 +6644,7 @@ func (instance *NaryEquationNode) GetChild(index int32)  (*EquationNode,  error)
 // Returns:
 //   void  
 func (instance *NaryEquationNode) Remove()  error {
+	
 	CGoReturnPtr := C.NaryEquationNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6312,6 +6659,7 @@ func (instance *NaryEquationNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *NaryEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.NaryEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6326,6 +6674,7 @@ func (instance *NaryEquationNode) RemoveChild_EquationNode(node *EquationNode)  
 // Returns:
 //   void  
 func (instance *NaryEquationNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.NaryEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6338,6 +6687,7 @@ func (instance *NaryEquationNode) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *NaryEquationNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.NaryEquationNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6350,6 +6700,7 @@ func (instance *NaryEquationNode) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *NaryEquationNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6366,6 +6717,7 @@ func (instance *NaryEquationNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *NaryEquationNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6386,6 +6738,7 @@ func (instance *NaryEquationNode) GetEquationType()  (EquationNodeType,  error) 
 // Returns:
 //   EquationNode  
 func NaryEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.NaryEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6433,6 +6786,7 @@ func NewRadicalEquationNode(src *EquationNode) ( *RadicalEquationNode, error) {
 // Returns:
 //   bool  
 func (instance *RadicalEquationNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.RadicalEquationNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6446,6 +6800,7 @@ func (instance *RadicalEquationNode) IsNull()  (bool,  error)  {
 // Returns:
 //   bool  
 func (instance *RadicalEquationNode) IsDegHide()  (bool,  error)  {
+	
 	CGoReturnPtr := C.RadicalEquationNode_IsDegHide( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6461,6 +6816,7 @@ func (instance *RadicalEquationNode) IsDegHide()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *RadicalEquationNode) SetIsDegHide(value bool)  error {
+	
 	CGoReturnPtr := C.RadicalEquationNode_SetIsDegHide( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6475,6 +6831,7 @@ func (instance *RadicalEquationNode) SetIsDegHide(value bool)  error {
 // Returns:
 //   bool  
 func (instance *RadicalEquationNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.RadicalEquationNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6488,6 +6845,7 @@ func (instance *RadicalEquationNode) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *RadicalEquationNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.RadicalEquationNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6505,6 +6863,7 @@ func (instance *RadicalEquationNode) GetParentNode()  (*EquationNode,  error)  {
 // Returns:
 //   void  
 func (instance *RadicalEquationNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.RadicalEquationNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6517,6 +6876,7 @@ func (instance *RadicalEquationNode) SetParentNode(value *EquationNode)  error {
 // Returns:
 //   string  
 func (instance *RadicalEquationNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.RadicalEquationNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6530,6 +6890,7 @@ func (instance *RadicalEquationNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *RadicalEquationNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.RadicalEquationNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6545,6 +6906,7 @@ func (instance *RadicalEquationNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *RadicalEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.RadicalEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6562,6 +6924,7 @@ func (instance *RadicalEquationNode) AddChild_EquationNodeType(equationtype Equa
 // Returns:
 //   void  
 func (instance *RadicalEquationNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.RadicalEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6577,6 +6940,7 @@ func (instance *RadicalEquationNode) AddChild_EquationNode(node *EquationNode)  
 // Returns:
 //   EquationNode  
 func (instance *RadicalEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.RadicalEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6594,6 +6958,7 @@ func (instance *RadicalEquationNode) InsertChild(index int32, equationtype Equat
 // Returns:
 //   EquationNode  
 func (instance *RadicalEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.RadicalEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6611,6 +6976,7 @@ func (instance *RadicalEquationNode) InsertAfter(equationtype EquationNodeType) 
 // Returns:
 //   EquationNode  
 func (instance *RadicalEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.RadicalEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6628,6 +6994,7 @@ func (instance *RadicalEquationNode) InsertBefore(equationtype EquationNodeType)
 // Returns:
 //   EquationNode  
 func (instance *RadicalEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.RadicalEquationNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6643,6 +7010,7 @@ func (instance *RadicalEquationNode) GetChild(index int32)  (*EquationNode,  err
 // Returns:
 //   void  
 func (instance *RadicalEquationNode) Remove()  error {
+	
 	CGoReturnPtr := C.RadicalEquationNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6657,6 +7025,7 @@ func (instance *RadicalEquationNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *RadicalEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.RadicalEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6671,6 +7040,7 @@ func (instance *RadicalEquationNode) RemoveChild_EquationNode(node *EquationNode
 // Returns:
 //   void  
 func (instance *RadicalEquationNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.RadicalEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6683,6 +7053,7 @@ func (instance *RadicalEquationNode) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *RadicalEquationNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.RadicalEquationNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6695,6 +7066,7 @@ func (instance *RadicalEquationNode) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *RadicalEquationNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.RadicalEquationNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6711,6 +7083,7 @@ func (instance *RadicalEquationNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *RadicalEquationNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.RadicalEquationNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6731,6 +7104,7 @@ func (instance *RadicalEquationNode) GetEquationType()  (EquationNodeType,  erro
 // Returns:
 //   EquationNode  
 func RadicalEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.RadicalEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6779,6 +7153,7 @@ func NewSubSupEquationNode(src *EquationNode) ( *SubSupEquationNode, error) {
 // Returns:
 //   bool  
 func (instance *SubSupEquationNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.SubSupEquationNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6794,6 +7169,7 @@ func (instance *SubSupEquationNode) IsNull()  (bool,  error)  {
 // Returns:
 //   bool  
 func (instance *SubSupEquationNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.SubSupEquationNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6807,6 +7183,7 @@ func (instance *SubSupEquationNode) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *SubSupEquationNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.SubSupEquationNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6824,6 +7201,7 @@ func (instance *SubSupEquationNode) GetParentNode()  (*EquationNode,  error)  {
 // Returns:
 //   void  
 func (instance *SubSupEquationNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.SubSupEquationNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6836,6 +7214,7 @@ func (instance *SubSupEquationNode) SetParentNode(value *EquationNode)  error {
 // Returns:
 //   string  
 func (instance *SubSupEquationNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.SubSupEquationNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6849,6 +7228,7 @@ func (instance *SubSupEquationNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *SubSupEquationNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.SubSupEquationNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6864,6 +7244,7 @@ func (instance *SubSupEquationNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *SubSupEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.SubSupEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6881,6 +7262,7 @@ func (instance *SubSupEquationNode) AddChild_EquationNodeType(equationtype Equat
 // Returns:
 //   void  
 func (instance *SubSupEquationNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.SubSupEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6896,6 +7278,7 @@ func (instance *SubSupEquationNode) AddChild_EquationNode(node *EquationNode)  e
 // Returns:
 //   EquationNode  
 func (instance *SubSupEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.SubSupEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6913,6 +7296,7 @@ func (instance *SubSupEquationNode) InsertChild(index int32, equationtype Equati
 // Returns:
 //   EquationNode  
 func (instance *SubSupEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.SubSupEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6930,6 +7314,7 @@ func (instance *SubSupEquationNode) InsertAfter(equationtype EquationNodeType)  
 // Returns:
 //   EquationNode  
 func (instance *SubSupEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.SubSupEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6947,6 +7332,7 @@ func (instance *SubSupEquationNode) InsertBefore(equationtype EquationNodeType) 
 // Returns:
 //   EquationNode  
 func (instance *SubSupEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.SubSupEquationNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6962,6 +7348,7 @@ func (instance *SubSupEquationNode) GetChild(index int32)  (*EquationNode,  erro
 // Returns:
 //   void  
 func (instance *SubSupEquationNode) Remove()  error {
+	
 	CGoReturnPtr := C.SubSupEquationNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6976,6 +7363,7 @@ func (instance *SubSupEquationNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *SubSupEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.SubSupEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -6990,6 +7378,7 @@ func (instance *SubSupEquationNode) RemoveChild_EquationNode(node *EquationNode)
 // Returns:
 //   void  
 func (instance *SubSupEquationNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.SubSupEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7002,6 +7391,7 @@ func (instance *SubSupEquationNode) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *SubSupEquationNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.SubSupEquationNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7014,6 +7404,7 @@ func (instance *SubSupEquationNode) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *SubSupEquationNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.SubSupEquationNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7030,6 +7421,7 @@ func (instance *SubSupEquationNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *SubSupEquationNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.SubSupEquationNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7050,6 +7442,7 @@ func (instance *SubSupEquationNode) GetEquationType()  (EquationNodeType,  error
 // Returns:
 //   EquationNode  
 func SubSupEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.SubSupEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7098,6 +7491,7 @@ func NewTextRunEquationNode(src *EquationNode) ( *TextRunEquationNode, error) {
 // Returns:
 //   bool  
 func (instance *TextRunEquationNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.TextRunEquationNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7111,6 +7505,7 @@ func (instance *TextRunEquationNode) IsNull()  (bool,  error)  {
 // Returns:
 //   string  
 func (instance *TextRunEquationNode) GetText()  (string,  error)  {
+	
 	CGoReturnPtr := C.TextRunEquationNode_GetText( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7126,6 +7521,7 @@ func (instance *TextRunEquationNode) GetText()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *TextRunEquationNode) SetText(value string)  error {
+	
 	CGoReturnPtr := C.TextRunEquationNode_SetText( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7140,6 +7536,7 @@ func (instance *TextRunEquationNode) SetText(value string)  error {
 // Returns:
 //   bool  
 func (instance *TextRunEquationNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.TextRunEquationNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7153,6 +7550,7 @@ func (instance *TextRunEquationNode) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *TextRunEquationNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.TextRunEquationNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7170,6 +7568,7 @@ func (instance *TextRunEquationNode) GetParentNode()  (*EquationNode,  error)  {
 // Returns:
 //   void  
 func (instance *TextRunEquationNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.TextRunEquationNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7182,6 +7581,7 @@ func (instance *TextRunEquationNode) SetParentNode(value *EquationNode)  error {
 // Returns:
 //   string  
 func (instance *TextRunEquationNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.TextRunEquationNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7195,6 +7595,7 @@ func (instance *TextRunEquationNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *TextRunEquationNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.TextRunEquationNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7210,6 +7611,7 @@ func (instance *TextRunEquationNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *TextRunEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.TextRunEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7227,6 +7629,7 @@ func (instance *TextRunEquationNode) AddChild_EquationNodeType(equationtype Equa
 // Returns:
 //   void  
 func (instance *TextRunEquationNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.TextRunEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7242,6 +7645,7 @@ func (instance *TextRunEquationNode) AddChild_EquationNode(node *EquationNode)  
 // Returns:
 //   EquationNode  
 func (instance *TextRunEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.TextRunEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7259,6 +7663,7 @@ func (instance *TextRunEquationNode) InsertChild(index int32, equationtype Equat
 // Returns:
 //   EquationNode  
 func (instance *TextRunEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.TextRunEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7276,6 +7681,7 @@ func (instance *TextRunEquationNode) InsertAfter(equationtype EquationNodeType) 
 // Returns:
 //   EquationNode  
 func (instance *TextRunEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.TextRunEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7293,6 +7699,7 @@ func (instance *TextRunEquationNode) InsertBefore(equationtype EquationNodeType)
 // Returns:
 //   EquationNode  
 func (instance *TextRunEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.TextRunEquationNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7308,6 +7715,7 @@ func (instance *TextRunEquationNode) GetChild(index int32)  (*EquationNode,  err
 // Returns:
 //   void  
 func (instance *TextRunEquationNode) Remove()  error {
+	
 	CGoReturnPtr := C.TextRunEquationNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7322,6 +7730,7 @@ func (instance *TextRunEquationNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *TextRunEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.TextRunEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7336,6 +7745,7 @@ func (instance *TextRunEquationNode) RemoveChild_EquationNode(node *EquationNode
 // Returns:
 //   void  
 func (instance *TextRunEquationNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.TextRunEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7348,6 +7758,7 @@ func (instance *TextRunEquationNode) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *TextRunEquationNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.TextRunEquationNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7360,6 +7771,7 @@ func (instance *TextRunEquationNode) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *TextRunEquationNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.TextRunEquationNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7376,6 +7788,7 @@ func (instance *TextRunEquationNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *TextRunEquationNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.TextRunEquationNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7396,6 +7809,7 @@ func (instance *TextRunEquationNode) GetEquationType()  (EquationNodeType,  erro
 // Returns:
 //   EquationNode  
 func TextRunEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.TextRunEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7443,6 +7857,7 @@ func NewUnknowEquationNode(src *EquationNode) ( *UnknowEquationNode, error) {
 // Returns:
 //   bool  
 func (instance *UnknowEquationNode) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.UnknowEquationNode_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7458,6 +7873,7 @@ func (instance *UnknowEquationNode) IsNull()  (bool,  error)  {
 // Returns:
 //   bool  
 func (instance *UnknowEquationNode) Equals(obj *Object)  (bool,  error)  {
+	
 	CGoReturnPtr := C.UnknowEquationNode_Equals( instance.ptr, obj.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7471,6 +7887,7 @@ func (instance *UnknowEquationNode) Equals(obj *Object)  (bool,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *UnknowEquationNode) GetParentNode()  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.UnknowEquationNode_GetParentNode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7488,6 +7905,7 @@ func (instance *UnknowEquationNode) GetParentNode()  (*EquationNode,  error)  {
 // Returns:
 //   void  
 func (instance *UnknowEquationNode) SetParentNode(value *EquationNode)  error {
+	
 	CGoReturnPtr := C.UnknowEquationNode_SetParentNode( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7500,6 +7918,7 @@ func (instance *UnknowEquationNode) SetParentNode(value *EquationNode)  error {
 // Returns:
 //   string  
 func (instance *UnknowEquationNode) ToLaTeX()  (string,  error)  {
+	
 	CGoReturnPtr := C.UnknowEquationNode_ToLaTeX( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7513,6 +7932,7 @@ func (instance *UnknowEquationNode) ToLaTeX()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *UnknowEquationNode) ToMathML()  (string,  error)  {
+	
 	CGoReturnPtr := C.UnknowEquationNode_ToMathML( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7528,6 +7948,7 @@ func (instance *UnknowEquationNode) ToMathML()  (string,  error)  {
 // Returns:
 //   EquationNode  
 func (instance *UnknowEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.UnknowEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7545,6 +7966,7 @@ func (instance *UnknowEquationNode) AddChild_EquationNodeType(equationtype Equat
 // Returns:
 //   void  
 func (instance *UnknowEquationNode) AddChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.UnknowEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7560,6 +7982,7 @@ func (instance *UnknowEquationNode) AddChild_EquationNode(node *EquationNode)  e
 // Returns:
 //   EquationNode  
 func (instance *UnknowEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.UnknowEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7577,6 +8000,7 @@ func (instance *UnknowEquationNode) InsertChild(index int32, equationtype Equati
 // Returns:
 //   EquationNode  
 func (instance *UnknowEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.UnknowEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7594,6 +8018,7 @@ func (instance *UnknowEquationNode) InsertAfter(equationtype EquationNodeType)  
 // Returns:
 //   EquationNode  
 func (instance *UnknowEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.UnknowEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7611,6 +8036,7 @@ func (instance *UnknowEquationNode) InsertBefore(equationtype EquationNodeType) 
 // Returns:
 //   EquationNode  
 func (instance *UnknowEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.UnknowEquationNode_GetChild( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7626,6 +8052,7 @@ func (instance *UnknowEquationNode) GetChild(index int32)  (*EquationNode,  erro
 // Returns:
 //   void  
 func (instance *UnknowEquationNode) Remove()  error {
+	
 	CGoReturnPtr := C.UnknowEquationNode_Remove( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7640,6 +8067,7 @@ func (instance *UnknowEquationNode) Remove()  error {
 // Returns:
 //   void  
 func (instance *UnknowEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
+	
 	CGoReturnPtr := C.UnknowEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7654,6 +8082,7 @@ func (instance *UnknowEquationNode) RemoveChild_EquationNode(node *EquationNode)
 // Returns:
 //   void  
 func (instance *UnknowEquationNode) RemoveChild_Int(index int32)  error {
+	
 	CGoReturnPtr := C.UnknowEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7666,6 +8095,7 @@ func (instance *UnknowEquationNode) RemoveChild_Int(index int32)  error {
 // Returns:
 //   void  
 func (instance *UnknowEquationNode) RemoveAllChildren()  error {
+	
 	CGoReturnPtr := C.UnknowEquationNode_RemoveAllChildren( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7678,6 +8108,7 @@ func (instance *UnknowEquationNode) RemoveAllChildren()  error {
 // Returns:
 //   int32  
 func (instance *UnknowEquationNode) GetType()  (TextNodeType,  error)  {
+	
 	CGoReturnPtr := C.UnknowEquationNode_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7694,6 +8125,7 @@ func (instance *UnknowEquationNode) GetType()  (TextNodeType,  error)  {
 // Returns:
 //   int32  
 func (instance *UnknowEquationNode) GetEquationType()  (EquationNodeType,  error)  {
+	
 	CGoReturnPtr := C.UnknowEquationNode_GetEquationType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -7714,6 +8146,7 @@ func (instance *UnknowEquationNode) GetEquationType()  (EquationNodeType,  error
 // Returns:
 //   EquationNode  
 func UnknowEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
+	
 	CGoReturnPtr := C.UnknowEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	

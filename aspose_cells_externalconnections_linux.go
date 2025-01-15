@@ -1,6 +1,6 @@
 // +build linux
 
-// Copyright (c) 2001-2024 Aspose Pty Ltd. All Rights Reserved.
+// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
 // Powered by Aspose.Cells.
 package asposecells
 
@@ -17,6 +17,7 @@ import (
 )
 
 /**************Enum ConnectionDataSourceType *****************/
+
 // Specifies external database source type
 type ConnectionDataSourceType int32
 
@@ -82,6 +83,7 @@ func Int32ToConnectionDataSourceType(value int32)(ConnectionDataSourceType ,erro
 }
 
 /**************Enum ConnectionParameterType *****************/
+
 // Specifies the parameter type of external connection
 type ConnectionParameterType int32
 
@@ -107,6 +109,7 @@ func Int32ToConnectionParameterType(value int32)(ConnectionParameterType ,error)
 }
 
 /**************Enum CredentialsMethodType *****************/
+
 // Specifies Credentials method used for server access.
 type CredentialsMethodType int32
 
@@ -136,6 +139,7 @@ func Int32ToCredentialsMethodType(value int32)(CredentialsMethodType ,error){
 }
 
 /**************Enum ExternalConnectionClassType *****************/
+
 // Represents the type of connection
 type ExternalConnectionClassType int32
 
@@ -169,6 +173,7 @@ func Int32ToExternalConnectionClassType(value int32)(ExternalConnectionClassType
 }
 
 /**************Enum HtmlFormatHandlingType *****************/
+
 // Specifies how to handle formatting from the HTML source
 type HtmlFormatHandlingType int32
 
@@ -194,6 +199,7 @@ func Int32ToHtmlFormatHandlingType(value int32)(HtmlFormatHandlingType ,error){
 }
 
 /**************Enum OLEDBCommandType *****************/
+
 // Specifies the OLE DB command type.
 type OLEDBCommandType int32
 
@@ -235,6 +241,7 @@ func Int32ToOLEDBCommandType(value int32)(OLEDBCommandType ,error){
 }
 
 /**************Enum ReConnectionMethodType *****************/
+
 // Specifies what the spreadsheet application should do when a connection fails.
 type ReConnectionMethodType int32
 
@@ -264,6 +271,7 @@ func Int32ToReConnectionMethodType(value int32)(ReConnectionMethodType ,error){
 }
 
 /**************Enum SqlDataType *****************/
+
 // Specifies SQL data type of the parameter. Only valid for ODBC sources.
 type SqlDataType int32
 
@@ -444,6 +452,7 @@ type ConnectionParameter struct {
 // Returns:
 //   bool  
 func (instance *ConnectionParameter) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ConnectionParameter_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -457,6 +466,7 @@ func (instance *ConnectionParameter) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *ConnectionParameter) GetSqlType()  (SqlDataType,  error)  {
+	
 	CGoReturnPtr := C.ConnectionParameter_GetSqlType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -475,6 +485,7 @@ func (instance *ConnectionParameter) GetSqlType()  (SqlDataType,  error)  {
 // Returns:
 //   void  
 func (instance *ConnectionParameter) SetSqlType(value SqlDataType)  error {
+	
 	CGoReturnPtr := C.ConnectionParameter_SetSqlType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -490,6 +501,7 @@ func (instance *ConnectionParameter) SetSqlType(value SqlDataType)  error {
 // Returns:
 //   bool  
 func (instance *ConnectionParameter) GetRefreshOnChange()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ConnectionParameter_GetRefreshOnChange( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -508,6 +520,7 @@ func (instance *ConnectionParameter) GetRefreshOnChange()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *ConnectionParameter) SetRefreshOnChange(value bool)  error {
+	
 	CGoReturnPtr := C.ConnectionParameter_SetRefreshOnChange( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -522,6 +535,7 @@ func (instance *ConnectionParameter) SetRefreshOnChange(value bool)  error {
 // Returns:
 //   string  
 func (instance *ConnectionParameter) GetPrompt()  (string,  error)  {
+	
 	CGoReturnPtr := C.ConnectionParameter_GetPrompt( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -539,6 +553,7 @@ func (instance *ConnectionParameter) GetPrompt()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *ConnectionParameter) SetPrompt(value string)  error {
+	
 	CGoReturnPtr := C.ConnectionParameter_SetPrompt( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -554,6 +569,7 @@ func (instance *ConnectionParameter) SetPrompt(value string)  error {
 // Returns:
 //   int32  
 func (instance *ConnectionParameter) GetType()  (ConnectionParameterType,  error)  {
+	
 	CGoReturnPtr := C.ConnectionParameter_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -575,6 +591,7 @@ func (instance *ConnectionParameter) GetType()  (ConnectionParameterType,  error
 // Returns:
 //   void  
 func (instance *ConnectionParameter) SetType(value ConnectionParameterType)  error {
+	
 	CGoReturnPtr := C.ConnectionParameter_SetType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -587,6 +604,7 @@ func (instance *ConnectionParameter) SetType(value ConnectionParameterType)  err
 // Returns:
 //   string  
 func (instance *ConnectionParameter) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.ConnectionParameter_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -602,6 +620,7 @@ func (instance *ConnectionParameter) GetName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *ConnectionParameter) SetName(value string)  error {
+	
 	CGoReturnPtr := C.ConnectionParameter_SetName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -614,6 +633,7 @@ func (instance *ConnectionParameter) SetName(value string)  error {
 // Returns:
 //   string  
 func (instance *ConnectionParameter) GetCellReference()  (string,  error)  {
+	
 	CGoReturnPtr := C.ConnectionParameter_GetCellReference( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -629,6 +649,7 @@ func (instance *ConnectionParameter) GetCellReference()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *ConnectionParameter) SetCellReference(value string)  error {
+	
 	CGoReturnPtr := C.ConnectionParameter_SetCellReference( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -642,6 +663,7 @@ func (instance *ConnectionParameter) SetCellReference(value string)  error {
 // Returns:
 //   Object  
 func (instance *ConnectionParameter) GetValue()  (*Object,  error)  {
+	
 	CGoReturnPtr := C.ConnectionParameter_GetValue( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -660,6 +682,7 @@ func (instance *ConnectionParameter) GetValue()  (*Object,  error)  {
 // Returns:
 //   void  
 func (instance *ConnectionParameter) SetValue(value *Object)  error {
+	
 	CGoReturnPtr := C.ConnectionParameter_SetValue( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -688,6 +711,7 @@ type ConnectionParameterCollection struct {
 // Returns:
 //   bool  
 func (instance *ConnectionParameterCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ConnectionParameterCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -703,6 +727,7 @@ func (instance *ConnectionParameterCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   ConnectionParameter  
 func (instance *ConnectionParameterCollection) Get_Int(index int32)  (*ConnectionParameter,  error)  {
+	
 	CGoReturnPtr := C.ConnectionParameterCollection_Get_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -721,6 +746,7 @@ func (instance *ConnectionParameterCollection) Get_Int(index int32)  (*Connectio
 // Returns:
 //   void  
 func (instance *ConnectionParameterCollection) Set(value *ConnectionParameter, index int32)  error {
+	
 	CGoReturnPtr := C.ConnectionParameterCollection_Set( instance.ptr, value.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -735,6 +761,7 @@ func (instance *ConnectionParameterCollection) Set(value *ConnectionParameter, i
 // Returns:
 //   ConnectionParameter  
 func (instance *ConnectionParameterCollection) Get_String(connparamname string)  (*ConnectionParameter,  error)  {
+	
 	CGoReturnPtr := C.ConnectionParameterCollection_Get_String( instance.ptr, C.CString(connparamname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -749,6 +776,7 @@ func (instance *ConnectionParameterCollection) Get_String(connparamname string) 
 // Returns:
 //   int32  
 func (instance *ConnectionParameterCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.ConnectionParameterCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -794,6 +822,7 @@ func NewDataModelConnection(src *ExternalConnection) ( *DataModelConnection, err
 // Returns:
 //   bool  
 func (instance *DataModelConnection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -807,6 +836,7 @@ func (instance *DataModelConnection) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *DataModelConnection) GetClassType()  (ExternalConnectionClassType,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetClassType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -824,6 +854,7 @@ func (instance *DataModelConnection) GetClassType()  (ExternalConnectionClassTyp
 // Returns:
 //   string  
 func (instance *DataModelConnection) GetCommand()  (string,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetCommand( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -840,6 +871,7 @@ func (instance *DataModelConnection) GetCommand()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetCommand(value string)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetCommand( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -852,6 +884,7 @@ func (instance *DataModelConnection) SetCommand(value string)  error {
 // Returns:
 //   int32  
 func (instance *DataModelConnection) GetCommandType()  (OLEDBCommandType,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetCommandType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -870,6 +903,7 @@ func (instance *DataModelConnection) GetCommandType()  (OLEDBCommandType,  error
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetCommandType(value OLEDBCommandType)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetCommandType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -882,6 +916,7 @@ func (instance *DataModelConnection) SetCommandType(value OLEDBCommandType)  err
 // Returns:
 //   string  
 func (instance *DataModelConnection) GetConnectionString()  (string,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetConnectionString( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -897,6 +932,7 @@ func (instance *DataModelConnection) GetConnectionString()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetConnectionString(value string)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetConnectionString( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -909,6 +945,7 @@ func (instance *DataModelConnection) SetConnectionString(value string)  error {
 // Returns:
 //   int32  
 func (instance *DataModelConnection) GetId()  (int32,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetId( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -922,6 +959,7 @@ func (instance *DataModelConnection) GetId()  (int32,  error)  {
 // Returns:
 //   int32  
 func (instance *DataModelConnection) GetSourceType()  (ConnectionDataSourceType,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetSourceType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -940,6 +978,7 @@ func (instance *DataModelConnection) GetSourceType()  (ConnectionDataSourceType,
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetSourceType(value ConnectionDataSourceType)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetSourceType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -953,6 +992,7 @@ func (instance *DataModelConnection) SetSourceType(value ConnectionDataSourceTyp
 // Returns:
 //   string  
 func (instance *DataModelConnection) GetSSOId()  (string,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetSSOId( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -969,6 +1009,7 @@ func (instance *DataModelConnection) GetSSOId()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetSSOId(value string)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetSSOId( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -981,6 +1022,7 @@ func (instance *DataModelConnection) SetSSOId(value string)  error {
 // Returns:
 //   bool  
 func (instance *DataModelConnection) GetSavePassword()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetSavePassword( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -996,6 +1038,7 @@ func (instance *DataModelConnection) GetSavePassword()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetSavePassword(value bool)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetSavePassword( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1009,6 +1052,7 @@ func (instance *DataModelConnection) SetSavePassword(value bool)  error {
 // Returns:
 //   bool  
 func (instance *DataModelConnection) GetSaveData()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetSaveData( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1025,6 +1069,7 @@ func (instance *DataModelConnection) GetSaveData()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetSaveData(value bool)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetSaveData( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1037,6 +1082,7 @@ func (instance *DataModelConnection) SetSaveData(value bool)  error {
 // Returns:
 //   bool  
 func (instance *DataModelConnection) GetRefreshOnLoad()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetRefreshOnLoad( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1052,6 +1098,7 @@ func (instance *DataModelConnection) GetRefreshOnLoad()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetRefreshOnLoad(value bool)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetRefreshOnLoad( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1065,6 +1112,7 @@ func (instance *DataModelConnection) SetRefreshOnLoad(value bool)  error {
 // Returns:
 //   int32  
 func (instance *DataModelConnection) GetReconnectionMethodType()  (ReConnectionMethodType,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetReconnectionMethodType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1084,6 +1132,7 @@ func (instance *DataModelConnection) GetReconnectionMethodType()  (ReConnectionM
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetReconnectionMethodType(value ReConnectionMethodType)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetReconnectionMethodType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1099,6 +1148,7 @@ func (instance *DataModelConnection) SetReconnectionMethodType(value ReConnectio
 // Returns:
 //   bool  
 func (instance *DataModelConnection) GetOnlyUseConnectionFile()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetOnlyUseConnectionFile( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1117,6 +1167,7 @@ func (instance *DataModelConnection) GetOnlyUseConnectionFile()  (bool,  error) 
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetOnlyUseConnectionFile(value bool)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetOnlyUseConnectionFile( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1132,6 +1183,7 @@ func (instance *DataModelConnection) SetOnlyUseConnectionFile(value bool)  error
 // Returns:
 //   string  
 func (instance *DataModelConnection) GetOdcFile()  (string,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetOdcFile( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1150,6 +1202,7 @@ func (instance *DataModelConnection) GetOdcFile()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetOdcFile(value string)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetOdcFile( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1164,6 +1217,7 @@ func (instance *DataModelConnection) SetOdcFile(value string)  error {
 // Returns:
 //   string  
 func (instance *DataModelConnection) GetSourceFile()  (string,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetSourceFile( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1181,6 +1235,7 @@ func (instance *DataModelConnection) GetSourceFile()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetSourceFile(value string)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetSourceFile( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1194,6 +1249,7 @@ func (instance *DataModelConnection) SetSourceFile(value string)  error {
 // Returns:
 //   bool  
 func (instance *DataModelConnection) IsNew()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_IsNew( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1210,6 +1266,7 @@ func (instance *DataModelConnection) IsNew()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetIsNew(value bool)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetIsNew( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1222,6 +1279,7 @@ func (instance *DataModelConnection) SetIsNew(value bool)  error {
 // Returns:
 //   string  
 func (instance *DataModelConnection) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1237,6 +1295,7 @@ func (instance *DataModelConnection) GetName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetName(value string)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1251,6 +1310,7 @@ func (instance *DataModelConnection) SetName(value string)  error {
 // Returns:
 //   bool  
 func (instance *DataModelConnection) GetKeepAlive()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetKeepAlive( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1268,6 +1328,7 @@ func (instance *DataModelConnection) GetKeepAlive()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetKeepAlive(value bool)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetKeepAlive( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1280,6 +1341,7 @@ func (instance *DataModelConnection) SetKeepAlive(value bool)  error {
 // Returns:
 //   int32  
 func (instance *DataModelConnection) GetRefreshInternal()  (int32,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetRefreshInternal( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1295,6 +1357,7 @@ func (instance *DataModelConnection) GetRefreshInternal()  (int32,  error)  {
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetRefreshInternal(value int32)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetRefreshInternal( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1307,6 +1370,7 @@ func (instance *DataModelConnection) SetRefreshInternal(value int32)  error {
 // Returns:
 //   string  
 func (instance *DataModelConnection) GetConnectionDescription()  (string,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetConnectionDescription( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1322,6 +1386,7 @@ func (instance *DataModelConnection) GetConnectionDescription()  (string,  error
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetConnectionDescription(value string)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetConnectionDescription( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1335,6 +1400,7 @@ func (instance *DataModelConnection) SetConnectionDescription(value string)  err
 // Returns:
 //   bool  
 func (instance *DataModelConnection) IsDeleted()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_IsDeleted( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1351,6 +1417,7 @@ func (instance *DataModelConnection) IsDeleted()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetIsDeleted(value bool)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetIsDeleted( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1363,6 +1430,7 @@ func (instance *DataModelConnection) SetIsDeleted(value bool)  error {
 // Returns:
 //   int32  
 func (instance *DataModelConnection) GetCredentialsMethodType()  (CredentialsMethodType,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetCredentialsMethodType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1381,6 +1449,7 @@ func (instance *DataModelConnection) GetCredentialsMethodType()  (CredentialsMet
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetCredentialsMethodType(value CredentialsMethodType)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetCredentialsMethodType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1395,6 +1464,7 @@ func (instance *DataModelConnection) SetCredentialsMethodType(value CredentialsM
 // Returns:
 //   bool  
 func (instance *DataModelConnection) GetBackgroundRefresh()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetBackgroundRefresh( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1412,6 +1482,7 @@ func (instance *DataModelConnection) GetBackgroundRefresh()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetBackgroundRefresh(value bool)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetBackgroundRefresh( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1424,6 +1495,7 @@ func (instance *DataModelConnection) SetBackgroundRefresh(value bool)  error {
 // Returns:
 //   ConnectionParameterCollection  
 func (instance *DataModelConnection) GetParameters()  (*ConnectionParameterCollection,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetParameters( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1439,6 +1511,7 @@ func (instance *DataModelConnection) GetParameters()  (*ConnectionParameterColle
 // Returns:
 //   PowerQueryFormula  
 func (instance *DataModelConnection) GetPowerQueryFormula()  (*PowerQueryFormula,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetPowerQueryFormula( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1454,6 +1527,7 @@ func (instance *DataModelConnection) GetPowerQueryFormula()  (*PowerQueryFormula
 // Returns:
 //   string  
 func (instance *DataModelConnection) GetConnectionFile()  (string,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetConnectionFile( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1471,6 +1545,7 @@ func (instance *DataModelConnection) GetConnectionFile()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *DataModelConnection) GetSecondCommand()  (string,  error)  {
+	
 	CGoReturnPtr := C.DataModelConnection_GetSecondCommand( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1490,6 +1565,7 @@ func (instance *DataModelConnection) GetSecondCommand()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DataModelConnection) SetSecondCommand(value string)  error {
+	
 	CGoReturnPtr := C.DataModelConnection_SetSecondCommand( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1534,6 +1610,7 @@ func NewDBConnection(src *ExternalConnection) ( *DBConnection, error) {
 // Returns:
 //   bool  
 func (instance *DBConnection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1547,6 +1624,7 @@ func (instance *DBConnection) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *DBConnection) GetClassType()  (ExternalConnectionClassType,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetClassType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1563,6 +1641,7 @@ func (instance *DBConnection) GetClassType()  (ExternalConnectionClassType,  err
 // Returns:
 //   string  
 func (instance *DBConnection) GetConnectionString()  (string,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetConnectionString( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1578,6 +1657,7 @@ func (instance *DBConnection) GetConnectionString()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DBConnection) SetConnectionString(value string)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetConnectionString( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1590,6 +1670,7 @@ func (instance *DBConnection) SetConnectionString(value string)  error {
 // Returns:
 //   PowerQueryFormula  
 func (instance *DBConnection) GetPowerQueryFormula()  (*PowerQueryFormula,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetPowerQueryFormula( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1610,6 +1691,7 @@ func (instance *DBConnection) GetPowerQueryFormula()  (*PowerQueryFormula,  erro
 // Returns:
 //   int32  
 func (instance *DBConnection) GetCommandType()  (OLEDBCommandType,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetCommandType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1633,6 +1715,7 @@ func (instance *DBConnection) GetCommandType()  (OLEDBCommandType,  error)  {
 // Returns:
 //   void  
 func (instance *DBConnection) SetCommandType(value OLEDBCommandType)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetCommandType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1646,6 +1729,7 @@ func (instance *DBConnection) SetCommandType(value OLEDBCommandType)  error {
 // Returns:
 //   string  
 func (instance *DBConnection) GetCommand()  (string,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetCommand( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1662,6 +1746,7 @@ func (instance *DBConnection) GetCommand()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DBConnection) SetCommand(value string)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetCommand( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1678,6 +1763,7 @@ func (instance *DBConnection) SetCommand(value string)  error {
 // Returns:
 //   string  
 func (instance *DBConnection) GetSecondCommand()  (string,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetSecondCommand( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1697,6 +1783,7 @@ func (instance *DBConnection) GetSecondCommand()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DBConnection) SetSecondCommand(value string)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetSecondCommand( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1709,6 +1796,7 @@ func (instance *DBConnection) SetSecondCommand(value string)  error {
 // Returns:
 //   int32  
 func (instance *DBConnection) GetId()  (int32,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetId( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1722,6 +1810,7 @@ func (instance *DBConnection) GetId()  (int32,  error)  {
 // Returns:
 //   int32  
 func (instance *DBConnection) GetSourceType()  (ConnectionDataSourceType,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetSourceType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1740,6 +1829,7 @@ func (instance *DBConnection) GetSourceType()  (ConnectionDataSourceType,  error
 // Returns:
 //   void  
 func (instance *DBConnection) SetSourceType(value ConnectionDataSourceType)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetSourceType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1753,6 +1843,7 @@ func (instance *DBConnection) SetSourceType(value ConnectionDataSourceType)  err
 // Returns:
 //   string  
 func (instance *DBConnection) GetSSOId()  (string,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetSSOId( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1769,6 +1860,7 @@ func (instance *DBConnection) GetSSOId()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DBConnection) SetSSOId(value string)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetSSOId( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1781,6 +1873,7 @@ func (instance *DBConnection) SetSSOId(value string)  error {
 // Returns:
 //   bool  
 func (instance *DBConnection) GetSavePassword()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetSavePassword( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1796,6 +1889,7 @@ func (instance *DBConnection) GetSavePassword()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *DBConnection) SetSavePassword(value bool)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetSavePassword( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1809,6 +1903,7 @@ func (instance *DBConnection) SetSavePassword(value bool)  error {
 // Returns:
 //   bool  
 func (instance *DBConnection) GetSaveData()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetSaveData( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1825,6 +1920,7 @@ func (instance *DBConnection) GetSaveData()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *DBConnection) SetSaveData(value bool)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetSaveData( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1837,6 +1933,7 @@ func (instance *DBConnection) SetSaveData(value bool)  error {
 // Returns:
 //   bool  
 func (instance *DBConnection) GetRefreshOnLoad()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetRefreshOnLoad( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1852,6 +1949,7 @@ func (instance *DBConnection) GetRefreshOnLoad()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *DBConnection) SetRefreshOnLoad(value bool)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetRefreshOnLoad( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1865,6 +1963,7 @@ func (instance *DBConnection) SetRefreshOnLoad(value bool)  error {
 // Returns:
 //   int32  
 func (instance *DBConnection) GetReconnectionMethodType()  (ReConnectionMethodType,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetReconnectionMethodType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1884,6 +1983,7 @@ func (instance *DBConnection) GetReconnectionMethodType()  (ReConnectionMethodTy
 // Returns:
 //   void  
 func (instance *DBConnection) SetReconnectionMethodType(value ReConnectionMethodType)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetReconnectionMethodType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1899,6 +1999,7 @@ func (instance *DBConnection) SetReconnectionMethodType(value ReConnectionMethod
 // Returns:
 //   bool  
 func (instance *DBConnection) GetOnlyUseConnectionFile()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetOnlyUseConnectionFile( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1917,6 +2018,7 @@ func (instance *DBConnection) GetOnlyUseConnectionFile()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *DBConnection) SetOnlyUseConnectionFile(value bool)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetOnlyUseConnectionFile( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1932,6 +2034,7 @@ func (instance *DBConnection) SetOnlyUseConnectionFile(value bool)  error {
 // Returns:
 //   string  
 func (instance *DBConnection) GetOdcFile()  (string,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetOdcFile( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1950,6 +2053,7 @@ func (instance *DBConnection) GetOdcFile()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DBConnection) SetOdcFile(value string)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetOdcFile( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1964,6 +2068,7 @@ func (instance *DBConnection) SetOdcFile(value string)  error {
 // Returns:
 //   string  
 func (instance *DBConnection) GetSourceFile()  (string,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetSourceFile( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1981,6 +2086,7 @@ func (instance *DBConnection) GetSourceFile()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DBConnection) SetSourceFile(value string)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetSourceFile( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -1994,6 +2100,7 @@ func (instance *DBConnection) SetSourceFile(value string)  error {
 // Returns:
 //   bool  
 func (instance *DBConnection) IsNew()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_IsNew( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2010,6 +2117,7 @@ func (instance *DBConnection) IsNew()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *DBConnection) SetIsNew(value bool)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetIsNew( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2022,6 +2130,7 @@ func (instance *DBConnection) SetIsNew(value bool)  error {
 // Returns:
 //   string  
 func (instance *DBConnection) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2037,6 +2146,7 @@ func (instance *DBConnection) GetName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DBConnection) SetName(value string)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2051,6 +2161,7 @@ func (instance *DBConnection) SetName(value string)  error {
 // Returns:
 //   bool  
 func (instance *DBConnection) GetKeepAlive()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetKeepAlive( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2068,6 +2179,7 @@ func (instance *DBConnection) GetKeepAlive()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *DBConnection) SetKeepAlive(value bool)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetKeepAlive( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2080,6 +2192,7 @@ func (instance *DBConnection) SetKeepAlive(value bool)  error {
 // Returns:
 //   int32  
 func (instance *DBConnection) GetRefreshInternal()  (int32,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetRefreshInternal( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2095,6 +2208,7 @@ func (instance *DBConnection) GetRefreshInternal()  (int32,  error)  {
 // Returns:
 //   void  
 func (instance *DBConnection) SetRefreshInternal(value int32)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetRefreshInternal( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2107,6 +2221,7 @@ func (instance *DBConnection) SetRefreshInternal(value int32)  error {
 // Returns:
 //   string  
 func (instance *DBConnection) GetConnectionDescription()  (string,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetConnectionDescription( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2122,6 +2237,7 @@ func (instance *DBConnection) GetConnectionDescription()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *DBConnection) SetConnectionDescription(value string)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetConnectionDescription( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2135,6 +2251,7 @@ func (instance *DBConnection) SetConnectionDescription(value string)  error {
 // Returns:
 //   bool  
 func (instance *DBConnection) IsDeleted()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_IsDeleted( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2151,6 +2268,7 @@ func (instance *DBConnection) IsDeleted()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *DBConnection) SetIsDeleted(value bool)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetIsDeleted( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2163,6 +2281,7 @@ func (instance *DBConnection) SetIsDeleted(value bool)  error {
 // Returns:
 //   int32  
 func (instance *DBConnection) GetCredentialsMethodType()  (CredentialsMethodType,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetCredentialsMethodType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2181,6 +2300,7 @@ func (instance *DBConnection) GetCredentialsMethodType()  (CredentialsMethodType
 // Returns:
 //   void  
 func (instance *DBConnection) SetCredentialsMethodType(value CredentialsMethodType)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetCredentialsMethodType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2195,6 +2315,7 @@ func (instance *DBConnection) SetCredentialsMethodType(value CredentialsMethodTy
 // Returns:
 //   bool  
 func (instance *DBConnection) GetBackgroundRefresh()  (bool,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetBackgroundRefresh( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2212,6 +2333,7 @@ func (instance *DBConnection) GetBackgroundRefresh()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *DBConnection) SetBackgroundRefresh(value bool)  error {
+	
 	CGoReturnPtr := C.DBConnection_SetBackgroundRefresh( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2224,6 +2346,7 @@ func (instance *DBConnection) SetBackgroundRefresh(value bool)  error {
 // Returns:
 //   ConnectionParameterCollection  
 func (instance *DBConnection) GetParameters()  (*ConnectionParameterCollection,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetParameters( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2239,6 +2362,7 @@ func (instance *DBConnection) GetParameters()  (*ConnectionParameterCollection, 
 // Returns:
 //   string  
 func (instance *DBConnection) GetConnectionFile()  (string,  error)  {
+	
 	CGoReturnPtr := C.DBConnection_GetConnectionFile( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2268,6 +2392,7 @@ type ExternalConnection struct {
 // Returns:
 //   bool  
 func (instance *ExternalConnection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2281,6 +2406,7 @@ func (instance *ExternalConnection) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *ExternalConnection) GetId()  (int32,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetId( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2294,6 +2420,7 @@ func (instance *ExternalConnection) GetId()  (int32,  error)  {
 // Returns:
 //   int32  
 func (instance *ExternalConnection) GetSourceType()  (ConnectionDataSourceType,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetSourceType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2312,6 +2439,7 @@ func (instance *ExternalConnection) GetSourceType()  (ConnectionDataSourceType, 
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetSourceType(value ConnectionDataSourceType)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetSourceType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2325,6 +2453,7 @@ func (instance *ExternalConnection) SetSourceType(value ConnectionDataSourceType
 // Returns:
 //   string  
 func (instance *ExternalConnection) GetSSOId()  (string,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetSSOId( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2341,6 +2470,7 @@ func (instance *ExternalConnection) GetSSOId()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetSSOId(value string)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetSSOId( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2353,6 +2483,7 @@ func (instance *ExternalConnection) SetSSOId(value string)  error {
 // Returns:
 //   bool  
 func (instance *ExternalConnection) GetSavePassword()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetSavePassword( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2368,6 +2499,7 @@ func (instance *ExternalConnection) GetSavePassword()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetSavePassword(value bool)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetSavePassword( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2381,6 +2513,7 @@ func (instance *ExternalConnection) SetSavePassword(value bool)  error {
 // Returns:
 //   bool  
 func (instance *ExternalConnection) GetSaveData()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetSaveData( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2397,6 +2530,7 @@ func (instance *ExternalConnection) GetSaveData()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetSaveData(value bool)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetSaveData( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2409,6 +2543,7 @@ func (instance *ExternalConnection) SetSaveData(value bool)  error {
 // Returns:
 //   bool  
 func (instance *ExternalConnection) GetRefreshOnLoad()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetRefreshOnLoad( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2424,6 +2559,7 @@ func (instance *ExternalConnection) GetRefreshOnLoad()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetRefreshOnLoad(value bool)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetRefreshOnLoad( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2437,6 +2573,7 @@ func (instance *ExternalConnection) SetRefreshOnLoad(value bool)  error {
 // Returns:
 //   int32  
 func (instance *ExternalConnection) GetReconnectionMethodType()  (ReConnectionMethodType,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetReconnectionMethodType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2456,6 +2593,7 @@ func (instance *ExternalConnection) GetReconnectionMethodType()  (ReConnectionMe
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetReconnectionMethodType(value ReConnectionMethodType)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetReconnectionMethodType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2471,6 +2609,7 @@ func (instance *ExternalConnection) SetReconnectionMethodType(value ReConnection
 // Returns:
 //   bool  
 func (instance *ExternalConnection) GetOnlyUseConnectionFile()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetOnlyUseConnectionFile( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2489,6 +2628,7 @@ func (instance *ExternalConnection) GetOnlyUseConnectionFile()  (bool,  error)  
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetOnlyUseConnectionFile(value bool)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetOnlyUseConnectionFile( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2504,6 +2644,7 @@ func (instance *ExternalConnection) SetOnlyUseConnectionFile(value bool)  error 
 // Returns:
 //   string  
 func (instance *ExternalConnection) GetOdcFile()  (string,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetOdcFile( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2522,6 +2663,7 @@ func (instance *ExternalConnection) GetOdcFile()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetOdcFile(value string)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetOdcFile( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2536,6 +2678,7 @@ func (instance *ExternalConnection) SetOdcFile(value string)  error {
 // Returns:
 //   string  
 func (instance *ExternalConnection) GetSourceFile()  (string,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetSourceFile( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2553,6 +2696,7 @@ func (instance *ExternalConnection) GetSourceFile()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetSourceFile(value string)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetSourceFile( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2566,6 +2710,7 @@ func (instance *ExternalConnection) SetSourceFile(value string)  error {
 // Returns:
 //   bool  
 func (instance *ExternalConnection) IsNew()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_IsNew( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2582,6 +2727,7 @@ func (instance *ExternalConnection) IsNew()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetIsNew(value bool)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetIsNew( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2594,6 +2740,7 @@ func (instance *ExternalConnection) SetIsNew(value bool)  error {
 // Returns:
 //   string  
 func (instance *ExternalConnection) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2609,6 +2756,7 @@ func (instance *ExternalConnection) GetName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetName(value string)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2623,6 +2771,7 @@ func (instance *ExternalConnection) SetName(value string)  error {
 // Returns:
 //   bool  
 func (instance *ExternalConnection) GetKeepAlive()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetKeepAlive( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2640,6 +2789,7 @@ func (instance *ExternalConnection) GetKeepAlive()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetKeepAlive(value bool)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetKeepAlive( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2652,6 +2802,7 @@ func (instance *ExternalConnection) SetKeepAlive(value bool)  error {
 // Returns:
 //   int32  
 func (instance *ExternalConnection) GetRefreshInternal()  (int32,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetRefreshInternal( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2667,6 +2818,7 @@ func (instance *ExternalConnection) GetRefreshInternal()  (int32,  error)  {
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetRefreshInternal(value int32)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetRefreshInternal( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2679,6 +2831,7 @@ func (instance *ExternalConnection) SetRefreshInternal(value int32)  error {
 // Returns:
 //   string  
 func (instance *ExternalConnection) GetConnectionDescription()  (string,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetConnectionDescription( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2694,6 +2847,7 @@ func (instance *ExternalConnection) GetConnectionDescription()  (string,  error)
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetConnectionDescription(value string)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetConnectionDescription( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2707,6 +2861,7 @@ func (instance *ExternalConnection) SetConnectionDescription(value string)  erro
 // Returns:
 //   bool  
 func (instance *ExternalConnection) IsDeleted()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_IsDeleted( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2723,6 +2878,7 @@ func (instance *ExternalConnection) IsDeleted()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetIsDeleted(value bool)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetIsDeleted( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2735,6 +2891,7 @@ func (instance *ExternalConnection) SetIsDeleted(value bool)  error {
 // Returns:
 //   int32  
 func (instance *ExternalConnection) GetCredentialsMethodType()  (CredentialsMethodType,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetCredentialsMethodType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2753,6 +2910,7 @@ func (instance *ExternalConnection) GetCredentialsMethodType()  (CredentialsMeth
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetCredentialsMethodType(value CredentialsMethodType)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetCredentialsMethodType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2767,6 +2925,7 @@ func (instance *ExternalConnection) SetCredentialsMethodType(value CredentialsMe
 // Returns:
 //   bool  
 func (instance *ExternalConnection) GetBackgroundRefresh()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetBackgroundRefresh( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2784,6 +2943,7 @@ func (instance *ExternalConnection) GetBackgroundRefresh()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetBackgroundRefresh(value bool)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetBackgroundRefresh( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2796,6 +2956,7 @@ func (instance *ExternalConnection) SetBackgroundRefresh(value bool)  error {
 // Returns:
 //   ConnectionParameterCollection  
 func (instance *ExternalConnection) GetParameters()  (*ConnectionParameterCollection,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetParameters( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2811,6 +2972,7 @@ func (instance *ExternalConnection) GetParameters()  (*ConnectionParameterCollec
 // Returns:
 //   int32  
 func (instance *ExternalConnection) GetClassType()  (ExternalConnectionClassType,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetClassType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2827,6 +2989,7 @@ func (instance *ExternalConnection) GetClassType()  (ExternalConnectionClassType
 // Returns:
 //   PowerQueryFormula  
 func (instance *ExternalConnection) GetPowerQueryFormula()  (*PowerQueryFormula,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetPowerQueryFormula( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2842,6 +3005,7 @@ func (instance *ExternalConnection) GetPowerQueryFormula()  (*PowerQueryFormula,
 // Returns:
 //   string  
 func (instance *ExternalConnection) GetConnectionFile()  (string,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetConnectionFile( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2856,6 +3020,7 @@ func (instance *ExternalConnection) GetConnectionFile()  (string,  error)  {
 // Returns:
 //   string  
 func (instance *ExternalConnection) GetCommand()  (string,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetCommand( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2872,6 +3037,7 @@ func (instance *ExternalConnection) GetCommand()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetCommand(value string)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetCommand( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2889,6 +3055,7 @@ func (instance *ExternalConnection) SetCommand(value string)  error {
 // Returns:
 //   int32  
 func (instance *ExternalConnection) GetCommandType()  (OLEDBCommandType,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetCommandType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2912,6 +3079,7 @@ func (instance *ExternalConnection) GetCommandType()  (OLEDBCommandType,  error)
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetCommandType(value OLEDBCommandType)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetCommandType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2924,6 +3092,7 @@ func (instance *ExternalConnection) SetCommandType(value OLEDBCommandType)  erro
 // Returns:
 //   string  
 func (instance *ExternalConnection) GetConnectionString()  (string,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetConnectionString( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2939,6 +3108,7 @@ func (instance *ExternalConnection) GetConnectionString()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetConnectionString(value string)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetConnectionString( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2955,6 +3125,7 @@ func (instance *ExternalConnection) SetConnectionString(value string)  error {
 // Returns:
 //   string  
 func (instance *ExternalConnection) GetSecondCommand()  (string,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnection_GetSecondCommand( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -2974,6 +3145,7 @@ func (instance *ExternalConnection) GetSecondCommand()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *ExternalConnection) SetSecondCommand(value string)  error {
+	
 	CGoReturnPtr := C.ExternalConnection_SetSecondCommand( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3002,6 +3174,7 @@ type ExternalConnectionCollection struct {
 // Returns:
 //   bool  
 func (instance *ExternalConnectionCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnectionCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3017,6 +3190,7 @@ func (instance *ExternalConnectionCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   ExternalConnection  
 func (instance *ExternalConnectionCollection) Get_Int(index int32)  (*ExternalConnection,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnectionCollection_Get_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3035,6 +3209,7 @@ func (instance *ExternalConnectionCollection) Get_Int(index int32)  (*ExternalCo
 // Returns:
 //   void  
 func (instance *ExternalConnectionCollection) Set(value *ExternalConnection, index int32)  error {
+	
 	CGoReturnPtr := C.ExternalConnectionCollection_Set( instance.ptr, value.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3049,6 +3224,7 @@ func (instance *ExternalConnectionCollection) Set(value *ExternalConnection, ind
 // Returns:
 //   ExternalConnection  
 func (instance *ExternalConnectionCollection) Get_String(connectionname string)  (*ExternalConnection,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnectionCollection_Get_String( instance.ptr, C.CString(connectionname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3066,6 +3242,7 @@ func (instance *ExternalConnectionCollection) Get_String(connectionname string) 
 // Returns:
 //   ExternalConnection  
 func (instance *ExternalConnectionCollection) GetExternalConnectionById(connid int32)  (*ExternalConnection,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnectionCollection_GetExternalConnectionById( instance.ptr, C.int(connid))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3080,6 +3257,7 @@ func (instance *ExternalConnectionCollection) GetExternalConnectionById(connid i
 // Returns:
 //   int32  
 func (instance *ExternalConnectionCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.ExternalConnectionCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3127,6 +3305,7 @@ func NewWebQueryConnection(src *ExternalConnection) ( *WebQueryConnection, error
 // Returns:
 //   bool  
 func (instance *WebQueryConnection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3140,6 +3319,7 @@ func (instance *WebQueryConnection) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *WebQueryConnection) GetClassType()  (ExternalConnectionClassType,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetClassType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3156,6 +3336,7 @@ func (instance *WebQueryConnection) GetClassType()  (ExternalConnectionClassType
 // Returns:
 //   bool  
 func (instance *WebQueryConnection) IsXml()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_IsXml( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3171,6 +3352,7 @@ func (instance *WebQueryConnection) IsXml()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetIsXml(value bool)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetIsXml( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3185,6 +3367,7 @@ func (instance *WebQueryConnection) SetIsXml(value bool)  error {
 // Returns:
 //   bool  
 func (instance *WebQueryConnection) IsXl97()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_IsXl97( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3202,6 +3385,7 @@ func (instance *WebQueryConnection) IsXl97()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetIsXl97(value bool)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetIsXl97( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3217,6 +3401,7 @@ func (instance *WebQueryConnection) SetIsXl97(value bool)  error {
 // Returns:
 //   bool  
 func (instance *WebQueryConnection) IsXl2000()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_IsXl2000( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3235,6 +3420,7 @@ func (instance *WebQueryConnection) IsXl2000()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetIsXl2000(value bool)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetIsXl2000( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3247,6 +3433,7 @@ func (instance *WebQueryConnection) SetIsXl2000(value bool)  error {
 // Returns:
 //   string  
 func (instance *WebQueryConnection) GetUrl()  (string,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetUrl( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3262,6 +3449,7 @@ func (instance *WebQueryConnection) GetUrl()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetUrl(value string)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetUrl( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3274,6 +3462,7 @@ func (instance *WebQueryConnection) SetUrl(value string)  error {
 // Returns:
 //   string  
 func (instance *WebQueryConnection) GetConnectionFile()  (string,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetConnectionFile( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3287,6 +3476,7 @@ func (instance *WebQueryConnection) GetConnectionFile()  (string,  error)  {
 // Returns:
 //   bool  
 func (instance *WebQueryConnection) IsTextDates()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_IsTextDates( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3302,6 +3492,7 @@ func (instance *WebQueryConnection) IsTextDates()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetIsTextDates(value bool)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetIsTextDates( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3314,6 +3505,7 @@ func (instance *WebQueryConnection) SetIsTextDates(value bool)  error {
 // Returns:
 //   bool  
 func (instance *WebQueryConnection) IsXmlSourceData()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_IsXmlSourceData( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3329,6 +3521,7 @@ func (instance *WebQueryConnection) IsXmlSourceData()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetIsXmlSourceData(value bool)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetIsXmlSourceData( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3342,6 +3535,7 @@ func (instance *WebQueryConnection) SetIsXmlSourceData(value bool)  error {
 // Returns:
 //   string  
 func (instance *WebQueryConnection) GetPost()  (string,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetPost( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3358,6 +3552,7 @@ func (instance *WebQueryConnection) GetPost()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetPost(value string)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetPost( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3371,6 +3566,7 @@ func (instance *WebQueryConnection) SetPost(value string)  error {
 // Returns:
 //   bool  
 func (instance *WebQueryConnection) IsParsePre()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_IsParsePre( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3387,6 +3583,7 @@ func (instance *WebQueryConnection) IsParsePre()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetIsParsePre(value bool)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetIsParsePre( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3399,6 +3596,7 @@ func (instance *WebQueryConnection) SetIsParsePre(value bool)  error {
 // Returns:
 //   bool  
 func (instance *WebQueryConnection) IsHtmlTables()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_IsHtmlTables( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3414,6 +3612,7 @@ func (instance *WebQueryConnection) IsHtmlTables()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetIsHtmlTables(value bool)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetIsHtmlTables( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3427,6 +3626,7 @@ func (instance *WebQueryConnection) SetIsHtmlTables(value bool)  error {
 // Returns:
 //   int32  
 func (instance *WebQueryConnection) GetHtmlFormat()  (HtmlFormatHandlingType,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetHtmlFormat( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3446,6 +3646,7 @@ func (instance *WebQueryConnection) GetHtmlFormat()  (HtmlFormatHandlingType,  e
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetHtmlFormat(value HtmlFormatHandlingType)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetHtmlFormat( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3459,6 +3660,7 @@ func (instance *WebQueryConnection) SetHtmlFormat(value HtmlFormatHandlingType) 
 // Returns:
 //   bool  
 func (instance *WebQueryConnection) IsSameSettings()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_IsSameSettings( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3475,6 +3677,7 @@ func (instance *WebQueryConnection) IsSameSettings()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetIsSameSettings(value bool)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetIsSameSettings( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3490,6 +3693,7 @@ func (instance *WebQueryConnection) SetIsSameSettings(value bool)  error {
 // Returns:
 //   string  
 func (instance *WebQueryConnection) GetEditWebPage()  (string,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetEditWebPage( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3508,6 +3712,7 @@ func (instance *WebQueryConnection) GetEditWebPage()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetEditWebPage(value string)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetEditWebPage( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3520,6 +3725,7 @@ func (instance *WebQueryConnection) SetEditWebPage(value string)  error {
 // Returns:
 //   bool  
 func (instance *WebQueryConnection) IsConsecutive()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_IsConsecutive( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3535,6 +3741,7 @@ func (instance *WebQueryConnection) IsConsecutive()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetIsConsecutive(value bool)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetIsConsecutive( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3547,6 +3754,7 @@ func (instance *WebQueryConnection) SetIsConsecutive(value bool)  error {
 // Returns:
 //   int32  
 func (instance *WebQueryConnection) GetId()  (int32,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetId( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3560,6 +3768,7 @@ func (instance *WebQueryConnection) GetId()  (int32,  error)  {
 // Returns:
 //   int32  
 func (instance *WebQueryConnection) GetSourceType()  (ConnectionDataSourceType,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetSourceType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3578,6 +3787,7 @@ func (instance *WebQueryConnection) GetSourceType()  (ConnectionDataSourceType, 
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetSourceType(value ConnectionDataSourceType)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetSourceType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3591,6 +3801,7 @@ func (instance *WebQueryConnection) SetSourceType(value ConnectionDataSourceType
 // Returns:
 //   string  
 func (instance *WebQueryConnection) GetSSOId()  (string,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetSSOId( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3607,6 +3818,7 @@ func (instance *WebQueryConnection) GetSSOId()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetSSOId(value string)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetSSOId( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3619,6 +3831,7 @@ func (instance *WebQueryConnection) SetSSOId(value string)  error {
 // Returns:
 //   bool  
 func (instance *WebQueryConnection) GetSavePassword()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetSavePassword( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3634,6 +3847,7 @@ func (instance *WebQueryConnection) GetSavePassword()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetSavePassword(value bool)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetSavePassword( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3647,6 +3861,7 @@ func (instance *WebQueryConnection) SetSavePassword(value bool)  error {
 // Returns:
 //   bool  
 func (instance *WebQueryConnection) GetSaveData()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetSaveData( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3663,6 +3878,7 @@ func (instance *WebQueryConnection) GetSaveData()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetSaveData(value bool)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetSaveData( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3675,6 +3891,7 @@ func (instance *WebQueryConnection) SetSaveData(value bool)  error {
 // Returns:
 //   bool  
 func (instance *WebQueryConnection) GetRefreshOnLoad()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetRefreshOnLoad( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3690,6 +3907,7 @@ func (instance *WebQueryConnection) GetRefreshOnLoad()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetRefreshOnLoad(value bool)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetRefreshOnLoad( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3703,6 +3921,7 @@ func (instance *WebQueryConnection) SetRefreshOnLoad(value bool)  error {
 // Returns:
 //   int32  
 func (instance *WebQueryConnection) GetReconnectionMethodType()  (ReConnectionMethodType,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetReconnectionMethodType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3722,6 +3941,7 @@ func (instance *WebQueryConnection) GetReconnectionMethodType()  (ReConnectionMe
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetReconnectionMethodType(value ReConnectionMethodType)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetReconnectionMethodType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3737,6 +3957,7 @@ func (instance *WebQueryConnection) SetReconnectionMethodType(value ReConnection
 // Returns:
 //   bool  
 func (instance *WebQueryConnection) GetOnlyUseConnectionFile()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetOnlyUseConnectionFile( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3755,6 +3976,7 @@ func (instance *WebQueryConnection) GetOnlyUseConnectionFile()  (bool,  error)  
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetOnlyUseConnectionFile(value bool)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetOnlyUseConnectionFile( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3770,6 +3992,7 @@ func (instance *WebQueryConnection) SetOnlyUseConnectionFile(value bool)  error 
 // Returns:
 //   string  
 func (instance *WebQueryConnection) GetOdcFile()  (string,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetOdcFile( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3788,6 +4011,7 @@ func (instance *WebQueryConnection) GetOdcFile()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetOdcFile(value string)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetOdcFile( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3802,6 +4026,7 @@ func (instance *WebQueryConnection) SetOdcFile(value string)  error {
 // Returns:
 //   string  
 func (instance *WebQueryConnection) GetSourceFile()  (string,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetSourceFile( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3819,6 +4044,7 @@ func (instance *WebQueryConnection) GetSourceFile()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetSourceFile(value string)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetSourceFile( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3832,6 +4058,7 @@ func (instance *WebQueryConnection) SetSourceFile(value string)  error {
 // Returns:
 //   bool  
 func (instance *WebQueryConnection) IsNew()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_IsNew( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3848,6 +4075,7 @@ func (instance *WebQueryConnection) IsNew()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetIsNew(value bool)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetIsNew( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3860,6 +4088,7 @@ func (instance *WebQueryConnection) SetIsNew(value bool)  error {
 // Returns:
 //   string  
 func (instance *WebQueryConnection) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3875,6 +4104,7 @@ func (instance *WebQueryConnection) GetName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetName(value string)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3889,6 +4119,7 @@ func (instance *WebQueryConnection) SetName(value string)  error {
 // Returns:
 //   bool  
 func (instance *WebQueryConnection) GetKeepAlive()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetKeepAlive( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3906,6 +4137,7 @@ func (instance *WebQueryConnection) GetKeepAlive()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetKeepAlive(value bool)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetKeepAlive( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3918,6 +4150,7 @@ func (instance *WebQueryConnection) SetKeepAlive(value bool)  error {
 // Returns:
 //   int32  
 func (instance *WebQueryConnection) GetRefreshInternal()  (int32,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetRefreshInternal( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3933,6 +4166,7 @@ func (instance *WebQueryConnection) GetRefreshInternal()  (int32,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetRefreshInternal(value int32)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetRefreshInternal( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3945,6 +4179,7 @@ func (instance *WebQueryConnection) SetRefreshInternal(value int32)  error {
 // Returns:
 //   string  
 func (instance *WebQueryConnection) GetConnectionDescription()  (string,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetConnectionDescription( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3960,6 +4195,7 @@ func (instance *WebQueryConnection) GetConnectionDescription()  (string,  error)
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetConnectionDescription(value string)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetConnectionDescription( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3973,6 +4209,7 @@ func (instance *WebQueryConnection) SetConnectionDescription(value string)  erro
 // Returns:
 //   bool  
 func (instance *WebQueryConnection) IsDeleted()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_IsDeleted( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -3989,6 +4226,7 @@ func (instance *WebQueryConnection) IsDeleted()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetIsDeleted(value bool)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetIsDeleted( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4001,6 +4239,7 @@ func (instance *WebQueryConnection) SetIsDeleted(value bool)  error {
 // Returns:
 //   int32  
 func (instance *WebQueryConnection) GetCredentialsMethodType()  (CredentialsMethodType,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetCredentialsMethodType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4019,6 +4258,7 @@ func (instance *WebQueryConnection) GetCredentialsMethodType()  (CredentialsMeth
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetCredentialsMethodType(value CredentialsMethodType)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetCredentialsMethodType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4033,6 +4273,7 @@ func (instance *WebQueryConnection) SetCredentialsMethodType(value CredentialsMe
 // Returns:
 //   bool  
 func (instance *WebQueryConnection) GetBackgroundRefresh()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetBackgroundRefresh( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4050,6 +4291,7 @@ func (instance *WebQueryConnection) GetBackgroundRefresh()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetBackgroundRefresh(value bool)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetBackgroundRefresh( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4062,6 +4304,7 @@ func (instance *WebQueryConnection) SetBackgroundRefresh(value bool)  error {
 // Returns:
 //   ConnectionParameterCollection  
 func (instance *WebQueryConnection) GetParameters()  (*ConnectionParameterCollection,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetParameters( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4077,6 +4320,7 @@ func (instance *WebQueryConnection) GetParameters()  (*ConnectionParameterCollec
 // Returns:
 //   PowerQueryFormula  
 func (instance *WebQueryConnection) GetPowerQueryFormula()  (*PowerQueryFormula,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetPowerQueryFormula( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4093,6 +4337,7 @@ func (instance *WebQueryConnection) GetPowerQueryFormula()  (*PowerQueryFormula,
 // Returns:
 //   string  
 func (instance *WebQueryConnection) GetCommand()  (string,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetCommand( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4109,6 +4354,7 @@ func (instance *WebQueryConnection) GetCommand()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetCommand(value string)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetCommand( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4126,6 +4372,7 @@ func (instance *WebQueryConnection) SetCommand(value string)  error {
 // Returns:
 //   int32  
 func (instance *WebQueryConnection) GetCommandType()  (OLEDBCommandType,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetCommandType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4149,6 +4396,7 @@ func (instance *WebQueryConnection) GetCommandType()  (OLEDBCommandType,  error)
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetCommandType(value OLEDBCommandType)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetCommandType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4161,6 +4409,7 @@ func (instance *WebQueryConnection) SetCommandType(value OLEDBCommandType)  erro
 // Returns:
 //   string  
 func (instance *WebQueryConnection) GetConnectionString()  (string,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetConnectionString( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4176,6 +4425,7 @@ func (instance *WebQueryConnection) GetConnectionString()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetConnectionString(value string)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetConnectionString( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4192,6 +4442,7 @@ func (instance *WebQueryConnection) SetConnectionString(value string)  error {
 // Returns:
 //   string  
 func (instance *WebQueryConnection) GetSecondCommand()  (string,  error)  {
+	
 	CGoReturnPtr := C.WebQueryConnection_GetSecondCommand( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -4211,6 +4462,7 @@ func (instance *WebQueryConnection) GetSecondCommand()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *WebQueryConnection) SetSecondCommand(value string)  error {
+	
 	CGoReturnPtr := C.WebQueryConnection_SetSecondCommand( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	

@@ -1,6 +1,6 @@
 // +build linux
 
-// Copyright (c) 2001-2024 Aspose Pty Ltd. All Rights Reserved.
+// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
 // Powered by Aspose.Cells.
 package asposecells
 
@@ -20,14 +20,12 @@ func init() {
 	}
 }
 
-func Version() {
-	println("---Version: v24.12.2---")
+func Version() string {
+	println("---Version: v25.1.0---")
+	return "v25.1.0"
 } 
-type UUID struct {
-	ptr unsafe.Pointer
-}
 
-type Stream struct {
+type UUID struct {
 	ptr unsafe.Pointer
 }
 

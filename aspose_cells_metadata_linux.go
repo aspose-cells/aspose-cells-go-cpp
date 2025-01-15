@@ -1,6 +1,6 @@
 // +build linux
 
-// Copyright (c) 2001-2024 Aspose Pty Ltd. All Rights Reserved.
+// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
 // Powered by Aspose.Cells.
 package asposecells
 
@@ -17,6 +17,7 @@ import (
 )
 
 /**************Enum MetadataType *****************/
+
 // Represents the type of metadata.
 type MetadataType int32
 
@@ -68,6 +69,7 @@ func NewMetadataOptions(metadatatype MetadataType) ( *MetadataOptions, error) {
 // Returns:
 //   bool  
 func (instance *MetadataOptions) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.MetadataOptions_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -81,6 +83,7 @@ func (instance *MetadataOptions) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *MetadataOptions) GetMetadataType()  (MetadataType,  error)  {
+	
 	CGoReturnPtr := C.MetadataOptions_GetMetadataType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -97,6 +100,7 @@ func (instance *MetadataOptions) GetMetadataType()  (MetadataType,  error)  {
 // Returns:
 //   string  
 func (instance *MetadataOptions) GetPassword()  (string,  error)  {
+	
 	CGoReturnPtr := C.MetadataOptions_GetPassword( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -112,6 +116,7 @@ func (instance *MetadataOptions) GetPassword()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *MetadataOptions) SetPassword(value string)  error {
+	
 	CGoReturnPtr := C.MetadataOptions_SetPassword( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -124,6 +129,7 @@ func (instance *MetadataOptions) SetPassword(value string)  error {
 // Returns:
 //   int32  
 func (instance *MetadataOptions) GetKeyLength()  (int32,  error)  {
+	
 	CGoReturnPtr := C.MetadataOptions_GetKeyLength( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -139,6 +145,7 @@ func (instance *MetadataOptions) GetKeyLength()  (int32,  error)  {
 // Returns:
 //   void  
 func (instance *MetadataOptions) SetKeyLength(value int32)  error {
+	
 	CGoReturnPtr := C.MetadataOptions_SetKeyLength( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -166,9 +173,26 @@ type WorkbookMetadata struct {
 // Parameters:
 //   fileName - string 
 //   options - MetadataOptions 
-func NewWorkbookMetadata(filename string, options *MetadataOptions) ( *WorkbookMetadata, error) {
+func NewWorkbookMetadata_String_MetadataOptions(filename string, options *MetadataOptions) ( *WorkbookMetadata, error) {
 	workbookmetadata := &WorkbookMetadata{}
-	CGoReturnPtr := C.New_WorkbookMetadata(C.CString(filename), options.ptr)
+	CGoReturnPtr := C.New_WorkbookMetadata_String_MetadataOptions(C.CString(filename), options.ptr)
+	if CGoReturnPtr.error_no == 0 {
+		workbookmetadata.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(workbookmetadata, DeleteWorkbookMetadata)
+		return workbookmetadata, nil
+	} else {
+		workbookmetadata.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return workbookmetadata, err
+	}	
+}
+// Create the meta data object.
+// Parameters:
+//   stream - []byte 
+//   options - MetadataOptions 
+func NewWorkbookMetadata_Stream_MetadataOptions(stream []byte, options *MetadataOptions) ( *WorkbookMetadata, error) {
+	workbookmetadata := &WorkbookMetadata{}
+	CGoReturnPtr := C.New_WorkbookMetadata_Stream_MetadataOptions(unsafe.Pointer(&stream[0]), C.int( len(stream)), options.ptr)
 	if CGoReturnPtr.error_no == 0 {
 		workbookmetadata.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(workbookmetadata, DeleteWorkbookMetadata)
@@ -184,6 +208,7 @@ func NewWorkbookMetadata(filename string, options *MetadataOptions) ( *WorkbookM
 // Returns:
 //   bool  
 func (instance *WorkbookMetadata) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.WorkbookMetadata_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -197,6 +222,7 @@ func (instance *WorkbookMetadata) IsNull()  (bool,  error)  {
 // Returns:
 //   MetadataOptions  
 func (instance *WorkbookMetadata) GetOptions()  (*MetadataOptions,  error)  {
+	
 	CGoReturnPtr := C.WorkbookMetadata_GetOptions( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -212,6 +238,7 @@ func (instance *WorkbookMetadata) GetOptions()  (*MetadataOptions,  error)  {
 // Returns:
 //   BuiltInDocumentPropertyCollection  
 func (instance *WorkbookMetadata) GetBuiltInDocumentProperties()  (*BuiltInDocumentPropertyCollection,  error)  {
+	
 	CGoReturnPtr := C.WorkbookMetadata_GetBuiltInDocumentProperties( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -227,6 +254,7 @@ func (instance *WorkbookMetadata) GetBuiltInDocumentProperties()  (*BuiltInDocum
 // Returns:
 //   CustomDocumentPropertyCollection  
 func (instance *WorkbookMetadata) GetCustomDocumentProperties()  (*CustomDocumentPropertyCollection,  error)  {
+	
 	CGoReturnPtr := C.WorkbookMetadata_GetCustomDocumentProperties( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -244,7 +272,23 @@ func (instance *WorkbookMetadata) GetCustomDocumentProperties()  (*CustomDocumen
 // Returns:
 //   void  
 func (instance *WorkbookMetadata) Save_String(filename string)  error {
+	
 	CGoReturnPtr := C.WorkbookMetadata_Save_String( instance.ptr, C.CString(filename))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Save the modified metadata to the stream.
+// Parameters:
+//   stream - []byte 
+// Returns:
+//   void  
+func (instance *WorkbookMetadata) Save_Stream(stream []byte)  error {
+	
+	CGoReturnPtr := C.WorkbookMetadata_Save_Stream( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

@@ -1,6 +1,6 @@
 // +build windows
 
-// Copyright (c) 2001-2024 Aspose Pty Ltd. All Rights Reserved.
+// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
 // Powered by Aspose.Cells.
 package asposecells
 
@@ -53,6 +53,7 @@ type VbaModule struct {
 // Returns:
 //   bool  
 func (instance *VbaModule) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.VbaModule_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -66,6 +67,7 @@ func (instance *VbaModule) IsNull()  (bool,  error)  {
 // Returns:
 //   string  
 func (instance *VbaModule) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.VbaModule_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -81,6 +83,7 @@ func (instance *VbaModule) GetName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *VbaModule) SetName(value string)  error {
+	
 	CGoReturnPtr := C.VbaModule_SetName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -93,6 +96,7 @@ func (instance *VbaModule) SetName(value string)  error {
 // Returns:
 //   string  
 func (instance *VbaModule) GetCodes()  (string,  error)  {
+	
 	CGoReturnPtr := C.VbaModule_GetCodes( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -108,6 +112,7 @@ func (instance *VbaModule) GetCodes()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *VbaModule) SetCodes(value string)  error {
+	
 	CGoReturnPtr := C.VbaModule_SetCodes( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -136,6 +141,7 @@ type VbaModuleCollection struct {
 // Returns:
 //   bool  
 func (instance *VbaModuleCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.VbaModuleCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -145,13 +151,64 @@ func (instance *VbaModuleCollection) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
+// Parameters:
+//   name - string 
+//   data - []byte 
+// Returns:
+//   void  
+func (instance *VbaModuleCollection) AddDesignerStorage(name string, data []byte)  error {
+	
+	CGoReturnPtr := C.VbaModuleCollection_AddDesignerStorage( instance.ptr, C.CString(name), unsafe.Pointer(&data[0]), C.int( len(data)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the data of Designer.
+// Parameters:
+//   name - string 
+// Returns:
+//   []byte  
+func (instance *VbaModuleCollection) GetDesignerStorage(name string)  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.VbaModuleCollection_GetDesignerStorage( instance.ptr, C.CString(name))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
 // Adds module for a worksheet.
 // Parameters:
 //   sheet - Worksheet 
 // Returns:
 //   int32  
 func (instance *VbaModuleCollection) Add_Worksheet(sheet *Worksheet)  (int32,  error)  {
+	
 	CGoReturnPtr := C.VbaModuleCollection_Add_Worksheet( instance.ptr, sheet.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Inser user form into VBA Project.
+// Parameters:
+//   name - string 
+//   codes - string 
+//   designerStorage - []byte 
+// Returns:
+//   int32  
+func (instance *VbaModuleCollection) AddUserForm(name string, codes string, designerstorage []byte)  (int32,  error)  {
+	
+	CGoReturnPtr := C.VbaModuleCollection_AddUserForm( instance.ptr, C.CString(name), C.CString(codes), unsafe.Pointer(&designerstorage[0]), C.int( len(designerstorage)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -166,6 +223,7 @@ func (instance *VbaModuleCollection) Add_Worksheet(sheet *Worksheet)  (int32,  e
 // Returns:
 //   VbaModule  
 func (instance *VbaModuleCollection) Get_Int(index int32)  (*VbaModule,  error)  {
+	
 	CGoReturnPtr := C.VbaModuleCollection_Get_Integer( instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -183,6 +241,7 @@ func (instance *VbaModuleCollection) Get_Int(index int32)  (*VbaModule,  error) 
 // Returns:
 //   void  
 func (instance *VbaModuleCollection) Remove_Worksheet(sheet *Worksheet)  error {
+	
 	CGoReturnPtr := C.VbaModuleCollection_Remove_Worksheet( instance.ptr, sheet.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -197,6 +256,7 @@ func (instance *VbaModuleCollection) Remove_Worksheet(sheet *Worksheet)  error {
 // Returns:
 //   void  
 func (instance *VbaModuleCollection) Remove_String(name string)  error {
+	
 	CGoReturnPtr := C.VbaModuleCollection_Remove_String( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -211,6 +271,7 @@ func (instance *VbaModuleCollection) Remove_String(name string)  error {
 // Returns:
 //   VbaModule  
 func (instance *VbaModuleCollection) Get_String(name string)  (*VbaModule,  error)  {
+	
 	CGoReturnPtr := C.VbaModuleCollection_Get_String( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -225,6 +286,7 @@ func (instance *VbaModuleCollection) Get_String(name string)  (*VbaModule,  erro
 // Returns:
 //   int32  
 func (instance *VbaModuleCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.VbaModuleCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -254,6 +316,7 @@ type VbaProject struct {
 // Returns:
 //   bool  
 func (instance *VbaProject) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.VbaProject_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -269,6 +332,7 @@ func (instance *VbaProject) IsNull()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *VbaProject) Sign(digitalsignature *DigitalSignature)  error {
+	
 	CGoReturnPtr := C.VbaProject_Sign( instance.ptr, digitalsignature.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -281,6 +345,7 @@ func (instance *VbaProject) Sign(digitalsignature *DigitalSignature)  error {
 // Returns:
 //   bool  
 func (instance *VbaProject) IsValidSigned()  (bool,  error)  {
+	
 	CGoReturnPtr := C.VbaProject_IsValidSigned( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -290,10 +355,26 @@ func (instance *VbaProject) IsValidSigned()  (bool,  error)  {
 
 	return result, nil 
 }
+// Gets certificate raw data if this VBA project is signed.
+// Returns:
+//   []byte  
+func (instance *VbaProject) GetCertRawData()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.VbaProject_GetCertRawData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
 // Gets and sets the encoding of VBA project.
 // Returns:
 //   int32  
 func (instance *VbaProject) GetEncoding()  (EncodingType,  error)  {
+	
 	CGoReturnPtr := C.VbaProject_GetEncoding( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -312,6 +393,7 @@ func (instance *VbaProject) GetEncoding()  (EncodingType,  error)  {
 // Returns:
 //   void  
 func (instance *VbaProject) SetEncoding(value EncodingType)  error {
+	
 	CGoReturnPtr := C.VbaProject_SetEncoding( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -324,6 +406,7 @@ func (instance *VbaProject) SetEncoding(value EncodingType)  error {
 // Returns:
 //   string  
 func (instance *VbaProject) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.VbaProject_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -339,6 +422,7 @@ func (instance *VbaProject) GetName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *VbaProject) SetName(value string)  error {
+	
 	CGoReturnPtr := C.VbaProject_SetName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -351,6 +435,7 @@ func (instance *VbaProject) SetName(value string)  error {
 // Returns:
 //   bool  
 func (instance *VbaProject) IsSigned()  (bool,  error)  {
+	
 	CGoReturnPtr := C.VbaProject_IsSigned( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -367,6 +452,7 @@ func (instance *VbaProject) IsSigned()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *VbaProject) Protect(islockedforviewing bool, password string)  error {
+	
 	CGoReturnPtr := C.VbaProject_Protect( instance.ptr, C.bool(islockedforviewing), C.CString(password))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -379,6 +465,7 @@ func (instance *VbaProject) Protect(islockedforviewing bool, password string)  e
 // Returns:
 //   bool  
 func (instance *VbaProject) IsProtected()  (bool,  error)  {
+	
 	CGoReturnPtr := C.VbaProject_IsProtected( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -392,6 +479,7 @@ func (instance *VbaProject) IsProtected()  (bool,  error)  {
 // Returns:
 //   bool  
 func (instance *VbaProject) GetIslockedForViewing()  (bool,  error)  {
+	
 	CGoReturnPtr := C.VbaProject_GetIslockedForViewing( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -407,6 +495,7 @@ func (instance *VbaProject) GetIslockedForViewing()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *VbaProject) Copy(source *VbaProject)  error {
+	
 	CGoReturnPtr := C.VbaProject_Copy( instance.ptr, source.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -419,6 +508,7 @@ func (instance *VbaProject) Copy(source *VbaProject)  error {
 // Returns:
 //   VbaModuleCollection  
 func (instance *VbaProject) GetModules()  (*VbaModuleCollection,  error)  {
+	
 	CGoReturnPtr := C.VbaProject_GetModules( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -434,6 +524,7 @@ func (instance *VbaProject) GetModules()  (*VbaModuleCollection,  error)  {
 // Returns:
 //   VbaProjectReferenceCollection  
 func (instance *VbaProject) GetReferences()  (*VbaProjectReferenceCollection,  error)  {
+	
 	CGoReturnPtr := C.VbaProject_GetReferences( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -451,6 +542,7 @@ func (instance *VbaProject) GetReferences()  (*VbaProjectReferenceCollection,  e
 // Returns:
 //   bool  
 func (instance *VbaProject) ValidatePassword(password string)  (bool,  error)  {
+	
 	CGoReturnPtr := C.VbaProject_ValidatePassword( instance.ptr, C.CString(password))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -480,6 +572,7 @@ type VbaProjectReference struct {
 // Returns:
 //   bool  
 func (instance *VbaProjectReference) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.VbaProjectReference_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -494,6 +587,7 @@ func (instance *VbaProjectReference) IsNull()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *VbaProjectReference) Copy(source *VbaProjectReference)  error {
+	
 	CGoReturnPtr := C.VbaProjectReference_Copy( instance.ptr, source.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -506,6 +600,7 @@ func (instance *VbaProjectReference) Copy(source *VbaProjectReference)  error {
 // Returns:
 //   int32  
 func (instance *VbaProjectReference) GetType()  (VbaProjectReferenceType,  error)  {
+	
 	CGoReturnPtr := C.VbaProjectReference_GetType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -522,6 +617,7 @@ func (instance *VbaProjectReference) GetType()  (VbaProjectReferenceType,  error
 // Returns:
 //   string  
 func (instance *VbaProjectReference) GetName()  (string,  error)  {
+	
 	CGoReturnPtr := C.VbaProjectReference_GetName( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -537,6 +633,7 @@ func (instance *VbaProjectReference) GetName()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *VbaProjectReference) SetName(value string)  error {
+	
 	CGoReturnPtr := C.VbaProjectReference_SetName( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -549,6 +646,7 @@ func (instance *VbaProjectReference) SetName(value string)  error {
 // Returns:
 //   string  
 func (instance *VbaProjectReference) GetLibid()  (string,  error)  {
+	
 	CGoReturnPtr := C.VbaProjectReference_GetLibid( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -564,6 +662,7 @@ func (instance *VbaProjectReference) GetLibid()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *VbaProjectReference) SetLibid(value string)  error {
+	
 	CGoReturnPtr := C.VbaProjectReference_SetLibid( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -576,6 +675,7 @@ func (instance *VbaProjectReference) SetLibid(value string)  error {
 // Returns:
 //   string  
 func (instance *VbaProjectReference) GetTwiddledlibid()  (string,  error)  {
+	
 	CGoReturnPtr := C.VbaProjectReference_GetTwiddledlibid( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -591,6 +691,7 @@ func (instance *VbaProjectReference) GetTwiddledlibid()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *VbaProjectReference) SetTwiddledlibid(value string)  error {
+	
 	CGoReturnPtr := C.VbaProjectReference_SetTwiddledlibid( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -603,6 +704,7 @@ func (instance *VbaProjectReference) SetTwiddledlibid(value string)  error {
 // Returns:
 //   string  
 func (instance *VbaProjectReference) GetExtendedLibid()  (string,  error)  {
+	
 	CGoReturnPtr := C.VbaProjectReference_GetExtendedLibid( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -618,6 +720,7 @@ func (instance *VbaProjectReference) GetExtendedLibid()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *VbaProjectReference) SetExtendedLibid(value string)  error {
+	
 	CGoReturnPtr := C.VbaProjectReference_SetExtendedLibid( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -630,6 +733,7 @@ func (instance *VbaProjectReference) SetExtendedLibid(value string)  error {
 // Returns:
 //   string  
 func (instance *VbaProjectReference) GetRelativeLibid()  (string,  error)  {
+	
 	CGoReturnPtr := C.VbaProjectReference_GetRelativeLibid( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -645,6 +749,7 @@ func (instance *VbaProjectReference) GetRelativeLibid()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *VbaProjectReference) SetRelativeLibid(value string)  error {
+	
 	CGoReturnPtr := C.VbaProjectReference_SetRelativeLibid( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -673,6 +778,7 @@ type VbaProjectReferenceCollection struct {
 // Returns:
 //   bool  
 func (instance *VbaProjectReferenceCollection) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.VbaProjectReferenceCollection_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -688,6 +794,7 @@ func (instance *VbaProjectReferenceCollection) IsNull()  (bool,  error)  {
 // Returns:
 //   VbaProjectReference  
 func (instance *VbaProjectReferenceCollection) Get(i int32)  (*VbaProjectReference,  error)  {
+	
 	CGoReturnPtr := C.VbaProjectReferenceCollection_Get( instance.ptr, C.int(i))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -706,6 +813,7 @@ func (instance *VbaProjectReferenceCollection) Get(i int32)  (*VbaProjectReferen
 // Returns:
 //   int32  
 func (instance *VbaProjectReferenceCollection) AddRegisteredReference(name string, libid string)  (int32,  error)  {
+	
 	CGoReturnPtr := C.VbaProjectReferenceCollection_AddRegisteredReference( instance.ptr, C.CString(name), C.CString(libid))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -724,6 +832,7 @@ func (instance *VbaProjectReferenceCollection) AddRegisteredReference(name strin
 // Returns:
 //   int32  
 func (instance *VbaProjectReferenceCollection) AddControlRefrernce(name string, libid string, twiddledlibid string, extendedlibid string)  (int32,  error)  {
+	
 	CGoReturnPtr := C.VbaProjectReferenceCollection_AddControlRefrernce( instance.ptr, C.CString(name), C.CString(libid), C.CString(twiddledlibid), C.CString(extendedlibid))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -741,6 +850,7 @@ func (instance *VbaProjectReferenceCollection) AddControlRefrernce(name string, 
 // Returns:
 //   int32  
 func (instance *VbaProjectReferenceCollection) AddProjectRefrernce(name string, absolutelibid string, relativelibid string)  (int32,  error)  {
+	
 	CGoReturnPtr := C.VbaProjectReferenceCollection_AddProjectRefrernce( instance.ptr, C.CString(name), C.CString(absolutelibid), C.CString(relativelibid))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -756,6 +866,7 @@ func (instance *VbaProjectReferenceCollection) AddProjectRefrernce(name string, 
 // Returns:
 //   void  
 func (instance *VbaProjectReferenceCollection) Copy(source *VbaProjectReferenceCollection)  error {
+	
 	CGoReturnPtr := C.VbaProjectReferenceCollection_Copy( instance.ptr, source.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -767,6 +878,7 @@ func (instance *VbaProjectReferenceCollection) Copy(source *VbaProjectReferenceC
 // Returns:
 //   int32  
 func (instance *VbaProjectReferenceCollection) GetCount()  (int32,  error)  {
+	
 	CGoReturnPtr := C.VbaProjectReferenceCollection_GetCount( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	

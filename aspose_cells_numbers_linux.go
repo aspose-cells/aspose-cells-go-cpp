@@ -1,6 +1,6 @@
 // +build linux
 
-// Copyright (c) 2001-2024 Aspose Pty Ltd. All Rights Reserved.
+// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
 // Powered by Aspose.Cells.
 package asposecells
 
@@ -17,6 +17,7 @@ import (
 )
 
 /**************Enum LoadNumbersTableType *****************/
+
 // Indicates type of loading tables when some tables are in a sheet.
 type LoadNumbersTableType int32
 
@@ -81,6 +82,7 @@ func NewNumbersLoadOptions_LoadOptions(src *LoadOptions) ( *NumbersLoadOptions, 
 // Returns:
 //   bool  
 func (instance *NumbersLoadOptions) IsNull()  (bool,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_IsNull( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -94,6 +96,7 @@ func (instance *NumbersLoadOptions) IsNull()  (bool,  error)  {
 // Returns:
 //   int32  
 func (instance *NumbersLoadOptions) GetLoadTableType()  (LoadNumbersTableType,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetLoadTableType( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -112,6 +115,7 @@ func (instance *NumbersLoadOptions) GetLoadTableType()  (LoadNumbersTableType,  
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetLoadTableType(value LoadNumbersTableType)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetLoadTableType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -124,6 +128,7 @@ func (instance *NumbersLoadOptions) SetLoadTableType(value LoadNumbersTableType)
 // Returns:
 //   int32  
 func (instance *NumbersLoadOptions) GetLoadFormat()  (LoadFormat,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetLoadFormat( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -140,6 +145,7 @@ func (instance *NumbersLoadOptions) GetLoadFormat()  (LoadFormat,  error)  {
 // Returns:
 //   string  
 func (instance *NumbersLoadOptions) GetPassword()  (string,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetPassword( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -155,6 +161,7 @@ func (instance *NumbersLoadOptions) GetPassword()  (string,  error)  {
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetPassword(value string)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetPassword( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -167,6 +174,7 @@ func (instance *NumbersLoadOptions) SetPassword(value string)  error {
 // Returns:
 //   bool  
 func (instance *NumbersLoadOptions) GetParsingFormulaOnOpen()  (bool,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetParsingFormulaOnOpen( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -182,6 +190,7 @@ func (instance *NumbersLoadOptions) GetParsingFormulaOnOpen()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetParsingFormulaOnOpen(value bool)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetParsingFormulaOnOpen( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -195,6 +204,7 @@ func (instance *NumbersLoadOptions) SetParsingFormulaOnOpen(value bool)  error {
 // Returns:
 //   bool  
 func (instance *NumbersLoadOptions) GetParsingPivotCachedRecords()  (bool,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetParsingPivotCachedRecords( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -211,6 +221,7 @@ func (instance *NumbersLoadOptions) GetParsingPivotCachedRecords()  (bool,  erro
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetParsingPivotCachedRecords(value bool)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetParsingPivotCachedRecords( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -225,6 +236,7 @@ func (instance *NumbersLoadOptions) SetParsingPivotCachedRecords(value bool)  er
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetPaperSize(type_ PaperSizeType)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetPaperSize( instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -237,6 +249,7 @@ func (instance *NumbersLoadOptions) SetPaperSize(type_ PaperSizeType)  error {
 // Returns:
 //   int32  
 func (instance *NumbersLoadOptions) GetLanguageCode()  (CountryCode,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetLanguageCode( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -255,6 +268,7 @@ func (instance *NumbersLoadOptions) GetLanguageCode()  (CountryCode,  error)  {
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetLanguageCode(value CountryCode)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetLanguageCode( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -267,6 +281,7 @@ func (instance *NumbersLoadOptions) SetLanguageCode(value CountryCode)  error {
 // Returns:
 //   int32  
 func (instance *NumbersLoadOptions) GetRegion()  (CountryCode,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetRegion( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -285,6 +300,7 @@ func (instance *NumbersLoadOptions) GetRegion()  (CountryCode,  error)  {
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetRegion(value CountryCode)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetRegion( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -297,6 +313,7 @@ func (instance *NumbersLoadOptions) SetRegion(value CountryCode)  error {
 // Returns:
 //   DefaultStyleSettings  
 func (instance *NumbersLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSettings,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetDefaultStyleSettings( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -312,6 +329,7 @@ func (instance *NumbersLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSet
 // Returns:
 //   AbstractInterruptMonitor  
 func (instance *NumbersLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonitor,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetInterruptMonitor( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -329,6 +347,7 @@ func (instance *NumbersLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMo
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetInterruptMonitor(value *AbstractInterruptMonitor)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetInterruptMonitor( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -341,6 +360,7 @@ func (instance *NumbersLoadOptions) SetInterruptMonitor(value *AbstractInterrupt
 // Returns:
 //   bool  
 func (instance *NumbersLoadOptions) GetIgnoreNotPrinted()  (bool,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetIgnoreNotPrinted( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -356,6 +376,7 @@ func (instance *NumbersLoadOptions) GetIgnoreNotPrinted()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetIgnoreNotPrinted(value bool)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetIgnoreNotPrinted( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -368,6 +389,7 @@ func (instance *NumbersLoadOptions) SetIgnoreNotPrinted(value bool)  error {
 // Returns:
 //   bool  
 func (instance *NumbersLoadOptions) GetCheckDataValid()  (bool,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetCheckDataValid( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -383,6 +405,7 @@ func (instance *NumbersLoadOptions) GetCheckDataValid()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetCheckDataValid(value bool)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetCheckDataValid( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -401,6 +424,7 @@ func (instance *NumbersLoadOptions) SetCheckDataValid(value bool)  error {
 // Returns:
 //   bool  
 func (instance *NumbersLoadOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetCheckExcelRestriction( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -422,6 +446,7 @@ func (instance *NumbersLoadOptions) GetCheckExcelRestriction()  (bool,  error)  
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetCheckExcelRestriction(value bool)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -434,6 +459,7 @@ func (instance *NumbersLoadOptions) SetCheckExcelRestriction(value bool)  error 
 // Returns:
 //   bool  
 func (instance *NumbersLoadOptions) GetKeepUnparsedData()  (bool,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetKeepUnparsedData( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -449,6 +475,7 @@ func (instance *NumbersLoadOptions) GetKeepUnparsedData()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetKeepUnparsedData(value bool)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetKeepUnparsedData( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -461,6 +488,7 @@ func (instance *NumbersLoadOptions) SetKeepUnparsedData(value bool)  error {
 // Returns:
 //   LoadFilter  
 func (instance *NumbersLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetLoadFilter( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -478,6 +506,7 @@ func (instance *NumbersLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetLoadFilter(value *LoadFilter)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetLoadFilter( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -490,6 +519,7 @@ func (instance *NumbersLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 // Returns:
 //   int32  
 func (instance *NumbersLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetMemorySetting( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -508,6 +538,7 @@ func (instance *NumbersLoadOptions) GetMemorySetting()  (MemorySetting,  error) 
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetMemorySetting(value MemorySetting)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetMemorySetting( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -520,6 +551,7 @@ func (instance *NumbersLoadOptions) SetMemorySetting(value MemorySetting)  error
 // Returns:
 //   AutoFitterOptions  
 func (instance *NumbersLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetAutoFitterOptions( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -537,6 +569,7 @@ func (instance *NumbersLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetAutoFitterOptions( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -549,6 +582,7 @@ func (instance *NumbersLoadOptions) SetAutoFitterOptions(value *AutoFitterOption
 // Returns:
 //   bool  
 func (instance *NumbersLoadOptions) GetAutoFilter()  (bool,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetAutoFilter( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -564,6 +598,7 @@ func (instance *NumbersLoadOptions) GetAutoFilter()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetAutoFilter(value bool)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetAutoFilter( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -577,6 +612,7 @@ func (instance *NumbersLoadOptions) SetAutoFilter(value bool)  error {
 // Returns:
 //   IndividualFontConfigs  
 func (instance *NumbersLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetFontConfigs( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -595,6 +631,7 @@ func (instance *NumbersLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetFontConfigs( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -607,6 +644,7 @@ func (instance *NumbersLoadOptions) SetFontConfigs(value *IndividualFontConfigs)
 // Returns:
 //   bool  
 func (instance *NumbersLoadOptions) GetIgnoreUselessShapes()  (bool,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetIgnoreUselessShapes( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -622,6 +660,7 @@ func (instance *NumbersLoadOptions) GetIgnoreUselessShapes()  (bool,  error)  {
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetIgnoreUselessShapes(value bool)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetIgnoreUselessShapes( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -636,6 +675,7 @@ func (instance *NumbersLoadOptions) SetIgnoreUselessShapes(value bool)  error {
 // Returns:
 //   bool  
 func (instance *NumbersLoadOptions) GetPreservePaddingSpacesInFormula()  (bool,  error)  {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_GetPreservePaddingSpacesInFormula( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
@@ -653,6 +693,7 @@ func (instance *NumbersLoadOptions) GetPreservePaddingSpacesInFormula()  (bool, 
 // Returns:
 //   void  
 func (instance *NumbersLoadOptions) SetPreservePaddingSpacesInFormula(value bool)  error {
+	
 	CGoReturnPtr := C.NumbersLoadOptions_SetPreservePaddingSpacesInFormula( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
