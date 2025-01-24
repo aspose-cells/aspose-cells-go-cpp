@@ -665,7 +665,7 @@ func (instance *ActiveXControl) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -679,7 +679,7 @@ func (instance *ActiveXControl) IsEnabled()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -708,7 +708,7 @@ func (instance *ActiveXControl) IsLocked()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -737,7 +737,7 @@ func (instance *ActiveXControl) IsTransparent()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -861,7 +861,7 @@ func (instance *ActiveXControl) IsAutoSize()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1159,7 +1159,7 @@ func (instance *ActiveXControl) IsVisible()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1188,7 +1188,7 @@ func (instance *ActiveXControl) GetShadow()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1233,7 +1233,7 @@ func (instance *ActiveXControlBase) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1516,7 +1516,7 @@ func (instance *ActiveXControlBase) IsVisible()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1545,7 +1545,7 @@ func (instance *ActiveXControlBase) GetShadow()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1621,7 +1621,7 @@ func (instance *CheckBoxActiveXControl) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1713,7 +1713,7 @@ func (instance *CheckBoxActiveXControl) IsWordWrapped()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1926,7 +1926,7 @@ func (instance *CheckBoxActiveXControl) IsTripleState()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1955,7 +1955,7 @@ func (instance *CheckBoxActiveXControl) IsEnabled()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1984,7 +1984,7 @@ func (instance *CheckBoxActiveXControl) IsLocked()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2013,7 +2013,7 @@ func (instance *CheckBoxActiveXControl) IsTransparent()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2137,7 +2137,7 @@ func (instance *CheckBoxActiveXControl) IsAutoSize()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2198,7 +2198,7 @@ func (instance *ComboBoxActiveXControl) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2626,7 +2626,7 @@ func (instance *ComboBoxActiveXControl) IsEditable()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2655,7 +2655,7 @@ func (instance *ComboBoxActiveXControl) GetShowColumnHeads()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2684,7 +2684,7 @@ func (instance *ComboBoxActiveXControl) IsDragBehaviorEnabled()  (bool,  error) 
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2715,7 +2715,7 @@ func (instance *ComboBoxActiveXControl) GetEnterFieldBehavior()  (bool,  error) 
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2746,7 +2746,7 @@ func (instance *ComboBoxActiveXControl) GetSelectionMargin()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2804,7 +2804,7 @@ func (instance *ComboBoxActiveXControl) GetHideSelection()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2864,7 +2864,7 @@ func (instance *ComboBoxActiveXControl) IsAutoWordSelected()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2895,7 +2895,7 @@ func (instance *ComboBoxActiveXControl) IsEnabled()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2924,7 +2924,7 @@ func (instance *ComboBoxActiveXControl) IsLocked()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2953,7 +2953,7 @@ func (instance *ComboBoxActiveXControl) IsTransparent()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3077,7 +3077,7 @@ func (instance *ComboBoxActiveXControl) IsAutoSize()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3138,7 +3138,7 @@ func (instance *CommandButtonActiveXControl) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3289,7 +3289,7 @@ func (instance *CommandButtonActiveXControl) GetTakeFocusOnClick()  (bool,  erro
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3318,7 +3318,7 @@ func (instance *CommandButtonActiveXControl) IsWordWrapped()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3347,7 +3347,7 @@ func (instance *CommandButtonActiveXControl) IsEnabled()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3376,7 +3376,7 @@ func (instance *CommandButtonActiveXControl) IsLocked()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3405,7 +3405,7 @@ func (instance *CommandButtonActiveXControl) IsTransparent()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3529,7 +3529,7 @@ func (instance *CommandButtonActiveXControl) IsAutoSize()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3590,7 +3590,7 @@ func (instance *ImageActiveXControl) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3621,7 +3621,7 @@ func (instance *ImageActiveXControl) IsAutoSize()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3837,7 +3837,7 @@ func (instance *ImageActiveXControl) IsTiled()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3866,7 +3866,7 @@ func (instance *ImageActiveXControl) IsEnabled()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3895,7 +3895,7 @@ func (instance *ImageActiveXControl) IsLocked()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3924,7 +3924,7 @@ func (instance *ImageActiveXControl) IsTransparent()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4080,7 +4080,7 @@ func (instance *LabelActiveXControl) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4324,7 +4324,7 @@ func (instance *LabelActiveXControl) IsWordWrapped()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4353,7 +4353,7 @@ func (instance *LabelActiveXControl) IsEnabled()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4382,7 +4382,7 @@ func (instance *LabelActiveXControl) IsLocked()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4411,7 +4411,7 @@ func (instance *LabelActiveXControl) IsTransparent()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4535,7 +4535,7 @@ func (instance *LabelActiveXControl) IsAutoSize()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4596,7 +4596,7 @@ func (instance *ListBoxActiveXControl) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4995,7 +4995,7 @@ func (instance *ListBoxActiveXControl) GetShowColumnHeads()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5024,7 +5024,7 @@ func (instance *ListBoxActiveXControl) GetIntegralHeight()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5082,7 +5082,7 @@ func (instance *ListBoxActiveXControl) IsEnabled()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5111,7 +5111,7 @@ func (instance *ListBoxActiveXControl) IsLocked()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5140,7 +5140,7 @@ func (instance *ListBoxActiveXControl) IsTransparent()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5264,7 +5264,7 @@ func (instance *ListBoxActiveXControl) IsAutoSize()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5325,7 +5325,7 @@ func (instance *RadioButtonActiveXControl) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5417,7 +5417,7 @@ func (instance *RadioButtonActiveXControl) IsWordWrapped()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5630,7 +5630,7 @@ func (instance *RadioButtonActiveXControl) IsTripleState()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5691,7 +5691,7 @@ func (instance *ScrollBarActiveXControl) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5931,7 +5931,7 @@ func (instance *SpinButtonActiveXControl) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6110,7 +6110,7 @@ func (instance *SpinButtonActiveXControl) IsEnabled()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6139,7 +6139,7 @@ func (instance *SpinButtonActiveXControl) IsLocked()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6168,7 +6168,7 @@ func (instance *SpinButtonActiveXControl) IsTransparent()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6292,7 +6292,7 @@ func (instance *SpinButtonActiveXControl) IsAutoSize()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6353,7 +6353,7 @@ func (instance *TextBoxActiveXControl) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6567,7 +6567,7 @@ func (instance *TextBoxActiveXControl) IsEditable()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6596,7 +6596,7 @@ func (instance *TextBoxActiveXControl) GetIntegralHeight()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6625,7 +6625,7 @@ func (instance *TextBoxActiveXControl) IsDragBehaviorEnabled()  (bool,  error)  
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6656,7 +6656,7 @@ func (instance *TextBoxActiveXControl) GetEnterKeyBehavior()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6689,7 +6689,7 @@ func (instance *TextBoxActiveXControl) GetEnterFieldBehavior()  (bool,  error)  
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6720,7 +6720,7 @@ func (instance *TextBoxActiveXControl) GetTabKeyBehavior()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6749,7 +6749,7 @@ func (instance *TextBoxActiveXControl) GetHideSelection()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6778,7 +6778,7 @@ func (instance *TextBoxActiveXControl) IsAutoTab()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6807,7 +6807,7 @@ func (instance *TextBoxActiveXControl) IsMultiLine()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6836,7 +6836,7 @@ func (instance *TextBoxActiveXControl) IsWordWrapped()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6960,7 +6960,7 @@ func (instance *TextBoxActiveXControl) IsAutoWordSelected()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6991,7 +6991,7 @@ func (instance *TextBoxActiveXControl) IsEnabled()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7020,7 +7020,7 @@ func (instance *TextBoxActiveXControl) IsLocked()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7049,7 +7049,7 @@ func (instance *TextBoxActiveXControl) IsTransparent()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7173,7 +7173,7 @@ func (instance *TextBoxActiveXControl) IsAutoSize()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7234,7 +7234,7 @@ func (instance *ToggleButtonActiveXControl) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7449,7 +7449,7 @@ func (instance *ToggleButtonActiveXControl) IsTripleState()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7478,7 +7478,7 @@ func (instance *ToggleButtonActiveXControl) IsEnabled()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7507,7 +7507,7 @@ func (instance *ToggleButtonActiveXControl) IsLocked()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7536,7 +7536,7 @@ func (instance *ToggleButtonActiveXControl) IsTransparent()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7660,7 +7660,7 @@ func (instance *ToggleButtonActiveXControl) IsAutoSize()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7721,7 +7721,7 @@ func (instance *UnknownControl) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7784,7 +7784,7 @@ func (instance *UnknownControl) IsEnabled()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7813,7 +7813,7 @@ func (instance *UnknownControl) IsLocked()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7842,7 +7842,7 @@ func (instance *UnknownControl) IsTransparent()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7951,7 +7951,7 @@ func (instance *UnknownControl) IsAutoSize()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }

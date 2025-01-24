@@ -75,7 +75,7 @@ func (instance *WebExtension) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -118,7 +118,7 @@ func (instance *WebExtension) IsFrozen()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -241,7 +241,7 @@ func (instance *WebExtensionBinding) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -372,7 +372,7 @@ func (instance *WebExtensionBindingCollection) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -447,7 +447,7 @@ func (instance *WebExtensionCollection) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -556,7 +556,7 @@ func (instance *WebExtensionProperty) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -658,7 +658,7 @@ func (instance *WebExtensionPropertyCollection) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -769,7 +769,7 @@ func (instance *WebExtensionReference) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -934,7 +934,7 @@ func (instance *WebExtensionReferenceCollection) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1009,7 +1009,7 @@ func (instance *WebExtensionTaskPane) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1083,7 +1083,7 @@ func (instance *WebExtensionTaskPane) IsVisible()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1112,7 +1112,7 @@ func (instance *WebExtensionTaskPane) IsLocked()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1215,7 +1215,7 @@ func (instance *WebExtensionTaskPaneCollection) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }

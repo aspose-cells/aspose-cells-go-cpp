@@ -93,7 +93,7 @@ func (instance *DigitalSignature) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -294,7 +294,7 @@ func (instance *DigitalSignature) IsValid()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -372,7 +372,7 @@ func (instance *DigitalSignatureCollection) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }

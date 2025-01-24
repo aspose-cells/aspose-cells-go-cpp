@@ -639,7 +639,7 @@ func (instance *AccentEquationNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -720,7 +720,7 @@ func (instance *AccentEquationNode) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1041,7 +1041,7 @@ func (instance *ArrayEquationNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1057,7 +1057,7 @@ func (instance *ArrayEquationNode) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1378,7 +1378,7 @@ func (instance *BarEquationNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1426,7 +1426,7 @@ func (instance *BarEquationNode) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1747,7 +1747,7 @@ func (instance *BorderBoxEquationNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1763,7 +1763,7 @@ func (instance *BorderBoxEquationNode) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2084,7 +2084,7 @@ func (instance *BoxEquationNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2100,7 +2100,7 @@ func (instance *BoxEquationNode) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2422,7 +2422,7 @@ func (instance *DelimiterEquationNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2493,7 +2493,7 @@ func (instance *DelimiterEquationNode) GetNaryGrow()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2584,7 +2584,7 @@ func (instance *DelimiterEquationNode) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2908,7 +2908,7 @@ func (instance *EquationComponentNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2924,7 +2924,7 @@ func (instance *EquationComponentNode) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3245,7 +3245,7 @@ func (instance *EquationNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3482,7 +3482,7 @@ func (instance *EquationNode) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3657,7 +3657,7 @@ func (instance *EquationNodeParagraph) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3705,7 +3705,7 @@ func (instance *EquationNodeParagraph) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4026,7 +4026,7 @@ func (instance *FractionEquationNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4074,7 +4074,7 @@ func (instance *FractionEquationNode) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4396,7 +4396,7 @@ func (instance *FunctionEquationNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4412,7 +4412,7 @@ func (instance *FunctionEquationNode) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4733,7 +4733,7 @@ func (instance *GroupCharacterEquationNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4878,7 +4878,7 @@ func (instance *GroupCharacterEquationNode) Equals(obj *Object)  (bool,  error) 
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5199,7 +5199,7 @@ func (instance *LimLowUppEquationNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5215,7 +5215,7 @@ func (instance *LimLowUppEquationNode) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5536,7 +5536,7 @@ func (instance *MathematicalEquationNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5552,7 +5552,7 @@ func (instance *MathematicalEquationNode) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5873,7 +5873,7 @@ func (instance *MatrixEquationNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5919,7 +5919,7 @@ func (instance *MatrixEquationNode) IsHidePlaceholder()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5950,7 +5950,7 @@ func (instance *MatrixEquationNode) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6271,7 +6271,7 @@ func (instance *NaryEquationNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6285,7 +6285,7 @@ func (instance *NaryEquationNode) IsHideSubscript()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6314,7 +6314,7 @@ func (instance *NaryEquationNode) IsHideSuperscript()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6440,7 +6440,7 @@ func (instance *NaryEquationNode) GetNaryGrow()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6471,7 +6471,7 @@ func (instance *NaryEquationNode) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6792,7 +6792,7 @@ func (instance *RadicalEquationNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6806,7 +6806,7 @@ func (instance *RadicalEquationNode) IsDegHide()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6837,7 +6837,7 @@ func (instance *RadicalEquationNode) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7159,7 +7159,7 @@ func (instance *SubSupEquationNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7175,7 +7175,7 @@ func (instance *SubSupEquationNode) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7497,7 +7497,7 @@ func (instance *TextRunEquationNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7542,7 +7542,7 @@ func (instance *TextRunEquationNode) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7863,7 +7863,7 @@ func (instance *UnknowEquationNode) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7879,7 +7879,7 @@ func (instance *UnknowEquationNode) Equals(obj *Object)  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }

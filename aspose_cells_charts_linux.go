@@ -1523,7 +1523,7 @@ func (instance *Axis) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1553,7 +1553,7 @@ func (instance *Axis) IsAutomaticMinValue()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1613,7 +1613,7 @@ func (instance *Axis) IsAutomaticMaxValue()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1673,7 +1673,7 @@ func (instance *Axis) IsAutomaticMajorUnit()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1731,7 +1731,7 @@ func (instance *Axis) IsAutomaticMinorUnit()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -1991,7 +1991,7 @@ func (instance *Axis) IsLogarithmic()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2020,7 +2020,7 @@ func (instance *Axis) IsPlotOrderReversed()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2049,7 +2049,7 @@ func (instance *Axis) GetAxisBetweenCategories()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2123,7 +2123,7 @@ func (instance *Axis) IsAutoTickLabelSpacing()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2259,7 +2259,7 @@ func (instance *Axis) IsDisplayUnitLabelShown()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2432,7 +2432,7 @@ func (instance *Axis) IsVisible()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2493,7 +2493,7 @@ func (instance *Axis) GetHasMultiLevelLabels()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2575,7 +2575,7 @@ func (instance *AxisBins) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2589,7 +2589,7 @@ func (instance *AxisBins) IsByCategory()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2618,7 +2618,7 @@ func (instance *AxisBins) IsAutomatic()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2779,7 +2779,7 @@ func (instance *Chart) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2838,7 +2838,7 @@ func (instance *Chart) GetHidePivotFieldButtons()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2918,7 +2918,7 @@ func (instance *Chart) IsCellReferedByChart(sheetindex int32, rowindex int32, co
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -2932,7 +2932,7 @@ func (instance *Chart) IsChartDataChanged()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3008,7 +3008,7 @@ func (instance *Chart) GetPlotVisibleCellsOnly()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3037,7 +3037,7 @@ func (instance *Chart) GetDisplayNaAsBlank()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3095,7 +3095,7 @@ func (instance *Chart) GetSizeWithWindow()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3462,7 +3462,7 @@ func (instance *Chart) GetShowLegend()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3492,7 +3492,7 @@ func (instance *Chart) IsRectangularCornered()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3522,7 +3522,7 @@ func (instance *Chart) GetShowDataTable()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3736,7 +3736,7 @@ func (instance *Chart) GetWallsAndGridlines2D()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3823,7 +3823,7 @@ func (instance *Chart) GetRightAngleAxes()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3853,7 +3853,7 @@ func (instance *Chart) GetAutoScaling()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -3943,7 +3943,7 @@ func (instance *Chart) GetIs3D()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4243,7 +4243,7 @@ func (instance *Chart) HasAxis(aixstype AxisType, isprimary bool)  (bool,  error
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4257,7 +4257,7 @@ func (instance *Chart) SwitchRowColumn()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4349,7 +4349,7 @@ func (instance *ChartArea) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4496,7 +4496,7 @@ func (instance *ChartArea) IsInnerMode()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4558,7 +4558,7 @@ func (instance *ChartArea) GetShadow()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4603,7 +4603,7 @@ func (instance *ChartArea) IsDefaultPosBeSet()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4721,7 +4721,7 @@ func (instance *ChartArea) GetAutoScaleFont()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4750,7 +4750,7 @@ func (instance *ChartArea) IsAutomaticSize()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4822,7 +4822,7 @@ func (instance *ChartCalculateOptions) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4838,7 +4838,7 @@ func (instance *ChartCalculateOptions) GetUpdateAllPoints()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4885,7 +4885,7 @@ func (instance *ChartCollection) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5076,7 +5076,7 @@ func (instance *ChartDataTable) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5107,7 +5107,7 @@ func (instance *ChartDataTable) GetAutoScaleFont()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5169,7 +5169,7 @@ func (instance *ChartDataTable) GetHasHorizontalBorder()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5198,7 +5198,7 @@ func (instance *ChartDataTable) GetHasVerticalBorder()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5227,7 +5227,7 @@ func (instance *ChartDataTable) GetHasOutlineBorder()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5256,7 +5256,7 @@ func (instance *ChartDataTable) GetShowLegendKey()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5317,7 +5317,7 @@ func (instance *ChartFrame) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5332,7 +5332,7 @@ func (instance *ChartFrame) IsInnerMode()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5394,7 +5394,7 @@ func (instance *ChartFrame) GetShadow()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5439,7 +5439,7 @@ func (instance *ChartFrame) IsDefaultPosBeSet()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5573,7 +5573,7 @@ func (instance *ChartFrame) GetAutoScaleFont()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5602,7 +5602,7 @@ func (instance *ChartFrame) IsAutomaticSize()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5790,7 +5790,7 @@ func (instance *ChartGlobalizationSettings) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5934,7 +5934,7 @@ func (instance *ChartPoint) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5977,7 +5977,7 @@ func (instance *ChartPoint) GetShadow()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6183,7 +6183,7 @@ func (instance *ChartPoint) IsInSecondaryPlot()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6676,7 +6676,7 @@ func (instance *ChartPointCollection) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6782,7 +6782,7 @@ func (instance *ChartTextFrame) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6796,7 +6796,7 @@ func (instance *ChartTextFrame) IsDeleted()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6918,7 +6918,7 @@ func (instance *ChartTextFrame) IsAutomaticRotation()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -6984,7 +6984,7 @@ func (instance *ChartTextFrame) IsResizeShapeToFitText()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7014,7 +7014,7 @@ func (instance *ChartTextFrame) IsAutoText()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7133,7 +7133,7 @@ func (instance *ChartTextFrame) IsTextWrapped()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7163,7 +7163,7 @@ func (instance *ChartTextFrame) IsInnerMode()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7225,7 +7225,7 @@ func (instance *ChartTextFrame) GetShadow()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7270,7 +7270,7 @@ func (instance *ChartTextFrame) IsDefaultPosBeSet()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7404,7 +7404,7 @@ func (instance *ChartTextFrame) GetAutoScaleFont()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7433,7 +7433,7 @@ func (instance *ChartTextFrame) IsAutomaticSize()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7623,7 +7623,7 @@ func (instance *DataLabels) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7669,7 +7669,7 @@ func (instance *DataLabels) IsAutoText()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7759,7 +7759,7 @@ func (instance *DataLabels) IsTextWrapped()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7820,7 +7820,7 @@ func (instance *DataLabels) GetShowValue()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7849,7 +7849,7 @@ func (instance *DataLabels) GetShowCellRange()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7878,7 +7878,7 @@ func (instance *DataLabels) GetShowPercentage()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7907,7 +7907,7 @@ func (instance *DataLabels) GetShowBubbleSize()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7936,7 +7936,7 @@ func (instance *DataLabels) GetShowCategoryName()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7966,7 +7966,7 @@ func (instance *DataLabels) GetShowSeriesName()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7997,7 +7997,7 @@ func (instance *DataLabels) GetShowLegendKey()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -8086,7 +8086,7 @@ func (instance *DataLabels) GetNumberFormatLinked()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -8238,7 +8238,7 @@ func (instance *DataLabels) IsNeverOverlap()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -8299,7 +8299,7 @@ func (instance *DataLabels) IsDeleted()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -8421,7 +8421,7 @@ func (instance *DataLabels) IsAutomaticRotation()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -8487,7 +8487,7 @@ func (instance *DataLabels) IsResizeShapeToFitText()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -8578,7 +8578,7 @@ func (instance *DisplayUnitLabel) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -8637,7 +8637,7 @@ func (instance *DisplayUnitLabel) GetAutoScaleFont()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -8666,7 +8666,7 @@ func (instance *DisplayUnitLabel) IsDeleted()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -8788,7 +8788,7 @@ func (instance *DisplayUnitLabel) IsAutomaticRotation()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -8854,7 +8854,7 @@ func (instance *DisplayUnitLabel) IsResizeShapeToFitText()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -8884,7 +8884,7 @@ func (instance *DisplayUnitLabel) IsAutoText()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -8974,7 +8974,7 @@ func (instance *DisplayUnitLabel) IsTextWrapped()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -9019,7 +9019,7 @@ func (instance *DropBars) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -9097,7 +9097,7 @@ func (instance *ErrorBar) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -9204,7 +9204,7 @@ func (instance *ErrorBar) GetShowMarkerTTop()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -9855,7 +9855,7 @@ func (instance *ErrorBar) IsAutomaticColor()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -9869,7 +9869,7 @@ func (instance *ErrorBar) IsVisible()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -9898,7 +9898,7 @@ func (instance *ErrorBar) IsAuto()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -9975,7 +9975,7 @@ func (instance *Floor) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -10113,7 +10113,7 @@ func (instance *Floor) GetInvertIfNegative()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -10220,7 +10220,7 @@ func (instance *Legend) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -10305,7 +10305,7 @@ func (instance *Legend) IsOverLay()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -10334,7 +10334,7 @@ func (instance *Legend) IsDeleted()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -10456,7 +10456,7 @@ func (instance *Legend) IsAutomaticRotation()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -10522,7 +10522,7 @@ func (instance *Legend) IsResizeShapeToFitText()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -10552,7 +10552,7 @@ func (instance *Legend) IsAutoText()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -10671,7 +10671,7 @@ func (instance *Legend) IsTextWrapped()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -10716,7 +10716,7 @@ func (instance *LegendEntry) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -10730,7 +10730,7 @@ func (instance *LegendEntry) IsDeleted()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -10775,7 +10775,7 @@ func (instance *LegendEntry) IsTextNoFill()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -10805,7 +10805,7 @@ func (instance *LegendEntry) GetAutoScaleFont()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -10883,7 +10883,7 @@ func (instance *LegendEntryCollection) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -10944,7 +10944,7 @@ func (instance *Marker) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -11220,7 +11220,7 @@ func (instance *PivotOptions) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -11235,7 +11235,7 @@ func (instance *PivotOptions) GetDropZoneFilter()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -11266,7 +11266,7 @@ func (instance *PivotOptions) GetDropZoneCategories()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -11297,7 +11297,7 @@ func (instance *PivotOptions) GetDropZoneData()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -11328,7 +11328,7 @@ func (instance *PivotOptions) GetDropZoneSeries()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -11358,7 +11358,7 @@ func (instance *PivotOptions) GetDropZonesVisible()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -11419,7 +11419,7 @@ func (instance *PlotArea) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -11678,7 +11678,7 @@ func (instance *PlotArea) IsAutomaticSize()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -11708,7 +11708,7 @@ func (instance *PlotArea) IsInnerMode()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -11770,7 +11770,7 @@ func (instance *PlotArea) GetShadow()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -11815,7 +11815,7 @@ func (instance *PlotArea) IsDefaultPosBeSet()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -11949,7 +11949,7 @@ func (instance *PlotArea) GetAutoScaleFont()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -11994,7 +11994,7 @@ func (instance *Series) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -12008,7 +12008,7 @@ func (instance *Series) IsFiltered()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -12173,7 +12173,7 @@ func (instance *Series) IsVerticalValues()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -12350,7 +12350,7 @@ func (instance *Series) GetSmooth()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -12381,7 +12381,7 @@ func (instance *Series) GetShadow()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -12411,7 +12411,7 @@ func (instance *Series) GetHas3DEffect()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -12537,7 +12537,7 @@ func (instance *Series) GetPlotOnSecondAxis()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -12599,7 +12599,7 @@ func (instance *Series) GetHasHiLoLines()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -12648,7 +12648,7 @@ func (instance *Series) GetHasSeriesLines()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -12697,7 +12697,7 @@ func (instance *Series) GetHasDropLines()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -12745,7 +12745,7 @@ func (instance *Series) GetHasUpDownBars()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -12810,7 +12810,7 @@ func (instance *Series) IsColorVaried()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -13033,7 +13033,7 @@ func (instance *Series) IsAutoSplit()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -13114,7 +13114,7 @@ func (instance *Series) GetShowNegativeBubbles()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -13203,7 +13203,7 @@ func (instance *Series) GetHasRadarAxisLabels()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -13232,7 +13232,7 @@ func (instance *Series) GetHasLeaderLines()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -13326,7 +13326,7 @@ func (instance *SeriesCollection) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -13544,7 +13544,7 @@ func (instance *SeriesCollection) IsColorVaried()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -13629,7 +13629,7 @@ func (instance *SeriesLayoutProperties) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -13643,7 +13643,7 @@ func (instance *SeriesLayoutProperties) GetShowConnectorLines()  (bool,  error) 
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -13672,7 +13672,7 @@ func (instance *SeriesLayoutProperties) GetShowMeanLine()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -13701,7 +13701,7 @@ func (instance *SeriesLayoutProperties) GetShowOutlierPoints()  (bool,  error)  
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -13730,7 +13730,7 @@ func (instance *SeriesLayoutProperties) GetShowMeanMarker()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -13759,7 +13759,7 @@ func (instance *SeriesLayoutProperties) GetShowInnerPoints()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -13888,7 +13888,7 @@ func (instance *SeriesLayoutProperties) IsIntervalLeftClosed()  (bool,  error)  
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -13997,7 +13997,7 @@ func (instance *Sparkline) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -14117,7 +14117,7 @@ func (instance *SparklineCollection) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -14212,7 +14212,7 @@ func (instance *SparklineGroup) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -14356,7 +14356,7 @@ func (instance *SparklineGroup) GetDisplayHidden()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -14385,7 +14385,7 @@ func (instance *SparklineGroup) GetShowHighPoint()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -14445,7 +14445,7 @@ func (instance *SparklineGroup) GetShowLowPoint()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -14505,7 +14505,7 @@ func (instance *SparklineGroup) GetShowNegativePoints()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -14565,7 +14565,7 @@ func (instance *SparklineGroup) GetShowFirstPoint()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -14625,7 +14625,7 @@ func (instance *SparklineGroup) GetShowLastPoint()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -14685,7 +14685,7 @@ func (instance *SparklineGroup) GetShowMarkers()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -14776,7 +14776,7 @@ func (instance *SparklineGroup) GetPlotRightToLeft()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -14866,7 +14866,7 @@ func (instance *SparklineGroup) GetShowHorizontalAxis()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -15063,7 +15063,7 @@ func (instance *SparklineGroupCollection) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -15189,7 +15189,7 @@ func (instance *TickLabelItem) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -15275,7 +15275,7 @@ func (instance *TickLabels) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -15305,7 +15305,7 @@ func (instance *TickLabels) GetAutoScaleFont()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -15395,7 +15395,7 @@ func (instance *TickLabels) IsAutomaticRotation()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -15483,7 +15483,7 @@ func (instance *TickLabels) GetNumberFormatLinked()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -15705,7 +15705,7 @@ func (instance *Title) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -15748,7 +15748,7 @@ func (instance *Title) IsVisible()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -15835,7 +15835,7 @@ func (instance *Title) GetOverLay()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -15904,7 +15904,7 @@ func (instance *Title) IsDeleted()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -16026,7 +16026,7 @@ func (instance *Title) IsAutomaticRotation()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -16073,7 +16073,7 @@ func (instance *Title) IsResizeShapeToFitText()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -16103,7 +16103,7 @@ func (instance *Title) IsAutoText()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -16193,7 +16193,7 @@ func (instance *Title) IsTextWrapped()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -16254,7 +16254,7 @@ func (instance *Trendline) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -16268,7 +16268,7 @@ func (instance *Trendline) IsNameAuto()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -16467,7 +16467,7 @@ func (instance *Trendline) GetDisplayEquation()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -16496,7 +16496,7 @@ func (instance *Trendline) GetDisplayRSquared()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -17150,7 +17150,7 @@ func (instance *Trendline) IsAutomaticColor()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -17164,7 +17164,7 @@ func (instance *Trendline) IsVisible()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -17193,7 +17193,7 @@ func (instance *Trendline) IsAuto()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -17254,7 +17254,7 @@ func (instance *TrendlineCollection) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -17364,7 +17364,7 @@ func (instance *Walls) IsNull()  (bool,  error)  {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
 	}
-	result := CGoReturnPtr.return_value != C.bool(true) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
