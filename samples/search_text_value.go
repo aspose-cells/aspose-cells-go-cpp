@@ -5,16 +5,11 @@ import (
 )
 
 func SearchCellValue() {
-
-	workbook, _ := NewWorkbook_String("Data/Input/Book1.xlsx")
-	println("NewWorkbook_String")
-	worksheets, _ := workbook.GetWorksheets()
-	worksheet, _ := worksheets.Get_Int(0)
-	cells, _ := worksheet.GetCells()
+	_, _, cells := create_table_data()
 	findOptions, _ := NewFindOptions()
 	cell, _ := cells.GetFirstCell()
 	findOptions.SetLookAtType(LookAtType_EntireContent)
-	obj, _ := NewObject_String("Hello")
+	obj, _ := NewObject_String("Product")
 	println(obj)
 	cell1, _ := cells.Find_Object_Cell_FindOptions(obj, cell, findOptions)
 	cellValue, _ := cell1.GetStringValue()

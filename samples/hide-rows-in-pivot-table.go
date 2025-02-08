@@ -1,19 +1,10 @@
 package main
 
-import (
-	. "github.com/aspose-cells/aspose-cells-go-cpp/v25"
-)
-
 func HideRowsInPivotTable() {
-	println("LicensePath.")
-	workbook, _ := NewWorkbook_String("Data/Input/TestCase.xlsx")
-	println("NewWorkbook_String.")
-	worksheets, _ := workbook.GetWorksheets()
-	worksheet, _ := worksheets.Get_Int(1)
-	cells, _ := worksheet.GetCells()
-	println("worksheets 0.")
+	workbook, worksheet, cells := create_table_data()
 	pivotTables, _ := worksheet.GetPivotTables()
-	pivotTable, _ := pivotTables.Get_Int(0)
+	pivotTableIndex, _ := pivotTables.Add_String_String_String("=Sheet1!A1:F6", "A12", "TestPivotTable")
+	pivotTable, _ := pivotTables.Get_Int(pivotTableIndex)
 	println("pivotTable 0.")
 	dataBodyRange, _ := pivotTable.GetDataBodyRange()
 	println("dataBodyRange.", dataBodyRange)

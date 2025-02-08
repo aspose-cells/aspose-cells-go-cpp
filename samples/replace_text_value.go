@@ -6,11 +6,11 @@ import (
 
 func ReplaceCellValue() {
 
-	workbook, _ := NewWorkbook_String("Data/Input/Book1.xlsx")
+	workbook, _, _ := create_table_data()
 	replaceOption, _ := NewReplaceOptions()
 	replaceOption.SetCaseSensitive(false)
 	replaceOption.SetRegexKey(true)
 	replaceOption.SetMatchEntireCellContents(false)
-	workbook.Replace_String_String_ReplaceOptions("\bKIM\b", "^^^^^^^^", replaceOption)
+	workbook.Replace_String_String_ReplaceOptions("China", "^^^^^^^^", replaceOption)
 	workbook.Save_String("Data/Output/Book1.pdf")
 }

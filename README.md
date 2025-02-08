@@ -68,7 +68,7 @@ If Aspose.Cells for Go via C++ is not installed in the development environment, 
 
 1. Set your PATH to point to the shared libraries in Aspose.Cells for Go via C++ in your current command shell. Replace your_version with the version of Aspose.Cells for Go via C++ you are running.
 
-```bash
+```cms
 
 set PATH=%PATH%;%GOPATH%/pkg/mod/github.com/aspose-cells/aspose-cells-go-cpp/v25@v25.1.1/lib/linux_x86_64/
 
@@ -79,6 +79,13 @@ Or in your powershell
 ```powershell
 
 $env:Path = $env:Path+ ";${env:GOPATH}\github.com\aspose-cells\aspose-cells-go-cpp\v25@v25.1.1\lib\win_x86_64\"
+
+```
+
+Or in your bash
+
+```bash
+export PATH=$PATH:$GOPATH/github.com/aspose-cells/aspose-cells-go-cpp/v25@v25.1.1/lib/linux_x86_64/
 
 ```
 
@@ -171,82 +178,29 @@ go get github.com/aspose-cells/aspose-cells-go-cpp/v25@v25.1.1
 
 ### **How to build Aspose.Cells for Go via C++ from the Source Code Package**
 
-1. Download Aspose.Cells for Go via C++ source package
+1. Create a work directory for your project.
 
-- **You can download the source code package from two locations:**
+1. Get the source code about Aspose.Cells for Go via C++ source package
 
-    1. Download the source code package from the [Aspose.Cells for Go via C++ download page](https://downloads.aspose.com/cells/go-cpp/).  
-    1. Download the source code package from the [GitHub repository](https://github.com/aspose-cells/aspose-cells-go-cpp) or directly via [GitHub Archive Package](https://github.com/aspose-cells/aspose-cells-go-cpp/archive/refs/heads/main.zip).  
+- Clone the source code from GitHub
 
-2. How install Aspose.Cells for Go via C++ package into your project
-
-- **Create a directory for your project and a main.go file within. Add the following code to your main.go.**
-
-```Go
-
-package main
-
-import (
- . "asposecells"
- "fmt"
-)
-
-func main() {
- lic, _ := NewLicense()
- lic.SetLicense_String("YOUR_LICENSE_File_PATH")
- workbook, _ := NewWorkbook()
- worksheets, _ := workbook.GetWorksheets()
- worksheet, _ := worksheets.Get_Int(0)
- cells, _ := worksheet.GetCells()
- cell, _ := cells.Get_String("A1")
- cell.PutValue_String_Bool("Hello World!", true)
- style, _ := cell.GetStyle()
- style.SetPattern(BackgroundType_Solid)
- color, _ := NewColor()
- color.Set_Color_R(uint8(255))
- color.Set_Color_G(uint8(128))
- style.SetForegroundColor(color)
- cell.SetStyle_Style(style)
- workbook.Save_String("HELLO.pdf")
-
-}
-
+```shell
+git clone https://github.com/aspose-cells/aspose-cells-go-cpp.git cells-go-cpp
 ```
 
-- **Initialize project go.mod**
+Or
 
-```bash
+- Download the source code package from the [Aspose.Cells for Go via C++ download page](https://downloads.aspose.com/cells/go-cpp/) 
 
-go mod init main
+1. Build source code
 
+```go
+go build .
 ```
-
-- **Extract the ZIP file to cells-go-cpp folder in your project directory.**
-
- --cells-go-cpp-samples
-   -- cells-go-cpp ( folder)
-     -- start_up.go
-     -- aspose_cells.go
-     -- ......
-     -- go.mod
-     -- AsposeCellsCWrapper.h
-   -- main.go
-   -- go.mod
-
-- **Modify your Go `mod` file to specify the package's location:**
-
-   ```go
-    module main
-    
-    go 1.19
-    
-    require github.com/aspose-cells/aspose-cells-go-cpp/v25 v25.1.0
-    replace github.com/aspose-cells/aspose-cells-go-cpp/v25 v25.1.0  => ./cells-go-cpp
-   ```
 
 - **Set your PATH to point to the shared libraries in Aspose.Cells for Go via C++ in your current command shell. Replace your_version with the version of Aspose.Cells for Go via C++ you are running.**
 
-```bash
+```cmd
 
 set PATH=%PATH%;%YourProjectPath%/cells-go-cpp-samples/cells-go-cpp/lib/win_x86_64/
 
@@ -260,129 +214,16 @@ $env:Path = $env:Path+ ";${YourProjectPath}\cells-go-cpp-samples\cells-go-cpp\li
 
 ```
 
-You may also copy the DLL files from the above path to the same place as your project executable.
-
-- **Run your created application.**
+Or in your bash
 
 ```bash
-
-go run main.go
+export PATH=$PATH:${YourProjectPath}/cells-go-cpp-samples/cells-go-cpp/lib/linux_x86_64/
 
 ```
 
-### **Code samples**
+1. Navigate to the `./samples` directory and run all sample.
 
-#### Create a table in excel
-
-```go
-
-package main
-
-import (
- . github.com/aspose-cells/aspose-cells-go-cpp/v24
-)
-
-func main() {
- workbook, _ := NewWorkbook()
- worksheets, _ := workbook.GetWorksheets()
- worksheet, _ := worksheets.Get_Int(0)
- cells, _ := worksheet.GetCells()
- set_cell_string_value(cells, "A1", "Employee")
- set_cell_string_value(cells, "B1", "Quarter")
- set_cell_string_value(cells, "C1", "Product")
- set_cell_string_value(cells, "D1", "Continent")
- set_cell_string_value(cells, "E1", "Country")
- set_cell_string_value(cells, "F1", "Sale")
-
- set_cell_string_value(cells, "A2", "David")
- set_cell_string_value(cells, "A3", "David")
- set_cell_string_value(cells, "A4", "David")
- set_cell_string_value(cells, "A5", "David")
- set_cell_string_value(cells, "A6", "James")
-
- set_cell_int_value(cells, "B2", 1)
- set_cell_int_value(cells, "B3", 2)
- set_cell_int_value(cells, "B4", 3)
- set_cell_int_value(cells, "B5", 4)
- set_cell_int_value(cells, "B6", 1)
-
- set_cell_string_value(cells, "C2", "Maxilaku")
- set_cell_string_value(cells, "C3", "Maxilaku")
- set_cell_string_value(cells, "C4", "Chai")
- set_cell_string_value(cells, "C5", "Maxilaku")
- set_cell_string_value(cells, "C6", "Chang")
-
- set_cell_string_value(cells, "D2", "Asia")
- set_cell_string_value(cells, "D3", "Asia")
- set_cell_string_value(cells, "D4", "Asia")
- set_cell_string_value(cells, "D5", "Asia")
- set_cell_string_value(cells, "D6", "Europe")
-
- set_cell_string_value(cells, "E2", "China")
- set_cell_string_value(cells, "E3", "India")
- set_cell_string_value(cells, "E4", "Korea")
- set_cell_string_value(cells, "E5", "India")
- set_cell_string_value(cells, "E6", "France")
-
- set_cell_int_value(cells, "F2", 2000)
- set_cell_int_value(cells, "F3", 500)
- set_cell_int_value(cells, "F4", 1200)
- set_cell_int_value(cells, "F5", 1500)
- set_cell_int_value(cells, "F6", 500)
-
- listObjects, _ := worksheet.GetListObjects()
- index, _ := listObjects.Add_String_String_Bool("A1", "F6", true)
- listObject, _ := listObjects.Get_Int(index)
- listObject.SetShowHeaderRow(true)
- listObject.SetTableStyleType(TableStyleType_TableStyleMedium10)
- listObject.SetShowTotals(true)
-
- workbook.Save_String("CreateTable.xlsx")
-}
-```
-
-#### Create bubble chart in excel
-
-```go
-
-package main
-
-import (
- . github.com/aspose-cells/aspose-cells-go-cpp/v24
-)
-
-func main() {
-   workbook, _ := NewWorkbook()
-   worksheets, _ := workbook.GetWorksheets()
-   worksheet, _ := worksheets.Get_Int(0)
-   cells, _ := worksheet.GetCells()
-   set_cell_string_value_2(cells, 0, 0, "Values")
-   set_cell_int_value_2(cells, 0, 1, 2)
-   set_cell_int_value_2(cells, 0, 2, 4)
-   set_cell_int_value_2(cells, 0, 3, 6)
-
-   set_cell_string_value_2(cells, 1, 0, "Bubble Size")
-   set_cell_int_value_2(cells, 1, 1, 2)
-   set_cell_int_value_2(cells, 1, 2, 3)
-   set_cell_int_value_2(cells, 1, 3, 1)
-
-   set_cell_string_value_2(cells, 1, 0, "X Values")
-   set_cell_int_value_2(cells, 2, 1, 1)
-   set_cell_int_value_2(cells, 2, 2, 2)
-   set_cell_int_value_2(cells, 2, 3, 3)
-   cells.SetColumnWidth(0, 12)
-
-   charts, _ := worksheet.GetCharts()
-   charts.AddFloatingChart(ChartType_Bubble, 5, 0, 20, 8)
-   chart, _ := charts.Get_Int(0)
-   nSeries, _ := chart.GetNSeries()
-   nSeries.Add_String_Bool("B1:D1", true)
-   series, _ := nSeries.Get(0)
-   series.SetBubbleSizes("B2:D2")
-   series.SetXValues("B3:D3")
-   series.SetValues("B1:D1")
-   workbook.Save_String("CreateBubbleChart.xlsx")
-
-}
+```shell
+go run .
 
 ```

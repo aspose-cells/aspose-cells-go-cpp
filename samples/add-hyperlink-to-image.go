@@ -15,7 +15,7 @@ func AddHyperlinkToImage() {
 	cells.SetColumnWidth(2, 21)
 	cells.SetRowHeight(3, 100)
 	pictures, _ := worksheet.GetPictures()
-	picture_index, err := pictures.Add_Int_Int_Int_Int_String(3, 2, 4, 3, "Data/Input/csharp.png")
+	picture_index, err := pictures.Add_Int_Int_Int_Int_String(3, 2, 4, 3, "asposecells.png")
 	if err != nil {
 		println("err.Error()")
 		println(err.Error())

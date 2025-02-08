@@ -1,36 +1,11 @@
 package main
 
-import (
-	. "github.com/aspose-cells/aspose-cells-go-cpp/v25"
-)
-
 func SetListobjectComment() {
-	workbook, err1 := NewWorkbook_String("Data/Input/BookPivotTable.xlsx")
-	if err1 != nil {
-		println(err1)
-	}
-
-	worksheets, err2 := workbook.GetWorksheets()
-	if err2 != nil {
-		println(err2)
-	}
-	worksheet, err3 := worksheets.Get_Int(0)
-	if err3 != nil {
-		println(err3)
-	}
-
-	listobjects, err4 := worksheet.GetListObjects()
-	if err4 != nil {
-		println(err4)
-	}
-
-	listobject, err5 := listobjects.Get_Int(0)
-	if err5 != nil {
-		println(err5)
-	}
-
-	listobject.SetComment("This is Aspose.Cells comment.")
-
+	workbook, worksheet, _ := create_table_data()
+	listObjects, _ := worksheet.GetListObjects()
+	index, _ := listObjects.Add_String_String_Bool("A1", "F6", true)
+	listObject, _ := listObjects.Get_Int(index)
+	listObject.SetComment("This is Aspose.Cells comment.")
 	workbook.Save_String("Data/Output/BookPivotTableSetComment.xlsx")
 
 	println("Set comment, and save as BookPivotTableSetComment.xlsx.")
