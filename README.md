@@ -82,7 +82,7 @@ $env:Path = $env:Path+ ";${env:GOPATH}\github.com\aspose-cells\aspose-cells-go-c
 
 ```
 
-Or in your bash
+Or in your linux bash
 
 ```bash
 export PATH=$PATH:$GOPATH/github.com/aspose-cells/aspose-cells-go-cpp/v25@v25.1.1/lib/linux_x86_64/
@@ -176,7 +176,7 @@ go get github.com/aspose-cells/aspose-cells-go-cpp/v25@v25.1.1
 
 ```
 
-### **How to build Aspose.Cells for Go via C++ from the Source Code Package**
+### **How to build Aspose.Cells for Go via C++ from the Source Code Package and run samples**
 
 1. Create a work directory for your project.
 
@@ -190,19 +190,20 @@ git clone https://github.com/aspose-cells/aspose-cells-go-cpp.git cells-go-cpp
 
 Or
 
-- Download the source code package from the [Aspose.Cells for Go via C++ download page](https://downloads.aspose.com/cells/go-cpp/) 
+- Download the source code package from the [Aspose.Cells for Go via C++ download page](https://downloads.aspose.com/cells/go-cpp/) and extract the ZIP file to cells-go-cpp folder in your work directory. 
 
-1. Build source code
+1. Navigate to cells-go-cpp folder and build source code
 
-```go
+```bash
+cd "your work directory"/cells-go-cpp/
 go build .
 ```
 
-- **Set your PATH to point to the shared libraries in Aspose.Cells for Go via C++ in your current command shell. Replace your_version with the version of Aspose.Cells for Go via C++ you are running.**
+1. **Set your PATH to point to the shared libraries in Aspose.Cells for Go via C++ in your current command shell.**
 
 ```cmd
 
-set PATH=%PATH%;%YourProjectPath%/cells-go-cpp-samples/cells-go-cpp/lib/win_x86_64/
+set PATH=%PATH%;%YourProjectPath%/cells-go-cpp/lib/win_x86_64/
 
 ```
 
@@ -210,7 +211,7 @@ Or in your powershell
 
 ```powershell
 
-$env:Path = $env:Path+ ";${YourProjectPath}\cells-go-cpp-samples\cells-go-cpp\lib\win_x86_64\"
+$env:Path = $env:Path+ ";${YourProjectPath}/cells-go-cpp/lib/win_x86_64/"
 
 ```
 
