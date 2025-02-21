@@ -157,7 +157,7 @@ Aspose.Cells for Go via C++ offers a wide arrange of features for creating, conv
 # Evaluate Aspose.Cells for Go via C++
 
 You can use Aspose.Cells for Go via C++ free of cost for evaluation.The evaluation version provides almost all functionality of the product with certain limitations. The same evaluation version becomes licensed when you purchase a license and add a couple of lines of code to apply the license.
-If you want to test Aspose.Cells for Go via C++ without evaluation version limitations, you can also request a 30 Day Temporary License. Please refer to  <a href="https://purchase.aspose.com/temporary-license/"> How to get a Temporary License</a>?
+If you want to test Aspose.Cells for Go via C++ without evaluation version limitations, you can also try a 30-Day Temporary License. Please refer to  <a href="https://purchase.aspose.com/temporary-license/"> How to get a Temporary License</a>?
 
 # Limitations of Evaluation version
 
