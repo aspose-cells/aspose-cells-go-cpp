@@ -12,7 +12,9 @@ Aspose.Cells for Go via C++ is a native Go library designed for Go developers to
 - Go 1.16 or greater
 
 ## Quick Start Guide
+
 <a id="installationinyourproject"></a>
+
 ### Installation Aspose.Cells for Go via C++ package and running your code in your project
 
 1. Create a directory for your project and a main.go file within. Add the following code to your main.go.
@@ -152,12 +154,13 @@ Aspose.Cells for Go via C++ offers a wide arrange of features for creating, conv
 |[DOCX](https://docs.fileformat.com/word-processing/docx/)|A well-known format for Microsoft Word documents that is a combination of XML and binary files.||&radic;|
 |[PPTX](https://docs.fileformat.com/presentation/pptx/)|The PPTX format is based on the Microsoft PowerPoint open XML presentation file format.||&radic;|
 
-
 # Evaluate Aspose.Cells for Go via C++
+
 You can use Aspose.Cells for Go via C++ free of cost for evaluation.The evaluation version provides almost all functionality of the product with certain limitations. The same evaluation version becomes licensed when you purchase a license and add a couple of lines of code to apply the license.
 If you want to test Aspose.Cells for Go via C++ without evaluation version limitations, you can also request a 30 Day Temporary License. Please refer to  <a href="https://purchase.aspose.com/temporary-license/"> How to get a Temporary License</a>?
 
 # Evaluation Version Limitations
+
 Evaluation version of Aspose.Cells for Go via C++ without the specified license provides full product functionality, but inserts an evaluative watermark at the top of the document upon loading and saving and limits the maximum document size to a few hundred paragraphs.
 
 # Run Aspose.Cells for Go via C++ in production
@@ -198,7 +201,7 @@ git clone https://github.com/aspose-cells/aspose-cells-go-cpp.git cells-go-cpp
 
 Or
 
-- Download the source code package from the [Aspose.Cells for Go via C++ download page](https://downloads.aspose.com/cells/go-cpp/) and extract the ZIP file to cells-go-cpp folder in your work directory. 
+- Download the source code package from the [Aspose.Cells for Go via C++ download page](https://downloads.aspose.com/cells/go-cpp/) and extract the ZIP file to cells-go-cpp folder in your work directory.
 
 1. Navigate to cells-go-cpp folder and build source code
 
@@ -211,7 +214,7 @@ go build .
 
 ```cmd
 
-set PATH=%PATH%;%YourProjectPath%/cells-go-cpp/lib/win_x86_64/
+set PATH=%PATH%;%YourProjectPath%\cells-go-cpp\lib\win_x86_64\
 
 ```
 
@@ -219,14 +222,14 @@ Or in your powershell
 
 ```powershell
 
-$env:Path = $env:Path+ ";${YourProjectPath}/cells-go-cpp/lib/win_x86_64/"
+$env:Path = $env:Path+ ";${YourProjectPath}\cells-go-cpp\lib\win_x86_64\"
 
 ```
 
 Or in your bash
 
 ```bash
-export PATH=$PATH:${YourProjectPath}/cells-go-cpp-samples/cells-go-cpp/lib/linux_x86_64/
+export PATH=$PATH:${YourProjectPath}/cells-go-cpp/lib/linux_x86_64/
 
 ```
 
