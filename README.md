@@ -159,13 +159,13 @@ Aspose.Cells for Go via C++ offers a wide arrange of features for creating, conv
 You can use Aspose.Cells for Go via C++ free of cost for evaluation.The evaluation version provides almost all functionality of the product with certain limitations. The same evaluation version becomes licensed when you purchase a license and add a couple of lines of code to apply the license.
 If you want to test Aspose.Cells for Go via C++ without evaluation version limitations, you can also request a 30 Day Temporary License. Please refer to  <a href="https://purchase.aspose.com/temporary-license/"> How to get a Temporary License</a>?
 
-# Evaluation Version Limitations
+# Limitations of Evaluation version
 
-Evaluation version of Aspose.Cells for Go via C++ without the specified license provides full product functionality, but inserts an evaluative watermark at the top of the document upon loading and saving and limits the maximum document size to a few hundred paragraphs.
+The evaluation version of Aspose. Cells for Go via C++ provides complete product functionality. An evaluation watermark will be inserted when saving the file. And the evaluation version can open up to 100 files.
 
 # Run Aspose.Cells for Go via C++ in production
 
-A commercial license key is required for use in a production environment. Please <a href="https://purchase.aspose.com/buy">contact us to purchase a commercial license</a> if you do not have a valid license key.
+A commercial license key is required in a production environment. Please contact us to <a href="https://purchase.aspose.com/buy">purchase a commercial license</a> if you want to publish application to the product server.
 
 ## How to Install Aspose.Cells for Go via C++
 
