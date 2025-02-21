@@ -1,7 +1,11 @@
 // +build linux
 
-// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
-// Powered by Aspose.Cells.
+/* ----------------------------------------------------------------
+ * Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
+ * Powered by Aspose.Cells.
+ * ---------------------------------------------------------------*/
+
+
 package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
@@ -11,7 +15,8 @@ package asposecells
 import "C"
 import (
 	"fmt"  
-	"errors"
+ 	
+	"errors"	
 	"runtime"
 	"unsafe" 
 )
@@ -2205,26 +2210,26 @@ func (instance *Axis) SetDisplayUnit(value DisplayUnitType)  error {
 }
 // Specifies a custom value for the display unit.
 // Returns:
-//   int32  
-func (instance *Axis) GetCustomUnit()  (int32,  error)  {
+//   float64  
+func (instance *Axis) GetCustomDisplayUnit()  (float64,  error)  {
 	
-	CGoReturnPtr := C.Axis_GetCustomUnit( instance.ptr)
+	CGoReturnPtr := C.Axis_GetCustomDisplayUnit( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
 // Specifies a custom value for the display unit.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *Axis) SetCustomUnit(value int32)  error {
+func (instance *Axis) SetCustomDisplayUnit(value float64)  error {
 	
-	CGoReturnPtr := C.Axis_SetCustomUnit( instance.ptr, C.int(value))
+	CGoReturnPtr := C.Axis_SetCustomDisplayUnit( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6680,6 +6685,23 @@ func (instance *ChartPointCollection) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
+// Returns an enumerator for the entire <see cref="ChartPointCollection"/>.
+// Returns:
+//   unsafe.Pointer  
+func (instance *ChartPointCollection) GetEnumerator()  (*ChartPointEnumerator,  error)  {
+	
+	CGoReturnPtr := C.ChartPointCollection_GetEnumerator( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ChartPointEnumerator{}
+	result.ptr = CGoReturnPtr.return_value
+	runtime.SetFinalizer(result, DeleteChartPointEnumerator)
+	 
+
+	return result, nil 
+}
 // Remove all setting of the chart points.
 // Returns:
 //   void  
@@ -8289,6 +8311,355 @@ func (instance *DataLabels) SetShapeType(value DataLabelShapeType)  error {
 
 	return nil 
 }
+// Indicates whether the size of the plot area size includes the tick marks, and the axis labels.
+// False specifies that the size shall determine the size of the plot area, the tick marks, and the axis labels.
+// Returns:
+//   bool  
+func (instance *DataLabels) IsInnerMode()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_IsInnerMode( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the size of the plot area size includes the tick marks, and the axis labels.
+// False specifies that the size shall determine the size of the plot area, the tick marks, and the axis labels.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DataLabels) SetIsInnerMode(value bool)  error {
+	
+	CGoReturnPtr := C.DataLabels_SetIsInnerMode( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// True if the frame has a shadow.
+// Returns:
+//   bool  
+func (instance *DataLabels) GetShadow()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_GetShadow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// True if the frame has a shadow.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DataLabels) SetShadow(value bool)  error {
+	
+	CGoReturnPtr := C.DataLabels_SetShadow( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the <see cref="ShapeProperties"/> object.
+// Returns:
+//   ShapePropertyCollection  
+func (instance *DataLabels) GetShapeProperties()  (*ShapePropertyCollection,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_GetShapeProperties( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ShapePropertyCollection{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteShapePropertyCollection) 
+
+	return result, nil 
+}
+// Indicates whether default position(DefaultX, DefaultY, DefaultWidth and DefaultHeight) are set.
+// Returns:
+//   bool  
+func (instance *DataLabels) IsDefaultPosBeSet()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_IsDefaultPosBeSet( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents x of default position
+// Returns:
+//   int32  
+func (instance *DataLabels) GetDefaultX()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_GetDefaultX( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents y of default position
+// Returns:
+//   int32  
+func (instance *DataLabels) GetDefaultY()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_GetDefaultY( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents width of default position
+// Returns:
+//   int32  
+func (instance *DataLabels) GetDefaultWidth()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_GetDefaultWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents height of default position
+// Returns:
+//   int32  
+func (instance *DataLabels) GetDefaultHeight()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_GetDefaultHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the options of the text.
+// Returns:
+//   TextOptions  
+func (instance *DataLabels) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// True if the text in the object changes font size when the object size changes. The default value is True.
+// Returns:
+//   bool  
+func (instance *DataLabels) GetAutoScaleFont()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_GetAutoScaleFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// True if the text in the object changes font size when the object size changes. The default value is True.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DataLabels) SetAutoScaleFont(value bool)  error {
+	
+	CGoReturnPtr := C.DataLabels_SetAutoScaleFont( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the chart frame is automatic sized.
+// Returns:
+//   bool  
+func (instance *DataLabels) IsAutomaticSize()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_IsAutomaticSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the chart frame is automatic sized.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DataLabels) SetIsAutomaticSize(value bool)  error {
+	
+	CGoReturnPtr := C.DataLabels_SetIsAutomaticSize( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Returns:
+//   int32  
+func (instance *DataLabels) GetX()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_GetX( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *DataLabels) SetX(value int32)  error {
+	
+	CGoReturnPtr := C.DataLabels_SetX( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Returns:
+//   int32  
+func (instance *DataLabels) GetY()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_GetY( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *DataLabels) SetY(value int32)  error {
+	
+	CGoReturnPtr := C.DataLabels_SetY( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Returns:
+//   int32  
+func (instance *DataLabels) GetHeight()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_GetHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *DataLabels) SetHeight(value int32)  error {
+	
+	CGoReturnPtr := C.DataLabels_SetHeight( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Returns:
+//   int32  
+func (instance *DataLabels) GetWidth()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_GetWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *DataLabels) SetWidth(value int32)  error {
+	
+	CGoReturnPtr := C.DataLabels_SetWidth( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Set position of the frame to automatic
+// Returns:
+//   void  
+func (instance *DataLabels) SetPositionAuto()  error {
+	
+	CGoReturnPtr := C.DataLabels_SetPositionAuto( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Indicates whether this data labels is deleted.
 // Returns:
 //   bool  
@@ -8649,6 +9020,390 @@ func (instance *DisplayUnitLabel) GetAutoScaleFont()  (bool,  error)  {
 func (instance *DisplayUnitLabel) SetAutoScaleFont(value bool)  error {
 	
 	CGoReturnPtr := C.DisplayUnitLabel_SetAutoScaleFont( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the size of the plot area size includes the tick marks, and the axis labels.
+// False specifies that the size shall determine the size of the plot area, the tick marks, and the axis labels.
+// Returns:
+//   bool  
+func (instance *DisplayUnitLabel) IsInnerMode()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_IsInnerMode( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the size of the plot area size includes the tick marks, and the axis labels.
+// False specifies that the size shall determine the size of the plot area, the tick marks, and the axis labels.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DisplayUnitLabel) SetIsInnerMode(value bool)  error {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_SetIsInnerMode( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the display mode of the background
+// Returns:
+//   int32  
+func (instance *DisplayUnitLabel) GetBackgroundMode()  (BackgroundMode,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_GetBackgroundMode( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToBackgroundMode(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the display mode of the background
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *DisplayUnitLabel) SetBackgroundMode(value BackgroundMode)  error {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_SetBackgroundMode( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// True if the frame has a shadow.
+// Returns:
+//   bool  
+func (instance *DisplayUnitLabel) GetShadow()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_GetShadow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// True if the frame has a shadow.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DisplayUnitLabel) SetShadow(value bool)  error {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_SetShadow( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the <see cref="ShapeProperties"/> object.
+// Returns:
+//   ShapePropertyCollection  
+func (instance *DisplayUnitLabel) GetShapeProperties()  (*ShapePropertyCollection,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_GetShapeProperties( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ShapePropertyCollection{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteShapePropertyCollection) 
+
+	return result, nil 
+}
+// Indicates whether default position(DefaultX, DefaultY, DefaultWidth and DefaultHeight) are set.
+// Returns:
+//   bool  
+func (instance *DisplayUnitLabel) IsDefaultPosBeSet()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_IsDefaultPosBeSet( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents x of default position
+// Returns:
+//   int32  
+func (instance *DisplayUnitLabel) GetDefaultX()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_GetDefaultX( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents y of default position
+// Returns:
+//   int32  
+func (instance *DisplayUnitLabel) GetDefaultY()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_GetDefaultY( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents width of default position
+// Returns:
+//   int32  
+func (instance *DisplayUnitLabel) GetDefaultWidth()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_GetDefaultWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents height of default position
+// Returns:
+//   int32  
+func (instance *DisplayUnitLabel) GetDefaultHeight()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_GetDefaultHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the <see cref="Line">border</see>.
+// Returns:
+//   Line  
+func (instance *DisplayUnitLabel) GetBorder()  (*Line,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_GetBorder( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Line{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteLine) 
+
+	return result, nil 
+}
+// Gets the <see cref="Area">area</see>.
+// Returns:
+//   Area  
+func (instance *DisplayUnitLabel) GetArea()  (*Area,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_GetArea( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Area{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteArea) 
+
+	return result, nil 
+}
+// Gets and sets the options of the text.
+// Returns:
+//   TextOptions  
+func (instance *DisplayUnitLabel) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Indicates whether the chart frame is automatic sized.
+// Returns:
+//   bool  
+func (instance *DisplayUnitLabel) IsAutomaticSize()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_IsAutomaticSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the chart frame is automatic sized.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DisplayUnitLabel) SetIsAutomaticSize(value bool)  error {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_SetIsAutomaticSize( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Returns:
+//   int32  
+func (instance *DisplayUnitLabel) GetX()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_GetX( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *DisplayUnitLabel) SetX(value int32)  error {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_SetX( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Returns:
+//   int32  
+func (instance *DisplayUnitLabel) GetY()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_GetY( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *DisplayUnitLabel) SetY(value int32)  error {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_SetY( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Returns:
+//   int32  
+func (instance *DisplayUnitLabel) GetHeight()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_GetHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *DisplayUnitLabel) SetHeight(value int32)  error {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_SetHeight( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Returns:
+//   int32  
+func (instance *DisplayUnitLabel) GetWidth()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_GetWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *DisplayUnitLabel) SetWidth(value int32)  error {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_SetWidth( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Set position of the frame to automatic
+// Returns:
+//   void  
+func (instance *DisplayUnitLabel) SetPositionAuto()  error {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_SetPositionAuto( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10317,6 +11072,435 @@ func (instance *Legend) IsOverLay()  (bool,  error)  {
 func (instance *Legend) SetIsOverLay(value bool)  error {
 	
 	CGoReturnPtr := C.Legend_SetIsOverLay( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the size of the plot area size includes the tick marks, and the axis labels.
+// False specifies that the size shall determine the size of the plot area, the tick marks, and the axis labels.
+// Returns:
+//   bool  
+func (instance *Legend) IsInnerMode()  (bool,  error)  {
+	
+	CGoReturnPtr := C.Legend_IsInnerMode( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the size of the plot area size includes the tick marks, and the axis labels.
+// False specifies that the size shall determine the size of the plot area, the tick marks, and the axis labels.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *Legend) SetIsInnerMode(value bool)  error {
+	
+	CGoReturnPtr := C.Legend_SetIsInnerMode( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the display mode of the background
+// Returns:
+//   int32  
+func (instance *Legend) GetBackgroundMode()  (BackgroundMode,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetBackgroundMode( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToBackgroundMode(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the display mode of the background
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Legend) SetBackgroundMode(value BackgroundMode)  error {
+	
+	CGoReturnPtr := C.Legend_SetBackgroundMode( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// True if the frame has a shadow.
+// Returns:
+//   bool  
+func (instance *Legend) GetShadow()  (bool,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetShadow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// True if the frame has a shadow.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *Legend) SetShadow(value bool)  error {
+	
+	CGoReturnPtr := C.Legend_SetShadow( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the <see cref="ShapeProperties"/> object.
+// Returns:
+//   ShapePropertyCollection  
+func (instance *Legend) GetShapeProperties()  (*ShapePropertyCollection,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetShapeProperties( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ShapePropertyCollection{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteShapePropertyCollection) 
+
+	return result, nil 
+}
+// Indicates whether default position(DefaultX, DefaultY, DefaultWidth and DefaultHeight) are set.
+// Returns:
+//   bool  
+func (instance *Legend) IsDefaultPosBeSet()  (bool,  error)  {
+	
+	CGoReturnPtr := C.Legend_IsDefaultPosBeSet( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents x of default position
+// Returns:
+//   int32  
+func (instance *Legend) GetDefaultX()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetDefaultX( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents y of default position
+// Returns:
+//   int32  
+func (instance *Legend) GetDefaultY()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetDefaultY( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents width of default position
+// Returns:
+//   int32  
+func (instance *Legend) GetDefaultWidth()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetDefaultWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents height of default position
+// Returns:
+//   int32  
+func (instance *Legend) GetDefaultHeight()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetDefaultHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the <see cref="Line">border</see>.
+// Returns:
+//   Line  
+func (instance *Legend) GetBorder()  (*Line,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetBorder( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Line{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteLine) 
+
+	return result, nil 
+}
+// Gets the <see cref="Area">area</see>.
+// Returns:
+//   Area  
+func (instance *Legend) GetArea()  (*Area,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetArea( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Area{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteArea) 
+
+	return result, nil 
+}
+// Gets and sets the options of the text.
+// Returns:
+//   TextOptions  
+func (instance *Legend) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets a <see cref="Font"/> object of the specified ChartFrame object.
+// Returns:
+//   Font  
+func (instance *Legend) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// True if the text in the object changes font size when the object size changes. The default value is True.
+// Returns:
+//   bool  
+func (instance *Legend) GetAutoScaleFont()  (bool,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetAutoScaleFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// True if the text in the object changes font size when the object size changes. The default value is True.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *Legend) SetAutoScaleFont(value bool)  error {
+	
+	CGoReturnPtr := C.Legend_SetAutoScaleFont( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the chart frame is automatic sized.
+// Returns:
+//   bool  
+func (instance *Legend) IsAutomaticSize()  (bool,  error)  {
+	
+	CGoReturnPtr := C.Legend_IsAutomaticSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the chart frame is automatic sized.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *Legend) SetIsAutomaticSize(value bool)  error {
+	
+	CGoReturnPtr := C.Legend_SetIsAutomaticSize( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Returns:
+//   int32  
+func (instance *Legend) GetX()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetX( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Legend) SetX(value int32)  error {
+	
+	CGoReturnPtr := C.Legend_SetX( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Returns:
+//   int32  
+func (instance *Legend) GetY()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetY( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Legend) SetY(value int32)  error {
+	
+	CGoReturnPtr := C.Legend_SetY( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Returns:
+//   int32  
+func (instance *Legend) GetHeight()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Legend) SetHeight(value int32)  error {
+	
+	CGoReturnPtr := C.Legend_SetHeight( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Returns:
+//   int32  
+func (instance *Legend) GetWidth()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Legend) SetWidth(value int32)  error {
+	
+	CGoReturnPtr := C.Legend_SetWidth( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Set position of the frame to automatic
+// Returns:
+//   void  
+func (instance *Legend) SetPositionAuto()  error {
+	
+	CGoReturnPtr := C.Legend_SetPositionAuto( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15894,6 +17078,377 @@ func (instance *Title) Characters_Int_Int(startindex int32, length int32)  (*Fon
 
 	return result, nil 
 }
+// Indicates whether the size of the plot area size includes the tick marks, and the axis labels.
+// False specifies that the size shall determine the size of the plot area, the tick marks, and the axis labels.
+// Returns:
+//   bool  
+func (instance *Title) IsInnerMode()  (bool,  error)  {
+	
+	CGoReturnPtr := C.Title_IsInnerMode( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the size of the plot area size includes the tick marks, and the axis labels.
+// False specifies that the size shall determine the size of the plot area, the tick marks, and the axis labels.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *Title) SetIsInnerMode(value bool)  error {
+	
+	CGoReturnPtr := C.Title_SetIsInnerMode( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the display mode of the background
+// Returns:
+//   int32  
+func (instance *Title) GetBackgroundMode()  (BackgroundMode,  error)  {
+	
+	CGoReturnPtr := C.Title_GetBackgroundMode( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToBackgroundMode(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the display mode of the background
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Title) SetBackgroundMode(value BackgroundMode)  error {
+	
+	CGoReturnPtr := C.Title_SetBackgroundMode( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// True if the frame has a shadow.
+// Returns:
+//   bool  
+func (instance *Title) GetShadow()  (bool,  error)  {
+	
+	CGoReturnPtr := C.Title_GetShadow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// True if the frame has a shadow.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *Title) SetShadow(value bool)  error {
+	
+	CGoReturnPtr := C.Title_SetShadow( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the <see cref="ShapeProperties"/> object.
+// Returns:
+//   ShapePropertyCollection  
+func (instance *Title) GetShapeProperties()  (*ShapePropertyCollection,  error)  {
+	
+	CGoReturnPtr := C.Title_GetShapeProperties( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ShapePropertyCollection{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteShapePropertyCollection) 
+
+	return result, nil 
+}
+// Indicates whether default position(DefaultX, DefaultY, DefaultWidth and DefaultHeight) are set.
+// Returns:
+//   bool  
+func (instance *Title) IsDefaultPosBeSet()  (bool,  error)  {
+	
+	CGoReturnPtr := C.Title_IsDefaultPosBeSet( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents x of default position
+// Returns:
+//   int32  
+func (instance *Title) GetDefaultX()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Title_GetDefaultX( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents y of default position
+// Returns:
+//   int32  
+func (instance *Title) GetDefaultY()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Title_GetDefaultY( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents width of default position
+// Returns:
+//   int32  
+func (instance *Title) GetDefaultWidth()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Title_GetDefaultWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents height of default position
+// Returns:
+//   int32  
+func (instance *Title) GetDefaultHeight()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Title_GetDefaultHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the <see cref="Line">border</see>.
+// Returns:
+//   Line  
+func (instance *Title) GetBorder()  (*Line,  error)  {
+	
+	CGoReturnPtr := C.Title_GetBorder( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Line{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteLine) 
+
+	return result, nil 
+}
+// Gets the <see cref="Area">area</see>.
+// Returns:
+//   Area  
+func (instance *Title) GetArea()  (*Area,  error)  {
+	
+	CGoReturnPtr := C.Title_GetArea( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Area{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteArea) 
+
+	return result, nil 
+}
+// Gets and sets the options of the text.
+// Returns:
+//   TextOptions  
+func (instance *Title) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.Title_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets a <see cref="Font"/> object of the specified ChartFrame object.
+// Returns:
+//   Font  
+func (instance *Title) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.Title_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// True if the text in the object changes font size when the object size changes. The default value is True.
+// Returns:
+//   bool  
+func (instance *Title) GetAutoScaleFont()  (bool,  error)  {
+	
+	CGoReturnPtr := C.Title_GetAutoScaleFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// True if the text in the object changes font size when the object size changes. The default value is True.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *Title) SetAutoScaleFont(value bool)  error {
+	
+	CGoReturnPtr := C.Title_SetAutoScaleFont( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the chart frame is automatic sized.
+// Returns:
+//   bool  
+func (instance *Title) IsAutomaticSize()  (bool,  error)  {
+	
+	CGoReturnPtr := C.Title_IsAutomaticSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the chart frame is automatic sized.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *Title) SetIsAutomaticSize(value bool)  error {
+	
+	CGoReturnPtr := C.Title_SetIsAutomaticSize( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Returns:
+//   int32  
+func (instance *Title) GetHeight()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Title_GetHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Title) SetHeight(value int32)  error {
+	
+	CGoReturnPtr := C.Title_SetHeight( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Returns:
+//   int32  
+func (instance *Title) GetWidth()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Title_GetWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Title) SetWidth(value int32)  error {
+	
+	CGoReturnPtr := C.Title_SetWidth( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Set position of the frame to automatic
+// Returns:
+//   void  
+func (instance *Title) SetPositionAuto()  error {
+	
+	CGoReturnPtr := C.Title_SetPositionAuto( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Indicates whether this data labels is deleted.
 // Returns:
 //   bool  
@@ -17555,6 +19110,174 @@ func (instance *Walls) GetCubePointYPx(index int32)  (float32,  error)  {
 	result := float32(CGoReturnPtr.return_value) 
 
 	return result, nil 
+}
+// Gets or sets the background <see cref="Color"/> of the <see cref="Area"/>.
+// Returns:
+//   Color  
+func (instance *Walls) GetBackgroundColor()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Walls_GetBackgroundColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Gets or sets the background <see cref="Color"/> of the <see cref="Area"/>.
+// Parameters:
+//   value - Color 
+// Returns:
+//   void  
+func (instance *Walls) SetBackgroundColor(value *Color)  error {
+	
+	CGoReturnPtr := C.Walls_SetBackgroundColor( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the foreground <see cref="Color"/>.
+// Returns:
+//   Color  
+func (instance *Walls) GetForegroundColor()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Walls_GetForegroundColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Gets or sets the foreground <see cref="Color"/>.
+// Parameters:
+//   value - Color 
+// Returns:
+//   void  
+func (instance *Walls) SetForegroundColor(value *Color)  error {
+	
+	CGoReturnPtr := C.Walls_SetForegroundColor( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the formatting of the area.
+// Returns:
+//   int32  
+func (instance *Walls) GetFormatting()  (FormattingType,  error)  {
+	
+	CGoReturnPtr := C.Walls_GetFormatting( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToFormattingType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Represents the formatting of the area.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Walls) SetFormatting(value FormattingType)  error {
+	
+	CGoReturnPtr := C.Walls_SetFormatting( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// If the property is true and the value of chart point is a negative number,
+// the foreground color and background color will be exchanged.
+// Returns:
+//   bool  
+func (instance *Walls) GetInvertIfNegative()  (bool,  error)  {
+	
+	CGoReturnPtr := C.Walls_GetInvertIfNegative( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// If the property is true and the value of chart point is a negative number,
+// the foreground color and background color will be exchanged.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *Walls) SetInvertIfNegative(value bool)  error {
+	
+	CGoReturnPtr := C.Walls_SetInvertIfNegative( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents a <see cref="FillFormat"/> object that contains fill formatting properties for the specified chart or shape.
+// Returns:
+//   FillFormat  
+func (instance *Walls) GetFillFormat()  (*FillFormat,  error)  {
+	
+	CGoReturnPtr := C.Walls_GetFillFormat( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &FillFormat{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFillFormat) 
+
+	return result, nil 
+}
+// Returns or sets the degree of transparency of the area as a value from 0.0 (opaque) through 1.0 (clear).
+// Returns:
+//   float64  
+func (instance *Walls) GetTransparency()  (float64,  error)  {
+	
+	CGoReturnPtr := C.Walls_GetTransparency( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns or sets the degree of transparency of the area as a value from 0.0 (opaque) through 1.0 (clear).
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *Walls) SetTransparency(value float64)  error {
+	
+	CGoReturnPtr := C.Walls_SetTransparency( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
 }
 // Gets or sets the border <see cref="Line"/>.
 // Returns:

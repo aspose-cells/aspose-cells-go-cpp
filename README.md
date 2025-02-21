@@ -68,9 +68,9 @@ If Aspose.Cells for Go via C++ is not installed in the development environment, 
 
 1. Set your PATH to point to the shared libraries in Aspose.Cells for Go via C++ in your current command shell. Replace your_version with the version of Aspose.Cells for Go via C++ you are running.
 
-```cms
+```cmd
 
-set PATH=%PATH%;%GOPATH%/pkg/mod/github.com/aspose-cells/aspose-cells-go-cpp/v25@v25.1.1/lib/linux_x86_64/
+set PATH=%PATH%;%GOPATH%\github.com\aspose-cells\aspose-cells-go-cpp\v25@v25.1.1\lib\win_x86_64\
 
 ```
 
@@ -151,6 +151,14 @@ Aspose.Cells for Go via C++ offers a wide arrange of features for creating, conv
 |[FODS](https://docs.fileformat.com/spreadsheet/fods/)|This is an Open Document format stored as flat XML.|&radic;|&radic;|
 |[DOCX](https://docs.fileformat.com/word-processing/docx/)|A well-known format for Microsoft Word documents that is a combination of XML and binary files.||&radic;|
 |[PPTX](https://docs.fileformat.com/presentation/pptx/)|The PPTX format is based on the Microsoft PowerPoint open XML presentation file format.||&radic;|
+
+
+# Evaluate Aspose.Cells for Go via C++
+You can use Aspose.Cells for Go via C++ free of cost for evaluation.The evaluation version provides almost all functionality of the product with certain limitations. The same evaluation version becomes licensed when you purchase a license and add a couple of lines of code to apply the license.
+If you want to test Aspose.Cells for Go via C++ without evaluation version limitations, you can also request a 30 Day Temporary License. Please refer to  <a href="https://purchase.aspose.com/temporary-license/"> How to get a Temporary License</a>?
+
+# Evaluation Version Limitations
+Evaluation version of Aspose.Cells for Go via C++ without the specified license provides full product functionality, but inserts an evaluative watermark at the top of the document upon loading and saving and limits the maximum document size to a few hundred paragraphs.
 
 # Run Aspose.Cells for Go via C++ in production
 

@@ -1,7 +1,11 @@
 // +build windows
 
-// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
-// Powered by Aspose.Cells.
+/* ----------------------------------------------------------------
+ * Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
+ * Powered by Aspose.Cells.
+ * ---------------------------------------------------------------*/
+
+
 package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
@@ -11,7 +15,8 @@ package asposecells
 import "C"
 import (
 	"fmt"  
-	"errors"
+	"time"  	
+	"errors"	
 	"runtime"
 	"unsafe" 
 )
@@ -2037,6 +2042,9 @@ FileFormatType_Json FileFormatType = 513
 // Sql
 FileFormatType_SqlScript FileFormatType = 514 
 
+// Xbase Data file
+FileFormatType_Dbf FileFormatType = 515 
+
 // Rrepesents XHtml file.
 FileFormatType_XHtml FileFormatType = 771 
 
@@ -2133,6 +2141,7 @@ func Int32ToFileFormatType(value int32)(FileFormatType ,error){
 		case 323:  return FileFormatType_WebP, nil  
 		case 513:  return FileFormatType_Json, nil  
 		case 514:  return FileFormatType_SqlScript, nil  
+		case 515:  return FileFormatType_Dbf, nil  
 		case 771:  return FileFormatType_XHtml, nil  
 		case 772:  return FileFormatType_OneNote, nil  
 		case 773:  return FileFormatType_MicrosoftCabinet, nil  
@@ -2844,6 +2853,32 @@ func Int32ToHtmlOfficeMathOutputType(value int32)(HtmlOfficeMathOutputType ,erro
 	}
 }
 
+/**************Enum HtmlVersion *****************/
+
+// Indicates the version of HTML is used when saving to Html formats.
+type HtmlVersion int32
+
+const(
+// Save the document in compliance with the MS Excel exporting HTML.
+HtmlVersion_Default HtmlVersion = 0 
+
+// Saves the document in compliance with the XHTML 1.0 Transitional standard.
+HtmlVersion_XHtml HtmlVersion = 1 
+
+// Saves the document in compliance with the HTML 5 standard.
+HtmlVersion_Html5 HtmlVersion = 2 
+)
+
+func Int32ToHtmlVersion(value int32)(HtmlVersion ,error){
+	switch value {
+		case 0:  return HtmlVersion_Default, nil  
+		case 1:  return HtmlVersion_XHtml, nil  
+		case 2:  return HtmlVersion_Html5, nil  
+		default:
+			return 0 ,fmt.Errorf("invalid HtmlVersion value: %d", value)
+	}
+}
+
 /**************Enum IconSetType *****************/
 
 // Icon set type for conditional formatting.
@@ -3161,6 +3196,12 @@ LoadFormat_Image LoadFormat = 254
 
 // Json
 LoadFormat_Json LoadFormat = 513 
+
+// Data Interchange Format.
+LoadFormat_Dif LoadFormat = 30 
+
+// Xbase Data file
+LoadFormat_Dbf LoadFormat = 515 
 )
 
 func Int32ToLoadFormat(value int32)(LoadFormat ,error){
@@ -3186,6 +3227,8 @@ func Int32ToLoadFormat(value int32)(LoadFormat ,error){
 		case 255:  return LoadFormat_Unknown, nil  
 		case 254:  return LoadFormat_Image, nil  
 		case 513:  return LoadFormat_Json, nil  
+		case 30:  return LoadFormat_Dif, nil  
+		case 515:  return LoadFormat_Dbf, nil  
 		default:
 			return 0 ,fmt.Errorf("invalid LoadFormat value: %d", value)
 	}
@@ -4673,9 +4716,6 @@ SaveFormat_Json SaveFormat = 513
 // Sql
 SaveFormat_SqlScript SaveFormat = 514 
 
-// Rrepesents XHtml file.
-SaveFormat_XHtml SaveFormat = 771 
-
 // Represents Epub file.
 SaveFormat_Epub SaveFormat = 772 
 
@@ -4684,6 +4724,9 @@ SaveFormat_Azw3 SaveFormat = 773
 
 // PCL (Printer Command Language)
 SaveFormat_Pcl SaveFormat = 1025 
+
+// Xbase Data file
+SaveFormat_Dbf SaveFormat = 515 
 )
 
 func Int32ToSaveFormat(value int32)(SaveFormat ,error){
@@ -4724,10 +4767,10 @@ func Int32ToSaveFormat(value int32)(SaveFormat ,error){
 		case 322:  return SaveFormat_Gif, nil  
 		case 513:  return SaveFormat_Json, nil  
 		case 514:  return SaveFormat_SqlScript, nil  
-		case 771:  return SaveFormat_XHtml, nil  
 		case 772:  return SaveFormat_Epub, nil  
 		case 773:  return SaveFormat_Azw3, nil  
 		case 1025:  return SaveFormat_Pcl, nil  
+		case 515:  return SaveFormat_Dbf, nil  
 		default:
 			return 0 ,fmt.Errorf("invalid SaveFormat value: %d", value)
 	}
@@ -5793,137 +5836,1969 @@ func (color *Color) Get_Color_B() (byte , error) {
 	return result, nil 
 }
 
+// Returns:
+//   Color  
+func Color_Black()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Black()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Navy()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Navy()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DarkBlue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DarkBlue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_MediumBlue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_MediumBlue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Blue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Blue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DarkGreen()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DarkGreen()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Green()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Green()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Teal()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Teal()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DarkCyan()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DarkCyan()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DeepSkyBlue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DeepSkyBlue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DarkTurquoise()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DarkTurquoise()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_MediumSpringGreen()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_MediumSpringGreen()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Lime()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Lime()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_SpringGreen()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_SpringGreen()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Aqua()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Aqua()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Cyan()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Cyan()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_MidnightBlue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_MidnightBlue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DodgerBlue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DodgerBlue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_LightSeaGreen()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_LightSeaGreen()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_ForestGreen()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_ForestGreen()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_SeaGreen()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_SeaGreen()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DarkSlateGray()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DarkSlateGray()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_LimeGreen()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_LimeGreen()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_MediumSeaGreen()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_MediumSeaGreen()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Turquoise()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Turquoise()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_RoyalBlue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_RoyalBlue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_SteelBlue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_SteelBlue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DarkSlateBlue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DarkSlateBlue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_MediumTurquoise()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_MediumTurquoise()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Indigo()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Indigo()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DarkOliveGreen()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DarkOliveGreen()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_CadetBlue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_CadetBlue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_CornflowerBlue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_CornflowerBlue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_MediumAquaMarine()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_MediumAquaMarine()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DimGray()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DimGray()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_SlateBlue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_SlateBlue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_OliveDrab()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_OliveDrab()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_SlateGray()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_SlateGray()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_LightSlateGray()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_LightSlateGray()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_MediumSlateBlue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_MediumSlateBlue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_LawnGreen()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_LawnGreen()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Chartreuse()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Chartreuse()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Aquamarine()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Aquamarine()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Maroon()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Maroon()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Purple()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Purple()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Olive()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Olive()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Gray()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Gray()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_SkyBlue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_SkyBlue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_LightSkyBlue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_LightSkyBlue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_BlueViolet()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_BlueViolet()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DarkRed()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DarkRed()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DarkMagenta()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DarkMagenta()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_SaddleBrown()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_SaddleBrown()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DarkSeaGreen()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DarkSeaGreen()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_LightGreen()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_LightGreen()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_MediumPurple()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_MediumPurple()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DarkViolet()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DarkViolet()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_PaleGreen()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_PaleGreen()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DarkOrchid()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DarkOrchid()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_YellowGreen()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_YellowGreen()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Sienna()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Sienna()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Brown()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Brown()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DarkGray()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DarkGray()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_LightBlue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_LightBlue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_GreenYellow()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_GreenYellow()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_PaleTurquoise()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_PaleTurquoise()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_LightSteelBlue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_LightSteelBlue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_PowderBlue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_PowderBlue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_FireBrick()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_FireBrick()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DarkGoldenRod()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DarkGoldenRod()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_MediumOrchid()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_MediumOrchid()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_RosyBrown()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_RosyBrown()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DarkKhaki()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DarkKhaki()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Silver()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Silver()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_MediumVioletRed()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_MediumVioletRed()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_IndianRed()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_IndianRed()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Peru()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Peru()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Chocolate()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Chocolate()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Tan()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Tan()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_LightGray()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_LightGray()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Thistle()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Thistle()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Orchid()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Orchid()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_GoldenRod()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_GoldenRod()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_PaleVioletRed()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_PaleVioletRed()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Crimson()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Crimson()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Gainsboro()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Gainsboro()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Plum()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Plum()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_BurlyWood()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_BurlyWood()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_LightCyan()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_LightCyan()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Lavender()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Lavender()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DarkSalmon()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DarkSalmon()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Violet()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Violet()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_PaleGoldenRod()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_PaleGoldenRod()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_LightCoral()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_LightCoral()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Khaki()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Khaki()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_AliceBlue()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_AliceBlue()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_HoneyDew()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_HoneyDew()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Azure()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Azure()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_SandyBrown()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_SandyBrown()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Wheat()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Wheat()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Beige()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Beige()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_WhiteSmoke()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_WhiteSmoke()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_MintCream()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_MintCream()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_GhostWhite()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_GhostWhite()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Salmon()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Salmon()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_AntiqueWhite()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_AntiqueWhite()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Linen()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Linen()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_LightGoldenRodYellow()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_LightGoldenRodYellow()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_OldLace()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_OldLace()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Red()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Red()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Fuchsia()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Fuchsia()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Magenta()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Magenta()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DeepPink()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DeepPink()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_OrangeRed()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_OrangeRed()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Tomato()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Tomato()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_HotPink()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_HotPink()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Coral()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Coral()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_DarkOrange()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_DarkOrange()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_LightSalmon()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_LightSalmon()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Orange()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Orange()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_LightPink()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_LightPink()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Pink()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Pink()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Gold()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Gold()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_PeachPuff()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_PeachPuff()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_NavajoWhite()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_NavajoWhite()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Moccasin()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Moccasin()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Bisque()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Bisque()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_MistyRose()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_MistyRose()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_BlanchedAlmond()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_BlanchedAlmond()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_PapayaWhip()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_PapayaWhip()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_LavenderBlush()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_LavenderBlush()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_SeaShell()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_SeaShell()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Cornsilk()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Cornsilk()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_LemonChiffon()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_LemonChiffon()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_FloralWhite()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_FloralWhite()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Snow()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Snow()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Yellow()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Yellow()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_LightYellow()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_LightYellow()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_Ivory()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_Ivory()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Returns:
+//   Color  
+func Color_White()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_White()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
 
 func DeleteColor(color *Color){
 	C.Delete_Color(color.ptr)
-}
-
-// Struct Date 
-// Represents a date and time.
-type Date struct {
-	ptr unsafe.Pointer
-}
-
-func NewDate() ( *Date, error) {
-	date := &Date{}
-	CGoReturnPtr := C.New_Date()
-	if CGoReturnPtr.error_no == 0 {
-		date.ptr = CGoReturnPtr.return_value
-		return date, nil
-	} else {
-		date.ptr = nil
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))
-		return date, err
-	}	
-}
-
-func (date *Date) Set_Date_Year(value int32 ) {
-	C.Date_Set_year(date.ptr, C.int( value ))
-}
-
-func (date *Date) Get_Date_Year() (int32 , error) {
-	CGoReturnPtr := C.Date_Get_year(date.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return 0, err
-	}
-	result := int32(CGoReturnPtr.return_value)
-	return result, nil 
-}
-
-
-func (date *Date) Set_Date_Month(value int32 ) {
-	C.Date_Set_month(date.ptr, C.int( value ))
-}
-
-func (date *Date) Get_Date_Month() (int32 , error) {
-	CGoReturnPtr := C.Date_Get_month(date.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return 0, err
-	}
-	result := int32(CGoReturnPtr.return_value)
-	return result, nil 
-}
-
-
-func (date *Date) Set_Date_Day(value int32 ) {
-	C.Date_Set_day(date.ptr, C.int( value ))
-}
-
-func (date *Date) Get_Date_Day() (int32 , error) {
-	CGoReturnPtr := C.Date_Get_day(date.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return 0, err
-	}
-	result := int32(CGoReturnPtr.return_value)
-	return result, nil 
-}
-
-
-func (date *Date) Set_Date_Hour(value int32 ) {
-	C.Date_Set_hour(date.ptr, C.int( value ))
-}
-
-func (date *Date) Get_Date_Hour() (int32 , error) {
-	CGoReturnPtr := C.Date_Get_hour(date.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return 0, err
-	}
-	result := int32(CGoReturnPtr.return_value)
-	return result, nil 
-}
-
-
-func (date *Date) Set_Date_Minute(value int32 ) {
-	C.Date_Set_minute(date.ptr, C.int( value ))
-}
-
-func (date *Date) Get_Date_Minute() (int32 , error) {
-	CGoReturnPtr := C.Date_Get_minute(date.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return 0, err
-	}
-	result := int32(CGoReturnPtr.return_value)
-	return result, nil 
-}
-
-
-func (date *Date) Set_Date_Second(value int32 ) {
-	C.Date_Set_second(date.ptr, C.int( value ))
-}
-
-func (date *Date) Get_Date_Second() (int32 , error) {
-	CGoReturnPtr := C.Date_Get_second(date.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return 0, err
-	}
-	result := int32(CGoReturnPtr.return_value)
-	return result, nil 
-}
-
-
-func (date *Date) Set_Date_Millisecond(value int32 ) {
-	C.Date_Set_millisecond(date.ptr, C.int( value ))
-}
-
-func (date *Date) Get_Date_Millisecond() (int32 , error) {
-	CGoReturnPtr := C.Date_Get_millisecond(date.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return 0, err
-	}
-	result := int32(CGoReturnPtr.return_value)
-	return result, nil 
-}
-
-
-func DeleteDate(date *Date){
-	C.Delete_Date(date.ptr)
 }
 // Class AboveAverage 
 
@@ -8700,6 +10575,28 @@ func (instance *CalculationOptions) GetLinkedDataSources()  ([]Workbook,  error)
 
 	return result, nil 
 }
+// Specifies the data sources for external links used in formulas.
+// Parameters:
+//   value - []Workbook 
+// Returns:
+//   void  
+func (instance *CalculationOptions) SetLinkedDataSources(value []Workbook)  error {
+	
+	value_length := len(value)
+	vector_value:= make([]unsafe.Pointer, value_length)
+	for i := 0; i < value_length; i++ {
+		vector_value[i] = value[i].ptr
+	}
+
+
+	CGoReturnPtr := C.CalculationOptions_SetLinkedDataSources( instance.ptr, unsafe.Pointer(&vector_value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Specifies the encoding used for encoding/decoding characters when calculating formulas.
 // For functions such as CHAR, CODE, the calculated result depends on the region settings and default charset of the environment.
 // With this property user can specify the proper encoding used for those function to get the expected result.
@@ -8895,9 +10792,13 @@ func (instance *Cell) PutValue_String(stringvalue string)  error {
 //   dateTime - Date 
 // Returns:
 //   void  
-func (instance *Cell) PutValue_Date(datetime *Date)  error {
+func (instance *Cell) PutValue_Date(datetime time.Time)  error {
 	
-	CGoReturnPtr := C.Cell_PutValue_Date( instance.ptr, datetime.ptr)
+	time_datetime := C.Get_Date( C.int(datetime.Year()), C.int(datetime.Month()) , C.int(datetime.Day()) , C.int(datetime.Hour()) , C.int(datetime.Minute()) , C.int(datetime.Second())  )
+
+	CGoReturnPtr := C.Cell_PutValue_Date( instance.ptr, time_datetime)
+	C.Delete_GetDate( time_datetime)
+
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8908,15 +10809,14 @@ func (instance *Cell) PutValue_Date(datetime *Date)  error {
 // Gets the DateTime value contained in the cell.
 // Returns:
 //   Date  
-func (instance *Cell) GetDateTimeValue()  (*Date,  error)  {
+func (instance *Cell) GetDateTimeValue()  (time.Time,  error)  {
 	
 	CGoReturnPtr := C.Cell_GetDateTimeValue( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
+		return  time.Unix(0, 0), err
 	}
-	result := &Date{}
-	result.ptr = CGoReturnPtr.return_value 
+	result := time.Date(int( C.Date_Get_year(CGoReturnPtr.return_value).return_value ),time.Month(int( C.Date_Get_month(CGoReturnPtr.return_value).return_value)),int( C.Date_Get_day(CGoReturnPtr.return_value).return_value),int(  C.Date_Get_hour(CGoReturnPtr.return_value).return_value),int( C.Date_Get_minute(CGoReturnPtr.return_value).return_value),int(  C.Date_Get_second(CGoReturnPtr.return_value).return_value), 0, time.UTC) 
 
 	return result, nil 
 }
@@ -9540,6 +11440,27 @@ func (instance *Cell) SetArrayFormula_String_Int_Int_FormulaParseOptions(arrayfo
 
 	return nil 
 }
+// Sets an array formula to a range of cells.
+// Parameters:
+//   arrayFormula - string 
+//   rowNumber - int32 
+//   columnNumber - int32 
+//   options - FormulaParseOptions 
+//   values - []Vector<Object> 
+// Returns:
+//   void  
+func (instance *Cell) SetArrayFormula_String_Int_Int_FormulaParseOptions_Object2Array(arrayformula string, rownumber int32, columnnumber int32, options *FormulaParseOptions, values [][]interface{})  error {
+	
+	vector_values, values_row_length, values_column_length := toObject2Array(values)
+
+	CGoReturnPtr := C.Cell_SetArrayFormula_String_Integer_Integer_FormulaParseOptions_Object2Array( instance.ptr, C.CString(arrayformula), C.int(rownumber), C.int(columnnumber), options.ptr, unsafe.Pointer(&vector_values[0]), C.int( values_row_length), C.int(values_column_length))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Sets shared formulas to a range of cells.
 // Parameters:
 //   sharedFormula - string 
@@ -9568,6 +11489,27 @@ func (instance *Cell) SetSharedFormula_String_Int_Int(sharedformula string, rown
 func (instance *Cell) SetSharedFormula_String_Int_Int_FormulaParseOptions(sharedformula string, rownumber int32, columnnumber int32, options *FormulaParseOptions)  error {
 	
 	CGoReturnPtr := C.Cell_SetSharedFormula_String_Integer_Integer_FormulaParseOptions( instance.ptr, C.CString(sharedformula), C.int(rownumber), C.int(columnnumber), options.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Sets shared formulas to a range of cells.
+// Parameters:
+//   sharedFormula - string 
+//   rowNumber - int32 
+//   columnNumber - int32 
+//   options - FormulaParseOptions 
+//   values - []Vector<Object> 
+// Returns:
+//   void  
+func (instance *Cell) SetSharedFormula_String_Int_Int_FormulaParseOptions_Object2Array(sharedformula string, rownumber int32, columnnumber int32, options *FormulaParseOptions, values [][]interface{})  error {
+	
+	vector_values, values_row_length, values_column_length := toObject2Array(values)
+
+	CGoReturnPtr := C.Cell_SetSharedFormula_String_Integer_Integer_FormulaParseOptions_Object2Array( instance.ptr, C.CString(sharedformula), C.int(rownumber), C.int(columnnumber), options.ptr, unsafe.Pointer(&vector_values[0]), C.int( values_row_length), C.int(values_column_length))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9625,6 +11567,42 @@ func (instance *Cell) GetDependents(isall bool)  ([]Cell,  error)  {
 	   goObject.ptr =unsafe.Pointer(uintptr( unsafe.Pointer(CGoReturnPtr.return_value)) + offset)
 	   result[i] = *goObject
 	}
+	 
+
+	return result, nil 
+}
+// Gets all precedents(reference to cells in current workbook) used by this cell's formula while calculating it.
+// Returns:
+//   unsafe.Pointer  
+func (instance *Cell) GetPrecedentsInCalculation()  (*ReferredAreaEnumerator,  error)  {
+	
+	CGoReturnPtr := C.Cell_GetPrecedentsInCalculation( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ReferredAreaEnumerator{}
+	result.ptr = CGoReturnPtr.return_value
+	runtime.SetFinalizer(result, DeleteReferredAreaEnumerator)
+	 
+
+	return result, nil 
+}
+// Gets all cells whose calculated result depends on this cell.
+// Parameters:
+//   recursive - bool 
+// Returns:
+//   unsafe.Pointer  
+func (instance *Cell) GetDependentsInCalculation(recursive bool)  (*CellEnumerator,  error)  {
+	
+	CGoReturnPtr := C.Cell_GetDependentsInCalculation( instance.ptr, C.bool(recursive))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CellEnumerator{}
+	result.ptr = CGoReturnPtr.return_value
+	runtime.SetFinalizer(result, DeleteCellEnumerator)
 	 
 
 	return result, nil 
@@ -9735,6 +11713,142 @@ func (instance *Cell) SetDynamicArrayFormula_String_FormulaParseOptions_Bool(arr
 	runtime.SetFinalizer(result, DeleteCellArea) 
 
 	return result, nil 
+}
+// Sets dynamic array formula and make the formula spill into neighboring cells if possible.
+// Parameters:
+//   arrayFormula - string 
+//   options - FormulaParseOptions 
+//   values - []Vector<Object> 
+//   calculateRange - bool 
+//   calculateValue - bool 
+// Returns:
+//   CellArea  
+func (instance *Cell) SetDynamicArrayFormula_String_FormulaParseOptions_Object2Array_Bool_Bool(arrayformula string, options *FormulaParseOptions, values [][]interface{}, calculaterange bool, calculatevalue bool)  (*CellArea,  error)  {
+	
+	vector_values, values_row_length, values_column_length := toObject2Array(values)
+
+	CGoReturnPtr := C.Cell_SetDynamicArrayFormula_String_FormulaParseOptions_Object2Array_Boolean_Boolean( instance.ptr, C.CString(arrayformula), options.ptr, unsafe.Pointer(&vector_values[0]), C.int( values_row_length), C.int(values_column_length), C.bool(calculaterange), C.bool(calculatevalue))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CellArea{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteCellArea) 
+
+	return result, nil 
+}
+// Sets dynamic array formula and make the formula spill into neighboring cells if possible.
+// Parameters:
+//   arrayFormula - string 
+//   options - FormulaParseOptions 
+//   values - []Vector<Object> 
+//   calculateRange - bool 
+//   calculateValue - bool 
+//   copts - CalculationOptions 
+// Returns:
+//   CellArea  
+func (instance *Cell) SetDynamicArrayFormula_String_FormulaParseOptions_Object2Array_Bool_Bool_CalculationOptions(arrayformula string, options *FormulaParseOptions, values [][]interface{}, calculaterange bool, calculatevalue bool, copts *CalculationOptions)  (*CellArea,  error)  {
+	
+	vector_values, values_row_length, values_column_length := toObject2Array(values)
+
+	CGoReturnPtr := C.Cell_SetDynamicArrayFormula_String_FormulaParseOptions_Object2Array_Boolean_Boolean_CalculationOptions( instance.ptr, C.CString(arrayformula), options.ptr, unsafe.Pointer(&vector_values[0]), C.int( values_row_length), C.int(values_column_length), C.bool(calculaterange), C.bool(calculatevalue), copts.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CellArea{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteCellArea) 
+
+	return result, nil 
+}
+// Create two-variable data table for given range starting from this cell.
+// Parameters:
+//   rowNumber - int32 
+//   columnNumber - int32 
+//   rowInputCell - string 
+//   columnInputCell - string 
+//   values - []Vector<Object> 
+// Returns:
+//   void  
+func (instance *Cell) SetTableFormula_Int_Int_String_String_Object2Array(rownumber int32, columnnumber int32, rowinputcell string, columninputcell string, values [][]interface{})  error {
+	
+	vector_values, values_row_length, values_column_length := toObject2Array(values)
+
+	CGoReturnPtr := C.Cell_SetTableFormula_Integer_Integer_String_String_Object2Array( instance.ptr, C.int(rownumber), C.int(columnnumber), C.CString(rowinputcell), C.CString(columninputcell), unsafe.Pointer(&vector_values[0]), C.int( values_row_length), C.int(values_column_length))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Create one-variable data table for given range starting from this cell.
+// Parameters:
+//   rowNumber - int32 
+//   columnNumber - int32 
+//   inputCell - string 
+//   isRowInput - bool 
+//   values - []Vector<Object> 
+// Returns:
+//   void  
+func (instance *Cell) SetTableFormula_Int_Int_String_Bool_Object2Array(rownumber int32, columnnumber int32, inputcell string, isrowinput bool, values [][]interface{})  error {
+	
+	vector_values, values_row_length, values_column_length := toObject2Array(values)
+
+	CGoReturnPtr := C.Cell_SetTableFormula_Integer_Integer_String_Boolean_Object2Array( instance.ptr, C.int(rownumber), C.int(columnnumber), C.CString(inputcell), C.bool(isrowinput), unsafe.Pointer(&vector_values[0]), C.int( values_row_length), C.int(values_column_length))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Create two-variable data table for given range starting from this cell.
+// Parameters:
+//   rowNumber - int32 
+//   columnNumber - int32 
+//   rowIndexOfRowInputCell - int32 
+//   columnIndexOfRowInputCell - int32 
+//   rowIndexOfColumnInputCell - int32 
+//   columnIndexOfColumnInputCell - int32 
+//   values - []Vector<Object> 
+// Returns:
+//   void  
+func (instance *Cell) SetTableFormula_Int_Int_Int_Int_Int_Int_Object2Array(rownumber int32, columnnumber int32, rowindexofrowinputcell int32, columnindexofrowinputcell int32, rowindexofcolumninputcell int32, columnindexofcolumninputcell int32, values [][]interface{})  error {
+	
+	vector_values, values_row_length, values_column_length := toObject2Array(values)
+
+	CGoReturnPtr := C.Cell_SetTableFormula_Integer_Integer_Integer_Integer_Integer_Integer_Object2Array( instance.ptr, C.int(rownumber), C.int(columnnumber), C.int(rowindexofrowinputcell), C.int(columnindexofrowinputcell), C.int(rowindexofcolumninputcell), C.int(columnindexofcolumninputcell), unsafe.Pointer(&vector_values[0]), C.int( values_row_length), C.int(values_column_length))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Create one-variable data table for given range starting from this cell.
+// Parameters:
+//   rowNumber - int32 
+//   columnNumber - int32 
+//   rowIndexOfInputCell - int32 
+//   columnIndexOfInputCell - int32 
+//   isRowInput - bool 
+//   values - []Vector<Object> 
+// Returns:
+//   void  
+func (instance *Cell) SetTableFormula_Int_Int_Int_Int_Bool_Object2Array(rownumber int32, columnnumber int32, rowindexofinputcell int32, columnindexofinputcell int32, isrowinput bool, values [][]interface{})  error {
+	
+	vector_values, values_row_length, values_column_length := toObject2Array(values)
+
+	CGoReturnPtr := C.Cell_SetTableFormula_Integer_Integer_Integer_Integer_Boolean_Object2Array( instance.ptr, C.int(rownumber), C.int(columnnumber), C.int(rowindexofinputcell), C.int(columnindexofinputcell), C.bool(isrowinput), unsafe.Pointer(&vector_values[0]), C.int( values_row_length), C.int(values_column_length))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
 }
 // Remove array formula.
 // Parameters:
@@ -9923,6 +12037,28 @@ func (instance *Cell) GetCharacters_Bool(flag bool)  ([]FontSetting,  error)  {
 	 
 
 	return result, nil 
+}
+// Sets rich text format of the cell.
+// Parameters:
+//   characters - []FontSetting 
+// Returns:
+//   void  
+func (instance *Cell) SetCharacters(characters []FontSetting)  error {
+	
+	characters_length := len(characters)
+	vector_characters:= make([]unsafe.Pointer, characters_length)
+	for i := 0; i < characters_length; i++ {
+		vector_characters[i] = characters[i].ptr
+	}
+
+
+	CGoReturnPtr := C.Cell_SetCharacters( instance.ptr, unsafe.Pointer(&vector_characters[0]), C.int( len(characters)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
 }
 // Checks if a cell is part of a merged range or not.
 // Returns:
@@ -10453,6 +12589,21 @@ func (instance *CellRichValue) GetAltText()  (string,  error)  {
 
 	return result, nil 
 }
+// Gets the alt text associated with the image.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *CellRichValue) SetAltText(value string)  error {
+	
+	CGoReturnPtr := C.CellRichValue_SetAltText( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 
 
 func DeleteCellRichValue(cellrichvalue *CellRichValue){
@@ -10538,6 +12689,23 @@ func (instance *Cells) GetCountLarge()  (int32,  error)  {
 		return  0, err
 	}
 	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the cells enumerator.
+// Returns:
+//   unsafe.Pointer  
+func (instance *Cells) GetEnumerator()  (*CellEnumerator,  error)  {
+	
+	CGoReturnPtr := C.Cells_GetEnumerator( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CellEnumerator{}
+	result.ptr = CGoReturnPtr.return_value
+	runtime.SetFinalizer(result, DeleteCellEnumerator)
+	 
 
 	return result, nil 
 }
@@ -13304,6 +15472,44 @@ func (instance *Cells) GetDependents(isall bool, row int32, column int32)  ([]Ce
 
 	return result, nil 
 }
+// Gets all cells whose calculated result depends on specific cell.
+// Parameters:
+//   row - int32 
+//   column - int32 
+//   recursive - bool 
+// Returns:
+//   unsafe.Pointer  
+func (instance *Cells) GetDependentsInCalculation(row int32, column int32, recursive bool)  (*CellEnumerator,  error)  {
+	
+	CGoReturnPtr := C.Cells_GetDependentsInCalculation( instance.ptr, C.int(row), C.int(column), C.bool(recursive))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CellEnumerator{}
+	result.ptr = CGoReturnPtr.return_value
+	runtime.SetFinalizer(result, DeleteCellEnumerator)
+	 
+
+	return result, nil 
+}
+// Gets all cells that contain embedded picture.
+// Returns:
+//   unsafe.Pointer  
+func (instance *Cells) GetCellsWithPlaceInCellPicture()  (*CellEnumerator,  error)  {
+	
+	CGoReturnPtr := C.Cells_GetCellsWithPlaceInCellPicture( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CellEnumerator{}
+	result.ptr = CGoReturnPtr.return_value
+	runtime.SetFinalizer(result, DeleteCellEnumerator)
+	 
+
+	return result, nil 
+}
 // Get the style of given cell.
 // Parameters:
 //   row - int32 
@@ -13839,15 +16045,14 @@ func CellsHelper_RowNameToIndex(rowname string)  (int32,  error)  {
 //   date1904 - bool 
 // Returns:
 //   Date  
-func CellsHelper_GetDateTimeFromDouble(doublevalue float64, date1904 bool)  (*Date,  error)  {
+func CellsHelper_GetDateTimeFromDouble(doublevalue float64, date1904 bool)  (time.Time,  error)  {
 	
 	CGoReturnPtr := C.CellsHelper_GetDateTimeFromDouble(C.double(doublevalue), C.bool(date1904))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
+		return  time.Unix(0, 0), err
 	}
-	result := &Date{}
-	result.ptr = CGoReturnPtr.return_value 
+	result := time.Date(int( C.Date_Get_year(CGoReturnPtr.return_value).return_value ),time.Month(int( C.Date_Get_month(CGoReturnPtr.return_value).return_value)),int( C.Date_Get_day(CGoReturnPtr.return_value).return_value),int(  C.Date_Get_hour(CGoReturnPtr.return_value).return_value),int( C.Date_Get_minute(CGoReturnPtr.return_value).return_value),int(  C.Date_Get_second(CGoReturnPtr.return_value).return_value), 0, time.UTC) 
 
 	return result, nil 
 }
@@ -13857,9 +16062,13 @@ func CellsHelper_GetDateTimeFromDouble(doublevalue float64, date1904 bool)  (*Da
 //   date1904 - bool 
 // Returns:
 //   float64  
-func CellsHelper_GetDoubleFromDateTime(datetime *Date, date1904 bool)  (float64,  error)  {
+func CellsHelper_GetDoubleFromDateTime(datetime time.Time, date1904 bool)  (float64,  error)  {
 	
-	CGoReturnPtr := C.CellsHelper_GetDoubleFromDateTime(datetime.ptr, C.bool(date1904))
+	time_datetime := C.Get_Date( C.int(datetime.Year()), C.int(datetime.Month()) , C.int(datetime.Day()) , C.int(datetime.Hour()) , C.int(datetime.Minute()) , C.int(datetime.Second())  )
+
+	CGoReturnPtr := C.CellsHelper_GetDoubleFromDateTime(time_datetime, C.bool(date1904))
+	C.Delete_GetDate( time_datetime)
+
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -18410,15 +20619,14 @@ func (instance *DateTimeGroupItem) ToObject()  (*Object,  error)  {
 // Gets the min value.
 // Returns:
 //   Date  
-func (instance *DateTimeGroupItem) GetMinValue()  (*Date,  error)  {
+func (instance *DateTimeGroupItem) GetMinValue()  (time.Time,  error)  {
 	
 	CGoReturnPtr := C.DateTimeGroupItem_GetMinValue( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
+		return  time.Unix(0, 0), err
 	}
-	result := &Date{}
-	result.ptr = CGoReturnPtr.return_value 
+	result := time.Date(int( C.Date_Get_year(CGoReturnPtr.return_value).return_value ),time.Month(int( C.Date_Get_month(CGoReturnPtr.return_value).return_value)),int( C.Date_Get_day(CGoReturnPtr.return_value).return_value),int(  C.Date_Get_hour(CGoReturnPtr.return_value).return_value),int( C.Date_Get_minute(CGoReturnPtr.return_value).return_value),int(  C.Date_Get_second(CGoReturnPtr.return_value).return_value), 0, time.UTC) 
 
 	return result, nil 
 }
@@ -20232,6 +22440,350 @@ func (instance *DocxSaveOptions) SetEmfRenderSetting(value EmfRenderSetting)  er
 
 	return nil 
 }
+// Gets the save file format.
+// Returns:
+//   int32  
+func (instance *DocxSaveOptions) GetSaveFormat()  (SaveFormat,  error)  {
+	
+	CGoReturnPtr := C.DocxSaveOptions_GetSaveFormat( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToSaveFormat(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Make the workbook empty after saving the file.
+// Returns:
+//   bool  
+func (instance *DocxSaveOptions) GetClearData()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DocxSaveOptions_GetClearData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Make the workbook empty after saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DocxSaveOptions) SetClearData(value bool)  error {
+	
+	CGoReturnPtr := C.DocxSaveOptions_SetClearData( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// The cached file folder is used to store some large data.
+// Returns:
+//   string  
+func (instance *DocxSaveOptions) GetCachedFileFolder()  (string,  error)  {
+	
+	CGoReturnPtr := C.DocxSaveOptions_GetCachedFileFolder( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// The cached file folder is used to store some large data.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *DocxSaveOptions) SetCachedFileFolder(value string)  error {
+	
+	CGoReturnPtr := C.DocxSaveOptions_SetCachedFileFolder( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether validate merged cells before saving the file.
+// Returns:
+//   bool  
+func (instance *DocxSaveOptions) GetValidateMergedAreas()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DocxSaveOptions_GetValidateMergedAreas( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether validate merged cells before saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DocxSaveOptions) SetValidateMergedAreas(value bool)  error {
+	
+	CGoReturnPtr := C.DocxSaveOptions_SetValidateMergedAreas( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether merge the areas of conditional formatting and validation before saving the file.
+// Returns:
+//   bool  
+func (instance *DocxSaveOptions) GetMergeAreas()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DocxSaveOptions_GetMergeAreas( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether merge the areas of conditional formatting and validation before saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DocxSaveOptions) SetMergeAreas(value bool)  error {
+	
+	CGoReturnPtr := C.DocxSaveOptions_SetMergeAreas( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// If true and the directory does not exist, the directory will be automatically created before saving the file.
+// Returns:
+//   bool  
+func (instance *DocxSaveOptions) GetCreateDirectory()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DocxSaveOptions_GetCreateDirectory( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// If true and the directory does not exist, the directory will be automatically created before saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DocxSaveOptions) SetCreateDirectory(value bool)  error {
+	
+	CGoReturnPtr := C.DocxSaveOptions_SetCreateDirectory( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether sorting defined names before saving file.
+// Returns:
+//   bool  
+func (instance *DocxSaveOptions) GetSortNames()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DocxSaveOptions_GetSortNames( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether sorting defined names before saving file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DocxSaveOptions) SetSortNames(value bool)  error {
+	
+	CGoReturnPtr := C.DocxSaveOptions_SetSortNames( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether sorting external defined names before saving file.
+// Returns:
+//   bool  
+func (instance *DocxSaveOptions) GetSortExternalNames()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DocxSaveOptions_GetSortExternalNames( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether sorting external defined names before saving file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DocxSaveOptions) SetSortExternalNames(value bool)  error {
+	
+	CGoReturnPtr := C.DocxSaveOptions_SetSortExternalNames( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether refreshing chart cache data
+// Returns:
+//   bool  
+func (instance *DocxSaveOptions) GetRefreshChartCache()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DocxSaveOptions_GetRefreshChartCache( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether refreshing chart cache data
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DocxSaveOptions) SetRefreshChartCache(value bool)  error {
+	
+	CGoReturnPtr := C.DocxSaveOptions_SetRefreshChartCache( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *DocxSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DocxSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DocxSaveOptions) SetCheckExcelRestriction(value bool)  error {
+	
+	CGoReturnPtr := C.DocxSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether updating smart art setting.
+// The default value is false.
+// Returns:
+//   bool  
+func (instance *DocxSaveOptions) GetUpdateSmartArt()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DocxSaveOptions_GetUpdateSmartArt( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether updating smart art setting.
+// The default value is false.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DocxSaveOptions) SetUpdateSmartArt(value bool)  error {
+	
+	CGoReturnPtr := C.DocxSaveOptions_SetUpdateSmartArt( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether encrypt document properties when saving as .xls file.
+// The default value is true.
+// Returns:
+//   bool  
+func (instance *DocxSaveOptions) GetEncryptDocumentProperties()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DocxSaveOptions_GetEncryptDocumentProperties( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether encrypt document properties when saving as .xls file.
+// The default value is true.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DocxSaveOptions) SetEncryptDocumentProperties(value bool)  error {
+	
+	CGoReturnPtr := C.DocxSaveOptions_SetEncryptDocumentProperties( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 
 
 func DeleteDocxSaveOptions(docxsaveoptions *DocxSaveOptions){
@@ -20525,6 +23077,157 @@ func (instance *EbookLoadOptions) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
+// Gets and sets the default encoding. Only applies for csv file.
+// Returns:
+//   int32  
+func (instance *EbookLoadOptions) GetEncoding()  (EncodingType,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetEncoding( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToEncodingType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the default encoding. Only applies for csv file.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetEncoding(value EncodingType)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetEncoding( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates the strategy to apply style for parsed values when converting string value to number or datetime.
+// Returns:
+//   int32  
+func (instance *EbookLoadOptions) GetLoadStyleStrategy()  (TxtLoadStyleStrategy,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetLoadStyleStrategy( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTxtLoadStyleStrategy(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Indicates the strategy to apply style for parsed values when converting string value to number or datetime.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetLoadStyleStrategy(value TxtLoadStyleStrategy)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetLoadStyleStrategy( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets a value that indicates whether the string in text file is converted to numeric data.
+// Returns:
+//   bool  
+func (instance *EbookLoadOptions) GetConvertNumericData()  (bool,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetConvertNumericData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets a value that indicates whether the string in text file is converted to numeric data.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetConvertNumericData(value bool)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetConvertNumericData( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets a value that indicates whether the string in text file is converted to date data.
+// Returns:
+//   bool  
+func (instance *EbookLoadOptions) GetConvertDateTimeData()  (bool,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetConvertDateTimeData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets a value that indicates whether the string in text file is converted to date data.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetConvertDateTimeData(value bool)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetConvertDateTimeData( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether not parsing a string value if the length is 15.
+// Returns:
+//   bool  
+func (instance *EbookLoadOptions) GetKeepPrecision()  (bool,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetKeepPrecision( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether not parsing a string value if the length is 15.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetKeepPrecision(value bool)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetKeepPrecision( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Indicates whether importing formulas if the original html file contains formulas
 // Returns:
 //   bool  
@@ -20704,6 +23407,584 @@ func (instance *EbookLoadOptions) GetTableLoadOptions()  (*HtmlTableLoadOptionCo
 	runtime.SetFinalizer(result, DeleteHtmlTableLoadOptionCollection) 
 
 	return result, nil 
+}
+// Gets the load format.
+// Returns:
+//   int32  
+func (instance *EbookLoadOptions) GetLoadFormat()  (LoadFormat,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetLoadFormat( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToLoadFormat(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and set the password of the workbook.
+// Returns:
+//   string  
+func (instance *EbookLoadOptions) GetPassword()  (string,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetPassword( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and set the password of the workbook.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetPassword(value string)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetPassword( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether parsing the formula when reading the file.
+// Returns:
+//   bool  
+func (instance *EbookLoadOptions) GetParsingFormulaOnOpen()  (bool,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetParsingFormulaOnOpen( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether parsing the formula when reading the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetParsingFormulaOnOpen(value bool)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetParsingFormulaOnOpen( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether parsing pivot cached records when loading the file.
+// The default value is false.
+// Returns:
+//   bool  
+func (instance *EbookLoadOptions) GetParsingPivotCachedRecords()  (bool,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetParsingPivotCachedRecords( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether parsing pivot cached records when loading the file.
+// The default value is false.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetParsingPivotCachedRecords(value bool)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetParsingPivotCachedRecords( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Sets the default print paper size from default printer's setting.
+// Parameters:
+//   type - int32 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetPaperSize(type_ PaperSizeType)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetPaperSize( instance.ptr, C.int( int32(type_)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the user interface language of the Workbook version based on CountryCode that has saved the file.
+// Returns:
+//   int32  
+func (instance *EbookLoadOptions) GetLanguageCode()  (CountryCode,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetLanguageCode( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToCountryCode(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the user interface language of the Workbook version based on CountryCode that has saved the file.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetLanguageCode(value CountryCode)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetLanguageCode( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Returns:
+//   int32  
+func (instance *EbookLoadOptions) GetRegion()  (CountryCode,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetRegion( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToCountryCode(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetRegion(value CountryCode)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetRegion( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the default style settings for initializing styles of the workbook
+// Returns:
+//   DefaultStyleSettings  
+func (instance *EbookLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSettings,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetDefaultStyleSettings( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &DefaultStyleSettings{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteDefaultStyleSettings) 
+
+	return result, nil 
+}
+// Gets and sets the interrupt monitor.
+// Returns:
+//   AbstractInterruptMonitor  
+func (instance *EbookLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonitor,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetInterruptMonitor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &AbstractInterruptMonitor{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteAbstractInterruptMonitor) 
+
+	return result, nil 
+}
+// Gets and sets the interrupt monitor.
+// Parameters:
+//   value - AbstractInterruptMonitor 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetInterruptMonitor(value *AbstractInterruptMonitor)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetInterruptMonitor( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Ignore the data which are not printed if directly printing the file
+// Returns:
+//   bool  
+func (instance *EbookLoadOptions) GetIgnoreNotPrinted()  (bool,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetIgnoreNotPrinted( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Ignore the data which are not printed if directly printing the file
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetIgnoreNotPrinted(value bool)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetIgnoreNotPrinted( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Check whether data is valid in the template file.
+// Returns:
+//   bool  
+func (instance *EbookLoadOptions) GetCheckDataValid()  (bool,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetCheckDataValid( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Check whether data is valid in the template file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetCheckDataValid(value bool)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetCheckDataValid( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K such as by Cell.PutValue(string), if this property is true, you will get an Exception.
+// If this property is false, we will accept your input string value as the cell's value so that later
+// you can output the complete string value for other file formats such as CSV.
+// However, if you have set such kind of value that is invalid for excel file format,
+// you should not save the workbook as excel file format later. Otherwise there may be unexpected error for the generated excel file.
+// Returns:
+//   bool  
+func (instance *EbookLoadOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K such as by Cell.PutValue(string), if this property is true, you will get an Exception.
+// If this property is false, we will accept your input string value as the cell's value so that later
+// you can output the complete string value for other file formats such as CSV.
+// However, if you have set such kind of value that is invalid for excel file format,
+// you should not save the workbook as excel file format later. Otherwise there may be unexpected error for the generated excel file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetCheckExcelRestriction(value bool)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether keep the unparsed data in memory for the Workbook when it is loaded from template file. Default is true.
+// Returns:
+//   bool  
+func (instance *EbookLoadOptions) GetKeepUnparsedData()  (bool,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetKeepUnparsedData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Whether keep the unparsed data in memory for the Workbook when it is loaded from template file. Default is true.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetKeepUnparsedData(value bool)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetKeepUnparsedData( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// The filter to denote how to load data.
+// Returns:
+//   LoadFilter  
+func (instance *EbookLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetLoadFilter( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &LoadFilter{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteLoadFilter) 
+
+	return result, nil 
+}
+// The filter to denote how to load data.
+// Parameters:
+//   value - LoadFilter 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetLoadFilter(value *LoadFilter)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetLoadFilter( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the memory usage options.
+// Returns:
+//   int32  
+func (instance *EbookLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetMemorySetting( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToMemorySetting(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the memory usage options.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetMemorySetting(value MemorySetting)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetMemorySetting( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the auto fitter options
+// Returns:
+//   AutoFitterOptions  
+func (instance *EbookLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetAutoFitterOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &AutoFitterOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteAutoFitterOptions) 
+
+	return result, nil 
+}
+// Gets and sets the auto fitter options
+// Parameters:
+//   value - AutoFitterOptions 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetAutoFitterOptions( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether auto filtering the data when loading the files.
+// Returns:
+//   bool  
+func (instance *EbookLoadOptions) GetAutoFilter()  (bool,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetAutoFilter( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether auto filtering the data when loading the files.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetAutoFilter(value bool)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetAutoFilter( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets individual font configs.
+// Only works for the <see cref="Workbook"/> which uses this <see cref="LoadOptions"/> to load.
+// Returns:
+//   IndividualFontConfigs  
+func (instance *EbookLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetFontConfigs( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &IndividualFontConfigs{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteIndividualFontConfigs) 
+
+	return result, nil 
+}
+// Gets and sets individual font configs.
+// Only works for the <see cref="Workbook"/> which uses this <see cref="LoadOptions"/> to load.
+// Parameters:
+//   value - IndividualFontConfigs 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetFontConfigs( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether ignoring useless shapes.
+// Returns:
+//   bool  
+func (instance *EbookLoadOptions) GetIgnoreUselessShapes()  (bool,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetIgnoreUselessShapes( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether ignoring useless shapes.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetIgnoreUselessShapes(value bool)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetIgnoreUselessShapes( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether preserve those spaces and line breaks that are padded between formula tokens
+// while getting and setting formulas.
+// Default value is false.
+// Returns:
+//   bool  
+func (instance *EbookLoadOptions) GetPreservePaddingSpacesInFormula()  (bool,  error)  {
+	
+	CGoReturnPtr := C.EbookLoadOptions_GetPreservePaddingSpacesInFormula( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether preserve those spaces and line breaks that are padded between formula tokens
+// while getting and setting formulas.
+// Default value is false.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *EbookLoadOptions) SetPreservePaddingSpacesInFormula(value bool)  error {
+	
+	CGoReturnPtr := C.EbookLoadOptions_SetPreservePaddingSpacesInFormula( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
 }
 
 
@@ -21237,6 +24518,23 @@ func (instance *ExternalLinkCollection) RemoveAt_Int_Bool(index int32, updateref
 	}
 
 	return nil 
+}
+// Get an enumerator that iterates through this collection.
+// Returns:
+//   unsafe.Pointer  
+func (instance *ExternalLinkCollection) GetEnumerator()  (*ExternalLinkEnumerator,  error)  {
+	
+	CGoReturnPtr := C.ExternalLinkCollection_GetEnumerator( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ExternalLinkEnumerator{}
+	result.ptr = CGoReturnPtr.return_value
+	runtime.SetFinalizer(result, DeleteExternalLinkEnumerator)
+	 
+
+	return result, nil 
 }
 
 
@@ -23177,6 +26475,28 @@ func FontConfigs_SetFontFolders(fontfolders []string, recursive bool)  error {
 	}
 
 	CGoReturnPtr := C.FontConfigs_SetFontFolders(unsafe.Pointer(&vector_fontfolders[0]), C.int( len(fontfolders)), C.bool(recursive))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Sets the fonts sources.
+// Parameters:
+//   sources - []FontSourceBase 
+// Returns:
+//   void  
+func FontConfigs_SetFontSources(sources []FontSourceBase)  error {
+	
+	sources_length := len(sources)
+	vector_sources:= make([]unsafe.Pointer, sources_length)
+	for i := 0; i < sources_length; i++ {
+		vector_sources[i] = sources[i].ptr
+	}
+
+
+	CGoReturnPtr := C.FontConfigs_SetFontSources(unsafe.Pointer(&vector_sources[0]), C.int( len(sources)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -25867,6 +29187,584 @@ func (instance *HtmlLoadOptions) SetKeepPrecision(value bool)  error {
 
 	return nil 
 }
+// Gets the load format.
+// Returns:
+//   int32  
+func (instance *HtmlLoadOptions) GetLoadFormat()  (LoadFormat,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetLoadFormat( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToLoadFormat(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and set the password of the workbook.
+// Returns:
+//   string  
+func (instance *HtmlLoadOptions) GetPassword()  (string,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetPassword( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and set the password of the workbook.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *HtmlLoadOptions) SetPassword(value string)  error {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_SetPassword( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether parsing the formula when reading the file.
+// Returns:
+//   bool  
+func (instance *HtmlLoadOptions) GetParsingFormulaOnOpen()  (bool,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetParsingFormulaOnOpen( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether parsing the formula when reading the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *HtmlLoadOptions) SetParsingFormulaOnOpen(value bool)  error {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_SetParsingFormulaOnOpen( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether parsing pivot cached records when loading the file.
+// The default value is false.
+// Returns:
+//   bool  
+func (instance *HtmlLoadOptions) GetParsingPivotCachedRecords()  (bool,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetParsingPivotCachedRecords( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether parsing pivot cached records when loading the file.
+// The default value is false.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *HtmlLoadOptions) SetParsingPivotCachedRecords(value bool)  error {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_SetParsingPivotCachedRecords( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Sets the default print paper size from default printer's setting.
+// Parameters:
+//   type - int32 
+// Returns:
+//   void  
+func (instance *HtmlLoadOptions) SetPaperSize(type_ PaperSizeType)  error {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_SetPaperSize( instance.ptr, C.int( int32(type_)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the user interface language of the Workbook version based on CountryCode that has saved the file.
+// Returns:
+//   int32  
+func (instance *HtmlLoadOptions) GetLanguageCode()  (CountryCode,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetLanguageCode( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToCountryCode(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the user interface language of the Workbook version based on CountryCode that has saved the file.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *HtmlLoadOptions) SetLanguageCode(value CountryCode)  error {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_SetLanguageCode( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Returns:
+//   int32  
+func (instance *HtmlLoadOptions) GetRegion()  (CountryCode,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetRegion( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToCountryCode(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *HtmlLoadOptions) SetRegion(value CountryCode)  error {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_SetRegion( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the default style settings for initializing styles of the workbook
+// Returns:
+//   DefaultStyleSettings  
+func (instance *HtmlLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSettings,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetDefaultStyleSettings( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &DefaultStyleSettings{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteDefaultStyleSettings) 
+
+	return result, nil 
+}
+// Gets and sets the interrupt monitor.
+// Returns:
+//   AbstractInterruptMonitor  
+func (instance *HtmlLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonitor,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetInterruptMonitor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &AbstractInterruptMonitor{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteAbstractInterruptMonitor) 
+
+	return result, nil 
+}
+// Gets and sets the interrupt monitor.
+// Parameters:
+//   value - AbstractInterruptMonitor 
+// Returns:
+//   void  
+func (instance *HtmlLoadOptions) SetInterruptMonitor(value *AbstractInterruptMonitor)  error {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_SetInterruptMonitor( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Ignore the data which are not printed if directly printing the file
+// Returns:
+//   bool  
+func (instance *HtmlLoadOptions) GetIgnoreNotPrinted()  (bool,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetIgnoreNotPrinted( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Ignore the data which are not printed if directly printing the file
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *HtmlLoadOptions) SetIgnoreNotPrinted(value bool)  error {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_SetIgnoreNotPrinted( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Check whether data is valid in the template file.
+// Returns:
+//   bool  
+func (instance *HtmlLoadOptions) GetCheckDataValid()  (bool,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetCheckDataValid( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Check whether data is valid in the template file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *HtmlLoadOptions) SetCheckDataValid(value bool)  error {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_SetCheckDataValid( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K such as by Cell.PutValue(string), if this property is true, you will get an Exception.
+// If this property is false, we will accept your input string value as the cell's value so that later
+// you can output the complete string value for other file formats such as CSV.
+// However, if you have set such kind of value that is invalid for excel file format,
+// you should not save the workbook as excel file format later. Otherwise there may be unexpected error for the generated excel file.
+// Returns:
+//   bool  
+func (instance *HtmlLoadOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K such as by Cell.PutValue(string), if this property is true, you will get an Exception.
+// If this property is false, we will accept your input string value as the cell's value so that later
+// you can output the complete string value for other file formats such as CSV.
+// However, if you have set such kind of value that is invalid for excel file format,
+// you should not save the workbook as excel file format later. Otherwise there may be unexpected error for the generated excel file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *HtmlLoadOptions) SetCheckExcelRestriction(value bool)  error {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether keep the unparsed data in memory for the Workbook when it is loaded from template file. Default is true.
+// Returns:
+//   bool  
+func (instance *HtmlLoadOptions) GetKeepUnparsedData()  (bool,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetKeepUnparsedData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Whether keep the unparsed data in memory for the Workbook when it is loaded from template file. Default is true.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *HtmlLoadOptions) SetKeepUnparsedData(value bool)  error {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_SetKeepUnparsedData( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// The filter to denote how to load data.
+// Returns:
+//   LoadFilter  
+func (instance *HtmlLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetLoadFilter( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &LoadFilter{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteLoadFilter) 
+
+	return result, nil 
+}
+// The filter to denote how to load data.
+// Parameters:
+//   value - LoadFilter 
+// Returns:
+//   void  
+func (instance *HtmlLoadOptions) SetLoadFilter(value *LoadFilter)  error {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_SetLoadFilter( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the memory usage options.
+// Returns:
+//   int32  
+func (instance *HtmlLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetMemorySetting( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToMemorySetting(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the memory usage options.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *HtmlLoadOptions) SetMemorySetting(value MemorySetting)  error {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_SetMemorySetting( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the auto fitter options
+// Returns:
+//   AutoFitterOptions  
+func (instance *HtmlLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetAutoFitterOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &AutoFitterOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteAutoFitterOptions) 
+
+	return result, nil 
+}
+// Gets and sets the auto fitter options
+// Parameters:
+//   value - AutoFitterOptions 
+// Returns:
+//   void  
+func (instance *HtmlLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  error {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_SetAutoFitterOptions( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether auto filtering the data when loading the files.
+// Returns:
+//   bool  
+func (instance *HtmlLoadOptions) GetAutoFilter()  (bool,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetAutoFilter( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether auto filtering the data when loading the files.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *HtmlLoadOptions) SetAutoFilter(value bool)  error {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_SetAutoFilter( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets individual font configs.
+// Only works for the <see cref="Workbook"/> which uses this <see cref="LoadOptions"/> to load.
+// Returns:
+//   IndividualFontConfigs  
+func (instance *HtmlLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetFontConfigs( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &IndividualFontConfigs{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteIndividualFontConfigs) 
+
+	return result, nil 
+}
+// Gets and sets individual font configs.
+// Only works for the <see cref="Workbook"/> which uses this <see cref="LoadOptions"/> to load.
+// Parameters:
+//   value - IndividualFontConfigs 
+// Returns:
+//   void  
+func (instance *HtmlLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  error {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_SetFontConfigs( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether ignoring useless shapes.
+// Returns:
+//   bool  
+func (instance *HtmlLoadOptions) GetIgnoreUselessShapes()  (bool,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetIgnoreUselessShapes( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether ignoring useless shapes.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *HtmlLoadOptions) SetIgnoreUselessShapes(value bool)  error {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_SetIgnoreUselessShapes( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether preserve those spaces and line breaks that are padded between formula tokens
+// while getting and setting formulas.
+// Default value is false.
+// Returns:
+//   bool  
+func (instance *HtmlLoadOptions) GetPreservePaddingSpacesInFormula()  (bool,  error)  {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_GetPreservePaddingSpacesInFormula( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether preserve those spaces and line breaks that are padded between formula tokens
+// while getting and setting formulas.
+// Default value is false.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *HtmlLoadOptions) SetPreservePaddingSpacesInFormula(value bool)  error {
+	
+	CGoReturnPtr := C.HtmlLoadOptions_SetPreservePaddingSpacesInFormula( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 
 
 func DeleteHtmlLoadOptions(htmlloadoptions *HtmlLoadOptions){
@@ -27897,6 +31795,40 @@ func (instance *HtmlSaveOptions) GetEnableCssCustomProperties()  (bool,  error) 
 func (instance *HtmlSaveOptions) SetEnableCssCustomProperties(value bool)  error {
 	
 	CGoReturnPtr := C.HtmlSaveOptions_SetEnableCssCustomProperties( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Specifies version of HTML standard that should be used when saving the HTML format.
+// Default value is HtmlVersion.Default.
+// Returns:
+//   int32  
+func (instance *HtmlSaveOptions) GetHtmlVersion()  (HtmlVersion,  error)  {
+	
+	CGoReturnPtr := C.HtmlSaveOptions_GetHtmlVersion( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToHtmlVersion(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Specifies version of HTML standard that should be used when saving the HTML format.
+// Default value is HtmlVersion.Default.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *HtmlSaveOptions) SetHtmlVersion(value HtmlVersion)  error {
+	
+	CGoReturnPtr := C.HtmlSaveOptions_SetHtmlVersion( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -30154,6 +34086,23 @@ func (instance *ImportTableOptions) GetDefaultValues()  ([]Object,  error)  {
 
 	return result, nil 
 }
+// Default value for the value in the table is null.
+// Parameters:
+//   value - []Object 
+// Returns:
+//   void  
+func (instance *ImportTableOptions) SetDefaultValues(value []interface{})  error {
+	
+	vector_value, value_row_length := toObjectArray(value)
+
+	CGoReturnPtr := C.ImportTableOptions_SetDefaultValues( instance.ptr, unsafe.Pointer(&vector_value[0]), C.int( value_row_length))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Indicates whether the value contains html tags.
 // Returns:
 //   bool  
@@ -30334,6 +34283,28 @@ func (instance *IndividualFontConfigs) SetFontFolders(fontfolders []string, recu
 	}
 
 	CGoReturnPtr := C.IndividualFontConfigs_SetFontFolders( instance.ptr, unsafe.Pointer(&vector_fontfolders[0]), C.int( len(fontfolders)), C.bool(recursive))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Sets the fonts sources.
+// Parameters:
+//   sources - []FontSourceBase 
+// Returns:
+//   void  
+func (instance *IndividualFontConfigs) SetFontSources(sources []FontSourceBase)  error {
+	
+	sources_length := len(sources)
+	vector_sources:= make([]unsafe.Pointer, sources_length)
+	for i := 0; i < sources_length; i++ {
+		vector_sources[i] = sources[i].ptr
+	}
+
+
+	CGoReturnPtr := C.IndividualFontConfigs_SetFontSources( instance.ptr, unsafe.Pointer(&vector_sources[0]), C.int( len(sources)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -34602,9 +38573,13 @@ func NewObject_Double(value float64) ( *Object, error) {
 // Constructs from a Date value.
 // Parameters:
 //   value - Date 
-func NewObject_Date(value *Date) ( *Object, error) {
+func NewObject_Date(value time.Time) ( *Object, error) {
 	object := &Object{}
-	CGoReturnPtr := C.New_Object_Date(value.ptr)
+	time_value := C.Get_Date( C.int(value.Year()), C.int(value.Month()) , C.int(value.Day()) , C.int(value.Hour()) , C.int(value.Minute()) , C.int(value.Second())  )
+
+	CGoReturnPtr := C.New_Object_Date(time_value)
+	C.Delete_GetDate( time_value)
+
 	if CGoReturnPtr.error_no == 0 {
 		object.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(object, DeleteObject)
@@ -34653,6 +38628,42 @@ func NewObject_String(value string) ( *Object, error) {
 func NewObject_Range(value *Range) ( *Object, error) {
 	object := &Object{}
 	CGoReturnPtr := C.New_Object_Range(value.ptr)
+	if CGoReturnPtr.error_no == 0 {
+		object.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(object, DeleteObject)
+		return object, nil
+	} else {
+		object.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return object, err
+	}	
+}
+// Constructs from a one-dimensional array.
+// Parameters:
+//   value - []Object 
+func NewObject_ObjectArray(value []interface{}) ( *Object, error) {
+	object := &Object{}
+	vector_value, value_row_length := toObjectArray(value)
+
+	CGoReturnPtr := C.New_Object_ObjectArray(unsafe.Pointer(&vector_value[0]), C.int(value_row_length))
+	if CGoReturnPtr.error_no == 0 {
+		object.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(object, DeleteObject)
+		return object, nil
+	} else {
+		object.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return object, err
+	}	
+}
+// Constructs from a two-dimensional array.
+// Parameters:
+//   value - []Vector<Object> 
+func NewObject_Object2Array(value [][]interface{}) ( *Object, error) {
+	object := &Object{}
+	vector_value, value_row_length, value_column_length := toObject2Array(value)
+
+	CGoReturnPtr := C.New_Object_Object2Array(unsafe.Pointer(&vector_value[0]), C.int(value_row_length), C.int( value_column_length))
 	if CGoReturnPtr.error_no == 0 {
 		object.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(object, DeleteObject)
@@ -35075,15 +39086,14 @@ func (instance *Object) ToString()  (string,  error)  {
 // Gets the Date value.
 // Returns:
 //   Date  
-func (instance *Object) ToDate()  (*Date,  error)  {
+func (instance *Object) ToDate()  (time.Time,  error)  {
 	
 	CGoReturnPtr := C.Object_ToDate( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
+		return  time.Unix(0, 0), err
 	}
-	result := &Date{}
-	result.ptr = CGoReturnPtr.return_value 
+	result := time.Date(int( C.Date_Get_year(CGoReturnPtr.return_value).return_value ),time.Month(int( C.Date_Get_month(CGoReturnPtr.return_value).return_value)),int( C.Date_Get_day(CGoReturnPtr.return_value).return_value),int(  C.Date_Get_hour(CGoReturnPtr.return_value).return_value),int( C.Date_Get_minute(CGoReturnPtr.return_value).return_value),int(  C.Date_Get_second(CGoReturnPtr.return_value).return_value), 0, time.UTC) 
 
 	return result, nil 
 }
@@ -36660,6 +40670,35 @@ func (instance *OoxmlSaveOptions) GetCompressionType()  (OoxmlCompressionType,  
 func (instance *OoxmlSaveOptions) SetCompressionType(value OoxmlCompressionType)  error {
 	
 	CGoReturnPtr := C.OoxmlSaveOptions_SetCompressionType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to make the xls more compatible with WPS.
+// Returns:
+//   bool  
+func (instance *OoxmlSaveOptions) GetWpsCompatibility()  (bool,  error)  {
+	
+	CGoReturnPtr := C.OoxmlSaveOptions_GetWpsCompatibility( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to make the xls more compatible with WPS.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *OoxmlSaveOptions) SetWpsCompatibility(value bool)  error {
+	
+	CGoReturnPtr := C.OoxmlSaveOptions_SetWpsCompatibility( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -40600,6 +44639,350 @@ func (instance *PclSaveOptions) SetEmfRenderSetting(value EmfRenderSetting)  err
 
 	return nil 
 }
+// Gets the save file format.
+// Returns:
+//   int32  
+func (instance *PclSaveOptions) GetSaveFormat()  (SaveFormat,  error)  {
+	
+	CGoReturnPtr := C.PclSaveOptions_GetSaveFormat( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToSaveFormat(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Make the workbook empty after saving the file.
+// Returns:
+//   bool  
+func (instance *PclSaveOptions) GetClearData()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PclSaveOptions_GetClearData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Make the workbook empty after saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PclSaveOptions) SetClearData(value bool)  error {
+	
+	CGoReturnPtr := C.PclSaveOptions_SetClearData( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// The cached file folder is used to store some large data.
+// Returns:
+//   string  
+func (instance *PclSaveOptions) GetCachedFileFolder()  (string,  error)  {
+	
+	CGoReturnPtr := C.PclSaveOptions_GetCachedFileFolder( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// The cached file folder is used to store some large data.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *PclSaveOptions) SetCachedFileFolder(value string)  error {
+	
+	CGoReturnPtr := C.PclSaveOptions_SetCachedFileFolder( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether validate merged cells before saving the file.
+// Returns:
+//   bool  
+func (instance *PclSaveOptions) GetValidateMergedAreas()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PclSaveOptions_GetValidateMergedAreas( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether validate merged cells before saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PclSaveOptions) SetValidateMergedAreas(value bool)  error {
+	
+	CGoReturnPtr := C.PclSaveOptions_SetValidateMergedAreas( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether merge the areas of conditional formatting and validation before saving the file.
+// Returns:
+//   bool  
+func (instance *PclSaveOptions) GetMergeAreas()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PclSaveOptions_GetMergeAreas( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether merge the areas of conditional formatting and validation before saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PclSaveOptions) SetMergeAreas(value bool)  error {
+	
+	CGoReturnPtr := C.PclSaveOptions_SetMergeAreas( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// If true and the directory does not exist, the directory will be automatically created before saving the file.
+// Returns:
+//   bool  
+func (instance *PclSaveOptions) GetCreateDirectory()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PclSaveOptions_GetCreateDirectory( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// If true and the directory does not exist, the directory will be automatically created before saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PclSaveOptions) SetCreateDirectory(value bool)  error {
+	
+	CGoReturnPtr := C.PclSaveOptions_SetCreateDirectory( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether sorting defined names before saving file.
+// Returns:
+//   bool  
+func (instance *PclSaveOptions) GetSortNames()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PclSaveOptions_GetSortNames( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether sorting defined names before saving file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PclSaveOptions) SetSortNames(value bool)  error {
+	
+	CGoReturnPtr := C.PclSaveOptions_SetSortNames( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether sorting external defined names before saving file.
+// Returns:
+//   bool  
+func (instance *PclSaveOptions) GetSortExternalNames()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PclSaveOptions_GetSortExternalNames( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether sorting external defined names before saving file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PclSaveOptions) SetSortExternalNames(value bool)  error {
+	
+	CGoReturnPtr := C.PclSaveOptions_SetSortExternalNames( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether refreshing chart cache data
+// Returns:
+//   bool  
+func (instance *PclSaveOptions) GetRefreshChartCache()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PclSaveOptions_GetRefreshChartCache( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether refreshing chart cache data
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PclSaveOptions) SetRefreshChartCache(value bool)  error {
+	
+	CGoReturnPtr := C.PclSaveOptions_SetRefreshChartCache( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *PclSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PclSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PclSaveOptions) SetCheckExcelRestriction(value bool)  error {
+	
+	CGoReturnPtr := C.PclSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether updating smart art setting.
+// The default value is false.
+// Returns:
+//   bool  
+func (instance *PclSaveOptions) GetUpdateSmartArt()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PclSaveOptions_GetUpdateSmartArt( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether updating smart art setting.
+// The default value is false.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PclSaveOptions) SetUpdateSmartArt(value bool)  error {
+	
+	CGoReturnPtr := C.PclSaveOptions_SetUpdateSmartArt( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether encrypt document properties when saving as .xls file.
+// The default value is true.
+// Returns:
+//   bool  
+func (instance *PclSaveOptions) GetEncryptDocumentProperties()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PclSaveOptions_GetEncryptDocumentProperties( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether encrypt document properties when saving as .xls file.
+// The default value is true.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PclSaveOptions) SetEncryptDocumentProperties(value bool)  error {
+	
+	CGoReturnPtr := C.PclSaveOptions_SetEncryptDocumentProperties( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 
 
 func DeletePclSaveOptions(pclsaveoptions *PclSaveOptions){
@@ -40873,15 +45256,14 @@ func (instance *PdfSaveOptions) SetImageResample(desiredppi int32, jpegquality i
 // Gets and sets the time of generating the pdf document.
 // Returns:
 //   Date  
-func (instance *PdfSaveOptions) GetCreatedTime()  (*Date,  error)  {
+func (instance *PdfSaveOptions) GetCreatedTime()  (time.Time,  error)  {
 	
 	CGoReturnPtr := C.PdfSaveOptions_GetCreatedTime( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
+		return  time.Unix(0, 0), err
 	}
-	result := &Date{}
-	result.ptr = CGoReturnPtr.return_value 
+	result := time.Date(int( C.Date_Get_year(CGoReturnPtr.return_value).return_value ),time.Month(int( C.Date_Get_month(CGoReturnPtr.return_value).return_value)),int( C.Date_Get_day(CGoReturnPtr.return_value).return_value),int(  C.Date_Get_hour(CGoReturnPtr.return_value).return_value),int( C.Date_Get_minute(CGoReturnPtr.return_value).return_value),int(  C.Date_Get_second(CGoReturnPtr.return_value).return_value), 0, time.UTC) 
 
 	return result, nil 
 }
@@ -40890,9 +45272,13 @@ func (instance *PdfSaveOptions) GetCreatedTime()  (*Date,  error)  {
 //   value - Date 
 // Returns:
 //   void  
-func (instance *PdfSaveOptions) SetCreatedTime(value *Date)  error {
+func (instance *PdfSaveOptions) SetCreatedTime(value time.Time)  error {
 	
-	CGoReturnPtr := C.PdfSaveOptions_SetCreatedTime( instance.ptr, value.ptr)
+	time_value := C.Get_Date( C.int(value.Year()), C.int(value.Month()) , C.int(value.Day()) , C.int(value.Hour()) , C.int(value.Minute()) , C.int(value.Second())  )
+
+	CGoReturnPtr := C.PdfSaveOptions_SetCreatedTime( instance.ptr, time_value)
+	C.Delete_GetDate( time_value)
+
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -41675,6 +46061,350 @@ func (instance *PdfSaveOptions) SetEmfRenderSetting(value EmfRenderSetting)  err
 
 	return nil 
 }
+// Gets the save file format.
+// Returns:
+//   int32  
+func (instance *PdfSaveOptions) GetSaveFormat()  (SaveFormat,  error)  {
+	
+	CGoReturnPtr := C.PdfSaveOptions_GetSaveFormat( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToSaveFormat(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Make the workbook empty after saving the file.
+// Returns:
+//   bool  
+func (instance *PdfSaveOptions) GetClearData()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PdfSaveOptions_GetClearData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Make the workbook empty after saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PdfSaveOptions) SetClearData(value bool)  error {
+	
+	CGoReturnPtr := C.PdfSaveOptions_SetClearData( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// The cached file folder is used to store some large data.
+// Returns:
+//   string  
+func (instance *PdfSaveOptions) GetCachedFileFolder()  (string,  error)  {
+	
+	CGoReturnPtr := C.PdfSaveOptions_GetCachedFileFolder( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// The cached file folder is used to store some large data.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *PdfSaveOptions) SetCachedFileFolder(value string)  error {
+	
+	CGoReturnPtr := C.PdfSaveOptions_SetCachedFileFolder( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether validate merged cells before saving the file.
+// Returns:
+//   bool  
+func (instance *PdfSaveOptions) GetValidateMergedAreas()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PdfSaveOptions_GetValidateMergedAreas( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether validate merged cells before saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PdfSaveOptions) SetValidateMergedAreas(value bool)  error {
+	
+	CGoReturnPtr := C.PdfSaveOptions_SetValidateMergedAreas( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether merge the areas of conditional formatting and validation before saving the file.
+// Returns:
+//   bool  
+func (instance *PdfSaveOptions) GetMergeAreas()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PdfSaveOptions_GetMergeAreas( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether merge the areas of conditional formatting and validation before saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PdfSaveOptions) SetMergeAreas(value bool)  error {
+	
+	CGoReturnPtr := C.PdfSaveOptions_SetMergeAreas( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// If true and the directory does not exist, the directory will be automatically created before saving the file.
+// Returns:
+//   bool  
+func (instance *PdfSaveOptions) GetCreateDirectory()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PdfSaveOptions_GetCreateDirectory( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// If true and the directory does not exist, the directory will be automatically created before saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PdfSaveOptions) SetCreateDirectory(value bool)  error {
+	
+	CGoReturnPtr := C.PdfSaveOptions_SetCreateDirectory( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether sorting defined names before saving file.
+// Returns:
+//   bool  
+func (instance *PdfSaveOptions) GetSortNames()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PdfSaveOptions_GetSortNames( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether sorting defined names before saving file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PdfSaveOptions) SetSortNames(value bool)  error {
+	
+	CGoReturnPtr := C.PdfSaveOptions_SetSortNames( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether sorting external defined names before saving file.
+// Returns:
+//   bool  
+func (instance *PdfSaveOptions) GetSortExternalNames()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PdfSaveOptions_GetSortExternalNames( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether sorting external defined names before saving file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PdfSaveOptions) SetSortExternalNames(value bool)  error {
+	
+	CGoReturnPtr := C.PdfSaveOptions_SetSortExternalNames( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether refreshing chart cache data
+// Returns:
+//   bool  
+func (instance *PdfSaveOptions) GetRefreshChartCache()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PdfSaveOptions_GetRefreshChartCache( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether refreshing chart cache data
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PdfSaveOptions) SetRefreshChartCache(value bool)  error {
+	
+	CGoReturnPtr := C.PdfSaveOptions_SetRefreshChartCache( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *PdfSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PdfSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PdfSaveOptions) SetCheckExcelRestriction(value bool)  error {
+	
+	CGoReturnPtr := C.PdfSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether updating smart art setting.
+// The default value is false.
+// Returns:
+//   bool  
+func (instance *PdfSaveOptions) GetUpdateSmartArt()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PdfSaveOptions_GetUpdateSmartArt( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether updating smart art setting.
+// The default value is false.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PdfSaveOptions) SetUpdateSmartArt(value bool)  error {
+	
+	CGoReturnPtr := C.PdfSaveOptions_SetUpdateSmartArt( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether encrypt document properties when saving as .xls file.
+// The default value is true.
+// Returns:
+//   bool  
+func (instance *PdfSaveOptions) GetEncryptDocumentProperties()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PdfSaveOptions_GetEncryptDocumentProperties( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether encrypt document properties when saving as .xls file.
+// The default value is true.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PdfSaveOptions) SetEncryptDocumentProperties(value bool)  error {
+	
+	CGoReturnPtr := C.PdfSaveOptions_SetEncryptDocumentProperties( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 
 
 func DeletePdfSaveOptions(pdfsaveoptions *PdfSaveOptions){
@@ -42371,6 +47101,350 @@ func (instance *PptxSaveOptions) GetEmfRenderSetting()  (EmfRenderSetting,  erro
 func (instance *PptxSaveOptions) SetEmfRenderSetting(value EmfRenderSetting)  error {
 	
 	CGoReturnPtr := C.PptxSaveOptions_SetEmfRenderSetting( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the save file format.
+// Returns:
+//   int32  
+func (instance *PptxSaveOptions) GetSaveFormat()  (SaveFormat,  error)  {
+	
+	CGoReturnPtr := C.PptxSaveOptions_GetSaveFormat( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToSaveFormat(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Make the workbook empty after saving the file.
+// Returns:
+//   bool  
+func (instance *PptxSaveOptions) GetClearData()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PptxSaveOptions_GetClearData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Make the workbook empty after saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PptxSaveOptions) SetClearData(value bool)  error {
+	
+	CGoReturnPtr := C.PptxSaveOptions_SetClearData( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// The cached file folder is used to store some large data.
+// Returns:
+//   string  
+func (instance *PptxSaveOptions) GetCachedFileFolder()  (string,  error)  {
+	
+	CGoReturnPtr := C.PptxSaveOptions_GetCachedFileFolder( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// The cached file folder is used to store some large data.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *PptxSaveOptions) SetCachedFileFolder(value string)  error {
+	
+	CGoReturnPtr := C.PptxSaveOptions_SetCachedFileFolder( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether validate merged cells before saving the file.
+// Returns:
+//   bool  
+func (instance *PptxSaveOptions) GetValidateMergedAreas()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PptxSaveOptions_GetValidateMergedAreas( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether validate merged cells before saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PptxSaveOptions) SetValidateMergedAreas(value bool)  error {
+	
+	CGoReturnPtr := C.PptxSaveOptions_SetValidateMergedAreas( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether merge the areas of conditional formatting and validation before saving the file.
+// Returns:
+//   bool  
+func (instance *PptxSaveOptions) GetMergeAreas()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PptxSaveOptions_GetMergeAreas( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether merge the areas of conditional formatting and validation before saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PptxSaveOptions) SetMergeAreas(value bool)  error {
+	
+	CGoReturnPtr := C.PptxSaveOptions_SetMergeAreas( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// If true and the directory does not exist, the directory will be automatically created before saving the file.
+// Returns:
+//   bool  
+func (instance *PptxSaveOptions) GetCreateDirectory()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PptxSaveOptions_GetCreateDirectory( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// If true and the directory does not exist, the directory will be automatically created before saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PptxSaveOptions) SetCreateDirectory(value bool)  error {
+	
+	CGoReturnPtr := C.PptxSaveOptions_SetCreateDirectory( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether sorting defined names before saving file.
+// Returns:
+//   bool  
+func (instance *PptxSaveOptions) GetSortNames()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PptxSaveOptions_GetSortNames( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether sorting defined names before saving file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PptxSaveOptions) SetSortNames(value bool)  error {
+	
+	CGoReturnPtr := C.PptxSaveOptions_SetSortNames( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether sorting external defined names before saving file.
+// Returns:
+//   bool  
+func (instance *PptxSaveOptions) GetSortExternalNames()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PptxSaveOptions_GetSortExternalNames( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether sorting external defined names before saving file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PptxSaveOptions) SetSortExternalNames(value bool)  error {
+	
+	CGoReturnPtr := C.PptxSaveOptions_SetSortExternalNames( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether refreshing chart cache data
+// Returns:
+//   bool  
+func (instance *PptxSaveOptions) GetRefreshChartCache()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PptxSaveOptions_GetRefreshChartCache( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether refreshing chart cache data
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PptxSaveOptions) SetRefreshChartCache(value bool)  error {
+	
+	CGoReturnPtr := C.PptxSaveOptions_SetRefreshChartCache( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *PptxSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PptxSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PptxSaveOptions) SetCheckExcelRestriction(value bool)  error {
+	
+	CGoReturnPtr := C.PptxSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether updating smart art setting.
+// The default value is false.
+// Returns:
+//   bool  
+func (instance *PptxSaveOptions) GetUpdateSmartArt()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PptxSaveOptions_GetUpdateSmartArt( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether updating smart art setting.
+// The default value is false.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PptxSaveOptions) SetUpdateSmartArt(value bool)  error {
+	
+	CGoReturnPtr := C.PptxSaveOptions_SetUpdateSmartArt( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether encrypt document properties when saving as .xls file.
+// The default value is true.
+// Returns:
+//   bool  
+func (instance *PptxSaveOptions) GetEncryptDocumentProperties()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PptxSaveOptions_GetEncryptDocumentProperties( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether encrypt document properties when saving as .xls file.
+// The default value is true.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PptxSaveOptions) SetEncryptDocumentProperties(value bool)  error {
+	
+	CGoReturnPtr := C.PptxSaveOptions_SetEncryptDocumentProperties( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43555,6 +48629,23 @@ func (instance *Range) AddHyperlink(address string, texttodisplay string, screen
 
 	return result, nil 
 }
+// Gets the enumerator for cells in this Range.
+// Returns:
+//   unsafe.Pointer  
+func (instance *Range) GetEnumerator()  (*CellEnumerator,  error)  {
+	
+	CGoReturnPtr := C.Range_GetEnumerator( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CellEnumerator{}
+	result.ptr = CGoReturnPtr.return_value
+	runtime.SetFinalizer(result, DeleteCellEnumerator)
+	 
+
+	return result, nil 
+}
 // Indicates whether the range is intersect.
 // Parameters:
 //   range - Range 
@@ -43586,6 +48677,31 @@ func (instance *Range) Intersect(range_ *Range)  (*Range,  error)  {
 	result := &Range{}
 	result.ptr = CGoReturnPtr.return_value 
 	runtime.SetFinalizer(result, DeleteRange) 
+
+	return result, nil 
+}
+// Returns the union result of two ranges.
+// Parameters:
+//   ranges - []Range 
+// Returns:
+//   UnionRange  
+func (instance *Range) UnionRanges(ranges []Range)  (*UnionRange,  error)  {
+	
+	ranges_length := len(ranges)
+	vector_ranges:= make([]unsafe.Pointer, ranges_length)
+	for i := 0; i < ranges_length; i++ {
+		vector_ranges[i] = ranges[i].ptr
+	}
+
+
+	CGoReturnPtr := C.Range_UnionRanges( instance.ptr, unsafe.Pointer(&vector_ranges[0]), C.int( len(ranges)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &UnionRange{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteUnionRange) 
 
 	return result, nil 
 }
@@ -43918,6 +49034,29 @@ func (instance *Range) SetOutlineBorders_CellBorderType_CellsColor(borderstyle C
 func (instance *Range) SetOutlineBorders_CellBorderType_Color(borderstyle CellBorderType, bordercolor *Color)  error {
 	
 	CGoReturnPtr := C.Range_SetOutlineBorders_CellBorderType_Color( instance.ptr, C.int( int32(borderstyle)), bordercolor.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Sets out line borders around a range of cells.
+// Parameters:
+//   borderStyles - []CellBorderType 
+//   borderColors - []Color 
+// Returns:
+//   void  
+func (instance *Range) SetOutlineBorders_CellBorderTypeArray_ColorArray(borderstyles []CellBorderType, bordercolors []Color)  error {
+	
+	bordercolors_length := len(bordercolors)
+	vector_bordercolors:= make([]unsafe.Pointer, bordercolors_length)
+	for i := 0; i < bordercolors_length; i++ {
+		vector_bordercolors[i] = bordercolors[i].ptr
+	}
+
+
+	CGoReturnPtr := C.Range_SetOutlineBorders_CellBorderTypeArray_ColorArray( instance.ptr, unsafe.Pointer(&borderstyles[0]), C.int( len(borderstyles)), unsafe.Pointer(&vector_bordercolors[0]), C.int( len(bordercolors)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -44457,6 +49596,27 @@ func (instance *ReferredArea) GetSheetName()  (string,  error)  {
 
 	return result, nil 
 }
+// Names of all the worksheets this instance references to.
+// Returns:
+//   []string  
+func (instance *ReferredArea) GetSheetNames()  ([]string,  error)  {
+	
+	CGoReturnPtr := C.ReferredArea_GetSheetNames( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result:= make([]string, CGoReturnPtr.column_length)
+	for i := 0; i < int(CGoReturnPtr.column_length); i++ {
+	   offset := uintptr(C.size_t(i)) * uintptr(CGoReturnPtr.size)
+	   cObject := *(*C.char)(unsafe.Pointer( uintptr( unsafe.Pointer(CGoReturnPtr.return_value)) + offset))
+	   goObject :=string(cObject)
+	   result[i] = goObject
+	}
+	 
+
+	return result, nil 
+}
 // Indicates whether this area contains all columns(entire row).
 // Returns:
 //   bool  
@@ -44855,6 +50015,28 @@ func (instance *ReplaceOptions) GetFontSettings()  ([]FontSetting,  error)  {
 
 	return result, nil 
 }
+// The rich formatted settings for the replaced text.
+// Parameters:
+//   value - []FontSetting 
+// Returns:
+//   void  
+func (instance *ReplaceOptions) SetFontSettings(value []FontSetting)  error {
+	
+	value_length := len(value)
+	vector_value:= make([]unsafe.Pointer, value_length)
+	for i := 0; i < value_length; i++ {
+		vector_value[i] = value[i].ptr
+	}
+
+
+	CGoReturnPtr := C.ReplaceOptions_SetFontSettings( instance.ptr, unsafe.Pointer(&vector_value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Gets and sets flags of applying font settings.
 // Returns:
 //   []StyleFlag  
@@ -44875,6 +50057,28 @@ func (instance *ReplaceOptions) GetStyleFlags()  ([]StyleFlag,  error)  {
 	 
 
 	return result, nil 
+}
+// Gets and sets flags of applying font settings.
+// Parameters:
+//   value - []StyleFlag 
+// Returns:
+//   void  
+func (instance *ReplaceOptions) SetStyleFlags(value []StyleFlag)  error {
+	
+	value_length := len(value)
+	vector_value:= make([]unsafe.Pointer, value_length)
+	for i := 0; i < value_length; i++ {
+		vector_value[i] = value[i].ptr
+	}
+
+
+	CGoReturnPtr := C.ReplaceOptions_SetStyleFlags( instance.ptr, unsafe.Pointer(&vector_value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
 }
 
 
@@ -44953,6 +50157,43 @@ func (instance *Row) Get(column int32)  (*Cell,  error)  {
 	result := &Cell{}
 	result.ptr = CGoReturnPtr.return_value 
 	runtime.SetFinalizer(result, DeleteCell) 
+
+	return result, nil 
+}
+// Gets the cells enumerator
+// Returns:
+//   unsafe.Pointer  
+func (instance *Row) GetEnumerator()  (*CellEnumerator,  error)  {
+	
+	CGoReturnPtr := C.Row_GetEnumerator( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CellEnumerator{}
+	result.ptr = CGoReturnPtr.return_value
+	runtime.SetFinalizer(result, DeleteCellEnumerator)
+	 
+
+	return result, nil 
+}
+// Gets an enumerator that iterates cells through this row.
+// Parameters:
+//   reversed - bool 
+//   sync - bool 
+// Returns:
+//   unsafe.Pointer  
+func (instance *Row) GetEnumerator_Bool_Bool(reversed bool, sync bool)  (*CellEnumerator,  error)  {
+	
+	CGoReturnPtr := C.Row_GetEnumerator_Boolean_Boolean( instance.ptr, C.bool(reversed), C.bool(sync))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CellEnumerator{}
+	result.ptr = CGoReturnPtr.return_value
+	runtime.SetFinalizer(result, DeleteCellEnumerator)
+	 
 
 	return result, nil 
 }
@@ -45349,6 +50590,43 @@ func (instance *RowCollection) GetCount()  (int32,  error)  {
 		return  0, err
 	}
 	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets an enumerator that iterates rows through this collection
+// Returns:
+//   unsafe.Pointer  
+func (instance *RowCollection) GetEnumerator()  (*RowEnumerator,  error)  {
+	
+	CGoReturnPtr := C.RowCollection_GetEnumerator( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &RowEnumerator{}
+	result.ptr = CGoReturnPtr.return_value
+	runtime.SetFinalizer(result, DeleteRowEnumerator)
+	 
+
+	return result, nil 
+}
+// Gets an enumerator that iterates rows through this collection
+// Parameters:
+//   reversed - bool 
+//   sync - bool 
+// Returns:
+//   unsafe.Pointer  
+func (instance *RowCollection) GetEnumerator_Bool_Bool(reversed bool, sync bool)  (*RowEnumerator,  error)  {
+	
+	CGoReturnPtr := C.RowCollection_GetEnumerator_Boolean_Boolean( instance.ptr, C.bool(reversed), C.bool(sync))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &RowEnumerator{}
+	result.ptr = CGoReturnPtr.return_value
+	runtime.SetFinalizer(result, DeleteRowEnumerator)
+	 
 
 	return result, nil 
 }
@@ -50532,15 +55810,14 @@ func (instance *ThreadedComment) SetAuthor(value *ThreadedCommentAuthor)  error 
 // Gets and sets the created time of this threaded comment.
 // Returns:
 //   Date  
-func (instance *ThreadedComment) GetCreatedTime()  (*Date,  error)  {
+func (instance *ThreadedComment) GetCreatedTime()  (time.Time,  error)  {
 	
 	CGoReturnPtr := C.ThreadedComment_GetCreatedTime( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
+		return  time.Unix(0, 0), err
 	}
-	result := &Date{}
-	result.ptr = CGoReturnPtr.return_value 
+	result := time.Date(int( C.Date_Get_year(CGoReturnPtr.return_value).return_value ),time.Month(int( C.Date_Get_month(CGoReturnPtr.return_value).return_value)),int( C.Date_Get_day(CGoReturnPtr.return_value).return_value),int(  C.Date_Get_hour(CGoReturnPtr.return_value).return_value),int( C.Date_Get_minute(CGoReturnPtr.return_value).return_value),int(  C.Date_Get_second(CGoReturnPtr.return_value).return_value), 0, time.UTC) 
 
 	return result, nil 
 }
@@ -50549,9 +55826,13 @@ func (instance *ThreadedComment) GetCreatedTime()  (*Date,  error)  {
 //   value - Date 
 // Returns:
 //   void  
-func (instance *ThreadedComment) SetCreatedTime(value *Date)  error {
+func (instance *ThreadedComment) SetCreatedTime(value time.Time)  error {
 	
-	CGoReturnPtr := C.ThreadedComment_SetCreatedTime( instance.ptr, value.ptr)
+	time_value := C.Get_Date( C.int(value.Year()), C.int(value.Month()) , C.int(value.Day()) , C.int(value.Hour()) , C.int(value.Minute()) , C.int(value.Second())  )
+
+	CGoReturnPtr := C.ThreadedComment_SetCreatedTime( instance.ptr, time_value)
+	C.Delete_GetDate( time_value)
+
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -52012,6 +57293,584 @@ func (instance *TxtLoadOptions) SetKeepPrecision(value bool)  error {
 
 	return nil 
 }
+// Gets the load format.
+// Returns:
+//   int32  
+func (instance *TxtLoadOptions) GetLoadFormat()  (LoadFormat,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetLoadFormat( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToLoadFormat(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and set the password of the workbook.
+// Returns:
+//   string  
+func (instance *TxtLoadOptions) GetPassword()  (string,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetPassword( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and set the password of the workbook.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *TxtLoadOptions) SetPassword(value string)  error {
+	
+	CGoReturnPtr := C.TxtLoadOptions_SetPassword( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether parsing the formula when reading the file.
+// Returns:
+//   bool  
+func (instance *TxtLoadOptions) GetParsingFormulaOnOpen()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetParsingFormulaOnOpen( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether parsing the formula when reading the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TxtLoadOptions) SetParsingFormulaOnOpen(value bool)  error {
+	
+	CGoReturnPtr := C.TxtLoadOptions_SetParsingFormulaOnOpen( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether parsing pivot cached records when loading the file.
+// The default value is false.
+// Returns:
+//   bool  
+func (instance *TxtLoadOptions) GetParsingPivotCachedRecords()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetParsingPivotCachedRecords( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether parsing pivot cached records when loading the file.
+// The default value is false.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TxtLoadOptions) SetParsingPivotCachedRecords(value bool)  error {
+	
+	CGoReturnPtr := C.TxtLoadOptions_SetParsingPivotCachedRecords( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Sets the default print paper size from default printer's setting.
+// Parameters:
+//   type - int32 
+// Returns:
+//   void  
+func (instance *TxtLoadOptions) SetPaperSize(type_ PaperSizeType)  error {
+	
+	CGoReturnPtr := C.TxtLoadOptions_SetPaperSize( instance.ptr, C.int( int32(type_)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the user interface language of the Workbook version based on CountryCode that has saved the file.
+// Returns:
+//   int32  
+func (instance *TxtLoadOptions) GetLanguageCode()  (CountryCode,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetLanguageCode( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToCountryCode(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the user interface language of the Workbook version based on CountryCode that has saved the file.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TxtLoadOptions) SetLanguageCode(value CountryCode)  error {
+	
+	CGoReturnPtr := C.TxtLoadOptions_SetLanguageCode( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Returns:
+//   int32  
+func (instance *TxtLoadOptions) GetRegion()  (CountryCode,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetRegion( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToCountryCode(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TxtLoadOptions) SetRegion(value CountryCode)  error {
+	
+	CGoReturnPtr := C.TxtLoadOptions_SetRegion( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the default style settings for initializing styles of the workbook
+// Returns:
+//   DefaultStyleSettings  
+func (instance *TxtLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSettings,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetDefaultStyleSettings( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &DefaultStyleSettings{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteDefaultStyleSettings) 
+
+	return result, nil 
+}
+// Gets and sets the interrupt monitor.
+// Returns:
+//   AbstractInterruptMonitor  
+func (instance *TxtLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonitor,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetInterruptMonitor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &AbstractInterruptMonitor{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteAbstractInterruptMonitor) 
+
+	return result, nil 
+}
+// Gets and sets the interrupt monitor.
+// Parameters:
+//   value - AbstractInterruptMonitor 
+// Returns:
+//   void  
+func (instance *TxtLoadOptions) SetInterruptMonitor(value *AbstractInterruptMonitor)  error {
+	
+	CGoReturnPtr := C.TxtLoadOptions_SetInterruptMonitor( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Ignore the data which are not printed if directly printing the file
+// Returns:
+//   bool  
+func (instance *TxtLoadOptions) GetIgnoreNotPrinted()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetIgnoreNotPrinted( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Ignore the data which are not printed if directly printing the file
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TxtLoadOptions) SetIgnoreNotPrinted(value bool)  error {
+	
+	CGoReturnPtr := C.TxtLoadOptions_SetIgnoreNotPrinted( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Check whether data is valid in the template file.
+// Returns:
+//   bool  
+func (instance *TxtLoadOptions) GetCheckDataValid()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetCheckDataValid( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Check whether data is valid in the template file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TxtLoadOptions) SetCheckDataValid(value bool)  error {
+	
+	CGoReturnPtr := C.TxtLoadOptions_SetCheckDataValid( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K such as by Cell.PutValue(string), if this property is true, you will get an Exception.
+// If this property is false, we will accept your input string value as the cell's value so that later
+// you can output the complete string value for other file formats such as CSV.
+// However, if you have set such kind of value that is invalid for excel file format,
+// you should not save the workbook as excel file format later. Otherwise there may be unexpected error for the generated excel file.
+// Returns:
+//   bool  
+func (instance *TxtLoadOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K such as by Cell.PutValue(string), if this property is true, you will get an Exception.
+// If this property is false, we will accept your input string value as the cell's value so that later
+// you can output the complete string value for other file formats such as CSV.
+// However, if you have set such kind of value that is invalid for excel file format,
+// you should not save the workbook as excel file format later. Otherwise there may be unexpected error for the generated excel file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TxtLoadOptions) SetCheckExcelRestriction(value bool)  error {
+	
+	CGoReturnPtr := C.TxtLoadOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether keep the unparsed data in memory for the Workbook when it is loaded from template file. Default is true.
+// Returns:
+//   bool  
+func (instance *TxtLoadOptions) GetKeepUnparsedData()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetKeepUnparsedData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Whether keep the unparsed data in memory for the Workbook when it is loaded from template file. Default is true.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TxtLoadOptions) SetKeepUnparsedData(value bool)  error {
+	
+	CGoReturnPtr := C.TxtLoadOptions_SetKeepUnparsedData( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// The filter to denote how to load data.
+// Returns:
+//   LoadFilter  
+func (instance *TxtLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetLoadFilter( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &LoadFilter{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteLoadFilter) 
+
+	return result, nil 
+}
+// The filter to denote how to load data.
+// Parameters:
+//   value - LoadFilter 
+// Returns:
+//   void  
+func (instance *TxtLoadOptions) SetLoadFilter(value *LoadFilter)  error {
+	
+	CGoReturnPtr := C.TxtLoadOptions_SetLoadFilter( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the memory usage options.
+// Returns:
+//   int32  
+func (instance *TxtLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetMemorySetting( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToMemorySetting(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the memory usage options.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TxtLoadOptions) SetMemorySetting(value MemorySetting)  error {
+	
+	CGoReturnPtr := C.TxtLoadOptions_SetMemorySetting( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the auto fitter options
+// Returns:
+//   AutoFitterOptions  
+func (instance *TxtLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetAutoFitterOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &AutoFitterOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteAutoFitterOptions) 
+
+	return result, nil 
+}
+// Gets and sets the auto fitter options
+// Parameters:
+//   value - AutoFitterOptions 
+// Returns:
+//   void  
+func (instance *TxtLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  error {
+	
+	CGoReturnPtr := C.TxtLoadOptions_SetAutoFitterOptions( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether auto filtering the data when loading the files.
+// Returns:
+//   bool  
+func (instance *TxtLoadOptions) GetAutoFilter()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetAutoFilter( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether auto filtering the data when loading the files.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TxtLoadOptions) SetAutoFilter(value bool)  error {
+	
+	CGoReturnPtr := C.TxtLoadOptions_SetAutoFilter( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets individual font configs.
+// Only works for the <see cref="Workbook"/> which uses this <see cref="LoadOptions"/> to load.
+// Returns:
+//   IndividualFontConfigs  
+func (instance *TxtLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetFontConfigs( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &IndividualFontConfigs{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteIndividualFontConfigs) 
+
+	return result, nil 
+}
+// Gets and sets individual font configs.
+// Only works for the <see cref="Workbook"/> which uses this <see cref="LoadOptions"/> to load.
+// Parameters:
+//   value - IndividualFontConfigs 
+// Returns:
+//   void  
+func (instance *TxtLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  error {
+	
+	CGoReturnPtr := C.TxtLoadOptions_SetFontConfigs( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether ignoring useless shapes.
+// Returns:
+//   bool  
+func (instance *TxtLoadOptions) GetIgnoreUselessShapes()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetIgnoreUselessShapes( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether ignoring useless shapes.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TxtLoadOptions) SetIgnoreUselessShapes(value bool)  error {
+	
+	CGoReturnPtr := C.TxtLoadOptions_SetIgnoreUselessShapes( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether preserve those spaces and line breaks that are padded between formula tokens
+// while getting and setting formulas.
+// Default value is false.
+// Returns:
+//   bool  
+func (instance *TxtLoadOptions) GetPreservePaddingSpacesInFormula()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TxtLoadOptions_GetPreservePaddingSpacesInFormula( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether preserve those spaces and line breaks that are padded between formula tokens
+// while getting and setting formulas.
+// Default value is false.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TxtLoadOptions) SetPreservePaddingSpacesInFormula(value bool)  error {
+	
+	CGoReturnPtr := C.TxtLoadOptions_SetPreservePaddingSpacesInFormula( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 
 
 func DeleteTxtLoadOptions(txtloadoptions *TxtLoadOptions){
@@ -53055,6 +58914,23 @@ func (instance *UnionRange) Copy(range_ *UnionRange, options *PasteOptions)  err
 
 	return nil 
 }
+// Gets the enumerator for cells in this Range.
+// Returns:
+//   unsafe.Pointer  
+func (instance *UnionRange) GetEnumerator()  (*CellEnumerator,  error)  {
+	
+	CGoReturnPtr := C.UnionRange_GetEnumerator( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CellEnumerator{}
+	result.ptr = CGoReturnPtr.return_value
+	runtime.SetFinalizer(result, DeleteCellEnumerator)
+	 
+
+	return result, nil 
+}
 // Gets all cell count in the range.
 // Returns:
 //   int32  
@@ -53103,6 +58979,29 @@ func (instance *UnionRange) GetRanges()  ([]Range,  error)  {
 	 
 
 	return result, nil 
+}
+// Sets out line borders around a range of cells.
+// Parameters:
+//   borderStyles - []CellBorderType 
+//   borderColors - []Color 
+// Returns:
+//   void  
+func (instance *UnionRange) SetOutlineBorders_CellBorderTypeArray_ColorArray(borderstyles []CellBorderType, bordercolors []Color)  error {
+	
+	bordercolors_length := len(bordercolors)
+	vector_bordercolors:= make([]unsafe.Pointer, bordercolors_length)
+	for i := 0; i < bordercolors_length; i++ {
+		vector_bordercolors[i] = bordercolors[i].ptr
+	}
+
+
+	CGoReturnPtr := C.UnionRange_SetOutlineBorders_CellBorderTypeArray_ColorArray( instance.ptr, unsafe.Pointer(&borderstyles[0]), C.int( len(borderstyles)), unsafe.Pointer(&vector_bordercolors[0]), C.int( len(bordercolors)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
 }
 // Sets the outline borders around a range of cells with same border style and color.
 // Parameters:
@@ -53156,6 +59055,31 @@ func (instance *UnionRange) Intersect_UnionRange(unionrange *UnionRange)  (*Unio
 
 	return result, nil 
 }
+// Intersects another range.
+// Parameters:
+//   ranges - []Range 
+// Returns:
+//   UnionRange  
+func (instance *UnionRange) Intersect_RangeArray(ranges []Range)  (*UnionRange,  error)  {
+	
+	ranges_length := len(ranges)
+	vector_ranges:= make([]unsafe.Pointer, ranges_length)
+	for i := 0; i < ranges_length; i++ {
+		vector_ranges[i] = ranges[i].ptr
+	}
+
+
+	CGoReturnPtr := C.UnionRange_Intersect_RangeArray( instance.ptr, unsafe.Pointer(&vector_ranges[0]), C.int( len(ranges)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &UnionRange{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteUnionRange) 
+
+	return result, nil 
+}
 // Union another range.
 // Parameters:
 //   range - string 
@@ -53182,6 +59106,31 @@ func (instance *UnionRange) Union_String(range_ string)  (*UnionRange,  error)  
 func (instance *UnionRange) Union_UnionRange(unionrange *UnionRange)  (*UnionRange,  error)  {
 	
 	CGoReturnPtr := C.UnionRange_Union_UnionRange( instance.ptr, unionrange.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &UnionRange{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteUnionRange) 
+
+	return result, nil 
+}
+// Union the ranges.
+// Parameters:
+//   ranges - []Range 
+// Returns:
+//   UnionRange  
+func (instance *UnionRange) Union_RangeArray(ranges []Range)  (*UnionRange,  error)  {
+	
+	ranges_length := len(ranges)
+	vector_ranges:= make([]unsafe.Pointer, ranges_length)
+	for i := 0; i < ranges_length; i++ {
+		vector_ranges[i] = ranges[i].ptr
+	}
+
+
+	CGoReturnPtr := C.UnionRange_Union_RangeArray( instance.ptr, unsafe.Pointer(&vector_ranges[0]), C.int( len(ranges)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -53868,6 +59817,30 @@ func (instance *Validation) AddArea_CellArea_Bool_Bool(cellarea *CellArea, check
 
 	return nil 
 }
+// Applies the validation to given areas.
+// Parameters:
+//   areas - []CellArea 
+//   checkIntersection - bool 
+//   checkEdge - bool 
+// Returns:
+//   void  
+func (instance *Validation) AddAreas(areas []CellArea, checkintersection bool, checkedge bool)  error {
+	
+	areas_length := len(areas)
+	vector_areas:= make([]unsafe.Pointer, areas_length)
+	for i := 0; i < areas_length; i++ {
+		vector_areas[i] = areas[i].ptr
+	}
+
+
+	CGoReturnPtr := C.Validation_AddAreas( instance.ptr, unsafe.Pointer(&vector_areas[0]), C.int( len(areas)), C.bool(checkintersection), C.bool(checkedge))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Remove the validation settings in the range.
 // Parameters:
 //   cellArea - CellArea 
@@ -53876,6 +59849,28 @@ func (instance *Validation) AddArea_CellArea_Bool_Bool(cellarea *CellArea, check
 func (instance *Validation) RemoveArea(cellarea *CellArea)  error {
 	
 	CGoReturnPtr := C.Validation_RemoveArea( instance.ptr, cellarea.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Removes this validation from given areas.
+// Parameters:
+//   areas - []CellArea 
+// Returns:
+//   void  
+func (instance *Validation) RemoveAreas(areas []CellArea)  error {
+	
+	areas_length := len(areas)
+	vector_areas:= make([]unsafe.Pointer, areas_length)
+	for i := 0; i < areas_length; i++ {
+		vector_areas[i] = areas[i].ptr
+	}
+
+
+	CGoReturnPtr := C.Validation_RemoveAreas( instance.ptr, unsafe.Pointer(&vector_areas[0]), C.int( len(areas)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -55516,6 +61511,29 @@ func (instance *Workbook) GetTheme()  (string,  error)  {
 
 	return result, nil 
 }
+// Customs the theme.
+// Parameters:
+//   themeName - string 
+//   colors - []Color 
+// Returns:
+//   void  
+func (instance *Workbook) CustomTheme(themename string, colors []Color)  error {
+	
+	colors_length := len(colors)
+	vector_colors:= make([]unsafe.Pointer, colors_length)
+	for i := 0; i < colors_length; i++ {
+		vector_colors[i] = colors[i].ptr
+	}
+
+
+	CGoReturnPtr := C.Workbook_CustomTheme( instance.ptr, C.CString(themename), unsafe.Pointer(&vector_colors[0]), C.int( len(colors)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Copies the theme from another workbook.
 // Parameters:
 //   source - Workbook 
@@ -55539,6 +61557,29 @@ func (instance *Workbook) CopyTheme(source *Workbook)  error {
 func (instance *Workbook) UpdateCustomFunctionDefinition(definition *CustomFunctionDefinition)  error {
 	
 	CGoReturnPtr := C.Workbook_UpdateCustomFunctionDefinition( instance.ptr, definition.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// If this workbook contains external links to other data source,
+// Aspose.Cells will attempt to retrieve the latest data from give sources.
+// Parameters:
+//   externalWorkbooks - []Workbook 
+// Returns:
+//   void  
+func (instance *Workbook) UpdateLinkedDataSource(externalworkbooks []Workbook)  error {
+	
+	externalworkbooks_length := len(externalworkbooks)
+	vector_externalworkbooks:= make([]unsafe.Pointer, externalworkbooks_length)
+	for i := 0; i < externalworkbooks_length; i++ {
+		vector_externalworkbooks[i] = externalworkbooks[i].ptr
+	}
+
+
+	CGoReturnPtr := C.Workbook_UpdateLinkedDataSource( instance.ptr, unsafe.Pointer(&vector_externalworkbooks[0]), C.int( len(externalworkbooks)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -60456,6 +66497,35 @@ func (instance *WorksheetCollection) AddCopy_Int(sheetindex int32)  (int32,  err
 
 	return result, nil 
 }
+// Copy a group of worksheets.
+// Parameters:
+//   source - []Worksheet 
+//   destSheetNames - []string 
+// Returns:
+//   void  
+func (instance *WorksheetCollection) AddCopy_WorksheetArray_stringArray(source []Worksheet, destsheetnames []string)  error {
+	
+	source_length := len(source)
+	vector_source:= make([]unsafe.Pointer, source_length)
+	for i := 0; i < source_length; i++ {
+		vector_source[i] = source[i].ptr
+	}
+
+	vector_destsheetnames := make([]*C.char, len(destsheetnames))
+	for i, str := range destsheetnames {
+	cStr := C.CString(str)
+	defer C.free(unsafe.Pointer(cStr))
+	vector_destsheetnames[i] = cStr
+	}
+
+	CGoReturnPtr := C.WorksheetCollection_AddCopy_WorksheetArray_U16StringArray( instance.ptr, unsafe.Pointer(&vector_source[0]), C.int( len(source)), unsafe.Pointer(&vector_destsheetnames[0]), C.int( len(destsheetnames)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Gets the master differential formatting records.
 // Returns:
 //   DxfCollection  
@@ -64168,6 +70238,350 @@ func (instance *XpsSaveOptions) GetEmfRenderSetting()  (EmfRenderSetting,  error
 func (instance *XpsSaveOptions) SetEmfRenderSetting(value EmfRenderSetting)  error {
 	
 	CGoReturnPtr := C.XpsSaveOptions_SetEmfRenderSetting( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the save file format.
+// Returns:
+//   int32  
+func (instance *XpsSaveOptions) GetSaveFormat()  (SaveFormat,  error)  {
+	
+	CGoReturnPtr := C.XpsSaveOptions_GetSaveFormat( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToSaveFormat(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Make the workbook empty after saving the file.
+// Returns:
+//   bool  
+func (instance *XpsSaveOptions) GetClearData()  (bool,  error)  {
+	
+	CGoReturnPtr := C.XpsSaveOptions_GetClearData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Make the workbook empty after saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *XpsSaveOptions) SetClearData(value bool)  error {
+	
+	CGoReturnPtr := C.XpsSaveOptions_SetClearData( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// The cached file folder is used to store some large data.
+// Returns:
+//   string  
+func (instance *XpsSaveOptions) GetCachedFileFolder()  (string,  error)  {
+	
+	CGoReturnPtr := C.XpsSaveOptions_GetCachedFileFolder( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// The cached file folder is used to store some large data.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *XpsSaveOptions) SetCachedFileFolder(value string)  error {
+	
+	CGoReturnPtr := C.XpsSaveOptions_SetCachedFileFolder( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether validate merged cells before saving the file.
+// Returns:
+//   bool  
+func (instance *XpsSaveOptions) GetValidateMergedAreas()  (bool,  error)  {
+	
+	CGoReturnPtr := C.XpsSaveOptions_GetValidateMergedAreas( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether validate merged cells before saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *XpsSaveOptions) SetValidateMergedAreas(value bool)  error {
+	
+	CGoReturnPtr := C.XpsSaveOptions_SetValidateMergedAreas( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether merge the areas of conditional formatting and validation before saving the file.
+// Returns:
+//   bool  
+func (instance *XpsSaveOptions) GetMergeAreas()  (bool,  error)  {
+	
+	CGoReturnPtr := C.XpsSaveOptions_GetMergeAreas( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether merge the areas of conditional formatting and validation before saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *XpsSaveOptions) SetMergeAreas(value bool)  error {
+	
+	CGoReturnPtr := C.XpsSaveOptions_SetMergeAreas( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// If true and the directory does not exist, the directory will be automatically created before saving the file.
+// Returns:
+//   bool  
+func (instance *XpsSaveOptions) GetCreateDirectory()  (bool,  error)  {
+	
+	CGoReturnPtr := C.XpsSaveOptions_GetCreateDirectory( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// If true and the directory does not exist, the directory will be automatically created before saving the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *XpsSaveOptions) SetCreateDirectory(value bool)  error {
+	
+	CGoReturnPtr := C.XpsSaveOptions_SetCreateDirectory( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether sorting defined names before saving file.
+// Returns:
+//   bool  
+func (instance *XpsSaveOptions) GetSortNames()  (bool,  error)  {
+	
+	CGoReturnPtr := C.XpsSaveOptions_GetSortNames( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether sorting defined names before saving file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *XpsSaveOptions) SetSortNames(value bool)  error {
+	
+	CGoReturnPtr := C.XpsSaveOptions_SetSortNames( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether sorting external defined names before saving file.
+// Returns:
+//   bool  
+func (instance *XpsSaveOptions) GetSortExternalNames()  (bool,  error)  {
+	
+	CGoReturnPtr := C.XpsSaveOptions_GetSortExternalNames( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether sorting external defined names before saving file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *XpsSaveOptions) SetSortExternalNames(value bool)  error {
+	
+	CGoReturnPtr := C.XpsSaveOptions_SetSortExternalNames( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether refreshing chart cache data
+// Returns:
+//   bool  
+func (instance *XpsSaveOptions) GetRefreshChartCache()  (bool,  error)  {
+	
+	CGoReturnPtr := C.XpsSaveOptions_GetRefreshChartCache( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether refreshing chart cache data
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *XpsSaveOptions) SetRefreshChartCache(value bool)  error {
+	
+	CGoReturnPtr := C.XpsSaveOptions_SetRefreshChartCache( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Returns:
+//   bool  
+func (instance *XpsSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	
+	CGoReturnPtr := C.XpsSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K, it will be truncated.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *XpsSaveOptions) SetCheckExcelRestriction(value bool)  error {
+	
+	CGoReturnPtr := C.XpsSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether updating smart art setting.
+// The default value is false.
+// Returns:
+//   bool  
+func (instance *XpsSaveOptions) GetUpdateSmartArt()  (bool,  error)  {
+	
+	CGoReturnPtr := C.XpsSaveOptions_GetUpdateSmartArt( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether updating smart art setting.
+// The default value is false.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *XpsSaveOptions) SetUpdateSmartArt(value bool)  error {
+	
+	CGoReturnPtr := C.XpsSaveOptions_SetUpdateSmartArt( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether encrypt document properties when saving as .xls file.
+// The default value is true.
+// Returns:
+//   bool  
+func (instance *XpsSaveOptions) GetEncryptDocumentProperties()  (bool,  error)  {
+	
+	CGoReturnPtr := C.XpsSaveOptions_GetEncryptDocumentProperties( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether encrypt document properties when saving as .xls file.
+// The default value is true.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *XpsSaveOptions) SetEncryptDocumentProperties(value bool)  error {
+	
+	CGoReturnPtr := C.XpsSaveOptions_SetEncryptDocumentProperties( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

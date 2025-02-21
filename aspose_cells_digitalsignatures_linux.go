@@ -1,7 +1,11 @@
 // +build linux
 
-// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
-// Powered by Aspose.Cells.
+/* ----------------------------------------------------------------
+ * Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
+ * Powered by Aspose.Cells.
+ * ---------------------------------------------------------------*/
+
+
 package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
@@ -11,7 +15,8 @@ package asposecells
 import "C"
 import (
 	"fmt"  
-	"errors"
+	"time"  	
+	"errors"	
 	"runtime"
 	"unsafe" 
 )
@@ -50,9 +55,13 @@ type DigitalSignature struct {
 //   password - string 
 //   comments - string 
 //   signTime - Date 
-func NewDigitalSignature_Stream_String_String_Date(rawdata []byte, password string, comments string, signtime *Date) ( *DigitalSignature, error) {
+func NewDigitalSignature_Stream_String_String_Date(rawdata []byte, password string, comments string, signtime time.Time) ( *DigitalSignature, error) {
 	digitalsignature := &DigitalSignature{}
-	CGoReturnPtr := C.New_DigitalSignature_Stream_String_String_Date(unsafe.Pointer(&rawdata[0]), C.int( len(rawdata)), C.CString(password), C.CString(comments), signtime.ptr)
+	time_signtime := C.Get_Date( C.int(signtime.Year()), C.int(signtime.Month()) , C.int(signtime.Day()) , C.int(signtime.Hour()) , C.int(signtime.Minute()) , C.int(signtime.Second())  )
+
+	CGoReturnPtr := C.New_DigitalSignature_Stream_String_String_Date(unsafe.Pointer(&rawdata[0]), C.int( len(rawdata)), C.CString(password), C.CString(comments), time_signtime)
+	C.Delete_GetDate( time_signtime)
+
 	if CGoReturnPtr.error_no == 0 {
 		digitalsignature.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(digitalsignature, DeleteDigitalSignature)
@@ -69,9 +78,13 @@ func NewDigitalSignature_Stream_String_String_Date(rawdata []byte, password stri
 //   password - string 
 //   comments - string 
 //   signTime - Date 
-func NewDigitalSignature_String_String_String_Date(filename string, password string, comments string, signtime *Date) ( *DigitalSignature, error) {
+func NewDigitalSignature_String_String_String_Date(filename string, password string, comments string, signtime time.Time) ( *DigitalSignature, error) {
 	digitalsignature := &DigitalSignature{}
-	CGoReturnPtr := C.New_DigitalSignature_String_String_String_Date(C.CString(filename), C.CString(password), C.CString(comments), signtime.ptr)
+	time_signtime := C.Get_Date( C.int(signtime.Year()), C.int(signtime.Month()) , C.int(signtime.Day()) , C.int(signtime.Hour()) , C.int(signtime.Minute()) , C.int(signtime.Second())  )
+
+	CGoReturnPtr := C.New_DigitalSignature_String_String_String_Date(C.CString(filename), C.CString(password), C.CString(comments), time_signtime)
+	C.Delete_GetDate( time_signtime)
+
 	if CGoReturnPtr.error_no == 0 {
 		digitalsignature.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(digitalsignature, DeleteDigitalSignature)
@@ -129,15 +142,14 @@ func (instance *DigitalSignature) SetComments(value string)  error {
 // The time when the document was signed.
 // Returns:
 //   Date  
-func (instance *DigitalSignature) GetSignTime()  (*Date,  error)  {
+func (instance *DigitalSignature) GetSignTime()  (time.Time,  error)  {
 	
 	CGoReturnPtr := C.DigitalSignature_GetSignTime( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
+		return  time.Unix(0, 0), err
 	}
-	result := &Date{}
-	result.ptr = CGoReturnPtr.return_value 
+	result := time.Date(int( C.Date_Get_year(CGoReturnPtr.return_value).return_value ),time.Month(int( C.Date_Get_month(CGoReturnPtr.return_value).return_value)),int( C.Date_Get_day(CGoReturnPtr.return_value).return_value),int(  C.Date_Get_hour(CGoReturnPtr.return_value).return_value),int( C.Date_Get_minute(CGoReturnPtr.return_value).return_value),int(  C.Date_Get_second(CGoReturnPtr.return_value).return_value), 0, time.UTC) 
 
 	return result, nil 
 }
@@ -146,9 +158,13 @@ func (instance *DigitalSignature) GetSignTime()  (*Date,  error)  {
 //   value - Date 
 // Returns:
 //   void  
-func (instance *DigitalSignature) SetSignTime(value *Date)  error {
+func (instance *DigitalSignature) SetSignTime(value time.Time)  error {
 	
-	CGoReturnPtr := C.DigitalSignature_SetSignTime( instance.ptr, value.ptr)
+	time_value := C.Get_Date( C.int(value.Year()), C.int(value.Month()) , C.int(value.Day()) , C.int(value.Hour()) , C.int(value.Minute()) , C.int(value.Second())  )
+
+	CGoReturnPtr := C.DigitalSignature_SetSignTime( instance.ptr, time_value)
+	C.Delete_GetDate( time_value)
+
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -390,6 +406,24 @@ func (instance *DigitalSignatureCollection) Add(digitalsignature *DigitalSignatu
 	}
 
 	return nil 
+}
+// Get the enumerator for DigitalSignatureCollection,
+// this enumerator allows iteration over the collection
+// Returns:
+//   unsafe.Pointer  
+func (instance *DigitalSignatureCollection) GetEnumerator()  (*DigitalSignatureEnumerator,  error)  {
+	
+	CGoReturnPtr := C.DigitalSignatureCollection_GetEnumerator( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &DigitalSignatureEnumerator{}
+	result.ptr = CGoReturnPtr.return_value
+	runtime.SetFinalizer(result, DeleteDigitalSignatureEnumerator)
+	 
+
+	return result, nil 
 }
 
 

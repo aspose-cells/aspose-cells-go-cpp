@@ -1,7 +1,11 @@
 // +build linux
 
-// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
-// Powered by Aspose.Cells.
+/* ----------------------------------------------------------------
+ * Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
+ * Powered by Aspose.Cells.
+ * ---------------------------------------------------------------*/
+
+
 package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
@@ -11,7 +15,8 @@ package asposecells
 import "C"
 import (
 	"fmt"  
-	"errors"
+ 	
+	"errors"	
 	"runtime"
 	"unsafe" 
 )
@@ -906,6 +911,23 @@ func (instance *FontSettingCollection) GetTextParagraphs()  (*TextParagraphColle
 	result := &TextParagraphCollection{}
 	result.ptr = CGoReturnPtr.return_value 
 	runtime.SetFinalizer(result, DeleteTextParagraphCollection) 
+
+	return result, nil 
+}
+// Gets the enumerator of the paragraphs.
+// Returns:
+//   unsafe.Pointer  
+func (instance *FontSettingCollection) GetParagraphEnumerator()  (*TextParagraphEnumerator,  error)  {
+	
+	CGoReturnPtr := C.FontSettingCollection_GetParagraphEnumerator( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextParagraphEnumerator{}
+	result.ptr = CGoReturnPtr.return_value
+	runtime.SetFinalizer(result, DeleteTextParagraphEnumerator)
+	 
 
 	return result, nil 
 }
@@ -3135,6 +3157,23 @@ func (instance *TextParagraphCollection) Get(index int32)  (*TextParagraph,  err
 	result := &TextParagraph{}
 	result.ptr = CGoReturnPtr.return_value 
 	runtime.SetFinalizer(result, DeleteTextParagraph) 
+
+	return result, nil 
+}
+// Gets the enumerator of the paragraphs.
+// Returns:
+//   unsafe.Pointer  
+func (instance *TextParagraphCollection) GetEnumerator()  (*TextParagraphEnumerator,  error)  {
+	
+	CGoReturnPtr := C.TextParagraphCollection_GetEnumerator( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextParagraphEnumerator{}
+	result.ptr = CGoReturnPtr.return_value
+	runtime.SetFinalizer(result, DeleteTextParagraphEnumerator)
+	 
 
 	return result, nil 
 }

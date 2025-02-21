@@ -1,7 +1,11 @@
 // +build linux
 
-// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
-// Powered by Aspose.Cells.
+/* ----------------------------------------------------------------
+ * Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
+ * Powered by Aspose.Cells.
+ * ---------------------------------------------------------------*/
+
+
 package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
@@ -11,7 +15,8 @@ package asposecells
 import "C"
 import (
 	"fmt"  
-	"errors"
+ 	
+	"errors"	
 	"runtime"
 	"unsafe" 
 )
@@ -2156,6 +2161,316 @@ func (instance *CheckBoxActiveXControl) SetIsAutoSize(value bool)  error {
 
 	return nil 
 }
+// Gets the <see cref="Workbook"/> object.
+// Returns:
+//   Workbook  
+func (instance *CheckBoxActiveXControl) GetWorkbook()  (*Workbook,  error)  {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_GetWorkbook( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Workbook{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteWorkbook) 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Returns:
+//   []byte  
+func (instance *CheckBoxActiveXControl) GetMouseIcon()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_GetMouseIcon( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Parameters:
+//   value - []byte 
+// Returns:
+//   void  
+func (instance *CheckBoxActiveXControl) SetMouseIcon(value []byte)  error {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Returns:
+//   int32  
+func (instance *CheckBoxActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_GetMousePointer( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToControlMousePointerType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *CheckBoxActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the linked cell.
+// Returns:
+//   string  
+func (instance *CheckBoxActiveXControl) GetLinkedCell()  (string,  error)  {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_GetLinkedCell( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the linked cell.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *CheckBoxActiveXControl) SetLinkedCell(value string)  error {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the list fill range.
+// Returns:
+//   string  
+func (instance *CheckBoxActiveXControl) GetListFillRange()  (string,  error)  {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_GetListFillRange( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the list fill range.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *CheckBoxActiveXControl) SetListFillRange(value string)  error {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *CheckBoxActiveXControl) GetWidth()  (float64,  error)  {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_GetWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *CheckBoxActiveXControl) SetWidth(value float64)  error {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_SetWidth( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *CheckBoxActiveXControl) GetHeight()  (float64,  error)  {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_GetHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *CheckBoxActiveXControl) SetHeight(value float64)  error {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_SetHeight( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the foreground.
+// Returns:
+//   int32  
+func (instance *CheckBoxActiveXControl) GetForeOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_GetForeOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the foreground.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *CheckBoxActiveXControl) SetForeOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the background.
+// Returns:
+//   int32  
+func (instance *CheckBoxActiveXControl) GetBackOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_GetBackOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the background.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *CheckBoxActiveXControl) SetBackOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether this control is visible.
+// Returns:
+//   bool  
+func (instance *CheckBoxActiveXControl) IsVisible()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_IsVisible( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether this control is visible.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *CheckBoxActiveXControl) SetIsVisible(value bool)  error {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to show a shadow.
+// Returns:
+//   bool  
+func (instance *CheckBoxActiveXControl) GetShadow()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_GetShadow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to show a shadow.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *CheckBoxActiveXControl) SetShadow(value bool)  error {
+	
+	CGoReturnPtr := C.CheckBoxActiveXControl_SetShadow( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 
 
 func DeleteCheckBoxActiveXControl(checkboxactivexcontrol *CheckBoxActiveXControl){
@@ -3096,6 +3411,316 @@ func (instance *ComboBoxActiveXControl) SetIsAutoSize(value bool)  error {
 
 	return nil 
 }
+// Gets the <see cref="Workbook"/> object.
+// Returns:
+//   Workbook  
+func (instance *ComboBoxActiveXControl) GetWorkbook()  (*Workbook,  error)  {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_GetWorkbook( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Workbook{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteWorkbook) 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Returns:
+//   []byte  
+func (instance *ComboBoxActiveXControl) GetMouseIcon()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_GetMouseIcon( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Parameters:
+//   value - []byte 
+// Returns:
+//   void  
+func (instance *ComboBoxActiveXControl) SetMouseIcon(value []byte)  error {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Returns:
+//   int32  
+func (instance *ComboBoxActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_GetMousePointer( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToControlMousePointerType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ComboBoxActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the linked cell.
+// Returns:
+//   string  
+func (instance *ComboBoxActiveXControl) GetLinkedCell()  (string,  error)  {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_GetLinkedCell( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the linked cell.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *ComboBoxActiveXControl) SetLinkedCell(value string)  error {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the list fill range.
+// Returns:
+//   string  
+func (instance *ComboBoxActiveXControl) GetListFillRange()  (string,  error)  {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_GetListFillRange( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the list fill range.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *ComboBoxActiveXControl) SetListFillRange(value string)  error {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *ComboBoxActiveXControl) GetWidth()  (float64,  error)  {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_GetWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *ComboBoxActiveXControl) SetWidth(value float64)  error {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_SetWidth( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *ComboBoxActiveXControl) GetHeight()  (float64,  error)  {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_GetHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *ComboBoxActiveXControl) SetHeight(value float64)  error {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_SetHeight( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the foreground.
+// Returns:
+//   int32  
+func (instance *ComboBoxActiveXControl) GetForeOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_GetForeOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the foreground.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ComboBoxActiveXControl) SetForeOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the background.
+// Returns:
+//   int32  
+func (instance *ComboBoxActiveXControl) GetBackOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_GetBackOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the background.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ComboBoxActiveXControl) SetBackOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether this control is visible.
+// Returns:
+//   bool  
+func (instance *ComboBoxActiveXControl) IsVisible()  (bool,  error)  {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_IsVisible( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether this control is visible.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *ComboBoxActiveXControl) SetIsVisible(value bool)  error {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to show a shadow.
+// Returns:
+//   bool  
+func (instance *ComboBoxActiveXControl) GetShadow()  (bool,  error)  {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_GetShadow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to show a shadow.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *ComboBoxActiveXControl) SetShadow(value bool)  error {
+	
+	CGoReturnPtr := C.ComboBoxActiveXControl_SetShadow( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 
 
 func DeleteComboBoxActiveXControl(comboboxactivexcontrol *ComboBoxActiveXControl){
@@ -3541,6 +4166,316 @@ func (instance *CommandButtonActiveXControl) IsAutoSize()  (bool,  error)  {
 func (instance *CommandButtonActiveXControl) SetIsAutoSize(value bool)  error {
 	
 	CGoReturnPtr := C.CommandButtonActiveXControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the <see cref="Workbook"/> object.
+// Returns:
+//   Workbook  
+func (instance *CommandButtonActiveXControl) GetWorkbook()  (*Workbook,  error)  {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_GetWorkbook( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Workbook{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteWorkbook) 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Returns:
+//   []byte  
+func (instance *CommandButtonActiveXControl) GetMouseIcon()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_GetMouseIcon( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Parameters:
+//   value - []byte 
+// Returns:
+//   void  
+func (instance *CommandButtonActiveXControl) SetMouseIcon(value []byte)  error {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Returns:
+//   int32  
+func (instance *CommandButtonActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_GetMousePointer( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToControlMousePointerType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *CommandButtonActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the linked cell.
+// Returns:
+//   string  
+func (instance *CommandButtonActiveXControl) GetLinkedCell()  (string,  error)  {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_GetLinkedCell( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the linked cell.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *CommandButtonActiveXControl) SetLinkedCell(value string)  error {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the list fill range.
+// Returns:
+//   string  
+func (instance *CommandButtonActiveXControl) GetListFillRange()  (string,  error)  {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_GetListFillRange( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the list fill range.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *CommandButtonActiveXControl) SetListFillRange(value string)  error {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *CommandButtonActiveXControl) GetWidth()  (float64,  error)  {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_GetWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *CommandButtonActiveXControl) SetWidth(value float64)  error {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_SetWidth( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *CommandButtonActiveXControl) GetHeight()  (float64,  error)  {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_GetHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *CommandButtonActiveXControl) SetHeight(value float64)  error {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_SetHeight( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the foreground.
+// Returns:
+//   int32  
+func (instance *CommandButtonActiveXControl) GetForeOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_GetForeOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the foreground.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *CommandButtonActiveXControl) SetForeOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the background.
+// Returns:
+//   int32  
+func (instance *CommandButtonActiveXControl) GetBackOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_GetBackOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the background.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *CommandButtonActiveXControl) SetBackOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether this control is visible.
+// Returns:
+//   bool  
+func (instance *CommandButtonActiveXControl) IsVisible()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_IsVisible( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether this control is visible.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *CommandButtonActiveXControl) SetIsVisible(value bool)  error {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to show a shadow.
+// Returns:
+//   bool  
+func (instance *CommandButtonActiveXControl) GetShadow()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_GetShadow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to show a shadow.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *CommandButtonActiveXControl) SetShadow(value bool)  error {
+	
+	CGoReturnPtr := C.CommandButtonActiveXControl_SetShadow( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4037,6 +4972,316 @@ func (instance *ImageActiveXControl) GetData()  ([]byte,  error)  {
 	 
 
 	return result, nil 
+}
+// Gets the <see cref="Workbook"/> object.
+// Returns:
+//   Workbook  
+func (instance *ImageActiveXControl) GetWorkbook()  (*Workbook,  error)  {
+	
+	CGoReturnPtr := C.ImageActiveXControl_GetWorkbook( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Workbook{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteWorkbook) 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Returns:
+//   []byte  
+func (instance *ImageActiveXControl) GetMouseIcon()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.ImageActiveXControl_GetMouseIcon( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Parameters:
+//   value - []byte 
+// Returns:
+//   void  
+func (instance *ImageActiveXControl) SetMouseIcon(value []byte)  error {
+	
+	CGoReturnPtr := C.ImageActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Returns:
+//   int32  
+func (instance *ImageActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
+	
+	CGoReturnPtr := C.ImageActiveXControl_GetMousePointer( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToControlMousePointerType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ImageActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
+	
+	CGoReturnPtr := C.ImageActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the linked cell.
+// Returns:
+//   string  
+func (instance *ImageActiveXControl) GetLinkedCell()  (string,  error)  {
+	
+	CGoReturnPtr := C.ImageActiveXControl_GetLinkedCell( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the linked cell.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *ImageActiveXControl) SetLinkedCell(value string)  error {
+	
+	CGoReturnPtr := C.ImageActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the list fill range.
+// Returns:
+//   string  
+func (instance *ImageActiveXControl) GetListFillRange()  (string,  error)  {
+	
+	CGoReturnPtr := C.ImageActiveXControl_GetListFillRange( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the list fill range.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *ImageActiveXControl) SetListFillRange(value string)  error {
+	
+	CGoReturnPtr := C.ImageActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *ImageActiveXControl) GetWidth()  (float64,  error)  {
+	
+	CGoReturnPtr := C.ImageActiveXControl_GetWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *ImageActiveXControl) SetWidth(value float64)  error {
+	
+	CGoReturnPtr := C.ImageActiveXControl_SetWidth( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *ImageActiveXControl) GetHeight()  (float64,  error)  {
+	
+	CGoReturnPtr := C.ImageActiveXControl_GetHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *ImageActiveXControl) SetHeight(value float64)  error {
+	
+	CGoReturnPtr := C.ImageActiveXControl_SetHeight( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the foreground.
+// Returns:
+//   int32  
+func (instance *ImageActiveXControl) GetForeOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ImageActiveXControl_GetForeOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the foreground.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ImageActiveXControl) SetForeOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.ImageActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the background.
+// Returns:
+//   int32  
+func (instance *ImageActiveXControl) GetBackOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ImageActiveXControl_GetBackOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the background.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ImageActiveXControl) SetBackOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.ImageActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether this control is visible.
+// Returns:
+//   bool  
+func (instance *ImageActiveXControl) IsVisible()  (bool,  error)  {
+	
+	CGoReturnPtr := C.ImageActiveXControl_IsVisible( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether this control is visible.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *ImageActiveXControl) SetIsVisible(value bool)  error {
+	
+	CGoReturnPtr := C.ImageActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to show a shadow.
+// Returns:
+//   bool  
+func (instance *ImageActiveXControl) GetShadow()  (bool,  error)  {
+	
+	CGoReturnPtr := C.ImageActiveXControl_GetShadow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to show a shadow.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *ImageActiveXControl) SetShadow(value bool)  error {
+	
+	CGoReturnPtr := C.ImageActiveXControl_SetShadow( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
 }
 
 
@@ -4547,6 +5792,316 @@ func (instance *LabelActiveXControl) IsAutoSize()  (bool,  error)  {
 func (instance *LabelActiveXControl) SetIsAutoSize(value bool)  error {
 	
 	CGoReturnPtr := C.LabelActiveXControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the <see cref="Workbook"/> object.
+// Returns:
+//   Workbook  
+func (instance *LabelActiveXControl) GetWorkbook()  (*Workbook,  error)  {
+	
+	CGoReturnPtr := C.LabelActiveXControl_GetWorkbook( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Workbook{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteWorkbook) 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Returns:
+//   []byte  
+func (instance *LabelActiveXControl) GetMouseIcon()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.LabelActiveXControl_GetMouseIcon( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Parameters:
+//   value - []byte 
+// Returns:
+//   void  
+func (instance *LabelActiveXControl) SetMouseIcon(value []byte)  error {
+	
+	CGoReturnPtr := C.LabelActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Returns:
+//   int32  
+func (instance *LabelActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
+	
+	CGoReturnPtr := C.LabelActiveXControl_GetMousePointer( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToControlMousePointerType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *LabelActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
+	
+	CGoReturnPtr := C.LabelActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the linked cell.
+// Returns:
+//   string  
+func (instance *LabelActiveXControl) GetLinkedCell()  (string,  error)  {
+	
+	CGoReturnPtr := C.LabelActiveXControl_GetLinkedCell( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the linked cell.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *LabelActiveXControl) SetLinkedCell(value string)  error {
+	
+	CGoReturnPtr := C.LabelActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the list fill range.
+// Returns:
+//   string  
+func (instance *LabelActiveXControl) GetListFillRange()  (string,  error)  {
+	
+	CGoReturnPtr := C.LabelActiveXControl_GetListFillRange( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the list fill range.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *LabelActiveXControl) SetListFillRange(value string)  error {
+	
+	CGoReturnPtr := C.LabelActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *LabelActiveXControl) GetWidth()  (float64,  error)  {
+	
+	CGoReturnPtr := C.LabelActiveXControl_GetWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *LabelActiveXControl) SetWidth(value float64)  error {
+	
+	CGoReturnPtr := C.LabelActiveXControl_SetWidth( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *LabelActiveXControl) GetHeight()  (float64,  error)  {
+	
+	CGoReturnPtr := C.LabelActiveXControl_GetHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *LabelActiveXControl) SetHeight(value float64)  error {
+	
+	CGoReturnPtr := C.LabelActiveXControl_SetHeight( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the foreground.
+// Returns:
+//   int32  
+func (instance *LabelActiveXControl) GetForeOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.LabelActiveXControl_GetForeOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the foreground.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *LabelActiveXControl) SetForeOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.LabelActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the background.
+// Returns:
+//   int32  
+func (instance *LabelActiveXControl) GetBackOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.LabelActiveXControl_GetBackOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the background.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *LabelActiveXControl) SetBackOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.LabelActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether this control is visible.
+// Returns:
+//   bool  
+func (instance *LabelActiveXControl) IsVisible()  (bool,  error)  {
+	
+	CGoReturnPtr := C.LabelActiveXControl_IsVisible( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether this control is visible.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *LabelActiveXControl) SetIsVisible(value bool)  error {
+	
+	CGoReturnPtr := C.LabelActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to show a shadow.
+// Returns:
+//   bool  
+func (instance *LabelActiveXControl) GetShadow()  (bool,  error)  {
+	
+	CGoReturnPtr := C.LabelActiveXControl_GetShadow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to show a shadow.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *LabelActiveXControl) SetShadow(value bool)  error {
+	
+	CGoReturnPtr := C.LabelActiveXControl_SetShadow( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5283,6 +6838,316 @@ func (instance *ListBoxActiveXControl) SetIsAutoSize(value bool)  error {
 
 	return nil 
 }
+// Gets the <see cref="Workbook"/> object.
+// Returns:
+//   Workbook  
+func (instance *ListBoxActiveXControl) GetWorkbook()  (*Workbook,  error)  {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_GetWorkbook( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Workbook{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteWorkbook) 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Returns:
+//   []byte  
+func (instance *ListBoxActiveXControl) GetMouseIcon()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_GetMouseIcon( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Parameters:
+//   value - []byte 
+// Returns:
+//   void  
+func (instance *ListBoxActiveXControl) SetMouseIcon(value []byte)  error {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Returns:
+//   int32  
+func (instance *ListBoxActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_GetMousePointer( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToControlMousePointerType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ListBoxActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the linked cell.
+// Returns:
+//   string  
+func (instance *ListBoxActiveXControl) GetLinkedCell()  (string,  error)  {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_GetLinkedCell( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the linked cell.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *ListBoxActiveXControl) SetLinkedCell(value string)  error {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the list fill range.
+// Returns:
+//   string  
+func (instance *ListBoxActiveXControl) GetListFillRange()  (string,  error)  {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_GetListFillRange( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the list fill range.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *ListBoxActiveXControl) SetListFillRange(value string)  error {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *ListBoxActiveXControl) GetWidth()  (float64,  error)  {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_GetWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *ListBoxActiveXControl) SetWidth(value float64)  error {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_SetWidth( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *ListBoxActiveXControl) GetHeight()  (float64,  error)  {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_GetHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *ListBoxActiveXControl) SetHeight(value float64)  error {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_SetHeight( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the foreground.
+// Returns:
+//   int32  
+func (instance *ListBoxActiveXControl) GetForeOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_GetForeOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the foreground.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ListBoxActiveXControl) SetForeOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the background.
+// Returns:
+//   int32  
+func (instance *ListBoxActiveXControl) GetBackOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_GetBackOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the background.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ListBoxActiveXControl) SetBackOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether this control is visible.
+// Returns:
+//   bool  
+func (instance *ListBoxActiveXControl) IsVisible()  (bool,  error)  {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_IsVisible( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether this control is visible.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *ListBoxActiveXControl) SetIsVisible(value bool)  error {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to show a shadow.
+// Returns:
+//   bool  
+func (instance *ListBoxActiveXControl) GetShadow()  (bool,  error)  {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_GetShadow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to show a shadow.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *ListBoxActiveXControl) SetShadow(value bool)  error {
+	
+	CGoReturnPtr := C.ListBoxActiveXControl_SetShadow( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 
 
 func DeleteListBoxActiveXControl(listboxactivexcontrol *ListBoxActiveXControl){
@@ -5429,6 +7294,527 @@ func (instance *RadioButtonActiveXControl) IsWordWrapped()  (bool,  error)  {
 func (instance *RadioButtonActiveXControl) SetIsWordWrapped(value bool)  error {
 	
 	CGoReturnPtr := C.RadioButtonActiveXControl_SetIsWordWrapped( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the control can receive the focus and respond to user-generated events.
+// Returns:
+//   bool  
+func (instance *RadioButtonActiveXControl) IsEnabled()  (bool,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_IsEnabled( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the control can receive the focus and respond to user-generated events.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *RadioButtonActiveXControl) SetIsEnabled(value bool)  error {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_SetIsEnabled( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether data in the control is locked for editing.
+// Returns:
+//   bool  
+func (instance *RadioButtonActiveXControl) IsLocked()  (bool,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_IsLocked( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether data in the control is locked for editing.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *RadioButtonActiveXControl) SetIsLocked(value bool)  error {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_SetIsLocked( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the control is transparent.
+// Returns:
+//   bool  
+func (instance *RadioButtonActiveXControl) IsTransparent()  (bool,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_IsTransparent( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the control is transparent.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *RadioButtonActiveXControl) SetIsTransparent(value bool)  error {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_SetIsTransparent( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the default run-time mode of the Input Method Editor for the control as it receives focus.
+// Returns:
+//   int32  
+func (instance *RadioButtonActiveXControl) GetIMEMode()  (InputMethodEditorMode,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_GetIMEMode( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToInputMethodEditorMode(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the default run-time mode of the Input Method Editor for the control as it receives focus.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *RadioButtonActiveXControl) SetIMEMode(value InputMethodEditorMode)  error {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_SetIMEMode( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the font of the control.
+// Returns:
+//   Font  
+func (instance *RadioButtonActiveXControl) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Represents how to align the text used by the control.
+// Returns:
+//   int32  
+func (instance *RadioButtonActiveXControl) GetTextAlign()  (TextAlignmentType,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_GetTextAlign( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextAlignmentType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Represents how to align the text used by the control.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *RadioButtonActiveXControl) SetTextAlign(value TextAlignmentType)  error {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_SetTextAlign( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the binary data of the control.
+// Returns:
+//   []byte  
+func (instance *RadioButtonActiveXControl) GetData()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_GetData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Indicates whether the control will automatically resize to display its entire contents.
+// Returns:
+//   bool  
+func (instance *RadioButtonActiveXControl) IsAutoSize()  (bool,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_IsAutoSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the control will automatically resize to display its entire contents.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *RadioButtonActiveXControl) SetIsAutoSize(value bool)  error {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the <see cref="Workbook"/> object.
+// Returns:
+//   Workbook  
+func (instance *RadioButtonActiveXControl) GetWorkbook()  (*Workbook,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_GetWorkbook( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Workbook{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteWorkbook) 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Returns:
+//   []byte  
+func (instance *RadioButtonActiveXControl) GetMouseIcon()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_GetMouseIcon( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Parameters:
+//   value - []byte 
+// Returns:
+//   void  
+func (instance *RadioButtonActiveXControl) SetMouseIcon(value []byte)  error {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Returns:
+//   int32  
+func (instance *RadioButtonActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_GetMousePointer( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToControlMousePointerType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *RadioButtonActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the linked cell.
+// Returns:
+//   string  
+func (instance *RadioButtonActiveXControl) GetLinkedCell()  (string,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_GetLinkedCell( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the linked cell.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *RadioButtonActiveXControl) SetLinkedCell(value string)  error {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the list fill range.
+// Returns:
+//   string  
+func (instance *RadioButtonActiveXControl) GetListFillRange()  (string,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_GetListFillRange( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the list fill range.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *RadioButtonActiveXControl) SetListFillRange(value string)  error {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *RadioButtonActiveXControl) GetWidth()  (float64,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_GetWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *RadioButtonActiveXControl) SetWidth(value float64)  error {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_SetWidth( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *RadioButtonActiveXControl) GetHeight()  (float64,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_GetHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *RadioButtonActiveXControl) SetHeight(value float64)  error {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_SetHeight( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the foreground.
+// Returns:
+//   int32  
+func (instance *RadioButtonActiveXControl) GetForeOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_GetForeOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the foreground.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *RadioButtonActiveXControl) SetForeOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the background.
+// Returns:
+//   int32  
+func (instance *RadioButtonActiveXControl) GetBackOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_GetBackOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the background.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *RadioButtonActiveXControl) SetBackOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether this control is visible.
+// Returns:
+//   bool  
+func (instance *RadioButtonActiveXControl) IsVisible()  (bool,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_IsVisible( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether this control is visible.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *RadioButtonActiveXControl) SetIsVisible(value bool)  error {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to show a shadow.
+// Returns:
+//   bool  
+func (instance *RadioButtonActiveXControl) GetShadow()  (bool,  error)  {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_GetShadow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to show a shadow.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *RadioButtonActiveXControl) SetShadow(value bool)  error {
+	
+	CGoReturnPtr := C.RadioButtonActiveXControl_SetShadow( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5734,6 +8120,527 @@ func (instance *ScrollBarActiveXControl) GetLargeChange()  (int32,  error)  {
 func (instance *ScrollBarActiveXControl) SetLargeChange(value int32)  error {
 	
 	CGoReturnPtr := C.ScrollBarActiveXControl_SetLargeChange( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the control can receive the focus and respond to user-generated events.
+// Returns:
+//   bool  
+func (instance *ScrollBarActiveXControl) IsEnabled()  (bool,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_IsEnabled( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the control can receive the focus and respond to user-generated events.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *ScrollBarActiveXControl) SetIsEnabled(value bool)  error {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_SetIsEnabled( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether data in the control is locked for editing.
+// Returns:
+//   bool  
+func (instance *ScrollBarActiveXControl) IsLocked()  (bool,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_IsLocked( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether data in the control is locked for editing.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *ScrollBarActiveXControl) SetIsLocked(value bool)  error {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_SetIsLocked( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the control is transparent.
+// Returns:
+//   bool  
+func (instance *ScrollBarActiveXControl) IsTransparent()  (bool,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_IsTransparent( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the control is transparent.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *ScrollBarActiveXControl) SetIsTransparent(value bool)  error {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_SetIsTransparent( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the default run-time mode of the Input Method Editor for the control as it receives focus.
+// Returns:
+//   int32  
+func (instance *ScrollBarActiveXControl) GetIMEMode()  (InputMethodEditorMode,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_GetIMEMode( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToInputMethodEditorMode(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the default run-time mode of the Input Method Editor for the control as it receives focus.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ScrollBarActiveXControl) SetIMEMode(value InputMethodEditorMode)  error {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_SetIMEMode( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the font of the control.
+// Returns:
+//   Font  
+func (instance *ScrollBarActiveXControl) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Represents how to align the text used by the control.
+// Returns:
+//   int32  
+func (instance *ScrollBarActiveXControl) GetTextAlign()  (TextAlignmentType,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_GetTextAlign( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextAlignmentType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Represents how to align the text used by the control.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ScrollBarActiveXControl) SetTextAlign(value TextAlignmentType)  error {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_SetTextAlign( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the binary data of the control.
+// Returns:
+//   []byte  
+func (instance *ScrollBarActiveXControl) GetData()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_GetData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Indicates whether the control will automatically resize to display its entire contents.
+// Returns:
+//   bool  
+func (instance *ScrollBarActiveXControl) IsAutoSize()  (bool,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_IsAutoSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the control will automatically resize to display its entire contents.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *ScrollBarActiveXControl) SetIsAutoSize(value bool)  error {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the <see cref="Workbook"/> object.
+// Returns:
+//   Workbook  
+func (instance *ScrollBarActiveXControl) GetWorkbook()  (*Workbook,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_GetWorkbook( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Workbook{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteWorkbook) 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Returns:
+//   []byte  
+func (instance *ScrollBarActiveXControl) GetMouseIcon()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_GetMouseIcon( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Parameters:
+//   value - []byte 
+// Returns:
+//   void  
+func (instance *ScrollBarActiveXControl) SetMouseIcon(value []byte)  error {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Returns:
+//   int32  
+func (instance *ScrollBarActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_GetMousePointer( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToControlMousePointerType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ScrollBarActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the linked cell.
+// Returns:
+//   string  
+func (instance *ScrollBarActiveXControl) GetLinkedCell()  (string,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_GetLinkedCell( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the linked cell.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *ScrollBarActiveXControl) SetLinkedCell(value string)  error {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the list fill range.
+// Returns:
+//   string  
+func (instance *ScrollBarActiveXControl) GetListFillRange()  (string,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_GetListFillRange( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the list fill range.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *ScrollBarActiveXControl) SetListFillRange(value string)  error {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *ScrollBarActiveXControl) GetWidth()  (float64,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_GetWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *ScrollBarActiveXControl) SetWidth(value float64)  error {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_SetWidth( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *ScrollBarActiveXControl) GetHeight()  (float64,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_GetHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *ScrollBarActiveXControl) SetHeight(value float64)  error {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_SetHeight( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the foreground.
+// Returns:
+//   int32  
+func (instance *ScrollBarActiveXControl) GetForeOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_GetForeOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the foreground.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ScrollBarActiveXControl) SetForeOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the background.
+// Returns:
+//   int32  
+func (instance *ScrollBarActiveXControl) GetBackOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_GetBackOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the background.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ScrollBarActiveXControl) SetBackOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether this control is visible.
+// Returns:
+//   bool  
+func (instance *ScrollBarActiveXControl) IsVisible()  (bool,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_IsVisible( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether this control is visible.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *ScrollBarActiveXControl) SetIsVisible(value bool)  error {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to show a shadow.
+// Returns:
+//   bool  
+func (instance *ScrollBarActiveXControl) GetShadow()  (bool,  error)  {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_GetShadow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to show a shadow.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *ScrollBarActiveXControl) SetShadow(value bool)  error {
+	
+	CGoReturnPtr := C.ScrollBarActiveXControl_SetShadow( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6304,6 +9211,316 @@ func (instance *SpinButtonActiveXControl) IsAutoSize()  (bool,  error)  {
 func (instance *SpinButtonActiveXControl) SetIsAutoSize(value bool)  error {
 	
 	CGoReturnPtr := C.SpinButtonActiveXControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the <see cref="Workbook"/> object.
+// Returns:
+//   Workbook  
+func (instance *SpinButtonActiveXControl) GetWorkbook()  (*Workbook,  error)  {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_GetWorkbook( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Workbook{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteWorkbook) 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Returns:
+//   []byte  
+func (instance *SpinButtonActiveXControl) GetMouseIcon()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_GetMouseIcon( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Parameters:
+//   value - []byte 
+// Returns:
+//   void  
+func (instance *SpinButtonActiveXControl) SetMouseIcon(value []byte)  error {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Returns:
+//   int32  
+func (instance *SpinButtonActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_GetMousePointer( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToControlMousePointerType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SpinButtonActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the linked cell.
+// Returns:
+//   string  
+func (instance *SpinButtonActiveXControl) GetLinkedCell()  (string,  error)  {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_GetLinkedCell( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the linked cell.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *SpinButtonActiveXControl) SetLinkedCell(value string)  error {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the list fill range.
+// Returns:
+//   string  
+func (instance *SpinButtonActiveXControl) GetListFillRange()  (string,  error)  {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_GetListFillRange( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the list fill range.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *SpinButtonActiveXControl) SetListFillRange(value string)  error {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *SpinButtonActiveXControl) GetWidth()  (float64,  error)  {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_GetWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *SpinButtonActiveXControl) SetWidth(value float64)  error {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_SetWidth( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *SpinButtonActiveXControl) GetHeight()  (float64,  error)  {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_GetHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *SpinButtonActiveXControl) SetHeight(value float64)  error {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_SetHeight( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the foreground.
+// Returns:
+//   int32  
+func (instance *SpinButtonActiveXControl) GetForeOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_GetForeOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the foreground.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SpinButtonActiveXControl) SetForeOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the background.
+// Returns:
+//   int32  
+func (instance *SpinButtonActiveXControl) GetBackOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_GetBackOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the background.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SpinButtonActiveXControl) SetBackOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether this control is visible.
+// Returns:
+//   bool  
+func (instance *SpinButtonActiveXControl) IsVisible()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_IsVisible( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether this control is visible.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SpinButtonActiveXControl) SetIsVisible(value bool)  error {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to show a shadow.
+// Returns:
+//   bool  
+func (instance *SpinButtonActiveXControl) GetShadow()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_GetShadow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to show a shadow.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SpinButtonActiveXControl) SetShadow(value bool)  error {
+	
+	CGoReturnPtr := C.SpinButtonActiveXControl_SetShadow( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7192,6 +10409,316 @@ func (instance *TextBoxActiveXControl) SetIsAutoSize(value bool)  error {
 
 	return nil 
 }
+// Gets the <see cref="Workbook"/> object.
+// Returns:
+//   Workbook  
+func (instance *TextBoxActiveXControl) GetWorkbook()  (*Workbook,  error)  {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_GetWorkbook( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Workbook{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteWorkbook) 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Returns:
+//   []byte  
+func (instance *TextBoxActiveXControl) GetMouseIcon()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_GetMouseIcon( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Parameters:
+//   value - []byte 
+// Returns:
+//   void  
+func (instance *TextBoxActiveXControl) SetMouseIcon(value []byte)  error {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Returns:
+//   int32  
+func (instance *TextBoxActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_GetMousePointer( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToControlMousePointerType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TextBoxActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the linked cell.
+// Returns:
+//   string  
+func (instance *TextBoxActiveXControl) GetLinkedCell()  (string,  error)  {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_GetLinkedCell( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the linked cell.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *TextBoxActiveXControl) SetLinkedCell(value string)  error {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the list fill range.
+// Returns:
+//   string  
+func (instance *TextBoxActiveXControl) GetListFillRange()  (string,  error)  {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_GetListFillRange( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the list fill range.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *TextBoxActiveXControl) SetListFillRange(value string)  error {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *TextBoxActiveXControl) GetWidth()  (float64,  error)  {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_GetWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *TextBoxActiveXControl) SetWidth(value float64)  error {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_SetWidth( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *TextBoxActiveXControl) GetHeight()  (float64,  error)  {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_GetHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *TextBoxActiveXControl) SetHeight(value float64)  error {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_SetHeight( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the foreground.
+// Returns:
+//   int32  
+func (instance *TextBoxActiveXControl) GetForeOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_GetForeOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the foreground.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TextBoxActiveXControl) SetForeOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the background.
+// Returns:
+//   int32  
+func (instance *TextBoxActiveXControl) GetBackOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_GetBackOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the background.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TextBoxActiveXControl) SetBackOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether this control is visible.
+// Returns:
+//   bool  
+func (instance *TextBoxActiveXControl) IsVisible()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_IsVisible( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether this control is visible.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TextBoxActiveXControl) SetIsVisible(value bool)  error {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to show a shadow.
+// Returns:
+//   bool  
+func (instance *TextBoxActiveXControl) GetShadow()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_GetShadow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to show a shadow.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TextBoxActiveXControl) SetShadow(value bool)  error {
+	
+	CGoReturnPtr := C.TextBoxActiveXControl_SetShadow( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 
 
 func DeleteTextBoxActiveXControl(textboxactivexcontrol *TextBoxActiveXControl){
@@ -7679,6 +11206,316 @@ func (instance *ToggleButtonActiveXControl) SetIsAutoSize(value bool)  error {
 
 	return nil 
 }
+// Gets the <see cref="Workbook"/> object.
+// Returns:
+//   Workbook  
+func (instance *ToggleButtonActiveXControl) GetWorkbook()  (*Workbook,  error)  {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_GetWorkbook( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Workbook{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteWorkbook) 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Returns:
+//   []byte  
+func (instance *ToggleButtonActiveXControl) GetMouseIcon()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_GetMouseIcon( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Parameters:
+//   value - []byte 
+// Returns:
+//   void  
+func (instance *ToggleButtonActiveXControl) SetMouseIcon(value []byte)  error {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Returns:
+//   int32  
+func (instance *ToggleButtonActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_GetMousePointer( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToControlMousePointerType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ToggleButtonActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the linked cell.
+// Returns:
+//   string  
+func (instance *ToggleButtonActiveXControl) GetLinkedCell()  (string,  error)  {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_GetLinkedCell( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the linked cell.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *ToggleButtonActiveXControl) SetLinkedCell(value string)  error {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the list fill range.
+// Returns:
+//   string  
+func (instance *ToggleButtonActiveXControl) GetListFillRange()  (string,  error)  {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_GetListFillRange( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the list fill range.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *ToggleButtonActiveXControl) SetListFillRange(value string)  error {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *ToggleButtonActiveXControl) GetWidth()  (float64,  error)  {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_GetWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *ToggleButtonActiveXControl) SetWidth(value float64)  error {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_SetWidth( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *ToggleButtonActiveXControl) GetHeight()  (float64,  error)  {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_GetHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *ToggleButtonActiveXControl) SetHeight(value float64)  error {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_SetHeight( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the foreground.
+// Returns:
+//   int32  
+func (instance *ToggleButtonActiveXControl) GetForeOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_GetForeOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the foreground.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ToggleButtonActiveXControl) SetForeOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the background.
+// Returns:
+//   int32  
+func (instance *ToggleButtonActiveXControl) GetBackOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_GetBackOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the background.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ToggleButtonActiveXControl) SetBackOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether this control is visible.
+// Returns:
+//   bool  
+func (instance *ToggleButtonActiveXControl) IsVisible()  (bool,  error)  {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_IsVisible( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether this control is visible.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *ToggleButtonActiveXControl) SetIsVisible(value bool)  error {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to show a shadow.
+// Returns:
+//   bool  
+func (instance *ToggleButtonActiveXControl) GetShadow()  (bool,  error)  {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_GetShadow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to show a shadow.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *ToggleButtonActiveXControl) SetShadow(value bool)  error {
+	
+	CGoReturnPtr := C.ToggleButtonActiveXControl_SetShadow( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 
 
 func DeleteToggleButtonActiveXControl(togglebuttonactivexcontrol *ToggleButtonActiveXControl){
@@ -7963,6 +11800,316 @@ func (instance *UnknownControl) IsAutoSize()  (bool,  error)  {
 func (instance *UnknownControl) SetIsAutoSize(value bool)  error {
 	
 	CGoReturnPtr := C.UnknownControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the <see cref="Workbook"/> object.
+// Returns:
+//   Workbook  
+func (instance *UnknownControl) GetWorkbook()  (*Workbook,  error)  {
+	
+	CGoReturnPtr := C.UnknownControl_GetWorkbook( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Workbook{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteWorkbook) 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Returns:
+//   []byte  
+func (instance *UnknownControl) GetMouseIcon()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.UnknownControl_GetMouseIcon( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Gets and sets a custom icon to display as the mouse pointer for the control.
+// Parameters:
+//   value - []byte 
+// Returns:
+//   void  
+func (instance *UnknownControl) SetMouseIcon(value []byte)  error {
+	
+	CGoReturnPtr := C.UnknownControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Returns:
+//   int32  
+func (instance *UnknownControl) GetMousePointer()  (ControlMousePointerType,  error)  {
+	
+	CGoReturnPtr := C.UnknownControl_GetMousePointer( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToControlMousePointerType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the type of icon displayed as the mouse pointer for the control.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *UnknownControl) SetMousePointer(value ControlMousePointerType)  error {
+	
+	CGoReturnPtr := C.UnknownControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the linked cell.
+// Returns:
+//   string  
+func (instance *UnknownControl) GetLinkedCell()  (string,  error)  {
+	
+	CGoReturnPtr := C.UnknownControl_GetLinkedCell( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the linked cell.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *UnknownControl) SetLinkedCell(value string)  error {
+	
+	CGoReturnPtr := C.UnknownControl_SetLinkedCell( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the list fill range.
+// Returns:
+//   string  
+func (instance *UnknownControl) GetListFillRange()  (string,  error)  {
+	
+	CGoReturnPtr := C.UnknownControl_GetListFillRange( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the list fill range.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *UnknownControl) SetListFillRange(value string)  error {
+	
+	CGoReturnPtr := C.UnknownControl_SetListFillRange( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *UnknownControl) GetWidth()  (float64,  error)  {
+	
+	CGoReturnPtr := C.UnknownControl_GetWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the width of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *UnknownControl) SetWidth(value float64)  error {
+	
+	CGoReturnPtr := C.UnknownControl_SetWidth( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Returns:
+//   float64  
+func (instance *UnknownControl) GetHeight()  (float64,  error)  {
+	
+	CGoReturnPtr := C.UnknownControl_GetHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the height of the control in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *UnknownControl) SetHeight(value float64)  error {
+	
+	CGoReturnPtr := C.UnknownControl_SetHeight( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the foreground.
+// Returns:
+//   int32  
+func (instance *UnknownControl) GetForeOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.UnknownControl_GetForeOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the foreground.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *UnknownControl) SetForeOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.UnknownControl_SetForeOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the ole color of the background.
+// Returns:
+//   int32  
+func (instance *UnknownControl) GetBackOleColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.UnknownControl_GetBackOleColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the ole color of the background.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *UnknownControl) SetBackOleColor(value int32)  error {
+	
+	CGoReturnPtr := C.UnknownControl_SetBackOleColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether this control is visible.
+// Returns:
+//   bool  
+func (instance *UnknownControl) IsVisible()  (bool,  error)  {
+	
+	CGoReturnPtr := C.UnknownControl_IsVisible( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether this control is visible.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *UnknownControl) SetIsVisible(value bool)  error {
+	
+	CGoReturnPtr := C.UnknownControl_SetIsVisible( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to show a shadow.
+// Returns:
+//   bool  
+func (instance *UnknownControl) GetShadow()  (bool,  error)  {
+	
+	CGoReturnPtr := C.UnknownControl_GetShadow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to show a shadow.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *UnknownControl) SetShadow(value bool)  error {
+	
+	CGoReturnPtr := C.UnknownControl_SetShadow( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

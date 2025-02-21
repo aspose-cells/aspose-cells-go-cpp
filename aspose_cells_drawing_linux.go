@@ -1,7 +1,11 @@
 // +build linux
 
-// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
-// Powered by Aspose.Cells.
+/* ----------------------------------------------------------------
+ * Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
+ * Powered by Aspose.Cells.
+ * ---------------------------------------------------------------*/
+
+
 package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
@@ -11,7 +15,8 @@ package asposecells
 import "C"
 import (
 	"fmt"  
-	"errors"
+ 	
+	"errors"	
 	"runtime"
 	"unsafe" 
 )
@@ -5958,19 +5963,20 @@ func (instance *ArcShape) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *ArcShape) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *ArcShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ArcShape_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.ArcShape_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -9296,19 +9302,20 @@ func (instance *Button) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *Button) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *Button) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Button_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.Button_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -12252,19 +12259,20 @@ func (instance *CellsDrawing) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *CellsDrawing) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *CellsDrawing) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsDrawing_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsDrawing_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -15225,19 +15233,20 @@ func (instance *ChartShape) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *ChartShape) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *ChartShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ChartShape_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.ChartShape_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -18271,19 +18280,20 @@ func (instance *CheckBox) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *CheckBox) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *CheckBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CheckBox_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.CheckBox_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -21490,19 +21500,20 @@ func (instance *ComboBox) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *ComboBox) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *ComboBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ComboBox_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.ComboBox_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -24462,19 +24473,20 @@ func (instance *CommentShape) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *CommentShape) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *CommentShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CommentShape_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.CommentShape_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -27496,19 +27508,20 @@ func (instance *CustomXmlShape) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *CustomXmlShape) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *CustomXmlShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CustomXmlShape_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.CustomXmlShape_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -30452,19 +30465,20 @@ func (instance *Dialog_Box) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *Dialog_Box) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *Dialog_Box) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Dialog_Box_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.Dialog_Box_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -34703,19 +34717,20 @@ func (instance *GroupBox) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *GroupBox) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *GroupBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.GroupBox_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.GroupBox_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -37741,19 +37756,20 @@ func (instance *GroupShape) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *GroupShape) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *GroupShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.GroupShape_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.GroupShape_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -40697,19 +40713,20 @@ func (instance *Label) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *Label) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *Label) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Label_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.Label_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -45228,19 +45245,20 @@ func (instance *LineShape) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *LineShape) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *LineShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.LineShape_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.LineShape_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -48375,19 +48393,20 @@ func (instance *ListBox) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *ListBox) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *ListBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ListBox_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.ListBox_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -53475,19 +53494,20 @@ func (instance *OleObject) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *OleObject) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *OleObject) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.OleObject_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.OleObject_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -56561,19 +56581,20 @@ func (instance *Oval) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *Oval) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *Oval) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Oval_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.Oval_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -60440,19 +60461,20 @@ func (instance *Picture) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *Picture) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *Picture) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Picture_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.Picture_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -63673,19 +63695,20 @@ func (instance *RadioButton) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *RadioButton) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *RadioButton) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.RadioButton_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.RadioButton_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -66629,19 +66652,20 @@ func (instance *RectangleShape) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *RectangleShape) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *RectangleShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.RectangleShape_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.RectangleShape_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -70053,19 +70077,20 @@ func (instance *ScrollBar) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *ScrollBar) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *ScrollBar) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ScrollBar_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.ScrollBar_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -73233,19 +73258,20 @@ func (instance *Shape) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *Shape) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *Shape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Shape_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.Shape_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -75154,6 +75180,31 @@ func (instance *ShapeCollection) DeleteShape(shape *Shape)  error {
 
 	return nil 
 }
+// Group the shapes.
+// Parameters:
+//   groupItems - []Shape 
+// Returns:
+//   GroupShape  
+func (instance *ShapeCollection) Group(groupitems []Shape)  (*GroupShape,  error)  {
+	
+	groupitems_length := len(groupitems)
+	vector_groupitems:= make([]unsafe.Pointer, groupitems_length)
+	for i := 0; i < groupitems_length; i++ {
+		vector_groupitems[i] = groupitems[i].ptr
+	}
+
+
+	CGoReturnPtr := C.ShapeCollection_Group( instance.ptr, unsafe.Pointer(&vector_groupitems[0]), C.int( len(groupitems)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &GroupShape{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteGroupShape) 
+
+	return result, nil 
+}
 // Ungroups the shape items.
 // Parameters:
 //   group - GroupShape 
@@ -75224,6 +75275,37 @@ func (instance *ShapeCollection) UpdateSelectedValue()  error {
 	}
 
 	return nil 
+}
+// Adds a freeform shape to the worksheet.
+// Parameters:
+//   upperLeftRow - int32 
+//   top - int32 
+//   upperLeftColumn - int32 
+//   left - int32 
+//   height - int32 
+//   width - int32 
+//   paths - []ShapePath 
+// Returns:
+//   Shape  
+func (instance *ShapeCollection) AddFreeform(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32, paths []ShapePath)  (*Shape,  error)  {
+	
+	paths_length := len(paths)
+	vector_paths:= make([]unsafe.Pointer, paths_length)
+	for i := 0; i < paths_length; i++ {
+		vector_paths[i] = paths[i].ptr
+	}
+
+
+	CGoReturnPtr := C.ShapeCollection_AddFreeform( instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&vector_paths[0]), C.int( len(paths)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Shape{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteShape) 
+
+	return result, nil 
 }
 // Adds a Signature Line to the worksheet.
 // Parameters:
@@ -78582,19 +78664,20 @@ func (instance *SmartArtShape) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *SmartArtShape) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *SmartArtShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.SmartArtShape_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.SmartArtShape_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -81845,19 +81928,20 @@ func (instance *Spinner) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *Spinner) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *Spinner) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Spinner_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.Spinner_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -84838,19 +84922,20 @@ func (instance *TextBox) GetConnectionPoints()  ([][]float32,  error)  {
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *TextBox) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *TextBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.TextBox_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.TextBox_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:
@@ -89422,19 +89507,20 @@ func (instance *WebExtensionShape) GetConnectionPoints()  ([][]float32,  error) 
 }
 // Creates the shape image and saves it to a stream in the specified format.
 // Parameters:
-//   stream - []byte 
 //   imageType - int32 
 // Returns:
-//   void  
-func (instance *WebExtensionShape) ToImage_Stream_ImageType(stream []byte, imagetype ImageType)  error {
+//   []byte  
+func (instance *WebExtensionShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.WebExtensionShape_ToImage_Stream_ImageType( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int( int32(imagetype)))
+	CGoReturnPtr := C.WebExtensionShape_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		return  nil, err
 	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
 
-	return nil 
+	return result, nil 
 }
 // Saves the shape to a file.
 // Parameters:

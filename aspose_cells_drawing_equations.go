@@ -1,7 +1,11 @@
 // +build windows
 
-// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
-// Powered by Aspose.Cells.
+/* ----------------------------------------------------------------
+ * Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
+ * Powered by Aspose.Cells.
+ * ---------------------------------------------------------------*/
+
+
 package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
@@ -11,7 +15,8 @@ package asposecells
 import "C"
 import (
 	"fmt"  
-	"errors"
+ 	
+	"errors"	
 	"runtime"
 	"unsafe" 
 )
@@ -724,6 +729,98 @@ func (instance *AccentEquationNode) Equals(obj *Object)  (bool,  error)  {
 
 	return result, nil 
 }
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *AccentEquationNode) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.AccentEquationNode_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *AccentEquationNode) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.AccentEquationNode_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *AccentEquationNode) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.AccentEquationNode_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *AccentEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.AccentEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *AccentEquationNode) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.AccentEquationNode_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *AccentEquationNode) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.AccentEquationNode_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
 // Specifies the parent node of the current node
 // Returns:
 //   EquationNode  
@@ -945,23 +1042,6 @@ func (instance *AccentEquationNode) RemoveAllChildren()  error {
 
 	return nil 
 }
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *AccentEquationNode) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.AccentEquationNode_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
 // Get the equation type of the current node
 // Returns:
 //   int32  
@@ -1058,6 +1138,98 @@ func (instance *ArrayEquationNode) Equals(obj *Object)  (bool,  error)  {
 		return  true, err
 	}
 	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *ArrayEquationNode) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ArrayEquationNode_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *ArrayEquationNode) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ArrayEquationNode_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *ArrayEquationNode) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.ArrayEquationNode_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *ArrayEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.ArrayEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *ArrayEquationNode) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.ArrayEquationNode_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *ArrayEquationNode) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.ArrayEquationNode_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
 
 	return result, nil 
 }
@@ -1282,23 +1454,6 @@ func (instance *ArrayEquationNode) RemoveAllChildren()  error {
 
 	return nil 
 }
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *ArrayEquationNode) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.ArrayEquationNode_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
 // Get the equation type of the current node
 // Returns:
 //   int32  
@@ -1427,6 +1582,98 @@ func (instance *BarEquationNode) Equals(obj *Object)  (bool,  error)  {
 		return  true, err
 	}
 	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *BarEquationNode) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.BarEquationNode_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *BarEquationNode) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.BarEquationNode_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *BarEquationNode) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.BarEquationNode_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *BarEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.BarEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *BarEquationNode) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.BarEquationNode_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *BarEquationNode) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.BarEquationNode_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
 
 	return result, nil 
 }
@@ -1651,23 +1898,6 @@ func (instance *BarEquationNode) RemoveAllChildren()  error {
 
 	return nil 
 }
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *BarEquationNode) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.BarEquationNode_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
 // Get the equation type of the current node
 // Returns:
 //   int32  
@@ -1764,6 +1994,98 @@ func (instance *BorderBoxEquationNode) Equals(obj *Object)  (bool,  error)  {
 		return  true, err
 	}
 	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *BorderBoxEquationNode) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.BorderBoxEquationNode_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *BorderBoxEquationNode) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.BorderBoxEquationNode_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *BorderBoxEquationNode) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.BorderBoxEquationNode_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *BorderBoxEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.BorderBoxEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *BorderBoxEquationNode) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.BorderBoxEquationNode_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *BorderBoxEquationNode) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.BorderBoxEquationNode_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
 
 	return result, nil 
 }
@@ -1988,23 +2310,6 @@ func (instance *BorderBoxEquationNode) RemoveAllChildren()  error {
 
 	return nil 
 }
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *BorderBoxEquationNode) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.BorderBoxEquationNode_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
 // Get the equation type of the current node
 // Returns:
 //   int32  
@@ -2101,6 +2406,98 @@ func (instance *BoxEquationNode) Equals(obj *Object)  (bool,  error)  {
 		return  true, err
 	}
 	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *BoxEquationNode) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.BoxEquationNode_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *BoxEquationNode) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.BoxEquationNode_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *BoxEquationNode) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.BoxEquationNode_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *BoxEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.BoxEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *BoxEquationNode) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.BoxEquationNode_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *BoxEquationNode) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.BoxEquationNode_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
 
 	return result, nil 
 }
@@ -2324,23 +2721,6 @@ func (instance *BoxEquationNode) RemoveAllChildren()  error {
 	}
 
 	return nil 
-}
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *BoxEquationNode) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.BoxEquationNode_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
 }
 // Get the equation type of the current node
 // Returns:
@@ -2588,6 +2968,98 @@ func (instance *DelimiterEquationNode) Equals(obj *Object)  (bool,  error)  {
 
 	return result, nil 
 }
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *DelimiterEquationNode) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DelimiterEquationNode_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *DelimiterEquationNode) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DelimiterEquationNode_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *DelimiterEquationNode) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.DelimiterEquationNode_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *DelimiterEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.DelimiterEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *DelimiterEquationNode) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.DelimiterEquationNode_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *DelimiterEquationNode) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.DelimiterEquationNode_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
 // Specifies the parent node of the current node
 // Returns:
 //   EquationNode  
@@ -2809,23 +3281,6 @@ func (instance *DelimiterEquationNode) RemoveAllChildren()  error {
 
 	return nil 
 }
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *DelimiterEquationNode) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.DelimiterEquationNode_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
 // Get the equation type of the current node
 // Returns:
 //   int32  
@@ -2925,6 +3380,98 @@ func (instance *EquationComponentNode) Equals(obj *Object)  (bool,  error)  {
 		return  true, err
 	}
 	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *EquationComponentNode) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.EquationComponentNode_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *EquationComponentNode) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.EquationComponentNode_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *EquationComponentNode) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.EquationComponentNode_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *EquationComponentNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.EquationComponentNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *EquationComponentNode) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.EquationComponentNode_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *EquationComponentNode) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.EquationComponentNode_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
 
 	return result, nil 
 }
@@ -3148,23 +3695,6 @@ func (instance *EquationComponentNode) RemoveAllChildren()  error {
 	}
 
 	return nil 
-}
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *EquationComponentNode) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.EquationComponentNode_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
 }
 // Get the equation type of the current node
 // Returns:
@@ -3709,6 +4239,98 @@ func (instance *EquationNodeParagraph) Equals(obj *Object)  (bool,  error)  {
 
 	return result, nil 
 }
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *EquationNodeParagraph) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.EquationNodeParagraph_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *EquationNodeParagraph) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.EquationNodeParagraph_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *EquationNodeParagraph) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.EquationNodeParagraph_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *EquationNodeParagraph) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.EquationNodeParagraph_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *EquationNodeParagraph) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.EquationNodeParagraph_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *EquationNodeParagraph) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.EquationNodeParagraph_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
 // Specifies the parent node of the current node
 // Returns:
 //   EquationNode  
@@ -3930,23 +4552,6 @@ func (instance *EquationNodeParagraph) RemoveAllChildren()  error {
 
 	return nil 
 }
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *EquationNodeParagraph) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.EquationNodeParagraph_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
 // Get the equation type of the current node
 // Returns:
 //   int32  
@@ -4075,6 +4680,98 @@ func (instance *FractionEquationNode) Equals(obj *Object)  (bool,  error)  {
 		return  true, err
 	}
 	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *FractionEquationNode) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.FractionEquationNode_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *FractionEquationNode) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.FractionEquationNode_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *FractionEquationNode) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.FractionEquationNode_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *FractionEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.FractionEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *FractionEquationNode) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.FractionEquationNode_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *FractionEquationNode) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.FractionEquationNode_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
 
 	return result, nil 
 }
@@ -4299,23 +4996,6 @@ func (instance *FractionEquationNode) RemoveAllChildren()  error {
 
 	return nil 
 }
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *FractionEquationNode) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.FractionEquationNode_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
 // Get the equation type of the current node
 // Returns:
 //   int32  
@@ -4413,6 +5093,98 @@ func (instance *FunctionEquationNode) Equals(obj *Object)  (bool,  error)  {
 		return  true, err
 	}
 	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *FunctionEquationNode) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.FunctionEquationNode_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *FunctionEquationNode) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.FunctionEquationNode_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *FunctionEquationNode) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.FunctionEquationNode_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *FunctionEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.FunctionEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *FunctionEquationNode) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.FunctionEquationNode_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *FunctionEquationNode) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.FunctionEquationNode_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
 
 	return result, nil 
 }
@@ -4636,23 +5408,6 @@ func (instance *FunctionEquationNode) RemoveAllChildren()  error {
 	}
 
 	return nil 
-}
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *FunctionEquationNode) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.FunctionEquationNode_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
 }
 // Get the equation type of the current node
 // Returns:
@@ -4882,6 +5637,98 @@ func (instance *GroupCharacterEquationNode) Equals(obj *Object)  (bool,  error) 
 
 	return result, nil 
 }
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *GroupCharacterEquationNode) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.GroupCharacterEquationNode_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *GroupCharacterEquationNode) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.GroupCharacterEquationNode_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *GroupCharacterEquationNode) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.GroupCharacterEquationNode_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *GroupCharacterEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.GroupCharacterEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *GroupCharacterEquationNode) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.GroupCharacterEquationNode_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *GroupCharacterEquationNode) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.GroupCharacterEquationNode_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
 // Specifies the parent node of the current node
 // Returns:
 //   EquationNode  
@@ -5103,23 +5950,6 @@ func (instance *GroupCharacterEquationNode) RemoveAllChildren()  error {
 
 	return nil 
 }
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *GroupCharacterEquationNode) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.GroupCharacterEquationNode_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
 // Get the equation type of the current node
 // Returns:
 //   int32  
@@ -5216,6 +6046,98 @@ func (instance *LimLowUppEquationNode) Equals(obj *Object)  (bool,  error)  {
 		return  true, err
 	}
 	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *LimLowUppEquationNode) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.LimLowUppEquationNode_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *LimLowUppEquationNode) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.LimLowUppEquationNode_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *LimLowUppEquationNode) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.LimLowUppEquationNode_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *LimLowUppEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.LimLowUppEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *LimLowUppEquationNode) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.LimLowUppEquationNode_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *LimLowUppEquationNode) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.LimLowUppEquationNode_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
 
 	return result, nil 
 }
@@ -5440,23 +6362,6 @@ func (instance *LimLowUppEquationNode) RemoveAllChildren()  error {
 
 	return nil 
 }
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *LimLowUppEquationNode) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.LimLowUppEquationNode_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
 // Get the equation type of the current node
 // Returns:
 //   int32  
@@ -5553,6 +6458,98 @@ func (instance *MathematicalEquationNode) Equals(obj *Object)  (bool,  error)  {
 		return  true, err
 	}
 	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *MathematicalEquationNode) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.MathematicalEquationNode_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *MathematicalEquationNode) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.MathematicalEquationNode_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *MathematicalEquationNode) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.MathematicalEquationNode_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *MathematicalEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.MathematicalEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *MathematicalEquationNode) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.MathematicalEquationNode_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *MathematicalEquationNode) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.MathematicalEquationNode_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
 
 	return result, nil 
 }
@@ -5777,23 +6774,6 @@ func (instance *MathematicalEquationNode) RemoveAllChildren()  error {
 
 	return nil 
 }
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *MathematicalEquationNode) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.MathematicalEquationNode_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
 // Get the equation type of the current node
 // Returns:
 //   int32  
@@ -5951,6 +6931,98 @@ func (instance *MatrixEquationNode) Equals(obj *Object)  (bool,  error)  {
 		return  true, err
 	}
 	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *MatrixEquationNode) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.MatrixEquationNode_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *MatrixEquationNode) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.MatrixEquationNode_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *MatrixEquationNode) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.MatrixEquationNode_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *MatrixEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.MatrixEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *MatrixEquationNode) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.MatrixEquationNode_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *MatrixEquationNode) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.MatrixEquationNode_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
 
 	return result, nil 
 }
@@ -6174,23 +7246,6 @@ func (instance *MatrixEquationNode) RemoveAllChildren()  error {
 	}
 
 	return nil 
-}
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *MatrixEquationNode) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.MatrixEquationNode_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
 }
 // Get the equation type of the current node
 // Returns:
@@ -6475,6 +7530,98 @@ func (instance *NaryEquationNode) Equals(obj *Object)  (bool,  error)  {
 
 	return result, nil 
 }
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *NaryEquationNode) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.NaryEquationNode_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *NaryEquationNode) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.NaryEquationNode_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *NaryEquationNode) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.NaryEquationNode_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *NaryEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.NaryEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *NaryEquationNode) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.NaryEquationNode_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *NaryEquationNode) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.NaryEquationNode_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
 // Specifies the parent node of the current node
 // Returns:
 //   EquationNode  
@@ -6696,23 +7843,6 @@ func (instance *NaryEquationNode) RemoveAllChildren()  error {
 
 	return nil 
 }
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *NaryEquationNode) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.NaryEquationNode_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
 // Get the equation type of the current node
 // Returns:
 //   int32  
@@ -6838,6 +7968,98 @@ func (instance *RadicalEquationNode) Equals(obj *Object)  (bool,  error)  {
 		return  true, err
 	}
 	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *RadicalEquationNode) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.RadicalEquationNode_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *RadicalEquationNode) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.RadicalEquationNode_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *RadicalEquationNode) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.RadicalEquationNode_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *RadicalEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.RadicalEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *RadicalEquationNode) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.RadicalEquationNode_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *RadicalEquationNode) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.RadicalEquationNode_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
 
 	return result, nil 
 }
@@ -7062,23 +8284,6 @@ func (instance *RadicalEquationNode) RemoveAllChildren()  error {
 
 	return nil 
 }
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *RadicalEquationNode) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.RadicalEquationNode_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
 // Get the equation type of the current node
 // Returns:
 //   int32  
@@ -7176,6 +8381,98 @@ func (instance *SubSupEquationNode) Equals(obj *Object)  (bool,  error)  {
 		return  true, err
 	}
 	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *SubSupEquationNode) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SubSupEquationNode_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *SubSupEquationNode) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SubSupEquationNode_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *SubSupEquationNode) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.SubSupEquationNode_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *SubSupEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.SubSupEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *SubSupEquationNode) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.SubSupEquationNode_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *SubSupEquationNode) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.SubSupEquationNode_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
 
 	return result, nil 
 }
@@ -7400,23 +8697,6 @@ func (instance *SubSupEquationNode) RemoveAllChildren()  error {
 
 	return nil 
 }
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *SubSupEquationNode) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.SubSupEquationNode_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
 // Get the equation type of the current node
 // Returns:
 //   int32  
@@ -7543,6 +8823,98 @@ func (instance *TextRunEquationNode) Equals(obj *Object)  (bool,  error)  {
 		return  true, err
 	}
 	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *TextRunEquationNode) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TextRunEquationNode_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *TextRunEquationNode) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TextRunEquationNode_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *TextRunEquationNode) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.TextRunEquationNode_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *TextRunEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.TextRunEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *TextRunEquationNode) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.TextRunEquationNode_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *TextRunEquationNode) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.TextRunEquationNode_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
 
 	return result, nil 
 }
@@ -7767,23 +9139,6 @@ func (instance *TextRunEquationNode) RemoveAllChildren()  error {
 
 	return nil 
 }
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *TextRunEquationNode) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.TextRunEquationNode_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
 // Get the equation type of the current node
 // Returns:
 //   int32  
@@ -7880,6 +9235,98 @@ func (instance *UnknowEquationNode) Equals(obj *Object)  (bool,  error)  {
 		return  true, err
 	}
 	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the start index of the characters.
+// Returns:
+//   int32  
+func (instance *UnknowEquationNode) GetStartIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.UnknowEquationNode_GetStartIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the length of the characters.
+// Returns:
+//   int32  
+func (instance *UnknowEquationNode) GetLength()  (int32,  error)  {
+	
+	CGoReturnPtr := C.UnknowEquationNode_GetLength( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the font of this object.
+// Returns:
+//   Font  
+func (instance *UnknowEquationNode) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.UnknowEquationNode_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Sets the preset WordArt style.
+// Parameters:
+//   style - int32 
+// Returns:
+//   void  
+func (instance *UnknowEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
+	
+	CGoReturnPtr := C.UnknowEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the text options.
+// Returns:
+//   TextOptions  
+func (instance *UnknowEquationNode) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.UnknowEquationNode_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Gets the type of text node.
+// Returns:
+//   int32  
+func (instance *UnknowEquationNode) GetType()  (TextNodeType,  error)  {
+	
+	CGoReturnPtr := C.UnknowEquationNode_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
 
 	return result, nil 
 }
@@ -8103,23 +9550,6 @@ func (instance *UnknowEquationNode) RemoveAllChildren()  error {
 	}
 
 	return nil 
-}
-// Represents the type of the node.
-// Returns:
-//   int32  
-func (instance *UnknowEquationNode) GetType()  (TextNodeType,  error)  {
-	
-	CGoReturnPtr := C.UnknowEquationNode_GetType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextNodeType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
 }
 // Get the equation type of the current node
 // Returns:

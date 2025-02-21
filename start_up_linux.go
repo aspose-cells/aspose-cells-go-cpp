@@ -1,8 +1,11 @@
-//go:build linux
 // +build linux
 
-// Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
-// Powered by Aspose.Cells.
+/* ----------------------------------------------------------------
+ * Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
+ * Powered by Aspose.Cells.
+ * ---------------------------------------------------------------*/
+
+
 package asposecells
 
 // #cgo CXXFLAGS: -std=c++11
@@ -13,9 +16,7 @@ import "C"
 import (
 	"unsafe"
 )
-
 var GlobalVar bool = false
-
 func init() {
 	if GlobalVar == false {
 		GlobalVar = true
@@ -24,20 +25,11 @@ func init() {
 }
 
 func Version() string {
-	println("---Version: v25.1.1---")
-	return "v25.1.1"
-}
-
+	println("---Version: v25.2.0---")
+	return "v25.2.0"
+} 
 type UUID struct {
 	ptr unsafe.Pointer
 }
 
-type Vector struct {
-	ptr       unsafe.Pointer
-	data_type string
-}
 
-type Enumerator struct {
-	ptr       unsafe.Pointer
-	data_type string
-}
