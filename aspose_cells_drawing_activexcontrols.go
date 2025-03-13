@@ -1214,6 +1214,12 @@ func (instance *ActiveXControl) SetShadow(value bool)  error {
 }
 
 
+func (instance *ActiveXControl) ToActiveXControlBase() *ActiveXControlBase {
+	parentClass := &ActiveXControlBase{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteActiveXControl(activexcontrol *ActiveXControl){
 	runtime.SetFinalizer(activexcontrol, nil)
 	C.Delete_ActiveXControl(activexcontrol.ptr)
@@ -1584,6 +1590,7 @@ func (instance *ActiveXControlBase) GetData()  ([]byte,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteActiveXControlBase(activexcontrolbase *ActiveXControlBase){
@@ -2472,6 +2479,17 @@ func (instance *CheckBoxActiveXControl) SetShadow(value bool)  error {
 	return nil 
 }
 
+
+func (instance *CheckBoxActiveXControl) ToActiveXControl() *ActiveXControl {
+	parentClass := &ActiveXControl{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *CheckBoxActiveXControl) ToActiveXControlBase() *ActiveXControlBase {
+	parentClass := &ActiveXControlBase{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteCheckBoxActiveXControl(checkboxactivexcontrol *CheckBoxActiveXControl){
 	runtime.SetFinalizer(checkboxactivexcontrol, nil)
@@ -3723,6 +3741,17 @@ func (instance *ComboBoxActiveXControl) SetShadow(value bool)  error {
 }
 
 
+func (instance *ComboBoxActiveXControl) ToActiveXControl() *ActiveXControl {
+	parentClass := &ActiveXControl{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *ComboBoxActiveXControl) ToActiveXControlBase() *ActiveXControlBase {
+	parentClass := &ActiveXControlBase{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteComboBoxActiveXControl(comboboxactivexcontrol *ComboBoxActiveXControl){
 	runtime.SetFinalizer(comboboxactivexcontrol, nil)
 	C.Delete_ComboBoxActiveXControl(comboboxactivexcontrol.ptr)
@@ -4484,6 +4513,17 @@ func (instance *CommandButtonActiveXControl) SetShadow(value bool)  error {
 	return nil 
 }
 
+
+func (instance *CommandButtonActiveXControl) ToActiveXControl() *ActiveXControl {
+	parentClass := &ActiveXControl{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *CommandButtonActiveXControl) ToActiveXControlBase() *ActiveXControlBase {
+	parentClass := &ActiveXControlBase{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteCommandButtonActiveXControl(commandbuttonactivexcontrol *CommandButtonActiveXControl){
 	runtime.SetFinalizer(commandbuttonactivexcontrol, nil)
@@ -5284,6 +5324,17 @@ func (instance *ImageActiveXControl) SetShadow(value bool)  error {
 	return nil 
 }
 
+
+func (instance *ImageActiveXControl) ToActiveXControl() *ActiveXControl {
+	parentClass := &ActiveXControl{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *ImageActiveXControl) ToActiveXControlBase() *ActiveXControlBase {
+	parentClass := &ActiveXControlBase{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteImageActiveXControl(imageactivexcontrol *ImageActiveXControl){
 	runtime.SetFinalizer(imageactivexcontrol, nil)
@@ -6110,6 +6161,17 @@ func (instance *LabelActiveXControl) SetShadow(value bool)  error {
 	return nil 
 }
 
+
+func (instance *LabelActiveXControl) ToActiveXControl() *ActiveXControl {
+	parentClass := &ActiveXControl{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *LabelActiveXControl) ToActiveXControlBase() *ActiveXControlBase {
+	parentClass := &ActiveXControlBase{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteLabelActiveXControl(labelactivexcontrol *LabelActiveXControl){
 	runtime.SetFinalizer(labelactivexcontrol, nil)
@@ -7150,6 +7212,17 @@ func (instance *ListBoxActiveXControl) SetShadow(value bool)  error {
 }
 
 
+func (instance *ListBoxActiveXControl) ToActiveXControl() *ActiveXControl {
+	parentClass := &ActiveXControl{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *ListBoxActiveXControl) ToActiveXControlBase() *ActiveXControlBase {
+	parentClass := &ActiveXControlBase{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteListBoxActiveXControl(listboxactivexcontrol *ListBoxActiveXControl){
 	runtime.SetFinalizer(listboxactivexcontrol, nil)
 	C.Delete_ListBoxActiveXControl(listboxactivexcontrol.ptr)
@@ -8037,6 +8110,22 @@ func (instance *RadioButtonActiveXControl) SetIsTripleState(value bool)  error {
 }
 
 
+func (instance *RadioButtonActiveXControl) ToToggleButtonActiveXControl() *ToggleButtonActiveXControl {
+	parentClass := &ToggleButtonActiveXControl{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *RadioButtonActiveXControl) ToActiveXControl() *ActiveXControl {
+	parentClass := &ActiveXControl{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *RadioButtonActiveXControl) ToActiveXControlBase() *ActiveXControlBase {
+	parentClass := &ActiveXControlBase{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteRadioButtonActiveXControl(radiobuttonactivexcontrol *RadioButtonActiveXControl){
 	runtime.SetFinalizer(radiobuttonactivexcontrol, nil)
 	C.Delete_RadioButtonActiveXControl(radiobuttonactivexcontrol.ptr)
@@ -8798,6 +8887,22 @@ func (instance *ScrollBarActiveXControl) SetOrientation(value ControlScrollOrien
 }
 
 
+func (instance *ScrollBarActiveXControl) ToSpinButtonActiveXControl() *SpinButtonActiveXControl {
+	parentClass := &SpinButtonActiveXControl{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *ScrollBarActiveXControl) ToActiveXControl() *ActiveXControl {
+	parentClass := &ActiveXControl{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *ScrollBarActiveXControl) ToActiveXControlBase() *ActiveXControlBase {
+	parentClass := &ActiveXControlBase{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteScrollBarActiveXControl(scrollbaractivexcontrol *ScrollBarActiveXControl){
 	runtime.SetFinalizer(scrollbaractivexcontrol, nil)
 	C.Delete_ScrollBarActiveXControl(scrollbaractivexcontrol.ptr)
@@ -9529,6 +9634,17 @@ func (instance *SpinButtonActiveXControl) SetShadow(value bool)  error {
 	return nil 
 }
 
+
+func (instance *SpinButtonActiveXControl) ToActiveXControl() *ActiveXControl {
+	parentClass := &ActiveXControl{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *SpinButtonActiveXControl) ToActiveXControlBase() *ActiveXControlBase {
+	parentClass := &ActiveXControlBase{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteSpinButtonActiveXControl(spinbuttonactivexcontrol *SpinButtonActiveXControl){
 	runtime.SetFinalizer(spinbuttonactivexcontrol, nil)
@@ -10721,6 +10837,17 @@ func (instance *TextBoxActiveXControl) SetShadow(value bool)  error {
 }
 
 
+func (instance *TextBoxActiveXControl) ToActiveXControl() *ActiveXControl {
+	parentClass := &ActiveXControl{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *TextBoxActiveXControl) ToActiveXControlBase() *ActiveXControlBase {
+	parentClass := &ActiveXControlBase{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteTextBoxActiveXControl(textboxactivexcontrol *TextBoxActiveXControl){
 	runtime.SetFinalizer(textboxactivexcontrol, nil)
 	C.Delete_TextBoxActiveXControl(textboxactivexcontrol.ptr)
@@ -11518,6 +11645,17 @@ func (instance *ToggleButtonActiveXControl) SetShadow(value bool)  error {
 }
 
 
+func (instance *ToggleButtonActiveXControl) ToActiveXControl() *ActiveXControl {
+	parentClass := &ActiveXControl{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *ToggleButtonActiveXControl) ToActiveXControlBase() *ActiveXControlBase {
+	parentClass := &ActiveXControlBase{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteToggleButtonActiveXControl(togglebuttonactivexcontrol *ToggleButtonActiveXControl){
 	runtime.SetFinalizer(togglebuttonactivexcontrol, nil)
 	C.Delete_ToggleButtonActiveXControl(togglebuttonactivexcontrol.ptr)
@@ -12118,6 +12256,17 @@ func (instance *UnknownControl) SetShadow(value bool)  error {
 	return nil 
 }
 
+
+func (instance *UnknownControl) ToActiveXControl() *ActiveXControl {
+	parentClass := &ActiveXControl{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *UnknownControl) ToActiveXControlBase() *ActiveXControlBase {
+	parentClass := &ActiveXControlBase{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteUnknownControl(unknowncontrol *UnknownControl){
 	runtime.SetFinalizer(unknowncontrol, nil)

@@ -161,6 +161,7 @@ func (instance *MetadataOptions) SetKeyLength(value int32)  error {
 }
 
 
+
 func DeleteMetadataOptions(metadataoptions *MetadataOptions){
 	runtime.SetFinalizer(metadataoptions, nil)
 	C.Delete_MetadataOptions(metadataoptions.ptr)
@@ -301,6 +302,7 @@ func (instance *WorkbookMetadata) Save_Stream(stream []byte)  error {
 
 	return nil 
 }
+
 
 
 func DeleteWorkbookMetadata(workbookmetadata *WorkbookMetadata){

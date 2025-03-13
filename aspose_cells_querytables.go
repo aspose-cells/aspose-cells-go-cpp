@@ -86,6 +86,7 @@ func (instance *DataMashup) GetPowerQueryFormulas()  (*PowerQueryFormulaCollecti
 }
 
 
+
 func DeleteDataMashup(datamashup *DataMashup){
 	runtime.SetFinalizer(datamashup, nil)
 	C.Delete_DataMashup(datamashup.ptr)
@@ -235,6 +236,7 @@ func (instance *PowerQueryFormula) GetFormulaDefinition()  (string,  error)  {
 }
 
 
+
 func DeletePowerQueryFormula(powerqueryformula *PowerQueryFormula){
 	runtime.SetFinalizer(powerqueryformula, nil)
 	C.Delete_PowerQueryFormula(powerqueryformula.ptr)
@@ -312,6 +314,7 @@ func (instance *PowerQueryFormulaCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeletePowerQueryFormulaCollection(powerqueryformulacollection *PowerQueryFormulaCollection){
@@ -508,6 +511,12 @@ func (instance *PowerQueryFormulaFunction) GetFormulaDefinition()  (string,  err
 }
 
 
+func (instance *PowerQueryFormulaFunction) ToPowerQueryFormula() *PowerQueryFormula {
+	parentClass := &PowerQueryFormula{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeletePowerQueryFormulaFunction(powerqueryformulafunction *PowerQueryFormulaFunction){
 	runtime.SetFinalizer(powerqueryformulafunction, nil)
 	C.Delete_PowerQueryFormulaFunction(powerqueryformulafunction.ptr)
@@ -579,6 +588,7 @@ func (instance *PowerQueryFormulaItem) SetValue(value string)  error {
 
 	return nil 
 }
+
 
 
 func DeletePowerQueryFormulaItem(powerqueryformulaitem *PowerQueryFormulaItem){
@@ -658,6 +668,7 @@ func (instance *PowerQueryFormulaItemCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeletePowerQueryFormulaItemCollection(powerqueryformulaitemcollection *PowerQueryFormulaItemCollection){
@@ -854,6 +865,12 @@ func (instance *PowerQueryFormulaParameter) GetPowerQueryFormulaItems()  (*Power
 }
 
 
+func (instance *PowerQueryFormulaParameter) ToPowerQueryFormula() *PowerQueryFormula {
+	parentClass := &PowerQueryFormula{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeletePowerQueryFormulaParameter(powerqueryformulaparameter *PowerQueryFormulaParameter){
 	runtime.SetFinalizer(powerqueryformulaparameter, nil)
 	C.Delete_PowerQueryFormulaParameter(powerqueryformulaparameter.ptr)
@@ -945,6 +962,7 @@ func (instance *PowerQueryFormulaParameterCollection) GetCount()  (int32,  error
 
 	return result, nil 
 }
+
 
 
 func DeletePowerQueryFormulaParameterCollection(powerqueryformulaparametercollection *PowerQueryFormulaParameterCollection){

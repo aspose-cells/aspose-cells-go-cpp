@@ -473,6 +473,12 @@ func (instance *DbfSaveOptions) SetEncryptDocumentProperties(value bool)  error 
 }
 
 
+func (instance *DbfSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteDbfSaveOptions(dbfsaveoptions *DbfSaveOptions){
 	runtime.SetFinalizer(dbfsaveoptions, nil)
 	C.Delete_DbfSaveOptions(dbfsaveoptions.ptr)
@@ -2888,6 +2894,17 @@ func (instance *EbookSaveOptions) SetEncryptDocumentProperties(value bool)  erro
 }
 
 
+func (instance *EbookSaveOptions) ToHtmlSaveOptions() *HtmlSaveOptions {
+	parentClass := &HtmlSaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *EbookSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteEbookSaveOptions(ebooksaveoptions *EbookSaveOptions){
 	runtime.SetFinalizer(ebooksaveoptions, nil)
 	C.Delete_EbookSaveOptions(ebooksaveoptions.ptr)
@@ -2958,6 +2975,7 @@ func (instance *SqlScriptColumnTypeMap) GetNumbericType()  (string,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteSqlScriptColumnTypeMap(sqlscriptcolumntypemap *SqlScriptColumnTypeMap){
@@ -3812,6 +3830,12 @@ func (instance *SqlScriptSaveOptions) SetEncryptDocumentProperties(value bool)  
 	return nil 
 }
 
+
+func (instance *SqlScriptSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteSqlScriptSaveOptions(sqlscriptsaveoptions *SqlScriptSaveOptions){
 	runtime.SetFinalizer(sqlscriptsaveoptions, nil)

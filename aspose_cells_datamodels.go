@@ -77,6 +77,7 @@ func (instance *DataModel) GetTables()  (*DataModelTableCollection,  error)  {
 }
 
 
+
 func DeleteDataModel(datamodel *DataModel){
 	runtime.SetFinalizer(datamodel, nil)
 	C.Delete_DataModel(datamodel.ptr)
@@ -163,6 +164,7 @@ func (instance *DataModelRelationship) GetPrimaryKeyColumn()  (string,  error)  
 }
 
 
+
 func DeleteDataModelRelationship(datamodelrelationship *DataModelRelationship){
 	runtime.SetFinalizer(datamodelrelationship, nil)
 	C.Delete_DataModelRelationship(datamodelrelationship.ptr)
@@ -222,6 +224,7 @@ func (instance *DataModelRelationshipCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteDataModelRelationshipCollection(datamodelrelationshipcollection *DataModelRelationshipCollection){
@@ -296,6 +299,7 @@ func (instance *DataModelTable) GetConnectionName()  (string,  error)  {
 }
 
 
+
 func DeleteDataModelTable(datamodeltable *DataModelTable){
 	runtime.SetFinalizer(datamodeltable, nil)
 	C.Delete_DataModelTable(datamodeltable.ptr)
@@ -329,9 +333,27 @@ func (instance *DataModelTableCollection) IsNull()  (bool,  error)  {
 //   index - int32 
 // Returns:
 //   DataModelTable  
-func (instance *DataModelTableCollection) Get(index int32)  (*DataModelTable,  error)  {
+func (instance *DataModelTableCollection) Get_Int(index int32)  (*DataModelTable,  error)  {
 	
-	CGoReturnPtr := C.DataModelTableCollection_Get( instance.ptr, C.int(index))
+	CGoReturnPtr := C.DataModelTableCollection_Get_Integer( instance.ptr, C.int(index))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &DataModelTable{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteDataModelTable) 
+
+	return result, nil 
+}
+// Gets the data model table by the name.
+// Parameters:
+//   name - string 
+// Returns:
+//   DataModelTable  
+func (instance *DataModelTableCollection) Get_String(name string)  (*DataModelTable,  error)  {
+	
+	CGoReturnPtr := C.DataModelTableCollection_Get_String( instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -355,6 +377,7 @@ func (instance *DataModelTableCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteDataModelTableCollection(datamodeltablecollection *DataModelTableCollection){

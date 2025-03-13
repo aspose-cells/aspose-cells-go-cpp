@@ -208,6 +208,7 @@ func (instance *WebExtension) GetBindings()  (*WebExtensionBindingCollection,  e
 }
 
 
+
 func DeleteWebExtension(webextension *WebExtension){
 	runtime.SetFinalizer(webextension, nil)
 	C.Delete_WebExtension(webextension.ptr)
@@ -339,6 +340,7 @@ func (instance *WebExtensionBinding) SetAppref(value string)  error {
 }
 
 
+
 func DeleteWebExtensionBinding(webextensionbinding *WebExtensionBinding){
 	runtime.SetFinalizer(webextensionbinding, nil)
 	C.Delete_WebExtensionBinding(webextensionbinding.ptr)
@@ -426,6 +428,7 @@ func (instance *WebExtensionBindingCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteWebExtensionBindingCollection(webextensionbindingcollection *WebExtensionBindingCollection){
@@ -537,6 +540,7 @@ func (instance *WebExtensionCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteWebExtensionCollection(webextensioncollection *WebExtensionCollection){
 	runtime.SetFinalizer(webextensioncollection, nil)
 	C.Delete_WebExtensionCollection(webextensioncollection.ptr)
@@ -623,6 +627,7 @@ func (instance *WebExtensionProperty) SetValue(value string)  error {
 
 	return nil 
 }
+
 
 
 func DeleteWebExtensionProperty(webextensionproperty *WebExtensionProperty){
@@ -748,6 +753,7 @@ func (instance *WebExtensionPropertyCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteWebExtensionPropertyCollection(webextensionpropertycollection *WebExtensionPropertyCollection){
@@ -901,6 +907,7 @@ func (instance *WebExtensionReference) SetStoreType(value WebExtensionStoreType)
 }
 
 
+
 func DeleteWebExtensionReference(webextensionreference *WebExtensionReference){
 	runtime.SetFinalizer(webextensionreference, nil)
 	C.Delete_WebExtensionReference(webextensionreference.ptr)
@@ -988,6 +995,7 @@ func (instance *WebExtensionReferenceCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteWebExtensionReferenceCollection(webextensionreferencecollection *WebExtensionReferenceCollection){
@@ -1196,6 +1204,7 @@ func (instance *WebExtensionTaskPane) SetRow(value int32)  error {
 }
 
 
+
 func DeleteWebExtensionTaskPane(webextensiontaskpane *WebExtensionTaskPane){
 	runtime.SetFinalizer(webextensiontaskpane, nil)
 	C.Delete_WebExtensionTaskPane(webextensiontaskpane.ptr)
@@ -1269,6 +1278,7 @@ func (instance *WebExtensionTaskPaneCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteWebExtensionTaskPaneCollection(webextensiontaskpanecollection *WebExtensionTaskPaneCollection){

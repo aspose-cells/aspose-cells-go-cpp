@@ -653,6 +653,12 @@ func (instance *DbfLoadOptions) SetPreservePaddingSpacesInFormula(value bool)  e
 }
 
 
+func (instance *DbfLoadOptions) ToLoadOptions() *LoadOptions {
+	parentClass := &LoadOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteDbfLoadOptions(dbfloadoptions *DbfLoadOptions){
 	runtime.SetFinalizer(dbfloadoptions, nil)
 	C.Delete_DbfLoadOptions(dbfloadoptions.ptr)
@@ -1290,6 +1296,12 @@ func (instance *DifLoadOptions) SetPreservePaddingSpacesInFormula(value bool)  e
 	return nil 
 }
 
+
+func (instance *DifLoadOptions) ToLoadOptions() *LoadOptions {
+	parentClass := &LoadOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteDifLoadOptions(difloadoptions *DifLoadOptions){
 	runtime.SetFinalizer(difloadoptions, nil)

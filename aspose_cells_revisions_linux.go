@@ -169,6 +169,7 @@ func (instance *HighlightChangesOptions) IsNull()  (bool,  error)  {
 }
 
 
+
 func DeleteHighlightChangesOptions(highlightchangesoptions *HighlightChangesOptions){
 	runtime.SetFinalizer(highlightchangesoptions, nil)
 	C.Delete_HighlightChangesOptions(highlightchangesoptions.ptr)
@@ -244,6 +245,7 @@ func (instance *Revision) GetType()  (RevisionType,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteRevision(revision *Revision){
@@ -354,6 +356,12 @@ func (instance *RevisionAutoFormat) GetId()  (int32,  error)  {
 	return result, nil 
 }
 
+
+func (instance *RevisionAutoFormat) ToRevision() *Revision {
+	parentClass := &Revision{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteRevisionAutoFormat(revisionautoformat *RevisionAutoFormat){
 	runtime.SetFinalizer(revisionautoformat, nil)
@@ -610,6 +618,12 @@ func (instance *RevisionCellChange) GetId()  (int32,  error)  {
 }
 
 
+func (instance *RevisionCellChange) ToRevision() *Revision {
+	parentClass := &Revision{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteRevisionCellChange(revisioncellchange *RevisionCellChange){
 	runtime.SetFinalizer(revisioncellchange, nil)
 	C.Delete_RevisionCellChange(revisioncellchange.ptr)
@@ -819,6 +833,12 @@ func (instance *RevisionCellComment) GetId()  (int32,  error)  {
 }
 
 
+func (instance *RevisionCellComment) ToRevision() *Revision {
+	parentClass := &Revision{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteRevisionCellComment(revisioncellcomment *RevisionCellComment){
 	runtime.SetFinalizer(revisioncellcomment, nil)
 	C.Delete_RevisionCellComment(revisioncellcomment.ptr)
@@ -960,6 +980,12 @@ func (instance *RevisionCellMove) GetId()  (int32,  error)  {
 }
 
 
+func (instance *RevisionCellMove) ToRevision() *Revision {
+	parentClass := &Revision{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteRevisionCellMove(revisioncellmove *RevisionCellMove){
 	runtime.SetFinalizer(revisioncellmove, nil)
 	C.Delete_RevisionCellMove(revisioncellmove.ptr)
@@ -1019,6 +1045,7 @@ func (instance *RevisionCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteRevisionCollection(revisioncollection *RevisionCollection){
@@ -1145,6 +1172,12 @@ func (instance *RevisionCustomView) GetId()  (int32,  error)  {
 	return result, nil 
 }
 
+
+func (instance *RevisionCustomView) ToRevision() *Revision {
+	parentClass := &Revision{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteRevisionCustomView(revisioncustomview *RevisionCustomView){
 	runtime.SetFinalizer(revisioncustomview, nil)
@@ -1281,6 +1314,12 @@ func (instance *RevisionDefinedName) GetId()  (int32,  error)  {
 }
 
 
+func (instance *RevisionDefinedName) ToRevision() *Revision {
+	parentClass := &Revision{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteRevisionDefinedName(revisiondefinedname *RevisionDefinedName){
 	runtime.SetFinalizer(revisiondefinedname, nil)
 	C.Delete_RevisionDefinedName(revisiondefinedname.ptr)
@@ -1411,6 +1450,12 @@ func (instance *RevisionFormat) GetId()  (int32,  error)  {
 }
 
 
+func (instance *RevisionFormat) ToRevision() *Revision {
+	parentClass := &Revision{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteRevisionFormat(revisionformat *RevisionFormat){
 	runtime.SetFinalizer(revisionformat, nil)
 	C.Delete_RevisionFormat(revisionformat.ptr)
@@ -1515,6 +1560,7 @@ func (instance *RevisionHeader) SetUserName(value string)  error {
 
 	return nil 
 }
+
 
 
 func DeleteRevisionHeader(revisionheader *RevisionHeader){
@@ -1659,6 +1705,12 @@ func (instance *RevisionInsertDelete) GetId()  (int32,  error)  {
 }
 
 
+func (instance *RevisionInsertDelete) ToRevision() *Revision {
+	parentClass := &Revision{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteRevisionInsertDelete(revisioninsertdelete *RevisionInsertDelete){
 	runtime.SetFinalizer(revisioninsertdelete, nil)
 	C.Delete_RevisionInsertDelete(revisioninsertdelete.ptr)
@@ -1797,6 +1849,12 @@ func (instance *RevisionInsertSheet) GetId()  (int32,  error)  {
 }
 
 
+func (instance *RevisionInsertSheet) ToRevision() *Revision {
+	parentClass := &Revision{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteRevisionInsertSheet(revisioninsertsheet *RevisionInsertSheet){
 	runtime.SetFinalizer(revisioninsertsheet, nil)
 	C.Delete_RevisionInsertSheet(revisioninsertsheet.ptr)
@@ -1858,6 +1916,7 @@ func (instance *RevisionLog) GetRevisions()  (*RevisionCollection,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteRevisionLog(revisionlog *RevisionLog){
@@ -1965,6 +2024,7 @@ func (instance *RevisionLogCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteRevisionLogCollection(revisionlogcollection *RevisionLogCollection){
 	runtime.SetFinalizer(revisionlogcollection, nil)
 	C.Delete_RevisionLogCollection(revisionlogcollection.ptr)
@@ -2057,6 +2117,12 @@ func (instance *RevisionMergeConflict) GetId()  (int32,  error)  {
 	return result, nil 
 }
 
+
+func (instance *RevisionMergeConflict) ToRevision() *Revision {
+	parentClass := &Revision{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteRevisionMergeConflict(revisionmergeconflict *RevisionMergeConflict){
 	runtime.SetFinalizer(revisionmergeconflict, nil)
@@ -2181,6 +2247,12 @@ func (instance *RevisionQueryTable) GetId()  (int32,  error)  {
 }
 
 
+func (instance *RevisionQueryTable) ToRevision() *Revision {
+	parentClass := &Revision{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteRevisionQueryTable(revisionquerytable *RevisionQueryTable){
 	runtime.SetFinalizer(revisionquerytable, nil)
 	C.Delete_RevisionQueryTable(revisionquerytable.ptr)
@@ -2301,6 +2373,12 @@ func (instance *RevisionRenameSheet) GetId()  (int32,  error)  {
 	return result, nil 
 }
 
+
+func (instance *RevisionRenameSheet) ToRevision() *Revision {
+	parentClass := &Revision{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteRevisionRenameSheet(revisionrenamesheet *RevisionRenameSheet){
 	runtime.SetFinalizer(revisionrenamesheet, nil)

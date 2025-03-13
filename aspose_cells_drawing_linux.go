@@ -6834,6 +6834,19 @@ func (instance *ArcShape) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *ArcShape) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.ArcShape_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -6867,6 +6880,12 @@ func (instance *ArcShape) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *ArcShape) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteArcShape(arcshape *ArcShape){
 	runtime.SetFinalizer(arcshape, nil)
@@ -7066,6 +7085,7 @@ func (instance *Area) SetTransparency(value float64)  error {
 }
 
 
+
 func DeleteArea(area *Area){
 	runtime.SetFinalizer(area, nil)
 	C.Delete_Area(area.ptr)
@@ -7096,6 +7116,7 @@ func (instance *AutomaticFill) IsNull()  (bool,  error)  {
 }
 
 
+
 func DeleteAutomaticFill(automaticfill *AutomaticFill){
 	runtime.SetFinalizer(automaticfill, nil)
 	C.Delete_AutomaticFill(automaticfill.ptr)
@@ -7124,6 +7145,7 @@ func (instance *BaseShapeGuide) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteBaseShapeGuide(baseshapeguide *BaseShapeGuide){
@@ -7248,6 +7270,7 @@ func (instance *Bevel) SetType(value BevelPresetType)  error {
 
 	return nil 
 }
+
 
 
 func DeleteBevel(bevel *Bevel){
@@ -10173,6 +10196,19 @@ func (instance *Button) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *Button) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.Button_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -10206,6 +10242,12 @@ func (instance *Button) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *Button) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteButton(button *Button){
 	runtime.SetFinalizer(button, nil)
@@ -13130,6 +13172,19 @@ func (instance *CellsDrawing) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *CellsDrawing) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.CellsDrawing_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -13163,6 +13218,12 @@ func (instance *CellsDrawing) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *CellsDrawing) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteCellsDrawing(cellsdrawing *CellsDrawing){
 	runtime.SetFinalizer(cellsdrawing, nil)
@@ -16104,6 +16165,19 @@ func (instance *ChartShape) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *ChartShape) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.ChartShape_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -16137,6 +16211,12 @@ func (instance *ChartShape) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *ChartShape) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteChartShape(chartshape *ChartShape){
 	runtime.SetFinalizer(chartshape, nil)
@@ -19151,6 +19231,19 @@ func (instance *CheckBox) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *CheckBox) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.CheckBox_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -19184,6 +19277,12 @@ func (instance *CheckBox) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *CheckBox) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteCheckBox(checkbox *CheckBox){
 	runtime.SetFinalizer(checkbox, nil)
@@ -19265,6 +19364,7 @@ func (instance *CheckBoxCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteCheckBoxCollection(checkboxcollection *CheckBoxCollection){
 	runtime.SetFinalizer(checkboxcollection, nil)
 	C.Delete_CheckBoxCollection(checkboxcollection.ptr)
@@ -19327,6 +19427,7 @@ func ColorHelper_ToOleColor(color *Color, workbook *Workbook)  (int32,  error)  
 
 	return result, nil 
 }
+
 
 
 func DeleteColorHelper(colorhelper *ColorHelper){
@@ -22371,6 +22472,19 @@ func (instance *ComboBox) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *ComboBox) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.ComboBox_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -22404,6 +22518,12 @@ func (instance *ComboBox) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *ComboBox) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteComboBox(combobox *ComboBox){
 	runtime.SetFinalizer(combobox, nil)
@@ -25344,6 +25464,19 @@ func (instance *CommentShape) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *CommentShape) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.CommentShape_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -25377,6 +25510,12 @@ func (instance *CommentShape) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *CommentShape) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteCommentShape(commentshape *CommentShape){
 	runtime.SetFinalizer(commentshape, nil)
@@ -25455,6 +25594,12 @@ func (instance *CustomGeometry) GetShapeAdjustValues()  (*ShapeGuideCollection, 
 	return result, nil 
 }
 
+
+func (instance *CustomGeometry) ToGeometry() *Geometry {
+	parentClass := &Geometry{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteCustomGeometry(customgeometry *CustomGeometry){
 	runtime.SetFinalizer(customgeometry, nil)
@@ -28379,6 +28524,19 @@ func (instance *CustomXmlShape) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *CustomXmlShape) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.CustomXmlShape_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -28412,6 +28570,12 @@ func (instance *CustomXmlShape) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *CustomXmlShape) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteCustomXmlShape(customxmlshape *CustomXmlShape){
 	runtime.SetFinalizer(customxmlshape, nil)
@@ -31336,6 +31500,19 @@ func (instance *Dialog_Box) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *Dialog_Box) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.Dialog_Box_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -31369,6 +31546,12 @@ func (instance *Dialog_Box) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *Dialog_Box) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteDialog_Box(dialog_box *Dialog_Box){
 	runtime.SetFinalizer(dialog_box, nil)
@@ -31897,6 +32080,7 @@ func (instance *FillFormat) GetHashCode()  (int32,  error)  {
 }
 
 
+
 func DeleteFillFormat(fillformat *FillFormat){
 	runtime.SetFinalizer(fillformat, nil)
 	C.Delete_FillFormat(fillformat.ptr)
@@ -32054,6 +32238,7 @@ func (instance *Format3D) SetLightingAngle(value float64)  error {
 }
 
 
+
 func DeleteFormat3D(format3d *Format3D){
 	runtime.SetFinalizer(format3d, nil)
 	C.Delete_Format3D(format3d.ptr)
@@ -32098,6 +32283,7 @@ func (instance *Geometry) GetShapeAdjustValues()  (*ShapeGuideCollection,  error
 
 	return result, nil 
 }
+
 
 
 func DeleteGeometry(geometry *Geometry){
@@ -32218,6 +32404,7 @@ func (instance *GlowEffect) SetTransparency(value float64)  error {
 
 	return nil 
 }
+
 
 
 func DeleteGlowEffect(gloweffect *GlowEffect){
@@ -32421,6 +32608,7 @@ func (instance *GradientFill) SetTwoColorGradient_Color_Double_Color_Double_Grad
 }
 
 
+
 func DeleteGradientFill(gradientfill *GradientFill){
 	runtime.SetFinalizer(gradientfill, nil)
 	C.Delete_GradientFill(gradientfill.ptr)
@@ -32523,6 +32711,7 @@ func (instance *GradientStop) SetTransparency(value float64)  error {
 
 	return nil 
 }
+
 
 
 func DeleteGradientStop(gradientstop *GradientStop){
@@ -32634,6 +32823,7 @@ func (instance *GradientStopCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteGradientStopCollection(gradientstopcollection *GradientStopCollection){
@@ -35588,6 +35778,19 @@ func (instance *GroupBox) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *GroupBox) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.GroupBox_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -35622,6 +35825,12 @@ func (instance *GroupBox) IsSameSetting(obj *Object)  (bool,  error)  {
 }
 
 
+func (instance *GroupBox) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteGroupBox(groupbox *GroupBox){
 	runtime.SetFinalizer(groupbox, nil)
 	C.Delete_GroupBox(groupbox.ptr)
@@ -35650,6 +35859,7 @@ func (instance *GroupFill) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteGroupFill(groupfill *GroupFill){
@@ -38627,6 +38837,19 @@ func (instance *GroupShape) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *GroupShape) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.GroupShape_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -38660,6 +38883,12 @@ func (instance *GroupShape) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *GroupShape) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteGroupShape(groupshape *GroupShape){
 	runtime.SetFinalizer(groupshape, nil)
@@ -41584,6 +41813,19 @@ func (instance *Label) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *Label) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.Label_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -41617,6 +41859,12 @@ func (instance *Label) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *Label) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteLabel(label *Label){
 	runtime.SetFinalizer(label, nil)
@@ -42298,6 +42546,7 @@ func (instance *Line) GetGradientFill()  (*GradientFill,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteLine(line *Line){
@@ -43192,6 +43441,12 @@ func (instance *LineFormat) SetImageData(value []byte)  error {
 	return nil 
 }
 
+
+func (instance *LineFormat) ToFillFormat() *FillFormat {
+	parentClass := &FillFormat{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteLineFormat(lineformat *LineFormat){
 	runtime.SetFinalizer(lineformat, nil)
@@ -46116,6 +46371,19 @@ func (instance *LineShape) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *LineShape) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.LineShape_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -46149,6 +46417,12 @@ func (instance *LineShape) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *LineShape) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteLineShape(lineshape *LineShape){
 	runtime.SetFinalizer(lineshape, nil)
@@ -49264,6 +49538,19 @@ func (instance *ListBox) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *ListBox) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.ListBox_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -49297,6 +49584,12 @@ func (instance *ListBox) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *ListBox) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteListBox(listbox *ListBox){
 	runtime.SetFinalizer(listbox, nil)
@@ -49511,6 +49804,7 @@ func (instance *MsoFillFormat) SetIsVisible(value bool)  error {
 }
 
 
+
 func DeleteMsoFillFormat(msofillformat *MsoFillFormat){
 	runtime.SetFinalizer(msofillformat, nil)
 	C.Delete_MsoFillFormat(msofillformat.ptr)
@@ -49722,6 +50016,7 @@ func (instance *MsoFillFormatHelper) SetIsVisible(value bool)  error {
 
 	return nil 
 }
+
 
 
 func DeleteMsoFillFormatHelper(msofillformathelper *MsoFillFormatHelper){
@@ -50220,6 +50515,7 @@ func (instance *MsoFormatPicture) Equals(obj *Object)  (bool,  error)  {
 }
 
 
+
 func DeleteMsoFormatPicture(msoformatpicture *MsoFormatPicture){
 	runtime.SetFinalizer(msoformatpicture, nil)
 	C.Delete_MsoFormatPicture(msoformatpicture.ptr)
@@ -50459,6 +50755,7 @@ func (instance *MsoLineFormat) SetWeight(value float64)  error {
 
 	return nil 
 }
+
 
 
 func DeleteMsoLineFormat(msolineformat *MsoLineFormat){
@@ -50702,6 +50999,7 @@ func (instance *MsoLineFormatHelper) SetWeight(value float64)  error {
 }
 
 
+
 func DeleteMsoLineFormatHelper(msolineformathelper *MsoLineFormatHelper){
 	runtime.SetFinalizer(msolineformathelper, nil)
 	C.Delete_MsoLineFormatHelper(msolineformathelper.ptr)
@@ -50935,6 +51233,7 @@ func (instance *MsoTextFrame) SetBottomMarginPt(value float64)  error {
 }
 
 
+
 func DeleteMsoTextFrame(msotextframe *MsoTextFrame){
 	runtime.SetFinalizer(msotextframe, nil)
 	C.Delete_MsoTextFrame(msotextframe.ptr)
@@ -50963,6 +51262,7 @@ func (instance *NoneFill) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteNoneFill(nonefill *NoneFill){
@@ -54365,6 +54665,19 @@ func (instance *OleObject) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *OleObject) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.OleObject_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -54398,6 +54711,12 @@ func (instance *OleObject) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *OleObject) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteOleObject(oleobject *OleObject){
 	runtime.SetFinalizer(oleobject, nil)
@@ -54527,6 +54846,7 @@ func (instance *OleObjectCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteOleObjectCollection(oleobjectcollection *OleObjectCollection){
@@ -57452,6 +57772,19 @@ func (instance *Oval) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *Oval) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.Oval_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -57485,6 +57818,12 @@ func (instance *Oval) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *Oval) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteOval(oval *Oval){
 	runtime.SetFinalizer(oval, nil)
@@ -57728,6 +58067,7 @@ func (instance *PatternFill) SetBackTransparency(value float64)  error {
 }
 
 
+
 func DeletePatternFill(patternfill *PatternFill){
 	runtime.SetFinalizer(patternfill, nil)
 	C.Delete_PatternFill(patternfill.ptr)
@@ -57947,6 +58287,7 @@ func (instance *PicFormatOption) SetRight(value float64)  error {
 
 	return nil 
 }
+
 
 
 func DeletePicFormatOption(picformatoption *PicFormatOption){
@@ -61332,6 +61673,19 @@ func (instance *Picture) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *Picture) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.Picture_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -61349,6 +61703,12 @@ func (instance *Picture) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	return result, nil 
 }
 
+
+func (instance *Picture) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeletePicture(picture *Picture){
 	runtime.SetFinalizer(picture, nil)
@@ -61553,6 +61913,7 @@ func (instance *PictureCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeletePictureCollection(picturecollection *PictureCollection){
@@ -64566,6 +64927,19 @@ func (instance *RadioButton) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *RadioButton) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.RadioButton_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -64599,6 +64973,12 @@ func (instance *RadioButton) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *RadioButton) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteRadioButton(radiobutton *RadioButton){
 	runtime.SetFinalizer(radiobutton, nil)
@@ -67523,6 +67903,19 @@ func (instance *RectangleShape) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *RectangleShape) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.RectangleShape_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -67556,6 +67949,12 @@ func (instance *RectangleShape) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *RectangleShape) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteRectangleShape(rectangleshape *RectangleShape){
 	runtime.SetFinalizer(rectangleshape, nil)
@@ -67820,6 +68219,7 @@ func (instance *ReflectionEffect) SetRotWithShape(value bool)  error {
 
 	return nil 
 }
+
 
 
 func DeleteReflectionEffect(reflectioneffect *ReflectionEffect){
@@ -70948,6 +71348,19 @@ func (instance *ScrollBar) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *ScrollBar) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.ScrollBar_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -70981,6 +71394,12 @@ func (instance *ScrollBar) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *ScrollBar) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteScrollBar(scrollbar *ScrollBar){
 	runtime.SetFinalizer(scrollbar, nil)
@@ -71220,6 +71639,7 @@ func (instance *ShadowEffect) SetDistance(value float64)  error {
 
 	return nil 
 }
+
 
 
 func DeleteShadowEffect(shadoweffect *ShadowEffect){
@@ -74129,6 +74549,19 @@ func (instance *Shape) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *Shape) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.Shape_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -74161,6 +74594,7 @@ func (instance *Shape) IsSameSetting(obj *Object)  (bool,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteShape(shape *Shape){
@@ -75342,6 +75776,7 @@ func (instance *ShapeCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteShapeCollection(shapecollection *ShapeCollection){
 	runtime.SetFinalizer(shapecollection, nil)
 	C.Delete_ShapeCollection(shapecollection.ptr)
@@ -75417,6 +75852,12 @@ func (instance *ShapeGuide) SetValue(value float64)  error {
 	return nil 
 }
 
+
+func (instance *ShapeGuide) ToBaseShapeGuide() *BaseShapeGuide {
+	parentClass := &BaseShapeGuide{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteShapeGuide(shapeguide *ShapeGuide){
 	runtime.SetFinalizer(shapeguide, nil)
@@ -75508,6 +75949,7 @@ func (instance *ShapeGuideCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteShapeGuideCollection(shapeguidecollection *ShapeGuideCollection){
@@ -75653,6 +76095,7 @@ func (instance *ShapePath) Close()  error {
 }
 
 
+
 func DeleteShapePath(shapepath *ShapePath){
 	runtime.SetFinalizer(shapepath, nil)
 	C.Delete_ShapePath(shapepath.ptr)
@@ -75727,6 +76170,7 @@ func (instance *ShapePathCollection) Add()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteShapePathCollection(shapepathcollection *ShapePathCollection){
@@ -75815,6 +76259,7 @@ func (instance *ShapePathPoint) SetY(value int32)  error {
 
 	return nil 
 }
+
 
 
 func DeleteShapePathPoint(shapepathpoint *ShapePathPoint){
@@ -75907,6 +76352,7 @@ func (instance *ShapePathPointCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteShapePathPointCollection(shapepathpointcollection *ShapePathPointCollection){
@@ -76097,6 +76543,7 @@ func (instance *ShapePropertyCollection) HasShadowEffect()  (bool,  error)  {
 }
 
 
+
 func DeleteShapePropertyCollection(shapepropertycollection *ShapePropertyCollection){
 	runtime.SetFinalizer(shapepropertycollection, nil)
 	C.Delete_ShapePropertyCollection(shapepropertycollection.ptr)
@@ -76158,6 +76605,7 @@ func (instance *ShapeSegmentPath) GetPoints()  (*ShapePathPointCollection,  erro
 
 	return result, nil 
 }
+
 
 
 func DeleteShapeSegmentPath(shapesegmentpath *ShapeSegmentPath){
@@ -76249,6 +76697,7 @@ func (instance *ShapeSegmentPathCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteShapeSegmentPathCollection(shapesegmentpathcollection *ShapeSegmentPathCollection){
@@ -76594,6 +77043,7 @@ func (instance *SignatureLine) SetSignatureLineType(value SignatureType)  error 
 
 	return nil 
 }
+
 
 
 func DeleteSignatureLine(signatureline *SignatureLine){
@@ -79535,6 +79985,19 @@ func (instance *SmartArtShape) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *SmartArtShape) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.SmartArtShape_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Returns whether the shape is same.
 // Parameters:
 //   obj - Object 
@@ -79552,6 +80015,12 @@ func (instance *SmartArtShape) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *SmartArtShape) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteSmartArtShape(smartartshape *SmartArtShape){
 	runtime.SetFinalizer(smartartshape, nil)
@@ -79700,6 +80169,7 @@ func (instance *SolidFill) Equals(obj *Object)  (bool,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteSolidFill(solidfill *SolidFill){
@@ -82799,6 +83269,19 @@ func (instance *Spinner) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *Spinner) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.Spinner_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -82832,6 +83315,12 @@ func (instance *Spinner) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *Spinner) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteSpinner(spinner *Spinner){
 	runtime.SetFinalizer(spinner, nil)
@@ -85793,6 +86282,19 @@ func (instance *TextBox) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *TextBox) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.TextBox_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -85826,6 +86328,12 @@ func (instance *TextBox) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *TextBox) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteTextBox(textbox *TextBox){
 	runtime.SetFinalizer(textbox, nil)
@@ -85951,6 +86459,7 @@ func (instance *TextBoxCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteTextBoxCollection(textboxcollection *TextBoxCollection){
@@ -86202,6 +86711,7 @@ func (instance *TextEffectFormat) SetPresetShape(value MsoPresetTextEffectShape)
 
 	return nil 
 }
+
 
 
 func DeleteTextEffectFormat(texteffectformat *TextEffectFormat){
@@ -86475,6 +86985,7 @@ func (instance *TextureFill) SetTransparency(value float64)  error {
 
 	return nil 
 }
+
 
 
 func DeleteTextureFill(texturefill *TextureFill){
@@ -87152,6 +87663,7 @@ func (instance *ThreeDFormat) Equals(obj *Object)  (bool,  error)  {
 }
 
 
+
 func DeleteThreeDFormat(threedformat *ThreeDFormat){
 	runtime.SetFinalizer(threedformat, nil)
 	C.Delete_ThreeDFormat(threedformat.ptr)
@@ -87376,6 +87888,7 @@ func (instance *TilePicOption) SetAlignmentType(value RectangleAlignmentType)  e
 }
 
 
+
 func DeleteTilePicOption(tilepicoption *TilePicOption){
 	runtime.SetFinalizer(tilepicoption, nil)
 	C.Delete_TilePicOption(tilepicoption.ptr)
@@ -87423,6 +87936,12 @@ func (instance *VmlShapeGuide) IsNull()  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *VmlShapeGuide) ToBaseShapeGuide() *BaseShapeGuide {
+	parentClass := &BaseShapeGuide{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteVmlShapeGuide(vmlshapeguide *VmlShapeGuide){
 	runtime.SetFinalizer(vmlshapeguide, nil)
@@ -90378,6 +90897,19 @@ func (instance *WebExtensionShape) GetActualBox()  ([]float32,  error)  {
 
 	return result, nil 
 }
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *WebExtensionShape) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.WebExtensionShape_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Converting smart art to grouped shapes.
 // Returns:
 //   GroupShape  
@@ -90411,6 +90943,12 @@ func (instance *WebExtensionShape) IsSameSetting(obj *Object)  (bool,  error)  {
 	return result, nil 
 }
 
+
+func (instance *WebExtensionShape) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteWebExtensionShape(webextensionshape *WebExtensionShape){
 	runtime.SetFinalizer(webextensionshape, nil)

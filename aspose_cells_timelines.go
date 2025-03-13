@@ -220,6 +220,7 @@ func (instance *Timeline) SetHeightPixel(value int32)  error {
 }
 
 
+
 func DeleteTimeline(timeline *Timeline){
 	runtime.SetFinalizer(timeline, nil)
 	C.Delete_Timeline(timeline.ptr)
@@ -409,6 +410,7 @@ func (instance *TimelineCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteTimelineCollection(timelinecollection *TimelineCollection){

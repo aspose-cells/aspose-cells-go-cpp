@@ -579,6 +579,12 @@ func (instance *AutoNumberedBulletValue) SetAutonumberScheme(value TextAutonumbe
 }
 
 
+func (instance *AutoNumberedBulletValue) ToBulletValue() *BulletValue {
+	parentClass := &BulletValue{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteAutoNumberedBulletValue(autonumberedbulletvalue *AutoNumberedBulletValue){
 	runtime.SetFinalizer(autonumberedbulletvalue, nil)
 	C.Delete_AutoNumberedBulletValue(autonumberedbulletvalue.ptr)
@@ -686,6 +692,7 @@ func (instance *Bullet) SetFontName(value string)  error {
 }
 
 
+
 func DeleteBullet(bullet *Bullet){
 	runtime.SetFinalizer(bullet, nil)
 	C.Delete_Bullet(bullet.ptr)
@@ -731,6 +738,7 @@ func (instance *BulletValue) GetType()  (BulletType,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteBulletValue(bulletvalue *BulletValue){
@@ -838,6 +846,12 @@ func (instance *CharacterBulletValue) SetCharacter(value byte)  error {
 	return nil 
 }
 
+
+func (instance *CharacterBulletValue) ToBulletValue() *BulletValue {
+	parentClass := &BulletValue{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteCharacterBulletValue(characterbulletvalue *CharacterBulletValue){
 	runtime.SetFinalizer(characterbulletvalue, nil)
@@ -1161,6 +1175,7 @@ func (instance *FontSettingCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteFontSettingCollection(fontsettingcollection *FontSettingCollection){
 	runtime.SetFinalizer(fontsettingcollection, nil)
 	C.Delete_FontSettingCollection(fontsettingcollection.ptr)
@@ -1237,6 +1252,12 @@ func (instance *NoneBulletValue) GetType()  (BulletType,  error)  {
 	return result, nil 
 }
 
+
+func (instance *NoneBulletValue) ToBulletValue() *BulletValue {
+	parentClass := &BulletValue{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteNoneBulletValue(nonebulletvalue *NoneBulletValue){
 	runtime.SetFinalizer(nonebulletvalue, nil)
@@ -1344,6 +1365,12 @@ func (instance *PictureBulletValue) SetImageData(value []byte)  error {
 	return nil 
 }
 
+
+func (instance *PictureBulletValue) ToBulletValue() *BulletValue {
+	parentClass := &BulletValue{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeletePictureBulletValue(picturebulletvalue *PictureBulletValue){
 	runtime.SetFinalizer(picturebulletvalue, nil)
@@ -1851,6 +1878,7 @@ func (instance *ShapeTextAlignment) GetHashCode()  (int32,  error)  {
 }
 
 
+
 func DeleteShapeTextAlignment(shapetextalignment *ShapeTextAlignment){
 	runtime.SetFinalizer(shapetextalignment, nil)
 	C.Delete_ShapeTextAlignment(shapetextalignment.ptr)
@@ -2154,6 +2182,7 @@ func (instance *TextBoxOptions) SetWrapTextInShape(value bool)  error {
 }
 
 
+
 func DeleteTextBoxOptions(textboxoptions *TextBoxOptions){
 	runtime.SetFinalizer(textboxoptions, nil)
 	C.Delete_TextBoxOptions(textboxoptions.ptr)
@@ -2454,7 +2483,551 @@ func (instance *TextOptions) SetSpacing(value float64)  error {
 
 	return nil 
 }
+// Represent the character set.
+// Returns:
+//   int32  
+func (instance *TextOptions) GetCharset()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_GetCharset( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
 
+	return result, nil 
+}
+// Represent the character set.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TextOptions) SetCharset(value int32)  error {
+	
+	CGoReturnPtr := C.TextOptions_SetCharset( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets a value indicating whether the font is italic.
+// Returns:
+//   bool  
+func (instance *TextOptions) IsItalic()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_IsItalic( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets a value indicating whether the font is italic.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TextOptions) SetIsItalic(value bool)  error {
+	
+	CGoReturnPtr := C.TextOptions_SetIsItalic( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets a value indicating whether the font is bold.
+// Returns:
+//   bool  
+func (instance *TextOptions) IsBold()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_IsBold( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets a value indicating whether the font is bold.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TextOptions) SetIsBold(value bool)  error {
+	
+	CGoReturnPtr := C.TextOptions_SetIsBold( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the text caps type.
+// Returns:
+//   int32  
+func (instance *TextOptions) GetCapsType()  (TextCapsType,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_GetCapsType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextCapsType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the text caps type.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TextOptions) SetCapsType(value TextCapsType)  error {
+	
+	CGoReturnPtr := C.TextOptions_SetCapsType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the strike type of the text.
+// Returns:
+//   int32  
+func (instance *TextOptions) GetStrikeType()  (TextStrikeType,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_GetStrikeType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextStrikeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets the strike type of the text.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TextOptions) SetStrikeType(value TextStrikeType)  error {
+	
+	CGoReturnPtr := C.TextOptions_SetStrikeType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets a value indicating whether the font is single strikeout.
+// Returns:
+//   bool  
+func (instance *TextOptions) IsStrikeout()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_IsStrikeout( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets a value indicating whether the font is single strikeout.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TextOptions) SetIsStrikeout(value bool)  error {
+	
+	CGoReturnPtr := C.TextOptions_SetIsStrikeout( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the script offset,in unit of percentage
+// Returns:
+//   float64  
+func (instance *TextOptions) GetScriptOffset()  (float64,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_GetScriptOffset( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the script offset,in unit of percentage
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *TextOptions) SetScriptOffset(value float64)  error {
+	
+	CGoReturnPtr := C.TextOptions_SetScriptOffset( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets a value indicating whether the font is super script.
+// Returns:
+//   bool  
+func (instance *TextOptions) IsSuperscript()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_IsSuperscript( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets a value indicating whether the font is super script.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TextOptions) SetIsSuperscript(value bool)  error {
+	
+	CGoReturnPtr := C.TextOptions_SetIsSuperscript( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets a value indicating whether the font is subscript.
+// Returns:
+//   bool  
+func (instance *TextOptions) IsSubscript()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_IsSubscript( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets a value indicating whether the font is subscript.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TextOptions) SetIsSubscript(value bool)  error {
+	
+	CGoReturnPtr := C.TextOptions_SetIsSubscript( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the font underline type.
+// Returns:
+//   int32  
+func (instance *TextOptions) GetUnderline()  (FontUnderlineType,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_GetUnderline( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToFontUnderlineType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the font underline type.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TextOptions) SetUnderline(value FontUnderlineType)  error {
+	
+	CGoReturnPtr := C.TextOptions_SetUnderline( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the double size of the font.
+// Returns:
+//   float64  
+func (instance *TextOptions) GetDoubleSize()  (float64,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_GetDoubleSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the double size of the font.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *TextOptions) SetDoubleSize(value float64)  error {
+	
+	CGoReturnPtr := C.TextOptions_SetDoubleSize( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the size of the font.
+// Returns:
+//   int32  
+func (instance *TextOptions) GetSize()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_GetSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the size of the font.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TextOptions) SetSize(value int32)  error {
+	
+	CGoReturnPtr := C.TextOptions_SetSize( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the theme color.
+// Returns:
+//   ThemeColor  
+func (instance *TextOptions) GetThemeColor()  (*ThemeColor,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_GetThemeColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ThemeColor{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteThemeColor) 
+
+	return result, nil 
+}
+// Gets and sets the theme color.
+// Parameters:
+//   value - ThemeColor 
+// Returns:
+//   void  
+func (instance *TextOptions) SetThemeColor(value *ThemeColor)  error {
+	
+	CGoReturnPtr := C.TextOptions_SetThemeColor( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the <see cref="Color"/> of the font.
+// Returns:
+//   Color  
+func (instance *TextOptions) GetColor()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_GetColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Gets or sets the <see cref="Color"/> of the font.
+// Parameters:
+//   value - Color 
+// Returns:
+//   void  
+func (instance *TextOptions) SetColor(value *Color)  error {
+	
+	CGoReturnPtr := C.TextOptions_SetColor( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the color with a 32-bit ARGB value.
+// Returns:
+//   int32  
+func (instance *TextOptions) GetArgbColor()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_GetArgbColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the color with a 32-bit ARGB value.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TextOptions) SetArgbColor(value int32)  error {
+	
+	CGoReturnPtr := C.TextOptions_SetArgbColor( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Checks if two fonts are equals.
+// Parameters:
+//   font - Font 
+// Returns:
+//   bool  
+func (instance *TextOptions) Equals(font *Font)  (bool,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_Equals( instance.ptr, font.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the normalization of height that is to be applied to the text run.
+// Returns:
+//   bool  
+func (instance *TextOptions) IsNormalizeHeights()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_IsNormalizeHeights( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the normalization of height that is to be applied to the text run.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TextOptions) SetIsNormalizeHeights(value bool)  error {
+	
+	CGoReturnPtr := C.TextOptions_SetIsNormalizeHeights( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the scheme type of the font.
+// Returns:
+//   int32  
+func (instance *TextOptions) GetSchemeType()  (FontSchemeType,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_GetSchemeType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToFontSchemeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the scheme type of the font.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TextOptions) SetSchemeType(value FontSchemeType)  error {
+	
+	CGoReturnPtr := C.TextOptions_SetSchemeType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns a string represents the current Cell object.
+// Returns:
+//   string  
+func (instance *TextOptions) ToString()  (string,  error)  {
+	
+	CGoReturnPtr := C.TextOptions_ToString( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+
+
+func (instance *TextOptions) ToFont() *Font {
+	parentClass := &Font{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteTextOptions(textoptions *TextOptions){
 	runtime.SetFinalizer(textoptions, nil)
@@ -3100,6 +3673,12 @@ func (instance *TextParagraph) GetTextOptions()  (*TextOptions,  error)  {
 }
 
 
+func (instance *TextParagraph) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteTextParagraph(textparagraph *TextParagraph){
 	runtime.SetFinalizer(textparagraph, nil)
 	C.Delete_TextParagraph(textparagraph.ptr)
@@ -3177,6 +3756,7 @@ func (instance *TextParagraphCollection) GetEnumerator()  (*TextParagraphEnumera
 
 	return result, nil 
 }
+
 
 
 func DeleteTextParagraphCollection(textparagraphcollection *TextParagraphCollection){
@@ -3270,6 +3850,7 @@ func (instance *TextTabStop) SetTabPosition(value float64)  error {
 }
 
 
+
 func DeleteTextTabStop(texttabstop *TextTabStop){
 	runtime.SetFinalizer(texttabstop, nil)
 	C.Delete_TextTabStop(texttabstop.ptr)
@@ -3360,6 +3941,7 @@ func (instance *TextTabStopCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteTextTabStopCollection(texttabstopcollection *TextTabStopCollection){

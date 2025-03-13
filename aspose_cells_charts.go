@@ -2556,6 +2556,7 @@ func (instance *Axis) GetBins()  (*AxisBins,  error)  {
 }
 
 
+
 func DeleteAxis(axis *Axis){
 	runtime.SetFinalizer(axis, nil)
 	C.Delete_Axis(axis.ptr)
@@ -2758,6 +2759,7 @@ func (instance *AxisBins) SetUnderflow(value float64)  error {
 
 	return nil 
 }
+
 
 
 func DeleteAxisBins(axisbins *AxisBins){
@@ -3910,27 +3912,27 @@ func (instance *Chart) SetHeightPercent(value int32)  error {
 // Returns or sets the perspective for the 3-D chart view. Must be between 0 and 100.
 // This property is ignored if the RightAngleAxes property is True.
 // Returns:
-//   int32  
-func (instance *Chart) GetPerspective()  (int32,  error)  {
+//   int16  
+func (instance *Chart) GetPerspective()  (int16,  error)  {
 	
 	CGoReturnPtr := C.Chart_GetPerspective( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := int16(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
 // Returns or sets the perspective for the 3-D chart view. Must be between 0 and 100.
 // This property is ignored if the RightAngleAxes property is True.
 // Parameters:
-//   value - int32 
+//   value - int16 
 // Returns:
 //   void  
-func (instance *Chart) SetPerspective(value int32)  error {
+func (instance *Chart) SetPerspective(value int16)  error {
 	
-	CGoReturnPtr := C.Chart_SetPerspective( instance.ptr, C.int(value))
+	CGoReturnPtr := C.Chart_SetPerspective( instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4013,30 +4015,14 @@ func (instance *Chart) ToImage_String_ImageType(imagefile string, imagetype Imag
 
 	return nil 
 }
-// Creates the chart image and saves it to a file in the Jpeg format.
-// Parameters:
-//   imageFile - string 
-//   jpegQuality - int32 
-// Returns:
-//   void  
-func (instance *Chart) ToImage_String_Int(imagefile string, jpegquality int32)  error {
-	
-	CGoReturnPtr := C.Chart_ToImage_String_Integer( instance.ptr, C.CString(imagefile), C.int(jpegquality))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Creates the chart image and saves it to a stream in the Jpeg format.
 // Parameters:
-//   jpegQuality - int32 
+//   jpegQuality - int64 
 // Returns:
 //   []byte  
-func (instance *Chart) ToImage_Int(jpegquality int32)  ([]byte,  error)  {
+func (instance *Chart) ToImage_Int64(jpegquality int64)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Chart_ToImage_Integer( instance.ptr, C.int(jpegquality))
+	CGoReturnPtr := C.Chart_ToImage_Long( instance.ptr, C.longlong(jpegquality))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4314,6 +4300,7 @@ func (instance *Chart) GetLine()  (*Line,  error)  {
 }
 
 
+
 func DeleteChart(chart *Chart){
 	runtime.SetFinalizer(chart, nil)
 	C.Delete_Chart(chart.ptr)
@@ -4358,28 +4345,28 @@ func (instance *ChartArea) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Gets or gets the horizontal offset from its upper left corner column.
+// Gets or gets the horizontal offset from its upper left corner column, in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartArea) GetX()  (int32,  error)  {
+//   float64  
+func (instance *ChartArea) GetXRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartArea_GetX( instance.ptr)
+	CGoReturnPtr := C.ChartArea_GetXRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or gets the horizontal offset from its upper left corner column.
+// Gets or gets the horizontal offset from its upper left corner column, in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *ChartArea) SetX(value int32)  error {
+func (instance *ChartArea) SetXRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.ChartArea_SetX( instance.ptr, C.int(value))
+	CGoReturnPtr := C.ChartArea_SetXRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4387,28 +4374,28 @@ func (instance *ChartArea) SetX(value int32)  error {
 
 	return nil 
 }
-// Gets or gets the vertical offset from its upper left corner row.
+// Gets or gets the vertical offset from its upper left corner row, in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartArea) GetY()  (int32,  error)  {
+//   float64  
+func (instance *ChartArea) GetYRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartArea_GetY( instance.ptr)
+	CGoReturnPtr := C.ChartArea_GetYRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or gets the vertical offset from its upper left corner row.
+// Gets or gets the vertical offset from its upper left corner row, in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *ChartArea) SetY(value int32)  error {
+func (instance *ChartArea) SetYRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.ChartArea_SetY( instance.ptr, C.int(value))
+	CGoReturnPtr := C.ChartArea_SetYRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4416,28 +4403,28 @@ func (instance *ChartArea) SetY(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the vertical offset from its lower right corner row.
+// Gets or sets the vertical offset from its lower right corner row, in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartArea) GetHeight()  (int32,  error)  {
+//   float64  
+func (instance *ChartArea) GetHeightRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartArea_GetHeight( instance.ptr)
+	CGoReturnPtr := C.ChartArea_GetHeightRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the vertical offset from its lower right corner row.
+// Gets or sets the vertical offset from its lower right corner row, in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *ChartArea) SetHeight(value int32)  error {
+func (instance *ChartArea) SetHeightRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.ChartArea_SetHeight( instance.ptr, C.int(value))
+	CGoReturnPtr := C.ChartArea_SetHeightRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4445,28 +4432,28 @@ func (instance *ChartArea) SetHeight(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the horizontal offset from its lower right corner column.
+// Gets or sets the horizontal offset from its lower right corner column, in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartArea) GetWidth()  (int32,  error)  {
+//   float64  
+func (instance *ChartArea) GetWidthRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartArea_GetWidth( instance.ptr)
+	CGoReturnPtr := C.ChartArea_GetWidthRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the horizontal offset from its lower right corner column.
+// Gets or sets the horizontal offset from its lower right corner column, in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *ChartArea) SetWidth(value int32)  error {
+func (instance *ChartArea) SetWidthRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.ChartArea_SetWidth( instance.ptr, C.int(value))
+	CGoReturnPtr := C.ChartArea_SetWidthRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4612,59 +4599,59 @@ func (instance *ChartArea) IsDefaultPosBeSet()  (bool,  error)  {
 
 	return result, nil 
 }
-// Represents x of default position
+// Represents x of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartArea) GetDefaultX()  (int32,  error)  {
+//   float64  
+func (instance *ChartArea) GetDefaultXRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartArea_GetDefaultX( instance.ptr)
+	CGoReturnPtr := C.ChartArea_GetDefaultXRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents y of default position
+// Represents y of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartArea) GetDefaultY()  (int32,  error)  {
+//   float64  
+func (instance *ChartArea) GetDefaultYRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartArea_GetDefaultY( instance.ptr)
+	CGoReturnPtr := C.ChartArea_GetDefaultYRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents width of default position
+// Represents width of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartArea) GetDefaultWidth()  (int32,  error)  {
+//   float64  
+func (instance *ChartArea) GetDefaultWidthRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartArea_GetDefaultWidth( instance.ptr)
+	CGoReturnPtr := C.ChartArea_GetDefaultWidthRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents height of default position
+// Represents height of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartArea) GetDefaultHeight()  (int32,  error)  {
+//   float64  
+func (instance *ChartArea) GetDefaultHeightRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartArea_GetDefaultHeight( instance.ptr)
+	CGoReturnPtr := C.ChartArea_GetDefaultHeightRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4774,6 +4761,122 @@ func (instance *ChartArea) SetIsAutomaticSize(value bool)  error {
 
 	return nil 
 }
+// Gets or sets the x coordinate of the upper left corner in units of Pixel.
+// Returns:
+//   int32  
+func (instance *ChartArea) GetXPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ChartArea_GetXPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the x coordinate of the upper left corner in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ChartArea) SetXPixel(value int32)  error {
+	
+	CGoReturnPtr := C.ChartArea_SetXPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Returns:
+//   int32  
+func (instance *ChartArea) GetYPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ChartArea_GetYPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ChartArea) SetYPixel(value int32)  error {
+	
+	CGoReturnPtr := C.ChartArea_SetYPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the width of frame in units of Pixel.
+// Returns:
+//   int32  
+func (instance *ChartArea) GetWidthPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ChartArea_GetWidthPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the width of frame in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ChartArea) SetWidthPixel(value int32)  error {
+	
+	CGoReturnPtr := C.ChartArea_SetWidthPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the height of frame in units of Pixel.
+// Returns:
+//   int32  
+func (instance *ChartArea) GetHeightPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ChartArea_GetHeightPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the height of frame in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ChartArea) SetHeightPixel(value int32)  error {
+	
+	CGoReturnPtr := C.ChartArea_SetHeightPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Set position of the frame to automatic
 // Returns:
 //   void  
@@ -4788,6 +4891,12 @@ func (instance *ChartArea) SetPositionAuto()  error {
 	return nil 
 }
 
+
+func (instance *ChartArea) ToChartFrame() *ChartFrame {
+	parentClass := &ChartFrame{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteChartArea(chartarea *ChartArea){
 	runtime.SetFinalizer(chartarea, nil)
@@ -4864,6 +4973,7 @@ func (instance *ChartCalculateOptions) SetUpdateAllPoints(value bool)  error {
 
 	return nil 
 }
+
 
 
 func DeleteChartCalculateOptions(chartcalculateoptions *ChartCalculateOptions){
@@ -5055,6 +5165,7 @@ func (instance *ChartCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteChartCollection(chartcollection *ChartCollection){
@@ -5298,6 +5409,7 @@ func (instance *ChartDataTable) GetBorder()  (*Line,  error)  {
 }
 
 
+
 func DeleteChartDataTable(chartdatatable *ChartDataTable){
 	runtime.SetFinalizer(chartdatatable, nil)
 	C.Delete_ChartDataTable(chartdatatable.ptr)
@@ -5448,59 +5560,59 @@ func (instance *ChartFrame) IsDefaultPosBeSet()  (bool,  error)  {
 
 	return result, nil 
 }
-// Represents x of default position
+// Represents x of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartFrame) GetDefaultX()  (int32,  error)  {
+//   float64  
+func (instance *ChartFrame) GetDefaultXRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartFrame_GetDefaultX( instance.ptr)
+	CGoReturnPtr := C.ChartFrame_GetDefaultXRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents y of default position
+// Represents y of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartFrame) GetDefaultY()  (int32,  error)  {
+//   float64  
+func (instance *ChartFrame) GetDefaultYRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartFrame_GetDefaultY( instance.ptr)
+	CGoReturnPtr := C.ChartFrame_GetDefaultYRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents width of default position
+// Represents width of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartFrame) GetDefaultWidth()  (int32,  error)  {
+//   float64  
+func (instance *ChartFrame) GetDefaultWidthRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartFrame_GetDefaultWidth( instance.ptr)
+	CGoReturnPtr := C.ChartFrame_GetDefaultWidthRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents height of default position
+// Represents height of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartFrame) GetDefaultHeight()  (int32,  error)  {
+//   float64  
+func (instance *ChartFrame) GetDefaultHeightRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartFrame_GetDefaultHeight( instance.ptr)
+	CGoReturnPtr := C.ChartFrame_GetDefaultHeightRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -5626,28 +5738,28 @@ func (instance *ChartFrame) SetIsAutomaticSize(value bool)  error {
 
 	return nil 
 }
-// Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the x coordinate of the upper left corner in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartFrame) GetX()  (int32,  error)  {
+//   float64  
+func (instance *ChartFrame) GetXRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartFrame_GetX( instance.ptr)
+	CGoReturnPtr := C.ChartFrame_GetXRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the x coordinate of the upper left corner in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *ChartFrame) SetX(value int32)  error {
+func (instance *ChartFrame) SetXRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.ChartFrame_SetX( instance.ptr, C.int(value))
+	CGoReturnPtr := C.ChartFrame_SetXRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5655,28 +5767,28 @@ func (instance *ChartFrame) SetX(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartFrame) GetY()  (int32,  error)  {
+//   float64  
+func (instance *ChartFrame) GetYRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartFrame_GetY( instance.ptr)
+	CGoReturnPtr := C.ChartFrame_GetYRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *ChartFrame) SetY(value int32)  error {
+func (instance *ChartFrame) SetYRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.ChartFrame_SetY( instance.ptr, C.int(value))
+	CGoReturnPtr := C.ChartFrame_SetYRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5684,28 +5796,28 @@ func (instance *ChartFrame) SetY(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Gets or sets the width of frame in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartFrame) GetHeight()  (int32,  error)  {
+//   float64  
+func (instance *ChartFrame) GetWidthRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartFrame_GetHeight( instance.ptr)
+	CGoReturnPtr := C.ChartFrame_GetWidthRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Gets or sets the width of frame in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *ChartFrame) SetHeight(value int32)  error {
+func (instance *ChartFrame) SetWidthRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.ChartFrame_SetHeight( instance.ptr, C.int(value))
+	CGoReturnPtr := C.ChartFrame_SetWidthRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5713,12 +5825,41 @@ func (instance *ChartFrame) SetHeight(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Gets or sets the height of frame in units of ratio of the chart area.
+// Returns:
+//   float64  
+func (instance *ChartFrame) GetHeightRatioToChart()  (float64,  error)  {
+	
+	CGoReturnPtr := C.ChartFrame_GetHeightRatioToChart( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the height of frame in units of ratio of the chart area.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *ChartFrame) SetHeightRatioToChart(value float64)  error {
+	
+	CGoReturnPtr := C.ChartFrame_SetHeightRatioToChart( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the x coordinate of the upper left corner in units of Pixel.
 // Returns:
 //   int32  
-func (instance *ChartFrame) GetWidth()  (int32,  error)  {
+func (instance *ChartFrame) GetXPixel()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ChartFrame_GetWidth( instance.ptr)
+	CGoReturnPtr := C.ChartFrame_GetXPixel( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5727,14 +5868,101 @@ func (instance *ChartFrame) GetWidth()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Gets or sets the x coordinate of the upper left corner in units of Pixel.
 // Parameters:
 //   value - int32 
 // Returns:
 //   void  
-func (instance *ChartFrame) SetWidth(value int32)  error {
+func (instance *ChartFrame) SetXPixel(value int32)  error {
 	
-	CGoReturnPtr := C.ChartFrame_SetWidth( instance.ptr, C.int(value))
+	CGoReturnPtr := C.ChartFrame_SetXPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Returns:
+//   int32  
+func (instance *ChartFrame) GetYPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ChartFrame_GetYPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ChartFrame) SetYPixel(value int32)  error {
+	
+	CGoReturnPtr := C.ChartFrame_SetYPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the width of frame in units of Pixel.
+// Returns:
+//   int32  
+func (instance *ChartFrame) GetWidthPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ChartFrame_GetWidthPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the width of frame in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ChartFrame) SetWidthPixel(value int32)  error {
+	
+	CGoReturnPtr := C.ChartFrame_SetWidthPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the height of frame in units of Pixel.
+// Returns:
+//   int32  
+func (instance *ChartFrame) GetHeightPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ChartFrame_GetHeightPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the height of frame in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ChartFrame) SetHeightPixel(value int32)  error {
+	
+	CGoReturnPtr := C.ChartFrame_SetHeightPixel( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5755,6 +5983,7 @@ func (instance *ChartFrame) SetPositionAuto()  error {
 
 	return nil 
 }
+
 
 
 func DeleteChartFrame(chartframe *ChartFrame){
@@ -5913,6 +6142,7 @@ func (instance *ChartGlobalizationSettings) GetAxisUnitName(type_ DisplayUnitTyp
 
 	return result, nil 
 }
+
 
 
 func DeleteChartGlobalizationSettings(chartglobalizationsettings *ChartGlobalizationSettings){
@@ -6657,6 +6887,7 @@ func (instance *ChartPoint) GetOnCategoryAxisPointYPx(index int32)  (float32,  e
 }
 
 
+
 func DeleteChartPoint(chartpoint *ChartPoint){
 	runtime.SetFinalizer(chartpoint, nil)
 	C.Delete_ChartPoint(chartpoint.ptr)
@@ -6762,6 +6993,7 @@ func (instance *ChartPointCollection) Get(index int32)  (*ChartPoint,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteChartPointCollection(chartpointcollection *ChartPointCollection){
@@ -7296,59 +7528,59 @@ func (instance *ChartTextFrame) IsDefaultPosBeSet()  (bool,  error)  {
 
 	return result, nil 
 }
-// Represents x of default position
+// Represents x of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartTextFrame) GetDefaultX()  (int32,  error)  {
+//   float64  
+func (instance *ChartTextFrame) GetDefaultXRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartTextFrame_GetDefaultX( instance.ptr)
+	CGoReturnPtr := C.ChartTextFrame_GetDefaultXRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents y of default position
+// Represents y of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartTextFrame) GetDefaultY()  (int32,  error)  {
+//   float64  
+func (instance *ChartTextFrame) GetDefaultYRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartTextFrame_GetDefaultY( instance.ptr)
+	CGoReturnPtr := C.ChartTextFrame_GetDefaultYRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents width of default position
+// Represents width of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartTextFrame) GetDefaultWidth()  (int32,  error)  {
+//   float64  
+func (instance *ChartTextFrame) GetDefaultWidthRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartTextFrame_GetDefaultWidth( instance.ptr)
+	CGoReturnPtr := C.ChartTextFrame_GetDefaultWidthRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents height of default position
+// Represents height of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartTextFrame) GetDefaultHeight()  (int32,  error)  {
+//   float64  
+func (instance *ChartTextFrame) GetDefaultHeightRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartTextFrame_GetDefaultHeight( instance.ptr)
+	CGoReturnPtr := C.ChartTextFrame_GetDefaultHeightRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -7474,28 +7706,28 @@ func (instance *ChartTextFrame) SetIsAutomaticSize(value bool)  error {
 
 	return nil 
 }
-// Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the x coordinate of the upper left corner in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartTextFrame) GetX()  (int32,  error)  {
+//   float64  
+func (instance *ChartTextFrame) GetXRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartTextFrame_GetX( instance.ptr)
+	CGoReturnPtr := C.ChartTextFrame_GetXRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the x coordinate of the upper left corner in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *ChartTextFrame) SetX(value int32)  error {
+func (instance *ChartTextFrame) SetXRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.ChartTextFrame_SetX( instance.ptr, C.int(value))
+	CGoReturnPtr := C.ChartTextFrame_SetXRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7503,28 +7735,28 @@ func (instance *ChartTextFrame) SetX(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartTextFrame) GetY()  (int32,  error)  {
+//   float64  
+func (instance *ChartTextFrame) GetYRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartTextFrame_GetY( instance.ptr)
+	CGoReturnPtr := C.ChartTextFrame_GetYRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *ChartTextFrame) SetY(value int32)  error {
+func (instance *ChartTextFrame) SetYRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.ChartTextFrame_SetY( instance.ptr, C.int(value))
+	CGoReturnPtr := C.ChartTextFrame_SetYRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7532,28 +7764,28 @@ func (instance *ChartTextFrame) SetY(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Gets or sets the width of frame in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *ChartTextFrame) GetHeight()  (int32,  error)  {
+//   float64  
+func (instance *ChartTextFrame) GetWidthRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ChartTextFrame_GetHeight( instance.ptr)
+	CGoReturnPtr := C.ChartTextFrame_GetWidthRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Gets or sets the width of frame in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *ChartTextFrame) SetHeight(value int32)  error {
+func (instance *ChartTextFrame) SetWidthRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.ChartTextFrame_SetHeight( instance.ptr, C.int(value))
+	CGoReturnPtr := C.ChartTextFrame_SetWidthRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7561,12 +7793,41 @@ func (instance *ChartTextFrame) SetHeight(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Gets or sets the height of frame in units of ratio of the chart area.
+// Returns:
+//   float64  
+func (instance *ChartTextFrame) GetHeightRatioToChart()  (float64,  error)  {
+	
+	CGoReturnPtr := C.ChartTextFrame_GetHeightRatioToChart( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the height of frame in units of ratio of the chart area.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *ChartTextFrame) SetHeightRatioToChart(value float64)  error {
+	
+	CGoReturnPtr := C.ChartTextFrame_SetHeightRatioToChart( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the x coordinate of the upper left corner in units of Pixel.
 // Returns:
 //   int32  
-func (instance *ChartTextFrame) GetWidth()  (int32,  error)  {
+func (instance *ChartTextFrame) GetXPixel()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ChartTextFrame_GetWidth( instance.ptr)
+	CGoReturnPtr := C.ChartTextFrame_GetXPixel( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7575,14 +7836,101 @@ func (instance *ChartTextFrame) GetWidth()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Gets or sets the x coordinate of the upper left corner in units of Pixel.
 // Parameters:
 //   value - int32 
 // Returns:
 //   void  
-func (instance *ChartTextFrame) SetWidth(value int32)  error {
+func (instance *ChartTextFrame) SetXPixel(value int32)  error {
 	
-	CGoReturnPtr := C.ChartTextFrame_SetWidth( instance.ptr, C.int(value))
+	CGoReturnPtr := C.ChartTextFrame_SetXPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Returns:
+//   int32  
+func (instance *ChartTextFrame) GetYPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ChartTextFrame_GetYPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ChartTextFrame) SetYPixel(value int32)  error {
+	
+	CGoReturnPtr := C.ChartTextFrame_SetYPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the width of frame in units of Pixel.
+// Returns:
+//   int32  
+func (instance *ChartTextFrame) GetWidthPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ChartTextFrame_GetWidthPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the width of frame in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ChartTextFrame) SetWidthPixel(value int32)  error {
+	
+	CGoReturnPtr := C.ChartTextFrame_SetWidthPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the height of frame in units of Pixel.
+// Returns:
+//   int32  
+func (instance *ChartTextFrame) GetHeightPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ChartTextFrame_GetHeightPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the height of frame in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ChartTextFrame) SetHeightPixel(value int32)  error {
+	
+	CGoReturnPtr := C.ChartTextFrame_SetHeightPixel( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7604,6 +7952,12 @@ func (instance *ChartTextFrame) SetPositionAuto()  error {
 	return nil 
 }
 
+
+func (instance *ChartTextFrame) ToChartFrame() *ChartFrame {
+	parentClass := &ChartFrame{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteChartTextFrame(charttextframe *ChartTextFrame){
 	runtime.SetFinalizer(charttextframe, nil)
@@ -8401,59 +8755,59 @@ func (instance *DataLabels) IsDefaultPosBeSet()  (bool,  error)  {
 
 	return result, nil 
 }
-// Represents x of default position
+// Represents x of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *DataLabels) GetDefaultX()  (int32,  error)  {
+//   float64  
+func (instance *DataLabels) GetDefaultXRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.DataLabels_GetDefaultX( instance.ptr)
+	CGoReturnPtr := C.DataLabels_GetDefaultXRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents y of default position
+// Represents y of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *DataLabels) GetDefaultY()  (int32,  error)  {
+//   float64  
+func (instance *DataLabels) GetDefaultYRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.DataLabels_GetDefaultY( instance.ptr)
+	CGoReturnPtr := C.DataLabels_GetDefaultYRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents width of default position
+// Represents width of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *DataLabels) GetDefaultWidth()  (int32,  error)  {
+//   float64  
+func (instance *DataLabels) GetDefaultWidthRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.DataLabels_GetDefaultWidth( instance.ptr)
+	CGoReturnPtr := C.DataLabels_GetDefaultWidthRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents height of default position
+// Represents height of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *DataLabels) GetDefaultHeight()  (int32,  error)  {
+//   float64  
+func (instance *DataLabels) GetDefaultHeightRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.DataLabels_GetDefaultHeight( instance.ptr)
+	CGoReturnPtr := C.DataLabels_GetDefaultHeightRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -8531,28 +8885,28 @@ func (instance *DataLabels) SetIsAutomaticSize(value bool)  error {
 
 	return nil 
 }
-// Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the x coordinate of the upper left corner in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *DataLabels) GetX()  (int32,  error)  {
+//   float64  
+func (instance *DataLabels) GetXRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.DataLabels_GetX( instance.ptr)
+	CGoReturnPtr := C.DataLabels_GetXRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the x coordinate of the upper left corner in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *DataLabels) SetX(value int32)  error {
+func (instance *DataLabels) SetXRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.DataLabels_SetX( instance.ptr, C.int(value))
+	CGoReturnPtr := C.DataLabels_SetXRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8560,28 +8914,28 @@ func (instance *DataLabels) SetX(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *DataLabels) GetY()  (int32,  error)  {
+//   float64  
+func (instance *DataLabels) GetYRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.DataLabels_GetY( instance.ptr)
+	CGoReturnPtr := C.DataLabels_GetYRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *DataLabels) SetY(value int32)  error {
+func (instance *DataLabels) SetYRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.DataLabels_SetY( instance.ptr, C.int(value))
+	CGoReturnPtr := C.DataLabels_SetYRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8589,28 +8943,28 @@ func (instance *DataLabels) SetY(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Gets or sets the width of frame in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *DataLabels) GetHeight()  (int32,  error)  {
+//   float64  
+func (instance *DataLabels) GetWidthRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.DataLabels_GetHeight( instance.ptr)
+	CGoReturnPtr := C.DataLabels_GetWidthRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Gets or sets the width of frame in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *DataLabels) SetHeight(value int32)  error {
+func (instance *DataLabels) SetWidthRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.DataLabels_SetHeight( instance.ptr, C.int(value))
+	CGoReturnPtr := C.DataLabels_SetWidthRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8618,12 +8972,41 @@ func (instance *DataLabels) SetHeight(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Gets or sets the height of frame in units of ratio of the chart area.
+// Returns:
+//   float64  
+func (instance *DataLabels) GetHeightRatioToChart()  (float64,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_GetHeightRatioToChart( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the height of frame in units of ratio of the chart area.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *DataLabels) SetHeightRatioToChart(value float64)  error {
+	
+	CGoReturnPtr := C.DataLabels_SetHeightRatioToChart( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the x coordinate of the upper left corner in units of Pixel.
 // Returns:
 //   int32  
-func (instance *DataLabels) GetWidth()  (int32,  error)  {
+func (instance *DataLabels) GetXPixel()  (int32,  error)  {
 	
-	CGoReturnPtr := C.DataLabels_GetWidth( instance.ptr)
+	CGoReturnPtr := C.DataLabels_GetXPixel( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8632,14 +9015,101 @@ func (instance *DataLabels) GetWidth()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Gets or sets the x coordinate of the upper left corner in units of Pixel.
 // Parameters:
 //   value - int32 
 // Returns:
 //   void  
-func (instance *DataLabels) SetWidth(value int32)  error {
+func (instance *DataLabels) SetXPixel(value int32)  error {
 	
-	CGoReturnPtr := C.DataLabels_SetWidth( instance.ptr, C.int(value))
+	CGoReturnPtr := C.DataLabels_SetXPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Returns:
+//   int32  
+func (instance *DataLabels) GetYPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_GetYPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *DataLabels) SetYPixel(value int32)  error {
+	
+	CGoReturnPtr := C.DataLabels_SetYPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the width of frame in units of Pixel.
+// Returns:
+//   int32  
+func (instance *DataLabels) GetWidthPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_GetWidthPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the width of frame in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *DataLabels) SetWidthPixel(value int32)  error {
+	
+	CGoReturnPtr := C.DataLabels_SetWidthPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the height of frame in units of Pixel.
+// Returns:
+//   int32  
+func (instance *DataLabels) GetHeightPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DataLabels_GetHeightPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the height of frame in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *DataLabels) SetHeightPixel(value int32)  error {
+	
+	CGoReturnPtr := C.DataLabels_SetHeightPixel( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8909,6 +9379,17 @@ func (instance *DataLabels) SetLinkedSource(value string)  error {
 }
 
 
+func (instance *DataLabels) ToChartTextFrame() *ChartTextFrame {
+	parentClass := &ChartTextFrame{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *DataLabels) ToChartFrame() *ChartFrame {
+	parentClass := &ChartFrame{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteDataLabels(datalabels *DataLabels){
 	runtime.SetFinalizer(datalabels, nil)
 	C.Delete_DataLabels(datalabels.ptr)
@@ -9149,59 +9630,59 @@ func (instance *DisplayUnitLabel) IsDefaultPosBeSet()  (bool,  error)  {
 
 	return result, nil 
 }
-// Represents x of default position
+// Represents x of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *DisplayUnitLabel) GetDefaultX()  (int32,  error)  {
+//   float64  
+func (instance *DisplayUnitLabel) GetDefaultXRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.DisplayUnitLabel_GetDefaultX( instance.ptr)
+	CGoReturnPtr := C.DisplayUnitLabel_GetDefaultXRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents y of default position
+// Represents y of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *DisplayUnitLabel) GetDefaultY()  (int32,  error)  {
+//   float64  
+func (instance *DisplayUnitLabel) GetDefaultYRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.DisplayUnitLabel_GetDefaultY( instance.ptr)
+	CGoReturnPtr := C.DisplayUnitLabel_GetDefaultYRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents width of default position
+// Represents width of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *DisplayUnitLabel) GetDefaultWidth()  (int32,  error)  {
+//   float64  
+func (instance *DisplayUnitLabel) GetDefaultWidthRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.DisplayUnitLabel_GetDefaultWidth( instance.ptr)
+	CGoReturnPtr := C.DisplayUnitLabel_GetDefaultWidthRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents height of default position
+// Represents height of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *DisplayUnitLabel) GetDefaultHeight()  (int32,  error)  {
+//   float64  
+func (instance *DisplayUnitLabel) GetDefaultHeightRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.DisplayUnitLabel_GetDefaultHeight( instance.ptr)
+	CGoReturnPtr := C.DisplayUnitLabel_GetDefaultHeightRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -9282,28 +9763,28 @@ func (instance *DisplayUnitLabel) SetIsAutomaticSize(value bool)  error {
 
 	return nil 
 }
-// Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the x coordinate of the upper left corner in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *DisplayUnitLabel) GetX()  (int32,  error)  {
+//   float64  
+func (instance *DisplayUnitLabel) GetXRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.DisplayUnitLabel_GetX( instance.ptr)
+	CGoReturnPtr := C.DisplayUnitLabel_GetXRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the x coordinate of the upper left corner in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *DisplayUnitLabel) SetX(value int32)  error {
+func (instance *DisplayUnitLabel) SetXRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.DisplayUnitLabel_SetX( instance.ptr, C.int(value))
+	CGoReturnPtr := C.DisplayUnitLabel_SetXRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9311,28 +9792,28 @@ func (instance *DisplayUnitLabel) SetX(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *DisplayUnitLabel) GetY()  (int32,  error)  {
+//   float64  
+func (instance *DisplayUnitLabel) GetYRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.DisplayUnitLabel_GetY( instance.ptr)
+	CGoReturnPtr := C.DisplayUnitLabel_GetYRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *DisplayUnitLabel) SetY(value int32)  error {
+func (instance *DisplayUnitLabel) SetYRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.DisplayUnitLabel_SetY( instance.ptr, C.int(value))
+	CGoReturnPtr := C.DisplayUnitLabel_SetYRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9340,28 +9821,28 @@ func (instance *DisplayUnitLabel) SetY(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Gets or sets the width of frame in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *DisplayUnitLabel) GetHeight()  (int32,  error)  {
+//   float64  
+func (instance *DisplayUnitLabel) GetWidthRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.DisplayUnitLabel_GetHeight( instance.ptr)
+	CGoReturnPtr := C.DisplayUnitLabel_GetWidthRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Gets or sets the width of frame in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *DisplayUnitLabel) SetHeight(value int32)  error {
+func (instance *DisplayUnitLabel) SetWidthRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.DisplayUnitLabel_SetHeight( instance.ptr, C.int(value))
+	CGoReturnPtr := C.DisplayUnitLabel_SetWidthRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9369,12 +9850,41 @@ func (instance *DisplayUnitLabel) SetHeight(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Gets or sets the height of frame in units of ratio of the chart area.
+// Returns:
+//   float64  
+func (instance *DisplayUnitLabel) GetHeightRatioToChart()  (float64,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_GetHeightRatioToChart( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the height of frame in units of ratio of the chart area.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *DisplayUnitLabel) SetHeightRatioToChart(value float64)  error {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_SetHeightRatioToChart( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the x coordinate of the upper left corner in units of Pixel.
 // Returns:
 //   int32  
-func (instance *DisplayUnitLabel) GetWidth()  (int32,  error)  {
+func (instance *DisplayUnitLabel) GetXPixel()  (int32,  error)  {
 	
-	CGoReturnPtr := C.DisplayUnitLabel_GetWidth( instance.ptr)
+	CGoReturnPtr := C.DisplayUnitLabel_GetXPixel( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9383,14 +9893,101 @@ func (instance *DisplayUnitLabel) GetWidth()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Gets or sets the x coordinate of the upper left corner in units of Pixel.
 // Parameters:
 //   value - int32 
 // Returns:
 //   void  
-func (instance *DisplayUnitLabel) SetWidth(value int32)  error {
+func (instance *DisplayUnitLabel) SetXPixel(value int32)  error {
 	
-	CGoReturnPtr := C.DisplayUnitLabel_SetWidth( instance.ptr, C.int(value))
+	CGoReturnPtr := C.DisplayUnitLabel_SetXPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Returns:
+//   int32  
+func (instance *DisplayUnitLabel) GetYPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_GetYPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *DisplayUnitLabel) SetYPixel(value int32)  error {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_SetYPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the width of frame in units of Pixel.
+// Returns:
+//   int32  
+func (instance *DisplayUnitLabel) GetWidthPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_GetWidthPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the width of frame in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *DisplayUnitLabel) SetWidthPixel(value int32)  error {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_SetWidthPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the height of frame in units of Pixel.
+// Returns:
+//   int32  
+func (instance *DisplayUnitLabel) GetHeightPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_GetHeightPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the height of frame in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *DisplayUnitLabel) SetHeightPixel(value int32)  error {
+	
+	CGoReturnPtr := C.DisplayUnitLabel_SetHeightPixel( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9750,6 +10347,17 @@ func (instance *DisplayUnitLabel) SetIsTextWrapped(value bool)  error {
 }
 
 
+func (instance *DisplayUnitLabel) ToChartTextFrame() *ChartTextFrame {
+	parentClass := &ChartTextFrame{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *DisplayUnitLabel) ToChartFrame() *ChartFrame {
+	parentClass := &ChartFrame{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteDisplayUnitLabel(displayunitlabel *DisplayUnitLabel){
 	runtime.SetFinalizer(displayunitlabel, nil)
 	C.Delete_DisplayUnitLabel(displayunitlabel.ptr)
@@ -9810,6 +10418,7 @@ func (instance *DropBars) GetArea()  (*Area,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteDropBars(dropbars *DropBars){
@@ -10690,6 +11299,12 @@ func (instance *ErrorBar) GetGradientFill()  (*GradientFill,  error)  {
 }
 
 
+func (instance *ErrorBar) ToLine() *Line {
+	parentClass := &Line{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteErrorBar(errorbar *ErrorBar){
 	runtime.SetFinalizer(errorbar, nil)
 	C.Delete_ErrorBar(errorbar.ptr)
@@ -10934,6 +11549,12 @@ func (instance *Floor) SetTransparency(value float64)  error {
 	return nil 
 }
 
+
+func (instance *Floor) ToArea() *Area {
+	parentClass := &Area{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteFloor(floor *Floor){
 	runtime.SetFinalizer(floor, nil)
@@ -11201,59 +11822,59 @@ func (instance *Legend) IsDefaultPosBeSet()  (bool,  error)  {
 
 	return result, nil 
 }
-// Represents x of default position
+// Represents x of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *Legend) GetDefaultX()  (int32,  error)  {
+//   float64  
+func (instance *Legend) GetDefaultXRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.Legend_GetDefaultX( instance.ptr)
+	CGoReturnPtr := C.Legend_GetDefaultXRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents y of default position
+// Represents y of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *Legend) GetDefaultY()  (int32,  error)  {
+//   float64  
+func (instance *Legend) GetDefaultYRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.Legend_GetDefaultY( instance.ptr)
+	CGoReturnPtr := C.Legend_GetDefaultYRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents width of default position
+// Represents width of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *Legend) GetDefaultWidth()  (int32,  error)  {
+//   float64  
+func (instance *Legend) GetDefaultWidthRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.Legend_GetDefaultWidth( instance.ptr)
+	CGoReturnPtr := C.Legend_GetDefaultWidthRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents height of default position
+// Represents height of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *Legend) GetDefaultHeight()  (int32,  error)  {
+//   float64  
+func (instance *Legend) GetDefaultHeightRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.Legend_GetDefaultHeight( instance.ptr)
+	CGoReturnPtr := C.Legend_GetDefaultHeightRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -11379,28 +12000,28 @@ func (instance *Legend) SetIsAutomaticSize(value bool)  error {
 
 	return nil 
 }
-// Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the x coordinate of the upper left corner in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *Legend) GetX()  (int32,  error)  {
+//   float64  
+func (instance *Legend) GetXRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.Legend_GetX( instance.ptr)
+	CGoReturnPtr := C.Legend_GetXRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the x coordinate of the upper left corner in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *Legend) SetX(value int32)  error {
+func (instance *Legend) SetXRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.Legend_SetX( instance.ptr, C.int(value))
+	CGoReturnPtr := C.Legend_SetXRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11408,28 +12029,28 @@ func (instance *Legend) SetX(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *Legend) GetY()  (int32,  error)  {
+//   float64  
+func (instance *Legend) GetYRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.Legend_GetY( instance.ptr)
+	CGoReturnPtr := C.Legend_GetYRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *Legend) SetY(value int32)  error {
+func (instance *Legend) SetYRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.Legend_SetY( instance.ptr, C.int(value))
+	CGoReturnPtr := C.Legend_SetYRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11437,28 +12058,28 @@ func (instance *Legend) SetY(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Gets or sets the width of frame in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *Legend) GetHeight()  (int32,  error)  {
+//   float64  
+func (instance *Legend) GetWidthRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.Legend_GetHeight( instance.ptr)
+	CGoReturnPtr := C.Legend_GetWidthRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Gets or sets the width of frame in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *Legend) SetHeight(value int32)  error {
+func (instance *Legend) SetWidthRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.Legend_SetHeight( instance.ptr, C.int(value))
+	CGoReturnPtr := C.Legend_SetWidthRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11466,12 +12087,41 @@ func (instance *Legend) SetHeight(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Gets or sets the height of frame in units of ratio of the chart area.
+// Returns:
+//   float64  
+func (instance *Legend) GetHeightRatioToChart()  (float64,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetHeightRatioToChart( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the height of frame in units of ratio of the chart area.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *Legend) SetHeightRatioToChart(value float64)  error {
+	
+	CGoReturnPtr := C.Legend_SetHeightRatioToChart( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the x coordinate of the upper left corner in units of Pixel.
 // Returns:
 //   int32  
-func (instance *Legend) GetWidth()  (int32,  error)  {
+func (instance *Legend) GetXPixel()  (int32,  error)  {
 	
-	CGoReturnPtr := C.Legend_GetWidth( instance.ptr)
+	CGoReturnPtr := C.Legend_GetXPixel( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11480,14 +12130,101 @@ func (instance *Legend) GetWidth()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Gets or sets the x coordinate of the upper left corner in units of Pixel.
 // Parameters:
 //   value - int32 
 // Returns:
 //   void  
-func (instance *Legend) SetWidth(value int32)  error {
+func (instance *Legend) SetXPixel(value int32)  error {
 	
-	CGoReturnPtr := C.Legend_SetWidth( instance.ptr, C.int(value))
+	CGoReturnPtr := C.Legend_SetXPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Returns:
+//   int32  
+func (instance *Legend) GetYPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetYPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Legend) SetYPixel(value int32)  error {
+	
+	CGoReturnPtr := C.Legend_SetYPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the width of frame in units of Pixel.
+// Returns:
+//   int32  
+func (instance *Legend) GetWidthPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetWidthPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the width of frame in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Legend) SetWidthPixel(value int32)  error {
+	
+	CGoReturnPtr := C.Legend_SetWidthPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the height of frame in units of Pixel.
+// Returns:
+//   int32  
+func (instance *Legend) GetHeightPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Legend_GetHeightPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the height of frame in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Legend) SetHeightPixel(value int32)  error {
+	
+	CGoReturnPtr := C.Legend_SetHeightPixel( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11876,6 +12613,17 @@ func (instance *Legend) SetIsTextWrapped(value bool)  error {
 }
 
 
+func (instance *Legend) ToChartTextFrame() *ChartTextFrame {
+	parentClass := &ChartTextFrame{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *Legend) ToChartFrame() *ChartFrame {
+	parentClass := &ChartFrame{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteLegend(legend *Legend){
 	runtime.SetFinalizer(legend, nil)
 	C.Delete_Legend(legend.ptr)
@@ -12043,6 +12791,7 @@ func (instance *LegendEntry) SetBackgroundMode(value BackgroundMode)  error {
 }
 
 
+
 func DeleteLegendEntry(legendentry *LegendEntry){
 	runtime.SetFinalizer(legendentry, nil)
 	C.Delete_LegendEntry(legendentry.ptr)
@@ -12102,6 +12851,7 @@ func (instance *LegendEntryCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteLegendEntryCollection(legendentrycollection *LegendEntryCollection){
@@ -12380,6 +13130,7 @@ func (instance *Marker) SetBackgroundColorSetType(value FormattingType)  error {
 }
 
 
+
 func DeleteMarker(marker *Marker){
 	runtime.SetFinalizer(marker, nil)
 	C.Delete_Marker(marker.ptr)
@@ -12563,6 +13314,7 @@ func (instance *PivotOptions) SetDropZonesVisible(value bool)  error {
 }
 
 
+
 func DeletePivotOptions(pivotoptions *PivotOptions){
 	runtime.SetFinalizer(pivotoptions, nil)
 	C.Delete_PivotOptions(pivotoptions.ptr)
@@ -12607,28 +13359,28 @@ func (instance *PlotArea) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Gets or gets the x coordinate of the upper left corner of plot-area bounding box in units of 1/4000 of the chart area.
+// Gets or gets the x coordinate of the upper left corner of plot-area bounding box in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *PlotArea) GetX()  (int32,  error)  {
+//   float64  
+func (instance *PlotArea) GetXRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.PlotArea_GetX( instance.ptr)
+	CGoReturnPtr := C.PlotArea_GetXRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or gets the x coordinate of the upper left corner of plot-area bounding box in units of 1/4000 of the chart area.
+// Gets or gets the x coordinate of the upper left corner of plot-area bounding box in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *PlotArea) SetX(value int32)  error {
+func (instance *PlotArea) SetXRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.PlotArea_SetX( instance.ptr, C.int(value))
+	CGoReturnPtr := C.PlotArea_SetXRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12636,28 +13388,28 @@ func (instance *PlotArea) SetX(value int32)  error {
 
 	return nil 
 }
-// Gets or gets the y coordinate of the upper top corner  of plot-area bounding box in units of 1/4000 of the chart area.
+// Gets or gets the y coordinate of the upper top corner  of plot-area bounding box in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *PlotArea) GetY()  (int32,  error)  {
+//   float64  
+func (instance *PlotArea) GetYRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.PlotArea_GetY( instance.ptr)
+	CGoReturnPtr := C.PlotArea_GetYRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or gets the y coordinate of the upper top corner  of plot-area bounding box in units of 1/4000 of the chart area.
+// Gets or gets the y coordinate of the upper top corner  of plot-area bounding box in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *PlotArea) SetY(value int32)  error {
+func (instance *PlotArea) SetYRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.PlotArea_SetY( instance.ptr, C.int(value))
+	CGoReturnPtr := C.PlotArea_SetYRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12665,28 +13417,28 @@ func (instance *PlotArea) SetY(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the height of plot-area bounding box in units of 1/4000 of the chart area.
+// Gets or sets the height of plot-area bounding box in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *PlotArea) GetHeight()  (int32,  error)  {
+//   float64  
+func (instance *PlotArea) GetHeightRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.PlotArea_GetHeight( instance.ptr)
+	CGoReturnPtr := C.PlotArea_GetHeightRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the height of plot-area bounding box in units of 1/4000 of the chart area.
+// Gets or sets the height of plot-area bounding box in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *PlotArea) SetHeight(value int32)  error {
+func (instance *PlotArea) SetHeightRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.PlotArea_SetHeight( instance.ptr, C.int(value))
+	CGoReturnPtr := C.PlotArea_SetHeightRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12694,28 +13446,28 @@ func (instance *PlotArea) SetHeight(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the width of plot-area bounding box in units of 1/4000 of the chart area.
+// Gets or sets the width of plot-area bounding box in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *PlotArea) GetWidth()  (int32,  error)  {
+//   float64  
+func (instance *PlotArea) GetWidthRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.PlotArea_GetWidth( instance.ptr)
+	CGoReturnPtr := C.PlotArea_GetWidthRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the width of plot-area bounding box in units of 1/4000 of the chart area.
+// Gets or sets the width of plot-area bounding box in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *PlotArea) SetWidth(value int32)  error {
+func (instance *PlotArea) SetWidthRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.PlotArea_SetWidth( instance.ptr, C.int(value))
+	CGoReturnPtr := C.PlotArea_SetWidthRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12723,28 +13475,28 @@ func (instance *PlotArea) SetWidth(value int32)  error {
 
 	return nil 
 }
-// Gets or gets the x coordinate of the upper top corner of plot area in units of 1/4000 of the chart area.
+// Gets or gets the x coordinate of the upper top corner of plot area in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *PlotArea) GetInnerX()  (int32,  error)  {
+//   float64  
+func (instance *PlotArea) GetInnerXRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.PlotArea_GetInnerX( instance.ptr)
+	CGoReturnPtr := C.PlotArea_GetInnerXRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or gets the x coordinate of the upper top corner of plot area in units of 1/4000 of the chart area.
+// Gets or gets the x coordinate of the upper top corner of plot area in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *PlotArea) SetInnerX(value int32)  error {
+func (instance *PlotArea) SetInnerXRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.PlotArea_SetInnerX( instance.ptr, C.int(value))
+	CGoReturnPtr := C.PlotArea_SetInnerXRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12752,28 +13504,28 @@ func (instance *PlotArea) SetInnerX(value int32)  error {
 
 	return nil 
 }
-// Gets or gets the x coordinate of the upper top corner of plot area in units of 1/4000 of the chart area.
+// Gets or gets the x coordinate of the upper top corner of plot area in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *PlotArea) GetInnerY()  (int32,  error)  {
+//   float64  
+func (instance *PlotArea) GetInnerYRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.PlotArea_GetInnerY( instance.ptr)
+	CGoReturnPtr := C.PlotArea_GetInnerYRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or gets the x coordinate of the upper top corner of plot area in units of 1/4000 of the chart area.
+// Gets or gets the x coordinate of the upper top corner of plot area in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *PlotArea) SetInnerY(value int32)  error {
+func (instance *PlotArea) SetInnerYRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.PlotArea_SetInnerY( instance.ptr, C.int(value))
+	CGoReturnPtr := C.PlotArea_SetInnerYRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12781,28 +13533,28 @@ func (instance *PlotArea) SetInnerY(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the height of plot area in units of 1/4000 of the chart area.
+// Gets or sets the height of plot area in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *PlotArea) GetInnerHeight()  (int32,  error)  {
+//   float64  
+func (instance *PlotArea) GetInnerHeightRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.PlotArea_GetInnerHeight( instance.ptr)
+	CGoReturnPtr := C.PlotArea_GetInnerHeightRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the height of plot area in units of 1/4000 of the chart area.
+// Gets or sets the height of plot area in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *PlotArea) SetInnerHeight(value int32)  error {
+func (instance *PlotArea) SetInnerHeightRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.PlotArea_SetInnerHeight( instance.ptr, C.int(value))
+	CGoReturnPtr := C.PlotArea_SetInnerHeightRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12810,28 +13562,28 @@ func (instance *PlotArea) SetInnerHeight(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the width  of plot area in units of 1/4000 of the chart area.
+// Gets or sets the width  of plot area in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *PlotArea) GetInnerWidth()  (int32,  error)  {
+//   float64  
+func (instance *PlotArea) GetInnerWidthRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.PlotArea_GetInnerWidth( instance.ptr)
+	CGoReturnPtr := C.PlotArea_GetInnerWidthRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the width  of plot area in units of 1/4000 of the chart area.
+// Gets or sets the width  of plot area in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *PlotArea) SetInnerWidth(value int32)  error {
+func (instance *PlotArea) SetInnerWidthRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.PlotArea_SetInnerWidth( instance.ptr, C.int(value))
+	CGoReturnPtr := C.PlotArea_SetInnerWidthRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -13003,59 +13755,59 @@ func (instance *PlotArea) IsDefaultPosBeSet()  (bool,  error)  {
 
 	return result, nil 
 }
-// Represents x of default position
+// Represents x of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *PlotArea) GetDefaultX()  (int32,  error)  {
+//   float64  
+func (instance *PlotArea) GetDefaultXRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.PlotArea_GetDefaultX( instance.ptr)
+	CGoReturnPtr := C.PlotArea_GetDefaultXRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents y of default position
+// Represents y of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *PlotArea) GetDefaultY()  (int32,  error)  {
+//   float64  
+func (instance *PlotArea) GetDefaultYRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.PlotArea_GetDefaultY( instance.ptr)
+	CGoReturnPtr := C.PlotArea_GetDefaultYRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents width of default position
+// Represents width of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *PlotArea) GetDefaultWidth()  (int32,  error)  {
+//   float64  
+func (instance *PlotArea) GetDefaultWidthRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.PlotArea_GetDefaultWidth( instance.ptr)
+	CGoReturnPtr := C.PlotArea_GetDefaultWidthRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents height of default position
+// Represents height of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *PlotArea) GetDefaultHeight()  (int32,  error)  {
+//   float64  
+func (instance *PlotArea) GetDefaultHeightRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.PlotArea_GetDefaultHeight( instance.ptr)
+	CGoReturnPtr := C.PlotArea_GetDefaultHeightRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -13152,7 +13904,129 @@ func (instance *PlotArea) SetAutoScaleFont(value bool)  error {
 
 	return nil 
 }
+// Gets or sets the x coordinate of the upper left corner in units of Pixel.
+// Returns:
+//   int32  
+func (instance *PlotArea) GetXPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.PlotArea_GetXPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
 
+	return result, nil 
+}
+// Gets or sets the x coordinate of the upper left corner in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *PlotArea) SetXPixel(value int32)  error {
+	
+	CGoReturnPtr := C.PlotArea_SetXPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Returns:
+//   int32  
+func (instance *PlotArea) GetYPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.PlotArea_GetYPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *PlotArea) SetYPixel(value int32)  error {
+	
+	CGoReturnPtr := C.PlotArea_SetYPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the width of frame in units of Pixel.
+// Returns:
+//   int32  
+func (instance *PlotArea) GetWidthPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.PlotArea_GetWidthPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the width of frame in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *PlotArea) SetWidthPixel(value int32)  error {
+	
+	CGoReturnPtr := C.PlotArea_SetWidthPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the height of frame in units of Pixel.
+// Returns:
+//   int32  
+func (instance *PlotArea) GetHeightPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.PlotArea_GetHeightPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the height of frame in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *PlotArea) SetHeightPixel(value int32)  error {
+	
+	CGoReturnPtr := C.PlotArea_SetHeightPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+
+
+func (instance *PlotArea) ToChartFrame() *ChartFrame {
+	parentClass := &ChartFrame{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeletePlotArea(plotarea *PlotArea){
 	runtime.SetFinalizer(plotarea, nil)
@@ -14017,27 +14891,27 @@ func (instance *Series) SetIsColorVaried(value bool)  error {
 // Returns or sets the space between bar or column clusters, as a percentage of the bar or column width.
 // The value of this property must be between 0 and 500.
 // Returns:
-//   int32  
-func (instance *Series) GetGapWidth()  (int32,  error)  {
+//   int16  
+func (instance *Series) GetGapWidth()  (int16,  error)  {
 	
 	CGoReturnPtr := C.Series_GetGapWidth( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := int16(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
 // Returns or sets the space between bar or column clusters, as a percentage of the bar or column width.
 // The value of this property must be between 0 and 500.
 // Parameters:
-//   value - int32 
+//   value - int16 
 // Returns:
 //   void  
-func (instance *Series) SetGapWidth(value int32)  error {
+func (instance *Series) SetGapWidth(value int16)  error {
 	
-	CGoReturnPtr := C.Series_SetGapWidth( instance.ptr, C.int(value))
+	CGoReturnPtr := C.Series_SetGapWidth( instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14048,27 +14922,27 @@ func (instance *Series) SetGapWidth(value int32)  error {
 // Gets or sets the angle of the first pie-chart or doughnut-chart slice, in degrees (clockwise from vertical).
 // Applies only to pie, 3-D pie, and doughnut charts, 0 to 360.
 // Returns:
-//   int32  
-func (instance *Series) GetFirstSliceAngle()  (int32,  error)  {
+//   int16  
+func (instance *Series) GetFirstSliceAngle()  (int16,  error)  {
 	
 	CGoReturnPtr := C.Series_GetFirstSliceAngle( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := int16(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
 // Gets or sets the angle of the first pie-chart or doughnut-chart slice, in degrees (clockwise from vertical).
 // Applies only to pie, 3-D pie, and doughnut charts, 0 to 360.
 // Parameters:
-//   value - int32 
+//   value - int16 
 // Returns:
 //   void  
-func (instance *Series) SetFirstSliceAngle(value int32)  error {
+func (instance *Series) SetFirstSliceAngle(value int16)  error {
 	
-	CGoReturnPtr := C.Series_SetFirstSliceAngle( instance.ptr, C.int(value))
+	CGoReturnPtr := C.Series_SetFirstSliceAngle( instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14080,15 +14954,15 @@ func (instance *Series) SetFirstSliceAngle(value int32)  error {
 // Can be a value between – 100 and 100.
 // Applies only to 2-D bar and 2-D column charts.
 // Returns:
-//   int32  
-func (instance *Series) GetOverlap()  (int32,  error)  {
+//   int16  
+func (instance *Series) GetOverlap()  (int16,  error)  {
 	
 	CGoReturnPtr := C.Series_GetOverlap( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := int16(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -14096,12 +14970,12 @@ func (instance *Series) GetOverlap()  (int32,  error)  {
 // Can be a value between – 100 and 100.
 // Applies only to 2-D bar and 2-D column charts.
 // Parameters:
-//   value - int32 
+//   value - int16 
 // Returns:
 //   void  
-func (instance *Series) SetOverlap(value int32)  error {
+func (instance *Series) SetOverlap(value int16)  error {
 	
-	CGoReturnPtr := C.Series_SetOverlap( instance.ptr, C.int(value))
+	CGoReturnPtr := C.Series_SetOverlap( instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14113,15 +14987,15 @@ func (instance *Series) SetOverlap(value int32)  error {
 // as a percentage of the size of the primary pie.
 // Can be a value from 5 to 200.
 // Returns:
-//   int32  
-func (instance *Series) GetSecondPlotSize()  (int32,  error)  {
+//   int16  
+func (instance *Series) GetSecondPlotSize()  (int16,  error)  {
 	
 	CGoReturnPtr := C.Series_GetSecondPlotSize( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := int16(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -14129,12 +15003,12 @@ func (instance *Series) GetSecondPlotSize()  (int32,  error)  {
 // as a percentage of the size of the primary pie.
 // Can be a value from 5 to 200.
 // Parameters:
-//   value - int32 
+//   value - int16 
 // Returns:
 //   void  
-func (instance *Series) SetSecondPlotSize(value int32)  error {
+func (instance *Series) SetSecondPlotSize(value int16)  error {
 	
-	CGoReturnPtr := C.Series_SetSecondPlotSize( instance.ptr, C.int(value))
+	CGoReturnPtr := C.Series_SetSecondPlotSize( instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14486,6 +15360,7 @@ func (instance *Series) GetShapeProperties()  (*ShapePropertyCollection,  error)
 }
 
 
+
 func DeleteSeries(series *Series){
 	runtime.SetFinalizer(series, nil)
 	C.Delete_Series(series.ptr)
@@ -14773,6 +15648,7 @@ func (instance *SeriesCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteSeriesCollection(seriescollection *SeriesCollection){
@@ -15157,6 +16033,7 @@ func (instance *SeriesLayoutProperties) SetMapChartProjectionType(value MapChart
 }
 
 
+
 func DeleteSeriesLayoutProperties(serieslayoutproperties *SeriesLayoutProperties){
 	runtime.SetFinalizer(serieslayoutproperties, nil)
 	C.Delete_SeriesLayoutProperties(serieslayoutproperties.ptr)
@@ -15277,6 +16154,7 @@ func (instance *Sparkline) ToImage_ImageOrPrintOptions(options *ImageOrPrintOpti
 }
 
 
+
 func DeleteSparkline(sparkline *Sparkline){
 	runtime.SetFinalizer(sparkline, nil)
 	C.Delete_Sparkline(sparkline.ptr)
@@ -15369,6 +16247,7 @@ func (instance *SparklineCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteSparklineCollection(sparklinecollection *SparklineCollection){
@@ -16223,6 +17102,7 @@ func (instance *SparklineGroup) SetVerticalAxisMinValue(value float64)  error {
 }
 
 
+
 func DeleteSparklineGroup(sparklinegroup *SparklineGroup){
 	runtime.SetFinalizer(sparklinegroup, nil)
 	C.Delete_SparklineGroup(sparklinegroup.ptr)
@@ -16349,6 +17229,7 @@ func (instance *SparklineGroupCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteSparklineGroupCollection(sparklinegroupcollection *SparklineGroupCollection){
 	runtime.SetFinalizer(sparklinegroupcollection, nil)
 	C.Delete_SparklineGroupCollection(sparklinegroupcollection.ptr)
@@ -16433,6 +17314,7 @@ func (instance *TickLabelItem) GetHeight()  (float64,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteTickLabelItem(ticklabelitem *TickLabelItem){
@@ -16849,6 +17731,7 @@ func (instance *TickLabels) SetAlignmentType(value TickLabelAlignmentType)  erro
 }
 
 
+
 func DeleteTickLabels(ticklabels *TickLabels){
 	runtime.SetFinalizer(ticklabels, nil)
 	C.Delete_TickLabels(ticklabels.ptr)
@@ -16951,28 +17834,30 @@ func (instance *Title) SetIsVisible(value bool)  error {
 
 	return nil 
 }
-// Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the x coordinate of the upper left corner in units of Fraction of the chart area.
+// X In Pixels = XRatioToChart * Chart.ChartObject.Width;
 // Returns:
-//   int32  
-func (instance *Title) GetX()  (int32,  error)  {
+//   float64  
+func (instance *Title) GetXRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.Title_GetX( instance.ptr)
+	CGoReturnPtr := C.Title_GetXRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the x coordinate of the upper left corner in units of Fraction of the chart area.
+// X In Pixels = XRatioToChart * Chart.ChartObject.Width;
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *Title) SetX(value int32)  error {
+func (instance *Title) SetXRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.Title_SetX( instance.ptr, C.int(value))
+	CGoReturnPtr := C.Title_SetXRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16980,28 +17865,30 @@ func (instance *Title) SetX(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of Fraction of the chart area.
+// Y In Pixels = YRatioToChart * Chart.ChartObject.Width;
 // Returns:
-//   int32  
-func (instance *Title) GetY()  (int32,  error)  {
+//   float64  
+func (instance *Title) GetYRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.Title_GetY( instance.ptr)
+	CGoReturnPtr := C.Title_GetYRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of Fraction of the chart area.
+// Y In Pixels = YRatioToChart * Chart.ChartObject.Width;
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *Title) SetY(value int32)  error {
+func (instance *Title) SetYRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.Title_SetY( instance.ptr, C.int(value))
+	CGoReturnPtr := C.Title_SetYRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17200,59 +18087,59 @@ func (instance *Title) IsDefaultPosBeSet()  (bool,  error)  {
 
 	return result, nil 
 }
-// Represents x of default position
+// Represents x of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *Title) GetDefaultX()  (int32,  error)  {
+//   float64  
+func (instance *Title) GetDefaultXRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.Title_GetDefaultX( instance.ptr)
+	CGoReturnPtr := C.Title_GetDefaultXRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents y of default position
+// Represents y of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *Title) GetDefaultY()  (int32,  error)  {
+//   float64  
+func (instance *Title) GetDefaultYRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.Title_GetDefaultY( instance.ptr)
+	CGoReturnPtr := C.Title_GetDefaultYRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents width of default position
+// Represents width of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *Title) GetDefaultWidth()  (int32,  error)  {
+//   float64  
+func (instance *Title) GetDefaultWidthRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.Title_GetDefaultWidth( instance.ptr)
+	CGoReturnPtr := C.Title_GetDefaultWidthRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Represents height of default position
+// Represents height of default position in units of Fraction of the chart area.
 // Returns:
-//   int32  
-func (instance *Title) GetDefaultHeight()  (int32,  error)  {
+//   float64  
+func (instance *Title) GetDefaultHeightRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.Title_GetDefaultHeight( instance.ptr)
+	CGoReturnPtr := C.Title_GetDefaultHeightRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -17378,28 +18265,28 @@ func (instance *Title) SetIsAutomaticSize(value bool)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Gets or sets the width of frame in units of ratio of the chart area.
 // Returns:
-//   int32  
-func (instance *Title) GetHeight()  (int32,  error)  {
+//   float64  
+func (instance *Title) GetWidthRatioToChart()  (float64,  error)  {
 	
-	CGoReturnPtr := C.Title_GetHeight( instance.ptr)
+	CGoReturnPtr := C.Title_GetWidthRatioToChart( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := float64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of 1/4000 of the chart area.
+// Gets or sets the width of frame in units of ratio of the chart area.
 // Parameters:
-//   value - int32 
+//   value - float64 
 // Returns:
 //   void  
-func (instance *Title) SetHeight(value int32)  error {
+func (instance *Title) SetWidthRatioToChart(value float64)  error {
 	
-	CGoReturnPtr := C.Title_SetHeight( instance.ptr, C.int(value))
+	CGoReturnPtr := C.Title_SetWidthRatioToChart( instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17407,12 +18294,41 @@ func (instance *Title) SetHeight(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Gets or sets the height of frame in units of ratio of the chart area.
+// Returns:
+//   float64  
+func (instance *Title) GetHeightRatioToChart()  (float64,  error)  {
+	
+	CGoReturnPtr := C.Title_GetHeightRatioToChart( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the height of frame in units of ratio of the chart area.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *Title) SetHeightRatioToChart(value float64)  error {
+	
+	CGoReturnPtr := C.Title_SetHeightRatioToChart( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the x coordinate of the upper left corner in units of Pixel.
 // Returns:
 //   int32  
-func (instance *Title) GetWidth()  (int32,  error)  {
+func (instance *Title) GetXPixel()  (int32,  error)  {
 	
-	CGoReturnPtr := C.Title_GetWidth( instance.ptr)
+	CGoReturnPtr := C.Title_GetXPixel( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -17421,14 +18337,101 @@ func (instance *Title) GetWidth()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the width of frame in units of 1/4000 of the chart area.
+// Gets or sets the x coordinate of the upper left corner in units of Pixel.
 // Parameters:
 //   value - int32 
 // Returns:
 //   void  
-func (instance *Title) SetWidth(value int32)  error {
+func (instance *Title) SetXPixel(value int32)  error {
 	
-	CGoReturnPtr := C.Title_SetWidth( instance.ptr, C.int(value))
+	CGoReturnPtr := C.Title_SetXPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Returns:
+//   int32  
+func (instance *Title) GetYPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Title_GetYPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Title) SetYPixel(value int32)  error {
+	
+	CGoReturnPtr := C.Title_SetYPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the width of frame in units of Pixel.
+// Returns:
+//   int32  
+func (instance *Title) GetWidthPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Title_GetWidthPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the width of frame in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Title) SetWidthPixel(value int32)  error {
+	
+	CGoReturnPtr := C.Title_SetWidthPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the height of frame in units of Pixel.
+// Returns:
+//   int32  
+func (instance *Title) GetHeightPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.Title_GetHeightPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the height of frame in units of Pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Title) SetHeightPixel(value int32)  error {
+	
+	CGoReturnPtr := C.Title_SetHeightPixel( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17768,6 +18771,17 @@ func (instance *Title) SetIsTextWrapped(value bool)  error {
 	return nil 
 }
 
+
+func (instance *Title) ToChartTextFrame() *ChartTextFrame {
+	parentClass := &ChartTextFrame{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *Title) ToChartFrame() *ChartFrame {
+	parentClass := &ChartFrame{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteTitle(title *Title){
 	runtime.SetFinalizer(title, nil)
@@ -18785,6 +19799,12 @@ func (instance *Trendline) GetGradientFill()  (*GradientFill,  error)  {
 }
 
 
+func (instance *Trendline) ToLine() *Line {
+	parentClass := &Line{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteTrendline(trendline *Trendline){
 	runtime.SetFinalizer(trendline, nil)
 	C.Delete_Trendline(trendline.ptr)
@@ -18877,6 +19897,7 @@ func (instance *TrendlineCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteTrendlineCollection(trendlinecollection *TrendlineCollection){
@@ -19311,6 +20332,17 @@ func (instance *Walls) SetBorder(value *Line)  error {
 	return nil 
 }
 
+
+func (instance *Walls) ToFloor() *Floor {
+	parentClass := &Floor{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *Walls) ToArea() *Area {
+	parentClass := &Area{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteWalls(walls *Walls){
 	runtime.SetFinalizer(walls, nil)

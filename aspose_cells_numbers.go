@@ -709,6 +709,12 @@ func (instance *NumbersLoadOptions) SetPreservePaddingSpacesInFormula(value bool
 }
 
 
+func (instance *NumbersLoadOptions) ToLoadOptions() *LoadOptions {
+	parentClass := &LoadOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteNumbersLoadOptions(numbersloadoptions *NumbersLoadOptions){
 	runtime.SetFinalizer(numbersloadoptions, nil)
 	C.Delete_NumbersLoadOptions(numbersloadoptions.ptr)

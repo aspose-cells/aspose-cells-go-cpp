@@ -1081,6 +1081,17 @@ func AccentEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 }
 
 
+func (instance *AccentEquationNode) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *AccentEquationNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteAccentEquationNode(accentequationnode *AccentEquationNode){
 	runtime.SetFinalizer(accentequationnode, nil)
 	C.Delete_AccentEquationNode(accentequationnode.ptr)
@@ -1492,6 +1503,17 @@ func ArrayEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workb
 	return result, nil 
 }
 
+
+func (instance *ArrayEquationNode) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *ArrayEquationNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteArrayEquationNode(arrayequationnode *ArrayEquationNode){
 	runtime.SetFinalizer(arrayequationnode, nil)
@@ -1937,6 +1959,17 @@ func BarEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workboo
 }
 
 
+func (instance *BarEquationNode) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *BarEquationNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteBarEquationNode(barequationnode *BarEquationNode){
 	runtime.SetFinalizer(barequationnode, nil)
 	C.Delete_BarEquationNode(barequationnode.ptr)
@@ -2349,6 +2382,17 @@ func BorderBoxEquationNode_CreateNode(equationtype EquationNodeType, workbook *W
 }
 
 
+func (instance *BorderBoxEquationNode) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *BorderBoxEquationNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteBorderBoxEquationNode(borderboxequationnode *BorderBoxEquationNode){
 	runtime.SetFinalizer(borderboxequationnode, nil)
 	C.Delete_BorderBoxEquationNode(borderboxequationnode.ptr)
@@ -2760,6 +2804,17 @@ func BoxEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workboo
 	return result, nil 
 }
 
+
+func (instance *BoxEquationNode) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *BoxEquationNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteBoxEquationNode(boxequationnode *BoxEquationNode){
 	runtime.SetFinalizer(boxequationnode, nil)
@@ -3320,6 +3375,17 @@ func DelimiterEquationNode_CreateNode(equationtype EquationNodeType, workbook *W
 }
 
 
+func (instance *DelimiterEquationNode) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *DelimiterEquationNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteDelimiterEquationNode(delimiterequationnode *DelimiterEquationNode){
 	runtime.SetFinalizer(delimiterequationnode, nil)
 	C.Delete_DelimiterEquationNode(delimiterequationnode.ptr)
@@ -3735,6 +3801,17 @@ func EquationComponentNode_CreateNode(equationtype EquationNodeType, workbook *W
 }
 
 
+func (instance *EquationComponentNode) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *EquationComponentNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteEquationComponentNode(equationcomponentnode *EquationComponentNode){
 	runtime.SetFinalizer(equationcomponentnode, nil)
 	C.Delete_EquationComponentNode(equationcomponentnode.ptr)
@@ -4146,6 +4223,12 @@ func (instance *EquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	return result, nil 
 }
 
+
+func (instance *EquationNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteEquationNode(equationnode *EquationNode){
 	runtime.SetFinalizer(equationnode, nil)
@@ -4591,6 +4674,17 @@ func EquationNodeParagraph_CreateNode(equationtype EquationNodeType, workbook *W
 }
 
 
+func (instance *EquationNodeParagraph) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *EquationNodeParagraph) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteEquationNodeParagraph(equationnodeparagraph *EquationNodeParagraph){
 	runtime.SetFinalizer(equationnodeparagraph, nil)
 	C.Delete_EquationNodeParagraph(equationnodeparagraph.ptr)
@@ -5035,6 +5129,17 @@ func FractionEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wo
 }
 
 
+func (instance *FractionEquationNode) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *FractionEquationNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteFractionEquationNode(fractionequationnode *FractionEquationNode){
 	runtime.SetFinalizer(fractionequationnode, nil)
 	C.Delete_FractionEquationNode(fractionequationnode.ptr)
@@ -5447,6 +5552,17 @@ func FunctionEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wo
 	return result, nil 
 }
 
+
+func (instance *FunctionEquationNode) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *FunctionEquationNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteFunctionEquationNode(functionequationnode *FunctionEquationNode){
 	runtime.SetFinalizer(functionequationnode, nil)
@@ -5989,6 +6105,17 @@ func GroupCharacterEquationNode_CreateNode(equationtype EquationNodeType, workbo
 }
 
 
+func (instance *GroupCharacterEquationNode) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *GroupCharacterEquationNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteGroupCharacterEquationNode(groupcharacterequationnode *GroupCharacterEquationNode){
 	runtime.SetFinalizer(groupcharacterequationnode, nil)
 	C.Delete_GroupCharacterEquationNode(groupcharacterequationnode.ptr)
@@ -6401,6 +6528,17 @@ func LimLowUppEquationNode_CreateNode(equationtype EquationNodeType, workbook *W
 }
 
 
+func (instance *LimLowUppEquationNode) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *LimLowUppEquationNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteLimLowUppEquationNode(limlowuppequationnode *LimLowUppEquationNode){
 	runtime.SetFinalizer(limlowuppequationnode, nil)
 	C.Delete_LimLowUppEquationNode(limlowuppequationnode.ptr)
@@ -6812,6 +6950,17 @@ func MathematicalEquationNode_CreateNode(equationtype EquationNodeType, workbook
 	return result, nil 
 }
 
+
+func (instance *MathematicalEquationNode) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *MathematicalEquationNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteMathematicalEquationNode(mathematicalequationnode *MathematicalEquationNode){
 	runtime.SetFinalizer(mathematicalequationnode, nil)
@@ -7285,6 +7434,17 @@ func MatrixEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	return result, nil 
 }
 
+
+func (instance *MatrixEquationNode) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *MatrixEquationNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteMatrixEquationNode(matrixequationnode *MatrixEquationNode){
 	runtime.SetFinalizer(matrixequationnode, nil)
@@ -7882,6 +8042,17 @@ func NaryEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbo
 }
 
 
+func (instance *NaryEquationNode) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *NaryEquationNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteNaryEquationNode(naryequationnode *NaryEquationNode){
 	runtime.SetFinalizer(naryequationnode, nil)
 	C.Delete_NaryEquationNode(naryequationnode.ptr)
@@ -8323,6 +8494,17 @@ func RadicalEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wor
 }
 
 
+func (instance *RadicalEquationNode) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *RadicalEquationNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteRadicalEquationNode(radicalequationnode *RadicalEquationNode){
 	runtime.SetFinalizer(radicalequationnode, nil)
 	C.Delete_RadicalEquationNode(radicalequationnode.ptr)
@@ -8735,6 +8917,17 @@ func SubSupEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	return result, nil 
 }
 
+
+func (instance *SubSupEquationNode) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *SubSupEquationNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteSubSupEquationNode(subsupequationnode *SubSupEquationNode){
 	runtime.SetFinalizer(subsupequationnode, nil)
@@ -9178,6 +9371,17 @@ func TextRunEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wor
 }
 
 
+func (instance *TextRunEquationNode) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *TextRunEquationNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteTextRunEquationNode(textrunequationnode *TextRunEquationNode){
 	runtime.SetFinalizer(textrunequationnode, nil)
 	C.Delete_TextRunEquationNode(textrunequationnode.ptr)
@@ -9589,6 +9793,17 @@ func UnknowEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	return result, nil 
 }
 
+
+func (instance *UnknowEquationNode) ToEquationNode() *EquationNode {
+	parentClass := &EquationNode{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *UnknowEquationNode) ToFontSetting() *FontSetting {
+	parentClass := &FontSetting{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteUnknowEquationNode(unknowequationnode *UnknowEquationNode){
 	runtime.SetFinalizer(unknowequationnode, nil)

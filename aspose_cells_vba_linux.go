@@ -113,6 +113,21 @@ func (instance *VbaModule) GetType()  (*VbaModuleType,  error)  {
 
 	return result, nil 
 }
+// Gets and sets the binary codes of module.
+// Returns:
+//   []byte  
+func (instance *VbaModule) GetBinaryCodes()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.VbaModule_GetBinaryCodes( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
 // Gets and sets the codes of module.
 // Returns:
 //   string  
@@ -142,6 +157,7 @@ func (instance *VbaModule) SetCodes(value string)  error {
 
 	return nil 
 }
+
 
 
 func DeleteVbaModule(vbamodule *VbaModule){
@@ -336,6 +352,7 @@ func (instance *VbaModuleCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteVbaModuleCollection(vbamodulecollection *VbaModuleCollection){
 	runtime.SetFinalizer(vbamodulecollection, nil)
 	C.Delete_VbaModuleCollection(vbamodulecollection.ptr)
@@ -348,6 +365,7 @@ func DeleteVbaModuleCollection(vbamodulecollection *VbaModuleCollection){
 type VbaModuleType struct {
 	ptr unsafe.Pointer
 }
+
 
 
 
@@ -608,6 +626,7 @@ func (instance *VbaProject) ValidatePassword(password string)  (bool,  error)  {
 }
 
 
+
 func DeleteVbaProject(vbaproject *VbaProject){
 	runtime.SetFinalizer(vbaproject, nil)
 	C.Delete_VbaProject(vbaproject.ptr)
@@ -814,6 +833,7 @@ func (instance *VbaProjectReference) SetRelativeLibid(value string)  error {
 }
 
 
+
 func DeleteVbaProjectReference(vbaprojectreference *VbaProjectReference){
 	runtime.SetFinalizer(vbaprojectreference, nil)
 	C.Delete_VbaProjectReference(vbaprojectreference.ptr)
@@ -942,6 +962,7 @@ func (instance *VbaProjectReferenceCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteVbaProjectReferenceCollection(vbaprojectreferencecollection *VbaProjectReferenceCollection){

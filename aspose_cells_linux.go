@@ -275,15 +275,6 @@ func Int32ToBackgroundType(value int32)(BackgroundType ,error){
 type BorderType int32
 
 const(
-// Represents bottom border line.
-BorderType_BottomBorder BorderType = 8 
-
-// Represents the diagonal line from top left to right bottom.
-BorderType_DiagonalDown BorderType = 16 
-
-// Represents the diagonal line from bottom left to right top.
-BorderType_DiagonalUp BorderType = 32 
-
 // Represents left border line.
 BorderType_LeftBorder BorderType = 1 
 
@@ -293,23 +284,50 @@ BorderType_RightBorder BorderType = 2
 // Represents top border line.
 BorderType_TopBorder BorderType = 4 
 
-// Only for dynamic style,such as conditional formatting.
+// Represents bottom border line.
+BorderType_BottomBorder BorderType = 8 
+
+// Represents the diagonal line from top left to right bottom.
+BorderType_DiagonalDown BorderType = 16 
+
+// Represents the diagonal line from bottom left to right top.
+BorderType_DiagonalUp BorderType = 32 
+
+// Only for dynamic style, such as conditional formatting.
+BorderType_Vertical BorderType = 64 
+
+// Only for dynamic style, such as conditional formatting.
 BorderType_Horizontal BorderType = 128 
 
-// Only for dynamic style,such as conditional formatting.
-BorderType_Vertical BorderType = 64 
+// Indicates the four side borders: <see cref="LeftBorder"/>,
+// <see cref="RightBorder"/>, <see cref="TopBorder"/> and <see cref="BottomBorder"/>.
+BorderType_SideBorders BorderType = 15 
+
+// Special combination of multiple borders for user's convenience for some APIs.
+// Indicates diagonal borders of <see cref="DiagonalUp"/> and <see cref="DiagonalDown"/>.
+BorderType_Diagonal BorderType = 48 
+
+// Indicates <see cref="Vertical"/> and <see cref="Horizontal"/> of dynamic style.
+BorderType_DynamicStyleBorders BorderType = 192 
+
+// No border has been specified.
+BorderType_None BorderType = 0 
 )
 
 func Int32ToBorderType(value int32)(BorderType ,error){
 	switch value {
-		case 8:  return BorderType_BottomBorder, nil  
-		case 16:  return BorderType_DiagonalDown, nil  
-		case 32:  return BorderType_DiagonalUp, nil  
 		case 1:  return BorderType_LeftBorder, nil  
 		case 2:  return BorderType_RightBorder, nil  
 		case 4:  return BorderType_TopBorder, nil  
-		case 128:  return BorderType_Horizontal, nil  
+		case 8:  return BorderType_BottomBorder, nil  
+		case 16:  return BorderType_DiagonalDown, nil  
+		case 32:  return BorderType_DiagonalUp, nil  
 		case 64:  return BorderType_Vertical, nil  
+		case 128:  return BorderType_Horizontal, nil  
+		case 15:  return BorderType_SideBorders, nil  
+		case 48:  return BorderType_Diagonal, nil  
+		case 192:  return BorderType_DynamicStyleBorders, nil  
+		case 0:  return BorderType_None, nil  
 		default:
 			return 0 ,fmt.Errorf("invalid BorderType value: %d", value)
 	}
@@ -2299,6 +2317,36 @@ func Int32ToFilterType(value int32)(FilterType ,error){
 	}
 }
 
+/**************Enum FontFileFormatType *****************/
+
+// Represents font format type.
+type FontFileFormatType int32
+
+const(
+// Unknown font format type.
+FontFileFormatType_Unknown FontFileFormatType = 0 
+
+// TTF font format type.
+FontFileFormatType_Ttf FontFileFormatType = 1 
+
+// OTF font format type.
+FontFileFormatType_Otf FontFileFormatType = 2 
+
+// TTC font format type.
+FontFileFormatType_Ttc FontFileFormatType = 3 
+)
+
+func Int32ToFontFileFormatType(value int32)(FontFileFormatType ,error){
+	switch value {
+		case 0:  return FontFileFormatType_Unknown, nil  
+		case 1:  return FontFileFormatType_Ttf, nil  
+		case 2:  return FontFileFormatType_Otf, nil  
+		case 3:  return FontFileFormatType_Ttc, nil  
+		default:
+			return 0 ,fmt.Errorf("invalid FontFileFormatType value: %d", value)
+	}
+}
+
 /**************Enum FontSchemeType *****************/
 
 // Represents the scheme type of the font.
@@ -3270,23 +3318,30 @@ func Int32ToLookAtType(value int32)(LookAtType ,error){
 type LookInType int32
 
 const(
-// If the cell contains a formula, find object from formula, else find it from the value.
+// Finds the searched object from formula(<see cref="Cell.Formula"/>) if the cell is formula,
+// otherwise finds from cell's original value(same with <see cref="OriginalValues"/>).
 LookInType_Formulas LookInType = 0 
 
-// Only find object from the formatted values.
+// Finds object from cell's original value(<see cref="Cell.Value"/>)
+// and formatted value(<see cref="Cell.StringValue"/>).
 LookInType_Values LookInType = 1 
 
-// Only find object from the values of cells which do not contains formula.
+// Ignores cells that are formula. For those cells that are not formula,
+// it is same with <see cref="Values"/>.
 LookInType_ValuesExcludeFormulaCell LookInType = 2 
 
-// Only find object from the comments.
+// Finds object from cell's comment only. Ignores those cells that have no comment.
 LookInType_Comments LookInType = 3 
 
-// Only find object from formulas.
+// Ignores cells that are not formula. For those cells that are formula,
+// finds the searched object from formula(<see cref="Cell.Formula"/>).
 LookInType_OnlyFormulas LookInType = 4 
 
-// Only find object from the original values.
+// Find object from cell's original value only.
 LookInType_OriginalValues LookInType = 5 
+
+// Find object from cell's formatted value(<see cref="Cell.StringValue"/>) only.
+LookInType_FormattedValues LookInType = 6 
 )
 
 func Int32ToLookInType(value int32)(LookInType ,error){
@@ -3297,6 +3352,7 @@ func Int32ToLookInType(value int32)(LookInType ,error){
 		case 3:  return LookInType_Comments, nil  
 		case 4:  return LookInType_OnlyFormulas, nil  
 		case 5:  return LookInType_OriginalValues, nil  
+		case 6:  return LookInType_FormattedValues, nil  
 		default:
 			return 0 ,fmt.Errorf("invalid LookInType value: %d", value)
 	}
@@ -4932,10 +4988,6 @@ StyleModifyFlag_DiagonalDownBorder StyleModifyFlag = 4096
 // Indicates whether diagonal-up border has been modified for the style.
 StyleModifyFlag_DiagonalUpBorder StyleModifyFlag = 8192 
 
-// Indicates whether one or more diagonal borders(<see cref="DiagonalDownBorder"/>,
-// <see cref="DiagonalUpBorder"/>) have been modified for the style.
-StyleModifyFlag_Diagonal StyleModifyFlag = 12288 
-
 // Indicates whether horizontal border has been modified for the style.
 // Only for dynamic style, such as conditional formatting.
 StyleModifyFlag_HorizontalBorder StyleModifyFlag = 32 
@@ -4943,6 +4995,16 @@ StyleModifyFlag_HorizontalBorder StyleModifyFlag = 32
 // Indicates whether vertical border has been modified for the style.
 // Only for dynamic style, such as conditional formatting.
 StyleModifyFlag_VerticalBorder StyleModifyFlag = 64 
+
+// Indicates the four side borders: <see cref="LeftBorder"/>,
+// <see cref="RightBorder"/>, <see cref="TopBorder"/> and <see cref="BottomBorder"/>.
+StyleModifyFlag_SideBorders StyleModifyFlag = 3840 
+
+// Indicates diagonal borders: <see cref="DiagonalDownBorder"/> and <see cref="DiagonalUpBorder"/>.
+StyleModifyFlag_Diagonal StyleModifyFlag = 12288 
+
+// Indicates borders of dynamic style: <see cref="HorizontalBorder"/> and <see cref="VerticalBorder"/>.
+StyleModifyFlag_DynamicStyleBorders StyleModifyFlag = 96 
 
 // Indicates whether one or more borders(<see cref="LeftBorder"/>,
 // <see cref="RightBorder"/>, <see cref="TopBorder"/>, <see cref="BottomBorder"/>,
@@ -5067,8 +5129,11 @@ StyleModifyFlag_FontVerticalText StyleModifyFlag = 19
 // Indicates whether one or more properties have been modified for the font of the style.
 StyleModifyFlag_Font StyleModifyFlag = 31 
 
-// Indicates whether one or more properties have been modified for the style.
+// All properties that can be modified for the style.
 StyleModifyFlag_All StyleModifyFlag = 234881023 
+
+// No property has been specified.
+StyleModifyFlag_None StyleModifyFlag = 0 
 )
 
 func Int32ToStyleModifyFlag(value int32)(StyleModifyFlag ,error){
@@ -5079,9 +5144,11 @@ func Int32ToStyleModifyFlag(value int32)(StyleModifyFlag ,error){
 		case 2048:  return StyleModifyFlag_BottomBorder, nil  
 		case 4096:  return StyleModifyFlag_DiagonalDownBorder, nil  
 		case 8192:  return StyleModifyFlag_DiagonalUpBorder, nil  
-		case 12288:  return StyleModifyFlag_Diagonal, nil  
 		case 32:  return StyleModifyFlag_HorizontalBorder, nil  
 		case 64:  return StyleModifyFlag_VerticalBorder, nil  
+		case 3840:  return StyleModifyFlag_SideBorders, nil  
+		case 12288:  return StyleModifyFlag_Diagonal, nil  
+		case 96:  return StyleModifyFlag_DynamicStyleBorders, nil  
 		case 16224:  return StyleModifyFlag_Borders, nil  
 		case 16384:  return StyleModifyFlag_NumberFormat, nil  
 		case 32768:  return StyleModifyFlag_HorizontalAlignment, nil  
@@ -5121,6 +5188,7 @@ func Int32ToStyleModifyFlag(value int32)(StyleModifyFlag ,error){
 		case 19:  return StyleModifyFlag_FontVerticalText, nil  
 		case 31:  return StyleModifyFlag_Font, nil  
 		case 234881023:  return StyleModifyFlag_All, nil  
+		case 0:  return StyleModifyFlag_None, nil  
 		default:
 			return 0 ,fmt.Errorf("invalid StyleModifyFlag value: %d", value)
 	}
@@ -7945,6 +8013,7 @@ func (instance *AboveAverage) SetStdDev(value int32)  error {
 }
 
 
+
 func DeleteAboveAverage(aboveaverage *AboveAverage){
 	runtime.SetFinalizer(aboveaverage, nil)
 	C.Delete_AboveAverage(aboveaverage.ptr)
@@ -8025,6 +8094,7 @@ func (instance *AbstractCalculationEngine) ForceRecalculate(functionname string)
 }
 
 
+
 func DeleteAbstractCalculationEngine(abstractcalculationengine *AbstractCalculationEngine){
 	runtime.SetFinalizer(abstractcalculationengine, nil)
 	C.Delete_AbstractCalculationEngine(abstractcalculationengine.ptr)
@@ -8056,6 +8126,22 @@ func (instance *AbstractFormulaChangeMonitor) OnCellFormulaChanged(sheetindex in
 
 	return nil 
 }
+// The event that will be triggered when the formula of FormatCondition is changed.
+// Parameters:
+//   fc - FormatCondition 
+// Returns:
+//   void  
+func (instance *AbstractFormulaChangeMonitor) OnFormatConditionFormulaChanged(fc *FormatCondition)  error {
+	
+	CGoReturnPtr := C.AbstractFormulaChangeMonitor_OnFormatConditionFormulaChanged( instance.ptr, fc.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+
 
 
 func DeleteAbstractFormulaChangeMonitor(abstractformulachangemonitor *AbstractFormulaChangeMonitor){
@@ -8088,6 +8174,7 @@ func (instance *AbstractInterruptMonitor) GetTerminateWithoutException()  (bool,
 
 	return result, nil 
 }
+
 
 
 func DeleteAbstractInterruptMonitor(abstractinterruptmonitor *AbstractInterruptMonitor){
@@ -8865,6 +8952,12 @@ func (instance *AbstractTextLoadOptions) SetPreservePaddingSpacesInFormula(value
 }
 
 
+func (instance *AbstractTextLoadOptions) ToLoadOptions() *LoadOptions {
+	parentClass := &LoadOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteAbstractTextLoadOptions(abstracttextloadoptions *AbstractTextLoadOptions){
 	runtime.SetFinalizer(abstracttextloadoptions, nil)
 	C.Delete_AbstractTextLoadOptions(abstracttextloadoptions.ptr)
@@ -8935,6 +9028,7 @@ func (instance *AdvancedFilter) GetCopyToRange()  (string,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteAdvancedFilter(advancedfilter *AdvancedFilter){
@@ -9424,6 +9518,7 @@ func (instance *AutoFilter) GetFilterColumns()  (*FilterColumnCollection,  error
 }
 
 
+
 func DeleteAutoFilter(autofilter *AutoFilter){
 	runtime.SetFinalizer(autofilter, nil)
 	C.Delete_AutoFilter(autofilter.ptr)
@@ -9712,6 +9807,7 @@ func (instance *AutoFitterOptions) SetForRendering(value bool)  error {
 }
 
 
+
 func DeleteAutoFitterOptions(autofitteroptions *AutoFitterOptions){
 	runtime.SetFinalizer(autofitteroptions, nil)
 	C.Delete_AutoFitterOptions(autofitteroptions.ptr)
@@ -9864,6 +9960,7 @@ func (instance *Border) SetLineStyle(value CellBorderType)  error {
 }
 
 
+
 func DeleteBorder(border *Border){
 	runtime.SetFinalizer(border, nil)
 	C.Delete_Border(border.ptr)
@@ -10004,6 +10101,7 @@ func (instance *BorderCollection) SetDiagonalStyle(value CellBorderType)  error 
 }
 
 
+
 func DeleteBorderCollection(bordercollection *BorderCollection){
 	runtime.SetFinalizer(bordercollection, nil)
 	C.Delete_BorderCollection(bordercollection.ptr)
@@ -10123,6 +10221,7 @@ func (instance *CalculationCell) GetCell()  (*Cell,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteCalculationCell(calculationcell *CalculationCell){
@@ -10354,6 +10453,7 @@ func (instance *CalculationData) GetParamText(index int32)  (string,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteCalculationData(calculationdata *CalculationData){
@@ -10633,6 +10733,7 @@ func (instance *CalculationOptions) SetCharacterEncoding(value EncodingType)  er
 
 	return nil 
 }
+
 
 
 func DeleteCalculationOptions(calculationoptions *CalculationOptions){
@@ -11084,9 +11185,7 @@ func (instance *Cell) GetHeightOfValue()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the display style of the cell.
-// If this cell is also affected by other settings such as conditional formatting, list objects, etc.,
-// then the display style may be different from cell.GetStyle().
+// Gets the display style of this cell.
 // Returns:
 //   Style  
 func (instance *Cell) GetDisplayStyle()  (*Style,  error)  {
@@ -11102,8 +11201,7 @@ func (instance *Cell) GetDisplayStyle()  (*Style,  error)  {
 
 	return result, nil 
 }
-// Gets the display style of the cell.
-// If the cell is conditional formatted, the display style is not same as the cell.GetStyle().
+// Gets the display style of this cell.
 // Parameters:
 //   includeMergedBorders - bool 
 // Returns:
@@ -11111,6 +11209,24 @@ func (instance *Cell) GetDisplayStyle()  (*Style,  error)  {
 func (instance *Cell) GetDisplayStyle_Bool(includemergedborders bool)  (*Style,  error)  {
 	
 	CGoReturnPtr := C.Cell_GetDisplayStyle_Boolean( instance.ptr, C.bool(includemergedborders))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Style{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteStyle) 
+
+	return result, nil 
+}
+// Gets the display style of this cell.
+// Parameters:
+//   adjacentBorders - int32 
+// Returns:
+//   Style  
+func (instance *Cell) GetDisplayStyle_BorderType(adjacentborders BorderType)  (*Style,  error)  {
+	
+	CGoReturnPtr := C.Cell_GetDisplayStyle_BorderType( instance.ptr, C.int( int32(adjacentborders)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -12376,6 +12492,7 @@ func (instance *Cell) Dispose()  error {
 }
 
 
+
 func DeleteCell(cell *Cell){
 	runtime.SetFinalizer(cell, nil)
 	C.Delete_Cell(cell.ptr)
@@ -12515,6 +12632,7 @@ func (cellarea *CellArea) Get_EndColumn() (int32 , error) {
 	return result, nil 
 }
 
+
 func DeleteCellArea(cellarea *CellArea){
 	runtime.SetFinalizer(cellarea, nil)
 	C.Delete_CellArea(cellarea.ptr)
@@ -12606,6 +12724,7 @@ func (instance *CellRichValue) SetAltText(value string)  error {
 }
 
 
+
 func DeleteCellRichValue(cellrichvalue *CellRichValue){
 	runtime.SetFinalizer(cellrichvalue, nil)
 	C.Delete_CellRichValue(cellrichvalue.ptr)
@@ -12680,15 +12799,15 @@ func (instance *Cells) GetCount()  (int32,  error)  {
 }
 // Gets the total count of instantiated Cell objects.
 // Returns:
-//   int32  
-func (instance *Cells) GetCountLarge()  (int32,  error)  {
+//   int64  
+func (instance *Cells) GetCountLarge()  (int64,  error)  {
 	
 	CGoReturnPtr := C.Cells_GetCountLarge( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := int64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -15529,6 +15648,46 @@ func (instance *Cells) GetCellStyle(row int32, column int32)  (*Style,  error)  
 
 	return result, nil 
 }
+// Get the display style of given cell.
+// Parameters:
+//   row - int32 
+//   column - int32 
+// Returns:
+//   Style  
+func (instance *Cells) GetCellDisplayStyle_Int_Int(row int32, column int32)  (*Style,  error)  {
+	
+	CGoReturnPtr := C.Cells_GetCellDisplayStyle_Integer_Integer( instance.ptr, C.int(row), C.int(column))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Style{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteStyle) 
+
+	return result, nil 
+}
+// Get the display style of given cell.
+// Parameters:
+//   row - int32 
+//   column - int32 
+//   adjacentBorders - int32 
+// Returns:
+//   Style  
+func (instance *Cells) GetCellDisplayStyle_Int_Int_BorderType(row int32, column int32, adjacentborders BorderType)  (*Style,  error)  {
+	
+	CGoReturnPtr := C.Cells_GetCellDisplayStyle_Integer_Integer_BorderType( instance.ptr, C.int(row), C.int(column), C.int( int32(adjacentborders)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Style{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteStyle) 
+
+	return result, nil 
+}
+
 
 
 func DeleteCells(cells *Cells){
@@ -15770,6 +15929,7 @@ func (instance *CellsColor) SetTintOfShapeColor(tint float64)  error {
 }
 
 
+
 func DeleteCellsColor(cellscolor *CellsColor){
 	runtime.SetFinalizer(cellscolor, nil)
 	C.Delete_CellsColor(cellscolor.ptr)
@@ -15828,6 +15988,7 @@ func (instance *CellsFactory) CreateStyle()  (*Style,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteCellsFactory(cellsfactory *CellsFactory){
@@ -16297,6 +16458,7 @@ func CellsHelper_SetIsCloudPlatform(value bool)  error {
 }
 
 
+
 func DeleteCellsHelper(cellshelper *CellsHelper){
 	runtime.SetFinalizer(cellshelper, nil)
 	C.Delete_CellsHelper(cellshelper.ptr)
@@ -16402,6 +16564,7 @@ func (instance *CellValue) SetValue(value *Object)  error {
 
 	return nil 
 }
+
 
 
 func DeleteCellValue(cellvalue *CellValue){
@@ -16535,6 +16698,7 @@ func (instance *CellWatch) SetCellName(value string)  error {
 }
 
 
+
 func DeleteCellWatch(cellwatch *CellWatch){
 	runtime.SetFinalizer(cellwatch, nil)
 	C.Delete_CellWatch(cellwatch.ptr)
@@ -16661,6 +16825,7 @@ func (instance *CellWatchCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteCellWatchCollection(cellwatchcollection *CellWatchCollection){
 	runtime.SetFinalizer(cellwatchcollection, nil)
 	C.Delete_CellWatchCollection(cellwatchcollection.ptr)
@@ -16767,6 +16932,7 @@ func (instance *ColorFilter) GetColor(sheets *WorksheetCollection)  (*Color,  er
 
 	return result, nil 
 }
+
 
 
 func DeleteColorFilter(colorfilter *ColorFilter){
@@ -16968,6 +17134,7 @@ func (instance *ColorScale) SetMaxColor(value *Color)  error {
 
 	return nil 
 }
+
 
 
 func DeleteColorScale(colorscale *ColorScale){
@@ -17191,6 +17358,7 @@ func (instance *Column) SetIsCollapsed(value bool)  error {
 }
 
 
+
 func DeleteColumn(column *Column){
 	runtime.SetFinalizer(column, nil)
 	C.Delete_Column(column.ptr)
@@ -17273,6 +17441,7 @@ func (instance *ColumnCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteColumnCollection(columncollection *ColumnCollection){
@@ -17665,6 +17834,7 @@ func (instance *Comment) SetTextVerticalAlignment(value TextAlignmentType)  erro
 	return nil 
 }
 // Indicates if size of comment is adjusted automatically according to its content.
+// Note: In some special cases (such as Mac environment), this setting may not take effect. If this setting does not take effect, please replace it with FitToTextSize().
 // Returns:
 //   bool  
 func (instance *Comment) GetAutoSize()  (bool,  error)  {
@@ -17679,6 +17849,7 @@ func (instance *Comment) GetAutoSize()  (bool,  error)  {
 	return result, nil 
 }
 // Indicates if size of comment is adjusted automatically according to its content.
+// Note: In some special cases (such as Mac environment), this setting may not take effect. If this setting does not take effect, please replace it with FitToTextSize().
 // Parameters:
 //   value - bool 
 // Returns:
@@ -17867,6 +18038,7 @@ func (instance *Comment) SetHeightInch(value float64)  error {
 
 	return nil 
 }
+
 
 
 func DeleteComment(comment *Comment){
@@ -18118,6 +18290,7 @@ func (instance *CommentCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteCommentCollection(commentcollection *CommentCollection){
 	runtime.SetFinalizer(commentcollection, nil)
 	C.Delete_CommentCollection(commentcollection.ptr)
@@ -18224,6 +18397,7 @@ func (instance *ConditionalFormattingCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteConditionalFormattingCollection(conditionalformattingcollection *ConditionalFormattingCollection){
@@ -18367,6 +18541,7 @@ func ConditionalFormattingIcon_GetIconImageData(type_ IconSetType, index int32) 
 }
 
 
+
 func DeleteConditionalFormattingIcon(conditionalformattingicon *ConditionalFormattingIcon){
 	runtime.SetFinalizer(conditionalformattingicon, nil)
 	C.Delete_ConditionalFormattingIcon(conditionalformattingicon.ptr)
@@ -18459,6 +18634,7 @@ func (instance *ConditionalFormattingIconCollection) GetCount()  (int32,  error)
 
 	return result, nil 
 }
+
 
 
 func DeleteConditionalFormattingIconCollection(conditionalformattingiconcollection *ConditionalFormattingIconCollection){
@@ -18568,6 +18744,7 @@ func (instance *ConditionalFormattingResult) GetColorScaleResult()  (*Color,  er
 
 	return result, nil 
 }
+
 
 
 func DeleteConditionalFormattingResult(conditionalformattingresult *ConditionalFormattingResult){
@@ -18706,6 +18883,7 @@ func (instance *ConditionalFormattingValue) SetIsGTE(value bool)  error {
 }
 
 
+
 func DeleteConditionalFormattingValue(conditionalformattingvalue *ConditionalFormattingValue){
 	runtime.SetFinalizer(conditionalformattingvalue, nil)
 	C.Delete_ConditionalFormattingValue(conditionalformattingvalue.ptr)
@@ -18783,6 +18961,7 @@ func (instance *ConditionalFormattingValueCollection) GetCount()  (int32,  error
 
 	return result, nil 
 }
+
 
 
 func DeleteConditionalFormattingValueCollection(conditionalformattingvaluecollection *ConditionalFormattingValueCollection){
@@ -19044,6 +19223,7 @@ func (instance *CopyOptions) SetReferToDestinationSheet(value bool)  error {
 }
 
 
+
 func DeleteCopyOptions(copyoptions *CopyOptions){
 	runtime.SetFinalizer(copyoptions, nil)
 	C.Delete_CopyOptions(copyoptions.ptr)
@@ -19151,6 +19331,7 @@ func (instance *CustomFilter) SetCriteria_FilterOperatorType_Object(filteroperat
 
 	return nil 
 }
+
 
 
 func DeleteCustomFilter(customfilter *CustomFilter){
@@ -19289,6 +19470,7 @@ func (instance *CustomFilterCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteCustomFilterCollection(customfiltercollection *CustomFilterCollection){
 	runtime.SetFinalizer(customfiltercollection, nil)
 	C.Delete_CustomFilterCollection(customfiltercollection.ptr)
@@ -19354,6 +19536,7 @@ func (instance *CustomFunctionDefinition) GetArrayModeParameters(functionname st
 
 	return result, nil 
 }
+
 
 
 func DeleteCustomFunctionDefinition(customfunctiondefinition *CustomFunctionDefinition){
@@ -19717,6 +19900,7 @@ func (instance *DataBar) ToImage(cell *Cell, imgopts *ImageOrPrintOptions)  ([]b
 }
 
 
+
 func DeleteDataBar(databar *DataBar){
 	runtime.SetFinalizer(databar, nil)
 	C.Delete_DataBar(databar.ptr)
@@ -19807,6 +19991,7 @@ func (instance *DataBarBorder) SetType(value DataBarBorderType)  error {
 
 	return nil 
 }
+
 
 
 func DeleteDataBarBorder(databarborder *DataBarBorder){
@@ -20336,6 +20521,7 @@ func (instance *DataSorter) Sort()  ([]int32,  error)  {
 }
 
 
+
 func DeleteDataSorter(datasorter *DataSorter){
 	runtime.SetFinalizer(datasorter, nil)
 	C.Delete_DataSorter(datasorter.ptr)
@@ -20460,6 +20646,7 @@ func (instance *DataSorterKey) GetColor()  (*Color,  error)  {
 }
 
 
+
 func DeleteDataSorterKey(datasorterkey *DataSorterKey){
 	runtime.SetFinalizer(datasorterkey, nil)
 	C.Delete_DataSorterKey(datasorterkey.ptr)
@@ -20533,6 +20720,7 @@ func (instance *DataSorterKeyCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteDataSorterKeyCollection(datasorterkeycollection *DataSorterKeyCollection){
@@ -20838,6 +21026,7 @@ func (instance *DateTimeGroupItem) SetSecond(value int32)  error {
 }
 
 
+
 func DeleteDateTimeGroupItem(datetimegroupitem *DateTimeGroupItem){
 	runtime.SetFinalizer(datetimegroupitem, nil)
 	C.Delete_DateTimeGroupItem(datetimegroupitem.ptr)
@@ -21019,6 +21208,7 @@ func (instance *DefaultStyleSettings) SetVerticalAlignment(value TextAlignmentTy
 
 	return nil 
 }
+
 
 
 func DeleteDefaultStyleSettings(defaultstylesettings *DefaultStyleSettings){
@@ -21326,6 +21516,12 @@ func (instance *DeleteBlankOptions) SetFormulaChangeMonitor(value *AbstractFormu
 }
 
 
+func (instance *DeleteBlankOptions) ToDeleteOptions() *DeleteOptions {
+	parentClass := &DeleteOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteDeleteBlankOptions(deleteblankoptions *DeleteBlankOptions){
 	runtime.SetFinalizer(deleteblankoptions, nil)
 	C.Delete_DeleteBlankOptions(deleteblankoptions.ptr)
@@ -21428,6 +21624,7 @@ func (instance *DeleteOptions) SetFormulaChangeMonitor(value *AbstractFormulaCha
 
 	return nil 
 }
+
 
 
 func DeleteDeleteOptions(deleteoptions *DeleteOptions){
@@ -21833,6 +22030,12 @@ func (instance *DifSaveOptions) SetEncryptDocumentProperties(value bool)  error 
 	return nil 
 }
 
+
+func (instance *DifSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteDifSaveOptions(difsaveoptions *DifSaveOptions){
 	runtime.SetFinalizer(difsaveoptions, nil)
@@ -22786,6 +22989,17 @@ func (instance *DocxSaveOptions) SetEncryptDocumentProperties(value bool)  error
 }
 
 
+func (instance *DocxSaveOptions) ToPaginatedSaveOptions() *PaginatedSaveOptions {
+	parentClass := &PaginatedSaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *DocxSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteDocxSaveOptions(docxsaveoptions *DocxSaveOptions){
 	runtime.SetFinalizer(docxsaveoptions, nil)
 	C.Delete_DocxSaveOptions(docxsaveoptions.ptr)
@@ -22845,6 +23059,7 @@ func (instance *DxfCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteDxfCollection(dxfcollection *DxfCollection){
@@ -23001,6 +23216,7 @@ func (instance *DynamicFilter) SetMaxValue(value *Object)  error {
 
 	return nil 
 }
+
 
 
 func DeleteDynamicFilter(dynamicfilter *DynamicFilter){
@@ -23988,6 +24204,22 @@ func (instance *EbookLoadOptions) SetPreservePaddingSpacesInFormula(value bool) 
 }
 
 
+func (instance *EbookLoadOptions) ToHtmlLoadOptions() *HtmlLoadOptions {
+	parentClass := &HtmlLoadOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *EbookLoadOptions) ToAbstractTextLoadOptions() *AbstractTextLoadOptions {
+	parentClass := &AbstractTextLoadOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *EbookLoadOptions) ToLoadOptions() *LoadOptions {
+	parentClass := &LoadOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteEbookLoadOptions(ebookloadoptions *EbookLoadOptions){
 	runtime.SetFinalizer(ebookloadoptions, nil)
 	C.Delete_EbookLoadOptions(ebookloadoptions.ptr)
@@ -24113,6 +24345,7 @@ func (instance *ErrorCheckOption) RemoveRange(index int32)  error {
 }
 
 
+
 func DeleteErrorCheckOption(errorcheckoption *ErrorCheckOption){
 	runtime.SetFinalizer(errorcheckoption, nil)
 	C.Delete_ErrorCheckOption(errorcheckoption.ptr)
@@ -24186,6 +24419,7 @@ func (instance *ErrorCheckOptionCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteErrorCheckOptionCollection(errorcheckoptioncollection *ErrorCheckOptionCollection){
@@ -24349,6 +24583,7 @@ func (instance *ExternalLink) IsVisible()  (bool,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteExternalLink(externallink *ExternalLink){
@@ -24538,6 +24773,7 @@ func (instance *ExternalLinkCollection) GetEnumerator()  (*ExternalLinkEnumerato
 }
 
 
+
 func DeleteExternalLinkCollection(externallinkcollection *ExternalLinkCollection){
 	runtime.SetFinalizer(externallinkcollection, nil)
 	C.Delete_ExternalLinkCollection(externallinkcollection.ptr)
@@ -24630,6 +24866,12 @@ func (instance *FileFontSource) GetType()  (FontSourceType,  error)  {
 	return result, nil 
 }
 
+
+func (instance *FileFontSource) ToFontSourceBase() *FontSourceBase {
+	parentClass := &FontSourceBase{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteFileFontSource(filefontsource *FileFontSource){
 	runtime.SetFinalizer(filefontsource, nil)
@@ -24735,6 +24977,7 @@ func (instance *FileFormatInfo) GetLoadFormat()  (LoadFormat,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteFileFormatInfo(fileformatinfo *FileFormatInfo){
@@ -24968,6 +25211,7 @@ func FileFormatUtil_SaveFormatToLoadFormat(saveformat SaveFormat)  (LoadFormat, 
 }
 
 
+
 func DeleteFileFormatUtil(fileformatutil *FileFormatUtil){
 	runtime.SetFinalizer(fileformatutil, nil)
 	C.Delete_FileFormatUtil(fileformatutil.ptr)
@@ -25119,6 +25363,7 @@ func (instance *FilterColumn) SetFieldIndex(value int32)  error {
 }
 
 
+
 func DeleteFilterColumn(filtercolumn *FilterColumn){
 	runtime.SetFinalizer(filtercolumn, nil)
 	C.Delete_FilterColumn(filtercolumn.ptr)
@@ -25210,6 +25455,7 @@ func (instance *FilterColumnCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteFilterColumnCollection(filtercolumncollection *FilterColumnCollection){
@@ -25451,7 +25697,8 @@ func (instance *FindOptions) SetLookInType(value LookInType)  error {
 	return nil 
 }
 // Indicates whether the searched key is regex.
-// If true the searched key will be taken as regex and parsed. Otherwise the key will be parsed according to the rules in ms excel.
+// If true the searched key will be taken as regex and parsed.
+// Otherwise the key will be parsed according to the rules in ms excel.
 // Returns:
 //   bool  
 func (instance *FindOptions) GetRegexKey()  (bool,  error)  {
@@ -25466,7 +25713,8 @@ func (instance *FindOptions) GetRegexKey()  (bool,  error)  {
 	return result, nil 
 }
 // Indicates whether the searched key is regex.
-// If true the searched key will be taken as regex and parsed. Otherwise the key will be parsed according to the rules in ms excel.
+// If true the searched key will be taken as regex and parsed.
+// Otherwise the key will be parsed according to the rules in ms excel.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -25570,6 +25818,7 @@ func (instance *FindOptions) SetConvertNumericData(value bool)  error {
 
 	return nil 
 }
+
 
 
 func DeleteFindOptions(findoptions *FindOptions){
@@ -25679,6 +25928,12 @@ func (instance *FolderFontSource) GetType()  (FontSourceType,  error)  {
 	return result, nil 
 }
 
+
+func (instance *FolderFontSource) ToFontSourceBase() *FontSourceBase {
+	parentClass := &FontSourceBase{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteFolderFontSource(folderfontsource *FolderFontSource){
 	runtime.SetFinalizer(folderfontsource, nil)
@@ -26277,6 +26532,7 @@ func (instance *Font) SetName(value string)  error {
 }
 
 
+
 func DeleteFont(font *Font){
 	runtime.SetFinalizer(font, nil)
 	C.Delete_Font(font.ptr)
@@ -26332,6 +26588,27 @@ func FontConfigs_IsFontAvailable(fontname string)  (bool,  error)  {
 		return  true, err
 	}
 	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Get data infomation of font file data.
+// Parameters:
+//   fontName - string 
+//   isBold - bool 
+//   isItalic - bool 
+//   isExactStyle - bool 
+// Returns:
+//   FontFileDataInfo  
+func FontConfigs_GetFontFileDataInfo(fontname string, isbold bool, isitalic bool, isexactstyle bool)  (*FontFileDataInfo,  error)  {
+	
+	CGoReturnPtr := C.FontConfigs_GetFontFileDataInfo(C.CString(fontname), C.bool(isbold), C.bool(isitalic), C.bool(isexactstyle))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &FontFileDataInfo{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFontFileDataInfo) 
 
 	return result, nil 
 }
@@ -26527,10 +26804,74 @@ func FontConfigs_GetFontSources()  ([]FontSourceBase,  error)  {
 }
 
 
+
 func DeleteFontConfigs(fontconfigs *FontConfigs){
 	runtime.SetFinalizer(fontconfigs, nil)
 	C.Delete_FontConfigs(fontconfigs.ptr)
 	fontconfigs.ptr = nil
+}
+
+// Class FontFileDataInfo 
+
+// Represents data infomation of font file data.
+type FontFileDataInfo struct {
+	ptr unsafe.Pointer
+}
+
+
+// Checks whether the implementation object is nullptr.
+// Returns:
+//   bool  
+func (instance *FontFileDataInfo) IsNull()  (bool,  error)  {
+	
+	CGoReturnPtr := C.FontFileDataInfo_IsNull( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets binary data of font file.
+// Returns:
+//   []byte  
+func (instance *FontFileDataInfo) GetData()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.FontFileDataInfo_GetData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Gets font format type of font file.
+// Returns:
+//   int32  
+func (instance *FontFileDataInfo) GetFormatType()  (FontFileFormatType,  error)  {
+	
+	CGoReturnPtr := C.FontFileDataInfo_GetFormatType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToFontFileFormatType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+
+
+
+func DeleteFontFileDataInfo(fontfiledatainfo *FontFileDataInfo){
+	runtime.SetFinalizer(fontfiledatainfo, nil)
+	C.Delete_FontFileDataInfo(fontfiledatainfo.ptr)
+	fontfiledatainfo.ptr = nil
 }
 
 // Class FontSetting 
@@ -26666,6 +27007,7 @@ func (instance *FontSetting) GetType()  (TextNodeType,  error)  {
 }
 
 
+
 func DeleteFontSetting(fontsetting *FontSetting){
 	runtime.SetFinalizer(fontsetting, nil)
 	C.Delete_FontSetting(fontsetting.ptr)
@@ -26711,6 +27053,7 @@ func (instance *FontSourceBase) GetType()  (FontSourceType,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteFontSourceBase(fontsourcebase *FontSourceBase){
@@ -27279,6 +27622,7 @@ func (instance *FormatCondition) SetTimePeriod(value TimePeriodType)  error {
 }
 
 
+
 func DeleteFormatCondition(formatcondition *FormatCondition){
 	runtime.SetFinalizer(formatcondition, nil)
 	C.Delete_FormatCondition(formatcondition.ptr)
@@ -27503,6 +27847,7 @@ func (instance *FormatConditionCollection) RemoveCondition(index int32)  error {
 }
 
 
+
 func DeleteFormatConditionCollection(formatconditioncollection *FormatConditionCollection){
 	runtime.SetFinalizer(formatconditioncollection, nil)
 	C.Delete_FormatConditionCollection(formatconditioncollection.ptr)
@@ -27698,6 +28043,7 @@ func (instance *FormulaParseOptions) SetCustomFunctionDefinition(value *CustomFu
 
 	return nil 
 }
+
 
 
 func DeleteFormulaParseOptions(formulaparseoptions *FormulaParseOptions){
@@ -28054,6 +28400,7 @@ func (instance *FormulaSettings) SetPreservePaddingSpaces(value bool)  error {
 
 	return nil 
 }
+
 
 
 func DeleteFormulaSettings(formulasettings *FormulaSettings){
@@ -28472,6 +28819,7 @@ func (instance *GlobalizationSettings) Compare(v1 string, v2 string, ignorecase 
 }
 
 
+
 func DeleteGlobalizationSettings(globalizationsettings *GlobalizationSettings){
 	runtime.SetFinalizer(globalizationsettings, nil)
 	C.Delete_GlobalizationSettings(globalizationsettings.ptr)
@@ -28549,6 +28897,7 @@ func (instance *HeaderFooterCommand) GetText()  (string,  error)  {
 }
 
 
+
 func DeleteHeaderFooterCommand(headerfootercommand *HeaderFooterCommand){
 	runtime.SetFinalizer(headerfootercommand, nil)
 	C.Delete_HeaderFooterCommand(headerfootercommand.ptr)
@@ -28619,6 +28968,7 @@ func (instance *HorizontalPageBreak) GetRow()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteHorizontalPageBreak(horizontalpagebreak *HorizontalPageBreak){
@@ -28780,6 +29130,7 @@ func (instance *HorizontalPageBreakCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteHorizontalPageBreakCollection(horizontalpagebreakcollection *HorizontalPageBreakCollection){
@@ -29766,6 +30117,17 @@ func (instance *HtmlLoadOptions) SetPreservePaddingSpacesInFormula(value bool)  
 	return nil 
 }
 
+
+func (instance *HtmlLoadOptions) ToAbstractTextLoadOptions() *AbstractTextLoadOptions {
+	parentClass := &AbstractTextLoadOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *HtmlLoadOptions) ToLoadOptions() *LoadOptions {
+	parentClass := &LoadOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteHtmlLoadOptions(htmlloadoptions *HtmlLoadOptions){
 	runtime.SetFinalizer(htmlloadoptions, nil)
@@ -32182,6 +32544,12 @@ func (instance *HtmlSaveOptions) SetEncryptDocumentProperties(value bool)  error
 }
 
 
+func (instance *HtmlSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteHtmlSaveOptions(htmlsaveoptions *HtmlSaveOptions){
 	runtime.SetFinalizer(htmlsaveoptions, nil)
 	C.Delete_HtmlSaveOptions(htmlsaveoptions.ptr)
@@ -32371,6 +32739,7 @@ func (instance *HtmlTableLoadOption) SetTableToListObject(value bool)  error {
 
 	return nil 
 }
+
 
 
 func DeleteHtmlTableLoadOption(htmltableloadoption *HtmlTableLoadOption){
@@ -32597,6 +32966,7 @@ func (instance *HtmlTableLoadOptionCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteHtmlTableLoadOptionCollection(htmltableloadoptioncollection *HtmlTableLoadOptionCollection){
 	runtime.SetFinalizer(htmltableloadoptioncollection, nil)
 	C.Delete_HtmlTableLoadOptionCollection(htmltableloadoptioncollection.ptr)
@@ -32760,6 +33130,7 @@ func (instance *Hyperlink) Delete()  error {
 }
 
 
+
 func DeleteHyperlink(hyperlink *Hyperlink){
 	runtime.SetFinalizer(hyperlink, nil)
 	C.Delete_Hyperlink(hyperlink.ptr)
@@ -32908,6 +33279,7 @@ func (instance *HyperlinkCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteHyperlinkCollection(hyperlinkcollection *HyperlinkCollection){
 	runtime.SetFinalizer(hyperlinkcollection, nil)
 	C.Delete_HyperlinkCollection(hyperlinkcollection.ptr)
@@ -33029,6 +33401,7 @@ func (instance *IconFilter) SetIconId(value int32)  error {
 
 	return nil 
 }
+
 
 
 func DeleteIconFilter(iconfilter *IconFilter){
@@ -33208,6 +33581,7 @@ func (instance *IconSet) SetReverse(value bool)  error {
 
 	return nil 
 }
+
 
 
 func DeleteIconSet(iconset *IconSet){
@@ -33646,6 +34020,12 @@ func (instance *ImageSaveOptions) SetEncryptDocumentProperties(value bool)  erro
 	return nil 
 }
 
+
+func (instance *ImageSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteImageSaveOptions(imagesaveoptions *ImageSaveOptions){
 	runtime.SetFinalizer(imagesaveoptions, nil)
@@ -34163,6 +34543,7 @@ func (instance *ImportTableOptions) SetCheckMergedCells(value bool)  error {
 }
 
 
+
 func DeleteImportTableOptions(importtableoptions *ImportTableOptions){
 	runtime.SetFinalizer(importtableoptions, nil)
 	C.Delete_ImportTableOptions(importtableoptions.ptr)
@@ -34335,6 +34716,7 @@ func (instance *IndividualFontConfigs) GetFontSources()  ([]FontSourceBase,  err
 }
 
 
+
 func DeleteIndividualFontConfigs(individualfontconfigs *IndividualFontConfigs){
 	runtime.SetFinalizer(individualfontconfigs, nil)
 	C.Delete_IndividualFontConfigs(individualfontconfigs.ptr)
@@ -34469,6 +34851,7 @@ func (instance *InsertOptions) SetFormulaChangeMonitor(value *AbstractFormulaCha
 }
 
 
+
 func DeleteInsertOptions(insertoptions *InsertOptions){
 	runtime.SetFinalizer(insertoptions, nil)
 	C.Delete_InsertOptions(insertoptions.ptr)
@@ -34538,6 +34921,7 @@ func (instance *InterruptMonitor) Interrupt()  error {
 
 	return nil 
 }
+
 
 
 func DeleteInterruptMonitor(interruptmonitor *InterruptMonitor){
@@ -35295,6 +35679,12 @@ func (instance *JsonLoadOptions) SetPreservePaddingSpacesInFormula(value bool)  
 	return nil 
 }
 
+
+func (instance *JsonLoadOptions) ToLoadOptions() *LoadOptions {
+	parentClass := &LoadOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteJsonLoadOptions(jsonloadoptions *JsonLoadOptions){
 	runtime.SetFinalizer(jsonloadoptions, nil)
@@ -36074,6 +36464,12 @@ func (instance *JsonSaveOptions) SetEncryptDocumentProperties(value bool)  error
 }
 
 
+func (instance *JsonSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteJsonSaveOptions(jsonsaveoptions *JsonSaveOptions){
 	runtime.SetFinalizer(jsonsaveoptions, nil)
 	C.Delete_JsonSaveOptions(jsonsaveoptions.ptr)
@@ -36146,6 +36542,7 @@ func (instance *License) SetLicense_Stream(stream []byte)  error {
 
 	return nil 
 }
+
 
 
 func DeleteLicense(license *License){
@@ -36292,6 +36689,7 @@ func (loadfilter *LoadFilter) Get__loadDataFilterOptions() (int32 , error) {
 	result := int32(CGoReturnPtr.return_value)
 	return result, nil 
 }
+
 
 func DeleteLoadFilter(loadfilter *LoadFilter){
 	runtime.SetFinalizer(loadfilter, nil)
@@ -36931,6 +37329,7 @@ func (instance *LoadOptions) SetPreservePaddingSpacesInFormula(value bool)  erro
 }
 
 
+
 func DeleteLoadOptions(loadoptions *LoadOptions){
 	runtime.SetFinalizer(loadoptions, nil)
 	C.Delete_LoadOptions(loadoptions.ptr)
@@ -37075,6 +37474,69 @@ func (instance *MarkdownSaveOptions) GetLineSeparator()  (string,  error)  {
 func (instance *MarkdownSaveOptions) SetLineSeparator(value string)  error {
 	
 	CGoReturnPtr := C.MarkdownSaveOptions_SetLineSeparator( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets how set the header of the table.
+// Returns:
+//   int32  
+func (instance *MarkdownSaveOptions) GetTableHeaderType()  (MarkdownTableHeaderType,  error)  {
+	
+	CGoReturnPtr := C.MarkdownSaveOptions_GetTableHeaderType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToMarkdownTableHeaderType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets how set the header of the table.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *MarkdownSaveOptions) SetTableHeaderType(value MarkdownTableHeaderType)  error {
+	
+	CGoReturnPtr := C.MarkdownSaveOptions_SetTableHeaderType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the sheets to render. Default is all visible sheets in the workbook: <see cref="Aspose.Cells.Rendering.SheetSet.Active"/>.
+// Returns:
+//   SheetSet  
+func (instance *MarkdownSaveOptions) GetSheetSet()  (*SheetSet,  error)  {
+	
+	CGoReturnPtr := C.MarkdownSaveOptions_GetSheetSet( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &SheetSet{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteSheetSet) 
+
+	return result, nil 
+}
+// Gets or sets the sheets to render. Default is all visible sheets in the workbook: <see cref="Aspose.Cells.Rendering.SheetSet.Active"/>.
+// Parameters:
+//   value - SheetSet 
+// Returns:
+//   void  
+func (instance *MarkdownSaveOptions) SetSheetSet(value *SheetSet)  error {
+	
+	CGoReturnPtr := C.MarkdownSaveOptions_SetSheetSet( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -37428,6 +37890,12 @@ func (instance *MarkdownSaveOptions) SetEncryptDocumentProperties(value bool)  e
 }
 
 
+func (instance *MarkdownSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteMarkdownSaveOptions(markdownsaveoptions *MarkdownSaveOptions){
 	runtime.SetFinalizer(markdownsaveoptions, nil)
 	C.Delete_MarkdownSaveOptions(markdownsaveoptions.ptr)
@@ -37521,6 +37989,12 @@ func (instance *MemoryFontSource) GetType()  (FontSourceType,  error)  {
 	return result, nil 
 }
 
+
+func (instance *MemoryFontSource) ToFontSourceBase() *FontSourceBase {
+	parentClass := &FontSourceBase{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteMemoryFontSource(memoryfontsource *MemoryFontSource){
 	runtime.SetFinalizer(memoryfontsource, nil)
@@ -37671,6 +38145,7 @@ func (instance *MultipleFilterCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteMultipleFilterCollection(multiplefiltercollection *MultipleFilterCollection){
@@ -38098,6 +38573,7 @@ func (instance *Name) GetRange_Int_Int_Int(sheetindex int32, row int32, column i
 }
 
 
+
 func DeleteName(name *Name){
 	runtime.SetFinalizer(name, nil)
 	C.Delete_Name(name.ptr)
@@ -38309,6 +38785,7 @@ func (instance *NameCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteNameCollection(namecollection *NameCollection){
 	runtime.SetFinalizer(namecollection, nil)
 	C.Delete_NameCollection(namecollection.ptr)
@@ -38463,6 +38940,7 @@ func (instance *NegativeBarFormat) SetColorType(value DataBarNegativeColorType) 
 }
 
 
+
 func DeleteNegativeBarFormat(negativebarformat *NegativeBarFormat){
 	runtime.SetFinalizer(negativebarformat, nil)
 	C.Delete_NegativeBarFormat(negativebarformat.ptr)
@@ -38508,10 +38986,10 @@ func NewObject_Bool(value bool) ( *Object, error) {
 }
 // Constructs from an int8_t value.
 // Parameters:
-//   value - int32 
-func NewObject_Int(value int32) ( *Object, error) {
+//   value - int8 
+func NewObject_Integer8(value int8) ( *Object, error) {
 	object := &Object{}
-	CGoReturnPtr := C.New_Object_Integer(C.int(value))
+	CGoReturnPtr := C.New_Object_Integer8(C.schar(value))
 	if CGoReturnPtr.error_no == 0 {
 		object.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(object, DeleteObject)
@@ -38528,6 +39006,102 @@ func NewObject_Int(value int32) ( *Object, error) {
 func NewObject_Byte(value byte) ( *Object, error) {
 	object := &Object{}
 	CGoReturnPtr := C.New_Object_Byte(C.uint8_t(value))
+	if CGoReturnPtr.error_no == 0 {
+		object.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(object, DeleteObject)
+		return object, nil
+	} else {
+		object.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return object, err
+	}	
+}
+// Constructs from an int16_t value.
+// Parameters:
+//   value - int16 
+func NewObject_Int16(value int16) ( *Object, error) {
+	object := &Object{}
+	CGoReturnPtr := C.New_Object_Integer16(C.short(value))
+	if CGoReturnPtr.error_no == 0 {
+		object.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(object, DeleteObject)
+		return object, nil
+	} else {
+		object.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return object, err
+	}	
+}
+// Constructs from an uint16_t value.
+// Parameters:
+//   value - uint16 
+func NewObject_UInteger16(value uint16) ( *Object, error) {
+	object := &Object{}
+	CGoReturnPtr := C.New_Object_UInteger16(C.ushort(value))
+	if CGoReturnPtr.error_no == 0 {
+		object.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(object, DeleteObject)
+		return object, nil
+	} else {
+		object.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return object, err
+	}	
+}
+// Constructs from an int32_t value.
+// Parameters:
+//   value - int32 
+func NewObject_Int(value int32) ( *Object, error) {
+	object := &Object{}
+	CGoReturnPtr := C.New_Object_Integer(C.int(value))
+	if CGoReturnPtr.error_no == 0 {
+		object.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(object, DeleteObject)
+		return object, nil
+	} else {
+		object.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return object, err
+	}	
+}
+// Constructs from an uint32_t value.
+// Parameters:
+//   value - uint32 
+func NewObject_UInteger(value uint32) ( *Object, error) {
+	object := &Object{}
+	CGoReturnPtr := C.New_Object_UInteger(C.uint(value))
+	if CGoReturnPtr.error_no == 0 {
+		object.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(object, DeleteObject)
+		return object, nil
+	} else {
+		object.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return object, err
+	}	
+}
+// Constructs from an int64_t value.
+// Parameters:
+//   value - int64 
+func NewObject_Int64(value int64) ( *Object, error) {
+	object := &Object{}
+	CGoReturnPtr := C.New_Object_Long(C.long(value))
+	if CGoReturnPtr.error_no == 0 {
+		object.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(object, DeleteObject)
+		return object, nil
+	} else {
+		object.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return object, err
+	}	
+}
+// Constructs from an uint64_t value.
+// Parameters:
+//   value - uint64 
+func NewObject_ULong(value uint64) ( *Object, error) {
+	object := &Object{}
+	CGoReturnPtr := C.New_Object_ULong(C.ulong(value))
 	if CGoReturnPtr.error_no == 0 {
 		object.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(object, DeleteObject)
@@ -38903,15 +39477,15 @@ func (instance *Object) ToBool()  (bool,  error)  {
 }
 // Gets the int8_t value.
 // Returns:
-//   int32  
-func (instance *Object) ToInt8()  (int32,  error)  {
+//   int8  
+func (instance *Object) ToInt8()  (int8,  error)  {
 	
 	CGoReturnPtr := C.Object_ToInt8( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := int8(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -38931,29 +39505,29 @@ func (instance *Object) ToUInt8()  (byte,  error)  {
 }
 // Gets the int16_t value.
 // Returns:
-//   int32  
-func (instance *Object) ToInt16()  (int32,  error)  {
+//   int16  
+func (instance *Object) ToInt16()  (int16,  error)  {
 	
 	CGoReturnPtr := C.Object_ToInt16( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := int16(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
 // Gets the uint16_t value.
 // Returns:
-//   int32  
-func (instance *Object) ToUInt16()  (int32,  error)  {
+//   uint16  
+func (instance *Object) ToUInt16()  (uint16,  error)  {
 	
 	CGoReturnPtr := C.Object_ToUInt16( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := uint16(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -38973,43 +39547,43 @@ func (instance *Object) ToInt32()  (int32,  error)  {
 }
 // Gets the uint32_t value.
 // Returns:
-//   int32  
-func (instance *Object) ToUInt32()  (int32,  error)  {
+//   uint32  
+func (instance *Object) ToUInt32()  (uint32,  error)  {
 	
 	CGoReturnPtr := C.Object_ToUInt32( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := uint32(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
 // Gets the int64_t value.
 // Returns:
-//   int32  
-func (instance *Object) ToInt64()  (int32,  error)  {
+//   int64  
+func (instance *Object) ToInt64()  (int64,  error)  {
 	
 	CGoReturnPtr := C.Object_ToInt64( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := int64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
 // Gets the uint64_t value.
 // Returns:
-//   int32  
-func (instance *Object) ToUInt64()  (int32,  error)  {
+//   uint64  
+func (instance *Object) ToUInt64()  (uint64,  error)  {
 	
 	CGoReturnPtr := C.Object_ToUInt64( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := uint64(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -39191,6 +39765,7 @@ func (instance *Object) ToArray2D()  ([][]Object,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteObject(object *Object){
@@ -39934,6 +40509,12 @@ func (instance *OdsLoadOptions) SetPreservePaddingSpacesInFormula(value bool)  e
 }
 
 
+func (instance *OdsLoadOptions) ToLoadOptions() *LoadOptions {
+	parentClass := &LoadOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteOdsLoadOptions(odsloadoptions *OdsLoadOptions){
 	runtime.SetFinalizer(odsloadoptions, nil)
 	C.Delete_OdsLoadOptions(odsloadoptions.ptr)
@@ -40446,6 +41027,12 @@ func (instance *OdsSaveOptions) SetEncryptDocumentProperties(value bool)  error 
 	return nil 
 }
 
+
+func (instance *OdsSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteOdsSaveOptions(odssaveoptions *OdsSaveOptions){
 	runtime.SetFinalizer(odssaveoptions, nil)
@@ -41052,6 +41639,12 @@ func (instance *OoxmlSaveOptions) SetEncryptDocumentProperties(value bool)  erro
 }
 
 
+func (instance *OoxmlSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteOoxmlSaveOptions(ooxmlsaveoptions *OoxmlSaveOptions){
 	runtime.SetFinalizer(ooxmlsaveoptions, nil)
 	C.Delete_OoxmlSaveOptions(ooxmlsaveoptions.ptr)
@@ -41138,6 +41731,7 @@ func (instance *Outline) SetSummaryColumnRight(value bool)  error {
 
 	return nil 
 }
+
 
 
 func DeleteOutline(outline *Outline){
@@ -42767,6 +43361,7 @@ func (instance *PageSetup) GetPicture_Bool_Bool_Bool_Int(isfirst bool, iseven bo
 }
 
 
+
 func DeletePageSetup(pagesetup *PageSetup){
 	runtime.SetFinalizer(pagesetup, nil)
 	C.Delete_PageSetup(pagesetup.ptr)
@@ -43689,6 +44284,12 @@ func (instance *PaginatedSaveOptions) SetEncryptDocumentProperties(value bool)  
 }
 
 
+func (instance *PaginatedSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeletePaginatedSaveOptions(paginatedsaveoptions *PaginatedSaveOptions){
 	runtime.SetFinalizer(paginatedsaveoptions, nil)
 	C.Delete_PaginatedSaveOptions(paginatedsaveoptions.ptr)
@@ -43807,6 +44408,7 @@ func (instance *PaneCollection) SetAcitvePaneType(value RectangleAlignmentType) 
 
 	return nil 
 }
+
 
 
 func DeletePaneCollection(panecollection *PaneCollection){
@@ -44031,6 +44633,7 @@ func (instance *PasteOptions) SetIgnoreLinksToOriginalFile(value bool)  error {
 
 	return nil 
 }
+
 
 
 func DeletePasteOptions(pasteoptions *PasteOptions){
@@ -44984,6 +45587,17 @@ func (instance *PclSaveOptions) SetEncryptDocumentProperties(value bool)  error 
 	return nil 
 }
 
+
+func (instance *PclSaveOptions) ToPaginatedSaveOptions() *PaginatedSaveOptions {
+	parentClass := &PaginatedSaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *PclSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeletePclSaveOptions(pclsaveoptions *PclSaveOptions){
 	runtime.SetFinalizer(pclsaveoptions, nil)
@@ -46407,6 +47021,17 @@ func (instance *PdfSaveOptions) SetEncryptDocumentProperties(value bool)  error 
 }
 
 
+func (instance *PdfSaveOptions) ToPaginatedSaveOptions() *PaginatedSaveOptions {
+	parentClass := &PaginatedSaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *PdfSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeletePdfSaveOptions(pdfsaveoptions *PdfSaveOptions){
 	runtime.SetFinalizer(pdfsaveoptions, nil)
 	C.Delete_PdfSaveOptions(pdfsaveoptions.ptr)
@@ -47454,6 +48079,17 @@ func (instance *PptxSaveOptions) SetEncryptDocumentProperties(value bool)  error
 }
 
 
+func (instance *PptxSaveOptions) ToPaginatedSaveOptions() *PaginatedSaveOptions {
+	parentClass := &PaginatedSaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *PptxSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeletePptxSaveOptions(pptxsaveoptions *PptxSaveOptions){
 	runtime.SetFinalizer(pptxsaveoptions, nil)
 	C.Delete_PptxSaveOptions(pptxsaveoptions.ptr)
@@ -47640,6 +48276,7 @@ func (instance *ProtectedRange) SetSecurityDescriptor(value string)  error {
 }
 
 
+
 func DeleteProtectedRange(protectedrange *ProtectedRange){
 	runtime.SetFinalizer(protectedrange, nil)
 	C.Delete_ProtectedRange(protectedrange.ptr)
@@ -47719,6 +48356,7 @@ func (instance *ProtectedRangeCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteProtectedRangeCollection(protectedrangecollection *ProtectedRangeCollection){
@@ -48303,6 +48941,7 @@ func (instance *Protection) GetPasswordHash()  (int32,  error)  {
 }
 
 
+
 func DeleteProtection(protection *Protection){
 	runtime.SetFinalizer(protection, nil)
 	C.Delete_Protection(protection.ptr)
@@ -48451,6 +49090,7 @@ func (instance *QueryTable) SetAdjustColumnWidth(value bool)  error {
 }
 
 
+
 func DeleteQueryTable(querytable *QueryTable){
 	runtime.SetFinalizer(querytable, nil)
 	C.Delete_QueryTable(querytable.ptr)
@@ -48510,6 +49150,7 @@ func (instance *QueryTableCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteQueryTableCollection(querytablecollection *QueryTableCollection){
@@ -49449,6 +50090,7 @@ func (instance *Range) ToHtml(saveoptions *HtmlSaveOptions)  ([]byte,  error)  {
 }
 
 
+
 func DeleteRange(range_ *Range){
 	runtime.SetFinalizer(range_, nil)
 	C.Delete_Range(range_.ptr)
@@ -49524,6 +50166,7 @@ func (instance *RangeCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteRangeCollection(rangecollection *RangeCollection){
@@ -49805,6 +50448,7 @@ func (instance *ReferredArea) ToString()  (string,  error)  {
 }
 
 
+
 func DeleteReferredArea(referredarea *ReferredArea){
 	runtime.SetFinalizer(referredarea, nil)
 	C.Delete_ReferredArea(referredarea.ptr)
@@ -49863,6 +50507,7 @@ func (instance *ReferredAreaCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteReferredAreaCollection(referredareacollection *ReferredAreaCollection){
@@ -50080,6 +50725,7 @@ func (instance *ReplaceOptions) SetStyleFlags(value []StyleFlag)  error {
 
 	return nil 
 }
+
 
 
 func DeleteReplaceOptions(replaceoptions *ReplaceOptions){
@@ -50551,6 +51197,7 @@ func (instance *Row) Equals_Row(row *Row)  (bool,  error)  {
 }
 
 
+
 func DeleteRow(row *Row){
 	runtime.SetFinalizer(row, nil)
 	C.Delete_Row(row.ptr)
@@ -50694,6 +51341,7 @@ func (instance *RowCollection) RemoveAt(index int32)  error {
 
 	return nil 
 }
+
 
 
 func DeleteRowCollection(rowcollection *RowCollection){
@@ -51070,6 +51718,7 @@ func (instance *SaveOptions) SetEncryptDocumentProperties(value bool)  error {
 }
 
 
+
 func DeleteSaveOptions(saveoptions *SaveOptions){
 	runtime.SetFinalizer(saveoptions, nil)
 	C.Delete_SaveOptions(saveoptions.ptr)
@@ -51246,6 +51895,7 @@ func (instance *Scenario) GetInputCells()  (*ScenarioInputCellCollection,  error
 }
 
 
+
 func DeleteScenario(scenario *Scenario){
 	runtime.SetFinalizer(scenario, nil)
 	C.Delete_Scenario(scenario.ptr)
@@ -51381,6 +52031,7 @@ func (instance *ScenarioCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteScenarioCollection(scenariocollection *ScenarioCollection){
 	runtime.SetFinalizer(scenariocollection, nil)
 	C.Delete_ScenarioCollection(scenariocollection.ptr)
@@ -51511,6 +52162,7 @@ func (instance *ScenarioInputCell) SetIsDeleted(value bool)  error {
 }
 
 
+
 func DeleteScenarioInputCell(scenarioinputcell *ScenarioInputCell){
 	runtime.SetFinalizer(scenarioinputcell, nil)
 	C.Delete_ScenarioInputCell(scenarioinputcell.ptr)
@@ -51588,6 +52240,7 @@ func (instance *ScenarioInputCellCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteScenarioInputCellCollection(scenarioinputcellcollection *ScenarioInputCellCollection){
@@ -51867,6 +52520,7 @@ func (instance *SettableChartGlobalizationSettings) SetAxisUnitName(type_ Displa
 
 	return nil 
 }
+
 
 
 func DeleteSettableChartGlobalizationSettings(settablechartglobalizationsettings *SettableChartGlobalizationSettings){
@@ -52455,6 +53109,7 @@ func (instance *SettableGlobalizationSettings) SetCommentTitleName(type_ Comment
 }
 
 
+
 func DeleteSettableGlobalizationSettings(settableglobalizationsettings *SettableGlobalizationSettings){
 	runtime.SetFinalizer(settableglobalizationsettings, nil)
 	C.Delete_SettableGlobalizationSettings(settableglobalizationsettings.ptr)
@@ -52794,6 +53449,7 @@ func (instance *SettablePivotGlobalizationSettings) SetTextOfSubTotal(subtotalty
 
 	return nil 
 }
+
 
 
 func DeleteSettablePivotGlobalizationSettings(settablepivotglobalizationsettings *SettablePivotGlobalizationSettings){
@@ -53286,6 +53942,12 @@ func (instance *SpreadsheetML2003SaveOptions) SetEncryptDocumentProperties(value
 	return nil 
 }
 
+
+func (instance *SpreadsheetML2003SaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteSpreadsheetML2003SaveOptions(spreadsheetml2003saveoptions *SpreadsheetML2003SaveOptions){
 	runtime.SetFinalizer(spreadsheetml2003saveoptions, nil)
@@ -54483,6 +55145,7 @@ func (instance *Style) ToJson()  (string,  error)  {
 }
 
 
+
 func DeleteStyle(style *Style){
 	runtime.SetFinalizer(style, nil)
 	C.Delete_Style(style.ptr)
@@ -55397,6 +56060,7 @@ func (instance *StyleFlag) SetQuotePrefix(value bool)  error {
 }
 
 
+
 func DeleteStyleFlag(styleflag *StyleFlag){
 	runtime.SetFinalizer(styleflag, nil)
 	C.Delete_StyleFlag(styleflag.ptr)
@@ -55493,6 +56157,7 @@ func (instance *SubtotalSetting) GetSummaryBelowData()  (bool,  error)  {
 }
 
 
+
 func DeleteSubtotalSetting(subtotalsetting *SubtotalSetting){
 	runtime.SetFinalizer(subtotalsetting, nil)
 	C.Delete_SubtotalSetting(subtotalsetting.ptr)
@@ -55582,6 +56247,7 @@ func (instance *SystemTimeInterruptMonitor) GetTerminateWithoutException()  (boo
 
 	return result, nil 
 }
+
 
 
 func DeleteSystemTimeInterruptMonitor(systemtimeinterruptmonitor *SystemTimeInterruptMonitor){
@@ -55689,6 +56355,7 @@ func (instance *ThemeColor) SetTint(value float64)  error {
 
 	return nil 
 }
+
 
 
 func DeleteThemeColor(themecolor *ThemeColor){
@@ -55842,6 +56509,7 @@ func (instance *ThreadedComment) SetCreatedTime(value time.Time)  error {
 }
 
 
+
 func DeleteThreadedComment(threadedcomment *ThreadedComment){
 	runtime.SetFinalizer(threadedcomment, nil)
 	C.Delete_ThreadedComment(threadedcomment.ptr)
@@ -55957,6 +56625,7 @@ func (instance *ThreadedCommentAuthor) SetProviderId(value string)  error {
 
 	return nil 
 }
+
 
 
 func DeleteThreadedCommentAuthor(threadedcommentauthor *ThreadedCommentAuthor){
@@ -56117,6 +56786,7 @@ func (instance *ThreadedCommentAuthorCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteThreadedCommentAuthorCollection(threadedcommentauthorcollection *ThreadedCommentAuthorCollection){
 	runtime.SetFinalizer(threadedcommentauthorcollection, nil)
 	C.Delete_ThreadedCommentAuthorCollection(threadedcommentauthorcollection.ptr)
@@ -56193,6 +56863,7 @@ func (instance *ThreadedCommentCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteThreadedCommentCollection(threadedcommentcollection *ThreadedCommentCollection){
@@ -56336,6 +57007,7 @@ func (instance *Top10) SetRank(value int32)  error {
 
 	return nil 
 }
+
 
 
 func DeleteTop10(top10 *Top10){
@@ -56516,6 +57188,7 @@ func (instance *Top10Filter) SetCriteria(value *Object)  error {
 }
 
 
+
 func DeleteTop10Filter(top10filter *Top10Filter){
 	runtime.SetFinalizer(top10filter, nil)
 	C.Delete_Top10Filter(top10filter.ptr)
@@ -56683,6 +57356,7 @@ func (instance *TwoColorGradient) SetVariant(value int32)  error {
 
 	return nil 
 }
+
 
 
 func DeleteTwoColorGradient(twocolorgradient *TwoColorGradient){
@@ -57873,6 +58547,17 @@ func (instance *TxtLoadOptions) SetPreservePaddingSpacesInFormula(value bool)  e
 }
 
 
+func (instance *TxtLoadOptions) ToAbstractTextLoadOptions() *AbstractTextLoadOptions {
+	parentClass := &AbstractTextLoadOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *TxtLoadOptions) ToLoadOptions() *LoadOptions {
+	parentClass := &LoadOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteTxtLoadOptions(txtloadoptions *TxtLoadOptions){
 	runtime.SetFinalizer(txtloadoptions, nil)
 	C.Delete_TxtLoadOptions(txtloadoptions.ptr)
@@ -58631,6 +59316,12 @@ func (instance *TxtSaveOptions) SetEncryptDocumentProperties(value bool)  error 
 }
 
 
+func (instance *TxtSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteTxtSaveOptions(txtsaveoptions *TxtSaveOptions){
 	runtime.SetFinalizer(txtsaveoptions, nil)
 	C.Delete_TxtSaveOptions(txtsaveoptions.ptr)
@@ -59141,6 +59832,7 @@ func (instance *UnionRange) Union_RangeArray(ranges []Range)  (*UnionRange,  err
 
 	return result, nil 
 }
+
 
 
 func DeleteUnionRange(unionrange *UnionRange){
@@ -59912,6 +60604,7 @@ func (instance *Validation) Copy(source *Validation, copyoption *CopyOptions)  e
 }
 
 
+
 func DeleteValidation(validation *Validation){
 	runtime.SetFinalizer(validation, nil)
 	C.Delete_Validation(validation.ptr)
@@ -60039,6 +60732,7 @@ func (instance *ValidationCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteValidationCollection(validationcollection *ValidationCollection){
 	runtime.SetFinalizer(validationcollection, nil)
 	C.Delete_ValidationCollection(validationcollection.ptr)
@@ -60109,6 +60803,7 @@ func (instance *VerticalPageBreak) GetColumn()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteVerticalPageBreak(verticalpagebreak *VerticalPageBreak){
@@ -60272,6 +60967,7 @@ func (instance *VerticalPageBreakCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteVerticalPageBreakCollection(verticalpagebreakcollection *VerticalPageBreakCollection){
 	runtime.SetFinalizer(verticalpagebreakcollection, nil)
 	C.Delete_VerticalPageBreakCollection(verticalpagebreakcollection.ptr)
@@ -60378,6 +61074,7 @@ func (instance *WarningInfo) SetCorrectedObject(value *Object)  error {
 
 	return nil 
 }
+
 
 
 func DeleteWarningInfo(warninginfo *WarningInfo){
@@ -61977,6 +62674,7 @@ func (instance *Workbook) Dispose()  error {
 
 	return nil 
 }
+
 
 
 func DeleteWorkbook(workbook *Workbook){
@@ -63750,6 +64448,7 @@ func (instance *WorkbookSettings) SetDefaultImageResolution(value int32)  error 
 
 	return nil 
 }
+
 
 
 func DeleteWorkbookSettings(workbooksettings *WorkbookSettings){
@@ -66000,6 +66699,7 @@ func (instance *Worksheet) RefreshPivotTables_PivotTableRefreshOption(option *Pi
 }
 
 
+
 func DeleteWorksheet(worksheet *Worksheet){
 	runtime.SetFinalizer(worksheet, nil)
 	C.Delete_Worksheet(worksheet.ptr)
@@ -66852,6 +67552,7 @@ func (instance *WorksheetCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteWorksheetCollection(worksheetcollection *WorksheetCollection){
 	runtime.SetFinalizer(worksheetcollection, nil)
 	C.Delete_WorksheetCollection(worksheetcollection.ptr)
@@ -66997,6 +67698,7 @@ func (instance *WriteProtection) ValidatePassword(password string)  (bool,  erro
 
 	return result, nil 
 }
+
 
 
 func DeleteWriteProtection(writeprotection *WriteProtection){
@@ -67463,6 +68165,12 @@ func (instance *XlsbSaveOptions) SetEncryptDocumentProperties(value bool)  error
 	return nil 
 }
 
+
+func (instance *XlsbSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteXlsbSaveOptions(xlsbsaveoptions *XlsbSaveOptions){
 	runtime.SetFinalizer(xlsbsaveoptions, nil)
@@ -67942,6 +68650,12 @@ func (instance *XlsSaveOptions) SetEncryptDocumentProperties(value bool)  error 
 }
 
 
+func (instance *XlsSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteXlsSaveOptions(xlssaveoptions *XlsSaveOptions){
 	runtime.SetFinalizer(xlssaveoptions, nil)
 	C.Delete_XlsSaveOptions(xlssaveoptions.ptr)
@@ -67986,6 +68700,7 @@ func (instance *XmlColumnProperty) IsNull()  (bool,  error)  {
 }
 
 
+
 func DeleteXmlColumnProperty(xmlcolumnproperty *XmlColumnProperty){
 	runtime.SetFinalizer(xmlcolumnproperty, nil)
 	C.Delete_XmlColumnProperty(xmlcolumnproperty.ptr)
@@ -68028,6 +68743,7 @@ func (instance *XmlDataBinding) GetUrl()  (string,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteXmlDataBinding(xmldatabinding *XmlDataBinding){
@@ -68889,6 +69605,12 @@ func (instance *XmlLoadOptions) SetPreservePaddingSpacesInFormula(value bool)  e
 }
 
 
+func (instance *XmlLoadOptions) ToLoadOptions() *LoadOptions {
+	parentClass := &LoadOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteXmlLoadOptions(xmlloadoptions *XmlLoadOptions){
 	runtime.SetFinalizer(xmlloadoptions, nil)
 	C.Delete_XmlLoadOptions(xmlloadoptions.ptr)
@@ -68976,6 +69698,7 @@ func (instance *XmlMap) GetDataBinding()  (*XmlDataBinding,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteXmlMap(xmlmap *XmlMap){
@@ -69066,6 +69789,7 @@ func (instance *XmlMapCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteXmlMapCollection(xmlmapcollection *XmlMapCollection){
@@ -69654,6 +70378,12 @@ func (instance *XmlSaveOptions) SetEncryptDocumentProperties(value bool)  error 
 	return nil 
 }
 
+
+func (instance *XmlSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteXmlSaveOptions(xmlsaveoptions *XmlSaveOptions){
 	runtime.SetFinalizer(xmlsaveoptions, nil)
@@ -70590,6 +71320,17 @@ func (instance *XpsSaveOptions) SetEncryptDocumentProperties(value bool)  error 
 	return nil 
 }
 
+
+func (instance *XpsSaveOptions) ToPaginatedSaveOptions() *PaginatedSaveOptions {
+	parentClass := &PaginatedSaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *XpsSaveOptions) ToSaveOptions() *SaveOptions {
+	parentClass := &SaveOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteXpsSaveOptions(xpssaveoptions *XpsSaveOptions){
 	runtime.SetFinalizer(xpssaveoptions, nil)

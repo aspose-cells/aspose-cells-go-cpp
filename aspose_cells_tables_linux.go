@@ -757,6 +757,7 @@ func (instance *ListColumn) SetDataStyle(style *Style)  error {
 }
 
 
+
 func DeleteListColumn(listcolumn *ListColumn){
 	runtime.SetFinalizer(listcolumn, nil)
 	C.Delete_ListColumn(listcolumn.ptr)
@@ -834,6 +835,7 @@ func (instance *ListColumnCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteListColumnCollection(listcolumncollection *ListColumnCollection){
@@ -1531,6 +1533,7 @@ func (instance *ListObject) SetAlternativeDescription(value string)  error {
 }
 
 
+
 func DeleteListObject(listobject *ListObject){
 	runtime.SetFinalizer(listobject, nil)
 	C.Delete_ListObject(listobject.ptr)
@@ -1661,6 +1664,7 @@ func (instance *ListObjectCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteListObjectCollection(listobjectcollection *ListObjectCollection){
 	runtime.SetFinalizer(listobjectcollection, nil)
 	C.Delete_ListObjectCollection(listobjectcollection.ptr)
@@ -1719,6 +1723,7 @@ func (instance *TableStyle) GetTableStyleElements()  (*TableStyleElementCollecti
 
 	return result, nil 
 }
+
 
 
 func DeleteTableStyle(tablestyle *TableStyle){
@@ -1908,6 +1913,7 @@ func (instance *TableStyleCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteTableStyleCollection(tablestylecollection *TableStyleCollection){
 	runtime.SetFinalizer(tablestylecollection, nil)
 	C.Delete_TableStyleCollection(tablestylecollection.ptr)
@@ -2017,6 +2023,7 @@ func (instance *TableStyleElement) SetElementStyle(style *Style)  error {
 }
 
 
+
 func DeleteTableStyleElement(tablestyleelement *TableStyleElement){
 	runtime.SetFinalizer(tablestyleelement, nil)
 	C.Delete_TableStyleElement(tablestyleelement.ptr)
@@ -2112,6 +2119,7 @@ func (instance *TableStyleElementCollection) GetCount()  (int32,  error)  {
 }
 
 
+
 func DeleteTableStyleElementCollection(tablestyleelementcollection *TableStyleElementCollection){
 	runtime.SetFinalizer(tablestyleelementcollection, nil)
 	C.Delete_TableStyleElementCollection(tablestyleelementcollection.ptr)
@@ -2183,6 +2191,7 @@ func (instance *TableToRangeOptions) SetLastRow(value int32)  error {
 
 	return nil 
 }
+
 
 
 func DeleteTableToRangeOptions(tabletorangeoptions *TableToRangeOptions){

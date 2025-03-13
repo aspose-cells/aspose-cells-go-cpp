@@ -698,6 +698,7 @@ func (instance *ConnectionParameter) SetValue(value *Object)  error {
 }
 
 
+
 func DeleteConnectionParameter(connectionparameter *ConnectionParameter){
 	runtime.SetFinalizer(connectionparameter, nil)
 	C.Delete_ConnectionParameter(connectionparameter.ptr)
@@ -791,6 +792,7 @@ func (instance *ConnectionParameterCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteConnectionParameterCollection(connectionparametercollection *ConnectionParameterCollection){
@@ -1580,6 +1582,12 @@ func (instance *DataModelConnection) SetSecondCommand(value string)  error {
 	return nil 
 }
 
+
+func (instance *DataModelConnection) ToExternalConnection() *ExternalConnection {
+	parentClass := &ExternalConnection{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteDataModelConnection(datamodelconnection *DataModelConnection){
 	runtime.SetFinalizer(datamodelconnection, nil)
@@ -2379,6 +2387,12 @@ func (instance *DBConnection) GetConnectionFile()  (string,  error)  {
 }
 
 
+func (instance *DBConnection) ToExternalConnection() *ExternalConnection {
+	parentClass := &ExternalConnection{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteDBConnection(dbconnection *DBConnection){
 	runtime.SetFinalizer(dbconnection, nil)
 	C.Delete_DBConnection(dbconnection.ptr)
@@ -3161,6 +3175,7 @@ func (instance *ExternalConnection) SetSecondCommand(value string)  error {
 }
 
 
+
 func DeleteExternalConnection(externalconnection *ExternalConnection){
 	runtime.SetFinalizer(externalconnection, nil)
 	C.Delete_ExternalConnection(externalconnection.ptr)
@@ -3272,6 +3287,7 @@ func (instance *ExternalConnectionCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteExternalConnectionCollection(externalconnectioncollection *ExternalConnectionCollection){
@@ -4477,6 +4493,12 @@ func (instance *WebQueryConnection) SetSecondCommand(value string)  error {
 	return nil 
 }
 
+
+func (instance *WebQueryConnection) ToExternalConnection() *ExternalConnection {
+	parentClass := &ExternalConnection{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 
 func DeleteWebQueryConnection(webqueryconnection *WebQueryConnection){
 	runtime.SetFinalizer(webqueryconnection, nil)

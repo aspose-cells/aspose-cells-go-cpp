@@ -79,6 +79,7 @@ func ConversionUtility_Convert_String_LoadOptions_String_SaveOptions(source stri
 }
 
 
+
 func DeleteConversionUtility(conversionutility *ConversionUtility){
 	runtime.SetFinalizer(conversionutility, nil)
 	C.Delete_ConversionUtility(conversionutility.ptr)
@@ -237,6 +238,7 @@ func (instance *ExportRangeToJsonOptions) SetIndent(value string)  error {
 
 	return nil 
 }
+
 
 
 func DeleteExportRangeToJsonOptions(exportrangetojsonoptions *ExportRangeToJsonOptions){
@@ -517,6 +519,7 @@ func (instance *JsonLayoutOptions) SetKeptSchema(value bool)  error {
 }
 
 
+
 func DeleteJsonLayoutOptions(jsonlayoutoptions *JsonLayoutOptions){
 	runtime.SetFinalizer(jsonlayoutoptions, nil)
 	C.Delete_JsonLayoutOptions(jsonlayoutoptions.ptr)
@@ -603,6 +606,7 @@ func JsonUtility_ExportRangeToJson(range_ *Range, options *JsonSaveOptions)  (st
 
 	return result, nil 
 }
+
 
 
 func DeleteJsonUtility(jsonutility *JsonUtility){

@@ -1074,6 +1074,12 @@ func (instance *BuiltInDocumentPropertyCollection) GetCount()  (int32,  error)  
 }
 
 
+func (instance *BuiltInDocumentPropertyCollection) ToDocumentPropertyCollection() *DocumentPropertyCollection {
+	parentClass := &DocumentPropertyCollection{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteBuiltInDocumentPropertyCollection(builtindocumentpropertycollection *BuiltInDocumentPropertyCollection){
 	runtime.SetFinalizer(builtindocumentpropertycollection, nil)
 	C.Delete_BuiltInDocumentPropertyCollection(builtindocumentpropertycollection.ptr)
@@ -1220,6 +1226,7 @@ func (instance *ContentTypeProperty) SetIsNillable(value bool)  error {
 }
 
 
+
 func DeleteContentTypeProperty(contenttypeproperty *ContentTypeProperty){
 	runtime.SetFinalizer(contenttypeproperty, nil)
 	C.Delete_ContentTypeProperty(contenttypeproperty.ptr)
@@ -1332,6 +1339,7 @@ func (instance *ContentTypePropertyCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteContentTypePropertyCollection(contenttypepropertycollection *ContentTypePropertyCollection){
@@ -1635,6 +1643,12 @@ func (instance *CustomDocumentPropertyCollection) GetCount()  (int32,  error)  {
 }
 
 
+func (instance *CustomDocumentPropertyCollection) ToDocumentPropertyCollection() *DocumentPropertyCollection {
+	parentClass := &DocumentPropertyCollection{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
 func DeleteCustomDocumentPropertyCollection(customdocumentpropertycollection *CustomDocumentPropertyCollection){
 	runtime.SetFinalizer(customdocumentpropertycollection, nil)
 	C.Delete_CustomDocumentPropertyCollection(customdocumentpropertycollection.ptr)
@@ -1737,6 +1751,7 @@ func (instance *CustomProperty) SetValue(value string)  error {
 }
 
 
+
 func DeleteCustomProperty(customproperty *CustomProperty){
 	runtime.SetFinalizer(customproperty, nil)
 	C.Delete_CustomProperty(customproperty.ptr)
@@ -1831,6 +1846,7 @@ func (instance *CustomPropertyCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteCustomPropertyCollection(custompropertycollection *CustomPropertyCollection){
@@ -2038,6 +2054,7 @@ func (instance *DocumentProperty) ToBool()  (bool,  error)  {
 }
 
 
+
 func DeleteDocumentProperty(documentproperty *DocumentProperty){
 	runtime.SetFinalizer(documentproperty, nil)
 	C.Delete_DocumentProperty(documentproperty.ptr)
@@ -2177,6 +2194,7 @@ func (instance *DocumentPropertyCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteDocumentPropertyCollection(documentpropertycollection *DocumentPropertyCollection){

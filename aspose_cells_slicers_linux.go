@@ -901,6 +901,7 @@ func (instance *Slicer) SetRowHeight(value float64)  error {
 }
 
 
+
 func DeleteSlicer(slicer *Slicer){
 	runtime.SetFinalizer(slicer, nil)
 	C.Delete_Slicer(slicer.ptr)
@@ -1023,6 +1024,7 @@ func (instance *SlicerCache) GetSourceName()  (string,  error)  {
 }
 
 
+
 func DeleteSlicerCache(slicercache *SlicerCache){
 	runtime.SetFinalizer(slicercache, nil)
 	C.Delete_SlicerCache(slicercache.ptr)
@@ -1096,6 +1098,7 @@ func (instance *SlicerCacheItem) GetValue()  (string,  error)  {
 }
 
 
+
 func DeleteSlicerCacheItem(slicercacheitem *SlicerCacheItem){
 	runtime.SetFinalizer(slicercacheitem, nil)
 	C.Delete_SlicerCacheItem(slicercacheitem.ptr)
@@ -1156,6 +1159,7 @@ func (instance *SlicerCacheItemCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteSlicerCacheItemCollection(slicercacheitemcollection *SlicerCacheItemCollection){
@@ -1444,6 +1448,7 @@ func (instance *SlicerCollection) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
+
 
 
 func DeleteSlicerCollection(slicercollection *SlicerCollection){
