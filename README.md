@@ -1,3 +1,5 @@
+![](https://img.shields.io/badge/aspose.cells-v25.3.0-blue?logo=go) [![GitHub license](https://img.shields.io/github/license/aspose-cells/aspose-cells-go-cpp)](https://github.com/aspose-cells/aspose-cells-go-cpp/blob/master/LICENSE)
+
 # Aspose.Cells for Go via C++
 
 Aspose.Cells for Go via C++ is a native Go library designed for Go developers to programmatically create, manipulate, and convert spreadsheets without needing Office Automation or Microsoft Excel. It supports a variety of spreadsheet formats, including MS Excel 97-2003 (XLS), MS Excel 2007-2016 (XLSX, XLSM, XLSB), Open Office XML, and more. With Aspose.Cells for Go via C++, you can also extract images from worksheets and convert Excel files to PDF. The library further enables the creation and manipulation of charts and shapes. Additionally, it offers robust formula calculation capabilities, providing you with a comprehensive solution for spreadsheet management.
@@ -72,7 +74,7 @@ If Aspose.Cells for Go via C++ is not installed in the development environment, 
 
 ```cmd
 
-set PATH=%PATH%;%GOPATH%\github.com\aspose-cells\aspose-cells-go-cpp\v25@v25.1.1\lib\win_x86_64\
+set PATH=%PATH%;%GOPATH%\github.com\aspose-cells\aspose-cells-go-cpp\v25@v25.3.0\lib\win_x86_64\
 
 ```
 
@@ -80,14 +82,14 @@ Or in your powershell
 
 ```powershell
 
-$env:Path = $env:Path+ ";${env:GOPATH}\github.com\aspose-cells\aspose-cells-go-cpp\v25@v25.1.1\lib\win_x86_64\"
+$env:Path = $env:Path+ ";${env:GOPATH}\github.com\aspose-cells\aspose-cells-go-cpp\v25@v25.3.0\lib\win_x86_64\"
 
 ```
 
 Or in your linux bash
 
 ```bash
-export PATH=$PATH:$GOPATH/github.com/aspose-cells/aspose-cells-go-cpp/v25@v25.1.1/lib/linux_x86_64/
+export PATH=$PATH:$GOPATH/github.com/aspose-cells/aspose-cells-go-cpp/v25@v25.3.0/lib/linux_x86_64/
 
 ```
 
@@ -183,7 +185,7 @@ go install github.com/aspose-cells/aspose-cells-go-cpp/v25@latest
 
 ```go
 
-go get github.com/aspose-cells/aspose-cells-go-cpp/v25@v25.1.1
+go get github.com/aspose-cells/aspose-cells-go-cpp/v25@v25.3.0
 
 ```
 
