@@ -292,6 +292,28 @@ func Int32ToPdfOptimizationType(value int32)(PdfOptimizationType ,error){
 	}
 }
 
+/**************Enum SvgEmbeddedFontType *****************/
+
+// Represents the embedded font type in Svg image.
+type SvgEmbeddedFontType int32
+
+const(
+// Not Embed font.
+SvgEmbeddedFontType_None SvgEmbeddedFontType = 0 
+
+// Embed WOFF font.
+SvgEmbeddedFontType_Woff SvgEmbeddedFontType = 1 
+)
+
+func Int32ToSvgEmbeddedFontType(value int32)(SvgEmbeddedFontType ,error){
+	switch value {
+		case 0:  return SvgEmbeddedFontType_None, nil  
+		case 1:  return SvgEmbeddedFontType_Woff, nil  
+		default:
+			return 0 ,fmt.Errorf("invalid SvgEmbeddedFontType value: %d", value)
+	}
+}
+
 /**************Enum TiffCompression *****************/
 
 // Specifies what type of compression to apply when saving images into TIFF format file.
@@ -509,7 +531,7 @@ type ImageOrPrintOptions struct {
 	ptr unsafe.Pointer
 }
 
-// Default constructor.
+// Ctor.
 func NewImageOrPrintOptions() ( *ImageOrPrintOptions, error) {
 	imageorprintoptions := &ImageOrPrintOptions{}
 	CGoReturnPtr := C.New_ImageOrPrintOptions()
@@ -788,40 +810,6 @@ func (instance *ImageOrPrintOptions) SetQuality(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the format of the generated images.
-// default value: PNG.
-// Returns:
-//   int32  
-func (instance *ImageOrPrintOptions) GetImageType()  (ImageType,  error)  {
-	
-	CGoReturnPtr := C.ImageOrPrintOptions_GetImageType( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToImageType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
-// Gets or sets the format of the generated images.
-// default value: PNG.
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *ImageOrPrintOptions) SetImageType(value ImageType)  error {
-	
-	CGoReturnPtr := C.ImageOrPrintOptions_SetImageType( instance.ptr, C.int( int32(value)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // If OnePagePerSheet is true , all content of one sheet will output to only one page in result.
 // The paper size of pagesetup will be invalid, and the other settings of pagesetup
 // will still take effect.
@@ -912,95 +900,6 @@ func (instance *ImageOrPrintOptions) GetDrawObjectEventHandler()  (*DrawObjectEv
 func (instance *ImageOrPrintOptions) SetDrawObjectEventHandler(value *DrawObjectEventHandler)  error {
 	
 	CGoReturnPtr := C.ImageOrPrintOptions_SetDrawObjectEventHandler( instance.ptr, value.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Indicate the filename of embedded image in svg.
-// This should be full path with directory like "c:\\xpsEmbedded"
-// Returns:
-//   string  
-func (instance *ImageOrPrintOptions) GetEmbededImageNameInSvg()  (string,  error)  {
-	
-	CGoReturnPtr := C.ImageOrPrintOptions_GetEmbededImageNameInSvg( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Indicate the filename of embedded image in svg.
-// This should be full path with directory like "c:\\xpsEmbedded"
-// Parameters:
-//   value - string 
-// Returns:
-//   void  
-func (instance *ImageOrPrintOptions) SetEmbededImageNameInSvg(value string)  error {
-	
-	CGoReturnPtr := C.ImageOrPrintOptions_SetEmbededImageNameInSvg( instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// if this property is true, the generated svg will fit to view port.
-// Returns:
-//   bool  
-func (instance *ImageOrPrintOptions) GetSVGFitToViewPort()  (bool,  error)  {
-	
-	CGoReturnPtr := C.ImageOrPrintOptions_GetSVGFitToViewPort( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  true, err
-	}
-	result := bool(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// if this property is true, the generated svg will fit to view port.
-// Parameters:
-//   value - bool 
-// Returns:
-//   void  
-func (instance *ImageOrPrintOptions) SetSVGFitToViewPort(value bool)  error {
-	
-	CGoReturnPtr := C.ImageOrPrintOptions_SetSVGFitToViewPort( instance.ptr, C.bool(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets and sets the prefix of the css name in svg,the default value is empty string.
-// Returns:
-//   string  
-func (instance *ImageOrPrintOptions) GetSvgCssPrefix()  (string,  error)  {
-	
-	CGoReturnPtr := C.ImageOrPrintOptions_GetSvgCssPrefix( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Gets and sets the prefix of the css name in svg,the default value is empty string.
-// Parameters:
-//   value - string 
-// Returns:
-//   void  
-func (instance *ImageOrPrintOptions) SetSvgCssPrefix(value string)  error {
-	
-	CGoReturnPtr := C.ImageOrPrintOptions_SetSvgCssPrefix( instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1423,7 +1322,7 @@ func (instance *ImageOrPrintOptions) SetSheetSet(value *SheetSet)  error {
 
 	return nil 
 }
-// Setting for rendering Emf metafile.
+// Setting for rendering Emf metafiles in source file.
 // Returns:
 //   int32  
 func (instance *ImageOrPrintOptions) GetEmfRenderSetting()  (EmfRenderSetting,  error)  {
@@ -1440,7 +1339,7 @@ func (instance *ImageOrPrintOptions) GetEmfRenderSetting()  (EmfRenderSetting,  
 
 	return result, nil 
 }
-// Setting for rendering Emf metafile.
+// Setting for rendering Emf metafiles in source file.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -1448,6 +1347,40 @@ func (instance *ImageOrPrintOptions) GetEmfRenderSetting()  (EmfRenderSetting,  
 func (instance *ImageOrPrintOptions) SetEmfRenderSetting(value EmfRenderSetting)  error {
 	
 	CGoReturnPtr := C.ImageOrPrintOptions_SetEmfRenderSetting( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the format of the generated images.
+// default value: PNG.
+// Returns:
+//   int32  
+func (instance *ImageOrPrintOptions) GetImageType()  (ImageType,  error)  {
+	
+	CGoReturnPtr := C.ImageOrPrintOptions_GetImageType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToImageType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the format of the generated images.
+// default value: PNG.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ImageOrPrintOptions) SetImageType(value ImageType)  error {
+	
+	CGoReturnPtr := C.ImageOrPrintOptions_SetImageType( instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2805,6 +2738,990 @@ func DeleteSheetSet(sheetset *SheetSet){
 	runtime.SetFinalizer(sheetset, nil)
 	C.Delete_SheetSet(sheetset.ptr)
 	sheetset.ptr = nil
+}
+
+// Class SvgImageOptions 
+
+// Options for generating Svg image.
+type SvgImageOptions struct {
+	ptr unsafe.Pointer
+}
+
+// Ctor.
+func NewSvgImageOptions() ( *SvgImageOptions, error) {
+	svgimageoptions := &SvgImageOptions{}
+	CGoReturnPtr := C.New_SvgImageOptions()
+	if CGoReturnPtr.error_no == 0 {
+		svgimageoptions.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(svgimageoptions, DeleteSvgImageOptions)
+		return svgimageoptions, nil
+	} else {
+		svgimageoptions.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return svgimageoptions, err
+	}	
+}
+// Constructs from a parent object.
+// Parameters:
+//   src - ImageOrPrintOptions 
+func NewSvgImageOptions_ImageOrPrintOptions(src *ImageOrPrintOptions) ( *SvgImageOptions, error) {
+	svgimageoptions := &SvgImageOptions{}
+	CGoReturnPtr := C.New_SvgImageOptions_ImageOrPrintOptions(src.ptr)
+	if CGoReturnPtr.error_no == 0 {
+		svgimageoptions.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(svgimageoptions, DeleteSvgImageOptions)
+		return svgimageoptions, nil
+	} else {
+		svgimageoptions.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return svgimageoptions, err
+	}	
+}
+
+// Checks whether the implementation object is nullptr.
+// Returns:
+//   bool  
+func (instance *SvgImageOptions) IsNull()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_IsNull( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the format of the generated images.
+// default value: PNG.
+// Returns:
+//   int32  
+func (instance *SvgImageOptions) GetImageType()  (ImageType,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetImageType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToImageType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the format of the generated images.
+// default value: PNG.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetImageType(value ImageType)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetImageType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// if this property is true, the generated svg will fit to view port.
+// Returns:
+//   bool  
+func (instance *SvgImageOptions) GetFitToViewPort()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetFitToViewPort( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// if this property is true, the generated svg will fit to view port.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetFitToViewPort(value bool)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetFitToViewPort( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the prefix of the css name in svg,the default value is empty string.
+// Returns:
+//   string  
+func (instance *SvgImageOptions) GetCssPrefix()  (string,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetCssPrefix( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the prefix of the css name in svg,the default value is empty string.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetCssPrefix(value string)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetCssPrefix( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the type of font that embedded in Svg.
+// Returns:
+//   int32  
+func (instance *SvgImageOptions) GetEmbeddedFontType()  (SvgEmbeddedFontType,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetEmbeddedFontType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToSvgEmbeddedFontType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the type of font that embedded in Svg.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetEmbeddedFontType(value SvgEmbeddedFontType)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetEmbeddedFontType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// If PrintWithStatusDialog = true , there will be a dialog that shows current print status.
+// else no such dialog will show.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetPrintWithStatusDialog(value bool)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetPrintWithStatusDialog( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// If PrintWithStatusDialog = true , there will be a dialog that shows current print status.
+// else no such dialog will show.
+// Returns:
+//   bool  
+func (instance *SvgImageOptions) GetPrintWithStatusDialog()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetPrintWithStatusDialog( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the horizontal resolution for generated images, in dots per inch.
+// Returns:
+//   int32  
+func (instance *SvgImageOptions) GetHorizontalResolution()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetHorizontalResolution( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the horizontal resolution for generated images, in dots per inch.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetHorizontalResolution(value int32)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetHorizontalResolution( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the vertical resolution for generated images, in dots per inch.
+// Returns:
+//   int32  
+func (instance *SvgImageOptions) GetVerticalResolution()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetVerticalResolution( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the vertical resolution for generated images, in dots per inch.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetVerticalResolution(value int32)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetVerticalResolution( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the type of compression to apply only when saving pages to the <c>Tiff</c> format.
+// Returns:
+//   int32  
+func (instance *SvgImageOptions) GetTiffCompression()  (TiffCompression,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetTiffCompression( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTiffCompression(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the type of compression to apply only when saving pages to the <c>Tiff</c> format.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetTiffCompression(value TiffCompression)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetTiffCompression( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets bit depth to apply only when saving pages to the <c>Tiff</c> format.
+// Returns:
+//   int32  
+func (instance *SvgImageOptions) GetTiffColorDepth()  (ColorDepth,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetTiffColorDepth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToColorDepth(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets bit depth to apply only when saving pages to the <c>Tiff</c> format.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetTiffColorDepth(value ColorDepth)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetTiffColorDepth( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets method used while converting images to 1 bpp format
+// when <see cref="ImageType"/> is Tiff and <see cref="TiffCompression"/> is equal to Ccitt3 or Ccitt4.
+// Returns:
+//   int32  
+func (instance *SvgImageOptions) GetTiffBinarizationMethod()  (ImageBinarizationMethod,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetTiffBinarizationMethod( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToImageBinarizationMethod(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets method used while converting images to 1 bpp format
+// when <see cref="ImageType"/> is Tiff and <see cref="TiffCompression"/> is equal to Ccitt3 or Ccitt4.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetTiffBinarizationMethod(value ImageBinarizationMethod)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetTiffBinarizationMethod( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates which pages will not be printed.
+// Returns:
+//   int32  
+func (instance *SvgImageOptions) GetPrintingPage()  (PrintingPageType,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetPrintingPage( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToPrintingPageType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Indicates which pages will not be printed.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetPrintingPage(value PrintingPageType)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetPrintingPage( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets a value determining the quality of the generated  images
+// to apply only when saving pages to the <c>Jpeg</c> format. The default value is 100
+// Returns:
+//   int32  
+func (instance *SvgImageOptions) GetQuality()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetQuality( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets a value determining the quality of the generated  images
+// to apply only when saving pages to the <c>Jpeg</c> format. The default value is 100
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetQuality(value int32)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetQuality( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// If OnePagePerSheet is true , all content of one sheet will output to only one page in result.
+// The paper size of pagesetup will be invalid, and the other settings of pagesetup
+// will still take effect.
+// Returns:
+//   bool  
+func (instance *SvgImageOptions) GetOnePagePerSheet()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetOnePagePerSheet( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// If OnePagePerSheet is true , all content of one sheet will output to only one page in result.
+// The paper size of pagesetup will be invalid, and the other settings of pagesetup
+// will still take effect.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetOnePagePerSheet(value bool)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetOnePagePerSheet( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// If AllColumnsInOnePagePerSheet is true , all column content of one sheet will output to only one page in result.
+// The width of paper size of pagesetup will be invalid, and the other settings of pagesetup
+// will still take effect.
+// Returns:
+//   bool  
+func (instance *SvgImageOptions) GetAllColumnsInOnePagePerSheet()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetAllColumnsInOnePagePerSheet( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// If AllColumnsInOnePagePerSheet is true , all column content of one sheet will output to only one page in result.
+// The width of paper size of pagesetup will be invalid, and the other settings of pagesetup
+// will still take effect.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetAllColumnsInOnePagePerSheet(value bool)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetAllColumnsInOnePagePerSheet( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Implements this interface to get DrawObject and Bound when rendering.
+// Returns:
+//   DrawObjectEventHandler  
+func (instance *SvgImageOptions) GetDrawObjectEventHandler()  (*DrawObjectEventHandler,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetDrawObjectEventHandler( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &DrawObjectEventHandler{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteDrawObjectEventHandler) 
+
+	return result, nil 
+}
+// Implements this interface to get DrawObject and Bound when rendering.
+// Parameters:
+//   value - DrawObjectEventHandler 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetDrawObjectEventHandler(value *DrawObjectEventHandler)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetDrawObjectEventHandler( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// If this property is true , one Area will be output, and no scale will take effect.
+// Returns:
+//   bool  
+func (instance *SvgImageOptions) GetOnlyArea()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetOnlyArea( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// If this property is true , one Area will be output, and no scale will take effect.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetOnlyArea(value bool)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetOnlyArea( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates if the background of generated image should be transparent.
+// Returns:
+//   bool  
+func (instance *SvgImageOptions) GetTransparent()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetTransparent( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates if the background of generated image should be transparent.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetTransparent(value bool)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetTransparent( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to only substitute the font of character when the cell font is not compatibility for it.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetIsFontSubstitutionCharGranularity(value bool)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetIsFontSubstitutionCharGranularity( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to only substitute the font of character when the cell font is not compatibility for it.
+// Returns:
+//   bool  
+func (instance *SvgImageOptions) IsFontSubstitutionCharGranularity()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_IsFontSubstitutionCharGranularity( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the 0-based index of the first page to save.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetPageIndex(value int32)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetPageIndex( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the 0-based index of the first page to save.
+// Returns:
+//   int32  
+func (instance *SvgImageOptions) GetPageIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetPageIndex( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the number of pages to save.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetPageCount(value int32)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetPageCount( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the number of pages to save.
+// Returns:
+//   int32  
+func (instance *SvgImageOptions) GetPageCount()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetPageCount( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Sets desired width and height of image.
+// Parameters:
+//   desiredWidth - int32 
+//   desiredHeight - int32 
+//   keepAspectRatio - bool 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetDesiredSize(desiredwidth int32, desiredheight int32, keepaspectratio bool)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetDesiredSize( instance.ptr, C.int(desiredwidth), C.int(desiredheight), C.bool(keepaspectratio))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to optimize the output elements.
+// Returns:
+//   bool  
+func (instance *SvgImageOptions) IsOptimized()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_IsOptimized( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to optimize the output elements.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetIsOptimized(value bool)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetIsOptimized( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// When characters in the Excel are Unicode and not be set with correct font in cell style,
+// They may appear as block in pdf,image.
+// Set the DefaultFont such as MingLiu or MS Gothic to show these characters.
+// If this property is not set, Aspose.Cells will use system default font to show these unicode characters.
+// Returns:
+//   string  
+func (instance *SvgImageOptions) GetDefaultFont()  (string,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetDefaultFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// When characters in the Excel are Unicode and not be set with correct font in cell style,
+// They may appear as block in pdf,image.
+// Set the DefaultFont such as MingLiu or MS Gothic to show these characters.
+// If this property is not set, Aspose.Cells will use system default font to show these unicode characters.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetDefaultFont(value string)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetDefaultFont( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// When characters in the Excel are Unicode and not be set with correct font in cell style,
+// They may appear as block in pdf,image.
+// Set this to true to try to use workbook's default font to show these characters first.
+// Returns:
+//   bool  
+func (instance *SvgImageOptions) GetCheckWorkbookDefaultFont()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetCheckWorkbookDefaultFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// When characters in the Excel are Unicode and not be set with correct font in cell style,
+// They may appear as block in pdf,image.
+// Set this to true to try to use workbook's default font to show these characters first.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetCheckWorkbookDefaultFont(value bool)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetCheckWorkbookDefaultFont( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to output a blank page when there is nothing to print.
+// Returns:
+//   bool  
+func (instance *SvgImageOptions) GetOutputBlankPageWhenNothingToPrint()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetOutputBlankPageWhenNothingToPrint( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to output a blank page when there is nothing to print.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetOutputBlankPageWhenNothingToPrint(value bool)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetOutputBlankPageWhenNothingToPrint( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets gridline type.
+// Returns:
+//   int32  
+func (instance *SvgImageOptions) GetGridlineType()  (GridlineType,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetGridlineType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToGridlineType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets gridline type.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetGridlineType(value GridlineType)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetGridlineType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets displaying text type when the text width is larger than cell width.
+// Returns:
+//   int32  
+func (instance *SvgImageOptions) GetTextCrossType()  (TextCrossType,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetTextCrossType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextCrossType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets displaying text type when the text width is larger than cell width.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetTextCrossType(value TextCrossType)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetTextCrossType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets default edit language.
+// Returns:
+//   int32  
+func (instance *SvgImageOptions) GetDefaultEditLanguage()  (DefaultEditLanguage,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetDefaultEditLanguage( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToDefaultEditLanguage(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets default edit language.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetDefaultEditLanguage(value DefaultEditLanguage)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetDefaultEditLanguage( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the sheets to render. Default is all visible sheets in the workbook: <see cref="Aspose.Cells.Rendering.SheetSet.Visible"/>.
+// Returns:
+//   SheetSet  
+func (instance *SvgImageOptions) GetSheetSet()  (*SheetSet,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetSheetSet( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &SheetSet{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteSheetSet) 
+
+	return result, nil 
+}
+// Gets or sets the sheets to render. Default is all visible sheets in the workbook: <see cref="Aspose.Cells.Rendering.SheetSet.Visible"/>.
+// Parameters:
+//   value - SheetSet 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetSheetSet(value *SheetSet)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetSheetSet( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Setting for rendering Emf metafiles in source file.
+// Returns:
+//   int32  
+func (instance *SvgImageOptions) GetEmfRenderSetting()  (EmfRenderSetting,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetEmfRenderSetting( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToEmfRenderSetting(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Setting for rendering Emf metafiles in source file.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetEmfRenderSetting(value EmfRenderSetting)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetEmfRenderSetting( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+
+
+func (instance *SvgImageOptions) ToImageOrPrintOptions() *ImageOrPrintOptions {
+	parentClass := &ImageOrPrintOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
+func DeleteSvgImageOptions(svgimageoptions *SvgImageOptions){
+	runtime.SetFinalizer(svgimageoptions, nil)
+	C.Delete_SvgImageOptions(svgimageoptions.ptr)
+	svgimageoptions.ptr = nil
 }
 
 // Class WorkbookPrintingPreview 

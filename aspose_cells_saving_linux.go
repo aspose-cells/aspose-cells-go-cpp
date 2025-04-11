@@ -2548,6 +2548,37 @@ func (instance *EbookSaveOptions) SetHtmlVersion(value HtmlVersion)  error {
 
 	return nil 
 }
+// Gets or sets the sheets to render. Default is all visible sheets in the workbook: <see cref="Aspose.Cells.Rendering.SheetSet.Visible"/>.
+// Returns:
+//   SheetSet  
+func (instance *EbookSaveOptions) GetSheetSet()  (*SheetSet,  error)  {
+	
+	CGoReturnPtr := C.EbookSaveOptions_GetSheetSet( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &SheetSet{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteSheetSet) 
+
+	return result, nil 
+}
+// Gets or sets the sheets to render. Default is all visible sheets in the workbook: <see cref="Aspose.Cells.Rendering.SheetSet.Visible"/>.
+// Parameters:
+//   value - SheetSet 
+// Returns:
+//   void  
+func (instance *EbookSaveOptions) SetSheetSet(value *SheetSet)  error {
+	
+	CGoReturnPtr := C.EbookSaveOptions_SetSheetSet( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Gets the save file format.
 // Returns:
 //   int32  

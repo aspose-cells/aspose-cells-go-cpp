@@ -3236,6 +3236,9 @@ LoadFormat_Azw3 LoadFormat = 53
 // Represents a CHM file.
 LoadFormat_Chm LoadFormat = 54 
 
+// Represents a Markdown file.
+LoadFormat_Markdown LoadFormat = 55 
+
 // Represents unrecognized format, cannot be loaded.
 LoadFormat_Unknown LoadFormat = 255 
 
@@ -3272,6 +3275,7 @@ func Int32ToLoadFormat(value int32)(LoadFormat ,error){
 		case 52:  return LoadFormat_Epub, nil  
 		case 53:  return LoadFormat_Azw3, nil  
 		case 54:  return LoadFormat_Chm, nil  
+		case 55:  return LoadFormat_Markdown, nil  
 		case 255:  return LoadFormat_Unknown, nil  
 		case 254:  return LoadFormat_Image, nil  
 		case 513:  return LoadFormat_Json, nil  
@@ -7864,6 +7868,23 @@ func Color_White()  (*Color,  error)  {
 
 	return result, nil 
 }
+// Creates a Color from its 32-bit component (alpha, red, green, and blue) values.
+// Parameters:
+//   value - int32 
+// Returns:
+//   Color  
+func Color_FromArgb(value int32)  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Color_FromArgb(C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
 
 func DeleteColor(color *Color){
 	C.Delete_Color(color.ptr)
@@ -10970,6 +10991,20 @@ func (instance *Cell) GetColumn()  (int32,  error)  {
 func (instance *Cell) IsFormula()  (bool,  error)  {
 	
 	CGoReturnPtr := C.Cell_IsFormula( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Checks whether there is custom function(unsupported function) in this cell's formula.
+// Returns:
+//   bool  
+func (instance *Cell) GetHasCustomFunction()  (bool,  error)  {
+	
+	CGoReturnPtr := C.Cell_GetHasCustomFunction( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -22111,6 +22146,35 @@ func (instance *DocxSaveOptions) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
+// Save all drawing objecgts as editable shapes in word file.So you can edit them in Word.
+// Returns:
+//   bool  
+func (instance *DocxSaveOptions) GetSaveAsEditableShaps()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DocxSaveOptions_GetSaveAsEditableShaps( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Save all drawing objecgts as editable shapes in word file.So you can edit them in Word.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DocxSaveOptions) SetSaveAsEditableShaps(value bool)  error {
+	
+	CGoReturnPtr := C.DocxSaveOptions_SetSaveAsEditableShaps( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // When characters in the Excel are Unicode and not be set with correct font in cell style,
 // They may appear as block in pdf,image.
 // Set the DefaultFont such as MingLiu or MS Gothic to show these characters.
@@ -32191,6 +32255,37 @@ func (instance *HtmlSaveOptions) GetHtmlVersion()  (HtmlVersion,  error)  {
 func (instance *HtmlSaveOptions) SetHtmlVersion(value HtmlVersion)  error {
 	
 	CGoReturnPtr := C.HtmlSaveOptions_SetHtmlVersion( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the sheets to render. Default is all visible sheets in the workbook: <see cref="Aspose.Cells.Rendering.SheetSet.Visible"/>.
+// Returns:
+//   SheetSet  
+func (instance *HtmlSaveOptions) GetSheetSet()  (*SheetSet,  error)  {
+	
+	CGoReturnPtr := C.HtmlSaveOptions_GetSheetSet( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &SheetSet{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteSheetSet) 
+
+	return result, nil 
+}
+// Gets or sets the sheets to render. Default is all visible sheets in the workbook: <see cref="Aspose.Cells.Rendering.SheetSet.Visible"/>.
+// Parameters:
+//   value - SheetSet 
+// Returns:
+//   void  
+func (instance *HtmlSaveOptions) SetSheetSet(value *SheetSet)  error {
+	
+	CGoReturnPtr := C.HtmlSaveOptions_SetSheetSet( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62348,6 +62443,21 @@ func (instance *Workbook) SetFileFormat(value FileFormatType)  error {
 
 	return nil 
 }
+// Detects whether there is custom function used in this workbook,
+// such as in cell's formula, in defined names...
+// Returns:
+//   bool  
+func (instance *Workbook) GetHasCustomFunction()  (bool,  error)  {
+	
+	CGoReturnPtr := C.Workbook_GetHasCustomFunction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
 // Gets and sets the interrupt monitor.
 // Returns:
 //   AbstractInterruptMonitor  
@@ -64602,22 +64712,6 @@ func (instance *Worksheet) GetQueryTables()  (*QueryTableCollection,  error)  {
 
 	return result, nil 
 }
-// Gets all pivot tables in this worksheet.
-// Returns:
-//   PivotTableCollection  
-func (instance *Worksheet) GetPivotTables()  (*PivotTableCollection,  error)  {
-	
-	CGoReturnPtr := C.Worksheet_GetPivotTables( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := &PivotTableCollection{}
-	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePivotTableCollection) 
-
-	return result, nil 
-}
 // Represents worksheet type.
 // Returns:
 //   int32  
@@ -65003,6 +65097,22 @@ func (instance *Worksheet) RemoveSplit()  error {
 	}
 
 	return nil 
+}
+// Gets all pivot tables in this worksheet.
+// Returns:
+//   PivotTableCollection  
+func (instance *Worksheet) GetPivotTables()  (*PivotTableCollection,  error)  {
+	
+	CGoReturnPtr := C.Worksheet_GetPivotTables( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &PivotTableCollection{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeletePivotTableCollection) 
+
+	return result, nil 
 }
 // Gets all ListObjects in this worksheet.
 // Returns:
@@ -66212,6 +66322,27 @@ func (instance *Worksheet) SetIsRulerVisible(value bool)  error {
 
 	return nil 
 }
+// Gets selected ranges of cells in the designer spreadsheet.
+// Returns:
+//   []Range  
+func (instance *Worksheet) GetSelectedAreas()  ([]Range,  error)  {
+	
+	CGoReturnPtr := C.Worksheet_GetSelectedAreas( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result:= make([]Range, CGoReturnPtr.column_length)
+	for i := 0; i < int(CGoReturnPtr.column_length); i++ {
+	   offset := uintptr(C.size_t(i)) * uintptr(CGoReturnPtr.size)
+	   goObject := &Range{}
+	   goObject.ptr =unsafe.Pointer(uintptr( unsafe.Pointer(CGoReturnPtr.return_value)) + offset)
+	   result[i] = *goObject
+	}
+	 
+
+	return result, nil 
+}
 // Represents worksheet tab color.
 // Returns:
 //   Color  
@@ -66235,6 +66366,36 @@ func (instance *Worksheet) GetTabColor()  (*Color,  error)  {
 func (instance *Worksheet) SetTabColor(value *Color)  error {
 	
 	CGoReturnPtr := C.Worksheet_SetTabColor( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the color of gridline
+// Returns:
+//   Color  
+func (instance *Worksheet) GetGridlineColor()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.Worksheet_GetGridlineColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Gets and sets the color of gridline
+// Parameters:
+//   value - Color 
+// Returns:
+//   void  
+func (instance *Worksheet) SetGridlineColor(value *Color)  error {
+	
+	CGoReturnPtr := C.Worksheet_SetGridlineColor( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -67534,6 +67695,22 @@ func (instance *WorksheetCollection) RefreshPivotTables_PivotTableRefreshOption(
 		return  true, err
 	}
 	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents all sensitivity labels.
+// Returns:
+//   SensitivityLabelCollection  
+func (instance *WorksheetCollection) GetSensitivityLabels()  (*SensitivityLabelCollection,  error)  {
+	
+	CGoReturnPtr := C.WorksheetCollection_GetSensitivityLabels( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &SensitivityLabelCollection{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteSensitivityLabelCollection) 
 
 	return result, nil 
 }

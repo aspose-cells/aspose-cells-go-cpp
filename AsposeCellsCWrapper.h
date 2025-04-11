@@ -478,6 +478,7 @@ extern "C" {
    ASPOSE_CELLS_API c_return_int_value* Cell_GetRow(void* instance_ptr);
    ASPOSE_CELLS_API c_return_int_value* Cell_GetColumn(void* instance_ptr);
    ASPOSE_CELLS_API c_return_bool_value* Cell_IsFormula(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* Cell_GetHasCustomFunction(void* instance_ptr);
    ASPOSE_CELLS_API c_return_int_value* Cell_GetType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_string_value* Cell_GetName(void* instance_ptr);
    ASPOSE_CELLS_API c_return_bool_value* Cell_IsErrorValue(void* instance_ptr);
@@ -1393,6 +1394,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_ptr_value* New_DocxSaveOptions_PaginatedSaveOptions(void* src);
 
    ASPOSE_CELLS_API c_return_bool_value* DocxSaveOptions_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* DocxSaveOptions_GetSaveAsEditableShaps(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* DocxSaveOptions_SetSaveAsEditableShaps(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_string_value* DocxSaveOptions_GetDefaultFont(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* DocxSaveOptions_SetDefaultFont(void* instance_ptr, char* value);
    ASPOSE_CELLS_API c_return_bool_value* DocxSaveOptions_GetCheckWorkbookDefaultFont(void* instance_ptr);
@@ -2208,6 +2211,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* HtmlSaveOptions_SetEnableCssCustomProperties(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_int_value* HtmlSaveOptions_GetHtmlVersion(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* HtmlSaveOptions_SetHtmlVersion(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* HtmlSaveOptions_GetSheetSet(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* HtmlSaveOptions_SetSheetSet(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* HtmlSaveOptions_GetSaveFormat(void* instance_ptr);
    ASPOSE_CELLS_API c_return_bool_value* HtmlSaveOptions_GetClearData(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* HtmlSaveOptions_SetClearData(void* instance_ptr, bool value);
@@ -4613,6 +4618,7 @@ extern "C" {
    ASPOSE_CELLS_API c_return_ptr_value* Workbook_GetCustomDocumentProperties(void* instance_ptr);
    ASPOSE_CELLS_API c_return_int_value* Workbook_GetFileFormat(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* Workbook_SetFileFormat(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_bool_value* Workbook_GetHasCustomFunction(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* Workbook_GetInterruptMonitor(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* Workbook_SetInterruptMonitor_AbstractInterruptMonitor(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_void_value* Workbook_SetInterruptMonitor_InterruptMonitor(void* instance_ptr, void* interruptmonitor);
@@ -4775,7 +4781,6 @@ extern "C" {
    ASPOSE_CELLS_API c_return_ptr_value* Worksheet_GetWorkbook(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* Worksheet_GetCells(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* Worksheet_GetQueryTables(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_ptr_value* Worksheet_GetPivotTables(void* instance_ptr);
    ASPOSE_CELLS_API c_return_int_value* Worksheet_GetType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* Worksheet_SetType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_string_value* Worksheet_GetName(void* instance_ptr);
@@ -4801,6 +4806,7 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* Worksheet_FreezePanes_String_Integer_Integer(void* instance_ptr, char* cellname, int32_t freezedrows, int32_t freezedcolumns);
    ASPOSE_CELLS_API c_return_void_value* Worksheet_UnFreezePanes(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* Worksheet_RemoveSplit(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* Worksheet_GetPivotTables(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* Worksheet_GetListObjects(void* instance_ptr);
    ASPOSE_CELLS_API c_return_int_value* Worksheet_GetTabId(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* Worksheet_SetTabId(void* instance_ptr, int32_t value);
@@ -4879,8 +4885,11 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* Worksheet_SetIsPageBreakPreview(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* Worksheet_IsRulerVisible(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* Worksheet_SetIsRulerVisible(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_ptr_value* Worksheet_GetSelectedAreas(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* Worksheet_GetTabColor(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* Worksheet_SetTabColor(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_ptr_value* Worksheet_GetGridlineColor(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* Worksheet_SetGridlineColor(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_string_value* Worksheet_GetCodeName(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* Worksheet_SetCodeName(void* instance_ptr, char* value);
    ASPOSE_CELLS_API c_return_ptr_value* Worksheet_GetBackgroundImage(void* instance_ptr);
@@ -4963,6 +4972,7 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* WorksheetCollection_RefreshAll(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* WorksheetCollection_RefreshPivotTables(void* instance_ptr);
    ASPOSE_CELLS_API c_return_bool_value* WorksheetCollection_RefreshPivotTables_PivotTableRefreshOption(void* instance_ptr, void* option);
+   ASPOSE_CELLS_API c_return_ptr_value* WorksheetCollection_GetSensitivityLabels(void* instance_ptr);
    ASPOSE_CELLS_API c_return_int_value* WorksheetCollection_GetCount(void* instance_ptr);
 
 
@@ -5274,6 +5284,318 @@ extern "C" {
 
 
    ASPOSE_CELLS_API void Delete_XpsSaveOptions( void* instance_ptr);
+
+   /**************Class AbstractLowCodeLoadOptionsProvider *****************/
+
+
+   ASPOSE_CELLS_API c_return_bool_value* AbstractLowCodeLoadOptionsProvider_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* AbstractLowCodeLoadOptionsProvider_MoveNext(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* AbstractLowCodeLoadOptionsProvider_GetCurrent(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* AbstractLowCodeLoadOptionsProvider_Finish(void* instance_ptr, void* part);
+
+
+   ASPOSE_CELLS_API void Delete_AbstractLowCodeLoadOptionsProvider( void* instance_ptr);
+
+   /**************Class AbstractLowCodeProtectionProvider *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_AbstractLowCodeProtectionProvider();
+
+   ASPOSE_CELLS_API c_return_bool_value* AbstractLowCodeProtectionProvider_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* AbstractLowCodeProtectionProvider_GetOpenPassword(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* AbstractLowCodeProtectionProvider_GetWritePassword(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* AbstractLowCodeProtectionProvider_GetWorkbookPassword(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* AbstractLowCodeProtectionProvider_GetWorkbookProtectionType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* AbstractLowCodeProtectionProvider_GetWorksheetPassword(void* instance_ptr, char* sheetname);
+   ASPOSE_CELLS_API c_return_int_value* AbstractLowCodeProtectionProvider_GetWorksheetProtectionType(void* instance_ptr, char* sheetname);
+
+
+   ASPOSE_CELLS_API void Delete_AbstractLowCodeProtectionProvider( void* instance_ptr);
+
+   /**************Class AbstractLowCodeSaveOptionsProvider *****************/
+
+
+   ASPOSE_CELLS_API c_return_bool_value* AbstractLowCodeSaveOptionsProvider_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* AbstractLowCodeSaveOptionsProvider_GetSaveOptions(void* instance_ptr, void* part);
+   ASPOSE_CELLS_API c_return_void_value* AbstractLowCodeSaveOptionsProvider_Finish(void* instance_ptr, void* part);
+
+
+   ASPOSE_CELLS_API void Delete_AbstractLowCodeSaveOptionsProvider( void* instance_ptr);
+
+   /**************Class HtmlConverter *****************/
+
+
+   ASPOSE_CELLS_API c_return_bool_value* HtmlConverter_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* HtmlConverter_Process_String_String(char* templatefile, char* resultfile);
+   ASPOSE_CELLS_API c_return_void_value* HtmlConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(void* loadoptions, void* saveoptions);
+
+
+   ASPOSE_CELLS_API void Delete_HtmlConverter( void* instance_ptr);
+
+   /**************Class ImageConverter *****************/
+
+
+   ASPOSE_CELLS_API c_return_bool_value* ImageConverter_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageConverter_Process_String_String(char* templatefile, char* resultfile);
+   ASPOSE_CELLS_API c_return_void_value* ImageConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(void* loadoptions, void* saveoptions);
+   ASPOSE_CELLS_API c_return_void_value* ImageConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLowCodeSaveOptionsProvider(void* loadoptions, void* saveoptions, void* provider);
+
+
+   ASPOSE_CELLS_API void Delete_ImageConverter( void* instance_ptr);
+
+   /**************Class JsonConverter *****************/
+
+
+   ASPOSE_CELLS_API c_return_bool_value* JsonConverter_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* JsonConverter_Process_String_String(char* templatefile, char* resultfile);
+   ASPOSE_CELLS_API c_return_void_value* JsonConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(void* loadoptions, void* saveoptions);
+
+
+   ASPOSE_CELLS_API void Delete_JsonConverter( void* instance_ptr);
+
+   /**************Class LowCodeHtmlSaveOptions *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_LowCodeHtmlSaveOptions();
+   ASPOSE_CELLS_API c_return_ptr_value* New_LowCodeHtmlSaveOptions_LowCodeSaveOptions(void* src);
+
+   ASPOSE_CELLS_API c_return_bool_value* LowCodeHtmlSaveOptions_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* LowCodeHtmlSaveOptions_GetSaveFormat(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeHtmlSaveOptions_SetSaveFormat(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* LowCodeHtmlSaveOptions_GetHtmlOptions(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeHtmlSaveOptions_SetHtmlOptions(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_string_value* LowCodeHtmlSaveOptions_GetOutputFile(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeHtmlSaveOptions_SetOutputFile(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_ptr_value* LowCodeHtmlSaveOptions_GetOutputStream(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeHtmlSaveOptions_SetOutputStream(void* instance_ptr, void* value, int value_length);
+
+
+   ASPOSE_CELLS_API void Delete_LowCodeHtmlSaveOptions( void* instance_ptr);
+
+   /**************Class LowCodeImageSaveOptions *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_LowCodeImageSaveOptions();
+   ASPOSE_CELLS_API c_return_ptr_value* New_LowCodeImageSaveOptions_LowCodeSaveOptions(void* src);
+
+   ASPOSE_CELLS_API c_return_bool_value* LowCodeImageSaveOptions_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* LowCodeImageSaveOptions_GetSaveFormat(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeImageSaveOptions_SetSaveFormat(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* LowCodeImageSaveOptions_GetImageOptions(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeImageSaveOptions_SetImageOptions(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_ptr_value* LowCodeImageSaveOptions_GetSaveOptionsProvider(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeImageSaveOptions_SetSaveOptionsProvider(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_string_value* LowCodeImageSaveOptions_GetOutputFile(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeImageSaveOptions_SetOutputFile(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_ptr_value* LowCodeImageSaveOptions_GetOutputStream(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeImageSaveOptions_SetOutputStream(void* instance_ptr, void* value, int value_length);
+
+
+   ASPOSE_CELLS_API void Delete_LowCodeImageSaveOptions( void* instance_ptr);
+
+   /**************Class LowCodeLoadOptions *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_LowCodeLoadOptions();
+
+   ASPOSE_CELLS_API c_return_bool_value* LowCodeLoadOptions_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* LowCodeLoadOptions_GetInputFile(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeLoadOptions_SetInputFile(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_ptr_value* LowCodeLoadOptions_GetInputStream(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeLoadOptions_SetInputStream(void* instance_ptr, void* value, int value_length);
+
+
+   ASPOSE_CELLS_API void Delete_LowCodeLoadOptions( void* instance_ptr);
+
+   /**************Class LowCodeMergeOptions *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_LowCodeMergeOptions();
+
+   ASPOSE_CELLS_API c_return_bool_value* LowCodeMergeOptions_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* LowCodeMergeOptions_GetSaveOptions(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeMergeOptions_SetSaveOptions(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_ptr_value* LowCodeMergeOptions_GetLoadOptionsProvider(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeMergeOptions_SetLoadOptionsProvider(void* instance_ptr, void* value);
+
+
+   ASPOSE_CELLS_API void Delete_LowCodeMergeOptions( void* instance_ptr);
+
+   /**************Class LowCodePdfSaveOptions *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_LowCodePdfSaveOptions();
+   ASPOSE_CELLS_API c_return_ptr_value* New_LowCodePdfSaveOptions_LowCodeSaveOptions(void* src);
+
+   ASPOSE_CELLS_API c_return_bool_value* LowCodePdfSaveOptions_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* LowCodePdfSaveOptions_GetSaveFormat(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodePdfSaveOptions_SetSaveFormat(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* LowCodePdfSaveOptions_GetPdfOptions(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodePdfSaveOptions_SetPdfOptions(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_string_value* LowCodePdfSaveOptions_GetOutputFile(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodePdfSaveOptions_SetOutputFile(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_ptr_value* LowCodePdfSaveOptions_GetOutputStream(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodePdfSaveOptions_SetOutputStream(void* instance_ptr, void* value, int value_length);
+
+
+   ASPOSE_CELLS_API void Delete_LowCodePdfSaveOptions( void* instance_ptr);
+
+   /**************Class LowCodeSaveOptions *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_LowCodeSaveOptions();
+
+   ASPOSE_CELLS_API c_return_bool_value* LowCodeSaveOptions_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* LowCodeSaveOptions_GetOutputFile(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptions_SetOutputFile(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_ptr_value* LowCodeSaveOptions_GetOutputStream(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptions_SetOutputStream(void* instance_ptr, void* value, int value_length);
+   ASPOSE_CELLS_API c_return_int_value* LowCodeSaveOptions_GetSaveFormat(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptions_SetSaveFormat(void* instance_ptr, int value);
+
+
+   ASPOSE_CELLS_API void Delete_LowCodeSaveOptions( void* instance_ptr);
+
+   /**************Class LowCodeSaveOptionsProviderOfAssembling *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_LowCodeSaveOptionsProviderOfAssembling();
+   ASPOSE_CELLS_API c_return_ptr_value* New_LowCodeSaveOptionsProviderOfAssembling_AbstractLowCodeSaveOptionsProvider(void* src);
+
+   ASPOSE_CELLS_API c_return_bool_value* LowCodeSaveOptionsProviderOfAssembling_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* LowCodeSaveOptionsProviderOfAssembling_GetPathHeader(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfAssembling_SetPathHeader(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_string_value* LowCodeSaveOptionsProviderOfAssembling_GetPathTail(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfAssembling_SetPathTail(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_bool_value* LowCodeSaveOptionsProviderOfAssembling_GetUseSheetName(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfAssembling_SetUseSheetName(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_string_value* LowCodeSaveOptionsProviderOfAssembling_GetSheetPrefix(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfAssembling_SetSheetPrefix(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_string_value* LowCodeSaveOptionsProviderOfAssembling_GetSplitPartPrefix(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfAssembling_SetSplitPartPrefix(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_int_value* LowCodeSaveOptionsProviderOfAssembling_GetSheetIndexOffset(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfAssembling_SetSheetIndexOffset(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* LowCodeSaveOptionsProviderOfAssembling_GetSplitPartIndexOffset(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfAssembling_SetSplitPartIndexOffset(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_bool_value* LowCodeSaveOptionsProviderOfAssembling_GetBuildPathWithSheetAlways(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfAssembling_SetBuildPathWithSheetAlways(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* LowCodeSaveOptionsProviderOfAssembling_GetBuildPathWithSplitPartAlways(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfAssembling_SetBuildPathWithSplitPartAlways(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_ptr_value* LowCodeSaveOptionsProviderOfAssembling_GetSaveOptionsTemplate(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfAssembling_SetSaveOptionsTemplate(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_ptr_value* LowCodeSaveOptionsProviderOfAssembling_GetSaveOptions(void* instance_ptr, void* part);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfAssembling_Finish(void* instance_ptr, void* part);
+
+
+   ASPOSE_CELLS_API void Delete_LowCodeSaveOptionsProviderOfAssembling( void* instance_ptr);
+
+   /**************Class LowCodeSaveOptionsProviderOfPlaceHolders *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_LowCodeSaveOptionsProviderOfPlaceHolders_String(char* pathtemplate);
+   ASPOSE_CELLS_API c_return_ptr_value* New_LowCodeSaveOptionsProviderOfPlaceHolders_AbstractLowCodeSaveOptionsProvider(void* src);
+
+   ASPOSE_CELLS_API c_return_bool_value* LowCodeSaveOptionsProviderOfPlaceHolders_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* LowCodeSaveOptionsProviderOfPlaceHolders_GetSheetIndexOffset(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfPlaceHolders_SetSheetIndexOffset(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* LowCodeSaveOptionsProviderOfPlaceHolders_GetSplitPartIndexOffset(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfPlaceHolders_SetSplitPartIndexOffset(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_bool_value* LowCodeSaveOptionsProviderOfPlaceHolders_GetBuildPathWithSheetAlways(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfPlaceHolders_SetBuildPathWithSheetAlways(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* LowCodeSaveOptionsProviderOfPlaceHolders_GetBuildPathWithSplitPartAlways(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfPlaceHolders_SetBuildPathWithSplitPartAlways(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_string_value* LowCodeSaveOptionsProviderOfPlaceHolders_GetSheetNamePrefix(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfPlaceHolders_SetSheetNamePrefix(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_string_value* LowCodeSaveOptionsProviderOfPlaceHolders_GetSheetIndexPrefix(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfPlaceHolders_SetSheetIndexPrefix(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_string_value* LowCodeSaveOptionsProviderOfPlaceHolders_GetSplitPartPrefix(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfPlaceHolders_SetSplitPartPrefix(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_ptr_value* LowCodeSaveOptionsProviderOfPlaceHolders_GetSaveOptionsTemplate(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfPlaceHolders_SetSaveOptionsTemplate(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_ptr_value* LowCodeSaveOptionsProviderOfPlaceHolders_GetSaveOptions(void* instance_ptr, void* part);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSaveOptionsProviderOfPlaceHolders_Finish(void* instance_ptr, void* part);
+
+
+   ASPOSE_CELLS_API void Delete_LowCodeSaveOptionsProviderOfPlaceHolders( void* instance_ptr);
+
+   /**************Class LowCodeSplitOptions *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_LowCodeSplitOptions();
+
+   ASPOSE_CELLS_API c_return_bool_value* LowCodeSplitOptions_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* LowCodeSplitOptions_GetLoadOptions(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSplitOptions_SetLoadOptions(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_ptr_value* LowCodeSplitOptions_GetSaveOptions(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSplitOptions_SetSaveOptions(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_ptr_value* LowCodeSplitOptions_GetSaveOptionsProvider(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* LowCodeSplitOptions_SetSaveOptionsProvider(void* instance_ptr, void* value);
+
+
+   ASPOSE_CELLS_API void Delete_LowCodeSplitOptions( void* instance_ptr);
+
+   /**************Class PdfConverter *****************/
+
+
+   ASPOSE_CELLS_API c_return_bool_value* PdfConverter_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PdfConverter_Process_String_String(char* templatefile, char* resultfile);
+   ASPOSE_CELLS_API c_return_void_value* PdfConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(void* loadoptions, void* saveoptions);
+
+
+   ASPOSE_CELLS_API void Delete_PdfConverter( void* instance_ptr);
+
+   /**************Class SplitPartInfo *****************/
+
+
+   ASPOSE_CELLS_API c_return_bool_value* SplitPartInfo_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* SplitPartInfo_GetPartIndex(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* SplitPartInfo_GetSheetIndex(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* SplitPartInfo_GetSheetName(void* instance_ptr);
+
+
+   ASPOSE_CELLS_API void Delete_SplitPartInfo( void* instance_ptr);
+
+   /**************Class SpreadsheetConverter *****************/
+
+
+   ASPOSE_CELLS_API c_return_bool_value* SpreadsheetConverter_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SpreadsheetConverter_Process_String_String(char* templatefile, char* resultfile);
+   ASPOSE_CELLS_API c_return_void_value* SpreadsheetConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(void* loadoptions, void* saveoptions);
+
+
+   ASPOSE_CELLS_API void Delete_SpreadsheetConverter( void* instance_ptr);
+
+   /**************Class SpreadsheetLocker *****************/
+
+
+   ASPOSE_CELLS_API c_return_bool_value* SpreadsheetLocker_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SpreadsheetLocker_Process_String_String_String_String(char* templatefile, char* resultfile, char* openpassword, char* writepassword);
+   ASPOSE_CELLS_API c_return_void_value* SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_String(void* loadoptions, void* saveoptions, char* openpassword, char* writepassword);
+   ASPOSE_CELLS_API c_return_void_value* SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_String_String_ProtectionType(void* loadoptions, void* saveoptions, char* openpassword, char* writepassword, char* workbookpassword, int workbooktype);
+   ASPOSE_CELLS_API c_return_void_value* SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLowCodeProtectionProvider(void* loadoptions, void* saveoptions, void* provider);
+
+
+   ASPOSE_CELLS_API void Delete_SpreadsheetLocker( void* instance_ptr);
+
+   /**************Class SpreadsheetMerger *****************/
+
+
+   ASPOSE_CELLS_API c_return_bool_value* SpreadsheetMerger_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SpreadsheetMerger_Process_U16StringArray_String(void* templatefiles, int templatefiles_length, char* resultfile);
+   ASPOSE_CELLS_API c_return_void_value* SpreadsheetMerger_Process_LowCodeMergeOptions(void* options);
+
+
+   ASPOSE_CELLS_API void Delete_SpreadsheetMerger( void* instance_ptr);
+
+   /**************Class SpreadsheetSplitter *****************/
+
+
+   ASPOSE_CELLS_API c_return_bool_value* SpreadsheetSplitter_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SpreadsheetSplitter_Process_String_String(char* templatefile, char* resultfile);
+   ASPOSE_CELLS_API c_return_void_value* SpreadsheetSplitter_Process_LowCodeSplitOptions(void* options);
+
+
+   ASPOSE_CELLS_API void Delete_SpreadsheetSplitter( void* instance_ptr);
+
+   /**************Class TextConverter *****************/
+
+
+   ASPOSE_CELLS_API c_return_bool_value* TextConverter_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TextConverter_Process_String_String(char* templatefile, char* resultfile);
+   ASPOSE_CELLS_API c_return_void_value* TextConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(void* loadoptions, void* saveoptions);
+
+
+   ASPOSE_CELLS_API void Delete_TextConverter( void* instance_ptr);
 
    /**************Class AccentEquationNode *****************/
 
@@ -16062,6 +16384,7 @@ extern "C" {
    ASPOSE_CELLS_API c_return_bool_value* PowerQueryFormulaCollection_IsNull(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* PowerQueryFormulaCollection_Get_Integer(void* instance_ptr, int32_t index);
    ASPOSE_CELLS_API c_return_ptr_value* PowerQueryFormulaCollection_Get_String(void* instance_ptr, char* name);
+   ASPOSE_CELLS_API c_return_void_value* PowerQueryFormulaCollection_RemoveBy(void* instance_ptr, char* name);
    ASPOSE_CELLS_API c_return_int_value* PowerQueryFormulaCollection_GetCount(void* instance_ptr);
 
 
@@ -16456,6 +16779,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* EbookSaveOptions_SetEnableCssCustomProperties(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_int_value* EbookSaveOptions_GetHtmlVersion(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* EbookSaveOptions_SetHtmlVersion(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* EbookSaveOptions_GetSheetSet(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* EbookSaveOptions_SetSheetSet(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* EbookSaveOptions_GetSaveFormat(void* instance_ptr);
    ASPOSE_CELLS_API c_return_bool_value* EbookSaveOptions_GetClearData(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* EbookSaveOptions_SetClearData(void* instance_ptr, bool value);
@@ -16637,20 +16962,12 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetPrintingPage(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetQuality(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetQuality(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetImageType(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetImageType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetOnePagePerSheet(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetOnePagePerSheet(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetAllColumnsInOnePagePerSheet(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetAllColumnsInOnePagePerSheet(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_ptr_value* ImageOrPrintOptions_GetDrawObjectEventHandler(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetDrawObjectEventHandler(void* instance_ptr, void* value);
-   ASPOSE_CELLS_API c_return_string_value* ImageOrPrintOptions_GetEmbededImageNameInSvg(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetEmbededImageNameInSvg(void* instance_ptr, char* value);
-   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetSVGFitToViewPort(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetSVGFitToViewPort(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_string_value* ImageOrPrintOptions_GetSvgCssPrefix(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetSvgCssPrefix(void* instance_ptr, char* value);
    ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetOnlyArea(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetOnlyArea(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetTransparent(void* instance_ptr);
@@ -16680,6 +16997,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetSheetSet(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetEmfRenderSetting(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetEmfRenderSetting(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetImageType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetImageType(void* instance_ptr, int value);
 
 
    ASPOSE_CELLS_API void Delete_ImageOrPrintOptions( void* instance_ptr);
@@ -16824,6 +17143,75 @@ extern "C" {
 
 
    ASPOSE_CELLS_API void Delete_SheetSet( void* instance_ptr);
+
+   /**************Class SvgImageOptions *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_SvgImageOptions();
+   ASPOSE_CELLS_API c_return_ptr_value* New_SvgImageOptions_ImageOrPrintOptions(void* src);
+
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetImageType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetImageType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetFitToViewPort(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetFitToViewPort(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_string_value* SvgImageOptions_GetCssPrefix(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetCssPrefix(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetEmbeddedFontType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetEmbeddedFontType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetPrintWithStatusDialog(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetPrintWithStatusDialog(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetHorizontalResolution(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetHorizontalResolution(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetVerticalResolution(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetVerticalResolution(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetTiffCompression(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetTiffCompression(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetTiffColorDepth(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetTiffColorDepth(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetTiffBinarizationMethod(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetTiffBinarizationMethod(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetPrintingPage(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetPrintingPage(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetQuality(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetQuality(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetOnePagePerSheet(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetOnePagePerSheet(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetAllColumnsInOnePagePerSheet(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetAllColumnsInOnePagePerSheet(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_ptr_value* SvgImageOptions_GetDrawObjectEventHandler(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetDrawObjectEventHandler(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetOnlyArea(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetOnlyArea(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetTransparent(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetTransparent(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetIsFontSubstitutionCharGranularity(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_IsFontSubstitutionCharGranularity(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetPageIndex(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetPageIndex(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetPageCount(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetPageCount(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetDesiredSize(void* instance_ptr, int32_t desiredwidth, int32_t desiredheight, bool keepaspectratio);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_IsOptimized(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetIsOptimized(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_string_value* SvgImageOptions_GetDefaultFont(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetDefaultFont(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetCheckWorkbookDefaultFont(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetCheckWorkbookDefaultFont(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetOutputBlankPageWhenNothingToPrint(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetOutputBlankPageWhenNothingToPrint(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetGridlineType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetGridlineType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetTextCrossType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetTextCrossType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetDefaultEditLanguage(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetDefaultEditLanguage(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* SvgImageOptions_GetSheetSet(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetSheetSet(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetEmfRenderSetting(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetEmfRenderSetting(void* instance_ptr, int value);
+
+
+   ASPOSE_CELLS_API void Delete_SvgImageOptions( void* instance_ptr);
 
    /**************Class WorkbookPrintingPreview *****************/
 
@@ -17452,6 +17840,37 @@ extern "C" {
 
    ASPOSE_CELLS_API void Delete_PivotGlobalizationSettings( void* instance_ptr);
 
+   /**************Class SensitivityLabel *****************/
+
+
+   ASPOSE_CELLS_API c_return_bool_value* SensitivityLabel_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* SensitivityLabel_GetId(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SensitivityLabel_SetId(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_bool_value* SensitivityLabel_IsEnabled(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SensitivityLabel_SetIsEnabled(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_int_value* SensitivityLabel_GetAssignmentType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SensitivityLabel_SetAssignmentType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_string_value* SensitivityLabel_GetSiteId(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SensitivityLabel_SetSiteId(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_int_value* SensitivityLabel_GetContentMarkType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SensitivityLabel_SetContentMarkType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_bool_value* SensitivityLabel_IsRemoved(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SensitivityLabel_SetIsRemoved(void* instance_ptr, bool value);
+
+
+   ASPOSE_CELLS_API void Delete_SensitivityLabel( void* instance_ptr);
+
+   /**************Class SensitivityLabelCollection *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_SensitivityLabelCollection();
+
+   ASPOSE_CELLS_API c_return_bool_value* SensitivityLabelCollection_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* SensitivityLabelCollection_Add(void* instance_ptr, char* id, bool isenabled, int methodtype, char* siteid, int marktype);
+   ASPOSE_CELLS_API c_return_int_value* SensitivityLabelCollection_GetCount(void* instance_ptr);
+
+
+   ASPOSE_CELLS_API void Delete_SensitivityLabelCollection( void* instance_ptr);
+
    /**************Class Slicer *****************/
 
 
@@ -17993,6 +18412,7 @@ extern "C" {
    ASPOSE_CELLS_API c_return_ptr_value* Color_LightYellow();
    ASPOSE_CELLS_API c_return_ptr_value* Color_Ivory();
    ASPOSE_CELLS_API c_return_ptr_value* Color_White();
+   ASPOSE_CELLS_API c_return_ptr_value* Color_FromArgb(int32_t value);
    ASPOSE_CELLS_API void Delete_Color( void* instance_ptr);
 
    /**************Struct Date *****************/

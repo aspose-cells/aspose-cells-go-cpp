@@ -301,6 +301,21 @@ func (instance *PowerQueryFormulaCollection) Get_String(name string)  (*PowerQue
 
 	return result, nil 
 }
+// Remove power query formula by name.
+// Parameters:
+//   name - string 
+// Returns:
+//   void  
+func (instance *PowerQueryFormulaCollection) RemoveBy(name string)  error {
+	
+	CGoReturnPtr := C.PowerQueryFormulaCollection_RemoveBy( instance.ptr, C.CString(name))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Returns:
 //   int32  
 func (instance *PowerQueryFormulaCollection) GetCount()  (int32,  error)  {
