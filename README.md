@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/aspose.cells-v25.3.0-blue?logo=go) [![GitHub license](https://img.shields.io/github/license/aspose-cells/aspose-cells-go-cpp)](https://github.com/aspose-cells/aspose-cells-go-cpp/blob/master/LICENSE)
+![](https://img.shields.io/badge/Aspose.Cells%20for%20Go%20via%20C++-v25.4.0-blue?logo=go) [![GitHub license](https://img.shields.io/github/license/aspose-cells/aspose-cells-go-cpp)](https://github.com/aspose-cells/aspose-cells-go-cpp/blob/master/LICENSE)
 
 # Aspose.Cells for Go via C++
 
