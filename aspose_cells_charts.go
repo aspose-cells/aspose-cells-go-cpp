@@ -17583,7 +17583,8 @@ func (instance *TickLabels) GetDisplayNumberFormat()  (string,  error)  {
 
 	return result, nil 
 }
-// Gets and sets the distance between the axis labels and the axis line.
+// Gets and sets the distance of labels from the category axis.
+// Only for category (x) axis.
 // Returns:
 //   int32  
 func (instance *TickLabels) GetOffset()  (int32,  error)  {
@@ -17597,7 +17598,8 @@ func (instance *TickLabels) GetOffset()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets and sets the distance between the axis labels and the axis line.
+// Gets and sets the distance of labels from the category axis.
+// Only for category (x) axis.
 // Parameters:
 //   value - int32 
 // Returns:

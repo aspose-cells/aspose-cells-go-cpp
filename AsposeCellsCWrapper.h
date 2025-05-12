@@ -695,6 +695,7 @@ extern "C" {
    ASPOSE_CELLS_API c_return_int_value* Cells_GetMinDataColumn(void* instance_ptr);
    ASPOSE_CELLS_API c_return_int_value* Cells_GetMaxDataColumn(void* instance_ptr);
    ASPOSE_CELLS_API c_return_int_value* Cells_GetLastDataRow(void* instance_ptr, int32_t column);
+   ASPOSE_CELLS_API c_return_int_value* Cells_GetFirstDataRow(void* instance_ptr, int32_t column);
    ASPOSE_CELLS_API c_return_bool_value* Cells_IsDefaultRowHeightMatched(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* Cells_SetIsDefaultRowHeightMatched(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* Cells_IsDefaultRowHidden(void* instance_ptr);
@@ -1420,6 +1421,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* DocxSaveOptions_SetPrintingPageType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_int_value* DocxSaveOptions_GetGridlineType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* DocxSaveOptions_SetGridlineType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* DocxSaveOptions_GetGridlineColor(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* DocxSaveOptions_SetGridlineColor(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* DocxSaveOptions_GetTextCrossType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* DocxSaveOptions_SetTextCrossType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_int_value* DocxSaveOptions_GetDefaultEditLanguage(void* instance_ptr);
@@ -2659,6 +2662,9 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* MarkdownSaveOptions_SetTableHeaderType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_ptr_value* MarkdownSaveOptions_GetSheetSet(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* MarkdownSaveOptions_SetSheetSet(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_ptr_value* MarkdownSaveOptions_GetImageOptions(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* MarkdownSaveOptions_GetExportImagesAsBase64(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownSaveOptions_SetExportImagesAsBase64(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_int_value* MarkdownSaveOptions_GetSaveFormat(void* instance_ptr);
    ASPOSE_CELLS_API c_return_bool_value* MarkdownSaveOptions_GetClearData(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* MarkdownSaveOptions_SetClearData(void* instance_ptr, bool value);
@@ -3134,6 +3140,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* PaginatedSaveOptions_SetPrintingPageType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_int_value* PaginatedSaveOptions_GetGridlineType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PaginatedSaveOptions_SetGridlineType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* PaginatedSaveOptions_GetGridlineColor(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PaginatedSaveOptions_SetGridlineColor(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* PaginatedSaveOptions_GetTextCrossType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PaginatedSaveOptions_SetTextCrossType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_int_value* PaginatedSaveOptions_GetDefaultEditLanguage(void* instance_ptr);
@@ -3237,6 +3245,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* PclSaveOptions_SetPrintingPageType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_int_value* PclSaveOptions_GetGridlineType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PclSaveOptions_SetGridlineType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* PclSaveOptions_GetGridlineColor(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PclSaveOptions_SetGridlineColor(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* PclSaveOptions_GetTextCrossType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PclSaveOptions_SetTextCrossType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_int_value* PclSaveOptions_GetDefaultEditLanguage(void* instance_ptr);
@@ -3335,6 +3345,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* PdfSaveOptions_SetPrintingPageType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_int_value* PdfSaveOptions_GetGridlineType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PdfSaveOptions_SetGridlineType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* PdfSaveOptions_GetGridlineColor(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PdfSaveOptions_SetGridlineColor(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* PdfSaveOptions_GetTextCrossType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PdfSaveOptions_SetTextCrossType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_int_value* PdfSaveOptions_GetDefaultEditLanguage(void* instance_ptr);
@@ -3409,6 +3421,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* PptxSaveOptions_SetPrintingPageType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_int_value* PptxSaveOptions_GetGridlineType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PptxSaveOptions_SetGridlineType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* PptxSaveOptions_GetGridlineColor(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PptxSaveOptions_SetGridlineColor(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* PptxSaveOptions_GetTextCrossType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PptxSaveOptions_SetTextCrossType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_int_value* PptxSaveOptions_GetDefaultEditLanguage(void* instance_ptr);
@@ -3608,6 +3622,11 @@ extern "C" {
    ASPOSE_CELLS_API c_return_ptr_value* Range_ToImage(void* instance_ptr, void* options);
    ASPOSE_CELLS_API c_return_string_value* Range_ToJson(void* instance_ptr, void* options);
    ASPOSE_CELLS_API c_return_ptr_value* Range_ToHtml(void* instance_ptr, void* saveoptions);
+   ASPOSE_CELLS_API c_return_void_value* Range_Clear(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* Range_ClearContents(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* Range_ClearFormats(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* Range_ClearComments(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* Range_ClearHyperlinks(void* instance_ptr, bool clearformat);
 
 
    ASPOSE_CELLS_API void Delete_Range( void* instance_ptr);
@@ -5248,6 +5267,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* XpsSaveOptions_SetPrintingPageType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_int_value* XpsSaveOptions_GetGridlineType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* XpsSaveOptions_SetGridlineType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* XpsSaveOptions_GetGridlineColor(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* XpsSaveOptions_SetGridlineColor(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* XpsSaveOptions_GetTextCrossType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* XpsSaveOptions_SetTextCrossType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_int_value* XpsSaveOptions_GetDefaultEditLanguage(void* instance_ptr);
@@ -11183,6 +11204,7 @@ extern "C" {
 
 
    ASPOSE_CELLS_API c_return_bool_value* PictureCollection_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* PictureCollection_Camera(void* instance_ptr, int32_t row, int32_t column, char* range_);
    ASPOSE_CELLS_API c_return_int_value* PictureCollection_Add_Integer_Integer_Integer_Integer_Stream(void* instance_ptr, int32_t upperleftrow, int32_t upperleftcolumn, int32_t lowerrightrow, int32_t lowerrightcolumn, void* stream, int stream_length);
    ASPOSE_CELLS_API c_return_int_value* PictureCollection_Add_Integer_Integer_Integer_Integer_String(void* instance_ptr, int32_t upperleftrow, int32_t upperleftcolumn, int32_t lowerrightrow, int32_t lowerrightcolumn, char* filename);
    ASPOSE_CELLS_API c_return_int_value* PictureCollection_Add_Integer_Integer_Stream(void* instance_ptr, int32_t upperleftrow, int32_t upperleftcolumn, void* stream, int stream_length);
@@ -16989,6 +17011,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetOutputBlankPageWhenNothingToPrint(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetGridlineType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetGridlineType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* ImageOrPrintOptions_GetGridlineColor(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetGridlineColor(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetTextCrossType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetTextCrossType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetDefaultEditLanguage(void* instance_ptr);
@@ -17201,6 +17225,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetOutputBlankPageWhenNothingToPrint(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetGridlineType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetGridlineType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* SvgImageOptions_GetGridlineColor(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetGridlineColor(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetTextCrossType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetTextCrossType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetDefaultEditLanguage(void* instance_ptr);
@@ -17500,6 +17526,7 @@ extern "C" {
    ASPOSE_CELLS_API c_return_ptr_value* ListColumn_GetRange(void* instance_ptr);
    ASPOSE_CELLS_API c_return_string_value* ListColumn_GetCustomTotalsRowFormula(void* instance_ptr, bool isr1c1, bool islocal);
    ASPOSE_CELLS_API c_return_void_value* ListColumn_SetCustomTotalsRowFormula(void* instance_ptr, char* formula, bool isr1c1, bool islocal);
+   ASPOSE_CELLS_API c_return_bool_value* ListColumn_IsArrayFormula(void* instance_ptr);
    ASPOSE_CELLS_API c_return_string_value* ListColumn_GetFormula(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* ListColumn_SetFormula(void* instance_ptr, char* value);
    ASPOSE_CELLS_API c_return_string_value* ListColumn_GetCustomCalculatedFormula(void* instance_ptr, bool isr1c1, bool islocal);

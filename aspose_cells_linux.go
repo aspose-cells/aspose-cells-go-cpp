@@ -14169,6 +14169,22 @@ func (instance *Cells) GetLastDataRow(column int32)  (int32,  error)  {
 
 	return result, nil 
 }
+// Gets the first row index of cell which contains data in the specified column.
+// Parameters:
+//   column - int32 
+// Returns:
+//   int32  
+func (instance *Cells) GetFirstDataRow(column int32)  (int32,  error)  {
+	
+	CGoReturnPtr := C.Cells_GetFirstDataRow( instance.ptr, C.int(column))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
 // Indicates that row height and default font height matches
 // Returns:
 //   bool  
@@ -22542,6 +22558,36 @@ func (instance *DocxSaveOptions) GetGridlineType()  (GridlineType,  error)  {
 func (instance *DocxSaveOptions) SetGridlineType(value GridlineType)  error {
 	
 	CGoReturnPtr := C.DocxSaveOptions_SetGridlineType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets gridline colr.
+// Returns:
+//   Color  
+func (instance *DocxSaveOptions) GetGridlineColor()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.DocxSaveOptions_GetGridlineColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Gets or sets gridline colr.
+// Parameters:
+//   value - Color 
+// Returns:
+//   void  
+func (instance *DocxSaveOptions) SetGridlineColor(value *Color)  error {
+	
+	CGoReturnPtr := C.DocxSaveOptions_SetGridlineColor( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -37639,6 +37685,51 @@ func (instance *MarkdownSaveOptions) SetSheetSet(value *SheetSet)  error {
 
 	return nil 
 }
+// Get the ImageOrPrintOptions object before exporting
+// Returns:
+//   ImageOrPrintOptions  
+func (instance *MarkdownSaveOptions) GetImageOptions()  (*ImageOrPrintOptions,  error)  {
+	
+	CGoReturnPtr := C.MarkdownSaveOptions_GetImageOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ImageOrPrintOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteImageOrPrintOptions) 
+
+	return result, nil 
+}
+// Specifies whether images are saved in Base64 format to Markdown.
+// Returns:
+//   bool  
+func (instance *MarkdownSaveOptions) GetExportImagesAsBase64()  (bool,  error)  {
+	
+	CGoReturnPtr := C.MarkdownSaveOptions_GetExportImagesAsBase64( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Specifies whether images are saved in Base64 format to Markdown.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *MarkdownSaveOptions) SetExportImagesAsBase64(value bool)  error {
+	
+	CGoReturnPtr := C.MarkdownSaveOptions_SetExportImagesAsBase64( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Gets the save file format.
 // Returns:
 //   int32  
@@ -43875,6 +43966,36 @@ func (instance *PaginatedSaveOptions) SetGridlineType(value GridlineType)  error
 
 	return nil 
 }
+// Gets or sets gridline colr.
+// Returns:
+//   Color  
+func (instance *PaginatedSaveOptions) GetGridlineColor()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.PaginatedSaveOptions_GetGridlineColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Gets or sets gridline colr.
+// Parameters:
+//   value - Color 
+// Returns:
+//   void  
+func (instance *PaginatedSaveOptions) SetGridlineColor(value *Color)  error {
+	
+	CGoReturnPtr := C.PaginatedSaveOptions_SetGridlineColor( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Gets or sets displaying text type when the text width is larger than cell width.
 // Returns:
 //   int32  
@@ -45172,6 +45293,36 @@ func (instance *PclSaveOptions) GetGridlineType()  (GridlineType,  error)  {
 func (instance *PclSaveOptions) SetGridlineType(value GridlineType)  error {
 	
 	CGoReturnPtr := C.PclSaveOptions_SetGridlineType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets gridline colr.
+// Returns:
+//   Color  
+func (instance *PclSaveOptions) GetGridlineColor()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.PclSaveOptions_GetGridlineColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Gets or sets gridline colr.
+// Parameters:
+//   value - Color 
+// Returns:
+//   void  
+func (instance *PclSaveOptions) SetGridlineColor(value *Color)  error {
+	
+	CGoReturnPtr := C.PclSaveOptions_SetGridlineColor( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -46612,6 +46763,36 @@ func (instance *PdfSaveOptions) SetGridlineType(value GridlineType)  error {
 
 	return nil 
 }
+// Gets or sets gridline colr.
+// Returns:
+//   Color  
+func (instance *PdfSaveOptions) GetGridlineColor()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.PdfSaveOptions_GetGridlineColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Gets or sets gridline colr.
+// Parameters:
+//   value - Color 
+// Returns:
+//   void  
+func (instance *PdfSaveOptions) SetGridlineColor(value *Color)  error {
+	
+	CGoReturnPtr := C.PdfSaveOptions_SetGridlineColor( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Gets or sets displaying text type when the text width is larger than cell width.
 // Returns:
 //   int32  
@@ -47663,6 +47844,36 @@ func (instance *PptxSaveOptions) GetGridlineType()  (GridlineType,  error)  {
 func (instance *PptxSaveOptions) SetGridlineType(value GridlineType)  error {
 	
 	CGoReturnPtr := C.PptxSaveOptions_SetGridlineType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets gridline colr.
+// Returns:
+//   Color  
+func (instance *PptxSaveOptions) GetGridlineColor()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.PptxSaveOptions_GetGridlineColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Gets or sets gridline colr.
+// Parameters:
+//   value - Color 
+// Returns:
+//   void  
+func (instance *PptxSaveOptions) SetGridlineColor(value *Color)  error {
+	
+	CGoReturnPtr := C.PptxSaveOptions_SetGridlineColor( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -50182,6 +50393,73 @@ func (instance *Range) ToHtml(saveoptions *HtmlSaveOptions)  ([]byte,  error)  {
 	 
 
 	return result, nil 
+}
+// Clears this range.
+// Returns:
+//   void  
+func (instance *Range) Clear()  error {
+	
+	CGoReturnPtr := C.Range_Clear( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Clears the contents of this range.
+// Returns:
+//   void  
+func (instance *Range) ClearContents()  error {
+	
+	CGoReturnPtr := C.Range_ClearContents( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Clears the formats of this range.
+// Returns:
+//   void  
+func (instance *Range) ClearFormats()  error {
+	
+	CGoReturnPtr := C.Range_ClearFormats( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Clears the comments of this range.
+// Returns:
+//   void  
+func (instance *Range) ClearComments()  error {
+	
+	CGoReturnPtr := C.Range_ClearComments( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Only removes hyperlinks.
+// Parameters:
+//   clearFormat - bool 
+// Returns:
+//   void  
+func (instance *Range) ClearHyperlinks(clearformat bool)  error {
+	
+	CGoReturnPtr := C.Range_ClearHyperlinks( instance.ptr, C.bool(clearformat))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
 }
 
 
@@ -61438,7 +61716,7 @@ func (instance *Workbook) Save_SaveOptions(saveoptions *SaveOptions)  ([]byte,  
 
 	return result, nil 
 }
-// Saves Excel file to a MemoryStream object and returns it.
+// Saves Excel file to a MemoryStream object as an Excel97-2003 xls file and returns it.
 // Returns:
 //   []byte  
 func (instance *Workbook) SaveToStream()  ([]byte,  error)  {
@@ -70987,6 +71265,36 @@ func (instance *XpsSaveOptions) GetGridlineType()  (GridlineType,  error)  {
 func (instance *XpsSaveOptions) SetGridlineType(value GridlineType)  error {
 	
 	CGoReturnPtr := C.XpsSaveOptions_SetGridlineType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets gridline colr.
+// Returns:
+//   Color  
+func (instance *XpsSaveOptions) GetGridlineColor()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.XpsSaveOptions_GetGridlineColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Gets or sets gridline colr.
+// Parameters:
+//   value - Color 
+// Returns:
+//   void  
+func (instance *XpsSaveOptions) SetGridlineColor(value *Color)  error {
+	
+	CGoReturnPtr := C.XpsSaveOptions_SetGridlineColor( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

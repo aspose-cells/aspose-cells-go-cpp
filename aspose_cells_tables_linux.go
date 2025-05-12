@@ -632,6 +632,20 @@ func (instance *ListColumn) SetCustomTotalsRowFormula(formula string, isr1c1 boo
 
 	return nil 
 }
+// Indicates whether the fomula is array formula.
+// Returns:
+//   bool  
+func (instance *ListColumn) IsArrayFormula()  (bool,  error)  {
+	
+	CGoReturnPtr := C.ListColumn_IsArrayFormula( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
 // Gets and sets the formula of the list column.
 // Returns:
 //   string  

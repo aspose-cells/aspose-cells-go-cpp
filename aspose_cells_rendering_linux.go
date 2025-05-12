@@ -1227,6 +1227,36 @@ func (instance *ImageOrPrintOptions) SetGridlineType(value GridlineType)  error 
 
 	return nil 
 }
+// Gets or sets gridline colr.
+// Returns:
+//   Color  
+func (instance *ImageOrPrintOptions) GetGridlineColor()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.ImageOrPrintOptions_GetGridlineColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Gets or sets gridline colr.
+// Parameters:
+//   value - Color 
+// Returns:
+//   void  
+func (instance *ImageOrPrintOptions) SetGridlineColor(value *Color)  error {
+	
+	CGoReturnPtr := C.ImageOrPrintOptions_SetGridlineColor( instance.ptr, value.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Gets or sets displaying text type when the text width is larger than cell width.
 // Returns:
 //   int32  
@@ -3576,6 +3606,36 @@ func (instance *SvgImageOptions) GetGridlineType()  (GridlineType,  error)  {
 func (instance *SvgImageOptions) SetGridlineType(value GridlineType)  error {
 	
 	CGoReturnPtr := C.SvgImageOptions_SetGridlineType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets gridline colr.
+// Returns:
+//   Color  
+func (instance *SvgImageOptions) GetGridlineColor()  (*Color,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetGridlineColor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Color{}
+	result.ptr = CGoReturnPtr.return_value 
+
+	return result, nil 
+}
+// Gets or sets gridline colr.
+// Parameters:
+//   value - Color 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetGridlineColor(value *Color)  error {
+	
+	CGoReturnPtr := C.SvgImageOptions_SetGridlineColor( instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

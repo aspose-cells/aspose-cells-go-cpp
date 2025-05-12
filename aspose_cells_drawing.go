@@ -61738,6 +61738,24 @@ func (instance *PictureCollection) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
+// Takes a photo of the range.
+// Parameters:
+//   row - int32 
+//   column - int32 
+//   range - string 
+// Returns:
+//   int32  
+func (instance *PictureCollection) Camera(row int32, column int32, range_ string)  (int32,  error)  {
+	
+	CGoReturnPtr := C.PictureCollection_Camera( instance.ptr, C.int(row), C.int(column), C.CString(range_))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
 // Adds a picture to the collection.
 // Parameters:
 //   upperLeftRow - int32 
