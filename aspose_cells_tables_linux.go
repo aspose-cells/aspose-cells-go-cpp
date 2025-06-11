@@ -761,7 +761,12 @@ func (instance *ListColumn) GetDataStyle()  (*Style,  error)  {
 //   void  
 func (instance *ListColumn) SetDataStyle(style *Style)  error {
 	
-	CGoReturnPtr := C.ListColumn_SetDataStyle( instance.ptr, style.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+
+	CGoReturnPtr := C.ListColumn_SetDataStyle( instance.ptr, style_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -982,7 +987,12 @@ func (instance *ListObject) Resize(startrow int32, startcolumn int32, endrow int
 //   void  
 func (instance *ListObject) PutCellValue_Int_Int_Object(rowoffset int32, columnoffset int32, value *Object)  error {
 	
-	CGoReturnPtr := C.ListObject_PutCellValue_Integer_Integer_Object( instance.ptr, C.int(rowoffset), C.int(columnoffset), value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ListObject_PutCellValue_Integer_Integer_Object( instance.ptr, C.int(rowoffset), C.int(columnoffset), value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1000,7 +1010,12 @@ func (instance *ListObject) PutCellValue_Int_Int_Object(rowoffset int32, columno
 //   void  
 func (instance *ListObject) PutCellValue_Int_Int_Object_Bool(rowoffset int32, columnoffset int32, value *Object, istotalsrowlabel bool)  error {
 	
-	CGoReturnPtr := C.ListObject_PutCellValue_Integer_Integer_Object_Boolean( instance.ptr, C.int(rowoffset), C.int(columnoffset), value.ptr, C.bool(istotalsrowlabel))
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ListObject_PutCellValue_Integer_Integer_Object_Boolean( instance.ptr, C.int(rowoffset), C.int(columnoffset), value_ptr, C.bool(istotalsrowlabel))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1402,7 +1417,12 @@ func (instance *ListObject) ConvertToRange()  error {
 //   void  
 func (instance *ListObject) ConvertToRange_TableToRangeOptions(options *TableToRangeOptions)  error {
 	
-	CGoReturnPtr := C.ListObject_ConvertToRange_TableToRangeOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.ListObject_ConvertToRange_TableToRangeOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2027,7 +2047,12 @@ func (instance *TableStyleElement) GetElementStyle()  (*Style,  error)  {
 //   void  
 func (instance *TableStyleElement) SetElementStyle(style *Style)  error {
 	
-	CGoReturnPtr := C.TableStyleElement_SetElementStyle( instance.ptr, style.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+
+	CGoReturnPtr := C.TableStyleElement_SetElementStyle( instance.ptr, style_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

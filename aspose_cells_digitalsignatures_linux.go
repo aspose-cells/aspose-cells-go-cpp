@@ -180,7 +180,12 @@ func (instance *DigitalSignature) SetSignTime(value time.Time)  error {
 //   void  
 func (instance *DigitalSignature) GetId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.DigitalSignature_GetId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.DigitalSignature_GetId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -196,7 +201,12 @@ func (instance *DigitalSignature) GetId(uuid *UUID)  error {
 //   void  
 func (instance *DigitalSignature) SetId(value *UUID)  error {
 	
-	CGoReturnPtr := C.DigitalSignature_SetId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DigitalSignature_SetId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -275,7 +285,12 @@ func (instance *DigitalSignature) SetImage(value []byte)  error {
 //   void  
 func (instance *DigitalSignature) GetProviderId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.DigitalSignature_GetProviderId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.DigitalSignature_GetProviderId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -291,7 +306,12 @@ func (instance *DigitalSignature) GetProviderId(uuid *UUID)  error {
 //   void  
 func (instance *DigitalSignature) SetProviderId(value *UUID)  error {
 	
-	CGoReturnPtr := C.DigitalSignature_SetProviderId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DigitalSignature_SetProviderId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -400,7 +420,12 @@ func (instance *DigitalSignatureCollection) IsNull()  (bool,  error)  {
 //   void  
 func (instance *DigitalSignatureCollection) Add(digitalsignature *DigitalSignature)  error {
 	
-	CGoReturnPtr := C.DigitalSignatureCollection_Add( instance.ptr, digitalsignature.ptr)
+	var digitalsignature_ptr unsafe.Pointer = nil
+	if digitalsignature != nil {
+	  digitalsignature_ptr =digitalsignature.ptr
+	}
+
+	CGoReturnPtr := C.DigitalSignatureCollection_Add( instance.ptr, digitalsignature_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

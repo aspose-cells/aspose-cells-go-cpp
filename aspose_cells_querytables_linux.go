@@ -350,7 +350,12 @@ type PowerQueryFormulaFunction struct {
 //   src - PowerQueryFormula 
 func NewPowerQueryFormulaFunction(src *PowerQueryFormula) ( *PowerQueryFormulaFunction, error) {
 	powerqueryformulafunction := &PowerQueryFormulaFunction{}
-	CGoReturnPtr := C.New_PowerQueryFormulaFunction(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_PowerQueryFormulaFunction(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		powerqueryformulafunction.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(powerqueryformulafunction, DeletePowerQueryFormulaFunction)
@@ -704,7 +709,12 @@ type PowerQueryFormulaParameter struct {
 //   src - PowerQueryFormula 
 func NewPowerQueryFormulaParameter(src *PowerQueryFormula) ( *PowerQueryFormulaParameter, error) {
 	powerqueryformulaparameter := &PowerQueryFormulaParameter{}
-	CGoReturnPtr := C.New_PowerQueryFormulaParameter(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_PowerQueryFormulaParameter(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		powerqueryformulaparameter.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(powerqueryformulaparameter, DeletePowerQueryFormulaParameter)

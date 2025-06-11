@@ -266,7 +266,12 @@ type RevisionAutoFormat struct {
 //   src - Revision 
 func NewRevisionAutoFormat(src *Revision) ( *RevisionAutoFormat, error) {
 	revisionautoformat := &RevisionAutoFormat{}
-	CGoReturnPtr := C.New_RevisionAutoFormat(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_RevisionAutoFormat(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisionautoformat.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisionautoformat, DeleteRevisionAutoFormat)
@@ -381,7 +386,12 @@ type RevisionCellChange struct {
 //   src - Revision 
 func NewRevisionCellChange(src *Revision) ( *RevisionCellChange, error) {
 	revisioncellchange := &RevisionCellChange{}
-	CGoReturnPtr := C.New_RevisionCellChange(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_RevisionCellChange(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisioncellchange.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisioncellchange, DeleteRevisionCellChange)
@@ -642,7 +652,12 @@ type RevisionCellComment struct {
 //   src - Revision 
 func NewRevisionCellComment(src *Revision) ( *RevisionCellComment, error) {
 	revisioncellcomment := &RevisionCellComment{}
-	CGoReturnPtr := C.New_RevisionCellComment(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_RevisionCellComment(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisioncellcomment.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisioncellcomment, DeleteRevisionCellComment)
@@ -857,7 +872,12 @@ type RevisionCellMove struct {
 //   src - Revision 
 func NewRevisionCellMove(src *Revision) ( *RevisionCellMove, error) {
 	revisioncellmove := &RevisionCellMove{}
-	CGoReturnPtr := C.New_RevisionCellMove(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_RevisionCellMove(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisioncellmove.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisioncellmove, DeleteRevisionCellMove)
@@ -1066,7 +1086,12 @@ type RevisionCustomView struct {
 //   src - Revision 
 func NewRevisionCustomView(src *Revision) ( *RevisionCustomView, error) {
 	revisioncustomview := &RevisionCustomView{}
-	CGoReturnPtr := C.New_RevisionCustomView(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_RevisionCustomView(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisioncustomview.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisioncustomview, DeleteRevisionCustomView)
@@ -1133,7 +1158,12 @@ func (instance *RevisionCustomView) GetActionType()  (RevisionActionType,  error
 //   void  
 func (instance *RevisionCustomView) GetGuid(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.RevisionCustomView_GetGuid( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.RevisionCustomView_GetGuid( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1197,7 +1227,12 @@ type RevisionDefinedName struct {
 //   src - Revision 
 func NewRevisionDefinedName(src *Revision) ( *RevisionDefinedName, error) {
 	revisiondefinedname := &RevisionDefinedName{}
-	CGoReturnPtr := C.New_RevisionDefinedName(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_RevisionDefinedName(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisiondefinedname.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisiondefinedname, DeleteRevisionDefinedName)
@@ -1338,7 +1373,12 @@ type RevisionFormat struct {
 //   src - Revision 
 func NewRevisionFormat(src *Revision) ( *RevisionFormat, error) {
 	revisionformat := &RevisionFormat{}
-	CGoReturnPtr := C.New_RevisionFormat(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_RevisionFormat(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisionformat.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisionformat, DeleteRevisionFormat)
@@ -1581,7 +1621,12 @@ type RevisionInsertDelete struct {
 //   src - Revision 
 func NewRevisionInsertDelete(src *Revision) ( *RevisionInsertDelete, error) {
 	revisioninsertdelete := &RevisionInsertDelete{}
-	CGoReturnPtr := C.New_RevisionInsertDelete(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_RevisionInsertDelete(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisioninsertdelete.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisioninsertdelete, DeleteRevisionInsertDelete)
@@ -1729,7 +1774,12 @@ type RevisionInsertSheet struct {
 //   src - Revision 
 func NewRevisionInsertSheet(src *Revision) ( *RevisionInsertSheet, error) {
 	revisioninsertsheet := &RevisionInsertSheet{}
-	CGoReturnPtr := C.New_RevisionInsertSheet(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_RevisionInsertSheet(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisioninsertsheet.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisioninsertsheet, DeleteRevisionInsertSheet)
@@ -2001,7 +2051,12 @@ func (instance *RevisionLogCollection) Get(index int32)  (*RevisionLog,  error) 
 //   void  
 func (instance *RevisionLogCollection) HighlightChanges(options *HighlightChangesOptions)  error {
 	
-	CGoReturnPtr := C.RevisionLogCollection_HighlightChanges( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.RevisionLogCollection_HighlightChanges( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2043,7 +2098,12 @@ type RevisionMergeConflict struct {
 //   src - Revision 
 func NewRevisionMergeConflict(src *Revision) ( *RevisionMergeConflict, error) {
 	revisionmergeconflict := &RevisionMergeConflict{}
-	CGoReturnPtr := C.New_RevisionMergeConflict(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_RevisionMergeConflict(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisionmergeconflict.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisionmergeconflict, DeleteRevisionMergeConflict)
@@ -2142,7 +2202,12 @@ type RevisionQueryTable struct {
 //   src - Revision 
 func NewRevisionQueryTable(src *Revision) ( *RevisionQueryTable, error) {
 	revisionquerytable := &RevisionQueryTable{}
-	CGoReturnPtr := C.New_RevisionQueryTable(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_RevisionQueryTable(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisionquerytable.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisionquerytable, DeleteRevisionQueryTable)
@@ -2271,7 +2336,12 @@ type RevisionRenameSheet struct {
 //   src - Revision 
 func NewRevisionRenameSheet(src *Revision) ( *RevisionRenameSheet, error) {
 	revisionrenamesheet := &RevisionRenameSheet{}
-	CGoReturnPtr := C.New_RevisionRenameSheet(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_RevisionRenameSheet(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisionrenamesheet.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisionrenamesheet, DeleteRevisionRenameSheet)

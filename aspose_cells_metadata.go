@@ -181,7 +181,12 @@ type WorkbookMetadata struct {
 //   options - MetadataOptions 
 func NewWorkbookMetadata_String_MetadataOptions(filename string, options *MetadataOptions) ( *WorkbookMetadata, error) {
 	workbookmetadata := &WorkbookMetadata{}
-	CGoReturnPtr := C.New_WorkbookMetadata_String_MetadataOptions(C.CString(filename), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.New_WorkbookMetadata_String_MetadataOptions(C.CString(filename), options_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		workbookmetadata.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(workbookmetadata, DeleteWorkbookMetadata)
@@ -198,7 +203,12 @@ func NewWorkbookMetadata_String_MetadataOptions(filename string, options *Metada
 //   options - MetadataOptions 
 func NewWorkbookMetadata_Stream_MetadataOptions(stream []byte, options *MetadataOptions) ( *WorkbookMetadata, error) {
 	workbookmetadata := &WorkbookMetadata{}
-	CGoReturnPtr := C.New_WorkbookMetadata_Stream_MetadataOptions(unsafe.Pointer(&stream[0]), C.int( len(stream)), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.New_WorkbookMetadata_Stream_MetadataOptions(unsafe.Pointer(&stream[0]), C.int( len(stream)), options_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		workbookmetadata.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(workbookmetadata, DeleteWorkbookMetadata)

@@ -1049,7 +1049,12 @@ func (instance *WebExtensionTaskPane) GetWebExtension()  (*WebExtension,  error)
 //   void  
 func (instance *WebExtensionTaskPane) SetWebExtension(value *WebExtension)  error {
 	
-	CGoReturnPtr := C.WebExtensionTaskPane_SetWebExtension( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.WebExtensionTaskPane_SetWebExtension( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

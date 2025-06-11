@@ -688,7 +688,12 @@ func (instance *ConnectionParameter) GetValue()  (*Object,  error)  {
 //   void  
 func (instance *ConnectionParameter) SetValue(value *Object)  error {
 	
-	CGoReturnPtr := C.ConnectionParameter_SetValue( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ConnectionParameter_SetValue( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -753,7 +758,12 @@ func (instance *ConnectionParameterCollection) Get_Int(index int32)  (*Connectio
 //   void  
 func (instance *ConnectionParameterCollection) Set(value *ConnectionParameter, index int32)  error {
 	
-	CGoReturnPtr := C.ConnectionParameterCollection_Set( instance.ptr, value.ptr, C.int(index))
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ConnectionParameterCollection_Set( instance.ptr, value_ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -813,7 +823,12 @@ type DataModelConnection struct {
 //   src - ExternalConnection 
 func NewDataModelConnection(src *ExternalConnection) ( *DataModelConnection, error) {
 	datamodelconnection := &DataModelConnection{}
-	CGoReturnPtr := C.New_DataModelConnection(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_DataModelConnection(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		datamodelconnection.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(datamodelconnection, DeleteDataModelConnection)
@@ -1607,7 +1622,12 @@ type DBConnection struct {
 //   src - ExternalConnection 
 func NewDBConnection(src *ExternalConnection) ( *DBConnection, error) {
 	dbconnection := &DBConnection{}
-	CGoReturnPtr := C.New_DBConnection(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_DBConnection(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		dbconnection.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(dbconnection, DeleteDBConnection)
@@ -3230,7 +3250,12 @@ func (instance *ExternalConnectionCollection) Get_Int(index int32)  (*ExternalCo
 //   void  
 func (instance *ExternalConnectionCollection) Set(value *ExternalConnection, index int32)  error {
 	
-	CGoReturnPtr := C.ExternalConnectionCollection_Set( instance.ptr, value.ptr, C.int(index))
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ExternalConnectionCollection_Set( instance.ptr, value_ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3310,7 +3335,12 @@ type WebQueryConnection struct {
 //   src - ExternalConnection 
 func NewWebQueryConnection(src *ExternalConnection) ( *WebQueryConnection, error) {
 	webqueryconnection := &WebQueryConnection{}
-	CGoReturnPtr := C.New_WebQueryConnection(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_WebQueryConnection(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		webqueryconnection.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(webqueryconnection, DeleteWebQueryConnection)

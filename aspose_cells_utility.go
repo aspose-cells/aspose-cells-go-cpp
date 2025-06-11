@@ -69,7 +69,16 @@ func ConversionUtility_Convert_String_String(source string, saveas string)  erro
 //   void  
 func ConversionUtility_Convert_String_LoadOptions_String_SaveOptions(source string, loadoptions *LoadOptions, saveas string, saveoptions *SaveOptions)  error {
 	
-	CGoReturnPtr := C.ConversionUtility_Convert_String_LoadOptions_String_SaveOptions(C.CString(source), loadoptions.ptr, C.CString(saveas), saveoptions.ptr)
+	var loadoptions_ptr unsafe.Pointer = nil
+	if loadoptions != nil {
+	  loadoptions_ptr =loadoptions.ptr
+	}
+	var saveoptions_ptr unsafe.Pointer = nil
+	if saveoptions != nil {
+	  saveoptions_ptr =saveoptions.ptr
+	}
+
+	CGoReturnPtr := C.ConversionUtility_Convert_String_LoadOptions_String_SaveOptions(C.CString(source), loadoptions_ptr, C.CString(saveas), saveoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -480,7 +489,12 @@ func (instance *JsonLayoutOptions) GetTitleStyle()  (*Style,  error)  {
 //   void  
 func (instance *JsonLayoutOptions) SetTitleStyle(value *Style)  error {
 	
-	CGoReturnPtr := C.JsonLayoutOptions_SetTitleStyle( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.JsonLayoutOptions_SetTitleStyle( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -573,7 +587,16 @@ func (instance *JsonUtility) IsNull()  (bool,  error)  {
 //   []int32_t  
 func JsonUtility_ImportData(json string, cells *Cells, row int32, column int32, option *JsonLayoutOptions)  ([]int32,  error)  {
 	
-	CGoReturnPtr := C.JsonUtility_ImportData(C.CString(json), cells.ptr, C.int(row), C.int(column), option.ptr)
+	var cells_ptr unsafe.Pointer = nil
+	if cells != nil {
+	  cells_ptr =cells.ptr
+	}
+	var option_ptr unsafe.Pointer = nil
+	if option != nil {
+	  option_ptr =option.ptr
+	}
+
+	CGoReturnPtr := C.JsonUtility_ImportData(C.CString(json), cells_ptr, C.int(row), C.int(column), option_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -597,7 +620,16 @@ func JsonUtility_ImportData(json string, cells *Cells, row int32, column int32, 
 //   string  
 func JsonUtility_ExportRangeToJson(range_ *Range, options *JsonSaveOptions)  (string,  error)  {
 	
-	CGoReturnPtr := C.JsonUtility_ExportRangeToJson(range_.ptr, options.ptr)
+	var range__ptr unsafe.Pointer = nil
+	if range_ != nil {
+	  range__ptr =range_.ptr
+	}
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.JsonUtility_ExportRangeToJson(range__ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err

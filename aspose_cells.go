@@ -3364,16 +3364,14 @@ func Int32ToLookInType(value int32)(LookInType ,error){
 
 /**************Enum MemorySetting *****************/
 
-// Memory usage options.
+// Memory usage modes for cells data model.
 type MemorySetting int32
 
 const(
-// Default option for cells model.
+// Default mode for cells model.
 MemorySetting_Normal MemorySetting = 0 
 
 // Memory performance preferrable.
-// With this option the data will be held in compact format so for common scenarios it may give lower memory cost.
-// However, this option also may degrade R/W performance a bit in some special cases.
 MemorySetting_MemoryPreference MemorySetting = 1 
 )
 
@@ -8154,7 +8152,12 @@ func (instance *AbstractFormulaChangeMonitor) OnCellFormulaChanged(sheetindex in
 //   void  
 func (instance *AbstractFormulaChangeMonitor) OnFormatConditionFormulaChanged(fc *FormatCondition)  error {
 	
-	CGoReturnPtr := C.AbstractFormulaChangeMonitor_OnFormatConditionFormulaChanged( instance.ptr, fc.ptr)
+	var fc_ptr unsafe.Pointer = nil
+	if fc != nil {
+	  fc_ptr =fc.ptr
+	}
+
+	CGoReturnPtr := C.AbstractFormulaChangeMonitor_OnFormatConditionFormulaChanged( instance.ptr, fc_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8216,7 +8219,12 @@ type AbstractTextLoadOptions struct {
 //   src - LoadOptions 
 func NewAbstractTextLoadOptions(src *LoadOptions) ( *AbstractTextLoadOptions, error) {
 	abstracttextloadoptions := &AbstractTextLoadOptions{}
-	CGoReturnPtr := C.New_AbstractTextLoadOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_AbstractTextLoadOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		abstracttextloadoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(abstracttextloadoptions, DeleteAbstractTextLoadOptions)
@@ -8546,7 +8554,7 @@ func (instance *AbstractTextLoadOptions) SetLanguageCode(value CountryCode)  err
 
 	return nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Returns:
 //   int32  
 func (instance *AbstractTextLoadOptions) GetRegion()  (CountryCode,  error)  {
@@ -8563,7 +8571,7 @@ func (instance *AbstractTextLoadOptions) GetRegion()  (CountryCode,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -8617,7 +8625,12 @@ func (instance *AbstractTextLoadOptions) GetInterruptMonitor()  (*AbstractInterr
 //   void  
 func (instance *AbstractTextLoadOptions) SetInterruptMonitor(value *AbstractInterruptMonitor)  error {
 	
-	CGoReturnPtr := C.AbstractTextLoadOptions_SetInterruptMonitor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.AbstractTextLoadOptions_SetInterruptMonitor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8776,7 +8789,12 @@ func (instance *AbstractTextLoadOptions) GetLoadFilter()  (*LoadFilter,  error) 
 //   void  
 func (instance *AbstractTextLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 	
-	CGoReturnPtr := C.AbstractTextLoadOptions_SetLoadFilter( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.AbstractTextLoadOptions_SetLoadFilter( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8839,7 +8857,12 @@ func (instance *AbstractTextLoadOptions) GetAutoFitterOptions()  (*AutoFitterOpt
 //   void  
 func (instance *AbstractTextLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  error {
 	
-	CGoReturnPtr := C.AbstractTextLoadOptions_SetAutoFitterOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.AbstractTextLoadOptions_SetAutoFitterOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8901,7 +8924,12 @@ func (instance *AbstractTextLoadOptions) GetFontConfigs()  (*IndividualFontConfi
 //   void  
 func (instance *AbstractTextLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  error {
 	
-	CGoReturnPtr := C.AbstractTextLoadOptions_SetFontConfigs( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.AbstractTextLoadOptions_SetFontConfigs( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9310,7 +9338,12 @@ func (instance *AutoFilter) Dynamic_Filter(fieldindex int32, dynamicfiltertype D
 //   void  
 func (instance *AutoFilter) AddFontColorFilter(fieldindex int32, color *CellsColor)  error {
 	
-	CGoReturnPtr := C.AutoFilter_AddFontColorFilter( instance.ptr, C.int(fieldindex), color.ptr)
+	var color_ptr unsafe.Pointer = nil
+	if color != nil {
+	  color_ptr =color.ptr
+	}
+
+	CGoReturnPtr := C.AutoFilter_AddFontColorFilter( instance.ptr, C.int(fieldindex), color_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9328,7 +9361,16 @@ func (instance *AutoFilter) AddFontColorFilter(fieldindex int32, color *CellsCol
 //   void  
 func (instance *AutoFilter) AddFillColorFilter(fieldindex int32, pattern BackgroundType, foregroundcolor *CellsColor, backgroundcolor *CellsColor)  error {
 	
-	CGoReturnPtr := C.AutoFilter_AddFillColorFilter( instance.ptr, C.int(fieldindex), C.int( int32(pattern)), foregroundcolor.ptr, backgroundcolor.ptr)
+	var foregroundcolor_ptr unsafe.Pointer = nil
+	if foregroundcolor != nil {
+	  foregroundcolor_ptr =foregroundcolor.ptr
+	}
+	var backgroundcolor_ptr unsafe.Pointer = nil
+	if backgroundcolor != nil {
+	  backgroundcolor_ptr =backgroundcolor.ptr
+	}
+
+	CGoReturnPtr := C.AutoFilter_AddFillColorFilter( instance.ptr, C.int(fieldindex), C.int( int32(pattern)), foregroundcolor_ptr, backgroundcolor_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9392,7 +9434,12 @@ func (instance *AutoFilter) MatchNonBlanks(fieldindex int32)  error {
 //   void  
 func (instance *AutoFilter) Custom_Int_FilterOperatorType_Object(fieldindex int32, operatortype1 FilterOperatorType, criteria1 *Object)  error {
 	
-	CGoReturnPtr := C.AutoFilter_Custom_Integer_FilterOperatorType_Object( instance.ptr, C.int(fieldindex), C.int( int32(operatortype1)), criteria1.ptr)
+	var criteria1_ptr unsafe.Pointer = nil
+	if criteria1 != nil {
+	  criteria1_ptr =criteria1.ptr
+	}
+
+	CGoReturnPtr := C.AutoFilter_Custom_Integer_FilterOperatorType_Object( instance.ptr, C.int(fieldindex), C.int( int32(operatortype1)), criteria1_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9412,7 +9459,16 @@ func (instance *AutoFilter) Custom_Int_FilterOperatorType_Object(fieldindex int3
 //   void  
 func (instance *AutoFilter) Custom_Int_FilterOperatorType_Object_Bool_FilterOperatorType_Object(fieldindex int32, operatortype1 FilterOperatorType, criteria1 *Object, isand bool, operatortype2 FilterOperatorType, criteria2 *Object)  error {
 	
-	CGoReturnPtr := C.AutoFilter_Custom_Integer_FilterOperatorType_Object_Boolean_FilterOperatorType_Object( instance.ptr, C.int(fieldindex), C.int( int32(operatortype1)), criteria1.ptr, C.bool(isand), C.int( int32(operatortype2)), criteria2.ptr)
+	var criteria1_ptr unsafe.Pointer = nil
+	if criteria1 != nil {
+	  criteria1_ptr =criteria1.ptr
+	}
+	var criteria2_ptr unsafe.Pointer = nil
+	if criteria2 != nil {
+	  criteria2_ptr =criteria2.ptr
+	}
+
+	CGoReturnPtr := C.AutoFilter_Custom_Integer_FilterOperatorType_Object_Boolean_FilterOperatorType_Object( instance.ptr, C.int(fieldindex), C.int( int32(operatortype1)), criteria1_ptr, C.bool(isand), C.int( int32(operatortype2)), criteria2_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9880,7 +9936,12 @@ func (instance *Border) GetThemeColor()  (*ThemeColor,  error)  {
 //   void  
 func (instance *Border) SetThemeColor(value *ThemeColor)  error {
 	
-	CGoReturnPtr := C.Border_SetThemeColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Border_SetThemeColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10158,7 +10219,12 @@ func (instance *CalculationCell) IsNull()  (bool,  error)  {
 //   void  
 func (instance *CalculationCell) SetCalculatedValue(v *Object)  error {
 	
-	CGoReturnPtr := C.CalculationCell_SetCalculatedValue( instance.ptr, v.ptr)
+	var v_ptr unsafe.Pointer = nil
+	if v != nil {
+	  v_ptr =v.ptr
+	}
+
+	CGoReturnPtr := C.CalculationCell_SetCalculatedValue( instance.ptr, v_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10296,7 +10362,12 @@ func (instance *CalculationData) GetCalculatedValue()  (*Object,  error)  {
 //   void  
 func (instance *CalculationData) SetCalculatedValue(value *Object)  error {
 	
-	CGoReturnPtr := C.CalculationData_SetCalculatedValue( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.CalculationData_SetCalculatedValue( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10606,7 +10677,12 @@ func (instance *CalculationOptions) GetCustomEngine()  (*AbstractCalculationEngi
 //   void  
 func (instance *CalculationOptions) SetCustomEngine(value *AbstractCalculationEngine)  error {
 	
-	CGoReturnPtr := C.CalculationOptions_SetCustomEngine( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.CalculationOptions_SetCustomEngine( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10792,7 +10868,12 @@ func (instance *Cell) IsNull()  (bool,  error)  {
 //   void  
 func (instance *Cell) Calculate(options *CalculationOptions)  error {
 	
-	CGoReturnPtr := C.Cell_Calculate( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Cell_Calculate( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10949,7 +11030,12 @@ func (instance *Cell) GetDateTimeValue()  (time.Time,  error)  {
 //   void  
 func (instance *Cell) PutValue_Object(objectvalue *Object)  error {
 	
-	CGoReturnPtr := C.Cell_PutValue_Object( instance.ptr, objectvalue.ptr)
+	var objectvalue_ptr unsafe.Pointer = nil
+	if objectvalue != nil {
+	  objectvalue_ptr =objectvalue.ptr
+	}
+
+	CGoReturnPtr := C.Cell_PutValue_Object( instance.ptr, objectvalue_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11334,7 +11420,12 @@ func (instance *Cell) GetStyle_Bool(checkborders bool)  (*Style,  error)  {
 //   void  
 func (instance *Cell) SetStyle_Style(style *Style)  error {
 	
-	CGoReturnPtr := C.Cell_SetStyle_Style( instance.ptr, style.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+
+	CGoReturnPtr := C.Cell_SetStyle_Style( instance.ptr, style_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11350,7 +11441,12 @@ func (instance *Cell) SetStyle_Style(style *Style)  error {
 //   void  
 func (instance *Cell) SetStyle_Style_Bool(style *Style, explicitflag bool)  error {
 	
-	CGoReturnPtr := C.Cell_SetStyle_Style_Boolean( instance.ptr, style.ptr, C.bool(explicitflag))
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+
+	CGoReturnPtr := C.Cell_SetStyle_Style_Boolean( instance.ptr, style_ptr, C.bool(explicitflag))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11366,7 +11462,16 @@ func (instance *Cell) SetStyle_Style_Bool(style *Style, explicitflag bool)  erro
 //   void  
 func (instance *Cell) SetStyle_Style_StyleFlag(style *Style, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.Cell_SetStyle_Style_StyleFlag( instance.ptr, style.ptr, flag.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.Cell_SetStyle_Style_StyleFlag( instance.ptr, style_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11498,7 +11603,12 @@ func (instance *Cell) SetR1C1Formula(value string)  error {
 //   void  
 func (instance *Cell) SetFormula_String_Object(formula string, value *Object)  error {
 	
-	CGoReturnPtr := C.Cell_SetFormula_String_Object( instance.ptr, C.CString(formula), value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Cell_SetFormula_String_Object( instance.ptr, C.CString(formula), value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11514,7 +11624,12 @@ func (instance *Cell) SetFormula_String_Object(formula string, value *Object)  e
 //   void  
 func (instance *Cell) SetFormula_String_FormulaParseOptions(formula string, options *FormulaParseOptions)  error {
 	
-	CGoReturnPtr := C.Cell_SetFormula_String_FormulaParseOptions( instance.ptr, C.CString(formula), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Cell_SetFormula_String_FormulaParseOptions( instance.ptr, C.CString(formula), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11548,7 +11663,16 @@ func (instance *Cell) GetFormula_Bool_Bool(isr1c1 bool, islocal bool)  (string, 
 //   void  
 func (instance *Cell) SetFormula_String_FormulaParseOptions_Object(formula string, options *FormulaParseOptions, value *Object)  error {
 	
-	CGoReturnPtr := C.Cell_SetFormula_String_FormulaParseOptions_Object( instance.ptr, C.CString(formula), options.ptr, value.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Cell_SetFormula_String_FormulaParseOptions_Object( instance.ptr, C.CString(formula), options_ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11583,7 +11707,12 @@ func (instance *Cell) SetArrayFormula_String_Int_Int(arrayformula string, rownum
 //   void  
 func (instance *Cell) SetArrayFormula_String_Int_Int_FormulaParseOptions(arrayformula string, rownumber int32, columnnumber int32, options *FormulaParseOptions)  error {
 	
-	CGoReturnPtr := C.Cell_SetArrayFormula_String_Integer_Integer_FormulaParseOptions( instance.ptr, C.CString(arrayformula), C.int(rownumber), C.int(columnnumber), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Cell_SetArrayFormula_String_Integer_Integer_FormulaParseOptions( instance.ptr, C.CString(arrayformula), C.int(rownumber), C.int(columnnumber), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11602,9 +11731,13 @@ func (instance *Cell) SetArrayFormula_String_Int_Int_FormulaParseOptions(arrayfo
 //   void  
 func (instance *Cell) SetArrayFormula_String_Int_Int_FormulaParseOptions_Object2Array(arrayformula string, rownumber int32, columnnumber int32, options *FormulaParseOptions, values [][]interface{})  error {
 	
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
 	vector_values, values_row_length, values_column_length := toObject2Array(values)
 
-	CGoReturnPtr := C.Cell_SetArrayFormula_String_Integer_Integer_FormulaParseOptions_Object2Array( instance.ptr, C.CString(arrayformula), C.int(rownumber), C.int(columnnumber), options.ptr, unsafe.Pointer(&vector_values[0]), C.int( values_row_length), C.int(values_column_length))
+	CGoReturnPtr := C.Cell_SetArrayFormula_String_Integer_Integer_FormulaParseOptions_Object2Array( instance.ptr, C.CString(arrayformula), C.int(rownumber), C.int(columnnumber), options_ptr, unsafe.Pointer(&vector_values[0]), C.int( values_row_length), C.int(values_column_length))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11639,7 +11772,12 @@ func (instance *Cell) SetSharedFormula_String_Int_Int(sharedformula string, rown
 //   void  
 func (instance *Cell) SetSharedFormula_String_Int_Int_FormulaParseOptions(sharedformula string, rownumber int32, columnnumber int32, options *FormulaParseOptions)  error {
 	
-	CGoReturnPtr := C.Cell_SetSharedFormula_String_Integer_Integer_FormulaParseOptions( instance.ptr, C.CString(sharedformula), C.int(rownumber), C.int(columnnumber), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Cell_SetSharedFormula_String_Integer_Integer_FormulaParseOptions( instance.ptr, C.CString(sharedformula), C.int(rownumber), C.int(columnnumber), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11658,9 +11796,13 @@ func (instance *Cell) SetSharedFormula_String_Int_Int_FormulaParseOptions(shared
 //   void  
 func (instance *Cell) SetSharedFormula_String_Int_Int_FormulaParseOptions_Object2Array(sharedformula string, rownumber int32, columnnumber int32, options *FormulaParseOptions, values [][]interface{})  error {
 	
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
 	vector_values, values_row_length, values_column_length := toObject2Array(values)
 
-	CGoReturnPtr := C.Cell_SetSharedFormula_String_Integer_Integer_FormulaParseOptions_Object2Array( instance.ptr, C.CString(sharedformula), C.int(rownumber), C.int(columnnumber), options.ptr, unsafe.Pointer(&vector_values[0]), C.int( values_row_length), C.int(values_column_length))
+	CGoReturnPtr := C.Cell_SetSharedFormula_String_Integer_Integer_FormulaParseOptions_Object2Array( instance.ptr, C.CString(sharedformula), C.int(rownumber), C.int(columnnumber), options_ptr, unsafe.Pointer(&vector_values[0]), C.int( values_row_length), C.int(values_column_length))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11854,7 +11996,12 @@ func (instance *Cell) IsTableFormula()  (bool,  error)  {
 //   CellArea  
 func (instance *Cell) SetDynamicArrayFormula_String_FormulaParseOptions_Bool(arrayformula string, options *FormulaParseOptions, calculatevalue bool)  (*CellArea,  error)  {
 	
-	CGoReturnPtr := C.Cell_SetDynamicArrayFormula_String_FormulaParseOptions_Boolean( instance.ptr, C.CString(arrayformula), options.ptr, C.bool(calculatevalue))
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Cell_SetDynamicArrayFormula_String_FormulaParseOptions_Boolean( instance.ptr, C.CString(arrayformula), options_ptr, C.bool(calculatevalue))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -11876,9 +12023,13 @@ func (instance *Cell) SetDynamicArrayFormula_String_FormulaParseOptions_Bool(arr
 //   CellArea  
 func (instance *Cell) SetDynamicArrayFormula_String_FormulaParseOptions_Object2Array_Bool_Bool(arrayformula string, options *FormulaParseOptions, values [][]interface{}, calculaterange bool, calculatevalue bool)  (*CellArea,  error)  {
 	
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
 	vector_values, values_row_length, values_column_length := toObject2Array(values)
 
-	CGoReturnPtr := C.Cell_SetDynamicArrayFormula_String_FormulaParseOptions_Object2Array_Boolean_Boolean( instance.ptr, C.CString(arrayformula), options.ptr, unsafe.Pointer(&vector_values[0]), C.int( values_row_length), C.int(values_column_length), C.bool(calculaterange), C.bool(calculatevalue))
+	CGoReturnPtr := C.Cell_SetDynamicArrayFormula_String_FormulaParseOptions_Object2Array_Boolean_Boolean( instance.ptr, C.CString(arrayformula), options_ptr, unsafe.Pointer(&vector_values[0]), C.int( values_row_length), C.int(values_column_length), C.bool(calculaterange), C.bool(calculatevalue))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -11901,9 +12052,17 @@ func (instance *Cell) SetDynamicArrayFormula_String_FormulaParseOptions_Object2A
 //   CellArea  
 func (instance *Cell) SetDynamicArrayFormula_String_FormulaParseOptions_Object2Array_Bool_Bool_CalculationOptions(arrayformula string, options *FormulaParseOptions, values [][]interface{}, calculaterange bool, calculatevalue bool, copts *CalculationOptions)  (*CellArea,  error)  {
 	
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
 	vector_values, values_row_length, values_column_length := toObject2Array(values)
+	var copts_ptr unsafe.Pointer = nil
+	if copts != nil {
+	  copts_ptr =copts.ptr
+	}
 
-	CGoReturnPtr := C.Cell_SetDynamicArrayFormula_String_FormulaParseOptions_Object2Array_Boolean_Boolean_CalculationOptions( instance.ptr, C.CString(arrayformula), options.ptr, unsafe.Pointer(&vector_values[0]), C.int( values_row_length), C.int(values_column_length), C.bool(calculaterange), C.bool(calculatevalue), copts.ptr)
+	CGoReturnPtr := C.Cell_SetDynamicArrayFormula_String_FormulaParseOptions_Object2Array_Boolean_Boolean_CalculationOptions( instance.ptr, C.CString(arrayformula), options_ptr, unsafe.Pointer(&vector_values[0]), C.int( values_row_length), C.int(values_column_length), C.bool(calculaterange), C.bool(calculatevalue), copts_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -12023,7 +12182,12 @@ func (instance *Cell) RemoveArrayFormula(leavenormalformula bool)  error {
 //   void  
 func (instance *Cell) Copy(cell *Cell)  error {
 	
-	CGoReturnPtr := C.Cell_Copy( instance.ptr, cell.ptr)
+	var cell_ptr unsafe.Pointer = nil
+	if cell != nil {
+	  cell_ptr =cell.ptr
+	}
+
+	CGoReturnPtr := C.Cell_Copy( instance.ptr, cell_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12054,7 +12218,12 @@ func (instance *Cell) GetValue()  (*Object,  error)  {
 //   void  
 func (instance *Cell) SetValue(value *Object)  error {
 	
-	CGoReturnPtr := C.Cell_SetValue( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Cell_SetValue( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12104,7 +12273,12 @@ func (instance *Cell) Characters(startindex int32, length int32)  (*FontSetting,
 //   void  
 func (instance *Cell) Replace(placeholder string, newvalue string, options *ReplaceOptions)  error {
 	
-	CGoReturnPtr := C.Cell_Replace( instance.ptr, C.CString(placeholder), C.CString(newvalue), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Cell_Replace( instance.ptr, C.CString(placeholder), C.CString(newvalue), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12337,7 +12511,12 @@ func (instance *Cell) ToJson()  (string,  error)  {
 //   bool  
 func (instance *Cell) Equals_Object(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.Cell_Equals_Object( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.Cell_Equals_Object( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -12367,7 +12546,12 @@ func (instance *Cell) GetHashCode()  (int32,  error)  {
 //   bool  
 func (instance *Cell) Equals_Cell(cell *Cell)  (bool,  error)  {
 	
-	CGoReturnPtr := C.Cell_Equals_Cell( instance.ptr, cell.ptr)
+	var cell_ptr unsafe.Pointer = nil
+	if cell != nil {
+	  cell_ptr =cell.ptr
+	}
+
+	CGoReturnPtr := C.Cell_Equals_Cell( instance.ptr, cell_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -12994,7 +13178,12 @@ func (instance *Cells) IsColumnHidden(columnindex int32)  (bool,  error)  {
 //   void  
 func (instance *Cells) AddRange(rangeobject *Range)  error {
 	
-	CGoReturnPtr := C.Cells_AddRange( instance.ptr, rangeobject.ptr)
+	var rangeobject_ptr unsafe.Pointer = nil
+	if rangeobject != nil {
+	  rangeobject_ptr =rangeobject.ptr
+	}
+
+	CGoReturnPtr := C.Cells_AddRange( instance.ptr, rangeobject_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -13216,7 +13405,12 @@ func (instance *Cells) GetStyle()  (*Style,  error)  {
 //   void  
 func (instance *Cells) SetStyle(value *Style)  error {
 	
-	CGoReturnPtr := C.Cells_SetStyle( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Cells_SetStyle( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -13433,7 +13627,12 @@ func (instance *Cells) ImportFormulaArray(stringarray []string, firstrow int32, 
 //   int32  
 func (instance *Cells) TextToColumns(row int32, column int32, totalrows int32, options *TxtLoadOptions)  (int32,  error)  {
 	
-	CGoReturnPtr := C.Cells_TextToColumns( instance.ptr, C.int(row), C.int(column), C.int(totalrows), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Cells_TextToColumns( instance.ptr, C.int(row), C.int(column), C.int(totalrows), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -13490,7 +13689,12 @@ func (instance *Cells) ImportCSV_Stream_String_Bool_Int_Int(stream []byte, split
 //   void  
 func (instance *Cells) ImportCSV_String_TxtLoadOptions_Int_Int(filename string, options *TxtLoadOptions, firstrow int32, firstcolumn int32)  error {
 	
-	CGoReturnPtr := C.Cells_ImportCSV_String_TxtLoadOptions_Integer_Integer( instance.ptr, C.CString(filename), options.ptr, C.int(firstrow), C.int(firstcolumn))
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Cells_ImportCSV_String_TxtLoadOptions_Integer_Integer( instance.ptr, C.CString(filename), options_ptr, C.int(firstrow), C.int(firstcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -13508,7 +13712,12 @@ func (instance *Cells) ImportCSV_String_TxtLoadOptions_Int_Int(filename string, 
 //   void  
 func (instance *Cells) ImportCSV_Stream_TxtLoadOptions_Int_Int(stream []byte, options *TxtLoadOptions, firstrow int32, firstcolumn int32)  error {
 	
-	CGoReturnPtr := C.Cells_ImportCSV_Stream_TxtLoadOptions_Integer_Integer( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), options.ptr, C.int(firstrow), C.int(firstcolumn))
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Cells_ImportCSV_Stream_TxtLoadOptions_Integer_Integer( instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), options_ptr, C.int(firstrow), C.int(firstcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14268,7 +14477,16 @@ func (instance *Cells) GetColumns()  (*ColumnCollection,  error)  {
 //   void  
 func (instance *Cells) ApplyColumnStyle(column int32, style *Style, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.Cells_ApplyColumnStyle( instance.ptr, C.int(column), style.ptr, flag.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.Cells_ApplyColumnStyle( instance.ptr, C.int(column), style_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14285,7 +14503,16 @@ func (instance *Cells) ApplyColumnStyle(column int32, style *Style, flag *StyleF
 //   void  
 func (instance *Cells) ApplyRowStyle(row int32, style *Style, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.Cells_ApplyRowStyle( instance.ptr, C.int(row), style.ptr, flag.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.Cells_ApplyRowStyle( instance.ptr, C.int(row), style_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14301,7 +14528,16 @@ func (instance *Cells) ApplyRowStyle(row int32, style *Style, flag *StyleFlag)  
 //   void  
 func (instance *Cells) ApplyStyle(style *Style, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.Cells_ApplyStyle( instance.ptr, style.ptr, flag.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.Cells_ApplyStyle( instance.ptr, style_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14320,7 +14556,16 @@ func (instance *Cells) ApplyStyle(style *Style, flag *StyleFlag)  error {
 //   void  
 func (instance *Cells) CopyColumns_Cells_Int_Int_Int_PasteOptions(sourcecells0 *Cells, sourcecolumnindex int32, destinationcolumnindex int32, columnnumber int32, pasteoptions *PasteOptions)  error {
 	
-	CGoReturnPtr := C.Cells_CopyColumns_Cells_Integer_Integer_Integer_PasteOptions( instance.ptr, sourcecells0.ptr, C.int(sourcecolumnindex), C.int(destinationcolumnindex), C.int(columnnumber), pasteoptions.ptr)
+	var sourcecells0_ptr unsafe.Pointer = nil
+	if sourcecells0 != nil {
+	  sourcecells0_ptr =sourcecells0.ptr
+	}
+	var pasteoptions_ptr unsafe.Pointer = nil
+	if pasteoptions != nil {
+	  pasteoptions_ptr =pasteoptions.ptr
+	}
+
+	CGoReturnPtr := C.Cells_CopyColumns_Cells_Integer_Integer_Integer_PasteOptions( instance.ptr, sourcecells0_ptr, C.int(sourcecolumnindex), C.int(destinationcolumnindex), C.int(columnnumber), pasteoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14337,7 +14582,12 @@ func (instance *Cells) CopyColumns_Cells_Int_Int_Int_PasteOptions(sourcecells0 *
 //   void  
 func (instance *Cells) CopyColumn(sourcecells *Cells, sourcecolumnindex int32, destinationcolumnindex int32)  error {
 	
-	CGoReturnPtr := C.Cells_CopyColumn( instance.ptr, sourcecells.ptr, C.int(sourcecolumnindex), C.int(destinationcolumnindex))
+	var sourcecells_ptr unsafe.Pointer = nil
+	if sourcecells != nil {
+	  sourcecells_ptr =sourcecells.ptr
+	}
+
+	CGoReturnPtr := C.Cells_CopyColumn( instance.ptr, sourcecells_ptr, C.int(sourcecolumnindex), C.int(destinationcolumnindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14355,7 +14605,12 @@ func (instance *Cells) CopyColumn(sourcecells *Cells, sourcecolumnindex int32, d
 //   void  
 func (instance *Cells) CopyColumns_Cells_Int_Int_Int(sourcecells0 *Cells, sourcecolumnindex int32, destinationcolumnindex int32, columnnumber int32)  error {
 	
-	CGoReturnPtr := C.Cells_CopyColumns_Cells_Integer_Integer_Integer( instance.ptr, sourcecells0.ptr, C.int(sourcecolumnindex), C.int(destinationcolumnindex), C.int(columnnumber))
+	var sourcecells0_ptr unsafe.Pointer = nil
+	if sourcecells0 != nil {
+	  sourcecells0_ptr =sourcecells0.ptr
+	}
+
+	CGoReturnPtr := C.Cells_CopyColumns_Cells_Integer_Integer_Integer( instance.ptr, sourcecells0_ptr, C.int(sourcecolumnindex), C.int(destinationcolumnindex), C.int(columnnumber))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14374,7 +14629,12 @@ func (instance *Cells) CopyColumns_Cells_Int_Int_Int(sourcecells0 *Cells, source
 //   void  
 func (instance *Cells) CopyColumns_Cells_Int_Int_Int_Int(sourcecells *Cells, sourcecolumnindex int32, sourcetotalcolumns int32, destinationcolumnindex int32, destinationtotalcolumns int32)  error {
 	
-	CGoReturnPtr := C.Cells_CopyColumns_Cells_Integer_Integer_Integer_Integer( instance.ptr, sourcecells.ptr, C.int(sourcecolumnindex), C.int(sourcetotalcolumns), C.int(destinationcolumnindex), C.int(destinationtotalcolumns))
+	var sourcecells_ptr unsafe.Pointer = nil
+	if sourcecells != nil {
+	  sourcecells_ptr =sourcecells.ptr
+	}
+
+	CGoReturnPtr := C.Cells_CopyColumns_Cells_Integer_Integer_Integer_Integer( instance.ptr, sourcecells_ptr, C.int(sourcecolumnindex), C.int(sourcetotalcolumns), C.int(destinationcolumnindex), C.int(destinationtotalcolumns))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14391,7 +14651,12 @@ func (instance *Cells) CopyColumns_Cells_Int_Int_Int_Int(sourcecells *Cells, sou
 //   void  
 func (instance *Cells) CopyRow(sourcecells *Cells, sourcerowindex int32, destinationrowindex int32)  error {
 	
-	CGoReturnPtr := C.Cells_CopyRow( instance.ptr, sourcecells.ptr, C.int(sourcerowindex), C.int(destinationrowindex))
+	var sourcecells_ptr unsafe.Pointer = nil
+	if sourcecells != nil {
+	  sourcecells_ptr =sourcecells.ptr
+	}
+
+	CGoReturnPtr := C.Cells_CopyRow( instance.ptr, sourcecells_ptr, C.int(sourcerowindex), C.int(destinationrowindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14409,7 +14674,12 @@ func (instance *Cells) CopyRow(sourcecells *Cells, sourcerowindex int32, destina
 //   void  
 func (instance *Cells) CopyRows_Cells_Int_Int_Int(sourcecells *Cells, sourcerowindex int32, destinationrowindex int32, rownumber int32)  error {
 	
-	CGoReturnPtr := C.Cells_CopyRows_Cells_Integer_Integer_Integer( instance.ptr, sourcecells.ptr, C.int(sourcerowindex), C.int(destinationrowindex), C.int(rownumber))
+	var sourcecells_ptr unsafe.Pointer = nil
+	if sourcecells != nil {
+	  sourcecells_ptr =sourcecells.ptr
+	}
+
+	CGoReturnPtr := C.Cells_CopyRows_Cells_Integer_Integer_Integer( instance.ptr, sourcecells_ptr, C.int(sourcerowindex), C.int(destinationrowindex), C.int(rownumber))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14428,7 +14698,16 @@ func (instance *Cells) CopyRows_Cells_Int_Int_Int(sourcecells *Cells, sourcerowi
 //   void  
 func (instance *Cells) CopyRows_Cells_Int_Int_Int_CopyOptions(sourcecells0 *Cells, sourcerowindex int32, destinationrowindex int32, rownumber int32, copyoptions *CopyOptions)  error {
 	
-	CGoReturnPtr := C.Cells_CopyRows_Cells_Integer_Integer_Integer_CopyOptions( instance.ptr, sourcecells0.ptr, C.int(sourcerowindex), C.int(destinationrowindex), C.int(rownumber), copyoptions.ptr)
+	var sourcecells0_ptr unsafe.Pointer = nil
+	if sourcecells0 != nil {
+	  sourcecells0_ptr =sourcecells0.ptr
+	}
+	var copyoptions_ptr unsafe.Pointer = nil
+	if copyoptions != nil {
+	  copyoptions_ptr =copyoptions.ptr
+	}
+
+	CGoReturnPtr := C.Cells_CopyRows_Cells_Integer_Integer_Integer_CopyOptions( instance.ptr, sourcecells0_ptr, C.int(sourcerowindex), C.int(destinationrowindex), C.int(rownumber), copyoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14448,7 +14727,20 @@ func (instance *Cells) CopyRows_Cells_Int_Int_Int_CopyOptions(sourcecells0 *Cell
 //   void  
 func (instance *Cells) CopyRows_Cells_Int_Int_Int_CopyOptions_PasteOptions(sourcecells0 *Cells, sourcerowindex int32, destinationrowindex int32, rownumber int32, copyoptions *CopyOptions, pasteoptions *PasteOptions)  error {
 	
-	CGoReturnPtr := C.Cells_CopyRows_Cells_Integer_Integer_Integer_CopyOptions_PasteOptions( instance.ptr, sourcecells0.ptr, C.int(sourcerowindex), C.int(destinationrowindex), C.int(rownumber), copyoptions.ptr, pasteoptions.ptr)
+	var sourcecells0_ptr unsafe.Pointer = nil
+	if sourcecells0 != nil {
+	  sourcecells0_ptr =sourcecells0.ptr
+	}
+	var copyoptions_ptr unsafe.Pointer = nil
+	if copyoptions != nil {
+	  copyoptions_ptr =copyoptions.ptr
+	}
+	var pasteoptions_ptr unsafe.Pointer = nil
+	if pasteoptions != nil {
+	  pasteoptions_ptr =pasteoptions.ptr
+	}
+
+	CGoReturnPtr := C.Cells_CopyRows_Cells_Integer_Integer_Integer_CopyOptions_PasteOptions( instance.ptr, sourcecells0_ptr, C.int(sourcerowindex), C.int(destinationrowindex), C.int(rownumber), copyoptions_ptr, pasteoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14720,7 +15012,12 @@ func (instance *Cells) DeleteColumns_Int_Int_Bool(columnindex int32, totalcolumn
 //   void  
 func (instance *Cells) DeleteColumns_Int_Int_DeleteOptions(columnindex int32, totalcolumns int32, options *DeleteOptions)  error {
 	
-	CGoReturnPtr := C.Cells_DeleteColumns_Integer_Integer_DeleteOptions( instance.ptr, C.int(columnindex), C.int(totalcolumns), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Cells_DeleteColumns_Integer_Integer_DeleteOptions( instance.ptr, C.int(columnindex), C.int(totalcolumns), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14822,7 +15119,12 @@ func (instance *Cells) DeleteRows_Int_Int_Bool(rowindex int32, totalrows int32, 
 //   bool  
 func (instance *Cells) DeleteRows_Int_Int_DeleteOptions(rowindex int32, totalrows int32, options *DeleteOptions)  (bool,  error)  {
 	
-	CGoReturnPtr := C.Cells_DeleteRows_Integer_Integer_DeleteOptions( instance.ptr, C.int(rowindex), C.int(totalrows), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Cells_DeleteRows_Integer_Integer_DeleteOptions( instance.ptr, C.int(rowindex), C.int(totalrows), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -14851,7 +15153,12 @@ func (instance *Cells) DeleteBlankColumns()  error {
 //   void  
 func (instance *Cells) DeleteBlankColumns_DeleteOptions(options *DeleteOptions)  error {
 	
-	CGoReturnPtr := C.Cells_DeleteBlankColumns_DeleteOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Cells_DeleteBlankColumns_DeleteOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14895,7 +15202,12 @@ func (instance *Cells) DeleteBlankRows()  error {
 //   void  
 func (instance *Cells) DeleteBlankRows_DeleteOptions(options *DeleteOptions)  error {
 	
-	CGoReturnPtr := C.Cells_DeleteBlankRows_DeleteOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Cells_DeleteBlankRows_DeleteOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14945,7 +15257,12 @@ func (instance *Cells) InsertColumns_Int_Int_Bool(columnindex int32, totalcolumn
 //   void  
 func (instance *Cells) InsertColumns_Int_Int_InsertOptions(columnindex int32, totalcolumns int32, options *InsertOptions)  error {
 	
-	CGoReturnPtr := C.Cells_InsertColumns_Integer_Integer_InsertOptions( instance.ptr, C.int(columnindex), C.int(totalcolumns), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Cells_InsertColumns_Integer_Integer_InsertOptions( instance.ptr, C.int(columnindex), C.int(totalcolumns), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15010,7 +15327,12 @@ func (instance *Cells) InsertRows_Int_Int_Bool(rowindex int32, totalrows int32, 
 //   void  
 func (instance *Cells) InsertRows_Int_Int_InsertOptions(rowindex int32, totalrows int32, options *InsertOptions)  error {
 	
-	CGoReturnPtr := C.Cells_InsertRows_Integer_Integer_InsertOptions( instance.ptr, C.int(rowindex), C.int(totalrows), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Cells_InsertRows_Integer_Integer_InsertOptions( instance.ptr, C.int(rowindex), C.int(totalrows), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15072,7 +15394,12 @@ func (instance *Cells) GetRanges()  (*RangeCollection,  error)  {
 //   void  
 func (instance *Cells) ClearRange_CellArea(range_ *CellArea)  error {
 	
-	CGoReturnPtr := C.Cells_ClearRange_CellArea( instance.ptr, range_.ptr)
+	var range__ptr unsafe.Pointer = nil
+	if range_ != nil {
+	  range__ptr =range_.ptr
+	}
+
+	CGoReturnPtr := C.Cells_ClearRange_CellArea( instance.ptr, range__ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15105,7 +15432,12 @@ func (instance *Cells) ClearRange_Int_Int_Int_Int(startrow int32, startcolumn in
 //   void  
 func (instance *Cells) ClearContents_CellArea(range_ *CellArea)  error {
 	
-	CGoReturnPtr := C.Cells_ClearContents_CellArea( instance.ptr, range_.ptr)
+	var range__ptr unsafe.Pointer = nil
+	if range_ != nil {
+	  range__ptr =range_.ptr
+	}
+
+	CGoReturnPtr := C.Cells_ClearContents_CellArea( instance.ptr, range__ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15138,7 +15470,12 @@ func (instance *Cells) ClearContents_Int_Int_Int_Int(startrow int32, startcolumn
 //   void  
 func (instance *Cells) ClearFormats_CellArea(range_ *CellArea)  error {
 	
-	CGoReturnPtr := C.Cells_ClearFormats_CellArea( instance.ptr, range_.ptr)
+	var range__ptr unsafe.Pointer = nil
+	if range_ != nil {
+	  range__ptr =range_.ptr
+	}
+
+	CGoReturnPtr := C.Cells_ClearFormats_CellArea( instance.ptr, range__ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15238,7 +15575,16 @@ func (instance *Cells) GetFirstCell()  (*Cell,  error)  {
 //   Cell  
 func (instance *Cells) Find_Object_Cell(what *Object, previouscell *Cell)  (*Cell,  error)  {
 	
-	CGoReturnPtr := C.Cells_Find_Object_Cell( instance.ptr, what.ptr, previouscell.ptr)
+	var what_ptr unsafe.Pointer = nil
+	if what != nil {
+	  what_ptr =what.ptr
+	}
+	var previouscell_ptr unsafe.Pointer = nil
+	if previouscell != nil {
+	  previouscell_ptr =previouscell.ptr
+	}
+
+	CGoReturnPtr := C.Cells_Find_Object_Cell( instance.ptr, what_ptr, previouscell_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -15258,7 +15604,20 @@ func (instance *Cells) Find_Object_Cell(what *Object, previouscell *Cell)  (*Cel
 //   Cell  
 func (instance *Cells) Find_Object_Cell_FindOptions(what *Object, previouscell *Cell, findoptions *FindOptions)  (*Cell,  error)  {
 	
-	CGoReturnPtr := C.Cells_Find_Object_Cell_FindOptions( instance.ptr, what.ptr, previouscell.ptr, findoptions.ptr)
+	var what_ptr unsafe.Pointer = nil
+	if what != nil {
+	  what_ptr =what.ptr
+	}
+	var previouscell_ptr unsafe.Pointer = nil
+	if previouscell != nil {
+	  previouscell_ptr =previouscell.ptr
+	}
+	var findoptions_ptr unsafe.Pointer = nil
+	if findoptions != nil {
+	  findoptions_ptr =findoptions.ptr
+	}
+
+	CGoReturnPtr := C.Cells_Find_Object_Cell_FindOptions( instance.ptr, what_ptr, previouscell_ptr, findoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -15356,7 +15715,12 @@ func (instance *Cells) EndCellInRow_Int_Int_Int_Int(startrow int32, endrow int32
 //   void  
 func (instance *Cells) MoveRange(sourcearea *CellArea, destrow int32, destcolumn int32)  error {
 	
-	CGoReturnPtr := C.Cells_MoveRange( instance.ptr, sourcearea.ptr, C.int(destrow), C.int(destcolumn))
+	var sourcearea_ptr unsafe.Pointer = nil
+	if sourcearea != nil {
+	  sourcearea_ptr =sourcearea.ptr
+	}
+
+	CGoReturnPtr := C.Cells_MoveRange( instance.ptr, sourcearea_ptr, C.int(destrow), C.int(destcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15374,7 +15738,12 @@ func (instance *Cells) MoveRange(sourcearea *CellArea, destrow int32, destcolumn
 //   void  
 func (instance *Cells) InsertCutCells(cutrange *Range, row int32, column int32, shifttype ShiftType)  error {
 	
-	CGoReturnPtr := C.Cells_InsertCutCells( instance.ptr, cutrange.ptr, C.int(row), C.int(column), C.int( int32(shifttype)))
+	var cutrange_ptr unsafe.Pointer = nil
+	if cutrange != nil {
+	  cutrange_ptr =cutrange.ptr
+	}
+
+	CGoReturnPtr := C.Cells_InsertCutCells( instance.ptr, cutrange_ptr, C.int(row), C.int(column), C.int( int32(shifttype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15392,7 +15761,12 @@ func (instance *Cells) InsertCutCells(cutrange *Range, row int32, column int32, 
 //   void  
 func (instance *Cells) InsertRange_CellArea_Int_ShiftType_Bool(area *CellArea, shiftnumber int32, shifttype ShiftType, updatereference bool)  error {
 	
-	CGoReturnPtr := C.Cells_InsertRange_CellArea_Integer_ShiftType_Boolean( instance.ptr, area.ptr, C.int(shiftnumber), C.int( int32(shifttype)), C.bool(updatereference))
+	var area_ptr unsafe.Pointer = nil
+	if area != nil {
+	  area_ptr =area.ptr
+	}
+
+	CGoReturnPtr := C.Cells_InsertRange_CellArea_Integer_ShiftType_Boolean( instance.ptr, area_ptr, C.int(shiftnumber), C.int( int32(shifttype)), C.bool(updatereference))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15408,7 +15782,12 @@ func (instance *Cells) InsertRange_CellArea_Int_ShiftType_Bool(area *CellArea, s
 //   void  
 func (instance *Cells) InsertRange_CellArea_ShiftType(area *CellArea, shifttype ShiftType)  error {
 	
-	CGoReturnPtr := C.Cells_InsertRange_CellArea_ShiftType( instance.ptr, area.ptr, C.int( int32(shifttype)))
+	var area_ptr unsafe.Pointer = nil
+	if area != nil {
+	  area_ptr =area.ptr
+	}
+
+	CGoReturnPtr := C.Cells_InsertRange_CellArea_ShiftType( instance.ptr, area_ptr, C.int( int32(shifttype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15425,7 +15804,12 @@ func (instance *Cells) InsertRange_CellArea_ShiftType(area *CellArea, shifttype 
 //   void  
 func (instance *Cells) InsertRange_CellArea_Int_ShiftType(area *CellArea, shiftnumber int32, shifttype ShiftType)  error {
 	
-	CGoReturnPtr := C.Cells_InsertRange_CellArea_Integer_ShiftType( instance.ptr, area.ptr, C.int(shiftnumber), C.int( int32(shifttype)))
+	var area_ptr unsafe.Pointer = nil
+	if area != nil {
+	  area_ptr =area.ptr
+	}
+
+	CGoReturnPtr := C.Cells_InsertRange_CellArea_Integer_ShiftType( instance.ptr, area_ptr, C.int(shiftnumber), C.int( int32(shifttype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15490,7 +15874,12 @@ func (instance *Cells) ExportArray(firstrow int32, firstcolumn int32, totalrows 
 //   SubtotalSetting  
 func (instance *Cells) RetrieveSubtotalSetting(ca *CellArea)  (*SubtotalSetting,  error)  {
 	
-	CGoReturnPtr := C.Cells_RetrieveSubtotalSetting( instance.ptr, ca.ptr)
+	var ca_ptr unsafe.Pointer = nil
+	if ca != nil {
+	  ca_ptr =ca.ptr
+	}
+
+	CGoReturnPtr := C.Cells_RetrieveSubtotalSetting( instance.ptr, ca_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -15511,7 +15900,12 @@ func (instance *Cells) RetrieveSubtotalSetting(ca *CellArea)  (*SubtotalSetting,
 //   void  
 func (instance *Cells) Subtotal_CellArea_Int_ConsolidationFunction_int32Array(ca *CellArea, groupby int32, function ConsolidationFunction, totallist []int32)  error {
 	
-	CGoReturnPtr := C.Cells_Subtotal_CellArea_Integer_ConsolidationFunction_int32_tArray( instance.ptr, ca.ptr, C.int(groupby), C.int( int32(function)), unsafe.Pointer(&totallist[0]), C.int( len(totallist)))
+	var ca_ptr unsafe.Pointer = nil
+	if ca != nil {
+	  ca_ptr =ca.ptr
+	}
+
+	CGoReturnPtr := C.Cells_Subtotal_CellArea_Integer_ConsolidationFunction_int32_tArray( instance.ptr, ca_ptr, C.int(groupby), C.int( int32(function)), unsafe.Pointer(&totallist[0]), C.int( len(totallist)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15532,7 +15926,12 @@ func (instance *Cells) Subtotal_CellArea_Int_ConsolidationFunction_int32Array(ca
 //   void  
 func (instance *Cells) Subtotal_CellArea_Int_ConsolidationFunction_int32Array_Bool_Bool_Bool(ca *CellArea, groupby int32, function ConsolidationFunction, totallist []int32, replace bool, pagebreaks bool, summarybelowdata bool)  error {
 	
-	CGoReturnPtr := C.Cells_Subtotal_CellArea_Integer_ConsolidationFunction_int32_tArray_Boolean_Boolean_Boolean( instance.ptr, ca.ptr, C.int(groupby), C.int( int32(function)), unsafe.Pointer(&totallist[0]), C.int( len(totallist)), C.bool(replace), C.bool(pagebreaks), C.bool(summarybelowdata))
+	var ca_ptr unsafe.Pointer = nil
+	if ca != nil {
+	  ca_ptr =ca.ptr
+	}
+
+	CGoReturnPtr := C.Cells_Subtotal_CellArea_Integer_ConsolidationFunction_int32_tArray_Boolean_Boolean_Boolean( instance.ptr, ca_ptr, C.int(groupby), C.int( int32(function)), unsafe.Pointer(&totallist[0]), C.int( len(totallist)), C.bool(replace), C.bool(pagebreaks), C.bool(summarybelowdata))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15838,7 +16237,12 @@ func (instance *CellsColor) GetThemeColor()  (*ThemeColor,  error)  {
 //   void  
 func (instance *CellsColor) SetThemeColor(value *ThemeColor)  error {
 	
-	CGoReturnPtr := C.CellsColor_SetThemeColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.CellsColor_SetThemeColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16125,7 +16529,12 @@ func CellsHelper_SetDPI(value float64)  error {
 //   float64  
 func CellsHelper_GetTextWidth(text string, font *Font, scaling float64)  (float64,  error)  {
 	
-	CGoReturnPtr := C.CellsHelper_GetTextWidth(C.CString(text), font.ptr, C.double(scaling))
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+
+	CGoReturnPtr := C.CellsHelper_GetTextWidth(C.CString(text), font_ptr, C.double(scaling))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -16383,7 +16792,12 @@ func CellsHelper_SetLibraryPath(value string)  error {
 //   []Color  
 func CellsHelper_GetUsedColors(workbook *Workbook)  ([]Color,  error)  {
 	
-	CGoReturnPtr := C.CellsHelper_GetUsedColors(workbook.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+
+	CGoReturnPtr := C.CellsHelper_GetUsedColors(workbook_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -16607,7 +17021,12 @@ func (instance *CellValue) GetValue()  (*Object,  error)  {
 //   void  
 func (instance *CellValue) SetValue(value *Object)  error {
 	
-	CGoReturnPtr := C.CellValue_SetValue( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.CellValue_SetValue( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16895,7 +17314,12 @@ type ColorFilter struct {
 //   obj - Object 
 func NewColorFilter(obj *Object) ( *ColorFilter, error) {
 	colorfilter := &ColorFilter{}
-	CGoReturnPtr := C.New_ColorFilter(obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.New_ColorFilter(obj_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		colorfilter.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(colorfilter, DeleteColorFilter)
@@ -16973,7 +17397,12 @@ func (instance *ColorFilter) SetFilterByFillColor(value bool)  error {
 //   Color  
 func (instance *ColorFilter) GetColor(sheets *WorksheetCollection)  (*Color,  error)  {
 	
-	CGoReturnPtr := C.ColorFilter_GetColor( instance.ptr, sheets.ptr)
+	var sheets_ptr unsafe.Pointer = nil
+	if sheets != nil {
+	  sheets_ptr =sheets.ptr
+	}
+
+	CGoReturnPtr := C.ColorFilter_GetColor( instance.ptr, sheets_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -17339,7 +17768,16 @@ func (instance *Column) GetHasCustomStyle()  (bool,  error)  {
 //   void  
 func (instance *Column) ApplyStyle(style *Style, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.Column_ApplyStyle( instance.ptr, style.ptr, flag.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.Column_ApplyStyle( instance.ptr, style_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17370,7 +17808,12 @@ func (instance *Column) GetStyle()  (*Style,  error)  {
 //   void  
 func (instance *Column) SetStyle(style *Style)  error {
 	
-	CGoReturnPtr := C.Column_SetStyle( instance.ptr, style.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+
+	CGoReturnPtr := C.Column_SetStyle( instance.ptr, style_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17710,7 +18153,16 @@ func (instance *Comment) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *Comment) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.Comment_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.Comment_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -18130,7 +18582,12 @@ func (instance *CommentCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *CommentCollection) AddThreadedComment_Int_Int_String_ThreadedCommentAuthor(row int32, column int32, text string, author *ThreadedCommentAuthor)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CommentCollection_AddThreadedComment_Integer_Integer_String_ThreadedCommentAuthor( instance.ptr, C.int(row), C.int(column), C.CString(text), author.ptr)
+	var author_ptr unsafe.Pointer = nil
+	if author != nil {
+	  author_ptr =author.ptr
+	}
+
+	CGoReturnPtr := C.CommentCollection_AddThreadedComment_Integer_Integer_String_ThreadedCommentAuthor( instance.ptr, C.int(row), C.int(column), C.CString(text), author_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -18148,7 +18605,12 @@ func (instance *CommentCollection) AddThreadedComment_Int_Int_String_ThreadedCom
 //   int32  
 func (instance *CommentCollection) AddThreadedComment_String_String_ThreadedCommentAuthor(cellname string, text string, author *ThreadedCommentAuthor)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CommentCollection_AddThreadedComment_String_String_ThreadedCommentAuthor( instance.ptr, C.CString(cellname), C.CString(text), author.ptr)
+	var author_ptr unsafe.Pointer = nil
+	if author != nil {
+	  author_ptr =author.ptr
+	}
+
+	CGoReturnPtr := C.CommentCollection_AddThreadedComment_String_String_ThreadedCommentAuthor( instance.ptr, C.CString(cellname), C.CString(text), author_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -18395,7 +18857,12 @@ func (instance *ConditionalFormattingCollection) RemoveArea(startrow int32, star
 //   void  
 func (instance *ConditionalFormattingCollection) Copy(cfs *ConditionalFormattingCollection)  error {
 	
-	CGoReturnPtr := C.ConditionalFormattingCollection_Copy( instance.ptr, cfs.ptr)
+	var cfs_ptr unsafe.Pointer = nil
+	if cfs != nil {
+	  cfs_ptr =cfs.ptr
+	}
+
+	CGoReturnPtr := C.ConditionalFormattingCollection_Copy( instance.ptr, cfs_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -18486,7 +18953,12 @@ func (instance *ConditionalFormattingIcon) IsNull()  (bool,  error)  {
 //   []byte  
 func (instance *ConditionalFormattingIcon) GetImageData_Cell(cell *Cell)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ConditionalFormattingIcon_GetImageData_Cell( instance.ptr, cell.ptr)
+	var cell_ptr unsafe.Pointer = nil
+	if cell != nil {
+	  cell_ptr =cell.ptr
+	}
+
+	CGoReturnPtr := C.ConditionalFormattingIcon_GetImageData_Cell( instance.ptr, cell_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -18663,7 +19135,12 @@ func (instance *ConditionalFormattingIconCollection) Add_IconSetType_Int(type_ I
 //   int32  
 func (instance *ConditionalFormattingIconCollection) Add_ConditionalFormattingIcon(cficon *ConditionalFormattingIcon)  (int32,  error)  {
 	
-	CGoReturnPtr := C.ConditionalFormattingIconCollection_Add_ConditionalFormattingIcon( instance.ptr, cficon.ptr)
+	var cficon_ptr unsafe.Pointer = nil
+	if cficon != nil {
+	  cficon_ptr =cficon.ptr
+	}
+
+	CGoReturnPtr := C.ConditionalFormattingIconCollection_Add_ConditionalFormattingIcon( instance.ptr, cficon_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -18851,7 +19328,12 @@ func (instance *ConditionalFormattingValue) GetValue()  (*Object,  error)  {
 //   void  
 func (instance *ConditionalFormattingValue) SetValue(value *Object)  error {
 	
-	CGoReturnPtr := C.ConditionalFormattingValue_SetValue( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ConditionalFormattingValue_SetValue( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19358,7 +19840,12 @@ func (instance *CustomFilter) GetCriteria()  (*Object,  error)  {
 //   void  
 func (instance *CustomFilter) SetCriteria_Object(value *Object)  error {
 	
-	CGoReturnPtr := C.CustomFilter_SetCriteria_Object( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.CustomFilter_SetCriteria_Object( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19374,7 +19861,12 @@ func (instance *CustomFilter) SetCriteria_Object(value *Object)  error {
 //   void  
 func (instance *CustomFilter) SetCriteria_FilterOperatorType_Object(filteroperator FilterOperatorType, criteria *Object)  error {
 	
-	CGoReturnPtr := C.CustomFilter_SetCriteria_FilterOperatorType_Object( instance.ptr, C.int( int32(filteroperator)), criteria.ptr)
+	var criteria_ptr unsafe.Pointer = nil
+	if criteria != nil {
+	  criteria_ptr =criteria.ptr
+	}
+
+	CGoReturnPtr := C.CustomFilter_SetCriteria_FilterOperatorType_Object( instance.ptr, C.int( int32(filteroperator)), criteria_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19417,7 +19909,12 @@ func NewCustomFilterCollection() ( *CustomFilterCollection, error) {
 //   obj - Object 
 func NewCustomFilterCollection_Object(obj *Object) ( *CustomFilterCollection, error) {
 	customfiltercollection := &CustomFilterCollection{}
-	CGoReturnPtr := C.New_CustomFilterCollection_Object(obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.New_CustomFilterCollection_Object(obj_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		customfiltercollection.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(customfiltercollection, DeleteCustomFilterCollection)
@@ -19939,7 +20436,16 @@ func (instance *DataBar) SetShowValue(value bool)  error {
 //   []byte  
 func (instance *DataBar) ToImage(cell *Cell, imgopts *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.DataBar_ToImage( instance.ptr, cell.ptr, imgopts.ptr)
+	var cell_ptr unsafe.Pointer = nil
+	if cell != nil {
+	  cell_ptr =cell.ptr
+	}
+	var imgopts_ptr unsafe.Pointer = nil
+	if imgopts != nil {
+	  imgopts_ptr =imgopts.ptr
+	}
+
+	CGoReturnPtr := C.DataBar_ToImage( instance.ptr, cell_ptr, imgopts_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -20192,7 +20698,12 @@ func (instance *DataSorter) AddColorKey(key int32, type_ SortOnType, order SortO
 //   void  
 func (instance *DataSorter) AddKey_Int_SortOnType_SortOrder_Object(key int32, type_ SortOnType, order SortOrder, customlist *Object)  error {
 	
-	CGoReturnPtr := C.DataSorter_AddKey_Integer_SortOnType_SortOrder_Object( instance.ptr, C.int(key), C.int( int32(type_)), C.int( int32(order)), customlist.ptr)
+	var customlist_ptr unsafe.Pointer = nil
+	if customlist != nil {
+	  customlist_ptr =customlist.ptr
+	}
+
+	CGoReturnPtr := C.DataSorter_AddKey_Integer_SortOnType_SortOrder_Object( instance.ptr, C.int(key), C.int( int32(type_)), C.int( int32(order)), customlist_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -20509,7 +21020,12 @@ func (instance *DataSorter) SetSortAsNumber(value bool)  error {
 //   []int32_t  
 func (instance *DataSorter) Sort_Cells_Int_Int_Int_Int(cells *Cells, startrow int32, startcolumn int32, endrow int32, endcolumn int32)  ([]int32,  error)  {
 	
-	CGoReturnPtr := C.DataSorter_Sort_Cells_Integer_Integer_Integer_Integer( instance.ptr, cells.ptr, C.int(startrow), C.int(startcolumn), C.int(endrow), C.int(endcolumn))
+	var cells_ptr unsafe.Pointer = nil
+	if cells != nil {
+	  cells_ptr =cells.ptr
+	}
+
+	CGoReturnPtr := C.DataSorter_Sort_Cells_Integer_Integer_Integer_Integer( instance.ptr, cells_ptr, C.int(startrow), C.int(startcolumn), C.int(endrow), C.int(endcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -20533,7 +21049,16 @@ func (instance *DataSorter) Sort_Cells_Int_Int_Int_Int(cells *Cells, startrow in
 //   []int32_t  
 func (instance *DataSorter) Sort_Cells_CellArea(cells *Cells, area *CellArea)  ([]int32,  error)  {
 	
-	CGoReturnPtr := C.DataSorter_Sort_Cells_CellArea( instance.ptr, cells.ptr, area.ptr)
+	var cells_ptr unsafe.Pointer = nil
+	if cells != nil {
+	  cells_ptr =cells.ptr
+	}
+	var area_ptr unsafe.Pointer = nil
+	if area != nil {
+	  area_ptr =area.ptr
+	}
+
+	CGoReturnPtr := C.DataSorter_Sort_Cells_CellArea( instance.ptr, cells_ptr, area_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -20813,7 +21338,12 @@ func NewDateTimeGroupItem_DateTimeGroupingType_Int_Int_Int_Int_Int_Int(type_ Dat
 //   obj - Object 
 func NewDateTimeGroupItem_Object(obj *Object) ( *DateTimeGroupItem, error) {
 	datetimegroupitem := &DateTimeGroupItem{}
-	CGoReturnPtr := C.New_DateTimeGroupItem_Object(obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.New_DateTimeGroupItem_Object(obj_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		datetimegroupitem.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(datetimegroupitem, DeleteDateTimeGroupItem)
@@ -21294,7 +21824,12 @@ func NewDeleteBlankOptions() ( *DeleteBlankOptions, error) {
 //   src - DeleteOptions 
 func NewDeleteBlankOptions_DeleteOptions(src *DeleteOptions) ( *DeleteBlankOptions, error) {
 	deleteblankoptions := &DeleteBlankOptions{}
-	CGoReturnPtr := C.New_DeleteBlankOptions_DeleteOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_DeleteBlankOptions_DeleteOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		deleteblankoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(deleteblankoptions, DeleteDeleteBlankOptions)
@@ -21557,7 +22092,12 @@ func (instance *DeleteBlankOptions) GetFormulaChangeMonitor()  (*AbstractFormula
 //   void  
 func (instance *DeleteBlankOptions) SetFormulaChangeMonitor(value *AbstractFormulaChangeMonitor)  error {
 	
-	CGoReturnPtr := C.DeleteBlankOptions_SetFormulaChangeMonitor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DeleteBlankOptions_SetFormulaChangeMonitor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -21667,7 +22207,12 @@ func (instance *DeleteOptions) GetFormulaChangeMonitor()  (*AbstractFormulaChang
 //   void  
 func (instance *DeleteOptions) SetFormulaChangeMonitor(value *AbstractFormulaChangeMonitor)  error {
 	
-	CGoReturnPtr := C.DeleteOptions_SetFormulaChangeMonitor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DeleteOptions_SetFormulaChangeMonitor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -21710,7 +22255,12 @@ func NewDifSaveOptions() ( *DifSaveOptions, error) {
 //   src - SaveOptions 
 func NewDifSaveOptions_SaveOptions(src *SaveOptions) ( *DifSaveOptions, error) {
 	difsaveoptions := &DifSaveOptions{}
-	CGoReturnPtr := C.New_DifSaveOptions_SaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_DifSaveOptions_SaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		difsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(difsaveoptions, DeleteDifSaveOptions)
@@ -21782,7 +22332,7 @@ func (instance *DifSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *DifSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -21796,7 +22346,7 @@ func (instance *DifSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -22136,7 +22686,12 @@ func NewDocxSaveOptions_Bool(saveasimage bool) ( *DocxSaveOptions, error) {
 //   src - PaginatedSaveOptions 
 func NewDocxSaveOptions_PaginatedSaveOptions(src *PaginatedSaveOptions) ( *DocxSaveOptions, error) {
 	docxsaveoptions := &DocxSaveOptions{}
-	CGoReturnPtr := C.New_DocxSaveOptions_PaginatedSaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_DocxSaveOptions_PaginatedSaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		docxsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(docxsaveoptions, DeleteDocxSaveOptions)
@@ -22162,12 +22717,12 @@ func (instance *DocxSaveOptions) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Save all drawing objecgts as editable shapes in word file.So you can edit them in Word.
+// Save all drawing objects as editable shapes in the word file, so you can edit them in Word.
 // Returns:
 //   bool  
-func (instance *DocxSaveOptions) GetSaveAsEditableShaps()  (bool,  error)  {
+func (instance *DocxSaveOptions) GetSaveAsEditableShapes()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DocxSaveOptions_GetSaveAsEditableShaps( instance.ptr)
+	CGoReturnPtr := C.DocxSaveOptions_GetSaveAsEditableShapes( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -22176,14 +22731,14 @@ func (instance *DocxSaveOptions) GetSaveAsEditableShaps()  (bool,  error)  {
 
 	return result, nil 
 }
-// Save all drawing objecgts as editable shapes in word file.So you can edit them in Word.
+// Save all drawing objects as editable shapes in the word file, so you can edit them in Word.
 // Parameters:
 //   value - bool 
 // Returns:
 //   void  
-func (instance *DocxSaveOptions) SetSaveAsEditableShaps(value bool)  error {
+func (instance *DocxSaveOptions) SetSaveAsEditableShapes(value bool)  error {
 	
-	CGoReturnPtr := C.DocxSaveOptions_SetSaveAsEditableShaps( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.DocxSaveOptions_SetSaveAsEditableShapes( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -22565,7 +23120,7 @@ func (instance *DocxSaveOptions) SetGridlineType(value GridlineType)  error {
 
 	return nil 
 }
-// Gets or sets gridline colr.
+// Gets or sets gridline color.
 // Returns:
 //   Color  
 func (instance *DocxSaveOptions) GetGridlineColor()  (*Color,  error)  {
@@ -22580,7 +23135,7 @@ func (instance *DocxSaveOptions) GetGridlineColor()  (*Color,  error)  {
 
 	return result, nil 
 }
-// Gets or sets gridline colr.
+// Gets or sets gridline color.
 // Parameters:
 //   value - Color 
 // Returns:
@@ -22682,7 +23237,12 @@ func (instance *DocxSaveOptions) GetSheetSet()  (*SheetSet,  error)  {
 //   void  
 func (instance *DocxSaveOptions) SetSheetSet(value *SheetSet)  error {
 	
-	CGoReturnPtr := C.DocxSaveOptions_SetSheetSet( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DocxSaveOptions_SetSheetSet( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -22713,7 +23273,12 @@ func (instance *DocxSaveOptions) GetDrawObjectEventHandler()  (*DrawObjectEventH
 //   void  
 func (instance *DocxSaveOptions) SetDrawObjectEventHandler(value *DrawObjectEventHandler)  error {
 	
-	CGoReturnPtr := C.DocxSaveOptions_SetDrawObjectEventHandler( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DocxSaveOptions_SetDrawObjectEventHandler( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -22746,6 +23311,42 @@ func (instance *DocxSaveOptions) GetEmfRenderSetting()  (EmfRenderSetting,  erro
 func (instance *DocxSaveOptions) SetEmfRenderSetting(value EmfRenderSetting)  error {
 	
 	CGoReturnPtr := C.DocxSaveOptions_SetEmfRenderSetting( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets custom settings during rendering.
+// Returns:
+//   CustomRenderSettings  
+func (instance *DocxSaveOptions) GetCustomRenderSettings()  (*CustomRenderSettings,  error)  {
+	
+	CGoReturnPtr := C.DocxSaveOptions_GetCustomRenderSettings( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CustomRenderSettings{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteCustomRenderSettings) 
+
+	return result, nil 
+}
+// Gets or sets custom settings during rendering.
+// Parameters:
+//   value - CustomRenderSettings 
+// Returns:
+//   void  
+func (instance *DocxSaveOptions) SetCustomRenderSettings(value *CustomRenderSettings)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DocxSaveOptions_SetCustomRenderSettings( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -22799,7 +23400,7 @@ func (instance *DocxSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *DocxSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -22813,7 +23414,7 @@ func (instance *DocxSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -23190,7 +23791,12 @@ type DynamicFilter struct {
 //   obj - Object 
 func NewDynamicFilter(obj *Object) ( *DynamicFilter, error) {
 	dynamicfilter := &DynamicFilter{}
-	CGoReturnPtr := C.New_DynamicFilter(obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.New_DynamicFilter(obj_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		dynamicfilter.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(dynamicfilter, DeleteDynamicFilter)
@@ -23287,7 +23893,12 @@ func (instance *DynamicFilter) GetValue()  (*Object,  error)  {
 //   void  
 func (instance *DynamicFilter) SetValue(value *Object)  error {
 	
-	CGoReturnPtr := C.DynamicFilter_SetValue( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DynamicFilter_SetValue( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -23318,7 +23929,12 @@ func (instance *DynamicFilter) GetMaxValue()  (*Object,  error)  {
 //   void  
 func (instance *DynamicFilter) SetMaxValue(value *Object)  error {
 	
-	CGoReturnPtr := C.DynamicFilter_SetMaxValue( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DynamicFilter_SetMaxValue( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -23377,7 +23993,12 @@ func NewEbookLoadOptions_LoadFormat(loadformat LoadFormat) ( *EbookLoadOptions, 
 //   src - HtmlLoadOptions 
 func NewEbookLoadOptions_HtmlLoadOptions(src *HtmlLoadOptions) ( *EbookLoadOptions, error) {
 	ebookloadoptions := &EbookLoadOptions{}
-	CGoReturnPtr := C.New_EbookLoadOptions_HtmlLoadOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_EbookLoadOptions_HtmlLoadOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		ebookloadoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(ebookloadoptions, DeleteEbookLoadOptions)
@@ -23887,7 +24508,7 @@ func (instance *EbookLoadOptions) SetLanguageCode(value CountryCode)  error {
 
 	return nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Returns:
 //   int32  
 func (instance *EbookLoadOptions) GetRegion()  (CountryCode,  error)  {
@@ -23904,7 +24525,7 @@ func (instance *EbookLoadOptions) GetRegion()  (CountryCode,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -23958,7 +24579,12 @@ func (instance *EbookLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMoni
 //   void  
 func (instance *EbookLoadOptions) SetInterruptMonitor(value *AbstractInterruptMonitor)  error {
 	
-	CGoReturnPtr := C.EbookLoadOptions_SetInterruptMonitor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.EbookLoadOptions_SetInterruptMonitor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -24117,7 +24743,12 @@ func (instance *EbookLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 //   void  
 func (instance *EbookLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 	
-	CGoReturnPtr := C.EbookLoadOptions_SetLoadFilter( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.EbookLoadOptions_SetLoadFilter( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -24180,7 +24811,12 @@ func (instance *EbookLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  
 //   void  
 func (instance *EbookLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  error {
 	
-	CGoReturnPtr := C.EbookLoadOptions_SetAutoFitterOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.EbookLoadOptions_SetAutoFitterOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -24242,7 +24878,12 @@ func (instance *EbookLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  er
 //   void  
 func (instance *EbookLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  error {
 	
-	CGoReturnPtr := C.EbookLoadOptions_SetFontConfigs( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.EbookLoadOptions_SetFontConfigs( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -24411,7 +25052,12 @@ func (instance *ErrorCheckOption) GetCountOfRange()  (int32,  error)  {
 //   int32  
 func (instance *ErrorCheckOption) AddRange(ca *CellArea)  (int32,  error)  {
 	
-	CGoReturnPtr := C.ErrorCheckOption_AddRange( instance.ptr, ca.ptr)
+	var ca_ptr unsafe.Pointer = nil
+	if ca != nil {
+	  ca_ptr =ca.ptr
+	}
+
+	CGoReturnPtr := C.ErrorCheckOption_AddRange( instance.ptr, ca_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -24918,7 +25564,12 @@ func NewFileFontSource_String(filepath string) ( *FileFontSource, error) {
 //   src - FontSourceBase 
 func NewFileFontSource_FontSourceBase(src *FontSourceBase) ( *FileFontSource, error) {
 	filefontsource := &FileFontSource{}
-	CGoReturnPtr := C.New_FileFontSource_FontSourceBase(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_FileFontSource_FontSourceBase(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		filefontsource.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(filefontsource, DeleteFileFontSource)
@@ -25402,7 +26053,12 @@ func (instance *FilterColumn) GetFilter()  (*Object,  error)  {
 //   void  
 func (instance *FilterColumn) SetFilter(value *Object)  error {
 	
-	CGoReturnPtr := C.FilterColumn_SetFilter( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.FilterColumn_SetFilter( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -25694,7 +26350,12 @@ func (instance *FindOptions) GetRange()  (*CellArea,  error)  {
 //   void  
 func (instance *FindOptions) SetRange(ca *CellArea)  error {
 	
-	CGoReturnPtr := C.FindOptions_SetRange( instance.ptr, ca.ptr)
+	var ca_ptr unsafe.Pointer = nil
+	if ca != nil {
+	  ca_ptr =ca.ptr
+	}
+
+	CGoReturnPtr := C.FindOptions_SetRange( instance.ptr, ca_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -25891,7 +26552,12 @@ func (instance *FindOptions) GetStyle()  (*Style,  error)  {
 //   void  
 func (instance *FindOptions) SetStyle(value *Style)  error {
 	
-	CGoReturnPtr := C.FindOptions_SetStyle( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.FindOptions_SetStyle( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -25966,7 +26632,12 @@ func NewFolderFontSource_String_Bool(folderpath string, scansubfolders bool) ( *
 //   src - FontSourceBase 
 func NewFolderFontSource_FontSourceBase(src *FontSourceBase) ( *FolderFontSource, error) {
 	folderfontsource := &FolderFontSource{}
-	CGoReturnPtr := C.New_FolderFontSource_FontSourceBase(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_FolderFontSource_FontSourceBase(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		folderfontsource.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(folderfontsource, DeleteFolderFontSource)
@@ -26453,7 +27124,12 @@ func (instance *Font) GetThemeColor()  (*ThemeColor,  error)  {
 //   void  
 func (instance *Font) SetThemeColor(value *ThemeColor)  error {
 	
-	CGoReturnPtr := C.Font_SetThemeColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Font_SetThemeColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -26527,7 +27203,12 @@ func (instance *Font) SetArgbColor(value int32)  error {
 //   bool  
 func (instance *Font) Equals(font *Font)  (bool,  error)  {
 	
-	CGoReturnPtr := C.Font_Equals( instance.ptr, font.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+
+	CGoReturnPtr := C.Font_Equals( instance.ptr, font_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -26997,7 +27678,12 @@ type FontSetting struct {
 //   sheets - WorksheetCollection 
 func NewFontSetting(startindex int32, length int32, sheets *WorksheetCollection) ( *FontSetting, error) {
 	fontsetting := &FontSetting{}
-	CGoReturnPtr := C.New_FontSetting(C.int(startindex), C.int(length), sheets.ptr)
+	var sheets_ptr unsafe.Pointer = nil
+	if sheets != nil {
+	  sheets_ptr =sheets.ptr
+	}
+
+	CGoReturnPtr := C.New_FontSetting(C.int(startindex), C.int(length), sheets_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		fontsetting.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(fontsetting, DeleteFontSetting)
@@ -27529,7 +28215,12 @@ func (instance *FormatCondition) GetStyle()  (*Style,  error)  {
 //   void  
 func (instance *FormatCondition) SetStyle(value *Style)  error {
 	
-	CGoReturnPtr := C.FormatCondition_SetStyle( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.FormatCondition_SetStyle( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -27775,7 +28466,12 @@ func (instance *FormatConditionCollection) IsNull()  (bool,  error)  {
 //   []int32_t  
 func (instance *FormatConditionCollection) Add(cellarea *CellArea, type_ FormatConditionType, operatortype OperatorType, formula1 string, formula2 string)  ([]int32,  error)  {
 	
-	CGoReturnPtr := C.FormatConditionCollection_Add( instance.ptr, cellarea.ptr, C.int( int32(type_)), C.int( int32(operatortype)), C.CString(formula1), C.CString(formula2))
+	var cellarea_ptr unsafe.Pointer = nil
+	if cellarea != nil {
+	  cellarea_ptr =cellarea.ptr
+	}
+
+	CGoReturnPtr := C.FormatConditionCollection_Add( instance.ptr, cellarea_ptr, C.int( int32(type_)), C.int( int32(operatortype)), C.CString(formula1), C.CString(formula2))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -27798,7 +28494,12 @@ func (instance *FormatConditionCollection) Add(cellarea *CellArea, type_ FormatC
 //   int32  
 func (instance *FormatConditionCollection) AddArea(cellarea *CellArea)  (int32,  error)  {
 	
-	CGoReturnPtr := C.FormatConditionCollection_AddArea( instance.ptr, cellarea.ptr)
+	var cellarea_ptr unsafe.Pointer = nil
+	if cellarea != nil {
+	  cellarea_ptr =cellarea.ptr
+	}
+
+	CGoReturnPtr := C.FormatConditionCollection_AddArea( instance.ptr, cellarea_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -28145,7 +28846,12 @@ func (instance *FormulaParseOptions) GetCustomFunctionDefinition()  (*CustomFunc
 //   void  
 func (instance *FormulaParseOptions) SetCustomFunctionDefinition(value *CustomFunctionDefinition)  error {
 	
-	CGoReturnPtr := C.FormulaParseOptions_SetCustomFunctionDefinition( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.FormulaParseOptions_SetCustomFunctionDefinition( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -28578,7 +29284,12 @@ func (instance *GlobalizationSettings) GetChartSettings()  (*ChartGlobalizationS
 //   void  
 func (instance *GlobalizationSettings) SetChartSettings(value *ChartGlobalizationSettings)  error {
 	
-	CGoReturnPtr := C.GlobalizationSettings_SetChartSettings( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.GlobalizationSettings_SetChartSettings( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -28609,7 +29320,12 @@ func (instance *GlobalizationSettings) GetPivotSettings()  (*PivotGlobalizationS
 //   void  
 func (instance *GlobalizationSettings) SetPivotSettings(value *PivotGlobalizationSettings)  error {
 	
-	CGoReturnPtr := C.GlobalizationSettings_SetPivotSettings( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.GlobalizationSettings_SetPivotSettings( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -29291,7 +30007,12 @@ func NewHtmlLoadOptions_LoadFormat(loadformat LoadFormat) ( *HtmlLoadOptions, er
 //   src - AbstractTextLoadOptions 
 func NewHtmlLoadOptions_AbstractTextLoadOptions(src *AbstractTextLoadOptions) ( *HtmlLoadOptions, error) {
 	htmlloadoptions := &HtmlLoadOptions{}
-	CGoReturnPtr := C.New_HtmlLoadOptions_AbstractTextLoadOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_HtmlLoadOptions_AbstractTextLoadOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		htmlloadoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(htmlloadoptions, DeleteHtmlLoadOptions)
@@ -29801,7 +30522,7 @@ func (instance *HtmlLoadOptions) SetLanguageCode(value CountryCode)  error {
 
 	return nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Returns:
 //   int32  
 func (instance *HtmlLoadOptions) GetRegion()  (CountryCode,  error)  {
@@ -29818,7 +30539,7 @@ func (instance *HtmlLoadOptions) GetRegion()  (CountryCode,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -29872,7 +30593,12 @@ func (instance *HtmlLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonit
 //   void  
 func (instance *HtmlLoadOptions) SetInterruptMonitor(value *AbstractInterruptMonitor)  error {
 	
-	CGoReturnPtr := C.HtmlLoadOptions_SetInterruptMonitor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.HtmlLoadOptions_SetInterruptMonitor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -30031,7 +30757,12 @@ func (instance *HtmlLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 //   void  
 func (instance *HtmlLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 	
-	CGoReturnPtr := C.HtmlLoadOptions_SetLoadFilter( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.HtmlLoadOptions_SetLoadFilter( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -30094,7 +30825,12 @@ func (instance *HtmlLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  e
 //   void  
 func (instance *HtmlLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  error {
 	
-	CGoReturnPtr := C.HtmlLoadOptions_SetAutoFitterOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.HtmlLoadOptions_SetAutoFitterOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -30156,7 +30892,12 @@ func (instance *HtmlLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  err
 //   void  
 func (instance *HtmlLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  error {
 	
-	CGoReturnPtr := C.HtmlLoadOptions_SetFontConfigs( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.HtmlLoadOptions_SetFontConfigs( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -30287,7 +31028,12 @@ func NewHtmlSaveOptions_SaveFormat(saveformat SaveFormat) ( *HtmlSaveOptions, er
 //   src - SaveOptions 
 func NewHtmlSaveOptions_SaveOptions(src *SaveOptions) ( *HtmlSaveOptions, error) {
 	htmlsaveoptions := &HtmlSaveOptions{}
-	CGoReturnPtr := C.New_HtmlSaveOptions_SaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_HtmlSaveOptions_SaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		htmlsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(htmlsaveoptions, DeleteHtmlSaveOptions)
@@ -30864,7 +31610,12 @@ func (instance *HtmlSaveOptions) GetExportArea()  (*CellArea,  error)  {
 //   void  
 func (instance *HtmlSaveOptions) SetExportArea(value *CellArea)  error {
 	
-	CGoReturnPtr := C.HtmlSaveOptions_SetExportArea( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.HtmlSaveOptions_SetExportArea( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32331,7 +33082,12 @@ func (instance *HtmlSaveOptions) GetSheetSet()  (*SheetSet,  error)  {
 //   void  
 func (instance *HtmlSaveOptions) SetSheetSet(value *SheetSet)  error {
 	
-	CGoReturnPtr := C.HtmlSaveOptions_SetSheetSet( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.HtmlSaveOptions_SetSheetSet( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32385,7 +33141,7 @@ func (instance *HtmlSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *HtmlSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -32399,7 +33155,7 @@ func (instance *HtmlSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -32981,7 +33737,12 @@ func (instance *HtmlTableLoadOptionCollection) Get(index int32)  (*HtmlTableLoad
 //   int32  
 func (instance *HtmlTableLoadOptionCollection) Add_HtmlTableLoadOption(item *HtmlTableLoadOption)  (int32,  error)  {
 	
-	CGoReturnPtr := C.HtmlTableLoadOptionCollection_Add_HtmlTableLoadOption( instance.ptr, item.ptr)
+	var item_ptr unsafe.Pointer = nil
+	if item != nil {
+	  item_ptr =item.ptr
+	}
+
+	CGoReturnPtr := C.HtmlTableLoadOptionCollection_Add_HtmlTableLoadOption( instance.ptr, item_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -33439,7 +34200,12 @@ type IconFilter struct {
 //   obj - Object 
 func NewIconFilter(obj *Object) ( *IconFilter, error) {
 	iconfilter := &IconFilter{}
-	CGoReturnPtr := C.New_IconFilter(obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.New_IconFilter(obj_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		iconfilter.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(iconfilter, DeleteIconFilter)
@@ -33774,7 +34540,12 @@ func NewImageSaveOptions_SaveFormat(saveformat SaveFormat) ( *ImageSaveOptions, 
 //   src - SaveOptions 
 func NewImageSaveOptions_SaveOptions(src *SaveOptions) ( *ImageSaveOptions, error) {
 	imagesaveoptions := &ImageSaveOptions{}
-	CGoReturnPtr := C.New_ImageSaveOptions_SaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_ImageSaveOptions_SaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		imagesaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(imagesaveoptions, DeleteImageSaveOptions)
@@ -33862,7 +34633,7 @@ func (instance *ImageSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *ImageSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -33876,7 +34647,7 @@ func (instance *ImageSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -34982,7 +35753,12 @@ func (instance *InsertOptions) GetFormulaChangeMonitor()  (*AbstractFormulaChang
 //   void  
 func (instance *InsertOptions) SetFormulaChangeMonitor(value *AbstractFormulaChangeMonitor)  error {
 	
-	CGoReturnPtr := C.InsertOptions_SetFormulaChangeMonitor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.InsertOptions_SetFormulaChangeMonitor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35097,7 +35873,12 @@ func NewJsonLoadOptions() ( *JsonLoadOptions, error) {
 //   src - LoadOptions 
 func NewJsonLoadOptions_LoadOptions(src *LoadOptions) ( *JsonLoadOptions, error) {
 	jsonloadoptions := &JsonLoadOptions{}
-	CGoReturnPtr := C.New_JsonLoadOptions_LoadOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_JsonLoadOptions_LoadOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		jsonloadoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(jsonloadoptions, DeleteJsonLoadOptions)
@@ -35175,7 +35956,12 @@ func (instance *JsonLoadOptions) GetLayoutOptions()  (*JsonLayoutOptions,  error
 //   void  
 func (instance *JsonLoadOptions) SetLayoutOptions(value *JsonLayoutOptions)  error {
 	
-	CGoReturnPtr := C.JsonLoadOptions_SetLayoutOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.JsonLoadOptions_SetLayoutOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35394,7 +36180,7 @@ func (instance *JsonLoadOptions) SetLanguageCode(value CountryCode)  error {
 
 	return nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Returns:
 //   int32  
 func (instance *JsonLoadOptions) GetRegion()  (CountryCode,  error)  {
@@ -35411,7 +36197,7 @@ func (instance *JsonLoadOptions) GetRegion()  (CountryCode,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -35465,7 +36251,12 @@ func (instance *JsonLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonit
 //   void  
 func (instance *JsonLoadOptions) SetInterruptMonitor(value *AbstractInterruptMonitor)  error {
 	
-	CGoReturnPtr := C.JsonLoadOptions_SetInterruptMonitor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.JsonLoadOptions_SetInterruptMonitor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35624,7 +36415,12 @@ func (instance *JsonLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 //   void  
 func (instance *JsonLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 	
-	CGoReturnPtr := C.JsonLoadOptions_SetLoadFilter( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.JsonLoadOptions_SetLoadFilter( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35687,7 +36483,12 @@ func (instance *JsonLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  e
 //   void  
 func (instance *JsonLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  error {
 	
-	CGoReturnPtr := C.JsonLoadOptions_SetAutoFitterOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.JsonLoadOptions_SetAutoFitterOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35749,7 +36550,12 @@ func (instance *JsonLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  err
 //   void  
 func (instance *JsonLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  error {
 	
-	CGoReturnPtr := C.JsonLoadOptions_SetFontConfigs( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.JsonLoadOptions_SetFontConfigs( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35859,7 +36665,12 @@ func NewJsonSaveOptions() ( *JsonSaveOptions, error) {
 //   src - SaveOptions 
 func NewJsonSaveOptions_SaveOptions(src *SaveOptions) ( *JsonSaveOptions, error) {
 	jsonsaveoptions := &JsonSaveOptions{}
-	CGoReturnPtr := C.New_JsonSaveOptions_SaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_JsonSaveOptions_SaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		jsonsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(jsonsaveoptions, DeleteJsonSaveOptions)
@@ -35884,6 +36695,35 @@ func (instance *JsonSaveOptions) IsNull()  (bool,  error)  {
 	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
+}
+// Exporting style pool when converting to json struct.
+// Returns:
+//   bool  
+func (instance *JsonSaveOptions) GetExportStylePool()  (bool,  error)  {
+	
+	CGoReturnPtr := C.JsonSaveOptions_GetExportStylePool( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Exporting style pool when converting to json struct.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *JsonSaveOptions) SetExportStylePool(value bool)  error {
+	
+	CGoReturnPtr := C.JsonSaveOptions_SetExportStylePool( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
 }
 // Represents the type of exporting hyperlink to json.
 // Returns:
@@ -36048,7 +36888,12 @@ func (instance *JsonSaveOptions) GetExportArea()  (*CellArea,  error)  {
 //   void  
 func (instance *JsonSaveOptions) SetExportArea(value *CellArea)  error {
 	
-	CGoReturnPtr := C.JsonSaveOptions_SetExportArea( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.JsonSaveOptions_SetExportArea( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -36305,7 +37150,7 @@ func (instance *JsonSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *JsonSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -36319,7 +37164,7 @@ func (instance *JsonSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -36808,7 +37653,12 @@ func (instance *LoadFilter) GetSheetsInLoadingOrder()  ([]int32,  error)  {
 //   void  
 func (instance *LoadFilter) StartSheet(sheet *Worksheet)  error {
 	
-	CGoReturnPtr := C.LoadFilter_StartSheet( instance.ptr, sheet.ptr)
+	var sheet_ptr unsafe.Pointer = nil
+	if sheet != nil {
+	  sheet_ptr =sheet.ptr
+	}
+
+	CGoReturnPtr := C.LoadFilter_StartSheet( instance.ptr, sheet_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -37043,7 +37893,7 @@ func (instance *LoadOptions) SetLanguageCode(value CountryCode)  error {
 
 	return nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Returns:
 //   int32  
 func (instance *LoadOptions) GetRegion()  (CountryCode,  error)  {
@@ -37060,7 +37910,7 @@ func (instance *LoadOptions) GetRegion()  (CountryCode,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -37114,7 +37964,12 @@ func (instance *LoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonitor, 
 //   void  
 func (instance *LoadOptions) SetInterruptMonitor(value *AbstractInterruptMonitor)  error {
 	
-	CGoReturnPtr := C.LoadOptions_SetInterruptMonitor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LoadOptions_SetInterruptMonitor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -37273,7 +38128,12 @@ func (instance *LoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 //   void  
 func (instance *LoadOptions) SetLoadFilter(value *LoadFilter)  error {
 	
-	CGoReturnPtr := C.LoadOptions_SetLoadFilter( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LoadOptions_SetLoadFilter( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -37336,7 +38196,12 @@ func (instance *LoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  error
 //   void  
 func (instance *LoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  error {
 	
-	CGoReturnPtr := C.LoadOptions_SetAutoFitterOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LoadOptions_SetAutoFitterOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -37398,7 +38263,12 @@ func (instance *LoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  error) 
 //   void  
 func (instance *LoadOptions) SetFontConfigs(value *IndividualFontConfigs)  error {
 	
-	CGoReturnPtr := C.LoadOptions_SetFontConfigs( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LoadOptions_SetFontConfigs( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -37503,7 +38373,12 @@ func NewMarkdownSaveOptions() ( *MarkdownSaveOptions, error) {
 //   src - SaveOptions 
 func NewMarkdownSaveOptions_SaveOptions(src *SaveOptions) ( *MarkdownSaveOptions, error) {
 	markdownsaveoptions := &MarkdownSaveOptions{}
-	CGoReturnPtr := C.New_MarkdownSaveOptions_SaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_MarkdownSaveOptions_SaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		markdownsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(markdownsaveoptions, DeleteMarkdownSaveOptions)
@@ -37677,7 +38552,12 @@ func (instance *MarkdownSaveOptions) GetSheetSet()  (*SheetSet,  error)  {
 //   void  
 func (instance *MarkdownSaveOptions) SetSheetSet(value *SheetSet)  error {
 	
-	CGoReturnPtr := C.MarkdownSaveOptions_SetSheetSet( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.MarkdownSaveOptions_SetSheetSet( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -37776,7 +38656,7 @@ func (instance *MarkdownSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *MarkdownSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -37790,7 +38670,7 @@ func (instance *MarkdownSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -38116,7 +38996,12 @@ func NewMemoryFontSource_Stream(fontdata []byte) ( *MemoryFontSource, error) {
 //   src - FontSourceBase 
 func NewMemoryFontSource_FontSourceBase(src *FontSourceBase) ( *MemoryFontSource, error) {
 	memoryfontsource := &MemoryFontSource{}
-	CGoReturnPtr := C.New_MemoryFontSource_FontSourceBase(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_MemoryFontSource_FontSourceBase(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		memoryfontsource.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(memoryfontsource, DeleteMemoryFontSource)
@@ -38214,7 +39099,12 @@ func NewMultipleFilterCollection() ( *MultipleFilterCollection, error) {
 //   obj - Object 
 func NewMultipleFilterCollection_Object(obj *Object) ( *MultipleFilterCollection, error) {
 	multiplefiltercollection := &MultipleFilterCollection{}
-	CGoReturnPtr := C.New_MultipleFilterCollection_Object(obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.New_MultipleFilterCollection_Object(obj_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		multiplefiltercollection.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(multiplefiltercollection, DeleteMultipleFilterCollection)
@@ -39387,7 +40277,12 @@ func NewObject_String(value string) ( *Object, error) {
 //   value - Range 
 func NewObject_Range(value *Range) ( *Object, error) {
 	object := &Object{}
-	CGoReturnPtr := C.New_Object_Range(value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.New_Object_Range(value_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		object.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(object, DeleteObject)
@@ -40002,7 +40897,12 @@ func NewOdsLoadOptions_LoadFormat(type_ LoadFormat) ( *OdsLoadOptions, error) {
 //   src - LoadOptions 
 func NewOdsLoadOptions_LoadOptions(src *LoadOptions) ( *OdsLoadOptions, error) {
 	odsloadoptions := &OdsLoadOptions{}
-	CGoReturnPtr := C.New_OdsLoadOptions_LoadOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_OdsLoadOptions_LoadOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		odsloadoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(odsloadoptions, DeleteOdsLoadOptions)
@@ -40268,7 +41168,7 @@ func (instance *OdsLoadOptions) SetLanguageCode(value CountryCode)  error {
 
 	return nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Returns:
 //   int32  
 func (instance *OdsLoadOptions) GetRegion()  (CountryCode,  error)  {
@@ -40285,7 +41185,7 @@ func (instance *OdsLoadOptions) GetRegion()  (CountryCode,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -40339,7 +41239,12 @@ func (instance *OdsLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonito
 //   void  
 func (instance *OdsLoadOptions) SetInterruptMonitor(value *AbstractInterruptMonitor)  error {
 	
-	CGoReturnPtr := C.OdsLoadOptions_SetInterruptMonitor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.OdsLoadOptions_SetInterruptMonitor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -40498,7 +41403,12 @@ func (instance *OdsLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 //   void  
 func (instance *OdsLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 	
-	CGoReturnPtr := C.OdsLoadOptions_SetLoadFilter( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.OdsLoadOptions_SetLoadFilter( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -40561,7 +41471,12 @@ func (instance *OdsLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  er
 //   void  
 func (instance *OdsLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  error {
 	
-	CGoReturnPtr := C.OdsLoadOptions_SetAutoFitterOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.OdsLoadOptions_SetAutoFitterOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -40623,7 +41538,12 @@ func (instance *OdsLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  erro
 //   void  
 func (instance *OdsLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  error {
 	
-	CGoReturnPtr := C.OdsLoadOptions_SetFontConfigs( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.OdsLoadOptions_SetFontConfigs( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -40749,7 +41669,12 @@ func NewOdsSaveOptions_SaveFormat(saveformat SaveFormat) ( *OdsSaveOptions, erro
 //   src - SaveOptions 
 func NewOdsSaveOptions_SaveOptions(src *SaveOptions) ( *OdsSaveOptions, error) {
 	odssaveoptions := &OdsSaveOptions{}
-	CGoReturnPtr := C.New_OdsSaveOptions_SaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_OdsSaveOptions_SaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		odssaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(odssaveoptions, DeleteOdsSaveOptions)
@@ -40914,7 +41839,7 @@ func (instance *OdsSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *OdsSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -40928,7 +41853,7 @@ func (instance *OdsSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -41268,7 +42193,12 @@ func NewOoxmlSaveOptions_SaveFormat(saveformat SaveFormat) ( *OoxmlSaveOptions, 
 //   src - SaveOptions 
 func NewOoxmlSaveOptions_SaveOptions(src *SaveOptions) ( *OoxmlSaveOptions, error) {
 	ooxmlsaveoptions := &OoxmlSaveOptions{}
-	CGoReturnPtr := C.New_OoxmlSaveOptions_SaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_OoxmlSaveOptions_SaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		ooxmlsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(ooxmlsaveoptions, DeleteOoxmlSaveOptions)
@@ -41525,7 +42455,7 @@ func (instance *OoxmlSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *OoxmlSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -41539,7 +42469,7 @@ func (instance *OoxmlSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -41973,7 +42903,16 @@ func (instance *PageSetup) GetODSPageBackground()  (*OdsPageBackground,  error) 
 //   void  
 func (instance *PageSetup) Copy(source *PageSetup, copyoptions *CopyOptions)  error {
 	
-	CGoReturnPtr := C.PageSetup_Copy( instance.ptr, source.ptr, copyoptions.ptr)
+	var source_ptr unsafe.Pointer = nil
+	if source != nil {
+	  source_ptr =source.ptr
+	}
+	var copyoptions_ptr unsafe.Pointer = nil
+	if copyoptions != nil {
+	  copyoptions_ptr =copyoptions.ptr
+	}
+
+	CGoReturnPtr := C.PageSetup_Copy( instance.ptr, source_ptr, copyoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43566,7 +44505,12 @@ type PaginatedSaveOptions struct {
 //   src - SaveOptions 
 func NewPaginatedSaveOptions(src *SaveOptions) ( *PaginatedSaveOptions, error) {
 	paginatedsaveoptions := &PaginatedSaveOptions{}
-	CGoReturnPtr := C.New_PaginatedSaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_PaginatedSaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		paginatedsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(paginatedsaveoptions, DeletePaginatedSaveOptions)
@@ -43966,7 +44910,7 @@ func (instance *PaginatedSaveOptions) SetGridlineType(value GridlineType)  error
 
 	return nil 
 }
-// Gets or sets gridline colr.
+// Gets or sets gridline color.
 // Returns:
 //   Color  
 func (instance *PaginatedSaveOptions) GetGridlineColor()  (*Color,  error)  {
@@ -43981,7 +44925,7 @@ func (instance *PaginatedSaveOptions) GetGridlineColor()  (*Color,  error)  {
 
 	return result, nil 
 }
-// Gets or sets gridline colr.
+// Gets or sets gridline color.
 // Parameters:
 //   value - Color 
 // Returns:
@@ -44083,7 +45027,12 @@ func (instance *PaginatedSaveOptions) GetSheetSet()  (*SheetSet,  error)  {
 //   void  
 func (instance *PaginatedSaveOptions) SetSheetSet(value *SheetSet)  error {
 	
-	CGoReturnPtr := C.PaginatedSaveOptions_SetSheetSet( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.PaginatedSaveOptions_SetSheetSet( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -44114,7 +45063,12 @@ func (instance *PaginatedSaveOptions) GetDrawObjectEventHandler()  (*DrawObjectE
 //   void  
 func (instance *PaginatedSaveOptions) SetDrawObjectEventHandler(value *DrawObjectEventHandler)  error {
 	
-	CGoReturnPtr := C.PaginatedSaveOptions_SetDrawObjectEventHandler( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.PaginatedSaveOptions_SetDrawObjectEventHandler( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -44147,6 +45101,42 @@ func (instance *PaginatedSaveOptions) GetEmfRenderSetting()  (EmfRenderSetting, 
 func (instance *PaginatedSaveOptions) SetEmfRenderSetting(value EmfRenderSetting)  error {
 	
 	CGoReturnPtr := C.PaginatedSaveOptions_SetEmfRenderSetting( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets custom settings during rendering.
+// Returns:
+//   CustomRenderSettings  
+func (instance *PaginatedSaveOptions) GetCustomRenderSettings()  (*CustomRenderSettings,  error)  {
+	
+	CGoReturnPtr := C.PaginatedSaveOptions_GetCustomRenderSettings( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CustomRenderSettings{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteCustomRenderSettings) 
+
+	return result, nil 
+}
+// Gets or sets custom settings during rendering.
+// Parameters:
+//   value - CustomRenderSettings 
+// Returns:
+//   void  
+func (instance *PaginatedSaveOptions) SetCustomRenderSettings(value *CustomRenderSettings)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.PaginatedSaveOptions_SetCustomRenderSettings( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -44200,7 +45190,7 @@ func (instance *PaginatedSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *PaginatedSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -44214,7 +45204,7 @@ func (instance *PaginatedSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -44884,7 +45874,12 @@ func NewPclSaveOptions() ( *PclSaveOptions, error) {
 //   src - PaginatedSaveOptions 
 func NewPclSaveOptions_PaginatedSaveOptions(src *PaginatedSaveOptions) ( *PclSaveOptions, error) {
 	pclsaveoptions := &PclSaveOptions{}
-	CGoReturnPtr := C.New_PclSaveOptions_PaginatedSaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_PclSaveOptions_PaginatedSaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		pclsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(pclsaveoptions, DeletePclSaveOptions)
@@ -44909,6 +45904,35 @@ func (instance *PclSaveOptions) IsNull()  (bool,  error)  {
 	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
+}
+// Indicates whether to embed font into the output Pcl file.
+// Returns:
+//   bool  
+func (instance *PclSaveOptions) GetEmbedFont()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PclSaveOptions_GetEmbedFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to embed font into the output Pcl file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PclSaveOptions) SetEmbedFont(value bool)  error {
+	
+	CGoReturnPtr := C.PclSaveOptions_SetEmbedFont( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
 }
 // Adds information about font that is already added to the printer by manufacturer.
 // Parameters:
@@ -45300,7 +46324,7 @@ func (instance *PclSaveOptions) SetGridlineType(value GridlineType)  error {
 
 	return nil 
 }
-// Gets or sets gridline colr.
+// Gets or sets gridline color.
 // Returns:
 //   Color  
 func (instance *PclSaveOptions) GetGridlineColor()  (*Color,  error)  {
@@ -45315,7 +46339,7 @@ func (instance *PclSaveOptions) GetGridlineColor()  (*Color,  error)  {
 
 	return result, nil 
 }
-// Gets or sets gridline colr.
+// Gets or sets gridline color.
 // Parameters:
 //   value - Color 
 // Returns:
@@ -45417,7 +46441,12 @@ func (instance *PclSaveOptions) GetSheetSet()  (*SheetSet,  error)  {
 //   void  
 func (instance *PclSaveOptions) SetSheetSet(value *SheetSet)  error {
 	
-	CGoReturnPtr := C.PclSaveOptions_SetSheetSet( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.PclSaveOptions_SetSheetSet( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -45448,7 +46477,12 @@ func (instance *PclSaveOptions) GetDrawObjectEventHandler()  (*DrawObjectEventHa
 //   void  
 func (instance *PclSaveOptions) SetDrawObjectEventHandler(value *DrawObjectEventHandler)  error {
 	
-	CGoReturnPtr := C.PclSaveOptions_SetDrawObjectEventHandler( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.PclSaveOptions_SetDrawObjectEventHandler( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -45481,6 +46515,42 @@ func (instance *PclSaveOptions) GetEmfRenderSetting()  (EmfRenderSetting,  error
 func (instance *PclSaveOptions) SetEmfRenderSetting(value EmfRenderSetting)  error {
 	
 	CGoReturnPtr := C.PclSaveOptions_SetEmfRenderSetting( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets custom settings during rendering.
+// Returns:
+//   CustomRenderSettings  
+func (instance *PclSaveOptions) GetCustomRenderSettings()  (*CustomRenderSettings,  error)  {
+	
+	CGoReturnPtr := C.PclSaveOptions_GetCustomRenderSettings( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CustomRenderSettings{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteCustomRenderSettings) 
+
+	return result, nil 
+}
+// Gets or sets custom settings during rendering.
+// Parameters:
+//   value - CustomRenderSettings 
+// Returns:
+//   void  
+func (instance *PclSaveOptions) SetCustomRenderSettings(value *CustomRenderSettings)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.PclSaveOptions_SetCustomRenderSettings( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -45534,7 +46604,7 @@ func (instance *PclSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *PclSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -45548,7 +46618,7 @@ func (instance *PclSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -45877,7 +46947,12 @@ func NewPdfSaveOptions() ( *PdfSaveOptions, error) {
 //   src - PaginatedSaveOptions 
 func NewPdfSaveOptions_PaginatedSaveOptions(src *PaginatedSaveOptions) ( *PdfSaveOptions, error) {
 	pdfsaveoptions := &PdfSaveOptions{}
-	CGoReturnPtr := C.New_PdfSaveOptions_PaginatedSaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_PdfSaveOptions_PaginatedSaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		pdfsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(pdfsaveoptions, DeletePdfSaveOptions)
@@ -45963,7 +47038,12 @@ func (instance *PdfSaveOptions) GetBookmark()  (*PdfBookmarkEntry,  error)  {
 //   void  
 func (instance *PdfSaveOptions) SetBookmark(value *PdfBookmarkEntry)  error {
 	
-	CGoReturnPtr := C.PdfSaveOptions_SetBookmark( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.PdfSaveOptions_SetBookmark( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -46026,7 +47106,12 @@ func (instance *PdfSaveOptions) GetSecurityOptions()  (*PdfSecurityOptions,  err
 //   void  
 func (instance *PdfSaveOptions) SetSecurityOptions(value *PdfSecurityOptions)  error {
 	
-	CGoReturnPtr := C.PdfSaveOptions_SetSecurityOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.PdfSaveOptions_SetSecurityOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -46352,7 +47437,12 @@ func (instance *PdfSaveOptions) GetWatermark()  (*RenderingWatermark,  error)  {
 //   void  
 func (instance *PdfSaveOptions) SetWatermark(value *RenderingWatermark)  error {
 	
-	CGoReturnPtr := C.PdfSaveOptions_SetWatermark( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.PdfSaveOptions_SetWatermark( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -46763,7 +47853,7 @@ func (instance *PdfSaveOptions) SetGridlineType(value GridlineType)  error {
 
 	return nil 
 }
-// Gets or sets gridline colr.
+// Gets or sets gridline color.
 // Returns:
 //   Color  
 func (instance *PdfSaveOptions) GetGridlineColor()  (*Color,  error)  {
@@ -46778,7 +47868,7 @@ func (instance *PdfSaveOptions) GetGridlineColor()  (*Color,  error)  {
 
 	return result, nil 
 }
-// Gets or sets gridline colr.
+// Gets or sets gridline color.
 // Parameters:
 //   value - Color 
 // Returns:
@@ -46880,7 +47970,12 @@ func (instance *PdfSaveOptions) GetSheetSet()  (*SheetSet,  error)  {
 //   void  
 func (instance *PdfSaveOptions) SetSheetSet(value *SheetSet)  error {
 	
-	CGoReturnPtr := C.PdfSaveOptions_SetSheetSet( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.PdfSaveOptions_SetSheetSet( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -46911,7 +48006,12 @@ func (instance *PdfSaveOptions) GetDrawObjectEventHandler()  (*DrawObjectEventHa
 //   void  
 func (instance *PdfSaveOptions) SetDrawObjectEventHandler(value *DrawObjectEventHandler)  error {
 	
-	CGoReturnPtr := C.PdfSaveOptions_SetDrawObjectEventHandler( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.PdfSaveOptions_SetDrawObjectEventHandler( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -46944,6 +48044,42 @@ func (instance *PdfSaveOptions) GetEmfRenderSetting()  (EmfRenderSetting,  error
 func (instance *PdfSaveOptions) SetEmfRenderSetting(value EmfRenderSetting)  error {
 	
 	CGoReturnPtr := C.PdfSaveOptions_SetEmfRenderSetting( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets custom settings during rendering.
+// Returns:
+//   CustomRenderSettings  
+func (instance *PdfSaveOptions) GetCustomRenderSettings()  (*CustomRenderSettings,  error)  {
+	
+	CGoReturnPtr := C.PdfSaveOptions_GetCustomRenderSettings( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CustomRenderSettings{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteCustomRenderSettings) 
+
+	return result, nil 
+}
+// Gets or sets custom settings during rendering.
+// Parameters:
+//   value - CustomRenderSettings 
+// Returns:
+//   void  
+func (instance *PdfSaveOptions) SetCustomRenderSettings(value *CustomRenderSettings)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.PdfSaveOptions_SetCustomRenderSettings( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -46997,7 +48133,7 @@ func (instance *PdfSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *PdfSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -47011,7 +48147,7 @@ func (instance *PdfSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -47356,7 +48492,12 @@ func NewPptxSaveOptions_Bool(saveasimage bool) ( *PptxSaveOptions, error) {
 //   src - PaginatedSaveOptions 
 func NewPptxSaveOptions_PaginatedSaveOptions(src *PaginatedSaveOptions) ( *PptxSaveOptions, error) {
 	pptxsaveoptions := &PptxSaveOptions{}
-	CGoReturnPtr := C.New_PptxSaveOptions_PaginatedSaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_PptxSaveOptions_PaginatedSaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		pptxsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(pptxsaveoptions, DeletePptxSaveOptions)
@@ -47851,7 +48992,7 @@ func (instance *PptxSaveOptions) SetGridlineType(value GridlineType)  error {
 
 	return nil 
 }
-// Gets or sets gridline colr.
+// Gets or sets gridline color.
 // Returns:
 //   Color  
 func (instance *PptxSaveOptions) GetGridlineColor()  (*Color,  error)  {
@@ -47866,7 +49007,7 @@ func (instance *PptxSaveOptions) GetGridlineColor()  (*Color,  error)  {
 
 	return result, nil 
 }
-// Gets or sets gridline colr.
+// Gets or sets gridline color.
 // Parameters:
 //   value - Color 
 // Returns:
@@ -47968,7 +49109,12 @@ func (instance *PptxSaveOptions) GetSheetSet()  (*SheetSet,  error)  {
 //   void  
 func (instance *PptxSaveOptions) SetSheetSet(value *SheetSet)  error {
 	
-	CGoReturnPtr := C.PptxSaveOptions_SetSheetSet( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.PptxSaveOptions_SetSheetSet( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -47999,7 +49145,12 @@ func (instance *PptxSaveOptions) GetDrawObjectEventHandler()  (*DrawObjectEventH
 //   void  
 func (instance *PptxSaveOptions) SetDrawObjectEventHandler(value *DrawObjectEventHandler)  error {
 	
-	CGoReturnPtr := C.PptxSaveOptions_SetDrawObjectEventHandler( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.PptxSaveOptions_SetDrawObjectEventHandler( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -48032,6 +49183,42 @@ func (instance *PptxSaveOptions) GetEmfRenderSetting()  (EmfRenderSetting,  erro
 func (instance *PptxSaveOptions) SetEmfRenderSetting(value EmfRenderSetting)  error {
 	
 	CGoReturnPtr := C.PptxSaveOptions_SetEmfRenderSetting( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets custom settings during rendering.
+// Returns:
+//   CustomRenderSettings  
+func (instance *PptxSaveOptions) GetCustomRenderSettings()  (*CustomRenderSettings,  error)  {
+	
+	CGoReturnPtr := C.PptxSaveOptions_GetCustomRenderSettings( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CustomRenderSettings{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteCustomRenderSettings) 
+
+	return result, nil 
+}
+// Gets or sets custom settings during rendering.
+// Parameters:
+//   value - CustomRenderSettings 
+// Returns:
+//   void  
+func (instance *PptxSaveOptions) SetCustomRenderSettings(value *CustomRenderSettings)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.PptxSaveOptions_SetCustomRenderSettings( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -48085,7 +49272,7 @@ func (instance *PptxSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *PptxSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -48099,7 +49286,7 @@ func (instance *PptxSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -48700,7 +49887,12 @@ func (instance *Protection) IsNull()  (bool,  error)  {
 //   void  
 func (instance *Protection) Copy(source *Protection)  error {
 	
-	CGoReturnPtr := C.Protection_Copy( instance.ptr, source.ptr)
+	var source_ptr unsafe.Pointer = nil
+	if source != nil {
+	  source_ptr =source.ptr
+	}
+
+	CGoReturnPtr := C.Protection_Copy( instance.ptr, source_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -49494,7 +50686,12 @@ func (instance *Range) IsNull()  (bool,  error)  {
 //   void  
 func (instance *Range) AutoFill_Range(target *Range)  error {
 	
-	CGoReturnPtr := C.Range_AutoFill_Range( instance.ptr, target.ptr)
+	var target_ptr unsafe.Pointer = nil
+	if target != nil {
+	  target_ptr =target.ptr
+	}
+
+	CGoReturnPtr := C.Range_AutoFill_Range( instance.ptr, target_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -49510,7 +50707,12 @@ func (instance *Range) AutoFill_Range(target *Range)  error {
 //   void  
 func (instance *Range) AutoFill_Range_AutoFillType(target *Range, autofilltype AutoFillType)  error {
 	
-	CGoReturnPtr := C.Range_AutoFill_Range_AutoFillType( instance.ptr, target.ptr, C.int( int32(autofilltype)))
+	var target_ptr unsafe.Pointer = nil
+	if target != nil {
+	  target_ptr =target.ptr
+	}
+
+	CGoReturnPtr := C.Range_AutoFill_Range_AutoFillType( instance.ptr, target_ptr, C.int( int32(autofilltype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -49600,7 +50802,12 @@ func (instance *Range) GetEnumerator()  (*CellEnumerator,  error)  {
 //   bool  
 func (instance *Range) IsIntersect(range_ *Range)  (bool,  error)  {
 	
-	CGoReturnPtr := C.Range_IsIntersect( instance.ptr, range_.ptr)
+	var range__ptr unsafe.Pointer = nil
+	if range_ != nil {
+	  range__ptr =range_.ptr
+	}
+
+	CGoReturnPtr := C.Range_IsIntersect( instance.ptr, range__ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -49616,7 +50823,12 @@ func (instance *Range) IsIntersect(range_ *Range)  (bool,  error)  {
 //   Range  
 func (instance *Range) Intersect(range_ *Range)  (*Range,  error)  {
 	
-	CGoReturnPtr := C.Range_Intersect( instance.ptr, range_.ptr)
+	var range__ptr unsafe.Pointer = nil
+	if range_ != nil {
+	  range__ptr =range_.ptr
+	}
+
+	CGoReturnPtr := C.Range_Intersect( instance.ptr, range__ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -49901,7 +51113,12 @@ func (instance *Range) GetValue()  (*Object,  error)  {
 //   void  
 func (instance *Range) SetValue(value *Object)  error {
 	
-	CGoReturnPtr := C.Range_SetValue( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Range_SetValue( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -49917,7 +51134,12 @@ func (instance *Range) SetValue(value *Object)  error {
 //   void  
 func (instance *Range) SetStyle_Style_Bool(style *Style, explicitflag bool)  error {
 	
-	CGoReturnPtr := C.Range_SetStyle_Style_Boolean( instance.ptr, style.ptr, C.bool(explicitflag))
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+
+	CGoReturnPtr := C.Range_SetStyle_Style_Boolean( instance.ptr, style_ptr, C.bool(explicitflag))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -49933,7 +51155,16 @@ func (instance *Range) SetStyle_Style_Bool(style *Style, explicitflag bool)  err
 //   void  
 func (instance *Range) ApplyStyle(style *Style, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.Range_ApplyStyle( instance.ptr, style.ptr, flag.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.Range_ApplyStyle( instance.ptr, style_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -49948,7 +51179,12 @@ func (instance *Range) ApplyStyle(style *Style, flag *StyleFlag)  error {
 //   void  
 func (instance *Range) SetStyle_Style(style *Style)  error {
 	
-	CGoReturnPtr := C.Range_SetStyle_Style( instance.ptr, style.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+
+	CGoReturnPtr := C.Range_SetStyle_Style( instance.ptr, style_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -49964,7 +51200,12 @@ func (instance *Range) SetStyle_Style(style *Style)  error {
 //   void  
 func (instance *Range) SetOutlineBorders_CellBorderType_CellsColor(borderstyle CellBorderType, bordercolor *CellsColor)  error {
 	
-	CGoReturnPtr := C.Range_SetOutlineBorders_CellBorderType_CellsColor( instance.ptr, C.int( int32(borderstyle)), bordercolor.ptr)
+	var bordercolor_ptr unsafe.Pointer = nil
+	if bordercolor != nil {
+	  bordercolor_ptr =bordercolor.ptr
+	}
+
+	CGoReturnPtr := C.Range_SetOutlineBorders_CellBorderType_CellsColor( instance.ptr, C.int( int32(borderstyle)), bordercolor_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -50020,7 +51261,12 @@ func (instance *Range) SetOutlineBorders_CellBorderTypeArray_ColorArray(borderst
 //   void  
 func (instance *Range) SetOutlineBorder_BorderType_CellBorderType_CellsColor(borderedge BorderType, borderstyle CellBorderType, bordercolor *CellsColor)  error {
 	
-	CGoReturnPtr := C.Range_SetOutlineBorder_BorderType_CellBorderType_CellsColor( instance.ptr, C.int( int32(borderedge)), C.int( int32(borderstyle)), bordercolor.ptr)
+	var bordercolor_ptr unsafe.Pointer = nil
+	if bordercolor != nil {
+	  bordercolor_ptr =bordercolor.ptr
+	}
+
+	CGoReturnPtr := C.Range_SetOutlineBorder_BorderType_CellBorderType_CellsColor( instance.ptr, C.int( int32(borderedge)), C.int( int32(borderstyle)), bordercolor_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -50054,7 +51300,12 @@ func (instance *Range) SetOutlineBorder_BorderType_CellBorderType_Color(bordered
 //   void  
 func (instance *Range) SetInsideBorders(borderedge BorderType, linestyle CellBorderType, bordercolor *CellsColor)  error {
 	
-	CGoReturnPtr := C.Range_SetInsideBorders( instance.ptr, C.int( int32(borderedge)), C.int( int32(linestyle)), bordercolor.ptr)
+	var bordercolor_ptr unsafe.Pointer = nil
+	if bordercolor != nil {
+	  bordercolor_ptr =bordercolor.ptr
+	}
+
+	CGoReturnPtr := C.Range_SetInsideBorders( instance.ptr, C.int( int32(borderedge)), C.int( int32(linestyle)), bordercolor_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -50143,7 +51394,12 @@ func (instance *Range) MoveTo(destrow int32, destcolumn int32)  error {
 //   void  
 func (instance *Range) CopyData(range_ *Range)  error {
 	
-	CGoReturnPtr := C.Range_CopyData( instance.ptr, range_.ptr)
+	var range__ptr unsafe.Pointer = nil
+	if range_ != nil {
+	  range__ptr =range_.ptr
+	}
+
+	CGoReturnPtr := C.Range_CopyData( instance.ptr, range__ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -50158,7 +51414,12 @@ func (instance *Range) CopyData(range_ *Range)  error {
 //   void  
 func (instance *Range) CopyValue(range_ *Range)  error {
 	
-	CGoReturnPtr := C.Range_CopyValue( instance.ptr, range_.ptr)
+	var range__ptr unsafe.Pointer = nil
+	if range_ != nil {
+	  range__ptr =range_.ptr
+	}
+
+	CGoReturnPtr := C.Range_CopyValue( instance.ptr, range__ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -50173,7 +51434,12 @@ func (instance *Range) CopyValue(range_ *Range)  error {
 //   void  
 func (instance *Range) CopyStyle(range_ *Range)  error {
 	
-	CGoReturnPtr := C.Range_CopyStyle( instance.ptr, range_.ptr)
+	var range__ptr unsafe.Pointer = nil
+	if range_ != nil {
+	  range__ptr =range_.ptr
+	}
+
+	CGoReturnPtr := C.Range_CopyStyle( instance.ptr, range__ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -50189,7 +51455,16 @@ func (instance *Range) CopyStyle(range_ *Range)  error {
 //   void  
 func (instance *Range) Copy_Range_PasteOptions(range_ *Range, options *PasteOptions)  error {
 	
-	CGoReturnPtr := C.Range_Copy_Range_PasteOptions( instance.ptr, range_.ptr, options.ptr)
+	var range__ptr unsafe.Pointer = nil
+	if range_ != nil {
+	  range__ptr =range_.ptr
+	}
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Range_Copy_Range_PasteOptions( instance.ptr, range__ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -50217,7 +51492,12 @@ func (instance *Range) Transpose()  error {
 //   void  
 func (instance *Range) Copy_Range(range_ *Range)  error {
 	
-	CGoReturnPtr := C.Range_Copy_Range( instance.ptr, range_.ptr)
+	var range__ptr unsafe.Pointer = nil
+	if range_ != nil {
+	  range__ptr =range_.ptr
+	}
+
+	CGoReturnPtr := C.Range_Copy_Range( instance.ptr, range__ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -50351,7 +51631,12 @@ func (instance *Range) ToString()  (string,  error)  {
 //   []byte  
 func (instance *Range) ToImage(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Range_ToImage( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Range_ToImage( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -50368,7 +51653,12 @@ func (instance *Range) ToImage(options *ImageOrPrintOptions)  ([]byte,  error)  
 //   string  
 func (instance *Range) ToJson(options *JsonSaveOptions)  (string,  error)  {
 	
-	CGoReturnPtr := C.Range_ToJson( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Range_ToJson( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -50384,7 +51674,12 @@ func (instance *Range) ToJson(options *JsonSaveOptions)  (string,  error)  {
 //   []byte  
 func (instance *Range) ToHtml(saveoptions *HtmlSaveOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Range_ToHtml( instance.ptr, saveoptions.ptr)
+	var saveoptions_ptr unsafe.Pointer = nil
+	if saveoptions != nil {
+	  saveoptions_ptr =saveoptions.ptr
+	}
+
+	CGoReturnPtr := C.Range_ToHtml( instance.ptr, saveoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -50517,7 +51812,12 @@ func (instance *RangeCollection) Get(index int32)  (*Range,  error)  {
 //   int32  
 func (instance *RangeCollection) Add(range_ *Range)  (int32,  error)  {
 	
-	CGoReturnPtr := C.RangeCollection_Add( instance.ptr, range_.ptr)
+	var range__ptr unsafe.Pointer = nil
+	if range_ != nil {
+	  range__ptr =range_.ptr
+	}
+
+	CGoReturnPtr := C.RangeCollection_Add( instance.ptr, range__ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -51418,7 +52718,12 @@ func (instance *Row) GetStyle()  (*Style,  error)  {
 //   void  
 func (instance *Row) SetStyle(style *Style)  error {
 	
-	CGoReturnPtr := C.Row_SetStyle( instance.ptr, style.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+
+	CGoReturnPtr := C.Row_SetStyle( instance.ptr, style_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -51448,7 +52753,12 @@ func (instance *Row) GetHasCustomStyle()  (bool,  error)  {
 //   void  
 func (instance *Row) CopySettings(source *Row, checkstyle bool)  error {
 	
-	CGoReturnPtr := C.Row_CopySettings( instance.ptr, source.ptr, C.bool(checkstyle))
+	var source_ptr unsafe.Pointer = nil
+	if source != nil {
+	  source_ptr =source.ptr
+	}
+
+	CGoReturnPtr := C.Row_CopySettings( instance.ptr, source_ptr, C.bool(checkstyle))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -51528,7 +52838,16 @@ func (instance *Row) GetLastDataCell()  (*Cell,  error)  {
 //   void  
 func (instance *Row) ApplyStyle(style *Style, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.Row_ApplyStyle( instance.ptr, style.ptr, flag.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.Row_ApplyStyle( instance.ptr, style_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -51543,7 +52862,12 @@ func (instance *Row) ApplyStyle(style *Style, flag *StyleFlag)  error {
 //   bool  
 func (instance *Row) Equals_Object(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.Row_Equals_Object( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.Row_Equals_Object( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -51559,7 +52883,12 @@ func (instance *Row) Equals_Object(obj *Object)  (bool,  error)  {
 //   bool  
 func (instance *Row) Equals_Row(row *Row)  (bool,  error)  {
 	
-	CGoReturnPtr := C.Row_Equals_Row( instance.ptr, row.ptr)
+	var row_ptr unsafe.Pointer = nil
+	if row != nil {
+	  row_ptr =row.ptr
+	}
+
+	CGoReturnPtr := C.Row_Equals_Row( instance.ptr, row_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -51791,7 +53120,7 @@ func (instance *SaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *SaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -51805,7 +53134,7 @@ func (instance *SaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -53857,7 +55186,12 @@ func NewSpreadsheetML2003SaveOptions() ( *SpreadsheetML2003SaveOptions, error) {
 //   src - SaveOptions 
 func NewSpreadsheetML2003SaveOptions_SaveOptions(src *SaveOptions) ( *SpreadsheetML2003SaveOptions, error) {
 	spreadsheetml2003saveoptions := &SpreadsheetML2003SaveOptions{}
-	CGoReturnPtr := C.New_SpreadsheetML2003SaveOptions_SaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_SpreadsheetML2003SaveOptions_SaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		spreadsheetml2003saveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(spreadsheetml2003saveoptions, DeleteSpreadsheetML2003SaveOptions)
@@ -54016,7 +55350,7 @@ func (instance *SpreadsheetML2003SaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *SpreadsheetML2003SaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -54030,7 +55364,7 @@ func (instance *SpreadsheetML2003SaveOptions) GetCachedFileFolder()  (string,  e
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -54374,7 +55708,12 @@ func (instance *Style) GetBackgroundThemeColor()  (*ThemeColor,  error)  {
 //   void  
 func (instance *Style) SetBackgroundThemeColor(value *ThemeColor)  error {
 	
-	CGoReturnPtr := C.Style_SetBackgroundThemeColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Style_SetBackgroundThemeColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -54405,7 +55744,12 @@ func (instance *Style) GetForegroundThemeColor()  (*ThemeColor,  error)  {
 //   void  
 func (instance *Style) SetForegroundThemeColor(value *ThemeColor)  error {
 	
-	CGoReturnPtr := C.Style_SetForegroundThemeColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Style_SetForegroundThemeColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -54632,7 +55976,12 @@ func (instance *Style) SetForegroundArgbColor(value int32)  error {
 //   void  
 func (instance *Style) Copy(style *Style)  error {
 	
-	CGoReturnPtr := C.Style_Copy( instance.ptr, style.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+
+	CGoReturnPtr := C.Style_Copy( instance.ptr, style_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -54883,7 +56232,12 @@ func (instance *Style) IsModified(modifyflag StyleModifyFlag)  (bool,  error)  {
 //   bool  
 func (instance *Style) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.Style_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.Style_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -55129,7 +56483,12 @@ func (instance *Style) SetBorder_BorderType_CellBorderType_Color(bordertype Bord
 //   bool  
 func (instance *Style) SetBorder_BorderType_CellBorderType_CellsColor(bordertype BorderType, borderstyle CellBorderType, bordercolor *CellsColor)  (bool,  error)  {
 	
-	CGoReturnPtr := C.Style_SetBorder_BorderType_CellBorderType_CellsColor( instance.ptr, C.int( int32(bordertype)), C.int( int32(borderstyle)), bordercolor.ptr)
+	var bordercolor_ptr unsafe.Pointer = nil
+	if bordercolor != nil {
+	  bordercolor_ptr =bordercolor.ptr
+	}
+
+	CGoReturnPtr := C.Style_SetBorder_BorderType_CellBorderType_CellsColor( instance.ptr, C.int( int32(bordertype)), C.int( int32(borderstyle)), bordercolor_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -56839,7 +58198,12 @@ func (instance *ThreadedComment) GetAuthor()  (*ThreadedCommentAuthor,  error)  
 //   void  
 func (instance *ThreadedComment) SetAuthor(value *ThreadedCommentAuthor)  error {
 	
-	CGoReturnPtr := C.ThreadedComment_SetAuthor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ThreadedComment_SetAuthor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -57066,7 +58430,12 @@ func (instance *ThreadedCommentAuthorCollection) GetCurrentPerson()  (*ThreadedC
 //   void  
 func (instance *ThreadedCommentAuthorCollection) SetCurrentPerson(value *ThreadedCommentAuthor)  error {
 	
-	CGoReturnPtr := C.ThreadedCommentAuthorCollection_SetCurrentPerson( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ThreadedCommentAuthorCollection_SetCurrentPerson( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -57081,7 +58450,12 @@ func (instance *ThreadedCommentAuthorCollection) SetCurrentPerson(value *Threade
 //   int32  
 func (instance *ThreadedCommentAuthorCollection) IndexOf(author *ThreadedCommentAuthor)  (int32,  error)  {
 	
-	CGoReturnPtr := C.ThreadedCommentAuthorCollection_IndexOf( instance.ptr, author.ptr)
+	var author_ptr unsafe.Pointer = nil
+	if author != nil {
+	  author_ptr =author.ptr
+	}
+
+	CGoReturnPtr := C.ThreadedCommentAuthorCollection_IndexOf( instance.ptr, author_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -57214,7 +58588,12 @@ func (instance *ThreadedCommentCollection) Get(index int32)  (*ThreadedComment, 
 //   int32  
 func (instance *ThreadedCommentCollection) Add(text string, author *ThreadedCommentAuthor)  (int32,  error)  {
 	
-	CGoReturnPtr := C.ThreadedCommentCollection_Add( instance.ptr, C.CString(text), author.ptr)
+	var author_ptr unsafe.Pointer = nil
+	if author != nil {
+	  author_ptr =author.ptr
+	}
+
+	CGoReturnPtr := C.ThreadedCommentCollection_Add( instance.ptr, C.CString(text), author_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -57401,7 +58780,12 @@ type Top10Filter struct {
 //   obj - Object 
 func NewTop10Filter(obj *Object) ( *Top10Filter, error) {
 	top10filter := &Top10Filter{}
-	CGoReturnPtr := C.New_Top10Filter(obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.New_Top10Filter(obj_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		top10filter.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(top10filter, DeleteTop10Filter)
@@ -57551,7 +58935,12 @@ func (instance *Top10Filter) GetCriteria()  (*Object,  error)  {
 //   void  
 func (instance *Top10Filter) SetCriteria(value *Object)  error {
 	
-	CGoReturnPtr := C.Top10Filter_SetCriteria( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Top10Filter_SetCriteria( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -57780,7 +59169,12 @@ func NewTxtLoadOptions_LoadFormat(loadformat LoadFormat) ( *TxtLoadOptions, erro
 //   src - AbstractTextLoadOptions 
 func NewTxtLoadOptions_AbstractTextLoadOptions(src *AbstractTextLoadOptions) ( *TxtLoadOptions, error) {
 	txtloadoptions := &TxtLoadOptions{}
-	CGoReturnPtr := C.New_TxtLoadOptions_AbstractTextLoadOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_TxtLoadOptions_AbstractTextLoadOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		txtloadoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(txtloadoptions, DeleteTxtLoadOptions)
@@ -58493,7 +59887,7 @@ func (instance *TxtLoadOptions) SetLanguageCode(value CountryCode)  error {
 
 	return nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Returns:
 //   int32  
 func (instance *TxtLoadOptions) GetRegion()  (CountryCode,  error)  {
@@ -58510,7 +59904,7 @@ func (instance *TxtLoadOptions) GetRegion()  (CountryCode,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -58564,7 +59958,12 @@ func (instance *TxtLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonito
 //   void  
 func (instance *TxtLoadOptions) SetInterruptMonitor(value *AbstractInterruptMonitor)  error {
 	
-	CGoReturnPtr := C.TxtLoadOptions_SetInterruptMonitor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.TxtLoadOptions_SetInterruptMonitor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -58723,7 +60122,12 @@ func (instance *TxtLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 //   void  
 func (instance *TxtLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 	
-	CGoReturnPtr := C.TxtLoadOptions_SetLoadFilter( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.TxtLoadOptions_SetLoadFilter( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -58786,7 +60190,12 @@ func (instance *TxtLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  er
 //   void  
 func (instance *TxtLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  error {
 	
-	CGoReturnPtr := C.TxtLoadOptions_SetAutoFitterOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.TxtLoadOptions_SetAutoFitterOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -58848,7 +60257,12 @@ func (instance *TxtLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  erro
 //   void  
 func (instance *TxtLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  error {
 	
-	CGoReturnPtr := C.TxtLoadOptions_SetFontConfigs( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.TxtLoadOptions_SetFontConfigs( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -58979,7 +60393,12 @@ func NewTxtSaveOptions_SaveFormat(saveformat SaveFormat) ( *TxtSaveOptions, erro
 //   src - SaveOptions 
 func NewTxtSaveOptions_SaveOptions(src *SaveOptions) ( *TxtSaveOptions, error) {
 	txtsaveoptions := &TxtSaveOptions{}
-	CGoReturnPtr := C.New_TxtSaveOptions_SaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_TxtSaveOptions_SaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		txtsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(txtsaveoptions, DeleteTxtSaveOptions)
@@ -59273,7 +60692,12 @@ func (instance *TxtSaveOptions) GetExportArea()  (*CellArea,  error)  {
 //   void  
 func (instance *TxtSaveOptions) SetExportArea(value *CellArea)  error {
 	
-	CGoReturnPtr := C.TxtSaveOptions_SetExportArea( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.TxtSaveOptions_SetExportArea( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -59389,7 +60813,7 @@ func (instance *TxtSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *TxtSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -59403,7 +60827,7 @@ func (instance *TxtSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -59845,7 +61269,12 @@ func (instance *UnionRange) GetValue()  (*Object,  error)  {
 //   void  
 func (instance *UnionRange) SetValue(value *Object)  error {
 	
-	CGoReturnPtr := C.UnionRange_SetValue( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.UnionRange_SetValue( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -59938,7 +61367,12 @@ func (instance *UnionRange) GetHyperlinks()  ([]Hyperlink,  error)  {
 //   void  
 func (instance *UnionRange) SetStyle(style *Style)  error {
 	
-	CGoReturnPtr := C.UnionRange_SetStyle( instance.ptr, style.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+
+	CGoReturnPtr := C.UnionRange_SetStyle( instance.ptr, style_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -59954,7 +61388,16 @@ func (instance *UnionRange) SetStyle(style *Style)  error {
 //   void  
 func (instance *UnionRange) ApplyStyle(style *Style, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.UnionRange_ApplyStyle( instance.ptr, style.ptr, flag.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.UnionRange_ApplyStyle( instance.ptr, style_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -59970,7 +61413,16 @@ func (instance *UnionRange) ApplyStyle(style *Style, flag *StyleFlag)  error {
 //   void  
 func (instance *UnionRange) Copy(range_ *UnionRange, options *PasteOptions)  error {
 	
-	CGoReturnPtr := C.UnionRange_Copy( instance.ptr, range_.ptr, options.ptr)
+	var range__ptr unsafe.Pointer = nil
+	if range_ != nil {
+	  range__ptr =range_.ptr
+	}
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.UnionRange_Copy( instance.ptr, range__ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -60108,7 +61560,12 @@ func (instance *UnionRange) Intersect_String(range_ string)  (*UnionRange,  erro
 //   UnionRange  
 func (instance *UnionRange) Intersect_UnionRange(unionrange *UnionRange)  (*UnionRange,  error)  {
 	
-	CGoReturnPtr := C.UnionRange_Intersect_UnionRange( instance.ptr, unionrange.ptr)
+	var unionrange_ptr unsafe.Pointer = nil
+	if unionrange != nil {
+	  unionrange_ptr =unionrange.ptr
+	}
+
+	CGoReturnPtr := C.UnionRange_Intersect_UnionRange( instance.ptr, unionrange_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -60169,7 +61626,12 @@ func (instance *UnionRange) Union_String(range_ string)  (*UnionRange,  error)  
 //   UnionRange  
 func (instance *UnionRange) Union_UnionRange(unionrange *UnionRange)  (*UnionRange,  error)  {
 	
-	CGoReturnPtr := C.UnionRange_Union_UnionRange( instance.ptr, unionrange.ptr)
+	var unionrange_ptr unsafe.Pointer = nil
+	if unionrange != nil {
+	  unionrange_ptr =unionrange.ptr
+	}
+
+	CGoReturnPtr := C.UnionRange_Union_UnionRange( instance.ptr, unionrange_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -60741,7 +62203,12 @@ func (instance *Validation) GetValue1()  (*Object,  error)  {
 //   void  
 func (instance *Validation) SetValue1(value *Object)  error {
 	
-	CGoReturnPtr := C.Validation_SetValue1( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Validation_SetValue1( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -60772,7 +62239,12 @@ func (instance *Validation) GetValue2()  (*Object,  error)  {
 //   void  
 func (instance *Validation) SetValue2(value *Object)  error {
 	
-	CGoReturnPtr := C.Validation_SetValue2( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Validation_SetValue2( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -60857,7 +62329,12 @@ func (instance *Validation) GetAreas()  ([]CellArea,  error)  {
 //   void  
 func (instance *Validation) AddArea_CellArea(cellarea *CellArea)  error {
 	
-	CGoReturnPtr := C.Validation_AddArea_CellArea( instance.ptr, cellarea.ptr)
+	var cellarea_ptr unsafe.Pointer = nil
+	if cellarea != nil {
+	  cellarea_ptr =cellarea.ptr
+	}
+
+	CGoReturnPtr := C.Validation_AddArea_CellArea( instance.ptr, cellarea_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -60874,7 +62351,12 @@ func (instance *Validation) AddArea_CellArea(cellarea *CellArea)  error {
 //   void  
 func (instance *Validation) AddArea_CellArea_Bool_Bool(cellarea *CellArea, checkintersection bool, checkedge bool)  error {
 	
-	CGoReturnPtr := C.Validation_AddArea_CellArea_Boolean_Boolean( instance.ptr, cellarea.ptr, C.bool(checkintersection), C.bool(checkedge))
+	var cellarea_ptr unsafe.Pointer = nil
+	if cellarea != nil {
+	  cellarea_ptr =cellarea.ptr
+	}
+
+	CGoReturnPtr := C.Validation_AddArea_CellArea_Boolean_Boolean( instance.ptr, cellarea_ptr, C.bool(checkintersection), C.bool(checkedge))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -60913,7 +62395,12 @@ func (instance *Validation) AddAreas(areas []CellArea, checkintersection bool, c
 //   void  
 func (instance *Validation) RemoveArea(cellarea *CellArea)  error {
 	
-	CGoReturnPtr := C.Validation_RemoveArea( instance.ptr, cellarea.ptr)
+	var cellarea_ptr unsafe.Pointer = nil
+	if cellarea != nil {
+	  cellarea_ptr =cellarea.ptr
+	}
+
+	CGoReturnPtr := C.Validation_RemoveArea( instance.ptr, cellarea_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -60967,7 +62454,16 @@ func (instance *Validation) RemoveACell(row int32, column int32)  error {
 //   void  
 func (instance *Validation) Copy(source *Validation, copyoption *CopyOptions)  error {
 	
-	CGoReturnPtr := C.Validation_Copy( instance.ptr, source.ptr, copyoption.ptr)
+	var source_ptr unsafe.Pointer = nil
+	if source != nil {
+	  source_ptr =source.ptr
+	}
+	var copyoption_ptr unsafe.Pointer = nil
+	if copyoption != nil {
+	  copyoption_ptr =copyoption.ptr
+	}
+
+	CGoReturnPtr := C.Validation_Copy( instance.ptr, source_ptr, copyoption_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -61013,7 +62509,12 @@ func (instance *ValidationCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ValidationCollection) Add(ca *CellArea)  (int32,  error)  {
 	
-	CGoReturnPtr := C.ValidationCollection_Add( instance.ptr, ca.ptr)
+	var ca_ptr unsafe.Pointer = nil
+	if ca != nil {
+	  ca_ptr =ca.ptr
+	}
+
+	CGoReturnPtr := C.ValidationCollection_Add( instance.ptr, ca_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -61063,7 +62564,12 @@ func (instance *ValidationCollection) RemoveACell(row int32, column int32)  erro
 //   void  
 func (instance *ValidationCollection) RemoveArea(ca *CellArea)  error {
 	
-	CGoReturnPtr := C.ValidationCollection_RemoveArea( instance.ptr, ca.ptr)
+	var ca_ptr unsafe.Pointer = nil
+	if ca != nil {
+	  ca_ptr =ca.ptr
+	}
+
+	CGoReturnPtr := C.ValidationCollection_RemoveArea( instance.ptr, ca_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -61439,7 +62945,12 @@ func (instance *WarningInfo) GetCorrectedObject()  (*Object,  error)  {
 //   void  
 func (instance *WarningInfo) SetCorrectedObject(value *Object)  error {
 	
-	CGoReturnPtr := C.WarningInfo_SetCorrectedObject( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.WarningInfo_SetCorrectedObject( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -61531,7 +63042,12 @@ func NewWorkbook_Stream(stream []byte) ( *Workbook, error) {
 //   loadOptions - LoadOptions 
 func NewWorkbook_String_LoadOptions(file string, loadoptions *LoadOptions) ( *Workbook, error) {
 	workbook := &Workbook{}
-	CGoReturnPtr := C.New_Workbook_String_LoadOptions(C.CString(file), loadoptions.ptr)
+	var loadoptions_ptr unsafe.Pointer = nil
+	if loadoptions != nil {
+	  loadoptions_ptr =loadoptions.ptr
+	}
+
+	CGoReturnPtr := C.New_Workbook_String_LoadOptions(C.CString(file), loadoptions_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		workbook.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(workbook, DeleteWorkbook)
@@ -61548,7 +63064,12 @@ func NewWorkbook_String_LoadOptions(file string, loadoptions *LoadOptions) ( *Wo
 //   loadOptions - LoadOptions 
 func NewWorkbook_Stream_LoadOptions(stream []byte, loadoptions *LoadOptions) ( *Workbook, error) {
 	workbook := &Workbook{}
-	CGoReturnPtr := C.New_Workbook_Stream_LoadOptions(unsafe.Pointer(&stream[0]), C.int( len(stream)), loadoptions.ptr)
+	var loadoptions_ptr unsafe.Pointer = nil
+	if loadoptions != nil {
+	  loadoptions_ptr =loadoptions.ptr
+	}
+
+	CGoReturnPtr := C.New_Workbook_Stream_LoadOptions(unsafe.Pointer(&stream[0]), C.int( len(stream)), loadoptions_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		workbook.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(workbook, DeleteWorkbook)
@@ -61674,7 +63195,12 @@ func (instance *Workbook) Save_String(filename string)  error {
 //   void  
 func (instance *Workbook) Save_String_SaveOptions(filename string, saveoptions *SaveOptions)  error {
 	
-	CGoReturnPtr := C.Workbook_Save_String_SaveOptions( instance.ptr, C.CString(filename), saveoptions.ptr)
+	var saveoptions_ptr unsafe.Pointer = nil
+	if saveoptions != nil {
+	  saveoptions_ptr =saveoptions.ptr
+	}
+
+	CGoReturnPtr := C.Workbook_Save_String_SaveOptions( instance.ptr, C.CString(filename), saveoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -61706,7 +63232,12 @@ func (instance *Workbook) Save_SaveFormat(saveformat SaveFormat)  ([]byte,  erro
 //   []byte  
 func (instance *Workbook) Save_SaveOptions(saveoptions *SaveOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Workbook_Save_SaveOptions( instance.ptr, saveoptions.ptr)
+	var saveoptions_ptr unsafe.Pointer = nil
+	if saveoptions != nil {
+	  saveoptions_ptr =saveoptions.ptr
+	}
+
+	CGoReturnPtr := C.Workbook_Save_SaveOptions( instance.ptr, saveoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -61962,7 +63493,12 @@ func (instance *Workbook) Replace_String_float64Array_Bool(placeholder string, n
 //   int32  
 func (instance *Workbook) Replace_Bool_Object(boolvalue bool, newvalue *Object)  (int32,  error)  {
 	
-	CGoReturnPtr := C.Workbook_Replace_Boolean_Object( instance.ptr, C.bool(boolvalue), newvalue.ptr)
+	var newvalue_ptr unsafe.Pointer = nil
+	if newvalue != nil {
+	  newvalue_ptr =newvalue.ptr
+	}
+
+	CGoReturnPtr := C.Workbook_Replace_Boolean_Object( instance.ptr, C.bool(boolvalue), newvalue_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -61979,7 +63515,12 @@ func (instance *Workbook) Replace_Bool_Object(boolvalue bool, newvalue *Object) 
 //   int32  
 func (instance *Workbook) Replace_Int_Object(intvalue int32, newvalue *Object)  (int32,  error)  {
 	
-	CGoReturnPtr := C.Workbook_Replace_Integer_Object( instance.ptr, C.int(intvalue), newvalue.ptr)
+	var newvalue_ptr unsafe.Pointer = nil
+	if newvalue != nil {
+	  newvalue_ptr =newvalue.ptr
+	}
+
+	CGoReturnPtr := C.Workbook_Replace_Integer_Object( instance.ptr, C.int(intvalue), newvalue_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -61997,7 +63538,12 @@ func (instance *Workbook) Replace_Int_Object(intvalue int32, newvalue *Object)  
 //   int32  
 func (instance *Workbook) Replace_String_String_ReplaceOptions(placeholder string, newvalue string, options *ReplaceOptions)  (int32,  error)  {
 	
-	CGoReturnPtr := C.Workbook_Replace_String_String_ReplaceOptions( instance.ptr, C.CString(placeholder), C.CString(newvalue), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Workbook_Replace_String_String_ReplaceOptions( instance.ptr, C.CString(placeholder), C.CString(newvalue), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -62014,7 +63560,16 @@ func (instance *Workbook) Replace_String_String_ReplaceOptions(placeholder strin
 //   void  
 func (instance *Workbook) Copy_Workbook_CopyOptions(source *Workbook, copyoptions *CopyOptions)  error {
 	
-	CGoReturnPtr := C.Workbook_Copy_Workbook_CopyOptions( instance.ptr, source.ptr, copyoptions.ptr)
+	var source_ptr unsafe.Pointer = nil
+	if source != nil {
+	  source_ptr =source.ptr
+	}
+	var copyoptions_ptr unsafe.Pointer = nil
+	if copyoptions != nil {
+	  copyoptions_ptr =copyoptions.ptr
+	}
+
+	CGoReturnPtr := C.Workbook_Copy_Workbook_CopyOptions( instance.ptr, source_ptr, copyoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62029,7 +63584,12 @@ func (instance *Workbook) Copy_Workbook_CopyOptions(source *Workbook, copyoption
 //   void  
 func (instance *Workbook) Copy_Workbook(source *Workbook)  error {
 	
-	CGoReturnPtr := C.Workbook_Copy_Workbook( instance.ptr, source.ptr)
+	var source_ptr unsafe.Pointer = nil
+	if source != nil {
+	  source_ptr =source.ptr
+	}
+
+	CGoReturnPtr := C.Workbook_Copy_Workbook( instance.ptr, source_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62044,7 +63604,12 @@ func (instance *Workbook) Copy_Workbook(source *Workbook)  error {
 //   void  
 func (instance *Workbook) Combine(secondworkbook *Workbook)  error {
 	
-	CGoReturnPtr := C.Workbook_Combine( instance.ptr, secondworkbook.ptr)
+	var secondworkbook_ptr unsafe.Pointer = nil
+	if secondworkbook != nil {
+	  secondworkbook_ptr =secondworkbook.ptr
+	}
+
+	CGoReturnPtr := C.Workbook_Combine( instance.ptr, secondworkbook_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62146,6 +63711,26 @@ func (instance *Workbook) GetNamedStyle(name string)  (*Style,  error)  {
 
 	return result, nil 
 }
+// Merges named styles from the other Excel file.
+// Parameters:
+//   source - Workbook 
+// Returns:
+//   void  
+func (instance *Workbook) MergeNamedStyles(source *Workbook)  error {
+	
+	var source_ptr unsafe.Pointer = nil
+	if source != nil {
+	  source_ptr =source.ptr
+	}
+
+	CGoReturnPtr := C.Workbook_MergeNamedStyles( instance.ptr, source_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Changes the palette for the spreadsheet in the specified index.
 // Parameters:
 //   color - Color 
@@ -62213,7 +63798,12 @@ func (instance *Workbook) CalculateFormula_Bool(ignoreerror bool)  error {
 //   void  
 func (instance *Workbook) CalculateFormula_CalculationOptions(options *CalculationOptions)  error {
 	
-	CGoReturnPtr := C.Workbook_CalculateFormula_CalculationOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Workbook_CalculateFormula_CalculationOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62245,7 +63835,12 @@ func (instance *Workbook) RefreshDynamicArrayFormulas_Bool(calculate bool)  erro
 //   void  
 func (instance *Workbook) RefreshDynamicArrayFormulas_Bool_CalculationOptions(calculate bool, copts *CalculationOptions)  error {
 	
-	CGoReturnPtr := C.Workbook_RefreshDynamicArrayFormulas_Boolean_CalculationOptions( instance.ptr, C.bool(calculate), copts.ptr)
+	var copts_ptr unsafe.Pointer = nil
+	if copts != nil {
+	  copts_ptr =copts.ptr
+	}
+
+	CGoReturnPtr := C.Workbook_RefreshDynamicArrayFormulas_Boolean_CalculationOptions( instance.ptr, C.bool(calculate), copts_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62276,7 +63871,12 @@ func (instance *Workbook) GetDefaultStyle()  (*Style,  error)  {
 //   void  
 func (instance *Workbook) SetDefaultStyle(value *Style)  error {
 	
-	CGoReturnPtr := C.Workbook_SetDefaultStyle( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Workbook_SetDefaultStyle( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62611,7 +64211,12 @@ func (instance *Workbook) CustomTheme(themename string, colors []Color)  error {
 //   void  
 func (instance *Workbook) CopyTheme(source *Workbook)  error {
 	
-	CGoReturnPtr := C.Workbook_CopyTheme( instance.ptr, source.ptr)
+	var source_ptr unsafe.Pointer = nil
+	if source != nil {
+	  source_ptr =source.ptr
+	}
+
+	CGoReturnPtr := C.Workbook_CopyTheme( instance.ptr, source_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62626,7 +64231,12 @@ func (instance *Workbook) CopyTheme(source *Workbook)  error {
 //   void  
 func (instance *Workbook) UpdateCustomFunctionDefinition(definition *CustomFunctionDefinition)  error {
 	
-	CGoReturnPtr := C.Workbook_UpdateCustomFunctionDefinition( instance.ptr, definition.ptr)
+	var definition_ptr unsafe.Pointer = nil
+	if definition != nil {
+	  definition_ptr =definition.ptr
+	}
+
+	CGoReturnPtr := C.Workbook_UpdateCustomFunctionDefinition( instance.ptr, definition_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62759,7 +64369,12 @@ func (instance *Workbook) GetInterruptMonitor()  (*AbstractInterruptMonitor,  er
 //   void  
 func (instance *Workbook) SetInterruptMonitor_AbstractInterruptMonitor(value *AbstractInterruptMonitor)  error {
 	
-	CGoReturnPtr := C.Workbook_SetInterruptMonitor_AbstractInterruptMonitor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Workbook_SetInterruptMonitor_AbstractInterruptMonitor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62774,7 +64389,12 @@ func (instance *Workbook) SetInterruptMonitor_AbstractInterruptMonitor(value *Ab
 //   void  
 func (instance *Workbook) SetInterruptMonitor_InterruptMonitor(interruptmonitor *InterruptMonitor)  error {
 	
-	CGoReturnPtr := C.Workbook_SetInterruptMonitor_InterruptMonitor( instance.ptr, interruptmonitor.ptr)
+	var interruptmonitor_ptr unsafe.Pointer = nil
+	if interruptmonitor != nil {
+	  interruptmonitor_ptr =interruptmonitor.ptr
+	}
+
+	CGoReturnPtr := C.Workbook_SetInterruptMonitor_InterruptMonitor( instance.ptr, interruptmonitor_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62980,7 +64600,12 @@ func (instance *Workbook) ExportXml_String(mapname string)  ([]byte,  error)  {
 //   void  
 func (instance *Workbook) SetDigitalSignature(digitalsignaturecollection *DigitalSignatureCollection)  error {
 	
-	CGoReturnPtr := C.Workbook_SetDigitalSignature( instance.ptr, digitalsignaturecollection.ptr)
+	var digitalsignaturecollection_ptr unsafe.Pointer = nil
+	if digitalsignaturecollection != nil {
+	  digitalsignaturecollection_ptr =digitalsignaturecollection.ptr
+	}
+
+	CGoReturnPtr := C.Workbook_SetDigitalSignature( instance.ptr, digitalsignaturecollection_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62995,7 +64620,12 @@ func (instance *Workbook) SetDigitalSignature(digitalsignaturecollection *Digita
 //   void  
 func (instance *Workbook) AddDigitalSignature(digitalsignaturecollection *DigitalSignatureCollection)  error {
 	
-	CGoReturnPtr := C.Workbook_AddDigitalSignature( instance.ptr, digitalsignaturecollection.ptr)
+	var digitalsignaturecollection_ptr unsafe.Pointer = nil
+	if digitalsignaturecollection != nil {
+	  digitalsignaturecollection_ptr =digitalsignaturecollection.ptr
+	}
+
+	CGoReturnPtr := C.Workbook_AddDigitalSignature( instance.ptr, digitalsignaturecollection_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -63548,7 +65178,12 @@ func (instance *WorkbookSettings) GetGlobalizationSettings()  (*GlobalizationSet
 //   void  
 func (instance *WorkbookSettings) SetGlobalizationSettings(value *GlobalizationSettings)  error {
 	
-	CGoReturnPtr := C.WorkbookSettings_SetGlobalizationSettings( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.WorkbookSettings_SetGlobalizationSettings( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65507,7 +67142,12 @@ func (instance *Worksheet) GetHyperlinks()  (*HyperlinkCollection,  error)  {
 //   void  
 func (instance *Worksheet) Copy_Worksheet(sourcesheet *Worksheet)  error {
 	
-	CGoReturnPtr := C.Worksheet_Copy_Worksheet( instance.ptr, sourcesheet.ptr)
+	var sourcesheet_ptr unsafe.Pointer = nil
+	if sourcesheet != nil {
+	  sourcesheet_ptr =sourcesheet.ptr
+	}
+
+	CGoReturnPtr := C.Worksheet_Copy_Worksheet( instance.ptr, sourcesheet_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65523,7 +67163,16 @@ func (instance *Worksheet) Copy_Worksheet(sourcesheet *Worksheet)  error {
 //   void  
 func (instance *Worksheet) Copy_Worksheet_CopyOptions(sourcesheet *Worksheet, copyoptions *CopyOptions)  error {
 	
-	CGoReturnPtr := C.Worksheet_Copy_Worksheet_CopyOptions( instance.ptr, sourcesheet.ptr, copyoptions.ptr)
+	var sourcesheet_ptr unsafe.Pointer = nil
+	if sourcesheet != nil {
+	  sourcesheet_ptr =sourcesheet.ptr
+	}
+	var copyoptions_ptr unsafe.Pointer = nil
+	if copyoptions != nil {
+	  copyoptions_ptr =copyoptions.ptr
+	}
+
+	CGoReturnPtr := C.Worksheet_Copy_Worksheet_CopyOptions( instance.ptr, sourcesheet_ptr, copyoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65568,7 +67217,12 @@ func (instance *Worksheet) AutoFitColumns()  error {
 //   void  
 func (instance *Worksheet) AutoFitColumns_AutoFitterOptions(options *AutoFitterOptions)  error {
 	
-	CGoReturnPtr := C.Worksheet_AutoFitColumns_AutoFitterOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Worksheet_AutoFitColumns_AutoFitterOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65616,7 +67270,12 @@ func (instance *Worksheet) AutoFitColumns_Int_Int(firstcolumn int32, lastcolumn 
 //   void  
 func (instance *Worksheet) AutoFitColumns_Int_Int_AutoFitterOptions(firstcolumn int32, lastcolumn int32, options *AutoFitterOptions)  error {
 	
-	CGoReturnPtr := C.Worksheet_AutoFitColumns_Integer_Integer_AutoFitterOptions( instance.ptr, C.int(firstcolumn), C.int(lastcolumn), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Worksheet_AutoFitColumns_Integer_Integer_AutoFitterOptions( instance.ptr, C.int(firstcolumn), C.int(lastcolumn), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65653,7 +67312,12 @@ func (instance *Worksheet) AutoFitColumns_Int_Int_Int_Int(firstrow int32, firstc
 //   void  
 func (instance *Worksheet) AutoFitColumns_Int_Int_Int_Int_AutoFitterOptions(firstrow int32, firstcolumn int32, lastrow int32, lastcolumn int32, options *AutoFitterOptions)  error {
 	
-	CGoReturnPtr := C.Worksheet_AutoFitColumns_Integer_Integer_Integer_Integer_AutoFitterOptions( instance.ptr, C.int(firstrow), C.int(firstcolumn), C.int(lastrow), C.int(lastcolumn), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Worksheet_AutoFitColumns_Integer_Integer_Integer_Integer_AutoFitterOptions( instance.ptr, C.int(firstrow), C.int(firstcolumn), C.int(lastrow), C.int(lastcolumn), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65688,7 +67352,12 @@ func (instance *Worksheet) AutoFitRow_Int_Int_Int(rowindex int32, firstcolumn in
 //   void  
 func (instance *Worksheet) AutoFitRow_Int_Int_Int_AutoFitterOptions(rowindex int32, firstcolumn int32, lastcolumn int32, options *AutoFitterOptions)  error {
 	
-	CGoReturnPtr := C.Worksheet_AutoFitRow_Integer_Integer_Integer_AutoFitterOptions( instance.ptr, C.int(rowindex), C.int(firstcolumn), C.int(lastcolumn), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Worksheet_AutoFitRow_Integer_Integer_Integer_AutoFitterOptions( instance.ptr, C.int(rowindex), C.int(firstcolumn), C.int(lastcolumn), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65731,7 +67400,12 @@ func (instance *Worksheet) AutoFitRows_Bool(onlyauto bool)  error {
 //   void  
 func (instance *Worksheet) AutoFitRows_AutoFitterOptions(options *AutoFitterOptions)  error {
 	
-	CGoReturnPtr := C.Worksheet_AutoFitRows_AutoFitterOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Worksheet_AutoFitRows_AutoFitterOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65764,7 +67438,12 @@ func (instance *Worksheet) AutoFitRows_Int_Int(startrow int32, endrow int32)  er
 //   void  
 func (instance *Worksheet) AutoFitRows_Int_Int_AutoFitterOptions(startrow int32, endrow int32, options *AutoFitterOptions)  error {
 	
-	CGoReturnPtr := C.Worksheet_AutoFitRows_Integer_Integer_AutoFitterOptions( instance.ptr, C.int(startrow), C.int(endrow), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Worksheet_AutoFitRows_Integer_Integer_AutoFitterOptions( instance.ptr, C.int(startrow), C.int(endrow), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -66809,7 +68488,12 @@ func (instance *Worksheet) GetCustomProperties()  (*CustomPropertyCollection,  e
 //   []CellArea  
 func (instance *Worksheet) GetPrintingPageBreaks(options *ImageOrPrintOptions)  ([]CellArea,  error)  {
 	
-	CGoReturnPtr := C.Worksheet_GetPrintingPageBreaks( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Worksheet_GetPrintingPageBreaks( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -66946,7 +68630,12 @@ func (instance *Worksheet) CalculateFormula_String(formula string)  (*Object,  e
 //   Object  
 func (instance *Worksheet) CalculateFormula_String_CalculationOptions(formula string, opts *CalculationOptions)  (*Object,  error)  {
 	
-	CGoReturnPtr := C.Worksheet_CalculateFormula_String_CalculationOptions( instance.ptr, C.CString(formula), opts.ptr)
+	var opts_ptr unsafe.Pointer = nil
+	if opts != nil {
+	  opts_ptr =opts.ptr
+	}
+
+	CGoReturnPtr := C.Worksheet_CalculateFormula_String_CalculationOptions( instance.ptr, C.CString(formula), opts_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -66969,7 +68658,20 @@ func (instance *Worksheet) CalculateFormula_String_CalculationOptions(formula st
 //   Object  
 func (instance *Worksheet) CalculateFormula_String_FormulaParseOptions_CalculationOptions_Int_Int_CalculationData(formula string, popts *FormulaParseOptions, copts *CalculationOptions, basecellrow int32, basecellcolumn int32, calculationdata *CalculationData)  (*Object,  error)  {
 	
-	CGoReturnPtr := C.Worksheet_CalculateFormula_String_FormulaParseOptions_CalculationOptions_Integer_Integer_CalculationData( instance.ptr, C.CString(formula), popts.ptr, copts.ptr, C.int(basecellrow), C.int(basecellcolumn), calculationdata.ptr)
+	var popts_ptr unsafe.Pointer = nil
+	if popts != nil {
+	  popts_ptr =popts.ptr
+	}
+	var copts_ptr unsafe.Pointer = nil
+	if copts != nil {
+	  copts_ptr =copts.ptr
+	}
+	var calculationdata_ptr unsafe.Pointer = nil
+	if calculationdata != nil {
+	  calculationdata_ptr =calculationdata.ptr
+	}
+
+	CGoReturnPtr := C.Worksheet_CalculateFormula_String_FormulaParseOptions_CalculationOptions_Integer_Integer_CalculationData( instance.ptr, C.CString(formula), popts_ptr, copts_ptr, C.int(basecellrow), C.int(basecellcolumn), calculationdata_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -66988,7 +68690,12 @@ func (instance *Worksheet) CalculateFormula_String_FormulaParseOptions_Calculati
 //   []Vector<Object>  
 func (instance *Worksheet) CalculateArrayFormula_String_CalculationOptions(formula string, opts *CalculationOptions)  ([][]Object,  error)  {
 	
-	CGoReturnPtr := C.Worksheet_CalculateArrayFormula_String_CalculationOptions( instance.ptr, C.CString(formula), opts.ptr)
+	var opts_ptr unsafe.Pointer = nil
+	if opts != nil {
+	  opts_ptr =opts.ptr
+	}
+
+	CGoReturnPtr := C.Worksheet_CalculateArrayFormula_String_CalculationOptions( instance.ptr, C.CString(formula), opts_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -67019,7 +68726,12 @@ func (instance *Worksheet) CalculateArrayFormula_String_CalculationOptions(formu
 //   []Vector<Object>  
 func (instance *Worksheet) CalculateArrayFormula_String_CalculationOptions_Int_Int(formula string, opts *CalculationOptions, maxrowcount int32, maxcolumncount int32)  ([][]Object,  error)  {
 	
-	CGoReturnPtr := C.Worksheet_CalculateArrayFormula_String_CalculationOptions_Integer_Integer( instance.ptr, C.CString(formula), opts.ptr, C.int(maxrowcount), C.int(maxcolumncount))
+	var opts_ptr unsafe.Pointer = nil
+	if opts != nil {
+	  opts_ptr =opts.ptr
+	}
+
+	CGoReturnPtr := C.Worksheet_CalculateArrayFormula_String_CalculationOptions_Integer_Integer( instance.ptr, C.CString(formula), opts_ptr, C.int(maxrowcount), C.int(maxcolumncount))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -67054,7 +68766,20 @@ func (instance *Worksheet) CalculateArrayFormula_String_CalculationOptions_Int_I
 //   []Vector<Object>  
 func (instance *Worksheet) CalculateArrayFormula_String_FormulaParseOptions_CalculationOptions_Int_Int_Int_Int_CalculationData(formula string, popts *FormulaParseOptions, copts *CalculationOptions, basecellrow int32, basecellcolumn int32, maxrowcount int32, maxcolumncount int32, calculationdata *CalculationData)  ([][]Object,  error)  {
 	
-	CGoReturnPtr := C.Worksheet_CalculateArrayFormula_String_FormulaParseOptions_CalculationOptions_Integer_Integer_Integer_Integer_CalculationData( instance.ptr, C.CString(formula), popts.ptr, copts.ptr, C.int(basecellrow), C.int(basecellcolumn), C.int(maxrowcount), C.int(maxcolumncount), calculationdata.ptr)
+	var popts_ptr unsafe.Pointer = nil
+	if popts != nil {
+	  popts_ptr =popts.ptr
+	}
+	var copts_ptr unsafe.Pointer = nil
+	if copts != nil {
+	  copts_ptr =copts.ptr
+	}
+	var calculationdata_ptr unsafe.Pointer = nil
+	if calculationdata != nil {
+	  calculationdata_ptr =calculationdata.ptr
+	}
+
+	CGoReturnPtr := C.Worksheet_CalculateArrayFormula_String_FormulaParseOptions_CalculationOptions_Integer_Integer_Integer_Integer_CalculationData( instance.ptr, C.CString(formula), popts_ptr, copts_ptr, C.int(basecellrow), C.int(basecellcolumn), C.int(maxrowcount), C.int(maxcolumncount), calculationdata_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -67083,7 +68808,12 @@ func (instance *Worksheet) CalculateArrayFormula_String_FormulaParseOptions_Calc
 //   void  
 func (instance *Worksheet) CalculateFormula_CalculationOptions_Bool(options *CalculationOptions, recursive bool)  error {
 	
-	CGoReturnPtr := C.Worksheet_CalculateFormula_CalculationOptions_Boolean( instance.ptr, options.ptr, C.bool(recursive))
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Worksheet_CalculateFormula_CalculationOptions_Boolean( instance.ptr, options_ptr, C.bool(recursive))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -67127,7 +68857,12 @@ func (instance *Worksheet) RefreshPivotTables()  error {
 //   bool  
 func (instance *Worksheet) RefreshPivotTables_PivotTableRefreshOption(option *PivotTableRefreshOption)  (bool,  error)  {
 	
-	CGoReturnPtr := C.Worksheet_RefreshPivotTables_PivotTableRefreshOption( instance.ptr, option.ptr)
+	var option_ptr unsafe.Pointer = nil
+	if option != nil {
+	  option_ptr =option.ptr
+	}
+
+	CGoReturnPtr := C.Worksheet_RefreshPivotTables_PivotTableRefreshOption( instance.ptr, option_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -67784,7 +69519,12 @@ func (instance *WorksheetCollection) GetXmlMaps()  (*XmlMapCollection,  error)  
 //   void  
 func (instance *WorksheetCollection) SetXmlMaps(value *XmlMapCollection)  error {
 	
-	CGoReturnPtr := C.WorksheetCollection_SetXmlMaps( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.WorksheetCollection_SetXmlMaps( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -67847,7 +69587,12 @@ func (instance *WorksheetCollection) GetOleSize()  (*Object,  error)  {
 //   void  
 func (instance *WorksheetCollection) SetOleSize_Object(value *Object)  error {
 	
-	CGoReturnPtr := C.WorksheetCollection_SetOleSize_Object( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.WorksheetCollection_SetOleSize_Object( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -67967,7 +69712,12 @@ func (instance *WorksheetCollection) RefreshPivotTables()  error {
 //   bool  
 func (instance *WorksheetCollection) RefreshPivotTables_PivotTableRefreshOption(option *PivotTableRefreshOption)  (bool,  error)  {
 	
-	CGoReturnPtr := C.WorksheetCollection_RefreshPivotTables_PivotTableRefreshOption( instance.ptr, option.ptr)
+	var option_ptr unsafe.Pointer = nil
+	if option != nil {
+	  option_ptr =option.ptr
+	}
+
+	CGoReturnPtr := C.WorksheetCollection_RefreshPivotTables_PivotTableRefreshOption( instance.ptr, option_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -68188,7 +69938,12 @@ func NewXlsbSaveOptions() ( *XlsbSaveOptions, error) {
 //   src - SaveOptions 
 func NewXlsbSaveOptions_SaveOptions(src *SaveOptions) ( *XlsbSaveOptions, error) {
 	xlsbsaveoptions := &XlsbSaveOptions{}
-	CGoReturnPtr := C.New_XlsbSaveOptions_SaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_XlsbSaveOptions_SaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		xlsbsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(xlsbsaveoptions, DeleteXlsbSaveOptions)
@@ -68321,7 +70076,7 @@ func (instance *XlsbSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *XlsbSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -68335,7 +70090,7 @@ func (instance *XlsbSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -68675,7 +70430,12 @@ func NewXlsSaveOptions_SaveFormat(saveformat SaveFormat) ( *XlsSaveOptions, erro
 //   src - SaveOptions 
 func NewXlsSaveOptions_SaveOptions(src *SaveOptions) ( *XlsSaveOptions, error) {
 	xlssaveoptions := &XlsSaveOptions{}
-	CGoReturnPtr := C.New_XlsSaveOptions_SaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_XlsSaveOptions_SaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		xlssaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(xlssaveoptions, DeleteXlsSaveOptions)
@@ -68805,7 +70565,7 @@ func (instance *XlsSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *XlsSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -68819,7 +70579,7 @@ func (instance *XlsSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -69249,7 +71009,12 @@ func NewXmlLoadOptions_LoadFormat(type_ LoadFormat) ( *XmlLoadOptions, error) {
 //   src - LoadOptions 
 func NewXmlLoadOptions_LoadOptions(src *LoadOptions) ( *XmlLoadOptions, error) {
 	xmlloadoptions := &XmlLoadOptions{}
-	CGoReturnPtr := C.New_XmlLoadOptions_LoadOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_XmlLoadOptions_LoadOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		xmlloadoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(xmlloadoptions, DeleteXmlLoadOptions)
@@ -69633,7 +71398,7 @@ func (instance *XmlLoadOptions) SetLanguageCode(value CountryCode)  error {
 
 	return nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Returns:
 //   int32  
 func (instance *XmlLoadOptions) GetRegion()  (CountryCode,  error)  {
@@ -69650,7 +71415,7 @@ func (instance *XmlLoadOptions) GetRegion()  (CountryCode,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -69704,7 +71469,12 @@ func (instance *XmlLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonito
 //   void  
 func (instance *XmlLoadOptions) SetInterruptMonitor(value *AbstractInterruptMonitor)  error {
 	
-	CGoReturnPtr := C.XmlLoadOptions_SetInterruptMonitor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.XmlLoadOptions_SetInterruptMonitor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -69863,7 +71633,12 @@ func (instance *XmlLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 //   void  
 func (instance *XmlLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 	
-	CGoReturnPtr := C.XmlLoadOptions_SetLoadFilter( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.XmlLoadOptions_SetLoadFilter( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -69926,7 +71701,12 @@ func (instance *XmlLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  er
 //   void  
 func (instance *XmlLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  error {
 	
-	CGoReturnPtr := C.XmlLoadOptions_SetAutoFitterOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.XmlLoadOptions_SetAutoFitterOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -69988,7 +71768,12 @@ func (instance *XmlLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  erro
 //   void  
 func (instance *XmlLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  error {
 	
-	CGoReturnPtr := C.XmlLoadOptions_SetFontConfigs( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.XmlLoadOptions_SetFontConfigs( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -70279,7 +72064,12 @@ func NewXmlSaveOptions() ( *XmlSaveOptions, error) {
 //   src - SaveOptions 
 func NewXmlSaveOptions_SaveOptions(src *SaveOptions) ( *XmlSaveOptions, error) {
 	xmlsaveoptions := &XmlSaveOptions{}
-	CGoReturnPtr := C.New_XmlSaveOptions_SaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_XmlSaveOptions_SaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		xmlsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(xmlsaveoptions, DeleteXmlSaveOptions)
@@ -70364,7 +72154,12 @@ func (instance *XmlSaveOptions) GetExportArea()  (*CellArea,  error)  {
 //   void  
 func (instance *XmlSaveOptions) SetExportArea(value *CellArea)  error {
 	
-	CGoReturnPtr := C.XmlSaveOptions_SetExportArea( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.XmlSaveOptions_SetExportArea( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -70534,7 +72329,7 @@ func (instance *XmlSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *XmlSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -70548,7 +72343,7 @@ func (instance *XmlSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -70872,7 +72667,12 @@ func NewXpsSaveOptions() ( *XpsSaveOptions, error) {
 //   src - PaginatedSaveOptions 
 func NewXpsSaveOptions_PaginatedSaveOptions(src *PaginatedSaveOptions) ( *XpsSaveOptions, error) {
 	xpssaveoptions := &XpsSaveOptions{}
-	CGoReturnPtr := C.New_XpsSaveOptions_PaginatedSaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_XpsSaveOptions_PaginatedSaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		xpssaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(xpssaveoptions, DeleteXpsSaveOptions)
@@ -71272,7 +73072,7 @@ func (instance *XpsSaveOptions) SetGridlineType(value GridlineType)  error {
 
 	return nil 
 }
-// Gets or sets gridline colr.
+// Gets or sets gridline color.
 // Returns:
 //   Color  
 func (instance *XpsSaveOptions) GetGridlineColor()  (*Color,  error)  {
@@ -71287,7 +73087,7 @@ func (instance *XpsSaveOptions) GetGridlineColor()  (*Color,  error)  {
 
 	return result, nil 
 }
-// Gets or sets gridline colr.
+// Gets or sets gridline color.
 // Parameters:
 //   value - Color 
 // Returns:
@@ -71389,7 +73189,12 @@ func (instance *XpsSaveOptions) GetSheetSet()  (*SheetSet,  error)  {
 //   void  
 func (instance *XpsSaveOptions) SetSheetSet(value *SheetSet)  error {
 	
-	CGoReturnPtr := C.XpsSaveOptions_SetSheetSet( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.XpsSaveOptions_SetSheetSet( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -71420,7 +73225,12 @@ func (instance *XpsSaveOptions) GetDrawObjectEventHandler()  (*DrawObjectEventHa
 //   void  
 func (instance *XpsSaveOptions) SetDrawObjectEventHandler(value *DrawObjectEventHandler)  error {
 	
-	CGoReturnPtr := C.XpsSaveOptions_SetDrawObjectEventHandler( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.XpsSaveOptions_SetDrawObjectEventHandler( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -71453,6 +73263,42 @@ func (instance *XpsSaveOptions) GetEmfRenderSetting()  (EmfRenderSetting,  error
 func (instance *XpsSaveOptions) SetEmfRenderSetting(value EmfRenderSetting)  error {
 	
 	CGoReturnPtr := C.XpsSaveOptions_SetEmfRenderSetting( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets custom settings during rendering.
+// Returns:
+//   CustomRenderSettings  
+func (instance *XpsSaveOptions) GetCustomRenderSettings()  (*CustomRenderSettings,  error)  {
+	
+	CGoReturnPtr := C.XpsSaveOptions_GetCustomRenderSettings( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CustomRenderSettings{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteCustomRenderSettings) 
+
+	return result, nil 
+}
+// Gets or sets custom settings during rendering.
+// Parameters:
+//   value - CustomRenderSettings 
+// Returns:
+//   void  
+func (instance *XpsSaveOptions) SetCustomRenderSettings(value *CustomRenderSettings)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.XpsSaveOptions_SetCustomRenderSettings( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -71506,7 +73352,7 @@ func (instance *XpsSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *XpsSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -71520,7 +73366,7 @@ func (instance *XpsSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:

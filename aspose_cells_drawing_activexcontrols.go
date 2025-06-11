@@ -648,7 +648,12 @@ type ActiveXControl struct {
 //   src - ActiveXControlBase 
 func NewActiveXControl(src *ActiveXControlBase) ( *ActiveXControl, error) {
 	activexcontrol := &ActiveXControl{}
-	CGoReturnPtr := C.New_ActiveXControl(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_ActiveXControl(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		activexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(activexcontrol, DeleteActiveXControl)
@@ -1611,7 +1616,12 @@ type CheckBoxActiveXControl struct {
 //   src - ActiveXControl 
 func NewCheckBoxActiveXControl(src *ActiveXControl) ( *CheckBoxActiveXControl, error) {
 	checkboxactivexcontrol := &CheckBoxActiveXControl{}
-	CGoReturnPtr := C.New_CheckBoxActiveXControl(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_CheckBoxActiveXControl(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		checkboxactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(checkboxactivexcontrol, DeleteCheckBoxActiveXControl)
@@ -2509,7 +2519,12 @@ type ComboBoxActiveXControl struct {
 //   src - ActiveXControl 
 func NewComboBoxActiveXControl(src *ActiveXControl) ( *ComboBoxActiveXControl, error) {
 	comboboxactivexcontrol := &ComboBoxActiveXControl{}
-	CGoReturnPtr := C.New_ComboBoxActiveXControl(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_ComboBoxActiveXControl(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		comboboxactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(comboboxactivexcontrol, DeleteComboBoxActiveXControl)
@@ -3770,7 +3785,12 @@ type CommandButtonActiveXControl struct {
 //   src - ActiveXControl 
 func NewCommandButtonActiveXControl(src *ActiveXControl) ( *CommandButtonActiveXControl, error) {
 	commandbuttonactivexcontrol := &CommandButtonActiveXControl{}
-	CGoReturnPtr := C.New_CommandButtonActiveXControl(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_CommandButtonActiveXControl(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		commandbuttonactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(commandbuttonactivexcontrol, DeleteCommandButtonActiveXControl)
@@ -4543,7 +4563,12 @@ type ImageActiveXControl struct {
 //   src - ActiveXControl 
 func NewImageActiveXControl(src *ActiveXControl) ( *ImageActiveXControl, error) {
 	imageactivexcontrol := &ImageActiveXControl{}
-	CGoReturnPtr := C.New_ImageActiveXControl(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_ImageActiveXControl(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		imageactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(imageactivexcontrol, DeleteImageActiveXControl)
@@ -5354,7 +5379,12 @@ type LabelActiveXControl struct {
 //   src - ActiveXControl 
 func NewLabelActiveXControl(src *ActiveXControl) ( *LabelActiveXControl, error) {
 	labelactivexcontrol := &LabelActiveXControl{}
-	CGoReturnPtr := C.New_LabelActiveXControl(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_LabelActiveXControl(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		labelactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(labelactivexcontrol, DeleteLabelActiveXControl)
@@ -6191,7 +6221,12 @@ type ListBoxActiveXControl struct {
 //   src - ActiveXControl 
 func NewListBoxActiveXControl(src *ActiveXControl) ( *ListBoxActiveXControl, error) {
 	listboxactivexcontrol := &ListBoxActiveXControl{}
-	CGoReturnPtr := C.New_ListBoxActiveXControl(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_ListBoxActiveXControl(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		listboxactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(listboxactivexcontrol, DeleteListBoxActiveXControl)
@@ -7241,7 +7276,12 @@ type RadioButtonActiveXControl struct {
 //   src - ToggleButtonActiveXControl 
 func NewRadioButtonActiveXControl(src *ToggleButtonActiveXControl) ( *RadioButtonActiveXControl, error) {
 	radiobuttonactivexcontrol := &RadioButtonActiveXControl{}
-	CGoReturnPtr := C.New_RadioButtonActiveXControl(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_RadioButtonActiveXControl(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		radiobuttonactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(radiobuttonactivexcontrol, DeleteRadioButtonActiveXControl)
@@ -8144,7 +8184,12 @@ type ScrollBarActiveXControl struct {
 //   src - SpinButtonActiveXControl 
 func NewScrollBarActiveXControl(src *SpinButtonActiveXControl) ( *ScrollBarActiveXControl, error) {
 	scrollbaractivexcontrol := &ScrollBarActiveXControl{}
-	CGoReturnPtr := C.New_ScrollBarActiveXControl(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_ScrollBarActiveXControl(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		scrollbaractivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(scrollbaractivexcontrol, DeleteScrollBarActiveXControl)
@@ -8921,7 +8966,12 @@ type SpinButtonActiveXControl struct {
 //   src - ActiveXControl 
 func NewSpinButtonActiveXControl(src *ActiveXControl) ( *SpinButtonActiveXControl, error) {
 	spinbuttonactivexcontrol := &SpinButtonActiveXControl{}
-	CGoReturnPtr := C.New_SpinButtonActiveXControl(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_SpinButtonActiveXControl(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		spinbuttonactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(spinbuttonactivexcontrol, DeleteSpinButtonActiveXControl)
@@ -9664,7 +9714,12 @@ type TextBoxActiveXControl struct {
 //   src - ActiveXControl 
 func NewTextBoxActiveXControl(src *ActiveXControl) ( *TextBoxActiveXControl, error) {
 	textboxactivexcontrol := &TextBoxActiveXControl{}
-	CGoReturnPtr := C.New_TextBoxActiveXControl(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_TextBoxActiveXControl(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		textboxactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(textboxactivexcontrol, DeleteTextBoxActiveXControl)
@@ -10866,7 +10921,12 @@ type ToggleButtonActiveXControl struct {
 //   src - ActiveXControl 
 func NewToggleButtonActiveXControl(src *ActiveXControl) ( *ToggleButtonActiveXControl, error) {
 	togglebuttonactivexcontrol := &ToggleButtonActiveXControl{}
-	CGoReturnPtr := C.New_ToggleButtonActiveXControl(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_ToggleButtonActiveXControl(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		togglebuttonactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(togglebuttonactivexcontrol, DeleteToggleButtonActiveXControl)
@@ -11674,7 +11734,12 @@ type UnknownControl struct {
 //   src - ActiveXControl 
 func NewUnknownControl(src *ActiveXControl) ( *UnknownControl, error) {
 	unknowncontrol := &UnknownControl{}
-	CGoReturnPtr := C.New_UnknownControl(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_UnknownControl(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		unknowncontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(unknowncontrol, DeleteUnknownControl)

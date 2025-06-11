@@ -473,7 +473,12 @@ func NewAutoNumberedBulletValue() ( *AutoNumberedBulletValue, error) {
 //   src - BulletValue 
 func NewAutoNumberedBulletValue_BulletValue(src *BulletValue) ( *AutoNumberedBulletValue, error) {
 	autonumberedbulletvalue := &AutoNumberedBulletValue{}
-	CGoReturnPtr := C.New_AutoNumberedBulletValue_BulletValue(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_AutoNumberedBulletValue_BulletValue(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		autonumberedbulletvalue.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(autonumberedbulletvalue, DeleteAutoNumberedBulletValue)
@@ -773,7 +778,12 @@ func NewCharacterBulletValue() ( *CharacterBulletValue, error) {
 //   src - BulletValue 
 func NewCharacterBulletValue_BulletValue(src *BulletValue) ( *CharacterBulletValue, error) {
 	characterbulletvalue := &CharacterBulletValue{}
-	CGoReturnPtr := C.New_CharacterBulletValue_BulletValue(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_CharacterBulletValue_BulletValue(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		characterbulletvalue.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(characterbulletvalue, DeleteCharacterBulletValue)
@@ -1093,7 +1103,16 @@ func (instance *FontSettingCollection) SetHtmlString(value string)  error {
 //   void  
 func (instance *FontSettingCollection) Format(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.FontSettingCollection_Format( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.FontSettingCollection_Format( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1138,7 +1157,12 @@ func (instance *FontSettingCollection) Clear()  error {
 //   bool  
 func (instance *FontSettingCollection) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.FontSettingCollection_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.FontSettingCollection_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1208,7 +1232,12 @@ func NewNoneBulletValue() ( *NoneBulletValue, error) {
 //   src - BulletValue 
 func NewNoneBulletValue_BulletValue(src *BulletValue) ( *NoneBulletValue, error) {
 	nonebulletvalue := &NoneBulletValue{}
-	CGoReturnPtr := C.New_NoneBulletValue_BulletValue(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_NoneBulletValue_BulletValue(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		nonebulletvalue.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(nonebulletvalue, DeleteNoneBulletValue)
@@ -1291,7 +1320,12 @@ func NewPictureBulletValue() ( *PictureBulletValue, error) {
 //   src - BulletValue 
 func NewPictureBulletValue_BulletValue(src *BulletValue) ( *PictureBulletValue, error) {
 	picturebulletvalue := &PictureBulletValue{}
-	CGoReturnPtr := C.New_PictureBulletValue_BulletValue(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_PictureBulletValue_BulletValue(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		picturebulletvalue.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(picturebulletvalue, DeletePictureBulletValue)
@@ -1854,7 +1888,12 @@ func (instance *ShapeTextAlignment) SetNumberOfColumns(value int32)  error {
 //   bool  
 func (instance *ShapeTextAlignment) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.ShapeTextAlignment_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.ShapeTextAlignment_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2201,7 +2240,12 @@ type TextOptions struct {
 //   src - Font 
 func NewTextOptions(src *Font) ( *TextOptions, error) {
 	textoptions := &TextOptions{}
-	CGoReturnPtr := C.New_TextOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_TextOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		textoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(textoptions, DeleteTextOptions)
@@ -2417,7 +2461,12 @@ func (instance *TextOptions) GetUnderlineColor()  (*CellsColor,  error)  {
 //   void  
 func (instance *TextOptions) SetUnderlineColor(value *CellsColor)  error {
 	
-	CGoReturnPtr := C.TextOptions_SetUnderlineColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.TextOptions_SetUnderlineColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2863,7 +2912,12 @@ func (instance *TextOptions) GetThemeColor()  (*ThemeColor,  error)  {
 //   void  
 func (instance *TextOptions) SetThemeColor(value *ThemeColor)  error {
 	
-	CGoReturnPtr := C.TextOptions_SetThemeColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.TextOptions_SetThemeColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2937,7 +2991,12 @@ func (instance *TextOptions) SetArgbColor(value int32)  error {
 //   bool  
 func (instance *TextOptions) Equals(font *Font)  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextOptions_Equals( instance.ptr, font.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+
+	CGoReturnPtr := C.TextOptions_Equals( instance.ptr, font_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3047,7 +3106,12 @@ type TextParagraph struct {
 //   src - FontSetting 
 func NewTextParagraph(src *FontSetting) ( *TextParagraph, error) {
 	textparagraph := &TextParagraph{}
-	CGoReturnPtr := C.New_TextParagraph(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_TextParagraph(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		textparagraph.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(textparagraph, DeleteTextParagraph)

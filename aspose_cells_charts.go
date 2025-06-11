@@ -1600,7 +1600,12 @@ func (instance *Axis) GetMinValue()  (*Object,  error)  {
 //   void  
 func (instance *Axis) SetMinValue(value *Object)  error {
 	
-	CGoReturnPtr := C.Axis_SetMinValue( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Axis_SetMinValue( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1660,7 +1665,12 @@ func (instance *Axis) GetMaxValue()  (*Object,  error)  {
 //   void  
 func (instance *Axis) SetMaxValue(value *Object)  error {
 	
-	CGoReturnPtr := C.Axis_SetMaxValue( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Axis_SetMaxValue( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3661,7 +3671,12 @@ func (instance *Chart) Calculate()  error {
 //   void  
 func (instance *Chart) Calculate_ChartCalculateOptions(calculateoptions *ChartCalculateOptions)  error {
 	
-	CGoReturnPtr := C.Chart_Calculate_ChartCalculateOptions( instance.ptr, calculateoptions.ptr)
+	var calculateoptions_ptr unsafe.Pointer = nil
+	if calculateoptions != nil {
+	  calculateoptions_ptr =calculateoptions.ptr
+	}
+
+	CGoReturnPtr := C.Chart_Calculate_ChartCalculateOptions( instance.ptr, calculateoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4127,7 +4142,12 @@ func (instance *Chart) ToPdf_Float_Float_PageLayoutAlignmentType_PageLayoutAlign
 //   void  
 func (instance *Chart) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.Chart_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Chart_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4142,7 +4162,12 @@ func (instance *Chart) ToImage_String_ImageOrPrintOptions(imagefile string, opti
 //   []byte  
 func (instance *Chart) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Chart_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Chart_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4319,7 +4344,12 @@ type ChartArea struct {
 //   src - ChartFrame 
 func NewChartArea(src *ChartFrame) ( *ChartArea, error) {
 	chartarea := &ChartArea{}
-	CGoReturnPtr := C.New_ChartArea(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_ChartArea(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		chartarea.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(chartarea, DeleteChartArea)
@@ -6318,7 +6348,12 @@ func (instance *ChartPoint) Get_YValue()  (*Object,  error)  {
 //   void  
 func (instance *ChartPoint) SetYValue(value *Object)  error {
 	
-	CGoReturnPtr := C.ChartPoint_SetYValue( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ChartPoint_SetYValue( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6366,7 +6401,12 @@ func (instance *ChartPoint) GetXValue()  (*Object,  error)  {
 //   void  
 func (instance *ChartPoint) SetXValue(value *Object)  error {
 	
-	CGoReturnPtr := C.ChartPoint_SetXValue( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ChartPoint_SetXValue( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7014,7 +7054,12 @@ type ChartTextFrame struct {
 //   src - ChartFrame 
 func NewChartTextFrame(src *ChartFrame) ( *ChartTextFrame, error) {
 	charttextframe := &ChartTextFrame{}
-	CGoReturnPtr := C.New_ChartTextFrame(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_ChartTextFrame(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		charttextframe.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(charttextframe, DeleteChartTextFrame)
@@ -7977,7 +8022,12 @@ type DataLabels struct {
 //   src - ChartTextFrame 
 func NewDataLabels(src *ChartTextFrame) ( *DataLabels, error) {
 	datalabels := &DataLabels{}
-	CGoReturnPtr := C.New_DataLabels(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_DataLabels(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		datalabels.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(datalabels, DeleteDataLabels)
@@ -9408,7 +9458,12 @@ type DisplayUnitLabel struct {
 //   src - ChartTextFrame 
 func NewDisplayUnitLabel(src *ChartTextFrame) ( *DisplayUnitLabel, error) {
 	displayunitlabel := &DisplayUnitLabel{}
-	CGoReturnPtr := C.New_DisplayUnitLabel(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_DisplayUnitLabel(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		displayunitlabel.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(displayunitlabel, DeleteDisplayUnitLabel)
@@ -10439,7 +10494,12 @@ type ErrorBar struct {
 //   src - Line 
 func NewErrorBar(src *Line) ( *ErrorBar, error) {
 	errorbar := &ErrorBar{}
-	CGoReturnPtr := C.New_ErrorBar(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_ErrorBar(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		errorbar.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(errorbar, DeleteErrorBar)
@@ -10988,7 +11048,12 @@ func (instance *ErrorBar) GetThemeColor()  (*ThemeColor,  error)  {
 //   void  
 func (instance *ErrorBar) SetThemeColor(value *ThemeColor)  error {
 	
-	CGoReturnPtr := C.ErrorBar_SetThemeColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ErrorBar_SetThemeColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11323,7 +11388,12 @@ type Floor struct {
 //   src - Area 
 func NewFloor(src *Area) ( *Floor, error) {
 	floor := &Floor{}
-	CGoReturnPtr := C.New_Floor(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_Floor(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		floor.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(floor, DeleteFloor)
@@ -11372,7 +11442,12 @@ func (instance *Floor) GetBorder()  (*Line,  error)  {
 //   void  
 func (instance *Floor) SetBorder(value *Line)  error {
 	
-	CGoReturnPtr := C.Floor_SetBorder( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Floor_SetBorder( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11574,7 +11649,12 @@ type Legend struct {
 //   src - ChartTextFrame 
 func NewLegend(src *ChartTextFrame) ( *Legend, error) {
 	legend := &Legend{}
-	CGoReturnPtr := C.New_Legend(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_Legend(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		legend.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(legend, DeleteLegend)
@@ -13333,7 +13413,12 @@ type PlotArea struct {
 //   src - ChartFrame 
 func NewPlotArea(src *ChartFrame) ( *PlotArea, error) {
 	plotarea := &PlotArea{}
-	CGoReturnPtr := C.New_PlotArea(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_PlotArea(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		plotarea.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(plotarea, DeletePlotArea)
@@ -16127,7 +16212,12 @@ func (instance *Sparkline) GetColumn()  (int32,  error)  {
 //   void  
 func (instance *Sparkline) ToImage_String_ImageOrPrintOptions(filename string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.Sparkline_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(filename), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Sparkline_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(filename), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16142,7 +16232,12 @@ func (instance *Sparkline) ToImage_String_ImageOrPrintOptions(filename string, o
 //   []byte  
 func (instance *Sparkline) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Sparkline_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Sparkline_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -16226,7 +16321,12 @@ func (instance *SparklineCollection) Add(datarange string, row int32, column int
 //   void  
 func (instance *SparklineCollection) Remove(o *Object)  error {
 	
-	CGoReturnPtr := C.SparklineCollection_Remove( instance.ptr, o.ptr)
+	var o_ptr unsafe.Pointer = nil
+	if o != nil {
+	  o_ptr =o.ptr
+	}
+
+	CGoReturnPtr := C.SparklineCollection_Remove( instance.ptr, o_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16289,7 +16389,12 @@ func (instance *SparklineGroup) IsNull()  (bool,  error)  {
 //   void  
 func (instance *SparklineGroup) ResetRanges(datarange string, isvertical bool, locationrange *CellArea)  error {
 	
-	CGoReturnPtr := C.SparklineGroup_ResetRanges( instance.ptr, C.CString(datarange), C.bool(isvertical), locationrange.ptr)
+	var locationrange_ptr unsafe.Pointer = nil
+	if locationrange != nil {
+	  locationrange_ptr =locationrange.ptr
+	}
+
+	CGoReturnPtr := C.SparklineGroup_ResetRanges( instance.ptr, C.CString(datarange), C.bool(isvertical), locationrange_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16490,7 +16595,12 @@ func (instance *SparklineGroup) GetHighPointColor()  (*CellsColor,  error)  {
 //   void  
 func (instance *SparklineGroup) SetHighPointColor(value *CellsColor)  error {
 	
-	CGoReturnPtr := C.SparklineGroup_SetHighPointColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SparklineGroup_SetHighPointColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16550,7 +16660,12 @@ func (instance *SparklineGroup) GetLowPointColor()  (*CellsColor,  error)  {
 //   void  
 func (instance *SparklineGroup) SetLowPointColor(value *CellsColor)  error {
 	
-	CGoReturnPtr := C.SparklineGroup_SetLowPointColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SparklineGroup_SetLowPointColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16610,7 +16725,12 @@ func (instance *SparklineGroup) GetNegativePointsColor()  (*CellsColor,  error) 
 //   void  
 func (instance *SparklineGroup) SetNegativePointsColor(value *CellsColor)  error {
 	
-	CGoReturnPtr := C.SparklineGroup_SetNegativePointsColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SparklineGroup_SetNegativePointsColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16670,7 +16790,12 @@ func (instance *SparklineGroup) GetFirstPointColor()  (*CellsColor,  error)  {
 //   void  
 func (instance *SparklineGroup) SetFirstPointColor(value *CellsColor)  error {
 	
-	CGoReturnPtr := C.SparklineGroup_SetFirstPointColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SparklineGroup_SetFirstPointColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16730,7 +16855,12 @@ func (instance *SparklineGroup) GetLastPointColor()  (*CellsColor,  error)  {
 //   void  
 func (instance *SparklineGroup) SetLastPointColor(value *CellsColor)  error {
 	
-	CGoReturnPtr := C.SparklineGroup_SetLastPointColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SparklineGroup_SetLastPointColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16790,7 +16920,12 @@ func (instance *SparklineGroup) GetMarkersColor()  (*CellsColor,  error)  {
 //   void  
 func (instance *SparklineGroup) SetMarkersColor(value *CellsColor)  error {
 	
-	CGoReturnPtr := C.SparklineGroup_SetMarkersColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SparklineGroup_SetMarkersColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16821,7 +16956,12 @@ func (instance *SparklineGroup) GetSeriesColor()  (*CellsColor,  error)  {
 //   void  
 func (instance *SparklineGroup) SetSeriesColor(value *CellsColor)  error {
 	
-	CGoReturnPtr := C.SparklineGroup_SetSeriesColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SparklineGroup_SetSeriesColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16910,7 +17050,12 @@ func (instance *SparklineGroup) GetHorizontalAxisColor()  (*CellsColor,  error) 
 //   void  
 func (instance *SparklineGroup) SetHorizontalAxisColor(value *CellsColor)  error {
 	
-	CGoReturnPtr := C.SparklineGroup_SetHorizontalAxisColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SparklineGroup_SetHorizontalAxisColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17175,7 +17320,12 @@ func (instance *SparklineGroupCollection) Add_SparklineType(type_ SparklineType)
 //   int32  
 func (instance *SparklineGroupCollection) Add_SparklineType_String_Bool_CellArea(type_ SparklineType, datarange string, isvertical bool, locationrange *CellArea)  (int32,  error)  {
 	
-	CGoReturnPtr := C.SparklineGroupCollection_Add_SparklineType_String_Boolean_CellArea( instance.ptr, C.int( int32(type_)), C.CString(datarange), C.bool(isvertical), locationrange.ptr)
+	var locationrange_ptr unsafe.Pointer = nil
+	if locationrange != nil {
+	  locationrange_ptr =locationrange.ptr
+	}
+
+	CGoReturnPtr := C.SparklineGroupCollection_Add_SparklineType_String_Boolean_CellArea( instance.ptr, C.int( int32(type_)), C.CString(datarange), C.bool(isvertical), locationrange_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -17191,7 +17341,12 @@ func (instance *SparklineGroupCollection) Add_SparklineType_String_Bool_CellArea
 //   void  
 func (instance *SparklineGroupCollection) ClearSparklines(cellarea *CellArea)  error {
 	
-	CGoReturnPtr := C.SparklineGroupCollection_ClearSparklines( instance.ptr, cellarea.ptr)
+	var cellarea_ptr unsafe.Pointer = nil
+	if cellarea != nil {
+	  cellarea_ptr =cellarea.ptr
+	}
+
+	CGoReturnPtr := C.SparklineGroupCollection_ClearSparklines( instance.ptr, cellarea_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17206,7 +17361,12 @@ func (instance *SparklineGroupCollection) ClearSparklines(cellarea *CellArea)  e
 //   void  
 func (instance *SparklineGroupCollection) ClearSparklineGroups(cellarea *CellArea)  error {
 	
-	CGoReturnPtr := C.SparklineGroupCollection_ClearSparklineGroups( instance.ptr, cellarea.ptr)
+	var cellarea_ptr unsafe.Pointer = nil
+	if cellarea != nil {
+	  cellarea_ptr =cellarea.ptr
+	}
+
+	CGoReturnPtr := C.SparklineGroupCollection_ClearSparklineGroups( instance.ptr, cellarea_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17752,7 +17912,12 @@ type Title struct {
 //   src - ChartTextFrame 
 func NewTitle(src *ChartTextFrame) ( *Title, error) {
 	title := &Title{}
-	CGoReturnPtr := C.New_Title(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_Title(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		title.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(title, DeleteTitle)
@@ -18803,7 +18968,12 @@ type Trendline struct {
 //   src - Line 
 func NewTrendline(src *Line) ( *Trendline, error) {
 	trendline := &Trendline{}
-	CGoReturnPtr := C.New_Trendline(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_Trendline(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		trendline.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(trendline, DeleteTrendline)
@@ -19490,7 +19660,12 @@ func (instance *Trendline) GetThemeColor()  (*ThemeColor,  error)  {
 //   void  
 func (instance *Trendline) SetThemeColor(value *ThemeColor)  error {
 	
-	CGoReturnPtr := C.Trendline_SetThemeColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Trendline_SetThemeColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19920,7 +20095,12 @@ type Walls struct {
 //   src - Floor 
 func NewWalls(src *Floor) ( *Walls, error) {
 	walls := &Walls{}
-	CGoReturnPtr := C.New_Walls(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_Walls(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		walls.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(walls, DeleteWalls)
@@ -20325,7 +20505,12 @@ func (instance *Walls) GetBorder()  (*Line,  error)  {
 //   void  
 func (instance *Walls) SetBorder(value *Line)  error {
 	
-	CGoReturnPtr := C.Walls_SetBorder( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Walls_SetBorder( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

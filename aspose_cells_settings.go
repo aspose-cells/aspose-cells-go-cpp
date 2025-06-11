@@ -340,6 +340,20 @@ func (instance *PivotGlobalizationSettings) GetTextOfRange()  (string,  error)  
 
 	return result, nil 
 }
+// Gets the local text of "All Periods"
+// Returns:
+//   string  
+func (instance *PivotGlobalizationSettings) GetTextOfAllPeriods()  (string,  error)  {
+	
+	CGoReturnPtr := C.PivotGlobalizationSettings_GetTextOfAllPeriods( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
 // Gets the text of <see cref="PivotFieldSubtotalType"/> type in the PivotTable.
 // Parameters:
 //   subTotalType - int32 

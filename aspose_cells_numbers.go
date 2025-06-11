@@ -71,7 +71,12 @@ func NewNumbersLoadOptions() ( *NumbersLoadOptions, error) {
 //   src - LoadOptions 
 func NewNumbersLoadOptions_LoadOptions(src *LoadOptions) ( *NumbersLoadOptions, error) {
 	numbersloadoptions := &NumbersLoadOptions{}
-	CGoReturnPtr := C.New_NumbersLoadOptions_LoadOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_NumbersLoadOptions_LoadOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		numbersloadoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(numbersloadoptions, DeleteNumbersLoadOptions)
@@ -282,7 +287,7 @@ func (instance *NumbersLoadOptions) SetLanguageCode(value CountryCode)  error {
 
 	return nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Returns:
 //   int32  
 func (instance *NumbersLoadOptions) GetRegion()  (CountryCode,  error)  {
@@ -299,7 +304,7 @@ func (instance *NumbersLoadOptions) GetRegion()  (CountryCode,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -353,7 +358,12 @@ func (instance *NumbersLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMo
 //   void  
 func (instance *NumbersLoadOptions) SetInterruptMonitor(value *AbstractInterruptMonitor)  error {
 	
-	CGoReturnPtr := C.NumbersLoadOptions_SetInterruptMonitor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.NumbersLoadOptions_SetInterruptMonitor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -512,7 +522,12 @@ func (instance *NumbersLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 //   void  
 func (instance *NumbersLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 	
-	CGoReturnPtr := C.NumbersLoadOptions_SetLoadFilter( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.NumbersLoadOptions_SetLoadFilter( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -575,7 +590,12 @@ func (instance *NumbersLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,
 //   void  
 func (instance *NumbersLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  error {
 	
-	CGoReturnPtr := C.NumbersLoadOptions_SetAutoFitterOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.NumbersLoadOptions_SetAutoFitterOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -637,7 +657,12 @@ func (instance *NumbersLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  
 //   void  
 func (instance *NumbersLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  error {
 	
-	CGoReturnPtr := C.NumbersLoadOptions_SetFontConfigs( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.NumbersLoadOptions_SetFontConfigs( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

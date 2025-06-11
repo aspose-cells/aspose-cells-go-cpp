@@ -1395,8 +1395,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_ptr_value* New_DocxSaveOptions_PaginatedSaveOptions(void* src);
 
    ASPOSE_CELLS_API c_return_bool_value* DocxSaveOptions_IsNull(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_bool_value* DocxSaveOptions_GetSaveAsEditableShaps(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* DocxSaveOptions_SetSaveAsEditableShaps(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* DocxSaveOptions_GetSaveAsEditableShapes(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* DocxSaveOptions_SetSaveAsEditableShapes(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_string_value* DocxSaveOptions_GetDefaultFont(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* DocxSaveOptions_SetDefaultFont(void* instance_ptr, char* value);
    ASPOSE_CELLS_API c_return_bool_value* DocxSaveOptions_GetCheckWorkbookDefaultFont(void* instance_ptr);
@@ -1433,6 +1433,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* DocxSaveOptions_SetDrawObjectEventHandler(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* DocxSaveOptions_GetEmfRenderSetting(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* DocxSaveOptions_SetEmfRenderSetting(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* DocxSaveOptions_GetCustomRenderSettings(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* DocxSaveOptions_SetCustomRenderSettings(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* DocxSaveOptions_GetSaveFormat(void* instance_ptr);
    ASPOSE_CELLS_API c_return_bool_value* DocxSaveOptions_GetClearData(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* DocxSaveOptions_SetClearData(void* instance_ptr, bool value);
@@ -2521,6 +2523,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_ptr_value* New_JsonSaveOptions_SaveOptions(void* src);
 
    ASPOSE_CELLS_API c_return_bool_value* JsonSaveOptions_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* JsonSaveOptions_GetExportStylePool(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* JsonSaveOptions_SetExportStylePool(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_int_value* JsonSaveOptions_GetExportHyperlinkType(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* JsonSaveOptions_SetExportHyperlinkType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_bool_value* JsonSaveOptions_GetSkipEmptyRows(void* instance_ptr);
@@ -3152,6 +3156,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* PaginatedSaveOptions_SetDrawObjectEventHandler(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* PaginatedSaveOptions_GetEmfRenderSetting(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PaginatedSaveOptions_SetEmfRenderSetting(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* PaginatedSaveOptions_GetCustomRenderSettings(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PaginatedSaveOptions_SetCustomRenderSettings(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* PaginatedSaveOptions_GetSaveFormat(void* instance_ptr);
    ASPOSE_CELLS_API c_return_bool_value* PaginatedSaveOptions_GetClearData(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PaginatedSaveOptions_SetClearData(void* instance_ptr, bool value);
@@ -3220,6 +3226,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_ptr_value* New_PclSaveOptions_PaginatedSaveOptions(void* src);
 
    ASPOSE_CELLS_API c_return_bool_value* PclSaveOptions_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* PclSaveOptions_GetEmbedFont(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PclSaveOptions_SetEmbedFont(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_void_value* PclSaveOptions_AddPrinterFont(void* instance_ptr, char* fontfullname, char* fontpclname);
    ASPOSE_CELLS_API c_return_string_value* PclSaveOptions_GetDefaultFont(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PclSaveOptions_SetDefaultFont(void* instance_ptr, char* value);
@@ -3257,6 +3265,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* PclSaveOptions_SetDrawObjectEventHandler(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* PclSaveOptions_GetEmfRenderSetting(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PclSaveOptions_SetEmfRenderSetting(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* PclSaveOptions_GetCustomRenderSettings(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PclSaveOptions_SetCustomRenderSettings(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* PclSaveOptions_GetSaveFormat(void* instance_ptr);
    ASPOSE_CELLS_API c_return_bool_value* PclSaveOptions_GetClearData(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PclSaveOptions_SetClearData(void* instance_ptr, bool value);
@@ -3357,6 +3367,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* PdfSaveOptions_SetDrawObjectEventHandler(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* PdfSaveOptions_GetEmfRenderSetting(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PdfSaveOptions_SetEmfRenderSetting(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* PdfSaveOptions_GetCustomRenderSettings(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PdfSaveOptions_SetCustomRenderSettings(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* PdfSaveOptions_GetSaveFormat(void* instance_ptr);
    ASPOSE_CELLS_API c_return_bool_value* PdfSaveOptions_GetClearData(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PdfSaveOptions_SetClearData(void* instance_ptr, bool value);
@@ -3433,6 +3445,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* PptxSaveOptions_SetDrawObjectEventHandler(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* PptxSaveOptions_GetEmfRenderSetting(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PptxSaveOptions_SetEmfRenderSetting(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* PptxSaveOptions_GetCustomRenderSettings(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PptxSaveOptions_SetCustomRenderSettings(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* PptxSaveOptions_GetSaveFormat(void* instance_ptr);
    ASPOSE_CELLS_API c_return_bool_value* PptxSaveOptions_GetClearData(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PptxSaveOptions_SetClearData(void* instance_ptr, bool value);
@@ -4600,6 +4614,7 @@ extern "C" {
    ASPOSE_CELLS_API c_return_int_value* Workbook_GetCountOfStylesInPool(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* Workbook_GetFonts(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* Workbook_GetNamedStyle(void* instance_ptr, char* name);
+   ASPOSE_CELLS_API c_return_void_value* Workbook_MergeNamedStyles(void* instance_ptr, void* source);
    ASPOSE_CELLS_API c_return_void_value* Workbook_ChangePalette(void* instance_ptr, void* color, int32_t index);
    ASPOSE_CELLS_API c_return_bool_value* Workbook_IsColorInPalette(void* instance_ptr, void* color);
    ASPOSE_CELLS_API c_return_void_value* Workbook_CalculateFormula(void* instance_ptr);
@@ -5279,6 +5294,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* XpsSaveOptions_SetDrawObjectEventHandler(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* XpsSaveOptions_GetEmfRenderSetting(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* XpsSaveOptions_SetEmfRenderSetting(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* XpsSaveOptions_GetCustomRenderSettings(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* XpsSaveOptions_SetCustomRenderSettings(void* instance_ptr, void* value);
    ASPOSE_CELLS_API c_return_int_value* XpsSaveOptions_GetSaveFormat(void* instance_ptr);
    ASPOSE_CELLS_API c_return_bool_value* XpsSaveOptions_GetClearData(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* XpsSaveOptions_SetClearData(void* instance_ptr, bool value);
@@ -12292,6 +12309,207 @@ extern "C" {
 
    ASPOSE_CELLS_API void Delete_SignatureLine( void* instance_ptr);
 
+   /**************Class SlicerShape *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_SlicerShape(void* src);
+
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* SlicerShape_GetMacroName(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetMacroName(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_IsEquation(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_IsSmartArt(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_ToFrontOrBack(void* instance_ptr, int32_t orders);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetZOrderPosition(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetZOrderPosition(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_string_value* SlicerShape_GetName(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetName(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_string_value* SlicerShape_GetAlternativeText(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetAlternativeText(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_string_value* SlicerShape_GetTitle(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetTitle(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetLine(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetFill(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetShadowEffect(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetReflection(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetGlow(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_double_value* SlicerShape_GetSoftEdges(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetSoftEdges(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetThreeDFormat(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetFormatPicture(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_IsHidden(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetIsHidden(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_IsAspectRatioLocked(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetIsAspectRatioLocked(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_GetLockedProperty(void* instance_ptr, int type_);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetLockedProperty(void* instance_ptr, int type_, bool value);
+   ASPOSE_CELLS_API c_return_double_value* SlicerShape_GetRotationAngle(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetRotationAngle(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_AddHyperlink(void* instance_ptr, char* address);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_RemoveHyperlink(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetHyperlink(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_MoveToRange(void* instance_ptr, int32_t upperleftrow, int32_t upperleftcolumn, int32_t lowerrightrow, int32_t lowerrightcolumn);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_AlignTopRightCorner(void* instance_ptr, int32_t toprow, int32_t rightcolumn);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetId(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* SlicerShape_GetSpid(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetSpt(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetWorksheet(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_IsGroup(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_IsInGroup(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_IsWordArt(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetTextEffect(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_IsLocked(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetIsLocked(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_IsPrintable(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetIsPrintable(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetMsoDrawingType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetAutoShapeType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetAutoShapeType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetAnchorType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetAnchorType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetPlacement(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetPlacement(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetUpperLeftRow(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetUpperLeftRow(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetUpperDeltaY(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetUpperDeltaY(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetUpperLeftColumn(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetUpperLeftColumn(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetUpperDeltaX(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetUpperDeltaX(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetLowerRightRow(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetLowerRightRow(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetLowerDeltaY(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetLowerDeltaY(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetLowerRightColumn(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetLowerRightColumn(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetLowerDeltaX(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetLowerDeltaX(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetRight(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetRight(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetBottom(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetBottom(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetWidth(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetWidth(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_double_value* SlicerShape_GetWidthInch(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetWidthInch(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_double_value* SlicerShape_GetWidthPt(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetWidthPt(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_double_value* SlicerShape_GetWidthCM(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetWidthCM(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetHeight(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetHeight(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_double_value* SlicerShape_GetHeightInch(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetHeightInch(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_double_value* SlicerShape_GetHeightPt(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetHeightPt(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_double_value* SlicerShape_GetHeightCM(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetHeightCM(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetLeft(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetLeft(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_double_value* SlicerShape_GetLeftInch(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetLeftInch(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_double_value* SlicerShape_GetLeftCM(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetLeftCM(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetTop(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetTop(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_double_value* SlicerShape_GetTopInch(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetTopInch(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_double_value* SlicerShape_GetTopCM(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetTopCM(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetTopToCorner(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetTopToCorner(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetLeftToCorner(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetLeftToCorner(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetX(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetX(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetY(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetY(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetWidthScale(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetWidthScale(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetHeightScale(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetHeightScale(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetTopInShape(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetTopInShape(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetLeftInShape(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetLeftInShape(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetWidthInShape(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetWidthInShape(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetHeightInShape(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetHeightInShape(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetGroup(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_GetHasLine(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetHasLine(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_IsFilled(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetIsFilled(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_IsFlippedHorizontally(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetIsFlippedHorizontally(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_IsFlippedVertically(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetIsFlippedVertically(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetActualLowerRightRow(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetConnectionPoints(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_ToImage_ImageType(void* instance_ptr, int imagetype);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_ToImage_String_ImageOrPrintOptions(void* instance_ptr, char* imagefile, void* options);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_ToImage_ImageOrPrintOptions(void* instance_ptr, void* options);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_GetRelativeToOriginalPictureSize(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetRelativeToOriginalPictureSize(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_string_value* SlicerShape_GetLinkedCell(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetLinkedCell_String(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_string_value* SlicerShape_GetInputRange(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetInputRange_String(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_string_value* SlicerShape_GetLinkedCell_Boolean_Boolean(void* instance_ptr, bool isr1c1, bool islocal);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetLinkedCell_String_Boolean_Boolean(void* instance_ptr, char* formula, bool isr1c1, bool islocal);
+   ASPOSE_CELLS_API c_return_string_value* SlicerShape_GetInputRange_Boolean_Boolean(void* instance_ptr, bool isr1c1, bool islocal);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetInputRange_String_Boolean_Boolean(void* instance_ptr, char* formula, bool isr1c1, bool islocal);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_UpdateSelectedValue(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetTextShapeType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetTextShapeType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetTextBody(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetFont(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetFont(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetTextOptions(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetTextOptions(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_CalculateTextSize(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* SlicerShape_GetText(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetText(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_IsRichText(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* SlicerShape_GetHtmlText(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetHtmlText(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_FormatCharacters(void* instance_ptr, int32_t startindex, int32_t length, void* font, void* flag);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_Characters(void* instance_ptr, int32_t startindex, int32_t length);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetRichFormattings(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetTextVerticalOverflow(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetTextVerticalOverflow(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetTextHorizontalOverflow(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetTextHorizontalOverflow(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_IsTextWrapped(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetIsTextWrapped(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetTextOrientationType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetTextOrientationType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetTextHorizontalAlignment(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetTextHorizontalAlignment(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetTextVerticalAlignment(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetTextVerticalAlignment(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* SlicerShape_GetTextDirection(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetTextDirection(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetTextBoxOptions(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetControlData(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetActiveXControl(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_RemoveActiveXControl(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetPaths(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetGeometry(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_GetCreateId(void* instance_ptr, void* uuid);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetCreateId(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_IsDecorative(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_SetIsDecorative(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetActualBox(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SlicerShape_FitToTextSize(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* SlicerShape_GetResultOfSmartArt(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* SlicerShape_IsSameSetting(void* instance_ptr, void* obj);
+
+
+   ASPOSE_CELLS_API void Delete_SlicerShape( void* instance_ptr);
+
    /**************Class SmartArtShape *****************/
 
    ASPOSE_CELLS_API c_return_ptr_value* New_SmartArtShape(void* src);
@@ -13056,6 +13274,207 @@ extern "C" {
 
 
    ASPOSE_CELLS_API void Delete_TilePicOption( void* instance_ptr);
+
+   /**************Class TimelineShape *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_TimelineShape(void* src);
+
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* TimelineShape_GetMacroName(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetMacroName(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_IsEquation(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_IsSmartArt(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_ToFrontOrBack(void* instance_ptr, int32_t orders);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetZOrderPosition(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetZOrderPosition(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_string_value* TimelineShape_GetName(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetName(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_string_value* TimelineShape_GetAlternativeText(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetAlternativeText(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_string_value* TimelineShape_GetTitle(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetTitle(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetLine(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetFill(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetShadowEffect(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetReflection(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetGlow(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_double_value* TimelineShape_GetSoftEdges(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetSoftEdges(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetThreeDFormat(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetFormatPicture(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_IsHidden(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetIsHidden(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_IsAspectRatioLocked(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetIsAspectRatioLocked(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_GetLockedProperty(void* instance_ptr, int type_);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetLockedProperty(void* instance_ptr, int type_, bool value);
+   ASPOSE_CELLS_API c_return_double_value* TimelineShape_GetRotationAngle(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetRotationAngle(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_AddHyperlink(void* instance_ptr, char* address);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_RemoveHyperlink(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetHyperlink(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_MoveToRange(void* instance_ptr, int32_t upperleftrow, int32_t upperleftcolumn, int32_t lowerrightrow, int32_t lowerrightcolumn);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_AlignTopRightCorner(void* instance_ptr, int32_t toprow, int32_t rightcolumn);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetId(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* TimelineShape_GetSpid(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetSpt(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetWorksheet(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_IsGroup(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_IsInGroup(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_IsWordArt(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetTextEffect(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_IsLocked(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetIsLocked(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_IsPrintable(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetIsPrintable(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetMsoDrawingType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetAutoShapeType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetAutoShapeType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetAnchorType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetAnchorType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetPlacement(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetPlacement(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetUpperLeftRow(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetUpperLeftRow(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetUpperDeltaY(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetUpperDeltaY(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetUpperLeftColumn(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetUpperLeftColumn(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetUpperDeltaX(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetUpperDeltaX(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetLowerRightRow(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetLowerRightRow(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetLowerDeltaY(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetLowerDeltaY(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetLowerRightColumn(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetLowerRightColumn(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetLowerDeltaX(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetLowerDeltaX(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetRight(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetRight(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetBottom(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetBottom(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetWidth(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetWidth(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_double_value* TimelineShape_GetWidthInch(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetWidthInch(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_double_value* TimelineShape_GetWidthPt(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetWidthPt(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_double_value* TimelineShape_GetWidthCM(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetWidthCM(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetHeight(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetHeight(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_double_value* TimelineShape_GetHeightInch(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetHeightInch(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_double_value* TimelineShape_GetHeightPt(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetHeightPt(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_double_value* TimelineShape_GetHeightCM(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetHeightCM(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetLeft(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetLeft(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_double_value* TimelineShape_GetLeftInch(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetLeftInch(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_double_value* TimelineShape_GetLeftCM(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetLeftCM(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetTop(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetTop(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_double_value* TimelineShape_GetTopInch(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetTopInch(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_double_value* TimelineShape_GetTopCM(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetTopCM(void* instance_ptr, double value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetTopToCorner(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetTopToCorner(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetLeftToCorner(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetLeftToCorner(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetX(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetX(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetY(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetY(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetWidthScale(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetWidthScale(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetHeightScale(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetHeightScale(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetTopInShape(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetTopInShape(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetLeftInShape(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetLeftInShape(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetWidthInShape(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetWidthInShape(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetHeightInShape(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetHeightInShape(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetGroup(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_GetHasLine(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetHasLine(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_IsFilled(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetIsFilled(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_IsFlippedHorizontally(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetIsFlippedHorizontally(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_IsFlippedVertically(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetIsFlippedVertically(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetActualLowerRightRow(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetConnectionPoints(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_ToImage_ImageType(void* instance_ptr, int imagetype);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_ToImage_String_ImageOrPrintOptions(void* instance_ptr, char* imagefile, void* options);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_ToImage_ImageOrPrintOptions(void* instance_ptr, void* options);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_GetRelativeToOriginalPictureSize(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetRelativeToOriginalPictureSize(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_string_value* TimelineShape_GetLinkedCell(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetLinkedCell_String(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_string_value* TimelineShape_GetInputRange(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetInputRange_String(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_string_value* TimelineShape_GetLinkedCell_Boolean_Boolean(void* instance_ptr, bool isr1c1, bool islocal);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetLinkedCell_String_Boolean_Boolean(void* instance_ptr, char* formula, bool isr1c1, bool islocal);
+   ASPOSE_CELLS_API c_return_string_value* TimelineShape_GetInputRange_Boolean_Boolean(void* instance_ptr, bool isr1c1, bool islocal);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetInputRange_String_Boolean_Boolean(void* instance_ptr, char* formula, bool isr1c1, bool islocal);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_UpdateSelectedValue(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetTextShapeType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetTextShapeType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetTextBody(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetFont(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetFont(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetTextOptions(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetTextOptions(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_CalculateTextSize(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* TimelineShape_GetText(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetText(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_IsRichText(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* TimelineShape_GetHtmlText(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetHtmlText(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_FormatCharacters(void* instance_ptr, int32_t startindex, int32_t length, void* font, void* flag);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_Characters(void* instance_ptr, int32_t startindex, int32_t length);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetRichFormattings(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetTextVerticalOverflow(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetTextVerticalOverflow(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetTextHorizontalOverflow(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetTextHorizontalOverflow(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_IsTextWrapped(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetIsTextWrapped(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetTextOrientationType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetTextOrientationType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetTextHorizontalAlignment(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetTextHorizontalAlignment(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetTextVerticalAlignment(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetTextVerticalAlignment(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* TimelineShape_GetTextDirection(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetTextDirection(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetTextBoxOptions(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetControlData(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetActiveXControl(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_RemoveActiveXControl(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetPaths(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetGeometry(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_GetCreateId(void* instance_ptr, void* uuid);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetCreateId(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_IsDecorative(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_SetIsDecorative(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetActualBox(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* TimelineShape_FitToTextSize(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* TimelineShape_GetResultOfSmartArt(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* TimelineShape_IsSameSetting(void* instance_ptr, void* obj);
+
+
+   ASPOSE_CELLS_API void Delete_TimelineShape( void* instance_ptr);
 
    /**************Class VmlShapeGuide *****************/
 
@@ -16269,6 +16688,345 @@ extern "C" {
 
    ASPOSE_CELLS_API void Delete_PivotTableRefreshOption( void* instance_ptr);
 
+   /**************Class CustomRenderSettings *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_CustomRenderSettings();
+
+   ASPOSE_CELLS_API c_return_bool_value* CustomRenderSettings_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_float_value* CustomRenderSettings_GetCellBorderWidth(void* instance_ptr, int bordertype);
+
+
+   ASPOSE_CELLS_API void Delete_CustomRenderSettings( void* instance_ptr);
+
+   /**************Class DrawObject *****************/
+
+
+   ASPOSE_CELLS_API c_return_bool_value* DrawObject_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* DrawObject_GetCell(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* DrawObject_GetShape(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* DrawObject_GetImageBytes(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* DrawObject_GetType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* DrawObject_GetCurrentPage(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* DrawObject_GetTotalPages(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* DrawObject_GetSheetIndex(void* instance_ptr);
+
+
+   ASPOSE_CELLS_API void Delete_DrawObject( void* instance_ptr);
+
+   /**************Class DrawObjectEventHandler *****************/
+
+
+   ASPOSE_CELLS_API c_return_void_value* DrawObjectEventHandler_Draw(void* instance_ptr, void* drawobject, float x, float y, float width, float height);
+
+
+   ASPOSE_CELLS_API void Delete_DrawObjectEventHandler( void* instance_ptr);
+
+   /**************Class ImageOrPrintOptions *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_ImageOrPrintOptions();
+
+   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetPrintWithStatusDialog(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetPrintWithStatusDialog(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetHorizontalResolution(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetHorizontalResolution(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetVerticalResolution(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetVerticalResolution(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetTiffCompression(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetTiffCompression(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetTiffColorDepth(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetTiffColorDepth(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetTiffBinarizationMethod(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetTiffBinarizationMethod(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetPrintingPage(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetPrintingPage(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetQuality(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetQuality(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetOnePagePerSheet(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetOnePagePerSheet(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetAllColumnsInOnePagePerSheet(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetAllColumnsInOnePagePerSheet(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_ptr_value* ImageOrPrintOptions_GetDrawObjectEventHandler(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetDrawObjectEventHandler(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetOnlyArea(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetOnlyArea(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetTransparent(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetTransparent(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetIsFontSubstitutionCharGranularity(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_IsFontSubstitutionCharGranularity(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetPageIndex(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetPageIndex(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetPageCount(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetPageCount(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetDesiredSize(void* instance_ptr, int32_t desiredwidth, int32_t desiredheight, bool keepaspectratio);
+   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_IsOptimized(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetIsOptimized(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_string_value* ImageOrPrintOptions_GetDefaultFont(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetDefaultFont(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetCheckWorkbookDefaultFont(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetCheckWorkbookDefaultFont(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetOutputBlankPageWhenNothingToPrint(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetOutputBlankPageWhenNothingToPrint(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetGridlineType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetGridlineType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* ImageOrPrintOptions_GetGridlineColor(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetGridlineColor(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetTextCrossType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetTextCrossType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetDefaultEditLanguage(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetDefaultEditLanguage(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* ImageOrPrintOptions_GetSheetSet(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetSheetSet(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetEmfRenderSetting(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetEmfRenderSetting(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* ImageOrPrintOptions_GetCustomRenderSettings(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetCustomRenderSettings(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetImageType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetImageType(void* instance_ptr, int value);
+
+
+   ASPOSE_CELLS_API void Delete_ImageOrPrintOptions( void* instance_ptr);
+
+   /**************Class PageEndSavingArgs *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_PageEndSavingArgs(void* src);
+
+   ASPOSE_CELLS_API c_return_bool_value* PageEndSavingArgs_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* PageEndSavingArgs_GetHasMorePages(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PageEndSavingArgs_SetHasMorePages(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_int_value* PageEndSavingArgs_GetPageIndex(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* PageEndSavingArgs_GetPageCount(void* instance_ptr);
+
+
+   ASPOSE_CELLS_API void Delete_PageEndSavingArgs( void* instance_ptr);
+
+   /**************Class PageSavingArgs *****************/
+
+
+   ASPOSE_CELLS_API c_return_bool_value* PageSavingArgs_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* PageSavingArgs_GetPageIndex(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* PageSavingArgs_GetPageCount(void* instance_ptr);
+
+
+   ASPOSE_CELLS_API void Delete_PageSavingArgs( void* instance_ptr);
+
+   /**************Class PageStartSavingArgs *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_PageStartSavingArgs(void* src);
+
+   ASPOSE_CELLS_API c_return_bool_value* PageStartSavingArgs_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* PageStartSavingArgs_IsToOutput(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PageStartSavingArgs_SetIsToOutput(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_int_value* PageStartSavingArgs_GetPageIndex(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* PageStartSavingArgs_GetPageCount(void* instance_ptr);
+
+
+   ASPOSE_CELLS_API void Delete_PageStartSavingArgs( void* instance_ptr);
+
+   /**************Class PdfBookmarkEntry *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_PdfBookmarkEntry();
+
+   ASPOSE_CELLS_API c_return_bool_value* PdfBookmarkEntry_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* PdfBookmarkEntry_GetText(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PdfBookmarkEntry_SetText(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_ptr_value* PdfBookmarkEntry_GetDestination(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PdfBookmarkEntry_SetDestination(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_string_value* PdfBookmarkEntry_GetDestinationName(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PdfBookmarkEntry_SetDestinationName(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_bool_value* PdfBookmarkEntry_IsOpen(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PdfBookmarkEntry_SetIsOpen(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* PdfBookmarkEntry_IsCollapse(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PdfBookmarkEntry_SetIsCollapse(void* instance_ptr, bool value);
+
+
+   ASPOSE_CELLS_API void Delete_PdfBookmarkEntry( void* instance_ptr);
+
+   /**************Class RenderingFont *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_RenderingFont(char* fontname, float fontsize);
+
+   ASPOSE_CELLS_API c_return_bool_value* RenderingFont_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* RenderingFont_GetName(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_float_value* RenderingFont_GetSize(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* RenderingFont_GetBold(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* RenderingFont_SetBold(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* RenderingFont_GetItalic(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* RenderingFont_SetItalic(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_ptr_value* RenderingFont_GetColor(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* RenderingFont_SetColor(void* instance_ptr, void* value);
+
+
+   ASPOSE_CELLS_API void Delete_RenderingFont( void* instance_ptr);
+
+   /**************Class RenderingWatermark *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_RenderingWatermark_String_RenderingFont(char* text, void* renderingfont);
+   ASPOSE_CELLS_API c_return_ptr_value* New_RenderingWatermark_Stream(void* imagedata, int imagedata_length);
+
+   ASPOSE_CELLS_API c_return_bool_value* RenderingWatermark_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_float_value* RenderingWatermark_GetRotation(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* RenderingWatermark_SetRotation(void* instance_ptr, float value);
+   ASPOSE_CELLS_API c_return_int_value* RenderingWatermark_GetScaleToPagePercent(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* RenderingWatermark_SetScaleToPagePercent(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_float_value* RenderingWatermark_GetOpacity(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* RenderingWatermark_SetOpacity(void* instance_ptr, float value);
+   ASPOSE_CELLS_API c_return_bool_value* RenderingWatermark_IsBackground(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* RenderingWatermark_SetIsBackground(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_string_value* RenderingWatermark_GetText(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* RenderingWatermark_GetFont(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* RenderingWatermark_GetImage(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* RenderingWatermark_GetHAlignment(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* RenderingWatermark_SetHAlignment(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* RenderingWatermark_GetVAlignment(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* RenderingWatermark_SetVAlignment(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_float_value* RenderingWatermark_GetOffsetX(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* RenderingWatermark_SetOffsetX(void* instance_ptr, float value);
+   ASPOSE_CELLS_API c_return_float_value* RenderingWatermark_GetOffsetY(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* RenderingWatermark_SetOffsetY(void* instance_ptr, float value);
+
+
+   ASPOSE_CELLS_API void Delete_RenderingWatermark( void* instance_ptr);
+
+   /**************Class SheetPrintingPreview *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_SheetPrintingPreview(void* sheet, void* options);
+
+   ASPOSE_CELLS_API c_return_bool_value* SheetPrintingPreview_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* SheetPrintingPreview_GetEvaluatedPageCount(void* instance_ptr);
+
+
+   ASPOSE_CELLS_API void Delete_SheetPrintingPreview( void* instance_ptr);
+
+   /**************Class SheetRender *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_SheetRender(void* worksheet, void* options);
+
+   ASPOSE_CELLS_API c_return_bool_value* SheetRender_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* SheetRender_GetPageCount(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_double_value* SheetRender_GetPageScale(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* SheetRender_GetPageSizeInch(void* instance_ptr, int32_t pageindex);
+   ASPOSE_CELLS_API c_return_void_value* SheetRender_ToImage_Integer_String(void* instance_ptr, int32_t pageindex, char* filename);
+   ASPOSE_CELLS_API c_return_ptr_value* SheetRender_ToImage_Integer(void* instance_ptr, int32_t pageindex);
+   ASPOSE_CELLS_API c_return_ptr_value* SheetRender_ToTiff(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SheetRender_ToTiff_String(void* instance_ptr, char* filename);
+   ASPOSE_CELLS_API c_return_void_value* SheetRender_Dispose(void* instance_ptr);
+
+
+   ASPOSE_CELLS_API void Delete_SheetRender( void* instance_ptr);
+
+   /**************Class SheetSet *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_SheetSet_int32_tArray(void* sheetindexes, int sheetindexes_length);
+   ASPOSE_CELLS_API c_return_ptr_value* New_SheetSet_U16StringArray(void* sheetnames, int sheetnames_length);
+
+   ASPOSE_CELLS_API c_return_bool_value* SheetSet_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* SheetSet_GetActive();
+   ASPOSE_CELLS_API c_return_ptr_value* SheetSet_GetVisible();
+   ASPOSE_CELLS_API c_return_ptr_value* SheetSet_GetAll();
+
+
+   ASPOSE_CELLS_API void Delete_SheetSet( void* instance_ptr);
+
+   /**************Class SvgImageOptions *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_SvgImageOptions();
+   ASPOSE_CELLS_API c_return_ptr_value* New_SvgImageOptions_ImageOrPrintOptions(void* src);
+
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetImageType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetImageType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetFitToViewPort(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetFitToViewPort(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_string_value* SvgImageOptions_GetCssPrefix(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetCssPrefix(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetEmbeddedFontType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetEmbeddedFontType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetPrintWithStatusDialog(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetPrintWithStatusDialog(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetHorizontalResolution(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetHorizontalResolution(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetVerticalResolution(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetVerticalResolution(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetTiffCompression(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetTiffCompression(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetTiffColorDepth(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetTiffColorDepth(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetTiffBinarizationMethod(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetTiffBinarizationMethod(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetPrintingPage(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetPrintingPage(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetQuality(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetQuality(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetOnePagePerSheet(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetOnePagePerSheet(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetAllColumnsInOnePagePerSheet(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetAllColumnsInOnePagePerSheet(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_ptr_value* SvgImageOptions_GetDrawObjectEventHandler(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetDrawObjectEventHandler(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetOnlyArea(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetOnlyArea(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetTransparent(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetTransparent(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetIsFontSubstitutionCharGranularity(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_IsFontSubstitutionCharGranularity(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetPageIndex(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetPageIndex(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetPageCount(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetPageCount(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetDesiredSize(void* instance_ptr, int32_t desiredwidth, int32_t desiredheight, bool keepaspectratio);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_IsOptimized(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetIsOptimized(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_string_value* SvgImageOptions_GetDefaultFont(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetDefaultFont(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetCheckWorkbookDefaultFont(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetCheckWorkbookDefaultFont(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetOutputBlankPageWhenNothingToPrint(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetOutputBlankPageWhenNothingToPrint(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetGridlineType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetGridlineType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* SvgImageOptions_GetGridlineColor(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetGridlineColor(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetTextCrossType(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetTextCrossType(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetDefaultEditLanguage(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetDefaultEditLanguage(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* SvgImageOptions_GetSheetSet(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetSheetSet(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetEmfRenderSetting(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetEmfRenderSetting(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* SvgImageOptions_GetCustomRenderSettings(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetCustomRenderSettings(void* instance_ptr, void* value);
+
+
+   ASPOSE_CELLS_API void Delete_SvgImageOptions( void* instance_ptr);
+
+   /**************Class WorkbookPrintingPreview *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_WorkbookPrintingPreview(void* workbook, void* options);
+
+   ASPOSE_CELLS_API c_return_bool_value* WorkbookPrintingPreview_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* WorkbookPrintingPreview_GetEvaluatedPageCount(void* instance_ptr);
+
+
+   ASPOSE_CELLS_API void Delete_WorkbookPrintingPreview( void* instance_ptr);
+
+   /**************Class WorkbookRender *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_WorkbookRender(void* workbook, void* options);
+
+   ASPOSE_CELLS_API c_return_bool_value* WorkbookRender_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* WorkbookRender_GetPageCount(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* WorkbookRender_GetPageSizeInch(void* instance_ptr, int32_t pageindex);
+   ASPOSE_CELLS_API c_return_ptr_value* WorkbookRender_ToImage(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* WorkbookRender_ToImage_String(void* instance_ptr, char* filename);
+   ASPOSE_CELLS_API c_return_void_value* WorkbookRender_ToImage_Integer_String(void* instance_ptr, int32_t pageindex, char* filename);
+   ASPOSE_CELLS_API c_return_ptr_value* WorkbookRender_ToImage_Integer(void* instance_ptr, int32_t pageindex);
+   ASPOSE_CELLS_API c_return_void_value* WorkbookRender_Dispose(void* instance_ptr);
+
+
+   ASPOSE_CELLS_API void Delete_WorkbookRender( void* instance_ptr);
+
    /**************Class CustomXmlPart *****************/
 
 
@@ -16940,331 +17698,6 @@ extern "C" {
 
    ASPOSE_CELLS_API void Delete_DigitalSignatureCollection( void* instance_ptr);
 
-   /**************Class DrawObject *****************/
-
-
-   ASPOSE_CELLS_API c_return_bool_value* DrawObject_IsNull(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_ptr_value* DrawObject_GetCell(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_ptr_value* DrawObject_GetShape(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_ptr_value* DrawObject_GetImageBytes(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_int_value* DrawObject_GetType(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_int_value* DrawObject_GetCurrentPage(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_int_value* DrawObject_GetTotalPages(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_int_value* DrawObject_GetSheetIndex(void* instance_ptr);
-
-
-   ASPOSE_CELLS_API void Delete_DrawObject( void* instance_ptr);
-
-   /**************Class DrawObjectEventHandler *****************/
-
-
-   ASPOSE_CELLS_API c_return_void_value* DrawObjectEventHandler_Draw(void* instance_ptr, void* drawobject, float x, float y, float width, float height);
-
-
-   ASPOSE_CELLS_API void Delete_DrawObjectEventHandler( void* instance_ptr);
-
-   /**************Class ImageOrPrintOptions *****************/
-
-   ASPOSE_CELLS_API c_return_ptr_value* New_ImageOrPrintOptions();
-
-   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_IsNull(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetPrintWithStatusDialog(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetPrintWithStatusDialog(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetHorizontalResolution(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetHorizontalResolution(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetVerticalResolution(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetVerticalResolution(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetTiffCompression(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetTiffCompression(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetTiffColorDepth(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetTiffColorDepth(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetTiffBinarizationMethod(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetTiffBinarizationMethod(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetPrintingPage(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetPrintingPage(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetQuality(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetQuality(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetOnePagePerSheet(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetOnePagePerSheet(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetAllColumnsInOnePagePerSheet(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetAllColumnsInOnePagePerSheet(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_ptr_value* ImageOrPrintOptions_GetDrawObjectEventHandler(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetDrawObjectEventHandler(void* instance_ptr, void* value);
-   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetOnlyArea(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetOnlyArea(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetTransparent(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetTransparent(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetIsFontSubstitutionCharGranularity(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_IsFontSubstitutionCharGranularity(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetPageIndex(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetPageIndex(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetPageCount(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetPageCount(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetDesiredSize(void* instance_ptr, int32_t desiredwidth, int32_t desiredheight, bool keepaspectratio);
-   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_IsOptimized(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetIsOptimized(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_string_value* ImageOrPrintOptions_GetDefaultFont(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetDefaultFont(void* instance_ptr, char* value);
-   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetCheckWorkbookDefaultFont(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetCheckWorkbookDefaultFont(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_bool_value* ImageOrPrintOptions_GetOutputBlankPageWhenNothingToPrint(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetOutputBlankPageWhenNothingToPrint(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetGridlineType(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetGridlineType(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_ptr_value* ImageOrPrintOptions_GetGridlineColor(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetGridlineColor(void* instance_ptr, void* value);
-   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetTextCrossType(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetTextCrossType(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetDefaultEditLanguage(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetDefaultEditLanguage(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_ptr_value* ImageOrPrintOptions_GetSheetSet(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetSheetSet(void* instance_ptr, void* value);
-   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetEmfRenderSetting(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetEmfRenderSetting(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_int_value* ImageOrPrintOptions_GetImageType(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ImageOrPrintOptions_SetImageType(void* instance_ptr, int value);
-
-
-   ASPOSE_CELLS_API void Delete_ImageOrPrintOptions( void* instance_ptr);
-
-   /**************Class PageEndSavingArgs *****************/
-
-   ASPOSE_CELLS_API c_return_ptr_value* New_PageEndSavingArgs(void* src);
-
-   ASPOSE_CELLS_API c_return_bool_value* PageEndSavingArgs_IsNull(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_bool_value* PageEndSavingArgs_GetHasMorePages(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* PageEndSavingArgs_SetHasMorePages(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_int_value* PageEndSavingArgs_GetPageIndex(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_int_value* PageEndSavingArgs_GetPageCount(void* instance_ptr);
-
-
-   ASPOSE_CELLS_API void Delete_PageEndSavingArgs( void* instance_ptr);
-
-   /**************Class PageSavingArgs *****************/
-
-
-   ASPOSE_CELLS_API c_return_bool_value* PageSavingArgs_IsNull(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_int_value* PageSavingArgs_GetPageIndex(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_int_value* PageSavingArgs_GetPageCount(void* instance_ptr);
-
-
-   ASPOSE_CELLS_API void Delete_PageSavingArgs( void* instance_ptr);
-
-   /**************Class PageStartSavingArgs *****************/
-
-   ASPOSE_CELLS_API c_return_ptr_value* New_PageStartSavingArgs(void* src);
-
-   ASPOSE_CELLS_API c_return_bool_value* PageStartSavingArgs_IsNull(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_bool_value* PageStartSavingArgs_IsToOutput(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* PageStartSavingArgs_SetIsToOutput(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_int_value* PageStartSavingArgs_GetPageIndex(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_int_value* PageStartSavingArgs_GetPageCount(void* instance_ptr);
-
-
-   ASPOSE_CELLS_API void Delete_PageStartSavingArgs( void* instance_ptr);
-
-   /**************Class PdfBookmarkEntry *****************/
-
-   ASPOSE_CELLS_API c_return_ptr_value* New_PdfBookmarkEntry();
-
-   ASPOSE_CELLS_API c_return_bool_value* PdfBookmarkEntry_IsNull(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_string_value* PdfBookmarkEntry_GetText(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* PdfBookmarkEntry_SetText(void* instance_ptr, char* value);
-   ASPOSE_CELLS_API c_return_ptr_value* PdfBookmarkEntry_GetDestination(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* PdfBookmarkEntry_SetDestination(void* instance_ptr, void* value);
-   ASPOSE_CELLS_API c_return_string_value* PdfBookmarkEntry_GetDestinationName(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* PdfBookmarkEntry_SetDestinationName(void* instance_ptr, char* value);
-   ASPOSE_CELLS_API c_return_bool_value* PdfBookmarkEntry_IsOpen(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* PdfBookmarkEntry_SetIsOpen(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_bool_value* PdfBookmarkEntry_IsCollapse(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* PdfBookmarkEntry_SetIsCollapse(void* instance_ptr, bool value);
-
-
-   ASPOSE_CELLS_API void Delete_PdfBookmarkEntry( void* instance_ptr);
-
-   /**************Class RenderingFont *****************/
-
-   ASPOSE_CELLS_API c_return_ptr_value* New_RenderingFont(char* fontname, float fontsize);
-
-   ASPOSE_CELLS_API c_return_bool_value* RenderingFont_IsNull(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_string_value* RenderingFont_GetName(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_float_value* RenderingFont_GetSize(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_bool_value* RenderingFont_GetBold(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* RenderingFont_SetBold(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_bool_value* RenderingFont_GetItalic(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* RenderingFont_SetItalic(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_ptr_value* RenderingFont_GetColor(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* RenderingFont_SetColor(void* instance_ptr, void* value);
-
-
-   ASPOSE_CELLS_API void Delete_RenderingFont( void* instance_ptr);
-
-   /**************Class RenderingWatermark *****************/
-
-   ASPOSE_CELLS_API c_return_ptr_value* New_RenderingWatermark_String_RenderingFont(char* text, void* renderingfont);
-   ASPOSE_CELLS_API c_return_ptr_value* New_RenderingWatermark_Stream(void* imagedata, int imagedata_length);
-
-   ASPOSE_CELLS_API c_return_bool_value* RenderingWatermark_IsNull(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_float_value* RenderingWatermark_GetRotation(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* RenderingWatermark_SetRotation(void* instance_ptr, float value);
-   ASPOSE_CELLS_API c_return_int_value* RenderingWatermark_GetScaleToPagePercent(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* RenderingWatermark_SetScaleToPagePercent(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_float_value* RenderingWatermark_GetOpacity(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* RenderingWatermark_SetOpacity(void* instance_ptr, float value);
-   ASPOSE_CELLS_API c_return_bool_value* RenderingWatermark_IsBackground(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* RenderingWatermark_SetIsBackground(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_string_value* RenderingWatermark_GetText(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_ptr_value* RenderingWatermark_GetFont(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_ptr_value* RenderingWatermark_GetImage(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_int_value* RenderingWatermark_GetHAlignment(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* RenderingWatermark_SetHAlignment(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_int_value* RenderingWatermark_GetVAlignment(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* RenderingWatermark_SetVAlignment(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_float_value* RenderingWatermark_GetOffsetX(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* RenderingWatermark_SetOffsetX(void* instance_ptr, float value);
-   ASPOSE_CELLS_API c_return_float_value* RenderingWatermark_GetOffsetY(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* RenderingWatermark_SetOffsetY(void* instance_ptr, float value);
-
-
-   ASPOSE_CELLS_API void Delete_RenderingWatermark( void* instance_ptr);
-
-   /**************Class SheetPrintingPreview *****************/
-
-   ASPOSE_CELLS_API c_return_ptr_value* New_SheetPrintingPreview(void* sheet, void* options);
-
-   ASPOSE_CELLS_API c_return_bool_value* SheetPrintingPreview_IsNull(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_int_value* SheetPrintingPreview_GetEvaluatedPageCount(void* instance_ptr);
-
-
-   ASPOSE_CELLS_API void Delete_SheetPrintingPreview( void* instance_ptr);
-
-   /**************Class SheetRender *****************/
-
-   ASPOSE_CELLS_API c_return_ptr_value* New_SheetRender(void* worksheet, void* options);
-
-   ASPOSE_CELLS_API c_return_bool_value* SheetRender_IsNull(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_int_value* SheetRender_GetPageCount(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_double_value* SheetRender_GetPageScale(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_ptr_value* SheetRender_GetPageSizeInch(void* instance_ptr, int32_t pageindex);
-   ASPOSE_CELLS_API c_return_void_value* SheetRender_ToImage_Integer_String(void* instance_ptr, int32_t pageindex, char* filename);
-   ASPOSE_CELLS_API c_return_ptr_value* SheetRender_ToImage_Integer(void* instance_ptr, int32_t pageindex);
-   ASPOSE_CELLS_API c_return_ptr_value* SheetRender_ToTiff(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SheetRender_ToTiff_String(void* instance_ptr, char* filename);
-   ASPOSE_CELLS_API c_return_void_value* SheetRender_Dispose(void* instance_ptr);
-
-
-   ASPOSE_CELLS_API void Delete_SheetRender( void* instance_ptr);
-
-   /**************Class SheetSet *****************/
-
-   ASPOSE_CELLS_API c_return_ptr_value* New_SheetSet_int32_tArray(void* sheetindexes, int sheetindexes_length);
-   ASPOSE_CELLS_API c_return_ptr_value* New_SheetSet_U16StringArray(void* sheetnames, int sheetnames_length);
-
-   ASPOSE_CELLS_API c_return_bool_value* SheetSet_IsNull(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_ptr_value* SheetSet_GetActive();
-   ASPOSE_CELLS_API c_return_ptr_value* SheetSet_GetVisible();
-   ASPOSE_CELLS_API c_return_ptr_value* SheetSet_GetAll();
-
-
-   ASPOSE_CELLS_API void Delete_SheetSet( void* instance_ptr);
-
-   /**************Class SvgImageOptions *****************/
-
-   ASPOSE_CELLS_API c_return_ptr_value* New_SvgImageOptions();
-   ASPOSE_CELLS_API c_return_ptr_value* New_SvgImageOptions_ImageOrPrintOptions(void* src);
-
-   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_IsNull(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetImageType(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetImageType(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetFitToViewPort(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetFitToViewPort(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_string_value* SvgImageOptions_GetCssPrefix(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetCssPrefix(void* instance_ptr, char* value);
-   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetEmbeddedFontType(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetEmbeddedFontType(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetPrintWithStatusDialog(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetPrintWithStatusDialog(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetHorizontalResolution(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetHorizontalResolution(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetVerticalResolution(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetVerticalResolution(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetTiffCompression(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetTiffCompression(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetTiffColorDepth(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetTiffColorDepth(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetTiffBinarizationMethod(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetTiffBinarizationMethod(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetPrintingPage(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetPrintingPage(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetQuality(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetQuality(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetOnePagePerSheet(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetOnePagePerSheet(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetAllColumnsInOnePagePerSheet(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetAllColumnsInOnePagePerSheet(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_ptr_value* SvgImageOptions_GetDrawObjectEventHandler(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetDrawObjectEventHandler(void* instance_ptr, void* value);
-   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetOnlyArea(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetOnlyArea(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetTransparent(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetTransparent(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetIsFontSubstitutionCharGranularity(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_IsFontSubstitutionCharGranularity(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetPageIndex(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetPageIndex(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetPageCount(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetPageCount(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetDesiredSize(void* instance_ptr, int32_t desiredwidth, int32_t desiredheight, bool keepaspectratio);
-   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_IsOptimized(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetIsOptimized(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_string_value* SvgImageOptions_GetDefaultFont(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetDefaultFont(void* instance_ptr, char* value);
-   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetCheckWorkbookDefaultFont(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetCheckWorkbookDefaultFont(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_bool_value* SvgImageOptions_GetOutputBlankPageWhenNothingToPrint(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetOutputBlankPageWhenNothingToPrint(void* instance_ptr, bool value);
-   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetGridlineType(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetGridlineType(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_ptr_value* SvgImageOptions_GetGridlineColor(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetGridlineColor(void* instance_ptr, void* value);
-   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetTextCrossType(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetTextCrossType(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetDefaultEditLanguage(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetDefaultEditLanguage(void* instance_ptr, int value);
-   ASPOSE_CELLS_API c_return_ptr_value* SvgImageOptions_GetSheetSet(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetSheetSet(void* instance_ptr, void* value);
-   ASPOSE_CELLS_API c_return_int_value* SvgImageOptions_GetEmfRenderSetting(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* SvgImageOptions_SetEmfRenderSetting(void* instance_ptr, int value);
-
-
-   ASPOSE_CELLS_API void Delete_SvgImageOptions( void* instance_ptr);
-
-   /**************Class WorkbookPrintingPreview *****************/
-
-   ASPOSE_CELLS_API c_return_ptr_value* New_WorkbookPrintingPreview(void* workbook, void* options);
-
-   ASPOSE_CELLS_API c_return_bool_value* WorkbookPrintingPreview_IsNull(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_int_value* WorkbookPrintingPreview_GetEvaluatedPageCount(void* instance_ptr);
-
-
-   ASPOSE_CELLS_API void Delete_WorkbookPrintingPreview( void* instance_ptr);
-
-   /**************Class WorkbookRender *****************/
-
-   ASPOSE_CELLS_API c_return_ptr_value* New_WorkbookRender(void* workbook, void* options);
-
-   ASPOSE_CELLS_API c_return_bool_value* WorkbookRender_IsNull(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_int_value* WorkbookRender_GetPageCount(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_ptr_value* WorkbookRender_GetPageSizeInch(void* instance_ptr, int32_t pageindex);
-   ASPOSE_CELLS_API c_return_ptr_value* WorkbookRender_ToImage(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* WorkbookRender_ToImage_String(void* instance_ptr, char* filename);
-   ASPOSE_CELLS_API c_return_void_value* WorkbookRender_ToImage_Integer_String(void* instance_ptr, int32_t pageindex, char* filename);
-   ASPOSE_CELLS_API c_return_ptr_value* WorkbookRender_ToImage_Integer(void* instance_ptr, int32_t pageindex);
-   ASPOSE_CELLS_API c_return_void_value* WorkbookRender_Dispose(void* instance_ptr);
-
-
-   ASPOSE_CELLS_API void Delete_WorkbookRender( void* instance_ptr);
-
    /**************Class HighlightChangesOptions *****************/
 
    ASPOSE_CELLS_API c_return_ptr_value* New_HighlightChangesOptions(bool highlightonscreen, bool listonnewsheet);
@@ -17862,6 +18295,7 @@ extern "C" {
    ASPOSE_CELLS_API c_return_string_value* PivotGlobalizationSettings_GetTextOfMinutes(void* instance_ptr);
    ASPOSE_CELLS_API c_return_string_value* PivotGlobalizationSettings_GetTextOfSeconds(void* instance_ptr);
    ASPOSE_CELLS_API c_return_string_value* PivotGlobalizationSettings_GetTextOfRange(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* PivotGlobalizationSettings_GetTextOfAllPeriods(void* instance_ptr);
    ASPOSE_CELLS_API c_return_string_value* PivotGlobalizationSettings_GetTextOfSubTotal(void* instance_ptr, int subtotaltype);
 
 
@@ -17919,6 +18353,7 @@ extern "C" {
    ASPOSE_CELLS_API c_return_bool_value* Slicer_GetLockedPosition(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* Slicer_SetLockedPosition(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_void_value* Slicer_Refresh(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* Slicer_GetShape(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* Slicer_GetSlicerCache(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* Slicer_GetParent(void* instance_ptr);
    ASPOSE_CELLS_API c_return_int_value* Slicer_GetStyleType(void* instance_ptr);
@@ -17931,18 +18366,6 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* Slicer_SetCaptionVisible(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_int_value* Slicer_GetNumberOfColumns(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* Slicer_SetNumberOfColumns(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_int_value* Slicer_GetLeftPixel(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* Slicer_SetLeftPixel(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_int_value* Slicer_GetTopPixel(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* Slicer_SetTopPixel(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_double_value* Slicer_GetWidth(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* Slicer_SetWidth(void* instance_ptr, double value);
-   ASPOSE_CELLS_API c_return_int_value* Slicer_GetWidthPixel(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* Slicer_SetWidthPixel(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_double_value* Slicer_GetHeight(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* Slicer_SetHeight(void* instance_ptr, double value);
-   ASPOSE_CELLS_API c_return_int_value* Slicer_GetHeightPixel(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* Slicer_SetHeightPixel(void* instance_ptr, int32_t value);
    ASPOSE_CELLS_API c_return_int_value* Slicer_GetColumnWidthPixel(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* Slicer_SetColumnWidthPixel(void* instance_ptr, int32_t value);
    ASPOSE_CELLS_API c_return_double_value* Slicer_GetColumnWidth(void* instance_ptr);
@@ -18019,16 +18442,9 @@ extern "C" {
    ASPOSE_CELLS_API c_return_bool_value* Timeline_IsNull(void* instance_ptr);
    ASPOSE_CELLS_API c_return_string_value* Timeline_GetCaption(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* Timeline_SetCaption(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_ptr_value* Timeline_GetShape(void* instance_ptr);
    ASPOSE_CELLS_API c_return_string_value* Timeline_GetName(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* Timeline_SetName(void* instance_ptr, char* value);
-   ASPOSE_CELLS_API c_return_int_value* Timeline_GetLeftPixel(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* Timeline_SetLeftPixel(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_int_value* Timeline_GetTopPixel(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* Timeline_SetTopPixel(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_int_value* Timeline_GetWidthPixel(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* Timeline_SetWidthPixel(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_int_value* Timeline_GetHeightPixel(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* Timeline_SetHeightPixel(void* instance_ptr, int32_t value);
 
 
    ASPOSE_CELLS_API void Delete_Timeline( void* instance_ptr);

@@ -622,7 +622,12 @@ type AccentEquationNode struct {
 //   src - EquationNode 
 func NewAccentEquationNode(src *EquationNode) ( *AccentEquationNode, error) {
 	accentequationnode := &AccentEquationNode{}
-	CGoReturnPtr := C.New_AccentEquationNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_AccentEquationNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		accentequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(accentequationnode, DeleteAccentEquationNode)
@@ -720,7 +725,12 @@ func (instance *AccentEquationNode) SetAccentCharacterType(value EquationCombini
 //   bool  
 func (instance *AccentEquationNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.AccentEquationNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -844,7 +854,12 @@ func (instance *AccentEquationNode) GetParentNode()  (*EquationNode,  error)  {
 //   void  
 func (instance *AccentEquationNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.AccentEquationNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.AccentEquationNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -905,7 +920,12 @@ func (instance *AccentEquationNode) AddChild_EquationNodeType(equationtype Equat
 //   void  
 func (instance *AccentEquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.AccentEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.AccentEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1006,7 +1026,12 @@ func (instance *AccentEquationNode) Remove()  error {
 //   void  
 func (instance *AccentEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.AccentEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.AccentEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1068,7 +1093,16 @@ func (instance *AccentEquationNode) GetEquationType()  (EquationNodeType,  error
 //   EquationNode  
 func AccentEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.AccentEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1110,7 +1144,12 @@ type ArrayEquationNode struct {
 //   src - EquationNode 
 func NewArrayEquationNode(src *EquationNode) ( *ArrayEquationNode, error) {
 	arrayequationnode := &ArrayEquationNode{}
-	CGoReturnPtr := C.New_ArrayEquationNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_ArrayEquationNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		arrayequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(arrayequationnode, DeleteArrayEquationNode)
@@ -1143,7 +1182,12 @@ func (instance *ArrayEquationNode) IsNull()  (bool,  error)  {
 //   bool  
 func (instance *ArrayEquationNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.ArrayEquationNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.ArrayEquationNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1267,7 +1311,12 @@ func (instance *ArrayEquationNode) GetParentNode()  (*EquationNode,  error)  {
 //   void  
 func (instance *ArrayEquationNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.ArrayEquationNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ArrayEquationNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1328,7 +1377,12 @@ func (instance *ArrayEquationNode) AddChild_EquationNodeType(equationtype Equati
 //   void  
 func (instance *ArrayEquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.ArrayEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.ArrayEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1429,7 +1483,12 @@ func (instance *ArrayEquationNode) Remove()  error {
 //   void  
 func (instance *ArrayEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.ArrayEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.ArrayEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1491,7 +1550,16 @@ func (instance *ArrayEquationNode) GetEquationType()  (EquationNodeType,  error)
 //   EquationNode  
 func ArrayEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.ArrayEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.ArrayEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1533,7 +1601,12 @@ type BarEquationNode struct {
 //   src - EquationNode 
 func NewBarEquationNode(src *EquationNode) ( *BarEquationNode, error) {
 	barequationnode := &BarEquationNode{}
-	CGoReturnPtr := C.New_BarEquationNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_BarEquationNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		barequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(barequationnode, DeleteBarEquationNode)
@@ -1598,7 +1671,12 @@ func (instance *BarEquationNode) SetBarPosition(value EquationCharacterPositionT
 //   bool  
 func (instance *BarEquationNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.BarEquationNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.BarEquationNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1722,7 +1800,12 @@ func (instance *BarEquationNode) GetParentNode()  (*EquationNode,  error)  {
 //   void  
 func (instance *BarEquationNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.BarEquationNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.BarEquationNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1783,7 +1866,12 @@ func (instance *BarEquationNode) AddChild_EquationNodeType(equationtype Equation
 //   void  
 func (instance *BarEquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.BarEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.BarEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1884,7 +1972,12 @@ func (instance *BarEquationNode) Remove()  error {
 //   void  
 func (instance *BarEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.BarEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.BarEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1946,7 +2039,16 @@ func (instance *BarEquationNode) GetEquationType()  (EquationNodeType,  error)  
 //   EquationNode  
 func BarEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BarEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.BarEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1988,7 +2090,12 @@ type BorderBoxEquationNode struct {
 //   src - EquationNode 
 func NewBorderBoxEquationNode(src *EquationNode) ( *BorderBoxEquationNode, error) {
 	borderboxequationnode := &BorderBoxEquationNode{}
-	CGoReturnPtr := C.New_BorderBoxEquationNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_BorderBoxEquationNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		borderboxequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(borderboxequationnode, DeleteBorderBoxEquationNode)
@@ -2021,7 +2128,12 @@ func (instance *BorderBoxEquationNode) IsNull()  (bool,  error)  {
 //   bool  
 func (instance *BorderBoxEquationNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.BorderBoxEquationNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2145,7 +2257,12 @@ func (instance *BorderBoxEquationNode) GetParentNode()  (*EquationNode,  error) 
 //   void  
 func (instance *BorderBoxEquationNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.BorderBoxEquationNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2206,7 +2323,12 @@ func (instance *BorderBoxEquationNode) AddChild_EquationNodeType(equationtype Eq
 //   void  
 func (instance *BorderBoxEquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.BorderBoxEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2307,7 +2429,12 @@ func (instance *BorderBoxEquationNode) Remove()  error {
 //   void  
 func (instance *BorderBoxEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.BorderBoxEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2369,7 +2496,16 @@ func (instance *BorderBoxEquationNode) GetEquationType()  (EquationNodeType,  er
 //   EquationNode  
 func BorderBoxEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.BorderBoxEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2411,7 +2547,12 @@ type BoxEquationNode struct {
 //   src - EquationNode 
 func NewBoxEquationNode(src *EquationNode) ( *BoxEquationNode, error) {
 	boxequationnode := &BoxEquationNode{}
-	CGoReturnPtr := C.New_BoxEquationNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_BoxEquationNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		boxequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(boxequationnode, DeleteBoxEquationNode)
@@ -2444,7 +2585,12 @@ func (instance *BoxEquationNode) IsNull()  (bool,  error)  {
 //   bool  
 func (instance *BoxEquationNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.BoxEquationNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.BoxEquationNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2568,7 +2714,12 @@ func (instance *BoxEquationNode) GetParentNode()  (*EquationNode,  error)  {
 //   void  
 func (instance *BoxEquationNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.BoxEquationNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.BoxEquationNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2629,7 +2780,12 @@ func (instance *BoxEquationNode) AddChild_EquationNodeType(equationtype Equation
 //   void  
 func (instance *BoxEquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.BoxEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.BoxEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2730,7 +2886,12 @@ func (instance *BoxEquationNode) Remove()  error {
 //   void  
 func (instance *BoxEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.BoxEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.BoxEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2792,7 +2953,16 @@ func (instance *BoxEquationNode) GetEquationType()  (EquationNodeType,  error)  
 //   EquationNode  
 func BoxEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BoxEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.BoxEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2835,7 +3005,12 @@ type DelimiterEquationNode struct {
 //   src - EquationNode 
 func NewDelimiterEquationNode(src *EquationNode) ( *DelimiterEquationNode, error) {
 	delimiterequationnode := &DelimiterEquationNode{}
-	CGoReturnPtr := C.New_DelimiterEquationNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_DelimiterEquationNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		delimiterequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(delimiterequationnode, DeleteDelimiterEquationNode)
@@ -3014,7 +3189,12 @@ func (instance *DelimiterEquationNode) SetDelimiterShape(value EquationDelimiter
 //   bool  
 func (instance *DelimiterEquationNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.DelimiterEquationNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3138,7 +3318,12 @@ func (instance *DelimiterEquationNode) GetParentNode()  (*EquationNode,  error) 
 //   void  
 func (instance *DelimiterEquationNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DelimiterEquationNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3199,7 +3384,12 @@ func (instance *DelimiterEquationNode) AddChild_EquationNodeType(equationtype Eq
 //   void  
 func (instance *DelimiterEquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.DelimiterEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3300,7 +3490,12 @@ func (instance *DelimiterEquationNode) Remove()  error {
 //   void  
 func (instance *DelimiterEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.DelimiterEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3362,7 +3557,16 @@ func (instance *DelimiterEquationNode) GetEquationType()  (EquationNodeType,  er
 //   EquationNode  
 func DelimiterEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.DelimiterEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3407,7 +3611,12 @@ type EquationComponentNode struct {
 //   src - EquationNode 
 func NewEquationComponentNode(src *EquationNode) ( *EquationComponentNode, error) {
 	equationcomponentnode := &EquationComponentNode{}
-	CGoReturnPtr := C.New_EquationComponentNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_EquationComponentNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		equationcomponentnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(equationcomponentnode, DeleteEquationComponentNode)
@@ -3440,7 +3649,12 @@ func (instance *EquationComponentNode) IsNull()  (bool,  error)  {
 //   bool  
 func (instance *EquationComponentNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.EquationComponentNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.EquationComponentNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3564,7 +3778,12 @@ func (instance *EquationComponentNode) GetParentNode()  (*EquationNode,  error) 
 //   void  
 func (instance *EquationComponentNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.EquationComponentNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.EquationComponentNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3625,7 +3844,12 @@ func (instance *EquationComponentNode) AddChild_EquationNodeType(equationtype Eq
 //   void  
 func (instance *EquationComponentNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.EquationComponentNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.EquationComponentNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3726,7 +3950,12 @@ func (instance *EquationComponentNode) Remove()  error {
 //   void  
 func (instance *EquationComponentNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.EquationComponentNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.EquationComponentNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3788,7 +4017,16 @@ func (instance *EquationComponentNode) GetEquationType()  (EquationNodeType,  er
 //   EquationNode  
 func EquationComponentNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationComponentNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.EquationComponentNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3830,7 +4068,12 @@ type EquationNode struct {
 //   src - FontSetting 
 func NewEquationNode(src *FontSetting) ( *EquationNode, error) {
 	equationnode := &EquationNode{}
-	CGoReturnPtr := C.New_EquationNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_EquationNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		equationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(equationnode, DeleteEquationNode)
@@ -3879,7 +4122,12 @@ func (instance *EquationNode) GetParentNode()  (*EquationNode,  error)  {
 //   void  
 func (instance *EquationNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.EquationNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.EquationNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3940,7 +4188,12 @@ func (instance *EquationNode) AddChild_EquationNodeType(equationtype EquationNod
 //   void  
 func (instance *EquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.EquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.EquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4041,7 +4294,12 @@ func (instance *EquationNode) Remove()  error {
 //   void  
 func (instance *EquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.EquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.EquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4084,7 +4342,12 @@ func (instance *EquationNode) RemoveAllChildren()  error {
 //   bool  
 func (instance *EquationNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.EquationNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.EquationNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4136,7 +4399,16 @@ func (instance *EquationNode) GetEquationType()  (EquationNodeType,  error)  {
 //   EquationNode  
 func EquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.EquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4248,7 +4520,12 @@ type EquationNodeParagraph struct {
 //   src - EquationNode 
 func NewEquationNodeParagraph(src *EquationNode) ( *EquationNodeParagraph, error) {
 	equationnodeparagraph := &EquationNodeParagraph{}
-	CGoReturnPtr := C.New_EquationNodeParagraph(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_EquationNodeParagraph(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		equationnodeparagraph.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(equationnodeparagraph, DeleteEquationNodeParagraph)
@@ -4313,7 +4590,12 @@ func (instance *EquationNodeParagraph) SetJustification(value EquationHorizontal
 //   bool  
 func (instance *EquationNodeParagraph) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.EquationNodeParagraph_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4437,7 +4719,12 @@ func (instance *EquationNodeParagraph) GetParentNode()  (*EquationNode,  error) 
 //   void  
 func (instance *EquationNodeParagraph) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.EquationNodeParagraph_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4498,7 +4785,12 @@ func (instance *EquationNodeParagraph) AddChild_EquationNodeType(equationtype Eq
 //   void  
 func (instance *EquationNodeParagraph) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.EquationNodeParagraph_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4599,7 +4891,12 @@ func (instance *EquationNodeParagraph) Remove()  error {
 //   void  
 func (instance *EquationNodeParagraph) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.EquationNodeParagraph_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4661,7 +4958,16 @@ func (instance *EquationNodeParagraph) GetEquationType()  (EquationNodeType,  er
 //   EquationNode  
 func EquationNodeParagraph_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.EquationNodeParagraph_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4703,7 +5009,12 @@ type FractionEquationNode struct {
 //   src - EquationNode 
 func NewFractionEquationNode(src *EquationNode) ( *FractionEquationNode, error) {
 	fractionequationnode := &FractionEquationNode{}
-	CGoReturnPtr := C.New_FractionEquationNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_FractionEquationNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		fractionequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(fractionequationnode, DeleteFractionEquationNode)
@@ -4768,7 +5079,12 @@ func (instance *FractionEquationNode) SetFractionType(value EquationFractionType
 //   bool  
 func (instance *FractionEquationNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.FractionEquationNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.FractionEquationNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4892,7 +5208,12 @@ func (instance *FractionEquationNode) GetParentNode()  (*EquationNode,  error)  
 //   void  
 func (instance *FractionEquationNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.FractionEquationNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.FractionEquationNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4953,7 +5274,12 @@ func (instance *FractionEquationNode) AddChild_EquationNodeType(equationtype Equ
 //   void  
 func (instance *FractionEquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.FractionEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.FractionEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5054,7 +5380,12 @@ func (instance *FractionEquationNode) Remove()  error {
 //   void  
 func (instance *FractionEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.FractionEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.FractionEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5116,7 +5447,16 @@ func (instance *FractionEquationNode) GetEquationType()  (EquationNodeType,  err
 //   EquationNode  
 func FractionEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.FractionEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.FractionEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5159,7 +5499,12 @@ type FunctionEquationNode struct {
 //   src - EquationNode 
 func NewFunctionEquationNode(src *EquationNode) ( *FunctionEquationNode, error) {
 	functionequationnode := &FunctionEquationNode{}
-	CGoReturnPtr := C.New_FunctionEquationNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_FunctionEquationNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		functionequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(functionequationnode, DeleteFunctionEquationNode)
@@ -5192,7 +5537,12 @@ func (instance *FunctionEquationNode) IsNull()  (bool,  error)  {
 //   bool  
 func (instance *FunctionEquationNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.FunctionEquationNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.FunctionEquationNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -5316,7 +5666,12 @@ func (instance *FunctionEquationNode) GetParentNode()  (*EquationNode,  error)  
 //   void  
 func (instance *FunctionEquationNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.FunctionEquationNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.FunctionEquationNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5377,7 +5732,12 @@ func (instance *FunctionEquationNode) AddChild_EquationNodeType(equationtype Equ
 //   void  
 func (instance *FunctionEquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.FunctionEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.FunctionEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5478,7 +5838,12 @@ func (instance *FunctionEquationNode) Remove()  error {
 //   void  
 func (instance *FunctionEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.FunctionEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.FunctionEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5540,7 +5905,16 @@ func (instance *FunctionEquationNode) GetEquationType()  (EquationNodeType,  err
 //   EquationNode  
 func FunctionEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.FunctionEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.FunctionEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5582,7 +5956,12 @@ type GroupCharacterEquationNode struct {
 //   src - EquationNode 
 func NewGroupCharacterEquationNode(src *EquationNode) ( *GroupCharacterEquationNode, error) {
 	groupcharacterequationnode := &GroupCharacterEquationNode{}
-	CGoReturnPtr := C.New_GroupCharacterEquationNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_GroupCharacterEquationNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		groupcharacterequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(groupcharacterequationnode, DeleteGroupCharacterEquationNode)
@@ -5744,7 +6123,12 @@ func (instance *GroupCharacterEquationNode) SetVertJc(value EquationCharacterPos
 //   bool  
 func (instance *GroupCharacterEquationNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.GroupCharacterEquationNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -5868,7 +6252,12 @@ func (instance *GroupCharacterEquationNode) GetParentNode()  (*EquationNode,  er
 //   void  
 func (instance *GroupCharacterEquationNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.GroupCharacterEquationNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5929,7 +6318,12 @@ func (instance *GroupCharacterEquationNode) AddChild_EquationNodeType(equationty
 //   void  
 func (instance *GroupCharacterEquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.GroupCharacterEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6030,7 +6424,12 @@ func (instance *GroupCharacterEquationNode) Remove()  error {
 //   void  
 func (instance *GroupCharacterEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.GroupCharacterEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6092,7 +6491,16 @@ func (instance *GroupCharacterEquationNode) GetEquationType()  (EquationNodeType
 //   EquationNode  
 func GroupCharacterEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.GroupCharacterEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6134,7 +6542,12 @@ type LimLowUppEquationNode struct {
 //   src - EquationNode 
 func NewLimLowUppEquationNode(src *EquationNode) ( *LimLowUppEquationNode, error) {
 	limlowuppequationnode := &LimLowUppEquationNode{}
-	CGoReturnPtr := C.New_LimLowUppEquationNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_LimLowUppEquationNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		limlowuppequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(limlowuppequationnode, DeleteLimLowUppEquationNode)
@@ -6167,7 +6580,12 @@ func (instance *LimLowUppEquationNode) IsNull()  (bool,  error)  {
 //   bool  
 func (instance *LimLowUppEquationNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.LimLowUppEquationNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -6291,7 +6709,12 @@ func (instance *LimLowUppEquationNode) GetParentNode()  (*EquationNode,  error) 
 //   void  
 func (instance *LimLowUppEquationNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LimLowUppEquationNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6352,7 +6775,12 @@ func (instance *LimLowUppEquationNode) AddChild_EquationNodeType(equationtype Eq
 //   void  
 func (instance *LimLowUppEquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.LimLowUppEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6453,7 +6881,12 @@ func (instance *LimLowUppEquationNode) Remove()  error {
 //   void  
 func (instance *LimLowUppEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.LimLowUppEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6515,7 +6948,16 @@ func (instance *LimLowUppEquationNode) GetEquationType()  (EquationNodeType,  er
 //   EquationNode  
 func LimLowUppEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.LimLowUppEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6557,7 +6999,12 @@ type MathematicalEquationNode struct {
 //   src - EquationNode 
 func NewMathematicalEquationNode(src *EquationNode) ( *MathematicalEquationNode, error) {
 	mathematicalequationnode := &MathematicalEquationNode{}
-	CGoReturnPtr := C.New_MathematicalEquationNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_MathematicalEquationNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		mathematicalequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(mathematicalequationnode, DeleteMathematicalEquationNode)
@@ -6590,7 +7037,12 @@ func (instance *MathematicalEquationNode) IsNull()  (bool,  error)  {
 //   bool  
 func (instance *MathematicalEquationNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.MathematicalEquationNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -6714,7 +7166,12 @@ func (instance *MathematicalEquationNode) GetParentNode()  (*EquationNode,  erro
 //   void  
 func (instance *MathematicalEquationNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.MathematicalEquationNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6775,7 +7232,12 @@ func (instance *MathematicalEquationNode) AddChild_EquationNodeType(equationtype
 //   void  
 func (instance *MathematicalEquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.MathematicalEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6876,7 +7338,12 @@ func (instance *MathematicalEquationNode) Remove()  error {
 //   void  
 func (instance *MathematicalEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.MathematicalEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6938,7 +7405,16 @@ func (instance *MathematicalEquationNode) GetEquationType()  (EquationNodeType, 
 //   EquationNode  
 func MathematicalEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.MathematicalEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6980,7 +7456,12 @@ type MatrixEquationNode struct {
 //   src - EquationNode 
 func NewMatrixEquationNode(src *EquationNode) ( *MatrixEquationNode, error) {
 	matrixequationnode := &MatrixEquationNode{}
-	CGoReturnPtr := C.New_MatrixEquationNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_MatrixEquationNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		matrixequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(matrixequationnode, DeleteMatrixEquationNode)
@@ -7074,7 +7555,12 @@ func (instance *MatrixEquationNode) SetIsHidePlaceholder(value bool)  error {
 //   bool  
 func (instance *MatrixEquationNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.MatrixEquationNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7198,7 +7684,12 @@ func (instance *MatrixEquationNode) GetParentNode()  (*EquationNode,  error)  {
 //   void  
 func (instance *MatrixEquationNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.MatrixEquationNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.MatrixEquationNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7259,7 +7750,12 @@ func (instance *MatrixEquationNode) AddChild_EquationNodeType(equationtype Equat
 //   void  
 func (instance *MatrixEquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.MatrixEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.MatrixEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7360,7 +7856,12 @@ func (instance *MatrixEquationNode) Remove()  error {
 //   void  
 func (instance *MatrixEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.MatrixEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.MatrixEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7422,7 +7923,16 @@ func (instance *MatrixEquationNode) GetEquationType()  (EquationNodeType,  error
 //   EquationNode  
 func MatrixEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.MatrixEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7464,7 +7974,12 @@ type NaryEquationNode struct {
 //   src - EquationNode 
 func NewNaryEquationNode(src *EquationNode) ( *NaryEquationNode, error) {
 	naryequationnode := &NaryEquationNode{}
-	CGoReturnPtr := C.New_NaryEquationNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_NaryEquationNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		naryequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(naryequationnode, DeleteNaryEquationNode)
@@ -7681,7 +8196,12 @@ func (instance *NaryEquationNode) SetNaryGrow(value bool)  error {
 //   bool  
 func (instance *NaryEquationNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.NaryEquationNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7805,7 +8325,12 @@ func (instance *NaryEquationNode) GetParentNode()  (*EquationNode,  error)  {
 //   void  
 func (instance *NaryEquationNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.NaryEquationNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.NaryEquationNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7866,7 +8391,12 @@ func (instance *NaryEquationNode) AddChild_EquationNodeType(equationtype Equatio
 //   void  
 func (instance *NaryEquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.NaryEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.NaryEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7967,7 +8497,12 @@ func (instance *NaryEquationNode) Remove()  error {
 //   void  
 func (instance *NaryEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.NaryEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.NaryEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8029,7 +8564,16 @@ func (instance *NaryEquationNode) GetEquationType()  (EquationNodeType,  error) 
 //   EquationNode  
 func NaryEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.NaryEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8071,7 +8615,12 @@ type RadicalEquationNode struct {
 //   src - EquationNode 
 func NewRadicalEquationNode(src *EquationNode) ( *RadicalEquationNode, error) {
 	radicalequationnode := &RadicalEquationNode{}
-	CGoReturnPtr := C.New_RadicalEquationNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_RadicalEquationNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		radicalequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(radicalequationnode, DeleteRadicalEquationNode)
@@ -8133,7 +8682,12 @@ func (instance *RadicalEquationNode) SetIsDegHide(value bool)  error {
 //   bool  
 func (instance *RadicalEquationNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.RadicalEquationNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.RadicalEquationNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -8257,7 +8811,12 @@ func (instance *RadicalEquationNode) GetParentNode()  (*EquationNode,  error)  {
 //   void  
 func (instance *RadicalEquationNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.RadicalEquationNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.RadicalEquationNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8318,7 +8877,12 @@ func (instance *RadicalEquationNode) AddChild_EquationNodeType(equationtype Equa
 //   void  
 func (instance *RadicalEquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.RadicalEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.RadicalEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8419,7 +8983,12 @@ func (instance *RadicalEquationNode) Remove()  error {
 //   void  
 func (instance *RadicalEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.RadicalEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.RadicalEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8481,7 +9050,16 @@ func (instance *RadicalEquationNode) GetEquationType()  (EquationNodeType,  erro
 //   EquationNode  
 func RadicalEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.RadicalEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.RadicalEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8524,7 +9102,12 @@ type SubSupEquationNode struct {
 //   src - EquationNode 
 func NewSubSupEquationNode(src *EquationNode) ( *SubSupEquationNode, error) {
 	subsupequationnode := &SubSupEquationNode{}
-	CGoReturnPtr := C.New_SubSupEquationNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_SubSupEquationNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		subsupequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(subsupequationnode, DeleteSubSupEquationNode)
@@ -8557,7 +9140,12 @@ func (instance *SubSupEquationNode) IsNull()  (bool,  error)  {
 //   bool  
 func (instance *SubSupEquationNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.SubSupEquationNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.SubSupEquationNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -8681,7 +9269,12 @@ func (instance *SubSupEquationNode) GetParentNode()  (*EquationNode,  error)  {
 //   void  
 func (instance *SubSupEquationNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.SubSupEquationNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SubSupEquationNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8742,7 +9335,12 @@ func (instance *SubSupEquationNode) AddChild_EquationNodeType(equationtype Equat
 //   void  
 func (instance *SubSupEquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.SubSupEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.SubSupEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8843,7 +9441,12 @@ func (instance *SubSupEquationNode) Remove()  error {
 //   void  
 func (instance *SubSupEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.SubSupEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.SubSupEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8905,7 +9508,16 @@ func (instance *SubSupEquationNode) GetEquationType()  (EquationNodeType,  error
 //   EquationNode  
 func SubSupEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.SubSupEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.SubSupEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8948,7 +9560,12 @@ type TextRunEquationNode struct {
 //   src - EquationNode 
 func NewTextRunEquationNode(src *EquationNode) ( *TextRunEquationNode, error) {
 	textrunequationnode := &TextRunEquationNode{}
-	CGoReturnPtr := C.New_TextRunEquationNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_TextRunEquationNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		textrunequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(textrunequationnode, DeleteTextRunEquationNode)
@@ -9010,7 +9627,12 @@ func (instance *TextRunEquationNode) SetText(value string)  error {
 //   bool  
 func (instance *TextRunEquationNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextRunEquationNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.TextRunEquationNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -9134,7 +9756,12 @@ func (instance *TextRunEquationNode) GetParentNode()  (*EquationNode,  error)  {
 //   void  
 func (instance *TextRunEquationNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.TextRunEquationNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.TextRunEquationNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9195,7 +9822,12 @@ func (instance *TextRunEquationNode) AddChild_EquationNodeType(equationtype Equa
 //   void  
 func (instance *TextRunEquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.TextRunEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.TextRunEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9296,7 +9928,12 @@ func (instance *TextRunEquationNode) Remove()  error {
 //   void  
 func (instance *TextRunEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.TextRunEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.TextRunEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9358,7 +9995,16 @@ func (instance *TextRunEquationNode) GetEquationType()  (EquationNodeType,  erro
 //   EquationNode  
 func TextRunEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.TextRunEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.TextRunEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9400,7 +10046,12 @@ type UnknowEquationNode struct {
 //   src - EquationNode 
 func NewUnknowEquationNode(src *EquationNode) ( *UnknowEquationNode, error) {
 	unknowequationnode := &UnknowEquationNode{}
-	CGoReturnPtr := C.New_UnknowEquationNode(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_UnknowEquationNode(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		unknowequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(unknowequationnode, DeleteUnknowEquationNode)
@@ -9433,7 +10084,12 @@ func (instance *UnknowEquationNode) IsNull()  (bool,  error)  {
 //   bool  
 func (instance *UnknowEquationNode) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.UnknowEquationNode_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.UnknowEquationNode_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -9557,7 +10213,12 @@ func (instance *UnknowEquationNode) GetParentNode()  (*EquationNode,  error)  {
 //   void  
 func (instance *UnknowEquationNode) SetParentNode(value *EquationNode)  error {
 	
-	CGoReturnPtr := C.UnknowEquationNode_SetParentNode( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.UnknowEquationNode_SetParentNode( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9618,7 +10279,12 @@ func (instance *UnknowEquationNode) AddChild_EquationNodeType(equationtype Equat
 //   void  
 func (instance *UnknowEquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.UnknowEquationNode_AddChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.UnknowEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9719,7 +10385,12 @@ func (instance *UnknowEquationNode) Remove()  error {
 //   void  
 func (instance *UnknowEquationNode) RemoveChild_EquationNode(node *EquationNode)  error {
 	
-	CGoReturnPtr := C.UnknowEquationNode_RemoveChild_EquationNode( instance.ptr, node.ptr)
+	var node_ptr unsafe.Pointer = nil
+	if node != nil {
+	  node_ptr =node.ptr
+	}
+
+	CGoReturnPtr := C.UnknowEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9781,7 +10452,16 @@ func (instance *UnknowEquationNode) GetEquationType()  (EquationNodeType,  error
 //   EquationNode  
 func UnknowEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, parent *EquationNode)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.UnknowEquationNode_CreateNode(C.int( int32(equationtype)), workbook.ptr, parent.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var parent_ptr unsafe.Pointer = nil
+	if parent != nil {
+	  parent_ptr =parent.ptr
+	}
+
+	CGoReturnPtr := C.UnknowEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err

@@ -81,7 +81,12 @@ func (instance *AbstractLowCodeLoadOptionsProvider) GetCurrent()  (*LowCodeLoadO
 //   void  
 func (instance *AbstractLowCodeLoadOptionsProvider) Finish(part *LowCodeLoadOptions)  error {
 	
-	CGoReturnPtr := C.AbstractLowCodeLoadOptionsProvider_Finish( instance.ptr, part.ptr)
+	var part_ptr unsafe.Pointer = nil
+	if part != nil {
+	  part_ptr =part.ptr
+	}
+
+	CGoReturnPtr := C.AbstractLowCodeLoadOptionsProvider_Finish( instance.ptr, part_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -270,7 +275,12 @@ func (instance *AbstractLowCodeSaveOptionsProvider) IsNull()  (bool,  error)  {
 //   LowCodeSaveOptions  
 func (instance *AbstractLowCodeSaveOptionsProvider) GetSaveOptions(part *SplitPartInfo)  (*LowCodeSaveOptions,  error)  {
 	
-	CGoReturnPtr := C.AbstractLowCodeSaveOptionsProvider_GetSaveOptions( instance.ptr, part.ptr)
+	var part_ptr unsafe.Pointer = nil
+	if part != nil {
+	  part_ptr =part.ptr
+	}
+
+	CGoReturnPtr := C.AbstractLowCodeSaveOptionsProvider_GetSaveOptions( instance.ptr, part_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -288,7 +298,12 @@ func (instance *AbstractLowCodeSaveOptionsProvider) GetSaveOptions(part *SplitPa
 //   void  
 func (instance *AbstractLowCodeSaveOptionsProvider) Finish(part *LowCodeSaveOptions)  error {
 	
-	CGoReturnPtr := C.AbstractLowCodeSaveOptionsProvider_Finish( instance.ptr, part.ptr)
+	var part_ptr unsafe.Pointer = nil
+	if part != nil {
+	  part_ptr =part.ptr
+	}
+
+	CGoReturnPtr := C.AbstractLowCodeSaveOptionsProvider_Finish( instance.ptr, part_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -351,7 +366,16 @@ func HtmlConverter_Process_String_String(templatefile string, resultfile string)
 //   void  
 func HtmlConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *LowCodeLoadOptions, saveoptions *LowCodeSaveOptions)  error {
 	
-	CGoReturnPtr := C.HtmlConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions.ptr, saveoptions.ptr)
+	var loadoptions_ptr unsafe.Pointer = nil
+	if loadoptions != nil {
+	  loadoptions_ptr =loadoptions.ptr
+	}
+	var saveoptions_ptr unsafe.Pointer = nil
+	if saveoptions != nil {
+	  saveoptions_ptr =saveoptions.ptr
+	}
+
+	CGoReturnPtr := C.HtmlConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions_ptr, saveoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -414,7 +438,16 @@ func ImageConverter_Process_String_String(templatefile string, resultfile string
 //   void  
 func ImageConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *LowCodeLoadOptions, saveoptions *LowCodeSaveOptions)  error {
 	
-	CGoReturnPtr := C.ImageConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions.ptr, saveoptions.ptr)
+	var loadoptions_ptr unsafe.Pointer = nil
+	if loadoptions != nil {
+	  loadoptions_ptr =loadoptions.ptr
+	}
+	var saveoptions_ptr unsafe.Pointer = nil
+	if saveoptions != nil {
+	  saveoptions_ptr =saveoptions.ptr
+	}
+
+	CGoReturnPtr := C.ImageConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions_ptr, saveoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -431,7 +464,20 @@ func ImageConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *L
 //   void  
 func ImageConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLowCodeSaveOptionsProvider(loadoptions *LowCodeLoadOptions, saveoptions *LowCodeSaveOptions, provider *AbstractLowCodeSaveOptionsProvider)  error {
 	
-	CGoReturnPtr := C.ImageConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLowCodeSaveOptionsProvider(loadoptions.ptr, saveoptions.ptr, provider.ptr)
+	var loadoptions_ptr unsafe.Pointer = nil
+	if loadoptions != nil {
+	  loadoptions_ptr =loadoptions.ptr
+	}
+	var saveoptions_ptr unsafe.Pointer = nil
+	if saveoptions != nil {
+	  saveoptions_ptr =saveoptions.ptr
+	}
+	var provider_ptr unsafe.Pointer = nil
+	if provider != nil {
+	  provider_ptr =provider.ptr
+	}
+
+	CGoReturnPtr := C.ImageConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLowCodeSaveOptionsProvider(loadoptions_ptr, saveoptions_ptr, provider_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -494,7 +540,16 @@ func JsonConverter_Process_String_String(templatefile string, resultfile string)
 //   void  
 func JsonConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *LowCodeLoadOptions, saveoptions *LowCodeSaveOptions)  error {
 	
-	CGoReturnPtr := C.JsonConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions.ptr, saveoptions.ptr)
+	var loadoptions_ptr unsafe.Pointer = nil
+	if loadoptions != nil {
+	  loadoptions_ptr =loadoptions.ptr
+	}
+	var saveoptions_ptr unsafe.Pointer = nil
+	if saveoptions != nil {
+	  saveoptions_ptr =saveoptions.ptr
+	}
+
+	CGoReturnPtr := C.JsonConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions_ptr, saveoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -537,7 +592,12 @@ func NewLowCodeHtmlSaveOptions() ( *LowCodeHtmlSaveOptions, error) {
 //   src - LowCodeSaveOptions 
 func NewLowCodeHtmlSaveOptions_LowCodeSaveOptions(src *LowCodeSaveOptions) ( *LowCodeHtmlSaveOptions, error) {
 	lowcodehtmlsaveoptions := &LowCodeHtmlSaveOptions{}
-	CGoReturnPtr := C.New_LowCodeHtmlSaveOptions_LowCodeSaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_LowCodeHtmlSaveOptions_LowCodeSaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		lowcodehtmlsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodehtmlsaveoptions, DeleteLowCodeHtmlSaveOptions)
@@ -618,7 +678,12 @@ func (instance *LowCodeHtmlSaveOptions) GetHtmlOptions()  (*HtmlSaveOptions,  er
 //   void  
 func (instance *LowCodeHtmlSaveOptions) SetHtmlOptions(value *HtmlSaveOptions)  error {
 	
-	CGoReturnPtr := C.LowCodeHtmlSaveOptions_SetHtmlOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LowCodeHtmlSaveOptions_SetHtmlOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -729,7 +794,12 @@ func NewLowCodeImageSaveOptions() ( *LowCodeImageSaveOptions, error) {
 //   src - LowCodeSaveOptions 
 func NewLowCodeImageSaveOptions_LowCodeSaveOptions(src *LowCodeSaveOptions) ( *LowCodeImageSaveOptions, error) {
 	lowcodeimagesaveoptions := &LowCodeImageSaveOptions{}
-	CGoReturnPtr := C.New_LowCodeImageSaveOptions_LowCodeSaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_LowCodeImageSaveOptions_LowCodeSaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		lowcodeimagesaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodeimagesaveoptions, DeleteLowCodeImageSaveOptions)
@@ -810,7 +880,12 @@ func (instance *LowCodeImageSaveOptions) GetImageOptions()  (*ImageOrPrintOption
 //   void  
 func (instance *LowCodeImageSaveOptions) SetImageOptions(value *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.LowCodeImageSaveOptions_SetImageOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LowCodeImageSaveOptions_SetImageOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -841,7 +916,12 @@ func (instance *LowCodeImageSaveOptions) GetSaveOptionsProvider()  (*AbstractLow
 //   void  
 func (instance *LowCodeImageSaveOptions) SetSaveOptionsProvider(value *AbstractLowCodeSaveOptionsProvider)  error {
 	
-	CGoReturnPtr := C.LowCodeImageSaveOptions_SetSaveOptionsProvider( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LowCodeImageSaveOptions_SetSaveOptionsProvider( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1089,7 +1169,12 @@ func (instance *LowCodeMergeOptions) GetSaveOptions()  (*LowCodeSaveOptions,  er
 //   void  
 func (instance *LowCodeMergeOptions) SetSaveOptions(value *LowCodeSaveOptions)  error {
 	
-	CGoReturnPtr := C.LowCodeMergeOptions_SetSaveOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LowCodeMergeOptions_SetSaveOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1120,7 +1205,12 @@ func (instance *LowCodeMergeOptions) GetLoadOptionsProvider()  (*AbstractLowCode
 //   void  
 func (instance *LowCodeMergeOptions) SetLoadOptionsProvider(value *AbstractLowCodeLoadOptionsProvider)  error {
 	
-	CGoReturnPtr := C.LowCodeMergeOptions_SetLoadOptionsProvider( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LowCodeMergeOptions_SetLoadOptionsProvider( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1163,7 +1253,12 @@ func NewLowCodePdfSaveOptions() ( *LowCodePdfSaveOptions, error) {
 //   src - LowCodeSaveOptions 
 func NewLowCodePdfSaveOptions_LowCodeSaveOptions(src *LowCodeSaveOptions) ( *LowCodePdfSaveOptions, error) {
 	lowcodepdfsaveoptions := &LowCodePdfSaveOptions{}
-	CGoReturnPtr := C.New_LowCodePdfSaveOptions_LowCodeSaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_LowCodePdfSaveOptions_LowCodeSaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		lowcodepdfsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodepdfsaveoptions, DeleteLowCodePdfSaveOptions)
@@ -1246,7 +1341,12 @@ func (instance *LowCodePdfSaveOptions) GetPdfOptions()  (*PdfSaveOptions,  error
 //   void  
 func (instance *LowCodePdfSaveOptions) SetPdfOptions(value *PdfSaveOptions)  error {
 	
-	CGoReturnPtr := C.LowCodePdfSaveOptions_SetPdfOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LowCodePdfSaveOptions_SetPdfOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1506,7 +1606,12 @@ func NewLowCodeSaveOptionsProviderOfAssembling() ( *LowCodeSaveOptionsProviderOf
 //   src - AbstractLowCodeSaveOptionsProvider 
 func NewLowCodeSaveOptionsProviderOfAssembling_AbstractLowCodeSaveOptionsProvider(src *AbstractLowCodeSaveOptionsProvider) ( *LowCodeSaveOptionsProviderOfAssembling, error) {
 	lowcodesaveoptionsproviderofassembling := &LowCodeSaveOptionsProviderOfAssembling{}
-	CGoReturnPtr := C.New_LowCodeSaveOptionsProviderOfAssembling_AbstractLowCodeSaveOptionsProvider(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_LowCodeSaveOptionsProviderOfAssembling_AbstractLowCodeSaveOptionsProvider(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		lowcodesaveoptionsproviderofassembling.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodesaveoptionsproviderofassembling, DeleteLowCodeSaveOptionsProviderOfAssembling)
@@ -1830,7 +1935,12 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) GetSaveOptionsTemplate()
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) SetSaveOptionsTemplate(value *LowCodeSaveOptions)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_SetSaveOptionsTemplate( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_SetSaveOptionsTemplate( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1845,7 +1955,12 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) SetSaveOptionsTemplate(v
 //   LowCodeSaveOptions  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) GetSaveOptions(part *SplitPartInfo)  (*LowCodeSaveOptions,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_GetSaveOptions( instance.ptr, part.ptr)
+	var part_ptr unsafe.Pointer = nil
+	if part != nil {
+	  part_ptr =part.ptr
+	}
+
+	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_GetSaveOptions( instance.ptr, part_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1863,7 +1978,12 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) GetSaveOptions(part *Spl
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) Finish(part *LowCodeSaveOptions)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_Finish( instance.ptr, part.ptr)
+	var part_ptr unsafe.Pointer = nil
+	if part != nil {
+	  part_ptr =part.ptr
+	}
+
+	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_Finish( instance.ptr, part_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1914,7 +2034,12 @@ func NewLowCodeSaveOptionsProviderOfPlaceHolders_String(pathtemplate string) ( *
 //   src - AbstractLowCodeSaveOptionsProvider 
 func NewLowCodeSaveOptionsProviderOfPlaceHolders_AbstractLowCodeSaveOptionsProvider(src *AbstractLowCodeSaveOptionsProvider) ( *LowCodeSaveOptionsProviderOfPlaceHolders, error) {
 	lowcodesaveoptionsproviderofplaceholders := &LowCodeSaveOptionsProviderOfPlaceHolders{}
-	CGoReturnPtr := C.New_LowCodeSaveOptionsProviderOfPlaceHolders_AbstractLowCodeSaveOptionsProvider(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_LowCodeSaveOptionsProviderOfPlaceHolders_AbstractLowCodeSaveOptionsProvider(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		lowcodesaveoptionsproviderofplaceholders.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodesaveoptionsproviderofplaceholders, DeleteLowCodeSaveOptionsProviderOfPlaceHolders)
@@ -2182,7 +2307,12 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetSaveOptionsTemplate
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) SetSaveOptionsTemplate(value *LowCodeSaveOptions)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_SetSaveOptionsTemplate( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_SetSaveOptionsTemplate( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2197,7 +2327,12 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) SetSaveOptionsTemplate
 //   LowCodeSaveOptions  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetSaveOptions(part *SplitPartInfo)  (*LowCodeSaveOptions,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_GetSaveOptions( instance.ptr, part.ptr)
+	var part_ptr unsafe.Pointer = nil
+	if part != nil {
+	  part_ptr =part.ptr
+	}
+
+	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_GetSaveOptions( instance.ptr, part_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2215,7 +2350,12 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetSaveOptions(part *S
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) Finish(part *LowCodeSaveOptions)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_Finish( instance.ptr, part.ptr)
+	var part_ptr unsafe.Pointer = nil
+	if part != nil {
+	  part_ptr =part.ptr
+	}
+
+	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_Finish( instance.ptr, part_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2296,7 +2436,12 @@ func (instance *LowCodeSplitOptions) GetLoadOptions()  (*LowCodeLoadOptions,  er
 //   void  
 func (instance *LowCodeSplitOptions) SetLoadOptions(value *LowCodeLoadOptions)  error {
 	
-	CGoReturnPtr := C.LowCodeSplitOptions_SetLoadOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LowCodeSplitOptions_SetLoadOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2327,7 +2472,12 @@ func (instance *LowCodeSplitOptions) GetSaveOptions()  (*LowCodeSaveOptions,  er
 //   void  
 func (instance *LowCodeSplitOptions) SetSaveOptions(value *LowCodeSaveOptions)  error {
 	
-	CGoReturnPtr := C.LowCodeSplitOptions_SetSaveOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LowCodeSplitOptions_SetSaveOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2358,7 +2508,12 @@ func (instance *LowCodeSplitOptions) GetSaveOptionsProvider()  (*AbstractLowCode
 //   void  
 func (instance *LowCodeSplitOptions) SetSaveOptionsProvider(value *AbstractLowCodeSaveOptionsProvider)  error {
 	
-	CGoReturnPtr := C.LowCodeSplitOptions_SetSaveOptionsProvider( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LowCodeSplitOptions_SetSaveOptionsProvider( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2421,7 +2576,16 @@ func PdfConverter_Process_String_String(templatefile string, resultfile string) 
 //   void  
 func PdfConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *LowCodeLoadOptions, saveoptions *LowCodeSaveOptions)  error {
 	
-	CGoReturnPtr := C.PdfConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions.ptr, saveoptions.ptr)
+	var loadoptions_ptr unsafe.Pointer = nil
+	if loadoptions != nil {
+	  loadoptions_ptr =loadoptions.ptr
+	}
+	var saveoptions_ptr unsafe.Pointer = nil
+	if saveoptions != nil {
+	  saveoptions_ptr =saveoptions.ptr
+	}
+
+	CGoReturnPtr := C.PdfConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions_ptr, saveoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2559,7 +2723,16 @@ func SpreadsheetConverter_Process_String_String(templatefile string, resultfile 
 //   void  
 func SpreadsheetConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *LowCodeLoadOptions, saveoptions *LowCodeSaveOptions)  error {
 	
-	CGoReturnPtr := C.SpreadsheetConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions.ptr, saveoptions.ptr)
+	var loadoptions_ptr unsafe.Pointer = nil
+	if loadoptions != nil {
+	  loadoptions_ptr =loadoptions.ptr
+	}
+	var saveoptions_ptr unsafe.Pointer = nil
+	if saveoptions != nil {
+	  saveoptions_ptr =saveoptions.ptr
+	}
+
+	CGoReturnPtr := C.SpreadsheetConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions_ptr, saveoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2626,7 +2799,16 @@ func SpreadsheetLocker_Process_String_String_String_String(templatefile string, 
 //   void  
 func SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_String(loadoptions *LowCodeLoadOptions, saveoptions *LowCodeSaveOptions, openpassword string, writepassword string)  error {
 	
-	CGoReturnPtr := C.SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_String(loadoptions.ptr, saveoptions.ptr, C.CString(openpassword), C.CString(writepassword))
+	var loadoptions_ptr unsafe.Pointer = nil
+	if loadoptions != nil {
+	  loadoptions_ptr =loadoptions.ptr
+	}
+	var saveoptions_ptr unsafe.Pointer = nil
+	if saveoptions != nil {
+	  saveoptions_ptr =saveoptions.ptr
+	}
+
+	CGoReturnPtr := C.SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_String(loadoptions_ptr, saveoptions_ptr, C.CString(openpassword), C.CString(writepassword))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2646,7 +2828,16 @@ func SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_Stri
 //   void  
 func SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_String_String_ProtectionType(loadoptions *LowCodeLoadOptions, saveoptions *LowCodeSaveOptions, openpassword string, writepassword string, workbookpassword string, workbooktype ProtectionType)  error {
 	
-	CGoReturnPtr := C.SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_String_String_ProtectionType(loadoptions.ptr, saveoptions.ptr, C.CString(openpassword), C.CString(writepassword), C.CString(workbookpassword), C.int( int32(workbooktype)))
+	var loadoptions_ptr unsafe.Pointer = nil
+	if loadoptions != nil {
+	  loadoptions_ptr =loadoptions.ptr
+	}
+	var saveoptions_ptr unsafe.Pointer = nil
+	if saveoptions != nil {
+	  saveoptions_ptr =saveoptions.ptr
+	}
+
+	CGoReturnPtr := C.SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_String_String_ProtectionType(loadoptions_ptr, saveoptions_ptr, C.CString(openpassword), C.CString(writepassword), C.CString(workbookpassword), C.int( int32(workbooktype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2663,7 +2854,20 @@ func SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_Stri
 //   void  
 func SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLowCodeProtectionProvider(loadoptions *LowCodeLoadOptions, saveoptions *LowCodeSaveOptions, provider *AbstractLowCodeProtectionProvider)  error {
 	
-	CGoReturnPtr := C.SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLowCodeProtectionProvider(loadoptions.ptr, saveoptions.ptr, provider.ptr)
+	var loadoptions_ptr unsafe.Pointer = nil
+	if loadoptions != nil {
+	  loadoptions_ptr =loadoptions.ptr
+	}
+	var saveoptions_ptr unsafe.Pointer = nil
+	if saveoptions != nil {
+	  saveoptions_ptr =saveoptions.ptr
+	}
+	var provider_ptr unsafe.Pointer = nil
+	if provider != nil {
+	  provider_ptr =provider.ptr
+	}
+
+	CGoReturnPtr := C.SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLowCodeProtectionProvider(loadoptions_ptr, saveoptions_ptr, provider_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2732,7 +2936,12 @@ func SpreadsheetMerger_Process_stringArray_String(templatefiles []string, result
 //   void  
 func SpreadsheetMerger_Process_LowCodeMergeOptions(options *LowCodeMergeOptions)  error {
 	
-	CGoReturnPtr := C.SpreadsheetMerger_Process_LowCodeMergeOptions(options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.SpreadsheetMerger_Process_LowCodeMergeOptions(options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2794,7 +3003,12 @@ func SpreadsheetSplitter_Process_String_String(templatefile string, resultfile s
 //   void  
 func SpreadsheetSplitter_Process_LowCodeSplitOptions(options *LowCodeSplitOptions)  error {
 	
-	CGoReturnPtr := C.SpreadsheetSplitter_Process_LowCodeSplitOptions(options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.SpreadsheetSplitter_Process_LowCodeSplitOptions(options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2857,7 +3071,16 @@ func TextConverter_Process_String_String(templatefile string, resultfile string)
 //   void  
 func TextConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *LowCodeLoadOptions, saveoptions *LowCodeSaveOptions)  error {
 	
-	CGoReturnPtr := C.TextConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions.ptr, saveoptions.ptr)
+	var loadoptions_ptr unsafe.Pointer = nil
+	if loadoptions != nil {
+	  loadoptions_ptr =loadoptions.ptr
+	}
+	var saveoptions_ptr unsafe.Pointer = nil
+	if saveoptions != nil {
+	  saveoptions_ptr =saveoptions.ptr
+	}
+
+	CGoReturnPtr := C.TextConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions_ptr, saveoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

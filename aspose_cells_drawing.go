@@ -3929,7 +3929,12 @@ type ArcShape struct {
 //   src - Shape 
 func NewArcShape(src *Shape) ( *ArcShape, error) {
 	arcshape := &ArcShape{}
-	CGoReturnPtr := C.New_ArcShape(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_ArcShape(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		arcshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(arcshape, DeleteArcShape)
@@ -5986,7 +5991,12 @@ func (instance *ArcShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  erro
 //   void  
 func (instance *ArcShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.ArcShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.ArcShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6001,7 +6011,12 @@ func (instance *ArcShape) ToImage_String_ImageOrPrintOptions(imagefile string, o
 //   []byte  
 func (instance *ArcShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ArcShape_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.ArcShape_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6250,7 +6265,12 @@ func (instance *ArcShape) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *ArcShape) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.ArcShape_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ArcShape_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6281,7 +6301,12 @@ func (instance *ArcShape) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *ArcShape) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.ArcShape_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ArcShape_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6392,7 +6417,16 @@ func (instance *ArcShape) SetHtmlText(value string)  error {
 //   void  
 func (instance *ArcShape) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.ArcShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.ArcShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6761,7 +6795,12 @@ func (instance *ArcShape) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *ArcShape) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.ArcShape_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.ArcShape_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6776,7 +6815,12 @@ func (instance *ArcShape) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *ArcShape) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.ArcShape_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ArcShape_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6870,7 +6914,12 @@ func (instance *ArcShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *ArcShape) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.ArcShape_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.ArcShape_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7291,7 +7340,12 @@ type Button struct {
 //   src - Shape 
 func NewButton(src *Shape) ( *Button, error) {
 	button := &Button{}
-	CGoReturnPtr := C.New_Button(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_Button(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		button.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(button, DeleteButton)
@@ -9348,7 +9402,12 @@ func (instance *Button) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)
 //   void  
 func (instance *Button) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.Button_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Button_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9363,7 +9422,12 @@ func (instance *Button) ToImage_String_ImageOrPrintOptions(imagefile string, opt
 //   []byte  
 func (instance *Button) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Button_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Button_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9612,7 +9676,12 @@ func (instance *Button) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *Button) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.Button_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Button_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9643,7 +9712,12 @@ func (instance *Button) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *Button) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.Button_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Button_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9754,7 +9828,16 @@ func (instance *Button) SetHtmlText(value string)  error {
 //   void  
 func (instance *Button) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.Button_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.Button_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10123,7 +10206,12 @@ func (instance *Button) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *Button) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.Button_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.Button_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10138,7 +10226,12 @@ func (instance *Button) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *Button) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.Button_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Button_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10232,7 +10325,12 @@ func (instance *Button) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *Button) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.Button_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.Button_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10267,7 +10365,12 @@ type CellsDrawing struct {
 //   src - Shape 
 func NewCellsDrawing(src *Shape) ( *CellsDrawing, error) {
 	cellsdrawing := &CellsDrawing{}
-	CGoReturnPtr := C.New_CellsDrawing(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_CellsDrawing(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		cellsdrawing.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(cellsdrawing, DeleteCellsDrawing)
@@ -12324,7 +12427,12 @@ func (instance *CellsDrawing) ToImage_ImageType(imagetype ImageType)  ([]byte,  
 //   void  
 func (instance *CellsDrawing) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.CellsDrawing_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.CellsDrawing_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12339,7 +12447,12 @@ func (instance *CellsDrawing) ToImage_String_ImageOrPrintOptions(imagefile strin
 //   []byte  
 func (instance *CellsDrawing) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsDrawing_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.CellsDrawing_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -12588,7 +12701,12 @@ func (instance *CellsDrawing) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *CellsDrawing) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.CellsDrawing_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.CellsDrawing_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12619,7 +12737,12 @@ func (instance *CellsDrawing) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *CellsDrawing) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.CellsDrawing_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.CellsDrawing_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12730,7 +12853,16 @@ func (instance *CellsDrawing) SetHtmlText(value string)  error {
 //   void  
 func (instance *CellsDrawing) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.CellsDrawing_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.CellsDrawing_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -13099,7 +13231,12 @@ func (instance *CellsDrawing) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *CellsDrawing) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.CellsDrawing_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.CellsDrawing_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -13114,7 +13251,12 @@ func (instance *CellsDrawing) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *CellsDrawing) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.CellsDrawing_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.CellsDrawing_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -13208,7 +13350,12 @@ func (instance *CellsDrawing) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *CellsDrawing) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsDrawing_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.CellsDrawing_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -13244,7 +13391,12 @@ type ChartShape struct {
 //   src - Shape 
 func NewChartShape(src *Shape) ( *ChartShape, error) {
 	chartshape := &ChartShape{}
-	CGoReturnPtr := C.New_ChartShape(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_ChartShape(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		chartshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(chartshape, DeleteChartShape)
@@ -15317,7 +15469,12 @@ func (instance *ChartShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  er
 //   void  
 func (instance *ChartShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.ChartShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.ChartShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15332,7 +15489,12 @@ func (instance *ChartShape) ToImage_String_ImageOrPrintOptions(imagefile string,
 //   []byte  
 func (instance *ChartShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ChartShape_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.ChartShape_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -15581,7 +15743,12 @@ func (instance *ChartShape) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *ChartShape) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.ChartShape_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ChartShape_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15612,7 +15779,12 @@ func (instance *ChartShape) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *ChartShape) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.ChartShape_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ChartShape_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15723,7 +15895,16 @@ func (instance *ChartShape) SetHtmlText(value string)  error {
 //   void  
 func (instance *ChartShape) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.ChartShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.ChartShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16092,7 +16273,12 @@ func (instance *ChartShape) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *ChartShape) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.ChartShape_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.ChartShape_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16107,7 +16293,12 @@ func (instance *ChartShape) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *ChartShape) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.ChartShape_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ChartShape_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16201,7 +16392,12 @@ func (instance *ChartShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *ChartShape) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.ChartShape_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.ChartShape_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -16236,7 +16432,12 @@ type CheckBox struct {
 //   src - Shape 
 func NewCheckBox(src *Shape) ( *CheckBox, error) {
 	checkbox := &CheckBox{}
-	CGoReturnPtr := C.New_CheckBox(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_CheckBox(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		checkbox.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(checkbox, DeleteCheckBox)
@@ -18383,7 +18584,12 @@ func (instance *CheckBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  erro
 //   void  
 func (instance *CheckBox) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.CheckBox_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.CheckBox_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -18398,7 +18604,12 @@ func (instance *CheckBox) ToImage_String_ImageOrPrintOptions(imagefile string, o
 //   []byte  
 func (instance *CheckBox) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CheckBox_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.CheckBox_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -18647,7 +18858,12 @@ func (instance *CheckBox) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *CheckBox) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.CheckBox_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.CheckBox_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -18678,7 +18894,12 @@ func (instance *CheckBox) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *CheckBox) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.CheckBox_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.CheckBox_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -18789,7 +19010,16 @@ func (instance *CheckBox) SetHtmlText(value string)  error {
 //   void  
 func (instance *CheckBox) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.CheckBox_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.CheckBox_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19158,7 +19388,12 @@ func (instance *CheckBox) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *CheckBox) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.CheckBox_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.CheckBox_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19173,7 +19408,12 @@ func (instance *CheckBox) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *CheckBox) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.CheckBox_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.CheckBox_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19267,7 +19507,12 @@ func (instance *CheckBox) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *CheckBox) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CheckBox_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.CheckBox_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -19418,7 +19663,12 @@ func ColorHelper_FromOleColor(olecolor int32)  (*Color,  error)  {
 //   int32  
 func ColorHelper_ToOleColor(color *Color, workbook *Workbook)  (int32,  error)  {
 	
-	CGoReturnPtr := C.ColorHelper_ToOleColor(color.ptr, workbook.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+
+	CGoReturnPtr := C.ColorHelper_ToOleColor(color.ptr, workbook_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19448,7 +19698,12 @@ type ComboBox struct {
 //   src - Shape 
 func NewComboBox(src *Shape) ( *ComboBox, error) {
 	combobox := &ComboBox{}
-	CGoReturnPtr := C.New_ComboBox(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_ComboBox(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		combobox.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(combobox, DeleteComboBox)
@@ -21624,7 +21879,12 @@ func (instance *ComboBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  erro
 //   void  
 func (instance *ComboBox) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.ComboBox_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.ComboBox_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -21639,7 +21899,12 @@ func (instance *ComboBox) ToImage_String_ImageOrPrintOptions(imagefile string, o
 //   []byte  
 func (instance *ComboBox) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ComboBox_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.ComboBox_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -21888,7 +22153,12 @@ func (instance *ComboBox) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *ComboBox) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.ComboBox_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ComboBox_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -21919,7 +22189,12 @@ func (instance *ComboBox) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *ComboBox) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.ComboBox_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ComboBox_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -22030,7 +22305,16 @@ func (instance *ComboBox) SetHtmlText(value string)  error {
 //   void  
 func (instance *ComboBox) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.ComboBox_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.ComboBox_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -22399,7 +22683,12 @@ func (instance *ComboBox) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *ComboBox) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.ComboBox_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.ComboBox_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -22414,7 +22703,12 @@ func (instance *ComboBox) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *ComboBox) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.ComboBox_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ComboBox_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -22508,7 +22802,12 @@ func (instance *ComboBox) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *ComboBox) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.ComboBox_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.ComboBox_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -22543,7 +22842,12 @@ type CommentShape struct {
 //   src - Shape 
 func NewCommentShape(src *Shape) ( *CommentShape, error) {
 	commentshape := &CommentShape{}
-	CGoReturnPtr := C.New_CommentShape(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_CommentShape(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		commentshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(commentshape, DeleteCommentShape)
@@ -24616,7 +24920,12 @@ func (instance *CommentShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  
 //   void  
 func (instance *CommentShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.CommentShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.CommentShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -24631,7 +24940,12 @@ func (instance *CommentShape) ToImage_String_ImageOrPrintOptions(imagefile strin
 //   []byte  
 func (instance *CommentShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CommentShape_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.CommentShape_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -24880,7 +25194,12 @@ func (instance *CommentShape) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *CommentShape) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.CommentShape_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.CommentShape_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -24911,7 +25230,12 @@ func (instance *CommentShape) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *CommentShape) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.CommentShape_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.CommentShape_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -25022,7 +25346,16 @@ func (instance *CommentShape) SetHtmlText(value string)  error {
 //   void  
 func (instance *CommentShape) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.CommentShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.CommentShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -25391,7 +25724,12 @@ func (instance *CommentShape) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *CommentShape) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.CommentShape_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.CommentShape_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -25406,7 +25744,12 @@ func (instance *CommentShape) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *CommentShape) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.CommentShape_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.CommentShape_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -25500,7 +25843,12 @@ func (instance *CommentShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *CommentShape) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CommentShape_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.CommentShape_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -25535,7 +25883,12 @@ type CustomGeometry struct {
 //   src - Geometry 
 func NewCustomGeometry(src *Geometry) ( *CustomGeometry, error) {
 	customgeometry := &CustomGeometry{}
-	CGoReturnPtr := C.New_CustomGeometry(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_CustomGeometry(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		customgeometry.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(customgeometry, DeleteCustomGeometry)
@@ -25619,7 +25972,12 @@ type CustomXmlShape struct {
 //   src - Shape 
 func NewCustomXmlShape(src *Shape) ( *CustomXmlShape, error) {
 	customxmlshape := &CustomXmlShape{}
-	CGoReturnPtr := C.New_CustomXmlShape(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_CustomXmlShape(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		customxmlshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(customxmlshape, DeleteCustomXmlShape)
@@ -27676,7 +28034,12 @@ func (instance *CustomXmlShape) ToImage_ImageType(imagetype ImageType)  ([]byte,
 //   void  
 func (instance *CustomXmlShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.CustomXmlShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.CustomXmlShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -27691,7 +28054,12 @@ func (instance *CustomXmlShape) ToImage_String_ImageOrPrintOptions(imagefile str
 //   []byte  
 func (instance *CustomXmlShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CustomXmlShape_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.CustomXmlShape_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -27940,7 +28308,12 @@ func (instance *CustomXmlShape) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *CustomXmlShape) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.CustomXmlShape_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.CustomXmlShape_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -27971,7 +28344,12 @@ func (instance *CustomXmlShape) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *CustomXmlShape) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.CustomXmlShape_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.CustomXmlShape_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -28082,7 +28460,16 @@ func (instance *CustomXmlShape) SetHtmlText(value string)  error {
 //   void  
 func (instance *CustomXmlShape) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.CustomXmlShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.CustomXmlShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -28451,7 +28838,12 @@ func (instance *CustomXmlShape) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *CustomXmlShape) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.CustomXmlShape_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.CustomXmlShape_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -28466,7 +28858,12 @@ func (instance *CustomXmlShape) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *CustomXmlShape) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.CustomXmlShape_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.CustomXmlShape_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -28560,7 +28957,12 @@ func (instance *CustomXmlShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *CustomXmlShape) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CustomXmlShape_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.CustomXmlShape_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -28595,7 +28997,12 @@ type Dialog_Box struct {
 //   src - Shape 
 func NewDialog_Box(src *Shape) ( *Dialog_Box, error) {
 	dialog_box := &Dialog_Box{}
-	CGoReturnPtr := C.New_Dialog_Box(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_Dialog_Box(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		dialog_box.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(dialog_box, DeleteDialog_Box)
@@ -30652,7 +31059,12 @@ func (instance *Dialog_Box) ToImage_ImageType(imagetype ImageType)  ([]byte,  er
 //   void  
 func (instance *Dialog_Box) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.Dialog_Box_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Dialog_Box_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -30667,7 +31079,12 @@ func (instance *Dialog_Box) ToImage_String_ImageOrPrintOptions(imagefile string,
 //   []byte  
 func (instance *Dialog_Box) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Dialog_Box_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Dialog_Box_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -30916,7 +31333,12 @@ func (instance *Dialog_Box) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *Dialog_Box) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.Dialog_Box_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Dialog_Box_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -30947,7 +31369,12 @@ func (instance *Dialog_Box) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *Dialog_Box) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.Dialog_Box_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Dialog_Box_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -31058,7 +31485,16 @@ func (instance *Dialog_Box) SetHtmlText(value string)  error {
 //   void  
 func (instance *Dialog_Box) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.Dialog_Box_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.Dialog_Box_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -31427,7 +31863,12 @@ func (instance *Dialog_Box) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *Dialog_Box) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.Dialog_Box_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.Dialog_Box_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -31442,7 +31883,12 @@ func (instance *Dialog_Box) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *Dialog_Box) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.Dialog_Box_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Dialog_Box_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -31536,7 +31982,12 @@ func (instance *Dialog_Box) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *Dialog_Box) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.Dialog_Box_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.Dialog_Box_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -32055,7 +32506,12 @@ func (instance *FillFormat) SetImageData(value []byte)  error {
 //   bool  
 func (instance *FillFormat) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.FillFormat_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.FillFormat_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -32338,7 +32794,12 @@ func (instance *GlowEffect) GetColor()  (*CellsColor,  error)  {
 //   void  
 func (instance *GlowEffect) SetColor(value *CellsColor)  error {
 	
-	CGoReturnPtr := C.GlowEffect_SetColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.GlowEffect_SetColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32751,7 +33212,12 @@ func (instance *GradientStopCollection) IsNull()  (bool,  error)  {
 //   void  
 func (instance *GradientStopCollection) Add_Double_CellsColor_Int(position float64, color *CellsColor, alpha int32)  error {
 	
-	CGoReturnPtr := C.GradientStopCollection_Add_Double_CellsColor_Integer( instance.ptr, C.double(position), color.ptr, C.int(alpha))
+	var color_ptr unsafe.Pointer = nil
+	if color != nil {
+	  color_ptr =color.ptr
+	}
+
+	CGoReturnPtr := C.GradientStopCollection_Add_Double_CellsColor_Integer( instance.ptr, C.double(position), color_ptr, C.int(alpha))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32802,7 +33268,12 @@ func (instance *GradientStopCollection) Get(index int32)  (*GradientStop,  error
 //   void  
 func (instance *GradientStopCollection) Set(value *GradientStop, index int32)  error {
 	
-	CGoReturnPtr := C.GradientStopCollection_Set( instance.ptr, value.ptr, C.int(index))
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.GradientStopCollection_Set( instance.ptr, value_ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32844,7 +33315,12 @@ type GroupBox struct {
 //   src - Shape 
 func NewGroupBox(src *Shape) ( *GroupBox, error) {
 	groupbox := &GroupBox{}
-	CGoReturnPtr := C.New_GroupBox(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_GroupBox(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		groupbox.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(groupbox, DeleteGroupBox)
@@ -34930,7 +35406,12 @@ func (instance *GroupBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  erro
 //   void  
 func (instance *GroupBox) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.GroupBox_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.GroupBox_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -34945,7 +35426,12 @@ func (instance *GroupBox) ToImage_String_ImageOrPrintOptions(imagefile string, o
 //   []byte  
 func (instance *GroupBox) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.GroupBox_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.GroupBox_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -35194,7 +35680,12 @@ func (instance *GroupBox) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *GroupBox) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.GroupBox_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.GroupBox_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35225,7 +35716,12 @@ func (instance *GroupBox) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *GroupBox) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.GroupBox_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.GroupBox_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35336,7 +35832,16 @@ func (instance *GroupBox) SetHtmlText(value string)  error {
 //   void  
 func (instance *GroupBox) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.GroupBox_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.GroupBox_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35705,7 +36210,12 @@ func (instance *GroupBox) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *GroupBox) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.GroupBox_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.GroupBox_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35720,7 +36230,12 @@ func (instance *GroupBox) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *GroupBox) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.GroupBox_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.GroupBox_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35814,7 +36329,12 @@ func (instance *GroupBox) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *GroupBox) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.GroupBox_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.GroupBox_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -35880,7 +36400,12 @@ type GroupShape struct {
 //   src - Shape 
 func NewGroupShape(src *Shape) ( *GroupShape, error) {
 	groupshape := &GroupShape{}
-	CGoReturnPtr := C.New_GroupShape(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_GroupShape(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		groupshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(groupshape, DeleteGroupShape)
@@ -37989,7 +38514,12 @@ func (instance *GroupShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  er
 //   void  
 func (instance *GroupShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.GroupShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.GroupShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -38004,7 +38534,12 @@ func (instance *GroupShape) ToImage_String_ImageOrPrintOptions(imagefile string,
 //   []byte  
 func (instance *GroupShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.GroupShape_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.GroupShape_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -38253,7 +38788,12 @@ func (instance *GroupShape) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *GroupShape) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.GroupShape_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.GroupShape_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -38284,7 +38824,12 @@ func (instance *GroupShape) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *GroupShape) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.GroupShape_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.GroupShape_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -38395,7 +38940,16 @@ func (instance *GroupShape) SetHtmlText(value string)  error {
 //   void  
 func (instance *GroupShape) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.GroupShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.GroupShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -38764,7 +39318,12 @@ func (instance *GroupShape) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *GroupShape) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.GroupShape_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.GroupShape_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -38779,7 +39338,12 @@ func (instance *GroupShape) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *GroupShape) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.GroupShape_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.GroupShape_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -38873,7 +39437,12 @@ func (instance *GroupShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *GroupShape) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.GroupShape_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.GroupShape_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -38908,7 +39477,12 @@ type Label struct {
 //   src - Shape 
 func NewLabel(src *Shape) ( *Label, error) {
 	label := &Label{}
-	CGoReturnPtr := C.New_Label(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_Label(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		label.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(label, DeleteLabel)
@@ -40965,7 +41539,12 @@ func (instance *Label) ToImage_ImageType(imagetype ImageType)  ([]byte,  error) 
 //   void  
 func (instance *Label) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.Label_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Label_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -40980,7 +41559,12 @@ func (instance *Label) ToImage_String_ImageOrPrintOptions(imagefile string, opti
 //   []byte  
 func (instance *Label) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Label_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Label_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -41229,7 +41813,12 @@ func (instance *Label) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *Label) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.Label_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Label_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -41260,7 +41849,12 @@ func (instance *Label) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *Label) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.Label_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Label_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -41371,7 +41965,16 @@ func (instance *Label) SetHtmlText(value string)  error {
 //   void  
 func (instance *Label) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.Label_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.Label_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -41740,7 +42343,12 @@ func (instance *Label) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *Label) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.Label_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.Label_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -41755,7 +42363,12 @@ func (instance *Label) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *Label) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.Label_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Label_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -41849,7 +42462,12 @@ func (instance *Label) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *Label) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.Label_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.Label_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -42237,7 +42855,12 @@ func (instance *Line) GetThemeColor()  (*ThemeColor,  error)  {
 //   void  
 func (instance *Line) SetThemeColor(value *ThemeColor)  error {
 	
-	CGoReturnPtr := C.Line_SetThemeColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Line_SetThemeColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -42567,7 +43190,12 @@ type LineFormat struct {
 //   src - FillFormat 
 func NewLineFormat(src *FillFormat) ( *LineFormat, error) {
 	lineformat := &LineFormat{}
-	CGoReturnPtr := C.New_LineFormat(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_LineFormat(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		lineformat.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lineformat, DeleteLineFormat)
@@ -42614,7 +43242,12 @@ func (instance *LineFormat) GetHashCode()  (int32,  error)  {
 //   bool  
 func (instance *LineFormat) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.LineFormat_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.LineFormat_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -43466,7 +44099,12 @@ type LineShape struct {
 //   src - Shape 
 func NewLineShape(src *Shape) ( *LineShape, error) {
 	lineshape := &LineShape{}
-	CGoReturnPtr := C.New_LineShape(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_LineShape(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		lineshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lineshape, DeleteLineShape)
@@ -45523,7 +46161,12 @@ func (instance *LineShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  err
 //   void  
 func (instance *LineShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.LineShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.LineShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -45538,7 +46181,12 @@ func (instance *LineShape) ToImage_String_ImageOrPrintOptions(imagefile string, 
 //   []byte  
 func (instance *LineShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.LineShape_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.LineShape_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -45787,7 +46435,12 @@ func (instance *LineShape) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *LineShape) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.LineShape_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LineShape_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -45818,7 +46471,12 @@ func (instance *LineShape) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *LineShape) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.LineShape_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LineShape_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -45929,7 +46587,16 @@ func (instance *LineShape) SetHtmlText(value string)  error {
 //   void  
 func (instance *LineShape) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.LineShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.LineShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -46298,7 +46965,12 @@ func (instance *LineShape) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *LineShape) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.LineShape_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.LineShape_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -46313,7 +46985,12 @@ func (instance *LineShape) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *LineShape) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.LineShape_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.LineShape_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -46407,7 +47084,12 @@ func (instance *LineShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *LineShape) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.LineShape_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.LineShape_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -46442,7 +47124,12 @@ type ListBox struct {
 //   src - Shape 
 func NewListBox(src *Shape) ( *ListBox, error) {
 	listbox := &ListBox{}
-	CGoReturnPtr := C.New_ListBox(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_ListBox(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		listbox.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(listbox, DeleteListBox)
@@ -48690,7 +49377,12 @@ func (instance *ListBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error
 //   void  
 func (instance *ListBox) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.ListBox_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.ListBox_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -48705,7 +49397,12 @@ func (instance *ListBox) ToImage_String_ImageOrPrintOptions(imagefile string, op
 //   []byte  
 func (instance *ListBox) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ListBox_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.ListBox_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -48954,7 +49651,12 @@ func (instance *ListBox) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *ListBox) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.ListBox_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ListBox_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -48985,7 +49687,12 @@ func (instance *ListBox) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *ListBox) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.ListBox_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ListBox_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -49096,7 +49803,16 @@ func (instance *ListBox) SetHtmlText(value string)  error {
 //   void  
 func (instance *ListBox) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.ListBox_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.ListBox_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -49465,7 +50181,12 @@ func (instance *ListBox) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *ListBox) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.ListBox_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.ListBox_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -49480,7 +50201,12 @@ func (instance *ListBox) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *ListBox) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.ListBox_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ListBox_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -49574,7 +50300,12 @@ func (instance *ListBox) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *ListBox) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.ListBox_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.ListBox_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -50331,7 +51062,12 @@ func (instance *MsoFormatPicture) GetTransparentColor()  (*CellsColor,  error)  
 //   void  
 func (instance *MsoFormatPicture) SetTransparentColor(value *CellsColor)  error {
 	
-	CGoReturnPtr := C.MsoFormatPicture_SetTransparentColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.MsoFormatPicture_SetTransparentColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -50504,7 +51240,12 @@ func (instance *MsoFormatPicture) GetHashCode()  (int32,  error)  {
 //   bool  
 func (instance *MsoFormatPicture) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.MsoFormatPicture_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.MsoFormatPicture_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -51283,7 +52024,12 @@ type OleObject struct {
 //   src - Shape 
 func NewOleObject(src *Shape) ( *OleObject, error) {
 	oleobject := &OleObject{}
-	CGoReturnPtr := C.New_OleObject(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_OleObject(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		oleobject.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(oleobject, DeleteOleObject)
@@ -53817,7 +54563,12 @@ func (instance *OleObject) ToImage_ImageType(imagetype ImageType)  ([]byte,  err
 //   void  
 func (instance *OleObject) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.OleObject_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.OleObject_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -53832,7 +54583,12 @@ func (instance *OleObject) ToImage_String_ImageOrPrintOptions(imagefile string, 
 //   []byte  
 func (instance *OleObject) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.OleObject_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.OleObject_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -54081,7 +54837,12 @@ func (instance *OleObject) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *OleObject) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.OleObject_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.OleObject_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -54112,7 +54873,12 @@ func (instance *OleObject) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *OleObject) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.OleObject_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.OleObject_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -54223,7 +54989,16 @@ func (instance *OleObject) SetHtmlText(value string)  error {
 //   void  
 func (instance *OleObject) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.OleObject_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.OleObject_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -54592,7 +55367,12 @@ func (instance *OleObject) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *OleObject) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.OleObject_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.OleObject_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -54607,7 +55387,12 @@ func (instance *OleObject) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *OleObject) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.OleObject_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.OleObject_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -54701,7 +55486,12 @@ func (instance *OleObject) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *OleObject) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.OleObject_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.OleObject_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -54867,7 +55657,12 @@ type Oval struct {
 //   src - Shape 
 func NewOval(src *Shape) ( *Oval, error) {
 	oval := &Oval{}
-	CGoReturnPtr := C.New_Oval(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_Oval(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		oval.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(oval, DeleteOval)
@@ -56924,7 +57719,12 @@ func (instance *Oval) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  
 //   void  
 func (instance *Oval) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.Oval_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Oval_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -56939,7 +57739,12 @@ func (instance *Oval) ToImage_String_ImageOrPrintOptions(imagefile string, optio
 //   []byte  
 func (instance *Oval) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Oval_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Oval_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -57188,7 +57993,12 @@ func (instance *Oval) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *Oval) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.Oval_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Oval_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -57219,7 +58029,12 @@ func (instance *Oval) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *Oval) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.Oval_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Oval_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -57330,7 +58145,16 @@ func (instance *Oval) SetHtmlText(value string)  error {
 //   void  
 func (instance *Oval) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.Oval_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.Oval_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -57699,7 +58523,12 @@ func (instance *Oval) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *Oval) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.Oval_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.Oval_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -57714,7 +58543,12 @@ func (instance *Oval) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *Oval) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.Oval_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Oval_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -57808,7 +58642,12 @@ func (instance *Oval) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *Oval) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.Oval_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.Oval_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -57938,7 +58777,12 @@ func (instance *PatternFill) GetBackgroundCellsColor()  (*CellsColor,  error)  {
 //   void  
 func (instance *PatternFill) SetBackgroundCellsColor(value *CellsColor)  error {
 	
-	CGoReturnPtr := C.PatternFill_SetBackgroundCellsColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.PatternFill_SetBackgroundCellsColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -57999,7 +58843,12 @@ func (instance *PatternFill) GetForegroundCellsColor()  (*CellsColor,  error)  {
 //   void  
 func (instance *PatternFill) SetForegroundCellsColor(value *CellsColor)  error {
 	
-	CGoReturnPtr := C.PatternFill_SetForegroundCellsColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.PatternFill_SetForegroundCellsColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -58308,7 +59157,12 @@ type Picture struct {
 //   src - Shape 
 func NewPicture(src *Shape) ( *Picture, error) {
 	picture := &Picture{}
-	CGoReturnPtr := C.New_Picture(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_Picture(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		picture.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(picture, DeletePicture)
@@ -58342,7 +59196,16 @@ func (instance *Picture) IsNull()  (bool,  error)  {
 //   void  
 func (instance *Picture) Copy(source *Picture, options *CopyOptions)  error {
 	
-	CGoReturnPtr := C.Picture_Copy( instance.ptr, source.ptr, options.ptr)
+	var source_ptr unsafe.Pointer = nil
+	if source != nil {
+	  source_ptr =source.ptr
+	}
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Picture_Copy( instance.ptr, source_ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -58770,7 +59633,12 @@ func (instance *Picture) GetSignatureLine()  (*SignatureLine,  error)  {
 //   void  
 func (instance *Picture) SetSignatureLine(value *SignatureLine)  error {
 	
-	CGoReturnPtr := C.Picture_SetSignatureLine( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Picture_SetSignatureLine( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -58785,7 +59653,12 @@ func (instance *Picture) SetSignatureLine(value *SignatureLine)  error {
 //   bool  
 func (instance *Picture) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.Picture_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.Picture_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -60825,7 +61698,12 @@ func (instance *Picture) ToImage_ImageType(imagetype ImageType)  ([]byte,  error
 //   void  
 func (instance *Picture) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.Picture_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Picture_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -60840,7 +61718,12 @@ func (instance *Picture) ToImage_String_ImageOrPrintOptions(imagefile string, op
 //   []byte  
 func (instance *Picture) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Picture_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Picture_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -61089,7 +61972,12 @@ func (instance *Picture) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *Picture) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.Picture_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Picture_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -61120,7 +62008,12 @@ func (instance *Picture) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *Picture) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.Picture_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Picture_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -61231,7 +62124,16 @@ func (instance *Picture) SetHtmlText(value string)  error {
 //   void  
 func (instance *Picture) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.Picture_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.Picture_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -61600,7 +62502,12 @@ func (instance *Picture) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *Picture) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.Picture_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.Picture_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -61615,7 +62522,12 @@ func (instance *Picture) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *Picture) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.Picture_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Picture_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -61952,7 +62864,12 @@ type RadioButton struct {
 //   src - Shape 
 func NewRadioButton(src *Shape) ( *RadioButton, error) {
 	radiobutton := &RadioButton{}
-	CGoReturnPtr := C.New_RadioButton(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_RadioButton(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		radiobutton.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(radiobutton, DeleteRadioButton)
@@ -64097,7 +65014,12 @@ func (instance *RadioButton) ToImage_ImageType(imagetype ImageType)  ([]byte,  e
 //   void  
 func (instance *RadioButton) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.RadioButton_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.RadioButton_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -64112,7 +65034,12 @@ func (instance *RadioButton) ToImage_String_ImageOrPrintOptions(imagefile string
 //   []byte  
 func (instance *RadioButton) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.RadioButton_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.RadioButton_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -64361,7 +65288,12 @@ func (instance *RadioButton) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *RadioButton) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.RadioButton_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.RadioButton_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -64392,7 +65324,12 @@ func (instance *RadioButton) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *RadioButton) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.RadioButton_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.RadioButton_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -64503,7 +65440,16 @@ func (instance *RadioButton) SetHtmlText(value string)  error {
 //   void  
 func (instance *RadioButton) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.RadioButton_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.RadioButton_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -64872,7 +65818,12 @@ func (instance *RadioButton) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *RadioButton) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.RadioButton_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.RadioButton_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -64887,7 +65838,12 @@ func (instance *RadioButton) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *RadioButton) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.RadioButton_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.RadioButton_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -64981,7 +65937,12 @@ func (instance *RadioButton) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *RadioButton) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.RadioButton_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.RadioButton_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -65016,7 +65977,12 @@ type RectangleShape struct {
 //   src - Shape 
 func NewRectangleShape(src *Shape) ( *RectangleShape, error) {
 	rectangleshape := &RectangleShape{}
-	CGoReturnPtr := C.New_RectangleShape(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_RectangleShape(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		rectangleshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(rectangleshape, DeleteRectangleShape)
@@ -67073,7 +68039,12 @@ func (instance *RectangleShape) ToImage_ImageType(imagetype ImageType)  ([]byte,
 //   void  
 func (instance *RectangleShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.RectangleShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.RectangleShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -67088,7 +68059,12 @@ func (instance *RectangleShape) ToImage_String_ImageOrPrintOptions(imagefile str
 //   []byte  
 func (instance *RectangleShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.RectangleShape_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.RectangleShape_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -67337,7 +68313,12 @@ func (instance *RectangleShape) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *RectangleShape) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.RectangleShape_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.RectangleShape_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -67368,7 +68349,12 @@ func (instance *RectangleShape) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *RectangleShape) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.RectangleShape_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.RectangleShape_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -67479,7 +68465,16 @@ func (instance *RectangleShape) SetHtmlText(value string)  error {
 //   void  
 func (instance *RectangleShape) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.RectangleShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.RectangleShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -67848,7 +68843,12 @@ func (instance *RectangleShape) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *RectangleShape) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.RectangleShape_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.RectangleShape_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -67863,7 +68863,12 @@ func (instance *RectangleShape) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *RectangleShape) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.RectangleShape_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.RectangleShape_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -67957,7 +68962,12 @@ func (instance *RectangleShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *RectangleShape) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.RectangleShape_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.RectangleShape_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -68258,7 +69268,12 @@ type ScrollBar struct {
 //   src - Shape 
 func NewScrollBar(src *Shape) ( *ScrollBar, error) {
 	scrollbar := &ScrollBar{}
-	CGoReturnPtr := C.New_ScrollBar(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_ScrollBar(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		scrollbar.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(scrollbar, DeleteScrollBar)
@@ -70518,7 +71533,12 @@ func (instance *ScrollBar) ToImage_ImageType(imagetype ImageType)  ([]byte,  err
 //   void  
 func (instance *ScrollBar) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.ScrollBar_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.ScrollBar_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -70533,7 +71553,12 @@ func (instance *ScrollBar) ToImage_String_ImageOrPrintOptions(imagefile string, 
 //   []byte  
 func (instance *ScrollBar) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ScrollBar_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.ScrollBar_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -70782,7 +71807,12 @@ func (instance *ScrollBar) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *ScrollBar) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.ScrollBar_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ScrollBar_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -70813,7 +71843,12 @@ func (instance *ScrollBar) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *ScrollBar) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.ScrollBar_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ScrollBar_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -70924,7 +71959,16 @@ func (instance *ScrollBar) SetHtmlText(value string)  error {
 //   void  
 func (instance *ScrollBar) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.ScrollBar_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.ScrollBar_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -71293,7 +72337,12 @@ func (instance *ScrollBar) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *ScrollBar) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.ScrollBar_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.ScrollBar_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -71308,7 +72357,12 @@ func (instance *ScrollBar) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *ScrollBar) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.ScrollBar_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ScrollBar_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -71402,7 +72456,12 @@ func (instance *ScrollBar) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *ScrollBar) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.ScrollBar_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.ScrollBar_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -71502,7 +72561,12 @@ func (instance *ShadowEffect) GetColor()  (*CellsColor,  error)  {
 //   void  
 func (instance *ShadowEffect) SetColor(value *CellsColor)  error {
 	
-	CGoReturnPtr := C.ShadowEffect_SetColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ShadowEffect_SetColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -73719,7 +74783,12 @@ func (instance *Shape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error) 
 //   void  
 func (instance *Shape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.Shape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Shape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -73734,7 +74803,12 @@ func (instance *Shape) ToImage_String_ImageOrPrintOptions(imagefile string, opti
 //   []byte  
 func (instance *Shape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Shape_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Shape_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -73983,7 +75057,12 @@ func (instance *Shape) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *Shape) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.Shape_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Shape_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -74014,7 +75093,12 @@ func (instance *Shape) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *Shape) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.Shape_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Shape_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -74125,7 +75209,16 @@ func (instance *Shape) SetHtmlText(value string)  error {
 //   void  
 func (instance *Shape) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.Shape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.Shape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -74494,7 +75587,12 @@ func (instance *Shape) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *Shape) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.Shape_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.Shape_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -74509,7 +75607,12 @@ func (instance *Shape) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *Shape) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.Shape_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Shape_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -74603,7 +75706,12 @@ func (instance *Shape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *Shape) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.Shape_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.Shape_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -74690,7 +75798,12 @@ func (instance *ShapeCollection) Get_String(name string)  (*Shape,  error)  {
 //   Shape  
 func (instance *ShapeCollection) AddCopy(sourceshape *Shape, toprow int32, top int32, leftcolumn int32, left int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.ShapeCollection_AddCopy( instance.ptr, sourceshape.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left))
+	var sourceshape_ptr unsafe.Pointer = nil
+	if sourceshape != nil {
+	  sourceshape_ptr =sourceshape.ptr
+	}
+
+	CGoReturnPtr := C.ShapeCollection_AddCopy( instance.ptr, sourceshape_ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75575,7 +76688,16 @@ func (instance *ShapeCollection) AddOleObject(upperleftrow int32, top int32, upp
 //   void  
 func (instance *ShapeCollection) CopyCommentsInRange(shapes *ShapeCollection, ca *CellArea, destrow int32, destcolumn int32)  error {
 	
-	CGoReturnPtr := C.ShapeCollection_CopyCommentsInRange( instance.ptr, shapes.ptr, ca.ptr, C.int(destrow), C.int(destcolumn))
+	var shapes_ptr unsafe.Pointer = nil
+	if shapes != nil {
+	  shapes_ptr =shapes.ptr
+	}
+	var ca_ptr unsafe.Pointer = nil
+	if ca != nil {
+	  ca_ptr =ca.ptr
+	}
+
+	CGoReturnPtr := C.ShapeCollection_CopyCommentsInRange( instance.ptr, shapes_ptr, ca_ptr, C.int(destrow), C.int(destcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -75594,7 +76716,16 @@ func (instance *ShapeCollection) CopyCommentsInRange(shapes *ShapeCollection, ca
 //   void  
 func (instance *ShapeCollection) CopyInRange(sourceshapes *ShapeCollection, ca *CellArea, destrow int32, destcolumn int32, iscontained bool)  error {
 	
-	CGoReturnPtr := C.ShapeCollection_CopyInRange( instance.ptr, sourceshapes.ptr, ca.ptr, C.int(destrow), C.int(destcolumn), C.bool(iscontained))
+	var sourceshapes_ptr unsafe.Pointer = nil
+	if sourceshapes != nil {
+	  sourceshapes_ptr =sourceshapes.ptr
+	}
+	var ca_ptr unsafe.Pointer = nil
+	if ca != nil {
+	  ca_ptr =ca.ptr
+	}
+
+	CGoReturnPtr := C.ShapeCollection_CopyInRange( instance.ptr, sourceshapes_ptr, ca_ptr, C.int(destrow), C.int(destcolumn), C.bool(iscontained))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -75609,7 +76740,12 @@ func (instance *ShapeCollection) CopyInRange(sourceshapes *ShapeCollection, ca *
 //   void  
 func (instance *ShapeCollection) DeleteInRange(ca *CellArea)  error {
 	
-	CGoReturnPtr := C.ShapeCollection_DeleteInRange( instance.ptr, ca.ptr)
+	var ca_ptr unsafe.Pointer = nil
+	if ca != nil {
+	  ca_ptr =ca.ptr
+	}
+
+	CGoReturnPtr := C.ShapeCollection_DeleteInRange( instance.ptr, ca_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -75624,7 +76760,12 @@ func (instance *ShapeCollection) DeleteInRange(ca *CellArea)  error {
 //   void  
 func (instance *ShapeCollection) DeleteShape(shape *Shape)  error {
 	
-	CGoReturnPtr := C.ShapeCollection_DeleteShape( instance.ptr, shape.ptr)
+	var shape_ptr unsafe.Pointer = nil
+	if shape != nil {
+	  shape_ptr =shape.ptr
+	}
+
+	CGoReturnPtr := C.ShapeCollection_DeleteShape( instance.ptr, shape_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -75664,7 +76805,12 @@ func (instance *ShapeCollection) Group(groupitems []Shape)  (*GroupShape,  error
 //   void  
 func (instance *ShapeCollection) Ungroup(group *GroupShape)  error {
 	
-	CGoReturnPtr := C.ShapeCollection_Ungroup( instance.ptr, group.ptr)
+	var group_ptr unsafe.Pointer = nil
+	if group != nil {
+	  group_ptr =group.ptr
+	}
+
+	CGoReturnPtr := C.ShapeCollection_Ungroup( instance.ptr, group_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -75694,7 +76840,12 @@ func (instance *ShapeCollection) RemoveAt(index int32)  error {
 //   void  
 func (instance *ShapeCollection) Remove(shape *Shape)  error {
 	
-	CGoReturnPtr := C.ShapeCollection_Remove( instance.ptr, shape.ptr)
+	var shape_ptr unsafe.Pointer = nil
+	if shape != nil {
+	  shape_ptr =shape.ptr
+	}
+
+	CGoReturnPtr := C.ShapeCollection_Remove( instance.ptr, shape_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -75768,7 +76919,12 @@ func (instance *ShapeCollection) AddFreeform(upperleftrow int32, top int32, uppe
 //   Picture  
 func (instance *ShapeCollection) AddSignatureLine(upperleftrow int32, upperleftcolumn int32, signatureline *SignatureLine)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.ShapeCollection_AddSignatureLine( instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), signatureline.ptr)
+	var signatureline_ptr unsafe.Pointer = nil
+	if signatureline != nil {
+	  signatureline_ptr =signatureline.ptr
+	}
+
+	CGoReturnPtr := C.ShapeCollection_AddSignatureLine( instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), signatureline_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75814,7 +76970,12 @@ type ShapeGuide struct {
 //   src - BaseShapeGuide 
 func NewShapeGuide(src *BaseShapeGuide) ( *ShapeGuide, error) {
 	shapeguide := &ShapeGuide{}
-	CGoReturnPtr := C.New_ShapeGuide(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_ShapeGuide(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		shapeguide.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(shapeguide, DeleteShapeGuide)
@@ -76767,7 +77928,12 @@ func (instance *SignatureLine) IsNull()  (bool,  error)  {
 //   void  
 func (instance *SignatureLine) GetId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.SignatureLine_GetId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.SignatureLine_GetId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -76782,7 +77948,12 @@ func (instance *SignatureLine) GetId(uuid *UUID)  error {
 //   void  
 func (instance *SignatureLine) SetId(value *UUID)  error {
 	
-	CGoReturnPtr := C.SignatureLine_SetId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SignatureLine_SetId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -76797,7 +77968,12 @@ func (instance *SignatureLine) SetId(value *UUID)  error {
 //   void  
 func (instance *SignatureLine) GetProviderId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.SignatureLine_GetProviderId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.SignatureLine_GetProviderId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -76812,7 +77988,12 @@ func (instance *SignatureLine) GetProviderId(uuid *UUID)  error {
 //   void  
 func (instance *SignatureLine) SetProviderId(value *UUID)  error {
 	
-	CGoReturnPtr := C.SignatureLine_SetProviderId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SignatureLine_SetProviderId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -77070,6 +78251,3031 @@ func DeleteSignatureLine(signatureline *SignatureLine){
 	signatureline.ptr = nil
 }
 
+// Class SlicerShape 
+
+// Represents the slicer shape.
+type SlicerShape struct {
+	ptr unsafe.Pointer
+}
+
+// Constructs from a parent object.
+// Parameters:
+//   src - Shape 
+func NewSlicerShape(src *Shape) ( *SlicerShape, error) {
+	slicershape := &SlicerShape{}
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_SlicerShape(src_ptr)
+	if CGoReturnPtr.error_no == 0 {
+		slicershape.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(slicershape, DeleteSlicerShape)
+		return slicershape, nil
+	} else {
+		slicershape.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return slicershape, err
+	}	
+}
+
+// Checks whether the implementation object is nullptr.
+// Returns:
+//   bool  
+func (instance *SlicerShape) IsNull()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_IsNull( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the name of macro.
+// Returns:
+//   string  
+func (instance *SlicerShape) GetMacroName()  (string,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetMacroName( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the name of macro.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetMacroName(value string)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetMacroName( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the shape only contains an equation.
+// Returns:
+//   bool  
+func (instance *SlicerShape) IsEquation()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_IsEquation( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the shape is a smart art.
+// Returns:
+//   bool  
+func (instance *SlicerShape) IsSmartArt()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_IsSmartArt( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Brings the shape to the front or sends the shape to back.
+// Parameters:
+//   orders - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) ToFrontOrBack(orders int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_ToFrontOrBack( instance.ptr, C.int(orders))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the position of a shape in the z-order.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetZOrderPosition()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetZOrderPosition( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the position of a shape in the z-order.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetZOrderPosition(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetZOrderPosition( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the name of the shape.
+// Returns:
+//   string  
+func (instance *SlicerShape) GetName()  (string,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetName( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the name of the shape.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetName(value string)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetName( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns or sets the descriptive (alternative) text string of the <see cref="Shape"/> object.
+// Returns:
+//   string  
+func (instance *SlicerShape) GetAlternativeText()  (string,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetAlternativeText( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns or sets the descriptive (alternative) text string of the <see cref="Shape"/> object.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetAlternativeText(value string)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetAlternativeText( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Specifies the title (caption) of the current shape object.
+// Returns:
+//   string  
+func (instance *SlicerShape) GetTitle()  (string,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetTitle( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Specifies the title (caption) of the current shape object.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetTitle(value string)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetTitle( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets line style
+// Returns:
+//   LineFormat  
+func (instance *SlicerShape) GetLine()  (*LineFormat,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetLine( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &LineFormat{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteLineFormat) 
+
+	return result, nil 
+}
+// Returns a <see cref="FillFormat"/> object that contains fill formatting properties for the specified shape.
+// Returns:
+//   FillFormat  
+func (instance *SlicerShape) GetFill()  (*FillFormat,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetFill( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &FillFormat{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFillFormat) 
+
+	return result, nil 
+}
+// Represents a <see cref="Drawing.ShadowEffect"/> object that specifies shadow effect for the chart element or shape.
+// Returns:
+//   ShadowEffect  
+func (instance *SlicerShape) GetShadowEffect()  (*ShadowEffect,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetShadowEffect( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ShadowEffect{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteShadowEffect) 
+
+	return result, nil 
+}
+// Represents a <see cref="ReflectionEffect"/> object that specifies reflection effect for the chart element or shape.
+// Returns:
+//   ReflectionEffect  
+func (instance *SlicerShape) GetReflection()  (*ReflectionEffect,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetReflection( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ReflectionEffect{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+
+	return result, nil 
+}
+// Represents a <see cref="GlowEffect"/> object that specifies glow effect for the chart element or shape.
+// Returns:
+//   GlowEffect  
+func (instance *SlicerShape) GetGlow()  (*GlowEffect,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetGlow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &GlowEffect{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteGlowEffect) 
+
+	return result, nil 
+}
+// Gets and sets the radius of blur to apply to the edges, in unit of points.
+// Returns:
+//   float64  
+func (instance *SlicerShape) GetSoftEdges()  (float64,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetSoftEdges( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the radius of blur to apply to the edges, in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetSoftEdges(value float64)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetSoftEdges( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets 3d format of the shape.
+// Returns:
+//   ThreeDFormat  
+func (instance *SlicerShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetThreeDFormat( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ThreeDFormat{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+
+	return result, nil 
+}
+// Gets and sets the options of the picture format.
+// Returns:
+//   MsoFormatPicture  
+func (instance *SlicerShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetFormatPicture( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &MsoFormatPicture{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+
+	return result, nil 
+}
+// Indicates whether the object is visible.
+// Returns:
+//   bool  
+func (instance *SlicerShape) IsHidden()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_IsHidden( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the object is visible.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetIsHidden(value bool)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetIsHidden( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// True means that aspect ratio of the shape is locked.
+// Returns:
+//   bool  
+func (instance *SlicerShape) IsAspectRatioLocked()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_IsAspectRatioLocked( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// True means that aspect ratio of the shape is locked.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetIsAspectRatioLocked(value bool)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetIsAspectRatioLocked( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the value of locked property.
+// Parameters:
+//   type - int32 
+// Returns:
+//   bool  
+func (instance *SlicerShape) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetLockedProperty( instance.ptr, C.int( int32(type_)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Set the locked property.
+// Parameters:
+//   type - int32 
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetLockedProperty(type_ ShapeLockType, value bool)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetLockedProperty( instance.ptr, C.int( int32(type_)), C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the rotation of the shape.
+// Returns:
+//   float64  
+func (instance *SlicerShape) GetRotationAngle()  (float64,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetRotationAngle( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the rotation of the shape.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetRotationAngle(value float64)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetRotationAngle( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Adds a hyperlink to the shape.
+// Parameters:
+//   address - string 
+// Returns:
+//   Hyperlink  
+func (instance *SlicerShape) AddHyperlink(address string)  (*Hyperlink,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_AddHyperlink( instance.ptr, C.CString(address))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Hyperlink{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteHyperlink) 
+
+	return result, nil 
+}
+// Removes the hyperlink of the shape.
+// Returns:
+//   void  
+func (instance *SlicerShape) RemoveHyperlink()  error {
+	
+	CGoReturnPtr := C.SlicerShape_RemoveHyperlink( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the hyperlink of the shape.
+// Returns:
+//   Hyperlink  
+func (instance *SlicerShape) GetHyperlink()  (*Hyperlink,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetHyperlink( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Hyperlink{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteHyperlink) 
+
+	return result, nil 
+}
+// Moves the shape to a specified range.
+// Parameters:
+//   upperLeftRow - int32 
+//   upperLeftColumn - int32 
+//   lowerRightRow - int32 
+//   lowerRightColumn - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_MoveToRange( instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Moves the picture to the top-right corner.
+// Parameters:
+//   topRow - int32 
+//   rightColumn - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) AlignTopRightCorner(toprow int32, rightcolumn int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_AlignTopRightCorner( instance.ptr, C.int(toprow), C.int(rightcolumn))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the identifier of this shape.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetId()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetId( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Specifies an optional string identifier that an application can use to identify the particular shape.
+// Returns:
+//   string  
+func (instance *SlicerShape) GetSpid()  (string,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetSpid( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Specifies an optional number that an application can use to associate the particular shape with a defined shape type.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetSpt()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetSpt( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Returns:
+//   Worksheet  
+func (instance *SlicerShape) GetWorksheet()  (*Worksheet,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetWorksheet( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Worksheet{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteWorksheet) 
+
+	return result, nil 
+}
+// Indicates whether this shape is a group shape.
+// Returns:
+//   bool  
+func (instance *SlicerShape) IsGroup()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_IsGroup( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the shape is grouped.
+// Returns:
+//   bool  
+func (instance *SlicerShape) IsInGroup()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_IsInGroup( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether this shape is a word art.
+// Returns:
+//   bool  
+func (instance *SlicerShape) IsWordArt()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_IsWordArt( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns a TextEffectFormat object that contains text-effect formatting properties for the specified shape.
+// Applies to Shape objects that represent WordArt.
+// Returns:
+//   TextEffectFormat  
+func (instance *SlicerShape) GetTextEffect()  (*TextEffectFormat,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetTextEffect( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextEffectFormat{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+
+	return result, nil 
+}
+// True means the object can not be modified when the sheet is protected.
+// Note that this value is meaningful only if the worksheet or objects in the worksheet are protected.
+// Returns:
+//   bool  
+func (instance *SlicerShape) IsLocked()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_IsLocked( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// True means the object can not be modified when the sheet is protected.
+// Note that this value is meaningful only if the worksheet or objects in the worksheet are protected.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetIsLocked(value bool)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetIsLocked( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the object is printable.
+// If False, this shape will not be printed when printing.
+// Returns:
+//   bool  
+func (instance *SlicerShape) IsPrintable()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_IsPrintable( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the object is printable.
+// If False, this shape will not be printed when printing.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetIsPrintable(value bool)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetIsPrintable( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets drawing type.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetMsoDrawingType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToMsoDrawingType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the auto shape type.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetAutoShapeType()  (AutoShapeType,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetAutoShapeType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToAutoShapeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the auto shape type.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetAutoShapeType(value AutoShapeType)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetAutoShapeType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and set the type of the shape anchor placeholder.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetAnchorType()  (ShapeAnchorType,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetAnchorType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToShapeAnchorType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and set the type of the shape anchor placeholder.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetAnchorType(value ShapeAnchorType)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetAnchorType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the way the drawing object is attached to the cells below it.
+// The property controls the placement of an object on a worksheet.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetPlacement()  (PlacementType,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetPlacement( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToPlacementType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Represents the way the drawing object is attached to the cells below it.
+// The property controls the placement of an object on a worksheet.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetPlacement(value PlacementType)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetPlacement( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the top row index.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetUpperLeftRow()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetUpperLeftRow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the top row index.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetUpperLeftRow(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetUpperLeftRow( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the shape's vertical offset from its upper left corner row.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetUpperDeltaY()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetUpperDeltaY( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the shape's vertical offset from its upper left corner row.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetUpperDeltaY(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetUpperDeltaY( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents upper left corner column index.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetUpperLeftColumn()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetUpperLeftColumn( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents upper left corner column index.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetUpperLeftColumn(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetUpperLeftColumn( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the shape's horizontal offset from its upper left corner column.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetUpperDeltaX()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetUpperDeltaX( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the shape's horizontal offset from its upper left corner column.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetUpperDeltaX(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetUpperDeltaX( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents lower right corner row index.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetLowerRightRow()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetLowerRightRow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents lower right corner row index.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetLowerRightRow(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetLowerRightRow( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the shape's vertical offset from its lower right corner row.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetLowerDeltaY()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetLowerDeltaY( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the shape's vertical offset from its lower right corner row.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetLowerDeltaY(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetLowerDeltaY( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents lower right corner column index.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetLowerRightColumn()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetLowerRightColumn( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents lower right corner column index.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetLowerRightColumn(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetLowerRightColumn( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the shape's horizontal  offset from its lower right corner column.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetLowerDeltaX()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetLowerDeltaX( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the shape's horizontal  offset from its lower right corner column.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetLowerDeltaX(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetLowerDeltaX( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the width of the shape's horizontal  offset from its lower right corner column, in unit of pixels.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetRight()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetRight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the width of the shape's horizontal  offset from its lower right corner column, in unit of pixels.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetRight(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetRight( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the width of the shape's vertical offset from its lower bottom corner row, in unit of pixels.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetBottom()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetBottom( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the width of the shape's vertical offset from its lower bottom corner row, in unit of pixels.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetBottom(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetBottom( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the width of shape, in unit of pixels.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetWidth()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the width of shape, in unit of pixels.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetWidth(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetWidth( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the width of the shape, in unit of inch.
+// Returns:
+//   float64  
+func (instance *SlicerShape) GetWidthInch()  (float64,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetWidthInch( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the width of the shape, in unit of inch.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetWidthInch(value float64)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetWidthInch( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the width of the shape, in unit of point.
+// Returns:
+//   float64  
+func (instance *SlicerShape) GetWidthPt()  (float64,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetWidthPt( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the width of the shape, in unit of point.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetWidthPt(value float64)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetWidthPt( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the width of the shape, in unit of centimeters.
+// Returns:
+//   float64  
+func (instance *SlicerShape) GetWidthCM()  (float64,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetWidthCM( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the width of the shape, in unit of centimeters.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetWidthCM(value float64)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetWidthCM( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the height of shape, in unit of pixel.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetHeight()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the height of shape, in unit of pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetHeight(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetHeight( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the height of the shape, in unit of inches.
+// Returns:
+//   float64  
+func (instance *SlicerShape) GetHeightInch()  (float64,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetHeightInch( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the height of the shape, in unit of inches.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetHeightInch(value float64)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetHeightInch( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the height of the shape, in unit of points.
+// Returns:
+//   float64  
+func (instance *SlicerShape) GetHeightPt()  (float64,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetHeightPt( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the height of the shape, in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetHeightPt(value float64)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetHeightPt( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the height of the shape, in unit of centimeters.
+// Returns:
+//   float64  
+func (instance *SlicerShape) GetHeightCM()  (float64,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetHeightCM( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the height of the shape, in unit of centimeters.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetHeightCM(value float64)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetHeightCM( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the horizontal offset of shape from its left column, in unit of pixels.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetLeft()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetLeft( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the horizontal offset of shape from its left column, in unit of pixels.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetLeft(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetLeft( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the horizontal offset of shape from its left column, in unit of inches.
+// Returns:
+//   float64  
+func (instance *SlicerShape) GetLeftInch()  (float64,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetLeftInch( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the horizontal offset of shape from its left column, in unit of inches.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetLeftInch(value float64)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetLeftInch( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the horizontal offset of shape from its left column, in unit of centimeters.
+// Returns:
+//   float64  
+func (instance *SlicerShape) GetLeftCM()  (float64,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetLeftCM( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the horizontal offset of shape from its left column, in unit of centimeters.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetLeftCM(value float64)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetLeftCM( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the vertical offset of shape from its top row, in unit of pixels.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetTop()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetTop( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the vertical offset of shape from its top row, in unit of pixels.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetTop(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetTop( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the vertical offset of shape from its top row, in unit of inches.
+// Returns:
+//   float64  
+func (instance *SlicerShape) GetTopInch()  (float64,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetTopInch( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the vertical offset of shape from its top row, in unit of inches.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetTopInch(value float64)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetTopInch( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the vertical offset of shape from its top row, in unit of centimeters.
+// Returns:
+//   float64  
+func (instance *SlicerShape) GetTopCM()  (float64,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetTopCM( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the vertical offset of shape from its top row, in unit of centimeters.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetTopCM(value float64)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetTopCM( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the vertical offset of shape from worksheet top border, in unit of pixels.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetTopToCorner()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetTopToCorner( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the vertical offset of shape from worksheet top border, in unit of pixels.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetTopToCorner(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetTopToCorner( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the horizonal offset of shape from worksheet left border.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetLeftToCorner()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetLeftToCorner( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the horizonal offset of shape from worksheet left border.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetLeftToCorner(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetLeftToCorner( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the horizontal offset of shape from worksheet left border,in unit of pixels.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetX()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetX( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the horizontal offset of shape from worksheet left border,in unit of pixels.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetX(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetX( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the vertical offset of shape from worksheet top border,in unit of pixels.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetY()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetY( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the vertical offset of shape from worksheet top border,in unit of pixels.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetY(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetY( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the width scale, in unit of percent of the original picture width.
+// If the shape is not picture ,the WidthScale property only returns 100;
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetWidthScale()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetWidthScale( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the width scale, in unit of percent of the original picture width.
+// If the shape is not picture ,the WidthScale property only returns 100;
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetWidthScale(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetWidthScale( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the height scale,in unit of percent of the original picture height.
+// If the shape is not picture ,the HeightScale property only returns 100;
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetHeightScale()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetHeightScale( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the height scale,in unit of percent of the original picture height.
+// If the shape is not picture ,the HeightScale property only returns 100;
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetHeightScale(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetHeightScale( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the vertical offset of shape from the top border of the parent shape,
+// in unit of 1/4000 of height of the parent shape.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetTopInShape()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetTopInShape( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the vertical offset of shape from the top border of the parent shape,
+// in unit of 1/4000 of height of the parent shape.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetTopInShape(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetTopInShape( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the horizontal offset of shape from the left border of the parent shape,
+// in unit of 1/4000 of width of the parent shape.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetLeftInShape()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetLeftInShape( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the horizontal offset of shape from the left border of the parent shape,
+// in unit of 1/4000 of width of the parent shape.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetLeftInShape(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetLeftInShape( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the width of the shape, in unit of 1/4000 of the parent shape.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetWidthInShape()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetWidthInShape( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the width of the shape, in unit of 1/4000 of the parent shape.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetWidthInShape(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetWidthInShape( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the vertical offset of shape from the top border of the parent shape, in unit of 1/4000 of height of the parent shape..
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetHeightInShape()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetHeightInShape( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the vertical offset of shape from the top border of the parent shape, in unit of 1/4000 of height of the parent shape..
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetHeightInShape(value int32)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetHeightInShape( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the group shape which contains this shape.
+// Returns:
+//   GroupShape  
+func (instance *SlicerShape) GetGroup()  (*GroupShape,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetGroup( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &GroupShape{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteGroupShape) 
+
+	return result, nil 
+}
+// Gets the auto shape type.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetType()  (AutoShapeType,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToAutoShapeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the line border of the shape is visible.
+// Returns:
+//   bool  
+func (instance *SlicerShape) GetHasLine()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetHasLine( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the line border of the shape is visible.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetHasLine(value bool)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetHasLine( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the fill format is visible.
+// Returns:
+//   bool  
+func (instance *SlicerShape) IsFilled()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_IsFilled( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the fill format is visible.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetIsFilled(value bool)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetIsFilled( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets whether shape is horizontally flipped .
+// Returns:
+//   bool  
+func (instance *SlicerShape) IsFlippedHorizontally()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_IsFlippedHorizontally( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets whether shape is horizontally flipped .
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetIsFlippedHorizontally(value bool)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetIsFlippedHorizontally( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets whether shape is vertically flipped .
+// Returns:
+//   bool  
+func (instance *SlicerShape) IsFlippedVertically()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_IsFlippedVertically( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets whether shape is vertically flipped .
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetIsFlippedVertically(value bool)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetIsFlippedVertically( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Get the actual bottom row.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetActualLowerRightRow()  (int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetActualLowerRightRow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Get the connection points
+// Returns:
+//   []Vector<float>  
+func (instance *SlicerShape) GetConnectionPoints()  ([][]float32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetConnectionPoints( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result:= make([][]float32, CGoReturnPtr.row_length)
+	for i := 0; i < int(CGoReturnPtr.row_length); i++ {
+	result[i] = make([]float32, int(CGoReturnPtr.column_length))
+	}
+	for i := 0; i < int(CGoReturnPtr.row_length); i++ {
+	for j := 0; j < int(CGoReturnPtr.column_length); j++ {
+	   offset := uintptr(C.size_t(i) * C.size_t(int(CGoReturnPtr.column_length))  +  C.size_t(j)  ) * uintptr(CGoReturnPtr.size) 
+	   cObject := *(*C.float)(unsafe.Pointer(uintptr( unsafe.Pointer(CGoReturnPtr.return_value)) +  offset))
+	   goObject :=float32(cObject)
+	   result[i][j] = goObject
+	}
+	}
+	 
+
+	return result, nil 
+}
+// Creates the shape image and saves it to a stream in the specified format.
+// Parameters:
+//   imageType - int32 
+// Returns:
+//   []byte  
+func (instance *SlicerShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Saves the shape to a file.
+// Parameters:
+//   imageFile - string 
+//   options - ImageOrPrintOptions 
+// Returns:
+//   void  
+func (instance *SlicerShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
+	
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.SlicerShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Saves the shape to a stream.
+// Parameters:
+//   options - ImageOrPrintOptions 
+// Returns:
+//   []byte  
+func (instance *SlicerShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
+	
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.SlicerShape_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Indicates whether shape is relative to original picture size.
+// Returns:
+//   bool  
+func (instance *SlicerShape) GetRelativeToOriginalPictureSize()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetRelativeToOriginalPictureSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether shape is relative to original picture size.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetRelativeToOriginalPictureSize(value bool)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetRelativeToOriginalPictureSize( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the worksheet range linked to the control's value.
+// Returns:
+//   string  
+func (instance *SlicerShape) GetLinkedCell()  (string,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetLinkedCell( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the worksheet range linked to the control's value.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetLinkedCell_String(value string)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetLinkedCell_String( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the worksheet range used to fill the specified combo box.
+// Returns:
+//   string  
+func (instance *SlicerShape) GetInputRange()  (string,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetInputRange( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the worksheet range used to fill the specified combo box.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetInputRange_String(value string)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetInputRange_String( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the range linked to the control's value.
+// Parameters:
+//   isR1C1 - bool 
+//   isLocal - bool 
+// Returns:
+//   string  
+func (instance *SlicerShape) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetLinkedCell_Boolean_Boolean( instance.ptr, C.bool(isr1c1), C.bool(islocal))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Sets the range linked to the control's value.
+// Parameters:
+//   formula - string 
+//   isR1C1 - bool 
+//   isLocal - bool 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetLinkedCell_String_Boolean_Boolean( instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the range used to fill the control.
+// Parameters:
+//   isR1C1 - bool 
+//   isLocal - bool 
+// Returns:
+//   string  
+func (instance *SlicerShape) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetInputRange_Boolean_Boolean( instance.ptr, C.bool(isr1c1), C.bool(islocal))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Sets the range used to fill the control.
+// Parameters:
+//   formula - string 
+//   isR1C1 - bool 
+//   isLocal - bool 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetInputRange_String_Boolean_Boolean( instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Update the selected value by the value of the linked cell.
+// Returns:
+//   void  
+func (instance *SlicerShape) UpdateSelectedValue()  error {
+	
+	CGoReturnPtr := C.SlicerShape_UpdateSelectedValue( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the preset text shape type.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetTextShapeType()  (AutoShapeType,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetTextShapeType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToAutoShapeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the preset text shape type.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetTextShapeType(value AutoShapeType)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetTextShapeType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the setting of the shape's text.
+// Returns:
+//   FontSettingCollection  
+func (instance *SlicerShape) GetTextBody()  (*FontSettingCollection,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetTextBody( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &FontSettingCollection{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+
+	return result, nil 
+}
+// Represents the font of shape.
+// Returns:
+//   Font  
+func (instance *SlicerShape) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Represents the font of shape.
+// Parameters:
+//   value - Font 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetFont(value *Font)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SlicerShape_SetFont( instance.ptr, value_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the text options of the shape.
+// Returns:
+//   TextOptions  
+func (instance *SlicerShape) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Represents the text options of the shape.
+// Parameters:
+//   value - TextOptions 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetTextOptions(value *TextOptions)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SlicerShape_SetTextOptions( instance.ptr, value_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Recalculate the text area
+// Returns:
+//   []int32_t  
+func (instance *SlicerShape) CalculateTextSize()  ([]int32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_CalculateTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result:= make([]int32, CGoReturnPtr.column_length)
+	for i := 0; i < int(CGoReturnPtr.column_length); i++ {
+	   offset := uintptr(C.size_t(i)) * uintptr(CGoReturnPtr.size)
+	   cObject := *(*C.int)(unsafe.Pointer( uintptr( unsafe.Pointer(CGoReturnPtr.return_value)) + offset))
+	   goObject :=int32(cObject)
+	   result[i] = goObject
+	}
+	 
+
+	return result, nil 
+}
+// Gets and sets the text of this shape.
+// Returns:
+//   string  
+func (instance *SlicerShape) GetText()  (string,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetText( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the text of this shape.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetText(value string)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetText( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether or not the text is rich text.
+// Returns:
+//   bool  
+func (instance *SlicerShape) IsRichText()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_IsRichText( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the html string which contains data and some formats in this textbox.
+// Returns:
+//   string  
+func (instance *SlicerShape) GetHtmlText()  (string,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetHtmlText( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the html string which contains data and some formats in this textbox.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetHtmlText(value string)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetHtmlText( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Formats some characters with the font setting.
+// Parameters:
+//   startIndex - int32 
+//   length - int32 
+//   font - Font 
+//   flag - StyleFlag 
+// Returns:
+//   void  
+func (instance *SlicerShape) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
+	
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.SlicerShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns a Characters object that represents a range of characters within the text.
+// Parameters:
+//   startIndex - int32 
+//   length - int32 
+// Returns:
+//   FontSetting  
+func (instance *SlicerShape) Characters(startindex int32, length int32)  (*FontSetting,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_Characters( instance.ptr, C.int(startindex), C.int(length))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &FontSetting{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFontSetting) 
+
+	return result, nil 
+}
+// Returns all Characters objects
+// that represents a range of characters within the text .
+// Returns:
+//   []FontSetting  
+func (instance *SlicerShape) GetRichFormattings()  ([]FontSetting,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetRichFormattings( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result:= make([]FontSetting, CGoReturnPtr.column_length)
+	for i := 0; i < int(CGoReturnPtr.column_length); i++ {
+	   offset := uintptr(C.size_t(i)) * uintptr(CGoReturnPtr.size)
+	   goObject := &FontSetting{}
+	   goObject.ptr =unsafe.Pointer(uintptr( unsafe.Pointer(CGoReturnPtr.return_value)) + offset)
+	   result[i] = *goObject
+	}
+	 
+
+	return result, nil 
+}
+// Gets and sets the text vertical overflow type of the shape which contains text.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetTextVerticalOverflow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextOverflowType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the text vertical overflow type of the shape which contains text.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetTextVerticalOverflow(value TextOverflowType)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetTextVerticalOverflow( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the text horizontal overflow type of the shape which contains text.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetTextHorizontalOverflow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextOverflowType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the text horizontal overflow type of the shape which contains text.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetTextHorizontalOverflow(value TextOverflowType)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetTextHorizontalOverflow( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the text wrapped type of the shape which contains text.
+// Returns:
+//   bool  
+func (instance *SlicerShape) IsTextWrapped()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_IsTextWrapped( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the text wrapped type of the shape which contains text.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetIsTextWrapped(value bool)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetIsTextWrapped( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the text orientation type of the shape.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetTextOrientationType()  (TextOrientationType,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetTextOrientationType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextOrientationType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the text orientation type of the shape.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetTextOrientationType(value TextOrientationType)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetTextOrientationType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the text horizontal alignment type of the shape.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetTextHorizontalAlignment()  (TextAlignmentType,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetTextHorizontalAlignment( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextAlignmentType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the text horizontal alignment type of the shape.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetTextHorizontalAlignment(value TextAlignmentType)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetTextHorizontalAlignment( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the text vertical alignment type of the shape.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetTextVerticalAlignment()  (TextAlignmentType,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetTextVerticalAlignment( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextAlignmentType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the text vertical alignment type of the shape.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetTextVerticalAlignment(value TextAlignmentType)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetTextVerticalAlignment( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets/Sets the direction of the text flow for this object.
+// Returns:
+//   int32  
+func (instance *SlicerShape) GetTextDirection()  (TextDirectionType,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetTextDirection( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextDirectionType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets/Sets the direction of the text flow for this object.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetTextDirection(value TextDirectionType)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetTextDirection( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the text information in the shape
+// Returns:
+//   TextBoxOptions  
+func (instance *SlicerShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetTextBoxOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextBoxOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+
+	return result, nil 
+}
+// Gets the data of control.
+// Returns:
+//   []byte  
+func (instance *SlicerShape) GetControlData()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetControlData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Gets the ActiveX control.
+// Returns:
+//   ActiveXControl  
+func (instance *SlicerShape) GetActiveXControl()  (*ActiveXControl,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetActiveXControl( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ActiveXControl{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteActiveXControl) 
+
+	return result, nil 
+}
+// Remove activeX control.
+// Returns:
+//   void  
+func (instance *SlicerShape) RemoveActiveXControl()  error {
+	
+	CGoReturnPtr := C.SlicerShape_RemoveActiveXControl( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the paths of a custom geometric shape.
+// Returns:
+//   ShapePathCollection  
+func (instance *SlicerShape) GetPaths()  (*ShapePathCollection,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetPaths( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ShapePathCollection{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+
+	return result, nil 
+}
+// Gets the geometry
+// Returns:
+//   Geometry  
+func (instance *SlicerShape) GetGeometry()  (*Geometry,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetGeometry( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Geometry{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteGeometry) 
+
+	return result, nil 
+}
+// Gets and sets create id for this shape.
+// Parameters:
+//   uuid - UUID 
+// Returns:
+//   void  
+func (instance *SlicerShape) GetCreateId(uuid *UUID)  error {
+	
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.SlicerShape_GetCreateId( instance.ptr, uuid_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets create id for this shape.
+// Parameters:
+//   value - UUID 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetCreateId(value *UUID)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SlicerShape_SetCreateId( instance.ptr, value_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the object is decorative.
+// Returns:
+//   bool  
+func (instance *SlicerShape) IsDecorative()  (bool,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_IsDecorative( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the object is decorative.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *SlicerShape) SetIsDecorative(value bool)  error {
+	
+	CGoReturnPtr := C.SlicerShape_SetIsDecorative( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Get the actual position and size of the shape (after applying rotation, flip, etc.)
+// Returns:
+//   []float  
+func (instance *SlicerShape) GetActualBox()  ([]float32,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetActualBox( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result:= make([]float32, CGoReturnPtr.column_length)
+	for i := 0; i < int(CGoReturnPtr.column_length); i++ {
+	   offset := uintptr(C.size_t(i)) * uintptr(CGoReturnPtr.size)
+	   cObject := *(*C.float)(unsafe.Pointer( uintptr( unsafe.Pointer(CGoReturnPtr.return_value)) + offset))
+	   goObject :=float32(cObject)
+	   result[i] = goObject
+	}
+	 
+
+	return result, nil 
+}
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *SlicerShape) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.SlicerShape_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Converting smart art to grouped shapes.
+// Returns:
+//   GroupShape  
+func (instance *SlicerShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
+	
+	CGoReturnPtr := C.SlicerShape_GetResultOfSmartArt( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &GroupShape{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteGroupShape) 
+
+	return result, nil 
+}
+// Returns whether the shape is same.
+// Parameters:
+//   obj - Object 
+// Returns:
+//   bool  
+func (instance *SlicerShape) IsSameSetting(obj *Object)  (bool,  error)  {
+	
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.SlicerShape_IsSameSetting( instance.ptr, obj_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+
+
+func (instance *SlicerShape) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
+func DeleteSlicerShape(slicershape *SlicerShape){
+	runtime.SetFinalizer(slicershape, nil)
+	C.Delete_SlicerShape(slicershape.ptr)
+	slicershape.ptr = nil
+}
+
 // Class SmartArtShape 
 
 // Represents the smart art.
@@ -77082,7 +81288,12 @@ type SmartArtShape struct {
 //   src - Shape 
 func NewSmartArtShape(src *Shape) ( *SmartArtShape, error) {
 	smartartshape := &SmartArtShape{}
-	CGoReturnPtr := C.New_SmartArtShape(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_SmartArtShape(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		smartartshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(smartartshape, DeleteSmartArtShape)
@@ -79155,7 +83366,12 @@ func (instance *SmartArtShape) ToImage_ImageType(imagetype ImageType)  ([]byte, 
 //   void  
 func (instance *SmartArtShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.SmartArtShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.SmartArtShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -79170,7 +83386,12 @@ func (instance *SmartArtShape) ToImage_String_ImageOrPrintOptions(imagefile stri
 //   []byte  
 func (instance *SmartArtShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.SmartArtShape_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.SmartArtShape_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -79419,7 +83640,12 @@ func (instance *SmartArtShape) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *SmartArtShape) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.SmartArtShape_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SmartArtShape_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -79450,7 +83676,12 @@ func (instance *SmartArtShape) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *SmartArtShape) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.SmartArtShape_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SmartArtShape_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -79561,7 +83792,16 @@ func (instance *SmartArtShape) SetHtmlText(value string)  error {
 //   void  
 func (instance *SmartArtShape) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.SmartArtShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.SmartArtShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -79930,7 +84170,12 @@ func (instance *SmartArtShape) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *SmartArtShape) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.SmartArtShape_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.SmartArtShape_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -79945,7 +84190,12 @@ func (instance *SmartArtShape) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *SmartArtShape) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.SmartArtShape_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SmartArtShape_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -80023,7 +84273,12 @@ func (instance *SmartArtShape) FitToTextSize()  error {
 //   bool  
 func (instance *SmartArtShape) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.SmartArtShape_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.SmartArtShape_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -80121,7 +84376,12 @@ func (instance *SolidFill) GetCellsColor()  (*CellsColor,  error)  {
 //   void  
 func (instance *SolidFill) SetCellsColor(value *CellsColor)  error {
 	
-	CGoReturnPtr := C.SolidFill_SetCellsColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SolidFill_SetCellsColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -80178,7 +84438,12 @@ func (instance *SolidFill) GetHashCode()  (int32,  error)  {
 //   bool  
 func (instance *SolidFill) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.SolidFill_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.SolidFill_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -80208,7 +84473,12 @@ type Spinner struct {
 //   src - Shape 
 func NewSpinner(src *Shape) ( *Spinner, error) {
 	spinner := &Spinner{}
-	CGoReturnPtr := C.New_Spinner(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_Spinner(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		spinner.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(spinner, DeleteSpinner)
@@ -82439,7 +86709,12 @@ func (instance *Spinner) ToImage_ImageType(imagetype ImageType)  ([]byte,  error
 //   void  
 func (instance *Spinner) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.Spinner_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Spinner_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -82454,7 +86729,12 @@ func (instance *Spinner) ToImage_String_ImageOrPrintOptions(imagefile string, op
 //   []byte  
 func (instance *Spinner) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.Spinner_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.Spinner_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -82703,7 +86983,12 @@ func (instance *Spinner) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *Spinner) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.Spinner_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Spinner_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -82734,7 +87019,12 @@ func (instance *Spinner) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *Spinner) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.Spinner_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Spinner_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -82845,7 +87135,16 @@ func (instance *Spinner) SetHtmlText(value string)  error {
 //   void  
 func (instance *Spinner) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.Spinner_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.Spinner_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -83214,7 +87513,12 @@ func (instance *Spinner) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *Spinner) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.Spinner_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.Spinner_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -83229,7 +87533,12 @@ func (instance *Spinner) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *Spinner) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.Spinner_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.Spinner_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -83323,7 +87632,12 @@ func (instance *Spinner) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *Spinner) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.Spinner_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.Spinner_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -83358,7 +87672,12 @@ type TextBox struct {
 //   src - Shape 
 func NewTextBox(src *Shape) ( *TextBox, error) {
 	textbox := &TextBox{}
-	CGoReturnPtr := C.New_TextBox(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_TextBox(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		textbox.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(textbox, DeleteTextBox)
@@ -85452,7 +89771,12 @@ func (instance *TextBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error
 //   void  
 func (instance *TextBox) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.TextBox_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.TextBox_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -85467,7 +89791,12 @@ func (instance *TextBox) ToImage_String_ImageOrPrintOptions(imagefile string, op
 //   []byte  
 func (instance *TextBox) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.TextBox_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.TextBox_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -85716,7 +90045,12 @@ func (instance *TextBox) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *TextBox) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.TextBox_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.TextBox_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -85747,7 +90081,12 @@ func (instance *TextBox) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *TextBox) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.TextBox_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.TextBox_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -85858,7 +90197,16 @@ func (instance *TextBox) SetHtmlText(value string)  error {
 //   void  
 func (instance *TextBox) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.TextBox_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.TextBox_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -86227,7 +90575,12 @@ func (instance *TextBox) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *TextBox) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.TextBox_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.TextBox_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -86242,7 +90595,12 @@ func (instance *TextBox) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *TextBox) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.TextBox_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.TextBox_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -86336,7 +90694,12 @@ func (instance *TextBox) GetResultOfSmartArt()  (*GroupShape,  error)  {
 //   bool  
 func (instance *TextBox) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBox_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.TextBox_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -86874,7 +91237,12 @@ func (instance *TextureFill) GetPicFormatOption()  (*PicFormatOption,  error)  {
 //   void  
 func (instance *TextureFill) SetPicFormatOption(value *PicFormatOption)  error {
 	
-	CGoReturnPtr := C.TextureFill_SetPicFormatOption( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.TextureFill_SetPicFormatOption( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -86905,7 +91273,12 @@ func (instance *TextureFill) GetTilePicOption()  (*TilePicOption,  error)  {
 //   void  
 func (instance *TextureFill) SetTilePicOption(value *TilePicOption)  error {
 	
-	CGoReturnPtr := C.TextureFill_SetTilePicOption( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.TextureFill_SetTilePicOption( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -87283,7 +91656,12 @@ func (instance *ThreeDFormat) GetContourColor()  (*CellsColor,  error)  {
 //   void  
 func (instance *ThreeDFormat) SetContourColor(value *CellsColor)  error {
 	
-	CGoReturnPtr := C.ThreeDFormat_SetContourColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ThreeDFormat_SetContourColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -87343,7 +91721,12 @@ func (instance *ThreeDFormat) GetExtrusionColor()  (*CellsColor,  error)  {
 //   void  
 func (instance *ThreeDFormat) SetExtrusionColor(value *CellsColor)  error {
 	
-	CGoReturnPtr := C.ThreeDFormat_SetExtrusionColor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ThreeDFormat_SetExtrusionColor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -87670,7 +92053,12 @@ func (instance *ThreeDFormat) GetHashCode()  (int32,  error)  {
 //   bool  
 func (instance *ThreeDFormat) Equals(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.ThreeDFormat_Equals( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.ThreeDFormat_Equals( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -87913,6 +92301,3031 @@ func DeleteTilePicOption(tilepicoption *TilePicOption){
 	tilepicoption.ptr = nil
 }
 
+// Class TimelineShape 
+
+// Represents the Timeline msodrawing object.
+type TimelineShape struct {
+	ptr unsafe.Pointer
+}
+
+// Constructs from a parent object.
+// Parameters:
+//   src - Shape 
+func NewTimelineShape(src *Shape) ( *TimelineShape, error) {
+	timelineshape := &TimelineShape{}
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_TimelineShape(src_ptr)
+	if CGoReturnPtr.error_no == 0 {
+		timelineshape.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(timelineshape, DeleteTimelineShape)
+		return timelineshape, nil
+	} else {
+		timelineshape.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return timelineshape, err
+	}	
+}
+
+// Checks whether the implementation object is nullptr.
+// Returns:
+//   bool  
+func (instance *TimelineShape) IsNull()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_IsNull( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the name of macro.
+// Returns:
+//   string  
+func (instance *TimelineShape) GetMacroName()  (string,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetMacroName( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the name of macro.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetMacroName(value string)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetMacroName( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the shape only contains an equation.
+// Returns:
+//   bool  
+func (instance *TimelineShape) IsEquation()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_IsEquation( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the shape is a smart art.
+// Returns:
+//   bool  
+func (instance *TimelineShape) IsSmartArt()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_IsSmartArt( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Brings the shape to the front or sends the shape to back.
+// Parameters:
+//   orders - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) ToFrontOrBack(orders int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_ToFrontOrBack( instance.ptr, C.int(orders))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns the position of a shape in the z-order.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetZOrderPosition()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetZOrderPosition( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns the position of a shape in the z-order.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetZOrderPosition(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetZOrderPosition( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the name of the shape.
+// Returns:
+//   string  
+func (instance *TimelineShape) GetName()  (string,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetName( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the name of the shape.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetName(value string)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetName( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns or sets the descriptive (alternative) text string of the <see cref="Shape"/> object.
+// Returns:
+//   string  
+func (instance *TimelineShape) GetAlternativeText()  (string,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetAlternativeText( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns or sets the descriptive (alternative) text string of the <see cref="Shape"/> object.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetAlternativeText(value string)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetAlternativeText( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Specifies the title (caption) of the current shape object.
+// Returns:
+//   string  
+func (instance *TimelineShape) GetTitle()  (string,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetTitle( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Specifies the title (caption) of the current shape object.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetTitle(value string)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetTitle( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets line style
+// Returns:
+//   LineFormat  
+func (instance *TimelineShape) GetLine()  (*LineFormat,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetLine( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &LineFormat{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteLineFormat) 
+
+	return result, nil 
+}
+// Returns a <see cref="FillFormat"/> object that contains fill formatting properties for the specified shape.
+// Returns:
+//   FillFormat  
+func (instance *TimelineShape) GetFill()  (*FillFormat,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetFill( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &FillFormat{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFillFormat) 
+
+	return result, nil 
+}
+// Represents a <see cref="Drawing.ShadowEffect"/> object that specifies shadow effect for the chart element or shape.
+// Returns:
+//   ShadowEffect  
+func (instance *TimelineShape) GetShadowEffect()  (*ShadowEffect,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetShadowEffect( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ShadowEffect{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteShadowEffect) 
+
+	return result, nil 
+}
+// Represents a <see cref="ReflectionEffect"/> object that specifies reflection effect for the chart element or shape.
+// Returns:
+//   ReflectionEffect  
+func (instance *TimelineShape) GetReflection()  (*ReflectionEffect,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetReflection( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ReflectionEffect{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+
+	return result, nil 
+}
+// Represents a <see cref="GlowEffect"/> object that specifies glow effect for the chart element or shape.
+// Returns:
+//   GlowEffect  
+func (instance *TimelineShape) GetGlow()  (*GlowEffect,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetGlow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &GlowEffect{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteGlowEffect) 
+
+	return result, nil 
+}
+// Gets and sets the radius of blur to apply to the edges, in unit of points.
+// Returns:
+//   float64  
+func (instance *TimelineShape) GetSoftEdges()  (float64,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetSoftEdges( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the radius of blur to apply to the edges, in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetSoftEdges(value float64)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetSoftEdges( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets 3d format of the shape.
+// Returns:
+//   ThreeDFormat  
+func (instance *TimelineShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetThreeDFormat( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ThreeDFormat{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+
+	return result, nil 
+}
+// Gets and sets the options of the picture format.
+// Returns:
+//   MsoFormatPicture  
+func (instance *TimelineShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetFormatPicture( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &MsoFormatPicture{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+
+	return result, nil 
+}
+// Indicates whether the object is visible.
+// Returns:
+//   bool  
+func (instance *TimelineShape) IsHidden()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_IsHidden( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the object is visible.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetIsHidden(value bool)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetIsHidden( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// True means that aspect ratio of the shape is locked.
+// Returns:
+//   bool  
+func (instance *TimelineShape) IsAspectRatioLocked()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_IsAspectRatioLocked( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// True means that aspect ratio of the shape is locked.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetIsAspectRatioLocked(value bool)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetIsAspectRatioLocked( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the value of locked property.
+// Parameters:
+//   type - int32 
+// Returns:
+//   bool  
+func (instance *TimelineShape) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetLockedProperty( instance.ptr, C.int( int32(type_)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Set the locked property.
+// Parameters:
+//   type - int32 
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetLockedProperty(type_ ShapeLockType, value bool)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetLockedProperty( instance.ptr, C.int( int32(type_)), C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the rotation of the shape.
+// Returns:
+//   float64  
+func (instance *TimelineShape) GetRotationAngle()  (float64,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetRotationAngle( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the rotation of the shape.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetRotationAngle(value float64)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetRotationAngle( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Adds a hyperlink to the shape.
+// Parameters:
+//   address - string 
+// Returns:
+//   Hyperlink  
+func (instance *TimelineShape) AddHyperlink(address string)  (*Hyperlink,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_AddHyperlink( instance.ptr, C.CString(address))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Hyperlink{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteHyperlink) 
+
+	return result, nil 
+}
+// Removes the hyperlink of the shape.
+// Returns:
+//   void  
+func (instance *TimelineShape) RemoveHyperlink()  error {
+	
+	CGoReturnPtr := C.TimelineShape_RemoveHyperlink( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the hyperlink of the shape.
+// Returns:
+//   Hyperlink  
+func (instance *TimelineShape) GetHyperlink()  (*Hyperlink,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetHyperlink( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Hyperlink{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteHyperlink) 
+
+	return result, nil 
+}
+// Moves the shape to a specified range.
+// Parameters:
+//   upperLeftRow - int32 
+//   upperLeftColumn - int32 
+//   lowerRightRow - int32 
+//   lowerRightColumn - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_MoveToRange( instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Moves the picture to the top-right corner.
+// Parameters:
+//   topRow - int32 
+//   rightColumn - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) AlignTopRightCorner(toprow int32, rightcolumn int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_AlignTopRightCorner( instance.ptr, C.int(toprow), C.int(rightcolumn))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the identifier of this shape.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetId()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetId( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Specifies an optional string identifier that an application can use to identify the particular shape.
+// Returns:
+//   string  
+func (instance *TimelineShape) GetSpid()  (string,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetSpid( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Specifies an optional number that an application can use to associate the particular shape with a defined shape type.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetSpt()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetSpt( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Returns:
+//   Worksheet  
+func (instance *TimelineShape) GetWorksheet()  (*Worksheet,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetWorksheet( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Worksheet{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteWorksheet) 
+
+	return result, nil 
+}
+// Indicates whether this shape is a group shape.
+// Returns:
+//   bool  
+func (instance *TimelineShape) IsGroup()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_IsGroup( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the shape is grouped.
+// Returns:
+//   bool  
+func (instance *TimelineShape) IsInGroup()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_IsInGroup( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether this shape is a word art.
+// Returns:
+//   bool  
+func (instance *TimelineShape) IsWordArt()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_IsWordArt( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Returns a TextEffectFormat object that contains text-effect formatting properties for the specified shape.
+// Applies to Shape objects that represent WordArt.
+// Returns:
+//   TextEffectFormat  
+func (instance *TimelineShape) GetTextEffect()  (*TextEffectFormat,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetTextEffect( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextEffectFormat{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+
+	return result, nil 
+}
+// True means the object can not be modified when the sheet is protected.
+// Note that this value is meaningful only if the worksheet or objects in the worksheet are protected.
+// Returns:
+//   bool  
+func (instance *TimelineShape) IsLocked()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_IsLocked( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// True means the object can not be modified when the sheet is protected.
+// Note that this value is meaningful only if the worksheet or objects in the worksheet are protected.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetIsLocked(value bool)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetIsLocked( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the object is printable.
+// If False, this shape will not be printed when printing.
+// Returns:
+//   bool  
+func (instance *TimelineShape) IsPrintable()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_IsPrintable( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the object is printable.
+// If False, this shape will not be printed when printing.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetIsPrintable(value bool)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetIsPrintable( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets drawing type.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetMsoDrawingType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToMsoDrawingType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the auto shape type.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetAutoShapeType()  (AutoShapeType,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetAutoShapeType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToAutoShapeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the auto shape type.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetAutoShapeType(value AutoShapeType)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetAutoShapeType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and set the type of the shape anchor placeholder.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetAnchorType()  (ShapeAnchorType,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetAnchorType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToShapeAnchorType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and set the type of the shape anchor placeholder.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetAnchorType(value ShapeAnchorType)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetAnchorType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the way the drawing object is attached to the cells below it.
+// The property controls the placement of an object on a worksheet.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetPlacement()  (PlacementType,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetPlacement( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToPlacementType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Represents the way the drawing object is attached to the cells below it.
+// The property controls the placement of an object on a worksheet.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetPlacement(value PlacementType)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetPlacement( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the top row index.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetUpperLeftRow()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetUpperLeftRow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the top row index.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetUpperLeftRow(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetUpperLeftRow( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the shape's vertical offset from its upper left corner row.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetUpperDeltaY()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetUpperDeltaY( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the shape's vertical offset from its upper left corner row.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetUpperDeltaY(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetUpperDeltaY( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents upper left corner column index.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetUpperLeftColumn()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetUpperLeftColumn( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents upper left corner column index.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetUpperLeftColumn(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetUpperLeftColumn( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the shape's horizontal offset from its upper left corner column.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetUpperDeltaX()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetUpperDeltaX( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the shape's horizontal offset from its upper left corner column.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetUpperDeltaX(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetUpperDeltaX( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents lower right corner row index.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetLowerRightRow()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetLowerRightRow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents lower right corner row index.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetLowerRightRow(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetLowerRightRow( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the shape's vertical offset from its lower right corner row.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetLowerDeltaY()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetLowerDeltaY( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the shape's vertical offset from its lower right corner row.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetLowerDeltaY(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetLowerDeltaY( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents lower right corner column index.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetLowerRightColumn()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetLowerRightColumn( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents lower right corner column index.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetLowerRightColumn(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetLowerRightColumn( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the shape's horizontal  offset from its lower right corner column.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetLowerDeltaX()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetLowerDeltaX( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the shape's horizontal  offset from its lower right corner column.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetLowerDeltaX(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetLowerDeltaX( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the width of the shape's horizontal  offset from its lower right corner column, in unit of pixels.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetRight()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetRight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the width of the shape's horizontal  offset from its lower right corner column, in unit of pixels.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetRight(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetRight( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the width of the shape's vertical offset from its lower bottom corner row, in unit of pixels.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetBottom()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetBottom( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the width of the shape's vertical offset from its lower bottom corner row, in unit of pixels.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetBottom(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetBottom( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the width of shape, in unit of pixels.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetWidth()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetWidth( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the width of shape, in unit of pixels.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetWidth(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetWidth( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the width of the shape, in unit of inch.
+// Returns:
+//   float64  
+func (instance *TimelineShape) GetWidthInch()  (float64,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetWidthInch( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the width of the shape, in unit of inch.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetWidthInch(value float64)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetWidthInch( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the width of the shape, in unit of point.
+// Returns:
+//   float64  
+func (instance *TimelineShape) GetWidthPt()  (float64,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetWidthPt( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the width of the shape, in unit of point.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetWidthPt(value float64)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetWidthPt( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the width of the shape, in unit of centimeters.
+// Returns:
+//   float64  
+func (instance *TimelineShape) GetWidthCM()  (float64,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetWidthCM( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the width of the shape, in unit of centimeters.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetWidthCM(value float64)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetWidthCM( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the height of shape, in unit of pixel.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetHeight()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetHeight( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the height of shape, in unit of pixel.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetHeight(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetHeight( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the height of the shape, in unit of inches.
+// Returns:
+//   float64  
+func (instance *TimelineShape) GetHeightInch()  (float64,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetHeightInch( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the height of the shape, in unit of inches.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetHeightInch(value float64)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetHeightInch( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the height of the shape, in unit of points.
+// Returns:
+//   float64  
+func (instance *TimelineShape) GetHeightPt()  (float64,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetHeightPt( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the height of the shape, in unit of points.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetHeightPt(value float64)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetHeightPt( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the height of the shape, in unit of centimeters.
+// Returns:
+//   float64  
+func (instance *TimelineShape) GetHeightCM()  (float64,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetHeightCM( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the height of the shape, in unit of centimeters.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetHeightCM(value float64)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetHeightCM( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the horizontal offset of shape from its left column, in unit of pixels.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetLeft()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetLeft( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the horizontal offset of shape from its left column, in unit of pixels.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetLeft(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetLeft( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the horizontal offset of shape from its left column, in unit of inches.
+// Returns:
+//   float64  
+func (instance *TimelineShape) GetLeftInch()  (float64,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetLeftInch( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the horizontal offset of shape from its left column, in unit of inches.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetLeftInch(value float64)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetLeftInch( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the horizontal offset of shape from its left column, in unit of centimeters.
+// Returns:
+//   float64  
+func (instance *TimelineShape) GetLeftCM()  (float64,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetLeftCM( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the horizontal offset of shape from its left column, in unit of centimeters.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetLeftCM(value float64)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetLeftCM( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the vertical offset of shape from its top row, in unit of pixels.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetTop()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetTop( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the vertical offset of shape from its top row, in unit of pixels.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetTop(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetTop( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the vertical offset of shape from its top row, in unit of inches.
+// Returns:
+//   float64  
+func (instance *TimelineShape) GetTopInch()  (float64,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetTopInch( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the vertical offset of shape from its top row, in unit of inches.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetTopInch(value float64)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetTopInch( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the vertical offset of shape from its top row, in unit of centimeters.
+// Returns:
+//   float64  
+func (instance *TimelineShape) GetTopCM()  (float64,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetTopCM( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the vertical offset of shape from its top row, in unit of centimeters.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetTopCM(value float64)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetTopCM( instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the vertical offset of shape from worksheet top border, in unit of pixels.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetTopToCorner()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetTopToCorner( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the vertical offset of shape from worksheet top border, in unit of pixels.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetTopToCorner(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetTopToCorner( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the horizonal offset of shape from worksheet left border.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetLeftToCorner()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetLeftToCorner( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the horizonal offset of shape from worksheet left border.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetLeftToCorner(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetLeftToCorner( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the horizontal offset of shape from worksheet left border,in unit of pixels.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetX()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetX( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the horizontal offset of shape from worksheet left border,in unit of pixels.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetX(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetX( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the vertical offset of shape from worksheet top border,in unit of pixels.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetY()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetY( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the vertical offset of shape from worksheet top border,in unit of pixels.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetY(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetY( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the width scale, in unit of percent of the original picture width.
+// If the shape is not picture ,the WidthScale property only returns 100;
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetWidthScale()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetWidthScale( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the width scale, in unit of percent of the original picture width.
+// If the shape is not picture ,the WidthScale property only returns 100;
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetWidthScale(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetWidthScale( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the height scale,in unit of percent of the original picture height.
+// If the shape is not picture ,the HeightScale property only returns 100;
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetHeightScale()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetHeightScale( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the height scale,in unit of percent of the original picture height.
+// If the shape is not picture ,the HeightScale property only returns 100;
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetHeightScale(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetHeightScale( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the vertical offset of shape from the top border of the parent shape,
+// in unit of 1/4000 of height of the parent shape.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetTopInShape()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetTopInShape( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the vertical offset of shape from the top border of the parent shape,
+// in unit of 1/4000 of height of the parent shape.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetTopInShape(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetTopInShape( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the horizontal offset of shape from the left border of the parent shape,
+// in unit of 1/4000 of width of the parent shape.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetLeftInShape()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetLeftInShape( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the horizontal offset of shape from the left border of the parent shape,
+// in unit of 1/4000 of width of the parent shape.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetLeftInShape(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetLeftInShape( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the width of the shape, in unit of 1/4000 of the parent shape.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetWidthInShape()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetWidthInShape( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the width of the shape, in unit of 1/4000 of the parent shape.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetWidthInShape(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetWidthInShape( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the vertical offset of shape from the top border of the parent shape, in unit of 1/4000 of height of the parent shape..
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetHeightInShape()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetHeightInShape( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represents the vertical offset of shape from the top border of the parent shape, in unit of 1/4000 of height of the parent shape..
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetHeightInShape(value int32)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetHeightInShape( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the group shape which contains this shape.
+// Returns:
+//   GroupShape  
+func (instance *TimelineShape) GetGroup()  (*GroupShape,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetGroup( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &GroupShape{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteGroupShape) 
+
+	return result, nil 
+}
+// Gets the auto shape type.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetType()  (AutoShapeType,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToAutoShapeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the line border of the shape is visible.
+// Returns:
+//   bool  
+func (instance *TimelineShape) GetHasLine()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetHasLine( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the line border of the shape is visible.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetHasLine(value bool)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetHasLine( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the fill format is visible.
+// Returns:
+//   bool  
+func (instance *TimelineShape) IsFilled()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_IsFilled( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the fill format is visible.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetIsFilled(value bool)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetIsFilled( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets whether shape is horizontally flipped .
+// Returns:
+//   bool  
+func (instance *TimelineShape) IsFlippedHorizontally()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_IsFlippedHorizontally( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets whether shape is horizontally flipped .
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetIsFlippedHorizontally(value bool)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetIsFlippedHorizontally( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets whether shape is vertically flipped .
+// Returns:
+//   bool  
+func (instance *TimelineShape) IsFlippedVertically()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_IsFlippedVertically( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets whether shape is vertically flipped .
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetIsFlippedVertically(value bool)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetIsFlippedVertically( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Get the actual bottom row.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetActualLowerRightRow()  (int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetActualLowerRightRow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Get the connection points
+// Returns:
+//   []Vector<float>  
+func (instance *TimelineShape) GetConnectionPoints()  ([][]float32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetConnectionPoints( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result:= make([][]float32, CGoReturnPtr.row_length)
+	for i := 0; i < int(CGoReturnPtr.row_length); i++ {
+	result[i] = make([]float32, int(CGoReturnPtr.column_length))
+	}
+	for i := 0; i < int(CGoReturnPtr.row_length); i++ {
+	for j := 0; j < int(CGoReturnPtr.column_length); j++ {
+	   offset := uintptr(C.size_t(i) * C.size_t(int(CGoReturnPtr.column_length))  +  C.size_t(j)  ) * uintptr(CGoReturnPtr.size) 
+	   cObject := *(*C.float)(unsafe.Pointer(uintptr( unsafe.Pointer(CGoReturnPtr.return_value)) +  offset))
+	   goObject :=float32(cObject)
+	   result[i][j] = goObject
+	}
+	}
+	 
+
+	return result, nil 
+}
+// Creates the shape image and saves it to a stream in the specified format.
+// Parameters:
+//   imageType - int32 
+// Returns:
+//   []byte  
+func (instance *TimelineShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_ToImage_ImageType( instance.ptr, C.int( int32(imagetype)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Saves the shape to a file.
+// Parameters:
+//   imageFile - string 
+//   options - ImageOrPrintOptions 
+// Returns:
+//   void  
+func (instance *TimelineShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
+	
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.TimelineShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Saves the shape to a stream.
+// Parameters:
+//   options - ImageOrPrintOptions 
+// Returns:
+//   []byte  
+func (instance *TimelineShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
+	
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.TimelineShape_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Indicates whether shape is relative to original picture size.
+// Returns:
+//   bool  
+func (instance *TimelineShape) GetRelativeToOriginalPictureSize()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetRelativeToOriginalPictureSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether shape is relative to original picture size.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetRelativeToOriginalPictureSize(value bool)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetRelativeToOriginalPictureSize( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the worksheet range linked to the control's value.
+// Returns:
+//   string  
+func (instance *TimelineShape) GetLinkedCell()  (string,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetLinkedCell( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the worksheet range linked to the control's value.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetLinkedCell_String(value string)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetLinkedCell_String( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the worksheet range used to fill the specified combo box.
+// Returns:
+//   string  
+func (instance *TimelineShape) GetInputRange()  (string,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetInputRange( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the worksheet range used to fill the specified combo box.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetInputRange_String(value string)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetInputRange_String( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the range linked to the control's value.
+// Parameters:
+//   isR1C1 - bool 
+//   isLocal - bool 
+// Returns:
+//   string  
+func (instance *TimelineShape) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetLinkedCell_Boolean_Boolean( instance.ptr, C.bool(isr1c1), C.bool(islocal))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Sets the range linked to the control's value.
+// Parameters:
+//   formula - string 
+//   isR1C1 - bool 
+//   isLocal - bool 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetLinkedCell_String_Boolean_Boolean( instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the range used to fill the control.
+// Parameters:
+//   isR1C1 - bool 
+//   isLocal - bool 
+// Returns:
+//   string  
+func (instance *TimelineShape) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetInputRange_Boolean_Boolean( instance.ptr, C.bool(isr1c1), C.bool(islocal))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Sets the range used to fill the control.
+// Parameters:
+//   formula - string 
+//   isR1C1 - bool 
+//   isLocal - bool 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetInputRange_String_Boolean_Boolean( instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Update the selected value by the value of the linked cell.
+// Returns:
+//   void  
+func (instance *TimelineShape) UpdateSelectedValue()  error {
+	
+	CGoReturnPtr := C.TimelineShape_UpdateSelectedValue( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the preset text shape type.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetTextShapeType()  (AutoShapeType,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetTextShapeType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToAutoShapeType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the preset text shape type.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetTextShapeType(value AutoShapeType)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetTextShapeType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the setting of the shape's text.
+// Returns:
+//   FontSettingCollection  
+func (instance *TimelineShape) GetTextBody()  (*FontSettingCollection,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetTextBody( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &FontSettingCollection{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+
+	return result, nil 
+}
+// Represents the font of shape.
+// Returns:
+//   Font  
+func (instance *TimelineShape) GetFont()  (*Font,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetFont( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Font{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFont) 
+
+	return result, nil 
+}
+// Represents the font of shape.
+// Parameters:
+//   value - Font 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetFont(value *Font)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.TimelineShape_SetFont( instance.ptr, value_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represents the text options of the shape.
+// Returns:
+//   TextOptions  
+func (instance *TimelineShape) GetTextOptions()  (*TextOptions,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetTextOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextOptions) 
+
+	return result, nil 
+}
+// Represents the text options of the shape.
+// Parameters:
+//   value - TextOptions 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetTextOptions(value *TextOptions)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.TimelineShape_SetTextOptions( instance.ptr, value_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Recalculate the text area
+// Returns:
+//   []int32_t  
+func (instance *TimelineShape) CalculateTextSize()  ([]int32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_CalculateTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result:= make([]int32, CGoReturnPtr.column_length)
+	for i := 0; i < int(CGoReturnPtr.column_length); i++ {
+	   offset := uintptr(C.size_t(i)) * uintptr(CGoReturnPtr.size)
+	   cObject := *(*C.int)(unsafe.Pointer( uintptr( unsafe.Pointer(CGoReturnPtr.return_value)) + offset))
+	   goObject :=int32(cObject)
+	   result[i] = goObject
+	}
+	 
+
+	return result, nil 
+}
+// Gets and sets the text of this shape.
+// Returns:
+//   string  
+func (instance *TimelineShape) GetText()  (string,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetText( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the text of this shape.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetText(value string)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetText( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether or not the text is rich text.
+// Returns:
+//   bool  
+func (instance *TimelineShape) IsRichText()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_IsRichText( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the html string which contains data and some formats in this textbox.
+// Returns:
+//   string  
+func (instance *TimelineShape) GetHtmlText()  (string,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetHtmlText( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the html string which contains data and some formats in this textbox.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetHtmlText(value string)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetHtmlText( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Formats some characters with the font setting.
+// Parameters:
+//   startIndex - int32 
+//   length - int32 
+//   font - Font 
+//   flag - StyleFlag 
+// Returns:
+//   void  
+func (instance *TimelineShape) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
+	
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.TimelineShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Returns a Characters object that represents a range of characters within the text.
+// Parameters:
+//   startIndex - int32 
+//   length - int32 
+// Returns:
+//   FontSetting  
+func (instance *TimelineShape) Characters(startindex int32, length int32)  (*FontSetting,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_Characters( instance.ptr, C.int(startindex), C.int(length))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &FontSetting{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteFontSetting) 
+
+	return result, nil 
+}
+// Returns all Characters objects
+// that represents a range of characters within the text .
+// Returns:
+//   []FontSetting  
+func (instance *TimelineShape) GetRichFormattings()  ([]FontSetting,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetRichFormattings( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result:= make([]FontSetting, CGoReturnPtr.column_length)
+	for i := 0; i < int(CGoReturnPtr.column_length); i++ {
+	   offset := uintptr(C.size_t(i)) * uintptr(CGoReturnPtr.size)
+	   goObject := &FontSetting{}
+	   goObject.ptr =unsafe.Pointer(uintptr( unsafe.Pointer(CGoReturnPtr.return_value)) + offset)
+	   result[i] = *goObject
+	}
+	 
+
+	return result, nil 
+}
+// Gets and sets the text vertical overflow type of the shape which contains text.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetTextVerticalOverflow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextOverflowType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the text vertical overflow type of the shape which contains text.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetTextVerticalOverflow(value TextOverflowType)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetTextVerticalOverflow( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the text horizontal overflow type of the shape which contains text.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetTextHorizontalOverflow( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextOverflowType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the text horizontal overflow type of the shape which contains text.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetTextHorizontalOverflow(value TextOverflowType)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetTextHorizontalOverflow( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the text wrapped type of the shape which contains text.
+// Returns:
+//   bool  
+func (instance *TimelineShape) IsTextWrapped()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_IsTextWrapped( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the text wrapped type of the shape which contains text.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetIsTextWrapped(value bool)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetIsTextWrapped( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the text orientation type of the shape.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetTextOrientationType()  (TextOrientationType,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetTextOrientationType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextOrientationType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the text orientation type of the shape.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetTextOrientationType(value TextOrientationType)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetTextOrientationType( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the text horizontal alignment type of the shape.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetTextHorizontalAlignment()  (TextAlignmentType,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetTextHorizontalAlignment( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextAlignmentType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the text horizontal alignment type of the shape.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetTextHorizontalAlignment(value TextAlignmentType)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetTextHorizontalAlignment( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the text vertical alignment type of the shape.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetTextVerticalAlignment()  (TextAlignmentType,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetTextVerticalAlignment( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextAlignmentType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the text vertical alignment type of the shape.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetTextVerticalAlignment(value TextAlignmentType)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetTextVerticalAlignment( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets/Sets the direction of the text flow for this object.
+// Returns:
+//   int32  
+func (instance *TimelineShape) GetTextDirection()  (TextDirectionType,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetTextDirection( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextDirectionType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets/Sets the direction of the text flow for this object.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetTextDirection(value TextDirectionType)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetTextDirection( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the text information in the shape
+// Returns:
+//   TextBoxOptions  
+func (instance *TimelineShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetTextBoxOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextBoxOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+
+	return result, nil 
+}
+// Gets the data of control.
+// Returns:
+//   []byte  
+func (instance *TimelineShape) GetControlData()  ([]byte,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetControlData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
+	 
+
+	return result, nil 
+}
+// Gets the ActiveX control.
+// Returns:
+//   ActiveXControl  
+func (instance *TimelineShape) GetActiveXControl()  (*ActiveXControl,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetActiveXControl( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ActiveXControl{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteActiveXControl) 
+
+	return result, nil 
+}
+// Remove activeX control.
+// Returns:
+//   void  
+func (instance *TimelineShape) RemoveActiveXControl()  error {
+	
+	CGoReturnPtr := C.TimelineShape_RemoveActiveXControl( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the paths of a custom geometric shape.
+// Returns:
+//   ShapePathCollection  
+func (instance *TimelineShape) GetPaths()  (*ShapePathCollection,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetPaths( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &ShapePathCollection{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+
+	return result, nil 
+}
+// Gets the geometry
+// Returns:
+//   Geometry  
+func (instance *TimelineShape) GetGeometry()  (*Geometry,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetGeometry( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &Geometry{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteGeometry) 
+
+	return result, nil 
+}
+// Gets and sets create id for this shape.
+// Parameters:
+//   uuid - UUID 
+// Returns:
+//   void  
+func (instance *TimelineShape) GetCreateId(uuid *UUID)  error {
+	
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.TimelineShape_GetCreateId( instance.ptr, uuid_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets create id for this shape.
+// Parameters:
+//   value - UUID 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetCreateId(value *UUID)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.TimelineShape_SetCreateId( instance.ptr, value_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the object is decorative.
+// Returns:
+//   bool  
+func (instance *TimelineShape) IsDecorative()  (bool,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_IsDecorative( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the object is decorative.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TimelineShape) SetIsDecorative(value bool)  error {
+	
+	CGoReturnPtr := C.TimelineShape_SetIsDecorative( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Get the actual position and size of the shape (after applying rotation, flip, etc.)
+// Returns:
+//   []float  
+func (instance *TimelineShape) GetActualBox()  ([]float32,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetActualBox( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result:= make([]float32, CGoReturnPtr.column_length)
+	for i := 0; i < int(CGoReturnPtr.column_length); i++ {
+	   offset := uintptr(C.size_t(i)) * uintptr(CGoReturnPtr.size)
+	   cObject := *(*C.float)(unsafe.Pointer( uintptr( unsafe.Pointer(CGoReturnPtr.return_value)) + offset))
+	   goObject :=float32(cObject)
+	   result[i] = goObject
+	}
+	 
+
+	return result, nil 
+}
+// Recalculate a text area suitable for displaying all text content.
+// Returns:
+//   void  
+func (instance *TimelineShape) FitToTextSize()  error {
+	
+	CGoReturnPtr := C.TimelineShape_FitToTextSize( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Converting smart art to grouped shapes.
+// Returns:
+//   GroupShape  
+func (instance *TimelineShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
+	
+	CGoReturnPtr := C.TimelineShape_GetResultOfSmartArt( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &GroupShape{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteGroupShape) 
+
+	return result, nil 
+}
+// Returns whether the shape is same.
+// Parameters:
+//   obj - Object 
+// Returns:
+//   bool  
+func (instance *TimelineShape) IsSameSetting(obj *Object)  (bool,  error)  {
+	
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.TimelineShape_IsSameSetting( instance.ptr, obj_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+
+
+func (instance *TimelineShape) ToShape() *Shape {
+	parentClass := &Shape{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
+func DeleteTimelineShape(timelineshape *TimelineShape){
+	runtime.SetFinalizer(timelineshape, nil)
+	C.Delete_TimelineShape(timelineshape.ptr)
+	timelineshape.ptr = nil
+}
+
 // Class VmlShapeGuide 
 
 // just for vml
@@ -87927,7 +95340,12 @@ type VmlShapeGuide struct {
 //   src - BaseShapeGuide 
 func NewVmlShapeGuide(src *BaseShapeGuide) ( *VmlShapeGuide, error) {
 	vmlshapeguide := &VmlShapeGuide{}
-	CGoReturnPtr := C.New_VmlShapeGuide(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_VmlShapeGuide(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		vmlshapeguide.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(vmlshapeguide, DeleteVmlShapeGuide)
@@ -87979,7 +95397,12 @@ type WebExtensionShape struct {
 //   src - Shape 
 func NewWebExtensionShape(src *Shape) ( *WebExtensionShape, error) {
 	webextensionshape := &WebExtensionShape{}
-	CGoReturnPtr := C.New_WebExtensionShape(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_WebExtensionShape(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		webextensionshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(webextensionshape, DeleteWebExtensionShape)
@@ -88028,7 +95451,12 @@ func (instance *WebExtensionShape) GetWebExtension()  (*WebExtension,  error)  {
 //   void  
 func (instance *WebExtensionShape) SetWebExtension(value *WebExtension)  error {
 	
-	CGoReturnPtr := C.WebExtensionShape_SetWebExtension( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.WebExtensionShape_SetWebExtension( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -90067,7 +97495,12 @@ func (instance *WebExtensionShape) ToImage_ImageType(imagetype ImageType)  ([]by
 //   void  
 func (instance *WebExtensionShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
 	
-	CGoReturnPtr := C.WebExtensionShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.WebExtensionShape_ToImage_String_ImageOrPrintOptions( instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -90082,7 +97515,12 @@ func (instance *WebExtensionShape) ToImage_String_ImageOrPrintOptions(imagefile 
 //   []byte  
 func (instance *WebExtensionShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.WebExtensionShape_ToImage_ImageOrPrintOptions( instance.ptr, options.ptr)
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.WebExtensionShape_ToImage_ImageOrPrintOptions( instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -90331,7 +97769,12 @@ func (instance *WebExtensionShape) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *WebExtensionShape) SetFont(value *Font)  error {
 	
-	CGoReturnPtr := C.WebExtensionShape_SetFont( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.WebExtensionShape_SetFont( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -90362,7 +97805,12 @@ func (instance *WebExtensionShape) GetTextOptions()  (*TextOptions,  error)  {
 //   void  
 func (instance *WebExtensionShape) SetTextOptions(value *TextOptions)  error {
 	
-	CGoReturnPtr := C.WebExtensionShape_SetTextOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.WebExtensionShape_SetTextOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -90473,7 +97921,16 @@ func (instance *WebExtensionShape) SetHtmlText(value string)  error {
 //   void  
 func (instance *WebExtensionShape) FormatCharacters(startindex int32, length int32, font *Font, flag *StyleFlag)  error {
 	
-	CGoReturnPtr := C.WebExtensionShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font.ptr, flag.ptr)
+	var font_ptr unsafe.Pointer = nil
+	if font != nil {
+	  font_ptr =font.ptr
+	}
+	var flag_ptr unsafe.Pointer = nil
+	if flag != nil {
+	  flag_ptr =flag.ptr
+	}
+
+	CGoReturnPtr := C.WebExtensionShape_FormatCharacters( instance.ptr, C.int(startindex), C.int(length), font_ptr, flag_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -90842,7 +98299,12 @@ func (instance *WebExtensionShape) GetGeometry()  (*Geometry,  error)  {
 //   void  
 func (instance *WebExtensionShape) GetCreateId(uuid *UUID)  error {
 	
-	CGoReturnPtr := C.WebExtensionShape_GetCreateId( instance.ptr, uuid.ptr)
+	var uuid_ptr unsafe.Pointer = nil
+	if uuid != nil {
+	  uuid_ptr =uuid.ptr
+	}
+
+	CGoReturnPtr := C.WebExtensionShape_GetCreateId( instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -90857,7 +98319,12 @@ func (instance *WebExtensionShape) GetCreateId(uuid *UUID)  error {
 //   void  
 func (instance *WebExtensionShape) SetCreateId(value *UUID)  error {
 	
-	CGoReturnPtr := C.WebExtensionShape_SetCreateId( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.WebExtensionShape_SetCreateId( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -90951,7 +98418,12 @@ func (instance *WebExtensionShape) GetResultOfSmartArt()  (*GroupShape,  error) 
 //   bool  
 func (instance *WebExtensionShape) IsSameSetting(obj *Object)  (bool,  error)  {
 	
-	CGoReturnPtr := C.WebExtensionShape_IsSameSetting( instance.ptr, obj.ptr)
+	var obj_ptr unsafe.Pointer = nil
+	if obj != nil {
+	  obj_ptr =obj.ptr
+	}
+
+	CGoReturnPtr := C.WebExtensionShape_IsSameSetting( instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err

@@ -347,6 +347,67 @@ func Int32ToTiffCompression(value int32)(TiffCompression ,error){
 			return 0 ,fmt.Errorf("invalid TiffCompression value: %d", value)
 	}
 }
+// Class CustomRenderSettings 
+
+// Represents custom settings during rendering.
+type CustomRenderSettings struct {
+	ptr unsafe.Pointer
+}
+
+// Ctor.
+func NewCustomRenderSettings() ( *CustomRenderSettings, error) {
+	customrendersettings := &CustomRenderSettings{}
+	CGoReturnPtr := C.New_CustomRenderSettings()
+	if CGoReturnPtr.error_no == 0 {
+		customrendersettings.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(customrendersettings, DeleteCustomRenderSettings)
+		return customrendersettings, nil
+	} else {
+		customrendersettings.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return customrendersettings, err
+	}	
+}
+
+// Checks whether the implementation object is nullptr.
+// Returns:
+//   bool  
+func (instance *CustomRenderSettings) IsNull()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CustomRenderSettings_IsNull( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Get cell border width according to border type.
+// Parameters:
+//   borderType - int32 
+// Returns:
+//   float32  
+func (instance *CustomRenderSettings) GetCellBorderWidth(bordertype CellBorderType)  (float32,  error)  {
+	
+	CGoReturnPtr := C.CustomRenderSettings_GetCellBorderWidth( instance.ptr, C.int( int32(bordertype)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+
+
+
+func DeleteCustomRenderSettings(customrendersettings *CustomRenderSettings){
+	runtime.SetFinalizer(customrendersettings, nil)
+	C.Delete_CustomRenderSettings(customrendersettings.ptr)
+	customrendersettings.ptr = nil
+}
+
 // Class DrawObject 
 
 // DrawObject will be initialized and returned when rendering.
@@ -507,7 +568,12 @@ type DrawObjectEventHandler struct {
 //   void  
 func (instance *DrawObjectEventHandler) Draw(drawobject *DrawObject, x float32, y float32, width float32, height float32)  error {
 	
-	CGoReturnPtr := C.DrawObjectEventHandler_Draw( instance.ptr, drawobject.ptr, C.float(x), C.float(y), C.float(width), C.float(height))
+	var drawobject_ptr unsafe.Pointer = nil
+	if drawobject != nil {
+	  drawobject_ptr =drawobject.ptr
+	}
+
+	CGoReturnPtr := C.DrawObjectEventHandler_Draw( instance.ptr, drawobject_ptr, C.float(x), C.float(y), C.float(width), C.float(height))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -899,7 +965,12 @@ func (instance *ImageOrPrintOptions) GetDrawObjectEventHandler()  (*DrawObjectEv
 //   void  
 func (instance *ImageOrPrintOptions) SetDrawObjectEventHandler(value *DrawObjectEventHandler)  error {
 	
-	CGoReturnPtr := C.ImageOrPrintOptions_SetDrawObjectEventHandler( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ImageOrPrintOptions_SetDrawObjectEventHandler( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1344,7 +1415,12 @@ func (instance *ImageOrPrintOptions) GetSheetSet()  (*SheetSet,  error)  {
 //   void  
 func (instance *ImageOrPrintOptions) SetSheetSet(value *SheetSet)  error {
 	
-	CGoReturnPtr := C.ImageOrPrintOptions_SetSheetSet( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ImageOrPrintOptions_SetSheetSet( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1377,6 +1453,42 @@ func (instance *ImageOrPrintOptions) GetEmfRenderSetting()  (EmfRenderSetting,  
 func (instance *ImageOrPrintOptions) SetEmfRenderSetting(value EmfRenderSetting)  error {
 	
 	CGoReturnPtr := C.ImageOrPrintOptions_SetEmfRenderSetting( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets custom settings during rendering.
+// Returns:
+//   CustomRenderSettings  
+func (instance *ImageOrPrintOptions) GetCustomRenderSettings()  (*CustomRenderSettings,  error)  {
+	
+	CGoReturnPtr := C.ImageOrPrintOptions_GetCustomRenderSettings( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CustomRenderSettings{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteCustomRenderSettings) 
+
+	return result, nil 
+}
+// Gets or sets custom settings during rendering.
+// Parameters:
+//   value - CustomRenderSettings 
+// Returns:
+//   void  
+func (instance *ImageOrPrintOptions) SetCustomRenderSettings(value *CustomRenderSettings)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.ImageOrPrintOptions_SetCustomRenderSettings( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1439,7 +1551,12 @@ type PageEndSavingArgs struct {
 //   src - PageSavingArgs 
 func NewPageEndSavingArgs(src *PageSavingArgs) ( *PageEndSavingArgs, error) {
 	pageendsavingargs := &PageEndSavingArgs{}
-	CGoReturnPtr := C.New_PageEndSavingArgs(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_PageEndSavingArgs(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		pageendsavingargs.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(pageendsavingargs, DeletePageEndSavingArgs)
@@ -1609,7 +1726,12 @@ type PageStartSavingArgs struct {
 //   src - PageSavingArgs 
 func NewPageStartSavingArgs(src *PageSavingArgs) ( *PageStartSavingArgs, error) {
 	pagestartsavingargs := &PageStartSavingArgs{}
-	CGoReturnPtr := C.New_PageStartSavingArgs(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_PageStartSavingArgs(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		pagestartsavingargs.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(pagestartsavingargs, DeletePageStartSavingArgs)
@@ -1798,7 +1920,12 @@ func (instance *PdfBookmarkEntry) GetDestination()  (*Cell,  error)  {
 //   void  
 func (instance *PdfBookmarkEntry) SetDestination(value *Cell)  error {
 	
-	CGoReturnPtr := C.PdfBookmarkEntry_SetDestination( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.PdfBookmarkEntry_SetDestination( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2079,7 +2206,12 @@ type RenderingWatermark struct {
 //   renderingFont - RenderingFont 
 func NewRenderingWatermark_String_RenderingFont(text string, renderingfont *RenderingFont) ( *RenderingWatermark, error) {
 	renderingwatermark := &RenderingWatermark{}
-	CGoReturnPtr := C.New_RenderingWatermark_String_RenderingFont(C.CString(text), renderingfont.ptr)
+	var renderingfont_ptr unsafe.Pointer = nil
+	if renderingfont != nil {
+	  renderingfont_ptr =renderingfont.ptr
+	}
+
+	CGoReturnPtr := C.New_RenderingWatermark_String_RenderingFont(C.CString(text), renderingfont_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		renderingwatermark.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(renderingwatermark, DeleteRenderingWatermark)
@@ -2426,7 +2558,16 @@ type SheetPrintingPreview struct {
 //   options - ImageOrPrintOptions 
 func NewSheetPrintingPreview(sheet *Worksheet, options *ImageOrPrintOptions) ( *SheetPrintingPreview, error) {
 	sheetprintingpreview := &SheetPrintingPreview{}
-	CGoReturnPtr := C.New_SheetPrintingPreview(sheet.ptr, options.ptr)
+	var sheet_ptr unsafe.Pointer = nil
+	if sheet != nil {
+	  sheet_ptr =sheet.ptr
+	}
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.New_SheetPrintingPreview(sheet_ptr, options_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		sheetprintingpreview.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(sheetprintingpreview, DeleteSheetPrintingPreview)
@@ -2489,7 +2630,16 @@ type SheetRender struct {
 //   options - ImageOrPrintOptions 
 func NewSheetRender(worksheet *Worksheet, options *ImageOrPrintOptions) ( *SheetRender, error) {
 	sheetrender := &SheetRender{}
-	CGoReturnPtr := C.New_SheetRender(worksheet.ptr, options.ptr)
+	var worksheet_ptr unsafe.Pointer = nil
+	if worksheet != nil {
+	  worksheet_ptr =worksheet.ptr
+	}
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.New_SheetRender(worksheet_ptr, options_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		sheetrender.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(sheetrender, DeleteSheetRender)
@@ -2796,7 +2946,12 @@ func NewSvgImageOptions() ( *SvgImageOptions, error) {
 //   src - ImageOrPrintOptions 
 func NewSvgImageOptions_ImageOrPrintOptions(src *ImageOrPrintOptions) ( *SvgImageOptions, error) {
 	svgimageoptions := &SvgImageOptions{}
-	CGoReturnPtr := C.New_SvgImageOptions_ImageOrPrintOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_SvgImageOptions_ImageOrPrintOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		svgimageoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(svgimageoptions, DeleteSvgImageOptions)
@@ -3285,7 +3440,12 @@ func (instance *SvgImageOptions) GetDrawObjectEventHandler()  (*DrawObjectEventH
 //   void  
 func (instance *SvgImageOptions) SetDrawObjectEventHandler(value *DrawObjectEventHandler)  error {
 	
-	CGoReturnPtr := C.SvgImageOptions_SetDrawObjectEventHandler( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SvgImageOptions_SetDrawObjectEventHandler( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3730,7 +3890,12 @@ func (instance *SvgImageOptions) GetSheetSet()  (*SheetSet,  error)  {
 //   void  
 func (instance *SvgImageOptions) SetSheetSet(value *SheetSet)  error {
 	
-	CGoReturnPtr := C.SvgImageOptions_SetSheetSet( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SvgImageOptions_SetSheetSet( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3770,6 +3935,42 @@ func (instance *SvgImageOptions) SetEmfRenderSetting(value EmfRenderSetting)  er
 
 	return nil 
 }
+// Gets or sets custom settings during rendering.
+// Returns:
+//   CustomRenderSettings  
+func (instance *SvgImageOptions) GetCustomRenderSettings()  (*CustomRenderSettings,  error)  {
+	
+	CGoReturnPtr := C.SvgImageOptions_GetCustomRenderSettings( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CustomRenderSettings{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteCustomRenderSettings) 
+
+	return result, nil 
+}
+// Gets or sets custom settings during rendering.
+// Parameters:
+//   value - CustomRenderSettings 
+// Returns:
+//   void  
+func (instance *SvgImageOptions) SetCustomRenderSettings(value *CustomRenderSettings)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SvgImageOptions_SetCustomRenderSettings( instance.ptr, value_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 
 
 func (instance *SvgImageOptions) ToImageOrPrintOptions() *ImageOrPrintOptions {
@@ -3797,7 +3998,16 @@ type WorkbookPrintingPreview struct {
 //   options - ImageOrPrintOptions 
 func NewWorkbookPrintingPreview(workbook *Workbook, options *ImageOrPrintOptions) ( *WorkbookPrintingPreview, error) {
 	workbookprintingpreview := &WorkbookPrintingPreview{}
-	CGoReturnPtr := C.New_WorkbookPrintingPreview(workbook.ptr, options.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.New_WorkbookPrintingPreview(workbook_ptr, options_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		workbookprintingpreview.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(workbookprintingpreview, DeleteWorkbookPrintingPreview)
@@ -3860,7 +4070,16 @@ type WorkbookRender struct {
 //   options - ImageOrPrintOptions 
 func NewWorkbookRender(workbook *Workbook, options *ImageOrPrintOptions) ( *WorkbookRender, error) {
 	workbookrender := &WorkbookRender{}
-	CGoReturnPtr := C.New_WorkbookRender(workbook.ptr, options.ptr)
+	var workbook_ptr unsafe.Pointer = nil
+	if workbook != nil {
+	  workbook_ptr =workbook.ptr
+	}
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.New_WorkbookRender(workbook_ptr, options_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		workbookrender.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(workbookrender, DeleteWorkbookRender)

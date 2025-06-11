@@ -47,7 +47,12 @@ func NewDbfLoadOptions() ( *DbfLoadOptions, error) {
 //   src - LoadOptions 
 func NewDbfLoadOptions_LoadOptions(src *LoadOptions) ( *DbfLoadOptions, error) {
 	dbfloadoptions := &DbfLoadOptions{}
-	CGoReturnPtr := C.New_DbfLoadOptions_LoadOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_DbfLoadOptions_LoadOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		dbfloadoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(dbfloadoptions, DeleteDbfLoadOptions)
@@ -226,7 +231,7 @@ func (instance *DbfLoadOptions) SetLanguageCode(value CountryCode)  error {
 
 	return nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Returns:
 //   int32  
 func (instance *DbfLoadOptions) GetRegion()  (CountryCode,  error)  {
@@ -243,7 +248,7 @@ func (instance *DbfLoadOptions) GetRegion()  (CountryCode,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -297,7 +302,12 @@ func (instance *DbfLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonito
 //   void  
 func (instance *DbfLoadOptions) SetInterruptMonitor(value *AbstractInterruptMonitor)  error {
 	
-	CGoReturnPtr := C.DbfLoadOptions_SetInterruptMonitor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DbfLoadOptions_SetInterruptMonitor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -456,7 +466,12 @@ func (instance *DbfLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 //   void  
 func (instance *DbfLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 	
-	CGoReturnPtr := C.DbfLoadOptions_SetLoadFilter( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DbfLoadOptions_SetLoadFilter( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -519,7 +534,12 @@ func (instance *DbfLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  er
 //   void  
 func (instance *DbfLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  error {
 	
-	CGoReturnPtr := C.DbfLoadOptions_SetAutoFitterOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DbfLoadOptions_SetAutoFitterOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -581,7 +601,12 @@ func (instance *DbfLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  erro
 //   void  
 func (instance *DbfLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  error {
 	
-	CGoReturnPtr := C.DbfLoadOptions_SetFontConfigs( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DbfLoadOptions_SetFontConfigs( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -691,7 +716,12 @@ func NewDifLoadOptions() ( *DifLoadOptions, error) {
 //   src - LoadOptions 
 func NewDifLoadOptions_LoadOptions(src *LoadOptions) ( *DifLoadOptions, error) {
 	difloadoptions := &DifLoadOptions{}
-	CGoReturnPtr := C.New_DifLoadOptions_LoadOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_DifLoadOptions_LoadOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		difloadoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(difloadoptions, DeleteDifLoadOptions)
@@ -870,7 +900,7 @@ func (instance *DifLoadOptions) SetLanguageCode(value CountryCode)  error {
 
 	return nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Returns:
 //   int32  
 func (instance *DifLoadOptions) GetRegion()  (CountryCode,  error)  {
@@ -887,7 +917,7 @@ func (instance *DifLoadOptions) GetRegion()  (CountryCode,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
+// Gets or sets the regional settings used for the Workbook that will be loaded.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -941,7 +971,12 @@ func (instance *DifLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonito
 //   void  
 func (instance *DifLoadOptions) SetInterruptMonitor(value *AbstractInterruptMonitor)  error {
 	
-	CGoReturnPtr := C.DifLoadOptions_SetInterruptMonitor( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DifLoadOptions_SetInterruptMonitor( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1100,7 +1135,12 @@ func (instance *DifLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 //   void  
 func (instance *DifLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 	
-	CGoReturnPtr := C.DifLoadOptions_SetLoadFilter( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DifLoadOptions_SetLoadFilter( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1163,7 +1203,12 @@ func (instance *DifLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  er
 //   void  
 func (instance *DifLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  error {
 	
-	CGoReturnPtr := C.DifLoadOptions_SetAutoFitterOptions( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DifLoadOptions_SetAutoFitterOptions( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1225,7 +1270,12 @@ func (instance *DifLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  erro
 //   void  
 func (instance *DifLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  error {
 	
-	CGoReturnPtr := C.DifLoadOptions_SetFontConfigs( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DifLoadOptions_SetFontConfigs( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

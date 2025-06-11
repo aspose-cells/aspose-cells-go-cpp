@@ -70,7 +70,12 @@ type BuiltInDocumentPropertyCollection struct {
 //   src - DocumentPropertyCollection 
 func NewBuiltInDocumentPropertyCollection(src *DocumentPropertyCollection) ( *BuiltInDocumentPropertyCollection, error) {
 	builtindocumentpropertycollection := &BuiltInDocumentPropertyCollection{}
-	CGoReturnPtr := C.New_BuiltInDocumentPropertyCollection(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_BuiltInDocumentPropertyCollection(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		builtindocumentpropertycollection.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(builtindocumentpropertycollection, DeleteBuiltInDocumentPropertyCollection)
@@ -1360,7 +1365,12 @@ type CustomDocumentPropertyCollection struct {
 //   src - DocumentPropertyCollection 
 func NewCustomDocumentPropertyCollection(src *DocumentPropertyCollection) ( *CustomDocumentPropertyCollection, error) {
 	customdocumentpropertycollection := &CustomDocumentPropertyCollection{}
-	CGoReturnPtr := C.New_CustomDocumentPropertyCollection(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_CustomDocumentPropertyCollection(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		customdocumentpropertycollection.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(customdocumentpropertycollection, DeleteCustomDocumentPropertyCollection)
@@ -1914,7 +1924,12 @@ func (instance *DocumentProperty) GetValue()  (*Object,  error)  {
 //   void  
 func (instance *DocumentProperty) SetValue(value *Object)  error {
 	
-	CGoReturnPtr := C.DocumentProperty_SetValue( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.DocumentProperty_SetValue( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

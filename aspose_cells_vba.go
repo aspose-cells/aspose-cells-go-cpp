@@ -227,7 +227,12 @@ func (instance *VbaModuleCollection) GetDesignerStorage(name string)  ([]byte,  
 //   int32  
 func (instance *VbaModuleCollection) Add_Worksheet(sheet *Worksheet)  (int32,  error)  {
 	
-	CGoReturnPtr := C.VbaModuleCollection_Add_Worksheet( instance.ptr, sheet.ptr)
+	var sheet_ptr unsafe.Pointer = nil
+	if sheet != nil {
+	  sheet_ptr =sheet.ptr
+	}
+
+	CGoReturnPtr := C.VbaModuleCollection_Add_Worksheet( instance.ptr, sheet_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -244,7 +249,12 @@ func (instance *VbaModuleCollection) Add_Worksheet(sheet *Worksheet)  (int32,  e
 //   int32  
 func (instance *VbaModuleCollection) Add_VbaModuleType_String(type_ *VbaModuleType, name string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.VbaModuleCollection_Add_VbaModuleType_String( instance.ptr, type_.ptr, C.CString(name))
+	var type__ptr unsafe.Pointer = nil
+	if type_ != nil {
+	  type__ptr =type_.ptr
+	}
+
+	CGoReturnPtr := C.VbaModuleCollection_Add_VbaModuleType_String( instance.ptr, type__ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -296,7 +306,12 @@ func (instance *VbaModuleCollection) Get_Int(index int32)  (*VbaModule,  error) 
 //   void  
 func (instance *VbaModuleCollection) Remove_Worksheet(sheet *Worksheet)  error {
 	
-	CGoReturnPtr := C.VbaModuleCollection_Remove_Worksheet( instance.ptr, sheet.ptr)
+	var sheet_ptr unsafe.Pointer = nil
+	if sheet != nil {
+	  sheet_ptr =sheet.ptr
+	}
+
+	CGoReturnPtr := C.VbaModuleCollection_Remove_Worksheet( instance.ptr, sheet_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -405,7 +420,12 @@ func (instance *VbaProject) IsNull()  (bool,  error)  {
 //   void  
 func (instance *VbaProject) Sign(digitalsignature *DigitalSignature)  error {
 	
-	CGoReturnPtr := C.VbaProject_Sign( instance.ptr, digitalsignature.ptr)
+	var digitalsignature_ptr unsafe.Pointer = nil
+	if digitalsignature != nil {
+	  digitalsignature_ptr =digitalsignature.ptr
+	}
+
+	CGoReturnPtr := C.VbaProject_Sign( instance.ptr, digitalsignature_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -568,7 +588,12 @@ func (instance *VbaProject) GetIslockedForViewing()  (bool,  error)  {
 //   void  
 func (instance *VbaProject) Copy(source *VbaProject)  error {
 	
-	CGoReturnPtr := C.VbaProject_Copy( instance.ptr, source.ptr)
+	var source_ptr unsafe.Pointer = nil
+	if source != nil {
+	  source_ptr =source.ptr
+	}
+
+	CGoReturnPtr := C.VbaProject_Copy( instance.ptr, source_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -661,7 +686,12 @@ func (instance *VbaProjectReference) IsNull()  (bool,  error)  {
 //   void  
 func (instance *VbaProjectReference) Copy(source *VbaProjectReference)  error {
 	
-	CGoReturnPtr := C.VbaProjectReference_Copy( instance.ptr, source.ptr)
+	var source_ptr unsafe.Pointer = nil
+	if source != nil {
+	  source_ptr =source.ptr
+	}
+
+	CGoReturnPtr := C.VbaProjectReference_Copy( instance.ptr, source_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -941,7 +971,12 @@ func (instance *VbaProjectReferenceCollection) AddProjectRefrernce(name string, 
 //   void  
 func (instance *VbaProjectReferenceCollection) Copy(source *VbaProjectReferenceCollection)  error {
 	
-	CGoReturnPtr := C.VbaProjectReferenceCollection_Copy( instance.ptr, source.ptr)
+	var source_ptr unsafe.Pointer = nil
+	if source != nil {
+	  source_ptr =source.ptr
+	}
+
+	CGoReturnPtr := C.VbaProjectReferenceCollection_Copy( instance.ptr, source_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

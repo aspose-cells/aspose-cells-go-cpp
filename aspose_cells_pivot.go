@@ -1388,7 +1388,12 @@ type PivotArea struct {
 //   table - PivotTable 
 func NewPivotArea(table *PivotTable) ( *PivotArea, error) {
 	pivotarea := &PivotArea{}
-	CGoReturnPtr := C.New_PivotArea(table.ptr)
+	var table_ptr unsafe.Pointer = nil
+	if table != nil {
+	  table_ptr =table.ptr
+	}
+
+	CGoReturnPtr := C.New_PivotArea(table_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		pivotarea.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(pivotarea, DeletePivotArea)
@@ -1471,7 +1476,12 @@ func (instance *PivotArea) SelectField_PivotFieldType_String(axistype PivotField
 //   void  
 func (instance *PivotArea) SelectField_PivotFieldType_PivotField(axistype PivotFieldType, field *PivotField)  error {
 	
-	CGoReturnPtr := C.PivotArea_SelectField_PivotFieldType_PivotField( instance.ptr, C.int( int32(axistype)), field.ptr)
+	var field_ptr unsafe.Pointer = nil
+	if field != nil {
+	  field_ptr =field.ptr
+	}
+
+	CGoReturnPtr := C.PivotArea_SelectField_PivotFieldType_PivotField( instance.ptr, C.int( int32(axistype)), field_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1749,7 +1759,12 @@ func (instance *PivotAreaCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *PivotAreaCollection) Add_PivotArea(pivotarea *PivotArea)  (int32,  error)  {
 	
-	CGoReturnPtr := C.PivotAreaCollection_Add_PivotArea( instance.ptr, pivotarea.ptr)
+	var pivotarea_ptr unsafe.Pointer = nil
+	if pivotarea != nil {
+	  pivotarea_ptr =pivotarea.ptr
+	}
+
+	CGoReturnPtr := C.PivotAreaCollection_Add_PivotArea( instance.ptr, pivotarea_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1798,7 +1813,12 @@ func (instance *PivotAreaCollection) Get(index int32)  (*PivotArea,  error)  {
 //   void  
 func (instance *PivotAreaCollection) Add_CellArea(cellarea *CellArea)  error {
 	
-	CGoReturnPtr := C.PivotAreaCollection_Add_CellArea( instance.ptr, cellarea.ptr)
+	var cellarea_ptr unsafe.Pointer = nil
+	if cellarea != nil {
+	  cellarea_ptr =cellarea.ptr
+	}
+
+	CGoReturnPtr := C.PivotAreaCollection_Add_CellArea( instance.ptr, cellarea_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2078,7 +2098,12 @@ func (instance *PivotConditionalFormat) GetPivotAreas()  (*PivotAreaCollection, 
 //   void  
 func (instance *PivotConditionalFormat) AddCellArea(ca *CellArea)  error {
 	
-	CGoReturnPtr := C.PivotConditionalFormat_AddCellArea( instance.ptr, ca.ptr)
+	var ca_ptr unsafe.Pointer = nil
+	if ca != nil {
+	  ca_ptr =ca.ptr
+	}
+
+	CGoReturnPtr := C.PivotConditionalFormat_AddCellArea( instance.ptr, ca_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2128,7 +2153,12 @@ func (instance *PivotConditionalFormat) AddFieldArea_PivotFieldType_String(axist
 //   void  
 func (instance *PivotConditionalFormat) AddFieldArea_PivotFieldType_PivotField(axistype PivotFieldType, field *PivotField)  error {
 	
-	CGoReturnPtr := C.PivotConditionalFormat_AddFieldArea_PivotFieldType_PivotField( instance.ptr, C.int( int32(axistype)), field.ptr)
+	var field_ptr unsafe.Pointer = nil
+	if field != nil {
+	  field_ptr =field.ptr
+	}
+
+	CGoReturnPtr := C.PivotConditionalFormat_AddFieldArea_PivotFieldType_PivotField( instance.ptr, C.int( int32(axistype)), field_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2313,7 +2343,12 @@ type PivotDateTimeRangeGroupSettings struct {
 //   src - PivotFieldGroupSettings 
 func NewPivotDateTimeRangeGroupSettings(src *PivotFieldGroupSettings) ( *PivotDateTimeRangeGroupSettings, error) {
 	pivotdatetimerangegroupsettings := &PivotDateTimeRangeGroupSettings{}
-	CGoReturnPtr := C.New_PivotDateTimeRangeGroupSettings(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_PivotDateTimeRangeGroupSettings(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		pivotdatetimerangegroupsettings.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(pivotdatetimerangegroupsettings, DeletePivotDateTimeRangeGroupSettings)
@@ -2460,7 +2495,12 @@ type PivotDiscreteGroupSettings struct {
 //   src - PivotFieldGroupSettings 
 func NewPivotDiscreteGroupSettings(src *PivotFieldGroupSettings) ( *PivotDiscreteGroupSettings, error) {
 	pivotdiscretegroupsettings := &PivotDiscreteGroupSettings{}
-	CGoReturnPtr := C.New_PivotDiscreteGroupSettings(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_PivotDiscreteGroupSettings(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		pivotdiscretegroupsettings.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(pivotdiscretegroupsettings, DeletePivotDiscreteGroupSettings)
@@ -4243,7 +4283,12 @@ func (instance *PivotFieldCollection) AddByBaseIndex(basefieldindex int32)  (int
 //   int32  
 func (instance *PivotFieldCollection) Add(pivotfield *PivotField)  (int32,  error)  {
 	
-	CGoReturnPtr := C.PivotFieldCollection_Add( instance.ptr, pivotfield.ptr)
+	var pivotfield_ptr unsafe.Pointer = nil
+	if pivotfield != nil {
+	  pivotfield_ptr =pivotfield.ptr
+	}
+
+	CGoReturnPtr := C.PivotFieldCollection_Add( instance.ptr, pivotfield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5062,7 +5107,12 @@ func (instance *PivotFormatCondition) AddDataAreaCondition_String(fieldname stri
 //   void  
 func (instance *PivotFormatCondition) AddDataAreaCondition_PivotField(datafield *PivotField)  error {
 	
-	CGoReturnPtr := C.PivotFormatCondition_AddDataAreaCondition_PivotField( instance.ptr, datafield.ptr)
+	var datafield_ptr unsafe.Pointer = nil
+	if datafield != nil {
+	  datafield_ptr =datafield.ptr
+	}
+
+	CGoReturnPtr := C.PivotFormatCondition_AddDataAreaCondition_PivotField( instance.ptr, datafield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5092,7 +5142,12 @@ func (instance *PivotFormatCondition) AddRowAreaCondition_String(fieldname strin
 //   void  
 func (instance *PivotFormatCondition) AddRowAreaCondition_PivotField(rowfield *PivotField)  error {
 	
-	CGoReturnPtr := C.PivotFormatCondition_AddRowAreaCondition_PivotField( instance.ptr, rowfield.ptr)
+	var rowfield_ptr unsafe.Pointer = nil
+	if rowfield != nil {
+	  rowfield_ptr =rowfield.ptr
+	}
+
+	CGoReturnPtr := C.PivotFormatCondition_AddRowAreaCondition_PivotField( instance.ptr, rowfield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5122,7 +5177,12 @@ func (instance *PivotFormatCondition) AddColumnAreaCondition_String(fieldname st
 //   void  
 func (instance *PivotFormatCondition) AddColumnAreaCondition_PivotField(columnfield *PivotField)  error {
 	
-	CGoReturnPtr := C.PivotFormatCondition_AddColumnAreaCondition_PivotField( instance.ptr, columnfield.ptr)
+	var columnfield_ptr unsafe.Pointer = nil
+	if columnfield != nil {
+	  columnfield_ptr =columnfield.ptr
+	}
+
+	CGoReturnPtr := C.PivotFormatCondition_AddColumnAreaCondition_PivotField( instance.ptr, columnfield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5775,7 +5835,12 @@ type PivotNumbericRangeGroupSettings struct {
 //   src - PivotFieldGroupSettings 
 func NewPivotNumbericRangeGroupSettings(src *PivotFieldGroupSettings) ( *PivotNumbericRangeGroupSettings, error) {
 	pivotnumbericrangegroupsettings := &PivotNumbericRangeGroupSettings{}
-	CGoReturnPtr := C.New_PivotNumbericRangeGroupSettings(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_PivotNumbericRangeGroupSettings(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		pivotnumbericrangegroupsettings.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(pivotnumbericrangegroupsettings, DeletePivotNumbericRangeGroupSettings)
@@ -6302,7 +6367,12 @@ func (instance *PivotTable) SetPivotTableStyleType(value PivotTableStyleType)  e
 //   void  
 func (instance *PivotTable) CopyStyle(pivottable *PivotTable)  error {
 	
-	CGoReturnPtr := C.PivotTable_CopyStyle( instance.ptr, pivottable.ptr)
+	var pivottable_ptr unsafe.Pointer = nil
+	if pivottable != nil {
+	  pivottable_ptr =pivottable.ptr
+	}
+
+	CGoReturnPtr := C.PivotTable_CopyStyle( instance.ptr, pivottable_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6317,7 +6387,12 @@ func (instance *PivotTable) CopyStyle(pivottable *PivotTable)  error {
 //   void  
 func (instance *PivotTable) ShowReportFilterPage(pagefield *PivotField)  error {
 	
-	CGoReturnPtr := C.PivotTable_ShowReportFilterPage( instance.ptr, pagefield.ptr)
+	var pagefield_ptr unsafe.Pointer = nil
+	if pagefield != nil {
+	  pagefield_ptr =pagefield.ptr
+	}
+
+	CGoReturnPtr := C.PivotTable_ShowReportFilterPage( instance.ptr, pagefield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6395,7 +6470,12 @@ func (instance *PivotTable) RemoveField_PivotFieldType_Int(fieldtype PivotFieldT
 //   void  
 func (instance *PivotTable) RemoveField_PivotFieldType_PivotField(fieldtype PivotFieldType, pivotfield *PivotField)  error {
 	
-	CGoReturnPtr := C.PivotTable_RemoveField_PivotFieldType_PivotField( instance.ptr, C.int( int32(fieldtype)), pivotfield.ptr)
+	var pivotfield_ptr unsafe.Pointer = nil
+	if pivotfield != nil {
+	  pivotfield_ptr =pivotfield.ptr
+	}
+
+	CGoReturnPtr := C.PivotTable_RemoveField_PivotFieldType_PivotField( instance.ptr, C.int( int32(fieldtype)), pivotfield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6445,7 +6525,12 @@ func (instance *PivotTable) AddFieldToArea_PivotFieldType_Int(fieldtype PivotFie
 //   int32  
 func (instance *PivotTable) AddFieldToArea_PivotFieldType_PivotField(fieldtype PivotFieldType, pivotfield *PivotField)  (int32,  error)  {
 	
-	CGoReturnPtr := C.PivotTable_AddFieldToArea_PivotFieldType_PivotField( instance.ptr, C.int( int32(fieldtype)), pivotfield.ptr)
+	var pivotfield_ptr unsafe.Pointer = nil
+	if pivotfield != nil {
+	  pivotfield_ptr =pivotfield.ptr
+	}
+
+	CGoReturnPtr := C.PivotTable_AddFieldToArea_PivotFieldType_PivotField( instance.ptr, C.int( int32(fieldtype)), pivotfield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8284,7 +8369,12 @@ func (instance *PivotTable) RefreshData()  (PivotRefreshState,  error)  {
 //   int32  
 func (instance *PivotTable) RefreshData_PivotTableRefreshOption(option *PivotTableRefreshOption)  (PivotRefreshState,  error)  {
 	
-	CGoReturnPtr := C.PivotTable_RefreshData_PivotTableRefreshOption( instance.ptr, option.ptr)
+	var option_ptr unsafe.Pointer = nil
+	if option != nil {
+	  option_ptr =option.ptr
+	}
+
+	CGoReturnPtr := C.PivotTable_RefreshData_PivotTableRefreshOption( instance.ptr, option_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8316,7 +8406,12 @@ func (instance *PivotTable) CalculateData()  error {
 //   void  
 func (instance *PivotTable) CalculateData_PivotTableCalculateOption(option *PivotTableCalculateOption)  error {
 	
-	CGoReturnPtr := C.PivotTable_CalculateData_PivotTableCalculateOption( instance.ptr, option.ptr)
+	var option_ptr unsafe.Pointer = nil
+	if option != nil {
+	  option_ptr =option.ptr
+	}
+
+	CGoReturnPtr := C.PivotTable_CalculateData_PivotTableCalculateOption( instance.ptr, option_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8357,7 +8452,12 @@ func (instance *PivotTable) CalculateRange()  error {
 //   void  
 func (instance *PivotTable) FormatAll(style *Style)  error {
 	
-	CGoReturnPtr := C.PivotTable_FormatAll( instance.ptr, style.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+
+	CGoReturnPtr := C.PivotTable_FormatAll( instance.ptr, style_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8373,7 +8473,12 @@ func (instance *PivotTable) FormatAll(style *Style)  error {
 //   void  
 func (instance *PivotTable) FormatRow(row int32, style *Style)  error {
 	
-	CGoReturnPtr := C.PivotTable_FormatRow( instance.ptr, C.int(row), style.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+
+	CGoReturnPtr := C.PivotTable_FormatRow( instance.ptr, C.int(row), style_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8389,7 +8494,16 @@ func (instance *PivotTable) FormatRow(row int32, style *Style)  error {
 //   void  
 func (instance *PivotTable) Format_PivotArea_Style(pivotarea *PivotArea, style *Style)  error {
 	
-	CGoReturnPtr := C.PivotTable_Format_PivotArea_Style( instance.ptr, pivotarea.ptr, style.ptr)
+	var pivotarea_ptr unsafe.Pointer = nil
+	if pivotarea != nil {
+	  pivotarea_ptr =pivotarea.ptr
+	}
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+
+	CGoReturnPtr := C.PivotTable_Format_PivotArea_Style( instance.ptr, pivotarea_ptr, style_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8405,7 +8519,16 @@ func (instance *PivotTable) Format_PivotArea_Style(pivotarea *PivotArea, style *
 //   void  
 func (instance *PivotTable) Format_CellArea_Style(ca *CellArea, style *Style)  error {
 	
-	CGoReturnPtr := C.PivotTable_Format_CellArea_Style( instance.ptr, ca.ptr, style.ptr)
+	var ca_ptr unsafe.Pointer = nil
+	if ca != nil {
+	  ca_ptr =ca.ptr
+	}
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+
+	CGoReturnPtr := C.PivotTable_Format_CellArea_Style( instance.ptr, ca_ptr, style_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8422,7 +8545,12 @@ func (instance *PivotTable) Format_CellArea_Style(ca *CellArea, style *Style)  e
 //   void  
 func (instance *PivotTable) Format_Int_Int_Style(row int32, column int32, style *Style)  error {
 	
-	CGoReturnPtr := C.PivotTable_Format_Integer_Integer_Style( instance.ptr, C.int(row), C.int(column), style.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+
+	CGoReturnPtr := C.PivotTable_Format_Integer_Integer_Style( instance.ptr, C.int(row), C.int(column), style_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8437,7 +8565,12 @@ func (instance *PivotTable) Format_Int_Int_Style(row int32, column int32, style 
 //   PivotAreaCollection  
 func (instance *PivotTable) SelectArea(ca *CellArea)  (*PivotAreaCollection,  error)  {
 	
-	CGoReturnPtr := C.PivotTable_SelectArea( instance.ptr, ca.ptr)
+	var ca_ptr unsafe.Pointer = nil
+	if ca != nil {
+	  ca_ptr =ca.ptr
+	}
+
+	CGoReturnPtr := C.PivotTable_SelectArea( instance.ptr, ca_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9153,7 +9286,12 @@ func (instance *PivotTableCollection) Add_String_String_String_Bool_Bool(sourced
 //   int32  
 func (instance *PivotTableCollection) Add_PivotTable_String_String(pivottable *PivotTable, destcellname string, tablename string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.PivotTableCollection_Add_PivotTable_String_String( instance.ptr, pivottable.ptr, C.CString(destcellname), C.CString(tablename))
+	var pivottable_ptr unsafe.Pointer = nil
+	if pivottable != nil {
+	  pivottable_ptr =pivottable.ptr
+	}
+
+	CGoReturnPtr := C.PivotTableCollection_Add_PivotTable_String_String( instance.ptr, pivottable_ptr, C.CString(destcellname), C.CString(tablename))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9172,7 +9310,12 @@ func (instance *PivotTableCollection) Add_PivotTable_String_String(pivottable *P
 //   int32  
 func (instance *PivotTableCollection) Add_PivotTable_Int_Int_String(pivottable *PivotTable, row int32, column int32, tablename string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.PivotTableCollection_Add_PivotTable_Integer_Integer_String( instance.ptr, pivottable.ptr, C.int(row), C.int(column), C.CString(tablename))
+	var pivottable_ptr unsafe.Pointer = nil
+	if pivottable != nil {
+	  pivottable_ptr =pivottable.ptr
+	}
+
+	CGoReturnPtr := C.PivotTableCollection_Add_PivotTable_Integer_Integer_String( instance.ptr, pivottable_ptr, C.int(row), C.int(column), C.CString(tablename))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9198,8 +9341,12 @@ func (instance *PivotTableCollection) Add_stringArray_Bool_PivotPageFields_Strin
 	defer C.free(unsafe.Pointer(cStr))
 	vector_sourcedata[i] = cStr
 	}
+	var pagefields_ptr unsafe.Pointer = nil
+	if pagefields != nil {
+	  pagefields_ptr =pagefields.ptr
+	}
 
-	CGoReturnPtr := C.PivotTableCollection_Add_U16StringArray_Boolean_PivotPageFields_String_String( instance.ptr, unsafe.Pointer(&vector_sourcedata[0]), C.int( len(sourcedata)), C.bool(isautopage), pagefields.ptr, C.CString(destcellname), C.CString(tablename))
+	CGoReturnPtr := C.PivotTableCollection_Add_U16StringArray_Boolean_PivotPageFields_String_String( instance.ptr, unsafe.Pointer(&vector_sourcedata[0]), C.int( len(sourcedata)), C.bool(isautopage), pagefields_ptr, C.CString(destcellname), C.CString(tablename))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9226,8 +9373,12 @@ func (instance *PivotTableCollection) Add_stringArray_Bool_PivotPageFields_Int_I
 	defer C.free(unsafe.Pointer(cStr))
 	vector_sourcedata[i] = cStr
 	}
+	var pagefields_ptr unsafe.Pointer = nil
+	if pagefields != nil {
+	  pagefields_ptr =pagefields.ptr
+	}
 
-	CGoReturnPtr := C.PivotTableCollection_Add_U16StringArray_Boolean_PivotPageFields_Integer_Integer_String( instance.ptr, unsafe.Pointer(&vector_sourcedata[0]), C.int( len(sourcedata)), C.bool(isautopage), pagefields.ptr, C.int(row), C.int(column), C.CString(tablename))
+	CGoReturnPtr := C.PivotTableCollection_Add_U16StringArray_Boolean_PivotPageFields_Integer_Integer_String( instance.ptr, unsafe.Pointer(&vector_sourcedata[0]), C.int( len(sourcedata)), C.bool(isautopage), pagefields_ptr, C.int(row), C.int(column), C.CString(tablename))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9311,7 +9462,12 @@ func (instance *PivotTableCollection) Clear()  error {
 //   void  
 func (instance *PivotTableCollection) Remove_PivotTable(pivottable *PivotTable)  error {
 	
-	CGoReturnPtr := C.PivotTableCollection_Remove_PivotTable( instance.ptr, pivottable.ptr)
+	var pivottable_ptr unsafe.Pointer = nil
+	if pivottable != nil {
+	  pivottable_ptr =pivottable.ptr
+	}
+
+	CGoReturnPtr := C.PivotTableCollection_Remove_PivotTable( instance.ptr, pivottable_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9327,7 +9483,12 @@ func (instance *PivotTableCollection) Remove_PivotTable(pivottable *PivotTable) 
 //   void  
 func (instance *PivotTableCollection) Remove_PivotTable_Bool(pivottable *PivotTable, keepdata bool)  error {
 	
-	CGoReturnPtr := C.PivotTableCollection_Remove_PivotTable_Boolean( instance.ptr, pivottable.ptr, C.bool(keepdata))
+	var pivottable_ptr unsafe.Pointer = nil
+	if pivottable != nil {
+	  pivottable_ptr =pivottable.ptr
+	}
+
+	CGoReturnPtr := C.PivotTableCollection_Remove_PivotTable_Boolean( instance.ptr, pivottable_ptr, C.bool(keepdata))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9449,7 +9610,12 @@ func (instance *PivotTableFormat) GetStyle()  (*Style,  error)  {
 //   void  
 func (instance *PivotTableFormat) SetStyle(style *Style)  error {
 	
-	CGoReturnPtr := C.PivotTableFormat_SetStyle( instance.ptr, style.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+
+	CGoReturnPtr := C.PivotTableFormat_SetStyle( instance.ptr, style_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9533,7 +9699,12 @@ func (instance *PivotTableFormatCollection) Add()  (int32,  error)  {
 //   PivotTableFormat  
 func (instance *PivotTableFormatCollection) FormatArea(axistype PivotFieldType, fieldposition int32, subtotaltype PivotFieldSubtotalType, selectiontype PivotTableSelectionType, isgrandrow bool, isgrandcolumn bool, style *Style)  (*PivotTableFormat,  error)  {
 	
-	CGoReturnPtr := C.PivotTableFormatCollection_FormatArea( instance.ptr, C.int( int32(axistype)), C.int(fieldposition), C.int( int32(subtotaltype)), C.int( int32(selectiontype)), C.bool(isgrandrow), C.bool(isgrandcolumn), style.ptr)
+	var style_ptr unsafe.Pointer = nil
+	if style != nil {
+	  style_ptr =style.ptr
+	}
+
+	CGoReturnPtr := C.PivotTableFormatCollection_FormatArea( instance.ptr, C.int( int32(axistype)), C.int(fieldposition), C.int( int32(subtotaltype)), C.int( int32(selectiontype)), C.bool(isgrandrow), C.bool(isgrandcolumn), style_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err

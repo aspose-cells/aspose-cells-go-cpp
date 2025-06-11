@@ -72,7 +72,12 @@ func NewDbfSaveOptions() ( *DbfSaveOptions, error) {
 //   src - SaveOptions 
 func NewDbfSaveOptions_SaveOptions(src *SaveOptions) ( *DbfSaveOptions, error) {
 	dbfsaveoptions := &DbfSaveOptions{}
-	CGoReturnPtr := C.New_DbfSaveOptions_SaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_DbfSaveOptions_SaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		dbfsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(dbfsaveoptions, DeleteDbfSaveOptions)
@@ -173,7 +178,7 @@ func (instance *DbfSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *DbfSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -187,7 +192,7 @@ func (instance *DbfSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -527,7 +532,12 @@ func NewEbookSaveOptions_SaveFormat(saveformat SaveFormat) ( *EbookSaveOptions, 
 //   src - HtmlSaveOptions 
 func NewEbookSaveOptions_HtmlSaveOptions(src *HtmlSaveOptions) ( *EbookSaveOptions, error) {
 	ebooksaveoptions := &EbookSaveOptions{}
-	CGoReturnPtr := C.New_EbookSaveOptions_HtmlSaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_EbookSaveOptions_HtmlSaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		ebooksaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(ebooksaveoptions, DeleteEbookSaveOptions)
@@ -1104,7 +1114,12 @@ func (instance *EbookSaveOptions) GetExportArea()  (*CellArea,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetExportArea(value *CellArea)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportArea( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.EbookSaveOptions_SetExportArea( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2571,7 +2586,12 @@ func (instance *EbookSaveOptions) GetSheetSet()  (*SheetSet,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetSheetSet(value *SheetSet)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetSheetSet( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.EbookSaveOptions_SetSheetSet( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2625,7 +2645,7 @@ func (instance *EbookSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *EbookSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -2639,7 +2659,7 @@ func (instance *EbookSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:
@@ -3041,7 +3061,12 @@ func NewSqlScriptSaveOptions() ( *SqlScriptSaveOptions, error) {
 //   src - SaveOptions 
 func NewSqlScriptSaveOptions_SaveOptions(src *SaveOptions) ( *SqlScriptSaveOptions, error) {
 	sqlscriptsaveoptions := &SqlScriptSaveOptions{}
-	CGoReturnPtr := C.New_SqlScriptSaveOptions_SaveOptions(src.ptr)
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_SqlScriptSaveOptions_SaveOptions(src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		sqlscriptsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(sqlscriptsaveoptions, DeleteSqlScriptSaveOptions)
@@ -3119,7 +3144,12 @@ func (instance *SqlScriptSaveOptions) GetColumnTypeMap()  (*SqlScriptColumnTypeM
 //   void  
 func (instance *SqlScriptSaveOptions) SetColumnTypeMap(value *SqlScriptColumnTypeMap)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetColumnTypeMap( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SqlScriptSaveOptions_SetColumnTypeMap( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3479,7 +3509,12 @@ func (instance *SqlScriptSaveOptions) GetExportArea()  (*CellArea,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetExportArea(value *CellArea)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetExportArea( instance.ptr, value.ptr)
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.SqlScriptSaveOptions_SetExportArea( instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3562,7 +3597,7 @@ func (instance *SqlScriptSaveOptions) SetClearData(value bool)  error {
 
 	return nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Returns:
 //   string  
 func (instance *SqlScriptSaveOptions) GetCachedFileFolder()  (string,  error)  {
@@ -3576,7 +3611,7 @@ func (instance *SqlScriptSaveOptions) GetCachedFileFolder()  (string,  error)  {
 
 	return result, nil 
 }
-// The cached file folder is used to store some large data.
+// The folder for temporary files that may be used as data cache.
 // Parameters:
 //   value - string 
 // Returns:

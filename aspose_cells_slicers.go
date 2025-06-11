@@ -181,7 +181,12 @@ func (instance *Slicer) IsNull()  (bool,  error)  {
 //   void  
 func (instance *Slicer) AddPivotConnection(pivot *PivotTable)  error {
 	
-	CGoReturnPtr := C.Slicer_AddPivotConnection( instance.ptr, pivot.ptr)
+	var pivot_ptr unsafe.Pointer = nil
+	if pivot != nil {
+	  pivot_ptr =pivot.ptr
+	}
+
+	CGoReturnPtr := C.Slicer_AddPivotConnection( instance.ptr, pivot_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -196,7 +201,12 @@ func (instance *Slicer) AddPivotConnection(pivot *PivotTable)  error {
 //   void  
 func (instance *Slicer) RemovePivotConnection(pivot *PivotTable)  error {
 	
-	CGoReturnPtr := C.Slicer_RemovePivotConnection( instance.ptr, pivot.ptr)
+	var pivot_ptr unsafe.Pointer = nil
+	if pivot != nil {
+	  pivot_ptr =pivot.ptr
+	}
+
+	CGoReturnPtr := C.Slicer_RemovePivotConnection( instance.ptr, pivot_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -425,6 +435,22 @@ func (instance *Slicer) Refresh()  error {
 
 	return nil 
 }
+// Returns the Shape object associated with the specified slicer. Read-only.
+// Returns:
+//   SlicerShape  
+func (instance *Slicer) GetShape()  (*SlicerShape,  error)  {
+	
+	CGoReturnPtr := C.Slicer_GetShape( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &SlicerShape{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteSlicerShape) 
+
+	return result, nil 
+}
 // Returns the SlicerCache object associated with the slicer. Read-only.
 // Returns:
 //   SlicerCache  
@@ -609,181 +635,7 @@ func (instance *Slicer) SetNumberOfColumns(value int32)  error {
 
 	return nil 
 }
-// Returns or sets the horizontal offset of slicer shape from its left column, in pixels.
-// Returns:
-//   int32  
-func (instance *Slicer) GetLeftPixel()  (int32,  error)  {
-	
-	CGoReturnPtr := C.Slicer_GetLeftPixel( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result := int32(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Returns or sets the horizontal offset of slicer shape from its left column, in pixels.
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *Slicer) SetLeftPixel(value int32)  error {
-	
-	CGoReturnPtr := C.Slicer_SetLeftPixel( instance.ptr, C.int(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Returns or sets the vertical offset of slicer shape from its top row, in pixels.
-// Returns:
-//   int32  
-func (instance *Slicer) GetTopPixel()  (int32,  error)  {
-	
-	CGoReturnPtr := C.Slicer_GetTopPixel( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result := int32(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Returns or sets the vertical offset of slicer shape from its top row, in pixels.
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *Slicer) SetTopPixel(value int32)  error {
-	
-	CGoReturnPtr := C.Slicer_SetTopPixel( instance.ptr, C.int(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Returns or sets the width of the specified slicer, in points.
-// Returns:
-//   float64  
-func (instance *Slicer) GetWidth()  (float64,  error)  {
-	
-	CGoReturnPtr := C.Slicer_GetWidth( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result := float64(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Returns or sets the width of the specified slicer, in points.
-// Parameters:
-//   value - float64 
-// Returns:
-//   void  
-func (instance *Slicer) SetWidth(value float64)  error {
-	
-	CGoReturnPtr := C.Slicer_SetWidth( instance.ptr, C.double(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Returns or sets the width of the specified slicer, in pixels.
-// Returns:
-//   int32  
-func (instance *Slicer) GetWidthPixel()  (int32,  error)  {
-	
-	CGoReturnPtr := C.Slicer_GetWidthPixel( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result := int32(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Returns or sets the width of the specified slicer, in pixels.
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *Slicer) SetWidthPixel(value int32)  error {
-	
-	CGoReturnPtr := C.Slicer_SetWidthPixel( instance.ptr, C.int(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Returns or sets the height of the specified slicer, in points.
-// Returns:
-//   float64  
-func (instance *Slicer) GetHeight()  (float64,  error)  {
-	
-	CGoReturnPtr := C.Slicer_GetHeight( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result := float64(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Returns or sets the height of the specified slicer, in points.
-// Parameters:
-//   value - float64 
-// Returns:
-//   void  
-func (instance *Slicer) SetHeight(value float64)  error {
-	
-	CGoReturnPtr := C.Slicer_SetHeight( instance.ptr, C.double(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Returns or sets the height of the specified slicer, in pixels.
-// Returns:
-//   int32  
-func (instance *Slicer) GetHeightPixel()  (int32,  error)  {
-	
-	CGoReturnPtr := C.Slicer_GetHeightPixel( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result := int32(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Returns or sets the height of the specified slicer, in pixels.
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *Slicer) SetHeightPixel(value int32)  error {
-	
-	CGoReturnPtr := C.Slicer_SetHeightPixel( instance.ptr, C.int(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets or sets the width in unit of pixels for each column of the slicer.
+// Gets or sets the width of each column in the slicer, in unit of pixels.
 // Returns:
 //   int32  
 func (instance *Slicer) GetColumnWidthPixel()  (int32,  error)  {
@@ -797,7 +649,7 @@ func (instance *Slicer) GetColumnWidthPixel()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the width in unit of pixels for each column of the slicer.
+// Gets or sets the width of each column in the slicer, in unit of pixels.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -1233,7 +1085,12 @@ func (instance *SlicerCollection) Get_String(name string)  (*Slicer,  error)  {
 //   void  
 func (instance *SlicerCollection) Remove(slicer *Slicer)  error {
 	
-	CGoReturnPtr := C.SlicerCollection_Remove( instance.ptr, slicer.ptr)
+	var slicer_ptr unsafe.Pointer = nil
+	if slicer != nil {
+	  slicer_ptr =slicer.ptr
+	}
+
+	CGoReturnPtr := C.SlicerCollection_Remove( instance.ptr, slicer_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1278,7 +1135,12 @@ func (instance *SlicerCollection) Clear()  error {
 //   int32  
 func (instance *SlicerCollection) Add_PivotTable_String_String(pivot *PivotTable, destcellname string, basefieldname string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.SlicerCollection_Add_PivotTable_String_String( instance.ptr, pivot.ptr, C.CString(destcellname), C.CString(basefieldname))
+	var pivot_ptr unsafe.Pointer = nil
+	if pivot != nil {
+	  pivot_ptr =pivot.ptr
+	}
+
+	CGoReturnPtr := C.SlicerCollection_Add_PivotTable_String_String( instance.ptr, pivot_ptr, C.CString(destcellname), C.CString(basefieldname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1297,7 +1159,12 @@ func (instance *SlicerCollection) Add_PivotTable_String_String(pivot *PivotTable
 //   int32  
 func (instance *SlicerCollection) Add_PivotTable_Int_Int_String(pivot *PivotTable, row int32, column int32, basefieldname string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.SlicerCollection_Add_PivotTable_Integer_Integer_String( instance.ptr, pivot.ptr, C.int(row), C.int(column), C.CString(basefieldname))
+	var pivot_ptr unsafe.Pointer = nil
+	if pivot != nil {
+	  pivot_ptr =pivot.ptr
+	}
+
+	CGoReturnPtr := C.SlicerCollection_Add_PivotTable_Integer_Integer_String( instance.ptr, pivot_ptr, C.int(row), C.int(column), C.CString(basefieldname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1316,7 +1183,12 @@ func (instance *SlicerCollection) Add_PivotTable_Int_Int_String(pivot *PivotTabl
 //   int32  
 func (instance *SlicerCollection) Add_PivotTable_Int_Int_Int(pivot *PivotTable, row int32, column int32, basefieldindex int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.SlicerCollection_Add_PivotTable_Integer_Integer_Integer( instance.ptr, pivot.ptr, C.int(row), C.int(column), C.int(basefieldindex))
+	var pivot_ptr unsafe.Pointer = nil
+	if pivot != nil {
+	  pivot_ptr =pivot.ptr
+	}
+
+	CGoReturnPtr := C.SlicerCollection_Add_PivotTable_Integer_Integer_Integer( instance.ptr, pivot_ptr, C.int(row), C.int(column), C.int(basefieldindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1334,7 +1206,12 @@ func (instance *SlicerCollection) Add_PivotTable_Int_Int_Int(pivot *PivotTable, 
 //   int32  
 func (instance *SlicerCollection) Add_PivotTable_String_Int(pivot *PivotTable, destcellname string, basefieldindex int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.SlicerCollection_Add_PivotTable_String_Integer( instance.ptr, pivot.ptr, C.CString(destcellname), C.int(basefieldindex))
+	var pivot_ptr unsafe.Pointer = nil
+	if pivot != nil {
+	  pivot_ptr =pivot.ptr
+	}
+
+	CGoReturnPtr := C.SlicerCollection_Add_PivotTable_String_Integer( instance.ptr, pivot_ptr, C.CString(destcellname), C.int(basefieldindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1353,7 +1230,16 @@ func (instance *SlicerCollection) Add_PivotTable_String_Int(pivot *PivotTable, d
 //   int32  
 func (instance *SlicerCollection) Add_PivotTable_Int_Int_PivotField(pivot *PivotTable, row int32, column int32, basefield *PivotField)  (int32,  error)  {
 	
-	CGoReturnPtr := C.SlicerCollection_Add_PivotTable_Integer_Integer_PivotField( instance.ptr, pivot.ptr, C.int(row), C.int(column), basefield.ptr)
+	var pivot_ptr unsafe.Pointer = nil
+	if pivot != nil {
+	  pivot_ptr =pivot.ptr
+	}
+	var basefield_ptr unsafe.Pointer = nil
+	if basefield != nil {
+	  basefield_ptr =basefield.ptr
+	}
+
+	CGoReturnPtr := C.SlicerCollection_Add_PivotTable_Integer_Integer_PivotField( instance.ptr, pivot_ptr, C.int(row), C.int(column), basefield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1371,7 +1257,16 @@ func (instance *SlicerCollection) Add_PivotTable_Int_Int_PivotField(pivot *Pivot
 //   int32  
 func (instance *SlicerCollection) Add_PivotTable_String_PivotField(pivot *PivotTable, destcellname string, basefield *PivotField)  (int32,  error)  {
 	
-	CGoReturnPtr := C.SlicerCollection_Add_PivotTable_String_PivotField( instance.ptr, pivot.ptr, C.CString(destcellname), basefield.ptr)
+	var pivot_ptr unsafe.Pointer = nil
+	if pivot != nil {
+	  pivot_ptr =pivot.ptr
+	}
+	var basefield_ptr unsafe.Pointer = nil
+	if basefield != nil {
+	  basefield_ptr =basefield.ptr
+	}
+
+	CGoReturnPtr := C.SlicerCollection_Add_PivotTable_String_PivotField( instance.ptr, pivot_ptr, C.CString(destcellname), basefield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1389,7 +1284,12 @@ func (instance *SlicerCollection) Add_PivotTable_String_PivotField(pivot *PivotT
 //   int32  
 func (instance *SlicerCollection) Add_ListObject_Int_String(table *ListObject, index int32, destcellname string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.SlicerCollection_Add_ListObject_Integer_String( instance.ptr, table.ptr, C.int(index), C.CString(destcellname))
+	var table_ptr unsafe.Pointer = nil
+	if table != nil {
+	  table_ptr =table.ptr
+	}
+
+	CGoReturnPtr := C.SlicerCollection_Add_ListObject_Integer_String( instance.ptr, table_ptr, C.int(index), C.CString(destcellname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1407,7 +1307,16 @@ func (instance *SlicerCollection) Add_ListObject_Int_String(table *ListObject, i
 //   int32  
 func (instance *SlicerCollection) Add_ListObject_ListColumn_String(table *ListObject, listcolumn *ListColumn, destcellname string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.SlicerCollection_Add_ListObject_ListColumn_String( instance.ptr, table.ptr, listcolumn.ptr, C.CString(destcellname))
+	var table_ptr unsafe.Pointer = nil
+	if table != nil {
+	  table_ptr =table.ptr
+	}
+	var listcolumn_ptr unsafe.Pointer = nil
+	if listcolumn != nil {
+	  listcolumn_ptr =listcolumn.ptr
+	}
+
+	CGoReturnPtr := C.SlicerCollection_Add_ListObject_ListColumn_String( instance.ptr, table_ptr, listcolumn_ptr, C.CString(destcellname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1426,7 +1335,16 @@ func (instance *SlicerCollection) Add_ListObject_ListColumn_String(table *ListOb
 //   int32  
 func (instance *SlicerCollection) Add_ListObject_ListColumn_Int_Int(table *ListObject, listcolumn *ListColumn, row int32, column int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.SlicerCollection_Add_ListObject_ListColumn_Integer_Integer( instance.ptr, table.ptr, listcolumn.ptr, C.int(row), C.int(column))
+	var table_ptr unsafe.Pointer = nil
+	if table != nil {
+	  table_ptr =table.ptr
+	}
+	var listcolumn_ptr unsafe.Pointer = nil
+	if listcolumn != nil {
+	  listcolumn_ptr =listcolumn.ptr
+	}
+
+	CGoReturnPtr := C.SlicerCollection_Add_ListObject_ListColumn_Integer_Integer( instance.ptr, table_ptr, listcolumn_ptr, C.int(row), C.int(column))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
