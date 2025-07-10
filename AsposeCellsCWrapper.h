@@ -636,6 +636,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* Cells_Clear(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* Cells_GetStyle(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* Cells_SetStyle(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_bool_value* Cells_IsDefaultColumnHidden(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* Cells_SetIsDefaultColumnHidden(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_double_value* Cells_GetStandardWidthInch(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* Cells_SetStandardWidthInch(void* instance_ptr, double value);
    ASPOSE_CELLS_API c_return_int_value* Cells_GetStandardWidthPixels(void* instance_ptr);
@@ -848,6 +850,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* CellsHelper_SetLibraryPath(char* value);
    ASPOSE_CELLS_API c_return_ptr_value* CellsHelper_GetUsedColors(void* workbook);
    ASPOSE_CELLS_API c_return_void_value* CellsHelper_MergeFiles(void* files, int files_length, char* cachedfile, char* destfile);
+   ASPOSE_CELLS_API c_return_string_value* CellsHelper_GetCacheFolder();
+   ASPOSE_CELLS_API c_return_void_value* CellsHelper_SetCacheFolder(char* cache);
    ASPOSE_CELLS_API c_return_string_value* CellsHelper_CreateSafeSheetName_String(char* nameproposal);
    ASPOSE_CELLS_API c_return_string_value* CellsHelper_CreateSafeSheetName_String_Char(char* nameproposal, char replacechar);
    ASPOSE_CELLS_API c_return_bool_value* CellsHelper_NeedQuoteInFormula(char* sheetname);
@@ -1397,6 +1401,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_bool_value* DocxSaveOptions_IsNull(void* instance_ptr);
    ASPOSE_CELLS_API c_return_bool_value* DocxSaveOptions_GetSaveAsEditableShapes(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* DocxSaveOptions_SetSaveAsEditableShapes(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* DocxSaveOptions_GetAsNormalView(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* DocxSaveOptions_SetAsNormalView(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_string_value* DocxSaveOptions_GetDefaultFont(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* DocxSaveOptions_SetDefaultFont(void* instance_ptr, char* value);
    ASPOSE_CELLS_API c_return_bool_value* DocxSaveOptions_GetCheckWorkbookDefaultFont(void* instance_ptr);
@@ -2669,6 +2675,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_ptr_value* MarkdownSaveOptions_GetImageOptions(void* instance_ptr);
    ASPOSE_CELLS_API c_return_bool_value* MarkdownSaveOptions_GetExportImagesAsBase64(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* MarkdownSaveOptions_SetExportImagesAsBase64(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* MarkdownSaveOptions_GetCalculateFormula(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownSaveOptions_SetCalculateFormula(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_int_value* MarkdownSaveOptions_GetSaveFormat(void* instance_ptr);
    ASPOSE_CELLS_API c_return_bool_value* MarkdownSaveOptions_GetClearData(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* MarkdownSaveOptions_SetClearData(void* instance_ptr, bool value);
@@ -5102,15 +5110,6 @@ extern "C" {
 
 
    ASPOSE_CELLS_API void Delete_XlsSaveOptions( void* instance_ptr);
-
-   /**************Class XmlColumnProperty *****************/
-
-   ASPOSE_CELLS_API c_return_ptr_value* New_XmlColumnProperty();
-
-   ASPOSE_CELLS_API c_return_bool_value* XmlColumnProperty_IsNull(void* instance_ptr);
-
-
-   ASPOSE_CELLS_API void Delete_XmlColumnProperty( void* instance_ptr);
 
    /**************Class XmlDataBinding *****************/
 
@@ -12195,6 +12194,10 @@ extern "C" {
 
    ASPOSE_CELLS_API c_return_bool_value* ShapePath_IsNull(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* ShapePath_GetPathSegementList(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_int_value* ShapePath_GetWidthPixel(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ShapePath_SetWidthPixel(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* ShapePath_GetHeightPixel(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ShapePath_SetHeightPixel(void* instance_ptr, int32_t value);
    ASPOSE_CELLS_API c_return_void_value* ShapePath_MoveTo(void* instance_ptr, float x, float y);
    ASPOSE_CELLS_API c_return_void_value* ShapePath_LineTo(void* instance_ptr, float x, float y);
    ASPOSE_CELLS_API c_return_void_value* ShapePath_CubicBezierTo(void* instance_ptr, float ctrx1, float ctry1, float ctrx2, float ctry2, float endx, float endy);

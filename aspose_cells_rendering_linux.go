@@ -383,7 +383,7 @@ func (instance *CustomRenderSettings) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Get cell border width according to border type.
+// Specifies cell border width according to border type.
 // Parameters:
 //   borderType - int32 
 // Returns:

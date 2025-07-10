@@ -3373,12 +3373,17 @@ MemorySetting_Normal MemorySetting = 0
 
 // Memory performance preferrable.
 MemorySetting_MemoryPreference MemorySetting = 1 
+
+// Memory performance preferrable and using file instead of memory
+// to maintain the cells data.
+MemorySetting_FileCache MemorySetting = 2 
 )
 
 func Int32ToMemorySetting(value int32)(MemorySetting ,error){
 	switch value {
 		case 0:  return MemorySetting_Normal, nil  
 		case 1:  return MemorySetting_MemoryPreference, nil  
+		case 2:  return MemorySetting_FileCache, nil  
 		default:
 			return 0 ,fmt.Errorf("invalid MemorySetting value: %d", value)
 	}
@@ -4385,28 +4390,28 @@ PasteType_ColumnWidths PasteType = 4
 // Only copies the heights of the range.
 PasteType_RowHeights PasteType = 5 
 
-
+// Only copies comments in the range.
 PasteType_Comments PasteType = 6 
 
-
+// Only copies formats in the range.
 PasteType_Formats PasteType = 7 
 
-
+// Only copies formulas in the range.
 PasteType_Formulas PasteType = 8 
 
-
+// Only copies formulas and number formats in the range.
 PasteType_FormulasAndNumberFormats PasteType = 9 
 
-
+// Only copies validations in the range.
 PasteType_Validation PasteType = 10 
 
-
+// Only copies values in the range.
 PasteType_Values PasteType = 11 
 
-
+// Only copies values and formats in the range.
 PasteType_ValuesAndFormats PasteType = 12 
 
-
+// Only copies values and number formats in the range.
 PasteType_ValuesAndNumberFormats PasteType = 13 
 )
 
@@ -13418,6 +13423,33 @@ func (instance *Cells) SetStyle(value *Style)  error {
 
 	return nil 
 }
+// Returns:
+//   bool  
+func (instance *Cells) IsDefaultColumnHidden()  (bool,  error)  {
+	
+	CGoReturnPtr := C.Cells_IsDefaultColumnHidden( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *Cells) SetIsDefaultColumnHidden(value bool)  error {
+	
+	CGoReturnPtr := C.Cells_SetIsDefaultColumnHidden( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Gets or sets the default column width in the worksheet, in unit of inches.
 // Returns:
 //   float64  
@@ -16830,6 +16862,35 @@ func CellsHelper_MergeFiles(files []string, cachedfile string, destfile string) 
 	}
 
 	CGoReturnPtr := C.CellsHelper_MergeFiles(unsafe.Pointer(&vector_files[0]), C.int( len(files)), C.CString(cachedfile), C.CString(destfile))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the folder for temporary files that may be used as data cache.
+// Returns:
+//   string  
+func CellsHelper_GetCacheFolder()  (string,  error)  {
+	
+	CGoReturnPtr := C.CellsHelper_GetCacheFolder()
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Sets the folder for temporary files that may be used as data cache.
+// Parameters:
+//   cache - string 
+// Returns:
+//   void  
+func CellsHelper_SetCacheFolder(cache string)  error {
+	
+	CGoReturnPtr := C.CellsHelper_SetCacheFolder(C.CString(cache))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -22739,6 +22800,39 @@ func (instance *DocxSaveOptions) GetSaveAsEditableShapes()  (bool,  error)  {
 func (instance *DocxSaveOptions) SetSaveAsEditableShapes(value bool)  error {
 	
 	CGoReturnPtr := C.DocxSaveOptions_SetSaveAsEditableShapes( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Exporting Excel file to docx fiel as normal view.
+// If this property is true , one Area will be output, and no scale will take effect.
+// The default value is false.
+// Returns:
+//   bool  
+func (instance *DocxSaveOptions) GetAsNormalView()  (bool,  error)  {
+	
+	CGoReturnPtr := C.DocxSaveOptions_GetAsNormalView( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Exporting Excel file to docx fiel as normal view.
+// If this property is true , one Area will be output, and no scale will take effect.
+// The default value is false.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *DocxSaveOptions) SetAsNormalView(value bool)  error {
+	
+	CGoReturnPtr := C.DocxSaveOptions_SetAsNormalView( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -36696,7 +36790,7 @@ func (instance *JsonSaveOptions) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Exporting style pool when converting to json struct.
+// Indicates whether to export styles collectively or individually to each cell.
 // Returns:
 //   bool  
 func (instance *JsonSaveOptions) GetExportStylePool()  (bool,  error)  {
@@ -36710,7 +36804,7 @@ func (instance *JsonSaveOptions) GetExportStylePool()  (bool,  error)  {
 
 	return result, nil 
 }
-// Exporting style pool when converting to json struct.
+// Indicates whether to export styles collectively or individually to each cell.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -38603,6 +38697,35 @@ func (instance *MarkdownSaveOptions) GetExportImagesAsBase64()  (bool,  error)  
 func (instance *MarkdownSaveOptions) SetExportImagesAsBase64(value bool)  error {
 	
 	CGoReturnPtr := C.MarkdownSaveOptions_SetExportImagesAsBase64( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to calculate formulas before saving html file.
+// Returns:
+//   bool  
+func (instance *MarkdownSaveOptions) GetCalculateFormula()  (bool,  error)  {
+	
+	CGoReturnPtr := C.MarkdownSaveOptions_GetCalculateFormula( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to calculate formulas before saving html file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *MarkdownSaveOptions) SetCalculateFormula(value bool)  error {
+	
+	CGoReturnPtr := C.MarkdownSaveOptions_SetCalculateFormula( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -70875,51 +70998,6 @@ func DeleteXlsSaveOptions(xlssaveoptions *XlsSaveOptions){
 	runtime.SetFinalizer(xlssaveoptions, nil)
 	C.Delete_XlsSaveOptions(xlssaveoptions.ptr)
 	xlssaveoptions.ptr = nil
-}
-
-// Class XmlColumnProperty 
-
-// Represents Xml Data Binding information.
-type XmlColumnProperty struct {
-	ptr unsafe.Pointer
-}
-
-// Default constructor.
-func NewXmlColumnProperty() ( *XmlColumnProperty, error) {
-	xmlcolumnproperty := &XmlColumnProperty{}
-	CGoReturnPtr := C.New_XmlColumnProperty()
-	if CGoReturnPtr.error_no == 0 {
-		xmlcolumnproperty.ptr = CGoReturnPtr.return_value
-		runtime.SetFinalizer(xmlcolumnproperty, DeleteXmlColumnProperty)
-		return xmlcolumnproperty, nil
-	} else {
-		xmlcolumnproperty.ptr = nil
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))
-		return xmlcolumnproperty, err
-	}	
-}
-
-// Checks whether the implementation object is nullptr.
-// Returns:
-//   bool  
-func (instance *XmlColumnProperty) IsNull()  (bool,  error)  {
-	
-	CGoReturnPtr := C.XmlColumnProperty_IsNull( instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  true, err
-	}
-	result := bool(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-
-
-
-func DeleteXmlColumnProperty(xmlcolumnproperty *XmlColumnProperty){
-	runtime.SetFinalizer(xmlcolumnproperty, nil)
-	C.Delete_XmlColumnProperty(xmlcolumnproperty.ptr)
-	xmlcolumnproperty.ptr = nil
 }
 
 // Class XmlDataBinding 

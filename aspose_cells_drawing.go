@@ -77189,6 +77189,64 @@ func (instance *ShapePath) GetPathSegementList()  (*ShapeSegmentPathCollection, 
 
 	return result, nil 
 }
+// Gets the width of this path in unit of pixels.
+// Returns:
+//   int32  
+func (instance *ShapePath) GetWidthPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ShapePath_GetWidthPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the width of this path in unit of pixels.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ShapePath) SetWidthPixel(value int32)  error {
+	
+	CGoReturnPtr := C.ShapePath_SetWidthPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the height of this path in unit of pixels.
+// Returns:
+//   int32  
+func (instance *ShapePath) GetHeightPixel()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ShapePath_GetHeightPixel( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the height of this path in unit of pixels.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ShapePath) SetHeightPixel(value int32)  error {
+	
+	CGoReturnPtr := C.ShapePath_SetHeightPixel( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Starts a new figure from the specified point without closing the current figure. All subsequent points added to the path are added to this new figure.
 // Parameters:
 //   x - float32 
@@ -77205,7 +77263,8 @@ func (instance *ShapePath) MoveTo(x float32, y float32)  error {
 
 	return nil 
 }
-// Appends a line segment to the current figure. The starting point is the end point of the current figure.
+// Appends a line segment to the current figure.
+// The starting point is the end point of the current figure.
 // Parameters:
 //   x - float32 
 //   y - float32 
