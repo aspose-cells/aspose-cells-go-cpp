@@ -3672,6 +3672,30 @@ func Int32ToShapeLockType(value int32)(ShapeLockType ,error){
 	}
 }
 
+/**************Enum ShapePathPointValueType *****************/
+
+// Specifies the value type of <see cref="ShapePathPoint"/> object
+type ShapePathPointValueType int32
+
+const(
+// Specifies the type of the object is location coordinates.
+// The <see cref="ShapePathPoint"/> object stores the coordinate values of a point.
+ShapePathPointValueType_Position ShapePathPointValueType = 0 
+
+// Specifies the type of the object is angle markers.
+// The <see cref="ShapePathPoint"/> object stores the start and end angles of the arc.
+ShapePathPointValueType_Angle ShapePathPointValueType = 1 
+)
+
+func Int32ToShapePathPointValueType(value int32)(ShapePathPointValueType ,error){
+	switch value {
+		case 0:  return ShapePathPointValueType_Position, nil  
+		case 1:  return ShapePathPointValueType_Angle, nil  
+		default:
+			return 0 ,fmt.Errorf("invalid ShapePathPointValueType value: %d", value)
+	}
+}
+
 /**************Enum ShapePathType *****************/
 
 // Represents path segment type.
@@ -3679,17 +3703,17 @@ type ShapePathType int32
 
 const(
 // Straight line segment
-ShapePathType_LineTo ShapePathType = 0 
+ShapePathType_LineTo ShapePathType = 1 
 
 // Cubic Bezier curve
-ShapePathType_CubicBezierCurveTo ShapePathType = 1 
+ShapePathType_CubicBezierCurveTo ShapePathType = 3 
 
 // Start a new path
-ShapePathType_MoveTo ShapePathType = 2 
+ShapePathType_MoveTo ShapePathType = 0 
 
 // If the starting POINT and the end POINT are not the same, a single
 // straight line is drawn to connect the starting POINT and ending POINT of the path.
-ShapePathType_Close ShapePathType = 3 
+ShapePathType_Close ShapePathType = 128 
 
 // The end of the current path
 ShapePathType_End ShapePathType = 4 
@@ -3706,10 +3730,10 @@ ShapePathType_Unknown ShapePathType = 7
 
 func Int32ToShapePathType(value int32)(ShapePathType ,error){
 	switch value {
-		case 0:  return ShapePathType_LineTo, nil  
-		case 1:  return ShapePathType_CubicBezierCurveTo, nil  
-		case 2:  return ShapePathType_MoveTo, nil  
-		case 3:  return ShapePathType_Close, nil  
+		case 1:  return ShapePathType_LineTo, nil  
+		case 3:  return ShapePathType_CubicBezierCurveTo, nil  
+		case 0:  return ShapePathType_MoveTo, nil  
+		case 128:  return ShapePathType_Close, nil  
 		case 4:  return ShapePathType_End, nil  
 		case 5:  return ShapePathType_Escape, nil  
 		case 6:  return ShapePathType_ArcTo, nil  
@@ -77247,7 +77271,7 @@ func (instance *ShapePath) SetHeightPixel(value int32)  error {
 
 	return nil 
 }
-// Starts a new figure from the specified point without closing the current figure. All subsequent points added to the path are added to this new figure.
+// Starts a new figure from the specified point without closing the current figure. All subsequent points added to the path are added to this new figure.Unit: Pixel.
 // Parameters:
 //   x - float32 
 //   y - float32 
@@ -77264,7 +77288,7 @@ func (instance *ShapePath) MoveTo(x float32, y float32)  error {
 	return nil 
 }
 // Appends a line segment to the current figure.
-// The starting point is the end point of the current figure.
+// The starting point is the end point of the current figure.Unit: Pixel.
 // Parameters:
 //   x - float32 
 //   y - float32 
@@ -77280,7 +77304,7 @@ func (instance *ShapePath) LineTo(x float32, y float32)  error {
 
 	return nil 
 }
-// Appends a cubic Bézier curve to the current figure. The starting point is the end point of the current figure.
+// Appends a cubic Bézier curve to the current figure. The starting point is the end point of the current figure.Unit: Pixel.
 // Parameters:
 //   ctrX1 - float32 
 //   ctrY1 - float32 
@@ -77419,7 +77443,9 @@ func DeleteShapePathCollection(shapepathcollection *ShapePathCollection){
 
 // Class ShapePathPoint 
 
-// Represents an x-y coordinate within the path coordinate space.
+// Specify position coordinates or angle markers.
+// Position coordinates represent the coordinates of a path in a coordinate space (e.g. X/Y).
+// Angle markers indicate angular changes in a path (e.g. the start and swing angles of an arc).
 type ShapePathPoint struct {
 	ptr unsafe.Pointer
 }
@@ -77439,12 +77465,12 @@ func (instance *ShapePathPoint) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Gets and sets x coordinate for this position coordinate.
+// When the object is a position coordinate, get or set the x coordinate in pixels.
 // Returns:
 //   int32  
-func (instance *ShapePathPoint) GetX()  (int32,  error)  {
+func (instance *ShapePathPoint) GetXPixel()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ShapePathPoint_GetX( instance.ptr)
+	CGoReturnPtr := C.ShapePathPoint_GetXPixel( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -77453,14 +77479,14 @@ func (instance *ShapePathPoint) GetX()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets and sets x coordinate for this position coordinate.
+// When the object is a position coordinate, get or set the x coordinate in pixels.
 // Parameters:
 //   value - int32 
 // Returns:
 //   void  
-func (instance *ShapePathPoint) SetX(value int32)  error {
+func (instance *ShapePathPoint) SetXPixel(value int32)  error {
 	
-	CGoReturnPtr := C.ShapePathPoint_SetX( instance.ptr, C.int(value))
+	CGoReturnPtr := C.ShapePathPoint_SetXPixel( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -77468,12 +77494,12 @@ func (instance *ShapePathPoint) SetX(value int32)  error {
 
 	return nil 
 }
-// Gets y coordinate for this position coordinate.
+// When the object is a position coordinate, get or set the y coordinate in pixels.
 // Returns:
 //   int32  
-func (instance *ShapePathPoint) GetY()  (int32,  error)  {
+func (instance *ShapePathPoint) GetYPixel()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ShapePathPoint_GetY( instance.ptr)
+	CGoReturnPtr := C.ShapePathPoint_GetYPixel( instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -77482,20 +77508,95 @@ func (instance *ShapePathPoint) GetY()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets y coordinate for this position coordinate.
+// When the object is a position coordinate, get or set the y coordinate in pixels.
 // Parameters:
 //   value - int32 
 // Returns:
 //   void  
-func (instance *ShapePathPoint) SetY(value int32)  error {
+func (instance *ShapePathPoint) SetYPixel(value int32)  error {
 	
-	CGoReturnPtr := C.ShapePathPoint_SetY( instance.ptr, C.int(value))
+	CGoReturnPtr := C.ShapePathPoint_SetYPixel( instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
 	}
 
 	return nil 
+}
+// When the object is an angle marker, get or set the first angle in degrees.
+// Returns:
+//   int32  
+func (instance *ShapePathPoint) GetXAngle()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ShapePathPoint_GetXAngle( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// When the object is an angle marker, get or set the first angle in degrees.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ShapePathPoint) SetXAngle(value int32)  error {
+	
+	CGoReturnPtr := C.ShapePathPoint_SetXAngle( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// When the object is an angle marker, get or set the second angle in degrees.
+// Returns:
+//   int32  
+func (instance *ShapePathPoint) GetYAngle()  (int32,  error)  {
+	
+	CGoReturnPtr := C.ShapePathPoint_GetYAngle( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// When the object is an angle marker, get or set the second angle in degrees.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *ShapePathPoint) SetYAngle(value int32)  error {
+	
+	CGoReturnPtr := C.ShapePathPoint_SetYAngle( instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Specifies the value type of the current object.
+// Returns:
+//   int32  
+func (instance *ShapePathPoint) GetType()  (ShapePathPointValueType,  error)  {
+	
+	CGoReturnPtr := C.ShapePathPoint_GetType( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToShapePathPointValueType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
 }
 
 
@@ -77557,23 +77658,6 @@ func (instance *ShapePathPointCollection) Get(index int32)  (*ShapePathPoint,  e
 	result := &ShapePathPoint{}
 	result.ptr = CGoReturnPtr.return_value 
 	runtime.SetFinalizer(result, DeleteShapePathPoint) 
-
-	return result, nil 
-}
-// Adds a path point.
-// Parameters:
-//   x - int32 
-//   y - int32 
-// Returns:
-//   int32  
-func (instance *ShapePathPointCollection) Add(x int32, y int32)  (int32,  error)  {
-	
-	CGoReturnPtr := C.ShapePathPointCollection_Add( instance.ptr, C.int(x), C.int(y))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result := int32(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }

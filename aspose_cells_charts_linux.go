@@ -159,6 +159,72 @@ func Int32ToCategoryType(value int32)(CategoryType ,error){
 	}
 }
 
+/**************Enum ChartColorPaletteType *****************/
+
+// Enumerates all Monochromatic Palettes used in Excel chart.
+type ChartColorPaletteType int32
+
+const(
+// accent1 theme color gradient, dark to light.
+ChartColorPaletteType_MonochromaticPalette1 ChartColorPaletteType = 1 
+
+// accent2 theme color gradient, dark to light.
+ChartColorPaletteType_MonochromaticPalette2 ChartColorPaletteType = 2 
+
+// accent3 theme color gradient, dark to light.
+ChartColorPaletteType_MonochromaticPalette3 ChartColorPaletteType = 3 
+
+// accent4 theme color gradient, dark to light.
+ChartColorPaletteType_MonochromaticPalette4 ChartColorPaletteType = 4 
+
+// accent5 theme color gradient, dark to light.
+ChartColorPaletteType_MonochromaticPalette5 ChartColorPaletteType = 5 
+
+// accent6 theme color gradient, dark to light.
+ChartColorPaletteType_MonochromaticPalette6 ChartColorPaletteType = 6 
+
+// accent7 theme color gradient.
+ChartColorPaletteType_MonochromaticPalette7 ChartColorPaletteType = 7 
+
+// accent1 theme color gradient, light to dark.
+ChartColorPaletteType_MonochromaticPalette8 ChartColorPaletteType = 8 
+
+// accent2 theme color gradient, light to dark.
+ChartColorPaletteType_MonochromaticPalette9 ChartColorPaletteType = 9 
+
+// accent3 theme color gradient, light to dark.
+ChartColorPaletteType_MonochromaticPalette10 ChartColorPaletteType = 10 
+
+// accent4 theme color gradient, light to dark.
+ChartColorPaletteType_MonochromaticPalette11 ChartColorPaletteType = 11 
+
+// accent5 theme color gradient, light to dark.
+ChartColorPaletteType_MonochromaticPalette12 ChartColorPaletteType = 12 
+
+// accent6 theme color gradient, light to dark.
+ChartColorPaletteType_MonochromaticPalette13 ChartColorPaletteType = 13 
+)
+
+func Int32ToChartColorPaletteType(value int32)(ChartColorPaletteType ,error){
+	switch value {
+		case 1:  return ChartColorPaletteType_MonochromaticPalette1, nil  
+		case 2:  return ChartColorPaletteType_MonochromaticPalette2, nil  
+		case 3:  return ChartColorPaletteType_MonochromaticPalette3, nil  
+		case 4:  return ChartColorPaletteType_MonochromaticPalette4, nil  
+		case 5:  return ChartColorPaletteType_MonochromaticPalette5, nil  
+		case 6:  return ChartColorPaletteType_MonochromaticPalette6, nil  
+		case 7:  return ChartColorPaletteType_MonochromaticPalette7, nil  
+		case 8:  return ChartColorPaletteType_MonochromaticPalette8, nil  
+		case 9:  return ChartColorPaletteType_MonochromaticPalette9, nil  
+		case 10:  return ChartColorPaletteType_MonochromaticPalette10, nil  
+		case 11:  return ChartColorPaletteType_MonochromaticPalette11, nil  
+		case 12:  return ChartColorPaletteType_MonochromaticPalette12, nil  
+		case 13:  return ChartColorPaletteType_MonochromaticPalette13, nil  
+		default:
+			return 0 ,fmt.Errorf("invalid ChartColorPaletteType value: %d", value)
+	}
+}
+
 /**************Enum ChartLineFormattingType *****************/
 
 // Represents line format type of chart line.
@@ -15713,6 +15779,21 @@ func (instance *SeriesCollection) SetIsColorVaried(value bool)  error {
 func (instance *SeriesCollection) Clear()  error {
 	
 	CGoReturnPtr := C.SeriesCollection_Clear( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Set Monochromatic Palette for chart series.
+// Parameters:
+//   type - int32 
+// Returns:
+//   void  
+func (instance *SeriesCollection) ChangeColors(type_ ChartColorPaletteType)  error {
+	
+	CGoReturnPtr := C.SeriesCollection_ChangeColors( instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

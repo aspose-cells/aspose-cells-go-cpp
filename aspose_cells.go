@@ -3371,10 +3371,10 @@ const(
 // Default mode for cells model.
 MemorySetting_Normal MemorySetting = 0 
 
-// Memory performance preferrable.
+// Memory performance preferable.
 MemorySetting_MemoryPreference MemorySetting = 1 
 
-// Memory performance preferrable and using file instead of memory
+// Memory performance preferable and using file instead of memory
 // to maintain the cells data.
 MemorySetting_FileCache MemorySetting = 2 
 )
@@ -8807,7 +8807,7 @@ func (instance *AbstractTextLoadOptions) SetLoadFilter(value *LoadFilter)  error
 
 	return nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Returns:
 //   int32  
 func (instance *AbstractTextLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
@@ -8824,7 +8824,7 @@ func (instance *AbstractTextLoadOptions) GetMemorySetting()  (MemorySetting,  er
 
 	return result, nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -21697,7 +21697,7 @@ func (instance *DefaultStyleSettings) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether property for number format is preferrable when the style defines both built-in number and custom pattern.
+// Indicates whether property for number format is preferable when the style defines both built-in number and custom pattern.
 // Default value is false, that means by default custom pattern will be used to format values as long as it is not empty for one style.
 // Returns:
 //   bool  
@@ -21712,7 +21712,7 @@ func (instance *DefaultStyleSettings) GetBuiltInPreference()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether property for number format is preferrable when the style defines both built-in number and custom pattern.
+// Indicates whether property for number format is preferable when the style defines both built-in number and custom pattern.
 // Default value is false, that means by default custom pattern will be used to format values as long as it is not empty for one style.
 // Parameters:
 //   value - bool 
@@ -24850,7 +24850,7 @@ func (instance *EbookLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 
 	return nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Returns:
 //   int32  
 func (instance *EbookLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
@@ -24867,7 +24867,7 @@ func (instance *EbookLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -30864,7 +30864,7 @@ func (instance *HtmlLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 
 	return nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Returns:
 //   int32  
 func (instance *HtmlLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
@@ -30881,7 +30881,7 @@ func (instance *HtmlLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -36522,7 +36522,7 @@ func (instance *JsonLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 
 	return nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Returns:
 //   int32  
 func (instance *JsonLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
@@ -36539,7 +36539,7 @@ func (instance *JsonLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -38235,7 +38235,7 @@ func (instance *LoadOptions) SetLoadFilter(value *LoadFilter)  error {
 
 	return nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Returns:
 //   int32  
 func (instance *LoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
@@ -38252,7 +38252,7 @@ func (instance *LoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -38439,6 +38439,860 @@ func DeleteLoadOptions(loadoptions *LoadOptions){
 	runtime.SetFinalizer(loadoptions, nil)
 	C.Delete_LoadOptions(loadoptions.ptr)
 	loadoptions.ptr = nil
+}
+
+// Class MarkdownLoadOptions 
+
+// Represents the options for loading markdown document.
+type MarkdownLoadOptions struct {
+	ptr unsafe.Pointer
+}
+
+// Default constructor.
+func NewMarkdownLoadOptions() ( *MarkdownLoadOptions, error) {
+	markdownloadoptions := &MarkdownLoadOptions{}
+	CGoReturnPtr := C.New_MarkdownLoadOptions()
+	if CGoReturnPtr.error_no == 0 {
+		markdownloadoptions.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(markdownloadoptions, DeleteMarkdownLoadOptions)
+		return markdownloadoptions, nil
+	} else {
+		markdownloadoptions.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return markdownloadoptions, err
+	}	
+}
+// Constructs from a parent object.
+// Parameters:
+//   src - AbstractTextLoadOptions 
+func NewMarkdownLoadOptions_AbstractTextLoadOptions(src *AbstractTextLoadOptions) ( *MarkdownLoadOptions, error) {
+	markdownloadoptions := &MarkdownLoadOptions{}
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.New_MarkdownLoadOptions_AbstractTextLoadOptions(src_ptr)
+	if CGoReturnPtr.error_no == 0 {
+		markdownloadoptions.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(markdownloadoptions, DeleteMarkdownLoadOptions)
+		return markdownloadoptions, nil
+	} else {
+		markdownloadoptions.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return markdownloadoptions, err
+	}	
+}
+
+// Checks whether the implementation object is nullptr.
+// Returns:
+//   bool  
+func (instance *MarkdownLoadOptions) IsNull()  (bool,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_IsNull( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the text is formula if it starts with "=".
+// Returns:
+//   bool  
+func (instance *MarkdownLoadOptions) GetHasFormula()  (bool,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetHasFormula( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the text is formula if it starts with "=".
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetHasFormula(value bool)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetHasFormula( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the default encoding. Only applies for csv file.
+// Returns:
+//   int32  
+func (instance *MarkdownLoadOptions) GetEncoding()  (EncodingType,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetEncoding( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToEncodingType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the default encoding. Only applies for csv file.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetEncoding(value EncodingType)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetEncoding( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates the strategy to apply style for parsed values when converting string value to number or datetime.
+// Returns:
+//   int32  
+func (instance *MarkdownLoadOptions) GetLoadStyleStrategy()  (TxtLoadStyleStrategy,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetLoadStyleStrategy( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTxtLoadStyleStrategy(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Indicates the strategy to apply style for parsed values when converting string value to number or datetime.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetLoadStyleStrategy(value TxtLoadStyleStrategy)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetLoadStyleStrategy( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets a value that indicates whether the string in text file is converted to numeric data.
+// Returns:
+//   bool  
+func (instance *MarkdownLoadOptions) GetConvertNumericData()  (bool,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetConvertNumericData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets a value that indicates whether the string in text file is converted to numeric data.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetConvertNumericData(value bool)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetConvertNumericData( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets a value that indicates whether the string in text file is converted to date data.
+// Returns:
+//   bool  
+func (instance *MarkdownLoadOptions) GetConvertDateTimeData()  (bool,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetConvertDateTimeData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets a value that indicates whether the string in text file is converted to date data.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetConvertDateTimeData(value bool)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetConvertDateTimeData( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether not parsing a string value if the length is 15.
+// Returns:
+//   bool  
+func (instance *MarkdownLoadOptions) GetKeepPrecision()  (bool,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetKeepPrecision( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether not parsing a string value if the length is 15.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetKeepPrecision(value bool)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetKeepPrecision( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the load format.
+// Returns:
+//   int32  
+func (instance *MarkdownLoadOptions) GetLoadFormat()  (LoadFormat,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetLoadFormat( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToLoadFormat(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and set the password of the workbook.
+// Returns:
+//   string  
+func (instance *MarkdownLoadOptions) GetPassword()  (string,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetPassword( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and set the password of the workbook.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetPassword(value string)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetPassword( instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether parsing the formula when reading the file.
+// Returns:
+//   bool  
+func (instance *MarkdownLoadOptions) GetParsingFormulaOnOpen()  (bool,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetParsingFormulaOnOpen( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether parsing the formula when reading the file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetParsingFormulaOnOpen(value bool)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetParsingFormulaOnOpen( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether parsing pivot cached records when loading the file.
+// The default value is false.
+// Returns:
+//   bool  
+func (instance *MarkdownLoadOptions) GetParsingPivotCachedRecords()  (bool,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetParsingPivotCachedRecords( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether parsing pivot cached records when loading the file.
+// The default value is false.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetParsingPivotCachedRecords(value bool)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetParsingPivotCachedRecords( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Sets the default print paper size from default printer's setting.
+// Parameters:
+//   type - int32 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetPaperSize(type_ PaperSizeType)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetPaperSize( instance.ptr, C.int( int32(type_)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the user interface language of the Workbook version based on CountryCode that has saved the file.
+// Returns:
+//   int32  
+func (instance *MarkdownLoadOptions) GetLanguageCode()  (CountryCode,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetLanguageCode( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToCountryCode(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the user interface language of the Workbook version based on CountryCode that has saved the file.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetLanguageCode(value CountryCode)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetLanguageCode( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the regional settings used for the Workbook that will be loaded.
+// Returns:
+//   int32  
+func (instance *MarkdownLoadOptions) GetRegion()  (CountryCode,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetRegion( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToCountryCode(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the regional settings used for the Workbook that will be loaded.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetRegion(value CountryCode)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetRegion( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the default style settings for initializing styles of the workbook
+// Returns:
+//   DefaultStyleSettings  
+func (instance *MarkdownLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSettings,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetDefaultStyleSettings( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &DefaultStyleSettings{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteDefaultStyleSettings) 
+
+	return result, nil 
+}
+// Gets and sets the interrupt monitor.
+// Returns:
+//   AbstractInterruptMonitor  
+func (instance *MarkdownLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonitor,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetInterruptMonitor( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &AbstractInterruptMonitor{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteAbstractInterruptMonitor) 
+
+	return result, nil 
+}
+// Gets and sets the interrupt monitor.
+// Parameters:
+//   value - AbstractInterruptMonitor 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetInterruptMonitor(value *AbstractInterruptMonitor)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.MarkdownLoadOptions_SetInterruptMonitor( instance.ptr, value_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Ignore the data which are not printed if directly printing the file
+// Returns:
+//   bool  
+func (instance *MarkdownLoadOptions) GetIgnoreNotPrinted()  (bool,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetIgnoreNotPrinted( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Ignore the data which are not printed if directly printing the file
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetIgnoreNotPrinted(value bool)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetIgnoreNotPrinted( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Check whether data is valid in the template file.
+// Returns:
+//   bool  
+func (instance *MarkdownLoadOptions) GetCheckDataValid()  (bool,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetCheckDataValid( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Check whether data is valid in the template file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetCheckDataValid(value bool)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetCheckDataValid( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K such as by Cell.PutValue(string), if this property is true, you will get an Exception.
+// If this property is false, we will accept your input string value as the cell's value so that later
+// you can output the complete string value for other file formats such as CSV.
+// However, if you have set such kind of value that is invalid for excel file format,
+// you should not save the workbook as excel file format later. Otherwise there may be unexpected error for the generated excel file.
+// Returns:
+//   bool  
+func (instance *MarkdownLoadOptions) GetCheckExcelRestriction()  (bool,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetCheckExcelRestriction( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Whether check restriction of excel file when user modify cells related objects.
+// For example, excel does not allow inputting string value longer than 32K.
+// When you input a value longer than 32K such as by Cell.PutValue(string), if this property is true, you will get an Exception.
+// If this property is false, we will accept your input string value as the cell's value so that later
+// you can output the complete string value for other file formats such as CSV.
+// However, if you have set such kind of value that is invalid for excel file format,
+// you should not save the workbook as excel file format later. Otherwise there may be unexpected error for the generated excel file.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetCheckExcelRestriction(value bool)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Whether keep the unparsed data in memory for the Workbook when it is loaded from template file. Default is true.
+// Returns:
+//   bool  
+func (instance *MarkdownLoadOptions) GetKeepUnparsedData()  (bool,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetKeepUnparsedData( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Whether keep the unparsed data in memory for the Workbook when it is loaded from template file. Default is true.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetKeepUnparsedData(value bool)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetKeepUnparsedData( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// The filter to denote how to load data.
+// Returns:
+//   LoadFilter  
+func (instance *MarkdownLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetLoadFilter( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &LoadFilter{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteLoadFilter) 
+
+	return result, nil 
+}
+// The filter to denote how to load data.
+// Parameters:
+//   value - LoadFilter 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetLoadFilter(value *LoadFilter)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.MarkdownLoadOptions_SetLoadFilter( instance.ptr, value_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the memory mode for loaded workbook.
+// Returns:
+//   int32  
+func (instance *MarkdownLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetMemorySetting( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToMemorySetting(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the memory mode for loaded workbook.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetMemorySetting(value MemorySetting)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetMemorySetting( instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the auto fitter options
+// Returns:
+//   AutoFitterOptions  
+func (instance *MarkdownLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetAutoFitterOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &AutoFitterOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteAutoFitterOptions) 
+
+	return result, nil 
+}
+// Gets and sets the auto fitter options
+// Parameters:
+//   value - AutoFitterOptions 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.MarkdownLoadOptions_SetAutoFitterOptions( instance.ptr, value_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether auto filtering the data when loading the files.
+// Returns:
+//   bool  
+func (instance *MarkdownLoadOptions) GetAutoFilter()  (bool,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetAutoFilter( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether auto filtering the data when loading the files.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetAutoFilter(value bool)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetAutoFilter( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets individual font configs.
+// Only works for the <see cref="Workbook"/> which uses this <see cref="LoadOptions"/> to load.
+// Returns:
+//   IndividualFontConfigs  
+func (instance *MarkdownLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetFontConfigs( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &IndividualFontConfigs{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteIndividualFontConfigs) 
+
+	return result, nil 
+}
+// Gets and sets individual font configs.
+// Only works for the <see cref="Workbook"/> which uses this <see cref="LoadOptions"/> to load.
+// Parameters:
+//   value - IndividualFontConfigs 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.MarkdownLoadOptions_SetFontConfigs( instance.ptr, value_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether ignoring useless shapes.
+// Returns:
+//   bool  
+func (instance *MarkdownLoadOptions) GetIgnoreUselessShapes()  (bool,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetIgnoreUselessShapes( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether ignoring useless shapes.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetIgnoreUselessShapes(value bool)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetIgnoreUselessShapes( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether preserve those spaces and line breaks that are padded between formula tokens
+// while getting and setting formulas.
+// Default value is false.
+// Returns:
+//   bool  
+func (instance *MarkdownLoadOptions) GetPreservePaddingSpacesInFormula()  (bool,  error)  {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_GetPreservePaddingSpacesInFormula( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether preserve those spaces and line breaks that are padded between formula tokens
+// while getting and setting formulas.
+// Default value is false.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *MarkdownLoadOptions) SetPreservePaddingSpacesInFormula(value bool)  error {
+	
+	CGoReturnPtr := C.MarkdownLoadOptions_SetPreservePaddingSpacesInFormula( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+
+
+func (instance *MarkdownLoadOptions) ToAbstractTextLoadOptions() *AbstractTextLoadOptions {
+	parentClass := &AbstractTextLoadOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+func (instance *MarkdownLoadOptions) ToLoadOptions() *LoadOptions {
+	parentClass := &LoadOptions{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
+func DeleteMarkdownLoadOptions(markdownloadoptions *MarkdownLoadOptions){
+	runtime.SetFinalizer(markdownloadoptions, nil)
+	C.Delete_MarkdownLoadOptions(markdownloadoptions.ptr)
+	markdownloadoptions.ptr = nil
 }
 
 // Class MarkdownSaveOptions 
@@ -38676,6 +39530,7 @@ func (instance *MarkdownSaveOptions) GetImageOptions()  (*ImageOrPrintOptions,  
 	return result, nil 
 }
 // Specifies whether images are saved in Base64 format to Markdown.
+// The default value is true.
 // Returns:
 //   bool  
 func (instance *MarkdownSaveOptions) GetExportImagesAsBase64()  (bool,  error)  {
@@ -38690,6 +39545,7 @@ func (instance *MarkdownSaveOptions) GetExportImagesAsBase64()  (bool,  error)  
 	return result, nil 
 }
 // Specifies whether images are saved in Base64 format to Markdown.
+// The default value is true.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -38704,7 +39560,7 @@ func (instance *MarkdownSaveOptions) SetExportImagesAsBase64(value bool)  error 
 
 	return nil 
 }
-// Indicates whether to calculate formulas before saving html file.
+// Indicates whether to calculate formulas before saving markdown file.
 // Returns:
 //   bool  
 func (instance *MarkdownSaveOptions) GetCalculateFormula()  (bool,  error)  {
@@ -38718,7 +39574,7 @@ func (instance *MarkdownSaveOptions) GetCalculateFormula()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether to calculate formulas before saving html file.
+// Indicates whether to calculate formulas before saving markdown file.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -41539,7 +42395,7 @@ func (instance *OdsLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 
 	return nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Returns:
 //   int32  
 func (instance *OdsLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
@@ -41556,7 +42412,7 @@ func (instance *OdsLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -45836,6 +46692,35 @@ func (instance *PasteOptions) GetSkipBlanks()  (bool,  error)  {
 func (instance *PasteOptions) SetSkipBlanks(value bool)  error {
 	
 	CGoReturnPtr := C.PasteOptions_SetSkipBlanks( instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Keeps the tables in the destination range.
+// Returns:
+//   bool  
+func (instance *PasteOptions) GetKeepOldTables()  (bool,  error)  {
+	
+	CGoReturnPtr := C.PasteOptions_GetKeepOldTables( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Keeps the tables in the destination range.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PasteOptions) SetKeepOldTables(value bool)  error {
+	
+	CGoReturnPtr := C.PasteOptions_SetKeepOldTables( instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -60258,7 +61143,7 @@ func (instance *TxtLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 
 	return nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Returns:
 //   int32  
 func (instance *TxtLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
@@ -60275,7 +61160,7 @@ func (instance *TxtLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -65691,6 +66576,22 @@ func (instance *WorkbookSettings) GetMaxColumn()  (int32,  error)  {
 		return  0, err
 	}
 	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the options of the smart tag.
+// Returns:
+//   SmartTagOptions  
+func (instance *WorkbookSettings) GetSmartTagOptions()  (*SmartTagOptions,  error)  {
+	
+	CGoReturnPtr := C.WorkbookSettings_GetSmartTagOptions( instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &SmartTagOptions{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteSmartTagOptions) 
 
 	return result, nil 
 }
@@ -71724,7 +72625,7 @@ func (instance *XmlLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 
 	return nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Returns:
 //   int32  
 func (instance *XmlLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
@@ -71741,7 +72642,7 @@ func (instance *XmlLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Parameters:
 //   value - int32 
 // Returns:

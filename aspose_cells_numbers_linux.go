@@ -535,7 +535,7 @@ func (instance *NumbersLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 
 	return nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Returns:
 //   int32  
 func (instance *NumbersLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
@@ -552,7 +552,7 @@ func (instance *NumbersLoadOptions) GetMemorySetting()  (MemorySetting,  error) 
 
 	return result, nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Parameters:
 //   value - int32 
 // Returns:

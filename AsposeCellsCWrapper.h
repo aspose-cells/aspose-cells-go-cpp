@@ -2656,6 +2656,65 @@ extern "C" {
 
    ASPOSE_CELLS_API void Delete_LoadOptions( void* instance_ptr);
 
+   /**************Class MarkdownLoadOptions *****************/
+
+   ASPOSE_CELLS_API c_return_ptr_value* New_MarkdownLoadOptions();
+   ASPOSE_CELLS_API c_return_ptr_value* New_MarkdownLoadOptions_AbstractTextLoadOptions(void* src);
+
+   ASPOSE_CELLS_API c_return_bool_value* MarkdownLoadOptions_IsNull(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_bool_value* MarkdownLoadOptions_GetHasFormula(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetHasFormula(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_int_value* MarkdownLoadOptions_GetEncoding(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetEncoding(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* MarkdownLoadOptions_GetLoadStyleStrategy(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetLoadStyleStrategy(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_bool_value* MarkdownLoadOptions_GetConvertNumericData(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetConvertNumericData(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* MarkdownLoadOptions_GetConvertDateTimeData(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetConvertDateTimeData(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* MarkdownLoadOptions_GetKeepPrecision(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetKeepPrecision(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_int_value* MarkdownLoadOptions_GetLoadFormat(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_string_value* MarkdownLoadOptions_GetPassword(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetPassword(void* instance_ptr, char* value);
+   ASPOSE_CELLS_API c_return_bool_value* MarkdownLoadOptions_GetParsingFormulaOnOpen(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetParsingFormulaOnOpen(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* MarkdownLoadOptions_GetParsingPivotCachedRecords(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetParsingPivotCachedRecords(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetPaperSize(void* instance_ptr, int type_);
+   ASPOSE_CELLS_API c_return_int_value* MarkdownLoadOptions_GetLanguageCode(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetLanguageCode(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_int_value* MarkdownLoadOptions_GetRegion(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetRegion(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* MarkdownLoadOptions_GetDefaultStyleSettings(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* MarkdownLoadOptions_GetInterruptMonitor(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetInterruptMonitor(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_bool_value* MarkdownLoadOptions_GetIgnoreNotPrinted(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetIgnoreNotPrinted(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* MarkdownLoadOptions_GetCheckDataValid(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetCheckDataValid(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* MarkdownLoadOptions_GetCheckExcelRestriction(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetCheckExcelRestriction(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* MarkdownLoadOptions_GetKeepUnparsedData(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetKeepUnparsedData(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_ptr_value* MarkdownLoadOptions_GetLoadFilter(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetLoadFilter(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_int_value* MarkdownLoadOptions_GetMemorySetting(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetMemorySetting(void* instance_ptr, int value);
+   ASPOSE_CELLS_API c_return_ptr_value* MarkdownLoadOptions_GetAutoFitterOptions(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetAutoFitterOptions(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_bool_value* MarkdownLoadOptions_GetAutoFilter(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetAutoFilter(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_ptr_value* MarkdownLoadOptions_GetFontConfigs(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetFontConfigs(void* instance_ptr, void* value);
+   ASPOSE_CELLS_API c_return_bool_value* MarkdownLoadOptions_GetIgnoreUselessShapes(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetIgnoreUselessShapes(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* MarkdownLoadOptions_GetPreservePaddingSpacesInFormula(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* MarkdownLoadOptions_SetPreservePaddingSpacesInFormula(void* instance_ptr, bool value);
+
+
+   ASPOSE_CELLS_API void Delete_MarkdownLoadOptions( void* instance_ptr);
+
    /**************Class MarkdownSaveOptions *****************/
 
    ASPOSE_CELLS_API c_return_ptr_value* New_MarkdownSaveOptions();
@@ -3216,6 +3275,8 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* PasteOptions_SetPasteType(void* instance_ptr, int value);
    ASPOSE_CELLS_API c_return_bool_value* PasteOptions_GetSkipBlanks(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PasteOptions_SetSkipBlanks(void* instance_ptr, bool value);
+   ASPOSE_CELLS_API c_return_bool_value* PasteOptions_GetKeepOldTables(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* PasteOptions_SetKeepOldTables(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* PasteOptions_GetOnlyVisibleCells(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* PasteOptions_SetOnlyVisibleCells(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_bool_value* PasteOptions_GetTranspose(void* instance_ptr);
@@ -4747,6 +4808,7 @@ extern "C" {
    ASPOSE_CELLS_API c_return_void_value* WorkbookSettings_SetPageOrientationType(void* instance_ptr, int pageorientationtype);
    ASPOSE_CELLS_API c_return_int_value* WorkbookSettings_GetMaxRow(void* instance_ptr);
    ASPOSE_CELLS_API c_return_int_value* WorkbookSettings_GetMaxColumn(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_ptr_value* WorkbookSettings_GetSmartTagOptions(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* WorkbookSettings_GetDefaultStyleSettings(void* instance_ptr);
    ASPOSE_CELLS_API c_return_double_value* WorkbookSettings_GetWindowLeft(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* WorkbookSettings_SetWindowLeft(void* instance_ptr, double value);
@@ -12222,10 +12284,15 @@ extern "C" {
 
 
    ASPOSE_CELLS_API c_return_bool_value* ShapePathPoint_IsNull(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_int_value* ShapePathPoint_GetX(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ShapePathPoint_SetX(void* instance_ptr, int32_t value);
-   ASPOSE_CELLS_API c_return_int_value* ShapePathPoint_GetY(void* instance_ptr);
-   ASPOSE_CELLS_API c_return_void_value* ShapePathPoint_SetY(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* ShapePathPoint_GetXPixel(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ShapePathPoint_SetXPixel(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* ShapePathPoint_GetYPixel(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ShapePathPoint_SetYPixel(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* ShapePathPoint_GetXAngle(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ShapePathPoint_SetXAngle(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* ShapePathPoint_GetYAngle(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* ShapePathPoint_SetYAngle(void* instance_ptr, int32_t value);
+   ASPOSE_CELLS_API c_return_int_value* ShapePathPoint_GetType(void* instance_ptr);
 
 
    ASPOSE_CELLS_API void Delete_ShapePathPoint( void* instance_ptr);
@@ -12236,7 +12303,6 @@ extern "C" {
 
    ASPOSE_CELLS_API c_return_bool_value* ShapePathPointCollection_IsNull(void* instance_ptr);
    ASPOSE_CELLS_API c_return_ptr_value* ShapePathPointCollection_Get(void* instance_ptr, int32_t index);
-   ASPOSE_CELLS_API c_return_int_value* ShapePathPointCollection_Add(void* instance_ptr, int32_t x, int32_t y);
    ASPOSE_CELLS_API c_return_int_value* ShapePathPointCollection_GetCount(void* instance_ptr);
 
 
@@ -15075,6 +15141,7 @@ extern "C" {
    ASPOSE_CELLS_API c_return_bool_value* SeriesCollection_IsColorVaried(void* instance_ptr);
    ASPOSE_CELLS_API c_return_void_value* SeriesCollection_SetIsColorVaried(void* instance_ptr, bool value);
    ASPOSE_CELLS_API c_return_void_value* SeriesCollection_Clear(void* instance_ptr);
+   ASPOSE_CELLS_API c_return_void_value* SeriesCollection_ChangeColors(void* instance_ptr, int type_);
    ASPOSE_CELLS_API c_return_int_value* SeriesCollection_GetCount(void* instance_ptr);
 
 

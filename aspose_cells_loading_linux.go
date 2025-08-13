@@ -479,7 +479,7 @@ func (instance *DbfLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 
 	return nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Returns:
 //   int32  
 func (instance *DbfLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
@@ -496,7 +496,7 @@ func (instance *DbfLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -1148,7 +1148,7 @@ func (instance *DifLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 
 	return nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Returns:
 //   int32  
 func (instance *DifLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
@@ -1165,7 +1165,7 @@ func (instance *DifLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the memory usage options.
+// Gets or sets the memory mode for loaded workbook.
 // Parameters:
 //   value - int32 
 // Returns:
