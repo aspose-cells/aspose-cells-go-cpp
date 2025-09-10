@@ -11,7 +11,7 @@ package asposecells
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
 // #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/win_x86_64" -L"${SRCDIR}/lib/win_x86_64" -lAspose.Cells.CWrapper
-// #include <AsposeCellsCWrapper.h>
+// #include <CellsFunctionMap.h>
 import "C"
 import (
 	"fmt"  
@@ -627,7 +627,7 @@ func NewAccentEquationNode(src *EquationNode) ( *AccentEquationNode, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_AccentEquationNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_AccentEquationNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		accentequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(accentequationnode, DeleteAccentEquationNode)
@@ -644,7 +644,7 @@ func NewAccentEquationNode(src *EquationNode) ( *AccentEquationNode, error) {
 //   bool  
 func (instance *AccentEquationNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("AccentEquationNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -660,7 +660,7 @@ func (instance *AccentEquationNode) IsNull()  (bool,  error)  {
 //   string  
 func (instance *AccentEquationNode) GetAccentCharacter()  (string,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_GetAccentCharacter( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("AccentEquationNode_GetAccentCharacter"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -678,7 +678,7 @@ func (instance *AccentEquationNode) GetAccentCharacter()  (string,  error)  {
 //   void  
 func (instance *AccentEquationNode) SetAccentCharacter(value string)  error {
 	
-	CGoReturnPtr := C.AccentEquationNode_SetAccentCharacter( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("AccentEquationNode_SetAccentCharacter"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -691,7 +691,7 @@ func (instance *AccentEquationNode) SetAccentCharacter(value string)  error {
 //   int32  
 func (instance *AccentEquationNode) GetAccentCharacterType()  (EquationCombiningCharacterType,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_GetAccentCharacterType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGQ(C.CString("AccentEquationNode_GetAccentCharacterType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -710,7 +710,7 @@ func (instance *AccentEquationNode) GetAccentCharacterType()  (EquationCombining
 //   void  
 func (instance *AccentEquationNode) SetAccentCharacterType(value EquationCombiningCharacterType)  error {
 	
-	CGoReturnPtr := C.AccentEquationNode_SetAccentCharacterType( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGR(C.CString("AccentEquationNode_SetAccentCharacterType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -730,7 +730,7 @@ func (instance *AccentEquationNode) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.AccentEquationNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("AccentEquationNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -744,7 +744,7 @@ func (instance *AccentEquationNode) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *AccentEquationNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("AccentEquationNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -758,7 +758,7 @@ func (instance *AccentEquationNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *AccentEquationNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("AccentEquationNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -772,7 +772,7 @@ func (instance *AccentEquationNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *AccentEquationNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("AccentEquationNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -790,7 +790,7 @@ func (instance *AccentEquationNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *AccentEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.AccentEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("AccentEquationNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -803,7 +803,7 @@ func (instance *AccentEquationNode) SetWordArtStyle(style PresetWordArtStyle)  e
 //   TextOptions  
 func (instance *AccentEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("AccentEquationNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -819,7 +819,7 @@ func (instance *AccentEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 //   int32  
 func (instance *AccentEquationNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("AccentEquationNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -836,7 +836,7 @@ func (instance *AccentEquationNode) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *AccentEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("AccentEquationNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -859,7 +859,7 @@ func (instance *AccentEquationNode) SetParentNode(value *EquationNode)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.AccentEquationNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("AccentEquationNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -872,7 +872,7 @@ func (instance *AccentEquationNode) SetParentNode(value *EquationNode)  error {
 //   string  
 func (instance *AccentEquationNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("AccentEquationNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -886,7 +886,7 @@ func (instance *AccentEquationNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *AccentEquationNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("AccentEquationNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -902,7 +902,7 @@ func (instance *AccentEquationNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *AccentEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("AccentEquationNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -925,7 +925,7 @@ func (instance *AccentEquationNode) AddChild_EquationNode(node *EquationNode)  e
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.AccentEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("AccentEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -941,7 +941,7 @@ func (instance *AccentEquationNode) AddChild_EquationNode(node *EquationNode)  e
 //   EquationNode  
 func (instance *AccentEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("AccentEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -959,7 +959,7 @@ func (instance *AccentEquationNode) InsertChild(index int32, equationtype Equati
 //   EquationNode  
 func (instance *AccentEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("AccentEquationNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -977,7 +977,7 @@ func (instance *AccentEquationNode) InsertAfter(equationtype EquationNodeType)  
 //   EquationNode  
 func (instance *AccentEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("AccentEquationNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -995,7 +995,7 @@ func (instance *AccentEquationNode) InsertBefore(equationtype EquationNodeType) 
 //   EquationNode  
 func (instance *AccentEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("AccentEquationNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1011,7 +1011,7 @@ func (instance *AccentEquationNode) GetChild(index int32)  (*EquationNode,  erro
 //   void  
 func (instance *AccentEquationNode) Remove()  error {
 	
-	CGoReturnPtr := C.AccentEquationNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("AccentEquationNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1031,7 +1031,7 @@ func (instance *AccentEquationNode) RemoveChild_EquationNode(node *EquationNode)
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.AccentEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("AccentEquationNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1046,7 +1046,7 @@ func (instance *AccentEquationNode) RemoveChild_EquationNode(node *EquationNode)
 //   void  
 func (instance *AccentEquationNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.AccentEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("AccentEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1059,7 +1059,7 @@ func (instance *AccentEquationNode) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *AccentEquationNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.AccentEquationNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("AccentEquationNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1072,7 +1072,7 @@ func (instance *AccentEquationNode) RemoveAllChildren()  error {
 //   int32  
 func (instance *AccentEquationNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.AccentEquationNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("AccentEquationNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1102,7 +1102,7 @@ func AccentEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.AccentEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("AccentEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1128,7 +1128,7 @@ func (instance *AccentEquationNode) ToFontSetting() *FontSetting {
 
 func DeleteAccentEquationNode(accentequationnode *AccentEquationNode){
 	runtime.SetFinalizer(accentequationnode, nil)
-	C.Delete_AccentEquationNode(accentequationnode.ptr)
+	C.Delete_CObject(C.CString("Delete_AccentEquationNode"),accentequationnode.ptr)
 	accentequationnode.ptr = nil
 }
 
@@ -1149,7 +1149,7 @@ func NewArrayEquationNode(src *EquationNode) ( *ArrayEquationNode, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_ArrayEquationNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_ArrayEquationNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		arrayequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(arrayequationnode, DeleteArrayEquationNode)
@@ -1166,7 +1166,7 @@ func NewArrayEquationNode(src *EquationNode) ( *ArrayEquationNode, error) {
 //   bool  
 func (instance *ArrayEquationNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ArrayEquationNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ArrayEquationNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1187,7 +1187,7 @@ func (instance *ArrayEquationNode) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.ArrayEquationNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("ArrayEquationNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1201,7 +1201,7 @@ func (instance *ArrayEquationNode) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *ArrayEquationNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ArrayEquationNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ArrayEquationNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1215,7 +1215,7 @@ func (instance *ArrayEquationNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *ArrayEquationNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ArrayEquationNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ArrayEquationNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1229,7 +1229,7 @@ func (instance *ArrayEquationNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *ArrayEquationNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.ArrayEquationNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("ArrayEquationNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1247,7 +1247,7 @@ func (instance *ArrayEquationNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *ArrayEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.ArrayEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("ArrayEquationNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1260,7 +1260,7 @@ func (instance *ArrayEquationNode) SetWordArtStyle(style PresetWordArtStyle)  er
 //   TextOptions  
 func (instance *ArrayEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.ArrayEquationNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("ArrayEquationNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1276,7 +1276,7 @@ func (instance *ArrayEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 //   int32  
 func (instance *ArrayEquationNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.ArrayEquationNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("ArrayEquationNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1293,7 +1293,7 @@ func (instance *ArrayEquationNode) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *ArrayEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.ArrayEquationNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("ArrayEquationNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1316,7 +1316,7 @@ func (instance *ArrayEquationNode) SetParentNode(value *EquationNode)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.ArrayEquationNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("ArrayEquationNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1329,7 +1329,7 @@ func (instance *ArrayEquationNode) SetParentNode(value *EquationNode)  error {
 //   string  
 func (instance *ArrayEquationNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.ArrayEquationNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ArrayEquationNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1343,7 +1343,7 @@ func (instance *ArrayEquationNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *ArrayEquationNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.ArrayEquationNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ArrayEquationNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1359,7 +1359,7 @@ func (instance *ArrayEquationNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *ArrayEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.ArrayEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("ArrayEquationNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1382,7 +1382,7 @@ func (instance *ArrayEquationNode) AddChild_EquationNode(node *EquationNode)  er
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.ArrayEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("ArrayEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1398,7 +1398,7 @@ func (instance *ArrayEquationNode) AddChild_EquationNode(node *EquationNode)  er
 //   EquationNode  
 func (instance *ArrayEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.ArrayEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("ArrayEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1416,7 +1416,7 @@ func (instance *ArrayEquationNode) InsertChild(index int32, equationtype Equatio
 //   EquationNode  
 func (instance *ArrayEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.ArrayEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("ArrayEquationNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1434,7 +1434,7 @@ func (instance *ArrayEquationNode) InsertAfter(equationtype EquationNodeType)  (
 //   EquationNode  
 func (instance *ArrayEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.ArrayEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("ArrayEquationNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1452,7 +1452,7 @@ func (instance *ArrayEquationNode) InsertBefore(equationtype EquationNodeType)  
 //   EquationNode  
 func (instance *ArrayEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.ArrayEquationNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("ArrayEquationNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1468,7 +1468,7 @@ func (instance *ArrayEquationNode) GetChild(index int32)  (*EquationNode,  error
 //   void  
 func (instance *ArrayEquationNode) Remove()  error {
 	
-	CGoReturnPtr := C.ArrayEquationNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("ArrayEquationNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1488,7 +1488,7 @@ func (instance *ArrayEquationNode) RemoveChild_EquationNode(node *EquationNode) 
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.ArrayEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("ArrayEquationNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1503,7 +1503,7 @@ func (instance *ArrayEquationNode) RemoveChild_EquationNode(node *EquationNode) 
 //   void  
 func (instance *ArrayEquationNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.ArrayEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ArrayEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1516,7 +1516,7 @@ func (instance *ArrayEquationNode) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *ArrayEquationNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.ArrayEquationNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("ArrayEquationNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1529,7 +1529,7 @@ func (instance *ArrayEquationNode) RemoveAllChildren()  error {
 //   int32  
 func (instance *ArrayEquationNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.ArrayEquationNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("ArrayEquationNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1559,7 +1559,7 @@ func ArrayEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workb
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.ArrayEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("ArrayEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1585,7 +1585,7 @@ func (instance *ArrayEquationNode) ToFontSetting() *FontSetting {
 
 func DeleteArrayEquationNode(arrayequationnode *ArrayEquationNode){
 	runtime.SetFinalizer(arrayequationnode, nil)
-	C.Delete_ArrayEquationNode(arrayequationnode.ptr)
+	C.Delete_CObject(C.CString("Delete_ArrayEquationNode"),arrayequationnode.ptr)
 	arrayequationnode.ptr = nil
 }
 
@@ -1606,7 +1606,7 @@ func NewBarEquationNode(src *EquationNode) ( *BarEquationNode, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_BarEquationNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_BarEquationNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		barequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(barequationnode, DeleteBarEquationNode)
@@ -1623,7 +1623,7 @@ func NewBarEquationNode(src *EquationNode) ( *BarEquationNode, error) {
 //   bool  
 func (instance *BarEquationNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.BarEquationNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("BarEquationNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1637,7 +1637,7 @@ func (instance *BarEquationNode) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *BarEquationNode) GetBarPosition()  (EquationCharacterPositionType,  error)  {
 	
-	CGoReturnPtr := C.BarEquationNode_GetBarPosition( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHA(C.CString("BarEquationNode_GetBarPosition"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1656,7 +1656,7 @@ func (instance *BarEquationNode) GetBarPosition()  (EquationCharacterPositionTyp
 //   void  
 func (instance *BarEquationNode) SetBarPosition(value EquationCharacterPositionType)  error {
 	
-	CGoReturnPtr := C.BarEquationNode_SetBarPosition( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHB(C.CString("BarEquationNode_SetBarPosition"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1676,7 +1676,7 @@ func (instance *BarEquationNode) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.BarEquationNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("BarEquationNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1690,7 +1690,7 @@ func (instance *BarEquationNode) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *BarEquationNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.BarEquationNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("BarEquationNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1704,7 +1704,7 @@ func (instance *BarEquationNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *BarEquationNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.BarEquationNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("BarEquationNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1718,7 +1718,7 @@ func (instance *BarEquationNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *BarEquationNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.BarEquationNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("BarEquationNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1736,7 +1736,7 @@ func (instance *BarEquationNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *BarEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.BarEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("BarEquationNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1749,7 +1749,7 @@ func (instance *BarEquationNode) SetWordArtStyle(style PresetWordArtStyle)  erro
 //   TextOptions  
 func (instance *BarEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.BarEquationNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("BarEquationNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1765,7 +1765,7 @@ func (instance *BarEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 //   int32  
 func (instance *BarEquationNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.BarEquationNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("BarEquationNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1782,7 +1782,7 @@ func (instance *BarEquationNode) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *BarEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BarEquationNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("BarEquationNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1805,7 +1805,7 @@ func (instance *BarEquationNode) SetParentNode(value *EquationNode)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.BarEquationNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("BarEquationNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1818,7 +1818,7 @@ func (instance *BarEquationNode) SetParentNode(value *EquationNode)  error {
 //   string  
 func (instance *BarEquationNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.BarEquationNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BarEquationNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1832,7 +1832,7 @@ func (instance *BarEquationNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *BarEquationNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.BarEquationNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BarEquationNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1848,7 +1848,7 @@ func (instance *BarEquationNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *BarEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BarEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("BarEquationNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1871,7 +1871,7 @@ func (instance *BarEquationNode) AddChild_EquationNode(node *EquationNode)  erro
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.BarEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("BarEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1887,7 +1887,7 @@ func (instance *BarEquationNode) AddChild_EquationNode(node *EquationNode)  erro
 //   EquationNode  
 func (instance *BarEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BarEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("BarEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1905,7 +1905,7 @@ func (instance *BarEquationNode) InsertChild(index int32, equationtype EquationN
 //   EquationNode  
 func (instance *BarEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BarEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("BarEquationNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1923,7 +1923,7 @@ func (instance *BarEquationNode) InsertAfter(equationtype EquationNodeType)  (*E
 //   EquationNode  
 func (instance *BarEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BarEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("BarEquationNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1941,7 +1941,7 @@ func (instance *BarEquationNode) InsertBefore(equationtype EquationNodeType)  (*
 //   EquationNode  
 func (instance *BarEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BarEquationNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("BarEquationNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1957,7 +1957,7 @@ func (instance *BarEquationNode) GetChild(index int32)  (*EquationNode,  error) 
 //   void  
 func (instance *BarEquationNode) Remove()  error {
 	
-	CGoReturnPtr := C.BarEquationNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("BarEquationNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1977,7 +1977,7 @@ func (instance *BarEquationNode) RemoveChild_EquationNode(node *EquationNode)  e
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.BarEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("BarEquationNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1992,7 +1992,7 @@ func (instance *BarEquationNode) RemoveChild_EquationNode(node *EquationNode)  e
 //   void  
 func (instance *BarEquationNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.BarEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("BarEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2005,7 +2005,7 @@ func (instance *BarEquationNode) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *BarEquationNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.BarEquationNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("BarEquationNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2018,7 +2018,7 @@ func (instance *BarEquationNode) RemoveAllChildren()  error {
 //   int32  
 func (instance *BarEquationNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.BarEquationNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("BarEquationNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2048,7 +2048,7 @@ func BarEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workboo
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.BarEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("BarEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2074,7 +2074,7 @@ func (instance *BarEquationNode) ToFontSetting() *FontSetting {
 
 func DeleteBarEquationNode(barequationnode *BarEquationNode){
 	runtime.SetFinalizer(barequationnode, nil)
-	C.Delete_BarEquationNode(barequationnode.ptr)
+	C.Delete_CObject(C.CString("Delete_BarEquationNode"),barequationnode.ptr)
 	barequationnode.ptr = nil
 }
 
@@ -2095,7 +2095,7 @@ func NewBorderBoxEquationNode(src *EquationNode) ( *BorderBoxEquationNode, error
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_BorderBoxEquationNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_BorderBoxEquationNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		borderboxequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(borderboxequationnode, DeleteBorderBoxEquationNode)
@@ -2112,7 +2112,7 @@ func NewBorderBoxEquationNode(src *EquationNode) ( *BorderBoxEquationNode, error
 //   bool  
 func (instance *BorderBoxEquationNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("BorderBoxEquationNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2133,7 +2133,7 @@ func (instance *BorderBoxEquationNode) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.BorderBoxEquationNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("BorderBoxEquationNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2147,7 +2147,7 @@ func (instance *BorderBoxEquationNode) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *BorderBoxEquationNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("BorderBoxEquationNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2161,7 +2161,7 @@ func (instance *BorderBoxEquationNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *BorderBoxEquationNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("BorderBoxEquationNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2175,7 +2175,7 @@ func (instance *BorderBoxEquationNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *BorderBoxEquationNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("BorderBoxEquationNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2193,7 +2193,7 @@ func (instance *BorderBoxEquationNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *BorderBoxEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("BorderBoxEquationNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2206,7 +2206,7 @@ func (instance *BorderBoxEquationNode) SetWordArtStyle(style PresetWordArtStyle)
 //   TextOptions  
 func (instance *BorderBoxEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("BorderBoxEquationNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2222,7 +2222,7 @@ func (instance *BorderBoxEquationNode) GetTextOptions()  (*TextOptions,  error) 
 //   int32  
 func (instance *BorderBoxEquationNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("BorderBoxEquationNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2239,7 +2239,7 @@ func (instance *BorderBoxEquationNode) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *BorderBoxEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("BorderBoxEquationNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2262,7 +2262,7 @@ func (instance *BorderBoxEquationNode) SetParentNode(value *EquationNode)  error
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.BorderBoxEquationNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("BorderBoxEquationNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2275,7 +2275,7 @@ func (instance *BorderBoxEquationNode) SetParentNode(value *EquationNode)  error
 //   string  
 func (instance *BorderBoxEquationNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BorderBoxEquationNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -2289,7 +2289,7 @@ func (instance *BorderBoxEquationNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *BorderBoxEquationNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BorderBoxEquationNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -2305,7 +2305,7 @@ func (instance *BorderBoxEquationNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *BorderBoxEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("BorderBoxEquationNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2328,7 +2328,7 @@ func (instance *BorderBoxEquationNode) AddChild_EquationNode(node *EquationNode)
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.BorderBoxEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("BorderBoxEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2344,7 +2344,7 @@ func (instance *BorderBoxEquationNode) AddChild_EquationNode(node *EquationNode)
 //   EquationNode  
 func (instance *BorderBoxEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("BorderBoxEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2362,7 +2362,7 @@ func (instance *BorderBoxEquationNode) InsertChild(index int32, equationtype Equ
 //   EquationNode  
 func (instance *BorderBoxEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("BorderBoxEquationNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2380,7 +2380,7 @@ func (instance *BorderBoxEquationNode) InsertAfter(equationtype EquationNodeType
 //   EquationNode  
 func (instance *BorderBoxEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("BorderBoxEquationNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2398,7 +2398,7 @@ func (instance *BorderBoxEquationNode) InsertBefore(equationtype EquationNodeTyp
 //   EquationNode  
 func (instance *BorderBoxEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("BorderBoxEquationNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2414,7 +2414,7 @@ func (instance *BorderBoxEquationNode) GetChild(index int32)  (*EquationNode,  e
 //   void  
 func (instance *BorderBoxEquationNode) Remove()  error {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("BorderBoxEquationNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2434,7 +2434,7 @@ func (instance *BorderBoxEquationNode) RemoveChild_EquationNode(node *EquationNo
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.BorderBoxEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("BorderBoxEquationNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2449,7 +2449,7 @@ func (instance *BorderBoxEquationNode) RemoveChild_EquationNode(node *EquationNo
 //   void  
 func (instance *BorderBoxEquationNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("BorderBoxEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2462,7 +2462,7 @@ func (instance *BorderBoxEquationNode) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *BorderBoxEquationNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("BorderBoxEquationNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2475,7 +2475,7 @@ func (instance *BorderBoxEquationNode) RemoveAllChildren()  error {
 //   int32  
 func (instance *BorderBoxEquationNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.BorderBoxEquationNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("BorderBoxEquationNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2505,7 +2505,7 @@ func BorderBoxEquationNode_CreateNode(equationtype EquationNodeType, workbook *W
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.BorderBoxEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("BorderBoxEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2531,7 +2531,7 @@ func (instance *BorderBoxEquationNode) ToFontSetting() *FontSetting {
 
 func DeleteBorderBoxEquationNode(borderboxequationnode *BorderBoxEquationNode){
 	runtime.SetFinalizer(borderboxequationnode, nil)
-	C.Delete_BorderBoxEquationNode(borderboxequationnode.ptr)
+	C.Delete_CObject(C.CString("Delete_BorderBoxEquationNode"),borderboxequationnode.ptr)
 	borderboxequationnode.ptr = nil
 }
 
@@ -2552,7 +2552,7 @@ func NewBoxEquationNode(src *EquationNode) ( *BoxEquationNode, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_BoxEquationNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_BoxEquationNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		boxequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(boxequationnode, DeleteBoxEquationNode)
@@ -2569,7 +2569,7 @@ func NewBoxEquationNode(src *EquationNode) ( *BoxEquationNode, error) {
 //   bool  
 func (instance *BoxEquationNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.BoxEquationNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("BoxEquationNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2590,7 +2590,7 @@ func (instance *BoxEquationNode) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.BoxEquationNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("BoxEquationNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2604,7 +2604,7 @@ func (instance *BoxEquationNode) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *BoxEquationNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.BoxEquationNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("BoxEquationNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2618,7 +2618,7 @@ func (instance *BoxEquationNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *BoxEquationNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.BoxEquationNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("BoxEquationNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2632,7 +2632,7 @@ func (instance *BoxEquationNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *BoxEquationNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.BoxEquationNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("BoxEquationNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2650,7 +2650,7 @@ func (instance *BoxEquationNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *BoxEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.BoxEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("BoxEquationNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2663,7 +2663,7 @@ func (instance *BoxEquationNode) SetWordArtStyle(style PresetWordArtStyle)  erro
 //   TextOptions  
 func (instance *BoxEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.BoxEquationNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("BoxEquationNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2679,7 +2679,7 @@ func (instance *BoxEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 //   int32  
 func (instance *BoxEquationNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.BoxEquationNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("BoxEquationNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2696,7 +2696,7 @@ func (instance *BoxEquationNode) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *BoxEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BoxEquationNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("BoxEquationNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2719,7 +2719,7 @@ func (instance *BoxEquationNode) SetParentNode(value *EquationNode)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.BoxEquationNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("BoxEquationNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2732,7 +2732,7 @@ func (instance *BoxEquationNode) SetParentNode(value *EquationNode)  error {
 //   string  
 func (instance *BoxEquationNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.BoxEquationNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BoxEquationNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -2746,7 +2746,7 @@ func (instance *BoxEquationNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *BoxEquationNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.BoxEquationNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BoxEquationNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -2762,7 +2762,7 @@ func (instance *BoxEquationNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *BoxEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BoxEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("BoxEquationNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2785,7 +2785,7 @@ func (instance *BoxEquationNode) AddChild_EquationNode(node *EquationNode)  erro
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.BoxEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("BoxEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2801,7 +2801,7 @@ func (instance *BoxEquationNode) AddChild_EquationNode(node *EquationNode)  erro
 //   EquationNode  
 func (instance *BoxEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BoxEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("BoxEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2819,7 +2819,7 @@ func (instance *BoxEquationNode) InsertChild(index int32, equationtype EquationN
 //   EquationNode  
 func (instance *BoxEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BoxEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("BoxEquationNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2837,7 +2837,7 @@ func (instance *BoxEquationNode) InsertAfter(equationtype EquationNodeType)  (*E
 //   EquationNode  
 func (instance *BoxEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BoxEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("BoxEquationNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2855,7 +2855,7 @@ func (instance *BoxEquationNode) InsertBefore(equationtype EquationNodeType)  (*
 //   EquationNode  
 func (instance *BoxEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.BoxEquationNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("BoxEquationNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2871,7 +2871,7 @@ func (instance *BoxEquationNode) GetChild(index int32)  (*EquationNode,  error) 
 //   void  
 func (instance *BoxEquationNode) Remove()  error {
 	
-	CGoReturnPtr := C.BoxEquationNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("BoxEquationNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2891,7 +2891,7 @@ func (instance *BoxEquationNode) RemoveChild_EquationNode(node *EquationNode)  e
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.BoxEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("BoxEquationNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2906,7 +2906,7 @@ func (instance *BoxEquationNode) RemoveChild_EquationNode(node *EquationNode)  e
 //   void  
 func (instance *BoxEquationNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.BoxEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("BoxEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2919,7 +2919,7 @@ func (instance *BoxEquationNode) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *BoxEquationNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.BoxEquationNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("BoxEquationNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2932,7 +2932,7 @@ func (instance *BoxEquationNode) RemoveAllChildren()  error {
 //   int32  
 func (instance *BoxEquationNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.BoxEquationNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("BoxEquationNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2962,7 +2962,7 @@ func BoxEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workboo
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.BoxEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("BoxEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2988,7 +2988,7 @@ func (instance *BoxEquationNode) ToFontSetting() *FontSetting {
 
 func DeleteBoxEquationNode(boxequationnode *BoxEquationNode){
 	runtime.SetFinalizer(boxequationnode, nil)
-	C.Delete_BoxEquationNode(boxequationnode.ptr)
+	C.Delete_CObject(C.CString("Delete_BoxEquationNode"),boxequationnode.ptr)
 	boxequationnode.ptr = nil
 }
 
@@ -3010,7 +3010,7 @@ func NewDelimiterEquationNode(src *EquationNode) ( *DelimiterEquationNode, error
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_DelimiterEquationNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_DelimiterEquationNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		delimiterequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(delimiterequationnode, DeleteDelimiterEquationNode)
@@ -3027,7 +3027,7 @@ func NewDelimiterEquationNode(src *EquationNode) ( *DelimiterEquationNode, error
 //   bool  
 func (instance *DelimiterEquationNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DelimiterEquationNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3041,7 +3041,7 @@ func (instance *DelimiterEquationNode) IsNull()  (bool,  error)  {
 //   string  
 func (instance *DelimiterEquationNode) GetBeginChar()  (string,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_GetBeginChar( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("DelimiterEquationNode_GetBeginChar"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -3057,7 +3057,7 @@ func (instance *DelimiterEquationNode) GetBeginChar()  (string,  error)  {
 //   void  
 func (instance *DelimiterEquationNode) SetBeginChar(value string)  error {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_SetBeginChar( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("DelimiterEquationNode_SetBeginChar"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3070,7 +3070,7 @@ func (instance *DelimiterEquationNode) SetBeginChar(value string)  error {
 //   string  
 func (instance *DelimiterEquationNode) GetEndChar()  (string,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_GetEndChar( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("DelimiterEquationNode_GetEndChar"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -3086,7 +3086,7 @@ func (instance *DelimiterEquationNode) GetEndChar()  (string,  error)  {
 //   void  
 func (instance *DelimiterEquationNode) SetEndChar(value string)  error {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_SetEndChar( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("DelimiterEquationNode_SetEndChar"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3098,7 +3098,7 @@ func (instance *DelimiterEquationNode) SetEndChar(value string)  error {
 //   bool  
 func (instance *DelimiterEquationNode) GetNaryGrow()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_GetNaryGrow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DelimiterEquationNode_GetNaryGrow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3113,7 +3113,7 @@ func (instance *DelimiterEquationNode) GetNaryGrow()  (bool,  error)  {
 //   void  
 func (instance *DelimiterEquationNode) SetNaryGrow(value bool)  error {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_SetNaryGrow( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DelimiterEquationNode_SetNaryGrow"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3126,7 +3126,7 @@ func (instance *DelimiterEquationNode) SetNaryGrow(value bool)  error {
 //   string  
 func (instance *DelimiterEquationNode) GetSeparatorChar()  (string,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_GetSeparatorChar( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("DelimiterEquationNode_GetSeparatorChar"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -3142,7 +3142,7 @@ func (instance *DelimiterEquationNode) GetSeparatorChar()  (string,  error)  {
 //   void  
 func (instance *DelimiterEquationNode) SetSeparatorChar(value string)  error {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_SetSeparatorChar( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("DelimiterEquationNode_SetSeparatorChar"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3155,7 +3155,7 @@ func (instance *DelimiterEquationNode) SetSeparatorChar(value string)  error {
 //   int32  
 func (instance *DelimiterEquationNode) GetDelimiterShape()  (EquationDelimiterShapeType,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_GetDelimiterShape( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHC(C.CString("DelimiterEquationNode_GetDelimiterShape"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3174,7 +3174,7 @@ func (instance *DelimiterEquationNode) GetDelimiterShape()  (EquationDelimiterSh
 //   void  
 func (instance *DelimiterEquationNode) SetDelimiterShape(value EquationDelimiterShapeType)  error {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_SetDelimiterShape( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHD(C.CString("DelimiterEquationNode_SetDelimiterShape"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3194,7 +3194,7 @@ func (instance *DelimiterEquationNode) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.DelimiterEquationNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("DelimiterEquationNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3208,7 +3208,7 @@ func (instance *DelimiterEquationNode) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *DelimiterEquationNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("DelimiterEquationNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3222,7 +3222,7 @@ func (instance *DelimiterEquationNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *DelimiterEquationNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("DelimiterEquationNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3236,7 +3236,7 @@ func (instance *DelimiterEquationNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *DelimiterEquationNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("DelimiterEquationNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3254,7 +3254,7 @@ func (instance *DelimiterEquationNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *DelimiterEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("DelimiterEquationNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3267,7 +3267,7 @@ func (instance *DelimiterEquationNode) SetWordArtStyle(style PresetWordArtStyle)
 //   TextOptions  
 func (instance *DelimiterEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("DelimiterEquationNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3283,7 +3283,7 @@ func (instance *DelimiterEquationNode) GetTextOptions()  (*TextOptions,  error) 
 //   int32  
 func (instance *DelimiterEquationNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("DelimiterEquationNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3300,7 +3300,7 @@ func (instance *DelimiterEquationNode) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *DelimiterEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("DelimiterEquationNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3323,7 +3323,7 @@ func (instance *DelimiterEquationNode) SetParentNode(value *EquationNode)  error
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.DelimiterEquationNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("DelimiterEquationNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3336,7 +3336,7 @@ func (instance *DelimiterEquationNode) SetParentNode(value *EquationNode)  error
 //   string  
 func (instance *DelimiterEquationNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("DelimiterEquationNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -3350,7 +3350,7 @@ func (instance *DelimiterEquationNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *DelimiterEquationNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("DelimiterEquationNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -3366,7 +3366,7 @@ func (instance *DelimiterEquationNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *DelimiterEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("DelimiterEquationNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3389,7 +3389,7 @@ func (instance *DelimiterEquationNode) AddChild_EquationNode(node *EquationNode)
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.DelimiterEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("DelimiterEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3405,7 +3405,7 @@ func (instance *DelimiterEquationNode) AddChild_EquationNode(node *EquationNode)
 //   EquationNode  
 func (instance *DelimiterEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("DelimiterEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3423,7 +3423,7 @@ func (instance *DelimiterEquationNode) InsertChild(index int32, equationtype Equ
 //   EquationNode  
 func (instance *DelimiterEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("DelimiterEquationNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3441,7 +3441,7 @@ func (instance *DelimiterEquationNode) InsertAfter(equationtype EquationNodeType
 //   EquationNode  
 func (instance *DelimiterEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("DelimiterEquationNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3459,7 +3459,7 @@ func (instance *DelimiterEquationNode) InsertBefore(equationtype EquationNodeTyp
 //   EquationNode  
 func (instance *DelimiterEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("DelimiterEquationNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3475,7 +3475,7 @@ func (instance *DelimiterEquationNode) GetChild(index int32)  (*EquationNode,  e
 //   void  
 func (instance *DelimiterEquationNode) Remove()  error {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("DelimiterEquationNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3495,7 +3495,7 @@ func (instance *DelimiterEquationNode) RemoveChild_EquationNode(node *EquationNo
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.DelimiterEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("DelimiterEquationNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3510,7 +3510,7 @@ func (instance *DelimiterEquationNode) RemoveChild_EquationNode(node *EquationNo
 //   void  
 func (instance *DelimiterEquationNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("DelimiterEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3523,7 +3523,7 @@ func (instance *DelimiterEquationNode) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *DelimiterEquationNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("DelimiterEquationNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3536,7 +3536,7 @@ func (instance *DelimiterEquationNode) RemoveAllChildren()  error {
 //   int32  
 func (instance *DelimiterEquationNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.DelimiterEquationNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("DelimiterEquationNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3566,7 +3566,7 @@ func DelimiterEquationNode_CreateNode(equationtype EquationNodeType, workbook *W
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.DelimiterEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("DelimiterEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3592,7 +3592,7 @@ func (instance *DelimiterEquationNode) ToFontSetting() *FontSetting {
 
 func DeleteDelimiterEquationNode(delimiterequationnode *DelimiterEquationNode){
 	runtime.SetFinalizer(delimiterequationnode, nil)
-	C.Delete_DelimiterEquationNode(delimiterequationnode.ptr)
+	C.Delete_CObject(C.CString("Delete_DelimiterEquationNode"),delimiterequationnode.ptr)
 	delimiterequationnode.ptr = nil
 }
 
@@ -3616,7 +3616,7 @@ func NewEquationComponentNode(src *EquationNode) ( *EquationComponentNode, error
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_EquationComponentNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_EquationComponentNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		equationcomponentnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(equationcomponentnode, DeleteEquationComponentNode)
@@ -3633,7 +3633,7 @@ func NewEquationComponentNode(src *EquationNode) ( *EquationComponentNode, error
 //   bool  
 func (instance *EquationComponentNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EquationComponentNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EquationComponentNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3654,7 +3654,7 @@ func (instance *EquationComponentNode) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.EquationComponentNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("EquationComponentNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3668,7 +3668,7 @@ func (instance *EquationComponentNode) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *EquationComponentNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.EquationComponentNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("EquationComponentNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3682,7 +3682,7 @@ func (instance *EquationComponentNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *EquationComponentNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.EquationComponentNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("EquationComponentNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3696,7 +3696,7 @@ func (instance *EquationComponentNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *EquationComponentNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.EquationComponentNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("EquationComponentNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3714,7 +3714,7 @@ func (instance *EquationComponentNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *EquationComponentNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.EquationComponentNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("EquationComponentNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3727,7 +3727,7 @@ func (instance *EquationComponentNode) SetWordArtStyle(style PresetWordArtStyle)
 //   TextOptions  
 func (instance *EquationComponentNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.EquationComponentNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("EquationComponentNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3743,7 +3743,7 @@ func (instance *EquationComponentNode) GetTextOptions()  (*TextOptions,  error) 
 //   int32  
 func (instance *EquationComponentNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.EquationComponentNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("EquationComponentNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3760,7 +3760,7 @@ func (instance *EquationComponentNode) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *EquationComponentNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationComponentNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("EquationComponentNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3783,7 +3783,7 @@ func (instance *EquationComponentNode) SetParentNode(value *EquationNode)  error
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.EquationComponentNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("EquationComponentNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3796,7 +3796,7 @@ func (instance *EquationComponentNode) SetParentNode(value *EquationNode)  error
 //   string  
 func (instance *EquationComponentNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.EquationComponentNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("EquationComponentNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -3810,7 +3810,7 @@ func (instance *EquationComponentNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *EquationComponentNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.EquationComponentNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("EquationComponentNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -3826,7 +3826,7 @@ func (instance *EquationComponentNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *EquationComponentNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationComponentNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("EquationComponentNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3849,7 +3849,7 @@ func (instance *EquationComponentNode) AddChild_EquationNode(node *EquationNode)
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.EquationComponentNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("EquationComponentNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3865,7 +3865,7 @@ func (instance *EquationComponentNode) AddChild_EquationNode(node *EquationNode)
 //   EquationNode  
 func (instance *EquationComponentNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationComponentNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("EquationComponentNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3883,7 +3883,7 @@ func (instance *EquationComponentNode) InsertChild(index int32, equationtype Equ
 //   EquationNode  
 func (instance *EquationComponentNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationComponentNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("EquationComponentNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3901,7 +3901,7 @@ func (instance *EquationComponentNode) InsertAfter(equationtype EquationNodeType
 //   EquationNode  
 func (instance *EquationComponentNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationComponentNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("EquationComponentNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3919,7 +3919,7 @@ func (instance *EquationComponentNode) InsertBefore(equationtype EquationNodeTyp
 //   EquationNode  
 func (instance *EquationComponentNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationComponentNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("EquationComponentNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3935,7 +3935,7 @@ func (instance *EquationComponentNode) GetChild(index int32)  (*EquationNode,  e
 //   void  
 func (instance *EquationComponentNode) Remove()  error {
 	
-	CGoReturnPtr := C.EquationComponentNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("EquationComponentNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3955,7 +3955,7 @@ func (instance *EquationComponentNode) RemoveChild_EquationNode(node *EquationNo
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.EquationComponentNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("EquationComponentNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3970,7 +3970,7 @@ func (instance *EquationComponentNode) RemoveChild_EquationNode(node *EquationNo
 //   void  
 func (instance *EquationComponentNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.EquationComponentNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("EquationComponentNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3983,7 +3983,7 @@ func (instance *EquationComponentNode) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *EquationComponentNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.EquationComponentNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("EquationComponentNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3996,7 +3996,7 @@ func (instance *EquationComponentNode) RemoveAllChildren()  error {
 //   int32  
 func (instance *EquationComponentNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.EquationComponentNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("EquationComponentNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4026,7 +4026,7 @@ func EquationComponentNode_CreateNode(equationtype EquationNodeType, workbook *W
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.EquationComponentNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("EquationComponentNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4052,7 +4052,7 @@ func (instance *EquationComponentNode) ToFontSetting() *FontSetting {
 
 func DeleteEquationComponentNode(equationcomponentnode *EquationComponentNode){
 	runtime.SetFinalizer(equationcomponentnode, nil)
-	C.Delete_EquationComponentNode(equationcomponentnode.ptr)
+	C.Delete_CObject(C.CString("Delete_EquationComponentNode"),equationcomponentnode.ptr)
 	equationcomponentnode.ptr = nil
 }
 
@@ -4073,7 +4073,7 @@ func NewEquationNode(src *FontSetting) ( *EquationNode, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_EquationNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHE(C.CString("New_EquationNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		equationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(equationnode, DeleteEquationNode)
@@ -4090,7 +4090,7 @@ func NewEquationNode(src *FontSetting) ( *EquationNode, error) {
 //   bool  
 func (instance *EquationNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EquationNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EquationNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4104,7 +4104,7 @@ func (instance *EquationNode) IsNull()  (bool,  error)  {
 //   EquationNode  
 func (instance *EquationNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("EquationNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4127,7 +4127,7 @@ func (instance *EquationNode) SetParentNode(value *EquationNode)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.EquationNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("EquationNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4140,7 +4140,7 @@ func (instance *EquationNode) SetParentNode(value *EquationNode)  error {
 //   string  
 func (instance *EquationNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.EquationNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("EquationNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -4154,7 +4154,7 @@ func (instance *EquationNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *EquationNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.EquationNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("EquationNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -4170,7 +4170,7 @@ func (instance *EquationNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *EquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("EquationNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4193,7 +4193,7 @@ func (instance *EquationNode) AddChild_EquationNode(node *EquationNode)  error {
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.EquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("EquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4209,7 +4209,7 @@ func (instance *EquationNode) AddChild_EquationNode(node *EquationNode)  error {
 //   EquationNode  
 func (instance *EquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("EquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4227,7 +4227,7 @@ func (instance *EquationNode) InsertChild(index int32, equationtype EquationNode
 //   EquationNode  
 func (instance *EquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("EquationNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4245,7 +4245,7 @@ func (instance *EquationNode) InsertAfter(equationtype EquationNodeType)  (*Equa
 //   EquationNode  
 func (instance *EquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("EquationNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4263,7 +4263,7 @@ func (instance *EquationNode) InsertBefore(equationtype EquationNodeType)  (*Equ
 //   EquationNode  
 func (instance *EquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("EquationNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4279,7 +4279,7 @@ func (instance *EquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 //   void  
 func (instance *EquationNode) Remove()  error {
 	
-	CGoReturnPtr := C.EquationNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("EquationNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4299,7 +4299,7 @@ func (instance *EquationNode) RemoveChild_EquationNode(node *EquationNode)  erro
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.EquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("EquationNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4314,7 +4314,7 @@ func (instance *EquationNode) RemoveChild_EquationNode(node *EquationNode)  erro
 //   void  
 func (instance *EquationNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.EquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("EquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4327,7 +4327,7 @@ func (instance *EquationNode) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *EquationNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.EquationNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("EquationNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4347,7 +4347,7 @@ func (instance *EquationNode) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.EquationNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("EquationNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4361,7 +4361,7 @@ func (instance *EquationNode) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *EquationNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.EquationNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("EquationNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4378,7 +4378,7 @@ func (instance *EquationNode) GetType()  (TextNodeType,  error)  {
 //   int32  
 func (instance *EquationNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.EquationNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("EquationNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4408,7 +4408,7 @@ func EquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, 
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.EquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("EquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4424,7 +4424,7 @@ func EquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, 
 //   int32  
 func (instance *EquationNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.EquationNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("EquationNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4438,7 +4438,7 @@ func (instance *EquationNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *EquationNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.EquationNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("EquationNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4452,7 +4452,7 @@ func (instance *EquationNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *EquationNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.EquationNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("EquationNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4470,7 +4470,7 @@ func (instance *EquationNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *EquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.EquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("EquationNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4483,7 +4483,7 @@ func (instance *EquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 //   TextOptions  
 func (instance *EquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.EquationNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("EquationNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4504,7 +4504,7 @@ func (instance *EquationNode) ToFontSetting() *FontSetting {
 
 func DeleteEquationNode(equationnode *EquationNode){
 	runtime.SetFinalizer(equationnode, nil)
-	C.Delete_EquationNode(equationnode.ptr)
+	C.Delete_CObject(C.CString("Delete_EquationNode"),equationnode.ptr)
 	equationnode.ptr = nil
 }
 
@@ -4525,7 +4525,7 @@ func NewEquationNodeParagraph(src *EquationNode) ( *EquationNodeParagraph, error
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_EquationNodeParagraph(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_EquationNodeParagraph"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		equationnodeparagraph.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(equationnodeparagraph, DeleteEquationNodeParagraph)
@@ -4542,7 +4542,7 @@ func NewEquationNodeParagraph(src *EquationNode) ( *EquationNodeParagraph, error
 //   bool  
 func (instance *EquationNodeParagraph) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EquationNodeParagraph_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4556,7 +4556,7 @@ func (instance *EquationNodeParagraph) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *EquationNodeParagraph) GetJustification()  (EquationHorizontalJustificationType,  error)  {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_GetJustification( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHF(C.CString("EquationNodeParagraph_GetJustification"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4575,7 +4575,7 @@ func (instance *EquationNodeParagraph) GetJustification()  (EquationHorizontalJu
 //   void  
 func (instance *EquationNodeParagraph) SetJustification(value EquationHorizontalJustificationType)  error {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_SetJustification( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHG(C.CString("EquationNodeParagraph_SetJustification"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4595,7 +4595,7 @@ func (instance *EquationNodeParagraph) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.EquationNodeParagraph_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("EquationNodeParagraph_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4609,7 +4609,7 @@ func (instance *EquationNodeParagraph) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *EquationNodeParagraph) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("EquationNodeParagraph_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4623,7 +4623,7 @@ func (instance *EquationNodeParagraph) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *EquationNodeParagraph) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("EquationNodeParagraph_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4637,7 +4637,7 @@ func (instance *EquationNodeParagraph) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *EquationNodeParagraph) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("EquationNodeParagraph_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4655,7 +4655,7 @@ func (instance *EquationNodeParagraph) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *EquationNodeParagraph) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("EquationNodeParagraph_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4668,7 +4668,7 @@ func (instance *EquationNodeParagraph) SetWordArtStyle(style PresetWordArtStyle)
 //   TextOptions  
 func (instance *EquationNodeParagraph) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("EquationNodeParagraph_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4684,7 +4684,7 @@ func (instance *EquationNodeParagraph) GetTextOptions()  (*TextOptions,  error) 
 //   int32  
 func (instance *EquationNodeParagraph) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("EquationNodeParagraph_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4701,7 +4701,7 @@ func (instance *EquationNodeParagraph) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *EquationNodeParagraph) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("EquationNodeParagraph_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4724,7 +4724,7 @@ func (instance *EquationNodeParagraph) SetParentNode(value *EquationNode)  error
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.EquationNodeParagraph_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("EquationNodeParagraph_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4737,7 +4737,7 @@ func (instance *EquationNodeParagraph) SetParentNode(value *EquationNode)  error
 //   string  
 func (instance *EquationNodeParagraph) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("EquationNodeParagraph_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -4751,7 +4751,7 @@ func (instance *EquationNodeParagraph) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *EquationNodeParagraph) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("EquationNodeParagraph_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -4767,7 +4767,7 @@ func (instance *EquationNodeParagraph) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *EquationNodeParagraph) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("EquationNodeParagraph_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4790,7 +4790,7 @@ func (instance *EquationNodeParagraph) AddChild_EquationNode(node *EquationNode)
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.EquationNodeParagraph_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("EquationNodeParagraph_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4806,7 +4806,7 @@ func (instance *EquationNodeParagraph) AddChild_EquationNode(node *EquationNode)
 //   EquationNode  
 func (instance *EquationNodeParagraph) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("EquationNodeParagraph_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4824,7 +4824,7 @@ func (instance *EquationNodeParagraph) InsertChild(index int32, equationtype Equ
 //   EquationNode  
 func (instance *EquationNodeParagraph) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("EquationNodeParagraph_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4842,7 +4842,7 @@ func (instance *EquationNodeParagraph) InsertAfter(equationtype EquationNodeType
 //   EquationNode  
 func (instance *EquationNodeParagraph) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("EquationNodeParagraph_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4860,7 +4860,7 @@ func (instance *EquationNodeParagraph) InsertBefore(equationtype EquationNodeTyp
 //   EquationNode  
 func (instance *EquationNodeParagraph) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("EquationNodeParagraph_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4876,7 +4876,7 @@ func (instance *EquationNodeParagraph) GetChild(index int32)  (*EquationNode,  e
 //   void  
 func (instance *EquationNodeParagraph) Remove()  error {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("EquationNodeParagraph_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4896,7 +4896,7 @@ func (instance *EquationNodeParagraph) RemoveChild_EquationNode(node *EquationNo
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.EquationNodeParagraph_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("EquationNodeParagraph_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4911,7 +4911,7 @@ func (instance *EquationNodeParagraph) RemoveChild_EquationNode(node *EquationNo
 //   void  
 func (instance *EquationNodeParagraph) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("EquationNodeParagraph_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4924,7 +4924,7 @@ func (instance *EquationNodeParagraph) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *EquationNodeParagraph) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("EquationNodeParagraph_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4937,7 +4937,7 @@ func (instance *EquationNodeParagraph) RemoveAllChildren()  error {
 //   int32  
 func (instance *EquationNodeParagraph) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.EquationNodeParagraph_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("EquationNodeParagraph_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4967,7 +4967,7 @@ func EquationNodeParagraph_CreateNode(equationtype EquationNodeType, workbook *W
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.EquationNodeParagraph_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("EquationNodeParagraph_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4993,7 +4993,7 @@ func (instance *EquationNodeParagraph) ToFontSetting() *FontSetting {
 
 func DeleteEquationNodeParagraph(equationnodeparagraph *EquationNodeParagraph){
 	runtime.SetFinalizer(equationnodeparagraph, nil)
-	C.Delete_EquationNodeParagraph(equationnodeparagraph.ptr)
+	C.Delete_CObject(C.CString("Delete_EquationNodeParagraph"),equationnodeparagraph.ptr)
 	equationnodeparagraph.ptr = nil
 }
 
@@ -5014,7 +5014,7 @@ func NewFractionEquationNode(src *EquationNode) ( *FractionEquationNode, error) 
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_FractionEquationNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_FractionEquationNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		fractionequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(fractionequationnode, DeleteFractionEquationNode)
@@ -5031,7 +5031,7 @@ func NewFractionEquationNode(src *EquationNode) ( *FractionEquationNode, error) 
 //   bool  
 func (instance *FractionEquationNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.FractionEquationNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("FractionEquationNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -5045,7 +5045,7 @@ func (instance *FractionEquationNode) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *FractionEquationNode) GetFractionType()  (EquationFractionType,  error)  {
 	
-	CGoReturnPtr := C.FractionEquationNode_GetFractionType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHH(C.CString("FractionEquationNode_GetFractionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5064,7 +5064,7 @@ func (instance *FractionEquationNode) GetFractionType()  (EquationFractionType, 
 //   void  
 func (instance *FractionEquationNode) SetFractionType(value EquationFractionType)  error {
 	
-	CGoReturnPtr := C.FractionEquationNode_SetFractionType( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHI(C.CString("FractionEquationNode_SetFractionType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5084,7 +5084,7 @@ func (instance *FractionEquationNode) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.FractionEquationNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("FractionEquationNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -5098,7 +5098,7 @@ func (instance *FractionEquationNode) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *FractionEquationNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.FractionEquationNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("FractionEquationNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5112,7 +5112,7 @@ func (instance *FractionEquationNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *FractionEquationNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.FractionEquationNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("FractionEquationNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5126,7 +5126,7 @@ func (instance *FractionEquationNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *FractionEquationNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.FractionEquationNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("FractionEquationNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5144,7 +5144,7 @@ func (instance *FractionEquationNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *FractionEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.FractionEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("FractionEquationNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5157,7 +5157,7 @@ func (instance *FractionEquationNode) SetWordArtStyle(style PresetWordArtStyle) 
 //   TextOptions  
 func (instance *FractionEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.FractionEquationNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("FractionEquationNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5173,7 +5173,7 @@ func (instance *FractionEquationNode) GetTextOptions()  (*TextOptions,  error)  
 //   int32  
 func (instance *FractionEquationNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.FractionEquationNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("FractionEquationNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5190,7 +5190,7 @@ func (instance *FractionEquationNode) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *FractionEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.FractionEquationNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("FractionEquationNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5213,7 +5213,7 @@ func (instance *FractionEquationNode) SetParentNode(value *EquationNode)  error 
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.FractionEquationNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("FractionEquationNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5226,7 +5226,7 @@ func (instance *FractionEquationNode) SetParentNode(value *EquationNode)  error 
 //   string  
 func (instance *FractionEquationNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.FractionEquationNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("FractionEquationNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -5240,7 +5240,7 @@ func (instance *FractionEquationNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *FractionEquationNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.FractionEquationNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("FractionEquationNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -5256,7 +5256,7 @@ func (instance *FractionEquationNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *FractionEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.FractionEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("FractionEquationNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5279,7 +5279,7 @@ func (instance *FractionEquationNode) AddChild_EquationNode(node *EquationNode) 
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.FractionEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("FractionEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5295,7 +5295,7 @@ func (instance *FractionEquationNode) AddChild_EquationNode(node *EquationNode) 
 //   EquationNode  
 func (instance *FractionEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.FractionEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("FractionEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5313,7 +5313,7 @@ func (instance *FractionEquationNode) InsertChild(index int32, equationtype Equa
 //   EquationNode  
 func (instance *FractionEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.FractionEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("FractionEquationNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5331,7 +5331,7 @@ func (instance *FractionEquationNode) InsertAfter(equationtype EquationNodeType)
 //   EquationNode  
 func (instance *FractionEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.FractionEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("FractionEquationNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5349,7 +5349,7 @@ func (instance *FractionEquationNode) InsertBefore(equationtype EquationNodeType
 //   EquationNode  
 func (instance *FractionEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.FractionEquationNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("FractionEquationNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5365,7 +5365,7 @@ func (instance *FractionEquationNode) GetChild(index int32)  (*EquationNode,  er
 //   void  
 func (instance *FractionEquationNode) Remove()  error {
 	
-	CGoReturnPtr := C.FractionEquationNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("FractionEquationNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5385,7 +5385,7 @@ func (instance *FractionEquationNode) RemoveChild_EquationNode(node *EquationNod
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.FractionEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("FractionEquationNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5400,7 +5400,7 @@ func (instance *FractionEquationNode) RemoveChild_EquationNode(node *EquationNod
 //   void  
 func (instance *FractionEquationNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.FractionEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("FractionEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5413,7 +5413,7 @@ func (instance *FractionEquationNode) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *FractionEquationNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.FractionEquationNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("FractionEquationNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5426,7 +5426,7 @@ func (instance *FractionEquationNode) RemoveAllChildren()  error {
 //   int32  
 func (instance *FractionEquationNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.FractionEquationNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("FractionEquationNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5456,7 +5456,7 @@ func FractionEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wo
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.FractionEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("FractionEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5482,7 +5482,7 @@ func (instance *FractionEquationNode) ToFontSetting() *FontSetting {
 
 func DeleteFractionEquationNode(fractionequationnode *FractionEquationNode){
 	runtime.SetFinalizer(fractionequationnode, nil)
-	C.Delete_FractionEquationNode(fractionequationnode.ptr)
+	C.Delete_CObject(C.CString("Delete_FractionEquationNode"),fractionequationnode.ptr)
 	fractionequationnode.ptr = nil
 }
 
@@ -5504,7 +5504,7 @@ func NewFunctionEquationNode(src *EquationNode) ( *FunctionEquationNode, error) 
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_FunctionEquationNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_FunctionEquationNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		functionequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(functionequationnode, DeleteFunctionEquationNode)
@@ -5521,7 +5521,7 @@ func NewFunctionEquationNode(src *EquationNode) ( *FunctionEquationNode, error) 
 //   bool  
 func (instance *FunctionEquationNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.FunctionEquationNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("FunctionEquationNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -5542,7 +5542,7 @@ func (instance *FunctionEquationNode) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.FunctionEquationNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("FunctionEquationNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -5556,7 +5556,7 @@ func (instance *FunctionEquationNode) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *FunctionEquationNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.FunctionEquationNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("FunctionEquationNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5570,7 +5570,7 @@ func (instance *FunctionEquationNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *FunctionEquationNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.FunctionEquationNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("FunctionEquationNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5584,7 +5584,7 @@ func (instance *FunctionEquationNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *FunctionEquationNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.FunctionEquationNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("FunctionEquationNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5602,7 +5602,7 @@ func (instance *FunctionEquationNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *FunctionEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.FunctionEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("FunctionEquationNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5615,7 +5615,7 @@ func (instance *FunctionEquationNode) SetWordArtStyle(style PresetWordArtStyle) 
 //   TextOptions  
 func (instance *FunctionEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.FunctionEquationNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("FunctionEquationNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5631,7 +5631,7 @@ func (instance *FunctionEquationNode) GetTextOptions()  (*TextOptions,  error)  
 //   int32  
 func (instance *FunctionEquationNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.FunctionEquationNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("FunctionEquationNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5648,7 +5648,7 @@ func (instance *FunctionEquationNode) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *FunctionEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.FunctionEquationNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("FunctionEquationNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5671,7 +5671,7 @@ func (instance *FunctionEquationNode) SetParentNode(value *EquationNode)  error 
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.FunctionEquationNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("FunctionEquationNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5684,7 +5684,7 @@ func (instance *FunctionEquationNode) SetParentNode(value *EquationNode)  error 
 //   string  
 func (instance *FunctionEquationNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.FunctionEquationNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("FunctionEquationNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -5698,7 +5698,7 @@ func (instance *FunctionEquationNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *FunctionEquationNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.FunctionEquationNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("FunctionEquationNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -5714,7 +5714,7 @@ func (instance *FunctionEquationNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *FunctionEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.FunctionEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("FunctionEquationNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5737,7 +5737,7 @@ func (instance *FunctionEquationNode) AddChild_EquationNode(node *EquationNode) 
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.FunctionEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("FunctionEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5753,7 +5753,7 @@ func (instance *FunctionEquationNode) AddChild_EquationNode(node *EquationNode) 
 //   EquationNode  
 func (instance *FunctionEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.FunctionEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("FunctionEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5771,7 +5771,7 @@ func (instance *FunctionEquationNode) InsertChild(index int32, equationtype Equa
 //   EquationNode  
 func (instance *FunctionEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.FunctionEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("FunctionEquationNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5789,7 +5789,7 @@ func (instance *FunctionEquationNode) InsertAfter(equationtype EquationNodeType)
 //   EquationNode  
 func (instance *FunctionEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.FunctionEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("FunctionEquationNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5807,7 +5807,7 @@ func (instance *FunctionEquationNode) InsertBefore(equationtype EquationNodeType
 //   EquationNode  
 func (instance *FunctionEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.FunctionEquationNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("FunctionEquationNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5823,7 +5823,7 @@ func (instance *FunctionEquationNode) GetChild(index int32)  (*EquationNode,  er
 //   void  
 func (instance *FunctionEquationNode) Remove()  error {
 	
-	CGoReturnPtr := C.FunctionEquationNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("FunctionEquationNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5843,7 +5843,7 @@ func (instance *FunctionEquationNode) RemoveChild_EquationNode(node *EquationNod
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.FunctionEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("FunctionEquationNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5858,7 +5858,7 @@ func (instance *FunctionEquationNode) RemoveChild_EquationNode(node *EquationNod
 //   void  
 func (instance *FunctionEquationNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.FunctionEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("FunctionEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5871,7 +5871,7 @@ func (instance *FunctionEquationNode) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *FunctionEquationNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.FunctionEquationNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("FunctionEquationNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5884,7 +5884,7 @@ func (instance *FunctionEquationNode) RemoveAllChildren()  error {
 //   int32  
 func (instance *FunctionEquationNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.FunctionEquationNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("FunctionEquationNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5914,7 +5914,7 @@ func FunctionEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wo
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.FunctionEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("FunctionEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5940,7 +5940,7 @@ func (instance *FunctionEquationNode) ToFontSetting() *FontSetting {
 
 func DeleteFunctionEquationNode(functionequationnode *FunctionEquationNode){
 	runtime.SetFinalizer(functionequationnode, nil)
-	C.Delete_FunctionEquationNode(functionequationnode.ptr)
+	C.Delete_CObject(C.CString("Delete_FunctionEquationNode"),functionequationnode.ptr)
 	functionequationnode.ptr = nil
 }
 
@@ -5961,7 +5961,7 @@ func NewGroupCharacterEquationNode(src *EquationNode) ( *GroupCharacterEquationN
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_GroupCharacterEquationNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_GroupCharacterEquationNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		groupcharacterequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(groupcharacterequationnode, DeleteGroupCharacterEquationNode)
@@ -5978,7 +5978,7 @@ func NewGroupCharacterEquationNode(src *EquationNode) ( *GroupCharacterEquationN
 //   bool  
 func (instance *GroupCharacterEquationNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("GroupCharacterEquationNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -5994,7 +5994,7 @@ func (instance *GroupCharacterEquationNode) IsNull()  (bool,  error)  {
 //   string  
 func (instance *GroupCharacterEquationNode) GetGroupChr()  (string,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_GetGroupChr( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("GroupCharacterEquationNode_GetGroupChr"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -6012,7 +6012,7 @@ func (instance *GroupCharacterEquationNode) GetGroupChr()  (string,  error)  {
 //   void  
 func (instance *GroupCharacterEquationNode) SetGroupChr(value string)  error {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_SetGroupChr( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("GroupCharacterEquationNode_SetGroupChr"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6025,7 +6025,7 @@ func (instance *GroupCharacterEquationNode) SetGroupChr(value string)  error {
 //   int32  
 func (instance *GroupCharacterEquationNode) GetChrType()  (EquationCombiningCharacterType,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_GetChrType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGQ(C.CString("GroupCharacterEquationNode_GetChrType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6044,7 +6044,7 @@ func (instance *GroupCharacterEquationNode) GetChrType()  (EquationCombiningChar
 //   void  
 func (instance *GroupCharacterEquationNode) SetChrType(value EquationCombiningCharacterType)  error {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_SetChrType( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGR(C.CString("GroupCharacterEquationNode_SetChrType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6057,7 +6057,7 @@ func (instance *GroupCharacterEquationNode) SetChrType(value EquationCombiningCh
 //   int32  
 func (instance *GroupCharacterEquationNode) GetPosition()  (EquationCharacterPositionType,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_GetPosition( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHA(C.CString("GroupCharacterEquationNode_GetPosition"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6076,7 +6076,7 @@ func (instance *GroupCharacterEquationNode) GetPosition()  (EquationCharacterPos
 //   void  
 func (instance *GroupCharacterEquationNode) SetPosition(value EquationCharacterPositionType)  error {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_SetPosition( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHB(C.CString("GroupCharacterEquationNode_SetPosition"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6089,7 +6089,7 @@ func (instance *GroupCharacterEquationNode) SetPosition(value EquationCharacterP
 //   int32  
 func (instance *GroupCharacterEquationNode) GetVertJc()  (EquationCharacterPositionType,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_GetVertJc( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHA(C.CString("GroupCharacterEquationNode_GetVertJc"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6108,7 +6108,7 @@ func (instance *GroupCharacterEquationNode) GetVertJc()  (EquationCharacterPosit
 //   void  
 func (instance *GroupCharacterEquationNode) SetVertJc(value EquationCharacterPositionType)  error {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_SetVertJc( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHB(C.CString("GroupCharacterEquationNode_SetVertJc"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6128,7 +6128,7 @@ func (instance *GroupCharacterEquationNode) Equals(obj *Object)  (bool,  error) 
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.GroupCharacterEquationNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("GroupCharacterEquationNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -6142,7 +6142,7 @@ func (instance *GroupCharacterEquationNode) Equals(obj *Object)  (bool,  error) 
 //   int32  
 func (instance *GroupCharacterEquationNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("GroupCharacterEquationNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6156,7 +6156,7 @@ func (instance *GroupCharacterEquationNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *GroupCharacterEquationNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("GroupCharacterEquationNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6170,7 +6170,7 @@ func (instance *GroupCharacterEquationNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *GroupCharacterEquationNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("GroupCharacterEquationNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6188,7 +6188,7 @@ func (instance *GroupCharacterEquationNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *GroupCharacterEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("GroupCharacterEquationNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6201,7 +6201,7 @@ func (instance *GroupCharacterEquationNode) SetWordArtStyle(style PresetWordArtS
 //   TextOptions  
 func (instance *GroupCharacterEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("GroupCharacterEquationNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6217,7 +6217,7 @@ func (instance *GroupCharacterEquationNode) GetTextOptions()  (*TextOptions,  er
 //   int32  
 func (instance *GroupCharacterEquationNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("GroupCharacterEquationNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6234,7 +6234,7 @@ func (instance *GroupCharacterEquationNode) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *GroupCharacterEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("GroupCharacterEquationNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6257,7 +6257,7 @@ func (instance *GroupCharacterEquationNode) SetParentNode(value *EquationNode)  
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.GroupCharacterEquationNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("GroupCharacterEquationNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6270,7 +6270,7 @@ func (instance *GroupCharacterEquationNode) SetParentNode(value *EquationNode)  
 //   string  
 func (instance *GroupCharacterEquationNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("GroupCharacterEquationNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -6284,7 +6284,7 @@ func (instance *GroupCharacterEquationNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *GroupCharacterEquationNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("GroupCharacterEquationNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -6300,7 +6300,7 @@ func (instance *GroupCharacterEquationNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *GroupCharacterEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("GroupCharacterEquationNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6323,7 +6323,7 @@ func (instance *GroupCharacterEquationNode) AddChild_EquationNode(node *Equation
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.GroupCharacterEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("GroupCharacterEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6339,7 +6339,7 @@ func (instance *GroupCharacterEquationNode) AddChild_EquationNode(node *Equation
 //   EquationNode  
 func (instance *GroupCharacterEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("GroupCharacterEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6357,7 +6357,7 @@ func (instance *GroupCharacterEquationNode) InsertChild(index int32, equationtyp
 //   EquationNode  
 func (instance *GroupCharacterEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("GroupCharacterEquationNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6375,7 +6375,7 @@ func (instance *GroupCharacterEquationNode) InsertAfter(equationtype EquationNod
 //   EquationNode  
 func (instance *GroupCharacterEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("GroupCharacterEquationNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6393,7 +6393,7 @@ func (instance *GroupCharacterEquationNode) InsertBefore(equationtype EquationNo
 //   EquationNode  
 func (instance *GroupCharacterEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("GroupCharacterEquationNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6409,7 +6409,7 @@ func (instance *GroupCharacterEquationNode) GetChild(index int32)  (*EquationNod
 //   void  
 func (instance *GroupCharacterEquationNode) Remove()  error {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("GroupCharacterEquationNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6429,7 +6429,7 @@ func (instance *GroupCharacterEquationNode) RemoveChild_EquationNode(node *Equat
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.GroupCharacterEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("GroupCharacterEquationNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6444,7 +6444,7 @@ func (instance *GroupCharacterEquationNode) RemoveChild_EquationNode(node *Equat
 //   void  
 func (instance *GroupCharacterEquationNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("GroupCharacterEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6457,7 +6457,7 @@ func (instance *GroupCharacterEquationNode) RemoveChild_Int(index int32)  error 
 //   void  
 func (instance *GroupCharacterEquationNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("GroupCharacterEquationNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6470,7 +6470,7 @@ func (instance *GroupCharacterEquationNode) RemoveAllChildren()  error {
 //   int32  
 func (instance *GroupCharacterEquationNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.GroupCharacterEquationNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("GroupCharacterEquationNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6500,7 +6500,7 @@ func GroupCharacterEquationNode_CreateNode(equationtype EquationNodeType, workbo
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.GroupCharacterEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("GroupCharacterEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6526,7 +6526,7 @@ func (instance *GroupCharacterEquationNode) ToFontSetting() *FontSetting {
 
 func DeleteGroupCharacterEquationNode(groupcharacterequationnode *GroupCharacterEquationNode){
 	runtime.SetFinalizer(groupcharacterequationnode, nil)
-	C.Delete_GroupCharacterEquationNode(groupcharacterequationnode.ptr)
+	C.Delete_CObject(C.CString("Delete_GroupCharacterEquationNode"),groupcharacterequationnode.ptr)
 	groupcharacterequationnode.ptr = nil
 }
 
@@ -6547,7 +6547,7 @@ func NewLimLowUppEquationNode(src *EquationNode) ( *LimLowUppEquationNode, error
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_LimLowUppEquationNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_LimLowUppEquationNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		limlowuppequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(limlowuppequationnode, DeleteLimLowUppEquationNode)
@@ -6564,7 +6564,7 @@ func NewLimLowUppEquationNode(src *EquationNode) ( *LimLowUppEquationNode, error
 //   bool  
 func (instance *LimLowUppEquationNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LimLowUppEquationNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -6585,7 +6585,7 @@ func (instance *LimLowUppEquationNode) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.LimLowUppEquationNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("LimLowUppEquationNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -6599,7 +6599,7 @@ func (instance *LimLowUppEquationNode) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *LimLowUppEquationNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("LimLowUppEquationNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6613,7 +6613,7 @@ func (instance *LimLowUppEquationNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *LimLowUppEquationNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("LimLowUppEquationNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6627,7 +6627,7 @@ func (instance *LimLowUppEquationNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *LimLowUppEquationNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("LimLowUppEquationNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6645,7 +6645,7 @@ func (instance *LimLowUppEquationNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *LimLowUppEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("LimLowUppEquationNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6658,7 +6658,7 @@ func (instance *LimLowUppEquationNode) SetWordArtStyle(style PresetWordArtStyle)
 //   TextOptions  
 func (instance *LimLowUppEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("LimLowUppEquationNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6674,7 +6674,7 @@ func (instance *LimLowUppEquationNode) GetTextOptions()  (*TextOptions,  error) 
 //   int32  
 func (instance *LimLowUppEquationNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("LimLowUppEquationNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6691,7 +6691,7 @@ func (instance *LimLowUppEquationNode) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *LimLowUppEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("LimLowUppEquationNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6714,7 +6714,7 @@ func (instance *LimLowUppEquationNode) SetParentNode(value *EquationNode)  error
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.LimLowUppEquationNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("LimLowUppEquationNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6727,7 +6727,7 @@ func (instance *LimLowUppEquationNode) SetParentNode(value *EquationNode)  error
 //   string  
 func (instance *LimLowUppEquationNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("LimLowUppEquationNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -6741,7 +6741,7 @@ func (instance *LimLowUppEquationNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *LimLowUppEquationNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("LimLowUppEquationNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -6757,7 +6757,7 @@ func (instance *LimLowUppEquationNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *LimLowUppEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("LimLowUppEquationNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6780,7 +6780,7 @@ func (instance *LimLowUppEquationNode) AddChild_EquationNode(node *EquationNode)
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.LimLowUppEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("LimLowUppEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6796,7 +6796,7 @@ func (instance *LimLowUppEquationNode) AddChild_EquationNode(node *EquationNode)
 //   EquationNode  
 func (instance *LimLowUppEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("LimLowUppEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6814,7 +6814,7 @@ func (instance *LimLowUppEquationNode) InsertChild(index int32, equationtype Equ
 //   EquationNode  
 func (instance *LimLowUppEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("LimLowUppEquationNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6832,7 +6832,7 @@ func (instance *LimLowUppEquationNode) InsertAfter(equationtype EquationNodeType
 //   EquationNode  
 func (instance *LimLowUppEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("LimLowUppEquationNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6850,7 +6850,7 @@ func (instance *LimLowUppEquationNode) InsertBefore(equationtype EquationNodeTyp
 //   EquationNode  
 func (instance *LimLowUppEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("LimLowUppEquationNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6866,7 +6866,7 @@ func (instance *LimLowUppEquationNode) GetChild(index int32)  (*EquationNode,  e
 //   void  
 func (instance *LimLowUppEquationNode) Remove()  error {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("LimLowUppEquationNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6886,7 +6886,7 @@ func (instance *LimLowUppEquationNode) RemoveChild_EquationNode(node *EquationNo
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.LimLowUppEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("LimLowUppEquationNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6901,7 +6901,7 @@ func (instance *LimLowUppEquationNode) RemoveChild_EquationNode(node *EquationNo
 //   void  
 func (instance *LimLowUppEquationNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("LimLowUppEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6914,7 +6914,7 @@ func (instance *LimLowUppEquationNode) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *LimLowUppEquationNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("LimLowUppEquationNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6927,7 +6927,7 @@ func (instance *LimLowUppEquationNode) RemoveAllChildren()  error {
 //   int32  
 func (instance *LimLowUppEquationNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.LimLowUppEquationNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("LimLowUppEquationNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6957,7 +6957,7 @@ func LimLowUppEquationNode_CreateNode(equationtype EquationNodeType, workbook *W
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.LimLowUppEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("LimLowUppEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6983,7 +6983,7 @@ func (instance *LimLowUppEquationNode) ToFontSetting() *FontSetting {
 
 func DeleteLimLowUppEquationNode(limlowuppequationnode *LimLowUppEquationNode){
 	runtime.SetFinalizer(limlowuppequationnode, nil)
-	C.Delete_LimLowUppEquationNode(limlowuppequationnode.ptr)
+	C.Delete_CObject(C.CString("Delete_LimLowUppEquationNode"),limlowuppequationnode.ptr)
 	limlowuppequationnode.ptr = nil
 }
 
@@ -7004,7 +7004,7 @@ func NewMathematicalEquationNode(src *EquationNode) ( *MathematicalEquationNode,
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_MathematicalEquationNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_MathematicalEquationNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		mathematicalequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(mathematicalequationnode, DeleteMathematicalEquationNode)
@@ -7021,7 +7021,7 @@ func NewMathematicalEquationNode(src *EquationNode) ( *MathematicalEquationNode,
 //   bool  
 func (instance *MathematicalEquationNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("MathematicalEquationNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7042,7 +7042,7 @@ func (instance *MathematicalEquationNode) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.MathematicalEquationNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("MathematicalEquationNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7056,7 +7056,7 @@ func (instance *MathematicalEquationNode) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *MathematicalEquationNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("MathematicalEquationNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7070,7 +7070,7 @@ func (instance *MathematicalEquationNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *MathematicalEquationNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("MathematicalEquationNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7084,7 +7084,7 @@ func (instance *MathematicalEquationNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *MathematicalEquationNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("MathematicalEquationNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7102,7 +7102,7 @@ func (instance *MathematicalEquationNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *MathematicalEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("MathematicalEquationNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7115,7 +7115,7 @@ func (instance *MathematicalEquationNode) SetWordArtStyle(style PresetWordArtSty
 //   TextOptions  
 func (instance *MathematicalEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("MathematicalEquationNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7131,7 +7131,7 @@ func (instance *MathematicalEquationNode) GetTextOptions()  (*TextOptions,  erro
 //   int32  
 func (instance *MathematicalEquationNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("MathematicalEquationNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7148,7 +7148,7 @@ func (instance *MathematicalEquationNode) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *MathematicalEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("MathematicalEquationNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7171,7 +7171,7 @@ func (instance *MathematicalEquationNode) SetParentNode(value *EquationNode)  er
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.MathematicalEquationNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("MathematicalEquationNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7184,7 +7184,7 @@ func (instance *MathematicalEquationNode) SetParentNode(value *EquationNode)  er
 //   string  
 func (instance *MathematicalEquationNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("MathematicalEquationNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -7198,7 +7198,7 @@ func (instance *MathematicalEquationNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *MathematicalEquationNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("MathematicalEquationNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -7214,7 +7214,7 @@ func (instance *MathematicalEquationNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *MathematicalEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("MathematicalEquationNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7237,7 +7237,7 @@ func (instance *MathematicalEquationNode) AddChild_EquationNode(node *EquationNo
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.MathematicalEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("MathematicalEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7253,7 +7253,7 @@ func (instance *MathematicalEquationNode) AddChild_EquationNode(node *EquationNo
 //   EquationNode  
 func (instance *MathematicalEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("MathematicalEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7271,7 +7271,7 @@ func (instance *MathematicalEquationNode) InsertChild(index int32, equationtype 
 //   EquationNode  
 func (instance *MathematicalEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("MathematicalEquationNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7289,7 +7289,7 @@ func (instance *MathematicalEquationNode) InsertAfter(equationtype EquationNodeT
 //   EquationNode  
 func (instance *MathematicalEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("MathematicalEquationNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7307,7 +7307,7 @@ func (instance *MathematicalEquationNode) InsertBefore(equationtype EquationNode
 //   EquationNode  
 func (instance *MathematicalEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("MathematicalEquationNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7323,7 +7323,7 @@ func (instance *MathematicalEquationNode) GetChild(index int32)  (*EquationNode,
 //   void  
 func (instance *MathematicalEquationNode) Remove()  error {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("MathematicalEquationNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7343,7 +7343,7 @@ func (instance *MathematicalEquationNode) RemoveChild_EquationNode(node *Equatio
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.MathematicalEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("MathematicalEquationNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7358,7 +7358,7 @@ func (instance *MathematicalEquationNode) RemoveChild_EquationNode(node *Equatio
 //   void  
 func (instance *MathematicalEquationNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("MathematicalEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7371,7 +7371,7 @@ func (instance *MathematicalEquationNode) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *MathematicalEquationNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("MathematicalEquationNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7384,7 +7384,7 @@ func (instance *MathematicalEquationNode) RemoveAllChildren()  error {
 //   int32  
 func (instance *MathematicalEquationNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.MathematicalEquationNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("MathematicalEquationNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7414,7 +7414,7 @@ func MathematicalEquationNode_CreateNode(equationtype EquationNodeType, workbook
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.MathematicalEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("MathematicalEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7440,7 +7440,7 @@ func (instance *MathematicalEquationNode) ToFontSetting() *FontSetting {
 
 func DeleteMathematicalEquationNode(mathematicalequationnode *MathematicalEquationNode){
 	runtime.SetFinalizer(mathematicalequationnode, nil)
-	C.Delete_MathematicalEquationNode(mathematicalequationnode.ptr)
+	C.Delete_CObject(C.CString("Delete_MathematicalEquationNode"),mathematicalequationnode.ptr)
 	mathematicalequationnode.ptr = nil
 }
 
@@ -7461,7 +7461,7 @@ func NewMatrixEquationNode(src *EquationNode) ( *MatrixEquationNode, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_MatrixEquationNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_MatrixEquationNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		matrixequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(matrixequationnode, DeleteMatrixEquationNode)
@@ -7478,7 +7478,7 @@ func NewMatrixEquationNode(src *EquationNode) ( *MatrixEquationNode, error) {
 //   bool  
 func (instance *MatrixEquationNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("MatrixEquationNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7492,7 +7492,7 @@ func (instance *MatrixEquationNode) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *MatrixEquationNode) GetBaseJc()  (EquationVerticalJustificationType,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_GetBaseJc( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHJ(C.CString("MatrixEquationNode_GetBaseJc"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7511,7 +7511,7 @@ func (instance *MatrixEquationNode) GetBaseJc()  (EquationVerticalJustificationT
 //   void  
 func (instance *MatrixEquationNode) SetBaseJc(value EquationVerticalJustificationType)  error {
 	
-	CGoReturnPtr := C.MatrixEquationNode_SetBaseJc( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHK(C.CString("MatrixEquationNode_SetBaseJc"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7524,7 +7524,7 @@ func (instance *MatrixEquationNode) SetBaseJc(value EquationVerticalJustificatio
 //   bool  
 func (instance *MatrixEquationNode) IsHidePlaceholder()  (bool,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_IsHidePlaceholder( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("MatrixEquationNode_IsHidePlaceholder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7540,7 +7540,7 @@ func (instance *MatrixEquationNode) IsHidePlaceholder()  (bool,  error)  {
 //   void  
 func (instance *MatrixEquationNode) SetIsHidePlaceholder(value bool)  error {
 	
-	CGoReturnPtr := C.MatrixEquationNode_SetIsHidePlaceholder( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("MatrixEquationNode_SetIsHidePlaceholder"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7560,7 +7560,7 @@ func (instance *MatrixEquationNode) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.MatrixEquationNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("MatrixEquationNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7574,7 +7574,7 @@ func (instance *MatrixEquationNode) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *MatrixEquationNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("MatrixEquationNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7588,7 +7588,7 @@ func (instance *MatrixEquationNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *MatrixEquationNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("MatrixEquationNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7602,7 +7602,7 @@ func (instance *MatrixEquationNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *MatrixEquationNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("MatrixEquationNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7620,7 +7620,7 @@ func (instance *MatrixEquationNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *MatrixEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.MatrixEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("MatrixEquationNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7633,7 +7633,7 @@ func (instance *MatrixEquationNode) SetWordArtStyle(style PresetWordArtStyle)  e
 //   TextOptions  
 func (instance *MatrixEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("MatrixEquationNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7649,7 +7649,7 @@ func (instance *MatrixEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 //   int32  
 func (instance *MatrixEquationNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("MatrixEquationNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7666,7 +7666,7 @@ func (instance *MatrixEquationNode) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *MatrixEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("MatrixEquationNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7689,7 +7689,7 @@ func (instance *MatrixEquationNode) SetParentNode(value *EquationNode)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.MatrixEquationNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("MatrixEquationNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7702,7 +7702,7 @@ func (instance *MatrixEquationNode) SetParentNode(value *EquationNode)  error {
 //   string  
 func (instance *MatrixEquationNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("MatrixEquationNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -7716,7 +7716,7 @@ func (instance *MatrixEquationNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *MatrixEquationNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("MatrixEquationNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -7732,7 +7732,7 @@ func (instance *MatrixEquationNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *MatrixEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("MatrixEquationNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7755,7 +7755,7 @@ func (instance *MatrixEquationNode) AddChild_EquationNode(node *EquationNode)  e
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.MatrixEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("MatrixEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7771,7 +7771,7 @@ func (instance *MatrixEquationNode) AddChild_EquationNode(node *EquationNode)  e
 //   EquationNode  
 func (instance *MatrixEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("MatrixEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7789,7 +7789,7 @@ func (instance *MatrixEquationNode) InsertChild(index int32, equationtype Equati
 //   EquationNode  
 func (instance *MatrixEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("MatrixEquationNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7807,7 +7807,7 @@ func (instance *MatrixEquationNode) InsertAfter(equationtype EquationNodeType)  
 //   EquationNode  
 func (instance *MatrixEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("MatrixEquationNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7825,7 +7825,7 @@ func (instance *MatrixEquationNode) InsertBefore(equationtype EquationNodeType) 
 //   EquationNode  
 func (instance *MatrixEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("MatrixEquationNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7841,7 +7841,7 @@ func (instance *MatrixEquationNode) GetChild(index int32)  (*EquationNode,  erro
 //   void  
 func (instance *MatrixEquationNode) Remove()  error {
 	
-	CGoReturnPtr := C.MatrixEquationNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("MatrixEquationNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7861,7 +7861,7 @@ func (instance *MatrixEquationNode) RemoveChild_EquationNode(node *EquationNode)
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.MatrixEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("MatrixEquationNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7876,7 +7876,7 @@ func (instance *MatrixEquationNode) RemoveChild_EquationNode(node *EquationNode)
 //   void  
 func (instance *MatrixEquationNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.MatrixEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("MatrixEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7889,7 +7889,7 @@ func (instance *MatrixEquationNode) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *MatrixEquationNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.MatrixEquationNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("MatrixEquationNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7902,7 +7902,7 @@ func (instance *MatrixEquationNode) RemoveAllChildren()  error {
 //   int32  
 func (instance *MatrixEquationNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.MatrixEquationNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("MatrixEquationNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7932,7 +7932,7 @@ func MatrixEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.MatrixEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("MatrixEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7958,7 +7958,7 @@ func (instance *MatrixEquationNode) ToFontSetting() *FontSetting {
 
 func DeleteMatrixEquationNode(matrixequationnode *MatrixEquationNode){
 	runtime.SetFinalizer(matrixequationnode, nil)
-	C.Delete_MatrixEquationNode(matrixequationnode.ptr)
+	C.Delete_CObject(C.CString("Delete_MatrixEquationNode"),matrixequationnode.ptr)
 	matrixequationnode.ptr = nil
 }
 
@@ -7979,7 +7979,7 @@ func NewNaryEquationNode(src *EquationNode) ( *NaryEquationNode, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_NaryEquationNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_NaryEquationNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		naryequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(naryequationnode, DeleteNaryEquationNode)
@@ -7996,7 +7996,7 @@ func NewNaryEquationNode(src *EquationNode) ( *NaryEquationNode, error) {
 //   bool  
 func (instance *NaryEquationNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("NaryEquationNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -8010,7 +8010,7 @@ func (instance *NaryEquationNode) IsNull()  (bool,  error)  {
 //   bool  
 func (instance *NaryEquationNode) IsHideSubscript()  (bool,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_IsHideSubscript( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("NaryEquationNode_IsHideSubscript"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -8026,7 +8026,7 @@ func (instance *NaryEquationNode) IsHideSubscript()  (bool,  error)  {
 //   void  
 func (instance *NaryEquationNode) SetIsHideSubscript(value bool)  error {
 	
-	CGoReturnPtr := C.NaryEquationNode_SetIsHideSubscript( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("NaryEquationNode_SetIsHideSubscript"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8039,7 +8039,7 @@ func (instance *NaryEquationNode) SetIsHideSubscript(value bool)  error {
 //   bool  
 func (instance *NaryEquationNode) IsHideSuperscript()  (bool,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_IsHideSuperscript( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("NaryEquationNode_IsHideSuperscript"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -8055,7 +8055,7 @@ func (instance *NaryEquationNode) IsHideSuperscript()  (bool,  error)  {
 //   void  
 func (instance *NaryEquationNode) SetIsHideSuperscript(value bool)  error {
 	
-	CGoReturnPtr := C.NaryEquationNode_SetIsHideSuperscript( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("NaryEquationNode_SetIsHideSuperscript"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8068,7 +8068,7 @@ func (instance *NaryEquationNode) SetIsHideSuperscript(value bool)  error {
 //   int32  
 func (instance *NaryEquationNode) GetLimitLocation()  (EquationLimitLocationType,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_GetLimitLocation( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHL(C.CString("NaryEquationNode_GetLimitLocation"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8087,7 +8087,7 @@ func (instance *NaryEquationNode) GetLimitLocation()  (EquationLimitLocationType
 //   void  
 func (instance *NaryEquationNode) SetLimitLocation(value EquationLimitLocationType)  error {
 	
-	CGoReturnPtr := C.NaryEquationNode_SetLimitLocation( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHM(C.CString("NaryEquationNode_SetLimitLocation"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8102,7 +8102,7 @@ func (instance *NaryEquationNode) SetLimitLocation(value EquationLimitLocationTy
 //   string  
 func (instance *NaryEquationNode) GetNaryOperator()  (string,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_GetNaryOperator( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("NaryEquationNode_GetNaryOperator"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -8120,7 +8120,7 @@ func (instance *NaryEquationNode) GetNaryOperator()  (string,  error)  {
 //   void  
 func (instance *NaryEquationNode) SetNaryOperator(value string)  error {
 	
-	CGoReturnPtr := C.NaryEquationNode_SetNaryOperator( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("NaryEquationNode_SetNaryOperator"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8133,7 +8133,7 @@ func (instance *NaryEquationNode) SetNaryOperator(value string)  error {
 //   int32  
 func (instance *NaryEquationNode) GetNaryOperatorType()  (EquationMathematicalOperatorType,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_GetNaryOperatorType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHN(C.CString("NaryEquationNode_GetNaryOperatorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8152,7 +8152,7 @@ func (instance *NaryEquationNode) GetNaryOperatorType()  (EquationMathematicalOp
 //   void  
 func (instance *NaryEquationNode) SetNaryOperatorType(value EquationMathematicalOperatorType)  error {
 	
-	CGoReturnPtr := C.NaryEquationNode_SetNaryOperatorType( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHO(C.CString("NaryEquationNode_SetNaryOperatorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8165,7 +8165,7 @@ func (instance *NaryEquationNode) SetNaryOperatorType(value EquationMathematical
 //   bool  
 func (instance *NaryEquationNode) GetNaryGrow()  (bool,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_GetNaryGrow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("NaryEquationNode_GetNaryGrow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -8181,7 +8181,7 @@ func (instance *NaryEquationNode) GetNaryGrow()  (bool,  error)  {
 //   void  
 func (instance *NaryEquationNode) SetNaryGrow(value bool)  error {
 	
-	CGoReturnPtr := C.NaryEquationNode_SetNaryGrow( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("NaryEquationNode_SetNaryGrow"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8201,7 +8201,7 @@ func (instance *NaryEquationNode) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.NaryEquationNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("NaryEquationNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -8215,7 +8215,7 @@ func (instance *NaryEquationNode) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *NaryEquationNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("NaryEquationNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8229,7 +8229,7 @@ func (instance *NaryEquationNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *NaryEquationNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("NaryEquationNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8243,7 +8243,7 @@ func (instance *NaryEquationNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *NaryEquationNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("NaryEquationNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8261,7 +8261,7 @@ func (instance *NaryEquationNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *NaryEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.NaryEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("NaryEquationNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8274,7 +8274,7 @@ func (instance *NaryEquationNode) SetWordArtStyle(style PresetWordArtStyle)  err
 //   TextOptions  
 func (instance *NaryEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("NaryEquationNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8290,7 +8290,7 @@ func (instance *NaryEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 //   int32  
 func (instance *NaryEquationNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("NaryEquationNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8307,7 +8307,7 @@ func (instance *NaryEquationNode) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *NaryEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("NaryEquationNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8330,7 +8330,7 @@ func (instance *NaryEquationNode) SetParentNode(value *EquationNode)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.NaryEquationNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("NaryEquationNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8343,7 +8343,7 @@ func (instance *NaryEquationNode) SetParentNode(value *EquationNode)  error {
 //   string  
 func (instance *NaryEquationNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("NaryEquationNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -8357,7 +8357,7 @@ func (instance *NaryEquationNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *NaryEquationNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("NaryEquationNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -8373,7 +8373,7 @@ func (instance *NaryEquationNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *NaryEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("NaryEquationNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8396,7 +8396,7 @@ func (instance *NaryEquationNode) AddChild_EquationNode(node *EquationNode)  err
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.NaryEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("NaryEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8412,7 +8412,7 @@ func (instance *NaryEquationNode) AddChild_EquationNode(node *EquationNode)  err
 //   EquationNode  
 func (instance *NaryEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("NaryEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8430,7 +8430,7 @@ func (instance *NaryEquationNode) InsertChild(index int32, equationtype Equation
 //   EquationNode  
 func (instance *NaryEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("NaryEquationNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8448,7 +8448,7 @@ func (instance *NaryEquationNode) InsertAfter(equationtype EquationNodeType)  (*
 //   EquationNode  
 func (instance *NaryEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("NaryEquationNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8466,7 +8466,7 @@ func (instance *NaryEquationNode) InsertBefore(equationtype EquationNodeType)  (
 //   EquationNode  
 func (instance *NaryEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("NaryEquationNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8482,7 +8482,7 @@ func (instance *NaryEquationNode) GetChild(index int32)  (*EquationNode,  error)
 //   void  
 func (instance *NaryEquationNode) Remove()  error {
 	
-	CGoReturnPtr := C.NaryEquationNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("NaryEquationNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8502,7 +8502,7 @@ func (instance *NaryEquationNode) RemoveChild_EquationNode(node *EquationNode)  
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.NaryEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("NaryEquationNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8517,7 +8517,7 @@ func (instance *NaryEquationNode) RemoveChild_EquationNode(node *EquationNode)  
 //   void  
 func (instance *NaryEquationNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.NaryEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("NaryEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8530,7 +8530,7 @@ func (instance *NaryEquationNode) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *NaryEquationNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.NaryEquationNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("NaryEquationNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8543,7 +8543,7 @@ func (instance *NaryEquationNode) RemoveAllChildren()  error {
 //   int32  
 func (instance *NaryEquationNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.NaryEquationNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("NaryEquationNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8573,7 +8573,7 @@ func NaryEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbo
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.NaryEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("NaryEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8599,7 +8599,7 @@ func (instance *NaryEquationNode) ToFontSetting() *FontSetting {
 
 func DeleteNaryEquationNode(naryequationnode *NaryEquationNode){
 	runtime.SetFinalizer(naryequationnode, nil)
-	C.Delete_NaryEquationNode(naryequationnode.ptr)
+	C.Delete_CObject(C.CString("Delete_NaryEquationNode"),naryequationnode.ptr)
 	naryequationnode.ptr = nil
 }
 
@@ -8620,7 +8620,7 @@ func NewRadicalEquationNode(src *EquationNode) ( *RadicalEquationNode, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_RadicalEquationNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_RadicalEquationNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		radicalequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(radicalequationnode, DeleteRadicalEquationNode)
@@ -8637,7 +8637,7 @@ func NewRadicalEquationNode(src *EquationNode) ( *RadicalEquationNode, error) {
 //   bool  
 func (instance *RadicalEquationNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RadicalEquationNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RadicalEquationNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -8651,7 +8651,7 @@ func (instance *RadicalEquationNode) IsNull()  (bool,  error)  {
 //   bool  
 func (instance *RadicalEquationNode) IsDegHide()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RadicalEquationNode_IsDegHide( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RadicalEquationNode_IsDegHide"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -8667,7 +8667,7 @@ func (instance *RadicalEquationNode) IsDegHide()  (bool,  error)  {
 //   void  
 func (instance *RadicalEquationNode) SetIsDegHide(value bool)  error {
 	
-	CGoReturnPtr := C.RadicalEquationNode_SetIsDegHide( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("RadicalEquationNode_SetIsDegHide"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8687,7 +8687,7 @@ func (instance *RadicalEquationNode) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.RadicalEquationNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("RadicalEquationNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -8701,7 +8701,7 @@ func (instance *RadicalEquationNode) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *RadicalEquationNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RadicalEquationNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RadicalEquationNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8715,7 +8715,7 @@ func (instance *RadicalEquationNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *RadicalEquationNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RadicalEquationNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RadicalEquationNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8729,7 +8729,7 @@ func (instance *RadicalEquationNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *RadicalEquationNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.RadicalEquationNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("RadicalEquationNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8747,7 +8747,7 @@ func (instance *RadicalEquationNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *RadicalEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.RadicalEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("RadicalEquationNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8760,7 +8760,7 @@ func (instance *RadicalEquationNode) SetWordArtStyle(style PresetWordArtStyle)  
 //   TextOptions  
 func (instance *RadicalEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.RadicalEquationNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("RadicalEquationNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8776,7 +8776,7 @@ func (instance *RadicalEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 //   int32  
 func (instance *RadicalEquationNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.RadicalEquationNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("RadicalEquationNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8793,7 +8793,7 @@ func (instance *RadicalEquationNode) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *RadicalEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.RadicalEquationNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("RadicalEquationNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8816,7 +8816,7 @@ func (instance *RadicalEquationNode) SetParentNode(value *EquationNode)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.RadicalEquationNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("RadicalEquationNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8829,7 +8829,7 @@ func (instance *RadicalEquationNode) SetParentNode(value *EquationNode)  error {
 //   string  
 func (instance *RadicalEquationNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.RadicalEquationNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("RadicalEquationNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -8843,7 +8843,7 @@ func (instance *RadicalEquationNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *RadicalEquationNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.RadicalEquationNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("RadicalEquationNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -8859,7 +8859,7 @@ func (instance *RadicalEquationNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *RadicalEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.RadicalEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("RadicalEquationNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8882,7 +8882,7 @@ func (instance *RadicalEquationNode) AddChild_EquationNode(node *EquationNode)  
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.RadicalEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("RadicalEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8898,7 +8898,7 @@ func (instance *RadicalEquationNode) AddChild_EquationNode(node *EquationNode)  
 //   EquationNode  
 func (instance *RadicalEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.RadicalEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("RadicalEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8916,7 +8916,7 @@ func (instance *RadicalEquationNode) InsertChild(index int32, equationtype Equat
 //   EquationNode  
 func (instance *RadicalEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.RadicalEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("RadicalEquationNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8934,7 +8934,7 @@ func (instance *RadicalEquationNode) InsertAfter(equationtype EquationNodeType) 
 //   EquationNode  
 func (instance *RadicalEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.RadicalEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("RadicalEquationNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8952,7 +8952,7 @@ func (instance *RadicalEquationNode) InsertBefore(equationtype EquationNodeType)
 //   EquationNode  
 func (instance *RadicalEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.RadicalEquationNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("RadicalEquationNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8968,7 +8968,7 @@ func (instance *RadicalEquationNode) GetChild(index int32)  (*EquationNode,  err
 //   void  
 func (instance *RadicalEquationNode) Remove()  error {
 	
-	CGoReturnPtr := C.RadicalEquationNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("RadicalEquationNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8988,7 +8988,7 @@ func (instance *RadicalEquationNode) RemoveChild_EquationNode(node *EquationNode
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.RadicalEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("RadicalEquationNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9003,7 +9003,7 @@ func (instance *RadicalEquationNode) RemoveChild_EquationNode(node *EquationNode
 //   void  
 func (instance *RadicalEquationNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.RadicalEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("RadicalEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9016,7 +9016,7 @@ func (instance *RadicalEquationNode) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *RadicalEquationNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.RadicalEquationNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("RadicalEquationNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9029,7 +9029,7 @@ func (instance *RadicalEquationNode) RemoveAllChildren()  error {
 //   int32  
 func (instance *RadicalEquationNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.RadicalEquationNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("RadicalEquationNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9059,7 +9059,7 @@ func RadicalEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wor
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.RadicalEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("RadicalEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9085,7 +9085,7 @@ func (instance *RadicalEquationNode) ToFontSetting() *FontSetting {
 
 func DeleteRadicalEquationNode(radicalequationnode *RadicalEquationNode){
 	runtime.SetFinalizer(radicalequationnode, nil)
-	C.Delete_RadicalEquationNode(radicalequationnode.ptr)
+	C.Delete_CObject(C.CString("Delete_RadicalEquationNode"),radicalequationnode.ptr)
 	radicalequationnode.ptr = nil
 }
 
@@ -9107,7 +9107,7 @@ func NewSubSupEquationNode(src *EquationNode) ( *SubSupEquationNode, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_SubSupEquationNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_SubSupEquationNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		subsupequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(subsupequationnode, DeleteSubSupEquationNode)
@@ -9124,7 +9124,7 @@ func NewSubSupEquationNode(src *EquationNode) ( *SubSupEquationNode, error) {
 //   bool  
 func (instance *SubSupEquationNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SubSupEquationNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SubSupEquationNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -9145,7 +9145,7 @@ func (instance *SubSupEquationNode) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.SubSupEquationNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("SubSupEquationNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -9159,7 +9159,7 @@ func (instance *SubSupEquationNode) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *SubSupEquationNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.SubSupEquationNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("SubSupEquationNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9173,7 +9173,7 @@ func (instance *SubSupEquationNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *SubSupEquationNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.SubSupEquationNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("SubSupEquationNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9187,7 +9187,7 @@ func (instance *SubSupEquationNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *SubSupEquationNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.SubSupEquationNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("SubSupEquationNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9205,7 +9205,7 @@ func (instance *SubSupEquationNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *SubSupEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.SubSupEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("SubSupEquationNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9218,7 +9218,7 @@ func (instance *SubSupEquationNode) SetWordArtStyle(style PresetWordArtStyle)  e
 //   TextOptions  
 func (instance *SubSupEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.SubSupEquationNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("SubSupEquationNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9234,7 +9234,7 @@ func (instance *SubSupEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 //   int32  
 func (instance *SubSupEquationNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.SubSupEquationNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("SubSupEquationNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9251,7 +9251,7 @@ func (instance *SubSupEquationNode) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *SubSupEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.SubSupEquationNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("SubSupEquationNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9274,7 +9274,7 @@ func (instance *SubSupEquationNode) SetParentNode(value *EquationNode)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.SubSupEquationNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("SubSupEquationNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9287,7 +9287,7 @@ func (instance *SubSupEquationNode) SetParentNode(value *EquationNode)  error {
 //   string  
 func (instance *SubSupEquationNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.SubSupEquationNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("SubSupEquationNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -9301,7 +9301,7 @@ func (instance *SubSupEquationNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *SubSupEquationNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.SubSupEquationNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("SubSupEquationNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -9317,7 +9317,7 @@ func (instance *SubSupEquationNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *SubSupEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.SubSupEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("SubSupEquationNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9340,7 +9340,7 @@ func (instance *SubSupEquationNode) AddChild_EquationNode(node *EquationNode)  e
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.SubSupEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("SubSupEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9356,7 +9356,7 @@ func (instance *SubSupEquationNode) AddChild_EquationNode(node *EquationNode)  e
 //   EquationNode  
 func (instance *SubSupEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.SubSupEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("SubSupEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9374,7 +9374,7 @@ func (instance *SubSupEquationNode) InsertChild(index int32, equationtype Equati
 //   EquationNode  
 func (instance *SubSupEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.SubSupEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("SubSupEquationNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9392,7 +9392,7 @@ func (instance *SubSupEquationNode) InsertAfter(equationtype EquationNodeType)  
 //   EquationNode  
 func (instance *SubSupEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.SubSupEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("SubSupEquationNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9410,7 +9410,7 @@ func (instance *SubSupEquationNode) InsertBefore(equationtype EquationNodeType) 
 //   EquationNode  
 func (instance *SubSupEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.SubSupEquationNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("SubSupEquationNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9426,7 +9426,7 @@ func (instance *SubSupEquationNode) GetChild(index int32)  (*EquationNode,  erro
 //   void  
 func (instance *SubSupEquationNode) Remove()  error {
 	
-	CGoReturnPtr := C.SubSupEquationNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("SubSupEquationNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9446,7 +9446,7 @@ func (instance *SubSupEquationNode) RemoveChild_EquationNode(node *EquationNode)
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.SubSupEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("SubSupEquationNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9461,7 +9461,7 @@ func (instance *SubSupEquationNode) RemoveChild_EquationNode(node *EquationNode)
 //   void  
 func (instance *SubSupEquationNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.SubSupEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("SubSupEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9474,7 +9474,7 @@ func (instance *SubSupEquationNode) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *SubSupEquationNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.SubSupEquationNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("SubSupEquationNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9487,7 +9487,7 @@ func (instance *SubSupEquationNode) RemoveAllChildren()  error {
 //   int32  
 func (instance *SubSupEquationNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.SubSupEquationNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("SubSupEquationNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9517,7 +9517,7 @@ func SubSupEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.SubSupEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("SubSupEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9543,7 +9543,7 @@ func (instance *SubSupEquationNode) ToFontSetting() *FontSetting {
 
 func DeleteSubSupEquationNode(subsupequationnode *SubSupEquationNode){
 	runtime.SetFinalizer(subsupequationnode, nil)
-	C.Delete_SubSupEquationNode(subsupequationnode.ptr)
+	C.Delete_CObject(C.CString("Delete_SubSupEquationNode"),subsupequationnode.ptr)
 	subsupequationnode.ptr = nil
 }
 
@@ -9565,7 +9565,7 @@ func NewTextRunEquationNode(src *EquationNode) ( *TextRunEquationNode, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_TextRunEquationNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_TextRunEquationNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		textrunequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(textrunequationnode, DeleteTextRunEquationNode)
@@ -9582,7 +9582,7 @@ func NewTextRunEquationNode(src *EquationNode) ( *TextRunEquationNode, error) {
 //   bool  
 func (instance *TextRunEquationNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextRunEquationNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextRunEquationNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -9596,7 +9596,7 @@ func (instance *TextRunEquationNode) IsNull()  (bool,  error)  {
 //   string  
 func (instance *TextRunEquationNode) GetText()  (string,  error)  {
 	
-	CGoReturnPtr := C.TextRunEquationNode_GetText( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("TextRunEquationNode_GetText"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -9612,7 +9612,7 @@ func (instance *TextRunEquationNode) GetText()  (string,  error)  {
 //   void  
 func (instance *TextRunEquationNode) SetText(value string)  error {
 	
-	CGoReturnPtr := C.TextRunEquationNode_SetText( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("TextRunEquationNode_SetText"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9632,7 +9632,7 @@ func (instance *TextRunEquationNode) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.TextRunEquationNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("TextRunEquationNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -9646,7 +9646,7 @@ func (instance *TextRunEquationNode) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *TextRunEquationNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.TextRunEquationNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("TextRunEquationNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9660,7 +9660,7 @@ func (instance *TextRunEquationNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *TextRunEquationNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.TextRunEquationNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("TextRunEquationNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9674,7 +9674,7 @@ func (instance *TextRunEquationNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *TextRunEquationNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.TextRunEquationNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("TextRunEquationNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9692,7 +9692,7 @@ func (instance *TextRunEquationNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *TextRunEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.TextRunEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("TextRunEquationNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9705,7 +9705,7 @@ func (instance *TextRunEquationNode) SetWordArtStyle(style PresetWordArtStyle)  
 //   TextOptions  
 func (instance *TextRunEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.TextRunEquationNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("TextRunEquationNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9721,7 +9721,7 @@ func (instance *TextRunEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 //   int32  
 func (instance *TextRunEquationNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.TextRunEquationNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("TextRunEquationNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9738,7 +9738,7 @@ func (instance *TextRunEquationNode) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *TextRunEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.TextRunEquationNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("TextRunEquationNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9761,7 +9761,7 @@ func (instance *TextRunEquationNode) SetParentNode(value *EquationNode)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.TextRunEquationNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("TextRunEquationNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9774,7 +9774,7 @@ func (instance *TextRunEquationNode) SetParentNode(value *EquationNode)  error {
 //   string  
 func (instance *TextRunEquationNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.TextRunEquationNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("TextRunEquationNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -9788,7 +9788,7 @@ func (instance *TextRunEquationNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *TextRunEquationNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.TextRunEquationNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("TextRunEquationNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -9804,7 +9804,7 @@ func (instance *TextRunEquationNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *TextRunEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.TextRunEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("TextRunEquationNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9827,7 +9827,7 @@ func (instance *TextRunEquationNode) AddChild_EquationNode(node *EquationNode)  
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.TextRunEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("TextRunEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9843,7 +9843,7 @@ func (instance *TextRunEquationNode) AddChild_EquationNode(node *EquationNode)  
 //   EquationNode  
 func (instance *TextRunEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.TextRunEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("TextRunEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9861,7 +9861,7 @@ func (instance *TextRunEquationNode) InsertChild(index int32, equationtype Equat
 //   EquationNode  
 func (instance *TextRunEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.TextRunEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("TextRunEquationNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9879,7 +9879,7 @@ func (instance *TextRunEquationNode) InsertAfter(equationtype EquationNodeType) 
 //   EquationNode  
 func (instance *TextRunEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.TextRunEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("TextRunEquationNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9897,7 +9897,7 @@ func (instance *TextRunEquationNode) InsertBefore(equationtype EquationNodeType)
 //   EquationNode  
 func (instance *TextRunEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.TextRunEquationNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("TextRunEquationNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9913,7 +9913,7 @@ func (instance *TextRunEquationNode) GetChild(index int32)  (*EquationNode,  err
 //   void  
 func (instance *TextRunEquationNode) Remove()  error {
 	
-	CGoReturnPtr := C.TextRunEquationNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("TextRunEquationNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9933,7 +9933,7 @@ func (instance *TextRunEquationNode) RemoveChild_EquationNode(node *EquationNode
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.TextRunEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("TextRunEquationNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9948,7 +9948,7 @@ func (instance *TextRunEquationNode) RemoveChild_EquationNode(node *EquationNode
 //   void  
 func (instance *TextRunEquationNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.TextRunEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("TextRunEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9961,7 +9961,7 @@ func (instance *TextRunEquationNode) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *TextRunEquationNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.TextRunEquationNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("TextRunEquationNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9974,7 +9974,7 @@ func (instance *TextRunEquationNode) RemoveAllChildren()  error {
 //   int32  
 func (instance *TextRunEquationNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.TextRunEquationNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("TextRunEquationNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10004,7 +10004,7 @@ func TextRunEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wor
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.TextRunEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("TextRunEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10030,7 +10030,7 @@ func (instance *TextRunEquationNode) ToFontSetting() *FontSetting {
 
 func DeleteTextRunEquationNode(textrunequationnode *TextRunEquationNode){
 	runtime.SetFinalizer(textrunequationnode, nil)
-	C.Delete_TextRunEquationNode(textrunequationnode.ptr)
+	C.Delete_CObject(C.CString("Delete_TextRunEquationNode"),textrunequationnode.ptr)
 	textrunequationnode.ptr = nil
 }
 
@@ -10051,7 +10051,7 @@ func NewUnknowEquationNode(src *EquationNode) ( *UnknowEquationNode, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_UnknowEquationNode(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGP(C.CString("New_UnknowEquationNode"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		unknowequationnode.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(unknowequationnode, DeleteUnknowEquationNode)
@@ -10068,7 +10068,7 @@ func NewUnknowEquationNode(src *EquationNode) ( *UnknowEquationNode, error) {
 //   bool  
 func (instance *UnknowEquationNode) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.UnknowEquationNode_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("UnknowEquationNode_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10089,7 +10089,7 @@ func (instance *UnknowEquationNode) Equals(obj *Object)  (bool,  error)  {
 	  obj_ptr =obj.ptr
 	}
 
-	CGoReturnPtr := C.UnknowEquationNode_Equals( instance.ptr, obj_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZDU(C.CString("UnknowEquationNode_Equals"), instance.ptr, obj_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10103,7 +10103,7 @@ func (instance *UnknowEquationNode) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *UnknowEquationNode) GetStartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.UnknowEquationNode_GetStartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("UnknowEquationNode_GetStartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10117,7 +10117,7 @@ func (instance *UnknowEquationNode) GetStartIndex()  (int32,  error)  {
 //   int32  
 func (instance *UnknowEquationNode) GetLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.UnknowEquationNode_GetLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("UnknowEquationNode_GetLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10131,7 +10131,7 @@ func (instance *UnknowEquationNode) GetLength()  (int32,  error)  {
 //   Font  
 func (instance *UnknowEquationNode) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.UnknowEquationNode_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("UnknowEquationNode_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10149,7 +10149,7 @@ func (instance *UnknowEquationNode) GetFont()  (*Font,  error)  {
 //   void  
 func (instance *UnknowEquationNode) SetWordArtStyle(style PresetWordArtStyle)  error {
 	
-	CGoReturnPtr := C.UnknowEquationNode_SetWordArtStyle( instance.ptr, C.int( int32(style)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("UnknowEquationNode_SetWordArtStyle"), instance.ptr, C.int( int32(style)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10162,7 +10162,7 @@ func (instance *UnknowEquationNode) SetWordArtStyle(style PresetWordArtStyle)  e
 //   TextOptions  
 func (instance *UnknowEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	
-	CGoReturnPtr := C.UnknowEquationNode_GetTextOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("UnknowEquationNode_GetTextOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10178,7 +10178,7 @@ func (instance *UnknowEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 //   int32  
 func (instance *UnknowEquationNode) GetType()  (TextNodeType,  error)  {
 	
-	CGoReturnPtr := C.UnknowEquationNode_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("UnknowEquationNode_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10195,7 +10195,7 @@ func (instance *UnknowEquationNode) GetType()  (TextNodeType,  error)  {
 //   EquationNode  
 func (instance *UnknowEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.UnknowEquationNode_GetParentNode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("UnknowEquationNode_GetParentNode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10218,7 +10218,7 @@ func (instance *UnknowEquationNode) SetParentNode(value *EquationNode)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.UnknowEquationNode_SetParentNode( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("UnknowEquationNode_SetParentNode"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10231,7 +10231,7 @@ func (instance *UnknowEquationNode) SetParentNode(value *EquationNode)  error {
 //   string  
 func (instance *UnknowEquationNode) ToLaTeX()  (string,  error)  {
 	
-	CGoReturnPtr := C.UnknowEquationNode_ToLaTeX( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("UnknowEquationNode_ToLaTeX"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -10245,7 +10245,7 @@ func (instance *UnknowEquationNode) ToLaTeX()  (string,  error)  {
 //   string  
 func (instance *UnknowEquationNode) ToMathML()  (string,  error)  {
 	
-	CGoReturnPtr := C.UnknowEquationNode_ToMathML( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("UnknowEquationNode_ToMathML"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -10261,7 +10261,7 @@ func (instance *UnknowEquationNode) ToMathML()  (string,  error)  {
 //   EquationNode  
 func (instance *UnknowEquationNode) AddChild_EquationNodeType(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.UnknowEquationNode_AddChild_EquationNodeType( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("UnknowEquationNode_AddChild_EquationNodeType"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10284,7 +10284,7 @@ func (instance *UnknowEquationNode) AddChild_EquationNode(node *EquationNode)  e
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.UnknowEquationNode_AddChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("UnknowEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10300,7 +10300,7 @@ func (instance *UnknowEquationNode) AddChild_EquationNode(node *EquationNode)  e
 //   EquationNode  
 func (instance *UnknowEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.UnknowEquationNode_InsertChild( instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGV(C.CString("UnknowEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10318,7 +10318,7 @@ func (instance *UnknowEquationNode) InsertChild(index int32, equationtype Equati
 //   EquationNode  
 func (instance *UnknowEquationNode) InsertAfter(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.UnknowEquationNode_InsertAfter( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("UnknowEquationNode_InsertAfter"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10336,7 +10336,7 @@ func (instance *UnknowEquationNode) InsertAfter(equationtype EquationNodeType)  
 //   EquationNode  
 func (instance *UnknowEquationNode) InsertBefore(equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.UnknowEquationNode_InsertBefore( instance.ptr, C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("UnknowEquationNode_InsertBefore"), instance.ptr, C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10354,7 +10354,7 @@ func (instance *UnknowEquationNode) InsertBefore(equationtype EquationNodeType) 
 //   EquationNode  
 func (instance *UnknowEquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.UnknowEquationNode_GetChild( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("UnknowEquationNode_GetChild"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10370,7 +10370,7 @@ func (instance *UnknowEquationNode) GetChild(index int32)  (*EquationNode,  erro
 //   void  
 func (instance *UnknowEquationNode) Remove()  error {
 	
-	CGoReturnPtr := C.UnknowEquationNode_Remove( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("UnknowEquationNode_Remove"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10390,7 +10390,7 @@ func (instance *UnknowEquationNode) RemoveChild_EquationNode(node *EquationNode)
 	  node_ptr =node.ptr
 	}
 
-	CGoReturnPtr := C.UnknowEquationNode_RemoveChild_EquationNode( instance.ptr, node_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGT(C.CString("UnknowEquationNode_RemoveChild_EquationNode"), instance.ptr, node_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10405,7 +10405,7 @@ func (instance *UnknowEquationNode) RemoveChild_EquationNode(node *EquationNode)
 //   void  
 func (instance *UnknowEquationNode) RemoveChild_Int(index int32)  error {
 	
-	CGoReturnPtr := C.UnknowEquationNode_RemoveChild_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("UnknowEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10418,7 +10418,7 @@ func (instance *UnknowEquationNode) RemoveChild_Int(index int32)  error {
 //   void  
 func (instance *UnknowEquationNode) RemoveAllChildren()  error {
 	
-	CGoReturnPtr := C.UnknowEquationNode_RemoveAllChildren( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("UnknowEquationNode_RemoveAllChildren"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10431,7 +10431,7 @@ func (instance *UnknowEquationNode) RemoveAllChildren()  error {
 //   int32  
 func (instance *UnknowEquationNode) GetEquationType()  (EquationNodeType,  error)  {
 	
-	CGoReturnPtr := C.UnknowEquationNode_GetEquationType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGX(C.CString("UnknowEquationNode_GetEquationType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10461,7 +10461,7 @@ func UnknowEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.UnknowEquationNode_CreateNode(C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("UnknowEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10487,6 +10487,6 @@ func (instance *UnknowEquationNode) ToFontSetting() *FontSetting {
 
 func DeleteUnknowEquationNode(unknowequationnode *UnknowEquationNode){
 	runtime.SetFinalizer(unknowequationnode, nil)
-	C.Delete_UnknowEquationNode(unknowequationnode.ptr)
+	C.Delete_CObject(C.CString("Delete_UnknowEquationNode"),unknowequationnode.ptr)
 	unknowequationnode.ptr = nil
 }

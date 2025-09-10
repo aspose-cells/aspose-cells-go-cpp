@@ -11,7 +11,7 @@ package asposecells
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
 // #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/win_x86_64" -L"${SRCDIR}/lib/win_x86_64" -lAspose.Cells.CWrapper
-// #include <AsposeCellsCWrapper.h>
+// #include <CellsFunctionMap.h>
 import "C"
 import (
 	"fmt"  
@@ -141,7 +141,7 @@ type HighlightChangesOptions struct {
 //   listOnNewSheet - bool 
 func NewHighlightChangesOptions(highlightonscreen bool, listonnewsheet bool) ( *HighlightChangesOptions, error) {
 	highlightchangesoptions := &HighlightChangesOptions{}
-	CGoReturnPtr := C.New_HighlightChangesOptions(C.bool(highlightonscreen), C.bool(listonnewsheet))
+	CGoReturnPtr := C.CellsGoFunctoinZBGY(C.CString("New_HighlightChangesOptions"),C.bool(highlightonscreen), C.bool(listonnewsheet))
 	if CGoReturnPtr.error_no == 0 {
 		highlightchangesoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(highlightchangesoptions, DeleteHighlightChangesOptions)
@@ -158,7 +158,7 @@ func NewHighlightChangesOptions(highlightonscreen bool, listonnewsheet bool) ( *
 //   bool  
 func (instance *HighlightChangesOptions) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.HighlightChangesOptions_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("HighlightChangesOptions_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -172,7 +172,7 @@ func (instance *HighlightChangesOptions) IsNull()  (bool,  error)  {
 
 func DeleteHighlightChangesOptions(highlightchangesoptions *HighlightChangesOptions){
 	runtime.SetFinalizer(highlightchangesoptions, nil)
-	C.Delete_HighlightChangesOptions(highlightchangesoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_HighlightChangesOptions"),highlightchangesoptions.ptr)
 	highlightchangesoptions.ptr = nil
 }
 
@@ -189,7 +189,7 @@ type Revision struct {
 //   bool  
 func (instance *Revision) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.Revision_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("Revision_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -203,7 +203,7 @@ func (instance *Revision) IsNull()  (bool,  error)  {
 //   Worksheet  
 func (instance *Revision) GetWorksheet()  (*Worksheet,  error)  {
 	
-	CGoReturnPtr := C.Revision_GetWorksheet( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBP(C.CString("Revision_GetWorksheet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -219,7 +219,7 @@ func (instance *Revision) GetWorksheet()  (*Worksheet,  error)  {
 //   int32  
 func (instance *Revision) GetId()  (int32,  error)  {
 	
-	CGoReturnPtr := C.Revision_GetId( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("Revision_GetId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -233,7 +233,7 @@ func (instance *Revision) GetId()  (int32,  error)  {
 //   int32  
 func (instance *Revision) GetType()  (RevisionType,  error)  {
 	
-	CGoReturnPtr := C.Revision_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHA(C.CString("Revision_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -250,7 +250,7 @@ func (instance *Revision) GetType()  (RevisionType,  error)  {
 
 func DeleteRevision(revision *Revision){
 	runtime.SetFinalizer(revision, nil)
-	C.Delete_Revision(revision.ptr)
+	C.Delete_CObject(C.CString("Delete_Revision"),revision.ptr)
 	revision.ptr = nil
 }
 
@@ -271,7 +271,7 @@ func NewRevisionAutoFormat(src *Revision) ( *RevisionAutoFormat, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_RevisionAutoFormat(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHB(C.CString("New_RevisionAutoFormat"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisionautoformat.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisionautoformat, DeleteRevisionAutoFormat)
@@ -288,7 +288,7 @@ func NewRevisionAutoFormat(src *Revision) ( *RevisionAutoFormat, error) {
 //   bool  
 func (instance *RevisionAutoFormat) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionAutoFormat_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionAutoFormat_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -302,7 +302,7 @@ func (instance *RevisionAutoFormat) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *RevisionAutoFormat) GetType()  (RevisionType,  error)  {
 	
-	CGoReturnPtr := C.RevisionAutoFormat_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHA(C.CString("RevisionAutoFormat_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -319,7 +319,7 @@ func (instance *RevisionAutoFormat) GetType()  (RevisionType,  error)  {
 //   CellArea  
 func (instance *RevisionAutoFormat) GetCellArea()  (*CellArea,  error)  {
 	
-	CGoReturnPtr := C.RevisionAutoFormat_GetCellArea( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAG(C.CString("RevisionAutoFormat_GetCellArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -335,7 +335,7 @@ func (instance *RevisionAutoFormat) GetCellArea()  (*CellArea,  error)  {
 //   Worksheet  
 func (instance *RevisionAutoFormat) GetWorksheet()  (*Worksheet,  error)  {
 	
-	CGoReturnPtr := C.RevisionAutoFormat_GetWorksheet( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBP(C.CString("RevisionAutoFormat_GetWorksheet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -351,7 +351,7 @@ func (instance *RevisionAutoFormat) GetWorksheet()  (*Worksheet,  error)  {
 //   int32  
 func (instance *RevisionAutoFormat) GetId()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionAutoFormat_GetId( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionAutoFormat_GetId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -370,7 +370,7 @@ func (instance *RevisionAutoFormat) ToRevision() *Revision {
 
 func DeleteRevisionAutoFormat(revisionautoformat *RevisionAutoFormat){
 	runtime.SetFinalizer(revisionautoformat, nil)
-	C.Delete_RevisionAutoFormat(revisionautoformat.ptr)
+	C.Delete_CObject(C.CString("Delete_RevisionAutoFormat"),revisionautoformat.ptr)
 	revisionautoformat.ptr = nil
 }
 
@@ -391,7 +391,7 @@ func NewRevisionCellChange(src *Revision) ( *RevisionCellChange, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_RevisionCellChange(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHB(C.CString("New_RevisionCellChange"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisioncellchange.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisioncellchange, DeleteRevisionCellChange)
@@ -408,7 +408,7 @@ func NewRevisionCellChange(src *Revision) ( *RevisionCellChange, error) {
 //   bool  
 func (instance *RevisionCellChange) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellChange_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionCellChange_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -422,7 +422,7 @@ func (instance *RevisionCellChange) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *RevisionCellChange) GetType()  (RevisionType,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellChange_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHA(C.CString("RevisionCellChange_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -439,7 +439,7 @@ func (instance *RevisionCellChange) GetType()  (RevisionType,  error)  {
 //   string  
 func (instance *RevisionCellChange) GetCellName()  (string,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellChange_GetCellName( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("RevisionCellChange_GetCellName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -453,7 +453,7 @@ func (instance *RevisionCellChange) GetCellName()  (string,  error)  {
 //   int32  
 func (instance *RevisionCellChange) GetRow()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellChange_GetRow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionCellChange_GetRow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -467,7 +467,7 @@ func (instance *RevisionCellChange) GetRow()  (int32,  error)  {
 //   int32  
 func (instance *RevisionCellChange) GetColumn()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellChange_GetColumn( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionCellChange_GetColumn"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -481,7 +481,7 @@ func (instance *RevisionCellChange) GetColumn()  (int32,  error)  {
 //   bool  
 func (instance *RevisionCellChange) IsNewFormatted()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellChange_IsNewFormatted( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionCellChange_IsNewFormatted"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -495,7 +495,7 @@ func (instance *RevisionCellChange) IsNewFormatted()  (bool,  error)  {
 //   bool  
 func (instance *RevisionCellChange) IsOldFormatted()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellChange_IsOldFormatted( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionCellChange_IsOldFormatted"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -509,7 +509,7 @@ func (instance *RevisionCellChange) IsOldFormatted()  (bool,  error)  {
 //   string  
 func (instance *RevisionCellChange) GetOldFormula()  (string,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellChange_GetOldFormula( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("RevisionCellChange_GetOldFormula"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -523,7 +523,7 @@ func (instance *RevisionCellChange) GetOldFormula()  (string,  error)  {
 //   Object  
 func (instance *RevisionCellChange) GetOldValue()  (*Object,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellChange_GetOldValue( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBR(C.CString("RevisionCellChange_GetOldValue"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -539,7 +539,7 @@ func (instance *RevisionCellChange) GetOldValue()  (*Object,  error)  {
 //   Object  
 func (instance *RevisionCellChange) GetNewValue()  (*Object,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellChange_GetNewValue( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBR(C.CString("RevisionCellChange_GetNewValue"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -555,7 +555,7 @@ func (instance *RevisionCellChange) GetNewValue()  (*Object,  error)  {
 //   string  
 func (instance *RevisionCellChange) GetNewFormula()  (string,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellChange_GetNewFormula( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("RevisionCellChange_GetNewFormula"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -569,7 +569,7 @@ func (instance *RevisionCellChange) GetNewFormula()  (string,  error)  {
 //   Style  
 func (instance *RevisionCellChange) GetNewStyle()  (*Style,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellChange_GetNewStyle( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZCL(C.CString("RevisionCellChange_GetNewStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -585,7 +585,7 @@ func (instance *RevisionCellChange) GetNewStyle()  (*Style,  error)  {
 //   Style  
 func (instance *RevisionCellChange) GetOldStyle()  (*Style,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellChange_GetOldStyle( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZCL(C.CString("RevisionCellChange_GetOldStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -601,7 +601,7 @@ func (instance *RevisionCellChange) GetOldStyle()  (*Style,  error)  {
 //   Worksheet  
 func (instance *RevisionCellChange) GetWorksheet()  (*Worksheet,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellChange_GetWorksheet( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBP(C.CString("RevisionCellChange_GetWorksheet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -617,7 +617,7 @@ func (instance *RevisionCellChange) GetWorksheet()  (*Worksheet,  error)  {
 //   int32  
 func (instance *RevisionCellChange) GetId()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellChange_GetId( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionCellChange_GetId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -636,7 +636,7 @@ func (instance *RevisionCellChange) ToRevision() *Revision {
 
 func DeleteRevisionCellChange(revisioncellchange *RevisionCellChange){
 	runtime.SetFinalizer(revisioncellchange, nil)
-	C.Delete_RevisionCellChange(revisioncellchange.ptr)
+	C.Delete_CObject(C.CString("Delete_RevisionCellChange"),revisioncellchange.ptr)
 	revisioncellchange.ptr = nil
 }
 
@@ -657,7 +657,7 @@ func NewRevisionCellComment(src *Revision) ( *RevisionCellComment, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_RevisionCellComment(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHB(C.CString("New_RevisionCellComment"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisioncellcomment.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisioncellcomment, DeleteRevisionCellComment)
@@ -674,7 +674,7 @@ func NewRevisionCellComment(src *Revision) ( *RevisionCellComment, error) {
 //   bool  
 func (instance *RevisionCellComment) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellComment_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionCellComment_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -688,7 +688,7 @@ func (instance *RevisionCellComment) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *RevisionCellComment) GetType()  (RevisionType,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellComment_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHA(C.CString("RevisionCellComment_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -705,7 +705,7 @@ func (instance *RevisionCellComment) GetType()  (RevisionType,  error)  {
 //   int32  
 func (instance *RevisionCellComment) GetRow()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellComment_GetRow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionCellComment_GetRow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -719,7 +719,7 @@ func (instance *RevisionCellComment) GetRow()  (int32,  error)  {
 //   int32  
 func (instance *RevisionCellComment) GetColumn()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellComment_GetColumn( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionCellComment_GetColumn"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -733,7 +733,7 @@ func (instance *RevisionCellComment) GetColumn()  (int32,  error)  {
 //   string  
 func (instance *RevisionCellComment) GetCellName()  (string,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellComment_GetCellName( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("RevisionCellComment_GetCellName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -749,7 +749,7 @@ func (instance *RevisionCellComment) GetCellName()  (string,  error)  {
 //   void  
 func (instance *RevisionCellComment) SetCellName(value string)  error {
 	
-	CGoReturnPtr := C.RevisionCellComment_SetCellName( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("RevisionCellComment_SetCellName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -762,7 +762,7 @@ func (instance *RevisionCellComment) SetCellName(value string)  error {
 //   int32  
 func (instance *RevisionCellComment) GetActionType()  (RevisionActionType,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellComment_GetActionType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHC(C.CString("RevisionCellComment_GetActionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -779,7 +779,7 @@ func (instance *RevisionCellComment) GetActionType()  (RevisionActionType,  erro
 //   bool  
 func (instance *RevisionCellComment) IsOldComment()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellComment_IsOldComment( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionCellComment_IsOldComment"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -793,7 +793,7 @@ func (instance *RevisionCellComment) IsOldComment()  (bool,  error)  {
 //   int32  
 func (instance *RevisionCellComment) GetOldLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellComment_GetOldLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionCellComment_GetOldLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -807,7 +807,7 @@ func (instance *RevisionCellComment) GetOldLength()  (int32,  error)  {
 //   int32  
 func (instance *RevisionCellComment) GetNewLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellComment_GetNewLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionCellComment_GetNewLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -821,7 +821,7 @@ func (instance *RevisionCellComment) GetNewLength()  (int32,  error)  {
 //   Worksheet  
 func (instance *RevisionCellComment) GetWorksheet()  (*Worksheet,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellComment_GetWorksheet( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBP(C.CString("RevisionCellComment_GetWorksheet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -837,7 +837,7 @@ func (instance *RevisionCellComment) GetWorksheet()  (*Worksheet,  error)  {
 //   int32  
 func (instance *RevisionCellComment) GetId()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellComment_GetId( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionCellComment_GetId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -856,7 +856,7 @@ func (instance *RevisionCellComment) ToRevision() *Revision {
 
 func DeleteRevisionCellComment(revisioncellcomment *RevisionCellComment){
 	runtime.SetFinalizer(revisioncellcomment, nil)
-	C.Delete_RevisionCellComment(revisioncellcomment.ptr)
+	C.Delete_CObject(C.CString("Delete_RevisionCellComment"),revisioncellcomment.ptr)
 	revisioncellcomment.ptr = nil
 }
 
@@ -877,7 +877,7 @@ func NewRevisionCellMove(src *Revision) ( *RevisionCellMove, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_RevisionCellMove(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHB(C.CString("New_RevisionCellMove"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisioncellmove.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisioncellmove, DeleteRevisionCellMove)
@@ -894,7 +894,7 @@ func NewRevisionCellMove(src *Revision) ( *RevisionCellMove, error) {
 //   bool  
 func (instance *RevisionCellMove) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellMove_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionCellMove_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -908,7 +908,7 @@ func (instance *RevisionCellMove) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *RevisionCellMove) GetType()  (RevisionType,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellMove_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHA(C.CString("RevisionCellMove_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -925,7 +925,7 @@ func (instance *RevisionCellMove) GetType()  (RevisionType,  error)  {
 //   CellArea  
 func (instance *RevisionCellMove) GetSourceArea()  (*CellArea,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellMove_GetSourceArea( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAG(C.CString("RevisionCellMove_GetSourceArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -941,7 +941,7 @@ func (instance *RevisionCellMove) GetSourceArea()  (*CellArea,  error)  {
 //   CellArea  
 func (instance *RevisionCellMove) GetDestinationArea()  (*CellArea,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellMove_GetDestinationArea( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAG(C.CString("RevisionCellMove_GetDestinationArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -957,7 +957,7 @@ func (instance *RevisionCellMove) GetDestinationArea()  (*CellArea,  error)  {
 //   Worksheet  
 func (instance *RevisionCellMove) GetSourceWorksheet()  (*Worksheet,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellMove_GetSourceWorksheet( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBP(C.CString("RevisionCellMove_GetSourceWorksheet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -973,7 +973,7 @@ func (instance *RevisionCellMove) GetSourceWorksheet()  (*Worksheet,  error)  {
 //   Worksheet  
 func (instance *RevisionCellMove) GetWorksheet()  (*Worksheet,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellMove_GetWorksheet( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBP(C.CString("RevisionCellMove_GetWorksheet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -989,7 +989,7 @@ func (instance *RevisionCellMove) GetWorksheet()  (*Worksheet,  error)  {
 //   int32  
 func (instance *RevisionCellMove) GetId()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionCellMove_GetId( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionCellMove_GetId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1008,7 +1008,7 @@ func (instance *RevisionCellMove) ToRevision() *Revision {
 
 func DeleteRevisionCellMove(revisioncellmove *RevisionCellMove){
 	runtime.SetFinalizer(revisioncellmove, nil)
-	C.Delete_RevisionCellMove(revisioncellmove.ptr)
+	C.Delete_CObject(C.CString("Delete_RevisionCellMove"),revisioncellmove.ptr)
 	revisioncellmove.ptr = nil
 }
 
@@ -1025,7 +1025,7 @@ type RevisionCollection struct {
 //   bool  
 func (instance *RevisionCollection) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionCollection_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionCollection_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1041,7 +1041,7 @@ func (instance *RevisionCollection) IsNull()  (bool,  error)  {
 //   Revision  
 func (instance *RevisionCollection) Get(index int32)  (*Revision,  error)  {
 	
-	CGoReturnPtr := C.RevisionCollection_Get( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZBHD(C.CString("RevisionCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1056,7 +1056,7 @@ func (instance *RevisionCollection) Get(index int32)  (*Revision,  error)  {
 //   int32  
 func (instance *RevisionCollection) GetCount()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionCollection_GetCount( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionCollection_GetCount"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1070,7 +1070,7 @@ func (instance *RevisionCollection) GetCount()  (int32,  error)  {
 
 func DeleteRevisionCollection(revisioncollection *RevisionCollection){
 	runtime.SetFinalizer(revisioncollection, nil)
-	C.Delete_RevisionCollection(revisioncollection.ptr)
+	C.Delete_CObject(C.CString("Delete_RevisionCollection"),revisioncollection.ptr)
 	revisioncollection.ptr = nil
 }
 
@@ -1091,7 +1091,7 @@ func NewRevisionCustomView(src *Revision) ( *RevisionCustomView, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_RevisionCustomView(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHB(C.CString("New_RevisionCustomView"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisioncustomview.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisioncustomview, DeleteRevisionCustomView)
@@ -1108,7 +1108,7 @@ func NewRevisionCustomView(src *Revision) ( *RevisionCustomView, error) {
 //   bool  
 func (instance *RevisionCustomView) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionCustomView_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionCustomView_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1122,7 +1122,7 @@ func (instance *RevisionCustomView) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *RevisionCustomView) GetType()  (RevisionType,  error)  {
 	
-	CGoReturnPtr := C.RevisionCustomView_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHA(C.CString("RevisionCustomView_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1139,7 +1139,7 @@ func (instance *RevisionCustomView) GetType()  (RevisionType,  error)  {
 //   int32  
 func (instance *RevisionCustomView) GetActionType()  (RevisionActionType,  error)  {
 	
-	CGoReturnPtr := C.RevisionCustomView_GetActionType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHC(C.CString("RevisionCustomView_GetActionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1163,7 +1163,7 @@ func (instance *RevisionCustomView) GetGuid(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.RevisionCustomView_GetGuid( instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("RevisionCustomView_GetGuid"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1176,7 +1176,7 @@ func (instance *RevisionCustomView) GetGuid(uuid *UUID)  error {
 //   Worksheet  
 func (instance *RevisionCustomView) GetWorksheet()  (*Worksheet,  error)  {
 	
-	CGoReturnPtr := C.RevisionCustomView_GetWorksheet( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBP(C.CString("RevisionCustomView_GetWorksheet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1192,7 +1192,7 @@ func (instance *RevisionCustomView) GetWorksheet()  (*Worksheet,  error)  {
 //   int32  
 func (instance *RevisionCustomView) GetId()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionCustomView_GetId( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionCustomView_GetId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1211,7 +1211,7 @@ func (instance *RevisionCustomView) ToRevision() *Revision {
 
 func DeleteRevisionCustomView(revisioncustomview *RevisionCustomView){
 	runtime.SetFinalizer(revisioncustomview, nil)
-	C.Delete_RevisionCustomView(revisioncustomview.ptr)
+	C.Delete_CObject(C.CString("Delete_RevisionCustomView"),revisioncustomview.ptr)
 	revisioncustomview.ptr = nil
 }
 
@@ -1232,7 +1232,7 @@ func NewRevisionDefinedName(src *Revision) ( *RevisionDefinedName, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_RevisionDefinedName(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHB(C.CString("New_RevisionDefinedName"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisiondefinedname.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisiondefinedname, DeleteRevisionDefinedName)
@@ -1249,7 +1249,7 @@ func NewRevisionDefinedName(src *Revision) ( *RevisionDefinedName, error) {
 //   bool  
 func (instance *RevisionDefinedName) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionDefinedName_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionDefinedName_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1263,7 +1263,7 @@ func (instance *RevisionDefinedName) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *RevisionDefinedName) GetType()  (RevisionType,  error)  {
 	
-	CGoReturnPtr := C.RevisionDefinedName_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHA(C.CString("RevisionDefinedName_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1280,7 +1280,7 @@ func (instance *RevisionDefinedName) GetType()  (RevisionType,  error)  {
 //   string  
 func (instance *RevisionDefinedName) GetText()  (string,  error)  {
 	
-	CGoReturnPtr := C.RevisionDefinedName_GetText( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("RevisionDefinedName_GetText"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1294,7 +1294,7 @@ func (instance *RevisionDefinedName) GetText()  (string,  error)  {
 //   string  
 func (instance *RevisionDefinedName) GetOldFormula()  (string,  error)  {
 	
-	CGoReturnPtr := C.RevisionDefinedName_GetOldFormula( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("RevisionDefinedName_GetOldFormula"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1308,7 +1308,7 @@ func (instance *RevisionDefinedName) GetOldFormula()  (string,  error)  {
 //   string  
 func (instance *RevisionDefinedName) GetNewFormula()  (string,  error)  {
 	
-	CGoReturnPtr := C.RevisionDefinedName_GetNewFormula( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("RevisionDefinedName_GetNewFormula"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1322,7 +1322,7 @@ func (instance *RevisionDefinedName) GetNewFormula()  (string,  error)  {
 //   Worksheet  
 func (instance *RevisionDefinedName) GetWorksheet()  (*Worksheet,  error)  {
 	
-	CGoReturnPtr := C.RevisionDefinedName_GetWorksheet( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBP(C.CString("RevisionDefinedName_GetWorksheet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1338,7 +1338,7 @@ func (instance *RevisionDefinedName) GetWorksheet()  (*Worksheet,  error)  {
 //   int32  
 func (instance *RevisionDefinedName) GetId()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionDefinedName_GetId( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionDefinedName_GetId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1357,7 +1357,7 @@ func (instance *RevisionDefinedName) ToRevision() *Revision {
 
 func DeleteRevisionDefinedName(revisiondefinedname *RevisionDefinedName){
 	runtime.SetFinalizer(revisiondefinedname, nil)
-	C.Delete_RevisionDefinedName(revisiondefinedname.ptr)
+	C.Delete_CObject(C.CString("Delete_RevisionDefinedName"),revisiondefinedname.ptr)
 	revisiondefinedname.ptr = nil
 }
 
@@ -1378,7 +1378,7 @@ func NewRevisionFormat(src *Revision) ( *RevisionFormat, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_RevisionFormat(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHB(C.CString("New_RevisionFormat"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisionformat.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisionformat, DeleteRevisionFormat)
@@ -1395,7 +1395,7 @@ func NewRevisionFormat(src *Revision) ( *RevisionFormat, error) {
 //   bool  
 func (instance *RevisionFormat) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionFormat_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionFormat_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1409,7 +1409,7 @@ func (instance *RevisionFormat) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *RevisionFormat) GetType()  (RevisionType,  error)  {
 	
-	CGoReturnPtr := C.RevisionFormat_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHA(C.CString("RevisionFormat_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1426,7 +1426,7 @@ func (instance *RevisionFormat) GetType()  (RevisionType,  error)  {
 //   []CellArea  
 func (instance *RevisionFormat) GetAreas()  ([]CellArea,  error)  {
 	
-	CGoReturnPtr := C.RevisionFormat_GetAreas( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEM(C.CString("RevisionFormat_GetAreas"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1447,7 +1447,7 @@ func (instance *RevisionFormat) GetAreas()  ([]CellArea,  error)  {
 //   Style  
 func (instance *RevisionFormat) GetStyle()  (*Style,  error)  {
 	
-	CGoReturnPtr := C.RevisionFormat_GetStyle( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZCL(C.CString("RevisionFormat_GetStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1463,7 +1463,7 @@ func (instance *RevisionFormat) GetStyle()  (*Style,  error)  {
 //   Worksheet  
 func (instance *RevisionFormat) GetWorksheet()  (*Worksheet,  error)  {
 	
-	CGoReturnPtr := C.RevisionFormat_GetWorksheet( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBP(C.CString("RevisionFormat_GetWorksheet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1479,7 +1479,7 @@ func (instance *RevisionFormat) GetWorksheet()  (*Worksheet,  error)  {
 //   int32  
 func (instance *RevisionFormat) GetId()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionFormat_GetId( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionFormat_GetId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1498,7 +1498,7 @@ func (instance *RevisionFormat) ToRevision() *Revision {
 
 func DeleteRevisionFormat(revisionformat *RevisionFormat){
 	runtime.SetFinalizer(revisionformat, nil)
-	C.Delete_RevisionFormat(revisionformat.ptr)
+	C.Delete_CObject(C.CString("Delete_RevisionFormat"),revisionformat.ptr)
 	revisionformat.ptr = nil
 }
 
@@ -1512,7 +1512,7 @@ type RevisionHeader struct {
 // Default constructor.
 func NewRevisionHeader() ( *RevisionHeader, error) {
 	revisionheader := &RevisionHeader{}
-	CGoReturnPtr := C.New_RevisionHeader()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_RevisionHeader"),)
 	if CGoReturnPtr.error_no == 0 {
 		revisionheader.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisionheader, DeleteRevisionHeader)
@@ -1529,7 +1529,7 @@ func NewRevisionHeader() ( *RevisionHeader, error) {
 //   bool  
 func (instance *RevisionHeader) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionHeader_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionHeader_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1543,12 +1543,12 @@ func (instance *RevisionHeader) IsNull()  (bool,  error)  {
 //   Date  
 func (instance *RevisionHeader) GetSavedTime()  (time.Time,  error)  {
 	
-	CGoReturnPtr := C.RevisionHeader_GetSavedTime( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZCG(C.CString("RevisionHeader_GetSavedTime"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  time.Unix(0, 0), err
 	}
-	result := time.Date(int( C.Date_Get_year(CGoReturnPtr.return_value).return_value ),time.Month(int( C.Date_Get_month(CGoReturnPtr.return_value).return_value)),int( C.Date_Get_day(CGoReturnPtr.return_value).return_value),int(  C.Date_Get_hour(CGoReturnPtr.return_value).return_value),int( C.Date_Get_minute(CGoReturnPtr.return_value).return_value),int(  C.Date_Get_second(CGoReturnPtr.return_value).return_value), 0, time.UTC) 
+	result := time.Date(int( C.CellsGoFunctoinZBLJ(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZBLJ(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZBLJ(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLJ(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLJ(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLJ(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
 
 	return result, nil 
 }
@@ -1561,7 +1561,7 @@ func (instance *RevisionHeader) SetSavedTime(value time.Time)  error {
 	
 	time_value := C.Get_Date( C.int(value.Year()), C.int(value.Month()) , C.int(value.Day()) , C.int(value.Hour()) , C.int(value.Minute()) , C.int(value.Second())  )
 
-	CGoReturnPtr := C.RevisionHeader_SetSavedTime( instance.ptr, time_value)
+	CGoReturnPtr := C.CellsGoFunctoinZZCF(C.CString("RevisionHeader_SetSavedTime"), instance.ptr, time_value)
 	C.Delete_GetDate( time_value)
 
 	if CGoReturnPtr.error_no != 0 {
@@ -1576,7 +1576,7 @@ func (instance *RevisionHeader) SetSavedTime(value time.Time)  error {
 //   string  
 func (instance *RevisionHeader) Get_UserName()  (string,  error)  {
 	
-	CGoReturnPtr := C.RevisionHeader_Get_UserName( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("RevisionHeader_Get_UserName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1592,7 +1592,7 @@ func (instance *RevisionHeader) Get_UserName()  (string,  error)  {
 //   void  
 func (instance *RevisionHeader) SetUserName(value string)  error {
 	
-	CGoReturnPtr := C.RevisionHeader_SetUserName( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("RevisionHeader_SetUserName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1605,7 +1605,7 @@ func (instance *RevisionHeader) SetUserName(value string)  error {
 
 func DeleteRevisionHeader(revisionheader *RevisionHeader){
 	runtime.SetFinalizer(revisionheader, nil)
-	C.Delete_RevisionHeader(revisionheader.ptr)
+	C.Delete_CObject(C.CString("Delete_RevisionHeader"),revisionheader.ptr)
 	revisionheader.ptr = nil
 }
 
@@ -1626,7 +1626,7 @@ func NewRevisionInsertDelete(src *Revision) ( *RevisionInsertDelete, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_RevisionInsertDelete(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHB(C.CString("New_RevisionInsertDelete"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisioninsertdelete.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisioninsertdelete, DeleteRevisionInsertDelete)
@@ -1643,7 +1643,7 @@ func NewRevisionInsertDelete(src *Revision) ( *RevisionInsertDelete, error) {
 //   bool  
 func (instance *RevisionInsertDelete) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionInsertDelete_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionInsertDelete_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1657,7 +1657,7 @@ func (instance *RevisionInsertDelete) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *RevisionInsertDelete) GetType()  (RevisionType,  error)  {
 	
-	CGoReturnPtr := C.RevisionInsertDelete_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHA(C.CString("RevisionInsertDelete_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1674,7 +1674,7 @@ func (instance *RevisionInsertDelete) GetType()  (RevisionType,  error)  {
 //   CellArea  
 func (instance *RevisionInsertDelete) GetCellArea()  (*CellArea,  error)  {
 	
-	CGoReturnPtr := C.RevisionInsertDelete_GetCellArea( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAG(C.CString("RevisionInsertDelete_GetCellArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1690,7 +1690,7 @@ func (instance *RevisionInsertDelete) GetCellArea()  (*CellArea,  error)  {
 //   int32  
 func (instance *RevisionInsertDelete) GetActionType()  (RevisionActionType,  error)  {
 	
-	CGoReturnPtr := C.RevisionInsertDelete_GetActionType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHC(C.CString("RevisionInsertDelete_GetActionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1707,7 +1707,7 @@ func (instance *RevisionInsertDelete) GetActionType()  (RevisionActionType,  err
 //   RevisionCollection  
 func (instance *RevisionInsertDelete) GetRevisions()  (*RevisionCollection,  error)  {
 	
-	CGoReturnPtr := C.RevisionInsertDelete_GetRevisions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHE(C.CString("RevisionInsertDelete_GetRevisions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1723,7 +1723,7 @@ func (instance *RevisionInsertDelete) GetRevisions()  (*RevisionCollection,  err
 //   Worksheet  
 func (instance *RevisionInsertDelete) GetWorksheet()  (*Worksheet,  error)  {
 	
-	CGoReturnPtr := C.RevisionInsertDelete_GetWorksheet( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBP(C.CString("RevisionInsertDelete_GetWorksheet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1739,7 +1739,7 @@ func (instance *RevisionInsertDelete) GetWorksheet()  (*Worksheet,  error)  {
 //   int32  
 func (instance *RevisionInsertDelete) GetId()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionInsertDelete_GetId( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionInsertDelete_GetId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1758,7 +1758,7 @@ func (instance *RevisionInsertDelete) ToRevision() *Revision {
 
 func DeleteRevisionInsertDelete(revisioninsertdelete *RevisionInsertDelete){
 	runtime.SetFinalizer(revisioninsertdelete, nil)
-	C.Delete_RevisionInsertDelete(revisioninsertdelete.ptr)
+	C.Delete_CObject(C.CString("Delete_RevisionInsertDelete"),revisioninsertdelete.ptr)
 	revisioninsertdelete.ptr = nil
 }
 
@@ -1779,7 +1779,7 @@ func NewRevisionInsertSheet(src *Revision) ( *RevisionInsertSheet, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_RevisionInsertSheet(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHB(C.CString("New_RevisionInsertSheet"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisioninsertsheet.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisioninsertsheet, DeleteRevisionInsertSheet)
@@ -1796,7 +1796,7 @@ func NewRevisionInsertSheet(src *Revision) ( *RevisionInsertSheet, error) {
 //   bool  
 func (instance *RevisionInsertSheet) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionInsertSheet_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionInsertSheet_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1810,7 +1810,7 @@ func (instance *RevisionInsertSheet) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *RevisionInsertSheet) GetType()  (RevisionType,  error)  {
 	
-	CGoReturnPtr := C.RevisionInsertSheet_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHA(C.CString("RevisionInsertSheet_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1827,7 +1827,7 @@ func (instance *RevisionInsertSheet) GetType()  (RevisionType,  error)  {
 //   int32  
 func (instance *RevisionInsertSheet) GetActionType()  (RevisionActionType,  error)  {
 	
-	CGoReturnPtr := C.RevisionInsertSheet_GetActionType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHC(C.CString("RevisionInsertSheet_GetActionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1844,7 +1844,7 @@ func (instance *RevisionInsertSheet) GetActionType()  (RevisionActionType,  erro
 //   string  
 func (instance *RevisionInsertSheet) GetName()  (string,  error)  {
 	
-	CGoReturnPtr := C.RevisionInsertSheet_GetName( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("RevisionInsertSheet_GetName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1858,7 +1858,7 @@ func (instance *RevisionInsertSheet) GetName()  (string,  error)  {
 //   int32  
 func (instance *RevisionInsertSheet) GetSheetPosition()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionInsertSheet_GetSheetPosition( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionInsertSheet_GetSheetPosition"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1872,7 +1872,7 @@ func (instance *RevisionInsertSheet) GetSheetPosition()  (int32,  error)  {
 //   Worksheet  
 func (instance *RevisionInsertSheet) GetWorksheet()  (*Worksheet,  error)  {
 	
-	CGoReturnPtr := C.RevisionInsertSheet_GetWorksheet( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBP(C.CString("RevisionInsertSheet_GetWorksheet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1888,7 +1888,7 @@ func (instance *RevisionInsertSheet) GetWorksheet()  (*Worksheet,  error)  {
 //   int32  
 func (instance *RevisionInsertSheet) GetId()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionInsertSheet_GetId( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionInsertSheet_GetId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1907,7 +1907,7 @@ func (instance *RevisionInsertSheet) ToRevision() *Revision {
 
 func DeleteRevisionInsertSheet(revisioninsertsheet *RevisionInsertSheet){
 	runtime.SetFinalizer(revisioninsertsheet, nil)
-	C.Delete_RevisionInsertSheet(revisioninsertsheet.ptr)
+	C.Delete_CObject(C.CString("Delete_RevisionInsertSheet"),revisioninsertsheet.ptr)
 	revisioninsertsheet.ptr = nil
 }
 
@@ -1924,7 +1924,7 @@ type RevisionLog struct {
 //   bool  
 func (instance *RevisionLog) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionLog_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionLog_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1939,7 +1939,7 @@ func (instance *RevisionLog) IsNull()  (bool,  error)  {
 //   RevisionHeader  
 func (instance *RevisionLog) GetMetadataTable()  (*RevisionHeader,  error)  {
 	
-	CGoReturnPtr := C.RevisionLog_GetMetadataTable( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHF(C.CString("RevisionLog_GetMetadataTable"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1955,7 +1955,7 @@ func (instance *RevisionLog) GetMetadataTable()  (*RevisionHeader,  error)  {
 //   RevisionCollection  
 func (instance *RevisionLog) GetRevisions()  (*RevisionCollection,  error)  {
 	
-	CGoReturnPtr := C.RevisionLog_GetRevisions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHE(C.CString("RevisionLog_GetRevisions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1971,7 +1971,7 @@ func (instance *RevisionLog) GetRevisions()  (*RevisionCollection,  error)  {
 
 func DeleteRevisionLog(revisionlog *RevisionLog){
 	runtime.SetFinalizer(revisionlog, nil)
-	C.Delete_RevisionLog(revisionlog.ptr)
+	C.Delete_CObject(C.CString("Delete_RevisionLog"),revisionlog.ptr)
 	revisionlog.ptr = nil
 }
 
@@ -1988,7 +1988,7 @@ type RevisionLogCollection struct {
 //   bool  
 func (instance *RevisionLogCollection) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionLogCollection_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionLogCollection_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2002,7 +2002,7 @@ func (instance *RevisionLogCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *RevisionLogCollection) GetDaysPreservingHistory()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionLogCollection_GetDaysPreservingHistory( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionLogCollection_GetDaysPreservingHistory"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2018,7 +2018,7 @@ func (instance *RevisionLogCollection) GetDaysPreservingHistory()  (int32,  erro
 //   void  
 func (instance *RevisionLogCollection) SetDaysPreservingHistory(value int32)  error {
 	
-	CGoReturnPtr := C.RevisionLogCollection_SetDaysPreservingHistory( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("RevisionLogCollection_SetDaysPreservingHistory"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2033,7 +2033,7 @@ func (instance *RevisionLogCollection) SetDaysPreservingHistory(value int32)  er
 //   RevisionLog  
 func (instance *RevisionLogCollection) Get(index int32)  (*RevisionLog,  error)  {
 	
-	CGoReturnPtr := C.RevisionLogCollection_Get( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZBHG(C.CString("RevisionLogCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2056,7 +2056,7 @@ func (instance *RevisionLogCollection) HighlightChanges(options *HighlightChange
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.RevisionLogCollection_HighlightChanges( instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHH(C.CString("RevisionLogCollection_HighlightChanges"), instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2068,7 +2068,7 @@ func (instance *RevisionLogCollection) HighlightChanges(options *HighlightChange
 //   int32  
 func (instance *RevisionLogCollection) GetCount()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionLogCollection_GetCount( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionLogCollection_GetCount"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2082,7 +2082,7 @@ func (instance *RevisionLogCollection) GetCount()  (int32,  error)  {
 
 func DeleteRevisionLogCollection(revisionlogcollection *RevisionLogCollection){
 	runtime.SetFinalizer(revisionlogcollection, nil)
-	C.Delete_RevisionLogCollection(revisionlogcollection.ptr)
+	C.Delete_CObject(C.CString("Delete_RevisionLogCollection"),revisionlogcollection.ptr)
 	revisionlogcollection.ptr = nil
 }
 
@@ -2103,7 +2103,7 @@ func NewRevisionMergeConflict(src *Revision) ( *RevisionMergeConflict, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_RevisionMergeConflict(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHB(C.CString("New_RevisionMergeConflict"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisionmergeconflict.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisionmergeconflict, DeleteRevisionMergeConflict)
@@ -2120,7 +2120,7 @@ func NewRevisionMergeConflict(src *Revision) ( *RevisionMergeConflict, error) {
 //   bool  
 func (instance *RevisionMergeConflict) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionMergeConflict_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionMergeConflict_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2134,7 +2134,7 @@ func (instance *RevisionMergeConflict) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *RevisionMergeConflict) GetType()  (RevisionType,  error)  {
 	
-	CGoReturnPtr := C.RevisionMergeConflict_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHA(C.CString("RevisionMergeConflict_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2151,7 +2151,7 @@ func (instance *RevisionMergeConflict) GetType()  (RevisionType,  error)  {
 //   Worksheet  
 func (instance *RevisionMergeConflict) GetWorksheet()  (*Worksheet,  error)  {
 	
-	CGoReturnPtr := C.RevisionMergeConflict_GetWorksheet( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBP(C.CString("RevisionMergeConflict_GetWorksheet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2167,7 +2167,7 @@ func (instance *RevisionMergeConflict) GetWorksheet()  (*Worksheet,  error)  {
 //   int32  
 func (instance *RevisionMergeConflict) GetId()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionMergeConflict_GetId( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionMergeConflict_GetId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2186,7 +2186,7 @@ func (instance *RevisionMergeConflict) ToRevision() *Revision {
 
 func DeleteRevisionMergeConflict(revisionmergeconflict *RevisionMergeConflict){
 	runtime.SetFinalizer(revisionmergeconflict, nil)
-	C.Delete_RevisionMergeConflict(revisionmergeconflict.ptr)
+	C.Delete_CObject(C.CString("Delete_RevisionMergeConflict"),revisionmergeconflict.ptr)
 	revisionmergeconflict.ptr = nil
 }
 
@@ -2207,7 +2207,7 @@ func NewRevisionQueryTable(src *Revision) ( *RevisionQueryTable, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_RevisionQueryTable(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHB(C.CString("New_RevisionQueryTable"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisionquerytable.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisionquerytable, DeleteRevisionQueryTable)
@@ -2224,7 +2224,7 @@ func NewRevisionQueryTable(src *Revision) ( *RevisionQueryTable, error) {
 //   bool  
 func (instance *RevisionQueryTable) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionQueryTable_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionQueryTable_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2238,7 +2238,7 @@ func (instance *RevisionQueryTable) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *RevisionQueryTable) GetType()  (RevisionType,  error)  {
 	
-	CGoReturnPtr := C.RevisionQueryTable_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHA(C.CString("RevisionQueryTable_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2255,7 +2255,7 @@ func (instance *RevisionQueryTable) GetType()  (RevisionType,  error)  {
 //   CellArea  
 func (instance *RevisionQueryTable) GetCellArea()  (*CellArea,  error)  {
 	
-	CGoReturnPtr := C.RevisionQueryTable_GetCellArea( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAG(C.CString("RevisionQueryTable_GetCellArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2271,7 +2271,7 @@ func (instance *RevisionQueryTable) GetCellArea()  (*CellArea,  error)  {
 //   int32  
 func (instance *RevisionQueryTable) GetFieldId()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionQueryTable_GetFieldId( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionQueryTable_GetFieldId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2285,7 +2285,7 @@ func (instance *RevisionQueryTable) GetFieldId()  (int32,  error)  {
 //   Worksheet  
 func (instance *RevisionQueryTable) GetWorksheet()  (*Worksheet,  error)  {
 	
-	CGoReturnPtr := C.RevisionQueryTable_GetWorksheet( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBP(C.CString("RevisionQueryTable_GetWorksheet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2301,7 +2301,7 @@ func (instance *RevisionQueryTable) GetWorksheet()  (*Worksheet,  error)  {
 //   int32  
 func (instance *RevisionQueryTable) GetId()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionQueryTable_GetId( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionQueryTable_GetId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2320,7 +2320,7 @@ func (instance *RevisionQueryTable) ToRevision() *Revision {
 
 func DeleteRevisionQueryTable(revisionquerytable *RevisionQueryTable){
 	runtime.SetFinalizer(revisionquerytable, nil)
-	C.Delete_RevisionQueryTable(revisionquerytable.ptr)
+	C.Delete_CObject(C.CString("Delete_RevisionQueryTable"),revisionquerytable.ptr)
 	revisionquerytable.ptr = nil
 }
 
@@ -2341,7 +2341,7 @@ func NewRevisionRenameSheet(src *Revision) ( *RevisionRenameSheet, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_RevisionRenameSheet(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHB(C.CString("New_RevisionRenameSheet"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		revisionrenamesheet.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(revisionrenamesheet, DeleteRevisionRenameSheet)
@@ -2358,7 +2358,7 @@ func NewRevisionRenameSheet(src *Revision) ( *RevisionRenameSheet, error) {
 //   bool  
 func (instance *RevisionRenameSheet) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RevisionRenameSheet_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RevisionRenameSheet_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2372,7 +2372,7 @@ func (instance *RevisionRenameSheet) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *RevisionRenameSheet) GetType()  (RevisionType,  error)  {
 	
-	CGoReturnPtr := C.RevisionRenameSheet_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBHA(C.CString("RevisionRenameSheet_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2389,7 +2389,7 @@ func (instance *RevisionRenameSheet) GetType()  (RevisionType,  error)  {
 //   string  
 func (instance *RevisionRenameSheet) GetOldName()  (string,  error)  {
 	
-	CGoReturnPtr := C.RevisionRenameSheet_GetOldName( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("RevisionRenameSheet_GetOldName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -2403,7 +2403,7 @@ func (instance *RevisionRenameSheet) GetOldName()  (string,  error)  {
 //   string  
 func (instance *RevisionRenameSheet) GetNewName()  (string,  error)  {
 	
-	CGoReturnPtr := C.RevisionRenameSheet_GetNewName( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("RevisionRenameSheet_GetNewName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -2417,7 +2417,7 @@ func (instance *RevisionRenameSheet) GetNewName()  (string,  error)  {
 //   Worksheet  
 func (instance *RevisionRenameSheet) GetWorksheet()  (*Worksheet,  error)  {
 	
-	CGoReturnPtr := C.RevisionRenameSheet_GetWorksheet( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBP(C.CString("RevisionRenameSheet_GetWorksheet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2433,7 +2433,7 @@ func (instance *RevisionRenameSheet) GetWorksheet()  (*Worksheet,  error)  {
 //   int32  
 func (instance *RevisionRenameSheet) GetId()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RevisionRenameSheet_GetId( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RevisionRenameSheet_GetId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2452,6 +2452,6 @@ func (instance *RevisionRenameSheet) ToRevision() *Revision {
 
 func DeleteRevisionRenameSheet(revisionrenamesheet *RevisionRenameSheet){
 	runtime.SetFinalizer(revisionrenamesheet, nil)
-	C.Delete_RevisionRenameSheet(revisionrenamesheet.ptr)
+	C.Delete_CObject(C.CString("Delete_RevisionRenameSheet"),revisionrenamesheet.ptr)
 	revisionrenamesheet.ptr = nil
 }

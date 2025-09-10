@@ -11,7 +11,7 @@ package asposecells
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
 // #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/linux_x86_64" -L"${SRCDIR}/lib/linux_x86_64" -lAspose.Cells.CWrapper
-// #include <AsposeCellsCWrapper.h>
+// #include <CellsFunctionMap.h>
 import "C"
 import (
 	"fmt"  
@@ -20,6 +20,28 @@ import (
 	"runtime"
 	"unsafe" 
 )
+
+/**************Enum SaveElementType *****************/
+
+// Represents what kind of elements should be saved.
+type SaveElementType int32
+
+const(
+// All data.
+SaveElementType_All SaveElementType = 251658239 
+
+// Only charts.
+SaveElementType_Chart SaveElementType = 256 
+)
+
+func Int32ToSaveElementType(value int32)(SaveElementType ,error){
+	switch value {
+		case 251658239:  return SaveElementType_All, nil  
+		case 256:  return SaveElementType_Chart, nil  
+		default:
+			return 0 ,fmt.Errorf("invalid SaveElementType value: %d", value)
+	}
+}
 
 /**************Enum SqlScriptOperatorType *****************/
 
@@ -56,7 +78,7 @@ type DbfSaveOptions struct {
 // The options of saving .dbf file.
 func NewDbfSaveOptions() ( *DbfSaveOptions, error) {
 	dbfsaveoptions := &DbfSaveOptions{}
-	CGoReturnPtr := C.New_DbfSaveOptions()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_DbfSaveOptions"),)
 	if CGoReturnPtr.error_no == 0 {
 		dbfsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(dbfsaveoptions, DeleteDbfSaveOptions)
@@ -77,7 +99,7 @@ func NewDbfSaveOptions_SaveOptions(src *SaveOptions) ( *DbfSaveOptions, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_DbfSaveOptions_SaveOptions(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZLB(C.CString("New_DbfSaveOptions_SaveOptions"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		dbfsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(dbfsaveoptions, DeleteDbfSaveOptions)
@@ -94,7 +116,7 @@ func NewDbfSaveOptions_SaveOptions(src *SaveOptions) ( *DbfSaveOptions, error) {
 //   bool  
 func (instance *DbfSaveOptions) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfSaveOptions_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfSaveOptions_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -108,7 +130,7 @@ func (instance *DbfSaveOptions) IsNull()  (bool,  error)  {
 //   bool  
 func (instance *DbfSaveOptions) GetExportAsString()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfSaveOptions_GetExportAsString( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfSaveOptions_GetExportAsString"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -124,7 +146,7 @@ func (instance *DbfSaveOptions) GetExportAsString()  (bool,  error)  {
 //   void  
 func (instance *DbfSaveOptions) SetExportAsString(value bool)  error {
 	
-	CGoReturnPtr := C.DbfSaveOptions_SetExportAsString( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfSaveOptions_SetExportAsString"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -137,7 +159,7 @@ func (instance *DbfSaveOptions) SetExportAsString(value bool)  error {
 //   int32  
 func (instance *DbfSaveOptions) GetSaveFormat()  (SaveFormat,  error)  {
 	
-	CGoReturnPtr := C.DbfSaveOptions_GetSaveFormat( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZLC(C.CString("DbfSaveOptions_GetSaveFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -154,7 +176,7 @@ func (instance *DbfSaveOptions) GetSaveFormat()  (SaveFormat,  error)  {
 //   bool  
 func (instance *DbfSaveOptions) GetClearData()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfSaveOptions_GetClearData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfSaveOptions_GetClearData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -170,7 +192,7 @@ func (instance *DbfSaveOptions) GetClearData()  (bool,  error)  {
 //   void  
 func (instance *DbfSaveOptions) SetClearData(value bool)  error {
 	
-	CGoReturnPtr := C.DbfSaveOptions_SetClearData( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfSaveOptions_SetClearData"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -183,7 +205,7 @@ func (instance *DbfSaveOptions) SetClearData(value bool)  error {
 //   string  
 func (instance *DbfSaveOptions) GetCachedFileFolder()  (string,  error)  {
 	
-	CGoReturnPtr := C.DbfSaveOptions_GetCachedFileFolder( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("DbfSaveOptions_GetCachedFileFolder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -199,7 +221,7 @@ func (instance *DbfSaveOptions) GetCachedFileFolder()  (string,  error)  {
 //   void  
 func (instance *DbfSaveOptions) SetCachedFileFolder(value string)  error {
 	
-	CGoReturnPtr := C.DbfSaveOptions_SetCachedFileFolder( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("DbfSaveOptions_SetCachedFileFolder"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -212,7 +234,7 @@ func (instance *DbfSaveOptions) SetCachedFileFolder(value string)  error {
 //   bool  
 func (instance *DbfSaveOptions) GetValidateMergedAreas()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfSaveOptions_GetValidateMergedAreas( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfSaveOptions_GetValidateMergedAreas"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -228,7 +250,7 @@ func (instance *DbfSaveOptions) GetValidateMergedAreas()  (bool,  error)  {
 //   void  
 func (instance *DbfSaveOptions) SetValidateMergedAreas(value bool)  error {
 	
-	CGoReturnPtr := C.DbfSaveOptions_SetValidateMergedAreas( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfSaveOptions_SetValidateMergedAreas"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -241,7 +263,7 @@ func (instance *DbfSaveOptions) SetValidateMergedAreas(value bool)  error {
 //   bool  
 func (instance *DbfSaveOptions) GetMergeAreas()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfSaveOptions_GetMergeAreas( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfSaveOptions_GetMergeAreas"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -257,7 +279,7 @@ func (instance *DbfSaveOptions) GetMergeAreas()  (bool,  error)  {
 //   void  
 func (instance *DbfSaveOptions) SetMergeAreas(value bool)  error {
 	
-	CGoReturnPtr := C.DbfSaveOptions_SetMergeAreas( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfSaveOptions_SetMergeAreas"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -270,7 +292,7 @@ func (instance *DbfSaveOptions) SetMergeAreas(value bool)  error {
 //   bool  
 func (instance *DbfSaveOptions) GetCreateDirectory()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfSaveOptions_GetCreateDirectory( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfSaveOptions_GetCreateDirectory"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -286,7 +308,7 @@ func (instance *DbfSaveOptions) GetCreateDirectory()  (bool,  error)  {
 //   void  
 func (instance *DbfSaveOptions) SetCreateDirectory(value bool)  error {
 	
-	CGoReturnPtr := C.DbfSaveOptions_SetCreateDirectory( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfSaveOptions_SetCreateDirectory"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -299,7 +321,7 @@ func (instance *DbfSaveOptions) SetCreateDirectory(value bool)  error {
 //   bool  
 func (instance *DbfSaveOptions) GetSortNames()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfSaveOptions_GetSortNames( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfSaveOptions_GetSortNames"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -315,7 +337,7 @@ func (instance *DbfSaveOptions) GetSortNames()  (bool,  error)  {
 //   void  
 func (instance *DbfSaveOptions) SetSortNames(value bool)  error {
 	
-	CGoReturnPtr := C.DbfSaveOptions_SetSortNames( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfSaveOptions_SetSortNames"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -328,7 +350,7 @@ func (instance *DbfSaveOptions) SetSortNames(value bool)  error {
 //   bool  
 func (instance *DbfSaveOptions) GetSortExternalNames()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfSaveOptions_GetSortExternalNames( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfSaveOptions_GetSortExternalNames"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -344,7 +366,7 @@ func (instance *DbfSaveOptions) GetSortExternalNames()  (bool,  error)  {
 //   void  
 func (instance *DbfSaveOptions) SetSortExternalNames(value bool)  error {
 	
-	CGoReturnPtr := C.DbfSaveOptions_SetSortExternalNames( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfSaveOptions_SetSortExternalNames"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -357,7 +379,7 @@ func (instance *DbfSaveOptions) SetSortExternalNames(value bool)  error {
 //   bool  
 func (instance *DbfSaveOptions) GetRefreshChartCache()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfSaveOptions_GetRefreshChartCache( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfSaveOptions_GetRefreshChartCache"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -373,7 +395,7 @@ func (instance *DbfSaveOptions) GetRefreshChartCache()  (bool,  error)  {
 //   void  
 func (instance *DbfSaveOptions) SetRefreshChartCache(value bool)  error {
 	
-	CGoReturnPtr := C.DbfSaveOptions_SetRefreshChartCache( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfSaveOptions_SetRefreshChartCache"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -388,7 +410,7 @@ func (instance *DbfSaveOptions) SetRefreshChartCache(value bool)  error {
 //   bool  
 func (instance *DbfSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfSaveOptions_GetCheckExcelRestriction"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -406,7 +428,7 @@ func (instance *DbfSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
 //   void  
 func (instance *DbfSaveOptions) SetCheckExcelRestriction(value bool)  error {
 	
-	CGoReturnPtr := C.DbfSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfSaveOptions_SetCheckExcelRestriction"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -420,7 +442,7 @@ func (instance *DbfSaveOptions) SetCheckExcelRestriction(value bool)  error {
 //   bool  
 func (instance *DbfSaveOptions) GetUpdateSmartArt()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfSaveOptions_GetUpdateSmartArt( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfSaveOptions_GetUpdateSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -437,7 +459,7 @@ func (instance *DbfSaveOptions) GetUpdateSmartArt()  (bool,  error)  {
 //   void  
 func (instance *DbfSaveOptions) SetUpdateSmartArt(value bool)  error {
 	
-	CGoReturnPtr := C.DbfSaveOptions_SetUpdateSmartArt( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfSaveOptions_SetUpdateSmartArt"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -451,7 +473,7 @@ func (instance *DbfSaveOptions) SetUpdateSmartArt(value bool)  error {
 //   bool  
 func (instance *DbfSaveOptions) GetEncryptDocumentProperties()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfSaveOptions_GetEncryptDocumentProperties( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfSaveOptions_GetEncryptDocumentProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -468,7 +490,7 @@ func (instance *DbfSaveOptions) GetEncryptDocumentProperties()  (bool,  error)  
 //   void  
 func (instance *DbfSaveOptions) SetEncryptDocumentProperties(value bool)  error {
 	
-	CGoReturnPtr := C.DbfSaveOptions_SetEncryptDocumentProperties( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfSaveOptions_SetEncryptDocumentProperties"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -500,7 +522,7 @@ type EbookSaveOptions struct {
 // Creates options for saving ebook file.
 func NewEbookSaveOptions() ( *EbookSaveOptions, error) {
 	ebooksaveoptions := &EbookSaveOptions{}
-	CGoReturnPtr := C.New_EbookSaveOptions()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_EbookSaveOptions"),)
 	if CGoReturnPtr.error_no == 0 {
 		ebooksaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(ebooksaveoptions, DeleteEbookSaveOptions)
@@ -516,7 +538,7 @@ func NewEbookSaveOptions() ( *EbookSaveOptions, error) {
 //   saveFormat - int32 
 func NewEbookSaveOptions_SaveFormat(saveformat SaveFormat) ( *EbookSaveOptions, error) {
 	ebooksaveoptions := &EbookSaveOptions{}
-	CGoReturnPtr := C.New_EbookSaveOptions_SaveFormat(C.int( int32(saveformat)))
+	CGoReturnPtr := C.CellsGoFunctoinZZPQ(C.CString("New_EbookSaveOptions_SaveFormat"),C.int( int32(saveformat)))
 	if CGoReturnPtr.error_no == 0 {
 		ebooksaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(ebooksaveoptions, DeleteEbookSaveOptions)
@@ -537,7 +559,7 @@ func NewEbookSaveOptions_HtmlSaveOptions(src *HtmlSaveOptions) ( *EbookSaveOptio
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_EbookSaveOptions_HtmlSaveOptions(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGN(C.CString("New_EbookSaveOptions_HtmlSaveOptions"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		ebooksaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(ebooksaveoptions, DeleteEbookSaveOptions)
@@ -554,7 +576,7 @@ func NewEbookSaveOptions_HtmlSaveOptions(src *HtmlSaveOptions) ( *EbookSaveOptio
 //   bool  
 func (instance *EbookSaveOptions) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -568,7 +590,7 @@ func (instance *EbookSaveOptions) IsNull()  (bool,  error)  {
 //   bool  
 func (instance *EbookSaveOptions) GetIgnoreInvisibleShapes()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetIgnoreInvisibleShapes( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetIgnoreInvisibleShapes"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -584,7 +606,7 @@ func (instance *EbookSaveOptions) GetIgnoreInvisibleShapes()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetIgnoreInvisibleShapes(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetIgnoreInvisibleShapes( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetIgnoreInvisibleShapes"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -598,7 +620,7 @@ func (instance *EbookSaveOptions) SetIgnoreInvisibleShapes(value bool)  error {
 //   string  
 func (instance *EbookSaveOptions) GetPageTitle()  (string,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetPageTitle( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("EbookSaveOptions_GetPageTitle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -615,7 +637,7 @@ func (instance *EbookSaveOptions) GetPageTitle()  (string,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetPageTitle(value string)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetPageTitle( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("EbookSaveOptions_SetPageTitle"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -629,7 +651,7 @@ func (instance *EbookSaveOptions) SetPageTitle(value string)  error {
 //   string  
 func (instance *EbookSaveOptions) GetAttachedFilesDirectory()  (string,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetAttachedFilesDirectory( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("EbookSaveOptions_GetAttachedFilesDirectory"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -646,7 +668,7 @@ func (instance *EbookSaveOptions) GetAttachedFilesDirectory()  (string,  error) 
 //   void  
 func (instance *EbookSaveOptions) SetAttachedFilesDirectory(value string)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetAttachedFilesDirectory( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("EbookSaveOptions_SetAttachedFilesDirectory"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -660,7 +682,7 @@ func (instance *EbookSaveOptions) SetAttachedFilesDirectory(value string)  error
 //   string  
 func (instance *EbookSaveOptions) GetAttachedFilesUrlPrefix()  (string,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetAttachedFilesUrlPrefix( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("EbookSaveOptions_GetAttachedFilesUrlPrefix"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -677,7 +699,7 @@ func (instance *EbookSaveOptions) GetAttachedFilesUrlPrefix()  (string,  error) 
 //   void  
 func (instance *EbookSaveOptions) SetAttachedFilesUrlPrefix(value string)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetAttachedFilesUrlPrefix( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("EbookSaveOptions_SetAttachedFilesUrlPrefix"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -692,7 +714,7 @@ func (instance *EbookSaveOptions) SetAttachedFilesUrlPrefix(value string)  error
 //   string  
 func (instance *EbookSaveOptions) GetDefaultFontName()  (string,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetDefaultFontName( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("EbookSaveOptions_GetDefaultFontName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -710,7 +732,7 @@ func (instance *EbookSaveOptions) GetDefaultFontName()  (string,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetDefaultFontName(value string)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetDefaultFontName( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("EbookSaveOptions_SetDefaultFontName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -724,7 +746,7 @@ func (instance *EbookSaveOptions) SetDefaultFontName(value string)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetAddGenericFont()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetAddGenericFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetAddGenericFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -741,7 +763,7 @@ func (instance *EbookSaveOptions) GetAddGenericFont()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetAddGenericFont(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetAddGenericFont( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetAddGenericFont"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -754,7 +776,7 @@ func (instance *EbookSaveOptions) SetAddGenericFont(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetWorksheetScalable()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetWorksheetScalable( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetWorksheetScalable"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -770,7 +792,7 @@ func (instance *EbookSaveOptions) GetWorksheetScalable()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetWorksheetScalable(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetWorksheetScalable( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetWorksheetScalable"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -783,7 +805,7 @@ func (instance *EbookSaveOptions) SetWorksheetScalable(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) IsExportComments()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_IsExportComments( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_IsExportComments"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -799,7 +821,7 @@ func (instance *EbookSaveOptions) IsExportComments()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetIsExportComments(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetIsExportComments( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetIsExportComments"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -812,7 +834,7 @@ func (instance *EbookSaveOptions) SetIsExportComments(value bool)  error {
 //   int32  
 func (instance *EbookSaveOptions) GetExportCommentsType()  (PrintCommentsType,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportCommentsType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPR(C.CString("EbookSaveOptions_GetExportCommentsType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -831,7 +853,7 @@ func (instance *EbookSaveOptions) GetExportCommentsType()  (PrintCommentsType,  
 //   void  
 func (instance *EbookSaveOptions) SetExportCommentsType(value PrintCommentsType)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportCommentsType( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("EbookSaveOptions_SetExportCommentsType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -844,7 +866,7 @@ func (instance *EbookSaveOptions) SetExportCommentsType(value PrintCommentsType)
 //   bool  
 func (instance *EbookSaveOptions) GetDisableDownlevelRevealedComments()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetDisableDownlevelRevealedComments( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetDisableDownlevelRevealedComments"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -860,7 +882,7 @@ func (instance *EbookSaveOptions) GetDisableDownlevelRevealedComments()  (bool, 
 //   void  
 func (instance *EbookSaveOptions) SetDisableDownlevelRevealedComments(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetDisableDownlevelRevealedComments( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetDisableDownlevelRevealedComments"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -874,7 +896,7 @@ func (instance *EbookSaveOptions) SetDisableDownlevelRevealedComments(value bool
 //   bool  
 func (instance *EbookSaveOptions) IsExpImageToTempDir()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_IsExpImageToTempDir( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_IsExpImageToTempDir"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -891,7 +913,7 @@ func (instance *EbookSaveOptions) IsExpImageToTempDir()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetIsExpImageToTempDir(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetIsExpImageToTempDir( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetIsExpImageToTempDir"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -906,7 +928,7 @@ func (instance *EbookSaveOptions) SetIsExpImageToTempDir(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetImageScalable()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetImageScalable( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetImageScalable"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -924,7 +946,7 @@ func (instance *EbookSaveOptions) GetImageScalable()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetImageScalable(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetImageScalable( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetImageScalable"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -938,7 +960,7 @@ func (instance *EbookSaveOptions) SetImageScalable(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetWidthScalable()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetWidthScalable( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetWidthScalable"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -955,7 +977,7 @@ func (instance *EbookSaveOptions) GetWidthScalable()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetWidthScalable(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetWidthScalable( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetWidthScalable"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -969,7 +991,7 @@ func (instance *EbookSaveOptions) SetWidthScalable(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetExportSingleTab()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportSingleTab( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportSingleTab"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -986,7 +1008,7 @@ func (instance *EbookSaveOptions) GetExportSingleTab()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetExportSingleTab(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportSingleTab( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportSingleTab"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -999,7 +1021,7 @@ func (instance *EbookSaveOptions) SetExportSingleTab(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetExportImagesAsBase64()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportImagesAsBase64( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportImagesAsBase64"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1015,7 +1037,7 @@ func (instance *EbookSaveOptions) GetExportImagesAsBase64()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetExportImagesAsBase64(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportImagesAsBase64( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportImagesAsBase64"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1031,7 +1053,7 @@ func (instance *EbookSaveOptions) SetExportImagesAsBase64(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetExportActiveWorksheetOnly()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportActiveWorksheetOnly( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportActiveWorksheetOnly"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1050,7 +1072,7 @@ func (instance *EbookSaveOptions) GetExportActiveWorksheetOnly()  (bool,  error)
 //   void  
 func (instance *EbookSaveOptions) SetExportActiveWorksheetOnly(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportActiveWorksheetOnly( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportActiveWorksheetOnly"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1063,7 +1085,7 @@ func (instance *EbookSaveOptions) SetExportActiveWorksheetOnly(value bool)  erro
 //   bool  
 func (instance *EbookSaveOptions) GetExportPrintAreaOnly()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportPrintAreaOnly( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportPrintAreaOnly"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1079,7 +1101,7 @@ func (instance *EbookSaveOptions) GetExportPrintAreaOnly()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetExportPrintAreaOnly(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportPrintAreaOnly( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportPrintAreaOnly"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1094,7 +1116,7 @@ func (instance *EbookSaveOptions) SetExportPrintAreaOnly(value bool)  error {
 //   CellArea  
 func (instance *EbookSaveOptions) GetExportArea()  (*CellArea,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportArea( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAG(C.CString("EbookSaveOptions_GetExportArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1119,7 +1141,7 @@ func (instance *EbookSaveOptions) SetExportArea(value *CellArea)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.EbookSaveOptions_SetExportArea( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZGH(C.CString("EbookSaveOptions_SetExportArea"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1133,7 +1155,7 @@ func (instance *EbookSaveOptions) SetExportArea(value *CellArea)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetParseHtmlTagInCell()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetParseHtmlTagInCell( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetParseHtmlTagInCell"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1150,7 +1172,7 @@ func (instance *EbookSaveOptions) GetParseHtmlTagInCell()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetParseHtmlTagInCell(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetParseHtmlTagInCell( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetParseHtmlTagInCell"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1165,7 +1187,7 @@ func (instance *EbookSaveOptions) SetParseHtmlTagInCell(value bool)  error {
 //   int32  
 func (instance *EbookSaveOptions) GetHtmlCrossStringType()  (HtmlCrossType,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetHtmlCrossStringType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPT(C.CString("EbookSaveOptions_GetHtmlCrossStringType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1186,7 +1208,7 @@ func (instance *EbookSaveOptions) GetHtmlCrossStringType()  (HtmlCrossType,  err
 //   void  
 func (instance *EbookSaveOptions) SetHtmlCrossStringType(value HtmlCrossType)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetHtmlCrossStringType( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZPU(C.CString("EbookSaveOptions_SetHtmlCrossStringType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1201,7 +1223,7 @@ func (instance *EbookSaveOptions) SetHtmlCrossStringType(value HtmlCrossType)  e
 //   int32  
 func (instance *EbookSaveOptions) GetHiddenColDisplayType()  (HtmlHiddenColDisplayType,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetHiddenColDisplayType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPV(C.CString("EbookSaveOptions_GetHiddenColDisplayType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1222,7 +1244,7 @@ func (instance *EbookSaveOptions) GetHiddenColDisplayType()  (HtmlHiddenColDispl
 //   void  
 func (instance *EbookSaveOptions) SetHiddenColDisplayType(value HtmlHiddenColDisplayType)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetHiddenColDisplayType( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZPW(C.CString("EbookSaveOptions_SetHiddenColDisplayType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1237,7 +1259,7 @@ func (instance *EbookSaveOptions) SetHiddenColDisplayType(value HtmlHiddenColDis
 //   int32  
 func (instance *EbookSaveOptions) GetHiddenRowDisplayType()  (HtmlHiddenRowDisplayType,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetHiddenRowDisplayType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPX(C.CString("EbookSaveOptions_GetHiddenRowDisplayType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1258,7 +1280,7 @@ func (instance *EbookSaveOptions) GetHiddenRowDisplayType()  (HtmlHiddenRowDispl
 //   void  
 func (instance *EbookSaveOptions) SetHiddenRowDisplayType(value HtmlHiddenRowDisplayType)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetHiddenRowDisplayType( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZPY(C.CString("EbookSaveOptions_SetHiddenRowDisplayType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1271,7 +1293,7 @@ func (instance *EbookSaveOptions) SetHiddenRowDisplayType(value HtmlHiddenRowDis
 //   int32  
 func (instance *EbookSaveOptions) GetEncoding()  (EncodingType,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetEncoding( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("EbookSaveOptions_GetEncoding"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1290,7 +1312,7 @@ func (instance *EbookSaveOptions) GetEncoding()  (EncodingType,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetEncoding(value EncodingType)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetEncoding( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("EbookSaveOptions_SetEncoding"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1303,7 +1325,7 @@ func (instance *EbookSaveOptions) SetEncoding(value EncodingType)  error {
 //   ImageOrPrintOptions  
 func (instance *EbookSaveOptions) GetImageOptions()  (*ImageOrPrintOptions,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetImageOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZQA(C.CString("EbookSaveOptions_GetImageOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1320,7 +1342,7 @@ func (instance *EbookSaveOptions) GetImageOptions()  (*ImageOrPrintOptions,  err
 //   bool  
 func (instance *EbookSaveOptions) GetSaveAsSingleFile()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetSaveAsSingleFile( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetSaveAsSingleFile"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1337,7 +1359,7 @@ func (instance *EbookSaveOptions) GetSaveAsSingleFile()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetSaveAsSingleFile(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetSaveAsSingleFile( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetSaveAsSingleFile"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1350,7 +1372,7 @@ func (instance *EbookSaveOptions) SetSaveAsSingleFile(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetShowAllSheets()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetShowAllSheets( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetShowAllSheets"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1366,7 +1388,7 @@ func (instance *EbookSaveOptions) GetShowAllSheets()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetShowAllSheets(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetShowAllSheets( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetShowAllSheets"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1379,7 +1401,7 @@ func (instance *EbookSaveOptions) SetShowAllSheets(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetExportPageHeaders()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportPageHeaders( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportPageHeaders"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1395,7 +1417,7 @@ func (instance *EbookSaveOptions) GetExportPageHeaders()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetExportPageHeaders(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportPageHeaders( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportPageHeaders"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1408,7 +1430,7 @@ func (instance *EbookSaveOptions) SetExportPageHeaders(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetExportPageFooters()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportPageFooters( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportPageFooters"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1424,7 +1446,7 @@ func (instance *EbookSaveOptions) GetExportPageFooters()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetExportPageFooters(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportPageFooters( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportPageFooters"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1437,7 +1459,7 @@ func (instance *EbookSaveOptions) SetExportPageFooters(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetExportHiddenWorksheet()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportHiddenWorksheet( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportHiddenWorksheet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1453,7 +1475,7 @@ func (instance *EbookSaveOptions) GetExportHiddenWorksheet()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetExportHiddenWorksheet(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportHiddenWorksheet( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportHiddenWorksheet"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1468,7 +1490,7 @@ func (instance *EbookSaveOptions) SetExportHiddenWorksheet(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetPresentationPreference()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetPresentationPreference( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetPresentationPreference"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1486,7 +1508,7 @@ func (instance *EbookSaveOptions) GetPresentationPreference()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetPresentationPreference(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetPresentationPreference( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetPresentationPreference"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1499,7 +1521,7 @@ func (instance *EbookSaveOptions) SetPresentationPreference(value bool)  error {
 //   string  
 func (instance *EbookSaveOptions) GetCellCssPrefix()  (string,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetCellCssPrefix( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("EbookSaveOptions_GetCellCssPrefix"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1515,7 +1537,7 @@ func (instance *EbookSaveOptions) GetCellCssPrefix()  (string,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetCellCssPrefix(value string)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetCellCssPrefix( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("EbookSaveOptions_SetCellCssPrefix"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1529,7 +1551,7 @@ func (instance *EbookSaveOptions) SetCellCssPrefix(value string)  error {
 //   string  
 func (instance *EbookSaveOptions) GetTableCssId()  (string,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetTableCssId( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("EbookSaveOptions_GetTableCssId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1546,7 +1568,7 @@ func (instance *EbookSaveOptions) GetTableCssId()  (string,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetTableCssId(value string)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetTableCssId( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("EbookSaveOptions_SetTableCssId"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1560,7 +1582,7 @@ func (instance *EbookSaveOptions) SetTableCssId(value string)  error {
 //   bool  
 func (instance *EbookSaveOptions) IsFullPathLink()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_IsFullPathLink( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_IsFullPathLink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1577,7 +1599,7 @@ func (instance *EbookSaveOptions) IsFullPathLink()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetIsFullPathLink(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetIsFullPathLink( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetIsFullPathLink"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1590,7 +1612,7 @@ func (instance *EbookSaveOptions) SetIsFullPathLink(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetExportWorksheetCSSSeparately()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportWorksheetCSSSeparately( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportWorksheetCSSSeparately"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1606,7 +1628,7 @@ func (instance *EbookSaveOptions) GetExportWorksheetCSSSeparately()  (bool,  err
 //   void  
 func (instance *EbookSaveOptions) SetExportWorksheetCSSSeparately(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportWorksheetCSSSeparately( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportWorksheetCSSSeparately"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1621,7 +1643,7 @@ func (instance *EbookSaveOptions) SetExportWorksheetCSSSeparately(value bool)  e
 //   bool  
 func (instance *EbookSaveOptions) GetExportSimilarBorderStyle()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportSimilarBorderStyle( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportSimilarBorderStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1639,7 +1661,7 @@ func (instance *EbookSaveOptions) GetExportSimilarBorderStyle()  (bool,  error) 
 //   void  
 func (instance *EbookSaveOptions) SetExportSimilarBorderStyle(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportSimilarBorderStyle( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportSimilarBorderStyle"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1653,7 +1675,7 @@ func (instance *EbookSaveOptions) SetExportSimilarBorderStyle(value bool)  error
 //   int32  
 func (instance *EbookSaveOptions) GetMergeEmptyTdType()  (MergeEmptyTdType,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetMergeEmptyTdType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZQB(C.CString("EbookSaveOptions_GetMergeEmptyTdType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1673,7 +1695,7 @@ func (instance *EbookSaveOptions) GetMergeEmptyTdType()  (MergeEmptyTdType,  err
 //   void  
 func (instance *EbookSaveOptions) SetMergeEmptyTdType(value MergeEmptyTdType)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetMergeEmptyTdType( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZQC(C.CString("EbookSaveOptions_SetMergeEmptyTdType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1687,7 +1709,7 @@ func (instance *EbookSaveOptions) SetMergeEmptyTdType(value MergeEmptyTdType)  e
 //   bool  
 func (instance *EbookSaveOptions) GetExportCellCoordinate()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportCellCoordinate( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportCellCoordinate"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1704,7 +1726,7 @@ func (instance *EbookSaveOptions) GetExportCellCoordinate()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetExportCellCoordinate(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportCellCoordinate( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportCellCoordinate"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1718,7 +1740,7 @@ func (instance *EbookSaveOptions) SetExportCellCoordinate(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetExportExtraHeadings()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportExtraHeadings( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportExtraHeadings"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1735,7 +1757,7 @@ func (instance *EbookSaveOptions) GetExportExtraHeadings()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetExportExtraHeadings(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportExtraHeadings( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportExtraHeadings"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1748,7 +1770,7 @@ func (instance *EbookSaveOptions) SetExportExtraHeadings(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetExportRowColumnHeadings()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportRowColumnHeadings( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportRowColumnHeadings"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1764,7 +1786,7 @@ func (instance *EbookSaveOptions) GetExportRowColumnHeadings()  (bool,  error)  
 //   void  
 func (instance *EbookSaveOptions) SetExportRowColumnHeadings(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportRowColumnHeadings( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportRowColumnHeadings"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1778,7 +1800,7 @@ func (instance *EbookSaveOptions) SetExportRowColumnHeadings(value bool)  error 
 //   bool  
 func (instance *EbookSaveOptions) GetExportFormula()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportFormula( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportFormula"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1795,7 +1817,7 @@ func (instance *EbookSaveOptions) GetExportFormula()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetExportFormula(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportFormula( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportFormula"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1809,7 +1831,7 @@ func (instance *EbookSaveOptions) SetExportFormula(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetAddTooltipText()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetAddTooltipText( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetAddTooltipText"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1826,7 +1848,7 @@ func (instance *EbookSaveOptions) GetAddTooltipText()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetAddTooltipText(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetAddTooltipText( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetAddTooltipText"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1839,7 +1861,7 @@ func (instance *EbookSaveOptions) SetAddTooltipText(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetExportGridLines()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportGridLines( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportGridLines"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1855,7 +1877,7 @@ func (instance *EbookSaveOptions) GetExportGridLines()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetExportGridLines(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportGridLines( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportGridLines"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1869,7 +1891,7 @@ func (instance *EbookSaveOptions) SetExportGridLines(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetExportBogusRowData()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportBogusRowData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportBogusRowData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1886,7 +1908,7 @@ func (instance *EbookSaveOptions) GetExportBogusRowData()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetExportBogusRowData(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportBogusRowData( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportBogusRowData"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1903,7 +1925,7 @@ func (instance *EbookSaveOptions) SetExportBogusRowData(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetExcludeUnusedStyles()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExcludeUnusedStyles( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExcludeUnusedStyles"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1923,7 +1945,7 @@ func (instance *EbookSaveOptions) GetExcludeUnusedStyles()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetExcludeUnusedStyles(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExcludeUnusedStyles( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExcludeUnusedStyles"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1937,7 +1959,7 @@ func (instance *EbookSaveOptions) SetExcludeUnusedStyles(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetExportDocumentProperties()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportDocumentProperties( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportDocumentProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1954,7 +1976,7 @@ func (instance *EbookSaveOptions) GetExportDocumentProperties()  (bool,  error) 
 //   void  
 func (instance *EbookSaveOptions) SetExportDocumentProperties(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportDocumentProperties( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportDocumentProperties"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1968,7 +1990,7 @@ func (instance *EbookSaveOptions) SetExportDocumentProperties(value bool)  error
 //   bool  
 func (instance *EbookSaveOptions) GetExportWorksheetProperties()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportWorksheetProperties( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportWorksheetProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1985,7 +2007,7 @@ func (instance *EbookSaveOptions) GetExportWorksheetProperties()  (bool,  error)
 //   void  
 func (instance *EbookSaveOptions) SetExportWorksheetProperties(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportWorksheetProperties( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportWorksheetProperties"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1999,7 +2021,7 @@ func (instance *EbookSaveOptions) SetExportWorksheetProperties(value bool)  erro
 //   bool  
 func (instance *EbookSaveOptions) GetExportWorkbookProperties()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportWorkbookProperties( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportWorkbookProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2016,7 +2038,7 @@ func (instance *EbookSaveOptions) GetExportWorkbookProperties()  (bool,  error) 
 //   void  
 func (instance *EbookSaveOptions) SetExportWorkbookProperties(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportWorkbookProperties( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportWorkbookProperties"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2030,7 +2052,7 @@ func (instance *EbookSaveOptions) SetExportWorkbookProperties(value bool)  error
 //   bool  
 func (instance *EbookSaveOptions) GetExportFrameScriptsAndProperties()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportFrameScriptsAndProperties( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportFrameScriptsAndProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2047,7 +2069,7 @@ func (instance *EbookSaveOptions) GetExportFrameScriptsAndProperties()  (bool,  
 //   void  
 func (instance *EbookSaveOptions) SetExportFrameScriptsAndProperties(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportFrameScriptsAndProperties( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportFrameScriptsAndProperties"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2060,7 +2082,7 @@ func (instance *EbookSaveOptions) SetExportFrameScriptsAndProperties(value bool)
 //   int32  
 func (instance *EbookSaveOptions) GetExportDataOptions()  (HtmlExportDataOptions,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetExportDataOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZQD(C.CString("EbookSaveOptions_GetExportDataOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2079,7 +2101,7 @@ func (instance *EbookSaveOptions) GetExportDataOptions()  (HtmlExportDataOptions
 //   void  
 func (instance *EbookSaveOptions) SetExportDataOptions(value HtmlExportDataOptions)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetExportDataOptions( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZQE(C.CString("EbookSaveOptions_SetExportDataOptions"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2092,7 +2114,7 @@ func (instance *EbookSaveOptions) SetExportDataOptions(value HtmlExportDataOptio
 //   int32  
 func (instance *EbookSaveOptions) GetLinkTargetType()  (HtmlLinkTargetType,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetLinkTargetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZQF(C.CString("EbookSaveOptions_GetLinkTargetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2111,7 +2133,7 @@ func (instance *EbookSaveOptions) GetLinkTargetType()  (HtmlLinkTargetType,  err
 //   void  
 func (instance *EbookSaveOptions) SetLinkTargetType(value HtmlLinkTargetType)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetLinkTargetType( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZQG(C.CString("EbookSaveOptions_SetLinkTargetType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2125,7 +2147,7 @@ func (instance *EbookSaveOptions) SetLinkTargetType(value HtmlLinkTargetType)  e
 //   bool  
 func (instance *EbookSaveOptions) IsIECompatible()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_IsIECompatible( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_IsIECompatible"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2142,7 +2164,7 @@ func (instance *EbookSaveOptions) IsIECompatible()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetIsIECompatible(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetIsIECompatible( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetIsIECompatible"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2158,7 +2180,7 @@ func (instance *EbookSaveOptions) SetIsIECompatible(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetFormatDataIgnoreColumnWidth()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetFormatDataIgnoreColumnWidth( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetFormatDataIgnoreColumnWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2177,7 +2199,7 @@ func (instance *EbookSaveOptions) GetFormatDataIgnoreColumnWidth()  (bool,  erro
 //   void  
 func (instance *EbookSaveOptions) SetFormatDataIgnoreColumnWidth(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetFormatDataIgnoreColumnWidth( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetFormatDataIgnoreColumnWidth"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2190,7 +2212,7 @@ func (instance *EbookSaveOptions) SetFormatDataIgnoreColumnWidth(value bool)  er
 //   bool  
 func (instance *EbookSaveOptions) GetCalculateFormula()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetCalculateFormula( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetCalculateFormula"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2206,7 +2228,7 @@ func (instance *EbookSaveOptions) GetCalculateFormula()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetCalculateFormula(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetCalculateFormula( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetCalculateFormula"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2220,7 +2242,7 @@ func (instance *EbookSaveOptions) SetCalculateFormula(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) IsJsBrowserCompatible()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_IsJsBrowserCompatible( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_IsJsBrowserCompatible"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2237,7 +2259,7 @@ func (instance *EbookSaveOptions) IsJsBrowserCompatible()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetIsJsBrowserCompatible(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetIsJsBrowserCompatible( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetIsJsBrowserCompatible"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2251,7 +2273,7 @@ func (instance *EbookSaveOptions) SetIsJsBrowserCompatible(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) IsMobileCompatible()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_IsMobileCompatible( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_IsMobileCompatible"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2268,7 +2290,7 @@ func (instance *EbookSaveOptions) IsMobileCompatible()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetIsMobileCompatible(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetIsMobileCompatible( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetIsMobileCompatible"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2282,7 +2304,7 @@ func (instance *EbookSaveOptions) SetIsMobileCompatible(value bool)  error {
 //   string  
 func (instance *EbookSaveOptions) GetCssStyles()  (string,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetCssStyles( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("EbookSaveOptions_GetCssStyles"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -2299,7 +2321,7 @@ func (instance *EbookSaveOptions) GetCssStyles()  (string,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetCssStyles(value string)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetCssStyles( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("EbookSaveOptions_SetCssStyles"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2313,7 +2335,7 @@ func (instance *EbookSaveOptions) SetCssStyles(value string)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetHideOverflowWrappedText()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetHideOverflowWrappedText( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetHideOverflowWrappedText"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2330,7 +2352,7 @@ func (instance *EbookSaveOptions) GetHideOverflowWrappedText()  (bool,  error)  
 //   void  
 func (instance *EbookSaveOptions) SetHideOverflowWrappedText(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetHideOverflowWrappedText( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetHideOverflowWrappedText"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2344,7 +2366,7 @@ func (instance *EbookSaveOptions) SetHideOverflowWrappedText(value bool)  error 
 //   bool  
 func (instance *EbookSaveOptions) IsBorderCollapsed()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_IsBorderCollapsed( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_IsBorderCollapsed"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2361,7 +2383,7 @@ func (instance *EbookSaveOptions) IsBorderCollapsed()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetIsBorderCollapsed(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetIsBorderCollapsed( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetIsBorderCollapsed"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2376,7 +2398,7 @@ func (instance *EbookSaveOptions) SetIsBorderCollapsed(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetEncodeEntityAsCode()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetEncodeEntityAsCode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetEncodeEntityAsCode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2394,7 +2416,7 @@ func (instance *EbookSaveOptions) GetEncodeEntityAsCode()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetEncodeEntityAsCode(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetEncodeEntityAsCode( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetEncodeEntityAsCode"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2407,7 +2429,7 @@ func (instance *EbookSaveOptions) SetEncodeEntityAsCode(value bool)  error {
 //   int32  
 func (instance *EbookSaveOptions) GetOfficeMathOutputMode()  (HtmlOfficeMathOutputType,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetOfficeMathOutputMode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZQH(C.CString("EbookSaveOptions_GetOfficeMathOutputMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2426,7 +2448,7 @@ func (instance *EbookSaveOptions) GetOfficeMathOutputMode()  (HtmlOfficeMathOutp
 //   void  
 func (instance *EbookSaveOptions) SetOfficeMathOutputMode(value HtmlOfficeMathOutputType)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetOfficeMathOutputMode( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZQI(C.CString("EbookSaveOptions_SetOfficeMathOutputMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2441,7 +2463,7 @@ func (instance *EbookSaveOptions) SetOfficeMathOutputMode(value HtmlOfficeMathOu
 //   string  
 func (instance *EbookSaveOptions) GetCellNameAttribute()  (string,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetCellNameAttribute( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("EbookSaveOptions_GetCellNameAttribute"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -2459,7 +2481,7 @@ func (instance *EbookSaveOptions) GetCellNameAttribute()  (string,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetCellNameAttribute(value string)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetCellNameAttribute( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("EbookSaveOptions_SetCellNameAttribute"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2473,7 +2495,7 @@ func (instance *EbookSaveOptions) SetCellNameAttribute(value string)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetDisableCss()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetDisableCss( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetDisableCss"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2490,7 +2512,7 @@ func (instance *EbookSaveOptions) GetDisableCss()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetDisableCss(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetDisableCss( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetDisableCss"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2504,7 +2526,7 @@ func (instance *EbookSaveOptions) SetDisableCss(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetEnableCssCustomProperties()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetEnableCssCustomProperties( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetEnableCssCustomProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2521,7 +2543,7 @@ func (instance *EbookSaveOptions) GetEnableCssCustomProperties()  (bool,  error)
 //   void  
 func (instance *EbookSaveOptions) SetEnableCssCustomProperties(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetEnableCssCustomProperties( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetEnableCssCustomProperties"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2535,7 +2557,7 @@ func (instance *EbookSaveOptions) SetEnableCssCustomProperties(value bool)  erro
 //   int32  
 func (instance *EbookSaveOptions) GetHtmlVersion()  (HtmlVersion,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetHtmlVersion( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZQJ(C.CString("EbookSaveOptions_GetHtmlVersion"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2555,7 +2577,7 @@ func (instance *EbookSaveOptions) GetHtmlVersion()  (HtmlVersion,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetHtmlVersion(value HtmlVersion)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetHtmlVersion( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZQK(C.CString("EbookSaveOptions_SetHtmlVersion"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2568,7 +2590,7 @@ func (instance *EbookSaveOptions) SetHtmlVersion(value HtmlVersion)  error {
 //   SheetSet  
 func (instance *EbookSaveOptions) GetSheetSet()  (*SheetSet,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetSheetSet( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZLN(C.CString("EbookSaveOptions_GetSheetSet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2591,7 +2613,41 @@ func (instance *EbookSaveOptions) SetSheetSet(value *SheetSet)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.EbookSaveOptions_SetSheetSet( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("EbookSaveOptions_SetSheetSet"), instance.ptr, value_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the type of font that embedded in html.
+// Default value is <see cref="HtmlEmbeddedFontType.None"/> which indicates that it will not embed font in html.
+// Returns:
+//   int32  
+func (instance *EbookSaveOptions) GetEmbeddedFontType()  (HtmlEmbeddedFontType,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZQL(C.CString("EbookSaveOptions_GetEmbeddedFontType"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToHtmlEmbeddedFontType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the type of font that embedded in html.
+// Default value is <see cref="HtmlEmbeddedFontType.None"/> which indicates that it will not embed font in html.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *EbookSaveOptions) SetEmbeddedFontType(value HtmlEmbeddedFontType)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZQM(C.CString("EbookSaveOptions_SetEmbeddedFontType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2604,7 +2660,7 @@ func (instance *EbookSaveOptions) SetSheetSet(value *SheetSet)  error {
 //   int32  
 func (instance *EbookSaveOptions) GetSaveFormat()  (SaveFormat,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetSaveFormat( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZLC(C.CString("EbookSaveOptions_GetSaveFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2621,7 +2677,7 @@ func (instance *EbookSaveOptions) GetSaveFormat()  (SaveFormat,  error)  {
 //   bool  
 func (instance *EbookSaveOptions) GetClearData()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetClearData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetClearData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2637,7 +2693,7 @@ func (instance *EbookSaveOptions) GetClearData()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetClearData(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetClearData( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetClearData"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2650,7 +2706,7 @@ func (instance *EbookSaveOptions) SetClearData(value bool)  error {
 //   string  
 func (instance *EbookSaveOptions) GetCachedFileFolder()  (string,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetCachedFileFolder( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("EbookSaveOptions_GetCachedFileFolder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -2666,7 +2722,7 @@ func (instance *EbookSaveOptions) GetCachedFileFolder()  (string,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetCachedFileFolder(value string)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetCachedFileFolder( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("EbookSaveOptions_SetCachedFileFolder"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2679,7 +2735,7 @@ func (instance *EbookSaveOptions) SetCachedFileFolder(value string)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetValidateMergedAreas()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetValidateMergedAreas( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetValidateMergedAreas"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2695,7 +2751,7 @@ func (instance *EbookSaveOptions) GetValidateMergedAreas()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetValidateMergedAreas(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetValidateMergedAreas( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetValidateMergedAreas"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2708,7 +2764,7 @@ func (instance *EbookSaveOptions) SetValidateMergedAreas(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetMergeAreas()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetMergeAreas( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetMergeAreas"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2724,7 +2780,7 @@ func (instance *EbookSaveOptions) GetMergeAreas()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetMergeAreas(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetMergeAreas( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetMergeAreas"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2737,7 +2793,7 @@ func (instance *EbookSaveOptions) SetMergeAreas(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetCreateDirectory()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetCreateDirectory( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetCreateDirectory"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2753,7 +2809,7 @@ func (instance *EbookSaveOptions) GetCreateDirectory()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetCreateDirectory(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetCreateDirectory( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetCreateDirectory"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2766,7 +2822,7 @@ func (instance *EbookSaveOptions) SetCreateDirectory(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetSortNames()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetSortNames( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetSortNames"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2782,7 +2838,7 @@ func (instance *EbookSaveOptions) GetSortNames()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetSortNames(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetSortNames( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetSortNames"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2795,7 +2851,7 @@ func (instance *EbookSaveOptions) SetSortNames(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetSortExternalNames()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetSortExternalNames( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetSortExternalNames"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2811,7 +2867,7 @@ func (instance *EbookSaveOptions) GetSortExternalNames()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetSortExternalNames(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetSortExternalNames( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetSortExternalNames"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2824,7 +2880,7 @@ func (instance *EbookSaveOptions) SetSortExternalNames(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetRefreshChartCache()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetRefreshChartCache( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetRefreshChartCache"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2840,7 +2896,7 @@ func (instance *EbookSaveOptions) GetRefreshChartCache()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetRefreshChartCache(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetRefreshChartCache( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetRefreshChartCache"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2855,7 +2911,7 @@ func (instance *EbookSaveOptions) SetRefreshChartCache(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetCheckExcelRestriction"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2873,7 +2929,7 @@ func (instance *EbookSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetCheckExcelRestriction(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetCheckExcelRestriction"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2887,7 +2943,7 @@ func (instance *EbookSaveOptions) SetCheckExcelRestriction(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetUpdateSmartArt()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetUpdateSmartArt( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetUpdateSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2904,7 +2960,7 @@ func (instance *EbookSaveOptions) GetUpdateSmartArt()  (bool,  error)  {
 //   void  
 func (instance *EbookSaveOptions) SetUpdateSmartArt(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetUpdateSmartArt( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetUpdateSmartArt"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2918,7 +2974,7 @@ func (instance *EbookSaveOptions) SetUpdateSmartArt(value bool)  error {
 //   bool  
 func (instance *EbookSaveOptions) GetEncryptDocumentProperties()  (bool,  error)  {
 	
-	CGoReturnPtr := C.EbookSaveOptions_GetEncryptDocumentProperties( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetEncryptDocumentProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2935,7 +2991,7 @@ func (instance *EbookSaveOptions) GetEncryptDocumentProperties()  (bool,  error)
 //   void  
 func (instance *EbookSaveOptions) SetEncryptDocumentProperties(value bool)  error {
 	
-	CGoReturnPtr := C.EbookSaveOptions_SetEncryptDocumentProperties( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetEncryptDocumentProperties"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2972,7 +3028,7 @@ type SqlScriptColumnTypeMap struct {
 // Default constructor.
 func NewSqlScriptColumnTypeMap() ( *SqlScriptColumnTypeMap, error) {
 	sqlscriptcolumntypemap := &SqlScriptColumnTypeMap{}
-	CGoReturnPtr := C.New_SqlScriptColumnTypeMap()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_SqlScriptColumnTypeMap"),)
 	if CGoReturnPtr.error_no == 0 {
 		sqlscriptcolumntypemap.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(sqlscriptcolumntypemap, DeleteSqlScriptColumnTypeMap)
@@ -2989,7 +3045,7 @@ func NewSqlScriptColumnTypeMap() ( *SqlScriptColumnTypeMap, error) {
 //   bool  
 func (instance *SqlScriptColumnTypeMap) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptColumnTypeMap_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SqlScriptColumnTypeMap_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3003,7 +3059,7 @@ func (instance *SqlScriptColumnTypeMap) IsNull()  (bool,  error)  {
 //   string  
 func (instance *SqlScriptColumnTypeMap) GetStringType()  (string,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptColumnTypeMap_GetStringType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("SqlScriptColumnTypeMap_GetStringType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -3017,7 +3073,7 @@ func (instance *SqlScriptColumnTypeMap) GetStringType()  (string,  error)  {
 //   string  
 func (instance *SqlScriptColumnTypeMap) GetNumbericType()  (string,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptColumnTypeMap_GetNumbericType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("SqlScriptColumnTypeMap_GetNumbericType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -3045,7 +3101,7 @@ type SqlScriptSaveOptions struct {
 // Creates options for saving sql file.
 func NewSqlScriptSaveOptions() ( *SqlScriptSaveOptions, error) {
 	sqlscriptsaveoptions := &SqlScriptSaveOptions{}
-	CGoReturnPtr := C.New_SqlScriptSaveOptions()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_SqlScriptSaveOptions"),)
 	if CGoReturnPtr.error_no == 0 {
 		sqlscriptsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(sqlscriptsaveoptions, DeleteSqlScriptSaveOptions)
@@ -3066,7 +3122,7 @@ func NewSqlScriptSaveOptions_SaveOptions(src *SaveOptions) ( *SqlScriptSaveOptio
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_SqlScriptSaveOptions_SaveOptions(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZLB(C.CString("New_SqlScriptSaveOptions_SaveOptions"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		sqlscriptsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(sqlscriptsaveoptions, DeleteSqlScriptSaveOptions)
@@ -3083,7 +3139,7 @@ func NewSqlScriptSaveOptions_SaveOptions(src *SaveOptions) ( *SqlScriptSaveOptio
 //   bool  
 func (instance *SqlScriptSaveOptions) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SqlScriptSaveOptions_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3097,7 +3153,7 @@ func (instance *SqlScriptSaveOptions) IsNull()  (bool,  error)  {
 //   bool  
 func (instance *SqlScriptSaveOptions) GetCheckIfTableExists()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetCheckIfTableExists( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SqlScriptSaveOptions_GetCheckIfTableExists"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3113,7 +3169,7 @@ func (instance *SqlScriptSaveOptions) GetCheckIfTableExists()  (bool,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetCheckIfTableExists(value bool)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetCheckIfTableExists( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SqlScriptSaveOptions_SetCheckIfTableExists"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3126,7 +3182,7 @@ func (instance *SqlScriptSaveOptions) SetCheckIfTableExists(value bool)  error {
 //   SqlScriptColumnTypeMap  
 func (instance *SqlScriptSaveOptions) GetColumnTypeMap()  (*SqlScriptColumnTypeMap,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetColumnTypeMap( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGO(C.CString("SqlScriptSaveOptions_GetColumnTypeMap"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3149,7 +3205,7 @@ func (instance *SqlScriptSaveOptions) SetColumnTypeMap(value *SqlScriptColumnTyp
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetColumnTypeMap( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGP(C.CString("SqlScriptSaveOptions_SetColumnTypeMap"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3162,7 +3218,7 @@ func (instance *SqlScriptSaveOptions) SetColumnTypeMap(value *SqlScriptColumnTyp
 //   bool  
 func (instance *SqlScriptSaveOptions) GetCheckAllDataForColumnType()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetCheckAllDataForColumnType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SqlScriptSaveOptions_GetCheckAllDataForColumnType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3178,7 +3234,7 @@ func (instance *SqlScriptSaveOptions) GetCheckAllDataForColumnType()  (bool,  er
 //   void  
 func (instance *SqlScriptSaveOptions) SetCheckAllDataForColumnType(value bool)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetCheckAllDataForColumnType( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SqlScriptSaveOptions_SetCheckAllDataForColumnType"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3191,7 +3247,7 @@ func (instance *SqlScriptSaveOptions) SetCheckAllDataForColumnType(value bool)  
 //   bool  
 func (instance *SqlScriptSaveOptions) GetAddBlankLineBetweenRows()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetAddBlankLineBetweenRows( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SqlScriptSaveOptions_GetAddBlankLineBetweenRows"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3207,7 +3263,7 @@ func (instance *SqlScriptSaveOptions) GetAddBlankLineBetweenRows()  (bool,  erro
 //   void  
 func (instance *SqlScriptSaveOptions) SetAddBlankLineBetweenRows(value bool)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetAddBlankLineBetweenRows( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SqlScriptSaveOptions_SetAddBlankLineBetweenRows"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3220,7 +3276,7 @@ func (instance *SqlScriptSaveOptions) SetAddBlankLineBetweenRows(value bool)  er
 //   byte  
 func (instance *SqlScriptSaveOptions) GetSeparator()  (byte,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetSeparator( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPI(C.CString("SqlScriptSaveOptions_GetSeparator"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3236,7 +3292,7 @@ func (instance *SqlScriptSaveOptions) GetSeparator()  (byte,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetSeparator(value byte)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetSeparator( instance.ptr, C.char(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZSA(C.CString("SqlScriptSaveOptions_SetSeparator"), instance.ptr, C.char(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3249,7 +3305,7 @@ func (instance *SqlScriptSaveOptions) SetSeparator(value byte)  error {
 //   int32  
 func (instance *SqlScriptSaveOptions) GetOperatorType()  (SqlScriptOperatorType,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetOperatorType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGQ(C.CString("SqlScriptSaveOptions_GetOperatorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3268,7 +3324,7 @@ func (instance *SqlScriptSaveOptions) GetOperatorType()  (SqlScriptOperatorType,
 //   void  
 func (instance *SqlScriptSaveOptions) SetOperatorType(value SqlScriptOperatorType)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetOperatorType( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZBGR(C.CString("SqlScriptSaveOptions_SetOperatorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3281,7 +3337,7 @@ func (instance *SqlScriptSaveOptions) SetOperatorType(value SqlScriptOperatorTyp
 //   int32  
 func (instance *SqlScriptSaveOptions) GetPrimaryKey()  (int32,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetPrimaryKey( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("SqlScriptSaveOptions_GetPrimaryKey"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3297,7 +3353,7 @@ func (instance *SqlScriptSaveOptions) GetPrimaryKey()  (int32,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetPrimaryKey(value int32)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetPrimaryKey( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("SqlScriptSaveOptions_SetPrimaryKey"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3310,7 +3366,7 @@ func (instance *SqlScriptSaveOptions) SetPrimaryKey(value int32)  error {
 //   bool  
 func (instance *SqlScriptSaveOptions) GetCreateTable()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetCreateTable( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SqlScriptSaveOptions_GetCreateTable"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3326,7 +3382,7 @@ func (instance *SqlScriptSaveOptions) GetCreateTable()  (bool,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetCreateTable(value bool)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetCreateTable( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SqlScriptSaveOptions_SetCreateTable"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3339,7 +3395,7 @@ func (instance *SqlScriptSaveOptions) SetCreateTable(value bool)  error {
 //   string  
 func (instance *SqlScriptSaveOptions) GetIdName()  (string,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetIdName( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("SqlScriptSaveOptions_GetIdName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -3355,7 +3411,7 @@ func (instance *SqlScriptSaveOptions) GetIdName()  (string,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetIdName(value string)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetIdName( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("SqlScriptSaveOptions_SetIdName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3368,7 +3424,7 @@ func (instance *SqlScriptSaveOptions) SetIdName(value string)  error {
 //   int32  
 func (instance *SqlScriptSaveOptions) GetStartId()  (int32,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetStartId( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("SqlScriptSaveOptions_GetStartId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3384,7 +3440,7 @@ func (instance *SqlScriptSaveOptions) GetStartId()  (int32,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetStartId(value int32)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetStartId( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("SqlScriptSaveOptions_SetStartId"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3397,7 +3453,7 @@ func (instance *SqlScriptSaveOptions) SetStartId(value int32)  error {
 //   string  
 func (instance *SqlScriptSaveOptions) GetTableName()  (string,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetTableName( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("SqlScriptSaveOptions_GetTableName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -3413,7 +3469,7 @@ func (instance *SqlScriptSaveOptions) GetTableName()  (string,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetTableName(value string)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetTableName( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("SqlScriptSaveOptions_SetTableName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3426,7 +3482,7 @@ func (instance *SqlScriptSaveOptions) SetTableName(value string)  error {
 //   bool  
 func (instance *SqlScriptSaveOptions) GetExportAsString()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetExportAsString( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SqlScriptSaveOptions_GetExportAsString"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3442,7 +3498,7 @@ func (instance *SqlScriptSaveOptions) GetExportAsString()  (bool,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetExportAsString(value bool)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetExportAsString( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SqlScriptSaveOptions_SetExportAsString"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3455,7 +3511,7 @@ func (instance *SqlScriptSaveOptions) SetExportAsString(value bool)  error {
 //   []int32_t  
 func (instance *SqlScriptSaveOptions) GetSheetIndexes()  ([]int32,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetSheetIndexes( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAS(C.CString("SqlScriptSaveOptions_GetSheetIndexes"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3478,7 +3534,7 @@ func (instance *SqlScriptSaveOptions) GetSheetIndexes()  ([]int32,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetSheetIndexes(value []int32)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetSheetIndexes( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZRD(C.CString("SqlScriptSaveOptions_SetSheetIndexes"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3491,7 +3547,7 @@ func (instance *SqlScriptSaveOptions) SetSheetIndexes(value []int32)  error {
 //   CellArea  
 func (instance *SqlScriptSaveOptions) GetExportArea()  (*CellArea,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetExportArea( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAG(C.CString("SqlScriptSaveOptions_GetExportArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3514,7 +3570,7 @@ func (instance *SqlScriptSaveOptions) SetExportArea(value *CellArea)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetExportArea( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZGH(C.CString("SqlScriptSaveOptions_SetExportArea"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3527,7 +3583,7 @@ func (instance *SqlScriptSaveOptions) SetExportArea(value *CellArea)  error {
 //   bool  
 func (instance *SqlScriptSaveOptions) GetHasHeaderRow()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetHasHeaderRow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SqlScriptSaveOptions_GetHasHeaderRow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3543,7 +3599,7 @@ func (instance *SqlScriptSaveOptions) GetHasHeaderRow()  (bool,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetHasHeaderRow(value bool)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetHasHeaderRow( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SqlScriptSaveOptions_SetHasHeaderRow"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3556,7 +3612,7 @@ func (instance *SqlScriptSaveOptions) SetHasHeaderRow(value bool)  error {
 //   int32  
 func (instance *SqlScriptSaveOptions) GetSaveFormat()  (SaveFormat,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetSaveFormat( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZLC(C.CString("SqlScriptSaveOptions_GetSaveFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3573,7 +3629,7 @@ func (instance *SqlScriptSaveOptions) GetSaveFormat()  (SaveFormat,  error)  {
 //   bool  
 func (instance *SqlScriptSaveOptions) GetClearData()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetClearData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SqlScriptSaveOptions_GetClearData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3589,7 +3645,7 @@ func (instance *SqlScriptSaveOptions) GetClearData()  (bool,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetClearData(value bool)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetClearData( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SqlScriptSaveOptions_SetClearData"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3602,7 +3658,7 @@ func (instance *SqlScriptSaveOptions) SetClearData(value bool)  error {
 //   string  
 func (instance *SqlScriptSaveOptions) GetCachedFileFolder()  (string,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetCachedFileFolder( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("SqlScriptSaveOptions_GetCachedFileFolder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -3618,7 +3674,7 @@ func (instance *SqlScriptSaveOptions) GetCachedFileFolder()  (string,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetCachedFileFolder(value string)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetCachedFileFolder( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("SqlScriptSaveOptions_SetCachedFileFolder"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3631,7 +3687,7 @@ func (instance *SqlScriptSaveOptions) SetCachedFileFolder(value string)  error {
 //   bool  
 func (instance *SqlScriptSaveOptions) GetValidateMergedAreas()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetValidateMergedAreas( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SqlScriptSaveOptions_GetValidateMergedAreas"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3647,7 +3703,7 @@ func (instance *SqlScriptSaveOptions) GetValidateMergedAreas()  (bool,  error)  
 //   void  
 func (instance *SqlScriptSaveOptions) SetValidateMergedAreas(value bool)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetValidateMergedAreas( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SqlScriptSaveOptions_SetValidateMergedAreas"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3660,7 +3716,7 @@ func (instance *SqlScriptSaveOptions) SetValidateMergedAreas(value bool)  error 
 //   bool  
 func (instance *SqlScriptSaveOptions) GetMergeAreas()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetMergeAreas( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SqlScriptSaveOptions_GetMergeAreas"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3676,7 +3732,7 @@ func (instance *SqlScriptSaveOptions) GetMergeAreas()  (bool,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetMergeAreas(value bool)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetMergeAreas( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SqlScriptSaveOptions_SetMergeAreas"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3689,7 +3745,7 @@ func (instance *SqlScriptSaveOptions) SetMergeAreas(value bool)  error {
 //   bool  
 func (instance *SqlScriptSaveOptions) GetCreateDirectory()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetCreateDirectory( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SqlScriptSaveOptions_GetCreateDirectory"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3705,7 +3761,7 @@ func (instance *SqlScriptSaveOptions) GetCreateDirectory()  (bool,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetCreateDirectory(value bool)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetCreateDirectory( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SqlScriptSaveOptions_SetCreateDirectory"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3718,7 +3774,7 @@ func (instance *SqlScriptSaveOptions) SetCreateDirectory(value bool)  error {
 //   bool  
 func (instance *SqlScriptSaveOptions) GetSortNames()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetSortNames( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SqlScriptSaveOptions_GetSortNames"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3734,7 +3790,7 @@ func (instance *SqlScriptSaveOptions) GetSortNames()  (bool,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetSortNames(value bool)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetSortNames( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SqlScriptSaveOptions_SetSortNames"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3747,7 +3803,7 @@ func (instance *SqlScriptSaveOptions) SetSortNames(value bool)  error {
 //   bool  
 func (instance *SqlScriptSaveOptions) GetSortExternalNames()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetSortExternalNames( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SqlScriptSaveOptions_GetSortExternalNames"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3763,7 +3819,7 @@ func (instance *SqlScriptSaveOptions) GetSortExternalNames()  (bool,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetSortExternalNames(value bool)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetSortExternalNames( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SqlScriptSaveOptions_SetSortExternalNames"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3776,7 +3832,7 @@ func (instance *SqlScriptSaveOptions) SetSortExternalNames(value bool)  error {
 //   bool  
 func (instance *SqlScriptSaveOptions) GetRefreshChartCache()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetRefreshChartCache( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SqlScriptSaveOptions_GetRefreshChartCache"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3792,7 +3848,7 @@ func (instance *SqlScriptSaveOptions) GetRefreshChartCache()  (bool,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetRefreshChartCache(value bool)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetRefreshChartCache( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SqlScriptSaveOptions_SetRefreshChartCache"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3807,7 +3863,7 @@ func (instance *SqlScriptSaveOptions) SetRefreshChartCache(value bool)  error {
 //   bool  
 func (instance *SqlScriptSaveOptions) GetCheckExcelRestriction()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetCheckExcelRestriction( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SqlScriptSaveOptions_GetCheckExcelRestriction"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3825,7 +3881,7 @@ func (instance *SqlScriptSaveOptions) GetCheckExcelRestriction()  (bool,  error)
 //   void  
 func (instance *SqlScriptSaveOptions) SetCheckExcelRestriction(value bool)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SqlScriptSaveOptions_SetCheckExcelRestriction"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3839,7 +3895,7 @@ func (instance *SqlScriptSaveOptions) SetCheckExcelRestriction(value bool)  erro
 //   bool  
 func (instance *SqlScriptSaveOptions) GetUpdateSmartArt()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetUpdateSmartArt( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SqlScriptSaveOptions_GetUpdateSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3856,7 +3912,7 @@ func (instance *SqlScriptSaveOptions) GetUpdateSmartArt()  (bool,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetUpdateSmartArt(value bool)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetUpdateSmartArt( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SqlScriptSaveOptions_SetUpdateSmartArt"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3870,7 +3926,7 @@ func (instance *SqlScriptSaveOptions) SetUpdateSmartArt(value bool)  error {
 //   bool  
 func (instance *SqlScriptSaveOptions) GetEncryptDocumentProperties()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_GetEncryptDocumentProperties( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SqlScriptSaveOptions_GetEncryptDocumentProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3887,7 +3943,7 @@ func (instance *SqlScriptSaveOptions) GetEncryptDocumentProperties()  (bool,  er
 //   void  
 func (instance *SqlScriptSaveOptions) SetEncryptDocumentProperties(value bool)  error {
 	
-	CGoReturnPtr := C.SqlScriptSaveOptions_SetEncryptDocumentProperties( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SqlScriptSaveOptions_SetEncryptDocumentProperties"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

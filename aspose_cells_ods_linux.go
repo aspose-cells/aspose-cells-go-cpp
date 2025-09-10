@@ -11,7 +11,7 @@ package asposecells
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
 // #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/linux_x86_64" -L"${SRCDIR}/lib/linux_x86_64" -lAspose.Cells.CWrapper
-// #include <AsposeCellsCWrapper.h>
+// #include <CellsFunctionMap.h>
 import "C"
 import (
 	"fmt"  
@@ -213,7 +213,7 @@ type OdsCellField struct {
 //   bool  
 func (instance *OdsCellField) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.OdsCellField_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("OdsCellField_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -227,7 +227,7 @@ func (instance *OdsCellField) IsNull()  (bool,  error)  {
 //   string  
 func (instance *OdsCellField) GetCustomFormat()  (string,  error)  {
 	
-	CGoReturnPtr := C.OdsCellField_GetCustomFormat( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("OdsCellField_GetCustomFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -243,7 +243,7 @@ func (instance *OdsCellField) GetCustomFormat()  (string,  error)  {
 //   void  
 func (instance *OdsCellField) SetCustomFormat(value string)  error {
 	
-	CGoReturnPtr := C.OdsCellField_SetCustomFormat( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("OdsCellField_SetCustomFormat"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -256,7 +256,7 @@ func (instance *OdsCellField) SetCustomFormat(value string)  error {
 //   int32  
 func (instance *OdsCellField) GetFieldType()  (OdsCellFieldType,  error)  {
 	
-	CGoReturnPtr := C.OdsCellField_GetFieldType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBIP(C.CString("OdsCellField_GetFieldType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -275,7 +275,7 @@ func (instance *OdsCellField) GetFieldType()  (OdsCellFieldType,  error)  {
 //   void  
 func (instance *OdsCellField) SetFieldType(value OdsCellFieldType)  error {
 	
-	CGoReturnPtr := C.OdsCellField_SetFieldType( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZBIQ(C.CString("OdsCellField_SetFieldType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -288,7 +288,7 @@ func (instance *OdsCellField) SetFieldType(value OdsCellFieldType)  error {
 //   int32  
 func (instance *OdsCellField) GetRow()  (int32,  error)  {
 	
-	CGoReturnPtr := C.OdsCellField_GetRow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("OdsCellField_GetRow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -304,7 +304,7 @@ func (instance *OdsCellField) GetRow()  (int32,  error)  {
 //   void  
 func (instance *OdsCellField) SetRow(value int32)  error {
 	
-	CGoReturnPtr := C.OdsCellField_SetRow( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("OdsCellField_SetRow"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -317,7 +317,7 @@ func (instance *OdsCellField) SetRow(value int32)  error {
 //   int32  
 func (instance *OdsCellField) GetColumn()  (int32,  error)  {
 	
-	CGoReturnPtr := C.OdsCellField_GetColumn( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("OdsCellField_GetColumn"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -333,7 +333,7 @@ func (instance *OdsCellField) GetColumn()  (int32,  error)  {
 //   void  
 func (instance *OdsCellField) SetColumn(value int32)  error {
 	
-	CGoReturnPtr := C.OdsCellField_SetColumn( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("OdsCellField_SetColumn"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -363,7 +363,7 @@ type OdsCellFieldCollection struct {
 //   bool  
 func (instance *OdsCellFieldCollection) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.OdsCellFieldCollection_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("OdsCellFieldCollection_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -379,7 +379,7 @@ func (instance *OdsCellFieldCollection) IsNull()  (bool,  error)  {
 //   OdsCellField  
 func (instance *OdsCellFieldCollection) Get_Int(index int32)  (*OdsCellField,  error)  {
 	
-	CGoReturnPtr := C.OdsCellFieldCollection_Get_Integer( instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZBIR(C.CString("OdsCellFieldCollection_Get_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -398,7 +398,7 @@ func (instance *OdsCellFieldCollection) Get_Int(index int32)  (*OdsCellField,  e
 //   OdsCellField  
 func (instance *OdsCellFieldCollection) Get_Int_Int(row int32, column int32)  (*OdsCellField,  error)  {
 	
-	CGoReturnPtr := C.OdsCellFieldCollection_Get_Integer_Integer( instance.ptr, C.int(row), C.int(column))
+	CGoReturnPtr := C.CellsGoFunctoinZBIS(C.CString("OdsCellFieldCollection_Get_Integer_Integer"), instance.ptr, C.int(row), C.int(column))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -419,7 +419,7 @@ func (instance *OdsCellFieldCollection) Get_Int_Int(row int32, column int32)  (*
 //   int32  
 func (instance *OdsCellFieldCollection) Add(row int32, column int32, fieldtype OdsCellFieldType, format string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.OdsCellFieldCollection_Add( instance.ptr, C.int(row), C.int(column), C.int( int32(fieldtype)), C.CString(format))
+	CGoReturnPtr := C.CellsGoFunctoinZBIT(C.CString("OdsCellFieldCollection_Add"), instance.ptr, C.int(row), C.int(column), C.int( int32(fieldtype)), C.CString(format))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -433,7 +433,7 @@ func (instance *OdsCellFieldCollection) Add(row int32, column int32, fieldtype O
 //   void  
 func (instance *OdsCellFieldCollection) UpdateFieldsValue()  error {
 	
-	CGoReturnPtr := C.OdsCellFieldCollection_UpdateFieldsValue( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("OdsCellFieldCollection_UpdateFieldsValue"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -445,7 +445,7 @@ func (instance *OdsCellFieldCollection) UpdateFieldsValue()  error {
 //   int32  
 func (instance *OdsCellFieldCollection) GetCount()  (int32,  error)  {
 	
-	CGoReturnPtr := C.OdsCellFieldCollection_GetCount( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("OdsCellFieldCollection_GetCount"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -473,7 +473,7 @@ type OdsPageBackground struct {
 // Default constructor.
 func NewOdsPageBackground() ( *OdsPageBackground, error) {
 	odspagebackground := &OdsPageBackground{}
-	CGoReturnPtr := C.New_OdsPageBackground()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_OdsPageBackground"),)
 	if CGoReturnPtr.error_no == 0 {
 		odspagebackground.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(odspagebackground, DeleteOdsPageBackground)
@@ -490,7 +490,7 @@ func NewOdsPageBackground() ( *OdsPageBackground, error) {
 //   bool  
 func (instance *OdsPageBackground) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.OdsPageBackground_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("OdsPageBackground_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -504,7 +504,7 @@ func (instance *OdsPageBackground) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *OdsPageBackground) GetType()  (OdsPageBackgroundType,  error)  {
 	
-	CGoReturnPtr := C.OdsPageBackground_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBIU(C.CString("OdsPageBackground_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -523,7 +523,7 @@ func (instance *OdsPageBackground) GetType()  (OdsPageBackgroundType,  error)  {
 //   void  
 func (instance *OdsPageBackground) SetType(value OdsPageBackgroundType)  error {
 	
-	CGoReturnPtr := C.OdsPageBackground_SetType( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZBIV(C.CString("OdsPageBackground_SetType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -536,7 +536,7 @@ func (instance *OdsPageBackground) SetType(value OdsPageBackgroundType)  error {
 //   Color  
 func (instance *OdsPageBackground) GetColor()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.OdsPageBackground_GetColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBI(C.CString("OdsPageBackground_GetColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -553,7 +553,7 @@ func (instance *OdsPageBackground) GetColor()  (*Color,  error)  {
 //   void  
 func (instance *OdsPageBackground) SetColor(value *Color)  error {
 	
-	CGoReturnPtr := C.OdsPageBackground_SetColor( instance.ptr, value.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBJ(C.CString("OdsPageBackground_SetColor"), instance.ptr, value.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -566,7 +566,7 @@ func (instance *OdsPageBackground) SetColor(value *Color)  error {
 //   int32  
 func (instance *OdsPageBackground) GetGraphicType()  (OdsPageBackgroundGraphicType,  error)  {
 	
-	CGoReturnPtr := C.OdsPageBackground_GetGraphicType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBIW(C.CString("OdsPageBackground_GetGraphicType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -585,7 +585,7 @@ func (instance *OdsPageBackground) GetGraphicType()  (OdsPageBackgroundGraphicTy
 //   void  
 func (instance *OdsPageBackground) SetGraphicType(value OdsPageBackgroundGraphicType)  error {
 	
-	CGoReturnPtr := C.OdsPageBackground_SetGraphicType( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZBIX(C.CString("OdsPageBackground_SetGraphicType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -598,7 +598,7 @@ func (instance *OdsPageBackground) SetGraphicType(value OdsPageBackgroundGraphic
 //   int32  
 func (instance *OdsPageBackground) GetGraphicPositionType()  (OdsPageBackgroundGraphicPositionType,  error)  {
 	
-	CGoReturnPtr := C.OdsPageBackground_GetGraphicPositionType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBIY(C.CString("OdsPageBackground_GetGraphicPositionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -617,7 +617,7 @@ func (instance *OdsPageBackground) GetGraphicPositionType()  (OdsPageBackgroundG
 //   void  
 func (instance *OdsPageBackground) SetGraphicPositionType(value OdsPageBackgroundGraphicPositionType)  error {
 	
-	CGoReturnPtr := C.OdsPageBackground_SetGraphicPositionType( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZBJA(C.CString("OdsPageBackground_SetGraphicPositionType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -630,7 +630,7 @@ func (instance *OdsPageBackground) SetGraphicPositionType(value OdsPageBackgroun
 //   bool  
 func (instance *OdsPageBackground) IsLink()  (bool,  error)  {
 	
-	CGoReturnPtr := C.OdsPageBackground_IsLink( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("OdsPageBackground_IsLink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -644,7 +644,7 @@ func (instance *OdsPageBackground) IsLink()  (bool,  error)  {
 //   string  
 func (instance *OdsPageBackground) GetLinkedGraphic()  (string,  error)  {
 	
-	CGoReturnPtr := C.OdsPageBackground_GetLinkedGraphic( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("OdsPageBackground_GetLinkedGraphic"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -660,7 +660,7 @@ func (instance *OdsPageBackground) GetLinkedGraphic()  (string,  error)  {
 //   void  
 func (instance *OdsPageBackground) SetLinkedGraphic(value string)  error {
 	
-	CGoReturnPtr := C.OdsPageBackground_SetLinkedGraphic( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("OdsPageBackground_SetLinkedGraphic"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -673,7 +673,7 @@ func (instance *OdsPageBackground) SetLinkedGraphic(value string)  error {
 //   []byte  
 func (instance *OdsPageBackground) GetGraphicData()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.OdsPageBackground_GetGraphicData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("OdsPageBackground_GetGraphicData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -690,7 +690,7 @@ func (instance *OdsPageBackground) GetGraphicData()  ([]byte,  error)  {
 //   void  
 func (instance *OdsPageBackground) SetGraphicData(value []byte)  error {
 	
-	CGoReturnPtr := C.OdsPageBackground_SetGraphicData( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("OdsPageBackground_SetGraphicData"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

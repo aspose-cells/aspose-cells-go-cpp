@@ -11,7 +11,7 @@ package asposecells
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
 // #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/win_x86_64" -L"${SRCDIR}/lib/win_x86_64" -lAspose.Cells.CWrapper
-// #include <AsposeCellsCWrapper.h>
+// #include <CellsFunctionMap.h>
 import "C"
 import (
  
@@ -35,7 +35,7 @@ type AbstractLowCodeLoadOptionsProvider struct {
 //   bool  
 func (instance *AbstractLowCodeLoadOptionsProvider) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.AbstractLowCodeLoadOptionsProvider_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("AbstractLowCodeLoadOptionsProvider_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -49,7 +49,7 @@ func (instance *AbstractLowCodeLoadOptionsProvider) IsNull()  (bool,  error)  {
 //   bool  
 func (instance *AbstractLowCodeLoadOptionsProvider) MoveNext()  (bool,  error)  {
 	
-	CGoReturnPtr := C.AbstractLowCodeLoadOptionsProvider_MoveNext( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("AbstractLowCodeLoadOptionsProvider_MoveNext"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -63,7 +63,7 @@ func (instance *AbstractLowCodeLoadOptionsProvider) MoveNext()  (bool,  error)  
 //   LowCodeLoadOptions  
 func (instance *AbstractLowCodeLoadOptionsProvider) GetCurrent()  (*LowCodeLoadOptions,  error)  {
 	
-	CGoReturnPtr := C.AbstractLowCodeLoadOptionsProvider_GetCurrent( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFM(C.CString("AbstractLowCodeLoadOptionsProvider_GetCurrent"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -86,7 +86,7 @@ func (instance *AbstractLowCodeLoadOptionsProvider) Finish(part *LowCodeLoadOpti
 	  part_ptr =part.ptr
 	}
 
-	CGoReturnPtr := C.AbstractLowCodeLoadOptionsProvider_Finish( instance.ptr, part_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFN(C.CString("AbstractLowCodeLoadOptionsProvider_Finish"), instance.ptr, part_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -99,7 +99,7 @@ func (instance *AbstractLowCodeLoadOptionsProvider) Finish(part *LowCodeLoadOpti
 
 func DeleteAbstractLowCodeLoadOptionsProvider(abstractlowcodeloadoptionsprovider *AbstractLowCodeLoadOptionsProvider){
 	runtime.SetFinalizer(abstractlowcodeloadoptionsprovider, nil)
-	C.Delete_AbstractLowCodeLoadOptionsProvider(abstractlowcodeloadoptionsprovider.ptr)
+	C.Delete_CObject(C.CString("Delete_AbstractLowCodeLoadOptionsProvider"),abstractlowcodeloadoptionsprovider.ptr)
 	abstractlowcodeloadoptionsprovider.ptr = nil
 }
 
@@ -113,7 +113,7 @@ type AbstractLowCodeProtectionProvider struct {
 // Default constructor.
 func NewAbstractLowCodeProtectionProvider() ( *AbstractLowCodeProtectionProvider, error) {
 	abstractlowcodeprotectionprovider := &AbstractLowCodeProtectionProvider{}
-	CGoReturnPtr := C.New_AbstractLowCodeProtectionProvider()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_AbstractLowCodeProtectionProvider"),)
 	if CGoReturnPtr.error_no == 0 {
 		abstractlowcodeprotectionprovider.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(abstractlowcodeprotectionprovider, DeleteAbstractLowCodeProtectionProvider)
@@ -130,7 +130,7 @@ func NewAbstractLowCodeProtectionProvider() ( *AbstractLowCodeProtectionProvider
 //   bool  
 func (instance *AbstractLowCodeProtectionProvider) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.AbstractLowCodeProtectionProvider_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("AbstractLowCodeProtectionProvider_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -144,7 +144,7 @@ func (instance *AbstractLowCodeProtectionProvider) IsNull()  (bool,  error)  {
 //   string  
 func (instance *AbstractLowCodeProtectionProvider) GetOpenPassword()  (string,  error)  {
 	
-	CGoReturnPtr := C.AbstractLowCodeProtectionProvider_GetOpenPassword( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("AbstractLowCodeProtectionProvider_GetOpenPassword"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -158,7 +158,7 @@ func (instance *AbstractLowCodeProtectionProvider) GetOpenPassword()  (string,  
 //   string  
 func (instance *AbstractLowCodeProtectionProvider) GetWritePassword()  (string,  error)  {
 	
-	CGoReturnPtr := C.AbstractLowCodeProtectionProvider_GetWritePassword( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("AbstractLowCodeProtectionProvider_GetWritePassword"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -172,7 +172,7 @@ func (instance *AbstractLowCodeProtectionProvider) GetWritePassword()  (string, 
 //   string  
 func (instance *AbstractLowCodeProtectionProvider) GetWorkbookPassword()  (string,  error)  {
 	
-	CGoReturnPtr := C.AbstractLowCodeProtectionProvider_GetWorkbookPassword( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("AbstractLowCodeProtectionProvider_GetWorkbookPassword"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -186,7 +186,7 @@ func (instance *AbstractLowCodeProtectionProvider) GetWorkbookPassword()  (strin
 //   int32  
 func (instance *AbstractLowCodeProtectionProvider) GetWorkbookProtectionType()  (ProtectionType,  error)  {
 	
-	CGoReturnPtr := C.AbstractLowCodeProtectionProvider_GetWorkbookProtectionType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZABU(C.CString("AbstractLowCodeProtectionProvider_GetWorkbookProtectionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -205,7 +205,7 @@ func (instance *AbstractLowCodeProtectionProvider) GetWorkbookProtectionType()  
 //   string  
 func (instance *AbstractLowCodeProtectionProvider) GetWorksheetPassword(sheetname string)  (string,  error)  {
 	
-	CGoReturnPtr := C.AbstractLowCodeProtectionProvider_GetWorksheetPassword( instance.ptr, C.CString(sheetname))
+	CGoReturnPtr := C.CellsGoFunctoinZZPH(C.CString("AbstractLowCodeProtectionProvider_GetWorksheetPassword"), instance.ptr, C.CString(sheetname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -221,7 +221,7 @@ func (instance *AbstractLowCodeProtectionProvider) GetWorksheetPassword(sheetnam
 //   int32  
 func (instance *AbstractLowCodeProtectionProvider) GetWorksheetProtectionType(sheetname string)  (ProtectionType,  error)  {
 	
-	CGoReturnPtr := C.AbstractLowCodeProtectionProvider_GetWorksheetProtectionType( instance.ptr, C.CString(sheetname))
+	CGoReturnPtr := C.CellsGoFunctoinZAFO(C.CString("AbstractLowCodeProtectionProvider_GetWorksheetProtectionType"), instance.ptr, C.CString(sheetname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -238,7 +238,7 @@ func (instance *AbstractLowCodeProtectionProvider) GetWorksheetProtectionType(sh
 
 func DeleteAbstractLowCodeProtectionProvider(abstractlowcodeprotectionprovider *AbstractLowCodeProtectionProvider){
 	runtime.SetFinalizer(abstractlowcodeprotectionprovider, nil)
-	C.Delete_AbstractLowCodeProtectionProvider(abstractlowcodeprotectionprovider.ptr)
+	C.Delete_CObject(C.CString("Delete_AbstractLowCodeProtectionProvider"),abstractlowcodeprotectionprovider.ptr)
 	abstractlowcodeprotectionprovider.ptr = nil
 }
 
@@ -258,7 +258,7 @@ type AbstractLowCodeSaveOptionsProvider struct {
 //   bool  
 func (instance *AbstractLowCodeSaveOptionsProvider) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.AbstractLowCodeSaveOptionsProvider_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("AbstractLowCodeSaveOptionsProvider_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -280,7 +280,7 @@ func (instance *AbstractLowCodeSaveOptionsProvider) GetSaveOptions(part *SplitPa
 	  part_ptr =part.ptr
 	}
 
-	CGoReturnPtr := C.AbstractLowCodeSaveOptionsProvider_GetSaveOptions( instance.ptr, part_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFP(C.CString("AbstractLowCodeSaveOptionsProvider_GetSaveOptions"), instance.ptr, part_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -303,7 +303,7 @@ func (instance *AbstractLowCodeSaveOptionsProvider) Finish(part *LowCodeSaveOpti
 	  part_ptr =part.ptr
 	}
 
-	CGoReturnPtr := C.AbstractLowCodeSaveOptionsProvider_Finish( instance.ptr, part_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFQ(C.CString("AbstractLowCodeSaveOptionsProvider_Finish"), instance.ptr, part_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -316,7 +316,7 @@ func (instance *AbstractLowCodeSaveOptionsProvider) Finish(part *LowCodeSaveOpti
 
 func DeleteAbstractLowCodeSaveOptionsProvider(abstractlowcodesaveoptionsprovider *AbstractLowCodeSaveOptionsProvider){
 	runtime.SetFinalizer(abstractlowcodesaveoptionsprovider, nil)
-	C.Delete_AbstractLowCodeSaveOptionsProvider(abstractlowcodesaveoptionsprovider.ptr)
+	C.Delete_CObject(C.CString("Delete_AbstractLowCodeSaveOptionsProvider"),abstractlowcodesaveoptionsprovider.ptr)
 	abstractlowcodesaveoptionsprovider.ptr = nil
 }
 
@@ -333,7 +333,7 @@ type HtmlConverter struct {
 //   bool  
 func (instance *HtmlConverter) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.HtmlConverter_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("HtmlConverter_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -350,7 +350,7 @@ func (instance *HtmlConverter) IsNull()  (bool,  error)  {
 //   void  
 func HtmlConverter_Process_String_String(templatefile string, resultfile string)  error {
 	
-	CGoReturnPtr := C.HtmlConverter_Process_String_String(C.CString(templatefile), C.CString(resultfile))
+	CGoReturnPtr := C.CellsGoFunctoinZAFR(C.CString("HtmlConverter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -375,7 +375,7 @@ func HtmlConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *Lo
 	  saveoptions_ptr =saveoptions.ptr
 	}
 
-	CGoReturnPtr := C.HtmlConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions_ptr, saveoptions_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFS(C.CString("HtmlConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions"),loadoptions_ptr, saveoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -388,7 +388,7 @@ func HtmlConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *Lo
 
 func DeleteHtmlConverter(htmlconverter *HtmlConverter){
 	runtime.SetFinalizer(htmlconverter, nil)
-	C.Delete_HtmlConverter(htmlconverter.ptr)
+	C.Delete_CObject(C.CString("Delete_HtmlConverter"),htmlconverter.ptr)
 	htmlconverter.ptr = nil
 }
 
@@ -405,7 +405,7 @@ type ImageConverter struct {
 //   bool  
 func (instance *ImageConverter) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ImageConverter_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ImageConverter_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -422,7 +422,7 @@ func (instance *ImageConverter) IsNull()  (bool,  error)  {
 //   void  
 func ImageConverter_Process_String_String(templatefile string, resultfile string)  error {
 	
-	CGoReturnPtr := C.ImageConverter_Process_String_String(C.CString(templatefile), C.CString(resultfile))
+	CGoReturnPtr := C.CellsGoFunctoinZAFR(C.CString("ImageConverter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -447,7 +447,7 @@ func ImageConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *L
 	  saveoptions_ptr =saveoptions.ptr
 	}
 
-	CGoReturnPtr := C.ImageConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions_ptr, saveoptions_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFS(C.CString("ImageConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions"),loadoptions_ptr, saveoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -477,7 +477,7 @@ func ImageConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLowCod
 	  provider_ptr =provider.ptr
 	}
 
-	CGoReturnPtr := C.ImageConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLowCodeSaveOptionsProvider(loadoptions_ptr, saveoptions_ptr, provider_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFT(C.CString("ImageConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLowCodeSaveOptionsProvider"),loadoptions_ptr, saveoptions_ptr, provider_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -490,7 +490,7 @@ func ImageConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLowCod
 
 func DeleteImageConverter(imageconverter *ImageConverter){
 	runtime.SetFinalizer(imageconverter, nil)
-	C.Delete_ImageConverter(imageconverter.ptr)
+	C.Delete_CObject(C.CString("Delete_ImageConverter"),imageconverter.ptr)
 	imageconverter.ptr = nil
 }
 
@@ -507,7 +507,7 @@ type JsonConverter struct {
 //   bool  
 func (instance *JsonConverter) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.JsonConverter_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("JsonConverter_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -524,7 +524,7 @@ func (instance *JsonConverter) IsNull()  (bool,  error)  {
 //   void  
 func JsonConverter_Process_String_String(templatefile string, resultfile string)  error {
 	
-	CGoReturnPtr := C.JsonConverter_Process_String_String(C.CString(templatefile), C.CString(resultfile))
+	CGoReturnPtr := C.CellsGoFunctoinZAFR(C.CString("JsonConverter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -549,7 +549,7 @@ func JsonConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *Lo
 	  saveoptions_ptr =saveoptions.ptr
 	}
 
-	CGoReturnPtr := C.JsonConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions_ptr, saveoptions_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFS(C.CString("JsonConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions"),loadoptions_ptr, saveoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -562,7 +562,7 @@ func JsonConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *Lo
 
 func DeleteJsonConverter(jsonconverter *JsonConverter){
 	runtime.SetFinalizer(jsonconverter, nil)
-	C.Delete_JsonConverter(jsonconverter.ptr)
+	C.Delete_CObject(C.CString("Delete_JsonConverter"),jsonconverter.ptr)
 	jsonconverter.ptr = nil
 }
 
@@ -576,7 +576,7 @@ type LowCodeHtmlSaveOptions struct {
 // Default constructor.
 func NewLowCodeHtmlSaveOptions() ( *LowCodeHtmlSaveOptions, error) {
 	lowcodehtmlsaveoptions := &LowCodeHtmlSaveOptions{}
-	CGoReturnPtr := C.New_LowCodeHtmlSaveOptions()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_LowCodeHtmlSaveOptions"),)
 	if CGoReturnPtr.error_no == 0 {
 		lowcodehtmlsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodehtmlsaveoptions, DeleteLowCodeHtmlSaveOptions)
@@ -597,7 +597,7 @@ func NewLowCodeHtmlSaveOptions_LowCodeSaveOptions(src *LowCodeSaveOptions) ( *Lo
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_LowCodeHtmlSaveOptions_LowCodeSaveOptions(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFU(C.CString("New_LowCodeHtmlSaveOptions_LowCodeSaveOptions"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		lowcodehtmlsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodehtmlsaveoptions, DeleteLowCodeHtmlSaveOptions)
@@ -614,7 +614,7 @@ func NewLowCodeHtmlSaveOptions_LowCodeSaveOptions(src *LowCodeSaveOptions) ( *Lo
 //   bool  
 func (instance *LowCodeHtmlSaveOptions) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LowCodeHtmlSaveOptions_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LowCodeHtmlSaveOptions_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -628,7 +628,7 @@ func (instance *LowCodeHtmlSaveOptions) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *LowCodeHtmlSaveOptions) GetSaveFormat()  (SaveFormat,  error)  {
 	
-	CGoReturnPtr := C.LowCodeHtmlSaveOptions_GetSaveFormat( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZLC(C.CString("LowCodeHtmlSaveOptions_GetSaveFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -647,7 +647,7 @@ func (instance *LowCodeHtmlSaveOptions) GetSaveFormat()  (SaveFormat,  error)  {
 //   void  
 func (instance *LowCodeHtmlSaveOptions) SetSaveFormat(value SaveFormat)  error {
 	
-	CGoReturnPtr := C.LowCodeHtmlSaveOptions_SetSaveFormat( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAFV(C.CString("LowCodeHtmlSaveOptions_SetSaveFormat"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -660,7 +660,7 @@ func (instance *LowCodeHtmlSaveOptions) SetSaveFormat(value SaveFormat)  error {
 //   HtmlSaveOptions  
 func (instance *LowCodeHtmlSaveOptions) GetHtmlOptions()  (*HtmlSaveOptions,  error)  {
 	
-	CGoReturnPtr := C.LowCodeHtmlSaveOptions_GetHtmlOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFW(C.CString("LowCodeHtmlSaveOptions_GetHtmlOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -683,7 +683,7 @@ func (instance *LowCodeHtmlSaveOptions) SetHtmlOptions(value *HtmlSaveOptions)  
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.LowCodeHtmlSaveOptions_SetHtmlOptions( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFX(C.CString("LowCodeHtmlSaveOptions_SetHtmlOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -697,7 +697,7 @@ func (instance *LowCodeHtmlSaveOptions) SetHtmlOptions(value *HtmlSaveOptions)  
 //   string  
 func (instance *LowCodeHtmlSaveOptions) GetOutputFile()  (string,  error)  {
 	
-	CGoReturnPtr := C.LowCodeHtmlSaveOptions_GetOutputFile( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("LowCodeHtmlSaveOptions_GetOutputFile"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -714,7 +714,7 @@ func (instance *LowCodeHtmlSaveOptions) GetOutputFile()  (string,  error)  {
 //   void  
 func (instance *LowCodeHtmlSaveOptions) SetOutputFile(value string)  error {
 	
-	CGoReturnPtr := C.LowCodeHtmlSaveOptions_SetOutputFile( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("LowCodeHtmlSaveOptions_SetOutputFile"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -728,7 +728,7 @@ func (instance *LowCodeHtmlSaveOptions) SetOutputFile(value string)  error {
 //   []byte  
 func (instance *LowCodeHtmlSaveOptions) GetOutputStream()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.LowCodeHtmlSaveOptions_GetOutputStream( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("LowCodeHtmlSaveOptions_GetOutputStream"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -746,7 +746,7 @@ func (instance *LowCodeHtmlSaveOptions) GetOutputStream()  ([]byte,  error)  {
 //   void  
 func (instance *LowCodeHtmlSaveOptions) SetOutputStream(value []byte)  error {
 	
-	CGoReturnPtr := C.LowCodeHtmlSaveOptions_SetOutputStream( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("LowCodeHtmlSaveOptions_SetOutputStream"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -764,7 +764,7 @@ func (instance *LowCodeHtmlSaveOptions) ToLowCodeSaveOptions() *LowCodeSaveOptio
 
 func DeleteLowCodeHtmlSaveOptions(lowcodehtmlsaveoptions *LowCodeHtmlSaveOptions){
 	runtime.SetFinalizer(lowcodehtmlsaveoptions, nil)
-	C.Delete_LowCodeHtmlSaveOptions(lowcodehtmlsaveoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_LowCodeHtmlSaveOptions"),lowcodehtmlsaveoptions.ptr)
 	lowcodehtmlsaveoptions.ptr = nil
 }
 
@@ -778,7 +778,7 @@ type LowCodeImageSaveOptions struct {
 // Default constructor.
 func NewLowCodeImageSaveOptions() ( *LowCodeImageSaveOptions, error) {
 	lowcodeimagesaveoptions := &LowCodeImageSaveOptions{}
-	CGoReturnPtr := C.New_LowCodeImageSaveOptions()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_LowCodeImageSaveOptions"),)
 	if CGoReturnPtr.error_no == 0 {
 		lowcodeimagesaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodeimagesaveoptions, DeleteLowCodeImageSaveOptions)
@@ -799,7 +799,7 @@ func NewLowCodeImageSaveOptions_LowCodeSaveOptions(src *LowCodeSaveOptions) ( *L
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_LowCodeImageSaveOptions_LowCodeSaveOptions(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFU(C.CString("New_LowCodeImageSaveOptions_LowCodeSaveOptions"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		lowcodeimagesaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodeimagesaveoptions, DeleteLowCodeImageSaveOptions)
@@ -816,7 +816,7 @@ func NewLowCodeImageSaveOptions_LowCodeSaveOptions(src *LowCodeSaveOptions) ( *L
 //   bool  
 func (instance *LowCodeImageSaveOptions) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LowCodeImageSaveOptions_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LowCodeImageSaveOptions_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -830,7 +830,7 @@ func (instance *LowCodeImageSaveOptions) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *LowCodeImageSaveOptions) GetSaveFormat()  (SaveFormat,  error)  {
 	
-	CGoReturnPtr := C.LowCodeImageSaveOptions_GetSaveFormat( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZLC(C.CString("LowCodeImageSaveOptions_GetSaveFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -849,7 +849,7 @@ func (instance *LowCodeImageSaveOptions) GetSaveFormat()  (SaveFormat,  error)  
 //   void  
 func (instance *LowCodeImageSaveOptions) SetSaveFormat(value SaveFormat)  error {
 	
-	CGoReturnPtr := C.LowCodeImageSaveOptions_SetSaveFormat( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAFV(C.CString("LowCodeImageSaveOptions_SetSaveFormat"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -862,7 +862,7 @@ func (instance *LowCodeImageSaveOptions) SetSaveFormat(value SaveFormat)  error 
 //   ImageOrPrintOptions  
 func (instance *LowCodeImageSaveOptions) GetImageOptions()  (*ImageOrPrintOptions,  error)  {
 	
-	CGoReturnPtr := C.LowCodeImageSaveOptions_GetImageOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZQA(C.CString("LowCodeImageSaveOptions_GetImageOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -885,7 +885,7 @@ func (instance *LowCodeImageSaveOptions) SetImageOptions(value *ImageOrPrintOpti
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.LowCodeImageSaveOptions_SetImageOptions( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFY(C.CString("LowCodeImageSaveOptions_SetImageOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -898,7 +898,7 @@ func (instance *LowCodeImageSaveOptions) SetImageOptions(value *ImageOrPrintOpti
 //   AbstractLowCodeSaveOptionsProvider  
 func (instance *LowCodeImageSaveOptions) GetSaveOptionsProvider()  (*AbstractLowCodeSaveOptionsProvider,  error)  {
 	
-	CGoReturnPtr := C.LowCodeImageSaveOptions_GetSaveOptionsProvider( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGA(C.CString("LowCodeImageSaveOptions_GetSaveOptionsProvider"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -921,7 +921,7 @@ func (instance *LowCodeImageSaveOptions) SetSaveOptionsProvider(value *AbstractL
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.LowCodeImageSaveOptions_SetSaveOptionsProvider( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGB(C.CString("LowCodeImageSaveOptions_SetSaveOptionsProvider"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -935,7 +935,7 @@ func (instance *LowCodeImageSaveOptions) SetSaveOptionsProvider(value *AbstractL
 //   string  
 func (instance *LowCodeImageSaveOptions) GetOutputFile()  (string,  error)  {
 	
-	CGoReturnPtr := C.LowCodeImageSaveOptions_GetOutputFile( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("LowCodeImageSaveOptions_GetOutputFile"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -952,7 +952,7 @@ func (instance *LowCodeImageSaveOptions) GetOutputFile()  (string,  error)  {
 //   void  
 func (instance *LowCodeImageSaveOptions) SetOutputFile(value string)  error {
 	
-	CGoReturnPtr := C.LowCodeImageSaveOptions_SetOutputFile( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("LowCodeImageSaveOptions_SetOutputFile"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -966,7 +966,7 @@ func (instance *LowCodeImageSaveOptions) SetOutputFile(value string)  error {
 //   []byte  
 func (instance *LowCodeImageSaveOptions) GetOutputStream()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.LowCodeImageSaveOptions_GetOutputStream( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("LowCodeImageSaveOptions_GetOutputStream"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -984,7 +984,7 @@ func (instance *LowCodeImageSaveOptions) GetOutputStream()  ([]byte,  error)  {
 //   void  
 func (instance *LowCodeImageSaveOptions) SetOutputStream(value []byte)  error {
 	
-	CGoReturnPtr := C.LowCodeImageSaveOptions_SetOutputStream( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("LowCodeImageSaveOptions_SetOutputStream"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1002,7 +1002,7 @@ func (instance *LowCodeImageSaveOptions) ToLowCodeSaveOptions() *LowCodeSaveOpti
 
 func DeleteLowCodeImageSaveOptions(lowcodeimagesaveoptions *LowCodeImageSaveOptions){
 	runtime.SetFinalizer(lowcodeimagesaveoptions, nil)
-	C.Delete_LowCodeImageSaveOptions(lowcodeimagesaveoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_LowCodeImageSaveOptions"),lowcodeimagesaveoptions.ptr)
 	lowcodeimagesaveoptions.ptr = nil
 }
 
@@ -1016,7 +1016,7 @@ type LowCodeLoadOptions struct {
 // Default constructor.
 func NewLowCodeLoadOptions() ( *LowCodeLoadOptions, error) {
 	lowcodeloadoptions := &LowCodeLoadOptions{}
-	CGoReturnPtr := C.New_LowCodeLoadOptions()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_LowCodeLoadOptions"),)
 	if CGoReturnPtr.error_no == 0 {
 		lowcodeloadoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodeloadoptions, DeleteLowCodeLoadOptions)
@@ -1033,7 +1033,7 @@ func NewLowCodeLoadOptions() ( *LowCodeLoadOptions, error) {
 //   bool  
 func (instance *LowCodeLoadOptions) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LowCodeLoadOptions_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LowCodeLoadOptions_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1047,7 +1047,7 @@ func (instance *LowCodeLoadOptions) IsNull()  (bool,  error)  {
 //   string  
 func (instance *LowCodeLoadOptions) GetInputFile()  (string,  error)  {
 	
-	CGoReturnPtr := C.LowCodeLoadOptions_GetInputFile( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("LowCodeLoadOptions_GetInputFile"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1063,7 +1063,7 @@ func (instance *LowCodeLoadOptions) GetInputFile()  (string,  error)  {
 //   void  
 func (instance *LowCodeLoadOptions) SetInputFile(value string)  error {
 	
-	CGoReturnPtr := C.LowCodeLoadOptions_SetInputFile( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("LowCodeLoadOptions_SetInputFile"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1076,7 +1076,7 @@ func (instance *LowCodeLoadOptions) SetInputFile(value string)  error {
 //   []byte  
 func (instance *LowCodeLoadOptions) GetInputStream()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.LowCodeLoadOptions_GetInputStream( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("LowCodeLoadOptions_GetInputStream"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1093,7 +1093,7 @@ func (instance *LowCodeLoadOptions) GetInputStream()  ([]byte,  error)  {
 //   void  
 func (instance *LowCodeLoadOptions) SetInputStream(value []byte)  error {
 	
-	CGoReturnPtr := C.LowCodeLoadOptions_SetInputStream( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("LowCodeLoadOptions_SetInputStream"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1106,7 +1106,7 @@ func (instance *LowCodeLoadOptions) SetInputStream(value []byte)  error {
 
 func DeleteLowCodeLoadOptions(lowcodeloadoptions *LowCodeLoadOptions){
 	runtime.SetFinalizer(lowcodeloadoptions, nil)
-	C.Delete_LowCodeLoadOptions(lowcodeloadoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_LowCodeLoadOptions"),lowcodeloadoptions.ptr)
 	lowcodeloadoptions.ptr = nil
 }
 
@@ -1120,7 +1120,7 @@ type LowCodeMergeOptions struct {
 // Default constructor.
 func NewLowCodeMergeOptions() ( *LowCodeMergeOptions, error) {
 	lowcodemergeoptions := &LowCodeMergeOptions{}
-	CGoReturnPtr := C.New_LowCodeMergeOptions()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_LowCodeMergeOptions"),)
 	if CGoReturnPtr.error_no == 0 {
 		lowcodemergeoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodemergeoptions, DeleteLowCodeMergeOptions)
@@ -1137,7 +1137,7 @@ func NewLowCodeMergeOptions() ( *LowCodeMergeOptions, error) {
 //   bool  
 func (instance *LowCodeMergeOptions) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LowCodeMergeOptions_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LowCodeMergeOptions_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1151,7 +1151,7 @@ func (instance *LowCodeMergeOptions) IsNull()  (bool,  error)  {
 //   LowCodeSaveOptions  
 func (instance *LowCodeMergeOptions) GetSaveOptions()  (*LowCodeSaveOptions,  error)  {
 	
-	CGoReturnPtr := C.LowCodeMergeOptions_GetSaveOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGC(C.CString("LowCodeMergeOptions_GetSaveOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1174,7 +1174,7 @@ func (instance *LowCodeMergeOptions) SetSaveOptions(value *LowCodeSaveOptions)  
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.LowCodeMergeOptions_SetSaveOptions( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFQ(C.CString("LowCodeMergeOptions_SetSaveOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1187,7 +1187,7 @@ func (instance *LowCodeMergeOptions) SetSaveOptions(value *LowCodeSaveOptions)  
 //   AbstractLowCodeLoadOptionsProvider  
 func (instance *LowCodeMergeOptions) GetLoadOptionsProvider()  (*AbstractLowCodeLoadOptionsProvider,  error)  {
 	
-	CGoReturnPtr := C.LowCodeMergeOptions_GetLoadOptionsProvider( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGD(C.CString("LowCodeMergeOptions_GetLoadOptionsProvider"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1210,7 +1210,7 @@ func (instance *LowCodeMergeOptions) SetLoadOptionsProvider(value *AbstractLowCo
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.LowCodeMergeOptions_SetLoadOptionsProvider( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGE(C.CString("LowCodeMergeOptions_SetLoadOptionsProvider"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1223,7 +1223,7 @@ func (instance *LowCodeMergeOptions) SetLoadOptionsProvider(value *AbstractLowCo
 
 func DeleteLowCodeMergeOptions(lowcodemergeoptions *LowCodeMergeOptions){
 	runtime.SetFinalizer(lowcodemergeoptions, nil)
-	C.Delete_LowCodeMergeOptions(lowcodemergeoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_LowCodeMergeOptions"),lowcodemergeoptions.ptr)
 	lowcodemergeoptions.ptr = nil
 }
 
@@ -1237,7 +1237,7 @@ type LowCodePdfSaveOptions struct {
 // Default constructor.
 func NewLowCodePdfSaveOptions() ( *LowCodePdfSaveOptions, error) {
 	lowcodepdfsaveoptions := &LowCodePdfSaveOptions{}
-	CGoReturnPtr := C.New_LowCodePdfSaveOptions()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_LowCodePdfSaveOptions"),)
 	if CGoReturnPtr.error_no == 0 {
 		lowcodepdfsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodepdfsaveoptions, DeleteLowCodePdfSaveOptions)
@@ -1258,7 +1258,7 @@ func NewLowCodePdfSaveOptions_LowCodeSaveOptions(src *LowCodeSaveOptions) ( *Low
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_LowCodePdfSaveOptions_LowCodeSaveOptions(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFU(C.CString("New_LowCodePdfSaveOptions_LowCodeSaveOptions"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		lowcodepdfsaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodepdfsaveoptions, DeleteLowCodePdfSaveOptions)
@@ -1275,7 +1275,7 @@ func NewLowCodePdfSaveOptions_LowCodeSaveOptions(src *LowCodeSaveOptions) ( *Low
 //   bool  
 func (instance *LowCodePdfSaveOptions) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LowCodePdfSaveOptions_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LowCodePdfSaveOptions_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1290,7 +1290,7 @@ func (instance *LowCodePdfSaveOptions) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *LowCodePdfSaveOptions) GetSaveFormat()  (SaveFormat,  error)  {
 	
-	CGoReturnPtr := C.LowCodePdfSaveOptions_GetSaveFormat( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZLC(C.CString("LowCodePdfSaveOptions_GetSaveFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1310,7 +1310,7 @@ func (instance *LowCodePdfSaveOptions) GetSaveFormat()  (SaveFormat,  error)  {
 //   void  
 func (instance *LowCodePdfSaveOptions) SetSaveFormat(value SaveFormat)  error {
 	
-	CGoReturnPtr := C.LowCodePdfSaveOptions_SetSaveFormat( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAFV(C.CString("LowCodePdfSaveOptions_SetSaveFormat"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1323,7 +1323,7 @@ func (instance *LowCodePdfSaveOptions) SetSaveFormat(value SaveFormat)  error {
 //   PdfSaveOptions  
 func (instance *LowCodePdfSaveOptions) GetPdfOptions()  (*PdfSaveOptions,  error)  {
 	
-	CGoReturnPtr := C.LowCodePdfSaveOptions_GetPdfOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGF(C.CString("LowCodePdfSaveOptions_GetPdfOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1346,7 +1346,7 @@ func (instance *LowCodePdfSaveOptions) SetPdfOptions(value *PdfSaveOptions)  err
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.LowCodePdfSaveOptions_SetPdfOptions( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGG(C.CString("LowCodePdfSaveOptions_SetPdfOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1360,7 +1360,7 @@ func (instance *LowCodePdfSaveOptions) SetPdfOptions(value *PdfSaveOptions)  err
 //   string  
 func (instance *LowCodePdfSaveOptions) GetOutputFile()  (string,  error)  {
 	
-	CGoReturnPtr := C.LowCodePdfSaveOptions_GetOutputFile( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("LowCodePdfSaveOptions_GetOutputFile"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1377,7 +1377,7 @@ func (instance *LowCodePdfSaveOptions) GetOutputFile()  (string,  error)  {
 //   void  
 func (instance *LowCodePdfSaveOptions) SetOutputFile(value string)  error {
 	
-	CGoReturnPtr := C.LowCodePdfSaveOptions_SetOutputFile( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("LowCodePdfSaveOptions_SetOutputFile"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1391,7 +1391,7 @@ func (instance *LowCodePdfSaveOptions) SetOutputFile(value string)  error {
 //   []byte  
 func (instance *LowCodePdfSaveOptions) GetOutputStream()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.LowCodePdfSaveOptions_GetOutputStream( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("LowCodePdfSaveOptions_GetOutputStream"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1409,7 +1409,7 @@ func (instance *LowCodePdfSaveOptions) GetOutputStream()  ([]byte,  error)  {
 //   void  
 func (instance *LowCodePdfSaveOptions) SetOutputStream(value []byte)  error {
 	
-	CGoReturnPtr := C.LowCodePdfSaveOptions_SetOutputStream( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("LowCodePdfSaveOptions_SetOutputStream"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1427,7 +1427,7 @@ func (instance *LowCodePdfSaveOptions) ToLowCodeSaveOptions() *LowCodeSaveOption
 
 func DeleteLowCodePdfSaveOptions(lowcodepdfsaveoptions *LowCodePdfSaveOptions){
 	runtime.SetFinalizer(lowcodepdfsaveoptions, nil)
-	C.Delete_LowCodePdfSaveOptions(lowcodepdfsaveoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_LowCodePdfSaveOptions"),lowcodepdfsaveoptions.ptr)
 	lowcodepdfsaveoptions.ptr = nil
 }
 
@@ -1441,7 +1441,7 @@ type LowCodeSaveOptions struct {
 // Default constructor.
 func NewLowCodeSaveOptions() ( *LowCodeSaveOptions, error) {
 	lowcodesaveoptions := &LowCodeSaveOptions{}
-	CGoReturnPtr := C.New_LowCodeSaveOptions()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_LowCodeSaveOptions"),)
 	if CGoReturnPtr.error_no == 0 {
 		lowcodesaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodesaveoptions, DeleteLowCodeSaveOptions)
@@ -1458,7 +1458,7 @@ func NewLowCodeSaveOptions() ( *LowCodeSaveOptions, error) {
 //   bool  
 func (instance *LowCodeSaveOptions) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptions_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LowCodeSaveOptions_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1473,7 +1473,7 @@ func (instance *LowCodeSaveOptions) IsNull()  (bool,  error)  {
 //   string  
 func (instance *LowCodeSaveOptions) GetOutputFile()  (string,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptions_GetOutputFile( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("LowCodeSaveOptions_GetOutputFile"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1490,7 +1490,7 @@ func (instance *LowCodeSaveOptions) GetOutputFile()  (string,  error)  {
 //   void  
 func (instance *LowCodeSaveOptions) SetOutputFile(value string)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptions_SetOutputFile( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("LowCodeSaveOptions_SetOutputFile"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1504,7 +1504,7 @@ func (instance *LowCodeSaveOptions) SetOutputFile(value string)  error {
 //   []byte  
 func (instance *LowCodeSaveOptions) GetOutputStream()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptions_GetOutputStream( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("LowCodeSaveOptions_GetOutputStream"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1522,7 +1522,7 @@ func (instance *LowCodeSaveOptions) GetOutputStream()  ([]byte,  error)  {
 //   void  
 func (instance *LowCodeSaveOptions) SetOutputStream(value []byte)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptions_SetOutputStream( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("LowCodeSaveOptions_SetOutputStream"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1538,7 +1538,7 @@ func (instance *LowCodeSaveOptions) SetOutputStream(value []byte)  error {
 //   int32  
 func (instance *LowCodeSaveOptions) GetSaveFormat()  (SaveFormat,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptions_GetSaveFormat( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZLC(C.CString("LowCodeSaveOptions_GetSaveFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1560,7 +1560,7 @@ func (instance *LowCodeSaveOptions) GetSaveFormat()  (SaveFormat,  error)  {
 //   void  
 func (instance *LowCodeSaveOptions) SetSaveFormat(value SaveFormat)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptions_SetSaveFormat( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAFV(C.CString("LowCodeSaveOptions_SetSaveFormat"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1573,7 +1573,7 @@ func (instance *LowCodeSaveOptions) SetSaveFormat(value SaveFormat)  error {
 
 func DeleteLowCodeSaveOptions(lowcodesaveoptions *LowCodeSaveOptions){
 	runtime.SetFinalizer(lowcodesaveoptions, nil)
-	C.Delete_LowCodeSaveOptions(lowcodesaveoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_LowCodeSaveOptions"),lowcodesaveoptions.ptr)
 	lowcodesaveoptions.ptr = nil
 }
 
@@ -1590,7 +1590,7 @@ type LowCodeSaveOptionsProviderOfAssembling struct {
 // Default constructor.
 func NewLowCodeSaveOptionsProviderOfAssembling() ( *LowCodeSaveOptionsProviderOfAssembling, error) {
 	lowcodesaveoptionsproviderofassembling := &LowCodeSaveOptionsProviderOfAssembling{}
-	CGoReturnPtr := C.New_LowCodeSaveOptionsProviderOfAssembling()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_LowCodeSaveOptionsProviderOfAssembling"),)
 	if CGoReturnPtr.error_no == 0 {
 		lowcodesaveoptionsproviderofassembling.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodesaveoptionsproviderofassembling, DeleteLowCodeSaveOptionsProviderOfAssembling)
@@ -1611,7 +1611,7 @@ func NewLowCodeSaveOptionsProviderOfAssembling_AbstractLowCodeSaveOptionsProvide
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_LowCodeSaveOptionsProviderOfAssembling_AbstractLowCodeSaveOptionsProvider(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGH(C.CString("New_LowCodeSaveOptionsProviderOfAssembling_AbstractLowCodeSaveOptionsProvider"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		lowcodesaveoptionsproviderofassembling.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodesaveoptionsproviderofassembling, DeleteLowCodeSaveOptionsProviderOfAssembling)
@@ -1628,7 +1628,7 @@ func NewLowCodeSaveOptionsProviderOfAssembling_AbstractLowCodeSaveOptionsProvide
 //   bool  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LowCodeSaveOptionsProviderOfAssembling_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1642,7 +1642,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) IsNull()  (bool,  error)
 //   string  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) GetPathHeader()  (string,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_GetPathHeader( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("LowCodeSaveOptionsProviderOfAssembling_GetPathHeader"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1658,7 +1658,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) GetPathHeader()  (string
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) SetPathHeader(value string)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_SetPathHeader( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("LowCodeSaveOptionsProviderOfAssembling_SetPathHeader"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1672,7 +1672,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) SetPathHeader(value stri
 //   string  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) GetPathTail()  (string,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_GetPathTail( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("LowCodeSaveOptionsProviderOfAssembling_GetPathTail"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1689,7 +1689,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) GetPathTail()  (string, 
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) SetPathTail(value string)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_SetPathTail( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("LowCodeSaveOptionsProviderOfAssembling_SetPathTail"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1702,7 +1702,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) SetPathTail(value string
 //   bool  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) GetUseSheetName()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_GetUseSheetName( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LowCodeSaveOptionsProviderOfAssembling_GetUseSheetName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1718,7 +1718,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) GetUseSheetName()  (bool
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) SetUseSheetName(value bool)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_SetUseSheetName( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("LowCodeSaveOptionsProviderOfAssembling_SetUseSheetName"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1731,7 +1731,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) SetUseSheetName(value bo
 //   string  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) GetSheetPrefix()  (string,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_GetSheetPrefix( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("LowCodeSaveOptionsProviderOfAssembling_GetSheetPrefix"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1747,7 +1747,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) GetSheetPrefix()  (strin
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) SetSheetPrefix(value string)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_SetSheetPrefix( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("LowCodeSaveOptionsProviderOfAssembling_SetSheetPrefix"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1760,7 +1760,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) SetSheetPrefix(value str
 //   string  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) GetSplitPartPrefix()  (string,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_GetSplitPartPrefix( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("LowCodeSaveOptionsProviderOfAssembling_GetSplitPartPrefix"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1776,7 +1776,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) GetSplitPartPrefix()  (s
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) SetSplitPartPrefix(value string)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_SetSplitPartPrefix( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("LowCodeSaveOptionsProviderOfAssembling_SetSplitPartPrefix"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1790,7 +1790,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) SetSplitPartPrefix(value
 //   int32  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) GetSheetIndexOffset()  (int32,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_GetSheetIndexOffset( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("LowCodeSaveOptionsProviderOfAssembling_GetSheetIndexOffset"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1807,7 +1807,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) GetSheetIndexOffset()  (
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) SetSheetIndexOffset(value int32)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_SetSheetIndexOffset( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("LowCodeSaveOptionsProviderOfAssembling_SetSheetIndexOffset"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1821,7 +1821,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) SetSheetIndexOffset(valu
 //   int32  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) GetSplitPartIndexOffset()  (int32,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_GetSplitPartIndexOffset( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("LowCodeSaveOptionsProviderOfAssembling_GetSplitPartIndexOffset"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1838,7 +1838,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) GetSplitPartIndexOffset(
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) SetSplitPartIndexOffset(value int32)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_SetSplitPartIndexOffset( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("LowCodeSaveOptionsProviderOfAssembling_SetSplitPartIndexOffset"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1853,7 +1853,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) SetSplitPartIndexOffset(
 //   bool  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) GetBuildPathWithSheetAlways()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_GetBuildPathWithSheetAlways( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LowCodeSaveOptionsProviderOfAssembling_GetBuildPathWithSheetAlways"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1871,7 +1871,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) GetBuildPathWithSheetAlw
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) SetBuildPathWithSheetAlways(value bool)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_SetBuildPathWithSheetAlways( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("LowCodeSaveOptionsProviderOfAssembling_SetBuildPathWithSheetAlways"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1886,7 +1886,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) SetBuildPathWithSheetAlw
 //   bool  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) GetBuildPathWithSplitPartAlways()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_GetBuildPathWithSplitPartAlways( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LowCodeSaveOptionsProviderOfAssembling_GetBuildPathWithSplitPartAlways"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1904,7 +1904,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) GetBuildPathWithSplitPar
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) SetBuildPathWithSplitPartAlways(value bool)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_SetBuildPathWithSplitPartAlways( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("LowCodeSaveOptionsProviderOfAssembling_SetBuildPathWithSplitPartAlways"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1917,7 +1917,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) SetBuildPathWithSplitPar
 //   LowCodeSaveOptions  
 func (instance *LowCodeSaveOptionsProviderOfAssembling) GetSaveOptionsTemplate()  (*LowCodeSaveOptions,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_GetSaveOptionsTemplate( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGC(C.CString("LowCodeSaveOptionsProviderOfAssembling_GetSaveOptionsTemplate"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1940,7 +1940,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) SetSaveOptionsTemplate(v
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_SetSaveOptionsTemplate( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFQ(C.CString("LowCodeSaveOptionsProviderOfAssembling_SetSaveOptionsTemplate"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1960,7 +1960,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) GetSaveOptions(part *Spl
 	  part_ptr =part.ptr
 	}
 
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_GetSaveOptions( instance.ptr, part_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFP(C.CString("LowCodeSaveOptionsProviderOfAssembling_GetSaveOptions"), instance.ptr, part_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1983,7 +1983,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) Finish(part *LowCodeSave
 	  part_ptr =part.ptr
 	}
 
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfAssembling_Finish( instance.ptr, part_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFQ(C.CString("LowCodeSaveOptionsProviderOfAssembling_Finish"), instance.ptr, part_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2001,7 +2001,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) ToAbstractLowCodeSaveOpt
 
 func DeleteLowCodeSaveOptionsProviderOfAssembling(lowcodesaveoptionsproviderofassembling *LowCodeSaveOptionsProviderOfAssembling){
 	runtime.SetFinalizer(lowcodesaveoptionsproviderofassembling, nil)
-	C.Delete_LowCodeSaveOptionsProviderOfAssembling(lowcodesaveoptionsproviderofassembling.ptr)
+	C.Delete_CObject(C.CString("Delete_LowCodeSaveOptionsProviderOfAssembling"),lowcodesaveoptionsproviderofassembling.ptr)
 	lowcodesaveoptionsproviderofassembling.ptr = nil
 }
 
@@ -2018,7 +2018,7 @@ type LowCodeSaveOptionsProviderOfPlaceHolders struct {
 //   pathTemplate - string 
 func NewLowCodeSaveOptionsProviderOfPlaceHolders_String(pathtemplate string) ( *LowCodeSaveOptionsProviderOfPlaceHolders, error) {
 	lowcodesaveoptionsproviderofplaceholders := &LowCodeSaveOptionsProviderOfPlaceHolders{}
-	CGoReturnPtr := C.New_LowCodeSaveOptionsProviderOfPlaceHolders_String(C.CString(pathtemplate))
+	CGoReturnPtr := C.CellsGoFunctoinZZMN(C.CString("New_LowCodeSaveOptionsProviderOfPlaceHolders_String"),C.CString(pathtemplate))
 	if CGoReturnPtr.error_no == 0 {
 		lowcodesaveoptionsproviderofplaceholders.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodesaveoptionsproviderofplaceholders, DeleteLowCodeSaveOptionsProviderOfPlaceHolders)
@@ -2039,7 +2039,7 @@ func NewLowCodeSaveOptionsProviderOfPlaceHolders_AbstractLowCodeSaveOptionsProvi
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_LowCodeSaveOptionsProviderOfPlaceHolders_AbstractLowCodeSaveOptionsProvider(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGH(C.CString("New_LowCodeSaveOptionsProviderOfPlaceHolders_AbstractLowCodeSaveOptionsProvider"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		lowcodesaveoptionsproviderofplaceholders.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodesaveoptionsproviderofplaceholders, DeleteLowCodeSaveOptionsProviderOfPlaceHolders)
@@ -2056,7 +2056,7 @@ func NewLowCodeSaveOptionsProviderOfPlaceHolders_AbstractLowCodeSaveOptionsProvi
 //   bool  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2071,7 +2071,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) IsNull()  (bool,  erro
 //   int32  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetSheetIndexOffset()  (int32,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_GetSheetIndexOffset( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_GetSheetIndexOffset"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2088,7 +2088,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetSheetIndexOffset() 
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) SetSheetIndexOffset(value int32)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_SetSheetIndexOffset( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_SetSheetIndexOffset"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2102,7 +2102,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) SetSheetIndexOffset(va
 //   int32  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetSplitPartIndexOffset()  (int32,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_GetSplitPartIndexOffset( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_GetSplitPartIndexOffset"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2119,7 +2119,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetSplitPartIndexOffse
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) SetSplitPartIndexOffset(value int32)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_SetSplitPartIndexOffset( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_SetSplitPartIndexOffset"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2135,7 +2135,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) SetSplitPartIndexOffse
 //   bool  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetBuildPathWithSheetAlways()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_GetBuildPathWithSheetAlways( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_GetBuildPathWithSheetAlways"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2154,7 +2154,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetBuildPathWithSheetA
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) SetBuildPathWithSheetAlways(value bool)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_SetBuildPathWithSheetAlways( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_SetBuildPathWithSheetAlways"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2170,7 +2170,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) SetBuildPathWithSheetA
 //   bool  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetBuildPathWithSplitPartAlways()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_GetBuildPathWithSplitPartAlways( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_GetBuildPathWithSplitPartAlways"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2189,7 +2189,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetBuildPathWithSplitP
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) SetBuildPathWithSplitPartAlways(value bool)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_SetBuildPathWithSplitPartAlways( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_SetBuildPathWithSplitPartAlways"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2202,7 +2202,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) SetBuildPathWithSplitP
 //   string  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetSheetNamePrefix()  (string,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_GetSheetNamePrefix( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_GetSheetNamePrefix"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -2218,7 +2218,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetSheetNamePrefix()  
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) SetSheetNamePrefix(value string)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_SetSheetNamePrefix( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_SetSheetNamePrefix"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2231,7 +2231,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) SetSheetNamePrefix(val
 //   string  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetSheetIndexPrefix()  (string,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_GetSheetIndexPrefix( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_GetSheetIndexPrefix"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -2247,7 +2247,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetSheetIndexPrefix() 
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) SetSheetIndexPrefix(value string)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_SetSheetIndexPrefix( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_SetSheetIndexPrefix"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2260,7 +2260,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) SetSheetIndexPrefix(va
 //   string  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetSplitPartPrefix()  (string,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_GetSplitPartPrefix( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_GetSplitPartPrefix"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -2276,7 +2276,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetSplitPartPrefix()  
 //   void  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) SetSplitPartPrefix(value string)  error {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_SetSplitPartPrefix( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_SetSplitPartPrefix"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2289,7 +2289,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) SetSplitPartPrefix(val
 //   LowCodeSaveOptions  
 func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetSaveOptionsTemplate()  (*LowCodeSaveOptions,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_GetSaveOptionsTemplate( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGC(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_GetSaveOptionsTemplate"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2312,7 +2312,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) SetSaveOptionsTemplate
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_SetSaveOptionsTemplate( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFQ(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_SetSaveOptionsTemplate"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2332,7 +2332,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetSaveOptions(part *S
 	  part_ptr =part.ptr
 	}
 
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_GetSaveOptions( instance.ptr, part_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFP(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_GetSaveOptions"), instance.ptr, part_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2355,7 +2355,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) Finish(part *LowCodeSa
 	  part_ptr =part.ptr
 	}
 
-	CGoReturnPtr := C.LowCodeSaveOptionsProviderOfPlaceHolders_Finish( instance.ptr, part_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFQ(C.CString("LowCodeSaveOptionsProviderOfPlaceHolders_Finish"), instance.ptr, part_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2373,7 +2373,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) ToAbstractLowCodeSaveO
 
 func DeleteLowCodeSaveOptionsProviderOfPlaceHolders(lowcodesaveoptionsproviderofplaceholders *LowCodeSaveOptionsProviderOfPlaceHolders){
 	runtime.SetFinalizer(lowcodesaveoptionsproviderofplaceholders, nil)
-	C.Delete_LowCodeSaveOptionsProviderOfPlaceHolders(lowcodesaveoptionsproviderofplaceholders.ptr)
+	C.Delete_CObject(C.CString("Delete_LowCodeSaveOptionsProviderOfPlaceHolders"),lowcodesaveoptionsproviderofplaceholders.ptr)
 	lowcodesaveoptionsproviderofplaceholders.ptr = nil
 }
 
@@ -2387,7 +2387,7 @@ type LowCodeSplitOptions struct {
 // Default constructor.
 func NewLowCodeSplitOptions() ( *LowCodeSplitOptions, error) {
 	lowcodesplitoptions := &LowCodeSplitOptions{}
-	CGoReturnPtr := C.New_LowCodeSplitOptions()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_LowCodeSplitOptions"),)
 	if CGoReturnPtr.error_no == 0 {
 		lowcodesplitoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lowcodesplitoptions, DeleteLowCodeSplitOptions)
@@ -2404,7 +2404,7 @@ func NewLowCodeSplitOptions() ( *LowCodeSplitOptions, error) {
 //   bool  
 func (instance *LowCodeSplitOptions) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSplitOptions_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LowCodeSplitOptions_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2418,7 +2418,7 @@ func (instance *LowCodeSplitOptions) IsNull()  (bool,  error)  {
 //   LowCodeLoadOptions  
 func (instance *LowCodeSplitOptions) GetLoadOptions()  (*LowCodeLoadOptions,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSplitOptions_GetLoadOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFM(C.CString("LowCodeSplitOptions_GetLoadOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2441,7 +2441,7 @@ func (instance *LowCodeSplitOptions) SetLoadOptions(value *LowCodeLoadOptions)  
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.LowCodeSplitOptions_SetLoadOptions( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFN(C.CString("LowCodeSplitOptions_SetLoadOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2454,7 +2454,7 @@ func (instance *LowCodeSplitOptions) SetLoadOptions(value *LowCodeLoadOptions)  
 //   LowCodeSaveOptions  
 func (instance *LowCodeSplitOptions) GetSaveOptions()  (*LowCodeSaveOptions,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSplitOptions_GetSaveOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGC(C.CString("LowCodeSplitOptions_GetSaveOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2477,7 +2477,7 @@ func (instance *LowCodeSplitOptions) SetSaveOptions(value *LowCodeSaveOptions)  
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.LowCodeSplitOptions_SetSaveOptions( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFQ(C.CString("LowCodeSplitOptions_SetSaveOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2490,7 +2490,7 @@ func (instance *LowCodeSplitOptions) SetSaveOptions(value *LowCodeSaveOptions)  
 //   AbstractLowCodeSaveOptionsProvider  
 func (instance *LowCodeSplitOptions) GetSaveOptionsProvider()  (*AbstractLowCodeSaveOptionsProvider,  error)  {
 	
-	CGoReturnPtr := C.LowCodeSplitOptions_GetSaveOptionsProvider( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGA(C.CString("LowCodeSplitOptions_GetSaveOptionsProvider"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2513,7 +2513,7 @@ func (instance *LowCodeSplitOptions) SetSaveOptionsProvider(value *AbstractLowCo
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.LowCodeSplitOptions_SetSaveOptionsProvider( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGB(C.CString("LowCodeSplitOptions_SetSaveOptionsProvider"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2526,7 +2526,7 @@ func (instance *LowCodeSplitOptions) SetSaveOptionsProvider(value *AbstractLowCo
 
 func DeleteLowCodeSplitOptions(lowcodesplitoptions *LowCodeSplitOptions){
 	runtime.SetFinalizer(lowcodesplitoptions, nil)
-	C.Delete_LowCodeSplitOptions(lowcodesplitoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_LowCodeSplitOptions"),lowcodesplitoptions.ptr)
 	lowcodesplitoptions.ptr = nil
 }
 
@@ -2543,7 +2543,7 @@ type PdfConverter struct {
 //   bool  
 func (instance *PdfConverter) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.PdfConverter_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PdfConverter_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2560,7 +2560,7 @@ func (instance *PdfConverter) IsNull()  (bool,  error)  {
 //   void  
 func PdfConverter_Process_String_String(templatefile string, resultfile string)  error {
 	
-	CGoReturnPtr := C.PdfConverter_Process_String_String(C.CString(templatefile), C.CString(resultfile))
+	CGoReturnPtr := C.CellsGoFunctoinZAFR(C.CString("PdfConverter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2585,7 +2585,7 @@ func PdfConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *Low
 	  saveoptions_ptr =saveoptions.ptr
 	}
 
-	CGoReturnPtr := C.PdfConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions_ptr, saveoptions_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFS(C.CString("PdfConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions"),loadoptions_ptr, saveoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2598,7 +2598,7 @@ func PdfConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *Low
 
 func DeletePdfConverter(pdfconverter *PdfConverter){
 	runtime.SetFinalizer(pdfconverter, nil)
-	C.Delete_PdfConverter(pdfconverter.ptr)
+	C.Delete_CObject(C.CString("Delete_PdfConverter"),pdfconverter.ptr)
 	pdfconverter.ptr = nil
 }
 
@@ -2616,7 +2616,7 @@ type SplitPartInfo struct {
 //   bool  
 func (instance *SplitPartInfo) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SplitPartInfo_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SplitPartInfo_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2631,7 +2631,7 @@ func (instance *SplitPartInfo) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *SplitPartInfo) GetPartIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.SplitPartInfo_GetPartIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("SplitPartInfo_GetPartIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2645,7 +2645,7 @@ func (instance *SplitPartInfo) GetPartIndex()  (int32,  error)  {
 //   int32  
 func (instance *SplitPartInfo) GetSheetIndex()  (int32,  error)  {
 	
-	CGoReturnPtr := C.SplitPartInfo_GetSheetIndex( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("SplitPartInfo_GetSheetIndex"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2659,7 +2659,7 @@ func (instance *SplitPartInfo) GetSheetIndex()  (int32,  error)  {
 //   string  
 func (instance *SplitPartInfo) GetSheetName()  (string,  error)  {
 	
-	CGoReturnPtr := C.SplitPartInfo_GetSheetName( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("SplitPartInfo_GetSheetName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -2673,7 +2673,7 @@ func (instance *SplitPartInfo) GetSheetName()  (string,  error)  {
 
 func DeleteSplitPartInfo(splitpartinfo *SplitPartInfo){
 	runtime.SetFinalizer(splitpartinfo, nil)
-	C.Delete_SplitPartInfo(splitpartinfo.ptr)
+	C.Delete_CObject(C.CString("Delete_SplitPartInfo"),splitpartinfo.ptr)
 	splitpartinfo.ptr = nil
 }
 
@@ -2690,7 +2690,7 @@ type SpreadsheetConverter struct {
 //   bool  
 func (instance *SpreadsheetConverter) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SpreadsheetConverter_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SpreadsheetConverter_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2707,7 +2707,7 @@ func (instance *SpreadsheetConverter) IsNull()  (bool,  error)  {
 //   void  
 func SpreadsheetConverter_Process_String_String(templatefile string, resultfile string)  error {
 	
-	CGoReturnPtr := C.SpreadsheetConverter_Process_String_String(C.CString(templatefile), C.CString(resultfile))
+	CGoReturnPtr := C.CellsGoFunctoinZAFR(C.CString("SpreadsheetConverter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2732,7 +2732,7 @@ func SpreadsheetConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadopti
 	  saveoptions_ptr =saveoptions.ptr
 	}
 
-	CGoReturnPtr := C.SpreadsheetConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions_ptr, saveoptions_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFS(C.CString("SpreadsheetConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions"),loadoptions_ptr, saveoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2745,7 +2745,7 @@ func SpreadsheetConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadopti
 
 func DeleteSpreadsheetConverter(spreadsheetconverter *SpreadsheetConverter){
 	runtime.SetFinalizer(spreadsheetconverter, nil)
-	C.Delete_SpreadsheetConverter(spreadsheetconverter.ptr)
+	C.Delete_CObject(C.CString("Delete_SpreadsheetConverter"),spreadsheetconverter.ptr)
 	spreadsheetconverter.ptr = nil
 }
 
@@ -2762,7 +2762,7 @@ type SpreadsheetLocker struct {
 //   bool  
 func (instance *SpreadsheetLocker) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SpreadsheetLocker_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SpreadsheetLocker_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2781,7 +2781,7 @@ func (instance *SpreadsheetLocker) IsNull()  (bool,  error)  {
 //   void  
 func SpreadsheetLocker_Process_String_String_String_String(templatefile string, resultfile string, openpassword string, writepassword string)  error {
 	
-	CGoReturnPtr := C.SpreadsheetLocker_Process_String_String_String_String(C.CString(templatefile), C.CString(resultfile), C.CString(openpassword), C.CString(writepassword))
+	CGoReturnPtr := C.CellsGoFunctoinZAGI(C.CString("SpreadsheetLocker_Process_String_String_String_String"),C.CString(templatefile), C.CString(resultfile), C.CString(openpassword), C.CString(writepassword))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2808,7 +2808,7 @@ func SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_Stri
 	  saveoptions_ptr =saveoptions.ptr
 	}
 
-	CGoReturnPtr := C.SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_String(loadoptions_ptr, saveoptions_ptr, C.CString(openpassword), C.CString(writepassword))
+	CGoReturnPtr := C.CellsGoFunctoinZAGJ(C.CString("SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_String"),loadoptions_ptr, saveoptions_ptr, C.CString(openpassword), C.CString(writepassword))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2837,7 +2837,7 @@ func SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_Stri
 	  saveoptions_ptr =saveoptions.ptr
 	}
 
-	CGoReturnPtr := C.SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_String_String_ProtectionType(loadoptions_ptr, saveoptions_ptr, C.CString(openpassword), C.CString(writepassword), C.CString(workbookpassword), C.int( int32(workbooktype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAGK(C.CString("SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_String_String_ProtectionType"),loadoptions_ptr, saveoptions_ptr, C.CString(openpassword), C.CString(writepassword), C.CString(workbookpassword), C.int( int32(workbooktype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2867,7 +2867,7 @@ func SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLow
 	  provider_ptr =provider.ptr
 	}
 
-	CGoReturnPtr := C.SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLowCodeProtectionProvider(loadoptions_ptr, saveoptions_ptr, provider_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGL(C.CString("SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLowCodeProtectionProvider"),loadoptions_ptr, saveoptions_ptr, provider_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2880,7 +2880,7 @@ func SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLow
 
 func DeleteSpreadsheetLocker(spreadsheetlocker *SpreadsheetLocker){
 	runtime.SetFinalizer(spreadsheetlocker, nil)
-	C.Delete_SpreadsheetLocker(spreadsheetlocker.ptr)
+	C.Delete_CObject(C.CString("Delete_SpreadsheetLocker"),spreadsheetlocker.ptr)
 	spreadsheetlocker.ptr = nil
 }
 
@@ -2897,7 +2897,7 @@ type SpreadsheetMerger struct {
 //   bool  
 func (instance *SpreadsheetMerger) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SpreadsheetMerger_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SpreadsheetMerger_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2921,7 +2921,7 @@ func SpreadsheetMerger_Process_stringArray_String(templatefiles []string, result
 	vector_templatefiles[i] = cStr
 	}
 
-	CGoReturnPtr := C.SpreadsheetMerger_Process_U16StringArray_String(unsafe.Pointer(&vector_templatefiles[0]), C.int( len(templatefiles)), C.CString(resultfile))
+	CGoReturnPtr := C.CellsGoFunctoinZAGM(C.CString("SpreadsheetMerger_Process_U16StringArray_String"),unsafe.Pointer(&vector_templatefiles[0]), C.int( len(templatefiles)), C.CString(resultfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2941,7 +2941,7 @@ func SpreadsheetMerger_Process_LowCodeMergeOptions(options *LowCodeMergeOptions)
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.SpreadsheetMerger_Process_LowCodeMergeOptions(options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGN(C.CString("SpreadsheetMerger_Process_LowCodeMergeOptions"),options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2954,7 +2954,7 @@ func SpreadsheetMerger_Process_LowCodeMergeOptions(options *LowCodeMergeOptions)
 
 func DeleteSpreadsheetMerger(spreadsheetmerger *SpreadsheetMerger){
 	runtime.SetFinalizer(spreadsheetmerger, nil)
-	C.Delete_SpreadsheetMerger(spreadsheetmerger.ptr)
+	C.Delete_CObject(C.CString("Delete_SpreadsheetMerger"),spreadsheetmerger.ptr)
 	spreadsheetmerger.ptr = nil
 }
 
@@ -2971,7 +2971,7 @@ type SpreadsheetSplitter struct {
 //   bool  
 func (instance *SpreadsheetSplitter) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SpreadsheetSplitter_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SpreadsheetSplitter_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2988,7 +2988,7 @@ func (instance *SpreadsheetSplitter) IsNull()  (bool,  error)  {
 //   void  
 func SpreadsheetSplitter_Process_String_String(templatefile string, resultfile string)  error {
 	
-	CGoReturnPtr := C.SpreadsheetSplitter_Process_String_String(C.CString(templatefile), C.CString(resultfile))
+	CGoReturnPtr := C.CellsGoFunctoinZAFR(C.CString("SpreadsheetSplitter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3008,7 +3008,7 @@ func SpreadsheetSplitter_Process_LowCodeSplitOptions(options *LowCodeSplitOption
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.SpreadsheetSplitter_Process_LowCodeSplitOptions(options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGO(C.CString("SpreadsheetSplitter_Process_LowCodeSplitOptions"),options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3021,7 +3021,7 @@ func SpreadsheetSplitter_Process_LowCodeSplitOptions(options *LowCodeSplitOption
 
 func DeleteSpreadsheetSplitter(spreadsheetsplitter *SpreadsheetSplitter){
 	runtime.SetFinalizer(spreadsheetsplitter, nil)
-	C.Delete_SpreadsheetSplitter(spreadsheetsplitter.ptr)
+	C.Delete_CObject(C.CString("Delete_SpreadsheetSplitter"),spreadsheetsplitter.ptr)
 	spreadsheetsplitter.ptr = nil
 }
 
@@ -3038,7 +3038,7 @@ type TextConverter struct {
 //   bool  
 func (instance *TextConverter) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextConverter_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextConverter_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3055,7 +3055,7 @@ func (instance *TextConverter) IsNull()  (bool,  error)  {
 //   void  
 func TextConverter_Process_String_String(templatefile string, resultfile string)  error {
 	
-	CGoReturnPtr := C.TextConverter_Process_String_String(C.CString(templatefile), C.CString(resultfile))
+	CGoReturnPtr := C.CellsGoFunctoinZAFR(C.CString("TextConverter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3080,7 +3080,7 @@ func TextConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *Lo
 	  saveoptions_ptr =saveoptions.ptr
 	}
 
-	CGoReturnPtr := C.TextConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions_ptr, saveoptions_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAFS(C.CString("TextConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions"),loadoptions_ptr, saveoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3093,6 +3093,6 @@ func TextConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *Lo
 
 func DeleteTextConverter(textconverter *TextConverter){
 	runtime.SetFinalizer(textconverter, nil)
-	C.Delete_TextConverter(textconverter.ptr)
+	C.Delete_CObject(C.CString("Delete_TextConverter"),textconverter.ptr)
 	textconverter.ptr = nil
 }

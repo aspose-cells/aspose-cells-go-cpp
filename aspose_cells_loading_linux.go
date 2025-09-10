@@ -11,7 +11,7 @@ package asposecells
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
 // #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/linux_x86_64" -L"${SRCDIR}/lib/linux_x86_64" -lAspose.Cells.CWrapper
-// #include <AsposeCellsCWrapper.h>
+// #include <CellsFunctionMap.h>
 import "C"
 import (
  
@@ -31,7 +31,7 @@ type DbfLoadOptions struct {
 // The options.
 func NewDbfLoadOptions() ( *DbfLoadOptions, error) {
 	dbfloadoptions := &DbfLoadOptions{}
-	CGoReturnPtr := C.New_DbfLoadOptions()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_DbfLoadOptions"),)
 	if CGoReturnPtr.error_no == 0 {
 		dbfloadoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(dbfloadoptions, DeleteDbfLoadOptions)
@@ -52,7 +52,7 @@ func NewDbfLoadOptions_LoadOptions(src *LoadOptions) ( *DbfLoadOptions, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_DbfLoadOptions_LoadOptions(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("New_DbfLoadOptions_LoadOptions"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		dbfloadoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(dbfloadoptions, DeleteDbfLoadOptions)
@@ -69,7 +69,7 @@ func NewDbfLoadOptions_LoadOptions(src *LoadOptions) ( *DbfLoadOptions, error) {
 //   bool  
 func (instance *DbfLoadOptions) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfLoadOptions_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -83,7 +83,7 @@ func (instance *DbfLoadOptions) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *DbfLoadOptions) GetLoadFormat()  (LoadFormat,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetLoadFormat( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("DbfLoadOptions_GetLoadFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -100,7 +100,7 @@ func (instance *DbfLoadOptions) GetLoadFormat()  (LoadFormat,  error)  {
 //   string  
 func (instance *DbfLoadOptions) GetPassword()  (string,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetPassword( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("DbfLoadOptions_GetPassword"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -116,7 +116,7 @@ func (instance *DbfLoadOptions) GetPassword()  (string,  error)  {
 //   void  
 func (instance *DbfLoadOptions) SetPassword(value string)  error {
 	
-	CGoReturnPtr := C.DbfLoadOptions_SetPassword( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("DbfLoadOptions_SetPassword"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -129,7 +129,7 @@ func (instance *DbfLoadOptions) SetPassword(value string)  error {
 //   bool  
 func (instance *DbfLoadOptions) GetParsingFormulaOnOpen()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetParsingFormulaOnOpen( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfLoadOptions_GetParsingFormulaOnOpen"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -145,7 +145,7 @@ func (instance *DbfLoadOptions) GetParsingFormulaOnOpen()  (bool,  error)  {
 //   void  
 func (instance *DbfLoadOptions) SetParsingFormulaOnOpen(value bool)  error {
 	
-	CGoReturnPtr := C.DbfLoadOptions_SetParsingFormulaOnOpen( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfLoadOptions_SetParsingFormulaOnOpen"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -159,7 +159,7 @@ func (instance *DbfLoadOptions) SetParsingFormulaOnOpen(value bool)  error {
 //   bool  
 func (instance *DbfLoadOptions) GetParsingPivotCachedRecords()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetParsingPivotCachedRecords( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfLoadOptions_GetParsingPivotCachedRecords"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -176,7 +176,7 @@ func (instance *DbfLoadOptions) GetParsingPivotCachedRecords()  (bool,  error)  
 //   void  
 func (instance *DbfLoadOptions) SetParsingPivotCachedRecords(value bool)  error {
 	
-	CGoReturnPtr := C.DbfLoadOptions_SetParsingPivotCachedRecords( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfLoadOptions_SetParsingPivotCachedRecords"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -191,7 +191,7 @@ func (instance *DbfLoadOptions) SetParsingPivotCachedRecords(value bool)  error 
 //   void  
 func (instance *DbfLoadOptions) SetPaperSize(type_ PaperSizeType)  error {
 	
-	CGoReturnPtr := C.DbfLoadOptions_SetPaperSize( instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZQ(C.CString("DbfLoadOptions_SetPaperSize"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -204,7 +204,7 @@ func (instance *DbfLoadOptions) SetPaperSize(type_ PaperSizeType)  error {
 //   int32  
 func (instance *DbfLoadOptions) GetLanguageCode()  (CountryCode,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetLanguageCode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZR(C.CString("DbfLoadOptions_GetLanguageCode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -223,7 +223,7 @@ func (instance *DbfLoadOptions) GetLanguageCode()  (CountryCode,  error)  {
 //   void  
 func (instance *DbfLoadOptions) SetLanguageCode(value CountryCode)  error {
 	
-	CGoReturnPtr := C.DbfLoadOptions_SetLanguageCode( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZS(C.CString("DbfLoadOptions_SetLanguageCode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -236,7 +236,7 @@ func (instance *DbfLoadOptions) SetLanguageCode(value CountryCode)  error {
 //   int32  
 func (instance *DbfLoadOptions) GetRegion()  (CountryCode,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetRegion( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZR(C.CString("DbfLoadOptions_GetRegion"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -255,7 +255,7 @@ func (instance *DbfLoadOptions) GetRegion()  (CountryCode,  error)  {
 //   void  
 func (instance *DbfLoadOptions) SetRegion(value CountryCode)  error {
 	
-	CGoReturnPtr := C.DbfLoadOptions_SetRegion( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZS(C.CString("DbfLoadOptions_SetRegion"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -268,7 +268,7 @@ func (instance *DbfLoadOptions) SetRegion(value CountryCode)  error {
 //   DefaultStyleSettings  
 func (instance *DbfLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSettings,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetDefaultStyleSettings( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZT(C.CString("DbfLoadOptions_GetDefaultStyleSettings"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -284,7 +284,7 @@ func (instance *DbfLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSetting
 //   AbstractInterruptMonitor  
 func (instance *DbfLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonitor,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetInterruptMonitor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZU(C.CString("DbfLoadOptions_GetInterruptMonitor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -307,7 +307,7 @@ func (instance *DbfLoadOptions) SetInterruptMonitor(value *AbstractInterruptMoni
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.DbfLoadOptions_SetInterruptMonitor( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZV(C.CString("DbfLoadOptions_SetInterruptMonitor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -320,7 +320,7 @@ func (instance *DbfLoadOptions) SetInterruptMonitor(value *AbstractInterruptMoni
 //   bool  
 func (instance *DbfLoadOptions) GetIgnoreNotPrinted()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetIgnoreNotPrinted( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfLoadOptions_GetIgnoreNotPrinted"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -336,7 +336,7 @@ func (instance *DbfLoadOptions) GetIgnoreNotPrinted()  (bool,  error)  {
 //   void  
 func (instance *DbfLoadOptions) SetIgnoreNotPrinted(value bool)  error {
 	
-	CGoReturnPtr := C.DbfLoadOptions_SetIgnoreNotPrinted( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfLoadOptions_SetIgnoreNotPrinted"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -349,7 +349,7 @@ func (instance *DbfLoadOptions) SetIgnoreNotPrinted(value bool)  error {
 //   bool  
 func (instance *DbfLoadOptions) GetCheckDataValid()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetCheckDataValid( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfLoadOptions_GetCheckDataValid"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -365,7 +365,7 @@ func (instance *DbfLoadOptions) GetCheckDataValid()  (bool,  error)  {
 //   void  
 func (instance *DbfLoadOptions) SetCheckDataValid(value bool)  error {
 	
-	CGoReturnPtr := C.DbfLoadOptions_SetCheckDataValid( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfLoadOptions_SetCheckDataValid"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -384,7 +384,7 @@ func (instance *DbfLoadOptions) SetCheckDataValid(value bool)  error {
 //   bool  
 func (instance *DbfLoadOptions) GetCheckExcelRestriction()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetCheckExcelRestriction( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfLoadOptions_GetCheckExcelRestriction"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -406,7 +406,7 @@ func (instance *DbfLoadOptions) GetCheckExcelRestriction()  (bool,  error)  {
 //   void  
 func (instance *DbfLoadOptions) SetCheckExcelRestriction(value bool)  error {
 	
-	CGoReturnPtr := C.DbfLoadOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfLoadOptions_SetCheckExcelRestriction"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -419,7 +419,7 @@ func (instance *DbfLoadOptions) SetCheckExcelRestriction(value bool)  error {
 //   bool  
 func (instance *DbfLoadOptions) GetKeepUnparsedData()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetKeepUnparsedData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfLoadOptions_GetKeepUnparsedData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -435,7 +435,7 @@ func (instance *DbfLoadOptions) GetKeepUnparsedData()  (bool,  error)  {
 //   void  
 func (instance *DbfLoadOptions) SetKeepUnparsedData(value bool)  error {
 	
-	CGoReturnPtr := C.DbfLoadOptions_SetKeepUnparsedData( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfLoadOptions_SetKeepUnparsedData"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -448,7 +448,7 @@ func (instance *DbfLoadOptions) SetKeepUnparsedData(value bool)  error {
 //   LoadFilter  
 func (instance *DbfLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetLoadFilter( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZW(C.CString("DbfLoadOptions_GetLoadFilter"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -471,7 +471,7 @@ func (instance *DbfLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.DbfLoadOptions_SetLoadFilter( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZX(C.CString("DbfLoadOptions_SetLoadFilter"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -484,7 +484,7 @@ func (instance *DbfLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 //   int32  
 func (instance *DbfLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetMemorySetting( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZY(C.CString("DbfLoadOptions_GetMemorySetting"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -503,7 +503,7 @@ func (instance *DbfLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
 //   void  
 func (instance *DbfLoadOptions) SetMemorySetting(value MemorySetting)  error {
 	
-	CGoReturnPtr := C.DbfLoadOptions_SetMemorySetting( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZAA(C.CString("DbfLoadOptions_SetMemorySetting"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -516,7 +516,7 @@ func (instance *DbfLoadOptions) SetMemorySetting(value MemorySetting)  error {
 //   AutoFitterOptions  
 func (instance *DbfLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetAutoFitterOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAB(C.CString("DbfLoadOptions_GetAutoFitterOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -539,7 +539,7 @@ func (instance *DbfLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.DbfLoadOptions_SetAutoFitterOptions( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAC(C.CString("DbfLoadOptions_SetAutoFitterOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -552,7 +552,7 @@ func (instance *DbfLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  
 //   bool  
 func (instance *DbfLoadOptions) GetAutoFilter()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetAutoFilter( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfLoadOptions_GetAutoFilter"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -568,7 +568,7 @@ func (instance *DbfLoadOptions) GetAutoFilter()  (bool,  error)  {
 //   void  
 func (instance *DbfLoadOptions) SetAutoFilter(value bool)  error {
 	
-	CGoReturnPtr := C.DbfLoadOptions_SetAutoFilter( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfLoadOptions_SetAutoFilter"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -582,7 +582,7 @@ func (instance *DbfLoadOptions) SetAutoFilter(value bool)  error {
 //   IndividualFontConfigs  
 func (instance *DbfLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetFontConfigs( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAD(C.CString("DbfLoadOptions_GetFontConfigs"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -606,7 +606,7 @@ func (instance *DbfLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  er
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.DbfLoadOptions_SetFontConfigs( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAE(C.CString("DbfLoadOptions_SetFontConfigs"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -619,7 +619,7 @@ func (instance *DbfLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  er
 //   bool  
 func (instance *DbfLoadOptions) GetIgnoreUselessShapes()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetIgnoreUselessShapes( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfLoadOptions_GetIgnoreUselessShapes"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -635,7 +635,7 @@ func (instance *DbfLoadOptions) GetIgnoreUselessShapes()  (bool,  error)  {
 //   void  
 func (instance *DbfLoadOptions) SetIgnoreUselessShapes(value bool)  error {
 	
-	CGoReturnPtr := C.DbfLoadOptions_SetIgnoreUselessShapes( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfLoadOptions_SetIgnoreUselessShapes"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -650,7 +650,7 @@ func (instance *DbfLoadOptions) SetIgnoreUselessShapes(value bool)  error {
 //   bool  
 func (instance *DbfLoadOptions) GetPreservePaddingSpacesInFormula()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DbfLoadOptions_GetPreservePaddingSpacesInFormula( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DbfLoadOptions_GetPreservePaddingSpacesInFormula"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -668,7 +668,7 @@ func (instance *DbfLoadOptions) GetPreservePaddingSpacesInFormula()  (bool,  err
 //   void  
 func (instance *DbfLoadOptions) SetPreservePaddingSpacesInFormula(value bool)  error {
 	
-	CGoReturnPtr := C.DbfLoadOptions_SetPreservePaddingSpacesInFormula( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DbfLoadOptions_SetPreservePaddingSpacesInFormula"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -700,7 +700,7 @@ type DifLoadOptions struct {
 // The options.
 func NewDifLoadOptions() ( *DifLoadOptions, error) {
 	difloadoptions := &DifLoadOptions{}
-	CGoReturnPtr := C.New_DifLoadOptions()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_DifLoadOptions"),)
 	if CGoReturnPtr.error_no == 0 {
 		difloadoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(difloadoptions, DeleteDifLoadOptions)
@@ -721,7 +721,7 @@ func NewDifLoadOptions_LoadOptions(src *LoadOptions) ( *DifLoadOptions, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_DifLoadOptions_LoadOptions(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("New_DifLoadOptions_LoadOptions"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		difloadoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(difloadoptions, DeleteDifLoadOptions)
@@ -738,7 +738,7 @@ func NewDifLoadOptions_LoadOptions(src *LoadOptions) ( *DifLoadOptions, error) {
 //   bool  
 func (instance *DifLoadOptions) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DifLoadOptions_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -752,7 +752,7 @@ func (instance *DifLoadOptions) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *DifLoadOptions) GetLoadFormat()  (LoadFormat,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetLoadFormat( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("DifLoadOptions_GetLoadFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -769,7 +769,7 @@ func (instance *DifLoadOptions) GetLoadFormat()  (LoadFormat,  error)  {
 //   string  
 func (instance *DifLoadOptions) GetPassword()  (string,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetPassword( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("DifLoadOptions_GetPassword"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -785,7 +785,7 @@ func (instance *DifLoadOptions) GetPassword()  (string,  error)  {
 //   void  
 func (instance *DifLoadOptions) SetPassword(value string)  error {
 	
-	CGoReturnPtr := C.DifLoadOptions_SetPassword( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("DifLoadOptions_SetPassword"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -798,7 +798,7 @@ func (instance *DifLoadOptions) SetPassword(value string)  error {
 //   bool  
 func (instance *DifLoadOptions) GetParsingFormulaOnOpen()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetParsingFormulaOnOpen( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DifLoadOptions_GetParsingFormulaOnOpen"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -814,7 +814,7 @@ func (instance *DifLoadOptions) GetParsingFormulaOnOpen()  (bool,  error)  {
 //   void  
 func (instance *DifLoadOptions) SetParsingFormulaOnOpen(value bool)  error {
 	
-	CGoReturnPtr := C.DifLoadOptions_SetParsingFormulaOnOpen( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DifLoadOptions_SetParsingFormulaOnOpen"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -828,7 +828,7 @@ func (instance *DifLoadOptions) SetParsingFormulaOnOpen(value bool)  error {
 //   bool  
 func (instance *DifLoadOptions) GetParsingPivotCachedRecords()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetParsingPivotCachedRecords( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DifLoadOptions_GetParsingPivotCachedRecords"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -845,7 +845,7 @@ func (instance *DifLoadOptions) GetParsingPivotCachedRecords()  (bool,  error)  
 //   void  
 func (instance *DifLoadOptions) SetParsingPivotCachedRecords(value bool)  error {
 	
-	CGoReturnPtr := C.DifLoadOptions_SetParsingPivotCachedRecords( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DifLoadOptions_SetParsingPivotCachedRecords"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -860,7 +860,7 @@ func (instance *DifLoadOptions) SetParsingPivotCachedRecords(value bool)  error 
 //   void  
 func (instance *DifLoadOptions) SetPaperSize(type_ PaperSizeType)  error {
 	
-	CGoReturnPtr := C.DifLoadOptions_SetPaperSize( instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZQ(C.CString("DifLoadOptions_SetPaperSize"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -873,7 +873,7 @@ func (instance *DifLoadOptions) SetPaperSize(type_ PaperSizeType)  error {
 //   int32  
 func (instance *DifLoadOptions) GetLanguageCode()  (CountryCode,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetLanguageCode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZR(C.CString("DifLoadOptions_GetLanguageCode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -892,7 +892,7 @@ func (instance *DifLoadOptions) GetLanguageCode()  (CountryCode,  error)  {
 //   void  
 func (instance *DifLoadOptions) SetLanguageCode(value CountryCode)  error {
 	
-	CGoReturnPtr := C.DifLoadOptions_SetLanguageCode( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZS(C.CString("DifLoadOptions_SetLanguageCode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -905,7 +905,7 @@ func (instance *DifLoadOptions) SetLanguageCode(value CountryCode)  error {
 //   int32  
 func (instance *DifLoadOptions) GetRegion()  (CountryCode,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetRegion( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZR(C.CString("DifLoadOptions_GetRegion"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -924,7 +924,7 @@ func (instance *DifLoadOptions) GetRegion()  (CountryCode,  error)  {
 //   void  
 func (instance *DifLoadOptions) SetRegion(value CountryCode)  error {
 	
-	CGoReturnPtr := C.DifLoadOptions_SetRegion( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZS(C.CString("DifLoadOptions_SetRegion"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -937,7 +937,7 @@ func (instance *DifLoadOptions) SetRegion(value CountryCode)  error {
 //   DefaultStyleSettings  
 func (instance *DifLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSettings,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetDefaultStyleSettings( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZT(C.CString("DifLoadOptions_GetDefaultStyleSettings"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -953,7 +953,7 @@ func (instance *DifLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSetting
 //   AbstractInterruptMonitor  
 func (instance *DifLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonitor,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetInterruptMonitor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZU(C.CString("DifLoadOptions_GetInterruptMonitor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -976,7 +976,7 @@ func (instance *DifLoadOptions) SetInterruptMonitor(value *AbstractInterruptMoni
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.DifLoadOptions_SetInterruptMonitor( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZV(C.CString("DifLoadOptions_SetInterruptMonitor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -989,7 +989,7 @@ func (instance *DifLoadOptions) SetInterruptMonitor(value *AbstractInterruptMoni
 //   bool  
 func (instance *DifLoadOptions) GetIgnoreNotPrinted()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetIgnoreNotPrinted( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DifLoadOptions_GetIgnoreNotPrinted"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1005,7 +1005,7 @@ func (instance *DifLoadOptions) GetIgnoreNotPrinted()  (bool,  error)  {
 //   void  
 func (instance *DifLoadOptions) SetIgnoreNotPrinted(value bool)  error {
 	
-	CGoReturnPtr := C.DifLoadOptions_SetIgnoreNotPrinted( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DifLoadOptions_SetIgnoreNotPrinted"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1018,7 +1018,7 @@ func (instance *DifLoadOptions) SetIgnoreNotPrinted(value bool)  error {
 //   bool  
 func (instance *DifLoadOptions) GetCheckDataValid()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetCheckDataValid( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DifLoadOptions_GetCheckDataValid"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1034,7 +1034,7 @@ func (instance *DifLoadOptions) GetCheckDataValid()  (bool,  error)  {
 //   void  
 func (instance *DifLoadOptions) SetCheckDataValid(value bool)  error {
 	
-	CGoReturnPtr := C.DifLoadOptions_SetCheckDataValid( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DifLoadOptions_SetCheckDataValid"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1053,7 +1053,7 @@ func (instance *DifLoadOptions) SetCheckDataValid(value bool)  error {
 //   bool  
 func (instance *DifLoadOptions) GetCheckExcelRestriction()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetCheckExcelRestriction( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DifLoadOptions_GetCheckExcelRestriction"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1075,7 +1075,7 @@ func (instance *DifLoadOptions) GetCheckExcelRestriction()  (bool,  error)  {
 //   void  
 func (instance *DifLoadOptions) SetCheckExcelRestriction(value bool)  error {
 	
-	CGoReturnPtr := C.DifLoadOptions_SetCheckExcelRestriction( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DifLoadOptions_SetCheckExcelRestriction"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1088,7 +1088,7 @@ func (instance *DifLoadOptions) SetCheckExcelRestriction(value bool)  error {
 //   bool  
 func (instance *DifLoadOptions) GetKeepUnparsedData()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetKeepUnparsedData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DifLoadOptions_GetKeepUnparsedData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1104,7 +1104,7 @@ func (instance *DifLoadOptions) GetKeepUnparsedData()  (bool,  error)  {
 //   void  
 func (instance *DifLoadOptions) SetKeepUnparsedData(value bool)  error {
 	
-	CGoReturnPtr := C.DifLoadOptions_SetKeepUnparsedData( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DifLoadOptions_SetKeepUnparsedData"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1117,7 +1117,7 @@ func (instance *DifLoadOptions) SetKeepUnparsedData(value bool)  error {
 //   LoadFilter  
 func (instance *DifLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetLoadFilter( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZW(C.CString("DifLoadOptions_GetLoadFilter"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1140,7 +1140,7 @@ func (instance *DifLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.DifLoadOptions_SetLoadFilter( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZX(C.CString("DifLoadOptions_SetLoadFilter"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1153,7 +1153,7 @@ func (instance *DifLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 //   int32  
 func (instance *DifLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetMemorySetting( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZY(C.CString("DifLoadOptions_GetMemorySetting"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1172,7 +1172,7 @@ func (instance *DifLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
 //   void  
 func (instance *DifLoadOptions) SetMemorySetting(value MemorySetting)  error {
 	
-	CGoReturnPtr := C.DifLoadOptions_SetMemorySetting( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZAA(C.CString("DifLoadOptions_SetMemorySetting"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1185,7 +1185,7 @@ func (instance *DifLoadOptions) SetMemorySetting(value MemorySetting)  error {
 //   AutoFitterOptions  
 func (instance *DifLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetAutoFitterOptions( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAB(C.CString("DifLoadOptions_GetAutoFitterOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1208,7 +1208,7 @@ func (instance *DifLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.DifLoadOptions_SetAutoFitterOptions( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAC(C.CString("DifLoadOptions_SetAutoFitterOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1221,7 +1221,7 @@ func (instance *DifLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  
 //   bool  
 func (instance *DifLoadOptions) GetAutoFilter()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetAutoFilter( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DifLoadOptions_GetAutoFilter"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1237,7 +1237,7 @@ func (instance *DifLoadOptions) GetAutoFilter()  (bool,  error)  {
 //   void  
 func (instance *DifLoadOptions) SetAutoFilter(value bool)  error {
 	
-	CGoReturnPtr := C.DifLoadOptions_SetAutoFilter( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DifLoadOptions_SetAutoFilter"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1251,7 +1251,7 @@ func (instance *DifLoadOptions) SetAutoFilter(value bool)  error {
 //   IndividualFontConfigs  
 func (instance *DifLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetFontConfigs( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAD(C.CString("DifLoadOptions_GetFontConfigs"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1275,7 +1275,7 @@ func (instance *DifLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  er
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.DifLoadOptions_SetFontConfigs( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAE(C.CString("DifLoadOptions_SetFontConfigs"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1288,7 +1288,7 @@ func (instance *DifLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  er
 //   bool  
 func (instance *DifLoadOptions) GetIgnoreUselessShapes()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetIgnoreUselessShapes( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DifLoadOptions_GetIgnoreUselessShapes"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1304,7 +1304,7 @@ func (instance *DifLoadOptions) GetIgnoreUselessShapes()  (bool,  error)  {
 //   void  
 func (instance *DifLoadOptions) SetIgnoreUselessShapes(value bool)  error {
 	
-	CGoReturnPtr := C.DifLoadOptions_SetIgnoreUselessShapes( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DifLoadOptions_SetIgnoreUselessShapes"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1319,7 +1319,7 @@ func (instance *DifLoadOptions) SetIgnoreUselessShapes(value bool)  error {
 //   bool  
 func (instance *DifLoadOptions) GetPreservePaddingSpacesInFormula()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DifLoadOptions_GetPreservePaddingSpacesInFormula( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DifLoadOptions_GetPreservePaddingSpacesInFormula"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1337,7 +1337,7 @@ func (instance *DifLoadOptions) GetPreservePaddingSpacesInFormula()  (bool,  err
 //   void  
 func (instance *DifLoadOptions) SetPreservePaddingSpacesInFormula(value bool)  error {
 	
-	CGoReturnPtr := C.DifLoadOptions_SetPreservePaddingSpacesInFormula( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DifLoadOptions_SetPreservePaddingSpacesInFormula"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

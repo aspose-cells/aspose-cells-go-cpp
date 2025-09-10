@@ -11,7 +11,7 @@ package asposecells
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
 // #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/win_x86_64" -L"${SRCDIR}/lib/win_x86_64" -lAspose.Cells.CWrapper
-// #include <AsposeCellsCWrapper.h>
+// #include <CellsFunctionMap.h>
 import "C"
 import (
  
@@ -32,7 +32,7 @@ type PdfSecurityOptions struct {
 // The constructor of PdfSecurityOptions
 func NewPdfSecurityOptions() ( *PdfSecurityOptions, error) {
 	pdfsecurityoptions := &PdfSecurityOptions{}
-	CGoReturnPtr := C.New_PdfSecurityOptions()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_PdfSecurityOptions"),)
 	if CGoReturnPtr.error_no == 0 {
 		pdfsecurityoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(pdfsecurityoptions, DeletePdfSecurityOptions)
@@ -49,7 +49,7 @@ func NewPdfSecurityOptions() ( *PdfSecurityOptions, error) {
 //   bool  
 func (instance *PdfSecurityOptions) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PdfSecurityOptions_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -63,7 +63,7 @@ func (instance *PdfSecurityOptions) IsNull()  (bool,  error)  {
 //   string  
 func (instance *PdfSecurityOptions) GetUserPassword()  (string,  error)  {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_GetUserPassword( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PdfSecurityOptions_GetUserPassword"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -79,7 +79,7 @@ func (instance *PdfSecurityOptions) GetUserPassword()  (string,  error)  {
 //   void  
 func (instance *PdfSecurityOptions) SetUserPassword(value string)  error {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_SetUserPassword( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("PdfSecurityOptions_SetUserPassword"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -92,7 +92,7 @@ func (instance *PdfSecurityOptions) SetUserPassword(value string)  error {
 //   string  
 func (instance *PdfSecurityOptions) GetOwnerPassword()  (string,  error)  {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_GetOwnerPassword( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PdfSecurityOptions_GetOwnerPassword"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -108,7 +108,7 @@ func (instance *PdfSecurityOptions) GetOwnerPassword()  (string,  error)  {
 //   void  
 func (instance *PdfSecurityOptions) SetOwnerPassword(value string)  error {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_SetOwnerPassword( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("PdfSecurityOptions_SetOwnerPassword"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -121,7 +121,7 @@ func (instance *PdfSecurityOptions) SetOwnerPassword(value string)  error {
 //   bool  
 func (instance *PdfSecurityOptions) GetPrintPermission()  (bool,  error)  {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_GetPrintPermission( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PdfSecurityOptions_GetPrintPermission"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -137,7 +137,7 @@ func (instance *PdfSecurityOptions) GetPrintPermission()  (bool,  error)  {
 //   void  
 func (instance *PdfSecurityOptions) SetPrintPermission(value bool)  error {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_SetPrintPermission( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PdfSecurityOptions_SetPrintPermission"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -151,7 +151,7 @@ func (instance *PdfSecurityOptions) SetPrintPermission(value bool)  error {
 //   bool  
 func (instance *PdfSecurityOptions) GetModifyDocumentPermission()  (bool,  error)  {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_GetModifyDocumentPermission( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PdfSecurityOptions_GetModifyDocumentPermission"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -168,7 +168,7 @@ func (instance *PdfSecurityOptions) GetModifyDocumentPermission()  (bool,  error
 //   void  
 func (instance *PdfSecurityOptions) SetModifyDocumentPermission(value bool)  error {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_SetModifyDocumentPermission( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PdfSecurityOptions_SetModifyDocumentPermission"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -181,7 +181,7 @@ func (instance *PdfSecurityOptions) SetModifyDocumentPermission(value bool)  err
 //   bool  
 func (instance *PdfSecurityOptions) GetAnnotationsPermission()  (bool,  error)  {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_GetAnnotationsPermission( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PdfSecurityOptions_GetAnnotationsPermission"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -197,7 +197,7 @@ func (instance *PdfSecurityOptions) GetAnnotationsPermission()  (bool,  error)  
 //   void  
 func (instance *PdfSecurityOptions) SetAnnotationsPermission(value bool)  error {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_SetAnnotationsPermission( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PdfSecurityOptions_SetAnnotationsPermission"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -211,7 +211,7 @@ func (instance *PdfSecurityOptions) SetAnnotationsPermission(value bool)  error 
 //   bool  
 func (instance *PdfSecurityOptions) GetFillFormsPermission()  (bool,  error)  {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_GetFillFormsPermission( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PdfSecurityOptions_GetFillFormsPermission"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -228,7 +228,7 @@ func (instance *PdfSecurityOptions) GetFillFormsPermission()  (bool,  error)  {
 //   void  
 func (instance *PdfSecurityOptions) SetFillFormsPermission(value bool)  error {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_SetFillFormsPermission( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PdfSecurityOptions_SetFillFormsPermission"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -242,7 +242,7 @@ func (instance *PdfSecurityOptions) SetFillFormsPermission(value bool)  error {
 //   bool  
 func (instance *PdfSecurityOptions) GetExtractContentPermission()  (bool,  error)  {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_GetExtractContentPermission( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PdfSecurityOptions_GetExtractContentPermission"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -259,7 +259,7 @@ func (instance *PdfSecurityOptions) GetExtractContentPermission()  (bool,  error
 //   void  
 func (instance *PdfSecurityOptions) SetExtractContentPermission(value bool)  error {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_SetExtractContentPermission( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PdfSecurityOptions_SetExtractContentPermission"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -272,7 +272,7 @@ func (instance *PdfSecurityOptions) SetExtractContentPermission(value bool)  err
 //   bool  
 func (instance *PdfSecurityOptions) GetAccessibilityExtractContent()  (bool,  error)  {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_GetAccessibilityExtractContent( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PdfSecurityOptions_GetAccessibilityExtractContent"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -288,7 +288,7 @@ func (instance *PdfSecurityOptions) GetAccessibilityExtractContent()  (bool,  er
 //   void  
 func (instance *PdfSecurityOptions) SetAccessibilityExtractContent(value bool)  error {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_SetAccessibilityExtractContent( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PdfSecurityOptions_SetAccessibilityExtractContent"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -302,7 +302,7 @@ func (instance *PdfSecurityOptions) SetAccessibilityExtractContent(value bool)  
 //   bool  
 func (instance *PdfSecurityOptions) GetAssembleDocumentPermission()  (bool,  error)  {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_GetAssembleDocumentPermission( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PdfSecurityOptions_GetAssembleDocumentPermission"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -319,7 +319,7 @@ func (instance *PdfSecurityOptions) GetAssembleDocumentPermission()  (bool,  err
 //   void  
 func (instance *PdfSecurityOptions) SetAssembleDocumentPermission(value bool)  error {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_SetAssembleDocumentPermission( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PdfSecurityOptions_SetAssembleDocumentPermission"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -333,7 +333,7 @@ func (instance *PdfSecurityOptions) SetAssembleDocumentPermission(value bool)  e
 //   bool  
 func (instance *PdfSecurityOptions) GetFullQualityPrintPermission()  (bool,  error)  {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_GetFullQualityPrintPermission( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PdfSecurityOptions_GetFullQualityPrintPermission"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -350,7 +350,7 @@ func (instance *PdfSecurityOptions) GetFullQualityPrintPermission()  (bool,  err
 //   void  
 func (instance *PdfSecurityOptions) SetFullQualityPrintPermission(value bool)  error {
 	
-	CGoReturnPtr := C.PdfSecurityOptions_SetFullQualityPrintPermission( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PdfSecurityOptions_SetFullQualityPrintPermission"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -363,6 +363,6 @@ func (instance *PdfSecurityOptions) SetFullQualityPrintPermission(value bool)  e
 
 func DeletePdfSecurityOptions(pdfsecurityoptions *PdfSecurityOptions){
 	runtime.SetFinalizer(pdfsecurityoptions, nil)
-	C.Delete_PdfSecurityOptions(pdfsecurityoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_PdfSecurityOptions"),pdfsecurityoptions.ptr)
 	pdfsecurityoptions.ptr = nil
 }

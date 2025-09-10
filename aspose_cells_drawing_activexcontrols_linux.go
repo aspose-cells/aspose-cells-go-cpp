@@ -11,7 +11,7 @@ package asposecells
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
 // #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/linux_x86_64" -L"${SRCDIR}/lib/linux_x86_64" -lAspose.Cells.CWrapper
-// #include <AsposeCellsCWrapper.h>
+// #include <CellsFunctionMap.h>
 import "C"
 import (
 	"fmt"  
@@ -653,7 +653,7 @@ func NewActiveXControl(src *ActiveXControlBase) ( *ActiveXControl, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_ActiveXControl(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHP(C.CString("New_ActiveXControl"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		activexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(activexcontrol, DeleteActiveXControl)
@@ -670,7 +670,7 @@ func NewActiveXControl(src *ActiveXControlBase) ( *ActiveXControl, error) {
 //   bool  
 func (instance *ActiveXControl) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ActiveXControl_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -684,7 +684,7 @@ func (instance *ActiveXControl) IsNull()  (bool,  error)  {
 //   bool  
 func (instance *ActiveXControl) IsEnabled()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_IsEnabled( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ActiveXControl_IsEnabled"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -700,7 +700,7 @@ func (instance *ActiveXControl) IsEnabled()  (bool,  error)  {
 //   void  
 func (instance *ActiveXControl) SetIsEnabled(value bool)  error {
 	
-	CGoReturnPtr := C.ActiveXControl_SetIsEnabled( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ActiveXControl_SetIsEnabled"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -713,7 +713,7 @@ func (instance *ActiveXControl) SetIsEnabled(value bool)  error {
 //   bool  
 func (instance *ActiveXControl) IsLocked()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_IsLocked( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ActiveXControl_IsLocked"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -729,7 +729,7 @@ func (instance *ActiveXControl) IsLocked()  (bool,  error)  {
 //   void  
 func (instance *ActiveXControl) SetIsLocked(value bool)  error {
 	
-	CGoReturnPtr := C.ActiveXControl_SetIsLocked( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ActiveXControl_SetIsLocked"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -742,7 +742,7 @@ func (instance *ActiveXControl) SetIsLocked(value bool)  error {
 //   bool  
 func (instance *ActiveXControl) IsTransparent()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_IsTransparent( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ActiveXControl_IsTransparent"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -758,7 +758,7 @@ func (instance *ActiveXControl) IsTransparent()  (bool,  error)  {
 //   void  
 func (instance *ActiveXControl) SetIsTransparent(value bool)  error {
 	
-	CGoReturnPtr := C.ActiveXControl_SetIsTransparent( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ActiveXControl_SetIsTransparent"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -771,7 +771,7 @@ func (instance *ActiveXControl) SetIsTransparent(value bool)  error {
 //   int32  
 func (instance *ActiveXControl) GetIMEMode()  (InputMethodEditorMode,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_GetIMEMode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHQ(C.CString("ActiveXControl_GetIMEMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -790,7 +790,7 @@ func (instance *ActiveXControl) GetIMEMode()  (InputMethodEditorMode,  error)  {
 //   void  
 func (instance *ActiveXControl) SetIMEMode(value InputMethodEditorMode)  error {
 	
-	CGoReturnPtr := C.ActiveXControl_SetIMEMode( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHR(C.CString("ActiveXControl_SetIMEMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -803,7 +803,7 @@ func (instance *ActiveXControl) SetIMEMode(value InputMethodEditorMode)  error {
 //   Font  
 func (instance *ActiveXControl) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("ActiveXControl_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -819,7 +819,7 @@ func (instance *ActiveXControl) GetFont()  (*Font,  error)  {
 //   int32  
 func (instance *ActiveXControl) GetTextAlign()  (TextAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_GetTextAlign( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("ActiveXControl_GetTextAlign"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -838,7 +838,7 @@ func (instance *ActiveXControl) GetTextAlign()  (TextAlignmentType,  error)  {
 //   void  
 func (instance *ActiveXControl) SetTextAlign(value TextAlignmentType)  error {
 	
-	CGoReturnPtr := C.ActiveXControl_SetTextAlign( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("ActiveXControl_SetTextAlign"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -851,7 +851,7 @@ func (instance *ActiveXControl) SetTextAlign(value TextAlignmentType)  error {
 //   []byte  
 func (instance *ActiveXControl) GetData()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_GetData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("ActiveXControl_GetData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -866,7 +866,7 @@ func (instance *ActiveXControl) GetData()  ([]byte,  error)  {
 //   bool  
 func (instance *ActiveXControl) IsAutoSize()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_IsAutoSize( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ActiveXControl_IsAutoSize"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -882,7 +882,7 @@ func (instance *ActiveXControl) IsAutoSize()  (bool,  error)  {
 //   void  
 func (instance *ActiveXControl) SetIsAutoSize(value bool)  error {
 	
-	CGoReturnPtr := C.ActiveXControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ActiveXControl_SetIsAutoSize"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -895,7 +895,7 @@ func (instance *ActiveXControl) SetIsAutoSize(value bool)  error {
 //   Workbook  
 func (instance *ActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_GetWorkbook( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBO(C.CString("ActiveXControl_GetWorkbook"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -911,7 +911,7 @@ func (instance *ActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 //   []byte  
 func (instance *ActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_GetMouseIcon( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("ActiveXControl_GetMouseIcon"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -928,7 +928,7 @@ func (instance *ActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 //   void  
 func (instance *ActiveXControl) SetMouseIcon(value []byte)  error {
 	
-	CGoReturnPtr := C.ActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("ActiveXControl_SetMouseIcon"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -941,7 +941,7 @@ func (instance *ActiveXControl) SetMouseIcon(value []byte)  error {
 //   int32  
 func (instance *ActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_GetMousePointer( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHS(C.CString("ActiveXControl_GetMousePointer"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -960,7 +960,7 @@ func (instance *ActiveXControl) GetMousePointer()  (ControlMousePointerType,  er
 //   void  
 func (instance *ActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
 	
-	CGoReturnPtr := C.ActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHT(C.CString("ActiveXControl_SetMousePointer"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -973,7 +973,7 @@ func (instance *ActiveXControl) SetMousePointer(value ControlMousePointerType)  
 //   string  
 func (instance *ActiveXControl) GetLinkedCell()  (string,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_GetLinkedCell( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ActiveXControl_GetLinkedCell"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -989,7 +989,7 @@ func (instance *ActiveXControl) GetLinkedCell()  (string,  error)  {
 //   void  
 func (instance *ActiveXControl) SetLinkedCell(value string)  error {
 	
-	CGoReturnPtr := C.ActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ActiveXControl_SetLinkedCell"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1002,7 +1002,7 @@ func (instance *ActiveXControl) SetLinkedCell(value string)  error {
 //   string  
 func (instance *ActiveXControl) GetListFillRange()  (string,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_GetListFillRange( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ActiveXControl_GetListFillRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1018,7 +1018,7 @@ func (instance *ActiveXControl) GetListFillRange()  (string,  error)  {
 //   void  
 func (instance *ActiveXControl) SetListFillRange(value string)  error {
 	
-	CGoReturnPtr := C.ActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ActiveXControl_SetListFillRange"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1031,7 +1031,7 @@ func (instance *ActiveXControl) SetListFillRange(value string)  error {
 //   int32  
 func (instance *ActiveXControl) GetType()  (ControlType,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHU(C.CString("ActiveXControl_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1048,7 +1048,7 @@ func (instance *ActiveXControl) GetType()  (ControlType,  error)  {
 //   float64  
 func (instance *ActiveXControl) GetWidth()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_GetWidth( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("ActiveXControl_GetWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1064,7 +1064,7 @@ func (instance *ActiveXControl) GetWidth()  (float64,  error)  {
 //   void  
 func (instance *ActiveXControl) SetWidth(value float64)  error {
 	
-	CGoReturnPtr := C.ActiveXControl_SetWidth( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("ActiveXControl_SetWidth"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1077,7 +1077,7 @@ func (instance *ActiveXControl) SetWidth(value float64)  error {
 //   float64  
 func (instance *ActiveXControl) GetHeight()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_GetHeight( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("ActiveXControl_GetHeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1093,7 +1093,7 @@ func (instance *ActiveXControl) GetHeight()  (float64,  error)  {
 //   void  
 func (instance *ActiveXControl) SetHeight(value float64)  error {
 	
-	CGoReturnPtr := C.ActiveXControl_SetHeight( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("ActiveXControl_SetHeight"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1106,7 +1106,7 @@ func (instance *ActiveXControl) SetHeight(value float64)  error {
 //   int32  
 func (instance *ActiveXControl) GetForeOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_GetForeOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ActiveXControl_GetForeOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1122,7 +1122,7 @@ func (instance *ActiveXControl) GetForeOleColor()  (int32,  error)  {
 //   void  
 func (instance *ActiveXControl) SetForeOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.ActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ActiveXControl_SetForeOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1135,7 +1135,7 @@ func (instance *ActiveXControl) SetForeOleColor(value int32)  error {
 //   int32  
 func (instance *ActiveXControl) GetBackOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_GetBackOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ActiveXControl_GetBackOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1151,7 +1151,7 @@ func (instance *ActiveXControl) GetBackOleColor()  (int32,  error)  {
 //   void  
 func (instance *ActiveXControl) SetBackOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.ActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ActiveXControl_SetBackOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1164,7 +1164,7 @@ func (instance *ActiveXControl) SetBackOleColor(value int32)  error {
 //   bool  
 func (instance *ActiveXControl) IsVisible()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_IsVisible( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ActiveXControl_IsVisible"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1180,7 +1180,7 @@ func (instance *ActiveXControl) IsVisible()  (bool,  error)  {
 //   void  
 func (instance *ActiveXControl) SetIsVisible(value bool)  error {
 	
-	CGoReturnPtr := C.ActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ActiveXControl_SetIsVisible"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1193,7 +1193,7 @@ func (instance *ActiveXControl) SetIsVisible(value bool)  error {
 //   bool  
 func (instance *ActiveXControl) GetShadow()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControl_GetShadow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ActiveXControl_GetShadow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1209,7 +1209,7 @@ func (instance *ActiveXControl) GetShadow()  (bool,  error)  {
 //   void  
 func (instance *ActiveXControl) SetShadow(value bool)  error {
 	
-	CGoReturnPtr := C.ActiveXControl_SetShadow( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ActiveXControl_SetShadow"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1244,7 +1244,7 @@ type ActiveXControlBase struct {
 //   bool  
 func (instance *ActiveXControlBase) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControlBase_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ActiveXControlBase_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1258,7 +1258,7 @@ func (instance *ActiveXControlBase) IsNull()  (bool,  error)  {
 //   Workbook  
 func (instance *ActiveXControlBase) GetWorkbook()  (*Workbook,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControlBase_GetWorkbook( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBO(C.CString("ActiveXControlBase_GetWorkbook"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1274,7 +1274,7 @@ func (instance *ActiveXControlBase) GetWorkbook()  (*Workbook,  error)  {
 //   []byte  
 func (instance *ActiveXControlBase) GetMouseIcon()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControlBase_GetMouseIcon( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("ActiveXControlBase_GetMouseIcon"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1291,7 +1291,7 @@ func (instance *ActiveXControlBase) GetMouseIcon()  ([]byte,  error)  {
 //   void  
 func (instance *ActiveXControlBase) SetMouseIcon(value []byte)  error {
 	
-	CGoReturnPtr := C.ActiveXControlBase_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("ActiveXControlBase_SetMouseIcon"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1304,7 +1304,7 @@ func (instance *ActiveXControlBase) SetMouseIcon(value []byte)  error {
 //   int32  
 func (instance *ActiveXControlBase) GetMousePointer()  (ControlMousePointerType,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControlBase_GetMousePointer( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHS(C.CString("ActiveXControlBase_GetMousePointer"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1323,7 +1323,7 @@ func (instance *ActiveXControlBase) GetMousePointer()  (ControlMousePointerType,
 //   void  
 func (instance *ActiveXControlBase) SetMousePointer(value ControlMousePointerType)  error {
 	
-	CGoReturnPtr := C.ActiveXControlBase_SetMousePointer( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHT(C.CString("ActiveXControlBase_SetMousePointer"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1336,7 +1336,7 @@ func (instance *ActiveXControlBase) SetMousePointer(value ControlMousePointerTyp
 //   string  
 func (instance *ActiveXControlBase) GetLinkedCell()  (string,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControlBase_GetLinkedCell( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ActiveXControlBase_GetLinkedCell"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1352,7 +1352,7 @@ func (instance *ActiveXControlBase) GetLinkedCell()  (string,  error)  {
 //   void  
 func (instance *ActiveXControlBase) SetLinkedCell(value string)  error {
 	
-	CGoReturnPtr := C.ActiveXControlBase_SetLinkedCell( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ActiveXControlBase_SetLinkedCell"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1365,7 +1365,7 @@ func (instance *ActiveXControlBase) SetLinkedCell(value string)  error {
 //   string  
 func (instance *ActiveXControlBase) GetListFillRange()  (string,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControlBase_GetListFillRange( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ActiveXControlBase_GetListFillRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1381,7 +1381,7 @@ func (instance *ActiveXControlBase) GetListFillRange()  (string,  error)  {
 //   void  
 func (instance *ActiveXControlBase) SetListFillRange(value string)  error {
 	
-	CGoReturnPtr := C.ActiveXControlBase_SetListFillRange( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ActiveXControlBase_SetListFillRange"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1394,7 +1394,7 @@ func (instance *ActiveXControlBase) SetListFillRange(value string)  error {
 //   int32  
 func (instance *ActiveXControlBase) GetType()  (ControlType,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControlBase_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHU(C.CString("ActiveXControlBase_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1411,7 +1411,7 @@ func (instance *ActiveXControlBase) GetType()  (ControlType,  error)  {
 //   float64  
 func (instance *ActiveXControlBase) GetWidth()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControlBase_GetWidth( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("ActiveXControlBase_GetWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1427,7 +1427,7 @@ func (instance *ActiveXControlBase) GetWidth()  (float64,  error)  {
 //   void  
 func (instance *ActiveXControlBase) SetWidth(value float64)  error {
 	
-	CGoReturnPtr := C.ActiveXControlBase_SetWidth( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("ActiveXControlBase_SetWidth"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1440,7 +1440,7 @@ func (instance *ActiveXControlBase) SetWidth(value float64)  error {
 //   float64  
 func (instance *ActiveXControlBase) GetHeight()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControlBase_GetHeight( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("ActiveXControlBase_GetHeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1456,7 +1456,7 @@ func (instance *ActiveXControlBase) GetHeight()  (float64,  error)  {
 //   void  
 func (instance *ActiveXControlBase) SetHeight(value float64)  error {
 	
-	CGoReturnPtr := C.ActiveXControlBase_SetHeight( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("ActiveXControlBase_SetHeight"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1469,7 +1469,7 @@ func (instance *ActiveXControlBase) SetHeight(value float64)  error {
 //   int32  
 func (instance *ActiveXControlBase) GetForeOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControlBase_GetForeOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ActiveXControlBase_GetForeOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1485,7 +1485,7 @@ func (instance *ActiveXControlBase) GetForeOleColor()  (int32,  error)  {
 //   void  
 func (instance *ActiveXControlBase) SetForeOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.ActiveXControlBase_SetForeOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ActiveXControlBase_SetForeOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1498,7 +1498,7 @@ func (instance *ActiveXControlBase) SetForeOleColor(value int32)  error {
 //   int32  
 func (instance *ActiveXControlBase) GetBackOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControlBase_GetBackOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ActiveXControlBase_GetBackOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1514,7 +1514,7 @@ func (instance *ActiveXControlBase) GetBackOleColor()  (int32,  error)  {
 //   void  
 func (instance *ActiveXControlBase) SetBackOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.ActiveXControlBase_SetBackOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ActiveXControlBase_SetBackOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1527,7 +1527,7 @@ func (instance *ActiveXControlBase) SetBackOleColor(value int32)  error {
 //   bool  
 func (instance *ActiveXControlBase) IsVisible()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControlBase_IsVisible( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ActiveXControlBase_IsVisible"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1543,7 +1543,7 @@ func (instance *ActiveXControlBase) IsVisible()  (bool,  error)  {
 //   void  
 func (instance *ActiveXControlBase) SetIsVisible(value bool)  error {
 	
-	CGoReturnPtr := C.ActiveXControlBase_SetIsVisible( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ActiveXControlBase_SetIsVisible"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1556,7 +1556,7 @@ func (instance *ActiveXControlBase) SetIsVisible(value bool)  error {
 //   bool  
 func (instance *ActiveXControlBase) GetShadow()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControlBase_GetShadow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ActiveXControlBase_GetShadow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1572,7 +1572,7 @@ func (instance *ActiveXControlBase) GetShadow()  (bool,  error)  {
 //   void  
 func (instance *ActiveXControlBase) SetShadow(value bool)  error {
 	
-	CGoReturnPtr := C.ActiveXControlBase_SetShadow( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ActiveXControlBase_SetShadow"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1585,7 +1585,7 @@ func (instance *ActiveXControlBase) SetShadow(value bool)  error {
 //   []byte  
 func (instance *ActiveXControlBase) GetData()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ActiveXControlBase_GetData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("ActiveXControlBase_GetData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1621,7 +1621,7 @@ func NewCheckBoxActiveXControl(src *ActiveXControl) ( *CheckBoxActiveXControl, e
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_CheckBoxActiveXControl(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHV(C.CString("New_CheckBoxActiveXControl"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		checkboxactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(checkboxactivexcontrol, DeleteCheckBoxActiveXControl)
@@ -1638,7 +1638,7 @@ func NewCheckBoxActiveXControl(src *ActiveXControl) ( *CheckBoxActiveXControl, e
 //   bool  
 func (instance *CheckBoxActiveXControl) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("CheckBoxActiveXControl_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1652,7 +1652,7 @@ func (instance *CheckBoxActiveXControl) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *CheckBoxActiveXControl) GetType()  (ControlType,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHU(C.CString("CheckBoxActiveXControl_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1669,7 +1669,7 @@ func (instance *CheckBoxActiveXControl) GetType()  (ControlType,  error)  {
 //   string  
 func (instance *CheckBoxActiveXControl) GetGroupName()  (string,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetGroupName( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("CheckBoxActiveXControl_GetGroupName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1685,7 +1685,7 @@ func (instance *CheckBoxActiveXControl) GetGroupName()  (string,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetGroupName(value string)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetGroupName( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("CheckBoxActiveXControl_SetGroupName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1698,7 +1698,7 @@ func (instance *CheckBoxActiveXControl) SetGroupName(value string)  error {
 //   int32  
 func (instance *CheckBoxActiveXControl) GetAlignment()  (ControlCaptionAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetAlignment( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHW(C.CString("CheckBoxActiveXControl_GetAlignment"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1717,7 +1717,7 @@ func (instance *CheckBoxActiveXControl) GetAlignment()  (ControlCaptionAlignment
 //   void  
 func (instance *CheckBoxActiveXControl) SetAlignment(value ControlCaptionAlignmentType)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetAlignment( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHX(C.CString("CheckBoxActiveXControl_SetAlignment"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1730,7 +1730,7 @@ func (instance *CheckBoxActiveXControl) SetAlignment(value ControlCaptionAlignme
 //   bool  
 func (instance *CheckBoxActiveXControl) IsWordWrapped()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_IsWordWrapped( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("CheckBoxActiveXControl_IsWordWrapped"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1746,7 +1746,7 @@ func (instance *CheckBoxActiveXControl) IsWordWrapped()  (bool,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetIsWordWrapped(value bool)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetIsWordWrapped( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("CheckBoxActiveXControl_SetIsWordWrapped"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1759,7 +1759,7 @@ func (instance *CheckBoxActiveXControl) SetIsWordWrapped(value bool)  error {
 //   string  
 func (instance *CheckBoxActiveXControl) GetCaption()  (string,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetCaption( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("CheckBoxActiveXControl_GetCaption"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1775,7 +1775,7 @@ func (instance *CheckBoxActiveXControl) GetCaption()  (string,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetCaption(value string)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetCaption( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("CheckBoxActiveXControl_SetCaption"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1788,7 +1788,7 @@ func (instance *CheckBoxActiveXControl) SetCaption(value string)  error {
 //   int32  
 func (instance *CheckBoxActiveXControl) GetPicturePosition()  (ControlPicturePositionType,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetPicturePosition( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHY(C.CString("CheckBoxActiveXControl_GetPicturePosition"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1807,7 +1807,7 @@ func (instance *CheckBoxActiveXControl) GetPicturePosition()  (ControlPicturePos
 //   void  
 func (instance *CheckBoxActiveXControl) SetPicturePosition(value ControlPicturePositionType)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetPicturePosition( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIA(C.CString("CheckBoxActiveXControl_SetPicturePosition"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1820,7 +1820,7 @@ func (instance *CheckBoxActiveXControl) SetPicturePosition(value ControlPictureP
 //   int32  
 func (instance *CheckBoxActiveXControl) GetSpecialEffect()  (ControlSpecialEffectType,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetSpecialEffect( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIB(C.CString("CheckBoxActiveXControl_GetSpecialEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1839,7 +1839,7 @@ func (instance *CheckBoxActiveXControl) GetSpecialEffect()  (ControlSpecialEffec
 //   void  
 func (instance *CheckBoxActiveXControl) SetSpecialEffect(value ControlSpecialEffectType)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetSpecialEffect( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIC(C.CString("CheckBoxActiveXControl_SetSpecialEffect"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1852,7 +1852,7 @@ func (instance *CheckBoxActiveXControl) SetSpecialEffect(value ControlSpecialEff
 //   []byte  
 func (instance *CheckBoxActiveXControl) GetPicture()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetPicture( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("CheckBoxActiveXControl_GetPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1869,7 +1869,7 @@ func (instance *CheckBoxActiveXControl) GetPicture()  ([]byte,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetPicture(value []byte)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetPicture( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("CheckBoxActiveXControl_SetPicture"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1882,7 +1882,7 @@ func (instance *CheckBoxActiveXControl) SetPicture(value []byte)  error {
 //   byte  
 func (instance *CheckBoxActiveXControl) GetAccelerator()  (byte,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetAccelerator( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPI(C.CString("CheckBoxActiveXControl_GetAccelerator"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1898,7 +1898,7 @@ func (instance *CheckBoxActiveXControl) GetAccelerator()  (byte,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetAccelerator(value byte)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetAccelerator( instance.ptr, C.char(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZSA(C.CString("CheckBoxActiveXControl_SetAccelerator"), instance.ptr, C.char(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1911,7 +1911,7 @@ func (instance *CheckBoxActiveXControl) SetAccelerator(value byte)  error {
 //   int32  
 func (instance *CheckBoxActiveXControl) GetValue()  (CheckValueType,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetValue( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAID(C.CString("CheckBoxActiveXControl_GetValue"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1930,7 +1930,7 @@ func (instance *CheckBoxActiveXControl) GetValue()  (CheckValueType,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetValue(value CheckValueType)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetValue( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIE(C.CString("CheckBoxActiveXControl_SetValue"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1943,7 +1943,7 @@ func (instance *CheckBoxActiveXControl) SetValue(value CheckValueType)  error {
 //   bool  
 func (instance *CheckBoxActiveXControl) IsTripleState()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_IsTripleState( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("CheckBoxActiveXControl_IsTripleState"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1959,7 +1959,7 @@ func (instance *CheckBoxActiveXControl) IsTripleState()  (bool,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetIsTripleState(value bool)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetIsTripleState( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("CheckBoxActiveXControl_SetIsTripleState"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1972,7 +1972,7 @@ func (instance *CheckBoxActiveXControl) SetIsTripleState(value bool)  error {
 //   bool  
 func (instance *CheckBoxActiveXControl) IsEnabled()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_IsEnabled( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("CheckBoxActiveXControl_IsEnabled"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -1988,7 +1988,7 @@ func (instance *CheckBoxActiveXControl) IsEnabled()  (bool,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetIsEnabled(value bool)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetIsEnabled( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("CheckBoxActiveXControl_SetIsEnabled"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2001,7 +2001,7 @@ func (instance *CheckBoxActiveXControl) SetIsEnabled(value bool)  error {
 //   bool  
 func (instance *CheckBoxActiveXControl) IsLocked()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_IsLocked( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("CheckBoxActiveXControl_IsLocked"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2017,7 +2017,7 @@ func (instance *CheckBoxActiveXControl) IsLocked()  (bool,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetIsLocked(value bool)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetIsLocked( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("CheckBoxActiveXControl_SetIsLocked"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2030,7 +2030,7 @@ func (instance *CheckBoxActiveXControl) SetIsLocked(value bool)  error {
 //   bool  
 func (instance *CheckBoxActiveXControl) IsTransparent()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_IsTransparent( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("CheckBoxActiveXControl_IsTransparent"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2046,7 +2046,7 @@ func (instance *CheckBoxActiveXControl) IsTransparent()  (bool,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetIsTransparent(value bool)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetIsTransparent( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("CheckBoxActiveXControl_SetIsTransparent"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2059,7 +2059,7 @@ func (instance *CheckBoxActiveXControl) SetIsTransparent(value bool)  error {
 //   int32  
 func (instance *CheckBoxActiveXControl) GetIMEMode()  (InputMethodEditorMode,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetIMEMode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHQ(C.CString("CheckBoxActiveXControl_GetIMEMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2078,7 +2078,7 @@ func (instance *CheckBoxActiveXControl) GetIMEMode()  (InputMethodEditorMode,  e
 //   void  
 func (instance *CheckBoxActiveXControl) SetIMEMode(value InputMethodEditorMode)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetIMEMode( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHR(C.CString("CheckBoxActiveXControl_SetIMEMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2091,7 +2091,7 @@ func (instance *CheckBoxActiveXControl) SetIMEMode(value InputMethodEditorMode) 
 //   Font  
 func (instance *CheckBoxActiveXControl) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("CheckBoxActiveXControl_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2107,7 +2107,7 @@ func (instance *CheckBoxActiveXControl) GetFont()  (*Font,  error)  {
 //   int32  
 func (instance *CheckBoxActiveXControl) GetTextAlign()  (TextAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetTextAlign( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("CheckBoxActiveXControl_GetTextAlign"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2126,7 +2126,7 @@ func (instance *CheckBoxActiveXControl) GetTextAlign()  (TextAlignmentType,  err
 //   void  
 func (instance *CheckBoxActiveXControl) SetTextAlign(value TextAlignmentType)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetTextAlign( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("CheckBoxActiveXControl_SetTextAlign"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2139,7 +2139,7 @@ func (instance *CheckBoxActiveXControl) SetTextAlign(value TextAlignmentType)  e
 //   []byte  
 func (instance *CheckBoxActiveXControl) GetData()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("CheckBoxActiveXControl_GetData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2154,7 +2154,7 @@ func (instance *CheckBoxActiveXControl) GetData()  ([]byte,  error)  {
 //   bool  
 func (instance *CheckBoxActiveXControl) IsAutoSize()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_IsAutoSize( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("CheckBoxActiveXControl_IsAutoSize"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2170,7 +2170,7 @@ func (instance *CheckBoxActiveXControl) IsAutoSize()  (bool,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetIsAutoSize(value bool)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("CheckBoxActiveXControl_SetIsAutoSize"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2183,7 +2183,7 @@ func (instance *CheckBoxActiveXControl) SetIsAutoSize(value bool)  error {
 //   Workbook  
 func (instance *CheckBoxActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetWorkbook( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBO(C.CString("CheckBoxActiveXControl_GetWorkbook"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2199,7 +2199,7 @@ func (instance *CheckBoxActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 //   []byte  
 func (instance *CheckBoxActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetMouseIcon( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("CheckBoxActiveXControl_GetMouseIcon"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2216,7 +2216,7 @@ func (instance *CheckBoxActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetMouseIcon(value []byte)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("CheckBoxActiveXControl_SetMouseIcon"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2229,7 +2229,7 @@ func (instance *CheckBoxActiveXControl) SetMouseIcon(value []byte)  error {
 //   int32  
 func (instance *CheckBoxActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetMousePointer( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHS(C.CString("CheckBoxActiveXControl_GetMousePointer"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2248,7 +2248,7 @@ func (instance *CheckBoxActiveXControl) GetMousePointer()  (ControlMousePointerT
 //   void  
 func (instance *CheckBoxActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHT(C.CString("CheckBoxActiveXControl_SetMousePointer"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2261,7 +2261,7 @@ func (instance *CheckBoxActiveXControl) SetMousePointer(value ControlMousePointe
 //   string  
 func (instance *CheckBoxActiveXControl) GetLinkedCell()  (string,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetLinkedCell( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("CheckBoxActiveXControl_GetLinkedCell"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -2277,7 +2277,7 @@ func (instance *CheckBoxActiveXControl) GetLinkedCell()  (string,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetLinkedCell(value string)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("CheckBoxActiveXControl_SetLinkedCell"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2290,7 +2290,7 @@ func (instance *CheckBoxActiveXControl) SetLinkedCell(value string)  error {
 //   string  
 func (instance *CheckBoxActiveXControl) GetListFillRange()  (string,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetListFillRange( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("CheckBoxActiveXControl_GetListFillRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -2306,7 +2306,7 @@ func (instance *CheckBoxActiveXControl) GetListFillRange()  (string,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetListFillRange(value string)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("CheckBoxActiveXControl_SetListFillRange"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2319,7 +2319,7 @@ func (instance *CheckBoxActiveXControl) SetListFillRange(value string)  error {
 //   float64  
 func (instance *CheckBoxActiveXControl) GetWidth()  (float64,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetWidth( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("CheckBoxActiveXControl_GetWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2335,7 +2335,7 @@ func (instance *CheckBoxActiveXControl) GetWidth()  (float64,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetWidth(value float64)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetWidth( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("CheckBoxActiveXControl_SetWidth"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2348,7 +2348,7 @@ func (instance *CheckBoxActiveXControl) SetWidth(value float64)  error {
 //   float64  
 func (instance *CheckBoxActiveXControl) GetHeight()  (float64,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetHeight( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("CheckBoxActiveXControl_GetHeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2364,7 +2364,7 @@ func (instance *CheckBoxActiveXControl) GetHeight()  (float64,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetHeight(value float64)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetHeight( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("CheckBoxActiveXControl_SetHeight"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2377,7 +2377,7 @@ func (instance *CheckBoxActiveXControl) SetHeight(value float64)  error {
 //   int32  
 func (instance *CheckBoxActiveXControl) GetForeOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetForeOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("CheckBoxActiveXControl_GetForeOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2393,7 +2393,7 @@ func (instance *CheckBoxActiveXControl) GetForeOleColor()  (int32,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetForeOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("CheckBoxActiveXControl_SetForeOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2406,7 +2406,7 @@ func (instance *CheckBoxActiveXControl) SetForeOleColor(value int32)  error {
 //   int32  
 func (instance *CheckBoxActiveXControl) GetBackOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetBackOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("CheckBoxActiveXControl_GetBackOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2422,7 +2422,7 @@ func (instance *CheckBoxActiveXControl) GetBackOleColor()  (int32,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetBackOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("CheckBoxActiveXControl_SetBackOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2435,7 +2435,7 @@ func (instance *CheckBoxActiveXControl) SetBackOleColor(value int32)  error {
 //   bool  
 func (instance *CheckBoxActiveXControl) IsVisible()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_IsVisible( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("CheckBoxActiveXControl_IsVisible"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2451,7 +2451,7 @@ func (instance *CheckBoxActiveXControl) IsVisible()  (bool,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetIsVisible(value bool)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("CheckBoxActiveXControl_SetIsVisible"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2464,7 +2464,7 @@ func (instance *CheckBoxActiveXControl) SetIsVisible(value bool)  error {
 //   bool  
 func (instance *CheckBoxActiveXControl) GetShadow()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_GetShadow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("CheckBoxActiveXControl_GetShadow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2480,7 +2480,7 @@ func (instance *CheckBoxActiveXControl) GetShadow()  (bool,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetShadow(value bool)  error {
 	
-	CGoReturnPtr := C.CheckBoxActiveXControl_SetShadow( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("CheckBoxActiveXControl_SetShadow"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2524,7 +2524,7 @@ func NewComboBoxActiveXControl(src *ActiveXControl) ( *ComboBoxActiveXControl, e
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_ComboBoxActiveXControl(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHV(C.CString("New_ComboBoxActiveXControl"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		comboboxactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(comboboxactivexcontrol, DeleteComboBoxActiveXControl)
@@ -2541,7 +2541,7 @@ func NewComboBoxActiveXControl(src *ActiveXControl) ( *ComboBoxActiveXControl, e
 //   bool  
 func (instance *ComboBoxActiveXControl) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ComboBoxActiveXControl_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2555,7 +2555,7 @@ func (instance *ComboBoxActiveXControl) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ComboBoxActiveXControl) GetType()  (ControlType,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHU(C.CString("ComboBoxActiveXControl_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2572,7 +2572,7 @@ func (instance *ComboBoxActiveXControl) GetType()  (ControlType,  error)  {
 //   int32  
 func (instance *ComboBoxActiveXControl) GetMaxLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetMaxLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ComboBoxActiveXControl_GetMaxLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2588,7 +2588,7 @@ func (instance *ComboBoxActiveXControl) GetMaxLength()  (int32,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetMaxLength(value int32)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetMaxLength( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ComboBoxActiveXControl_SetMaxLength"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2601,7 +2601,7 @@ func (instance *ComboBoxActiveXControl) SetMaxLength(value int32)  error {
 //   float64  
 func (instance *ComboBoxActiveXControl) GetListWidth()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetListWidth( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("ComboBoxActiveXControl_GetListWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2617,7 +2617,7 @@ func (instance *ComboBoxActiveXControl) GetListWidth()  (float64,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetListWidth(value float64)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetListWidth( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("ComboBoxActiveXControl_SetListWidth"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2631,7 +2631,7 @@ func (instance *ComboBoxActiveXControl) SetListWidth(value float64)  error {
 //   int32  
 func (instance *ComboBoxActiveXControl) GetBoundColumn()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetBoundColumn( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ComboBoxActiveXControl_GetBoundColumn"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2648,7 +2648,7 @@ func (instance *ComboBoxActiveXControl) GetBoundColumn()  (int32,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetBoundColumn(value int32)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetBoundColumn( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ComboBoxActiveXControl_SetBoundColumn"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2661,7 +2661,7 @@ func (instance *ComboBoxActiveXControl) SetBoundColumn(value int32)  error {
 //   int32  
 func (instance *ComboBoxActiveXControl) GetTextColumn()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetTextColumn( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ComboBoxActiveXControl_GetTextColumn"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2677,7 +2677,7 @@ func (instance *ComboBoxActiveXControl) GetTextColumn()  (int32,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetTextColumn(value int32)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetTextColumn( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ComboBoxActiveXControl_SetTextColumn"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2690,7 +2690,7 @@ func (instance *ComboBoxActiveXControl) SetTextColumn(value int32)  error {
 //   int32  
 func (instance *ComboBoxActiveXControl) GetColumnCount()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetColumnCount( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ComboBoxActiveXControl_GetColumnCount"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2706,7 +2706,7 @@ func (instance *ComboBoxActiveXControl) GetColumnCount()  (int32,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetColumnCount(value int32)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetColumnCount( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ComboBoxActiveXControl_SetColumnCount"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2719,7 +2719,7 @@ func (instance *ComboBoxActiveXControl) SetColumnCount(value int32)  error {
 //   int32  
 func (instance *ComboBoxActiveXControl) GetListRows()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetListRows( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ComboBoxActiveXControl_GetListRows"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2735,7 +2735,7 @@ func (instance *ComboBoxActiveXControl) GetListRows()  (int32,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetListRows(value int32)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetListRows( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ComboBoxActiveXControl_SetListRows"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2748,7 +2748,7 @@ func (instance *ComboBoxActiveXControl) SetListRows(value int32)  error {
 //   int32  
 func (instance *ComboBoxActiveXControl) GetMatchEntry()  (ControlMatchEntryType,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetMatchEntry( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIF(C.CString("ComboBoxActiveXControl_GetMatchEntry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2767,7 +2767,7 @@ func (instance *ComboBoxActiveXControl) GetMatchEntry()  (ControlMatchEntryType,
 //   void  
 func (instance *ComboBoxActiveXControl) SetMatchEntry(value ControlMatchEntryType)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetMatchEntry( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIG(C.CString("ComboBoxActiveXControl_SetMatchEntry"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2780,7 +2780,7 @@ func (instance *ComboBoxActiveXControl) SetMatchEntry(value ControlMatchEntryTyp
 //   int32  
 func (instance *ComboBoxActiveXControl) GetDropButtonStyle()  (DropButtonStyle,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetDropButtonStyle( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIH(C.CString("ComboBoxActiveXControl_GetDropButtonStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2799,7 +2799,7 @@ func (instance *ComboBoxActiveXControl) GetDropButtonStyle()  (DropButtonStyle, 
 //   void  
 func (instance *ComboBoxActiveXControl) SetDropButtonStyle(value DropButtonStyle)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetDropButtonStyle( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAII(C.CString("ComboBoxActiveXControl_SetDropButtonStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2812,7 +2812,7 @@ func (instance *ComboBoxActiveXControl) SetDropButtonStyle(value DropButtonStyle
 //   int32  
 func (instance *ComboBoxActiveXControl) GetShowDropButtonTypeWhen()  (ShowDropButtonType,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetShowDropButtonTypeWhen( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIJ(C.CString("ComboBoxActiveXControl_GetShowDropButtonTypeWhen"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2831,7 +2831,7 @@ func (instance *ComboBoxActiveXControl) GetShowDropButtonTypeWhen()  (ShowDropBu
 //   void  
 func (instance *ComboBoxActiveXControl) SetShowDropButtonTypeWhen(value ShowDropButtonType)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetShowDropButtonTypeWhen( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIK(C.CString("ComboBoxActiveXControl_SetShowDropButtonTypeWhen"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2844,7 +2844,7 @@ func (instance *ComboBoxActiveXControl) SetShowDropButtonTypeWhen(value ShowDrop
 //   int32  
 func (instance *ComboBoxActiveXControl) GetListStyle()  (ControlListStyle,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetListStyle( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIL(C.CString("ComboBoxActiveXControl_GetListStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2863,7 +2863,7 @@ func (instance *ComboBoxActiveXControl) GetListStyle()  (ControlListStyle,  erro
 //   void  
 func (instance *ComboBoxActiveXControl) SetListStyle(value ControlListStyle)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetListStyle( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIM(C.CString("ComboBoxActiveXControl_SetListStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2876,7 +2876,7 @@ func (instance *ComboBoxActiveXControl) SetListStyle(value ControlListStyle)  er
 //   int32  
 func (instance *ComboBoxActiveXControl) GetBorderStyle()  (ControlBorderType,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetBorderStyle( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIN(C.CString("ComboBoxActiveXControl_GetBorderStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2895,7 +2895,7 @@ func (instance *ComboBoxActiveXControl) GetBorderStyle()  (ControlBorderType,  e
 //   void  
 func (instance *ComboBoxActiveXControl) SetBorderStyle(value ControlBorderType)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetBorderStyle( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIO(C.CString("ComboBoxActiveXControl_SetBorderStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2908,7 +2908,7 @@ func (instance *ComboBoxActiveXControl) SetBorderStyle(value ControlBorderType) 
 //   int32  
 func (instance *ComboBoxActiveXControl) GetBorderOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetBorderOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ComboBoxActiveXControl_GetBorderOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2924,7 +2924,7 @@ func (instance *ComboBoxActiveXControl) GetBorderOleColor()  (int32,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetBorderOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetBorderOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ComboBoxActiveXControl_SetBorderOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2937,7 +2937,7 @@ func (instance *ComboBoxActiveXControl) SetBorderOleColor(value int32)  error {
 //   int32  
 func (instance *ComboBoxActiveXControl) GetSpecialEffect()  (ControlSpecialEffectType,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetSpecialEffect( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIB(C.CString("ComboBoxActiveXControl_GetSpecialEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2956,7 +2956,7 @@ func (instance *ComboBoxActiveXControl) GetSpecialEffect()  (ControlSpecialEffec
 //   void  
 func (instance *ComboBoxActiveXControl) SetSpecialEffect(value ControlSpecialEffectType)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetSpecialEffect( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIC(C.CString("ComboBoxActiveXControl_SetSpecialEffect"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2969,7 +2969,7 @@ func (instance *ComboBoxActiveXControl) SetSpecialEffect(value ControlSpecialEff
 //   bool  
 func (instance *ComboBoxActiveXControl) IsEditable()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_IsEditable( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ComboBoxActiveXControl_IsEditable"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2985,7 +2985,7 @@ func (instance *ComboBoxActiveXControl) IsEditable()  (bool,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetIsEditable(value bool)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetIsEditable( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ComboBoxActiveXControl_SetIsEditable"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2998,7 +2998,7 @@ func (instance *ComboBoxActiveXControl) SetIsEditable(value bool)  error {
 //   bool  
 func (instance *ComboBoxActiveXControl) GetShowColumnHeads()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetShowColumnHeads( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ComboBoxActiveXControl_GetShowColumnHeads"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3014,7 +3014,7 @@ func (instance *ComboBoxActiveXControl) GetShowColumnHeads()  (bool,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetShowColumnHeads(value bool)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetShowColumnHeads( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ComboBoxActiveXControl_SetShowColumnHeads"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3027,7 +3027,7 @@ func (instance *ComboBoxActiveXControl) SetShowColumnHeads(value bool)  error {
 //   bool  
 func (instance *ComboBoxActiveXControl) IsDragBehaviorEnabled()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_IsDragBehaviorEnabled( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ComboBoxActiveXControl_IsDragBehaviorEnabled"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3043,7 +3043,7 @@ func (instance *ComboBoxActiveXControl) IsDragBehaviorEnabled()  (bool,  error) 
 //   void  
 func (instance *ComboBoxActiveXControl) SetIsDragBehaviorEnabled(value bool)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetIsDragBehaviorEnabled( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ComboBoxActiveXControl_SetIsDragBehaviorEnabled"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3058,7 +3058,7 @@ func (instance *ComboBoxActiveXControl) SetIsDragBehaviorEnabled(value bool)  er
 //   bool  
 func (instance *ComboBoxActiveXControl) GetEnterFieldBehavior()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetEnterFieldBehavior( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ComboBoxActiveXControl_GetEnterFieldBehavior"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3076,7 +3076,7 @@ func (instance *ComboBoxActiveXControl) GetEnterFieldBehavior()  (bool,  error) 
 //   void  
 func (instance *ComboBoxActiveXControl) SetEnterFieldBehavior(value bool)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetEnterFieldBehavior( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ComboBoxActiveXControl_SetEnterFieldBehavior"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3089,7 +3089,7 @@ func (instance *ComboBoxActiveXControl) SetEnterFieldBehavior(value bool)  error
 //   bool  
 func (instance *ComboBoxActiveXControl) GetSelectionMargin()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetSelectionMargin( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ComboBoxActiveXControl_GetSelectionMargin"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3105,7 +3105,7 @@ func (instance *ComboBoxActiveXControl) GetSelectionMargin()  (bool,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetSelectionMargin(value bool)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetSelectionMargin( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ComboBoxActiveXControl_SetSelectionMargin"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3118,7 +3118,7 @@ func (instance *ComboBoxActiveXControl) SetSelectionMargin(value bool)  error {
 //   string  
 func (instance *ComboBoxActiveXControl) GetValue()  (string,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetValue( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ComboBoxActiveXControl_GetValue"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -3134,7 +3134,7 @@ func (instance *ComboBoxActiveXControl) GetValue()  (string,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetValue(value string)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetValue( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ComboBoxActiveXControl_SetValue"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3147,7 +3147,7 @@ func (instance *ComboBoxActiveXControl) SetValue(value string)  error {
 //   bool  
 func (instance *ComboBoxActiveXControl) GetHideSelection()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetHideSelection( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ComboBoxActiveXControl_GetHideSelection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3163,7 +3163,7 @@ func (instance *ComboBoxActiveXControl) GetHideSelection()  (bool,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetHideSelection(value bool)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetHideSelection( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ComboBoxActiveXControl_SetHideSelection"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3176,7 +3176,7 @@ func (instance *ComboBoxActiveXControl) SetHideSelection(value bool)  error {
 //   float64  
 func (instance *ComboBoxActiveXControl) GetColumnWidths()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetColumnWidths( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("ComboBoxActiveXControl_GetColumnWidths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3192,7 +3192,7 @@ func (instance *ComboBoxActiveXControl) GetColumnWidths()  (float64,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetColumnWidths(value float64)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetColumnWidths( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("ComboBoxActiveXControl_SetColumnWidths"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3207,7 +3207,7 @@ func (instance *ComboBoxActiveXControl) SetColumnWidths(value float64)  error {
 //   bool  
 func (instance *ComboBoxActiveXControl) IsAutoWordSelected()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_IsAutoWordSelected( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ComboBoxActiveXControl_IsAutoWordSelected"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3225,7 +3225,7 @@ func (instance *ComboBoxActiveXControl) IsAutoWordSelected()  (bool,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetIsAutoWordSelected(value bool)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetIsAutoWordSelected( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ComboBoxActiveXControl_SetIsAutoWordSelected"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3238,7 +3238,7 @@ func (instance *ComboBoxActiveXControl) SetIsAutoWordSelected(value bool)  error
 //   bool  
 func (instance *ComboBoxActiveXControl) IsEnabled()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_IsEnabled( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ComboBoxActiveXControl_IsEnabled"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3254,7 +3254,7 @@ func (instance *ComboBoxActiveXControl) IsEnabled()  (bool,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetIsEnabled(value bool)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetIsEnabled( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ComboBoxActiveXControl_SetIsEnabled"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3267,7 +3267,7 @@ func (instance *ComboBoxActiveXControl) SetIsEnabled(value bool)  error {
 //   bool  
 func (instance *ComboBoxActiveXControl) IsLocked()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_IsLocked( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ComboBoxActiveXControl_IsLocked"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3283,7 +3283,7 @@ func (instance *ComboBoxActiveXControl) IsLocked()  (bool,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetIsLocked(value bool)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetIsLocked( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ComboBoxActiveXControl_SetIsLocked"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3296,7 +3296,7 @@ func (instance *ComboBoxActiveXControl) SetIsLocked(value bool)  error {
 //   bool  
 func (instance *ComboBoxActiveXControl) IsTransparent()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_IsTransparent( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ComboBoxActiveXControl_IsTransparent"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3312,7 +3312,7 @@ func (instance *ComboBoxActiveXControl) IsTransparent()  (bool,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetIsTransparent(value bool)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetIsTransparent( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ComboBoxActiveXControl_SetIsTransparent"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3325,7 +3325,7 @@ func (instance *ComboBoxActiveXControl) SetIsTransparent(value bool)  error {
 //   int32  
 func (instance *ComboBoxActiveXControl) GetIMEMode()  (InputMethodEditorMode,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetIMEMode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHQ(C.CString("ComboBoxActiveXControl_GetIMEMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3344,7 +3344,7 @@ func (instance *ComboBoxActiveXControl) GetIMEMode()  (InputMethodEditorMode,  e
 //   void  
 func (instance *ComboBoxActiveXControl) SetIMEMode(value InputMethodEditorMode)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetIMEMode( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHR(C.CString("ComboBoxActiveXControl_SetIMEMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3357,7 +3357,7 @@ func (instance *ComboBoxActiveXControl) SetIMEMode(value InputMethodEditorMode) 
 //   Font  
 func (instance *ComboBoxActiveXControl) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("ComboBoxActiveXControl_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3373,7 +3373,7 @@ func (instance *ComboBoxActiveXControl) GetFont()  (*Font,  error)  {
 //   int32  
 func (instance *ComboBoxActiveXControl) GetTextAlign()  (TextAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetTextAlign( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("ComboBoxActiveXControl_GetTextAlign"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3392,7 +3392,7 @@ func (instance *ComboBoxActiveXControl) GetTextAlign()  (TextAlignmentType,  err
 //   void  
 func (instance *ComboBoxActiveXControl) SetTextAlign(value TextAlignmentType)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetTextAlign( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("ComboBoxActiveXControl_SetTextAlign"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3405,7 +3405,7 @@ func (instance *ComboBoxActiveXControl) SetTextAlign(value TextAlignmentType)  e
 //   []byte  
 func (instance *ComboBoxActiveXControl) GetData()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("ComboBoxActiveXControl_GetData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3420,7 +3420,7 @@ func (instance *ComboBoxActiveXControl) GetData()  ([]byte,  error)  {
 //   bool  
 func (instance *ComboBoxActiveXControl) IsAutoSize()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_IsAutoSize( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ComboBoxActiveXControl_IsAutoSize"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3436,7 +3436,7 @@ func (instance *ComboBoxActiveXControl) IsAutoSize()  (bool,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetIsAutoSize(value bool)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ComboBoxActiveXControl_SetIsAutoSize"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3449,7 +3449,7 @@ func (instance *ComboBoxActiveXControl) SetIsAutoSize(value bool)  error {
 //   Workbook  
 func (instance *ComboBoxActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetWorkbook( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBO(C.CString("ComboBoxActiveXControl_GetWorkbook"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3465,7 +3465,7 @@ func (instance *ComboBoxActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 //   []byte  
 func (instance *ComboBoxActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetMouseIcon( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("ComboBoxActiveXControl_GetMouseIcon"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3482,7 +3482,7 @@ func (instance *ComboBoxActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetMouseIcon(value []byte)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("ComboBoxActiveXControl_SetMouseIcon"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3495,7 +3495,7 @@ func (instance *ComboBoxActiveXControl) SetMouseIcon(value []byte)  error {
 //   int32  
 func (instance *ComboBoxActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetMousePointer( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHS(C.CString("ComboBoxActiveXControl_GetMousePointer"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3514,7 +3514,7 @@ func (instance *ComboBoxActiveXControl) GetMousePointer()  (ControlMousePointerT
 //   void  
 func (instance *ComboBoxActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHT(C.CString("ComboBoxActiveXControl_SetMousePointer"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3527,7 +3527,7 @@ func (instance *ComboBoxActiveXControl) SetMousePointer(value ControlMousePointe
 //   string  
 func (instance *ComboBoxActiveXControl) GetLinkedCell()  (string,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetLinkedCell( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ComboBoxActiveXControl_GetLinkedCell"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -3543,7 +3543,7 @@ func (instance *ComboBoxActiveXControl) GetLinkedCell()  (string,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetLinkedCell(value string)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ComboBoxActiveXControl_SetLinkedCell"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3556,7 +3556,7 @@ func (instance *ComboBoxActiveXControl) SetLinkedCell(value string)  error {
 //   string  
 func (instance *ComboBoxActiveXControl) GetListFillRange()  (string,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetListFillRange( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ComboBoxActiveXControl_GetListFillRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -3572,7 +3572,7 @@ func (instance *ComboBoxActiveXControl) GetListFillRange()  (string,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetListFillRange(value string)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ComboBoxActiveXControl_SetListFillRange"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3585,7 +3585,7 @@ func (instance *ComboBoxActiveXControl) SetListFillRange(value string)  error {
 //   float64  
 func (instance *ComboBoxActiveXControl) GetWidth()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetWidth( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("ComboBoxActiveXControl_GetWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3601,7 +3601,7 @@ func (instance *ComboBoxActiveXControl) GetWidth()  (float64,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetWidth(value float64)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetWidth( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("ComboBoxActiveXControl_SetWidth"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3614,7 +3614,7 @@ func (instance *ComboBoxActiveXControl) SetWidth(value float64)  error {
 //   float64  
 func (instance *ComboBoxActiveXControl) GetHeight()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetHeight( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("ComboBoxActiveXControl_GetHeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3630,7 +3630,7 @@ func (instance *ComboBoxActiveXControl) GetHeight()  (float64,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetHeight(value float64)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetHeight( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("ComboBoxActiveXControl_SetHeight"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3643,7 +3643,7 @@ func (instance *ComboBoxActiveXControl) SetHeight(value float64)  error {
 //   int32  
 func (instance *ComboBoxActiveXControl) GetForeOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetForeOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ComboBoxActiveXControl_GetForeOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3659,7 +3659,7 @@ func (instance *ComboBoxActiveXControl) GetForeOleColor()  (int32,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetForeOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ComboBoxActiveXControl_SetForeOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3672,7 +3672,7 @@ func (instance *ComboBoxActiveXControl) SetForeOleColor(value int32)  error {
 //   int32  
 func (instance *ComboBoxActiveXControl) GetBackOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetBackOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ComboBoxActiveXControl_GetBackOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3688,7 +3688,7 @@ func (instance *ComboBoxActiveXControl) GetBackOleColor()  (int32,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetBackOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ComboBoxActiveXControl_SetBackOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3701,7 +3701,7 @@ func (instance *ComboBoxActiveXControl) SetBackOleColor(value int32)  error {
 //   bool  
 func (instance *ComboBoxActiveXControl) IsVisible()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_IsVisible( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ComboBoxActiveXControl_IsVisible"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3717,7 +3717,7 @@ func (instance *ComboBoxActiveXControl) IsVisible()  (bool,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetIsVisible(value bool)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ComboBoxActiveXControl_SetIsVisible"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3730,7 +3730,7 @@ func (instance *ComboBoxActiveXControl) SetIsVisible(value bool)  error {
 //   bool  
 func (instance *ComboBoxActiveXControl) GetShadow()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_GetShadow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ComboBoxActiveXControl_GetShadow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3746,7 +3746,7 @@ func (instance *ComboBoxActiveXControl) GetShadow()  (bool,  error)  {
 //   void  
 func (instance *ComboBoxActiveXControl) SetShadow(value bool)  error {
 	
-	CGoReturnPtr := C.ComboBoxActiveXControl_SetShadow( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ComboBoxActiveXControl_SetShadow"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3790,7 +3790,7 @@ func NewCommandButtonActiveXControl(src *ActiveXControl) ( *CommandButtonActiveX
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_CommandButtonActiveXControl(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHV(C.CString("New_CommandButtonActiveXControl"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		commandbuttonactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(commandbuttonactivexcontrol, DeleteCommandButtonActiveXControl)
@@ -3807,7 +3807,7 @@ func NewCommandButtonActiveXControl(src *ActiveXControl) ( *CommandButtonActiveX
 //   bool  
 func (instance *CommandButtonActiveXControl) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("CommandButtonActiveXControl_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3821,7 +3821,7 @@ func (instance *CommandButtonActiveXControl) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *CommandButtonActiveXControl) GetType()  (ControlType,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHU(C.CString("CommandButtonActiveXControl_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3838,7 +3838,7 @@ func (instance *CommandButtonActiveXControl) GetType()  (ControlType,  error)  {
 //   string  
 func (instance *CommandButtonActiveXControl) GetCaption()  (string,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetCaption( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("CommandButtonActiveXControl_GetCaption"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -3854,7 +3854,7 @@ func (instance *CommandButtonActiveXControl) GetCaption()  (string,  error)  {
 //   void  
 func (instance *CommandButtonActiveXControl) SetCaption(value string)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetCaption( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("CommandButtonActiveXControl_SetCaption"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3867,7 +3867,7 @@ func (instance *CommandButtonActiveXControl) SetCaption(value string)  error {
 //   int32  
 func (instance *CommandButtonActiveXControl) GetPicturePosition()  (ControlPicturePositionType,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetPicturePosition( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHY(C.CString("CommandButtonActiveXControl_GetPicturePosition"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3886,7 +3886,7 @@ func (instance *CommandButtonActiveXControl) GetPicturePosition()  (ControlPictu
 //   void  
 func (instance *CommandButtonActiveXControl) SetPicturePosition(value ControlPicturePositionType)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetPicturePosition( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIA(C.CString("CommandButtonActiveXControl_SetPicturePosition"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3899,7 +3899,7 @@ func (instance *CommandButtonActiveXControl) SetPicturePosition(value ControlPic
 //   []byte  
 func (instance *CommandButtonActiveXControl) GetPicture()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetPicture( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("CommandButtonActiveXControl_GetPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3916,7 +3916,7 @@ func (instance *CommandButtonActiveXControl) GetPicture()  ([]byte,  error)  {
 //   void  
 func (instance *CommandButtonActiveXControl) SetPicture(value []byte)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetPicture( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("CommandButtonActiveXControl_SetPicture"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3929,7 +3929,7 @@ func (instance *CommandButtonActiveXControl) SetPicture(value []byte)  error {
 //   byte  
 func (instance *CommandButtonActiveXControl) GetAccelerator()  (byte,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetAccelerator( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPI(C.CString("CommandButtonActiveXControl_GetAccelerator"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3945,7 +3945,7 @@ func (instance *CommandButtonActiveXControl) GetAccelerator()  (byte,  error)  {
 //   void  
 func (instance *CommandButtonActiveXControl) SetAccelerator(value byte)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetAccelerator( instance.ptr, C.char(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZSA(C.CString("CommandButtonActiveXControl_SetAccelerator"), instance.ptr, C.char(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3958,7 +3958,7 @@ func (instance *CommandButtonActiveXControl) SetAccelerator(value byte)  error {
 //   bool  
 func (instance *CommandButtonActiveXControl) GetTakeFocusOnClick()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetTakeFocusOnClick( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("CommandButtonActiveXControl_GetTakeFocusOnClick"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3974,7 +3974,7 @@ func (instance *CommandButtonActiveXControl) GetTakeFocusOnClick()  (bool,  erro
 //   void  
 func (instance *CommandButtonActiveXControl) SetTakeFocusOnClick(value bool)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetTakeFocusOnClick( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("CommandButtonActiveXControl_SetTakeFocusOnClick"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3987,7 +3987,7 @@ func (instance *CommandButtonActiveXControl) SetTakeFocusOnClick(value bool)  er
 //   bool  
 func (instance *CommandButtonActiveXControl) IsWordWrapped()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_IsWordWrapped( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("CommandButtonActiveXControl_IsWordWrapped"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4003,7 +4003,7 @@ func (instance *CommandButtonActiveXControl) IsWordWrapped()  (bool,  error)  {
 //   void  
 func (instance *CommandButtonActiveXControl) SetIsWordWrapped(value bool)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetIsWordWrapped( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("CommandButtonActiveXControl_SetIsWordWrapped"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4016,7 +4016,7 @@ func (instance *CommandButtonActiveXControl) SetIsWordWrapped(value bool)  error
 //   bool  
 func (instance *CommandButtonActiveXControl) IsEnabled()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_IsEnabled( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("CommandButtonActiveXControl_IsEnabled"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4032,7 +4032,7 @@ func (instance *CommandButtonActiveXControl) IsEnabled()  (bool,  error)  {
 //   void  
 func (instance *CommandButtonActiveXControl) SetIsEnabled(value bool)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetIsEnabled( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("CommandButtonActiveXControl_SetIsEnabled"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4045,7 +4045,7 @@ func (instance *CommandButtonActiveXControl) SetIsEnabled(value bool)  error {
 //   bool  
 func (instance *CommandButtonActiveXControl) IsLocked()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_IsLocked( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("CommandButtonActiveXControl_IsLocked"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4061,7 +4061,7 @@ func (instance *CommandButtonActiveXControl) IsLocked()  (bool,  error)  {
 //   void  
 func (instance *CommandButtonActiveXControl) SetIsLocked(value bool)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetIsLocked( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("CommandButtonActiveXControl_SetIsLocked"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4074,7 +4074,7 @@ func (instance *CommandButtonActiveXControl) SetIsLocked(value bool)  error {
 //   bool  
 func (instance *CommandButtonActiveXControl) IsTransparent()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_IsTransparent( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("CommandButtonActiveXControl_IsTransparent"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4090,7 +4090,7 @@ func (instance *CommandButtonActiveXControl) IsTransparent()  (bool,  error)  {
 //   void  
 func (instance *CommandButtonActiveXControl) SetIsTransparent(value bool)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetIsTransparent( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("CommandButtonActiveXControl_SetIsTransparent"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4103,7 +4103,7 @@ func (instance *CommandButtonActiveXControl) SetIsTransparent(value bool)  error
 //   int32  
 func (instance *CommandButtonActiveXControl) GetIMEMode()  (InputMethodEditorMode,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetIMEMode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHQ(C.CString("CommandButtonActiveXControl_GetIMEMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4122,7 +4122,7 @@ func (instance *CommandButtonActiveXControl) GetIMEMode()  (InputMethodEditorMod
 //   void  
 func (instance *CommandButtonActiveXControl) SetIMEMode(value InputMethodEditorMode)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetIMEMode( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHR(C.CString("CommandButtonActiveXControl_SetIMEMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4135,7 +4135,7 @@ func (instance *CommandButtonActiveXControl) SetIMEMode(value InputMethodEditorM
 //   Font  
 func (instance *CommandButtonActiveXControl) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("CommandButtonActiveXControl_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4151,7 +4151,7 @@ func (instance *CommandButtonActiveXControl) GetFont()  (*Font,  error)  {
 //   int32  
 func (instance *CommandButtonActiveXControl) GetTextAlign()  (TextAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetTextAlign( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("CommandButtonActiveXControl_GetTextAlign"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4170,7 +4170,7 @@ func (instance *CommandButtonActiveXControl) GetTextAlign()  (TextAlignmentType,
 //   void  
 func (instance *CommandButtonActiveXControl) SetTextAlign(value TextAlignmentType)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetTextAlign( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("CommandButtonActiveXControl_SetTextAlign"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4183,7 +4183,7 @@ func (instance *CommandButtonActiveXControl) SetTextAlign(value TextAlignmentTyp
 //   []byte  
 func (instance *CommandButtonActiveXControl) GetData()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("CommandButtonActiveXControl_GetData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4198,7 +4198,7 @@ func (instance *CommandButtonActiveXControl) GetData()  ([]byte,  error)  {
 //   bool  
 func (instance *CommandButtonActiveXControl) IsAutoSize()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_IsAutoSize( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("CommandButtonActiveXControl_IsAutoSize"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4214,7 +4214,7 @@ func (instance *CommandButtonActiveXControl) IsAutoSize()  (bool,  error)  {
 //   void  
 func (instance *CommandButtonActiveXControl) SetIsAutoSize(value bool)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("CommandButtonActiveXControl_SetIsAutoSize"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4227,7 +4227,7 @@ func (instance *CommandButtonActiveXControl) SetIsAutoSize(value bool)  error {
 //   Workbook  
 func (instance *CommandButtonActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetWorkbook( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBO(C.CString("CommandButtonActiveXControl_GetWorkbook"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4243,7 +4243,7 @@ func (instance *CommandButtonActiveXControl) GetWorkbook()  (*Workbook,  error) 
 //   []byte  
 func (instance *CommandButtonActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetMouseIcon( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("CommandButtonActiveXControl_GetMouseIcon"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4260,7 +4260,7 @@ func (instance *CommandButtonActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 //   void  
 func (instance *CommandButtonActiveXControl) SetMouseIcon(value []byte)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("CommandButtonActiveXControl_SetMouseIcon"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4273,7 +4273,7 @@ func (instance *CommandButtonActiveXControl) SetMouseIcon(value []byte)  error {
 //   int32  
 func (instance *CommandButtonActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetMousePointer( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHS(C.CString("CommandButtonActiveXControl_GetMousePointer"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4292,7 +4292,7 @@ func (instance *CommandButtonActiveXControl) GetMousePointer()  (ControlMousePoi
 //   void  
 func (instance *CommandButtonActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHT(C.CString("CommandButtonActiveXControl_SetMousePointer"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4305,7 +4305,7 @@ func (instance *CommandButtonActiveXControl) SetMousePointer(value ControlMouseP
 //   string  
 func (instance *CommandButtonActiveXControl) GetLinkedCell()  (string,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetLinkedCell( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("CommandButtonActiveXControl_GetLinkedCell"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -4321,7 +4321,7 @@ func (instance *CommandButtonActiveXControl) GetLinkedCell()  (string,  error)  
 //   void  
 func (instance *CommandButtonActiveXControl) SetLinkedCell(value string)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("CommandButtonActiveXControl_SetLinkedCell"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4334,7 +4334,7 @@ func (instance *CommandButtonActiveXControl) SetLinkedCell(value string)  error 
 //   string  
 func (instance *CommandButtonActiveXControl) GetListFillRange()  (string,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetListFillRange( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("CommandButtonActiveXControl_GetListFillRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -4350,7 +4350,7 @@ func (instance *CommandButtonActiveXControl) GetListFillRange()  (string,  error
 //   void  
 func (instance *CommandButtonActiveXControl) SetListFillRange(value string)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("CommandButtonActiveXControl_SetListFillRange"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4363,7 +4363,7 @@ func (instance *CommandButtonActiveXControl) SetListFillRange(value string)  err
 //   float64  
 func (instance *CommandButtonActiveXControl) GetWidth()  (float64,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetWidth( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("CommandButtonActiveXControl_GetWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4379,7 +4379,7 @@ func (instance *CommandButtonActiveXControl) GetWidth()  (float64,  error)  {
 //   void  
 func (instance *CommandButtonActiveXControl) SetWidth(value float64)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetWidth( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("CommandButtonActiveXControl_SetWidth"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4392,7 +4392,7 @@ func (instance *CommandButtonActiveXControl) SetWidth(value float64)  error {
 //   float64  
 func (instance *CommandButtonActiveXControl) GetHeight()  (float64,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetHeight( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("CommandButtonActiveXControl_GetHeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4408,7 +4408,7 @@ func (instance *CommandButtonActiveXControl) GetHeight()  (float64,  error)  {
 //   void  
 func (instance *CommandButtonActiveXControl) SetHeight(value float64)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetHeight( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("CommandButtonActiveXControl_SetHeight"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4421,7 +4421,7 @@ func (instance *CommandButtonActiveXControl) SetHeight(value float64)  error {
 //   int32  
 func (instance *CommandButtonActiveXControl) GetForeOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetForeOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("CommandButtonActiveXControl_GetForeOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4437,7 +4437,7 @@ func (instance *CommandButtonActiveXControl) GetForeOleColor()  (int32,  error) 
 //   void  
 func (instance *CommandButtonActiveXControl) SetForeOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("CommandButtonActiveXControl_SetForeOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4450,7 +4450,7 @@ func (instance *CommandButtonActiveXControl) SetForeOleColor(value int32)  error
 //   int32  
 func (instance *CommandButtonActiveXControl) GetBackOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetBackOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("CommandButtonActiveXControl_GetBackOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4466,7 +4466,7 @@ func (instance *CommandButtonActiveXControl) GetBackOleColor()  (int32,  error) 
 //   void  
 func (instance *CommandButtonActiveXControl) SetBackOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("CommandButtonActiveXControl_SetBackOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4479,7 +4479,7 @@ func (instance *CommandButtonActiveXControl) SetBackOleColor(value int32)  error
 //   bool  
 func (instance *CommandButtonActiveXControl) IsVisible()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_IsVisible( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("CommandButtonActiveXControl_IsVisible"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4495,7 +4495,7 @@ func (instance *CommandButtonActiveXControl) IsVisible()  (bool,  error)  {
 //   void  
 func (instance *CommandButtonActiveXControl) SetIsVisible(value bool)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("CommandButtonActiveXControl_SetIsVisible"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4508,7 +4508,7 @@ func (instance *CommandButtonActiveXControl) SetIsVisible(value bool)  error {
 //   bool  
 func (instance *CommandButtonActiveXControl) GetShadow()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_GetShadow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("CommandButtonActiveXControl_GetShadow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4524,7 +4524,7 @@ func (instance *CommandButtonActiveXControl) GetShadow()  (bool,  error)  {
 //   void  
 func (instance *CommandButtonActiveXControl) SetShadow(value bool)  error {
 	
-	CGoReturnPtr := C.CommandButtonActiveXControl_SetShadow( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("CommandButtonActiveXControl_SetShadow"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4568,7 +4568,7 @@ func NewImageActiveXControl(src *ActiveXControl) ( *ImageActiveXControl, error) 
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_ImageActiveXControl(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHV(C.CString("New_ImageActiveXControl"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		imageactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(imageactivexcontrol, DeleteImageActiveXControl)
@@ -4585,7 +4585,7 @@ func NewImageActiveXControl(src *ActiveXControl) ( *ImageActiveXControl, error) 
 //   bool  
 func (instance *ImageActiveXControl) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ImageActiveXControl_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4599,7 +4599,7 @@ func (instance *ImageActiveXControl) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ImageActiveXControl) GetType()  (ControlType,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHU(C.CString("ImageActiveXControl_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4616,7 +4616,7 @@ func (instance *ImageActiveXControl) GetType()  (ControlType,  error)  {
 //   bool  
 func (instance *ImageActiveXControl) IsAutoSize()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_IsAutoSize( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ImageActiveXControl_IsAutoSize"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4632,7 +4632,7 @@ func (instance *ImageActiveXControl) IsAutoSize()  (bool,  error)  {
 //   void  
 func (instance *ImageActiveXControl) SetIsAutoSize(value bool)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ImageActiveXControl_SetIsAutoSize"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4645,7 +4645,7 @@ func (instance *ImageActiveXControl) SetIsAutoSize(value bool)  error {
 //   int32  
 func (instance *ImageActiveXControl) GetBorderOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetBorderOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ImageActiveXControl_GetBorderOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4661,7 +4661,7 @@ func (instance *ImageActiveXControl) GetBorderOleColor()  (int32,  error)  {
 //   void  
 func (instance *ImageActiveXControl) SetBorderOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetBorderOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ImageActiveXControl_SetBorderOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4674,7 +4674,7 @@ func (instance *ImageActiveXControl) SetBorderOleColor(value int32)  error {
 //   int32  
 func (instance *ImageActiveXControl) GetBorderStyle()  (ControlBorderType,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetBorderStyle( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIN(C.CString("ImageActiveXControl_GetBorderStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4693,7 +4693,7 @@ func (instance *ImageActiveXControl) GetBorderStyle()  (ControlBorderType,  erro
 //   void  
 func (instance *ImageActiveXControl) SetBorderStyle(value ControlBorderType)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetBorderStyle( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIO(C.CString("ImageActiveXControl_SetBorderStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4706,7 +4706,7 @@ func (instance *ImageActiveXControl) SetBorderStyle(value ControlBorderType)  er
 //   int32  
 func (instance *ImageActiveXControl) GetPictureSizeMode()  (ControlPictureSizeMode,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetPictureSizeMode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIP(C.CString("ImageActiveXControl_GetPictureSizeMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4725,7 +4725,7 @@ func (instance *ImageActiveXControl) GetPictureSizeMode()  (ControlPictureSizeMo
 //   void  
 func (instance *ImageActiveXControl) SetPictureSizeMode(value ControlPictureSizeMode)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetPictureSizeMode( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIQ(C.CString("ImageActiveXControl_SetPictureSizeMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4738,7 +4738,7 @@ func (instance *ImageActiveXControl) SetPictureSizeMode(value ControlPictureSize
 //   int32  
 func (instance *ImageActiveXControl) GetSpecialEffect()  (ControlSpecialEffectType,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetSpecialEffect( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIB(C.CString("ImageActiveXControl_GetSpecialEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4757,7 +4757,7 @@ func (instance *ImageActiveXControl) GetSpecialEffect()  (ControlSpecialEffectTy
 //   void  
 func (instance *ImageActiveXControl) SetSpecialEffect(value ControlSpecialEffectType)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetSpecialEffect( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIC(C.CString("ImageActiveXControl_SetSpecialEffect"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4770,7 +4770,7 @@ func (instance *ImageActiveXControl) SetSpecialEffect(value ControlSpecialEffect
 //   []byte  
 func (instance *ImageActiveXControl) GetPicture()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetPicture( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("ImageActiveXControl_GetPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4787,7 +4787,7 @@ func (instance *ImageActiveXControl) GetPicture()  ([]byte,  error)  {
 //   void  
 func (instance *ImageActiveXControl) SetPicture(value []byte)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetPicture( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("ImageActiveXControl_SetPicture"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4800,7 +4800,7 @@ func (instance *ImageActiveXControl) SetPicture(value []byte)  error {
 //   int32  
 func (instance *ImageActiveXControl) GetPictureAlignment()  (ControlPictureAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetPictureAlignment( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIR(C.CString("ImageActiveXControl_GetPictureAlignment"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4819,7 +4819,7 @@ func (instance *ImageActiveXControl) GetPictureAlignment()  (ControlPictureAlign
 //   void  
 func (instance *ImageActiveXControl) SetPictureAlignment(value ControlPictureAlignmentType)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetPictureAlignment( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIS(C.CString("ImageActiveXControl_SetPictureAlignment"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4832,7 +4832,7 @@ func (instance *ImageActiveXControl) SetPictureAlignment(value ControlPictureAli
 //   bool  
 func (instance *ImageActiveXControl) IsTiled()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_IsTiled( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ImageActiveXControl_IsTiled"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4848,7 +4848,7 @@ func (instance *ImageActiveXControl) IsTiled()  (bool,  error)  {
 //   void  
 func (instance *ImageActiveXControl) SetIsTiled(value bool)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetIsTiled( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ImageActiveXControl_SetIsTiled"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4861,7 +4861,7 @@ func (instance *ImageActiveXControl) SetIsTiled(value bool)  error {
 //   bool  
 func (instance *ImageActiveXControl) IsEnabled()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_IsEnabled( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ImageActiveXControl_IsEnabled"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4877,7 +4877,7 @@ func (instance *ImageActiveXControl) IsEnabled()  (bool,  error)  {
 //   void  
 func (instance *ImageActiveXControl) SetIsEnabled(value bool)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetIsEnabled( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ImageActiveXControl_SetIsEnabled"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4890,7 +4890,7 @@ func (instance *ImageActiveXControl) SetIsEnabled(value bool)  error {
 //   bool  
 func (instance *ImageActiveXControl) IsLocked()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_IsLocked( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ImageActiveXControl_IsLocked"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4906,7 +4906,7 @@ func (instance *ImageActiveXControl) IsLocked()  (bool,  error)  {
 //   void  
 func (instance *ImageActiveXControl) SetIsLocked(value bool)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetIsLocked( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ImageActiveXControl_SetIsLocked"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4919,7 +4919,7 @@ func (instance *ImageActiveXControl) SetIsLocked(value bool)  error {
 //   bool  
 func (instance *ImageActiveXControl) IsTransparent()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_IsTransparent( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ImageActiveXControl_IsTransparent"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4935,7 +4935,7 @@ func (instance *ImageActiveXControl) IsTransparent()  (bool,  error)  {
 //   void  
 func (instance *ImageActiveXControl) SetIsTransparent(value bool)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetIsTransparent( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ImageActiveXControl_SetIsTransparent"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4948,7 +4948,7 @@ func (instance *ImageActiveXControl) SetIsTransparent(value bool)  error {
 //   int32  
 func (instance *ImageActiveXControl) GetIMEMode()  (InputMethodEditorMode,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetIMEMode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHQ(C.CString("ImageActiveXControl_GetIMEMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4967,7 +4967,7 @@ func (instance *ImageActiveXControl) GetIMEMode()  (InputMethodEditorMode,  erro
 //   void  
 func (instance *ImageActiveXControl) SetIMEMode(value InputMethodEditorMode)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetIMEMode( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHR(C.CString("ImageActiveXControl_SetIMEMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4980,7 +4980,7 @@ func (instance *ImageActiveXControl) SetIMEMode(value InputMethodEditorMode)  er
 //   Font  
 func (instance *ImageActiveXControl) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("ImageActiveXControl_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4996,7 +4996,7 @@ func (instance *ImageActiveXControl) GetFont()  (*Font,  error)  {
 //   int32  
 func (instance *ImageActiveXControl) GetTextAlign()  (TextAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetTextAlign( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("ImageActiveXControl_GetTextAlign"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5015,7 +5015,7 @@ func (instance *ImageActiveXControl) GetTextAlign()  (TextAlignmentType,  error)
 //   void  
 func (instance *ImageActiveXControl) SetTextAlign(value TextAlignmentType)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetTextAlign( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("ImageActiveXControl_SetTextAlign"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5028,7 +5028,7 @@ func (instance *ImageActiveXControl) SetTextAlign(value TextAlignmentType)  erro
 //   []byte  
 func (instance *ImageActiveXControl) GetData()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("ImageActiveXControl_GetData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5043,7 +5043,7 @@ func (instance *ImageActiveXControl) GetData()  ([]byte,  error)  {
 //   Workbook  
 func (instance *ImageActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetWorkbook( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBO(C.CString("ImageActiveXControl_GetWorkbook"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5059,7 +5059,7 @@ func (instance *ImageActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 //   []byte  
 func (instance *ImageActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetMouseIcon( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("ImageActiveXControl_GetMouseIcon"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5076,7 +5076,7 @@ func (instance *ImageActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 //   void  
 func (instance *ImageActiveXControl) SetMouseIcon(value []byte)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("ImageActiveXControl_SetMouseIcon"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5089,7 +5089,7 @@ func (instance *ImageActiveXControl) SetMouseIcon(value []byte)  error {
 //   int32  
 func (instance *ImageActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetMousePointer( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHS(C.CString("ImageActiveXControl_GetMousePointer"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5108,7 +5108,7 @@ func (instance *ImageActiveXControl) GetMousePointer()  (ControlMousePointerType
 //   void  
 func (instance *ImageActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHT(C.CString("ImageActiveXControl_SetMousePointer"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5121,7 +5121,7 @@ func (instance *ImageActiveXControl) SetMousePointer(value ControlMousePointerTy
 //   string  
 func (instance *ImageActiveXControl) GetLinkedCell()  (string,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetLinkedCell( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ImageActiveXControl_GetLinkedCell"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -5137,7 +5137,7 @@ func (instance *ImageActiveXControl) GetLinkedCell()  (string,  error)  {
 //   void  
 func (instance *ImageActiveXControl) SetLinkedCell(value string)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ImageActiveXControl_SetLinkedCell"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5150,7 +5150,7 @@ func (instance *ImageActiveXControl) SetLinkedCell(value string)  error {
 //   string  
 func (instance *ImageActiveXControl) GetListFillRange()  (string,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetListFillRange( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ImageActiveXControl_GetListFillRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -5166,7 +5166,7 @@ func (instance *ImageActiveXControl) GetListFillRange()  (string,  error)  {
 //   void  
 func (instance *ImageActiveXControl) SetListFillRange(value string)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ImageActiveXControl_SetListFillRange"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5179,7 +5179,7 @@ func (instance *ImageActiveXControl) SetListFillRange(value string)  error {
 //   float64  
 func (instance *ImageActiveXControl) GetWidth()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetWidth( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("ImageActiveXControl_GetWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5195,7 +5195,7 @@ func (instance *ImageActiveXControl) GetWidth()  (float64,  error)  {
 //   void  
 func (instance *ImageActiveXControl) SetWidth(value float64)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetWidth( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("ImageActiveXControl_SetWidth"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5208,7 +5208,7 @@ func (instance *ImageActiveXControl) SetWidth(value float64)  error {
 //   float64  
 func (instance *ImageActiveXControl) GetHeight()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetHeight( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("ImageActiveXControl_GetHeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5224,7 +5224,7 @@ func (instance *ImageActiveXControl) GetHeight()  (float64,  error)  {
 //   void  
 func (instance *ImageActiveXControl) SetHeight(value float64)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetHeight( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("ImageActiveXControl_SetHeight"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5237,7 +5237,7 @@ func (instance *ImageActiveXControl) SetHeight(value float64)  error {
 //   int32  
 func (instance *ImageActiveXControl) GetForeOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetForeOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ImageActiveXControl_GetForeOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5253,7 +5253,7 @@ func (instance *ImageActiveXControl) GetForeOleColor()  (int32,  error)  {
 //   void  
 func (instance *ImageActiveXControl) SetForeOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ImageActiveXControl_SetForeOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5266,7 +5266,7 @@ func (instance *ImageActiveXControl) SetForeOleColor(value int32)  error {
 //   int32  
 func (instance *ImageActiveXControl) GetBackOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetBackOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ImageActiveXControl_GetBackOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5282,7 +5282,7 @@ func (instance *ImageActiveXControl) GetBackOleColor()  (int32,  error)  {
 //   void  
 func (instance *ImageActiveXControl) SetBackOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ImageActiveXControl_SetBackOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5295,7 +5295,7 @@ func (instance *ImageActiveXControl) SetBackOleColor(value int32)  error {
 //   bool  
 func (instance *ImageActiveXControl) IsVisible()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_IsVisible( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ImageActiveXControl_IsVisible"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -5311,7 +5311,7 @@ func (instance *ImageActiveXControl) IsVisible()  (bool,  error)  {
 //   void  
 func (instance *ImageActiveXControl) SetIsVisible(value bool)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ImageActiveXControl_SetIsVisible"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5324,7 +5324,7 @@ func (instance *ImageActiveXControl) SetIsVisible(value bool)  error {
 //   bool  
 func (instance *ImageActiveXControl) GetShadow()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ImageActiveXControl_GetShadow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ImageActiveXControl_GetShadow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -5340,7 +5340,7 @@ func (instance *ImageActiveXControl) GetShadow()  (bool,  error)  {
 //   void  
 func (instance *ImageActiveXControl) SetShadow(value bool)  error {
 	
-	CGoReturnPtr := C.ImageActiveXControl_SetShadow( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ImageActiveXControl_SetShadow"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5384,7 +5384,7 @@ func NewLabelActiveXControl(src *ActiveXControl) ( *LabelActiveXControl, error) 
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_LabelActiveXControl(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHV(C.CString("New_LabelActiveXControl"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		labelactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(labelactivexcontrol, DeleteLabelActiveXControl)
@@ -5401,7 +5401,7 @@ func NewLabelActiveXControl(src *ActiveXControl) ( *LabelActiveXControl, error) 
 //   bool  
 func (instance *LabelActiveXControl) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LabelActiveXControl_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -5415,7 +5415,7 @@ func (instance *LabelActiveXControl) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *LabelActiveXControl) GetType()  (ControlType,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHU(C.CString("LabelActiveXControl_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5432,7 +5432,7 @@ func (instance *LabelActiveXControl) GetType()  (ControlType,  error)  {
 //   string  
 func (instance *LabelActiveXControl) GetCaption()  (string,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetCaption( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("LabelActiveXControl_GetCaption"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -5448,7 +5448,7 @@ func (instance *LabelActiveXControl) GetCaption()  (string,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetCaption(value string)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetCaption( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("LabelActiveXControl_SetCaption"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5461,7 +5461,7 @@ func (instance *LabelActiveXControl) SetCaption(value string)  error {
 //   int32  
 func (instance *LabelActiveXControl) GetPicturePosition()  (ControlPicturePositionType,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetPicturePosition( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHY(C.CString("LabelActiveXControl_GetPicturePosition"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5480,7 +5480,7 @@ func (instance *LabelActiveXControl) GetPicturePosition()  (ControlPicturePositi
 //   void  
 func (instance *LabelActiveXControl) SetPicturePosition(value ControlPicturePositionType)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetPicturePosition( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIA(C.CString("LabelActiveXControl_SetPicturePosition"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5493,7 +5493,7 @@ func (instance *LabelActiveXControl) SetPicturePosition(value ControlPicturePosi
 //   int32  
 func (instance *LabelActiveXControl) GetBorderOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetBorderOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("LabelActiveXControl_GetBorderOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5509,7 +5509,7 @@ func (instance *LabelActiveXControl) GetBorderOleColor()  (int32,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetBorderOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetBorderOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("LabelActiveXControl_SetBorderOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5522,7 +5522,7 @@ func (instance *LabelActiveXControl) SetBorderOleColor(value int32)  error {
 //   int32  
 func (instance *LabelActiveXControl) GetBorderStyle()  (ControlBorderType,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetBorderStyle( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIN(C.CString("LabelActiveXControl_GetBorderStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5541,7 +5541,7 @@ func (instance *LabelActiveXControl) GetBorderStyle()  (ControlBorderType,  erro
 //   void  
 func (instance *LabelActiveXControl) SetBorderStyle(value ControlBorderType)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetBorderStyle( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIO(C.CString("LabelActiveXControl_SetBorderStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5554,7 +5554,7 @@ func (instance *LabelActiveXControl) SetBorderStyle(value ControlBorderType)  er
 //   int32  
 func (instance *LabelActiveXControl) GetSpecialEffect()  (ControlSpecialEffectType,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetSpecialEffect( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIB(C.CString("LabelActiveXControl_GetSpecialEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5573,7 +5573,7 @@ func (instance *LabelActiveXControl) GetSpecialEffect()  (ControlSpecialEffectTy
 //   void  
 func (instance *LabelActiveXControl) SetSpecialEffect(value ControlSpecialEffectType)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetSpecialEffect( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIC(C.CString("LabelActiveXControl_SetSpecialEffect"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5586,7 +5586,7 @@ func (instance *LabelActiveXControl) SetSpecialEffect(value ControlSpecialEffect
 //   []byte  
 func (instance *LabelActiveXControl) GetPicture()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetPicture( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("LabelActiveXControl_GetPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5603,7 +5603,7 @@ func (instance *LabelActiveXControl) GetPicture()  ([]byte,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetPicture(value []byte)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetPicture( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("LabelActiveXControl_SetPicture"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5616,7 +5616,7 @@ func (instance *LabelActiveXControl) SetPicture(value []byte)  error {
 //   byte  
 func (instance *LabelActiveXControl) GetAccelerator()  (byte,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetAccelerator( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPI(C.CString("LabelActiveXControl_GetAccelerator"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5632,7 +5632,7 @@ func (instance *LabelActiveXControl) GetAccelerator()  (byte,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetAccelerator(value byte)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetAccelerator( instance.ptr, C.char(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZSA(C.CString("LabelActiveXControl_SetAccelerator"), instance.ptr, C.char(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5645,7 +5645,7 @@ func (instance *LabelActiveXControl) SetAccelerator(value byte)  error {
 //   bool  
 func (instance *LabelActiveXControl) IsWordWrapped()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_IsWordWrapped( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LabelActiveXControl_IsWordWrapped"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -5661,7 +5661,7 @@ func (instance *LabelActiveXControl) IsWordWrapped()  (bool,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetIsWordWrapped(value bool)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetIsWordWrapped( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("LabelActiveXControl_SetIsWordWrapped"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5674,7 +5674,7 @@ func (instance *LabelActiveXControl) SetIsWordWrapped(value bool)  error {
 //   bool  
 func (instance *LabelActiveXControl) IsEnabled()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_IsEnabled( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LabelActiveXControl_IsEnabled"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -5690,7 +5690,7 @@ func (instance *LabelActiveXControl) IsEnabled()  (bool,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetIsEnabled(value bool)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetIsEnabled( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("LabelActiveXControl_SetIsEnabled"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5703,7 +5703,7 @@ func (instance *LabelActiveXControl) SetIsEnabled(value bool)  error {
 //   bool  
 func (instance *LabelActiveXControl) IsLocked()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_IsLocked( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LabelActiveXControl_IsLocked"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -5719,7 +5719,7 @@ func (instance *LabelActiveXControl) IsLocked()  (bool,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetIsLocked(value bool)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetIsLocked( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("LabelActiveXControl_SetIsLocked"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5732,7 +5732,7 @@ func (instance *LabelActiveXControl) SetIsLocked(value bool)  error {
 //   bool  
 func (instance *LabelActiveXControl) IsTransparent()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_IsTransparent( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LabelActiveXControl_IsTransparent"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -5748,7 +5748,7 @@ func (instance *LabelActiveXControl) IsTransparent()  (bool,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetIsTransparent(value bool)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetIsTransparent( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("LabelActiveXControl_SetIsTransparent"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5761,7 +5761,7 @@ func (instance *LabelActiveXControl) SetIsTransparent(value bool)  error {
 //   int32  
 func (instance *LabelActiveXControl) GetIMEMode()  (InputMethodEditorMode,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetIMEMode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHQ(C.CString("LabelActiveXControl_GetIMEMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5780,7 +5780,7 @@ func (instance *LabelActiveXControl) GetIMEMode()  (InputMethodEditorMode,  erro
 //   void  
 func (instance *LabelActiveXControl) SetIMEMode(value InputMethodEditorMode)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetIMEMode( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHR(C.CString("LabelActiveXControl_SetIMEMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5793,7 +5793,7 @@ func (instance *LabelActiveXControl) SetIMEMode(value InputMethodEditorMode)  er
 //   Font  
 func (instance *LabelActiveXControl) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("LabelActiveXControl_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5809,7 +5809,7 @@ func (instance *LabelActiveXControl) GetFont()  (*Font,  error)  {
 //   int32  
 func (instance *LabelActiveXControl) GetTextAlign()  (TextAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetTextAlign( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("LabelActiveXControl_GetTextAlign"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5828,7 +5828,7 @@ func (instance *LabelActiveXControl) GetTextAlign()  (TextAlignmentType,  error)
 //   void  
 func (instance *LabelActiveXControl) SetTextAlign(value TextAlignmentType)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetTextAlign( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("LabelActiveXControl_SetTextAlign"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5841,7 +5841,7 @@ func (instance *LabelActiveXControl) SetTextAlign(value TextAlignmentType)  erro
 //   []byte  
 func (instance *LabelActiveXControl) GetData()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("LabelActiveXControl_GetData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5856,7 +5856,7 @@ func (instance *LabelActiveXControl) GetData()  ([]byte,  error)  {
 //   bool  
 func (instance *LabelActiveXControl) IsAutoSize()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_IsAutoSize( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LabelActiveXControl_IsAutoSize"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -5872,7 +5872,7 @@ func (instance *LabelActiveXControl) IsAutoSize()  (bool,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetIsAutoSize(value bool)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("LabelActiveXControl_SetIsAutoSize"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5885,7 +5885,7 @@ func (instance *LabelActiveXControl) SetIsAutoSize(value bool)  error {
 //   Workbook  
 func (instance *LabelActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetWorkbook( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBO(C.CString("LabelActiveXControl_GetWorkbook"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5901,7 +5901,7 @@ func (instance *LabelActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 //   []byte  
 func (instance *LabelActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetMouseIcon( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("LabelActiveXControl_GetMouseIcon"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5918,7 +5918,7 @@ func (instance *LabelActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetMouseIcon(value []byte)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("LabelActiveXControl_SetMouseIcon"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5931,7 +5931,7 @@ func (instance *LabelActiveXControl) SetMouseIcon(value []byte)  error {
 //   int32  
 func (instance *LabelActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetMousePointer( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHS(C.CString("LabelActiveXControl_GetMousePointer"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5950,7 +5950,7 @@ func (instance *LabelActiveXControl) GetMousePointer()  (ControlMousePointerType
 //   void  
 func (instance *LabelActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHT(C.CString("LabelActiveXControl_SetMousePointer"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5963,7 +5963,7 @@ func (instance *LabelActiveXControl) SetMousePointer(value ControlMousePointerTy
 //   string  
 func (instance *LabelActiveXControl) GetLinkedCell()  (string,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetLinkedCell( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("LabelActiveXControl_GetLinkedCell"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -5979,7 +5979,7 @@ func (instance *LabelActiveXControl) GetLinkedCell()  (string,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetLinkedCell(value string)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("LabelActiveXControl_SetLinkedCell"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5992,7 +5992,7 @@ func (instance *LabelActiveXControl) SetLinkedCell(value string)  error {
 //   string  
 func (instance *LabelActiveXControl) GetListFillRange()  (string,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetListFillRange( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("LabelActiveXControl_GetListFillRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -6008,7 +6008,7 @@ func (instance *LabelActiveXControl) GetListFillRange()  (string,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetListFillRange(value string)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("LabelActiveXControl_SetListFillRange"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6021,7 +6021,7 @@ func (instance *LabelActiveXControl) SetListFillRange(value string)  error {
 //   float64  
 func (instance *LabelActiveXControl) GetWidth()  (float64,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetWidth( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("LabelActiveXControl_GetWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6037,7 +6037,7 @@ func (instance *LabelActiveXControl) GetWidth()  (float64,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetWidth(value float64)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetWidth( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("LabelActiveXControl_SetWidth"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6050,7 +6050,7 @@ func (instance *LabelActiveXControl) SetWidth(value float64)  error {
 //   float64  
 func (instance *LabelActiveXControl) GetHeight()  (float64,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetHeight( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("LabelActiveXControl_GetHeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6066,7 +6066,7 @@ func (instance *LabelActiveXControl) GetHeight()  (float64,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetHeight(value float64)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetHeight( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("LabelActiveXControl_SetHeight"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6079,7 +6079,7 @@ func (instance *LabelActiveXControl) SetHeight(value float64)  error {
 //   int32  
 func (instance *LabelActiveXControl) GetForeOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetForeOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("LabelActiveXControl_GetForeOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6095,7 +6095,7 @@ func (instance *LabelActiveXControl) GetForeOleColor()  (int32,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetForeOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("LabelActiveXControl_SetForeOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6108,7 +6108,7 @@ func (instance *LabelActiveXControl) SetForeOleColor(value int32)  error {
 //   int32  
 func (instance *LabelActiveXControl) GetBackOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetBackOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("LabelActiveXControl_GetBackOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6124,7 +6124,7 @@ func (instance *LabelActiveXControl) GetBackOleColor()  (int32,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetBackOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("LabelActiveXControl_SetBackOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6137,7 +6137,7 @@ func (instance *LabelActiveXControl) SetBackOleColor(value int32)  error {
 //   bool  
 func (instance *LabelActiveXControl) IsVisible()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_IsVisible( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LabelActiveXControl_IsVisible"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -6153,7 +6153,7 @@ func (instance *LabelActiveXControl) IsVisible()  (bool,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetIsVisible(value bool)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("LabelActiveXControl_SetIsVisible"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6166,7 +6166,7 @@ func (instance *LabelActiveXControl) SetIsVisible(value bool)  error {
 //   bool  
 func (instance *LabelActiveXControl) GetShadow()  (bool,  error)  {
 	
-	CGoReturnPtr := C.LabelActiveXControl_GetShadow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("LabelActiveXControl_GetShadow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -6182,7 +6182,7 @@ func (instance *LabelActiveXControl) GetShadow()  (bool,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetShadow(value bool)  error {
 	
-	CGoReturnPtr := C.LabelActiveXControl_SetShadow( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("LabelActiveXControl_SetShadow"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6226,7 +6226,7 @@ func NewListBoxActiveXControl(src *ActiveXControl) ( *ListBoxActiveXControl, err
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_ListBoxActiveXControl(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHV(C.CString("New_ListBoxActiveXControl"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		listboxactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(listboxactivexcontrol, DeleteListBoxActiveXControl)
@@ -6243,7 +6243,7 @@ func NewListBoxActiveXControl(src *ActiveXControl) ( *ListBoxActiveXControl, err
 //   bool  
 func (instance *ListBoxActiveXControl) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ListBoxActiveXControl_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -6257,7 +6257,7 @@ func (instance *ListBoxActiveXControl) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ListBoxActiveXControl) GetType()  (ControlType,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHU(C.CString("ListBoxActiveXControl_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6274,7 +6274,7 @@ func (instance *ListBoxActiveXControl) GetType()  (ControlType,  error)  {
 //   int32  
 func (instance *ListBoxActiveXControl) GetScrollBars()  (ControlScrollBarType,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetScrollBars( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIT(C.CString("ListBoxActiveXControl_GetScrollBars"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6293,7 +6293,7 @@ func (instance *ListBoxActiveXControl) GetScrollBars()  (ControlScrollBarType,  
 //   void  
 func (instance *ListBoxActiveXControl) SetScrollBars(value ControlScrollBarType)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetScrollBars( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIU(C.CString("ListBoxActiveXControl_SetScrollBars"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6306,7 +6306,7 @@ func (instance *ListBoxActiveXControl) SetScrollBars(value ControlScrollBarType)
 //   float64  
 func (instance *ListBoxActiveXControl) GetListWidth()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetListWidth( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("ListBoxActiveXControl_GetListWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6322,7 +6322,7 @@ func (instance *ListBoxActiveXControl) GetListWidth()  (float64,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetListWidth(value float64)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetListWidth( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("ListBoxActiveXControl_SetListWidth"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6336,7 +6336,7 @@ func (instance *ListBoxActiveXControl) SetListWidth(value float64)  error {
 //   int32  
 func (instance *ListBoxActiveXControl) GetBoundColumn()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetBoundColumn( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ListBoxActiveXControl_GetBoundColumn"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6353,7 +6353,7 @@ func (instance *ListBoxActiveXControl) GetBoundColumn()  (int32,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetBoundColumn(value int32)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetBoundColumn( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ListBoxActiveXControl_SetBoundColumn"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6366,7 +6366,7 @@ func (instance *ListBoxActiveXControl) SetBoundColumn(value int32)  error {
 //   int32  
 func (instance *ListBoxActiveXControl) GetTextColumn()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetTextColumn( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ListBoxActiveXControl_GetTextColumn"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6382,7 +6382,7 @@ func (instance *ListBoxActiveXControl) GetTextColumn()  (int32,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetTextColumn(value int32)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetTextColumn( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ListBoxActiveXControl_SetTextColumn"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6395,7 +6395,7 @@ func (instance *ListBoxActiveXControl) SetTextColumn(value int32)  error {
 //   int32  
 func (instance *ListBoxActiveXControl) GetColumnCount()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetColumnCount( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ListBoxActiveXControl_GetColumnCount"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6411,7 +6411,7 @@ func (instance *ListBoxActiveXControl) GetColumnCount()  (int32,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetColumnCount(value int32)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetColumnCount( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ListBoxActiveXControl_SetColumnCount"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6424,7 +6424,7 @@ func (instance *ListBoxActiveXControl) SetColumnCount(value int32)  error {
 //   int32  
 func (instance *ListBoxActiveXControl) GetMatchEntry()  (ControlMatchEntryType,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetMatchEntry( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIF(C.CString("ListBoxActiveXControl_GetMatchEntry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6443,7 +6443,7 @@ func (instance *ListBoxActiveXControl) GetMatchEntry()  (ControlMatchEntryType, 
 //   void  
 func (instance *ListBoxActiveXControl) SetMatchEntry(value ControlMatchEntryType)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetMatchEntry( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIG(C.CString("ListBoxActiveXControl_SetMatchEntry"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6456,7 +6456,7 @@ func (instance *ListBoxActiveXControl) SetMatchEntry(value ControlMatchEntryType
 //   int32  
 func (instance *ListBoxActiveXControl) GetListStyle()  (ControlListStyle,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetListStyle( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIL(C.CString("ListBoxActiveXControl_GetListStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6475,7 +6475,7 @@ func (instance *ListBoxActiveXControl) GetListStyle()  (ControlListStyle,  error
 //   void  
 func (instance *ListBoxActiveXControl) SetListStyle(value ControlListStyle)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetListStyle( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIM(C.CString("ListBoxActiveXControl_SetListStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6488,7 +6488,7 @@ func (instance *ListBoxActiveXControl) SetListStyle(value ControlListStyle)  err
 //   int32  
 func (instance *ListBoxActiveXControl) GetSelectionType()  (SelectionType,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetSelectionType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIV(C.CString("ListBoxActiveXControl_GetSelectionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6507,7 +6507,7 @@ func (instance *ListBoxActiveXControl) GetSelectionType()  (SelectionType,  erro
 //   void  
 func (instance *ListBoxActiveXControl) SetSelectionType(value SelectionType)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetSelectionType( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIW(C.CString("ListBoxActiveXControl_SetSelectionType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6520,7 +6520,7 @@ func (instance *ListBoxActiveXControl) SetSelectionType(value SelectionType)  er
 //   string  
 func (instance *ListBoxActiveXControl) GetValue()  (string,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetValue( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ListBoxActiveXControl_GetValue"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -6536,7 +6536,7 @@ func (instance *ListBoxActiveXControl) GetValue()  (string,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetValue(value string)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetValue( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ListBoxActiveXControl_SetValue"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6549,7 +6549,7 @@ func (instance *ListBoxActiveXControl) SetValue(value string)  error {
 //   int32  
 func (instance *ListBoxActiveXControl) GetBorderStyle()  (ControlBorderType,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetBorderStyle( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIN(C.CString("ListBoxActiveXControl_GetBorderStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6568,7 +6568,7 @@ func (instance *ListBoxActiveXControl) GetBorderStyle()  (ControlBorderType,  er
 //   void  
 func (instance *ListBoxActiveXControl) SetBorderStyle(value ControlBorderType)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetBorderStyle( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIO(C.CString("ListBoxActiveXControl_SetBorderStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6581,7 +6581,7 @@ func (instance *ListBoxActiveXControl) SetBorderStyle(value ControlBorderType)  
 //   int32  
 func (instance *ListBoxActiveXControl) GetBorderOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetBorderOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ListBoxActiveXControl_GetBorderOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6597,7 +6597,7 @@ func (instance *ListBoxActiveXControl) GetBorderOleColor()  (int32,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetBorderOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetBorderOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ListBoxActiveXControl_SetBorderOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6610,7 +6610,7 @@ func (instance *ListBoxActiveXControl) SetBorderOleColor(value int32)  error {
 //   int32  
 func (instance *ListBoxActiveXControl) GetSpecialEffect()  (ControlSpecialEffectType,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetSpecialEffect( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIB(C.CString("ListBoxActiveXControl_GetSpecialEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6629,7 +6629,7 @@ func (instance *ListBoxActiveXControl) GetSpecialEffect()  (ControlSpecialEffect
 //   void  
 func (instance *ListBoxActiveXControl) SetSpecialEffect(value ControlSpecialEffectType)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetSpecialEffect( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIC(C.CString("ListBoxActiveXControl_SetSpecialEffect"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6642,7 +6642,7 @@ func (instance *ListBoxActiveXControl) SetSpecialEffect(value ControlSpecialEffe
 //   bool  
 func (instance *ListBoxActiveXControl) GetShowColumnHeads()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetShowColumnHeads( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ListBoxActiveXControl_GetShowColumnHeads"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -6658,7 +6658,7 @@ func (instance *ListBoxActiveXControl) GetShowColumnHeads()  (bool,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetShowColumnHeads(value bool)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetShowColumnHeads( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ListBoxActiveXControl_SetShowColumnHeads"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6671,7 +6671,7 @@ func (instance *ListBoxActiveXControl) SetShowColumnHeads(value bool)  error {
 //   bool  
 func (instance *ListBoxActiveXControl) GetIntegralHeight()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetIntegralHeight( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ListBoxActiveXControl_GetIntegralHeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -6687,7 +6687,7 @@ func (instance *ListBoxActiveXControl) GetIntegralHeight()  (bool,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetIntegralHeight(value bool)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetIntegralHeight( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ListBoxActiveXControl_SetIntegralHeight"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6700,7 +6700,7 @@ func (instance *ListBoxActiveXControl) SetIntegralHeight(value bool)  error {
 //   float64  
 func (instance *ListBoxActiveXControl) GetColumnWidths()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetColumnWidths( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("ListBoxActiveXControl_GetColumnWidths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6716,7 +6716,7 @@ func (instance *ListBoxActiveXControl) GetColumnWidths()  (float64,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetColumnWidths(value float64)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetColumnWidths( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("ListBoxActiveXControl_SetColumnWidths"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6729,7 +6729,7 @@ func (instance *ListBoxActiveXControl) SetColumnWidths(value float64)  error {
 //   bool  
 func (instance *ListBoxActiveXControl) IsEnabled()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_IsEnabled( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ListBoxActiveXControl_IsEnabled"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -6745,7 +6745,7 @@ func (instance *ListBoxActiveXControl) IsEnabled()  (bool,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetIsEnabled(value bool)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetIsEnabled( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ListBoxActiveXControl_SetIsEnabled"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6758,7 +6758,7 @@ func (instance *ListBoxActiveXControl) SetIsEnabled(value bool)  error {
 //   bool  
 func (instance *ListBoxActiveXControl) IsLocked()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_IsLocked( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ListBoxActiveXControl_IsLocked"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -6774,7 +6774,7 @@ func (instance *ListBoxActiveXControl) IsLocked()  (bool,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetIsLocked(value bool)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetIsLocked( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ListBoxActiveXControl_SetIsLocked"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6787,7 +6787,7 @@ func (instance *ListBoxActiveXControl) SetIsLocked(value bool)  error {
 //   bool  
 func (instance *ListBoxActiveXControl) IsTransparent()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_IsTransparent( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ListBoxActiveXControl_IsTransparent"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -6803,7 +6803,7 @@ func (instance *ListBoxActiveXControl) IsTransparent()  (bool,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetIsTransparent(value bool)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetIsTransparent( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ListBoxActiveXControl_SetIsTransparent"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6816,7 +6816,7 @@ func (instance *ListBoxActiveXControl) SetIsTransparent(value bool)  error {
 //   int32  
 func (instance *ListBoxActiveXControl) GetIMEMode()  (InputMethodEditorMode,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetIMEMode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHQ(C.CString("ListBoxActiveXControl_GetIMEMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6835,7 +6835,7 @@ func (instance *ListBoxActiveXControl) GetIMEMode()  (InputMethodEditorMode,  er
 //   void  
 func (instance *ListBoxActiveXControl) SetIMEMode(value InputMethodEditorMode)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetIMEMode( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHR(C.CString("ListBoxActiveXControl_SetIMEMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6848,7 +6848,7 @@ func (instance *ListBoxActiveXControl) SetIMEMode(value InputMethodEditorMode)  
 //   Font  
 func (instance *ListBoxActiveXControl) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("ListBoxActiveXControl_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6864,7 +6864,7 @@ func (instance *ListBoxActiveXControl) GetFont()  (*Font,  error)  {
 //   int32  
 func (instance *ListBoxActiveXControl) GetTextAlign()  (TextAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetTextAlign( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("ListBoxActiveXControl_GetTextAlign"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6883,7 +6883,7 @@ func (instance *ListBoxActiveXControl) GetTextAlign()  (TextAlignmentType,  erro
 //   void  
 func (instance *ListBoxActiveXControl) SetTextAlign(value TextAlignmentType)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetTextAlign( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("ListBoxActiveXControl_SetTextAlign"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6896,7 +6896,7 @@ func (instance *ListBoxActiveXControl) SetTextAlign(value TextAlignmentType)  er
 //   []byte  
 func (instance *ListBoxActiveXControl) GetData()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("ListBoxActiveXControl_GetData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6911,7 +6911,7 @@ func (instance *ListBoxActiveXControl) GetData()  ([]byte,  error)  {
 //   bool  
 func (instance *ListBoxActiveXControl) IsAutoSize()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_IsAutoSize( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ListBoxActiveXControl_IsAutoSize"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -6927,7 +6927,7 @@ func (instance *ListBoxActiveXControl) IsAutoSize()  (bool,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetIsAutoSize(value bool)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ListBoxActiveXControl_SetIsAutoSize"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6940,7 +6940,7 @@ func (instance *ListBoxActiveXControl) SetIsAutoSize(value bool)  error {
 //   Workbook  
 func (instance *ListBoxActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetWorkbook( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBO(C.CString("ListBoxActiveXControl_GetWorkbook"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6956,7 +6956,7 @@ func (instance *ListBoxActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 //   []byte  
 func (instance *ListBoxActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetMouseIcon( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("ListBoxActiveXControl_GetMouseIcon"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6973,7 +6973,7 @@ func (instance *ListBoxActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetMouseIcon(value []byte)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("ListBoxActiveXControl_SetMouseIcon"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6986,7 +6986,7 @@ func (instance *ListBoxActiveXControl) SetMouseIcon(value []byte)  error {
 //   int32  
 func (instance *ListBoxActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetMousePointer( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHS(C.CString("ListBoxActiveXControl_GetMousePointer"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7005,7 +7005,7 @@ func (instance *ListBoxActiveXControl) GetMousePointer()  (ControlMousePointerTy
 //   void  
 func (instance *ListBoxActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHT(C.CString("ListBoxActiveXControl_SetMousePointer"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7018,7 +7018,7 @@ func (instance *ListBoxActiveXControl) SetMousePointer(value ControlMousePointer
 //   string  
 func (instance *ListBoxActiveXControl) GetLinkedCell()  (string,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetLinkedCell( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ListBoxActiveXControl_GetLinkedCell"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -7034,7 +7034,7 @@ func (instance *ListBoxActiveXControl) GetLinkedCell()  (string,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetLinkedCell(value string)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ListBoxActiveXControl_SetLinkedCell"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7047,7 +7047,7 @@ func (instance *ListBoxActiveXControl) SetLinkedCell(value string)  error {
 //   string  
 func (instance *ListBoxActiveXControl) GetListFillRange()  (string,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetListFillRange( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ListBoxActiveXControl_GetListFillRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -7063,7 +7063,7 @@ func (instance *ListBoxActiveXControl) GetListFillRange()  (string,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetListFillRange(value string)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ListBoxActiveXControl_SetListFillRange"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7076,7 +7076,7 @@ func (instance *ListBoxActiveXControl) SetListFillRange(value string)  error {
 //   float64  
 func (instance *ListBoxActiveXControl) GetWidth()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetWidth( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("ListBoxActiveXControl_GetWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7092,7 +7092,7 @@ func (instance *ListBoxActiveXControl) GetWidth()  (float64,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetWidth(value float64)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetWidth( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("ListBoxActiveXControl_SetWidth"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7105,7 +7105,7 @@ func (instance *ListBoxActiveXControl) SetWidth(value float64)  error {
 //   float64  
 func (instance *ListBoxActiveXControl) GetHeight()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetHeight( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("ListBoxActiveXControl_GetHeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7121,7 +7121,7 @@ func (instance *ListBoxActiveXControl) GetHeight()  (float64,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetHeight(value float64)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetHeight( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("ListBoxActiveXControl_SetHeight"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7134,7 +7134,7 @@ func (instance *ListBoxActiveXControl) SetHeight(value float64)  error {
 //   int32  
 func (instance *ListBoxActiveXControl) GetForeOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetForeOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ListBoxActiveXControl_GetForeOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7150,7 +7150,7 @@ func (instance *ListBoxActiveXControl) GetForeOleColor()  (int32,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetForeOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ListBoxActiveXControl_SetForeOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7163,7 +7163,7 @@ func (instance *ListBoxActiveXControl) SetForeOleColor(value int32)  error {
 //   int32  
 func (instance *ListBoxActiveXControl) GetBackOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetBackOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ListBoxActiveXControl_GetBackOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7179,7 +7179,7 @@ func (instance *ListBoxActiveXControl) GetBackOleColor()  (int32,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetBackOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ListBoxActiveXControl_SetBackOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7192,7 +7192,7 @@ func (instance *ListBoxActiveXControl) SetBackOleColor(value int32)  error {
 //   bool  
 func (instance *ListBoxActiveXControl) IsVisible()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_IsVisible( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ListBoxActiveXControl_IsVisible"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7208,7 +7208,7 @@ func (instance *ListBoxActiveXControl) IsVisible()  (bool,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetIsVisible(value bool)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ListBoxActiveXControl_SetIsVisible"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7221,7 +7221,7 @@ func (instance *ListBoxActiveXControl) SetIsVisible(value bool)  error {
 //   bool  
 func (instance *ListBoxActiveXControl) GetShadow()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_GetShadow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ListBoxActiveXControl_GetShadow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7237,7 +7237,7 @@ func (instance *ListBoxActiveXControl) GetShadow()  (bool,  error)  {
 //   void  
 func (instance *ListBoxActiveXControl) SetShadow(value bool)  error {
 	
-	CGoReturnPtr := C.ListBoxActiveXControl_SetShadow( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ListBoxActiveXControl_SetShadow"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7281,7 +7281,7 @@ func NewRadioButtonActiveXControl(src *ToggleButtonActiveXControl) ( *RadioButto
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_RadioButtonActiveXControl(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIX(C.CString("New_RadioButtonActiveXControl"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		radiobuttonactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(radiobuttonactivexcontrol, DeleteRadioButtonActiveXControl)
@@ -7298,7 +7298,7 @@ func NewRadioButtonActiveXControl(src *ToggleButtonActiveXControl) ( *RadioButto
 //   bool  
 func (instance *RadioButtonActiveXControl) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RadioButtonActiveXControl_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7312,7 +7312,7 @@ func (instance *RadioButtonActiveXControl) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *RadioButtonActiveXControl) GetType()  (ControlType,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHU(C.CString("RadioButtonActiveXControl_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7329,7 +7329,7 @@ func (instance *RadioButtonActiveXControl) GetType()  (ControlType,  error)  {
 //   string  
 func (instance *RadioButtonActiveXControl) GetGroupName()  (string,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetGroupName( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("RadioButtonActiveXControl_GetGroupName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -7345,7 +7345,7 @@ func (instance *RadioButtonActiveXControl) GetGroupName()  (string,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetGroupName(value string)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetGroupName( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("RadioButtonActiveXControl_SetGroupName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7358,7 +7358,7 @@ func (instance *RadioButtonActiveXControl) SetGroupName(value string)  error {
 //   int32  
 func (instance *RadioButtonActiveXControl) GetAlignment()  (ControlCaptionAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetAlignment( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHW(C.CString("RadioButtonActiveXControl_GetAlignment"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7377,7 +7377,7 @@ func (instance *RadioButtonActiveXControl) GetAlignment()  (ControlCaptionAlignm
 //   void  
 func (instance *RadioButtonActiveXControl) SetAlignment(value ControlCaptionAlignmentType)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetAlignment( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHX(C.CString("RadioButtonActiveXControl_SetAlignment"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7390,7 +7390,7 @@ func (instance *RadioButtonActiveXControl) SetAlignment(value ControlCaptionAlig
 //   bool  
 func (instance *RadioButtonActiveXControl) IsWordWrapped()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_IsWordWrapped( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RadioButtonActiveXControl_IsWordWrapped"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7406,7 +7406,7 @@ func (instance *RadioButtonActiveXControl) IsWordWrapped()  (bool,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetIsWordWrapped(value bool)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetIsWordWrapped( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("RadioButtonActiveXControl_SetIsWordWrapped"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7419,7 +7419,7 @@ func (instance *RadioButtonActiveXControl) SetIsWordWrapped(value bool)  error {
 //   bool  
 func (instance *RadioButtonActiveXControl) IsEnabled()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_IsEnabled( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RadioButtonActiveXControl_IsEnabled"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7435,7 +7435,7 @@ func (instance *RadioButtonActiveXControl) IsEnabled()  (bool,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetIsEnabled(value bool)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetIsEnabled( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("RadioButtonActiveXControl_SetIsEnabled"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7448,7 +7448,7 @@ func (instance *RadioButtonActiveXControl) SetIsEnabled(value bool)  error {
 //   bool  
 func (instance *RadioButtonActiveXControl) IsLocked()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_IsLocked( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RadioButtonActiveXControl_IsLocked"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7464,7 +7464,7 @@ func (instance *RadioButtonActiveXControl) IsLocked()  (bool,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetIsLocked(value bool)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetIsLocked( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("RadioButtonActiveXControl_SetIsLocked"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7477,7 +7477,7 @@ func (instance *RadioButtonActiveXControl) SetIsLocked(value bool)  error {
 //   bool  
 func (instance *RadioButtonActiveXControl) IsTransparent()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_IsTransparent( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RadioButtonActiveXControl_IsTransparent"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7493,7 +7493,7 @@ func (instance *RadioButtonActiveXControl) IsTransparent()  (bool,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetIsTransparent(value bool)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetIsTransparent( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("RadioButtonActiveXControl_SetIsTransparent"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7506,7 +7506,7 @@ func (instance *RadioButtonActiveXControl) SetIsTransparent(value bool)  error {
 //   int32  
 func (instance *RadioButtonActiveXControl) GetIMEMode()  (InputMethodEditorMode,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetIMEMode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHQ(C.CString("RadioButtonActiveXControl_GetIMEMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7525,7 +7525,7 @@ func (instance *RadioButtonActiveXControl) GetIMEMode()  (InputMethodEditorMode,
 //   void  
 func (instance *RadioButtonActiveXControl) SetIMEMode(value InputMethodEditorMode)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetIMEMode( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHR(C.CString("RadioButtonActiveXControl_SetIMEMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7538,7 +7538,7 @@ func (instance *RadioButtonActiveXControl) SetIMEMode(value InputMethodEditorMod
 //   Font  
 func (instance *RadioButtonActiveXControl) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("RadioButtonActiveXControl_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7554,7 +7554,7 @@ func (instance *RadioButtonActiveXControl) GetFont()  (*Font,  error)  {
 //   int32  
 func (instance *RadioButtonActiveXControl) GetTextAlign()  (TextAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetTextAlign( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("RadioButtonActiveXControl_GetTextAlign"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7573,7 +7573,7 @@ func (instance *RadioButtonActiveXControl) GetTextAlign()  (TextAlignmentType,  
 //   void  
 func (instance *RadioButtonActiveXControl) SetTextAlign(value TextAlignmentType)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetTextAlign( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("RadioButtonActiveXControl_SetTextAlign"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7586,7 +7586,7 @@ func (instance *RadioButtonActiveXControl) SetTextAlign(value TextAlignmentType)
 //   []byte  
 func (instance *RadioButtonActiveXControl) GetData()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("RadioButtonActiveXControl_GetData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7601,7 +7601,7 @@ func (instance *RadioButtonActiveXControl) GetData()  ([]byte,  error)  {
 //   bool  
 func (instance *RadioButtonActiveXControl) IsAutoSize()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_IsAutoSize( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RadioButtonActiveXControl_IsAutoSize"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7617,7 +7617,7 @@ func (instance *RadioButtonActiveXControl) IsAutoSize()  (bool,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetIsAutoSize(value bool)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("RadioButtonActiveXControl_SetIsAutoSize"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7630,7 +7630,7 @@ func (instance *RadioButtonActiveXControl) SetIsAutoSize(value bool)  error {
 //   Workbook  
 func (instance *RadioButtonActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetWorkbook( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBO(C.CString("RadioButtonActiveXControl_GetWorkbook"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7646,7 +7646,7 @@ func (instance *RadioButtonActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 //   []byte  
 func (instance *RadioButtonActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetMouseIcon( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("RadioButtonActiveXControl_GetMouseIcon"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7663,7 +7663,7 @@ func (instance *RadioButtonActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetMouseIcon(value []byte)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("RadioButtonActiveXControl_SetMouseIcon"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7676,7 +7676,7 @@ func (instance *RadioButtonActiveXControl) SetMouseIcon(value []byte)  error {
 //   int32  
 func (instance *RadioButtonActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetMousePointer( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHS(C.CString("RadioButtonActiveXControl_GetMousePointer"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7695,7 +7695,7 @@ func (instance *RadioButtonActiveXControl) GetMousePointer()  (ControlMousePoint
 //   void  
 func (instance *RadioButtonActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHT(C.CString("RadioButtonActiveXControl_SetMousePointer"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7708,7 +7708,7 @@ func (instance *RadioButtonActiveXControl) SetMousePointer(value ControlMousePoi
 //   string  
 func (instance *RadioButtonActiveXControl) GetLinkedCell()  (string,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetLinkedCell( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("RadioButtonActiveXControl_GetLinkedCell"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -7724,7 +7724,7 @@ func (instance *RadioButtonActiveXControl) GetLinkedCell()  (string,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetLinkedCell(value string)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("RadioButtonActiveXControl_SetLinkedCell"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7737,7 +7737,7 @@ func (instance *RadioButtonActiveXControl) SetLinkedCell(value string)  error {
 //   string  
 func (instance *RadioButtonActiveXControl) GetListFillRange()  (string,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetListFillRange( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("RadioButtonActiveXControl_GetListFillRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -7753,7 +7753,7 @@ func (instance *RadioButtonActiveXControl) GetListFillRange()  (string,  error) 
 //   void  
 func (instance *RadioButtonActiveXControl) SetListFillRange(value string)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("RadioButtonActiveXControl_SetListFillRange"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7766,7 +7766,7 @@ func (instance *RadioButtonActiveXControl) SetListFillRange(value string)  error
 //   float64  
 func (instance *RadioButtonActiveXControl) GetWidth()  (float64,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetWidth( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("RadioButtonActiveXControl_GetWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7782,7 +7782,7 @@ func (instance *RadioButtonActiveXControl) GetWidth()  (float64,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetWidth(value float64)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetWidth( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("RadioButtonActiveXControl_SetWidth"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7795,7 +7795,7 @@ func (instance *RadioButtonActiveXControl) SetWidth(value float64)  error {
 //   float64  
 func (instance *RadioButtonActiveXControl) GetHeight()  (float64,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetHeight( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("RadioButtonActiveXControl_GetHeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7811,7 +7811,7 @@ func (instance *RadioButtonActiveXControl) GetHeight()  (float64,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetHeight(value float64)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetHeight( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("RadioButtonActiveXControl_SetHeight"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7824,7 +7824,7 @@ func (instance *RadioButtonActiveXControl) SetHeight(value float64)  error {
 //   int32  
 func (instance *RadioButtonActiveXControl) GetForeOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetForeOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RadioButtonActiveXControl_GetForeOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7840,7 +7840,7 @@ func (instance *RadioButtonActiveXControl) GetForeOleColor()  (int32,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetForeOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("RadioButtonActiveXControl_SetForeOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7853,7 +7853,7 @@ func (instance *RadioButtonActiveXControl) SetForeOleColor(value int32)  error {
 //   int32  
 func (instance *RadioButtonActiveXControl) GetBackOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetBackOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("RadioButtonActiveXControl_GetBackOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7869,7 +7869,7 @@ func (instance *RadioButtonActiveXControl) GetBackOleColor()  (int32,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetBackOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("RadioButtonActiveXControl_SetBackOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7882,7 +7882,7 @@ func (instance *RadioButtonActiveXControl) SetBackOleColor(value int32)  error {
 //   bool  
 func (instance *RadioButtonActiveXControl) IsVisible()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_IsVisible( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RadioButtonActiveXControl_IsVisible"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7898,7 +7898,7 @@ func (instance *RadioButtonActiveXControl) IsVisible()  (bool,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetIsVisible(value bool)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("RadioButtonActiveXControl_SetIsVisible"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7911,7 +7911,7 @@ func (instance *RadioButtonActiveXControl) SetIsVisible(value bool)  error {
 //   bool  
 func (instance *RadioButtonActiveXControl) GetShadow()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetShadow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RadioButtonActiveXControl_GetShadow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7927,7 +7927,7 @@ func (instance *RadioButtonActiveXControl) GetShadow()  (bool,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetShadow(value bool)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetShadow( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("RadioButtonActiveXControl_SetShadow"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7940,7 +7940,7 @@ func (instance *RadioButtonActiveXControl) SetShadow(value bool)  error {
 //   string  
 func (instance *RadioButtonActiveXControl) GetCaption()  (string,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetCaption( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("RadioButtonActiveXControl_GetCaption"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -7956,7 +7956,7 @@ func (instance *RadioButtonActiveXControl) GetCaption()  (string,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetCaption(value string)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetCaption( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("RadioButtonActiveXControl_SetCaption"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7969,7 +7969,7 @@ func (instance *RadioButtonActiveXControl) SetCaption(value string)  error {
 //   int32  
 func (instance *RadioButtonActiveXControl) GetPicturePosition()  (ControlPicturePositionType,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetPicturePosition( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHY(C.CString("RadioButtonActiveXControl_GetPicturePosition"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7988,7 +7988,7 @@ func (instance *RadioButtonActiveXControl) GetPicturePosition()  (ControlPicture
 //   void  
 func (instance *RadioButtonActiveXControl) SetPicturePosition(value ControlPicturePositionType)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetPicturePosition( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIA(C.CString("RadioButtonActiveXControl_SetPicturePosition"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8001,7 +8001,7 @@ func (instance *RadioButtonActiveXControl) SetPicturePosition(value ControlPictu
 //   int32  
 func (instance *RadioButtonActiveXControl) GetSpecialEffect()  (ControlSpecialEffectType,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetSpecialEffect( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIB(C.CString("RadioButtonActiveXControl_GetSpecialEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8020,7 +8020,7 @@ func (instance *RadioButtonActiveXControl) GetSpecialEffect()  (ControlSpecialEf
 //   void  
 func (instance *RadioButtonActiveXControl) SetSpecialEffect(value ControlSpecialEffectType)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetSpecialEffect( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIC(C.CString("RadioButtonActiveXControl_SetSpecialEffect"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8033,7 +8033,7 @@ func (instance *RadioButtonActiveXControl) SetSpecialEffect(value ControlSpecial
 //   []byte  
 func (instance *RadioButtonActiveXControl) GetPicture()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetPicture( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("RadioButtonActiveXControl_GetPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8050,7 +8050,7 @@ func (instance *RadioButtonActiveXControl) GetPicture()  ([]byte,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetPicture(value []byte)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetPicture( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("RadioButtonActiveXControl_SetPicture"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8063,7 +8063,7 @@ func (instance *RadioButtonActiveXControl) SetPicture(value []byte)  error {
 //   byte  
 func (instance *RadioButtonActiveXControl) GetAccelerator()  (byte,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetAccelerator( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPI(C.CString("RadioButtonActiveXControl_GetAccelerator"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8079,7 +8079,7 @@ func (instance *RadioButtonActiveXControl) GetAccelerator()  (byte,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetAccelerator(value byte)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetAccelerator( instance.ptr, C.char(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZSA(C.CString("RadioButtonActiveXControl_SetAccelerator"), instance.ptr, C.char(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8092,7 +8092,7 @@ func (instance *RadioButtonActiveXControl) SetAccelerator(value byte)  error {
 //   int32  
 func (instance *RadioButtonActiveXControl) GetValue()  (CheckValueType,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_GetValue( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAID(C.CString("RadioButtonActiveXControl_GetValue"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8111,7 +8111,7 @@ func (instance *RadioButtonActiveXControl) GetValue()  (CheckValueType,  error) 
 //   void  
 func (instance *RadioButtonActiveXControl) SetValue(value CheckValueType)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetValue( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIE(C.CString("RadioButtonActiveXControl_SetValue"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8124,7 +8124,7 @@ func (instance *RadioButtonActiveXControl) SetValue(value CheckValueType)  error
 //   bool  
 func (instance *RadioButtonActiveXControl) IsTripleState()  (bool,  error)  {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_IsTripleState( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("RadioButtonActiveXControl_IsTripleState"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -8140,7 +8140,7 @@ func (instance *RadioButtonActiveXControl) IsTripleState()  (bool,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetIsTripleState(value bool)  error {
 	
-	CGoReturnPtr := C.RadioButtonActiveXControl_SetIsTripleState( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("RadioButtonActiveXControl_SetIsTripleState"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8189,7 +8189,7 @@ func NewScrollBarActiveXControl(src *SpinButtonActiveXControl) ( *ScrollBarActiv
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_ScrollBarActiveXControl(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIY(C.CString("New_ScrollBarActiveXControl"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		scrollbaractivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(scrollbaractivexcontrol, DeleteScrollBarActiveXControl)
@@ -8206,7 +8206,7 @@ func NewScrollBarActiveXControl(src *SpinButtonActiveXControl) ( *ScrollBarActiv
 //   bool  
 func (instance *ScrollBarActiveXControl) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ScrollBarActiveXControl_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -8220,7 +8220,7 @@ func (instance *ScrollBarActiveXControl) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ScrollBarActiveXControl) GetType()  (ControlType,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHU(C.CString("ScrollBarActiveXControl_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8237,7 +8237,7 @@ func (instance *ScrollBarActiveXControl) GetType()  (ControlType,  error)  {
 //   int32  
 func (instance *ScrollBarActiveXControl) GetLargeChange()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetLargeChange( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ScrollBarActiveXControl_GetLargeChange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8253,7 +8253,7 @@ func (instance *ScrollBarActiveXControl) GetLargeChange()  (int32,  error)  {
 //   void  
 func (instance *ScrollBarActiveXControl) SetLargeChange(value int32)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetLargeChange( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ScrollBarActiveXControl_SetLargeChange"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8266,7 +8266,7 @@ func (instance *ScrollBarActiveXControl) SetLargeChange(value int32)  error {
 //   bool  
 func (instance *ScrollBarActiveXControl) IsEnabled()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_IsEnabled( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ScrollBarActiveXControl_IsEnabled"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -8282,7 +8282,7 @@ func (instance *ScrollBarActiveXControl) IsEnabled()  (bool,  error)  {
 //   void  
 func (instance *ScrollBarActiveXControl) SetIsEnabled(value bool)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetIsEnabled( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ScrollBarActiveXControl_SetIsEnabled"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8295,7 +8295,7 @@ func (instance *ScrollBarActiveXControl) SetIsEnabled(value bool)  error {
 //   bool  
 func (instance *ScrollBarActiveXControl) IsLocked()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_IsLocked( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ScrollBarActiveXControl_IsLocked"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -8311,7 +8311,7 @@ func (instance *ScrollBarActiveXControl) IsLocked()  (bool,  error)  {
 //   void  
 func (instance *ScrollBarActiveXControl) SetIsLocked(value bool)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetIsLocked( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ScrollBarActiveXControl_SetIsLocked"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8324,7 +8324,7 @@ func (instance *ScrollBarActiveXControl) SetIsLocked(value bool)  error {
 //   bool  
 func (instance *ScrollBarActiveXControl) IsTransparent()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_IsTransparent( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ScrollBarActiveXControl_IsTransparent"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -8340,7 +8340,7 @@ func (instance *ScrollBarActiveXControl) IsTransparent()  (bool,  error)  {
 //   void  
 func (instance *ScrollBarActiveXControl) SetIsTransparent(value bool)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetIsTransparent( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ScrollBarActiveXControl_SetIsTransparent"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8353,7 +8353,7 @@ func (instance *ScrollBarActiveXControl) SetIsTransparent(value bool)  error {
 //   int32  
 func (instance *ScrollBarActiveXControl) GetIMEMode()  (InputMethodEditorMode,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetIMEMode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHQ(C.CString("ScrollBarActiveXControl_GetIMEMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8372,7 +8372,7 @@ func (instance *ScrollBarActiveXControl) GetIMEMode()  (InputMethodEditorMode,  
 //   void  
 func (instance *ScrollBarActiveXControl) SetIMEMode(value InputMethodEditorMode)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetIMEMode( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHR(C.CString("ScrollBarActiveXControl_SetIMEMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8385,7 +8385,7 @@ func (instance *ScrollBarActiveXControl) SetIMEMode(value InputMethodEditorMode)
 //   Font  
 func (instance *ScrollBarActiveXControl) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("ScrollBarActiveXControl_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8401,7 +8401,7 @@ func (instance *ScrollBarActiveXControl) GetFont()  (*Font,  error)  {
 //   int32  
 func (instance *ScrollBarActiveXControl) GetTextAlign()  (TextAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetTextAlign( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("ScrollBarActiveXControl_GetTextAlign"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8420,7 +8420,7 @@ func (instance *ScrollBarActiveXControl) GetTextAlign()  (TextAlignmentType,  er
 //   void  
 func (instance *ScrollBarActiveXControl) SetTextAlign(value TextAlignmentType)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetTextAlign( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("ScrollBarActiveXControl_SetTextAlign"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8433,7 +8433,7 @@ func (instance *ScrollBarActiveXControl) SetTextAlign(value TextAlignmentType)  
 //   []byte  
 func (instance *ScrollBarActiveXControl) GetData()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("ScrollBarActiveXControl_GetData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8448,7 +8448,7 @@ func (instance *ScrollBarActiveXControl) GetData()  ([]byte,  error)  {
 //   bool  
 func (instance *ScrollBarActiveXControl) IsAutoSize()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_IsAutoSize( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ScrollBarActiveXControl_IsAutoSize"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -8464,7 +8464,7 @@ func (instance *ScrollBarActiveXControl) IsAutoSize()  (bool,  error)  {
 //   void  
 func (instance *ScrollBarActiveXControl) SetIsAutoSize(value bool)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ScrollBarActiveXControl_SetIsAutoSize"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8477,7 +8477,7 @@ func (instance *ScrollBarActiveXControl) SetIsAutoSize(value bool)  error {
 //   Workbook  
 func (instance *ScrollBarActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetWorkbook( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBO(C.CString("ScrollBarActiveXControl_GetWorkbook"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8493,7 +8493,7 @@ func (instance *ScrollBarActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 //   []byte  
 func (instance *ScrollBarActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetMouseIcon( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("ScrollBarActiveXControl_GetMouseIcon"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8510,7 +8510,7 @@ func (instance *ScrollBarActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 //   void  
 func (instance *ScrollBarActiveXControl) SetMouseIcon(value []byte)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("ScrollBarActiveXControl_SetMouseIcon"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8523,7 +8523,7 @@ func (instance *ScrollBarActiveXControl) SetMouseIcon(value []byte)  error {
 //   int32  
 func (instance *ScrollBarActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetMousePointer( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHS(C.CString("ScrollBarActiveXControl_GetMousePointer"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8542,7 +8542,7 @@ func (instance *ScrollBarActiveXControl) GetMousePointer()  (ControlMousePointer
 //   void  
 func (instance *ScrollBarActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHT(C.CString("ScrollBarActiveXControl_SetMousePointer"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8555,7 +8555,7 @@ func (instance *ScrollBarActiveXControl) SetMousePointer(value ControlMousePoint
 //   string  
 func (instance *ScrollBarActiveXControl) GetLinkedCell()  (string,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetLinkedCell( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ScrollBarActiveXControl_GetLinkedCell"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -8571,7 +8571,7 @@ func (instance *ScrollBarActiveXControl) GetLinkedCell()  (string,  error)  {
 //   void  
 func (instance *ScrollBarActiveXControl) SetLinkedCell(value string)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ScrollBarActiveXControl_SetLinkedCell"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8584,7 +8584,7 @@ func (instance *ScrollBarActiveXControl) SetLinkedCell(value string)  error {
 //   string  
 func (instance *ScrollBarActiveXControl) GetListFillRange()  (string,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetListFillRange( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ScrollBarActiveXControl_GetListFillRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -8600,7 +8600,7 @@ func (instance *ScrollBarActiveXControl) GetListFillRange()  (string,  error)  {
 //   void  
 func (instance *ScrollBarActiveXControl) SetListFillRange(value string)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ScrollBarActiveXControl_SetListFillRange"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8613,7 +8613,7 @@ func (instance *ScrollBarActiveXControl) SetListFillRange(value string)  error {
 //   float64  
 func (instance *ScrollBarActiveXControl) GetWidth()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetWidth( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("ScrollBarActiveXControl_GetWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8629,7 +8629,7 @@ func (instance *ScrollBarActiveXControl) GetWidth()  (float64,  error)  {
 //   void  
 func (instance *ScrollBarActiveXControl) SetWidth(value float64)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetWidth( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("ScrollBarActiveXControl_SetWidth"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8642,7 +8642,7 @@ func (instance *ScrollBarActiveXControl) SetWidth(value float64)  error {
 //   float64  
 func (instance *ScrollBarActiveXControl) GetHeight()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetHeight( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("ScrollBarActiveXControl_GetHeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8658,7 +8658,7 @@ func (instance *ScrollBarActiveXControl) GetHeight()  (float64,  error)  {
 //   void  
 func (instance *ScrollBarActiveXControl) SetHeight(value float64)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetHeight( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("ScrollBarActiveXControl_SetHeight"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8671,7 +8671,7 @@ func (instance *ScrollBarActiveXControl) SetHeight(value float64)  error {
 //   int32  
 func (instance *ScrollBarActiveXControl) GetForeOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetForeOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ScrollBarActiveXControl_GetForeOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8687,7 +8687,7 @@ func (instance *ScrollBarActiveXControl) GetForeOleColor()  (int32,  error)  {
 //   void  
 func (instance *ScrollBarActiveXControl) SetForeOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ScrollBarActiveXControl_SetForeOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8700,7 +8700,7 @@ func (instance *ScrollBarActiveXControl) SetForeOleColor(value int32)  error {
 //   int32  
 func (instance *ScrollBarActiveXControl) GetBackOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetBackOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ScrollBarActiveXControl_GetBackOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8716,7 +8716,7 @@ func (instance *ScrollBarActiveXControl) GetBackOleColor()  (int32,  error)  {
 //   void  
 func (instance *ScrollBarActiveXControl) SetBackOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ScrollBarActiveXControl_SetBackOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8729,7 +8729,7 @@ func (instance *ScrollBarActiveXControl) SetBackOleColor(value int32)  error {
 //   bool  
 func (instance *ScrollBarActiveXControl) IsVisible()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_IsVisible( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ScrollBarActiveXControl_IsVisible"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -8745,7 +8745,7 @@ func (instance *ScrollBarActiveXControl) IsVisible()  (bool,  error)  {
 //   void  
 func (instance *ScrollBarActiveXControl) SetIsVisible(value bool)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ScrollBarActiveXControl_SetIsVisible"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8758,7 +8758,7 @@ func (instance *ScrollBarActiveXControl) SetIsVisible(value bool)  error {
 //   bool  
 func (instance *ScrollBarActiveXControl) GetShadow()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetShadow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ScrollBarActiveXControl_GetShadow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -8774,7 +8774,7 @@ func (instance *ScrollBarActiveXControl) GetShadow()  (bool,  error)  {
 //   void  
 func (instance *ScrollBarActiveXControl) SetShadow(value bool)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetShadow( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ScrollBarActiveXControl_SetShadow"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8787,7 +8787,7 @@ func (instance *ScrollBarActiveXControl) SetShadow(value bool)  error {
 //   int32  
 func (instance *ScrollBarActiveXControl) GetMin()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetMin( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ScrollBarActiveXControl_GetMin"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8803,7 +8803,7 @@ func (instance *ScrollBarActiveXControl) GetMin()  (int32,  error)  {
 //   void  
 func (instance *ScrollBarActiveXControl) SetMin(value int32)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetMin( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ScrollBarActiveXControl_SetMin"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8816,7 +8816,7 @@ func (instance *ScrollBarActiveXControl) SetMin(value int32)  error {
 //   int32  
 func (instance *ScrollBarActiveXControl) GetMax()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetMax( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ScrollBarActiveXControl_GetMax"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8832,7 +8832,7 @@ func (instance *ScrollBarActiveXControl) GetMax()  (int32,  error)  {
 //   void  
 func (instance *ScrollBarActiveXControl) SetMax(value int32)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetMax( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ScrollBarActiveXControl_SetMax"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8845,7 +8845,7 @@ func (instance *ScrollBarActiveXControl) SetMax(value int32)  error {
 //   int32  
 func (instance *ScrollBarActiveXControl) GetPosition()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetPosition( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ScrollBarActiveXControl_GetPosition"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8861,7 +8861,7 @@ func (instance *ScrollBarActiveXControl) GetPosition()  (int32,  error)  {
 //   void  
 func (instance *ScrollBarActiveXControl) SetPosition(value int32)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetPosition( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ScrollBarActiveXControl_SetPosition"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8874,7 +8874,7 @@ func (instance *ScrollBarActiveXControl) SetPosition(value int32)  error {
 //   int32  
 func (instance *ScrollBarActiveXControl) GetSmallChange()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetSmallChange( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ScrollBarActiveXControl_GetSmallChange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8890,7 +8890,7 @@ func (instance *ScrollBarActiveXControl) GetSmallChange()  (int32,  error)  {
 //   void  
 func (instance *ScrollBarActiveXControl) SetSmallChange(value int32)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetSmallChange( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ScrollBarActiveXControl_SetSmallChange"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8903,7 +8903,7 @@ func (instance *ScrollBarActiveXControl) SetSmallChange(value int32)  error {
 //   int32  
 func (instance *ScrollBarActiveXControl) GetOrientation()  (ControlScrollOrientation,  error)  {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_GetOrientation( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJA(C.CString("ScrollBarActiveXControl_GetOrientation"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8922,7 +8922,7 @@ func (instance *ScrollBarActiveXControl) GetOrientation()  (ControlScrollOrienta
 //   void  
 func (instance *ScrollBarActiveXControl) SetOrientation(value ControlScrollOrientation)  error {
 	
-	CGoReturnPtr := C.ScrollBarActiveXControl_SetOrientation( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJB(C.CString("ScrollBarActiveXControl_SetOrientation"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8971,7 +8971,7 @@ func NewSpinButtonActiveXControl(src *ActiveXControl) ( *SpinButtonActiveXContro
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_SpinButtonActiveXControl(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHV(C.CString("New_SpinButtonActiveXControl"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		spinbuttonactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(spinbuttonactivexcontrol, DeleteSpinButtonActiveXControl)
@@ -8988,7 +8988,7 @@ func NewSpinButtonActiveXControl(src *ActiveXControl) ( *SpinButtonActiveXContro
 //   bool  
 func (instance *SpinButtonActiveXControl) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SpinButtonActiveXControl_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -9002,7 +9002,7 @@ func (instance *SpinButtonActiveXControl) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *SpinButtonActiveXControl) GetType()  (ControlType,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHU(C.CString("SpinButtonActiveXControl_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9019,7 +9019,7 @@ func (instance *SpinButtonActiveXControl) GetType()  (ControlType,  error)  {
 //   int32  
 func (instance *SpinButtonActiveXControl) GetMin()  (int32,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetMin( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("SpinButtonActiveXControl_GetMin"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9035,7 +9035,7 @@ func (instance *SpinButtonActiveXControl) GetMin()  (int32,  error)  {
 //   void  
 func (instance *SpinButtonActiveXControl) SetMin(value int32)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetMin( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("SpinButtonActiveXControl_SetMin"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9048,7 +9048,7 @@ func (instance *SpinButtonActiveXControl) SetMin(value int32)  error {
 //   int32  
 func (instance *SpinButtonActiveXControl) GetMax()  (int32,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetMax( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("SpinButtonActiveXControl_GetMax"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9064,7 +9064,7 @@ func (instance *SpinButtonActiveXControl) GetMax()  (int32,  error)  {
 //   void  
 func (instance *SpinButtonActiveXControl) SetMax(value int32)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetMax( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("SpinButtonActiveXControl_SetMax"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9077,7 +9077,7 @@ func (instance *SpinButtonActiveXControl) SetMax(value int32)  error {
 //   int32  
 func (instance *SpinButtonActiveXControl) GetPosition()  (int32,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetPosition( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("SpinButtonActiveXControl_GetPosition"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9093,7 +9093,7 @@ func (instance *SpinButtonActiveXControl) GetPosition()  (int32,  error)  {
 //   void  
 func (instance *SpinButtonActiveXControl) SetPosition(value int32)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetPosition( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("SpinButtonActiveXControl_SetPosition"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9106,7 +9106,7 @@ func (instance *SpinButtonActiveXControl) SetPosition(value int32)  error {
 //   int32  
 func (instance *SpinButtonActiveXControl) GetSmallChange()  (int32,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetSmallChange( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("SpinButtonActiveXControl_GetSmallChange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9122,7 +9122,7 @@ func (instance *SpinButtonActiveXControl) GetSmallChange()  (int32,  error)  {
 //   void  
 func (instance *SpinButtonActiveXControl) SetSmallChange(value int32)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetSmallChange( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("SpinButtonActiveXControl_SetSmallChange"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9135,7 +9135,7 @@ func (instance *SpinButtonActiveXControl) SetSmallChange(value int32)  error {
 //   int32  
 func (instance *SpinButtonActiveXControl) GetOrientation()  (ControlScrollOrientation,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetOrientation( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJA(C.CString("SpinButtonActiveXControl_GetOrientation"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9154,7 +9154,7 @@ func (instance *SpinButtonActiveXControl) GetOrientation()  (ControlScrollOrient
 //   void  
 func (instance *SpinButtonActiveXControl) SetOrientation(value ControlScrollOrientation)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetOrientation( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJB(C.CString("SpinButtonActiveXControl_SetOrientation"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9167,7 +9167,7 @@ func (instance *SpinButtonActiveXControl) SetOrientation(value ControlScrollOrie
 //   bool  
 func (instance *SpinButtonActiveXControl) IsEnabled()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_IsEnabled( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SpinButtonActiveXControl_IsEnabled"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -9183,7 +9183,7 @@ func (instance *SpinButtonActiveXControl) IsEnabled()  (bool,  error)  {
 //   void  
 func (instance *SpinButtonActiveXControl) SetIsEnabled(value bool)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetIsEnabled( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SpinButtonActiveXControl_SetIsEnabled"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9196,7 +9196,7 @@ func (instance *SpinButtonActiveXControl) SetIsEnabled(value bool)  error {
 //   bool  
 func (instance *SpinButtonActiveXControl) IsLocked()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_IsLocked( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SpinButtonActiveXControl_IsLocked"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -9212,7 +9212,7 @@ func (instance *SpinButtonActiveXControl) IsLocked()  (bool,  error)  {
 //   void  
 func (instance *SpinButtonActiveXControl) SetIsLocked(value bool)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetIsLocked( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SpinButtonActiveXControl_SetIsLocked"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9225,7 +9225,7 @@ func (instance *SpinButtonActiveXControl) SetIsLocked(value bool)  error {
 //   bool  
 func (instance *SpinButtonActiveXControl) IsTransparent()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_IsTransparent( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SpinButtonActiveXControl_IsTransparent"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -9241,7 +9241,7 @@ func (instance *SpinButtonActiveXControl) IsTransparent()  (bool,  error)  {
 //   void  
 func (instance *SpinButtonActiveXControl) SetIsTransparent(value bool)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetIsTransparent( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SpinButtonActiveXControl_SetIsTransparent"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9254,7 +9254,7 @@ func (instance *SpinButtonActiveXControl) SetIsTransparent(value bool)  error {
 //   int32  
 func (instance *SpinButtonActiveXControl) GetIMEMode()  (InputMethodEditorMode,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetIMEMode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHQ(C.CString("SpinButtonActiveXControl_GetIMEMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9273,7 +9273,7 @@ func (instance *SpinButtonActiveXControl) GetIMEMode()  (InputMethodEditorMode, 
 //   void  
 func (instance *SpinButtonActiveXControl) SetIMEMode(value InputMethodEditorMode)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetIMEMode( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHR(C.CString("SpinButtonActiveXControl_SetIMEMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9286,7 +9286,7 @@ func (instance *SpinButtonActiveXControl) SetIMEMode(value InputMethodEditorMode
 //   Font  
 func (instance *SpinButtonActiveXControl) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("SpinButtonActiveXControl_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9302,7 +9302,7 @@ func (instance *SpinButtonActiveXControl) GetFont()  (*Font,  error)  {
 //   int32  
 func (instance *SpinButtonActiveXControl) GetTextAlign()  (TextAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetTextAlign( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("SpinButtonActiveXControl_GetTextAlign"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9321,7 +9321,7 @@ func (instance *SpinButtonActiveXControl) GetTextAlign()  (TextAlignmentType,  e
 //   void  
 func (instance *SpinButtonActiveXControl) SetTextAlign(value TextAlignmentType)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetTextAlign( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("SpinButtonActiveXControl_SetTextAlign"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9334,7 +9334,7 @@ func (instance *SpinButtonActiveXControl) SetTextAlign(value TextAlignmentType) 
 //   []byte  
 func (instance *SpinButtonActiveXControl) GetData()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("SpinButtonActiveXControl_GetData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9349,7 +9349,7 @@ func (instance *SpinButtonActiveXControl) GetData()  ([]byte,  error)  {
 //   bool  
 func (instance *SpinButtonActiveXControl) IsAutoSize()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_IsAutoSize( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SpinButtonActiveXControl_IsAutoSize"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -9365,7 +9365,7 @@ func (instance *SpinButtonActiveXControl) IsAutoSize()  (bool,  error)  {
 //   void  
 func (instance *SpinButtonActiveXControl) SetIsAutoSize(value bool)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SpinButtonActiveXControl_SetIsAutoSize"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9378,7 +9378,7 @@ func (instance *SpinButtonActiveXControl) SetIsAutoSize(value bool)  error {
 //   Workbook  
 func (instance *SpinButtonActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetWorkbook( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBO(C.CString("SpinButtonActiveXControl_GetWorkbook"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9394,7 +9394,7 @@ func (instance *SpinButtonActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 //   []byte  
 func (instance *SpinButtonActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetMouseIcon( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("SpinButtonActiveXControl_GetMouseIcon"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9411,7 +9411,7 @@ func (instance *SpinButtonActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 //   void  
 func (instance *SpinButtonActiveXControl) SetMouseIcon(value []byte)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("SpinButtonActiveXControl_SetMouseIcon"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9424,7 +9424,7 @@ func (instance *SpinButtonActiveXControl) SetMouseIcon(value []byte)  error {
 //   int32  
 func (instance *SpinButtonActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetMousePointer( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHS(C.CString("SpinButtonActiveXControl_GetMousePointer"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9443,7 +9443,7 @@ func (instance *SpinButtonActiveXControl) GetMousePointer()  (ControlMousePointe
 //   void  
 func (instance *SpinButtonActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHT(C.CString("SpinButtonActiveXControl_SetMousePointer"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9456,7 +9456,7 @@ func (instance *SpinButtonActiveXControl) SetMousePointer(value ControlMousePoin
 //   string  
 func (instance *SpinButtonActiveXControl) GetLinkedCell()  (string,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetLinkedCell( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("SpinButtonActiveXControl_GetLinkedCell"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -9472,7 +9472,7 @@ func (instance *SpinButtonActiveXControl) GetLinkedCell()  (string,  error)  {
 //   void  
 func (instance *SpinButtonActiveXControl) SetLinkedCell(value string)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("SpinButtonActiveXControl_SetLinkedCell"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9485,7 +9485,7 @@ func (instance *SpinButtonActiveXControl) SetLinkedCell(value string)  error {
 //   string  
 func (instance *SpinButtonActiveXControl) GetListFillRange()  (string,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetListFillRange( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("SpinButtonActiveXControl_GetListFillRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -9501,7 +9501,7 @@ func (instance *SpinButtonActiveXControl) GetListFillRange()  (string,  error)  
 //   void  
 func (instance *SpinButtonActiveXControl) SetListFillRange(value string)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("SpinButtonActiveXControl_SetListFillRange"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9514,7 +9514,7 @@ func (instance *SpinButtonActiveXControl) SetListFillRange(value string)  error 
 //   float64  
 func (instance *SpinButtonActiveXControl) GetWidth()  (float64,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetWidth( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("SpinButtonActiveXControl_GetWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9530,7 +9530,7 @@ func (instance *SpinButtonActiveXControl) GetWidth()  (float64,  error)  {
 //   void  
 func (instance *SpinButtonActiveXControl) SetWidth(value float64)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetWidth( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("SpinButtonActiveXControl_SetWidth"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9543,7 +9543,7 @@ func (instance *SpinButtonActiveXControl) SetWidth(value float64)  error {
 //   float64  
 func (instance *SpinButtonActiveXControl) GetHeight()  (float64,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetHeight( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("SpinButtonActiveXControl_GetHeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9559,7 +9559,7 @@ func (instance *SpinButtonActiveXControl) GetHeight()  (float64,  error)  {
 //   void  
 func (instance *SpinButtonActiveXControl) SetHeight(value float64)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetHeight( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("SpinButtonActiveXControl_SetHeight"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9572,7 +9572,7 @@ func (instance *SpinButtonActiveXControl) SetHeight(value float64)  error {
 //   int32  
 func (instance *SpinButtonActiveXControl) GetForeOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetForeOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("SpinButtonActiveXControl_GetForeOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9588,7 +9588,7 @@ func (instance *SpinButtonActiveXControl) GetForeOleColor()  (int32,  error)  {
 //   void  
 func (instance *SpinButtonActiveXControl) SetForeOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("SpinButtonActiveXControl_SetForeOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9601,7 +9601,7 @@ func (instance *SpinButtonActiveXControl) SetForeOleColor(value int32)  error {
 //   int32  
 func (instance *SpinButtonActiveXControl) GetBackOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetBackOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("SpinButtonActiveXControl_GetBackOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9617,7 +9617,7 @@ func (instance *SpinButtonActiveXControl) GetBackOleColor()  (int32,  error)  {
 //   void  
 func (instance *SpinButtonActiveXControl) SetBackOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("SpinButtonActiveXControl_SetBackOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9630,7 +9630,7 @@ func (instance *SpinButtonActiveXControl) SetBackOleColor(value int32)  error {
 //   bool  
 func (instance *SpinButtonActiveXControl) IsVisible()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_IsVisible( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SpinButtonActiveXControl_IsVisible"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -9646,7 +9646,7 @@ func (instance *SpinButtonActiveXControl) IsVisible()  (bool,  error)  {
 //   void  
 func (instance *SpinButtonActiveXControl) SetIsVisible(value bool)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SpinButtonActiveXControl_SetIsVisible"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9659,7 +9659,7 @@ func (instance *SpinButtonActiveXControl) SetIsVisible(value bool)  error {
 //   bool  
 func (instance *SpinButtonActiveXControl) GetShadow()  (bool,  error)  {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_GetShadow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("SpinButtonActiveXControl_GetShadow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -9675,7 +9675,7 @@ func (instance *SpinButtonActiveXControl) GetShadow()  (bool,  error)  {
 //   void  
 func (instance *SpinButtonActiveXControl) SetShadow(value bool)  error {
 	
-	CGoReturnPtr := C.SpinButtonActiveXControl_SetShadow( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("SpinButtonActiveXControl_SetShadow"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9719,7 +9719,7 @@ func NewTextBoxActiveXControl(src *ActiveXControl) ( *TextBoxActiveXControl, err
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_TextBoxActiveXControl(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHV(C.CString("New_TextBoxActiveXControl"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		textboxactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(textboxactivexcontrol, DeleteTextBoxActiveXControl)
@@ -9736,7 +9736,7 @@ func NewTextBoxActiveXControl(src *ActiveXControl) ( *TextBoxActiveXControl, err
 //   bool  
 func (instance *TextBoxActiveXControl) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextBoxActiveXControl_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -9750,7 +9750,7 @@ func (instance *TextBoxActiveXControl) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *TextBoxActiveXControl) GetType()  (ControlType,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHU(C.CString("TextBoxActiveXControl_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9767,7 +9767,7 @@ func (instance *TextBoxActiveXControl) GetType()  (ControlType,  error)  {
 //   int32  
 func (instance *TextBoxActiveXControl) GetBorderStyle()  (ControlBorderType,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetBorderStyle( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIN(C.CString("TextBoxActiveXControl_GetBorderStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9786,7 +9786,7 @@ func (instance *TextBoxActiveXControl) GetBorderStyle()  (ControlBorderType,  er
 //   void  
 func (instance *TextBoxActiveXControl) SetBorderStyle(value ControlBorderType)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetBorderStyle( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIO(C.CString("TextBoxActiveXControl_SetBorderStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9799,7 +9799,7 @@ func (instance *TextBoxActiveXControl) SetBorderStyle(value ControlBorderType)  
 //   int32  
 func (instance *TextBoxActiveXControl) GetBorderOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetBorderOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("TextBoxActiveXControl_GetBorderOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9815,7 +9815,7 @@ func (instance *TextBoxActiveXControl) GetBorderOleColor()  (int32,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetBorderOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetBorderOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("TextBoxActiveXControl_SetBorderOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9828,7 +9828,7 @@ func (instance *TextBoxActiveXControl) SetBorderOleColor(value int32)  error {
 //   int32  
 func (instance *TextBoxActiveXControl) GetSpecialEffect()  (ControlSpecialEffectType,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetSpecialEffect( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIB(C.CString("TextBoxActiveXControl_GetSpecialEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9847,7 +9847,7 @@ func (instance *TextBoxActiveXControl) GetSpecialEffect()  (ControlSpecialEffect
 //   void  
 func (instance *TextBoxActiveXControl) SetSpecialEffect(value ControlSpecialEffectType)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetSpecialEffect( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIC(C.CString("TextBoxActiveXControl_SetSpecialEffect"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9860,7 +9860,7 @@ func (instance *TextBoxActiveXControl) SetSpecialEffect(value ControlSpecialEffe
 //   int32  
 func (instance *TextBoxActiveXControl) GetMaxLength()  (int32,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetMaxLength( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("TextBoxActiveXControl_GetMaxLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9876,7 +9876,7 @@ func (instance *TextBoxActiveXControl) GetMaxLength()  (int32,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetMaxLength(value int32)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetMaxLength( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("TextBoxActiveXControl_SetMaxLength"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9889,7 +9889,7 @@ func (instance *TextBoxActiveXControl) SetMaxLength(value int32)  error {
 //   int32  
 func (instance *TextBoxActiveXControl) GetScrollBars()  (ControlScrollBarType,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetScrollBars( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIT(C.CString("TextBoxActiveXControl_GetScrollBars"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9908,7 +9908,7 @@ func (instance *TextBoxActiveXControl) GetScrollBars()  (ControlScrollBarType,  
 //   void  
 func (instance *TextBoxActiveXControl) SetScrollBars(value ControlScrollBarType)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetScrollBars( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIU(C.CString("TextBoxActiveXControl_SetScrollBars"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9921,7 +9921,7 @@ func (instance *TextBoxActiveXControl) SetScrollBars(value ControlScrollBarType)
 //   byte  
 func (instance *TextBoxActiveXControl) GetPasswordChar()  (byte,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetPasswordChar( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPI(C.CString("TextBoxActiveXControl_GetPasswordChar"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9937,7 +9937,7 @@ func (instance *TextBoxActiveXControl) GetPasswordChar()  (byte,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetPasswordChar(value byte)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetPasswordChar( instance.ptr, C.char(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZSA(C.CString("TextBoxActiveXControl_SetPasswordChar"), instance.ptr, C.char(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9950,7 +9950,7 @@ func (instance *TextBoxActiveXControl) SetPasswordChar(value byte)  error {
 //   bool  
 func (instance *TextBoxActiveXControl) IsEditable()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_IsEditable( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextBoxActiveXControl_IsEditable"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -9966,7 +9966,7 @@ func (instance *TextBoxActiveXControl) IsEditable()  (bool,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetIsEditable(value bool)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetIsEditable( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextBoxActiveXControl_SetIsEditable"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9979,7 +9979,7 @@ func (instance *TextBoxActiveXControl) SetIsEditable(value bool)  error {
 //   bool  
 func (instance *TextBoxActiveXControl) GetIntegralHeight()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetIntegralHeight( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextBoxActiveXControl_GetIntegralHeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -9995,7 +9995,7 @@ func (instance *TextBoxActiveXControl) GetIntegralHeight()  (bool,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetIntegralHeight(value bool)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetIntegralHeight( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextBoxActiveXControl_SetIntegralHeight"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10008,7 +10008,7 @@ func (instance *TextBoxActiveXControl) SetIntegralHeight(value bool)  error {
 //   bool  
 func (instance *TextBoxActiveXControl) IsDragBehaviorEnabled()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_IsDragBehaviorEnabled( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextBoxActiveXControl_IsDragBehaviorEnabled"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10024,7 +10024,7 @@ func (instance *TextBoxActiveXControl) IsDragBehaviorEnabled()  (bool,  error)  
 //   void  
 func (instance *TextBoxActiveXControl) SetIsDragBehaviorEnabled(value bool)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetIsDragBehaviorEnabled( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextBoxActiveXControl_SetIsDragBehaviorEnabled"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10039,7 +10039,7 @@ func (instance *TextBoxActiveXControl) SetIsDragBehaviorEnabled(value bool)  err
 //   bool  
 func (instance *TextBoxActiveXControl) GetEnterKeyBehavior()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetEnterKeyBehavior( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextBoxActiveXControl_GetEnterKeyBehavior"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10057,7 +10057,7 @@ func (instance *TextBoxActiveXControl) GetEnterKeyBehavior()  (bool,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetEnterKeyBehavior(value bool)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetEnterKeyBehavior( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextBoxActiveXControl_SetEnterKeyBehavior"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10072,7 +10072,7 @@ func (instance *TextBoxActiveXControl) SetEnterKeyBehavior(value bool)  error {
 //   bool  
 func (instance *TextBoxActiveXControl) GetEnterFieldBehavior()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetEnterFieldBehavior( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextBoxActiveXControl_GetEnterFieldBehavior"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10090,7 +10090,7 @@ func (instance *TextBoxActiveXControl) GetEnterFieldBehavior()  (bool,  error)  
 //   void  
 func (instance *TextBoxActiveXControl) SetEnterFieldBehavior(value bool)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetEnterFieldBehavior( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextBoxActiveXControl_SetEnterFieldBehavior"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10103,7 +10103,7 @@ func (instance *TextBoxActiveXControl) SetEnterFieldBehavior(value bool)  error 
 //   bool  
 func (instance *TextBoxActiveXControl) GetTabKeyBehavior()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetTabKeyBehavior( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextBoxActiveXControl_GetTabKeyBehavior"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10119,7 +10119,7 @@ func (instance *TextBoxActiveXControl) GetTabKeyBehavior()  (bool,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetTabKeyBehavior(value bool)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetTabKeyBehavior( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextBoxActiveXControl_SetTabKeyBehavior"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10132,7 +10132,7 @@ func (instance *TextBoxActiveXControl) SetTabKeyBehavior(value bool)  error {
 //   bool  
 func (instance *TextBoxActiveXControl) GetHideSelection()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetHideSelection( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextBoxActiveXControl_GetHideSelection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10148,7 +10148,7 @@ func (instance *TextBoxActiveXControl) GetHideSelection()  (bool,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetHideSelection(value bool)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetHideSelection( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextBoxActiveXControl_SetHideSelection"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10161,7 +10161,7 @@ func (instance *TextBoxActiveXControl) SetHideSelection(value bool)  error {
 //   bool  
 func (instance *TextBoxActiveXControl) IsAutoTab()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_IsAutoTab( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextBoxActiveXControl_IsAutoTab"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10177,7 +10177,7 @@ func (instance *TextBoxActiveXControl) IsAutoTab()  (bool,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetIsAutoTab(value bool)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetIsAutoTab( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextBoxActiveXControl_SetIsAutoTab"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10190,7 +10190,7 @@ func (instance *TextBoxActiveXControl) SetIsAutoTab(value bool)  error {
 //   bool  
 func (instance *TextBoxActiveXControl) IsMultiLine()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_IsMultiLine( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextBoxActiveXControl_IsMultiLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10206,7 +10206,7 @@ func (instance *TextBoxActiveXControl) IsMultiLine()  (bool,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetIsMultiLine(value bool)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetIsMultiLine( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextBoxActiveXControl_SetIsMultiLine"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10219,7 +10219,7 @@ func (instance *TextBoxActiveXControl) SetIsMultiLine(value bool)  error {
 //   bool  
 func (instance *TextBoxActiveXControl) IsWordWrapped()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_IsWordWrapped( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextBoxActiveXControl_IsWordWrapped"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10235,7 +10235,7 @@ func (instance *TextBoxActiveXControl) IsWordWrapped()  (bool,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetIsWordWrapped(value bool)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetIsWordWrapped( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextBoxActiveXControl_SetIsWordWrapped"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10248,7 +10248,7 @@ func (instance *TextBoxActiveXControl) SetIsWordWrapped(value bool)  error {
 //   string  
 func (instance *TextBoxActiveXControl) GetText()  (string,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetText( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("TextBoxActiveXControl_GetText"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -10264,7 +10264,7 @@ func (instance *TextBoxActiveXControl) GetText()  (string,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetText(value string)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetText( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("TextBoxActiveXControl_SetText"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10277,7 +10277,7 @@ func (instance *TextBoxActiveXControl) SetText(value string)  error {
 //   int32  
 func (instance *TextBoxActiveXControl) GetDropButtonStyle()  (DropButtonStyle,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetDropButtonStyle( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIH(C.CString("TextBoxActiveXControl_GetDropButtonStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10296,7 +10296,7 @@ func (instance *TextBoxActiveXControl) GetDropButtonStyle()  (DropButtonStyle,  
 //   void  
 func (instance *TextBoxActiveXControl) SetDropButtonStyle(value DropButtonStyle)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetDropButtonStyle( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAII(C.CString("TextBoxActiveXControl_SetDropButtonStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10309,7 +10309,7 @@ func (instance *TextBoxActiveXControl) SetDropButtonStyle(value DropButtonStyle)
 //   int32  
 func (instance *TextBoxActiveXControl) GetShowDropButtonTypeWhen()  (ShowDropButtonType,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetShowDropButtonTypeWhen( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIJ(C.CString("TextBoxActiveXControl_GetShowDropButtonTypeWhen"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10328,7 +10328,7 @@ func (instance *TextBoxActiveXControl) GetShowDropButtonTypeWhen()  (ShowDropBut
 //   void  
 func (instance *TextBoxActiveXControl) SetShowDropButtonTypeWhen(value ShowDropButtonType)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetShowDropButtonTypeWhen( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIK(C.CString("TextBoxActiveXControl_SetShowDropButtonTypeWhen"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10343,7 +10343,7 @@ func (instance *TextBoxActiveXControl) SetShowDropButtonTypeWhen(value ShowDropB
 //   bool  
 func (instance *TextBoxActiveXControl) IsAutoWordSelected()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_IsAutoWordSelected( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextBoxActiveXControl_IsAutoWordSelected"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10361,7 +10361,7 @@ func (instance *TextBoxActiveXControl) IsAutoWordSelected()  (bool,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetIsAutoWordSelected(value bool)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetIsAutoWordSelected( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextBoxActiveXControl_SetIsAutoWordSelected"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10374,7 +10374,7 @@ func (instance *TextBoxActiveXControl) SetIsAutoWordSelected(value bool)  error 
 //   bool  
 func (instance *TextBoxActiveXControl) IsEnabled()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_IsEnabled( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextBoxActiveXControl_IsEnabled"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10390,7 +10390,7 @@ func (instance *TextBoxActiveXControl) IsEnabled()  (bool,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetIsEnabled(value bool)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetIsEnabled( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextBoxActiveXControl_SetIsEnabled"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10403,7 +10403,7 @@ func (instance *TextBoxActiveXControl) SetIsEnabled(value bool)  error {
 //   bool  
 func (instance *TextBoxActiveXControl) IsLocked()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_IsLocked( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextBoxActiveXControl_IsLocked"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10419,7 +10419,7 @@ func (instance *TextBoxActiveXControl) IsLocked()  (bool,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetIsLocked(value bool)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetIsLocked( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextBoxActiveXControl_SetIsLocked"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10432,7 +10432,7 @@ func (instance *TextBoxActiveXControl) SetIsLocked(value bool)  error {
 //   bool  
 func (instance *TextBoxActiveXControl) IsTransparent()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_IsTransparent( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextBoxActiveXControl_IsTransparent"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10448,7 +10448,7 @@ func (instance *TextBoxActiveXControl) IsTransparent()  (bool,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetIsTransparent(value bool)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetIsTransparent( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextBoxActiveXControl_SetIsTransparent"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10461,7 +10461,7 @@ func (instance *TextBoxActiveXControl) SetIsTransparent(value bool)  error {
 //   int32  
 func (instance *TextBoxActiveXControl) GetIMEMode()  (InputMethodEditorMode,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetIMEMode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHQ(C.CString("TextBoxActiveXControl_GetIMEMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10480,7 +10480,7 @@ func (instance *TextBoxActiveXControl) GetIMEMode()  (InputMethodEditorMode,  er
 //   void  
 func (instance *TextBoxActiveXControl) SetIMEMode(value InputMethodEditorMode)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetIMEMode( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHR(C.CString("TextBoxActiveXControl_SetIMEMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10493,7 +10493,7 @@ func (instance *TextBoxActiveXControl) SetIMEMode(value InputMethodEditorMode)  
 //   Font  
 func (instance *TextBoxActiveXControl) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("TextBoxActiveXControl_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10509,7 +10509,7 @@ func (instance *TextBoxActiveXControl) GetFont()  (*Font,  error)  {
 //   int32  
 func (instance *TextBoxActiveXControl) GetTextAlign()  (TextAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetTextAlign( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("TextBoxActiveXControl_GetTextAlign"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10528,7 +10528,7 @@ func (instance *TextBoxActiveXControl) GetTextAlign()  (TextAlignmentType,  erro
 //   void  
 func (instance *TextBoxActiveXControl) SetTextAlign(value TextAlignmentType)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetTextAlign( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("TextBoxActiveXControl_SetTextAlign"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10541,7 +10541,7 @@ func (instance *TextBoxActiveXControl) SetTextAlign(value TextAlignmentType)  er
 //   []byte  
 func (instance *TextBoxActiveXControl) GetData()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("TextBoxActiveXControl_GetData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10556,7 +10556,7 @@ func (instance *TextBoxActiveXControl) GetData()  ([]byte,  error)  {
 //   bool  
 func (instance *TextBoxActiveXControl) IsAutoSize()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_IsAutoSize( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextBoxActiveXControl_IsAutoSize"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10572,7 +10572,7 @@ func (instance *TextBoxActiveXControl) IsAutoSize()  (bool,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetIsAutoSize(value bool)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextBoxActiveXControl_SetIsAutoSize"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10585,7 +10585,7 @@ func (instance *TextBoxActiveXControl) SetIsAutoSize(value bool)  error {
 //   Workbook  
 func (instance *TextBoxActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetWorkbook( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBO(C.CString("TextBoxActiveXControl_GetWorkbook"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10601,7 +10601,7 @@ func (instance *TextBoxActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 //   []byte  
 func (instance *TextBoxActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetMouseIcon( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("TextBoxActiveXControl_GetMouseIcon"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10618,7 +10618,7 @@ func (instance *TextBoxActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetMouseIcon(value []byte)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("TextBoxActiveXControl_SetMouseIcon"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10631,7 +10631,7 @@ func (instance *TextBoxActiveXControl) SetMouseIcon(value []byte)  error {
 //   int32  
 func (instance *TextBoxActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetMousePointer( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHS(C.CString("TextBoxActiveXControl_GetMousePointer"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10650,7 +10650,7 @@ func (instance *TextBoxActiveXControl) GetMousePointer()  (ControlMousePointerTy
 //   void  
 func (instance *TextBoxActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHT(C.CString("TextBoxActiveXControl_SetMousePointer"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10663,7 +10663,7 @@ func (instance *TextBoxActiveXControl) SetMousePointer(value ControlMousePointer
 //   string  
 func (instance *TextBoxActiveXControl) GetLinkedCell()  (string,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetLinkedCell( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("TextBoxActiveXControl_GetLinkedCell"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -10679,7 +10679,7 @@ func (instance *TextBoxActiveXControl) GetLinkedCell()  (string,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetLinkedCell(value string)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("TextBoxActiveXControl_SetLinkedCell"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10692,7 +10692,7 @@ func (instance *TextBoxActiveXControl) SetLinkedCell(value string)  error {
 //   string  
 func (instance *TextBoxActiveXControl) GetListFillRange()  (string,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetListFillRange( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("TextBoxActiveXControl_GetListFillRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -10708,7 +10708,7 @@ func (instance *TextBoxActiveXControl) GetListFillRange()  (string,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetListFillRange(value string)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("TextBoxActiveXControl_SetListFillRange"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10721,7 +10721,7 @@ func (instance *TextBoxActiveXControl) SetListFillRange(value string)  error {
 //   float64  
 func (instance *TextBoxActiveXControl) GetWidth()  (float64,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetWidth( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("TextBoxActiveXControl_GetWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10737,7 +10737,7 @@ func (instance *TextBoxActiveXControl) GetWidth()  (float64,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetWidth(value float64)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetWidth( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("TextBoxActiveXControl_SetWidth"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10750,7 +10750,7 @@ func (instance *TextBoxActiveXControl) SetWidth(value float64)  error {
 //   float64  
 func (instance *TextBoxActiveXControl) GetHeight()  (float64,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetHeight( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("TextBoxActiveXControl_GetHeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10766,7 +10766,7 @@ func (instance *TextBoxActiveXControl) GetHeight()  (float64,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetHeight(value float64)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetHeight( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("TextBoxActiveXControl_SetHeight"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10779,7 +10779,7 @@ func (instance *TextBoxActiveXControl) SetHeight(value float64)  error {
 //   int32  
 func (instance *TextBoxActiveXControl) GetForeOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetForeOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("TextBoxActiveXControl_GetForeOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10795,7 +10795,7 @@ func (instance *TextBoxActiveXControl) GetForeOleColor()  (int32,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetForeOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("TextBoxActiveXControl_SetForeOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10808,7 +10808,7 @@ func (instance *TextBoxActiveXControl) SetForeOleColor(value int32)  error {
 //   int32  
 func (instance *TextBoxActiveXControl) GetBackOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetBackOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("TextBoxActiveXControl_GetBackOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10824,7 +10824,7 @@ func (instance *TextBoxActiveXControl) GetBackOleColor()  (int32,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetBackOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("TextBoxActiveXControl_SetBackOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10837,7 +10837,7 @@ func (instance *TextBoxActiveXControl) SetBackOleColor(value int32)  error {
 //   bool  
 func (instance *TextBoxActiveXControl) IsVisible()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_IsVisible( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextBoxActiveXControl_IsVisible"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10853,7 +10853,7 @@ func (instance *TextBoxActiveXControl) IsVisible()  (bool,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetIsVisible(value bool)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextBoxActiveXControl_SetIsVisible"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10866,7 +10866,7 @@ func (instance *TextBoxActiveXControl) SetIsVisible(value bool)  error {
 //   bool  
 func (instance *TextBoxActiveXControl) GetShadow()  (bool,  error)  {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_GetShadow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextBoxActiveXControl_GetShadow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10882,7 +10882,7 @@ func (instance *TextBoxActiveXControl) GetShadow()  (bool,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetShadow(value bool)  error {
 	
-	CGoReturnPtr := C.TextBoxActiveXControl_SetShadow( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextBoxActiveXControl_SetShadow"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10926,7 +10926,7 @@ func NewToggleButtonActiveXControl(src *ActiveXControl) ( *ToggleButtonActiveXCo
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_ToggleButtonActiveXControl(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHV(C.CString("New_ToggleButtonActiveXControl"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		togglebuttonactivexcontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(togglebuttonactivexcontrol, DeleteToggleButtonActiveXControl)
@@ -10943,7 +10943,7 @@ func NewToggleButtonActiveXControl(src *ActiveXControl) ( *ToggleButtonActiveXCo
 //   bool  
 func (instance *ToggleButtonActiveXControl) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ToggleButtonActiveXControl_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10957,7 +10957,7 @@ func (instance *ToggleButtonActiveXControl) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ToggleButtonActiveXControl) GetType()  (ControlType,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHU(C.CString("ToggleButtonActiveXControl_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10974,7 +10974,7 @@ func (instance *ToggleButtonActiveXControl) GetType()  (ControlType,  error)  {
 //   string  
 func (instance *ToggleButtonActiveXControl) GetCaption()  (string,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetCaption( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ToggleButtonActiveXControl_GetCaption"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -10990,7 +10990,7 @@ func (instance *ToggleButtonActiveXControl) GetCaption()  (string,  error)  {
 //   void  
 func (instance *ToggleButtonActiveXControl) SetCaption(value string)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetCaption( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ToggleButtonActiveXControl_SetCaption"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11003,7 +11003,7 @@ func (instance *ToggleButtonActiveXControl) SetCaption(value string)  error {
 //   int32  
 func (instance *ToggleButtonActiveXControl) GetPicturePosition()  (ControlPicturePositionType,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetPicturePosition( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHY(C.CString("ToggleButtonActiveXControl_GetPicturePosition"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11022,7 +11022,7 @@ func (instance *ToggleButtonActiveXControl) GetPicturePosition()  (ControlPictur
 //   void  
 func (instance *ToggleButtonActiveXControl) SetPicturePosition(value ControlPicturePositionType)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetPicturePosition( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIA(C.CString("ToggleButtonActiveXControl_SetPicturePosition"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11035,7 +11035,7 @@ func (instance *ToggleButtonActiveXControl) SetPicturePosition(value ControlPict
 //   int32  
 func (instance *ToggleButtonActiveXControl) GetSpecialEffect()  (ControlSpecialEffectType,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetSpecialEffect( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIB(C.CString("ToggleButtonActiveXControl_GetSpecialEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11054,7 +11054,7 @@ func (instance *ToggleButtonActiveXControl) GetSpecialEffect()  (ControlSpecialE
 //   void  
 func (instance *ToggleButtonActiveXControl) SetSpecialEffect(value ControlSpecialEffectType)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetSpecialEffect( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIC(C.CString("ToggleButtonActiveXControl_SetSpecialEffect"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11067,7 +11067,7 @@ func (instance *ToggleButtonActiveXControl) SetSpecialEffect(value ControlSpecia
 //   []byte  
 func (instance *ToggleButtonActiveXControl) GetPicture()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetPicture( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("ToggleButtonActiveXControl_GetPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -11084,7 +11084,7 @@ func (instance *ToggleButtonActiveXControl) GetPicture()  ([]byte,  error)  {
 //   void  
 func (instance *ToggleButtonActiveXControl) SetPicture(value []byte)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetPicture( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("ToggleButtonActiveXControl_SetPicture"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11097,7 +11097,7 @@ func (instance *ToggleButtonActiveXControl) SetPicture(value []byte)  error {
 //   byte  
 func (instance *ToggleButtonActiveXControl) GetAccelerator()  (byte,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetAccelerator( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPI(C.CString("ToggleButtonActiveXControl_GetAccelerator"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11113,7 +11113,7 @@ func (instance *ToggleButtonActiveXControl) GetAccelerator()  (byte,  error)  {
 //   void  
 func (instance *ToggleButtonActiveXControl) SetAccelerator(value byte)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetAccelerator( instance.ptr, C.char(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZSA(C.CString("ToggleButtonActiveXControl_SetAccelerator"), instance.ptr, C.char(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11126,7 +11126,7 @@ func (instance *ToggleButtonActiveXControl) SetAccelerator(value byte)  error {
 //   int32  
 func (instance *ToggleButtonActiveXControl) GetValue()  (CheckValueType,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetValue( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAID(C.CString("ToggleButtonActiveXControl_GetValue"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11145,7 +11145,7 @@ func (instance *ToggleButtonActiveXControl) GetValue()  (CheckValueType,  error)
 //   void  
 func (instance *ToggleButtonActiveXControl) SetValue(value CheckValueType)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetValue( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIE(C.CString("ToggleButtonActiveXControl_SetValue"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11158,7 +11158,7 @@ func (instance *ToggleButtonActiveXControl) SetValue(value CheckValueType)  erro
 //   bool  
 func (instance *ToggleButtonActiveXControl) IsTripleState()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_IsTripleState( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ToggleButtonActiveXControl_IsTripleState"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -11174,7 +11174,7 @@ func (instance *ToggleButtonActiveXControl) IsTripleState()  (bool,  error)  {
 //   void  
 func (instance *ToggleButtonActiveXControl) SetIsTripleState(value bool)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetIsTripleState( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ToggleButtonActiveXControl_SetIsTripleState"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11187,7 +11187,7 @@ func (instance *ToggleButtonActiveXControl) SetIsTripleState(value bool)  error 
 //   bool  
 func (instance *ToggleButtonActiveXControl) IsEnabled()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_IsEnabled( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ToggleButtonActiveXControl_IsEnabled"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -11203,7 +11203,7 @@ func (instance *ToggleButtonActiveXControl) IsEnabled()  (bool,  error)  {
 //   void  
 func (instance *ToggleButtonActiveXControl) SetIsEnabled(value bool)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetIsEnabled( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ToggleButtonActiveXControl_SetIsEnabled"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11216,7 +11216,7 @@ func (instance *ToggleButtonActiveXControl) SetIsEnabled(value bool)  error {
 //   bool  
 func (instance *ToggleButtonActiveXControl) IsLocked()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_IsLocked( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ToggleButtonActiveXControl_IsLocked"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -11232,7 +11232,7 @@ func (instance *ToggleButtonActiveXControl) IsLocked()  (bool,  error)  {
 //   void  
 func (instance *ToggleButtonActiveXControl) SetIsLocked(value bool)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetIsLocked( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ToggleButtonActiveXControl_SetIsLocked"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11245,7 +11245,7 @@ func (instance *ToggleButtonActiveXControl) SetIsLocked(value bool)  error {
 //   bool  
 func (instance *ToggleButtonActiveXControl) IsTransparent()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_IsTransparent( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ToggleButtonActiveXControl_IsTransparent"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -11261,7 +11261,7 @@ func (instance *ToggleButtonActiveXControl) IsTransparent()  (bool,  error)  {
 //   void  
 func (instance *ToggleButtonActiveXControl) SetIsTransparent(value bool)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetIsTransparent( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ToggleButtonActiveXControl_SetIsTransparent"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11274,7 +11274,7 @@ func (instance *ToggleButtonActiveXControl) SetIsTransparent(value bool)  error 
 //   int32  
 func (instance *ToggleButtonActiveXControl) GetIMEMode()  (InputMethodEditorMode,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetIMEMode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHQ(C.CString("ToggleButtonActiveXControl_GetIMEMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11293,7 +11293,7 @@ func (instance *ToggleButtonActiveXControl) GetIMEMode()  (InputMethodEditorMode
 //   void  
 func (instance *ToggleButtonActiveXControl) SetIMEMode(value InputMethodEditorMode)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetIMEMode( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHR(C.CString("ToggleButtonActiveXControl_SetIMEMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11306,7 +11306,7 @@ func (instance *ToggleButtonActiveXControl) SetIMEMode(value InputMethodEditorMo
 //   Font  
 func (instance *ToggleButtonActiveXControl) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("ToggleButtonActiveXControl_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -11322,7 +11322,7 @@ func (instance *ToggleButtonActiveXControl) GetFont()  (*Font,  error)  {
 //   int32  
 func (instance *ToggleButtonActiveXControl) GetTextAlign()  (TextAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetTextAlign( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("ToggleButtonActiveXControl_GetTextAlign"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11341,7 +11341,7 @@ func (instance *ToggleButtonActiveXControl) GetTextAlign()  (TextAlignmentType, 
 //   void  
 func (instance *ToggleButtonActiveXControl) SetTextAlign(value TextAlignmentType)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetTextAlign( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("ToggleButtonActiveXControl_SetTextAlign"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11354,7 +11354,7 @@ func (instance *ToggleButtonActiveXControl) SetTextAlign(value TextAlignmentType
 //   []byte  
 func (instance *ToggleButtonActiveXControl) GetData()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("ToggleButtonActiveXControl_GetData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -11369,7 +11369,7 @@ func (instance *ToggleButtonActiveXControl) GetData()  ([]byte,  error)  {
 //   bool  
 func (instance *ToggleButtonActiveXControl) IsAutoSize()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_IsAutoSize( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ToggleButtonActiveXControl_IsAutoSize"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -11385,7 +11385,7 @@ func (instance *ToggleButtonActiveXControl) IsAutoSize()  (bool,  error)  {
 //   void  
 func (instance *ToggleButtonActiveXControl) SetIsAutoSize(value bool)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ToggleButtonActiveXControl_SetIsAutoSize"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11398,7 +11398,7 @@ func (instance *ToggleButtonActiveXControl) SetIsAutoSize(value bool)  error {
 //   Workbook  
 func (instance *ToggleButtonActiveXControl) GetWorkbook()  (*Workbook,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetWorkbook( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBO(C.CString("ToggleButtonActiveXControl_GetWorkbook"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -11414,7 +11414,7 @@ func (instance *ToggleButtonActiveXControl) GetWorkbook()  (*Workbook,  error)  
 //   []byte  
 func (instance *ToggleButtonActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetMouseIcon( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("ToggleButtonActiveXControl_GetMouseIcon"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -11431,7 +11431,7 @@ func (instance *ToggleButtonActiveXControl) GetMouseIcon()  ([]byte,  error)  {
 //   void  
 func (instance *ToggleButtonActiveXControl) SetMouseIcon(value []byte)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("ToggleButtonActiveXControl_SetMouseIcon"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11444,7 +11444,7 @@ func (instance *ToggleButtonActiveXControl) SetMouseIcon(value []byte)  error {
 //   int32  
 func (instance *ToggleButtonActiveXControl) GetMousePointer()  (ControlMousePointerType,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetMousePointer( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHS(C.CString("ToggleButtonActiveXControl_GetMousePointer"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11463,7 +11463,7 @@ func (instance *ToggleButtonActiveXControl) GetMousePointer()  (ControlMousePoin
 //   void  
 func (instance *ToggleButtonActiveXControl) SetMousePointer(value ControlMousePointerType)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHT(C.CString("ToggleButtonActiveXControl_SetMousePointer"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11476,7 +11476,7 @@ func (instance *ToggleButtonActiveXControl) SetMousePointer(value ControlMousePo
 //   string  
 func (instance *ToggleButtonActiveXControl) GetLinkedCell()  (string,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetLinkedCell( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ToggleButtonActiveXControl_GetLinkedCell"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -11492,7 +11492,7 @@ func (instance *ToggleButtonActiveXControl) GetLinkedCell()  (string,  error)  {
 //   void  
 func (instance *ToggleButtonActiveXControl) SetLinkedCell(value string)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetLinkedCell( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ToggleButtonActiveXControl_SetLinkedCell"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11505,7 +11505,7 @@ func (instance *ToggleButtonActiveXControl) SetLinkedCell(value string)  error {
 //   string  
 func (instance *ToggleButtonActiveXControl) GetListFillRange()  (string,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetListFillRange( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ToggleButtonActiveXControl_GetListFillRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -11521,7 +11521,7 @@ func (instance *ToggleButtonActiveXControl) GetListFillRange()  (string,  error)
 //   void  
 func (instance *ToggleButtonActiveXControl) SetListFillRange(value string)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetListFillRange( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ToggleButtonActiveXControl_SetListFillRange"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11534,7 +11534,7 @@ func (instance *ToggleButtonActiveXControl) SetListFillRange(value string)  erro
 //   float64  
 func (instance *ToggleButtonActiveXControl) GetWidth()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetWidth( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("ToggleButtonActiveXControl_GetWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11550,7 +11550,7 @@ func (instance *ToggleButtonActiveXControl) GetWidth()  (float64,  error)  {
 //   void  
 func (instance *ToggleButtonActiveXControl) SetWidth(value float64)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetWidth( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("ToggleButtonActiveXControl_SetWidth"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11563,7 +11563,7 @@ func (instance *ToggleButtonActiveXControl) SetWidth(value float64)  error {
 //   float64  
 func (instance *ToggleButtonActiveXControl) GetHeight()  (float64,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetHeight( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("ToggleButtonActiveXControl_GetHeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11579,7 +11579,7 @@ func (instance *ToggleButtonActiveXControl) GetHeight()  (float64,  error)  {
 //   void  
 func (instance *ToggleButtonActiveXControl) SetHeight(value float64)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetHeight( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("ToggleButtonActiveXControl_SetHeight"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11592,7 +11592,7 @@ func (instance *ToggleButtonActiveXControl) SetHeight(value float64)  error {
 //   int32  
 func (instance *ToggleButtonActiveXControl) GetForeOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetForeOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ToggleButtonActiveXControl_GetForeOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11608,7 +11608,7 @@ func (instance *ToggleButtonActiveXControl) GetForeOleColor()  (int32,  error)  
 //   void  
 func (instance *ToggleButtonActiveXControl) SetForeOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetForeOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ToggleButtonActiveXControl_SetForeOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11621,7 +11621,7 @@ func (instance *ToggleButtonActiveXControl) SetForeOleColor(value int32)  error 
 //   int32  
 func (instance *ToggleButtonActiveXControl) GetBackOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetBackOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("ToggleButtonActiveXControl_GetBackOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11637,7 +11637,7 @@ func (instance *ToggleButtonActiveXControl) GetBackOleColor()  (int32,  error)  
 //   void  
 func (instance *ToggleButtonActiveXControl) SetBackOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetBackOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ToggleButtonActiveXControl_SetBackOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11650,7 +11650,7 @@ func (instance *ToggleButtonActiveXControl) SetBackOleColor(value int32)  error 
 //   bool  
 func (instance *ToggleButtonActiveXControl) IsVisible()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_IsVisible( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ToggleButtonActiveXControl_IsVisible"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -11666,7 +11666,7 @@ func (instance *ToggleButtonActiveXControl) IsVisible()  (bool,  error)  {
 //   void  
 func (instance *ToggleButtonActiveXControl) SetIsVisible(value bool)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetIsVisible( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ToggleButtonActiveXControl_SetIsVisible"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11679,7 +11679,7 @@ func (instance *ToggleButtonActiveXControl) SetIsVisible(value bool)  error {
 //   bool  
 func (instance *ToggleButtonActiveXControl) GetShadow()  (bool,  error)  {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_GetShadow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ToggleButtonActiveXControl_GetShadow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -11695,7 +11695,7 @@ func (instance *ToggleButtonActiveXControl) GetShadow()  (bool,  error)  {
 //   void  
 func (instance *ToggleButtonActiveXControl) SetShadow(value bool)  error {
 	
-	CGoReturnPtr := C.ToggleButtonActiveXControl_SetShadow( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ToggleButtonActiveXControl_SetShadow"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11739,7 +11739,7 @@ func NewUnknownControl(src *ActiveXControl) ( *UnknownControl, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.New_UnknownControl(src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHV(C.CString("New_UnknownControl"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		unknowncontrol.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(unknowncontrol, DeleteUnknownControl)
@@ -11756,7 +11756,7 @@ func NewUnknownControl(src *ActiveXControl) ( *UnknownControl, error) {
 //   bool  
 func (instance *UnknownControl) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("UnknownControl_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -11772,7 +11772,7 @@ func (instance *UnknownControl) IsNull()  (bool,  error)  {
 //   []byte  
 func (instance *UnknownControl) GetRelationshipData(relid string)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_GetRelationshipData( instance.ptr, C.CString(relid))
+	CGoReturnPtr := C.CellsGoFunctoinZABP(C.CString("UnknownControl_GetRelationshipData"), instance.ptr, C.CString(relid))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -11787,7 +11787,7 @@ func (instance *UnknownControl) GetRelationshipData(relid string)  ([]byte,  err
 //   []byte  
 func (instance *UnknownControl) GetData()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_GetData( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("UnknownControl_GetData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -11802,7 +11802,7 @@ func (instance *UnknownControl) GetData()  ([]byte,  error)  {
 //   int32  
 func (instance *UnknownControl) GetType()  (ControlType,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_GetType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHU(C.CString("UnknownControl_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11819,7 +11819,7 @@ func (instance *UnknownControl) GetType()  (ControlType,  error)  {
 //   bool  
 func (instance *UnknownControl) IsEnabled()  (bool,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_IsEnabled( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("UnknownControl_IsEnabled"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -11835,7 +11835,7 @@ func (instance *UnknownControl) IsEnabled()  (bool,  error)  {
 //   void  
 func (instance *UnknownControl) SetIsEnabled(value bool)  error {
 	
-	CGoReturnPtr := C.UnknownControl_SetIsEnabled( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("UnknownControl_SetIsEnabled"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11848,7 +11848,7 @@ func (instance *UnknownControl) SetIsEnabled(value bool)  error {
 //   bool  
 func (instance *UnknownControl) IsLocked()  (bool,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_IsLocked( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("UnknownControl_IsLocked"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -11864,7 +11864,7 @@ func (instance *UnknownControl) IsLocked()  (bool,  error)  {
 //   void  
 func (instance *UnknownControl) SetIsLocked(value bool)  error {
 	
-	CGoReturnPtr := C.UnknownControl_SetIsLocked( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("UnknownControl_SetIsLocked"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11877,7 +11877,7 @@ func (instance *UnknownControl) SetIsLocked(value bool)  error {
 //   bool  
 func (instance *UnknownControl) IsTransparent()  (bool,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_IsTransparent( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("UnknownControl_IsTransparent"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -11893,7 +11893,7 @@ func (instance *UnknownControl) IsTransparent()  (bool,  error)  {
 //   void  
 func (instance *UnknownControl) SetIsTransparent(value bool)  error {
 	
-	CGoReturnPtr := C.UnknownControl_SetIsTransparent( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("UnknownControl_SetIsTransparent"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11906,7 +11906,7 @@ func (instance *UnknownControl) SetIsTransparent(value bool)  error {
 //   int32  
 func (instance *UnknownControl) GetIMEMode()  (InputMethodEditorMode,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_GetIMEMode( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHQ(C.CString("UnknownControl_GetIMEMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11925,7 +11925,7 @@ func (instance *UnknownControl) GetIMEMode()  (InputMethodEditorMode,  error)  {
 //   void  
 func (instance *UnknownControl) SetIMEMode(value InputMethodEditorMode)  error {
 	
-	CGoReturnPtr := C.UnknownControl_SetIMEMode( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHR(C.CString("UnknownControl_SetIMEMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11938,7 +11938,7 @@ func (instance *UnknownControl) SetIMEMode(value InputMethodEditorMode)  error {
 //   Font  
 func (instance *UnknownControl) GetFont()  (*Font,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_GetFont( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("UnknownControl_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -11954,7 +11954,7 @@ func (instance *UnknownControl) GetFont()  (*Font,  error)  {
 //   int32  
 func (instance *UnknownControl) GetTextAlign()  (TextAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_GetTextAlign( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("UnknownControl_GetTextAlign"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11973,7 +11973,7 @@ func (instance *UnknownControl) GetTextAlign()  (TextAlignmentType,  error)  {
 //   void  
 func (instance *UnknownControl) SetTextAlign(value TextAlignmentType)  error {
 	
-	CGoReturnPtr := C.UnknownControl_SetTextAlign( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("UnknownControl_SetTextAlign"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11986,7 +11986,7 @@ func (instance *UnknownControl) SetTextAlign(value TextAlignmentType)  error {
 //   bool  
 func (instance *UnknownControl) IsAutoSize()  (bool,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_IsAutoSize( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("UnknownControl_IsAutoSize"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -12002,7 +12002,7 @@ func (instance *UnknownControl) IsAutoSize()  (bool,  error)  {
 //   void  
 func (instance *UnknownControl) SetIsAutoSize(value bool)  error {
 	
-	CGoReturnPtr := C.UnknownControl_SetIsAutoSize( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("UnknownControl_SetIsAutoSize"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12015,7 +12015,7 @@ func (instance *UnknownControl) SetIsAutoSize(value bool)  error {
 //   Workbook  
 func (instance *UnknownControl) GetWorkbook()  (*Workbook,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_GetWorkbook( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBO(C.CString("UnknownControl_GetWorkbook"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -12031,7 +12031,7 @@ func (instance *UnknownControl) GetWorkbook()  (*Workbook,  error)  {
 //   []byte  
 func (instance *UnknownControl) GetMouseIcon()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_GetMouseIcon( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("UnknownControl_GetMouseIcon"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -12048,7 +12048,7 @@ func (instance *UnknownControl) GetMouseIcon()  ([]byte,  error)  {
 //   void  
 func (instance *UnknownControl) SetMouseIcon(value []byte)  error {
 	
-	CGoReturnPtr := C.UnknownControl_SetMouseIcon( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("UnknownControl_SetMouseIcon"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12061,7 +12061,7 @@ func (instance *UnknownControl) SetMouseIcon(value []byte)  error {
 //   int32  
 func (instance *UnknownControl) GetMousePointer()  (ControlMousePointerType,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_GetMousePointer( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHS(C.CString("UnknownControl_GetMousePointer"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -12080,7 +12080,7 @@ func (instance *UnknownControl) GetMousePointer()  (ControlMousePointerType,  er
 //   void  
 func (instance *UnknownControl) SetMousePointer(value ControlMousePointerType)  error {
 	
-	CGoReturnPtr := C.UnknownControl_SetMousePointer( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAHT(C.CString("UnknownControl_SetMousePointer"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12093,7 +12093,7 @@ func (instance *UnknownControl) SetMousePointer(value ControlMousePointerType)  
 //   string  
 func (instance *UnknownControl) GetLinkedCell()  (string,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_GetLinkedCell( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("UnknownControl_GetLinkedCell"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -12109,7 +12109,7 @@ func (instance *UnknownControl) GetLinkedCell()  (string,  error)  {
 //   void  
 func (instance *UnknownControl) SetLinkedCell(value string)  error {
 	
-	CGoReturnPtr := C.UnknownControl_SetLinkedCell( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("UnknownControl_SetLinkedCell"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12122,7 +12122,7 @@ func (instance *UnknownControl) SetLinkedCell(value string)  error {
 //   string  
 func (instance *UnknownControl) GetListFillRange()  (string,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_GetListFillRange( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("UnknownControl_GetListFillRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -12138,7 +12138,7 @@ func (instance *UnknownControl) GetListFillRange()  (string,  error)  {
 //   void  
 func (instance *UnknownControl) SetListFillRange(value string)  error {
 	
-	CGoReturnPtr := C.UnknownControl_SetListFillRange( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("UnknownControl_SetListFillRange"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12151,7 +12151,7 @@ func (instance *UnknownControl) SetListFillRange(value string)  error {
 //   float64  
 func (instance *UnknownControl) GetWidth()  (float64,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_GetWidth( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("UnknownControl_GetWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -12167,7 +12167,7 @@ func (instance *UnknownControl) GetWidth()  (float64,  error)  {
 //   void  
 func (instance *UnknownControl) SetWidth(value float64)  error {
 	
-	CGoReturnPtr := C.UnknownControl_SetWidth( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("UnknownControl_SetWidth"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12180,7 +12180,7 @@ func (instance *UnknownControl) SetWidth(value float64)  error {
 //   float64  
 func (instance *UnknownControl) GetHeight()  (float64,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_GetHeight( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("UnknownControl_GetHeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -12196,7 +12196,7 @@ func (instance *UnknownControl) GetHeight()  (float64,  error)  {
 //   void  
 func (instance *UnknownControl) SetHeight(value float64)  error {
 	
-	CGoReturnPtr := C.UnknownControl_SetHeight( instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("UnknownControl_SetHeight"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12209,7 +12209,7 @@ func (instance *UnknownControl) SetHeight(value float64)  error {
 //   int32  
 func (instance *UnknownControl) GetForeOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_GetForeOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("UnknownControl_GetForeOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -12225,7 +12225,7 @@ func (instance *UnknownControl) GetForeOleColor()  (int32,  error)  {
 //   void  
 func (instance *UnknownControl) SetForeOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.UnknownControl_SetForeOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("UnknownControl_SetForeOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12238,7 +12238,7 @@ func (instance *UnknownControl) SetForeOleColor(value int32)  error {
 //   int32  
 func (instance *UnknownControl) GetBackOleColor()  (int32,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_GetBackOleColor( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("UnknownControl_GetBackOleColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -12254,7 +12254,7 @@ func (instance *UnknownControl) GetBackOleColor()  (int32,  error)  {
 //   void  
 func (instance *UnknownControl) SetBackOleColor(value int32)  error {
 	
-	CGoReturnPtr := C.UnknownControl_SetBackOleColor( instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("UnknownControl_SetBackOleColor"), instance.ptr, C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12267,7 +12267,7 @@ func (instance *UnknownControl) SetBackOleColor(value int32)  error {
 //   bool  
 func (instance *UnknownControl) IsVisible()  (bool,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_IsVisible( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("UnknownControl_IsVisible"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -12283,7 +12283,7 @@ func (instance *UnknownControl) IsVisible()  (bool,  error)  {
 //   void  
 func (instance *UnknownControl) SetIsVisible(value bool)  error {
 	
-	CGoReturnPtr := C.UnknownControl_SetIsVisible( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("UnknownControl_SetIsVisible"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12296,7 +12296,7 @@ func (instance *UnknownControl) SetIsVisible(value bool)  error {
 //   bool  
 func (instance *UnknownControl) GetShadow()  (bool,  error)  {
 	
-	CGoReturnPtr := C.UnknownControl_GetShadow( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("UnknownControl_GetShadow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -12312,7 +12312,7 @@ func (instance *UnknownControl) GetShadow()  (bool,  error)  {
 //   void  
 func (instance *UnknownControl) SetShadow(value bool)  error {
 	
-	CGoReturnPtr := C.UnknownControl_SetShadow( instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("UnknownControl_SetShadow"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

@@ -11,7 +11,7 @@ package asposecells
 // #cgo CXXFLAGS: -std=c++11
 // #cgo CFLAGS: -I.
 // #cgo LDFLAGS: -Wl,-rpath,"${SRCDIR}/lib/win_x86_64" -L"${SRCDIR}/lib/win_x86_64" -lAspose.Cells.CWrapper
-// #include <AsposeCellsCWrapper.h>
+// #include <CellsFunctionMap.h>
 import "C"
 import (
 	"fmt"  
@@ -59,7 +59,7 @@ func NewDigitalSignature_Stream_String_String_Date(rawdata []byte, password stri
 	digitalsignature := &DigitalSignature{}
 	time_signtime := C.Get_Date( C.int(signtime.Year()), C.int(signtime.Month()) , C.int(signtime.Day()) , C.int(signtime.Hour()) , C.int(signtime.Minute()) , C.int(signtime.Second())  )
 
-	CGoReturnPtr := C.New_DigitalSignature_Stream_String_String_Date(unsafe.Pointer(&rawdata[0]), C.int( len(rawdata)), C.CString(password), C.CString(comments), time_signtime)
+	CGoReturnPtr := C.CellsGoFunctoinZBGS(C.CString("New_DigitalSignature_Stream_String_String_Date"),unsafe.Pointer(&rawdata[0]), C.int( len(rawdata)), C.CString(password), C.CString(comments), time_signtime)
 	C.Delete_GetDate( time_signtime)
 
 	if CGoReturnPtr.error_no == 0 {
@@ -82,7 +82,7 @@ func NewDigitalSignature_String_String_String_Date(filename string, password str
 	digitalsignature := &DigitalSignature{}
 	time_signtime := C.Get_Date( C.int(signtime.Year()), C.int(signtime.Month()) , C.int(signtime.Day()) , C.int(signtime.Hour()) , C.int(signtime.Minute()) , C.int(signtime.Second())  )
 
-	CGoReturnPtr := C.New_DigitalSignature_String_String_String_Date(C.CString(filename), C.CString(password), C.CString(comments), time_signtime)
+	CGoReturnPtr := C.CellsGoFunctoinZBGT(C.CString("New_DigitalSignature_String_String_String_Date"),C.CString(filename), C.CString(password), C.CString(comments), time_signtime)
 	C.Delete_GetDate( time_signtime)
 
 	if CGoReturnPtr.error_no == 0 {
@@ -101,7 +101,7 @@ func NewDigitalSignature_String_String_String_Date(filename string, password str
 //   bool  
 func (instance *DigitalSignature) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DigitalSignature_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DigitalSignature_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -115,7 +115,7 @@ func (instance *DigitalSignature) IsNull()  (bool,  error)  {
 //   string  
 func (instance *DigitalSignature) GetComments()  (string,  error)  {
 	
-	CGoReturnPtr := C.DigitalSignature_GetComments( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("DigitalSignature_GetComments"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -131,7 +131,7 @@ func (instance *DigitalSignature) GetComments()  (string,  error)  {
 //   void  
 func (instance *DigitalSignature) SetComments(value string)  error {
 	
-	CGoReturnPtr := C.DigitalSignature_SetComments( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("DigitalSignature_SetComments"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -144,12 +144,12 @@ func (instance *DigitalSignature) SetComments(value string)  error {
 //   Date  
 func (instance *DigitalSignature) GetSignTime()  (time.Time,  error)  {
 	
-	CGoReturnPtr := C.DigitalSignature_GetSignTime( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZCG(C.CString("DigitalSignature_GetSignTime"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  time.Unix(0, 0), err
 	}
-	result := time.Date(int( C.Date_Get_year(CGoReturnPtr.return_value).return_value ),time.Month(int( C.Date_Get_month(CGoReturnPtr.return_value).return_value)),int( C.Date_Get_day(CGoReturnPtr.return_value).return_value),int(  C.Date_Get_hour(CGoReturnPtr.return_value).return_value),int( C.Date_Get_minute(CGoReturnPtr.return_value).return_value),int(  C.Date_Get_second(CGoReturnPtr.return_value).return_value), 0, time.UTC) 
+	result := time.Date(int( C.CellsGoFunctoinZBLJ(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZBLJ(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZBLJ(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLJ(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLJ(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLJ(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
 
 	return result, nil 
 }
@@ -162,7 +162,7 @@ func (instance *DigitalSignature) SetSignTime(value time.Time)  error {
 	
 	time_value := C.Get_Date( C.int(value.Year()), C.int(value.Month()) , C.int(value.Day()) , C.int(value.Hour()) , C.int(value.Minute()) , C.int(value.Second())  )
 
-	CGoReturnPtr := C.DigitalSignature_SetSignTime( instance.ptr, time_value)
+	CGoReturnPtr := C.CellsGoFunctoinZZCF(C.CString("DigitalSignature_SetSignTime"), instance.ptr, time_value)
 	C.Delete_GetDate( time_value)
 
 	if CGoReturnPtr.error_no != 0 {
@@ -185,7 +185,7 @@ func (instance *DigitalSignature) GetId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.DigitalSignature_GetId( instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("DigitalSignature_GetId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -206,7 +206,7 @@ func (instance *DigitalSignature) SetId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.DigitalSignature_SetId( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("DigitalSignature_SetId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -220,7 +220,7 @@ func (instance *DigitalSignature) SetId(value *UUID)  error {
 //   string  
 func (instance *DigitalSignature) GetText()  (string,  error)  {
 	
-	CGoReturnPtr := C.DigitalSignature_GetText( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("DigitalSignature_GetText"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -237,7 +237,7 @@ func (instance *DigitalSignature) GetText()  (string,  error)  {
 //   void  
 func (instance *DigitalSignature) SetText(value string)  error {
 	
-	CGoReturnPtr := C.DigitalSignature_SetText( instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("DigitalSignature_SetText"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -251,7 +251,7 @@ func (instance *DigitalSignature) SetText(value string)  error {
 //   []byte  
 func (instance *DigitalSignature) GetImage()  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.DigitalSignature_GetImage( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZEB(C.CString("DigitalSignature_GetImage"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -269,7 +269,7 @@ func (instance *DigitalSignature) GetImage()  ([]byte,  error)  {
 //   void  
 func (instance *DigitalSignature) SetImage(value []byte)  error {
 	
-	CGoReturnPtr := C.DigitalSignature_SetImage( instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZEC(C.CString("DigitalSignature_SetImage"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -290,7 +290,7 @@ func (instance *DigitalSignature) GetProviderId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.DigitalSignature_GetProviderId( instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("DigitalSignature_GetProviderId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -311,7 +311,7 @@ func (instance *DigitalSignature) SetProviderId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.DigitalSignature_SetProviderId( instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("DigitalSignature_SetProviderId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -325,7 +325,7 @@ func (instance *DigitalSignature) SetProviderId(value *UUID)  error {
 //   bool  
 func (instance *DigitalSignature) IsValid()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DigitalSignature_IsValid( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DigitalSignature_IsValid"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -340,7 +340,7 @@ func (instance *DigitalSignature) IsValid()  (bool,  error)  {
 //   int32  
 func (instance *DigitalSignature) GetXAdESType()  (XAdESType,  error)  {
 	
-	CGoReturnPtr := C.DigitalSignature_GetXAdESType( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGU(C.CString("DigitalSignature_GetXAdESType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -360,7 +360,7 @@ func (instance *DigitalSignature) GetXAdESType()  (XAdESType,  error)  {
 //   void  
 func (instance *DigitalSignature) SetXAdESType(value XAdESType)  error {
 	
-	CGoReturnPtr := C.DigitalSignature_SetXAdESType( instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZBGV(C.CString("DigitalSignature_SetXAdESType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -373,7 +373,7 @@ func (instance *DigitalSignature) SetXAdESType(value XAdESType)  error {
 
 func DeleteDigitalSignature(digitalsignature *DigitalSignature){
 	runtime.SetFinalizer(digitalsignature, nil)
-	C.Delete_DigitalSignature(digitalsignature.ptr)
+	C.Delete_CObject(C.CString("Delete_DigitalSignature"),digitalsignature.ptr)
 	digitalsignature.ptr = nil
 }
 
@@ -387,7 +387,7 @@ type DigitalSignatureCollection struct {
 // The constructor of DigitalSignatureCollection.
 func NewDigitalSignatureCollection() ( *DigitalSignatureCollection, error) {
 	digitalsignaturecollection := &DigitalSignatureCollection{}
-	CGoReturnPtr := C.New_DigitalSignatureCollection()
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_DigitalSignatureCollection"),)
 	if CGoReturnPtr.error_no == 0 {
 		digitalsignaturecollection.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(digitalsignaturecollection, DeleteDigitalSignatureCollection)
@@ -404,7 +404,7 @@ func NewDigitalSignatureCollection() ( *DigitalSignatureCollection, error) {
 //   bool  
 func (instance *DigitalSignatureCollection) IsNull()  (bool,  error)  {
 	
-	CGoReturnPtr := C.DigitalSignatureCollection_IsNull( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DigitalSignatureCollection_IsNull"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -425,7 +425,7 @@ func (instance *DigitalSignatureCollection) Add(digitalsignature *DigitalSignatu
 	  digitalsignature_ptr =digitalsignature.ptr
 	}
 
-	CGoReturnPtr := C.DigitalSignatureCollection_Add( instance.ptr, digitalsignature_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGW(C.CString("DigitalSignatureCollection_Add"), instance.ptr, digitalsignature_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -439,7 +439,7 @@ func (instance *DigitalSignatureCollection) Add(digitalsignature *DigitalSignatu
 //   unsafe.Pointer  
 func (instance *DigitalSignatureCollection) GetEnumerator()  (*DigitalSignatureEnumerator,  error)  {
 	
-	CGoReturnPtr := C.DigitalSignatureCollection_GetEnumerator( instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGX(C.CString("DigitalSignatureCollection_GetEnumerator"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -456,6 +456,6 @@ func (instance *DigitalSignatureCollection) GetEnumerator()  (*DigitalSignatureE
 
 func DeleteDigitalSignatureCollection(digitalsignaturecollection *DigitalSignatureCollection){
 	runtime.SetFinalizer(digitalsignaturecollection, nil)
-	C.Delete_DigitalSignatureCollection(digitalsignaturecollection.ptr)
+	C.Delete_CObject(C.CString("Delete_DigitalSignatureCollection"),digitalsignaturecollection.ptr)
 	digitalsignaturecollection.ptr = nil
 }
