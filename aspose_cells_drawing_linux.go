@@ -6962,7 +6962,7 @@ func (instance *ArcShape) ToShape() *Shape {
 
 func DeleteArcShape(arcshape *ArcShape){
 	runtime.SetFinalizer(arcshape, nil)
-	C.Delete_ArcShape(arcshape.ptr)
+	C.Delete_CObject(C.CString("Delete_ArcShape"),arcshape.ptr)
 	arcshape.ptr = nil
 }
 
@@ -7161,7 +7161,7 @@ func (instance *Area) SetTransparency(value float64)  error {
 
 func DeleteArea(area *Area){
 	runtime.SetFinalizer(area, nil)
-	C.Delete_Area(area.ptr)
+	C.Delete_CObject(C.CString("Delete_Area"),area.ptr)
 	area.ptr = nil
 }
 
@@ -7192,7 +7192,7 @@ func (instance *AutomaticFill) IsNull()  (bool,  error)  {
 
 func DeleteAutomaticFill(automaticfill *AutomaticFill){
 	runtime.SetFinalizer(automaticfill, nil)
-	C.Delete_AutomaticFill(automaticfill.ptr)
+	C.Delete_CObject(C.CString("Delete_AutomaticFill"),automaticfill.ptr)
 	automaticfill.ptr = nil
 }
 
@@ -7223,7 +7223,7 @@ func (instance *BaseShapeGuide) IsNull()  (bool,  error)  {
 
 func DeleteBaseShapeGuide(baseshapeguide *BaseShapeGuide){
 	runtime.SetFinalizer(baseshapeguide, nil)
-	C.Delete_BaseShapeGuide(baseshapeguide.ptr)
+	C.Delete_CObject(C.CString("Delete_BaseShapeGuide"),baseshapeguide.ptr)
 	baseshapeguide.ptr = nil
 }
 
@@ -7348,7 +7348,7 @@ func (instance *Bevel) SetType(value BevelPresetType)  error {
 
 func DeleteBevel(bevel *Bevel){
 	runtime.SetFinalizer(bevel, nil)
-	C.Delete_Bevel(bevel.ptr)
+	C.Delete_CObject(C.CString("Delete_Bevel"),bevel.ptr)
 	bevel.ptr = nil
 }
 
@@ -10373,7 +10373,7 @@ func (instance *Button) ToShape() *Shape {
 
 func DeleteButton(button *Button){
 	runtime.SetFinalizer(button, nil)
-	C.Delete_Button(button.ptr)
+	C.Delete_CObject(C.CString("Delete_Button"),button.ptr)
 	button.ptr = nil
 }
 
@@ -13398,7 +13398,7 @@ func (instance *CellsDrawing) ToShape() *Shape {
 
 func DeleteCellsDrawing(cellsdrawing *CellsDrawing){
 	runtime.SetFinalizer(cellsdrawing, nil)
-	C.Delete_CellsDrawing(cellsdrawing.ptr)
+	C.Delete_CObject(C.CString("Delete_CellsDrawing"),cellsdrawing.ptr)
 	cellsdrawing.ptr = nil
 }
 
@@ -16440,7 +16440,7 @@ func (instance *ChartShape) ToShape() *Shape {
 
 func DeleteChartShape(chartshape *ChartShape){
 	runtime.SetFinalizer(chartshape, nil)
-	C.Delete_ChartShape(chartshape.ptr)
+	C.Delete_CObject(C.CString("Delete_ChartShape"),chartshape.ptr)
 	chartshape.ptr = nil
 }
 
@@ -19555,7 +19555,7 @@ func (instance *CheckBox) ToShape() *Shape {
 
 func DeleteCheckBox(checkbox *CheckBox){
 	runtime.SetFinalizer(checkbox, nil)
-	C.Delete_CheckBox(checkbox.ptr)
+	C.Delete_CObject(C.CString("Delete_CheckBox"),checkbox.ptr)
 	checkbox.ptr = nil
 }
 
@@ -19636,7 +19636,7 @@ func (instance *CheckBoxCollection) GetCount()  (int32,  error)  {
 
 func DeleteCheckBoxCollection(checkboxcollection *CheckBoxCollection){
 	runtime.SetFinalizer(checkboxcollection, nil)
-	C.Delete_CheckBoxCollection(checkboxcollection.ptr)
+	C.Delete_CObject(C.CString("Delete_CheckBoxCollection"),checkboxcollection.ptr)
 	checkboxcollection.ptr = nil
 }
 
@@ -19706,7 +19706,7 @@ func ColorHelper_ToOleColor(color *Color, workbook *Workbook)  (int32,  error)  
 
 func DeleteColorHelper(colorhelper *ColorHelper){
 	runtime.SetFinalizer(colorhelper, nil)
-	C.Delete_ColorHelper(colorhelper.ptr)
+	C.Delete_CObject(C.CString("Delete_ColorHelper"),colorhelper.ptr)
 	colorhelper.ptr = nil
 }
 
@@ -22850,7 +22850,7 @@ func (instance *ComboBox) ToShape() *Shape {
 
 func DeleteComboBox(combobox *ComboBox){
 	runtime.SetFinalizer(combobox, nil)
-	C.Delete_ComboBox(combobox.ptr)
+	C.Delete_CObject(C.CString("Delete_ComboBox"),combobox.ptr)
 	combobox.ptr = nil
 }
 
@@ -25891,7 +25891,7 @@ func (instance *CommentShape) ToShape() *Shape {
 
 func DeleteCommentShape(commentshape *CommentShape){
 	runtime.SetFinalizer(commentshape, nil)
-	C.Delete_CommentShape(commentshape.ptr)
+	C.Delete_CObject(C.CString("Delete_CommentShape"),commentshape.ptr)
 	commentshape.ptr = nil
 }
 
@@ -25980,7 +25980,7 @@ func (instance *CustomGeometry) ToGeometry() *Geometry {
 
 func DeleteCustomGeometry(customgeometry *CustomGeometry){
 	runtime.SetFinalizer(customgeometry, nil)
-	C.Delete_CustomGeometry(customgeometry.ptr)
+	C.Delete_CObject(C.CString("Delete_CustomGeometry"),customgeometry.ptr)
 	customgeometry.ptr = nil
 }
 
@@ -29005,7 +29005,7 @@ func (instance *CustomXmlShape) ToShape() *Shape {
 
 func DeleteCustomXmlShape(customxmlshape *CustomXmlShape){
 	runtime.SetFinalizer(customxmlshape, nil)
-	C.Delete_CustomXmlShape(customxmlshape.ptr)
+	C.Delete_CObject(C.CString("Delete_CustomXmlShape"),customxmlshape.ptr)
 	customxmlshape.ptr = nil
 }
 
@@ -32030,7 +32030,7 @@ func (instance *Dialog_Box) ToShape() *Shape {
 
 func DeleteDialog_Box(dialog_box *Dialog_Box){
 	runtime.SetFinalizer(dialog_box, nil)
-	C.Delete_Dialog_Box(dialog_box.ptr)
+	C.Delete_CObject(C.CString("Delete_Dialog_Box"),dialog_box.ptr)
 	dialog_box.ptr = nil
 }
 
@@ -32563,7 +32563,7 @@ func (instance *FillFormat) GetHashCode()  (int32,  error)  {
 
 func DeleteFillFormat(fillformat *FillFormat){
 	runtime.SetFinalizer(fillformat, nil)
-	C.Delete_FillFormat(fillformat.ptr)
+	C.Delete_CObject(C.CString("Delete_FillFormat"),fillformat.ptr)
 	fillformat.ptr = nil
 }
 
@@ -32721,7 +32721,7 @@ func (instance *Format3D) SetLightingAngle(value float64)  error {
 
 func DeleteFormat3D(format3d *Format3D){
 	runtime.SetFinalizer(format3d, nil)
-	C.Delete_Format3D(format3d.ptr)
+	C.Delete_CObject(C.CString("Delete_Format3D"),format3d.ptr)
 	format3d.ptr = nil
 }
 
@@ -32768,7 +32768,7 @@ func (instance *Geometry) GetShapeAdjustValues()  (*ShapeGuideCollection,  error
 
 func DeleteGeometry(geometry *Geometry){
 	runtime.SetFinalizer(geometry, nil)
-	C.Delete_Geometry(geometry.ptr)
+	C.Delete_CObject(C.CString("Delete_Geometry"),geometry.ptr)
 	geometry.ptr = nil
 }
 
@@ -32894,7 +32894,7 @@ func (instance *GlowEffect) SetTransparency(value float64)  error {
 
 func DeleteGlowEffect(gloweffect *GlowEffect){
 	runtime.SetFinalizer(gloweffect, nil)
-	C.Delete_GlowEffect(gloweffect.ptr)
+	C.Delete_CObject(C.CString("Delete_GlowEffect"),gloweffect.ptr)
 	gloweffect.ptr = nil
 }
 
@@ -33096,7 +33096,7 @@ func (instance *GradientFill) SetTwoColorGradient_Color_Double_Color_Double_Grad
 
 func DeleteGradientFill(gradientfill *GradientFill){
 	runtime.SetFinalizer(gradientfill, nil)
-	C.Delete_GradientFill(gradientfill.ptr)
+	C.Delete_CObject(C.CString("Delete_GradientFill"),gradientfill.ptr)
 	gradientfill.ptr = nil
 }
 
@@ -33201,7 +33201,7 @@ func (instance *GradientStop) SetTransparency(value float64)  error {
 
 func DeleteGradientStop(gradientstop *GradientStop){
 	runtime.SetFinalizer(gradientstop, nil)
-	C.Delete_GradientStop(gradientstop.ptr)
+	C.Delete_CObject(C.CString("Delete_GradientStop"),gradientstop.ptr)
 	gradientstop.ptr = nil
 }
 
@@ -33323,7 +33323,7 @@ func (instance *GradientStopCollection) GetCount()  (int32,  error)  {
 
 func DeleteGradientStopCollection(gradientstopcollection *GradientStopCollection){
 	runtime.SetFinalizer(gradientstopcollection, nil)
-	C.Delete_GradientStopCollection(gradientstopcollection.ptr)
+	C.Delete_CObject(C.CString("Delete_GradientStopCollection"),gradientstopcollection.ptr)
 	gradientstopcollection.ptr = nil
 }
 
@@ -36377,7 +36377,7 @@ func (instance *GroupBox) ToShape() *Shape {
 
 func DeleteGroupBox(groupbox *GroupBox){
 	runtime.SetFinalizer(groupbox, nil)
-	C.Delete_GroupBox(groupbox.ptr)
+	C.Delete_CObject(C.CString("Delete_GroupBox"),groupbox.ptr)
 	groupbox.ptr = nil
 }
 
@@ -36408,7 +36408,7 @@ func (instance *GroupFill) IsNull()  (bool,  error)  {
 
 func DeleteGroupFill(groupfill *GroupFill){
 	runtime.SetFinalizer(groupfill, nil)
-	C.Delete_GroupFill(groupfill.ptr)
+	C.Delete_CObject(C.CString("Delete_GroupFill"),groupfill.ptr)
 	groupfill.ptr = nil
 }
 
@@ -39485,7 +39485,7 @@ func (instance *GroupShape) ToShape() *Shape {
 
 func DeleteGroupShape(groupshape *GroupShape){
 	runtime.SetFinalizer(groupshape, nil)
-	C.Delete_GroupShape(groupshape.ptr)
+	C.Delete_CObject(C.CString("Delete_GroupShape"),groupshape.ptr)
 	groupshape.ptr = nil
 }
 
@@ -42510,7 +42510,7 @@ func (instance *Label) ToShape() *Shape {
 
 func DeleteLabel(label *Label){
 	runtime.SetFinalizer(label, nil)
-	C.Delete_Label(label.ptr)
+	C.Delete_CObject(C.CString("Delete_Label"),label.ptr)
 	label.ptr = nil
 }
 
@@ -43198,7 +43198,7 @@ func (instance *Line) GetGradientFill()  (*GradientFill,  error)  {
 
 func DeleteLine(line *Line){
 	runtime.SetFinalizer(line, nil)
-	C.Delete_Line(line.ptr)
+	C.Delete_CObject(C.CString("Delete_Line"),line.ptr)
 	line.ptr = nil
 }
 
@@ -44107,7 +44107,7 @@ func (instance *LineFormat) ToFillFormat() *FillFormat {
 
 func DeleteLineFormat(lineformat *LineFormat){
 	runtime.SetFinalizer(lineformat, nil)
-	C.Delete_LineFormat(lineformat.ptr)
+	C.Delete_CObject(C.CString("Delete_LineFormat"),lineformat.ptr)
 	lineformat.ptr = nil
 }
 
@@ -47132,7 +47132,7 @@ func (instance *LineShape) ToShape() *Shape {
 
 func DeleteLineShape(lineshape *LineShape){
 	runtime.SetFinalizer(lineshape, nil)
-	C.Delete_LineShape(lineshape.ptr)
+	C.Delete_CObject(C.CString("Delete_LineShape"),lineshape.ptr)
 	lineshape.ptr = nil
 }
 
@@ -50348,7 +50348,7 @@ func (instance *ListBox) ToShape() *Shape {
 
 func DeleteListBox(listbox *ListBox){
 	runtime.SetFinalizer(listbox, nil)
-	C.Delete_ListBox(listbox.ptr)
+	C.Delete_CObject(C.CString("Delete_ListBox"),listbox.ptr)
 	listbox.ptr = nil
 }
 
@@ -50562,7 +50562,7 @@ func (instance *MsoFillFormat) SetIsVisible(value bool)  error {
 
 func DeleteMsoFillFormat(msofillformat *MsoFillFormat){
 	runtime.SetFinalizer(msofillformat, nil)
-	C.Delete_MsoFillFormat(msofillformat.ptr)
+	C.Delete_CObject(C.CString("Delete_MsoFillFormat"),msofillformat.ptr)
 	msofillformat.ptr = nil
 }
 
@@ -50776,7 +50776,7 @@ func (instance *MsoFillFormatHelper) SetIsVisible(value bool)  error {
 
 func DeleteMsoFillFormatHelper(msofillformathelper *MsoFillFormatHelper){
 	runtime.SetFinalizer(msofillformathelper, nil)
-	C.Delete_MsoFillFormatHelper(msofillformathelper.ptr)
+	C.Delete_CObject(C.CString("Delete_MsoFillFormatHelper"),msofillformathelper.ptr)
 	msofillformathelper.ptr = nil
 }
 
@@ -51283,7 +51283,7 @@ func (instance *MsoFormatPicture) Equals(obj *Object)  (bool,  error)  {
 
 func DeleteMsoFormatPicture(msoformatpicture *MsoFormatPicture){
 	runtime.SetFinalizer(msoformatpicture, nil)
-	C.Delete_MsoFormatPicture(msoformatpicture.ptr)
+	C.Delete_CObject(C.CString("Delete_MsoFormatPicture"),msoformatpicture.ptr)
 	msoformatpicture.ptr = nil
 }
 
@@ -51525,7 +51525,7 @@ func (instance *MsoLineFormat) SetWeight(value float64)  error {
 
 func DeleteMsoLineFormat(msolineformat *MsoLineFormat){
 	runtime.SetFinalizer(msolineformat, nil)
-	C.Delete_MsoLineFormat(msolineformat.ptr)
+	C.Delete_CObject(C.CString("Delete_MsoLineFormat"),msolineformat.ptr)
 	msolineformat.ptr = nil
 }
 
@@ -51767,7 +51767,7 @@ func (instance *MsoLineFormatHelper) SetWeight(value float64)  error {
 
 func DeleteMsoLineFormatHelper(msolineformathelper *MsoLineFormatHelper){
 	runtime.SetFinalizer(msolineformathelper, nil)
-	C.Delete_MsoLineFormatHelper(msolineformathelper.ptr)
+	C.Delete_CObject(C.CString("Delete_MsoLineFormatHelper"),msolineformathelper.ptr)
 	msolineformathelper.ptr = nil
 }
 
@@ -52001,7 +52001,7 @@ func (instance *MsoTextFrame) SetBottomMarginPt(value float64)  error {
 
 func DeleteMsoTextFrame(msotextframe *MsoTextFrame){
 	runtime.SetFinalizer(msotextframe, nil)
-	C.Delete_MsoTextFrame(msotextframe.ptr)
+	C.Delete_CObject(C.CString("Delete_MsoTextFrame"),msotextframe.ptr)
 	msotextframe.ptr = nil
 }
 
@@ -52032,7 +52032,7 @@ func (instance *NoneFill) IsNull()  (bool,  error)  {
 
 func DeleteNoneFill(nonefill *NoneFill){
 	runtime.SetFinalizer(nonefill, nil)
-	C.Delete_NoneFill(nonefill.ptr)
+	C.Delete_CObject(C.CString("Delete_NoneFill"),nonefill.ptr)
 	nonefill.ptr = nil
 }
 
@@ -55534,7 +55534,7 @@ func (instance *OleObject) ToShape() *Shape {
 
 func DeleteOleObject(oleobject *OleObject){
 	runtime.SetFinalizer(oleobject, nil)
-	C.Delete_OleObject(oleobject.ptr)
+	C.Delete_CObject(C.CString("Delete_OleObject"),oleobject.ptr)
 	oleobject.ptr = nil
 }
 
@@ -55665,7 +55665,7 @@ func (instance *OleObjectCollection) GetCount()  (int32,  error)  {
 
 func DeleteOleObjectCollection(oleobjectcollection *OleObjectCollection){
 	runtime.SetFinalizer(oleobjectcollection, nil)
-	C.Delete_OleObjectCollection(oleobjectcollection.ptr)
+	C.Delete_CObject(C.CString("Delete_OleObjectCollection"),oleobjectcollection.ptr)
 	oleobjectcollection.ptr = nil
 }
 
@@ -58690,7 +58690,7 @@ func (instance *Oval) ToShape() *Shape {
 
 func DeleteOval(oval *Oval){
 	runtime.SetFinalizer(oval, nil)
-	C.Delete_Oval(oval.ptr)
+	C.Delete_CObject(C.CString("Delete_Oval"),oval.ptr)
 	oval.ptr = nil
 }
 
@@ -58943,7 +58943,7 @@ func (instance *PatternFill) SetBackTransparency(value float64)  error {
 
 func DeletePatternFill(patternfill *PatternFill){
 	runtime.SetFinalizer(patternfill, nil)
-	C.Delete_PatternFill(patternfill.ptr)
+	C.Delete_CObject(C.CString("Delete_PatternFill"),patternfill.ptr)
 	patternfill.ptr = nil
 }
 
@@ -59165,7 +59165,7 @@ func (instance *PicFormatOption) SetRight(value float64)  error {
 
 func DeletePicFormatOption(picformatoption *PicFormatOption){
 	runtime.SetFinalizer(picformatoption, nil)
-	C.Delete_PicFormatOption(picformatoption.ptr)
+	C.Delete_CObject(C.CString("Delete_PicFormatOption"),picformatoption.ptr)
 	picformatoption.ptr = nil
 }
 
@@ -62648,7 +62648,7 @@ func (instance *Picture) ToShape() *Shape {
 
 func DeletePicture(picture *Picture){
 	runtime.SetFinalizer(picture, nil)
-	C.Delete_Picture(picture.ptr)
+	C.Delete_CObject(C.CString("Delete_Picture"),picture.ptr)
 	picture.ptr = nil
 }
 
@@ -62872,7 +62872,7 @@ func (instance *PictureCollection) GetCount()  (int32,  error)  {
 
 func DeletePictureCollection(picturecollection *PictureCollection){
 	runtime.SetFinalizer(picturecollection, nil)
-	C.Delete_PictureCollection(picturecollection.ptr)
+	C.Delete_CObject(C.CString("Delete_PictureCollection"),picturecollection.ptr)
 	picturecollection.ptr = nil
 }
 
@@ -65985,7 +65985,7 @@ func (instance *RadioButton) ToShape() *Shape {
 
 func DeleteRadioButton(radiobutton *RadioButton){
 	runtime.SetFinalizer(radiobutton, nil)
-	C.Delete_RadioButton(radiobutton.ptr)
+	C.Delete_CObject(C.CString("Delete_RadioButton"),radiobutton.ptr)
 	radiobutton.ptr = nil
 }
 
@@ -69010,7 +69010,7 @@ func (instance *RectangleShape) ToShape() *Shape {
 
 func DeleteRectangleShape(rectangleshape *RectangleShape){
 	runtime.SetFinalizer(rectangleshape, nil)
-	C.Delete_RectangleShape(rectangleshape.ptr)
+	C.Delete_CObject(C.CString("Delete_RectangleShape"),rectangleshape.ptr)
 	rectangleshape.ptr = nil
 }
 
@@ -69276,7 +69276,7 @@ func (instance *ReflectionEffect) SetRotWithShape(value bool)  error {
 
 func DeleteReflectionEffect(reflectioneffect *ReflectionEffect){
 	runtime.SetFinalizer(reflectioneffect, nil)
-	C.Delete_ReflectionEffect(reflectioneffect.ptr)
+	C.Delete_CObject(C.CString("Delete_ReflectionEffect"),reflectioneffect.ptr)
 	reflectioneffect.ptr = nil
 }
 
@@ -72504,7 +72504,7 @@ func (instance *ScrollBar) ToShape() *Shape {
 
 func DeleteScrollBar(scrollbar *ScrollBar){
 	runtime.SetFinalizer(scrollbar, nil)
-	C.Delete_ScrollBar(scrollbar.ptr)
+	C.Delete_CObject(C.CString("Delete_ScrollBar"),scrollbar.ptr)
 	scrollbar.ptr = nil
 }
 
@@ -72750,7 +72750,7 @@ func (instance *ShadowEffect) SetDistance(value float64)  error {
 
 func DeleteShadowEffect(shadoweffect *ShadowEffect){
 	runtime.SetFinalizer(shadoweffect, nil)
-	C.Delete_ShadowEffect(shadoweffect.ptr)
+	C.Delete_CObject(C.CString("Delete_ShadowEffect"),shadoweffect.ptr)
 	shadoweffect.ptr = nil
 }
 
@@ -75749,7 +75749,7 @@ func (instance *Shape) IsSameSetting(obj *Object)  (bool,  error)  {
 
 func DeleteShape(shape *Shape){
 	runtime.SetFinalizer(shape, nil)
-	C.Delete_Shape(shape.ptr)
+	C.Delete_CObject(C.CString("Delete_Shape"),shape.ptr)
 	shape.ptr = nil
 }
 
@@ -76977,7 +76977,7 @@ func (instance *ShapeCollection) GetCount()  (int32,  error)  {
 
 func DeleteShapeCollection(shapecollection *ShapeCollection){
 	runtime.SetFinalizer(shapecollection, nil)
-	C.Delete_ShapeCollection(shapecollection.ptr)
+	C.Delete_CObject(C.CString("Delete_ShapeCollection"),shapecollection.ptr)
 	shapecollection.ptr = nil
 }
 
@@ -77064,7 +77064,7 @@ func (instance *ShapeGuide) ToBaseShapeGuide() *BaseShapeGuide {
 
 func DeleteShapeGuide(shapeguide *ShapeGuide){
 	runtime.SetFinalizer(shapeguide, nil)
-	C.Delete_ShapeGuide(shapeguide.ptr)
+	C.Delete_CObject(C.CString("Delete_ShapeGuide"),shapeguide.ptr)
 	shapeguide.ptr = nil
 }
 
@@ -77157,7 +77157,7 @@ func (instance *ShapeGuideCollection) GetCount()  (int32,  error)  {
 
 func DeleteShapeGuideCollection(shapeguidecollection *ShapeGuideCollection){
 	runtime.SetFinalizer(shapeguidecollection, nil)
-	C.Delete_ShapeGuideCollection(shapeguidecollection.ptr)
+	C.Delete_CObject(C.CString("Delete_ShapeGuideCollection"),shapeguidecollection.ptr)
 	shapeguidecollection.ptr = nil
 }
 
@@ -77360,7 +77360,7 @@ func (instance *ShapePath) Close()  error {
 
 func DeleteShapePath(shapepath *ShapePath){
 	runtime.SetFinalizer(shapepath, nil)
-	C.Delete_ShapePath(shapepath.ptr)
+	C.Delete_CObject(C.CString("Delete_ShapePath"),shapepath.ptr)
 	shapepath.ptr = nil
 }
 
@@ -77437,7 +77437,7 @@ func (instance *ShapePathCollection) Add()  (int32,  error)  {
 
 func DeleteShapePathCollection(shapepathcollection *ShapePathCollection){
 	runtime.SetFinalizer(shapepathcollection, nil)
-	C.Delete_ShapePathCollection(shapepathcollection.ptr)
+	C.Delete_CObject(C.CString("Delete_ShapePathCollection"),shapepathcollection.ptr)
 	shapepathcollection.ptr = nil
 }
 
@@ -77603,7 +77603,7 @@ func (instance *ShapePathPoint) GetType()  (ShapePathPointValueType,  error)  {
 
 func DeleteShapePathPoint(shapepathpoint *ShapePathPoint){
 	runtime.SetFinalizer(shapepathpoint, nil)
-	C.Delete_ShapePathPoint(shapepathpoint.ptr)
+	C.Delete_CObject(C.CString("Delete_ShapePathPoint"),shapepathpoint.ptr)
 	shapepathpoint.ptr = nil
 }
 
@@ -77679,7 +77679,7 @@ func (instance *ShapePathPointCollection) GetCount()  (int32,  error)  {
 
 func DeleteShapePathPointCollection(shapepathpointcollection *ShapePathPointCollection){
 	runtime.SetFinalizer(shapepathpointcollection, nil)
-	C.Delete_ShapePathPointCollection(shapepathpointcollection.ptr)
+	C.Delete_CObject(C.CString("Delete_ShapePathPointCollection"),shapepathpointcollection.ptr)
 	shapepathpointcollection.ptr = nil
 }
 
@@ -77868,7 +77868,7 @@ func (instance *ShapePropertyCollection) HasShadowEffect()  (bool,  error)  {
 
 func DeleteShapePropertyCollection(shapepropertycollection *ShapePropertyCollection){
 	runtime.SetFinalizer(shapepropertycollection, nil)
-	C.Delete_ShapePropertyCollection(shapepropertycollection.ptr)
+	C.Delete_CObject(C.CString("Delete_ShapePropertyCollection"),shapepropertycollection.ptr)
 	shapepropertycollection.ptr = nil
 }
 
@@ -77932,7 +77932,7 @@ func (instance *ShapeSegmentPath) GetPoints()  (*ShapePathPointCollection,  erro
 
 func DeleteShapeSegmentPath(shapesegmentpath *ShapeSegmentPath){
 	runtime.SetFinalizer(shapesegmentpath, nil)
-	C.Delete_ShapeSegmentPath(shapesegmentpath.ptr)
+	C.Delete_CObject(C.CString("Delete_ShapeSegmentPath"),shapesegmentpath.ptr)
 	shapesegmentpath.ptr = nil
 }
 
@@ -78024,7 +78024,7 @@ func (instance *ShapeSegmentPathCollection) GetCount()  (int32,  error)  {
 
 func DeleteShapeSegmentPathCollection(shapesegmentpathcollection *ShapeSegmentPathCollection){
 	runtime.SetFinalizer(shapesegmentpathcollection, nil)
-	C.Delete_ShapeSegmentPathCollection(shapesegmentpathcollection.ptr)
+	C.Delete_CObject(C.CString("Delete_ShapeSegmentPathCollection"),shapesegmentpathcollection.ptr)
 	shapesegmentpathcollection.ptr = nil
 }
 
@@ -78390,7 +78390,7 @@ func (instance *SignatureLine) SetSignatureLineType(value SignatureType)  error 
 
 func DeleteSignatureLine(signatureline *SignatureLine){
 	runtime.SetFinalizer(signatureline, nil)
-	C.Delete_SignatureLine(signatureline.ptr)
+	C.Delete_CObject(C.CString("Delete_SignatureLine"),signatureline.ptr)
 	signatureline.ptr = nil
 }
 
@@ -81415,7 +81415,7 @@ func (instance *SlicerShape) ToShape() *Shape {
 
 func DeleteSlicerShape(slicershape *SlicerShape){
 	runtime.SetFinalizer(slicershape, nil)
-	C.Delete_SlicerShape(slicershape.ptr)
+	C.Delete_CObject(C.CString("Delete_SlicerShape"),slicershape.ptr)
 	slicershape.ptr = nil
 }
 
@@ -84440,7 +84440,7 @@ func (instance *SmartArtShape) ToShape() *Shape {
 
 func DeleteSmartArtShape(smartartshape *SmartArtShape){
 	runtime.SetFinalizer(smartartshape, nil)
-	C.Delete_SmartArtShape(smartartshape.ptr)
+	C.Delete_CObject(C.CString("Delete_SmartArtShape"),smartartshape.ptr)
 	smartartshape.ptr = nil
 }
 
@@ -84600,7 +84600,7 @@ func (instance *SolidFill) Equals(obj *Object)  (bool,  error)  {
 
 func DeleteSolidFill(solidfill *SolidFill){
 	runtime.SetFinalizer(solidfill, nil)
-	C.Delete_SolidFill(solidfill.ptr)
+	C.Delete_CObject(C.CString("Delete_SolidFill"),solidfill.ptr)
 	solidfill.ptr = nil
 }
 
@@ -87799,7 +87799,7 @@ func (instance *Spinner) ToShape() *Shape {
 
 func DeleteSpinner(spinner *Spinner){
 	runtime.SetFinalizer(spinner, nil)
-	C.Delete_Spinner(spinner.ptr)
+	C.Delete_CObject(C.CString("Delete_Spinner"),spinner.ptr)
 	spinner.ptr = nil
 }
 
@@ -90861,7 +90861,7 @@ func (instance *TextBox) ToShape() *Shape {
 
 func DeleteTextBox(textbox *TextBox){
 	runtime.SetFinalizer(textbox, nil)
-	C.Delete_TextBox(textbox.ptr)
+	C.Delete_CObject(C.CString("Delete_TextBox"),textbox.ptr)
 	textbox.ptr = nil
 }
 
@@ -90988,7 +90988,7 @@ func (instance *TextBoxCollection) GetCount()  (int32,  error)  {
 
 func DeleteTextBoxCollection(textboxcollection *TextBoxCollection){
 	runtime.SetFinalizer(textboxcollection, nil)
-	C.Delete_TextBoxCollection(textboxcollection.ptr)
+	C.Delete_CObject(C.CString("Delete_TextBoxCollection"),textboxcollection.ptr)
 	textboxcollection.ptr = nil
 }
 
@@ -91240,7 +91240,7 @@ func (instance *TextEffectFormat) SetPresetShape(value MsoPresetTextEffectShape)
 
 func DeleteTextEffectFormat(texteffectformat *TextEffectFormat){
 	runtime.SetFinalizer(texteffectformat, nil)
-	C.Delete_TextEffectFormat(texteffectformat.ptr)
+	C.Delete_CObject(C.CString("Delete_TextEffectFormat"),texteffectformat.ptr)
 	texteffectformat.ptr = nil
 }
 
@@ -91524,7 +91524,7 @@ func (instance *TextureFill) SetTransparency(value float64)  error {
 
 func DeleteTextureFill(texturefill *TextureFill){
 	runtime.SetFinalizer(texturefill, nil)
-	C.Delete_TextureFill(texturefill.ptr)
+	C.Delete_CObject(C.CString("Delete_TextureFill"),texturefill.ptr)
 	texturefill.ptr = nil
 }
 
@@ -92215,7 +92215,7 @@ func (instance *ThreeDFormat) Equals(obj *Object)  (bool,  error)  {
 
 func DeleteThreeDFormat(threedformat *ThreeDFormat){
 	runtime.SetFinalizer(threedformat, nil)
-	C.Delete_ThreeDFormat(threedformat.ptr)
+	C.Delete_CObject(C.CString("Delete_ThreeDFormat"),threedformat.ptr)
 	threedformat.ptr = nil
 }
 
@@ -92440,7 +92440,7 @@ func (instance *TilePicOption) SetAlignmentType(value RectangleAlignmentType)  e
 
 func DeleteTilePicOption(tilepicoption *TilePicOption){
 	runtime.SetFinalizer(tilepicoption, nil)
-	C.Delete_TilePicOption(tilepicoption.ptr)
+	C.Delete_CObject(C.CString("Delete_TilePicOption"),tilepicoption.ptr)
 	tilepicoption.ptr = nil
 }
 
@@ -95465,7 +95465,7 @@ func (instance *TimelineShape) ToShape() *Shape {
 
 func DeleteTimelineShape(timelineshape *TimelineShape){
 	runtime.SetFinalizer(timelineshape, nil)
-	C.Delete_TimelineShape(timelineshape.ptr)
+	C.Delete_CObject(C.CString("Delete_TimelineShape"),timelineshape.ptr)
 	timelineshape.ptr = nil
 }
 
@@ -95524,7 +95524,7 @@ func (instance *VmlShapeGuide) ToBaseShapeGuide() *BaseShapeGuide {
 
 func DeleteVmlShapeGuide(vmlshapeguide *VmlShapeGuide){
 	runtime.SetFinalizer(vmlshapeguide, nil)
-	C.Delete_VmlShapeGuide(vmlshapeguide.ptr)
+	C.Delete_CObject(C.CString("Delete_VmlShapeGuide"),vmlshapeguide.ptr)
 	vmlshapeguide.ptr = nil
 }
 
@@ -98585,6 +98585,6 @@ func (instance *WebExtensionShape) ToShape() *Shape {
 
 func DeleteWebExtensionShape(webextensionshape *WebExtensionShape){
 	runtime.SetFinalizer(webextensionshape, nil)
-	C.Delete_WebExtensionShape(webextensionshape.ptr)
+	C.Delete_CObject(C.CString("Delete_WebExtensionShape"),webextensionshape.ptr)
 	webextensionshape.ptr = nil
 }

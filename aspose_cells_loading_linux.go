@@ -686,7 +686,7 @@ func (instance *DbfLoadOptions) ToLoadOptions() *LoadOptions {
 
 func DeleteDbfLoadOptions(dbfloadoptions *DbfLoadOptions){
 	runtime.SetFinalizer(dbfloadoptions, nil)
-	C.Delete_DbfLoadOptions(dbfloadoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_DbfLoadOptions"),dbfloadoptions.ptr)
 	dbfloadoptions.ptr = nil
 }
 
@@ -1355,6 +1355,6 @@ func (instance *DifLoadOptions) ToLoadOptions() *LoadOptions {
 
 func DeleteDifLoadOptions(difloadoptions *DifLoadOptions){
 	runtime.SetFinalizer(difloadoptions, nil)
-	C.Delete_DifLoadOptions(difloadoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_DifLoadOptions"),difloadoptions.ptr)
 	difloadoptions.ptr = nil
 }

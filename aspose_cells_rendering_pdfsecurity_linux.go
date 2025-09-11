@@ -363,6 +363,6 @@ func (instance *PdfSecurityOptions) SetFullQualityPrintPermission(value bool)  e
 
 func DeletePdfSecurityOptions(pdfsecurityoptions *PdfSecurityOptions){
 	runtime.SetFinalizer(pdfsecurityoptions, nil)
-	C.Delete_PdfSecurityOptions(pdfsecurityoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_PdfSecurityOptions"),pdfsecurityoptions.ptr)
 	pdfsecurityoptions.ptr = nil
 }

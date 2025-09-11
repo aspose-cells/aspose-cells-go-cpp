@@ -91,7 +91,7 @@ func ConversionUtility_Convert_String_LoadOptions_String_SaveOptions(source stri
 
 func DeleteConversionUtility(conversionutility *ConversionUtility){
 	runtime.SetFinalizer(conversionutility, nil)
-	C.Delete_ConversionUtility(conversionutility.ptr)
+	C.Delete_CObject(C.CString("Delete_ConversionUtility"),conversionutility.ptr)
 	conversionutility.ptr = nil
 }
 
@@ -252,7 +252,7 @@ func (instance *ExportRangeToJsonOptions) SetIndent(value string)  error {
 
 func DeleteExportRangeToJsonOptions(exportrangetojsonoptions *ExportRangeToJsonOptions){
 	runtime.SetFinalizer(exportrangetojsonoptions, nil)
-	C.Delete_ExportRangeToJsonOptions(exportrangetojsonoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_ExportRangeToJsonOptions"),exportrangetojsonoptions.ptr)
 	exportrangetojsonoptions.ptr = nil
 }
 
@@ -536,7 +536,7 @@ func (instance *JsonLayoutOptions) SetKeptSchema(value bool)  error {
 
 func DeleteJsonLayoutOptions(jsonlayoutoptions *JsonLayoutOptions){
 	runtime.SetFinalizer(jsonlayoutoptions, nil)
-	C.Delete_JsonLayoutOptions(jsonlayoutoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_JsonLayoutOptions"),jsonlayoutoptions.ptr)
 	jsonlayoutoptions.ptr = nil
 }
 
@@ -643,6 +643,6 @@ func JsonUtility_ExportRangeToJson(range_ *Range, options *JsonSaveOptions)  (st
 
 func DeleteJsonUtility(jsonutility *JsonUtility){
 	runtime.SetFinalizer(jsonutility, nil)
-	C.Delete_JsonUtility(jsonutility.ptr)
+	C.Delete_CObject(C.CString("Delete_JsonUtility"),jsonutility.ptr)
 	jsonutility.ptr = nil
 }

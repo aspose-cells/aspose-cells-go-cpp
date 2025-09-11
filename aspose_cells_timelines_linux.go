@@ -123,7 +123,7 @@ func (instance *Timeline) SetName(value string)  error {
 
 func DeleteTimeline(timeline *Timeline){
 	runtime.SetFinalizer(timeline, nil)
-	C.Delete_Timeline(timeline.ptr)
+	C.Delete_CObject(C.CString("Delete_Timeline"),timeline.ptr)
 	timeline.ptr = nil
 }
 
@@ -353,6 +353,6 @@ func (instance *TimelineCollection) GetCount()  (int32,  error)  {
 
 func DeleteTimelineCollection(timelinecollection *TimelineCollection){
 	runtime.SetFinalizer(timelinecollection, nil)
-	C.Delete_TimelineCollection(timelinecollection.ptr)
+	C.Delete_CObject(C.CString("Delete_TimelineCollection"),timelinecollection.ptr)
 	timelinecollection.ptr = nil
 }

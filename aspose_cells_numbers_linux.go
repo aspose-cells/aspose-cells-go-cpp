@@ -742,6 +742,6 @@ func (instance *NumbersLoadOptions) ToLoadOptions() *LoadOptions {
 
 func DeleteNumbersLoadOptions(numbersloadoptions *NumbersLoadOptions){
 	runtime.SetFinalizer(numbersloadoptions, nil)
-	C.Delete_NumbersLoadOptions(numbersloadoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_NumbersLoadOptions"),numbersloadoptions.ptr)
 	numbersloadoptions.ptr = nil
 }

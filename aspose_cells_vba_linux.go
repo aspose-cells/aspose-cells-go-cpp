@@ -162,7 +162,7 @@ func (instance *VbaModule) SetCodes(value string)  error {
 
 func DeleteVbaModule(vbamodule *VbaModule){
 	runtime.SetFinalizer(vbamodule, nil)
-	C.Delete_VbaModule(vbamodule.ptr)
+	C.Delete_CObject(C.CString("Delete_VbaModule"),vbamodule.ptr)
 	vbamodule.ptr = nil
 }
 
@@ -370,7 +370,7 @@ func (instance *VbaModuleCollection) GetCount()  (int32,  error)  {
 
 func DeleteVbaModuleCollection(vbamodulecollection *VbaModuleCollection){
 	runtime.SetFinalizer(vbamodulecollection, nil)
-	C.Delete_VbaModuleCollection(vbamodulecollection.ptr)
+	C.Delete_CObject(C.CString("Delete_VbaModuleCollection"),vbamodulecollection.ptr)
 	vbamodulecollection.ptr = nil
 }
 
@@ -387,7 +387,7 @@ type VbaModuleType struct {
 
 func DeleteVbaModuleType(vbamoduletype *VbaModuleType){
 	runtime.SetFinalizer(vbamoduletype, nil)
-	C.Delete_VbaModuleType(vbamoduletype.ptr)
+	C.Delete_CObject(C.CString("Delete_VbaModuleType"),vbamoduletype.ptr)
 	vbamoduletype.ptr = nil
 }
 
@@ -654,7 +654,7 @@ func (instance *VbaProject) ValidatePassword(password string)  (bool,  error)  {
 
 func DeleteVbaProject(vbaproject *VbaProject){
 	runtime.SetFinalizer(vbaproject, nil)
-	C.Delete_VbaProject(vbaproject.ptr)
+	C.Delete_CObject(C.CString("Delete_VbaProject"),vbaproject.ptr)
 	vbaproject.ptr = nil
 }
 
@@ -866,7 +866,7 @@ func (instance *VbaProjectReference) SetRelativeLibid(value string)  error {
 
 func DeleteVbaProjectReference(vbaprojectreference *VbaProjectReference){
 	runtime.SetFinalizer(vbaprojectreference, nil)
-	C.Delete_VbaProjectReference(vbaprojectreference.ptr)
+	C.Delete_CObject(C.CString("Delete_VbaProjectReference"),vbaprojectreference.ptr)
 	vbaprojectreference.ptr = nil
 }
 
@@ -1002,6 +1002,6 @@ func (instance *VbaProjectReferenceCollection) GetCount()  (int32,  error)  {
 
 func DeleteVbaProjectReferenceCollection(vbaprojectreferencecollection *VbaProjectReferenceCollection){
 	runtime.SetFinalizer(vbaprojectreferencecollection, nil)
-	C.Delete_VbaProjectReferenceCollection(vbaprojectreferencecollection.ptr)
+	C.Delete_CObject(C.CString("Delete_VbaProjectReferenceCollection"),vbaprojectreferencecollection.ptr)
 	vbaprojectreferencecollection.ptr = nil
 }

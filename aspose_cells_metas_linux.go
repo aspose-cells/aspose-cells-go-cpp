@@ -283,7 +283,7 @@ func (instance *SensitivityLabel) SetIsRemoved(value bool)  error {
 
 func DeleteSensitivityLabel(sensitivitylabel *SensitivityLabel){
 	runtime.SetFinalizer(sensitivitylabel, nil)
-	C.Delete_SensitivityLabel(sensitivitylabel.ptr)
+	C.Delete_CObject(C.CString("Delete_SensitivityLabel"),sensitivitylabel.ptr)
 	sensitivitylabel.ptr = nil
 }
 
@@ -361,6 +361,6 @@ func (instance *SensitivityLabelCollection) GetCount()  (int32,  error)  {
 
 func DeleteSensitivityLabelCollection(sensitivitylabelcollection *SensitivityLabelCollection){
 	runtime.SetFinalizer(sensitivitylabelcollection, nil)
-	C.Delete_SensitivityLabelCollection(sensitivitylabelcollection.ptr)
+	C.Delete_CObject(C.CString("Delete_SensitivityLabelCollection"),sensitivitylabelcollection.ptr)
 	sensitivitylabelcollection.ptr = nil
 }

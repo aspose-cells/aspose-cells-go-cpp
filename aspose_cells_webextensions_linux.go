@@ -211,7 +211,7 @@ func (instance *WebExtension) GetBindings()  (*WebExtensionBindingCollection,  e
 
 func DeleteWebExtension(webextension *WebExtension){
 	runtime.SetFinalizer(webextension, nil)
-	C.Delete_WebExtension(webextension.ptr)
+	C.Delete_CObject(C.CString("Delete_WebExtension"),webextension.ptr)
 	webextension.ptr = nil
 }
 
@@ -343,7 +343,7 @@ func (instance *WebExtensionBinding) SetAppref(value string)  error {
 
 func DeleteWebExtensionBinding(webextensionbinding *WebExtensionBinding){
 	runtime.SetFinalizer(webextensionbinding, nil)
-	C.Delete_WebExtensionBinding(webextensionbinding.ptr)
+	C.Delete_CObject(C.CString("Delete_WebExtensionBinding"),webextensionbinding.ptr)
 	webextensionbinding.ptr = nil
 }
 
@@ -433,7 +433,7 @@ func (instance *WebExtensionBindingCollection) GetCount()  (int32,  error)  {
 
 func DeleteWebExtensionBindingCollection(webextensionbindingcollection *WebExtensionBindingCollection){
 	runtime.SetFinalizer(webextensionbindingcollection, nil)
-	C.Delete_WebExtensionBindingCollection(webextensionbindingcollection.ptr)
+	C.Delete_CObject(C.CString("Delete_WebExtensionBindingCollection"),webextensionbindingcollection.ptr)
 	webextensionbindingcollection.ptr = nil
 }
 
@@ -543,7 +543,7 @@ func (instance *WebExtensionCollection) GetCount()  (int32,  error)  {
 
 func DeleteWebExtensionCollection(webextensioncollection *WebExtensionCollection){
 	runtime.SetFinalizer(webextensioncollection, nil)
-	C.Delete_WebExtensionCollection(webextensioncollection.ptr)
+	C.Delete_CObject(C.CString("Delete_WebExtensionCollection"),webextensioncollection.ptr)
 	webextensioncollection.ptr = nil
 }
 
@@ -632,7 +632,7 @@ func (instance *WebExtensionProperty) SetValue(value string)  error {
 
 func DeleteWebExtensionProperty(webextensionproperty *WebExtensionProperty){
 	runtime.SetFinalizer(webextensionproperty, nil)
-	C.Delete_WebExtensionProperty(webextensionproperty.ptr)
+	C.Delete_CObject(C.CString("Delete_WebExtensionProperty"),webextensionproperty.ptr)
 	webextensionproperty.ptr = nil
 }
 
@@ -758,7 +758,7 @@ func (instance *WebExtensionPropertyCollection) GetCount()  (int32,  error)  {
 
 func DeleteWebExtensionPropertyCollection(webextensionpropertycollection *WebExtensionPropertyCollection){
 	runtime.SetFinalizer(webextensionpropertycollection, nil)
-	C.Delete_WebExtensionPropertyCollection(webextensionpropertycollection.ptr)
+	C.Delete_CObject(C.CString("Delete_WebExtensionPropertyCollection"),webextensionpropertycollection.ptr)
 	webextensionpropertycollection.ptr = nil
 }
 
@@ -910,7 +910,7 @@ func (instance *WebExtensionReference) SetStoreType(value WebExtensionStoreType)
 
 func DeleteWebExtensionReference(webextensionreference *WebExtensionReference){
 	runtime.SetFinalizer(webextensionreference, nil)
-	C.Delete_WebExtensionReference(webextensionreference.ptr)
+	C.Delete_CObject(C.CString("Delete_WebExtensionReference"),webextensionreference.ptr)
 	webextensionreference.ptr = nil
 }
 
@@ -1000,7 +1000,7 @@ func (instance *WebExtensionReferenceCollection) GetCount()  (int32,  error)  {
 
 func DeleteWebExtensionReferenceCollection(webextensionreferencecollection *WebExtensionReferenceCollection){
 	runtime.SetFinalizer(webextensionreferencecollection, nil)
-	C.Delete_WebExtensionReferenceCollection(webextensionreferencecollection.ptr)
+	C.Delete_CObject(C.CString("Delete_WebExtensionReferenceCollection"),webextensionreferencecollection.ptr)
 	webextensionreferencecollection.ptr = nil
 }
 
@@ -1212,7 +1212,7 @@ func (instance *WebExtensionTaskPane) SetRow(value int32)  error {
 
 func DeleteWebExtensionTaskPane(webextensiontaskpane *WebExtensionTaskPane){
 	runtime.SetFinalizer(webextensiontaskpane, nil)
-	C.Delete_WebExtensionTaskPane(webextensiontaskpane.ptr)
+	C.Delete_CObject(C.CString("Delete_WebExtensionTaskPane"),webextensiontaskpane.ptr)
 	webextensiontaskpane.ptr = nil
 }
 
@@ -1288,6 +1288,6 @@ func (instance *WebExtensionTaskPaneCollection) GetCount()  (int32,  error)  {
 
 func DeleteWebExtensionTaskPaneCollection(webextensiontaskpanecollection *WebExtensionTaskPaneCollection){
 	runtime.SetFinalizer(webextensiontaskpanecollection, nil)
-	C.Delete_WebExtensionTaskPaneCollection(webextensiontaskpanecollection.ptr)
+	C.Delete_CObject(C.CString("Delete_WebExtensionTaskPaneCollection"),webextensiontaskpanecollection.ptr)
 	webextensiontaskpanecollection.ptr = nil
 }

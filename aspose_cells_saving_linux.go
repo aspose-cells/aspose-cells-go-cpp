@@ -508,7 +508,7 @@ func (instance *DbfSaveOptions) ToSaveOptions() *SaveOptions {
 
 func DeleteDbfSaveOptions(dbfsaveoptions *DbfSaveOptions){
 	runtime.SetFinalizer(dbfsaveoptions, nil)
-	C.Delete_DbfSaveOptions(dbfsaveoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_DbfSaveOptions"),dbfsaveoptions.ptr)
 	dbfsaveoptions.ptr = nil
 }
 
@@ -3014,7 +3014,7 @@ func (instance *EbookSaveOptions) ToSaveOptions() *SaveOptions {
 
 func DeleteEbookSaveOptions(ebooksaveoptions *EbookSaveOptions){
 	runtime.SetFinalizer(ebooksaveoptions, nil)
-	C.Delete_EbookSaveOptions(ebooksaveoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_EbookSaveOptions"),ebooksaveoptions.ptr)
 	ebooksaveoptions.ptr = nil
 }
 
@@ -3087,7 +3087,7 @@ func (instance *SqlScriptColumnTypeMap) GetNumbericType()  (string,  error)  {
 
 func DeleteSqlScriptColumnTypeMap(sqlscriptcolumntypemap *SqlScriptColumnTypeMap){
 	runtime.SetFinalizer(sqlscriptcolumntypemap, nil)
-	C.Delete_SqlScriptColumnTypeMap(sqlscriptcolumntypemap.ptr)
+	C.Delete_CObject(C.CString("Delete_SqlScriptColumnTypeMap"),sqlscriptcolumntypemap.ptr)
 	sqlscriptcolumntypemap.ptr = nil
 }
 
@@ -3961,6 +3961,6 @@ func (instance *SqlScriptSaveOptions) ToSaveOptions() *SaveOptions {
 
 func DeleteSqlScriptSaveOptions(sqlscriptsaveoptions *SqlScriptSaveOptions){
 	runtime.SetFinalizer(sqlscriptsaveoptions, nil)
-	C.Delete_SqlScriptSaveOptions(sqlscriptsaveoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_SqlScriptSaveOptions"),sqlscriptsaveoptions.ptr)
 	sqlscriptsaveoptions.ptr = nil
 }

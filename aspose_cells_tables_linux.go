@@ -779,7 +779,7 @@ func (instance *ListColumn) SetDataStyle(style *Style)  error {
 
 func DeleteListColumn(listcolumn *ListColumn){
 	runtime.SetFinalizer(listcolumn, nil)
-	C.Delete_ListColumn(listcolumn.ptr)
+	C.Delete_CObject(C.CString("Delete_ListColumn"),listcolumn.ptr)
 	listcolumn.ptr = nil
 }
 
@@ -859,7 +859,7 @@ func (instance *ListColumnCollection) GetCount()  (int32,  error)  {
 
 func DeleteListColumnCollection(listcolumncollection *ListColumnCollection){
 	runtime.SetFinalizer(listcolumncollection, nil)
-	C.Delete_ListColumnCollection(listcolumncollection.ptr)
+	C.Delete_CObject(C.CString("Delete_ListColumnCollection"),listcolumncollection.ptr)
 	listcolumncollection.ptr = nil
 }
 
@@ -1570,7 +1570,7 @@ func (instance *ListObject) SetAlternativeDescription(value string)  error {
 
 func DeleteListObject(listobject *ListObject){
 	runtime.SetFinalizer(listobject, nil)
-	C.Delete_ListObject(listobject.ptr)
+	C.Delete_CObject(C.CString("Delete_ListObject"),listobject.ptr)
 	listobject.ptr = nil
 }
 
@@ -1701,7 +1701,7 @@ func (instance *ListObjectCollection) GetCount()  (int32,  error)  {
 
 func DeleteListObjectCollection(listobjectcollection *ListObjectCollection){
 	runtime.SetFinalizer(listobjectcollection, nil)
-	C.Delete_ListObjectCollection(listobjectcollection.ptr)
+	C.Delete_CObject(C.CString("Delete_ListObjectCollection"),listobjectcollection.ptr)
 	listobjectcollection.ptr = nil
 }
 
@@ -1762,7 +1762,7 @@ func (instance *TableStyle) GetTableStyleElements()  (*TableStyleElementCollecti
 
 func DeleteTableStyle(tablestyle *TableStyle){
 	runtime.SetFinalizer(tablestyle, nil)
-	C.Delete_TableStyle(tablestyle.ptr)
+	C.Delete_CObject(C.CString("Delete_TableStyle"),tablestyle.ptr)
 	tablestyle.ptr = nil
 }
 
@@ -1950,7 +1950,7 @@ func (instance *TableStyleCollection) GetCount()  (int32,  error)  {
 
 func DeleteTableStyleCollection(tablestylecollection *TableStyleCollection){
 	runtime.SetFinalizer(tablestylecollection, nil)
-	C.Delete_TableStyleCollection(tablestylecollection.ptr)
+	C.Delete_CObject(C.CString("Delete_TableStyleCollection"),tablestylecollection.ptr)
 	tablestylecollection.ptr = nil
 }
 
@@ -2065,7 +2065,7 @@ func (instance *TableStyleElement) SetElementStyle(style *Style)  error {
 
 func DeleteTableStyleElement(tablestyleelement *TableStyleElement){
 	runtime.SetFinalizer(tablestyleelement, nil)
-	C.Delete_TableStyleElement(tablestyleelement.ptr)
+	C.Delete_CObject(C.CString("Delete_TableStyleElement"),tablestyleelement.ptr)
 	tablestyleelement.ptr = nil
 }
 
@@ -2161,7 +2161,7 @@ func (instance *TableStyleElementCollection) GetCount()  (int32,  error)  {
 
 func DeleteTableStyleElementCollection(tablestyleelementcollection *TableStyleElementCollection){
 	runtime.SetFinalizer(tablestyleelementcollection, nil)
-	C.Delete_TableStyleElementCollection(tablestyleelementcollection.ptr)
+	C.Delete_CObject(C.CString("Delete_TableStyleElementCollection"),tablestyleelementcollection.ptr)
 	tablestyleelementcollection.ptr = nil
 }
 
@@ -2235,6 +2235,6 @@ func (instance *TableToRangeOptions) SetLastRow(value int32)  error {
 
 func DeleteTableToRangeOptions(tabletorangeoptions *TableToRangeOptions){
 	runtime.SetFinalizer(tabletorangeoptions, nil)
-	C.Delete_TableToRangeOptions(tabletorangeoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_TableToRangeOptions"),tabletorangeoptions.ptr)
 	tabletorangeoptions.ptr = nil
 }

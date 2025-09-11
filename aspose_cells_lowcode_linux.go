@@ -99,7 +99,7 @@ func (instance *AbstractLowCodeLoadOptionsProvider) Finish(part *LowCodeLoadOpti
 
 func DeleteAbstractLowCodeLoadOptionsProvider(abstractlowcodeloadoptionsprovider *AbstractLowCodeLoadOptionsProvider){
 	runtime.SetFinalizer(abstractlowcodeloadoptionsprovider, nil)
-	C.Delete_AbstractLowCodeLoadOptionsProvider(abstractlowcodeloadoptionsprovider.ptr)
+	C.Delete_CObject(C.CString("Delete_AbstractLowCodeLoadOptionsProvider"),abstractlowcodeloadoptionsprovider.ptr)
 	abstractlowcodeloadoptionsprovider.ptr = nil
 }
 
@@ -238,7 +238,7 @@ func (instance *AbstractLowCodeProtectionProvider) GetWorksheetProtectionType(sh
 
 func DeleteAbstractLowCodeProtectionProvider(abstractlowcodeprotectionprovider *AbstractLowCodeProtectionProvider){
 	runtime.SetFinalizer(abstractlowcodeprotectionprovider, nil)
-	C.Delete_AbstractLowCodeProtectionProvider(abstractlowcodeprotectionprovider.ptr)
+	C.Delete_CObject(C.CString("Delete_AbstractLowCodeProtectionProvider"),abstractlowcodeprotectionprovider.ptr)
 	abstractlowcodeprotectionprovider.ptr = nil
 }
 
@@ -316,7 +316,7 @@ func (instance *AbstractLowCodeSaveOptionsProvider) Finish(part *LowCodeSaveOpti
 
 func DeleteAbstractLowCodeSaveOptionsProvider(abstractlowcodesaveoptionsprovider *AbstractLowCodeSaveOptionsProvider){
 	runtime.SetFinalizer(abstractlowcodesaveoptionsprovider, nil)
-	C.Delete_AbstractLowCodeSaveOptionsProvider(abstractlowcodesaveoptionsprovider.ptr)
+	C.Delete_CObject(C.CString("Delete_AbstractLowCodeSaveOptionsProvider"),abstractlowcodesaveoptionsprovider.ptr)
 	abstractlowcodesaveoptionsprovider.ptr = nil
 }
 
@@ -388,7 +388,7 @@ func HtmlConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *Lo
 
 func DeleteHtmlConverter(htmlconverter *HtmlConverter){
 	runtime.SetFinalizer(htmlconverter, nil)
-	C.Delete_HtmlConverter(htmlconverter.ptr)
+	C.Delete_CObject(C.CString("Delete_HtmlConverter"),htmlconverter.ptr)
 	htmlconverter.ptr = nil
 }
 
@@ -490,7 +490,7 @@ func ImageConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLowCod
 
 func DeleteImageConverter(imageconverter *ImageConverter){
 	runtime.SetFinalizer(imageconverter, nil)
-	C.Delete_ImageConverter(imageconverter.ptr)
+	C.Delete_CObject(C.CString("Delete_ImageConverter"),imageconverter.ptr)
 	imageconverter.ptr = nil
 }
 
@@ -562,7 +562,7 @@ func JsonConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *Lo
 
 func DeleteJsonConverter(jsonconverter *JsonConverter){
 	runtime.SetFinalizer(jsonconverter, nil)
-	C.Delete_JsonConverter(jsonconverter.ptr)
+	C.Delete_CObject(C.CString("Delete_JsonConverter"),jsonconverter.ptr)
 	jsonconverter.ptr = nil
 }
 
@@ -764,7 +764,7 @@ func (instance *LowCodeHtmlSaveOptions) ToLowCodeSaveOptions() *LowCodeSaveOptio
 
 func DeleteLowCodeHtmlSaveOptions(lowcodehtmlsaveoptions *LowCodeHtmlSaveOptions){
 	runtime.SetFinalizer(lowcodehtmlsaveoptions, nil)
-	C.Delete_LowCodeHtmlSaveOptions(lowcodehtmlsaveoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_LowCodeHtmlSaveOptions"),lowcodehtmlsaveoptions.ptr)
 	lowcodehtmlsaveoptions.ptr = nil
 }
 
@@ -1002,7 +1002,7 @@ func (instance *LowCodeImageSaveOptions) ToLowCodeSaveOptions() *LowCodeSaveOpti
 
 func DeleteLowCodeImageSaveOptions(lowcodeimagesaveoptions *LowCodeImageSaveOptions){
 	runtime.SetFinalizer(lowcodeimagesaveoptions, nil)
-	C.Delete_LowCodeImageSaveOptions(lowcodeimagesaveoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_LowCodeImageSaveOptions"),lowcodeimagesaveoptions.ptr)
 	lowcodeimagesaveoptions.ptr = nil
 }
 
@@ -1106,7 +1106,7 @@ func (instance *LowCodeLoadOptions) SetInputStream(value []byte)  error {
 
 func DeleteLowCodeLoadOptions(lowcodeloadoptions *LowCodeLoadOptions){
 	runtime.SetFinalizer(lowcodeloadoptions, nil)
-	C.Delete_LowCodeLoadOptions(lowcodeloadoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_LowCodeLoadOptions"),lowcodeloadoptions.ptr)
 	lowcodeloadoptions.ptr = nil
 }
 
@@ -1223,7 +1223,7 @@ func (instance *LowCodeMergeOptions) SetLoadOptionsProvider(value *AbstractLowCo
 
 func DeleteLowCodeMergeOptions(lowcodemergeoptions *LowCodeMergeOptions){
 	runtime.SetFinalizer(lowcodemergeoptions, nil)
-	C.Delete_LowCodeMergeOptions(lowcodemergeoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_LowCodeMergeOptions"),lowcodemergeoptions.ptr)
 	lowcodemergeoptions.ptr = nil
 }
 
@@ -1427,7 +1427,7 @@ func (instance *LowCodePdfSaveOptions) ToLowCodeSaveOptions() *LowCodeSaveOption
 
 func DeleteLowCodePdfSaveOptions(lowcodepdfsaveoptions *LowCodePdfSaveOptions){
 	runtime.SetFinalizer(lowcodepdfsaveoptions, nil)
-	C.Delete_LowCodePdfSaveOptions(lowcodepdfsaveoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_LowCodePdfSaveOptions"),lowcodepdfsaveoptions.ptr)
 	lowcodepdfsaveoptions.ptr = nil
 }
 
@@ -1573,7 +1573,7 @@ func (instance *LowCodeSaveOptions) SetSaveFormat(value SaveFormat)  error {
 
 func DeleteLowCodeSaveOptions(lowcodesaveoptions *LowCodeSaveOptions){
 	runtime.SetFinalizer(lowcodesaveoptions, nil)
-	C.Delete_LowCodeSaveOptions(lowcodesaveoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_LowCodeSaveOptions"),lowcodesaveoptions.ptr)
 	lowcodesaveoptions.ptr = nil
 }
 
@@ -2001,7 +2001,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) ToAbstractLowCodeSaveOpt
 
 func DeleteLowCodeSaveOptionsProviderOfAssembling(lowcodesaveoptionsproviderofassembling *LowCodeSaveOptionsProviderOfAssembling){
 	runtime.SetFinalizer(lowcodesaveoptionsproviderofassembling, nil)
-	C.Delete_LowCodeSaveOptionsProviderOfAssembling(lowcodesaveoptionsproviderofassembling.ptr)
+	C.Delete_CObject(C.CString("Delete_LowCodeSaveOptionsProviderOfAssembling"),lowcodesaveoptionsproviderofassembling.ptr)
 	lowcodesaveoptionsproviderofassembling.ptr = nil
 }
 
@@ -2373,7 +2373,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) ToAbstractLowCodeSaveO
 
 func DeleteLowCodeSaveOptionsProviderOfPlaceHolders(lowcodesaveoptionsproviderofplaceholders *LowCodeSaveOptionsProviderOfPlaceHolders){
 	runtime.SetFinalizer(lowcodesaveoptionsproviderofplaceholders, nil)
-	C.Delete_LowCodeSaveOptionsProviderOfPlaceHolders(lowcodesaveoptionsproviderofplaceholders.ptr)
+	C.Delete_CObject(C.CString("Delete_LowCodeSaveOptionsProviderOfPlaceHolders"),lowcodesaveoptionsproviderofplaceholders.ptr)
 	lowcodesaveoptionsproviderofplaceholders.ptr = nil
 }
 
@@ -2526,7 +2526,7 @@ func (instance *LowCodeSplitOptions) SetSaveOptionsProvider(value *AbstractLowCo
 
 func DeleteLowCodeSplitOptions(lowcodesplitoptions *LowCodeSplitOptions){
 	runtime.SetFinalizer(lowcodesplitoptions, nil)
-	C.Delete_LowCodeSplitOptions(lowcodesplitoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_LowCodeSplitOptions"),lowcodesplitoptions.ptr)
 	lowcodesplitoptions.ptr = nil
 }
 
@@ -2598,7 +2598,7 @@ func PdfConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *Low
 
 func DeletePdfConverter(pdfconverter *PdfConverter){
 	runtime.SetFinalizer(pdfconverter, nil)
-	C.Delete_PdfConverter(pdfconverter.ptr)
+	C.Delete_CObject(C.CString("Delete_PdfConverter"),pdfconverter.ptr)
 	pdfconverter.ptr = nil
 }
 
@@ -2673,7 +2673,7 @@ func (instance *SplitPartInfo) GetSheetName()  (string,  error)  {
 
 func DeleteSplitPartInfo(splitpartinfo *SplitPartInfo){
 	runtime.SetFinalizer(splitpartinfo, nil)
-	C.Delete_SplitPartInfo(splitpartinfo.ptr)
+	C.Delete_CObject(C.CString("Delete_SplitPartInfo"),splitpartinfo.ptr)
 	splitpartinfo.ptr = nil
 }
 
@@ -2745,7 +2745,7 @@ func SpreadsheetConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadopti
 
 func DeleteSpreadsheetConverter(spreadsheetconverter *SpreadsheetConverter){
 	runtime.SetFinalizer(spreadsheetconverter, nil)
-	C.Delete_SpreadsheetConverter(spreadsheetconverter.ptr)
+	C.Delete_CObject(C.CString("Delete_SpreadsheetConverter"),spreadsheetconverter.ptr)
 	spreadsheetconverter.ptr = nil
 }
 
@@ -2880,7 +2880,7 @@ func SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLow
 
 func DeleteSpreadsheetLocker(spreadsheetlocker *SpreadsheetLocker){
 	runtime.SetFinalizer(spreadsheetlocker, nil)
-	C.Delete_SpreadsheetLocker(spreadsheetlocker.ptr)
+	C.Delete_CObject(C.CString("Delete_SpreadsheetLocker"),spreadsheetlocker.ptr)
 	spreadsheetlocker.ptr = nil
 }
 
@@ -2954,7 +2954,7 @@ func SpreadsheetMerger_Process_LowCodeMergeOptions(options *LowCodeMergeOptions)
 
 func DeleteSpreadsheetMerger(spreadsheetmerger *SpreadsheetMerger){
 	runtime.SetFinalizer(spreadsheetmerger, nil)
-	C.Delete_SpreadsheetMerger(spreadsheetmerger.ptr)
+	C.Delete_CObject(C.CString("Delete_SpreadsheetMerger"),spreadsheetmerger.ptr)
 	spreadsheetmerger.ptr = nil
 }
 
@@ -3021,7 +3021,7 @@ func SpreadsheetSplitter_Process_LowCodeSplitOptions(options *LowCodeSplitOption
 
 func DeleteSpreadsheetSplitter(spreadsheetsplitter *SpreadsheetSplitter){
 	runtime.SetFinalizer(spreadsheetsplitter, nil)
-	C.Delete_SpreadsheetSplitter(spreadsheetsplitter.ptr)
+	C.Delete_CObject(C.CString("Delete_SpreadsheetSplitter"),spreadsheetsplitter.ptr)
 	spreadsheetsplitter.ptr = nil
 }
 
@@ -3093,6 +3093,6 @@ func TextConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *Lo
 
 func DeleteTextConverter(textconverter *TextConverter){
 	runtime.SetFinalizer(textconverter, nil)
-	C.Delete_TextConverter(textconverter.ptr)
+	C.Delete_CObject(C.CString("Delete_TextConverter"),textconverter.ptr)
 	textconverter.ptr = nil
 }

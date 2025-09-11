@@ -346,7 +346,7 @@ func (instance *OdsCellField) SetColumn(value int32)  error {
 
 func DeleteOdsCellField(odscellfield *OdsCellField){
 	runtime.SetFinalizer(odscellfield, nil)
-	C.Delete_OdsCellField(odscellfield.ptr)
+	C.Delete_CObject(C.CString("Delete_OdsCellField"),odscellfield.ptr)
 	odscellfield.ptr = nil
 }
 
@@ -459,7 +459,7 @@ func (instance *OdsCellFieldCollection) GetCount()  (int32,  error)  {
 
 func DeleteOdsCellFieldCollection(odscellfieldcollection *OdsCellFieldCollection){
 	runtime.SetFinalizer(odscellfieldcollection, nil)
-	C.Delete_OdsCellFieldCollection(odscellfieldcollection.ptr)
+	C.Delete_CObject(C.CString("Delete_OdsCellFieldCollection"),odscellfieldcollection.ptr)
 	odscellfieldcollection.ptr = nil
 }
 
@@ -703,6 +703,6 @@ func (instance *OdsPageBackground) SetGraphicData(value []byte)  error {
 
 func DeleteOdsPageBackground(odspagebackground *OdsPageBackground){
 	runtime.SetFinalizer(odspagebackground, nil)
-	C.Delete_OdsPageBackground(odspagebackground.ptr)
+	C.Delete_CObject(C.CString("Delete_OdsPageBackground"),odspagebackground.ptr)
 	odspagebackground.ptr = nil
 }

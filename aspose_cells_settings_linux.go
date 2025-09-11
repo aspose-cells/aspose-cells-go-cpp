@@ -375,6 +375,6 @@ func (instance *PivotGlobalizationSettings) GetTextOfSubTotal(subtotaltype Pivot
 
 func DeletePivotGlobalizationSettings(pivotglobalizationsettings *PivotGlobalizationSettings){
 	runtime.SetFinalizer(pivotglobalizationsettings, nil)
-	C.Delete_PivotGlobalizationSettings(pivotglobalizationsettings.ptr)
+	C.Delete_CObject(C.CString("Delete_PivotGlobalizationSettings"),pivotglobalizationsettings.ptr)
 	pivotglobalizationsettings.ptr = nil
 }

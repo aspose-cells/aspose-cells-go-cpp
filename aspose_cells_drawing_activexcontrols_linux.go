@@ -1227,7 +1227,7 @@ func (instance *ActiveXControl) ToActiveXControlBase() *ActiveXControlBase {
 
 func DeleteActiveXControl(activexcontrol *ActiveXControl){
 	runtime.SetFinalizer(activexcontrol, nil)
-	C.Delete_ActiveXControl(activexcontrol.ptr)
+	C.Delete_CObject(C.CString("Delete_ActiveXControl"),activexcontrol.ptr)
 	activexcontrol.ptr = nil
 }
 
@@ -1600,7 +1600,7 @@ func (instance *ActiveXControlBase) GetData()  ([]byte,  error)  {
 
 func DeleteActiveXControlBase(activexcontrolbase *ActiveXControlBase){
 	runtime.SetFinalizer(activexcontrolbase, nil)
-	C.Delete_ActiveXControlBase(activexcontrolbase.ptr)
+	C.Delete_CObject(C.CString("Delete_ActiveXControlBase"),activexcontrolbase.ptr)
 	activexcontrolbase.ptr = nil
 }
 
@@ -2503,7 +2503,7 @@ func (instance *CheckBoxActiveXControl) ToActiveXControlBase() *ActiveXControlBa
 
 func DeleteCheckBoxActiveXControl(checkboxactivexcontrol *CheckBoxActiveXControl){
 	runtime.SetFinalizer(checkboxactivexcontrol, nil)
-	C.Delete_CheckBoxActiveXControl(checkboxactivexcontrol.ptr)
+	C.Delete_CObject(C.CString("Delete_CheckBoxActiveXControl"),checkboxactivexcontrol.ptr)
 	checkboxactivexcontrol.ptr = nil
 }
 
@@ -3769,7 +3769,7 @@ func (instance *ComboBoxActiveXControl) ToActiveXControlBase() *ActiveXControlBa
 
 func DeleteComboBoxActiveXControl(comboboxactivexcontrol *ComboBoxActiveXControl){
 	runtime.SetFinalizer(comboboxactivexcontrol, nil)
-	C.Delete_ComboBoxActiveXControl(comboboxactivexcontrol.ptr)
+	C.Delete_CObject(C.CString("Delete_ComboBoxActiveXControl"),comboboxactivexcontrol.ptr)
 	comboboxactivexcontrol.ptr = nil
 }
 
@@ -4547,7 +4547,7 @@ func (instance *CommandButtonActiveXControl) ToActiveXControlBase() *ActiveXCont
 
 func DeleteCommandButtonActiveXControl(commandbuttonactivexcontrol *CommandButtonActiveXControl){
 	runtime.SetFinalizer(commandbuttonactivexcontrol, nil)
-	C.Delete_CommandButtonActiveXControl(commandbuttonactivexcontrol.ptr)
+	C.Delete_CObject(C.CString("Delete_CommandButtonActiveXControl"),commandbuttonactivexcontrol.ptr)
 	commandbuttonactivexcontrol.ptr = nil
 }
 
@@ -5363,7 +5363,7 @@ func (instance *ImageActiveXControl) ToActiveXControlBase() *ActiveXControlBase 
 
 func DeleteImageActiveXControl(imageactivexcontrol *ImageActiveXControl){
 	runtime.SetFinalizer(imageactivexcontrol, nil)
-	C.Delete_ImageActiveXControl(imageactivexcontrol.ptr)
+	C.Delete_CObject(C.CString("Delete_ImageActiveXControl"),imageactivexcontrol.ptr)
 	imageactivexcontrol.ptr = nil
 }
 
@@ -6205,7 +6205,7 @@ func (instance *LabelActiveXControl) ToActiveXControlBase() *ActiveXControlBase 
 
 func DeleteLabelActiveXControl(labelactivexcontrol *LabelActiveXControl){
 	runtime.SetFinalizer(labelactivexcontrol, nil)
-	C.Delete_LabelActiveXControl(labelactivexcontrol.ptr)
+	C.Delete_CObject(C.CString("Delete_LabelActiveXControl"),labelactivexcontrol.ptr)
 	labelactivexcontrol.ptr = nil
 }
 
@@ -7260,7 +7260,7 @@ func (instance *ListBoxActiveXControl) ToActiveXControlBase() *ActiveXControlBas
 
 func DeleteListBoxActiveXControl(listboxactivexcontrol *ListBoxActiveXControl){
 	runtime.SetFinalizer(listboxactivexcontrol, nil)
-	C.Delete_ListBoxActiveXControl(listboxactivexcontrol.ptr)
+	C.Delete_CObject(C.CString("Delete_ListBoxActiveXControl"),listboxactivexcontrol.ptr)
 	listboxactivexcontrol.ptr = nil
 }
 
@@ -8168,7 +8168,7 @@ func (instance *RadioButtonActiveXControl) ToActiveXControlBase() *ActiveXContro
 
 func DeleteRadioButtonActiveXControl(radiobuttonactivexcontrol *RadioButtonActiveXControl){
 	runtime.SetFinalizer(radiobuttonactivexcontrol, nil)
-	C.Delete_RadioButtonActiveXControl(radiobuttonactivexcontrol.ptr)
+	C.Delete_CObject(C.CString("Delete_RadioButtonActiveXControl"),radiobuttonactivexcontrol.ptr)
 	radiobuttonactivexcontrol.ptr = nil
 }
 
@@ -8950,7 +8950,7 @@ func (instance *ScrollBarActiveXControl) ToActiveXControlBase() *ActiveXControlB
 
 func DeleteScrollBarActiveXControl(scrollbaractivexcontrol *ScrollBarActiveXControl){
 	runtime.SetFinalizer(scrollbaractivexcontrol, nil)
-	C.Delete_ScrollBarActiveXControl(scrollbaractivexcontrol.ptr)
+	C.Delete_CObject(C.CString("Delete_ScrollBarActiveXControl"),scrollbaractivexcontrol.ptr)
 	scrollbaractivexcontrol.ptr = nil
 }
 
@@ -9698,7 +9698,7 @@ func (instance *SpinButtonActiveXControl) ToActiveXControlBase() *ActiveXControl
 
 func DeleteSpinButtonActiveXControl(spinbuttonactivexcontrol *SpinButtonActiveXControl){
 	runtime.SetFinalizer(spinbuttonactivexcontrol, nil)
-	C.Delete_SpinButtonActiveXControl(spinbuttonactivexcontrol.ptr)
+	C.Delete_CObject(C.CString("Delete_SpinButtonActiveXControl"),spinbuttonactivexcontrol.ptr)
 	spinbuttonactivexcontrol.ptr = nil
 }
 
@@ -10905,7 +10905,7 @@ func (instance *TextBoxActiveXControl) ToActiveXControlBase() *ActiveXControlBas
 
 func DeleteTextBoxActiveXControl(textboxactivexcontrol *TextBoxActiveXControl){
 	runtime.SetFinalizer(textboxactivexcontrol, nil)
-	C.Delete_TextBoxActiveXControl(textboxactivexcontrol.ptr)
+	C.Delete_CObject(C.CString("Delete_TextBoxActiveXControl"),textboxactivexcontrol.ptr)
 	textboxactivexcontrol.ptr = nil
 }
 
@@ -11718,7 +11718,7 @@ func (instance *ToggleButtonActiveXControl) ToActiveXControlBase() *ActiveXContr
 
 func DeleteToggleButtonActiveXControl(togglebuttonactivexcontrol *ToggleButtonActiveXControl){
 	runtime.SetFinalizer(togglebuttonactivexcontrol, nil)
-	C.Delete_ToggleButtonActiveXControl(togglebuttonactivexcontrol.ptr)
+	C.Delete_CObject(C.CString("Delete_ToggleButtonActiveXControl"),togglebuttonactivexcontrol.ptr)
 	togglebuttonactivexcontrol.ptr = nil
 }
 
@@ -12335,6 +12335,6 @@ func (instance *UnknownControl) ToActiveXControlBase() *ActiveXControlBase {
 
 func DeleteUnknownControl(unknowncontrol *UnknownControl){
 	runtime.SetFinalizer(unknowncontrol, nil)
-	C.Delete_UnknownControl(unknowncontrol.ptr)
+	C.Delete_CObject(C.CString("Delete_UnknownControl"),unknowncontrol.ptr)
 	unknowncontrol.ptr = nil
 }

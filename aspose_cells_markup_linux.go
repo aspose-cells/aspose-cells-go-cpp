@@ -162,7 +162,7 @@ func (instance *CustomXmlPart) SetID(value string)  error {
 
 func DeleteCustomXmlPart(customxmlpart *CustomXmlPart){
 	runtime.SetFinalizer(customxmlpart, nil)
-	C.Delete_CustomXmlPart(customxmlpart.ptr)
+	C.Delete_CObject(C.CString("Delete_CustomXmlPart"),customxmlpart.ptr)
 	customxmlpart.ptr = nil
 }
 
@@ -259,7 +259,7 @@ func (instance *CustomXmlPartCollection) GetCount()  (int32,  error)  {
 
 func DeleteCustomXmlPartCollection(customxmlpartcollection *CustomXmlPartCollection){
 	runtime.SetFinalizer(customxmlpartcollection, nil)
-	C.Delete_CustomXmlPartCollection(customxmlpartcollection.ptr)
+	C.Delete_CObject(C.CString("Delete_CustomXmlPartCollection"),customxmlpartcollection.ptr)
 	customxmlpartcollection.ptr = nil
 }
 
@@ -399,7 +399,7 @@ func (instance *SmartTag) SetLink(uri string, name string)  error {
 
 func DeleteSmartTag(smarttag *SmartTag){
 	runtime.SetFinalizer(smarttag, nil)
-	C.Delete_SmartTag(smarttag.ptr)
+	C.Delete_CObject(C.CString("Delete_SmartTag"),smarttag.ptr)
 	smarttag.ptr = nil
 }
 
@@ -506,7 +506,7 @@ func (instance *SmartTagCollection) GetCount()  (int32,  error)  {
 
 func DeleteSmartTagCollection(smarttagcollection *SmartTagCollection){
 	runtime.SetFinalizer(smarttagcollection, nil)
-	C.Delete_SmartTagCollection(smarttagcollection.ptr)
+	C.Delete_CObject(C.CString("Delete_SmartTagCollection"),smarttagcollection.ptr)
 	smarttagcollection.ptr = nil
 }
 
@@ -612,7 +612,7 @@ func (instance *SmartTagOptions) SetShowType(value SmartTagShowType)  error {
 
 func DeleteSmartTagOptions(smarttagoptions *SmartTagOptions){
 	runtime.SetFinalizer(smarttagoptions, nil)
-	C.Delete_SmartTagOptions(smarttagoptions.ptr)
+	C.Delete_CObject(C.CString("Delete_SmartTagOptions"),smarttagoptions.ptr)
 	smarttagoptions.ptr = nil
 }
 
@@ -701,7 +701,7 @@ func (instance *SmartTagProperty) SetValue(value string)  error {
 
 func DeleteSmartTagProperty(smarttagproperty *SmartTagProperty){
 	runtime.SetFinalizer(smarttagproperty, nil)
-	C.Delete_SmartTagProperty(smarttagproperty.ptr)
+	C.Delete_CObject(C.CString("Delete_SmartTagProperty"),smarttagproperty.ptr)
 	smarttagproperty.ptr = nil
 }
 
@@ -812,7 +812,7 @@ func (instance *SmartTagPropertyCollection) GetCount()  (int32,  error)  {
 
 func DeleteSmartTagPropertyCollection(smarttagpropertycollection *SmartTagPropertyCollection){
 	runtime.SetFinalizer(smarttagpropertycollection, nil)
-	C.Delete_SmartTagPropertyCollection(smarttagpropertycollection.ptr)
+	C.Delete_CObject(C.CString("Delete_SmartTagPropertyCollection"),smarttagpropertycollection.ptr)
 	smarttagpropertycollection.ptr = nil
 }
 
@@ -944,6 +944,6 @@ func (instance *SmartTagSetting) GetCount()  (int32,  error)  {
 
 func DeleteSmartTagSetting(smarttagsetting *SmartTagSetting){
 	runtime.SetFinalizer(smarttagsetting, nil)
-	C.Delete_SmartTagSetting(smarttagsetting.ptr)
+	C.Delete_CObject(C.CString("Delete_SmartTagSetting"),smarttagsetting.ptr)
 	smarttagsetting.ptr = nil
 }
