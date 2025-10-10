@@ -559,7 +559,7 @@ func NewEbookSaveOptions_HtmlSaveOptions(src *HtmlSaveOptions) ( *EbookSaveOptio
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZBGN(C.CString("New_EbookSaveOptions_HtmlSaveOptions"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGP(C.CString("New_EbookSaveOptions_HtmlSaveOptions"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		ebooksaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(ebooksaveoptions, DeleteEbookSaveOptions)
@@ -3182,7 +3182,7 @@ func (instance *SqlScriptSaveOptions) SetCheckIfTableExists(value bool)  error {
 //   SqlScriptColumnTypeMap  
 func (instance *SqlScriptSaveOptions) GetColumnTypeMap()  (*SqlScriptColumnTypeMap,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBGO(C.CString("SqlScriptSaveOptions_GetColumnTypeMap"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGQ(C.CString("SqlScriptSaveOptions_GetColumnTypeMap"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3205,7 +3205,7 @@ func (instance *SqlScriptSaveOptions) SetColumnTypeMap(value *SqlScriptColumnTyp
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZBGP(C.CString("SqlScriptSaveOptions_SetColumnTypeMap"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGR(C.CString("SqlScriptSaveOptions_SetColumnTypeMap"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3305,7 +3305,7 @@ func (instance *SqlScriptSaveOptions) SetSeparator(value byte)  error {
 //   int32  
 func (instance *SqlScriptSaveOptions) GetOperatorType()  (SqlScriptOperatorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBGQ(C.CString("SqlScriptSaveOptions_GetOperatorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGS(C.CString("SqlScriptSaveOptions_GetOperatorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3324,7 +3324,7 @@ func (instance *SqlScriptSaveOptions) GetOperatorType()  (SqlScriptOperatorType,
 //   void  
 func (instance *SqlScriptSaveOptions) SetOperatorType(value SqlScriptOperatorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBGR(C.CString("SqlScriptSaveOptions_SetOperatorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZBGT(C.CString("SqlScriptSaveOptions_SetOperatorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

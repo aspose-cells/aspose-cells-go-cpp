@@ -1,8 +1,9 @@
 package main
 
 import (
-	. "github.com/aspose-cells/aspose-cells-go-cpp/v25"
 	"os"
+
+	. "github.com/aspose-cells/aspose-cells-go-cpp/v25"
 )
 
 func create_folder(folder string) {
@@ -129,4 +130,5 @@ func main() {
 	ShowCellsHelper()
 	ReplaceCellValue()
 	Unlock()
+	PerformanceTesting1()
 }

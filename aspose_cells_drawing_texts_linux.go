@@ -478,7 +478,7 @@ func NewAutoNumberedBulletValue_BulletValue(src *BulletValue) ( *AutoNumberedBul
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZARB(C.CString("New_AutoNumberedBulletValue_BulletValue"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARD(C.CString("New_AutoNumberedBulletValue_BulletValue"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		autonumberedbulletvalue.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(autonumberedbulletvalue, DeleteAutoNumberedBulletValue)
@@ -509,7 +509,7 @@ func (instance *AutoNumberedBulletValue) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *AutoNumberedBulletValue) GetType()  (BulletType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARC(C.CString("AutoNumberedBulletValue_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARE(C.CString("AutoNumberedBulletValue_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -555,7 +555,7 @@ func (instance *AutoNumberedBulletValue) SetStartAt(value int32)  error {
 //   int32  
 func (instance *AutoNumberedBulletValue) GetAutonumberScheme()  (TextAutonumberScheme,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARD(C.CString("AutoNumberedBulletValue_GetAutonumberScheme"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARF(C.CString("AutoNumberedBulletValue_GetAutonumberScheme"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -574,7 +574,7 @@ func (instance *AutoNumberedBulletValue) GetAutonumberScheme()  (TextAutonumberS
 //   void  
 func (instance *AutoNumberedBulletValue) SetAutonumberScheme(value TextAutonumberScheme)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARE(C.CString("AutoNumberedBulletValue_SetAutonumberScheme"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZARG(C.CString("AutoNumberedBulletValue_SetAutonumberScheme"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -623,7 +623,7 @@ func (instance *Bullet) IsNull()  (bool,  error)  {
 //   BulletValue  
 func (instance *Bullet) GetBulletValue()  (*BulletValue,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARF(C.CString("Bullet_GetBulletValue"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARH(C.CString("Bullet_GetBulletValue"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -639,7 +639,7 @@ func (instance *Bullet) GetBulletValue()  (*BulletValue,  error)  {
 //   int32  
 func (instance *Bullet) GetType()  (BulletType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARC(C.CString("Bullet_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARE(C.CString("Bullet_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -658,7 +658,7 @@ func (instance *Bullet) GetType()  (BulletType,  error)  {
 //   void  
 func (instance *Bullet) SetType(value BulletType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARG(C.CString("Bullet_SetType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZARI(C.CString("Bullet_SetType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -731,7 +731,7 @@ func (instance *BulletValue) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *BulletValue) GetType()  (BulletType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARC(C.CString("BulletValue_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARE(C.CString("BulletValue_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -783,7 +783,7 @@ func NewCharacterBulletValue_BulletValue(src *BulletValue) ( *CharacterBulletVal
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZARB(C.CString("New_CharacterBulletValue_BulletValue"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARD(C.CString("New_CharacterBulletValue_BulletValue"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		characterbulletvalue.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(characterbulletvalue, DeleteCharacterBulletValue)
@@ -814,7 +814,7 @@ func (instance *CharacterBulletValue) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *CharacterBulletValue) GetType()  (BulletType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARC(C.CString("CharacterBulletValue_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARE(C.CString("CharacterBulletValue_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -911,7 +911,7 @@ func (instance *FontSettingCollection) SetWordArtStyle(style PresetWordArtStyle)
 //   ShapeTextAlignment  
 func (instance *FontSettingCollection) GetTextAlignment()  (*ShapeTextAlignment,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARH(C.CString("FontSettingCollection_GetTextAlignment"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARJ(C.CString("FontSettingCollection_GetTextAlignment"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -927,7 +927,7 @@ func (instance *FontSettingCollection) GetTextAlignment()  (*ShapeTextAlignment,
 //   TextParagraphCollection  
 func (instance *FontSettingCollection) GetTextParagraphs()  (*TextParagraphCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARI(C.CString("FontSettingCollection_GetTextParagraphs"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARK(C.CString("FontSettingCollection_GetTextParagraphs"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -943,7 +943,7 @@ func (instance *FontSettingCollection) GetTextParagraphs()  (*TextParagraphColle
 //   unsafe.Pointer  
 func (instance *FontSettingCollection) GetParagraphEnumerator()  (*TextParagraphEnumerator,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARJ(C.CString("FontSettingCollection_GetParagraphEnumerator"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARL(C.CString("FontSettingCollection_GetParagraphEnumerator"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1024,7 +1024,7 @@ func (instance *FontSettingCollection) InsertText(index int32, text string)  err
 //   void  
 func (instance *FontSettingCollection) Replace_Int_Int_String(index int32, count int32, text string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARK(C.CString("FontSettingCollection_Replace_Integer_Integer_String"), instance.ptr, C.int(index), C.int(count), C.CString(text))
+	CGoReturnPtr := C.CellsGoFunctoinZARM(C.CString("FontSettingCollection_Replace_Integer_Integer_String"), instance.ptr, C.int(index), C.int(count), C.CString(text))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1127,7 +1127,7 @@ func (instance *FontSettingCollection) Format(startindex int32, length int32, fo
 //   FontSetting  
 func (instance *FontSettingCollection) Get(index int32)  (*FontSetting,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARL(C.CString("FontSettingCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZARN(C.CString("FontSettingCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1237,7 +1237,7 @@ func NewNoneBulletValue_BulletValue(src *BulletValue) ( *NoneBulletValue, error)
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZARB(C.CString("New_NoneBulletValue_BulletValue"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARD(C.CString("New_NoneBulletValue_BulletValue"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		nonebulletvalue.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(nonebulletvalue, DeleteNoneBulletValue)
@@ -1268,7 +1268,7 @@ func (instance *NoneBulletValue) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *NoneBulletValue) GetType()  (BulletType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARC(C.CString("NoneBulletValue_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARE(C.CString("NoneBulletValue_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1325,7 +1325,7 @@ func NewPictureBulletValue_BulletValue(src *BulletValue) ( *PictureBulletValue, 
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZARB(C.CString("New_PictureBulletValue_BulletValue"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARD(C.CString("New_PictureBulletValue_BulletValue"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		picturebulletvalue.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(picturebulletvalue, DeletePictureBulletValue)
@@ -1356,7 +1356,7 @@ func (instance *PictureBulletValue) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *PictureBulletValue) GetType()  (BulletType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARC(C.CString("PictureBulletValue_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARE(C.CString("PictureBulletValue_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1497,7 +1497,7 @@ func (instance *ShapeTextAlignment) SetRotateTextWithShape(value bool)  error {
 //   int32  
 func (instance *ShapeTextAlignment) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("ShapeTextAlignment_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("ShapeTextAlignment_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1516,7 +1516,7 @@ func (instance *ShapeTextAlignment) GetTextVerticalOverflow()  (TextOverflowType
 //   void  
 func (instance *ShapeTextAlignment) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("ShapeTextAlignment_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("ShapeTextAlignment_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1529,7 +1529,7 @@ func (instance *ShapeTextAlignment) SetTextVerticalOverflow(value TextOverflowTy
 //   int32  
 func (instance *ShapeTextAlignment) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("ShapeTextAlignment_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("ShapeTextAlignment_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1548,7 +1548,7 @@ func (instance *ShapeTextAlignment) GetTextHorizontalOverflow()  (TextOverflowTy
 //   void  
 func (instance *ShapeTextAlignment) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("ShapeTextAlignment_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("ShapeTextAlignment_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1590,7 +1590,7 @@ func (instance *ShapeTextAlignment) SetRotationAngle(value float64)  error {
 //   int32  
 func (instance *ShapeTextAlignment) GetTextVerticalType()  (TextVerticalType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARM(C.CString("ShapeTextAlignment_GetTextVerticalType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARO(C.CString("ShapeTextAlignment_GetTextVerticalType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1609,7 +1609,7 @@ func (instance *ShapeTextAlignment) GetTextVerticalType()  (TextVerticalType,  e
 //   void  
 func (instance *ShapeTextAlignment) SetTextVerticalType(value TextVerticalType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARN(C.CString("ShapeTextAlignment_SetTextVerticalType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZARP(C.CString("ShapeTextAlignment_SetTextVerticalType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1680,7 +1680,7 @@ func (instance *ShapeTextAlignment) SetAutoSize(value bool)  error {
 //   int32  
 func (instance *ShapeTextAlignment) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ShapeTextAlignment_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ShapeTextAlignment_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1699,7 +1699,7 @@ func (instance *ShapeTextAlignment) GetTextShapeType()  (AutoShapeType,  error) 
 //   void  
 func (instance *ShapeTextAlignment) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("ShapeTextAlignment_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("ShapeTextAlignment_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1951,7 +1951,7 @@ func (instance *TextBoxOptions) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *TextBoxOptions) GetShapeTextVerticalAlignment()  (ShapeTextVerticalAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARO(C.CString("TextBoxOptions_GetShapeTextVerticalAlignment"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARQ(C.CString("TextBoxOptions_GetShapeTextVerticalAlignment"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1970,7 +1970,7 @@ func (instance *TextBoxOptions) GetShapeTextVerticalAlignment()  (ShapeTextVerti
 //   void  
 func (instance *TextBoxOptions) SetShapeTextVerticalAlignment(value ShapeTextVerticalAlignmentType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARP(C.CString("TextBoxOptions_SetShapeTextVerticalAlignment"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZARR(C.CString("TextBoxOptions_SetShapeTextVerticalAlignment"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2013,7 +2013,7 @@ func (instance *TextBoxOptions) SetResizeToFitText(value bool)  error {
 //   int32  
 func (instance *TextBoxOptions) GetShapeTextDirection()  (TextVerticalType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARM(C.CString("TextBoxOptions_GetShapeTextDirection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARO(C.CString("TextBoxOptions_GetShapeTextDirection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2033,7 +2033,7 @@ func (instance *TextBoxOptions) GetShapeTextDirection()  (TextVerticalType,  err
 //   void  
 func (instance *TextBoxOptions) SetShapeTextDirection(value TextVerticalType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARN(C.CString("TextBoxOptions_SetShapeTextDirection"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZARP(C.CString("TextBoxOptions_SetShapeTextDirection"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2245,7 +2245,7 @@ func NewTextOptions(src *Font) ( *TextOptions, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZARQ(C.CString("New_TextOptions"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARS(C.CString("New_TextOptions"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		textoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(textoptions, DeleteTextOptions)
@@ -2395,7 +2395,7 @@ func (instance *TextOptions) SetFarEastName(value string)  error {
 //   FillFormat  
 func (instance *TextOptions) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("TextOptions_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("TextOptions_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2411,7 +2411,7 @@ func (instance *TextOptions) GetFill()  (*FillFormat,  error)  {
 //   LineFormat  
 func (instance *TextOptions) GetOutline()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("TextOptions_GetOutline"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("TextOptions_GetOutline"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2427,7 +2427,7 @@ func (instance *TextOptions) GetOutline()  (*LineFormat,  error)  {
 //   ShadowEffect  
 func (instance *TextOptions) GetShadow()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("TextOptions_GetShadow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("TextOptions_GetShadow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2466,7 +2466,7 @@ func (instance *TextOptions) SetUnderlineColor(value *CellsColor)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("TextOptions_SetUnderlineColor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALW(C.CString("TextOptions_SetUnderlineColor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3111,7 +3111,7 @@ func NewTextParagraph(src *FontSetting) ( *TextParagraph, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAHE(C.CString("New_TextParagraph"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAHG(C.CString("New_TextParagraph"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		textparagraph.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(textparagraph, DeleteTextParagraph)
@@ -3142,7 +3142,7 @@ func (instance *TextParagraph) IsNull()  (bool,  error)  {
 //   Bullet  
 func (instance *TextParagraph) GetBullet()  (*Bullet,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARR(C.CString("TextParagraph_GetBullet"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZART(C.CString("TextParagraph_GetBullet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3175,7 +3175,7 @@ func (instance *TextParagraph) GetType()  (TextNodeType,  error)  {
 //   int32  
 func (instance *TextParagraph) GetLineSpaceSizeType()  (LineSpaceSizeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARS(C.CString("TextParagraph_GetLineSpaceSizeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARU(C.CString("TextParagraph_GetLineSpaceSizeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3194,7 +3194,7 @@ func (instance *TextParagraph) GetLineSpaceSizeType()  (LineSpaceSizeType,  erro
 //   void  
 func (instance *TextParagraph) SetLineSpaceSizeType(value LineSpaceSizeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZART(C.CString("TextParagraph_SetLineSpaceSizeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZARV(C.CString("TextParagraph_SetLineSpaceSizeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3236,7 +3236,7 @@ func (instance *TextParagraph) SetLineSpace(value float64)  error {
 //   int32  
 func (instance *TextParagraph) GetSpaceAfterSizeType()  (LineSpaceSizeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARS(C.CString("TextParagraph_GetSpaceAfterSizeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARU(C.CString("TextParagraph_GetSpaceAfterSizeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3255,7 +3255,7 @@ func (instance *TextParagraph) GetSpaceAfterSizeType()  (LineSpaceSizeType,  err
 //   void  
 func (instance *TextParagraph) SetSpaceAfterSizeType(value LineSpaceSizeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZART(C.CString("TextParagraph_SetSpaceAfterSizeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZARV(C.CString("TextParagraph_SetSpaceAfterSizeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3297,7 +3297,7 @@ func (instance *TextParagraph) SetSpaceAfter(value float64)  error {
 //   int32  
 func (instance *TextParagraph) GetSpaceBeforeSizeType()  (LineSpaceSizeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARS(C.CString("TextParagraph_GetSpaceBeforeSizeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARU(C.CString("TextParagraph_GetSpaceBeforeSizeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3316,7 +3316,7 @@ func (instance *TextParagraph) GetSpaceBeforeSizeType()  (LineSpaceSizeType,  er
 //   void  
 func (instance *TextParagraph) SetSpaceBeforeSizeType(value LineSpaceSizeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZART(C.CString("TextParagraph_SetSpaceBeforeSizeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZARV(C.CString("TextParagraph_SetSpaceBeforeSizeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3358,7 +3358,7 @@ func (instance *TextParagraph) SetSpaceBefore(value float64)  error {
 //   TextTabStopCollection  
 func (instance *TextParagraph) GetStops()  (*TextTabStopCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARU(C.CString("TextParagraph_GetStops"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARW(C.CString("TextParagraph_GetStops"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3549,7 +3549,7 @@ func (instance *TextParagraph) SetFirstLineIndent(value float64)  error {
 //   int32  
 func (instance *TextParagraph) GetFontAlignType()  (TextFontAlignType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARV(C.CString("TextParagraph_GetFontAlignType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARX(C.CString("TextParagraph_GetFontAlignType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3569,7 +3569,7 @@ func (instance *TextParagraph) GetFontAlignType()  (TextFontAlignType,  error)  
 //   void  
 func (instance *TextParagraph) SetFontAlignType(value TextFontAlignType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARW(C.CString("TextParagraph_SetFontAlignType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZARY(C.CString("TextParagraph_SetFontAlignType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3792,7 +3792,7 @@ func (instance *TextParagraphCollection) GetCount()  (int32,  error)  {
 //   TextParagraph  
 func (instance *TextParagraphCollection) Get(index int32)  (*TextParagraph,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARX(C.CString("TextParagraphCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZASA(C.CString("TextParagraphCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3808,7 +3808,7 @@ func (instance *TextParagraphCollection) Get(index int32)  (*TextParagraph,  err
 //   unsafe.Pointer  
 func (instance *TextParagraphCollection) GetEnumerator()  (*TextParagraphEnumerator,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARJ(C.CString("TextParagraphCollection_GetEnumerator"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARL(C.CString("TextParagraphCollection_GetEnumerator"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3856,7 +3856,7 @@ func (instance *TextTabStop) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *TextTabStop) GetTabAlignment()  (TextTabAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZARY(C.CString("TextTabStop_GetTabAlignment"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASB(C.CString("TextTabStop_GetTabAlignment"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3875,7 +3875,7 @@ func (instance *TextTabStop) GetTabAlignment()  (TextTabAlignmentType,  error)  
 //   void  
 func (instance *TextTabStop) SetTabAlignment(value TextTabAlignmentType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASA(C.CString("TextTabStop_SetTabAlignment"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZASC(C.CString("TextTabStop_SetTabAlignment"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3965,7 +3965,7 @@ func (instance *TextTabStopCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *TextTabStopCollection) Add(tabalignment TextTabAlignmentType, tabposition float64)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASB(C.CString("TextTabStopCollection_Add"), instance.ptr, C.int( int32(tabalignment)), C.double(tabposition))
+	CGoReturnPtr := C.CellsGoFunctoinZASD(C.CString("TextTabStopCollection_Add"), instance.ptr, C.int( int32(tabalignment)), C.double(tabposition))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3981,7 +3981,7 @@ func (instance *TextTabStopCollection) Add(tabalignment TextTabAlignmentType, ta
 //   TextTabStop  
 func (instance *TextTabStopCollection) Get(index int32)  (*TextTabStop,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASC(C.CString("TextTabStopCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("TextTabStopCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err

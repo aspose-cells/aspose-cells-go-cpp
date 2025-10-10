@@ -256,7 +256,7 @@ func (instance *OdsCellField) SetCustomFormat(value string)  error {
 //   int32  
 func (instance *OdsCellField) GetFieldType()  (OdsCellFieldType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBIP(C.CString("OdsCellField_GetFieldType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBIR(C.CString("OdsCellField_GetFieldType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -275,7 +275,7 @@ func (instance *OdsCellField) GetFieldType()  (OdsCellFieldType,  error)  {
 //   void  
 func (instance *OdsCellField) SetFieldType(value OdsCellFieldType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBIQ(C.CString("OdsCellField_SetFieldType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZBIS(C.CString("OdsCellField_SetFieldType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -379,7 +379,7 @@ func (instance *OdsCellFieldCollection) IsNull()  (bool,  error)  {
 //   OdsCellField  
 func (instance *OdsCellFieldCollection) Get_Int(index int32)  (*OdsCellField,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBIR(C.CString("OdsCellFieldCollection_Get_Integer"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZBIT(C.CString("OdsCellFieldCollection_Get_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -398,7 +398,7 @@ func (instance *OdsCellFieldCollection) Get_Int(index int32)  (*OdsCellField,  e
 //   OdsCellField  
 func (instance *OdsCellFieldCollection) Get_Int_Int(row int32, column int32)  (*OdsCellField,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBIS(C.CString("OdsCellFieldCollection_Get_Integer_Integer"), instance.ptr, C.int(row), C.int(column))
+	CGoReturnPtr := C.CellsGoFunctoinZBIU(C.CString("OdsCellFieldCollection_Get_Integer_Integer"), instance.ptr, C.int(row), C.int(column))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -419,7 +419,7 @@ func (instance *OdsCellFieldCollection) Get_Int_Int(row int32, column int32)  (*
 //   int32  
 func (instance *OdsCellFieldCollection) Add(row int32, column int32, fieldtype OdsCellFieldType, format string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBIT(C.CString("OdsCellFieldCollection_Add"), instance.ptr, C.int(row), C.int(column), C.int( int32(fieldtype)), C.CString(format))
+	CGoReturnPtr := C.CellsGoFunctoinZBIV(C.CString("OdsCellFieldCollection_Add"), instance.ptr, C.int(row), C.int(column), C.int( int32(fieldtype)), C.CString(format))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -504,7 +504,7 @@ func (instance *OdsPageBackground) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *OdsPageBackground) GetType()  (OdsPageBackgroundType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBIU(C.CString("OdsPageBackground_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBIW(C.CString("OdsPageBackground_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -523,7 +523,7 @@ func (instance *OdsPageBackground) GetType()  (OdsPageBackgroundType,  error)  {
 //   void  
 func (instance *OdsPageBackground) SetType(value OdsPageBackgroundType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBIV(C.CString("OdsPageBackground_SetType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZBIX(C.CString("OdsPageBackground_SetType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -566,7 +566,7 @@ func (instance *OdsPageBackground) SetColor(value *Color)  error {
 //   int32  
 func (instance *OdsPageBackground) GetGraphicType()  (OdsPageBackgroundGraphicType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBIW(C.CString("OdsPageBackground_GetGraphicType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBIY(C.CString("OdsPageBackground_GetGraphicType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -585,7 +585,7 @@ func (instance *OdsPageBackground) GetGraphicType()  (OdsPageBackgroundGraphicTy
 //   void  
 func (instance *OdsPageBackground) SetGraphicType(value OdsPageBackgroundGraphicType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBIX(C.CString("OdsPageBackground_SetGraphicType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZBJA(C.CString("OdsPageBackground_SetGraphicType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -598,7 +598,7 @@ func (instance *OdsPageBackground) SetGraphicType(value OdsPageBackgroundGraphic
 //   int32  
 func (instance *OdsPageBackground) GetGraphicPositionType()  (OdsPageBackgroundGraphicPositionType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBIY(C.CString("OdsPageBackground_GetGraphicPositionType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBJB(C.CString("OdsPageBackground_GetGraphicPositionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -617,7 +617,7 @@ func (instance *OdsPageBackground) GetGraphicPositionType()  (OdsPageBackgroundG
 //   void  
 func (instance *OdsPageBackground) SetGraphicPositionType(value OdsPageBackgroundGraphicPositionType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBJA(C.CString("OdsPageBackground_SetGraphicPositionType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZBJC(C.CString("OdsPageBackground_SetGraphicPositionType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

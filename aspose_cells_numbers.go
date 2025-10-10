@@ -107,7 +107,7 @@ func (instance *NumbersLoadOptions) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *NumbersLoadOptions) GetLoadTableType()  (LoadNumbersTableType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBIN(C.CString("NumbersLoadOptions_GetLoadTableType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBIP(C.CString("NumbersLoadOptions_GetLoadTableType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -126,7 +126,7 @@ func (instance *NumbersLoadOptions) GetLoadTableType()  (LoadNumbersTableType,  
 //   void  
 func (instance *NumbersLoadOptions) SetLoadTableType(value LoadNumbersTableType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBIO(C.CString("NumbersLoadOptions_SetLoadTableType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZBIQ(C.CString("NumbersLoadOptions_SetLoadTableType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

@@ -73,7 +73,7 @@ func (instance *DataMashup) IsNull()  (bool,  error)  {
 //   PowerQueryFormulaCollection  
 func (instance *DataMashup) GetPowerQueryFormulas()  (*PowerQueryFormulaCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBFX(C.CString("DataMashup_GetPowerQueryFormulas"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGA(C.CString("DataMashup_GetPowerQueryFormulas"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -192,7 +192,7 @@ func (instance *PowerQueryFormula) SetDescription(value string)  error {
 //   PowerQueryFormulaItemCollection  
 func (instance *PowerQueryFormula) GetPowerQueryFormulaItems()  (*PowerQueryFormulaItemCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBFY(C.CString("PowerQueryFormula_GetPowerQueryFormulaItems"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGB(C.CString("PowerQueryFormula_GetPowerQueryFormulaItems"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -208,7 +208,7 @@ func (instance *PowerQueryFormula) GetPowerQueryFormulaItems()  (*PowerQueryForm
 //   int32  
 func (instance *PowerQueryFormula) GetType()  (PowerQueryFormulaType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBGA(C.CString("PowerQueryFormula_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGC(C.CString("PowerQueryFormula_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -272,7 +272,7 @@ func (instance *PowerQueryFormulaCollection) IsNull()  (bool,  error)  {
 //   PowerQueryFormula  
 func (instance *PowerQueryFormulaCollection) Get_Int(index int32)  (*PowerQueryFormula,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBGB(C.CString("PowerQueryFormulaCollection_Get_Integer"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZBGD(C.CString("PowerQueryFormulaCollection_Get_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -290,7 +290,7 @@ func (instance *PowerQueryFormulaCollection) Get_Int(index int32)  (*PowerQueryF
 //   PowerQueryFormula  
 func (instance *PowerQueryFormulaCollection) Get_String(name string)  (*PowerQueryFormula,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBGC(C.CString("PowerQueryFormulaCollection_Get_String"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZBGE(C.CString("PowerQueryFormulaCollection_Get_String"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -355,7 +355,7 @@ func NewPowerQueryFormulaFunction(src *PowerQueryFormula) ( *PowerQueryFormulaFu
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZBGD(C.CString("New_PowerQueryFormulaFunction"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGF(C.CString("New_PowerQueryFormulaFunction"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		powerqueryformulafunction.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(powerqueryformulafunction, DeletePowerQueryFormulaFunction)
@@ -386,7 +386,7 @@ func (instance *PowerQueryFormulaFunction) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *PowerQueryFormulaFunction) GetType()  (PowerQueryFormulaType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBGA(C.CString("PowerQueryFormulaFunction_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGC(C.CString("PowerQueryFormulaFunction_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -504,7 +504,7 @@ func (instance *PowerQueryFormulaFunction) SetDescription(value string)  error {
 //   PowerQueryFormulaItemCollection  
 func (instance *PowerQueryFormulaFunction) GetPowerQueryFormulaItems()  (*PowerQueryFormulaItemCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBFY(C.CString("PowerQueryFormulaFunction_GetPowerQueryFormulaItems"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGB(C.CString("PowerQueryFormulaFunction_GetPowerQueryFormulaItems"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -646,7 +646,7 @@ func (instance *PowerQueryFormulaItemCollection) IsNull()  (bool,  error)  {
 //   PowerQueryFormulaItem  
 func (instance *PowerQueryFormulaItemCollection) Get_Int(index int32)  (*PowerQueryFormulaItem,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBGE(C.CString("PowerQueryFormulaItemCollection_Get_Integer"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZBGG(C.CString("PowerQueryFormulaItemCollection_Get_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -664,7 +664,7 @@ func (instance *PowerQueryFormulaItemCollection) Get_Int(index int32)  (*PowerQu
 //   PowerQueryFormulaItem  
 func (instance *PowerQueryFormulaItemCollection) Get_String(name string)  (*PowerQueryFormulaItem,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBGF(C.CString("PowerQueryFormulaItemCollection_Get_String"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZBGH(C.CString("PowerQueryFormulaItemCollection_Get_String"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -714,7 +714,7 @@ func NewPowerQueryFormulaParameter(src *PowerQueryFormula) ( *PowerQueryFormulaP
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZBGD(C.CString("New_PowerQueryFormulaParameter"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGF(C.CString("New_PowerQueryFormulaParameter"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		powerqueryformulaparameter.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(powerqueryformulaparameter, DeletePowerQueryFormulaParameter)
@@ -745,7 +745,7 @@ func (instance *PowerQueryFormulaParameter) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *PowerQueryFormulaParameter) GetType()  (PowerQueryFormulaType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBGA(C.CString("PowerQueryFormulaParameter_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGC(C.CString("PowerQueryFormulaParameter_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -877,7 +877,7 @@ func (instance *PowerQueryFormulaParameter) SetDescription(value string)  error 
 //   PowerQueryFormulaItemCollection  
 func (instance *PowerQueryFormulaParameter) GetPowerQueryFormulaItems()  (*PowerQueryFormulaItemCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBFY(C.CString("PowerQueryFormulaParameter_GetPowerQueryFormulaItems"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBGB(C.CString("PowerQueryFormulaParameter_GetPowerQueryFormulaItems"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -945,7 +945,7 @@ func (instance *PowerQueryFormulaParameterCollection) IsNull()  (bool,  error)  
 //   PowerQueryFormulaParameter  
 func (instance *PowerQueryFormulaParameterCollection) Get_Int(index int32)  (*PowerQueryFormulaParameter,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBGG(C.CString("PowerQueryFormulaParameterCollection_Get_Integer"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZBGI(C.CString("PowerQueryFormulaParameterCollection_Get_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -963,7 +963,7 @@ func (instance *PowerQueryFormulaParameterCollection) Get_Int(index int32)  (*Po
 //   PowerQueryFormulaParameter  
 func (instance *PowerQueryFormulaParameterCollection) Get_String(name string)  (*PowerQueryFormulaParameter,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBGH(C.CString("PowerQueryFormulaParameterCollection_Get_String"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZBGJ(C.CString("PowerQueryFormulaParameterCollection_Get_String"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err

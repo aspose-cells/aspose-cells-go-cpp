@@ -51,7 +51,7 @@ func (instance *ConversionUtility) IsNull()  (bool,  error)  {
 //   void  
 func ConversionUtility_Convert_String_String(source string, saveas string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAFR(C.CString("ConversionUtility_Convert_String_String"),C.CString(source), C.CString(saveas))
+	CGoReturnPtr := C.CellsGoFunctoinZAFT(C.CString("ConversionUtility_Convert_String_String"),C.CString(source), C.CString(saveas))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -78,7 +78,7 @@ func ConversionUtility_Convert_String_LoadOptions_String_SaveOptions(source stri
 	  saveoptions_ptr =saveoptions.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAYO(C.CString("ConversionUtility_Convert_String_LoadOptions_String_SaveOptions"),C.CString(source), loadoptions_ptr, C.CString(saveas), saveoptions_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYQ(C.CString("ConversionUtility_Convert_String_LoadOptions_String_SaveOptions"),C.CString(source), loadoptions_ptr, C.CString(saveas), saveoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -596,7 +596,7 @@ func JsonUtility_ImportData(json string, cells *Cells, row int32, column int32, 
 	  option_ptr =option.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAYP(C.CString("JsonUtility_ImportData"),C.CString(json), cells_ptr, C.int(row), C.int(column), option_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYR(C.CString("JsonUtility_ImportData"),C.CString(json), cells_ptr, C.int(row), C.int(column), option_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -629,7 +629,7 @@ func JsonUtility_ExportRangeToJson(range_ *Range, options *JsonSaveOptions)  (st
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAYQ(C.CString("JsonUtility_ExportRangeToJson"),range__ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYS(C.CString("JsonUtility_ExportRangeToJson"),range__ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err

@@ -196,7 +196,7 @@ func (instance *CustomXmlPartCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *CustomXmlPartCollection) Add(data []byte, shemadata []byte)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBFK(C.CString("CustomXmlPartCollection_Add"), instance.ptr, unsafe.Pointer(&data[0]), C.int( len(data)), unsafe.Pointer(&shemadata[0]), C.int( len(shemadata)))
+	CGoReturnPtr := C.CellsGoFunctoinZBFM(C.CString("CustomXmlPartCollection_Add"), instance.ptr, unsafe.Pointer(&data[0]), C.int( len(data)), unsafe.Pointer(&shemadata[0]), C.int( len(shemadata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -212,7 +212,7 @@ func (instance *CustomXmlPartCollection) Add(data []byte, shemadata []byte)  (in
 //   CustomXmlPart  
 func (instance *CustomXmlPartCollection) Get(index int32)  (*CustomXmlPart,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBFL(C.CString("CustomXmlPartCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZBFN(C.CString("CustomXmlPartCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -230,7 +230,7 @@ func (instance *CustomXmlPartCollection) Get(index int32)  (*CustomXmlPart,  err
 //   CustomXmlPart  
 func (instance *CustomXmlPartCollection) SelectByID(id string)  (*CustomXmlPart,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBFM(C.CString("CustomXmlPartCollection_SelectByID"), instance.ptr, C.CString(id))
+	CGoReturnPtr := C.CellsGoFunctoinZBFO(C.CString("CustomXmlPartCollection_SelectByID"), instance.ptr, C.CString(id))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -319,7 +319,7 @@ func (instance *SmartTag) SetDeleted(value bool)  error {
 //   SmartTagPropertyCollection  
 func (instance *SmartTag) GetProperties()  (*SmartTagPropertyCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBFN(C.CString("SmartTag_GetProperties"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBFP(C.CString("SmartTag_GetProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -342,7 +342,7 @@ func (instance *SmartTag) SetProperties(value *SmartTagPropertyCollection)  erro
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZBFO(C.CString("SmartTag_SetProperties"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBFQ(C.CString("SmartTag_SetProperties"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -460,7 +460,7 @@ func (instance *SmartTagCollection) GetColumn()  (int32,  error)  {
 //   SmartTag  
 func (instance *SmartTagCollection) Get(index int32)  (*SmartTag,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBFP(C.CString("SmartTagCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZBFR(C.CString("SmartTagCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -580,7 +580,7 @@ func (instance *SmartTagOptions) SetEmbedSmartTags(value bool)  error {
 //   int32  
 func (instance *SmartTagOptions) GetShowType()  (SmartTagShowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBFQ(C.CString("SmartTagOptions_GetShowType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBFS(C.CString("SmartTagOptions_GetShowType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -599,7 +599,7 @@ func (instance *SmartTagOptions) GetShowType()  (SmartTagShowType,  error)  {
 //   void  
 func (instance *SmartTagOptions) SetShowType(value SmartTagShowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBFR(C.CString("SmartTagOptions_SetShowType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZBFT(C.CString("SmartTagOptions_SetShowType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -748,7 +748,7 @@ func (instance *SmartTagPropertyCollection) IsNull()  (bool,  error)  {
 //   SmartTagProperty  
 func (instance *SmartTagPropertyCollection) Get_Int(index int32)  (*SmartTagProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBFS(C.CString("SmartTagPropertyCollection_Get_Integer"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZBFU(C.CString("SmartTagPropertyCollection_Get_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -766,7 +766,7 @@ func (instance *SmartTagPropertyCollection) Get_Int(index int32)  (*SmartTagProp
 //   SmartTagProperty  
 func (instance *SmartTagPropertyCollection) Get_String(name string)  (*SmartTagProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBFT(C.CString("SmartTagPropertyCollection_Get_String"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZBFV(C.CString("SmartTagPropertyCollection_Get_String"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -878,7 +878,7 @@ func (instance *SmartTagSetting) Add_String(cellname string)  (int32,  error)  {
 //   SmartTagCollection  
 func (instance *SmartTagSetting) Get_Int(index int32)  (*SmartTagCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBFU(C.CString("SmartTagSetting_Get_Integer"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZBFW(C.CString("SmartTagSetting_Get_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -897,7 +897,7 @@ func (instance *SmartTagSetting) Get_Int(index int32)  (*SmartTagCollection,  er
 //   SmartTagCollection  
 func (instance *SmartTagSetting) Get_Int_Int(row int32, column int32)  (*SmartTagCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBFV(C.CString("SmartTagSetting_Get_Integer_Integer"), instance.ptr, C.int(row), C.int(column))
+	CGoReturnPtr := C.CellsGoFunctoinZBFX(C.CString("SmartTagSetting_Get_Integer_Integer"), instance.ptr, C.int(row), C.int(column))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -915,7 +915,7 @@ func (instance *SmartTagSetting) Get_Int_Int(row int32, column int32)  (*SmartTa
 //   SmartTagCollection  
 func (instance *SmartTagSetting) Get_String(cellname string)  (*SmartTagCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBFW(C.CString("SmartTagSetting_Get_String"), instance.ptr, C.CString(cellname))
+	CGoReturnPtr := C.CellsGoFunctoinZBFY(C.CString("SmartTagSetting_Get_String"), instance.ptr, C.CString(cellname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err

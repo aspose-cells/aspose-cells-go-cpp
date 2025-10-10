@@ -78,7 +78,7 @@ func (instance *Timeline) SetCaption(value string)  error {
 //   TimelineShape  
 func (instance *Timeline) GetShape()  (*TimelineShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBJY(C.CString("Timeline_GetShape"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBKB(C.CString("Timeline_GetShape"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -157,7 +157,7 @@ func (instance *TimelineCollection) IsNull()  (bool,  error)  {
 //   Timeline  
 func (instance *TimelineCollection) Get_Int(index int32)  (*Timeline,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBKA(C.CString("TimelineCollection_Get_Integer"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZBKC(C.CString("TimelineCollection_Get_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -175,7 +175,7 @@ func (instance *TimelineCollection) Get_Int(index int32)  (*Timeline,  error)  {
 //   Timeline  
 func (instance *TimelineCollection) Get_String(name string)  (*Timeline,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBKB(C.CString("TimelineCollection_Get_String"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZBKD(C.CString("TimelineCollection_Get_String"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -201,7 +201,7 @@ func (instance *TimelineCollection) Add_PivotTable_Int_Int_String(pivot *PivotTa
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZBEA(C.CString("TimelineCollection_Add_PivotTable_Integer_Integer_String"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.CString(basefieldname))
+	CGoReturnPtr := C.CellsGoFunctoinZBEC(C.CString("TimelineCollection_Add_PivotTable_Integer_Integer_String"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.CString(basefieldname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -224,7 +224,7 @@ func (instance *TimelineCollection) Add_PivotTable_String_String(pivot *PivotTab
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZBDY(C.CString("TimelineCollection_Add_PivotTable_String_String"), instance.ptr, pivot_ptr, C.CString(destcellname), C.CString(basefieldname))
+	CGoReturnPtr := C.CellsGoFunctoinZBEB(C.CString("TimelineCollection_Add_PivotTable_String_String"), instance.ptr, pivot_ptr, C.CString(destcellname), C.CString(basefieldname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -248,7 +248,7 @@ func (instance *TimelineCollection) Add_PivotTable_Int_Int_Int(pivot *PivotTable
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZBJR(C.CString("TimelineCollection_Add_PivotTable_Integer_Integer_Integer"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.int(basefieldindex))
+	CGoReturnPtr := C.CellsGoFunctoinZBJT(C.CString("TimelineCollection_Add_PivotTable_Integer_Integer_Integer"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.int(basefieldindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -271,7 +271,7 @@ func (instance *TimelineCollection) Add_PivotTable_String_Int(pivot *PivotTable,
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZBJS(C.CString("TimelineCollection_Add_PivotTable_String_Integer"), instance.ptr, pivot_ptr, C.CString(destcellname), C.int(basefieldindex))
+	CGoReturnPtr := C.CellsGoFunctoinZBJU(C.CString("TimelineCollection_Add_PivotTable_String_Integer"), instance.ptr, pivot_ptr, C.CString(destcellname), C.int(basefieldindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -299,7 +299,7 @@ func (instance *TimelineCollection) Add_PivotTable_Int_Int_PivotField(pivot *Piv
 	  basefield_ptr =basefield.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZBJT(C.CString("TimelineCollection_Add_PivotTable_Integer_Integer_PivotField"), instance.ptr, pivot_ptr, C.int(row), C.int(column), basefield_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBJV(C.CString("TimelineCollection_Add_PivotTable_Integer_Integer_PivotField"), instance.ptr, pivot_ptr, C.int(row), C.int(column), basefield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -326,7 +326,7 @@ func (instance *TimelineCollection) Add_PivotTable_String_PivotField(pivot *Pivo
 	  basefield_ptr =basefield.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZBJU(C.CString("TimelineCollection_Add_PivotTable_String_PivotField"), instance.ptr, pivot_ptr, C.CString(destcellname), basefield_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBJW(C.CString("TimelineCollection_Add_PivotTable_String_PivotField"), instance.ptr, pivot_ptr, C.CString(destcellname), basefield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err

@@ -472,7 +472,7 @@ func (instance *ConnectionParameter) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ConnectionParameter) GetSqlType()  (SqlDataType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXP(C.CString("ConnectionParameter_GetSqlType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAXR(C.CString("ConnectionParameter_GetSqlType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -491,7 +491,7 @@ func (instance *ConnectionParameter) GetSqlType()  (SqlDataType,  error)  {
 //   void  
 func (instance *ConnectionParameter) SetSqlType(value SqlDataType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXQ(C.CString("ConnectionParameter_SetSqlType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAXS(C.CString("ConnectionParameter_SetSqlType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -575,7 +575,7 @@ func (instance *ConnectionParameter) SetPrompt(value string)  error {
 //   int32  
 func (instance *ConnectionParameter) GetType()  (ConnectionParameterType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXR(C.CString("ConnectionParameter_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAXT(C.CString("ConnectionParameter_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -597,7 +597,7 @@ func (instance *ConnectionParameter) GetType()  (ConnectionParameterType,  error
 //   void  
 func (instance *ConnectionParameter) SetType(value ConnectionParameterType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXS(C.CString("ConnectionParameter_SetType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAXU(C.CString("ConnectionParameter_SetType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -739,7 +739,7 @@ func (instance *ConnectionParameterCollection) IsNull()  (bool,  error)  {
 //   ConnectionParameter  
 func (instance *ConnectionParameterCollection) Get_Int(index int32)  (*ConnectionParameter,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXT(C.CString("ConnectionParameterCollection_Get_Integer"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAXV(C.CString("ConnectionParameterCollection_Get_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -763,7 +763,7 @@ func (instance *ConnectionParameterCollection) Set(value *ConnectionParameter, i
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAXU(C.CString("ConnectionParameterCollection_Set"), instance.ptr, value_ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAXW(C.CString("ConnectionParameterCollection_Set"), instance.ptr, value_ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -778,7 +778,7 @@ func (instance *ConnectionParameterCollection) Set(value *ConnectionParameter, i
 //   ConnectionParameter  
 func (instance *ConnectionParameterCollection) Get_String(connparamname string)  (*ConnectionParameter,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXV(C.CString("ConnectionParameterCollection_Get_String"), instance.ptr, C.CString(connparamname))
+	CGoReturnPtr := C.CellsGoFunctoinZAXX(C.CString("ConnectionParameterCollection_Get_String"), instance.ptr, C.CString(connparamname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -828,7 +828,7 @@ func NewDataModelConnection(src *ExternalConnection) ( *DataModelConnection, err
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAXW(C.CString("New_DataModelConnection"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAXY(C.CString("New_DataModelConnection"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		datamodelconnection.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(datamodelconnection, DeleteDataModelConnection)
@@ -859,7 +859,7 @@ func (instance *DataModelConnection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *DataModelConnection) GetClassType()  (ExternalConnectionClassType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXX(C.CString("DataModelConnection_GetClassType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYA(C.CString("DataModelConnection_GetClassType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -907,7 +907,7 @@ func (instance *DataModelConnection) SetCommand(value string)  error {
 //   int32  
 func (instance *DataModelConnection) GetCommandType()  (OLEDBCommandType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXY(C.CString("DataModelConnection_GetCommandType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYB(C.CString("DataModelConnection_GetCommandType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -926,7 +926,7 @@ func (instance *DataModelConnection) GetCommandType()  (OLEDBCommandType,  error
 //   void  
 func (instance *DataModelConnection) SetCommandType(value OLEDBCommandType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYA(C.CString("DataModelConnection_SetCommandType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAYC(C.CString("DataModelConnection_SetCommandType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -982,7 +982,7 @@ func (instance *DataModelConnection) GetId()  (int32,  error)  {
 //   int32  
 func (instance *DataModelConnection) GetSourceType()  (ConnectionDataSourceType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYB(C.CString("DataModelConnection_GetSourceType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYD(C.CString("DataModelConnection_GetSourceType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1001,7 +1001,7 @@ func (instance *DataModelConnection) GetSourceType()  (ConnectionDataSourceType,
 //   void  
 func (instance *DataModelConnection) SetSourceType(value ConnectionDataSourceType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYC(C.CString("DataModelConnection_SetSourceType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAYE(C.CString("DataModelConnection_SetSourceType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1135,7 +1135,7 @@ func (instance *DataModelConnection) SetRefreshOnLoad(value bool)  error {
 //   int32  
 func (instance *DataModelConnection) GetReconnectionMethodType()  (ReConnectionMethodType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYD(C.CString("DataModelConnection_GetReconnectionMethodType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYF(C.CString("DataModelConnection_GetReconnectionMethodType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1155,7 +1155,7 @@ func (instance *DataModelConnection) GetReconnectionMethodType()  (ReConnectionM
 //   void  
 func (instance *DataModelConnection) SetReconnectionMethodType(value ReConnectionMethodType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYE(C.CString("DataModelConnection_SetReconnectionMethodType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAYG(C.CString("DataModelConnection_SetReconnectionMethodType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1453,7 +1453,7 @@ func (instance *DataModelConnection) SetIsDeleted(value bool)  error {
 //   int32  
 func (instance *DataModelConnection) GetCredentialsMethodType()  (CredentialsMethodType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYF(C.CString("DataModelConnection_GetCredentialsMethodType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYH(C.CString("DataModelConnection_GetCredentialsMethodType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1472,7 +1472,7 @@ func (instance *DataModelConnection) GetCredentialsMethodType()  (CredentialsMet
 //   void  
 func (instance *DataModelConnection) SetCredentialsMethodType(value CredentialsMethodType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYG(C.CString("DataModelConnection_SetCredentialsMethodType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAYI(C.CString("DataModelConnection_SetCredentialsMethodType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1518,7 +1518,7 @@ func (instance *DataModelConnection) SetBackgroundRefresh(value bool)  error {
 //   ConnectionParameterCollection  
 func (instance *DataModelConnection) GetParameters()  (*ConnectionParameterCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYH(C.CString("DataModelConnection_GetParameters"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYJ(C.CString("DataModelConnection_GetParameters"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1534,7 +1534,7 @@ func (instance *DataModelConnection) GetParameters()  (*ConnectionParameterColle
 //   PowerQueryFormula  
 func (instance *DataModelConnection) GetPowerQueryFormula()  (*PowerQueryFormula,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYI(C.CString("DataModelConnection_GetPowerQueryFormula"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYK(C.CString("DataModelConnection_GetPowerQueryFormula"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1627,7 +1627,7 @@ func NewDBConnection(src *ExternalConnection) ( *DBConnection, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAXW(C.CString("New_DBConnection"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAXY(C.CString("New_DBConnection"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		dbconnection.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(dbconnection, DeleteDBConnection)
@@ -1658,7 +1658,7 @@ func (instance *DBConnection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *DBConnection) GetClassType()  (ExternalConnectionClassType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXX(C.CString("DBConnection_GetClassType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYA(C.CString("DBConnection_GetClassType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1704,7 +1704,7 @@ func (instance *DBConnection) SetConnectionString(value string)  error {
 //   PowerQueryFormula  
 func (instance *DBConnection) GetPowerQueryFormula()  (*PowerQueryFormula,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYI(C.CString("DBConnection_GetPowerQueryFormula"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYK(C.CString("DBConnection_GetPowerQueryFormula"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1725,7 +1725,7 @@ func (instance *DBConnection) GetPowerQueryFormula()  (*PowerQueryFormula,  erro
 //   int32  
 func (instance *DBConnection) GetCommandType()  (OLEDBCommandType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXY(C.CString("DBConnection_GetCommandType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYB(C.CString("DBConnection_GetCommandType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1749,7 +1749,7 @@ func (instance *DBConnection) GetCommandType()  (OLEDBCommandType,  error)  {
 //   void  
 func (instance *DBConnection) SetCommandType(value OLEDBCommandType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYA(C.CString("DBConnection_SetCommandType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAYC(C.CString("DBConnection_SetCommandType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1844,7 +1844,7 @@ func (instance *DBConnection) GetId()  (int32,  error)  {
 //   int32  
 func (instance *DBConnection) GetSourceType()  (ConnectionDataSourceType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYB(C.CString("DBConnection_GetSourceType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYD(C.CString("DBConnection_GetSourceType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1863,7 +1863,7 @@ func (instance *DBConnection) GetSourceType()  (ConnectionDataSourceType,  error
 //   void  
 func (instance *DBConnection) SetSourceType(value ConnectionDataSourceType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYC(C.CString("DBConnection_SetSourceType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAYE(C.CString("DBConnection_SetSourceType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1997,7 +1997,7 @@ func (instance *DBConnection) SetRefreshOnLoad(value bool)  error {
 //   int32  
 func (instance *DBConnection) GetReconnectionMethodType()  (ReConnectionMethodType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYD(C.CString("DBConnection_GetReconnectionMethodType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYF(C.CString("DBConnection_GetReconnectionMethodType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2017,7 +2017,7 @@ func (instance *DBConnection) GetReconnectionMethodType()  (ReConnectionMethodTy
 //   void  
 func (instance *DBConnection) SetReconnectionMethodType(value ReConnectionMethodType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYE(C.CString("DBConnection_SetReconnectionMethodType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAYG(C.CString("DBConnection_SetReconnectionMethodType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2315,7 +2315,7 @@ func (instance *DBConnection) SetIsDeleted(value bool)  error {
 //   int32  
 func (instance *DBConnection) GetCredentialsMethodType()  (CredentialsMethodType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYF(C.CString("DBConnection_GetCredentialsMethodType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYH(C.CString("DBConnection_GetCredentialsMethodType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2334,7 +2334,7 @@ func (instance *DBConnection) GetCredentialsMethodType()  (CredentialsMethodType
 //   void  
 func (instance *DBConnection) SetCredentialsMethodType(value CredentialsMethodType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYG(C.CString("DBConnection_SetCredentialsMethodType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAYI(C.CString("DBConnection_SetCredentialsMethodType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2380,7 +2380,7 @@ func (instance *DBConnection) SetBackgroundRefresh(value bool)  error {
 //   ConnectionParameterCollection  
 func (instance *DBConnection) GetParameters()  (*ConnectionParameterCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYH(C.CString("DBConnection_GetParameters"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYJ(C.CString("DBConnection_GetParameters"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2460,7 +2460,7 @@ func (instance *ExternalConnection) GetId()  (int32,  error)  {
 //   int32  
 func (instance *ExternalConnection) GetSourceType()  (ConnectionDataSourceType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYB(C.CString("ExternalConnection_GetSourceType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYD(C.CString("ExternalConnection_GetSourceType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2479,7 +2479,7 @@ func (instance *ExternalConnection) GetSourceType()  (ConnectionDataSourceType, 
 //   void  
 func (instance *ExternalConnection) SetSourceType(value ConnectionDataSourceType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYC(C.CString("ExternalConnection_SetSourceType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAYE(C.CString("ExternalConnection_SetSourceType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2613,7 +2613,7 @@ func (instance *ExternalConnection) SetRefreshOnLoad(value bool)  error {
 //   int32  
 func (instance *ExternalConnection) GetReconnectionMethodType()  (ReConnectionMethodType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYD(C.CString("ExternalConnection_GetReconnectionMethodType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYF(C.CString("ExternalConnection_GetReconnectionMethodType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2633,7 +2633,7 @@ func (instance *ExternalConnection) GetReconnectionMethodType()  (ReConnectionMe
 //   void  
 func (instance *ExternalConnection) SetReconnectionMethodType(value ReConnectionMethodType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYE(C.CString("ExternalConnection_SetReconnectionMethodType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAYG(C.CString("ExternalConnection_SetReconnectionMethodType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2931,7 +2931,7 @@ func (instance *ExternalConnection) SetIsDeleted(value bool)  error {
 //   int32  
 func (instance *ExternalConnection) GetCredentialsMethodType()  (CredentialsMethodType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYF(C.CString("ExternalConnection_GetCredentialsMethodType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYH(C.CString("ExternalConnection_GetCredentialsMethodType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2950,7 +2950,7 @@ func (instance *ExternalConnection) GetCredentialsMethodType()  (CredentialsMeth
 //   void  
 func (instance *ExternalConnection) SetCredentialsMethodType(value CredentialsMethodType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYG(C.CString("ExternalConnection_SetCredentialsMethodType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAYI(C.CString("ExternalConnection_SetCredentialsMethodType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2996,7 +2996,7 @@ func (instance *ExternalConnection) SetBackgroundRefresh(value bool)  error {
 //   ConnectionParameterCollection  
 func (instance *ExternalConnection) GetParameters()  (*ConnectionParameterCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYH(C.CString("ExternalConnection_GetParameters"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYJ(C.CString("ExternalConnection_GetParameters"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3012,7 +3012,7 @@ func (instance *ExternalConnection) GetParameters()  (*ConnectionParameterCollec
 //   int32  
 func (instance *ExternalConnection) GetClassType()  (ExternalConnectionClassType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXX(C.CString("ExternalConnection_GetClassType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYA(C.CString("ExternalConnection_GetClassType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3029,7 +3029,7 @@ func (instance *ExternalConnection) GetClassType()  (ExternalConnectionClassType
 //   PowerQueryFormula  
 func (instance *ExternalConnection) GetPowerQueryFormula()  (*PowerQueryFormula,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYI(C.CString("ExternalConnection_GetPowerQueryFormula"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYK(C.CString("ExternalConnection_GetPowerQueryFormula"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3095,7 +3095,7 @@ func (instance *ExternalConnection) SetCommand(value string)  error {
 //   int32  
 func (instance *ExternalConnection) GetCommandType()  (OLEDBCommandType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXY(C.CString("ExternalConnection_GetCommandType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYB(C.CString("ExternalConnection_GetCommandType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3119,7 +3119,7 @@ func (instance *ExternalConnection) GetCommandType()  (OLEDBCommandType,  error)
 //   void  
 func (instance *ExternalConnection) SetCommandType(value OLEDBCommandType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYA(C.CString("ExternalConnection_SetCommandType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAYC(C.CString("ExternalConnection_SetCommandType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3231,7 +3231,7 @@ func (instance *ExternalConnectionCollection) IsNull()  (bool,  error)  {
 //   ExternalConnection  
 func (instance *ExternalConnectionCollection) Get_Int(index int32)  (*ExternalConnection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYJ(C.CString("ExternalConnectionCollection_Get_Integer"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAYL(C.CString("ExternalConnectionCollection_Get_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3255,7 +3255,7 @@ func (instance *ExternalConnectionCollection) Set(value *ExternalConnection, ind
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAYK(C.CString("ExternalConnectionCollection_Set"), instance.ptr, value_ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAYM(C.CString("ExternalConnectionCollection_Set"), instance.ptr, value_ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3270,7 +3270,7 @@ func (instance *ExternalConnectionCollection) Set(value *ExternalConnection, ind
 //   ExternalConnection  
 func (instance *ExternalConnectionCollection) Get_String(connectionname string)  (*ExternalConnection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYL(C.CString("ExternalConnectionCollection_Get_String"), instance.ptr, C.CString(connectionname))
+	CGoReturnPtr := C.CellsGoFunctoinZAYN(C.CString("ExternalConnectionCollection_Get_String"), instance.ptr, C.CString(connectionname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3288,7 +3288,7 @@ func (instance *ExternalConnectionCollection) Get_String(connectionname string) 
 //   ExternalConnection  
 func (instance *ExternalConnectionCollection) GetExternalConnectionById(connid int32)  (*ExternalConnection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYJ(C.CString("ExternalConnectionCollection_GetExternalConnectionById"), instance.ptr, C.int(connid))
+	CGoReturnPtr := C.CellsGoFunctoinZAYL(C.CString("ExternalConnectionCollection_GetExternalConnectionById"), instance.ptr, C.int(connid))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3340,7 +3340,7 @@ func NewWebQueryConnection(src *ExternalConnection) ( *WebQueryConnection, error
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAXW(C.CString("New_WebQueryConnection"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAXY(C.CString("New_WebQueryConnection"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		webqueryconnection.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(webqueryconnection, DeleteWebQueryConnection)
@@ -3371,7 +3371,7 @@ func (instance *WebQueryConnection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *WebQueryConnection) GetClassType()  (ExternalConnectionClassType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXX(C.CString("WebQueryConnection_GetClassType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYA(C.CString("WebQueryConnection_GetClassType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3678,7 +3678,7 @@ func (instance *WebQueryConnection) SetIsHtmlTables(value bool)  error {
 //   int32  
 func (instance *WebQueryConnection) GetHtmlFormat()  (HtmlFormatHandlingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYM(C.CString("WebQueryConnection_GetHtmlFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYO(C.CString("WebQueryConnection_GetHtmlFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3698,7 +3698,7 @@ func (instance *WebQueryConnection) GetHtmlFormat()  (HtmlFormatHandlingType,  e
 //   void  
 func (instance *WebQueryConnection) SetHtmlFormat(value HtmlFormatHandlingType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYN(C.CString("WebQueryConnection_SetHtmlFormat"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAYP(C.CString("WebQueryConnection_SetHtmlFormat"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3820,7 +3820,7 @@ func (instance *WebQueryConnection) GetId()  (int32,  error)  {
 //   int32  
 func (instance *WebQueryConnection) GetSourceType()  (ConnectionDataSourceType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYB(C.CString("WebQueryConnection_GetSourceType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYD(C.CString("WebQueryConnection_GetSourceType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3839,7 +3839,7 @@ func (instance *WebQueryConnection) GetSourceType()  (ConnectionDataSourceType, 
 //   void  
 func (instance *WebQueryConnection) SetSourceType(value ConnectionDataSourceType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYC(C.CString("WebQueryConnection_SetSourceType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAYE(C.CString("WebQueryConnection_SetSourceType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3973,7 +3973,7 @@ func (instance *WebQueryConnection) SetRefreshOnLoad(value bool)  error {
 //   int32  
 func (instance *WebQueryConnection) GetReconnectionMethodType()  (ReConnectionMethodType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYD(C.CString("WebQueryConnection_GetReconnectionMethodType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYF(C.CString("WebQueryConnection_GetReconnectionMethodType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3993,7 +3993,7 @@ func (instance *WebQueryConnection) GetReconnectionMethodType()  (ReConnectionMe
 //   void  
 func (instance *WebQueryConnection) SetReconnectionMethodType(value ReConnectionMethodType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYE(C.CString("WebQueryConnection_SetReconnectionMethodType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAYG(C.CString("WebQueryConnection_SetReconnectionMethodType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4291,7 +4291,7 @@ func (instance *WebQueryConnection) SetIsDeleted(value bool)  error {
 //   int32  
 func (instance *WebQueryConnection) GetCredentialsMethodType()  (CredentialsMethodType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYF(C.CString("WebQueryConnection_GetCredentialsMethodType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYH(C.CString("WebQueryConnection_GetCredentialsMethodType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4310,7 +4310,7 @@ func (instance *WebQueryConnection) GetCredentialsMethodType()  (CredentialsMeth
 //   void  
 func (instance *WebQueryConnection) SetCredentialsMethodType(value CredentialsMethodType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYG(C.CString("WebQueryConnection_SetCredentialsMethodType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAYI(C.CString("WebQueryConnection_SetCredentialsMethodType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4356,7 +4356,7 @@ func (instance *WebQueryConnection) SetBackgroundRefresh(value bool)  error {
 //   ConnectionParameterCollection  
 func (instance *WebQueryConnection) GetParameters()  (*ConnectionParameterCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYH(C.CString("WebQueryConnection_GetParameters"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYJ(C.CString("WebQueryConnection_GetParameters"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4372,7 +4372,7 @@ func (instance *WebQueryConnection) GetParameters()  (*ConnectionParameterCollec
 //   PowerQueryFormula  
 func (instance *WebQueryConnection) GetPowerQueryFormula()  (*PowerQueryFormula,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYI(C.CString("WebQueryConnection_GetPowerQueryFormula"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYK(C.CString("WebQueryConnection_GetPowerQueryFormula"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4424,7 +4424,7 @@ func (instance *WebQueryConnection) SetCommand(value string)  error {
 //   int32  
 func (instance *WebQueryConnection) GetCommandType()  (OLEDBCommandType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXY(C.CString("WebQueryConnection_GetCommandType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAYB(C.CString("WebQueryConnection_GetCommandType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4448,7 +4448,7 @@ func (instance *WebQueryConnection) GetCommandType()  (OLEDBCommandType,  error)
 //   void  
 func (instance *WebQueryConnection) SetCommandType(value OLEDBCommandType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAYA(C.CString("WebQueryConnection_SetCommandType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAYC(C.CString("WebQueryConnection_SetCommandType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

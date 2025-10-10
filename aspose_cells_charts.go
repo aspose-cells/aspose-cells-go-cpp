@@ -1603,7 +1603,7 @@ func (instance *Axis) IsNull()  (bool,  error)  {
 //   Area  
 func (instance *Axis) GetArea()  (*Area,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASD(C.CString("Axis_GetArea"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASF(C.CString("Axis_GetArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1865,7 +1865,7 @@ func (instance *Axis) SetMinorUnit(value float64)  error {
 //   Line  
 func (instance *Axis) GetAxisLine()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("Axis_GetAxisLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("Axis_GetAxisLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1881,7 +1881,7 @@ func (instance *Axis) GetAxisLine()  (*Line,  error)  {
 //   int32  
 func (instance *Axis) GetMajorTickMark()  (TickMarkType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASF(C.CString("Axis_GetMajorTickMark"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASH(C.CString("Axis_GetMajorTickMark"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1900,7 +1900,7 @@ func (instance *Axis) GetMajorTickMark()  (TickMarkType,  error)  {
 //   void  
 func (instance *Axis) SetMajorTickMark(value TickMarkType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("Axis_SetMajorTickMark"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZASI(C.CString("Axis_SetMajorTickMark"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1913,7 +1913,7 @@ func (instance *Axis) SetMajorTickMark(value TickMarkType)  error {
 //   int32  
 func (instance *Axis) GetMinorTickMark()  (TickMarkType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASF(C.CString("Axis_GetMinorTickMark"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASH(C.CString("Axis_GetMinorTickMark"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1932,7 +1932,7 @@ func (instance *Axis) GetMinorTickMark()  (TickMarkType,  error)  {
 //   void  
 func (instance *Axis) SetMinorTickMark(value TickMarkType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("Axis_SetMinorTickMark"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZASI(C.CString("Axis_SetMinorTickMark"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1945,7 +1945,7 @@ func (instance *Axis) SetMinorTickMark(value TickMarkType)  error {
 //   int32  
 func (instance *Axis) GetTickLabelPosition()  (TickLabelPositionType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASH(C.CString("Axis_GetTickLabelPosition"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASJ(C.CString("Axis_GetTickLabelPosition"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1964,7 +1964,7 @@ func (instance *Axis) GetTickLabelPosition()  (TickLabelPositionType,  error)  {
 //   void  
 func (instance *Axis) SetTickLabelPosition(value TickLabelPositionType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASI(C.CString("Axis_SetTickLabelPosition"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZASK(C.CString("Axis_SetTickLabelPosition"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2006,7 +2006,7 @@ func (instance *Axis) SetCrossAt(value float64)  error {
 //   int32  
 func (instance *Axis) GetCrossType()  (CrossType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASJ(C.CString("Axis_GetCrossType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASL(C.CString("Axis_GetCrossType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2025,7 +2025,7 @@ func (instance *Axis) GetCrossType()  (CrossType,  error)  {
 //   void  
 func (instance *Axis) SetCrossType(value CrossType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASK(C.CString("Axis_SetCrossType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZASM(C.CString("Axis_SetCrossType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2154,7 +2154,7 @@ func (instance *Axis) SetAxisBetweenCategories(value bool)  error {
 //   TickLabels  
 func (instance *Axis) GetTickLabels()  (*TickLabels,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASL(C.CString("Axis_GetTickLabels"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASN(C.CString("Axis_GetTickLabels"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2257,7 +2257,7 @@ func (instance *Axis) SetTickMarkSpacing(value int32)  error {
 //   int32  
 func (instance *Axis) GetDisplayUnit()  (DisplayUnitType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASM(C.CString("Axis_GetDisplayUnit"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASO(C.CString("Axis_GetDisplayUnit"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2276,7 +2276,7 @@ func (instance *Axis) GetDisplayUnit()  (DisplayUnitType,  error)  {
 //   void  
 func (instance *Axis) SetDisplayUnit(value DisplayUnitType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASN(C.CString("Axis_SetDisplayUnit"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZASP(C.CString("Axis_SetDisplayUnit"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2319,7 +2319,7 @@ func (instance *Axis) SetCustomDisplayUnit(value float64)  error {
 //   DisplayUnitLabel  
 func (instance *Axis) GetDisplayUnitLabel()  (*DisplayUnitLabel,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASO(C.CString("Axis_GetDisplayUnitLabel"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASQ(C.CString("Axis_GetDisplayUnitLabel"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2364,7 +2364,7 @@ func (instance *Axis) SetIsDisplayUnitLabelShown(value bool)  error {
 //   Title  
 func (instance *Axis) GetTitle()  (*Title,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASP(C.CString("Axis_GetTitle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASR(C.CString("Axis_GetTitle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2380,7 +2380,7 @@ func (instance *Axis) GetTitle()  (*Title,  error)  {
 //   int32  
 func (instance *Axis) GetCategoryType()  (CategoryType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASQ(C.CString("Axis_GetCategoryType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASS(C.CString("Axis_GetCategoryType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2399,7 +2399,7 @@ func (instance *Axis) GetCategoryType()  (CategoryType,  error)  {
 //   void  
 func (instance *Axis) SetCategoryType(value CategoryType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASR(C.CString("Axis_SetCategoryType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAST(C.CString("Axis_SetCategoryType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2412,7 +2412,7 @@ func (instance *Axis) SetCategoryType(value CategoryType)  error {
 //   int32  
 func (instance *Axis) GetBaseUnitScale()  (TimeUnit,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASS(C.CString("Axis_GetBaseUnitScale"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASU(C.CString("Axis_GetBaseUnitScale"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2431,7 +2431,7 @@ func (instance *Axis) GetBaseUnitScale()  (TimeUnit,  error)  {
 //   void  
 func (instance *Axis) SetBaseUnitScale(value TimeUnit)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAST(C.CString("Axis_SetBaseUnitScale"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZASV(C.CString("Axis_SetBaseUnitScale"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2444,7 +2444,7 @@ func (instance *Axis) SetBaseUnitScale(value TimeUnit)  error {
 //   int32  
 func (instance *Axis) GetMajorUnitScale()  (TimeUnit,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASS(C.CString("Axis_GetMajorUnitScale"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASU(C.CString("Axis_GetMajorUnitScale"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2463,7 +2463,7 @@ func (instance *Axis) GetMajorUnitScale()  (TimeUnit,  error)  {
 //   void  
 func (instance *Axis) SetMajorUnitScale(value TimeUnit)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAST(C.CString("Axis_SetMajorUnitScale"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZASV(C.CString("Axis_SetMajorUnitScale"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2476,7 +2476,7 @@ func (instance *Axis) SetMajorUnitScale(value TimeUnit)  error {
 //   int32  
 func (instance *Axis) GetMinorUnitScale()  (TimeUnit,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASS(C.CString("Axis_GetMinorUnitScale"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASU(C.CString("Axis_GetMinorUnitScale"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2495,7 +2495,7 @@ func (instance *Axis) GetMinorUnitScale()  (TimeUnit,  error)  {
 //   void  
 func (instance *Axis) SetMinorUnitScale(value TimeUnit)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAST(C.CString("Axis_SetMinorUnitScale"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZASV(C.CString("Axis_SetMinorUnitScale"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2537,7 +2537,7 @@ func (instance *Axis) SetIsVisible(value bool)  error {
 //   Line  
 func (instance *Axis) GetMajorGridLines()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("Axis_GetMajorGridLines"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("Axis_GetMajorGridLines"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2553,7 +2553,7 @@ func (instance *Axis) GetMajorGridLines()  (*Line,  error)  {
 //   Line  
 func (instance *Axis) GetMinorGridLines()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("Axis_GetMinorGridLines"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("Axis_GetMinorGridLines"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2619,7 +2619,7 @@ func (instance *Axis) GetAxisTexts()  ([]string,  error)  {
 //   AxisBins  
 func (instance *Axis) GetBins()  (*AxisBins,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASU(C.CString("Axis_GetBins"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASW(C.CString("Axis_GetBins"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2900,7 +2900,7 @@ func (instance *Chart) SetStyle(value int32)  error {
 //   ChartShape  
 func (instance *Chart) GetChartObject()  (*ChartShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASV(C.CString("Chart_GetChartObject"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASX(C.CString("Chart_GetChartObject"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2945,7 +2945,7 @@ func (instance *Chart) SetHidePivotFieldButtons(value bool)  error {
 //   PivotOptions  
 func (instance *Chart) GetPivotOptions()  (*PivotOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASW(C.CString("Chart_GetPivotOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASY(C.CString("Chart_GetPivotOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2996,7 +2996,7 @@ func (instance *Chart) SetPivotSource(value string)  error {
 //   bool  
 func (instance *Chart) IsCellReferedByChart(sheetindex int32, rowindex int32, columnindex int32)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASX(C.CString("Chart_IsCellReferedByChart"), instance.ptr, C.int(sheetindex), C.int(rowindex), C.int(columnindex))
+	CGoReturnPtr := C.CellsGoFunctoinZATA(C.CString("Chart_IsCellReferedByChart"), instance.ptr, C.int(sheetindex), C.int(rowindex), C.int(columnindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3024,7 +3024,7 @@ func (instance *Chart) IsChartDataChanged()  (bool,  error)  {
 //   int32  
 func (instance *Chart) GetPlotBy()  (PlotDataByType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASY(C.CString("Chart_GetPlotBy"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATB(C.CString("Chart_GetPlotBy"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3054,7 +3054,7 @@ func (instance *Chart) RefreshPivotData()  error {
 //   int32  
 func (instance *Chart) GetPlotEmptyCellsType()  (PlotEmptyCellsType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATA(C.CString("Chart_GetPlotEmptyCellsType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATC(C.CString("Chart_GetPlotEmptyCellsType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3073,7 +3073,7 @@ func (instance *Chart) GetPlotEmptyCellsType()  (PlotEmptyCellsType,  error)  {
 //   void  
 func (instance *Chart) SetPlotEmptyCellsType(value PlotEmptyCellsType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATB(C.CString("Chart_SetPlotEmptyCellsType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZATD(C.CString("Chart_SetPlotEmptyCellsType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3218,7 +3218,7 @@ func (instance *Chart) GetWorksheet()  (*Worksheet,  error)  {
 //   ShapeCollection  
 func (instance *Chart) GetShapes()  (*ShapeCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZADN(C.CString("Chart_GetShapes"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZADP(C.CString("Chart_GetShapes"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3234,7 +3234,7 @@ func (instance *Chart) GetShapes()  (*ShapeCollection,  error)  {
 //   int32  
 func (instance *Chart) GetPrintSize()  (PrintSizeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATC(C.CString("Chart_GetPrintSize"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATE(C.CString("Chart_GetPrintSize"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3253,7 +3253,7 @@ func (instance *Chart) GetPrintSize()  (PrintSizeType,  error)  {
 //   void  
 func (instance *Chart) SetPrintSize(value PrintSizeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATD(C.CString("Chart_SetPrintSize"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZATF(C.CString("Chart_SetPrintSize"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3281,7 +3281,7 @@ func (instance *Chart) ChangeTemplate(data []byte)  error {
 //   int32  
 func (instance *Chart) GetType()  (ChartType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATE(C.CString("Chart_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATG(C.CString("Chart_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3300,7 +3300,7 @@ func (instance *Chart) GetType()  (ChartType,  error)  {
 //   void  
 func (instance *Chart) SetType(value ChartType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATF(C.CString("Chart_SetType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZATH(C.CString("Chart_SetType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3331,7 +3331,7 @@ func (instance *Chart) Move(upperleftrow int32, upperleftcolumn int32, lowerrigh
 //   SeriesCollection  
 func (instance *Chart) GetNSeries()  (*SeriesCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATG(C.CString("Chart_GetNSeries"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATI(C.CString("Chart_GetNSeries"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3347,7 +3347,7 @@ func (instance *Chart) GetNSeries()  (*SeriesCollection,  error)  {
 //   SeriesCollection  
 func (instance *Chart) GetFilteredNSeries()  (*SeriesCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATG(C.CString("Chart_GetFilteredNSeries"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATI(C.CString("Chart_GetFilteredNSeries"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3363,7 +3363,7 @@ func (instance *Chart) GetFilteredNSeries()  (*SeriesCollection,  error)  {
 //   Title  
 func (instance *Chart) GetTitle()  (*Title,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASP(C.CString("Chart_GetTitle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASR(C.CString("Chart_GetTitle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3380,7 +3380,7 @@ func (instance *Chart) GetTitle()  (*Title,  error)  {
 //   Title  
 func (instance *Chart) GetSubTitle()  (*Title,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASP(C.CString("Chart_GetSubTitle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASR(C.CString("Chart_GetSubTitle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3396,7 +3396,7 @@ func (instance *Chart) GetSubTitle()  (*Title,  error)  {
 //   PlotArea  
 func (instance *Chart) GetPlotArea()  (*PlotArea,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATH(C.CString("Chart_GetPlotArea"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATJ(C.CString("Chart_GetPlotArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3412,7 +3412,7 @@ func (instance *Chart) GetPlotArea()  (*PlotArea,  error)  {
 //   ChartArea  
 func (instance *Chart) GetChartArea()  (*ChartArea,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATI(C.CString("Chart_GetChartArea"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATK(C.CString("Chart_GetChartArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3428,7 +3428,7 @@ func (instance *Chart) GetChartArea()  (*ChartArea,  error)  {
 //   Axis  
 func (instance *Chart) GetCategoryAxis()  (*Axis,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATJ(C.CString("Chart_GetCategoryAxis"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATL(C.CString("Chart_GetCategoryAxis"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3444,7 +3444,7 @@ func (instance *Chart) GetCategoryAxis()  (*Axis,  error)  {
 //   Axis  
 func (instance *Chart) GetValueAxis()  (*Axis,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATJ(C.CString("Chart_GetValueAxis"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATL(C.CString("Chart_GetValueAxis"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3460,7 +3460,7 @@ func (instance *Chart) GetValueAxis()  (*Axis,  error)  {
 //   Axis  
 func (instance *Chart) GetSecondValueAxis()  (*Axis,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATJ(C.CString("Chart_GetSecondValueAxis"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATL(C.CString("Chart_GetSecondValueAxis"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3476,7 +3476,7 @@ func (instance *Chart) GetSecondValueAxis()  (*Axis,  error)  {
 //   Axis  
 func (instance *Chart) GetSecondCategoryAxis()  (*Axis,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATJ(C.CString("Chart_GetSecondCategoryAxis"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATL(C.CString("Chart_GetSecondCategoryAxis"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3492,7 +3492,7 @@ func (instance *Chart) GetSecondCategoryAxis()  (*Axis,  error)  {
 //   Axis  
 func (instance *Chart) GetSeriesAxis()  (*Axis,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATJ(C.CString("Chart_GetSeriesAxis"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATL(C.CString("Chart_GetSeriesAxis"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3508,7 +3508,7 @@ func (instance *Chart) GetSeriesAxis()  (*Axis,  error)  {
 //   Legend  
 func (instance *Chart) GetLegend()  (*Legend,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATK(C.CString("Chart_GetLegend"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATM(C.CString("Chart_GetLegend"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3524,7 +3524,7 @@ func (instance *Chart) GetLegend()  (*Legend,  error)  {
 //   ChartDataTable  
 func (instance *Chart) GetChartDataTable()  (*ChartDataTable,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATL(C.CString("Chart_GetChartDataTable"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATN(C.CString("Chart_GetChartDataTable"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3742,7 +3742,7 @@ func (instance *Chart) Calculate_ChartCalculateOptions(calculateoptions *ChartCa
 	  calculateoptions_ptr =calculateoptions.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZATM(C.CString("Chart_Calculate_ChartCalculateOptions"), instance.ptr, calculateoptions_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATO(C.CString("Chart_Calculate_ChartCalculateOptions"), instance.ptr, calculateoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3755,7 +3755,7 @@ func (instance *Chart) Calculate_ChartCalculateOptions(calculateoptions *ChartCa
 //   Floor  
 func (instance *Chart) GetFloor()  (*Floor,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATN(C.CString("Chart_GetFloor"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATP(C.CString("Chart_GetFloor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3771,7 +3771,7 @@ func (instance *Chart) GetFloor()  (*Floor,  error)  {
 //   Walls  
 func (instance *Chart) GetWalls()  (*Walls,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATO(C.CString("Chart_GetWalls"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATQ(C.CString("Chart_GetWalls"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3787,7 +3787,7 @@ func (instance *Chart) GetWalls()  (*Walls,  error)  {
 //   Walls  
 func (instance *Chart) GetBackWall()  (*Walls,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATO(C.CString("Chart_GetBackWall"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATQ(C.CString("Chart_GetBackWall"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3803,7 +3803,7 @@ func (instance *Chart) GetBackWall()  (*Walls,  error)  {
 //   Walls  
 func (instance *Chart) GetSideWall()  (*Walls,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATO(C.CString("Chart_GetSideWall"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATQ(C.CString("Chart_GetSideWall"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4013,7 +4013,7 @@ func (instance *Chart) GetPerspective()  (int16,  error)  {
 //   void  
 func (instance *Chart) SetPerspective(value int16)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATP(C.CString("Chart_SetPerspective"), instance.ptr, C.short(value))
+	CGoReturnPtr := C.CellsGoFunctoinZATR(C.CString("Chart_SetPerspective"), instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4088,7 +4088,7 @@ func (instance *Chart) ToImage_String(imagefile string)  error {
 //   void  
 func (instance *Chart) ToImage_String_ImageType(imagefile string, imagetype ImageType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATQ(C.CString("Chart_ToImage_String_ImageType"), instance.ptr, C.CString(imagefile), C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZATS(C.CString("Chart_ToImage_String_ImageType"), instance.ptr, C.CString(imagefile), C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4103,7 +4103,7 @@ func (instance *Chart) ToImage_String_ImageType(imagefile string, imagetype Imag
 //   []byte  
 func (instance *Chart) ToImage_Int64(jpegquality int64)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATR(C.CString("Chart_ToImage_Long"), instance.ptr, C.longlong(jpegquality))
+	CGoReturnPtr := C.CellsGoFunctoinZATT(C.CString("Chart_ToImage_Long"), instance.ptr, C.longlong(jpegquality))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4120,7 +4120,7 @@ func (instance *Chart) ToImage_Int64(jpegquality int64)  ([]byte,  error)  {
 //   []byte  
 func (instance *Chart) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Chart_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("Chart_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4156,7 +4156,7 @@ func (instance *Chart) ToPdf_String(filename string)  error {
 //   void  
 func (instance *Chart) ToPdf_String_Float_Float_PageLayoutAlignmentType_PageLayoutAlignmentType(filename string, desiredpagewidth float32, desiredpageheight float32, halignmenttype PageLayoutAlignmentType, valignmenttype PageLayoutAlignmentType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATS(C.CString("Chart_ToPdf_String_Floating_Floating_PageLayoutAlignmentType_PageLayoutAlignmentType"), instance.ptr, C.CString(filename), C.float(desiredpagewidth), C.float(desiredpageheight), C.int( int32(halignmenttype)), C.int( int32(valignmenttype)))
+	CGoReturnPtr := C.CellsGoFunctoinZATU(C.CString("Chart_ToPdf_String_Floating_Floating_PageLayoutAlignmentType_PageLayoutAlignmentType"), instance.ptr, C.CString(filename), C.float(desiredpagewidth), C.float(desiredpageheight), C.int( int32(halignmenttype)), C.int( int32(valignmenttype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4189,7 +4189,7 @@ func (instance *Chart) ToPdf()  ([]byte,  error)  {
 //   []byte  
 func (instance *Chart) ToPdf_Float_Float_PageLayoutAlignmentType_PageLayoutAlignmentType(desiredpagewidth float32, desiredpageheight float32, halignmenttype PageLayoutAlignmentType, valignmenttype PageLayoutAlignmentType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATT(C.CString("Chart_ToPdf_Floating_Floating_PageLayoutAlignmentType_PageLayoutAlignmentType"), instance.ptr, C.float(desiredpagewidth), C.float(desiredpageheight), C.int( int32(halignmenttype)), C.int( int32(valignmenttype)))
+	CGoReturnPtr := C.CellsGoFunctoinZATV(C.CString("Chart_ToPdf_Floating_Floating_PageLayoutAlignmentType_PageLayoutAlignmentType"), instance.ptr, C.float(desiredpagewidth), C.float(desiredpageheight), C.int( int32(halignmenttype)), C.int( int32(valignmenttype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4213,7 +4213,7 @@ func (instance *Chart) ToImage_String_ImageOrPrintOptions(imagefile string, opti
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("Chart_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("Chart_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4269,7 +4269,7 @@ func (instance *Chart) GetActualSize()  ([]int32,  error)  {
 //   int32  
 func (instance *Chart) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("Chart_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Chart_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4288,7 +4288,7 @@ func (instance *Chart) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *Chart) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("Chart_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("Chart_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4301,7 +4301,7 @@ func (instance *Chart) SetPlacement(value PlacementType)  error {
 //   PageSetup  
 func (instance *Chart) GetPageSetup()  (*PageSetup,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZACY(C.CString("Chart_GetPageSetup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZADB(C.CString("Chart_GetPageSetup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4320,7 +4320,7 @@ func (instance *Chart) GetPageSetup()  (*PageSetup,  error)  {
 //   bool  
 func (instance *Chart) HasAxis(aixstype AxisType, isprimary bool)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATU(C.CString("Chart_HasAxis"), instance.ptr, C.int( int32(aixstype)), C.bool(isprimary))
+	CGoReturnPtr := C.CellsGoFunctoinZATW(C.CString("Chart_HasAxis"), instance.ptr, C.int( int32(aixstype)), C.bool(isprimary))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4378,7 +4378,7 @@ func (instance *Chart) SetChartDataRange(area string, isvertical bool)  error {
 //   Line  
 func (instance *Chart) GetLine()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("Chart_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("Chart_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4415,7 +4415,7 @@ func NewChartArea(src *ChartFrame) ( *ChartArea, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZATV(C.CString("New_ChartArea"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATX(C.CString("New_ChartArea"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		chartarea.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(chartarea, DeleteChartArea)
@@ -4609,7 +4609,7 @@ func (instance *ChartArea) SetIsInnerMode(value bool)  error {
 //   int32  
 func (instance *ChartArea) GetBackgroundMode()  (BackgroundMode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATW(C.CString("ChartArea_GetBackgroundMode"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("ChartArea_GetBackgroundMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4628,7 +4628,7 @@ func (instance *ChartArea) GetBackgroundMode()  (BackgroundMode,  error)  {
 //   void  
 func (instance *ChartArea) SetBackgroundMode(value BackgroundMode)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATX(C.CString("ChartArea_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUA(C.CString("ChartArea_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4670,7 +4670,7 @@ func (instance *ChartArea) SetShadow(value bool)  error {
 //   ShapePropertyCollection  
 func (instance *ChartArea) GetShapeProperties()  (*ShapePropertyCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("ChartArea_GetShapeProperties"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUB(C.CString("ChartArea_GetShapeProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4756,7 +4756,7 @@ func (instance *ChartArea) GetDefaultHeightRatioToChart()  (float64,  error)  {
 //   Line  
 func (instance *ChartArea) GetBorder()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("ChartArea_GetBorder"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("ChartArea_GetBorder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4772,7 +4772,7 @@ func (instance *ChartArea) GetBorder()  (*Line,  error)  {
 //   Area  
 func (instance *ChartArea) GetArea()  (*Area,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASD(C.CString("ChartArea_GetArea"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASF(C.CString("ChartArea_GetArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5111,7 +5111,7 @@ func (instance *ChartCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ChartCollection) AddFloatingChart(type_ ChartType, left int32, top int32, width int32, height int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUA(C.CString("ChartCollection_AddFloatingChart"), instance.ptr, C.int( int32(type_)), C.int(left), C.int(top), C.int(width), C.int(height))
+	CGoReturnPtr := C.CellsGoFunctoinZAUC(C.CString("ChartCollection_AddFloatingChart"), instance.ptr, C.int( int32(type_)), C.int(left), C.int(top), C.int(width), C.int(height))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5131,7 +5131,7 @@ func (instance *ChartCollection) AddFloatingChart(type_ ChartType, left int32, t
 //   int32  
 func (instance *ChartCollection) Add_ChartType_Int_Int_Int_Int(type_ ChartType, upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUA(C.CString("ChartCollection_Add_ChartType_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZAUC(C.CString("ChartCollection_Add_ChartType_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5153,7 +5153,7 @@ func (instance *ChartCollection) Add_ChartType_Int_Int_Int_Int(type_ ChartType, 
 //   int32  
 func (instance *ChartCollection) Add_Stream_String_Bool_Int_Int_Int_Int(data []byte, datarange string, isvertical bool, toprow int32, leftcolumn int32, rightrow int32, bottomcolumn int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUB(C.CString("ChartCollection_Add_Stream_String_Boolean_Integer_Integer_Integer_Integer"), instance.ptr, unsafe.Pointer(&data[0]), C.int( len(data)), C.CString(datarange), C.bool(isvertical), C.int(toprow), C.int(leftcolumn), C.int(rightrow), C.int(bottomcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZAUD(C.CString("ChartCollection_Add_Stream_String_Boolean_Integer_Integer_Integer_Integer"), instance.ptr, unsafe.Pointer(&data[0]), C.int( len(data)), C.CString(datarange), C.bool(isvertical), C.int(toprow), C.int(leftcolumn), C.int(rightrow), C.int(bottomcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5175,7 +5175,7 @@ func (instance *ChartCollection) Add_Stream_String_Bool_Int_Int_Int_Int(data []b
 //   int32  
 func (instance *ChartCollection) Add_ChartType_String_Bool_Int_Int_Int_Int(type_ ChartType, datarange string, isvertical bool, toprow int32, leftcolumn int32, rightrow int32, bottomcolumn int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUC(C.CString("ChartCollection_Add_ChartType_String_Boolean_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.CString(datarange), C.bool(isvertical), C.int(toprow), C.int(leftcolumn), C.int(rightrow), C.int(bottomcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZAUE(C.CString("ChartCollection_Add_ChartType_String_Boolean_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.CString(datarange), C.bool(isvertical), C.int(toprow), C.int(leftcolumn), C.int(rightrow), C.int(bottomcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5191,7 +5191,7 @@ func (instance *ChartCollection) Add_ChartType_String_Bool_Int_Int_Int_Int(type_
 //   Chart  
 func (instance *ChartCollection) Get_Int(index int32)  (*Chart,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUD(C.CString("ChartCollection_Get_Integer"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAUF(C.CString("ChartCollection_Get_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5209,7 +5209,7 @@ func (instance *ChartCollection) Get_Int(index int32)  (*Chart,  error)  {
 //   Chart  
 func (instance *ChartCollection) Get_String(name string)  (*Chart,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUE(C.CString("ChartCollection_Get_String"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZAUG(C.CString("ChartCollection_Get_String"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5344,7 +5344,7 @@ func (instance *ChartDataTable) SetAutoScaleFont(value bool)  error {
 //   int32  
 func (instance *ChartDataTable) GetBackgroundMode()  (BackgroundMode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATW(C.CString("ChartDataTable_GetBackgroundMode"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("ChartDataTable_GetBackgroundMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5363,7 +5363,7 @@ func (instance *ChartDataTable) GetBackgroundMode()  (BackgroundMode,  error)  {
 //   void  
 func (instance *ChartDataTable) SetBackgroundMode(value BackgroundMode)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATX(C.CString("ChartDataTable_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUA(C.CString("ChartDataTable_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5492,7 +5492,7 @@ func (instance *ChartDataTable) SetShowLegendKey(value bool)  error {
 //   Line  
 func (instance *ChartDataTable) GetBorder()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("ChartDataTable_GetBorder"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("ChartDataTable_GetBorder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5570,7 +5570,7 @@ func (instance *ChartFrame) SetIsInnerMode(value bool)  error {
 //   int32  
 func (instance *ChartFrame) GetBackgroundMode()  (BackgroundMode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATW(C.CString("ChartFrame_GetBackgroundMode"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("ChartFrame_GetBackgroundMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5589,7 +5589,7 @@ func (instance *ChartFrame) GetBackgroundMode()  (BackgroundMode,  error)  {
 //   void  
 func (instance *ChartFrame) SetBackgroundMode(value BackgroundMode)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATX(C.CString("ChartFrame_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUA(C.CString("ChartFrame_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5631,7 +5631,7 @@ func (instance *ChartFrame) SetShadow(value bool)  error {
 //   ShapePropertyCollection  
 func (instance *ChartFrame) GetShapeProperties()  (*ShapePropertyCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("ChartFrame_GetShapeProperties"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUB(C.CString("ChartFrame_GetShapeProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5717,7 +5717,7 @@ func (instance *ChartFrame) GetDefaultHeightRatioToChart()  (float64,  error)  {
 //   Line  
 func (instance *ChartFrame) GetBorder()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("ChartFrame_GetBorder"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("ChartFrame_GetBorder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5733,7 +5733,7 @@ func (instance *ChartFrame) GetBorder()  (*Line,  error)  {
 //   Area  
 func (instance *ChartFrame) GetArea()  (*Area,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASD(C.CString("ChartFrame_GetArea"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASF(C.CString("ChartFrame_GetArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6332,7 +6332,7 @@ func (instance *ChartPoint) SetShadow(value bool)  error {
 //   Line  
 func (instance *ChartPoint) GetBorder()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("ChartPoint_GetBorder"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("ChartPoint_GetBorder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6348,7 +6348,7 @@ func (instance *ChartPoint) GetBorder()  (*Line,  error)  {
 //   Area  
 func (instance *ChartPoint) GetArea()  (*Area,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASD(C.CString("ChartPoint_GetArea"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASF(C.CString("ChartPoint_GetArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6364,7 +6364,7 @@ func (instance *ChartPoint) GetArea()  (*Area,  error)  {
 //   Marker  
 func (instance *ChartPoint) GetMarker()  (*Marker,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUF(C.CString("ChartPoint_GetMarker"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUH(C.CString("ChartPoint_GetMarker"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6380,7 +6380,7 @@ func (instance *ChartPoint) GetMarker()  (*Marker,  error)  {
 //   DataLabels  
 func (instance *ChartPoint) GetDataLabels()  (*DataLabels,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUG(C.CString("ChartPoint_GetDataLabels"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUI(C.CString("ChartPoint_GetDataLabels"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6502,7 +6502,7 @@ func (instance *ChartPoint) GetXValueType()  (CellValueType,  error)  {
 //   ShapePropertyCollection  
 func (instance *ChartPoint) GetShapeProperties()  (*ShapePropertyCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("ChartPoint_GetShapeProperties"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUB(C.CString("ChartPoint_GetShapeProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6871,7 +6871,7 @@ func (instance *ChartPoint) GetTopPointCount()  (int32,  error)  {
 //   float32  
 func (instance *ChartPoint) GetTopPointXPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUH(C.CString("ChartPoint_GetTopPointXPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAUJ(C.CString("ChartPoint_GetTopPointXPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6888,7 +6888,7 @@ func (instance *ChartPoint) GetTopPointXPx(index int32)  (float32,  error)  {
 //   float32  
 func (instance *ChartPoint) GetTopPointYPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUH(C.CString("ChartPoint_GetTopPointYPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAUJ(C.CString("ChartPoint_GetTopPointYPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6919,7 +6919,7 @@ func (instance *ChartPoint) GetBottomPointCount()  (int32,  error)  {
 //   float32  
 func (instance *ChartPoint) GetBottomPointXPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUH(C.CString("ChartPoint_GetBottomPointXPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAUJ(C.CString("ChartPoint_GetBottomPointXPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6936,7 +6936,7 @@ func (instance *ChartPoint) GetBottomPointXPx(index int32)  (float32,  error)  {
 //   float32  
 func (instance *ChartPoint) GetBottomPointYPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUH(C.CString("ChartPoint_GetBottomPointYPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAUJ(C.CString("ChartPoint_GetBottomPointYPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6966,7 +6966,7 @@ func (instance *ChartPoint) GetOnCategoryAxisPointCount()  (int32,  error)  {
 //   float32  
 func (instance *ChartPoint) GetOnCategoryAxisPointXPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUH(C.CString("ChartPoint_GetOnCategoryAxisPointXPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAUJ(C.CString("ChartPoint_GetOnCategoryAxisPointXPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6982,7 +6982,7 @@ func (instance *ChartPoint) GetOnCategoryAxisPointXPx(index int32)  (float32,  e
 //   float32  
 func (instance *ChartPoint) GetOnCategoryAxisPointYPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUH(C.CString("ChartPoint_GetOnCategoryAxisPointYPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAUJ(C.CString("ChartPoint_GetOnCategoryAxisPointYPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7027,7 +7027,7 @@ func (instance *ChartPointCollection) IsNull()  (bool,  error)  {
 //   unsafe.Pointer  
 func (instance *ChartPointCollection) GetEnumerator()  (*ChartPointEnumerator,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUI(C.CString("ChartPointCollection_GetEnumerator"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUK(C.CString("ChartPointCollection_GetEnumerator"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7088,7 +7088,7 @@ func (instance *ChartPointCollection) GetCount()  (int32,  error)  {
 //   ChartPoint  
 func (instance *ChartPointCollection) Get(index int32)  (*ChartPoint,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUJ(C.CString("ChartPointCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAUL(C.CString("ChartPointCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7125,7 +7125,7 @@ func NewChartTextFrame(src *ChartFrame) ( *ChartTextFrame, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZATV(C.CString("New_ChartTextFrame"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATX(C.CString("New_ChartTextFrame"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		charttextframe.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(charttextframe, DeleteChartTextFrame)
@@ -7461,7 +7461,7 @@ func (instance *ChartTextFrame) SetLinkedSource(value string)  error {
 //   int32  
 func (instance *ChartTextFrame) GetDirectionType()  (ChartTextDirectionType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUK(C.CString("ChartTextFrame_GetDirectionType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUM(C.CString("ChartTextFrame_GetDirectionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7480,7 +7480,7 @@ func (instance *ChartTextFrame) GetDirectionType()  (ChartTextDirectionType,  er
 //   void  
 func (instance *ChartTextFrame) SetDirectionType(value ChartTextDirectionType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUL(C.CString("ChartTextFrame_SetDirectionType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUN(C.CString("ChartTextFrame_SetDirectionType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7553,7 +7553,7 @@ func (instance *ChartTextFrame) SetIsInnerMode(value bool)  error {
 //   int32  
 func (instance *ChartTextFrame) GetBackgroundMode()  (BackgroundMode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATW(C.CString("ChartTextFrame_GetBackgroundMode"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("ChartTextFrame_GetBackgroundMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7572,7 +7572,7 @@ func (instance *ChartTextFrame) GetBackgroundMode()  (BackgroundMode,  error)  {
 //   void  
 func (instance *ChartTextFrame) SetBackgroundMode(value BackgroundMode)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATX(C.CString("ChartTextFrame_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUA(C.CString("ChartTextFrame_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7614,7 +7614,7 @@ func (instance *ChartTextFrame) SetShadow(value bool)  error {
 //   ShapePropertyCollection  
 func (instance *ChartTextFrame) GetShapeProperties()  (*ShapePropertyCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("ChartTextFrame_GetShapeProperties"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUB(C.CString("ChartTextFrame_GetShapeProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7700,7 +7700,7 @@ func (instance *ChartTextFrame) GetDefaultHeightRatioToChart()  (float64,  error
 //   Line  
 func (instance *ChartTextFrame) GetBorder()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("ChartTextFrame_GetBorder"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("ChartTextFrame_GetBorder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7716,7 +7716,7 @@ func (instance *ChartTextFrame) GetBorder()  (*Line,  error)  {
 //   Area  
 func (instance *ChartTextFrame) GetArea()  (*Area,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASD(C.CString("ChartTextFrame_GetArea"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASF(C.CString("ChartTextFrame_GetArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8093,7 +8093,7 @@ func NewDataLabels(src *ChartTextFrame) ( *DataLabels, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAUM(C.CString("New_DataLabels"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUO(C.CString("New_DataLabels"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		datalabels.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(datalabels, DeleteDataLabels)
@@ -8124,7 +8124,7 @@ func (instance *DataLabels) IsNull()  (bool,  error)  {
 //   Line  
 func (instance *DataLabels) GetBorder()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("DataLabels_GetBorder"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("DataLabels_GetBorder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8140,7 +8140,7 @@ func (instance *DataLabels) GetBorder()  (*Line,  error)  {
 //   Area  
 func (instance *DataLabels) GetArea()  (*Area,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASD(C.CString("DataLabels_GetArea"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASF(C.CString("DataLabels_GetArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8185,7 +8185,7 @@ func (instance *DataLabels) SetIsAutoText(value bool)  error {
 //   int32  
 func (instance *DataLabels) GetDirectionType()  (ChartTextDirectionType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUK(C.CString("DataLabels_GetDirectionType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUM(C.CString("DataLabels_GetDirectionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8204,7 +8204,7 @@ func (instance *DataLabels) GetDirectionType()  (ChartTextDirectionType,  error)
 //   void  
 func (instance *DataLabels) SetDirectionType(value ChartTextDirectionType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUL(C.CString("DataLabels_SetDirectionType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUN(C.CString("DataLabels_SetDirectionType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8275,7 +8275,7 @@ func (instance *DataLabels) SetIsTextWrapped(value bool)  error {
 //   int32  
 func (instance *DataLabels) GetBackgroundMode()  (BackgroundMode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATW(C.CString("DataLabels_GetBackgroundMode"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("DataLabels_GetBackgroundMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8294,7 +8294,7 @@ func (instance *DataLabels) GetBackgroundMode()  (BackgroundMode,  error)  {
 //   void  
 func (instance *DataLabels) SetBackgroundMode(value BackgroundMode)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATX(C.CString("DataLabels_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUA(C.CString("DataLabels_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8632,7 +8632,7 @@ func (instance *DataLabels) GetFont()  (*Font,  error)  {
 //   int32  
 func (instance *DataLabels) GetSeparatorType()  (DataLabelsSeparatorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUN(C.CString("DataLabels_GetSeparatorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUP(C.CString("DataLabels_GetSeparatorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8651,7 +8651,7 @@ func (instance *DataLabels) GetSeparatorType()  (DataLabelsSeparatorType,  error
 //   void  
 func (instance *DataLabels) SetSeparatorType(value DataLabelsSeparatorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUO(C.CString("DataLabels_SetSeparatorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUQ(C.CString("DataLabels_SetSeparatorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8693,7 +8693,7 @@ func (instance *DataLabels) SetSeparatorValue(value string)  error {
 //   int32  
 func (instance *DataLabels) GetPosition()  (LabelPositionType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUP(C.CString("DataLabels_GetPosition"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUR(C.CString("DataLabels_GetPosition"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8712,7 +8712,7 @@ func (instance *DataLabels) GetPosition()  (LabelPositionType,  error)  {
 //   void  
 func (instance *DataLabels) SetPosition(value LabelPositionType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUQ(C.CString("DataLabels_SetPosition"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUS(C.CString("DataLabels_SetPosition"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8754,7 +8754,7 @@ func (instance *DataLabels) SetIsNeverOverlap(value bool)  error {
 //   int32  
 func (instance *DataLabels) GetShapeType()  (DataLabelShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUR(C.CString("DataLabels_GetShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUT(C.CString("DataLabels_GetShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8773,7 +8773,7 @@ func (instance *DataLabels) GetShapeType()  (DataLabelShapeType,  error)  {
 //   void  
 func (instance *DataLabels) SetShapeType(value DataLabelShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUS(C.CString("DataLabels_SetShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUU(C.CString("DataLabels_SetShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8846,7 +8846,7 @@ func (instance *DataLabels) SetShadow(value bool)  error {
 //   ShapePropertyCollection  
 func (instance *DataLabels) GetShapeProperties()  (*ShapePropertyCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("DataLabels_GetShapeProperties"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUB(C.CString("DataLabels_GetShapeProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9529,7 +9529,7 @@ func NewDisplayUnitLabel(src *ChartTextFrame) ( *DisplayUnitLabel, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAUM(C.CString("New_DisplayUnitLabel"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUO(C.CString("New_DisplayUnitLabel"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		displayunitlabel.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(displayunitlabel, DeleteDisplayUnitLabel)
@@ -9665,7 +9665,7 @@ func (instance *DisplayUnitLabel) SetIsInnerMode(value bool)  error {
 //   int32  
 func (instance *DisplayUnitLabel) GetBackgroundMode()  (BackgroundMode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATW(C.CString("DisplayUnitLabel_GetBackgroundMode"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("DisplayUnitLabel_GetBackgroundMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9684,7 +9684,7 @@ func (instance *DisplayUnitLabel) GetBackgroundMode()  (BackgroundMode,  error) 
 //   void  
 func (instance *DisplayUnitLabel) SetBackgroundMode(value BackgroundMode)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATX(C.CString("DisplayUnitLabel_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUA(C.CString("DisplayUnitLabel_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9726,7 +9726,7 @@ func (instance *DisplayUnitLabel) SetShadow(value bool)  error {
 //   ShapePropertyCollection  
 func (instance *DisplayUnitLabel) GetShapeProperties()  (*ShapePropertyCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("DisplayUnitLabel_GetShapeProperties"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUB(C.CString("DisplayUnitLabel_GetShapeProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9812,7 +9812,7 @@ func (instance *DisplayUnitLabel) GetDefaultHeightRatioToChart()  (float64,  err
 //   Line  
 func (instance *DisplayUnitLabel) GetBorder()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("DisplayUnitLabel_GetBorder"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("DisplayUnitLabel_GetBorder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9828,7 +9828,7 @@ func (instance *DisplayUnitLabel) GetBorder()  (*Line,  error)  {
 //   Area  
 func (instance *DisplayUnitLabel) GetArea()  (*Area,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASD(C.CString("DisplayUnitLabel_GetArea"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASF(C.CString("DisplayUnitLabel_GetArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10410,7 +10410,7 @@ func (instance *DisplayUnitLabel) SetLinkedSource(value string)  error {
 //   int32  
 func (instance *DisplayUnitLabel) GetDirectionType()  (ChartTextDirectionType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUK(C.CString("DisplayUnitLabel_GetDirectionType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUM(C.CString("DisplayUnitLabel_GetDirectionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10429,7 +10429,7 @@ func (instance *DisplayUnitLabel) GetDirectionType()  (ChartTextDirectionType,  
 //   void  
 func (instance *DisplayUnitLabel) SetDirectionType(value ChartTextDirectionType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUL(C.CString("DisplayUnitLabel_SetDirectionType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUN(C.CString("DisplayUnitLabel_SetDirectionType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10512,7 +10512,7 @@ func (instance *DropBars) IsNull()  (bool,  error)  {
 //   Line  
 func (instance *DropBars) GetBorder()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("DropBars_GetBorder"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("DropBars_GetBorder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10528,7 +10528,7 @@ func (instance *DropBars) GetBorder()  (*Line,  error)  {
 //   Area  
 func (instance *DropBars) GetArea()  (*Area,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASD(C.CString("DropBars_GetArea"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASF(C.CString("DropBars_GetArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10565,7 +10565,7 @@ func NewErrorBar(src *Line) ( *ErrorBar, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAUT(C.CString("New_ErrorBar"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUV(C.CString("New_ErrorBar"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		errorbar.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(errorbar, DeleteErrorBar)
@@ -10596,7 +10596,7 @@ func (instance *ErrorBar) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ErrorBar) GetType()  (ErrorBarType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUU(C.CString("ErrorBar_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUW(C.CString("ErrorBar_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10615,7 +10615,7 @@ func (instance *ErrorBar) GetType()  (ErrorBarType,  error)  {
 //   void  
 func (instance *ErrorBar) SetType(value ErrorBarType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUV(C.CString("ErrorBar_SetType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUX(C.CString("ErrorBar_SetType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10628,7 +10628,7 @@ func (instance *ErrorBar) SetType(value ErrorBarType)  error {
 //   int32  
 func (instance *ErrorBar) GetDisplayType()  (ErrorBarDisplayType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUW(C.CString("ErrorBar_GetDisplayType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUY(C.CString("ErrorBar_GetDisplayType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10647,7 +10647,7 @@ func (instance *ErrorBar) GetDisplayType()  (ErrorBarDisplayType,  error)  {
 //   void  
 func (instance *ErrorBar) SetDisplayType(value ErrorBarDisplayType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUX(C.CString("ErrorBar_SetDisplayType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAVA(C.CString("ErrorBar_SetDisplayType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10776,7 +10776,7 @@ func (instance *ErrorBar) SetMinusValue(value string)  error {
 //   int32  
 func (instance *ErrorBar) GetCompoundType()  (MsoLineStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMI(C.CString("ErrorBar_GetCompoundType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMK(C.CString("ErrorBar_GetCompoundType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10795,7 +10795,7 @@ func (instance *ErrorBar) GetCompoundType()  (MsoLineStyle,  error)  {
 //   void  
 func (instance *ErrorBar) SetCompoundType(value MsoLineStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMJ(C.CString("ErrorBar_SetCompoundType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAML(C.CString("ErrorBar_SetCompoundType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10808,7 +10808,7 @@ func (instance *ErrorBar) SetCompoundType(value MsoLineStyle)  error {
 //   int32  
 func (instance *ErrorBar) GetDashType()  (MsoLineDashStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMK(C.CString("ErrorBar_GetDashType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMM(C.CString("ErrorBar_GetDashType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10827,7 +10827,7 @@ func (instance *ErrorBar) GetDashType()  (MsoLineDashStyle,  error)  {
 //   void  
 func (instance *ErrorBar) SetDashType(value MsoLineDashStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAML(C.CString("ErrorBar_SetDashType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMN(C.CString("ErrorBar_SetDashType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10840,7 +10840,7 @@ func (instance *ErrorBar) SetDashType(value MsoLineDashStyle)  error {
 //   int32  
 func (instance *ErrorBar) GetCapType()  (LineCapType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMM(C.CString("ErrorBar_GetCapType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMO(C.CString("ErrorBar_GetCapType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10859,7 +10859,7 @@ func (instance *ErrorBar) GetCapType()  (LineCapType,  error)  {
 //   void  
 func (instance *ErrorBar) SetCapType(value LineCapType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMN(C.CString("ErrorBar_SetCapType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMP(C.CString("ErrorBar_SetCapType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10872,7 +10872,7 @@ func (instance *ErrorBar) SetCapType(value LineCapType)  error {
 //   int32  
 func (instance *ErrorBar) GetJoinType()  (LineJoinType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMO(C.CString("ErrorBar_GetJoinType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMQ(C.CString("ErrorBar_GetJoinType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10891,7 +10891,7 @@ func (instance *ErrorBar) GetJoinType()  (LineJoinType,  error)  {
 //   void  
 func (instance *ErrorBar) SetJoinType(value LineJoinType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMP(C.CString("ErrorBar_SetJoinType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMR(C.CString("ErrorBar_SetJoinType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10904,7 +10904,7 @@ func (instance *ErrorBar) SetJoinType(value LineJoinType)  error {
 //   int32  
 func (instance *ErrorBar) GetBeginType()  (MsoArrowheadStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMQ(C.CString("ErrorBar_GetBeginType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMS(C.CString("ErrorBar_GetBeginType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10923,7 +10923,7 @@ func (instance *ErrorBar) GetBeginType()  (MsoArrowheadStyle,  error)  {
 //   void  
 func (instance *ErrorBar) SetBeginType(value MsoArrowheadStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMR(C.CString("ErrorBar_SetBeginType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMT(C.CString("ErrorBar_SetBeginType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10936,7 +10936,7 @@ func (instance *ErrorBar) SetBeginType(value MsoArrowheadStyle)  error {
 //   int32  
 func (instance *ErrorBar) GetEndType()  (MsoArrowheadStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMQ(C.CString("ErrorBar_GetEndType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMS(C.CString("ErrorBar_GetEndType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10955,7 +10955,7 @@ func (instance *ErrorBar) GetEndType()  (MsoArrowheadStyle,  error)  {
 //   void  
 func (instance *ErrorBar) SetEndType(value MsoArrowheadStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMR(C.CString("ErrorBar_SetEndType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMT(C.CString("ErrorBar_SetEndType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10968,7 +10968,7 @@ func (instance *ErrorBar) SetEndType(value MsoArrowheadStyle)  error {
 //   int32  
 func (instance *ErrorBar) GetBeginArrowLength()  (MsoArrowheadLength,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMS(C.CString("ErrorBar_GetBeginArrowLength"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMU(C.CString("ErrorBar_GetBeginArrowLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -10987,7 +10987,7 @@ func (instance *ErrorBar) GetBeginArrowLength()  (MsoArrowheadLength,  error)  {
 //   void  
 func (instance *ErrorBar) SetBeginArrowLength(value MsoArrowheadLength)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMT(C.CString("ErrorBar_SetBeginArrowLength"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMV(C.CString("ErrorBar_SetBeginArrowLength"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11000,7 +11000,7 @@ func (instance *ErrorBar) SetBeginArrowLength(value MsoArrowheadLength)  error {
 //   int32  
 func (instance *ErrorBar) GetEndArrowLength()  (MsoArrowheadLength,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMS(C.CString("ErrorBar_GetEndArrowLength"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMU(C.CString("ErrorBar_GetEndArrowLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11019,7 +11019,7 @@ func (instance *ErrorBar) GetEndArrowLength()  (MsoArrowheadLength,  error)  {
 //   void  
 func (instance *ErrorBar) SetEndArrowLength(value MsoArrowheadLength)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMT(C.CString("ErrorBar_SetEndArrowLength"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMV(C.CString("ErrorBar_SetEndArrowLength"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11032,7 +11032,7 @@ func (instance *ErrorBar) SetEndArrowLength(value MsoArrowheadLength)  error {
 //   int32  
 func (instance *ErrorBar) GetBeginArrowWidth()  (MsoArrowheadWidth,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMU(C.CString("ErrorBar_GetBeginArrowWidth"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMW(C.CString("ErrorBar_GetBeginArrowWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11051,7 +11051,7 @@ func (instance *ErrorBar) GetBeginArrowWidth()  (MsoArrowheadWidth,  error)  {
 //   void  
 func (instance *ErrorBar) SetBeginArrowWidth(value MsoArrowheadWidth)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMV(C.CString("ErrorBar_SetBeginArrowWidth"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMX(C.CString("ErrorBar_SetBeginArrowWidth"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11064,7 +11064,7 @@ func (instance *ErrorBar) SetBeginArrowWidth(value MsoArrowheadWidth)  error {
 //   int32  
 func (instance *ErrorBar) GetEndArrowWidth()  (MsoArrowheadWidth,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMU(C.CString("ErrorBar_GetEndArrowWidth"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMW(C.CString("ErrorBar_GetEndArrowWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11083,7 +11083,7 @@ func (instance *ErrorBar) GetEndArrowWidth()  (MsoArrowheadWidth,  error)  {
 //   void  
 func (instance *ErrorBar) SetEndArrowWidth(value MsoArrowheadWidth)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMV(C.CString("ErrorBar_SetEndArrowWidth"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMX(C.CString("ErrorBar_SetEndArrowWidth"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11191,7 +11191,7 @@ func (instance *ErrorBar) SetTransparency(value float64)  error {
 //   int32  
 func (instance *ErrorBar) GetStyle()  (LineType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMW(C.CString("ErrorBar_GetStyle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMY(C.CString("ErrorBar_GetStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11210,7 +11210,7 @@ func (instance *ErrorBar) GetStyle()  (LineType,  error)  {
 //   void  
 func (instance *ErrorBar) SetStyle(value LineType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMX(C.CString("ErrorBar_SetStyle"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZANA(C.CString("ErrorBar_SetStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11223,7 +11223,7 @@ func (instance *ErrorBar) SetStyle(value LineType)  error {
 //   int32  
 func (instance *ErrorBar) GetWeight()  (WeightType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMY(C.CString("ErrorBar_GetWeight"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZANB(C.CString("ErrorBar_GetWeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11242,7 +11242,7 @@ func (instance *ErrorBar) GetWeight()  (WeightType,  error)  {
 //   void  
 func (instance *ErrorBar) SetWeight(value WeightType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANA(C.CString("ErrorBar_SetWeight"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZANC(C.CString("ErrorBar_SetWeight"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11313,7 +11313,7 @@ func (instance *ErrorBar) SetWeightPx(value float64)  error {
 //   int32  
 func (instance *ErrorBar) GetFormattingType()  (ChartLineFormattingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANB(C.CString("ErrorBar_GetFormattingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAND(C.CString("ErrorBar_GetFormattingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11332,7 +11332,7 @@ func (instance *ErrorBar) GetFormattingType()  (ChartLineFormattingType,  error)
 //   void  
 func (instance *ErrorBar) SetFormattingType(value ChartLineFormattingType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANC(C.CString("ErrorBar_SetFormattingType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZANE(C.CString("ErrorBar_SetFormattingType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11417,7 +11417,7 @@ func (instance *ErrorBar) SetIsAuto(value bool)  error {
 //   GradientFill  
 func (instance *ErrorBar) GetGradientFill()  (*GradientFill,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALA(C.CString("ErrorBar_GetGradientFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALC(C.CString("ErrorBar_GetGradientFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -11459,7 +11459,7 @@ func NewFloor(src *Area) ( *Floor, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAUY(C.CString("New_Floor"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAVB(C.CString("New_Floor"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		floor.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(floor, DeleteFloor)
@@ -11490,7 +11490,7 @@ func (instance *Floor) IsNull()  (bool,  error)  {
 //   Line  
 func (instance *Floor) GetBorder()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("Floor_GetBorder"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("Floor_GetBorder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -11513,7 +11513,7 @@ func (instance *Floor) SetBorder(value *Line)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAVA(C.CString("Floor_SetBorder"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAVC(C.CString("Floor_SetBorder"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11586,7 +11586,7 @@ func (instance *Floor) SetForegroundColor(value *Color)  error {
 //   int32  
 func (instance *Floor) GetFormatting()  (FormattingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Floor_GetFormatting"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKO(C.CString("Floor_GetFormatting"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11605,7 +11605,7 @@ func (instance *Floor) GetFormatting()  (FormattingType,  error)  {
 //   void  
 func (instance *Floor) SetFormatting(value FormattingType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("Floor_SetFormatting"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKP(C.CString("Floor_SetFormatting"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11649,7 +11649,7 @@ func (instance *Floor) SetInvertIfNegative(value bool)  error {
 //   FillFormat  
 func (instance *Floor) GetFillFormat()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("Floor_GetFillFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("Floor_GetFillFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -11720,7 +11720,7 @@ func NewLegend(src *ChartTextFrame) ( *Legend, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAUM(C.CString("New_Legend"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUO(C.CString("New_Legend"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		legend.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(legend, DeleteLegend)
@@ -11751,7 +11751,7 @@ func (instance *Legend) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *Legend) GetPosition()  (LegendPositionType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVB(C.CString("Legend_GetPosition"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAVD(C.CString("Legend_GetPosition"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11770,7 +11770,7 @@ func (instance *Legend) GetPosition()  (LegendPositionType,  error)  {
 //   void  
 func (instance *Legend) SetPosition(value LegendPositionType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVC(C.CString("Legend_SetPosition"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAVE(C.CString("Legend_SetPosition"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11785,7 +11785,7 @@ func (instance *Legend) SetPosition(value LegendPositionType)  error {
 //   LegendEntryCollection  
 func (instance *Legend) GetLegendEntries()  (*LegendEntryCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVD(C.CString("Legend_GetLegendEntries"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAVF(C.CString("Legend_GetLegendEntries"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -11882,7 +11882,7 @@ func (instance *Legend) SetIsInnerMode(value bool)  error {
 //   int32  
 func (instance *Legend) GetBackgroundMode()  (BackgroundMode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATW(C.CString("Legend_GetBackgroundMode"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("Legend_GetBackgroundMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11901,7 +11901,7 @@ func (instance *Legend) GetBackgroundMode()  (BackgroundMode,  error)  {
 //   void  
 func (instance *Legend) SetBackgroundMode(value BackgroundMode)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATX(C.CString("Legend_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUA(C.CString("Legend_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11943,7 +11943,7 @@ func (instance *Legend) SetShadow(value bool)  error {
 //   ShapePropertyCollection  
 func (instance *Legend) GetShapeProperties()  (*ShapePropertyCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("Legend_GetShapeProperties"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUB(C.CString("Legend_GetShapeProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -12029,7 +12029,7 @@ func (instance *Legend) GetDefaultHeightRatioToChart()  (float64,  error)  {
 //   Line  
 func (instance *Legend) GetBorder()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("Legend_GetBorder"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("Legend_GetBorder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -12045,7 +12045,7 @@ func (instance *Legend) GetBorder()  (*Line,  error)  {
 //   Area  
 func (instance *Legend) GetArea()  (*Area,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASD(C.CString("Legend_GetArea"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASF(C.CString("Legend_GetArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -12701,7 +12701,7 @@ func (instance *Legend) SetLinkedSource(value string)  error {
 //   int32  
 func (instance *Legend) GetDirectionType()  (ChartTextDirectionType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUK(C.CString("Legend_GetDirectionType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUM(C.CString("Legend_GetDirectionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -12720,7 +12720,7 @@ func (instance *Legend) GetDirectionType()  (ChartTextDirectionType,  error)  {
 //   void  
 func (instance *Legend) SetDirectionType(value ChartTextDirectionType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUL(C.CString("Legend_SetDirectionType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUN(C.CString("Legend_SetDirectionType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12908,7 +12908,7 @@ func (instance *LegendEntry) SetAutoScaleFont(value bool)  error {
 //   int32  
 func (instance *LegendEntry) GetBackgroundMode()  (BackgroundMode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATW(C.CString("LegendEntry_GetBackgroundMode"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("LegendEntry_GetBackgroundMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -12927,7 +12927,7 @@ func (instance *LegendEntry) GetBackgroundMode()  (BackgroundMode,  error)  {
 //   void  
 func (instance *LegendEntry) SetBackgroundMode(value BackgroundMode)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATX(C.CString("LegendEntry_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUA(C.CString("LegendEntry_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12973,7 +12973,7 @@ func (instance *LegendEntryCollection) IsNull()  (bool,  error)  {
 //   LegendEntry  
 func (instance *LegendEntryCollection) Get(index int32)  (*LegendEntry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVE(C.CString("LegendEntryCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAVG(C.CString("LegendEntryCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13033,7 +13033,7 @@ func (instance *Marker) IsNull()  (bool,  error)  {
 //   Line  
 func (instance *Marker) GetBorder()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("Marker_GetBorder"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("Marker_GetBorder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13049,7 +13049,7 @@ func (instance *Marker) GetBorder()  (*Line,  error)  {
 //   Area  
 func (instance *Marker) GetArea()  (*Area,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASD(C.CString("Marker_GetArea"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASF(C.CString("Marker_GetArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13065,7 +13065,7 @@ func (instance *Marker) GetArea()  (*Area,  error)  {
 //   int32  
 func (instance *Marker) GetMarkerStyle()  (ChartMarkerType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVF(C.CString("Marker_GetMarkerStyle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAVH(C.CString("Marker_GetMarkerStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -13084,7 +13084,7 @@ func (instance *Marker) GetMarkerStyle()  (ChartMarkerType,  error)  {
 //   void  
 func (instance *Marker) SetMarkerStyle(value ChartMarkerType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVG(C.CString("Marker_SetMarkerStyle"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAVI(C.CString("Marker_SetMarkerStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -13185,7 +13185,7 @@ func (instance *Marker) SetForegroundColor(value *Color)  error {
 //   int32  
 func (instance *Marker) GetForegroundColorSetType()  (FormattingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Marker_GetForegroundColorSetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKO(C.CString("Marker_GetForegroundColorSetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -13204,7 +13204,7 @@ func (instance *Marker) GetForegroundColorSetType()  (FormattingType,  error)  {
 //   void  
 func (instance *Marker) SetForegroundColorSetType(value FormattingType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("Marker_SetForegroundColorSetType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKP(C.CString("Marker_SetForegroundColorSetType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -13247,7 +13247,7 @@ func (instance *Marker) SetBackgroundColor(value *Color)  error {
 //   int32  
 func (instance *Marker) GetBackgroundColorSetType()  (FormattingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Marker_GetBackgroundColorSetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKO(C.CString("Marker_GetBackgroundColorSetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -13266,7 +13266,7 @@ func (instance *Marker) GetBackgroundColorSetType()  (FormattingType,  error)  {
 //   void  
 func (instance *Marker) SetBackgroundColorSetType(value FormattingType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("Marker_SetBackgroundColorSetType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKP(C.CString("Marker_SetBackgroundColorSetType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -13484,7 +13484,7 @@ func NewPlotArea(src *ChartFrame) ( *PlotArea, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZATV(C.CString("New_PlotArea"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATX(C.CString("New_PlotArea"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		plotarea.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(plotarea, DeletePlotArea)
@@ -13820,7 +13820,7 @@ func (instance *PlotArea) SetIsInnerMode(value bool)  error {
 //   int32  
 func (instance *PlotArea) GetBackgroundMode()  (BackgroundMode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATW(C.CString("PlotArea_GetBackgroundMode"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("PlotArea_GetBackgroundMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -13839,7 +13839,7 @@ func (instance *PlotArea) GetBackgroundMode()  (BackgroundMode,  error)  {
 //   void  
 func (instance *PlotArea) SetBackgroundMode(value BackgroundMode)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATX(C.CString("PlotArea_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUA(C.CString("PlotArea_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -13881,7 +13881,7 @@ func (instance *PlotArea) SetShadow(value bool)  error {
 //   ShapePropertyCollection  
 func (instance *PlotArea) GetShapeProperties()  (*ShapePropertyCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("PlotArea_GetShapeProperties"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUB(C.CString("PlotArea_GetShapeProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13967,7 +13967,7 @@ func (instance *PlotArea) GetDefaultHeightRatioToChart()  (float64,  error)  {
 //   Line  
 func (instance *PlotArea) GetBorder()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("PlotArea_GetBorder"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("PlotArea_GetBorder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13983,7 +13983,7 @@ func (instance *PlotArea) GetBorder()  (*Line,  error)  {
 //   Area  
 func (instance *PlotArea) GetArea()  (*Area,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASD(C.CString("PlotArea_GetArea"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASF(C.CString("PlotArea_GetArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -14241,7 +14241,7 @@ func (instance *Series) SetIsFiltered(value bool)  error {
 //   SeriesLayoutProperties  
 func (instance *Series) GetLayoutProperties()  (*SeriesLayoutProperties,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVH(C.CString("Series_GetLayoutProperties"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAVJ(C.CString("Series_GetLayoutProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -14272,7 +14272,7 @@ func (instance *Series) Move(count int32)  error {
 //   ChartPointCollection  
 func (instance *Series) GetPoints()  (*ChartPointCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVI(C.CString("Series_GetPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAVK(C.CString("Series_GetPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -14288,7 +14288,7 @@ func (instance *Series) GetPoints()  (*ChartPointCollection,  error)  {
 //   Area  
 func (instance *Series) GetArea()  (*Area,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASD(C.CString("Series_GetArea"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASF(C.CString("Series_GetArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -14304,7 +14304,7 @@ func (instance *Series) GetArea()  (*Area,  error)  {
 //   Line  
 func (instance *Series) GetBorder()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("Series_GetBorder"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("Series_GetBorder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -14536,7 +14536,7 @@ func (instance *Series) SetBubbleSizes(value string)  error {
 //   TrendlineCollection  
 func (instance *Series) GetTrendLines()  (*TrendlineCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVJ(C.CString("Series_GetTrendLines"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAVL(C.CString("Series_GetTrendLines"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -14645,7 +14645,7 @@ func (instance *Series) SetHas3DEffect(value bool)  error {
 //   int32  
 func (instance *Series) GetBar3DShapeType()  (Bar3DShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVK(C.CString("Series_GetBar3DShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAVM(C.CString("Series_GetBar3DShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -14664,7 +14664,7 @@ func (instance *Series) GetBar3DShapeType()  (Bar3DShapeType,  error)  {
 //   void  
 func (instance *Series) SetBar3DShapeType(value Bar3DShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVL(C.CString("Series_SetBar3DShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAVN(C.CString("Series_SetBar3DShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14677,7 +14677,7 @@ func (instance *Series) SetBar3DShapeType(value Bar3DShapeType)  error {
 //   DataLabels  
 func (instance *Series) GetDataLabels()  (*DataLabels,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUG(C.CString("Series_GetDataLabels"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUI(C.CString("Series_GetDataLabels"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -14693,7 +14693,7 @@ func (instance *Series) GetDataLabels()  (*DataLabels,  error)  {
 //   int32  
 func (instance *Series) GetType()  (ChartType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATE(C.CString("Series_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATG(C.CString("Series_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -14712,7 +14712,7 @@ func (instance *Series) GetType()  (ChartType,  error)  {
 //   void  
 func (instance *Series) SetType(value ChartType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATF(C.CString("Series_SetType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZATH(C.CString("Series_SetType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14725,7 +14725,7 @@ func (instance *Series) SetType(value ChartType)  error {
 //   Marker  
 func (instance *Series) GetMarker()  (*Marker,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUF(C.CString("Series_GetMarker"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUH(C.CString("Series_GetMarker"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -14770,7 +14770,7 @@ func (instance *Series) SetPlotOnSecondAxis(value bool)  error {
 //   ErrorBar  
 func (instance *Series) GetXErrorBar()  (*ErrorBar,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVM(C.CString("Series_GetXErrorBar"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAVO(C.CString("Series_GetXErrorBar"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -14786,7 +14786,7 @@ func (instance *Series) GetXErrorBar()  (*ErrorBar,  error)  {
 //   ErrorBar  
 func (instance *Series) GetYErrorBar()  (*ErrorBar,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVM(C.CString("Series_GetYErrorBar"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAVO(C.CString("Series_GetYErrorBar"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -14834,7 +14834,7 @@ func (instance *Series) SetHasHiLoLines(value bool)  error {
 //   Line  
 func (instance *Series) GetHiLoLines()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("Series_GetHiLoLines"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("Series_GetHiLoLines"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -14884,7 +14884,7 @@ func (instance *Series) SetHasSeriesLines(value bool)  error {
 //   Line  
 func (instance *Series) GetSeriesLines()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("Series_GetSeriesLines"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("Series_GetSeriesLines"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -14932,7 +14932,7 @@ func (instance *Series) SetHasDropLines(value bool)  error {
 //   Line  
 func (instance *Series) GetDropLines()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("Series_GetDropLines"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("Series_GetDropLines"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -14980,7 +14980,7 @@ func (instance *Series) SetHasUpDownBars(value bool)  error {
 //   DropBars  
 func (instance *Series) GetUpBars()  (*DropBars,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVN(C.CString("Series_GetUpBars"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAVP(C.CString("Series_GetUpBars"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -14997,7 +14997,7 @@ func (instance *Series) GetUpBars()  (*DropBars,  error)  {
 //   DropBars  
 func (instance *Series) GetDownBars()  (*DropBars,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVN(C.CString("Series_GetDownBars"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAVP(C.CString("Series_GetDownBars"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -15062,7 +15062,7 @@ func (instance *Series) GetGapWidth()  (int16,  error)  {
 //   void  
 func (instance *Series) SetGapWidth(value int16)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATP(C.CString("Series_SetGapWidth"), instance.ptr, C.short(value))
+	CGoReturnPtr := C.CellsGoFunctoinZATR(C.CString("Series_SetGapWidth"), instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15093,7 +15093,7 @@ func (instance *Series) GetFirstSliceAngle()  (int16,  error)  {
 //   void  
 func (instance *Series) SetFirstSliceAngle(value int16)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATP(C.CString("Series_SetFirstSliceAngle"), instance.ptr, C.short(value))
+	CGoReturnPtr := C.CellsGoFunctoinZATR(C.CString("Series_SetFirstSliceAngle"), instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15126,7 +15126,7 @@ func (instance *Series) GetOverlap()  (int16,  error)  {
 //   void  
 func (instance *Series) SetOverlap(value int16)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATP(C.CString("Series_SetOverlap"), instance.ptr, C.short(value))
+	CGoReturnPtr := C.CellsGoFunctoinZATR(C.CString("Series_SetOverlap"), instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15159,7 +15159,7 @@ func (instance *Series) GetSecondPlotSize()  (int16,  error)  {
 //   void  
 func (instance *Series) SetSecondPlotSize(value int16)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATP(C.CString("Series_SetSecondPlotSize"), instance.ptr, C.short(value))
+	CGoReturnPtr := C.CellsGoFunctoinZATR(C.CString("Series_SetSecondPlotSize"), instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15173,7 +15173,7 @@ func (instance *Series) SetSecondPlotSize(value int16)  error {
 //   int32  
 func (instance *Series) GetSplitType()  (ChartSplitType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVO(C.CString("Series_GetSplitType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAVQ(C.CString("Series_GetSplitType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -15193,7 +15193,7 @@ func (instance *Series) GetSplitType()  (ChartSplitType,  error)  {
 //   void  
 func (instance *Series) SetSplitType(value ChartSplitType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVP(C.CString("Series_SetSplitType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAVR(C.CString("Series_SetSplitType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15286,7 +15286,7 @@ func (instance *Series) SetBubbleScale(value int32)  error {
 //   int32  
 func (instance *Series) GetSizeRepresents()  (BubbleSizeRepresents,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVQ(C.CString("Series_GetSizeRepresents"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAVS(C.CString("Series_GetSizeRepresents"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -15305,7 +15305,7 @@ func (instance *Series) GetSizeRepresents()  (BubbleSizeRepresents,  error)  {
 //   void  
 func (instance *Series) SetSizeRepresents(value BubbleSizeRepresents)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVR(C.CString("Series_SetSizeRepresents"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAVT(C.CString("Series_SetSizeRepresents"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15466,7 +15466,7 @@ func (instance *Series) SetHasLeaderLines(value bool)  error {
 //   Line  
 func (instance *Series) GetLeaderLines()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("Series_GetLeaderLines"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("Series_GetLeaderLines"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -15482,7 +15482,7 @@ func (instance *Series) GetLeaderLines()  (*Line,  error)  {
 //   LegendEntry  
 func (instance *Series) GetLegendEntry()  (*LegendEntry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVS(C.CString("Series_GetLegendEntry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAVU(C.CString("Series_GetLegendEntry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -15498,7 +15498,7 @@ func (instance *Series) GetLegendEntry()  (*LegendEntry,  error)  {
 //   ShapePropertyCollection  
 func (instance *Series) GetShapeProperties()  (*ShapePropertyCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("Series_GetShapeProperties"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUB(C.CString("Series_GetShapeProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -15547,7 +15547,7 @@ func (instance *SeriesCollection) IsNull()  (bool,  error)  {
 //   Series  
 func (instance *SeriesCollection) Get(index int32)  (*Series,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVT(C.CString("SeriesCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAVV(C.CString("SeriesCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -15565,7 +15565,7 @@ func (instance *SeriesCollection) Get(index int32)  (*Series,  error)  {
 //   Series  
 func (instance *SeriesCollection) GetSeriesByOrder(order int32)  (*Series,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVT(C.CString("SeriesCollection_GetSeriesByOrder"), instance.ptr, C.int(order))
+	CGoReturnPtr := C.CellsGoFunctoinZAVV(C.CString("SeriesCollection_GetSeriesByOrder"), instance.ptr, C.int(order))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -15684,7 +15684,7 @@ func (instance *SeriesCollection) SwapSeries(sourceindex int32, destindex int32)
 //   void  
 func (instance *SeriesCollection) SetSeriesNames(startindex int32, area string, isvertical bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVU(C.CString("SeriesCollection_SetSeriesNames"), instance.ptr, C.int(startindex), C.CString(area), C.bool(isvertical))
+	CGoReturnPtr := C.CellsGoFunctoinZAVW(C.CString("SeriesCollection_SetSeriesNames"), instance.ptr, C.int(startindex), C.CString(area), C.bool(isvertical))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15700,7 +15700,7 @@ func (instance *SeriesCollection) SetSeriesNames(startindex int32, area string, 
 //   int32  
 func (instance *SeriesCollection) AddR1C1(area string, isvertical bool)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVV(C.CString("SeriesCollection_AddR1C1"), instance.ptr, C.CString(area), C.bool(isvertical))
+	CGoReturnPtr := C.CellsGoFunctoinZAVX(C.CString("SeriesCollection_AddR1C1"), instance.ptr, C.CString(area), C.bool(isvertical))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -15717,7 +15717,7 @@ func (instance *SeriesCollection) AddR1C1(area string, isvertical bool)  (int32,
 //   int32  
 func (instance *SeriesCollection) Add_String_Bool(area string, isvertical bool)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVV(C.CString("SeriesCollection_Add_String_Boolean"), instance.ptr, C.CString(area), C.bool(isvertical))
+	CGoReturnPtr := C.CellsGoFunctoinZAVX(C.CString("SeriesCollection_Add_String_Boolean"), instance.ptr, C.CString(area), C.bool(isvertical))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -15735,7 +15735,7 @@ func (instance *SeriesCollection) Add_String_Bool(area string, isvertical bool) 
 //   int32  
 func (instance *SeriesCollection) Add_String_Bool_Bool(area string, isvertical bool, checklabels bool)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVW(C.CString("SeriesCollection_Add_String_Boolean_Boolean"), instance.ptr, C.CString(area), C.bool(isvertical), C.bool(checklabels))
+	CGoReturnPtr := C.CellsGoFunctoinZAVY(C.CString("SeriesCollection_Add_String_Boolean_Boolean"), instance.ptr, C.CString(area), C.bool(isvertical), C.bool(checklabels))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -15793,7 +15793,7 @@ func (instance *SeriesCollection) Clear()  error {
 //   void  
 func (instance *SeriesCollection) ChangeColors(type_ ChartColorPaletteType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVX(C.CString("SeriesCollection_ChangeColors"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAWA(C.CString("SeriesCollection_ChangeColors"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16045,7 +16045,7 @@ func (instance *SeriesLayoutProperties) SetSubtotals(value []int32)  error {
 //   int32  
 func (instance *SeriesLayoutProperties) GetQuartileCalculation()  (QuartileCalculationType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVY(C.CString("SeriesLayoutProperties_GetQuartileCalculation"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAWB(C.CString("SeriesLayoutProperties_GetQuartileCalculation"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -16064,7 +16064,7 @@ func (instance *SeriesLayoutProperties) GetQuartileCalculation()  (QuartileCalcu
 //   void  
 func (instance *SeriesLayoutProperties) SetQuartileCalculation(value QuartileCalculationType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWA(C.CString("SeriesLayoutProperties_SetQuartileCalculation"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAWC(C.CString("SeriesLayoutProperties_SetQuartileCalculation"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16077,7 +16077,7 @@ func (instance *SeriesLayoutProperties) SetQuartileCalculation(value QuartileCal
 //   int32  
 func (instance *SeriesLayoutProperties) GetMapLabelLayout()  (MapChartLabelLayout,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWB(C.CString("SeriesLayoutProperties_GetMapLabelLayout"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAWD(C.CString("SeriesLayoutProperties_GetMapLabelLayout"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -16096,7 +16096,7 @@ func (instance *SeriesLayoutProperties) GetMapLabelLayout()  (MapChartLabelLayou
 //   void  
 func (instance *SeriesLayoutProperties) SetMapLabelLayout(value MapChartLabelLayout)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWC(C.CString("SeriesLayoutProperties_SetMapLabelLayout"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAWE(C.CString("SeriesLayoutProperties_SetMapLabelLayout"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16138,7 +16138,7 @@ func (instance *SeriesLayoutProperties) SetIsIntervalLeftClosed(value bool)  err
 //   int32  
 func (instance *SeriesLayoutProperties) GetMapChartRegionType()  (MapChartRegionType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWD(C.CString("SeriesLayoutProperties_GetMapChartRegionType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAWF(C.CString("SeriesLayoutProperties_GetMapChartRegionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -16157,7 +16157,7 @@ func (instance *SeriesLayoutProperties) GetMapChartRegionType()  (MapChartRegion
 //   void  
 func (instance *SeriesLayoutProperties) SetMapChartRegionType(value MapChartRegionType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWE(C.CString("SeriesLayoutProperties_SetMapChartRegionType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAWG(C.CString("SeriesLayoutProperties_SetMapChartRegionType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16170,7 +16170,7 @@ func (instance *SeriesLayoutProperties) SetMapChartRegionType(value MapChartRegi
 //   int32  
 func (instance *SeriesLayoutProperties) GetMapChartProjectionType()  (MapChartProjectionType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWF(C.CString("SeriesLayoutProperties_GetMapChartProjectionType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAWH(C.CString("SeriesLayoutProperties_GetMapChartProjectionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -16189,7 +16189,7 @@ func (instance *SeriesLayoutProperties) GetMapChartProjectionType()  (MapChartPr
 //   void  
 func (instance *SeriesLayoutProperties) SetMapChartProjectionType(value MapChartProjectionType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWG(C.CString("SeriesLayoutProperties_SetMapChartProjectionType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAWI(C.CString("SeriesLayoutProperties_SetMapChartProjectionType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16298,7 +16298,7 @@ func (instance *Sparkline) ToImage_String_ImageOrPrintOptions(filename string, o
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("Sparkline_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(filename), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("Sparkline_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(filename), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16366,7 +16366,7 @@ func (instance *SparklineCollection) IsNull()  (bool,  error)  {
 //   Sparkline  
 func (instance *SparklineCollection) Get(index int32)  (*Sparkline,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWH(C.CString("SparklineCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAWJ(C.CString("SparklineCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -16475,7 +16475,7 @@ func (instance *SparklineGroup) ResetRanges(datarange string, isvertical bool, l
 	  locationrange_ptr =locationrange.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAWI(C.CString("SparklineGroup_ResetRanges"), instance.ptr, C.CString(datarange), C.bool(isvertical), locationrange_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAWK(C.CString("SparklineGroup_ResetRanges"), instance.ptr, C.CString(datarange), C.bool(isvertical), locationrange_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16488,7 +16488,7 @@ func (instance *SparklineGroup) ResetRanges(datarange string, isvertical bool, l
 //   int32  
 func (instance *SparklineGroup) GetPresetStyle()  (SparklinePresetStyleType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWJ(C.CString("SparklineGroup_GetPresetStyle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAWL(C.CString("SparklineGroup_GetPresetStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -16507,7 +16507,7 @@ func (instance *SparklineGroup) GetPresetStyle()  (SparklinePresetStyleType,  er
 //   void  
 func (instance *SparklineGroup) SetPresetStyle(value SparklinePresetStyleType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWK(C.CString("SparklineGroup_SetPresetStyle"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAWM(C.CString("SparklineGroup_SetPresetStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16520,7 +16520,7 @@ func (instance *SparklineGroup) SetPresetStyle(value SparklinePresetStyleType)  
 //   SparklineCollection  
 func (instance *SparklineGroup) GetSparklines()  (*SparklineCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWL(C.CString("SparklineGroup_GetSparklines"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAWN(C.CString("SparklineGroup_GetSparklines"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -16536,7 +16536,7 @@ func (instance *SparklineGroup) GetSparklines()  (*SparklineCollection,  error) 
 //   int32  
 func (instance *SparklineGroup) GetType()  (SparklineType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWM(C.CString("SparklineGroup_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAWO(C.CString("SparklineGroup_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -16555,7 +16555,7 @@ func (instance *SparklineGroup) GetType()  (SparklineType,  error)  {
 //   void  
 func (instance *SparklineGroup) SetType(value SparklineType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWN(C.CString("SparklineGroup_SetType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAWP(C.CString("SparklineGroup_SetType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16568,7 +16568,7 @@ func (instance *SparklineGroup) SetType(value SparklineType)  error {
 //   int32  
 func (instance *SparklineGroup) GetPlotEmptyCellsType()  (PlotEmptyCellsType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATA(C.CString("SparklineGroup_GetPlotEmptyCellsType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATC(C.CString("SparklineGroup_GetPlotEmptyCellsType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -16587,7 +16587,7 @@ func (instance *SparklineGroup) GetPlotEmptyCellsType()  (PlotEmptyCellsType,  e
 //   void  
 func (instance *SparklineGroup) SetPlotEmptyCellsType(value PlotEmptyCellsType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATB(C.CString("SparklineGroup_SetPlotEmptyCellsType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZATD(C.CString("SparklineGroup_SetPlotEmptyCellsType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16681,7 +16681,7 @@ func (instance *SparklineGroup) SetHighPointColor(value *CellsColor)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("SparklineGroup_SetHighPointColor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALW(C.CString("SparklineGroup_SetHighPointColor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16746,7 +16746,7 @@ func (instance *SparklineGroup) SetLowPointColor(value *CellsColor)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("SparklineGroup_SetLowPointColor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALW(C.CString("SparklineGroup_SetLowPointColor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16811,7 +16811,7 @@ func (instance *SparklineGroup) SetNegativePointsColor(value *CellsColor)  error
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("SparklineGroup_SetNegativePointsColor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALW(C.CString("SparklineGroup_SetNegativePointsColor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16876,7 +16876,7 @@ func (instance *SparklineGroup) SetFirstPointColor(value *CellsColor)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("SparklineGroup_SetFirstPointColor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALW(C.CString("SparklineGroup_SetFirstPointColor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16941,7 +16941,7 @@ func (instance *SparklineGroup) SetLastPointColor(value *CellsColor)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("SparklineGroup_SetLastPointColor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALW(C.CString("SparklineGroup_SetLastPointColor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17006,7 +17006,7 @@ func (instance *SparklineGroup) SetMarkersColor(value *CellsColor)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("SparklineGroup_SetMarkersColor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALW(C.CString("SparklineGroup_SetMarkersColor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17042,7 +17042,7 @@ func (instance *SparklineGroup) SetSeriesColor(value *CellsColor)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("SparklineGroup_SetSeriesColor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALW(C.CString("SparklineGroup_SetSeriesColor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17136,7 +17136,7 @@ func (instance *SparklineGroup) SetHorizontalAxisColor(value *CellsColor)  error
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("SparklineGroup_SetHorizontalAxisColor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALW(C.CString("SparklineGroup_SetHorizontalAxisColor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17209,7 +17209,7 @@ func (instance *SparklineGroup) SetHorizontalAxisDateRange(value string)  error 
 //   int32  
 func (instance *SparklineGroup) GetVerticalAxisMaxValueType()  (SparklineAxisMinMaxType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWO(C.CString("SparklineGroup_GetVerticalAxisMaxValueType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAWQ(C.CString("SparklineGroup_GetVerticalAxisMaxValueType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -17228,7 +17228,7 @@ func (instance *SparklineGroup) GetVerticalAxisMaxValueType()  (SparklineAxisMin
 //   void  
 func (instance *SparklineGroup) SetVerticalAxisMaxValueType(value SparklineAxisMinMaxType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWP(C.CString("SparklineGroup_SetVerticalAxisMaxValueType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAWR(C.CString("SparklineGroup_SetVerticalAxisMaxValueType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17270,7 +17270,7 @@ func (instance *SparklineGroup) SetVerticalAxisMaxValue(value float64)  error {
 //   int32  
 func (instance *SparklineGroup) GetVerticalAxisMinValueType()  (SparklineAxisMinMaxType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWO(C.CString("SparklineGroup_GetVerticalAxisMinValueType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAWQ(C.CString("SparklineGroup_GetVerticalAxisMinValueType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -17289,7 +17289,7 @@ func (instance *SparklineGroup) GetVerticalAxisMinValueType()  (SparklineAxisMin
 //   void  
 func (instance *SparklineGroup) SetVerticalAxisMinValueType(value SparklineAxisMinMaxType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWP(C.CString("SparklineGroup_SetVerticalAxisMinValueType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAWR(C.CString("SparklineGroup_SetVerticalAxisMinValueType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17364,7 +17364,7 @@ func (instance *SparklineGroupCollection) IsNull()  (bool,  error)  {
 //   SparklineGroup  
 func (instance *SparklineGroupCollection) Get(index int32)  (*SparklineGroup,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWQ(C.CString("SparklineGroupCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAWS(C.CString("SparklineGroupCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -17382,7 +17382,7 @@ func (instance *SparklineGroupCollection) Get(index int32)  (*SparklineGroup,  e
 //   int32  
 func (instance *SparklineGroupCollection) Add_SparklineType(type_ SparklineType)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWR(C.CString("SparklineGroupCollection_Add_SparklineType"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAWT(C.CString("SparklineGroupCollection_Add_SparklineType"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -17406,7 +17406,7 @@ func (instance *SparklineGroupCollection) Add_SparklineType_String_Bool_CellArea
 	  locationrange_ptr =locationrange.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAWS(C.CString("SparklineGroupCollection_Add_SparklineType_String_Boolean_CellArea"), instance.ptr, C.int( int32(type_)), C.CString(datarange), C.bool(isvertical), locationrange_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAWU(C.CString("SparklineGroupCollection_Add_SparklineType_String_Boolean_CellArea"), instance.ptr, C.int( int32(type_)), C.CString(datarange), C.bool(isvertical), locationrange_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -17636,7 +17636,7 @@ func (instance *TickLabels) SetAutoScaleFont(value bool)  error {
 //   int32  
 func (instance *TickLabels) GetBackgroundMode()  (BackgroundMode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATW(C.CString("TickLabels_GetBackgroundMode"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("TickLabels_GetBackgroundMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -17655,7 +17655,7 @@ func (instance *TickLabels) GetBackgroundMode()  (BackgroundMode,  error)  {
 //   void  
 func (instance *TickLabels) SetBackgroundMode(value BackgroundMode)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATX(C.CString("TickLabels_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUA(C.CString("TickLabels_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17892,7 +17892,7 @@ func (instance *TickLabels) SetReadingOrder(value TextDirectionType)  error {
 //   int32  
 func (instance *TickLabels) GetDirectionType()  (ChartTextDirectionType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUK(C.CString("TickLabels_GetDirectionType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUM(C.CString("TickLabels_GetDirectionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -17911,7 +17911,7 @@ func (instance *TickLabels) GetDirectionType()  (ChartTextDirectionType,  error)
 //   void  
 func (instance *TickLabels) SetDirectionType(value ChartTextDirectionType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUL(C.CString("TickLabels_SetDirectionType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUN(C.CString("TickLabels_SetDirectionType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17924,7 +17924,7 @@ func (instance *TickLabels) SetDirectionType(value ChartTextDirectionType)  erro
 //   []TickLabelItem  
 func (instance *TickLabels) GetTickLabelItems()  ([]TickLabelItem,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWT(C.CString("TickLabels_GetTickLabelItems"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAWV(C.CString("TickLabels_GetTickLabelItems"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -17945,7 +17945,7 @@ func (instance *TickLabels) GetTickLabelItems()  ([]TickLabelItem,  error)  {
 //   int32  
 func (instance *TickLabels) GetAlignmentType()  (TickLabelAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWU(C.CString("TickLabels_GetAlignmentType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAWW(C.CString("TickLabels_GetAlignmentType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -17964,7 +17964,7 @@ func (instance *TickLabels) GetAlignmentType()  (TickLabelAlignmentType,  error)
 //   void  
 func (instance *TickLabels) SetAlignmentType(value TickLabelAlignmentType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWV(C.CString("TickLabels_SetAlignmentType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAWX(C.CString("TickLabels_SetAlignmentType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17998,7 +17998,7 @@ func NewTitle(src *ChartTextFrame) ( *Title, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAUM(C.CString("New_Title"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUO(C.CString("New_Title"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		title.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(title, DeleteTitle)
@@ -18249,7 +18249,7 @@ func (instance *Title) SetIsInnerMode(value bool)  error {
 //   int32  
 func (instance *Title) GetBackgroundMode()  (BackgroundMode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATW(C.CString("Title_GetBackgroundMode"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("Title_GetBackgroundMode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -18268,7 +18268,7 @@ func (instance *Title) GetBackgroundMode()  (BackgroundMode,  error)  {
 //   void  
 func (instance *Title) SetBackgroundMode(value BackgroundMode)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATX(C.CString("Title_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUA(C.CString("Title_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -18310,7 +18310,7 @@ func (instance *Title) SetShadow(value bool)  error {
 //   ShapePropertyCollection  
 func (instance *Title) GetShapeProperties()  (*ShapePropertyCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZATY(C.CString("Title_GetShapeProperties"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUB(C.CString("Title_GetShapeProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -18396,7 +18396,7 @@ func (instance *Title) GetDefaultHeightRatioToChart()  (float64,  error)  {
 //   Line  
 func (instance *Title) GetBorder()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("Title_GetBorder"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("Title_GetBorder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -18412,7 +18412,7 @@ func (instance *Title) GetBorder()  (*Line,  error)  {
 //   Area  
 func (instance *Title) GetArea()  (*Area,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASD(C.CString("Title_GetArea"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASF(C.CString("Title_GetArea"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -18962,7 +18962,7 @@ func (instance *Title) SetLinkedSource(value string)  error {
 //   int32  
 func (instance *Title) GetDirectionType()  (ChartTextDirectionType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUK(C.CString("Title_GetDirectionType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUM(C.CString("Title_GetDirectionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -18981,7 +18981,7 @@ func (instance *Title) GetDirectionType()  (ChartTextDirectionType,  error)  {
 //   void  
 func (instance *Title) SetDirectionType(value ChartTextDirectionType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUL(C.CString("Title_SetDirectionType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAUN(C.CString("Title_SetDirectionType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19054,7 +19054,7 @@ func NewTrendline(src *Line) ( *Trendline, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAUT(C.CString("New_Trendline"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUV(C.CString("New_Trendline"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		trendline.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(trendline, DeleteTrendline)
@@ -19114,7 +19114,7 @@ func (instance *Trendline) SetIsNameAuto(value bool)  error {
 //   int32  
 func (instance *Trendline) GetType()  (TrendlineType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWW(C.CString("Trendline_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAWY(C.CString("Trendline_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19371,7 +19371,7 @@ func (instance *Trendline) SetIntercept(value float64)  error {
 //   DataLabels  
 func (instance *Trendline) GetDataLabels()  (*DataLabels,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUG(C.CString("Trendline_GetDataLabels"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAUI(C.CString("Trendline_GetDataLabels"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -19387,7 +19387,7 @@ func (instance *Trendline) GetDataLabels()  (*DataLabels,  error)  {
 //   LegendEntry  
 func (instance *Trendline) GetLegendEntry()  (*LegendEntry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAVS(C.CString("Trendline_GetLegendEntry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAVU(C.CString("Trendline_GetLegendEntry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -19403,7 +19403,7 @@ func (instance *Trendline) GetLegendEntry()  (*LegendEntry,  error)  {
 //   int32  
 func (instance *Trendline) GetCompoundType()  (MsoLineStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMI(C.CString("Trendline_GetCompoundType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMK(C.CString("Trendline_GetCompoundType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19422,7 +19422,7 @@ func (instance *Trendline) GetCompoundType()  (MsoLineStyle,  error)  {
 //   void  
 func (instance *Trendline) SetCompoundType(value MsoLineStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMJ(C.CString("Trendline_SetCompoundType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAML(C.CString("Trendline_SetCompoundType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19435,7 +19435,7 @@ func (instance *Trendline) SetCompoundType(value MsoLineStyle)  error {
 //   int32  
 func (instance *Trendline) GetDashType()  (MsoLineDashStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMK(C.CString("Trendline_GetDashType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMM(C.CString("Trendline_GetDashType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19454,7 +19454,7 @@ func (instance *Trendline) GetDashType()  (MsoLineDashStyle,  error)  {
 //   void  
 func (instance *Trendline) SetDashType(value MsoLineDashStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAML(C.CString("Trendline_SetDashType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMN(C.CString("Trendline_SetDashType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19467,7 +19467,7 @@ func (instance *Trendline) SetDashType(value MsoLineDashStyle)  error {
 //   int32  
 func (instance *Trendline) GetCapType()  (LineCapType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMM(C.CString("Trendline_GetCapType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMO(C.CString("Trendline_GetCapType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19486,7 +19486,7 @@ func (instance *Trendline) GetCapType()  (LineCapType,  error)  {
 //   void  
 func (instance *Trendline) SetCapType(value LineCapType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMN(C.CString("Trendline_SetCapType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMP(C.CString("Trendline_SetCapType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19499,7 +19499,7 @@ func (instance *Trendline) SetCapType(value LineCapType)  error {
 //   int32  
 func (instance *Trendline) GetJoinType()  (LineJoinType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMO(C.CString("Trendline_GetJoinType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMQ(C.CString("Trendline_GetJoinType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19518,7 +19518,7 @@ func (instance *Trendline) GetJoinType()  (LineJoinType,  error)  {
 //   void  
 func (instance *Trendline) SetJoinType(value LineJoinType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMP(C.CString("Trendline_SetJoinType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMR(C.CString("Trendline_SetJoinType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19531,7 +19531,7 @@ func (instance *Trendline) SetJoinType(value LineJoinType)  error {
 //   int32  
 func (instance *Trendline) GetBeginType()  (MsoArrowheadStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMQ(C.CString("Trendline_GetBeginType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMS(C.CString("Trendline_GetBeginType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19550,7 +19550,7 @@ func (instance *Trendline) GetBeginType()  (MsoArrowheadStyle,  error)  {
 //   void  
 func (instance *Trendline) SetBeginType(value MsoArrowheadStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMR(C.CString("Trendline_SetBeginType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMT(C.CString("Trendline_SetBeginType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19563,7 +19563,7 @@ func (instance *Trendline) SetBeginType(value MsoArrowheadStyle)  error {
 //   int32  
 func (instance *Trendline) GetEndType()  (MsoArrowheadStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMQ(C.CString("Trendline_GetEndType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMS(C.CString("Trendline_GetEndType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19582,7 +19582,7 @@ func (instance *Trendline) GetEndType()  (MsoArrowheadStyle,  error)  {
 //   void  
 func (instance *Trendline) SetEndType(value MsoArrowheadStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMR(C.CString("Trendline_SetEndType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMT(C.CString("Trendline_SetEndType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19595,7 +19595,7 @@ func (instance *Trendline) SetEndType(value MsoArrowheadStyle)  error {
 //   int32  
 func (instance *Trendline) GetBeginArrowLength()  (MsoArrowheadLength,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMS(C.CString("Trendline_GetBeginArrowLength"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMU(C.CString("Trendline_GetBeginArrowLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19614,7 +19614,7 @@ func (instance *Trendline) GetBeginArrowLength()  (MsoArrowheadLength,  error)  
 //   void  
 func (instance *Trendline) SetBeginArrowLength(value MsoArrowheadLength)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMT(C.CString("Trendline_SetBeginArrowLength"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMV(C.CString("Trendline_SetBeginArrowLength"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19627,7 +19627,7 @@ func (instance *Trendline) SetBeginArrowLength(value MsoArrowheadLength)  error 
 //   int32  
 func (instance *Trendline) GetEndArrowLength()  (MsoArrowheadLength,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMS(C.CString("Trendline_GetEndArrowLength"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMU(C.CString("Trendline_GetEndArrowLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19646,7 +19646,7 @@ func (instance *Trendline) GetEndArrowLength()  (MsoArrowheadLength,  error)  {
 //   void  
 func (instance *Trendline) SetEndArrowLength(value MsoArrowheadLength)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMT(C.CString("Trendline_SetEndArrowLength"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMV(C.CString("Trendline_SetEndArrowLength"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19659,7 +19659,7 @@ func (instance *Trendline) SetEndArrowLength(value MsoArrowheadLength)  error {
 //   int32  
 func (instance *Trendline) GetBeginArrowWidth()  (MsoArrowheadWidth,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMU(C.CString("Trendline_GetBeginArrowWidth"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMW(C.CString("Trendline_GetBeginArrowWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19678,7 +19678,7 @@ func (instance *Trendline) GetBeginArrowWidth()  (MsoArrowheadWidth,  error)  {
 //   void  
 func (instance *Trendline) SetBeginArrowWidth(value MsoArrowheadWidth)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMV(C.CString("Trendline_SetBeginArrowWidth"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMX(C.CString("Trendline_SetBeginArrowWidth"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19691,7 +19691,7 @@ func (instance *Trendline) SetBeginArrowWidth(value MsoArrowheadWidth)  error {
 //   int32  
 func (instance *Trendline) GetEndArrowWidth()  (MsoArrowheadWidth,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMU(C.CString("Trendline_GetEndArrowWidth"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMW(C.CString("Trendline_GetEndArrowWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19710,7 +19710,7 @@ func (instance *Trendline) GetEndArrowWidth()  (MsoArrowheadWidth,  error)  {
 //   void  
 func (instance *Trendline) SetEndArrowWidth(value MsoArrowheadWidth)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMV(C.CString("Trendline_SetEndArrowWidth"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMX(C.CString("Trendline_SetEndArrowWidth"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19818,7 +19818,7 @@ func (instance *Trendline) SetTransparency(value float64)  error {
 //   int32  
 func (instance *Trendline) GetStyle()  (LineType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMW(C.CString("Trendline_GetStyle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMY(C.CString("Trendline_GetStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19837,7 +19837,7 @@ func (instance *Trendline) GetStyle()  (LineType,  error)  {
 //   void  
 func (instance *Trendline) SetStyle(value LineType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMX(C.CString("Trendline_SetStyle"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZANA(C.CString("Trendline_SetStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19850,7 +19850,7 @@ func (instance *Trendline) SetStyle(value LineType)  error {
 //   int32  
 func (instance *Trendline) GetWeight()  (WeightType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMY(C.CString("Trendline_GetWeight"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZANB(C.CString("Trendline_GetWeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19869,7 +19869,7 @@ func (instance *Trendline) GetWeight()  (WeightType,  error)  {
 //   void  
 func (instance *Trendline) SetWeight(value WeightType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANA(C.CString("Trendline_SetWeight"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZANC(C.CString("Trendline_SetWeight"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19940,7 +19940,7 @@ func (instance *Trendline) SetWeightPx(value float64)  error {
 //   int32  
 func (instance *Trendline) GetFormattingType()  (ChartLineFormattingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANB(C.CString("Trendline_GetFormattingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAND(C.CString("Trendline_GetFormattingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19959,7 +19959,7 @@ func (instance *Trendline) GetFormattingType()  (ChartLineFormattingType,  error
 //   void  
 func (instance *Trendline) SetFormattingType(value ChartLineFormattingType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANC(C.CString("Trendline_SetFormattingType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZANE(C.CString("Trendline_SetFormattingType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -20044,7 +20044,7 @@ func (instance *Trendline) SetIsAuto(value bool)  error {
 //   GradientFill  
 func (instance *Trendline) GetGradientFill()  (*GradientFill,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALA(C.CString("Trendline_GetGradientFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALC(C.CString("Trendline_GetGradientFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -20098,7 +20098,7 @@ func (instance *TrendlineCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *TrendlineCollection) Add_TrendlineType(type_ TrendlineType)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWX(C.CString("TrendlineCollection_Add_TrendlineType"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAXA(C.CString("TrendlineCollection_Add_TrendlineType"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -20115,7 +20115,7 @@ func (instance *TrendlineCollection) Add_TrendlineType(type_ TrendlineType)  (in
 //   int32  
 func (instance *TrendlineCollection) Add_TrendlineType_String(type_ TrendlineType, name string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAWY(C.CString("TrendlineCollection_Add_TrendlineType_String"), instance.ptr, C.int( int32(type_)), C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZAXB(C.CString("TrendlineCollection_Add_TrendlineType_String"), instance.ptr, C.int( int32(type_)), C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -20131,7 +20131,7 @@ func (instance *TrendlineCollection) Add_TrendlineType_String(type_ TrendlineTyp
 //   Trendline  
 func (instance *TrendlineCollection) Get(index int32)  (*Trendline,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXA(C.CString("TrendlineCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAXC(C.CString("TrendlineCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -20181,7 +20181,7 @@ func NewWalls(src *Floor) ( *Walls, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAXB(C.CString("New_Walls"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAXD(C.CString("New_Walls"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		walls.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(walls, DeleteWalls)
@@ -20369,7 +20369,7 @@ func (instance *Walls) GetCubePointCount()  (int32,  error)  {
 //   float32  
 func (instance *Walls) GetCubePointXPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUH(C.CString("Walls_GetCubePointXPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAUJ(C.CString("Walls_GetCubePointXPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -20386,7 +20386,7 @@ func (instance *Walls) GetCubePointXPx(index int32)  (float32,  error)  {
 //   float32  
 func (instance *Walls) GetCubePointYPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAUH(C.CString("Walls_GetCubePointYPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAUJ(C.CString("Walls_GetCubePointYPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -20460,7 +20460,7 @@ func (instance *Walls) SetForegroundColor(value *Color)  error {
 //   int32  
 func (instance *Walls) GetFormatting()  (FormattingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Walls_GetFormatting"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKO(C.CString("Walls_GetFormatting"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -20479,7 +20479,7 @@ func (instance *Walls) GetFormatting()  (FormattingType,  error)  {
 //   void  
 func (instance *Walls) SetFormatting(value FormattingType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("Walls_SetFormatting"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKP(C.CString("Walls_SetFormatting"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -20523,7 +20523,7 @@ func (instance *Walls) SetInvertIfNegative(value bool)  error {
 //   FillFormat  
 func (instance *Walls) GetFillFormat()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("Walls_GetFillFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("Walls_GetFillFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -20568,7 +20568,7 @@ func (instance *Walls) SetTransparency(value float64)  error {
 //   Line  
 func (instance *Walls) GetBorder()  (*Line,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZASE(C.CString("Walls_GetBorder"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZASG(C.CString("Walls_GetBorder"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -20591,7 +20591,7 @@ func (instance *Walls) SetBorder(value *Line)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAVA(C.CString("Walls_SetBorder"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAVC(C.CString("Walls_SetBorder"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

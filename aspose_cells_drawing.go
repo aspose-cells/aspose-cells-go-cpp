@@ -146,40 +146,40 @@ AutoShapeType_CurvedConnector4 AutoShapeType = 39
 
 AutoShapeType_CurvedConnector5 AutoShapeType = 40 
 
-
+// Specifies the "Line Callout 2(No Border)" type of the Ms Excel 97-2003 version or the "Callout: Line with No Border" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutNoBorder2 AutoShapeType = 41 
 
-
+// Specifies the "Line Callout 3(No Border)" type of the Ms Excel 97-2003 version or the "Callout: Bent Line with No Border" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutNoBorder3 AutoShapeType = 42 
 
-
+// Specifies the "Line Callout 4(No Border)" type of the Ms Excel 97-2003 version or the "Callout: Double Bent Line with No Border" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutNoBorder4 AutoShapeType = 43 
 
-
+// Specifies the "Line Callout 2(Accent Bar)" type of the Ms Excel 97-2003 version or the "Callout: Line with Accent Bar" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutWithAccentBar2 AutoShapeType = 44 
 
-
+// Specifies the "Line Callout 3(Accent Bar)" type of the Ms Excel 97-2003 version or the "Callout: Bent Line with Accent Bar" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutWithAccentBar3 AutoShapeType = 45 
 
-
+// Specifies the "Line Callout 4(Accent Bar)" type of the Ms Excel 97-2003 version or the "Callout: Double Bent Line with Accent Bar" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutWithAccentBar4 AutoShapeType = 46 
 
-
+// Specifies the "Line Callout 2" type of the Ms Excel 97-2003 version or the "Callout: Line" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutWithBorder2 AutoShapeType = 47 
 
-
+// Specifies the "Line Callout 3" type of the Ms Excel 97-2003 version or the "Callout: Bent Line" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutWithBorder3 AutoShapeType = 48 
 
-
+// Specifies the "Line Callout 4" type of the Ms Excel 97-2003 version or the "Callout: Double Bent Line" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutWithBorder4 AutoShapeType = 49 
 
-
+// Specifies the "Line Callout 2(Border and Accent Bar)" type of the Ms Excel 97-2003 version or the "Callout: Line with Border and Accent Bar" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutWithBorderAndAccentBar2 AutoShapeType = 50 
 
-
+// Specifies the "Line Callout 3(Border and Accent Bar)" type of the Ms Excel 97-2003 version or the "Callout: Bent Line with Border and Accent Bar" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutWithBorderAndAccentBar3 AutoShapeType = 51 
 
-
+// Specifies the "Line Callout 4(Border and Accent Bar)" type of the Ms Excel 97-2003 version or the "Callout: Double Bent Line with Border and Accent Bar" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutWithBorderAndAccentBar4 AutoShapeType = 52 
 
 
@@ -557,16 +557,16 @@ AutoShapeType_FlowChartAlternateProcess AutoShapeType = 176
 
 AutoShapeType_FlowChartOffpageConnector AutoShapeType = 177 
 
-
+// Specifies the "Line Callout 1(No Border)" type of the Ms Excel 97-2003 version.
 AutoShapeType_LineCalloutNoBorder1 AutoShapeType = 178 
 
-
+// Specifies the "Line Callout 1(Accent Bar)" type of the Ms Excel 97-2003 version.
 AutoShapeType_LineCalloutWithAccentBar1 AutoShapeType = 179 
 
-
+// Specifies the "Line Callout 1" type of the Ms Excel 97-2003 version.
 AutoShapeType_LineCalloutWithBorder1 AutoShapeType = 180 
 
-
+// Specifies the "Line Callout 1(Border and Accent Bar)" type of the Ms Excel 97-2003 version.
 AutoShapeType_LineCalloutWithBorderAndAccentBar1 AutoShapeType = 181 
 
 
@@ -3958,7 +3958,7 @@ func NewArcShape(src *Shape) ( *ArcShape, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_ArcShape"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_ArcShape"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		arcshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(arcshape, DeleteArcShape)
@@ -4177,7 +4177,7 @@ func (instance *ArcShape) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *ArcShape) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("ArcShape_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("ArcShape_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4193,7 +4193,7 @@ func (instance *ArcShape) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *ArcShape) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("ArcShape_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("ArcShape_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4209,7 +4209,7 @@ func (instance *ArcShape) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *ArcShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("ArcShape_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("ArcShape_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4225,7 +4225,7 @@ func (instance *ArcShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *ArcShape) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("ArcShape_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("ArcShape_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4241,7 +4241,7 @@ func (instance *ArcShape) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *ArcShape) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("ArcShape_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("ArcShape_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4286,7 +4286,7 @@ func (instance *ArcShape) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *ArcShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("ArcShape_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("ArcShape_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4302,7 +4302,7 @@ func (instance *ArcShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *ArcShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("ArcShape_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("ArcShape_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4378,7 +4378,7 @@ func (instance *ArcShape) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *ArcShape) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("ArcShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("ArcShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4395,7 +4395,7 @@ func (instance *ArcShape) GetLockedProperty(type_ ShapeLockType)  (bool,  error)
 //   void  
 func (instance *ArcShape) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("ArcShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("ArcShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4439,7 +4439,7 @@ func (instance *ArcShape) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *ArcShape) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("ArcShape_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("ArcShape_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4468,7 +4468,7 @@ func (instance *ArcShape) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *ArcShape) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("ArcShape_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("ArcShape_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4619,7 +4619,7 @@ func (instance *ArcShape) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *ArcShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("ArcShape_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ArcShape_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4697,7 +4697,7 @@ func (instance *ArcShape) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *ArcShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("ArcShape_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("ArcShape_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4714,7 +4714,7 @@ func (instance *ArcShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *ArcShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ArcShape_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ArcShape_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4733,7 +4733,7 @@ func (instance *ArcShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *ArcShape) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("ArcShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("ArcShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4746,7 +4746,7 @@ func (instance *ArcShape) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *ArcShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ArcShape_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("ArcShape_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4765,7 +4765,7 @@ func (instance *ArcShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *ArcShape) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("ArcShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("ArcShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4779,7 +4779,7 @@ func (instance *ArcShape) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *ArcShape) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("ArcShape_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("ArcShape_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4799,7 +4799,7 @@ func (instance *ArcShape) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *ArcShape) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("ArcShape_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("ArcShape_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5806,7 +5806,7 @@ func (instance *ArcShape) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *ArcShape) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("ArcShape_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("ArcShape_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5822,7 +5822,7 @@ func (instance *ArcShape) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *ArcShape) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ArcShape_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ArcShape_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5969,7 +5969,7 @@ func (instance *ArcShape) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *ArcShape) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("ArcShape_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("ArcShape_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5997,7 +5997,7 @@ func (instance *ArcShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *ArcShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("ArcShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("ArcShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6020,7 +6020,7 @@ func (instance *ArcShape) ToImage_String_ImageOrPrintOptions(imagefile string, o
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("ArcShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("ArcShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6223,7 +6223,7 @@ func (instance *ArcShape) UpdateSelectedValue()  error {
 //   int32  
 func (instance *ArcShape) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ArcShape_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ArcShape_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6242,7 +6242,7 @@ func (instance *ArcShape) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *ArcShape) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("ArcShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("ArcShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6255,7 +6255,7 @@ func (instance *ArcShape) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *ArcShape) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("ArcShape_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("ArcShape_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6294,7 +6294,7 @@ func (instance *ArcShape) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("ArcShape_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("ArcShape_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6330,7 +6330,7 @@ func (instance *ArcShape) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("ArcShape_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("ArcShape_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6504,7 +6504,7 @@ func (instance *ArcShape) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *ArcShape) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("ArcShape_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("ArcShape_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6523,7 +6523,7 @@ func (instance *ArcShape) GetTextVerticalOverflow()  (TextOverflowType,  error) 
 //   void  
 func (instance *ArcShape) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("ArcShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("ArcShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6536,7 +6536,7 @@ func (instance *ArcShape) SetTextVerticalOverflow(value TextOverflowType)  error
 //   int32  
 func (instance *ArcShape) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("ArcShape_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("ArcShape_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6555,7 +6555,7 @@ func (instance *ArcShape) GetTextHorizontalOverflow()  (TextOverflowType,  error
 //   void  
 func (instance *ArcShape) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("ArcShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("ArcShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6725,7 +6725,7 @@ func (instance *ArcShape) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *ArcShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("ArcShape_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("ArcShape_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6756,7 +6756,7 @@ func (instance *ArcShape) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *ArcShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("ArcShape_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("ArcShape_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6785,7 +6785,7 @@ func (instance *ArcShape) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *ArcShape) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("ArcShape_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("ArcShape_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6801,7 +6801,7 @@ func (instance *ArcShape) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *ArcShape) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("ArcShape_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("ArcShape_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6824,7 +6824,7 @@ func (instance *ArcShape) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("ArcShape_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("ArcShape_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6844,7 +6844,7 @@ func (instance *ArcShape) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("ArcShape_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("ArcShape_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6886,7 +6886,7 @@ func (instance *ArcShape) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *ArcShape) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("ArcShape_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("ArcShape_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6920,7 +6920,7 @@ func (instance *ArcShape) FitToTextSize()  error {
 //   GroupShape  
 func (instance *ArcShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("ArcShape_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("ArcShape_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7053,7 +7053,7 @@ func (instance *Area) SetForegroundColor(value *Color)  error {
 //   int32  
 func (instance *Area) GetFormatting()  (FormattingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Area_GetFormatting"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKO(C.CString("Area_GetFormatting"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7072,7 +7072,7 @@ func (instance *Area) GetFormatting()  (FormattingType,  error)  {
 //   void  
 func (instance *Area) SetFormatting(value FormattingType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("Area_SetFormatting"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKP(C.CString("Area_SetFormatting"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7116,7 +7116,7 @@ func (instance *Area) SetInvertIfNegative(value bool)  error {
 //   FillFormat  
 func (instance *Area) GetFillFormat()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("Area_GetFillFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("Area_GetFillFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7316,7 +7316,7 @@ func (instance *Bevel) SetHeight(value float64)  error {
 //   int32  
 func (instance *Bevel) GetType()  (BevelPresetType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKO(C.CString("Bevel_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKQ(C.CString("Bevel_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7335,7 +7335,7 @@ func (instance *Bevel) GetType()  (BevelPresetType,  error)  {
 //   void  
 func (instance *Bevel) SetType(value BevelPresetType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKP(C.CString("Bevel_SetType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKR(C.CString("Bevel_SetType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7369,7 +7369,7 @@ func NewButton(src *Shape) ( *Button, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_Button"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_Button"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		button.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(button, DeleteButton)
@@ -7588,7 +7588,7 @@ func (instance *Button) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *Button) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("Button_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("Button_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7604,7 +7604,7 @@ func (instance *Button) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *Button) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("Button_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("Button_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7620,7 +7620,7 @@ func (instance *Button) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *Button) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("Button_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("Button_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7636,7 +7636,7 @@ func (instance *Button) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *Button) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("Button_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("Button_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7652,7 +7652,7 @@ func (instance *Button) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *Button) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("Button_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("Button_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7697,7 +7697,7 @@ func (instance *Button) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *Button) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("Button_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("Button_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7713,7 +7713,7 @@ func (instance *Button) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *Button) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("Button_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("Button_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7789,7 +7789,7 @@ func (instance *Button) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *Button) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("Button_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("Button_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7806,7 +7806,7 @@ func (instance *Button) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  
 //   void  
 func (instance *Button) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("Button_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("Button_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7850,7 +7850,7 @@ func (instance *Button) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *Button) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("Button_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("Button_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7879,7 +7879,7 @@ func (instance *Button) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *Button) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("Button_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("Button_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8030,7 +8030,7 @@ func (instance *Button) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *Button) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("Button_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Button_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8108,7 +8108,7 @@ func (instance *Button) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *Button) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("Button_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Button_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8125,7 +8125,7 @@ func (instance *Button) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *Button) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Button_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Button_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8144,7 +8144,7 @@ func (instance *Button) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *Button) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Button_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Button_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8157,7 +8157,7 @@ func (instance *Button) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *Button) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Button_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("Button_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8176,7 +8176,7 @@ func (instance *Button) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *Button) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Button_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("Button_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8190,7 +8190,7 @@ func (instance *Button) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *Button) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("Button_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Button_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8210,7 +8210,7 @@ func (instance *Button) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *Button) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("Button_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("Button_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9217,7 +9217,7 @@ func (instance *Button) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *Button) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Button_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Button_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9233,7 +9233,7 @@ func (instance *Button) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *Button) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Button_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Button_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9380,7 +9380,7 @@ func (instance *Button) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *Button) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("Button_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("Button_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9408,7 +9408,7 @@ func (instance *Button) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Button) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Button_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("Button_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9431,7 +9431,7 @@ func (instance *Button) ToImage_String_ImageOrPrintOptions(imagefile string, opt
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("Button_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("Button_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9634,7 +9634,7 @@ func (instance *Button) UpdateSelectedValue()  error {
 //   int32  
 func (instance *Button) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Button_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Button_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9653,7 +9653,7 @@ func (instance *Button) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *Button) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Button_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Button_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9666,7 +9666,7 @@ func (instance *Button) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *Button) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("Button_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("Button_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9705,7 +9705,7 @@ func (instance *Button) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("Button_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Button_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9741,7 +9741,7 @@ func (instance *Button) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("Button_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Button_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9915,7 +9915,7 @@ func (instance *Button) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *Button) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Button_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Button_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9934,7 +9934,7 @@ func (instance *Button) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 //   void  
 func (instance *Button) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Button_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Button_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9947,7 +9947,7 @@ func (instance *Button) SetTextVerticalOverflow(value TextOverflowType)  error {
 //   int32  
 func (instance *Button) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Button_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Button_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9966,7 +9966,7 @@ func (instance *Button) GetTextHorizontalOverflow()  (TextOverflowType,  error) 
 //   void  
 func (instance *Button) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Button_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Button_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10136,7 +10136,7 @@ func (instance *Button) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *Button) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Button_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("Button_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10167,7 +10167,7 @@ func (instance *Button) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *Button) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Button_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("Button_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10196,7 +10196,7 @@ func (instance *Button) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *Button) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("Button_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Button_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10212,7 +10212,7 @@ func (instance *Button) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *Button) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("Button_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("Button_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10235,7 +10235,7 @@ func (instance *Button) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Button_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Button_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10255,7 +10255,7 @@ func (instance *Button) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Button_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Button_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10297,7 +10297,7 @@ func (instance *Button) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *Button) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("Button_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("Button_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10331,7 +10331,7 @@ func (instance *Button) FitToTextSize()  error {
 //   GroupShape  
 func (instance *Button) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Button_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Button_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10394,7 +10394,7 @@ func NewCellsDrawing(src *Shape) ( *CellsDrawing, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_CellsDrawing"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_CellsDrawing"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		cellsdrawing.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(cellsdrawing, DeleteCellsDrawing)
@@ -10613,7 +10613,7 @@ func (instance *CellsDrawing) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *CellsDrawing) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("CellsDrawing_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("CellsDrawing_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10629,7 +10629,7 @@ func (instance *CellsDrawing) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *CellsDrawing) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("CellsDrawing_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("CellsDrawing_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10645,7 +10645,7 @@ func (instance *CellsDrawing) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *CellsDrawing) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("CellsDrawing_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("CellsDrawing_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10661,7 +10661,7 @@ func (instance *CellsDrawing) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *CellsDrawing) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("CellsDrawing_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("CellsDrawing_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10677,7 +10677,7 @@ func (instance *CellsDrawing) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *CellsDrawing) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("CellsDrawing_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("CellsDrawing_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10722,7 +10722,7 @@ func (instance *CellsDrawing) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *CellsDrawing) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("CellsDrawing_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("CellsDrawing_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10738,7 +10738,7 @@ func (instance *CellsDrawing) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *CellsDrawing) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("CellsDrawing_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("CellsDrawing_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10814,7 +10814,7 @@ func (instance *CellsDrawing) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *CellsDrawing) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("CellsDrawing_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("CellsDrawing_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -10831,7 +10831,7 @@ func (instance *CellsDrawing) GetLockedProperty(type_ ShapeLockType)  (bool,  er
 //   void  
 func (instance *CellsDrawing) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("CellsDrawing_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("CellsDrawing_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10875,7 +10875,7 @@ func (instance *CellsDrawing) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *CellsDrawing) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("CellsDrawing_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("CellsDrawing_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10904,7 +10904,7 @@ func (instance *CellsDrawing) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *CellsDrawing) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("CellsDrawing_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("CellsDrawing_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -11055,7 +11055,7 @@ func (instance *CellsDrawing) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *CellsDrawing) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("CellsDrawing_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("CellsDrawing_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -11133,7 +11133,7 @@ func (instance *CellsDrawing) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *CellsDrawing) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("CellsDrawing_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("CellsDrawing_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11150,7 +11150,7 @@ func (instance *CellsDrawing) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *CellsDrawing) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("CellsDrawing_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("CellsDrawing_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11169,7 +11169,7 @@ func (instance *CellsDrawing) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *CellsDrawing) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("CellsDrawing_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("CellsDrawing_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11182,7 +11182,7 @@ func (instance *CellsDrawing) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *CellsDrawing) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("CellsDrawing_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("CellsDrawing_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11201,7 +11201,7 @@ func (instance *CellsDrawing) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *CellsDrawing) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("CellsDrawing_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("CellsDrawing_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11215,7 +11215,7 @@ func (instance *CellsDrawing) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *CellsDrawing) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("CellsDrawing_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("CellsDrawing_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11235,7 +11235,7 @@ func (instance *CellsDrawing) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *CellsDrawing) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("CellsDrawing_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("CellsDrawing_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12242,7 +12242,7 @@ func (instance *CellsDrawing) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *CellsDrawing) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("CellsDrawing_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("CellsDrawing_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -12258,7 +12258,7 @@ func (instance *CellsDrawing) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *CellsDrawing) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("CellsDrawing_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("CellsDrawing_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -12405,7 +12405,7 @@ func (instance *CellsDrawing) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *CellsDrawing) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("CellsDrawing_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("CellsDrawing_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -12433,7 +12433,7 @@ func (instance *CellsDrawing) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *CellsDrawing) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("CellsDrawing_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("CellsDrawing_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -12456,7 +12456,7 @@ func (instance *CellsDrawing) ToImage_String_ImageOrPrintOptions(imagefile strin
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("CellsDrawing_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("CellsDrawing_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12659,7 +12659,7 @@ func (instance *CellsDrawing) UpdateSelectedValue()  error {
 //   int32  
 func (instance *CellsDrawing) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("CellsDrawing_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("CellsDrawing_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -12678,7 +12678,7 @@ func (instance *CellsDrawing) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *CellsDrawing) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("CellsDrawing_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("CellsDrawing_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12691,7 +12691,7 @@ func (instance *CellsDrawing) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *CellsDrawing) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("CellsDrawing_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("CellsDrawing_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -12730,7 +12730,7 @@ func (instance *CellsDrawing) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("CellsDrawing_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("CellsDrawing_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12766,7 +12766,7 @@ func (instance *CellsDrawing) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("CellsDrawing_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("CellsDrawing_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12940,7 +12940,7 @@ func (instance *CellsDrawing) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *CellsDrawing) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("CellsDrawing_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("CellsDrawing_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -12959,7 +12959,7 @@ func (instance *CellsDrawing) GetTextVerticalOverflow()  (TextOverflowType,  err
 //   void  
 func (instance *CellsDrawing) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("CellsDrawing_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("CellsDrawing_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12972,7 +12972,7 @@ func (instance *CellsDrawing) SetTextVerticalOverflow(value TextOverflowType)  e
 //   int32  
 func (instance *CellsDrawing) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("CellsDrawing_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("CellsDrawing_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -12991,7 +12991,7 @@ func (instance *CellsDrawing) GetTextHorizontalOverflow()  (TextOverflowType,  e
 //   void  
 func (instance *CellsDrawing) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("CellsDrawing_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("CellsDrawing_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -13161,7 +13161,7 @@ func (instance *CellsDrawing) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *CellsDrawing) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("CellsDrawing_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("CellsDrawing_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13192,7 +13192,7 @@ func (instance *CellsDrawing) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *CellsDrawing) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("CellsDrawing_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("CellsDrawing_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13221,7 +13221,7 @@ func (instance *CellsDrawing) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *CellsDrawing) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("CellsDrawing_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("CellsDrawing_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13237,7 +13237,7 @@ func (instance *CellsDrawing) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *CellsDrawing) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("CellsDrawing_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("CellsDrawing_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13260,7 +13260,7 @@ func (instance *CellsDrawing) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("CellsDrawing_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("CellsDrawing_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -13280,7 +13280,7 @@ func (instance *CellsDrawing) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("CellsDrawing_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("CellsDrawing_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -13322,7 +13322,7 @@ func (instance *CellsDrawing) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *CellsDrawing) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("CellsDrawing_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("CellsDrawing_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13356,7 +13356,7 @@ func (instance *CellsDrawing) FitToTextSize()  error {
 //   GroupShape  
 func (instance *CellsDrawing) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("CellsDrawing_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("CellsDrawing_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13420,7 +13420,7 @@ func NewChartShape(src *Shape) ( *ChartShape, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_ChartShape"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_ChartShape"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		chartshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(chartshape, DeleteChartShape)
@@ -13451,7 +13451,7 @@ func (instance *ChartShape) IsNull()  (bool,  error)  {
 //   Chart  
 func (instance *ChartShape) GetChart()  (*Chart,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKQ(C.CString("ChartShape_GetChart"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKS(C.CString("ChartShape_GetChart"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13655,7 +13655,7 @@ func (instance *ChartShape) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *ChartShape) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("ChartShape_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("ChartShape_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13671,7 +13671,7 @@ func (instance *ChartShape) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *ChartShape) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("ChartShape_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("ChartShape_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13687,7 +13687,7 @@ func (instance *ChartShape) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *ChartShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("ChartShape_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("ChartShape_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13703,7 +13703,7 @@ func (instance *ChartShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *ChartShape) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("ChartShape_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("ChartShape_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13719,7 +13719,7 @@ func (instance *ChartShape) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *ChartShape) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("ChartShape_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("ChartShape_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13764,7 +13764,7 @@ func (instance *ChartShape) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *ChartShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("ChartShape_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("ChartShape_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13780,7 +13780,7 @@ func (instance *ChartShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *ChartShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("ChartShape_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("ChartShape_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13856,7 +13856,7 @@ func (instance *ChartShape) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *ChartShape) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("ChartShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("ChartShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -13873,7 +13873,7 @@ func (instance *ChartShape) GetLockedProperty(type_ ShapeLockType)  (bool,  erro
 //   void  
 func (instance *ChartShape) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("ChartShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("ChartShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -13917,7 +13917,7 @@ func (instance *ChartShape) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *ChartShape) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("ChartShape_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("ChartShape_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13946,7 +13946,7 @@ func (instance *ChartShape) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *ChartShape) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("ChartShape_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("ChartShape_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -14097,7 +14097,7 @@ func (instance *ChartShape) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *ChartShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("ChartShape_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ChartShape_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -14175,7 +14175,7 @@ func (instance *ChartShape) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *ChartShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("ChartShape_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("ChartShape_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -14192,7 +14192,7 @@ func (instance *ChartShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *ChartShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ChartShape_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ChartShape_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -14211,7 +14211,7 @@ func (instance *ChartShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *ChartShape) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("ChartShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("ChartShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14224,7 +14224,7 @@ func (instance *ChartShape) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *ChartShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ChartShape_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("ChartShape_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -14243,7 +14243,7 @@ func (instance *ChartShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *ChartShape) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("ChartShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("ChartShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14257,7 +14257,7 @@ func (instance *ChartShape) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *ChartShape) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("ChartShape_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("ChartShape_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -14277,7 +14277,7 @@ func (instance *ChartShape) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *ChartShape) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("ChartShape_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("ChartShape_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15284,7 +15284,7 @@ func (instance *ChartShape) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *ChartShape) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("ChartShape_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("ChartShape_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -15300,7 +15300,7 @@ func (instance *ChartShape) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *ChartShape) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ChartShape_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ChartShape_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -15447,7 +15447,7 @@ func (instance *ChartShape) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *ChartShape) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("ChartShape_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("ChartShape_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -15475,7 +15475,7 @@ func (instance *ChartShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *ChartShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("ChartShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("ChartShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -15498,7 +15498,7 @@ func (instance *ChartShape) ToImage_String_ImageOrPrintOptions(imagefile string,
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("ChartShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("ChartShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15701,7 +15701,7 @@ func (instance *ChartShape) UpdateSelectedValue()  error {
 //   int32  
 func (instance *ChartShape) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ChartShape_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ChartShape_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -15720,7 +15720,7 @@ func (instance *ChartShape) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *ChartShape) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("ChartShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("ChartShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15733,7 +15733,7 @@ func (instance *ChartShape) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *ChartShape) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("ChartShape_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("ChartShape_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -15772,7 +15772,7 @@ func (instance *ChartShape) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("ChartShape_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("ChartShape_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15808,7 +15808,7 @@ func (instance *ChartShape) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("ChartShape_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("ChartShape_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15982,7 +15982,7 @@ func (instance *ChartShape) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *ChartShape) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("ChartShape_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("ChartShape_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -16001,7 +16001,7 @@ func (instance *ChartShape) GetTextVerticalOverflow()  (TextOverflowType,  error
 //   void  
 func (instance *ChartShape) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("ChartShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("ChartShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16014,7 +16014,7 @@ func (instance *ChartShape) SetTextVerticalOverflow(value TextOverflowType)  err
 //   int32  
 func (instance *ChartShape) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("ChartShape_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("ChartShape_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -16033,7 +16033,7 @@ func (instance *ChartShape) GetTextHorizontalOverflow()  (TextOverflowType,  err
 //   void  
 func (instance *ChartShape) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("ChartShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("ChartShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16203,7 +16203,7 @@ func (instance *ChartShape) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *ChartShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("ChartShape_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("ChartShape_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -16234,7 +16234,7 @@ func (instance *ChartShape) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *ChartShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("ChartShape_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("ChartShape_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -16263,7 +16263,7 @@ func (instance *ChartShape) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *ChartShape) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("ChartShape_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("ChartShape_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -16279,7 +16279,7 @@ func (instance *ChartShape) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *ChartShape) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("ChartShape_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("ChartShape_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -16302,7 +16302,7 @@ func (instance *ChartShape) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("ChartShape_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("ChartShape_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16322,7 +16322,7 @@ func (instance *ChartShape) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("ChartShape_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("ChartShape_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16364,7 +16364,7 @@ func (instance *ChartShape) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *ChartShape) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("ChartShape_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("ChartShape_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -16398,7 +16398,7 @@ func (instance *ChartShape) FitToTextSize()  error {
 //   GroupShape  
 func (instance *ChartShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("ChartShape_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("ChartShape_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -16461,7 +16461,7 @@ func NewCheckBox(src *Shape) ( *CheckBox, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_CheckBox"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_CheckBox"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		checkbox.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(checkbox, DeleteCheckBox)
@@ -16521,7 +16521,7 @@ func (instance *CheckBox) SetValue(value bool)  error {
 //   int32  
 func (instance *CheckBox) GetCheckedValue()  (CheckValueType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAID(C.CString("CheckBox_GetCheckedValue"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIF(C.CString("CheckBox_GetCheckedValue"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -16540,7 +16540,7 @@ func (instance *CheckBox) GetCheckedValue()  (CheckValueType,  error)  {
 //   void  
 func (instance *CheckBox) SetCheckedValue(value CheckValueType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAIE(C.CString("CheckBox_SetCheckedValue"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIG(C.CString("CheckBox_SetCheckedValue"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -16770,7 +16770,7 @@ func (instance *CheckBox) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *CheckBox) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("CheckBox_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("CheckBox_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -16786,7 +16786,7 @@ func (instance *CheckBox) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *CheckBox) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("CheckBox_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("CheckBox_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -16802,7 +16802,7 @@ func (instance *CheckBox) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *CheckBox) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("CheckBox_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("CheckBox_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -16818,7 +16818,7 @@ func (instance *CheckBox) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *CheckBox) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("CheckBox_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("CheckBox_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -16834,7 +16834,7 @@ func (instance *CheckBox) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *CheckBox) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("CheckBox_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("CheckBox_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -16879,7 +16879,7 @@ func (instance *CheckBox) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *CheckBox) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("CheckBox_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("CheckBox_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -16895,7 +16895,7 @@ func (instance *CheckBox) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *CheckBox) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("CheckBox_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("CheckBox_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -16971,7 +16971,7 @@ func (instance *CheckBox) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *CheckBox) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("CheckBox_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("CheckBox_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -16988,7 +16988,7 @@ func (instance *CheckBox) GetLockedProperty(type_ ShapeLockType)  (bool,  error)
 //   void  
 func (instance *CheckBox) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("CheckBox_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("CheckBox_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17032,7 +17032,7 @@ func (instance *CheckBox) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *CheckBox) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("CheckBox_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("CheckBox_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -17061,7 +17061,7 @@ func (instance *CheckBox) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *CheckBox) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("CheckBox_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("CheckBox_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -17212,7 +17212,7 @@ func (instance *CheckBox) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *CheckBox) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("CheckBox_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("CheckBox_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -17290,7 +17290,7 @@ func (instance *CheckBox) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *CheckBox) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("CheckBox_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("CheckBox_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -17307,7 +17307,7 @@ func (instance *CheckBox) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *CheckBox) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("CheckBox_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("CheckBox_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -17326,7 +17326,7 @@ func (instance *CheckBox) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *CheckBox) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("CheckBox_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("CheckBox_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17339,7 +17339,7 @@ func (instance *CheckBox) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *CheckBox) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("CheckBox_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("CheckBox_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -17358,7 +17358,7 @@ func (instance *CheckBox) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *CheckBox) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("CheckBox_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("CheckBox_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17372,7 +17372,7 @@ func (instance *CheckBox) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *CheckBox) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("CheckBox_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("CheckBox_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -17392,7 +17392,7 @@ func (instance *CheckBox) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *CheckBox) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("CheckBox_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("CheckBox_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -18399,7 +18399,7 @@ func (instance *CheckBox) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *CheckBox) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("CheckBox_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("CheckBox_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -18415,7 +18415,7 @@ func (instance *CheckBox) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *CheckBox) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("CheckBox_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("CheckBox_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -18562,7 +18562,7 @@ func (instance *CheckBox) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *CheckBox) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("CheckBox_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("CheckBox_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -18590,7 +18590,7 @@ func (instance *CheckBox) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *CheckBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("CheckBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("CheckBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -18613,7 +18613,7 @@ func (instance *CheckBox) ToImage_String_ImageOrPrintOptions(imagefile string, o
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("CheckBox_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("CheckBox_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -18816,7 +18816,7 @@ func (instance *CheckBox) UpdateSelectedValue()  error {
 //   int32  
 func (instance *CheckBox) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("CheckBox_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("CheckBox_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -18835,7 +18835,7 @@ func (instance *CheckBox) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *CheckBox) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("CheckBox_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("CheckBox_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -18848,7 +18848,7 @@ func (instance *CheckBox) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *CheckBox) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("CheckBox_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("CheckBox_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -18887,7 +18887,7 @@ func (instance *CheckBox) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("CheckBox_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("CheckBox_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -18923,7 +18923,7 @@ func (instance *CheckBox) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("CheckBox_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("CheckBox_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19097,7 +19097,7 @@ func (instance *CheckBox) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *CheckBox) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("CheckBox_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("CheckBox_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19116,7 +19116,7 @@ func (instance *CheckBox) GetTextVerticalOverflow()  (TextOverflowType,  error) 
 //   void  
 func (instance *CheckBox) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("CheckBox_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("CheckBox_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19129,7 +19129,7 @@ func (instance *CheckBox) SetTextVerticalOverflow(value TextOverflowType)  error
 //   int32  
 func (instance *CheckBox) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("CheckBox_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("CheckBox_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19148,7 +19148,7 @@ func (instance *CheckBox) GetTextHorizontalOverflow()  (TextOverflowType,  error
 //   void  
 func (instance *CheckBox) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("CheckBox_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("CheckBox_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19318,7 +19318,7 @@ func (instance *CheckBox) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *CheckBox) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("CheckBox_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("CheckBox_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -19349,7 +19349,7 @@ func (instance *CheckBox) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *CheckBox) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("CheckBox_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("CheckBox_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -19378,7 +19378,7 @@ func (instance *CheckBox) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *CheckBox) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("CheckBox_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("CheckBox_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -19394,7 +19394,7 @@ func (instance *CheckBox) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *CheckBox) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("CheckBox_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("CheckBox_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -19417,7 +19417,7 @@ func (instance *CheckBox) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("CheckBox_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("CheckBox_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19437,7 +19437,7 @@ func (instance *CheckBox) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("CheckBox_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("CheckBox_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19479,7 +19479,7 @@ func (instance *CheckBox) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *CheckBox) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("CheckBox_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("CheckBox_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -19513,7 +19513,7 @@ func (instance *CheckBox) FitToTextSize()  error {
 //   GroupShape  
 func (instance *CheckBox) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("CheckBox_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("CheckBox_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -19591,7 +19591,7 @@ func (instance *CheckBoxCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *CheckBoxCollection) Add(upperleftrow int32, upperleftcolumn int32, height int32, width int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKR(C.CString("CheckBoxCollection_Add"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAKT(C.CString("CheckBoxCollection_Add"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19607,7 +19607,7 @@ func (instance *CheckBoxCollection) Add(upperleftrow int32, upperleftcolumn int3
 //   CheckBox  
 func (instance *CheckBoxCollection) Get(index int32)  (*CheckBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKS(C.CString("CheckBoxCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAKU(C.CString("CheckBoxCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -19669,7 +19669,7 @@ func (instance *ColorHelper) IsNull()  (bool,  error)  {
 //   Color  
 func ColorHelper_FromOleColor(olecolor int32)  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKT(C.CString("ColorHelper_FromOleColor"),C.int(olecolor))
+	CGoReturnPtr := C.CellsGoFunctoinZAKV(C.CString("ColorHelper_FromOleColor"),C.int(olecolor))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -19692,7 +19692,7 @@ func ColorHelper_ToOleColor(color *Color, workbook *Workbook)  (int32,  error)  
 	  workbook_ptr =workbook.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKU(C.CString("ColorHelper_ToOleColor"),color.ptr, workbook_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKW(C.CString("ColorHelper_ToOleColor"),color.ptr, workbook_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19727,7 +19727,7 @@ func NewComboBox(src *Shape) ( *ComboBox, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_ComboBox"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_ComboBox"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		combobox.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(combobox, DeleteComboBox)
@@ -20065,7 +20065,7 @@ func (instance *ComboBox) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *ComboBox) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("ComboBox_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("ComboBox_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -20081,7 +20081,7 @@ func (instance *ComboBox) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *ComboBox) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("ComboBox_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("ComboBox_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -20097,7 +20097,7 @@ func (instance *ComboBox) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *ComboBox) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("ComboBox_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("ComboBox_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -20113,7 +20113,7 @@ func (instance *ComboBox) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *ComboBox) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("ComboBox_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("ComboBox_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -20129,7 +20129,7 @@ func (instance *ComboBox) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *ComboBox) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("ComboBox_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("ComboBox_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -20174,7 +20174,7 @@ func (instance *ComboBox) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *ComboBox) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("ComboBox_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("ComboBox_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -20190,7 +20190,7 @@ func (instance *ComboBox) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *ComboBox) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("ComboBox_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("ComboBox_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -20266,7 +20266,7 @@ func (instance *ComboBox) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *ComboBox) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("ComboBox_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("ComboBox_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -20283,7 +20283,7 @@ func (instance *ComboBox) GetLockedProperty(type_ ShapeLockType)  (bool,  error)
 //   void  
 func (instance *ComboBox) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("ComboBox_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("ComboBox_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -20327,7 +20327,7 @@ func (instance *ComboBox) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *ComboBox) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("ComboBox_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("ComboBox_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -20356,7 +20356,7 @@ func (instance *ComboBox) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *ComboBox) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("ComboBox_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("ComboBox_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -20507,7 +20507,7 @@ func (instance *ComboBox) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *ComboBox) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("ComboBox_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ComboBox_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -20585,7 +20585,7 @@ func (instance *ComboBox) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *ComboBox) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("ComboBox_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("ComboBox_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -20602,7 +20602,7 @@ func (instance *ComboBox) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *ComboBox) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ComboBox_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ComboBox_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -20621,7 +20621,7 @@ func (instance *ComboBox) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *ComboBox) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("ComboBox_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("ComboBox_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -20634,7 +20634,7 @@ func (instance *ComboBox) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *ComboBox) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ComboBox_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("ComboBox_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -20653,7 +20653,7 @@ func (instance *ComboBox) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *ComboBox) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("ComboBox_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("ComboBox_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -20667,7 +20667,7 @@ func (instance *ComboBox) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *ComboBox) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("ComboBox_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("ComboBox_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -20687,7 +20687,7 @@ func (instance *ComboBox) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *ComboBox) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("ComboBox_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("ComboBox_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -21694,7 +21694,7 @@ func (instance *ComboBox) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *ComboBox) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("ComboBox_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("ComboBox_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -21710,7 +21710,7 @@ func (instance *ComboBox) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *ComboBox) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ComboBox_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ComboBox_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -21857,7 +21857,7 @@ func (instance *ComboBox) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *ComboBox) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("ComboBox_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("ComboBox_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -21885,7 +21885,7 @@ func (instance *ComboBox) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *ComboBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("ComboBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("ComboBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -21908,7 +21908,7 @@ func (instance *ComboBox) ToImage_String_ImageOrPrintOptions(imagefile string, o
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("ComboBox_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("ComboBox_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -22111,7 +22111,7 @@ func (instance *ComboBox) UpdateSelectedValue()  error {
 //   int32  
 func (instance *ComboBox) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ComboBox_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ComboBox_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -22130,7 +22130,7 @@ func (instance *ComboBox) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *ComboBox) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("ComboBox_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("ComboBox_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -22143,7 +22143,7 @@ func (instance *ComboBox) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *ComboBox) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("ComboBox_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("ComboBox_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -22182,7 +22182,7 @@ func (instance *ComboBox) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("ComboBox_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("ComboBox_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -22218,7 +22218,7 @@ func (instance *ComboBox) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("ComboBox_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("ComboBox_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -22392,7 +22392,7 @@ func (instance *ComboBox) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *ComboBox) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("ComboBox_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("ComboBox_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -22411,7 +22411,7 @@ func (instance *ComboBox) GetTextVerticalOverflow()  (TextOverflowType,  error) 
 //   void  
 func (instance *ComboBox) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("ComboBox_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("ComboBox_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -22424,7 +22424,7 @@ func (instance *ComboBox) SetTextVerticalOverflow(value TextOverflowType)  error
 //   int32  
 func (instance *ComboBox) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("ComboBox_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("ComboBox_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -22443,7 +22443,7 @@ func (instance *ComboBox) GetTextHorizontalOverflow()  (TextOverflowType,  error
 //   void  
 func (instance *ComboBox) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("ComboBox_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("ComboBox_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -22613,7 +22613,7 @@ func (instance *ComboBox) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *ComboBox) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("ComboBox_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("ComboBox_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -22644,7 +22644,7 @@ func (instance *ComboBox) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *ComboBox) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("ComboBox_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("ComboBox_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -22673,7 +22673,7 @@ func (instance *ComboBox) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *ComboBox) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("ComboBox_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("ComboBox_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -22689,7 +22689,7 @@ func (instance *ComboBox) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *ComboBox) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("ComboBox_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("ComboBox_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -22712,7 +22712,7 @@ func (instance *ComboBox) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("ComboBox_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("ComboBox_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -22732,7 +22732,7 @@ func (instance *ComboBox) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("ComboBox_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("ComboBox_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -22774,7 +22774,7 @@ func (instance *ComboBox) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *ComboBox) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("ComboBox_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("ComboBox_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -22808,7 +22808,7 @@ func (instance *ComboBox) FitToTextSize()  error {
 //   GroupShape  
 func (instance *ComboBox) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("ComboBox_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("ComboBox_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -22871,7 +22871,7 @@ func NewCommentShape(src *Shape) ( *CommentShape, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_CommentShape"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_CommentShape"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		commentshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(commentshape, DeleteCommentShape)
@@ -23106,7 +23106,7 @@ func (instance *CommentShape) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *CommentShape) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("CommentShape_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("CommentShape_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -23122,7 +23122,7 @@ func (instance *CommentShape) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *CommentShape) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("CommentShape_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("CommentShape_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -23138,7 +23138,7 @@ func (instance *CommentShape) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *CommentShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("CommentShape_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("CommentShape_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -23154,7 +23154,7 @@ func (instance *CommentShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *CommentShape) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("CommentShape_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("CommentShape_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -23170,7 +23170,7 @@ func (instance *CommentShape) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *CommentShape) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("CommentShape_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("CommentShape_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -23215,7 +23215,7 @@ func (instance *CommentShape) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *CommentShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("CommentShape_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("CommentShape_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -23231,7 +23231,7 @@ func (instance *CommentShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *CommentShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("CommentShape_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("CommentShape_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -23307,7 +23307,7 @@ func (instance *CommentShape) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *CommentShape) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("CommentShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("CommentShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -23324,7 +23324,7 @@ func (instance *CommentShape) GetLockedProperty(type_ ShapeLockType)  (bool,  er
 //   void  
 func (instance *CommentShape) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("CommentShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("CommentShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -23368,7 +23368,7 @@ func (instance *CommentShape) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *CommentShape) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("CommentShape_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("CommentShape_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -23397,7 +23397,7 @@ func (instance *CommentShape) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *CommentShape) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("CommentShape_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("CommentShape_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -23548,7 +23548,7 @@ func (instance *CommentShape) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *CommentShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("CommentShape_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("CommentShape_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -23626,7 +23626,7 @@ func (instance *CommentShape) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *CommentShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("CommentShape_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("CommentShape_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -23643,7 +23643,7 @@ func (instance *CommentShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *CommentShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("CommentShape_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("CommentShape_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -23662,7 +23662,7 @@ func (instance *CommentShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *CommentShape) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("CommentShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("CommentShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -23675,7 +23675,7 @@ func (instance *CommentShape) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *CommentShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("CommentShape_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("CommentShape_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -23694,7 +23694,7 @@ func (instance *CommentShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *CommentShape) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("CommentShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("CommentShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -23708,7 +23708,7 @@ func (instance *CommentShape) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *CommentShape) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("CommentShape_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("CommentShape_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -23728,7 +23728,7 @@ func (instance *CommentShape) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *CommentShape) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("CommentShape_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("CommentShape_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -24735,7 +24735,7 @@ func (instance *CommentShape) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *CommentShape) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("CommentShape_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("CommentShape_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -24751,7 +24751,7 @@ func (instance *CommentShape) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *CommentShape) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("CommentShape_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("CommentShape_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -24898,7 +24898,7 @@ func (instance *CommentShape) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *CommentShape) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("CommentShape_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("CommentShape_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -24926,7 +24926,7 @@ func (instance *CommentShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *CommentShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("CommentShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("CommentShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -24949,7 +24949,7 @@ func (instance *CommentShape) ToImage_String_ImageOrPrintOptions(imagefile strin
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("CommentShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("CommentShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -25152,7 +25152,7 @@ func (instance *CommentShape) UpdateSelectedValue()  error {
 //   int32  
 func (instance *CommentShape) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("CommentShape_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("CommentShape_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -25171,7 +25171,7 @@ func (instance *CommentShape) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *CommentShape) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("CommentShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("CommentShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -25184,7 +25184,7 @@ func (instance *CommentShape) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *CommentShape) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("CommentShape_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("CommentShape_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -25223,7 +25223,7 @@ func (instance *CommentShape) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("CommentShape_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("CommentShape_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -25259,7 +25259,7 @@ func (instance *CommentShape) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("CommentShape_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("CommentShape_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -25433,7 +25433,7 @@ func (instance *CommentShape) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *CommentShape) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("CommentShape_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("CommentShape_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -25452,7 +25452,7 @@ func (instance *CommentShape) GetTextVerticalOverflow()  (TextOverflowType,  err
 //   void  
 func (instance *CommentShape) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("CommentShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("CommentShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -25465,7 +25465,7 @@ func (instance *CommentShape) SetTextVerticalOverflow(value TextOverflowType)  e
 //   int32  
 func (instance *CommentShape) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("CommentShape_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("CommentShape_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -25484,7 +25484,7 @@ func (instance *CommentShape) GetTextHorizontalOverflow()  (TextOverflowType,  e
 //   void  
 func (instance *CommentShape) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("CommentShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("CommentShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -25654,7 +25654,7 @@ func (instance *CommentShape) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *CommentShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("CommentShape_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("CommentShape_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -25685,7 +25685,7 @@ func (instance *CommentShape) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *CommentShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("CommentShape_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("CommentShape_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -25714,7 +25714,7 @@ func (instance *CommentShape) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *CommentShape) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("CommentShape_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("CommentShape_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -25730,7 +25730,7 @@ func (instance *CommentShape) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *CommentShape) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("CommentShape_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("CommentShape_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -25753,7 +25753,7 @@ func (instance *CommentShape) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("CommentShape_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("CommentShape_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -25773,7 +25773,7 @@ func (instance *CommentShape) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("CommentShape_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("CommentShape_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -25815,7 +25815,7 @@ func (instance *CommentShape) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *CommentShape) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("CommentShape_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("CommentShape_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -25849,7 +25849,7 @@ func (instance *CommentShape) FitToTextSize()  error {
 //   GroupShape  
 func (instance *CommentShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("CommentShape_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("CommentShape_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -25912,7 +25912,7 @@ func NewCustomGeometry(src *Geometry) ( *CustomGeometry, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKV(C.CString("New_CustomGeometry"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKX(C.CString("New_CustomGeometry"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		customgeometry.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(customgeometry, DeleteCustomGeometry)
@@ -25943,7 +25943,7 @@ func (instance *CustomGeometry) IsNull()  (bool,  error)  {
 //   ShapePathCollection  
 func (instance *CustomGeometry) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("CustomGeometry_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("CustomGeometry_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -25959,7 +25959,7 @@ func (instance *CustomGeometry) GetPaths()  (*ShapePathCollection,  error)  {
 //   ShapeGuideCollection  
 func (instance *CustomGeometry) GetShapeAdjustValues()  (*ShapeGuideCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKW(C.CString("CustomGeometry_GetShapeAdjustValues"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKY(C.CString("CustomGeometry_GetShapeAdjustValues"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -26001,7 +26001,7 @@ func NewCustomXmlShape(src *Shape) ( *CustomXmlShape, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_CustomXmlShape"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_CustomXmlShape"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		customxmlshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(customxmlshape, DeleteCustomXmlShape)
@@ -26220,7 +26220,7 @@ func (instance *CustomXmlShape) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *CustomXmlShape) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("CustomXmlShape_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("CustomXmlShape_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -26236,7 +26236,7 @@ func (instance *CustomXmlShape) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *CustomXmlShape) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("CustomXmlShape_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("CustomXmlShape_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -26252,7 +26252,7 @@ func (instance *CustomXmlShape) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *CustomXmlShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("CustomXmlShape_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("CustomXmlShape_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -26268,7 +26268,7 @@ func (instance *CustomXmlShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *CustomXmlShape) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("CustomXmlShape_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("CustomXmlShape_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -26284,7 +26284,7 @@ func (instance *CustomXmlShape) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *CustomXmlShape) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("CustomXmlShape_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("CustomXmlShape_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -26329,7 +26329,7 @@ func (instance *CustomXmlShape) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *CustomXmlShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("CustomXmlShape_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("CustomXmlShape_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -26345,7 +26345,7 @@ func (instance *CustomXmlShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *CustomXmlShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("CustomXmlShape_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("CustomXmlShape_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -26421,7 +26421,7 @@ func (instance *CustomXmlShape) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *CustomXmlShape) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("CustomXmlShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("CustomXmlShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -26438,7 +26438,7 @@ func (instance *CustomXmlShape) GetLockedProperty(type_ ShapeLockType)  (bool,  
 //   void  
 func (instance *CustomXmlShape) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("CustomXmlShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("CustomXmlShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -26482,7 +26482,7 @@ func (instance *CustomXmlShape) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *CustomXmlShape) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("CustomXmlShape_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("CustomXmlShape_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -26511,7 +26511,7 @@ func (instance *CustomXmlShape) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *CustomXmlShape) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("CustomXmlShape_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("CustomXmlShape_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -26662,7 +26662,7 @@ func (instance *CustomXmlShape) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *CustomXmlShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("CustomXmlShape_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("CustomXmlShape_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -26740,7 +26740,7 @@ func (instance *CustomXmlShape) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *CustomXmlShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("CustomXmlShape_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("CustomXmlShape_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -26757,7 +26757,7 @@ func (instance *CustomXmlShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *CustomXmlShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("CustomXmlShape_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("CustomXmlShape_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -26776,7 +26776,7 @@ func (instance *CustomXmlShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *CustomXmlShape) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("CustomXmlShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("CustomXmlShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -26789,7 +26789,7 @@ func (instance *CustomXmlShape) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *CustomXmlShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("CustomXmlShape_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("CustomXmlShape_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -26808,7 +26808,7 @@ func (instance *CustomXmlShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *CustomXmlShape) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("CustomXmlShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("CustomXmlShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -26822,7 +26822,7 @@ func (instance *CustomXmlShape) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *CustomXmlShape) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("CustomXmlShape_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("CustomXmlShape_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -26842,7 +26842,7 @@ func (instance *CustomXmlShape) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *CustomXmlShape) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("CustomXmlShape_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("CustomXmlShape_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -27849,7 +27849,7 @@ func (instance *CustomXmlShape) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *CustomXmlShape) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("CustomXmlShape_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("CustomXmlShape_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -27865,7 +27865,7 @@ func (instance *CustomXmlShape) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *CustomXmlShape) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("CustomXmlShape_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("CustomXmlShape_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -28012,7 +28012,7 @@ func (instance *CustomXmlShape) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *CustomXmlShape) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("CustomXmlShape_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("CustomXmlShape_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -28040,7 +28040,7 @@ func (instance *CustomXmlShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *CustomXmlShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("CustomXmlShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("CustomXmlShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -28063,7 +28063,7 @@ func (instance *CustomXmlShape) ToImage_String_ImageOrPrintOptions(imagefile str
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("CustomXmlShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("CustomXmlShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -28266,7 +28266,7 @@ func (instance *CustomXmlShape) UpdateSelectedValue()  error {
 //   int32  
 func (instance *CustomXmlShape) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("CustomXmlShape_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("CustomXmlShape_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -28285,7 +28285,7 @@ func (instance *CustomXmlShape) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *CustomXmlShape) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("CustomXmlShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("CustomXmlShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -28298,7 +28298,7 @@ func (instance *CustomXmlShape) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *CustomXmlShape) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("CustomXmlShape_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("CustomXmlShape_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -28337,7 +28337,7 @@ func (instance *CustomXmlShape) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("CustomXmlShape_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("CustomXmlShape_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -28373,7 +28373,7 @@ func (instance *CustomXmlShape) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("CustomXmlShape_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("CustomXmlShape_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -28547,7 +28547,7 @@ func (instance *CustomXmlShape) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *CustomXmlShape) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("CustomXmlShape_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("CustomXmlShape_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -28566,7 +28566,7 @@ func (instance *CustomXmlShape) GetTextVerticalOverflow()  (TextOverflowType,  e
 //   void  
 func (instance *CustomXmlShape) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("CustomXmlShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("CustomXmlShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -28579,7 +28579,7 @@ func (instance *CustomXmlShape) SetTextVerticalOverflow(value TextOverflowType) 
 //   int32  
 func (instance *CustomXmlShape) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("CustomXmlShape_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("CustomXmlShape_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -28598,7 +28598,7 @@ func (instance *CustomXmlShape) GetTextHorizontalOverflow()  (TextOverflowType, 
 //   void  
 func (instance *CustomXmlShape) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("CustomXmlShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("CustomXmlShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -28768,7 +28768,7 @@ func (instance *CustomXmlShape) SetTextDirection(value TextDirectionType)  error
 //   TextBoxOptions  
 func (instance *CustomXmlShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("CustomXmlShape_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("CustomXmlShape_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -28799,7 +28799,7 @@ func (instance *CustomXmlShape) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *CustomXmlShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("CustomXmlShape_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("CustomXmlShape_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -28828,7 +28828,7 @@ func (instance *CustomXmlShape) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *CustomXmlShape) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("CustomXmlShape_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("CustomXmlShape_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -28844,7 +28844,7 @@ func (instance *CustomXmlShape) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *CustomXmlShape) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("CustomXmlShape_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("CustomXmlShape_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -28867,7 +28867,7 @@ func (instance *CustomXmlShape) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("CustomXmlShape_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("CustomXmlShape_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -28887,7 +28887,7 @@ func (instance *CustomXmlShape) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("CustomXmlShape_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("CustomXmlShape_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -28929,7 +28929,7 @@ func (instance *CustomXmlShape) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *CustomXmlShape) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("CustomXmlShape_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("CustomXmlShape_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -28963,7 +28963,7 @@ func (instance *CustomXmlShape) FitToTextSize()  error {
 //   GroupShape  
 func (instance *CustomXmlShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("CustomXmlShape_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("CustomXmlShape_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -29026,7 +29026,7 @@ func NewDialog_Box(src *Shape) ( *Dialog_Box, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_Dialog_Box"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_Dialog_Box"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		dialog_box.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(dialog_box, DeleteDialog_Box)
@@ -29245,7 +29245,7 @@ func (instance *Dialog_Box) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *Dialog_Box) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("Dialog_Box_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("Dialog_Box_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -29261,7 +29261,7 @@ func (instance *Dialog_Box) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *Dialog_Box) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("Dialog_Box_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("Dialog_Box_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -29277,7 +29277,7 @@ func (instance *Dialog_Box) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *Dialog_Box) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("Dialog_Box_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("Dialog_Box_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -29293,7 +29293,7 @@ func (instance *Dialog_Box) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *Dialog_Box) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("Dialog_Box_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("Dialog_Box_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -29309,7 +29309,7 @@ func (instance *Dialog_Box) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *Dialog_Box) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("Dialog_Box_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("Dialog_Box_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -29354,7 +29354,7 @@ func (instance *Dialog_Box) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *Dialog_Box) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("Dialog_Box_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("Dialog_Box_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -29370,7 +29370,7 @@ func (instance *Dialog_Box) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *Dialog_Box) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("Dialog_Box_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("Dialog_Box_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -29446,7 +29446,7 @@ func (instance *Dialog_Box) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *Dialog_Box) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("Dialog_Box_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("Dialog_Box_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -29463,7 +29463,7 @@ func (instance *Dialog_Box) GetLockedProperty(type_ ShapeLockType)  (bool,  erro
 //   void  
 func (instance *Dialog_Box) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("Dialog_Box_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("Dialog_Box_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -29507,7 +29507,7 @@ func (instance *Dialog_Box) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *Dialog_Box) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("Dialog_Box_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("Dialog_Box_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -29536,7 +29536,7 @@ func (instance *Dialog_Box) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *Dialog_Box) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("Dialog_Box_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("Dialog_Box_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -29687,7 +29687,7 @@ func (instance *Dialog_Box) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *Dialog_Box) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("Dialog_Box_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Dialog_Box_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -29765,7 +29765,7 @@ func (instance *Dialog_Box) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *Dialog_Box) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("Dialog_Box_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Dialog_Box_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -29782,7 +29782,7 @@ func (instance *Dialog_Box) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *Dialog_Box) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Dialog_Box_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Dialog_Box_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -29801,7 +29801,7 @@ func (instance *Dialog_Box) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *Dialog_Box) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Dialog_Box_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Dialog_Box_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -29814,7 +29814,7 @@ func (instance *Dialog_Box) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *Dialog_Box) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Dialog_Box_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("Dialog_Box_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -29833,7 +29833,7 @@ func (instance *Dialog_Box) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *Dialog_Box) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Dialog_Box_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("Dialog_Box_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -29847,7 +29847,7 @@ func (instance *Dialog_Box) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *Dialog_Box) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("Dialog_Box_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Dialog_Box_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -29867,7 +29867,7 @@ func (instance *Dialog_Box) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *Dialog_Box) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("Dialog_Box_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("Dialog_Box_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -30874,7 +30874,7 @@ func (instance *Dialog_Box) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *Dialog_Box) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Dialog_Box_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Dialog_Box_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -30890,7 +30890,7 @@ func (instance *Dialog_Box) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *Dialog_Box) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Dialog_Box_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Dialog_Box_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -31037,7 +31037,7 @@ func (instance *Dialog_Box) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *Dialog_Box) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("Dialog_Box_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("Dialog_Box_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -31065,7 +31065,7 @@ func (instance *Dialog_Box) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Dialog_Box) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Dialog_Box_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("Dialog_Box_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -31088,7 +31088,7 @@ func (instance *Dialog_Box) ToImage_String_ImageOrPrintOptions(imagefile string,
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("Dialog_Box_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("Dialog_Box_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -31291,7 +31291,7 @@ func (instance *Dialog_Box) UpdateSelectedValue()  error {
 //   int32  
 func (instance *Dialog_Box) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Dialog_Box_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Dialog_Box_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -31310,7 +31310,7 @@ func (instance *Dialog_Box) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *Dialog_Box) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Dialog_Box_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Dialog_Box_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -31323,7 +31323,7 @@ func (instance *Dialog_Box) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *Dialog_Box) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("Dialog_Box_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("Dialog_Box_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -31362,7 +31362,7 @@ func (instance *Dialog_Box) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("Dialog_Box_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Dialog_Box_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -31398,7 +31398,7 @@ func (instance *Dialog_Box) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("Dialog_Box_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Dialog_Box_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -31572,7 +31572,7 @@ func (instance *Dialog_Box) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *Dialog_Box) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Dialog_Box_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Dialog_Box_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -31591,7 +31591,7 @@ func (instance *Dialog_Box) GetTextVerticalOverflow()  (TextOverflowType,  error
 //   void  
 func (instance *Dialog_Box) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Dialog_Box_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Dialog_Box_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -31604,7 +31604,7 @@ func (instance *Dialog_Box) SetTextVerticalOverflow(value TextOverflowType)  err
 //   int32  
 func (instance *Dialog_Box) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Dialog_Box_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Dialog_Box_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -31623,7 +31623,7 @@ func (instance *Dialog_Box) GetTextHorizontalOverflow()  (TextOverflowType,  err
 //   void  
 func (instance *Dialog_Box) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Dialog_Box_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Dialog_Box_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -31793,7 +31793,7 @@ func (instance *Dialog_Box) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *Dialog_Box) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Dialog_Box_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("Dialog_Box_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -31824,7 +31824,7 @@ func (instance *Dialog_Box) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *Dialog_Box) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Dialog_Box_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("Dialog_Box_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -31853,7 +31853,7 @@ func (instance *Dialog_Box) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *Dialog_Box) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("Dialog_Box_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Dialog_Box_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -31869,7 +31869,7 @@ func (instance *Dialog_Box) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *Dialog_Box) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("Dialog_Box_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("Dialog_Box_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -31892,7 +31892,7 @@ func (instance *Dialog_Box) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Dialog_Box_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Dialog_Box_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -31912,7 +31912,7 @@ func (instance *Dialog_Box) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Dialog_Box_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Dialog_Box_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -31954,7 +31954,7 @@ func (instance *Dialog_Box) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *Dialog_Box) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("Dialog_Box_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("Dialog_Box_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -31988,7 +31988,7 @@ func (instance *Dialog_Box) FitToTextSize()  error {
 //   GroupShape  
 func (instance *Dialog_Box) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Dialog_Box_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Dialog_Box_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -32061,7 +32061,7 @@ func (instance *FillFormat) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *FillFormat) GetFillType()  (FillType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKX(C.CString("FillFormat_GetFillType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALA(C.CString("FillFormat_GetFillType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -32080,7 +32080,7 @@ func (instance *FillFormat) GetFillType()  (FillType,  error)  {
 //   void  
 func (instance *FillFormat) SetFillType(value FillType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKY(C.CString("FillFormat_SetFillType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZALB(C.CString("FillFormat_SetFillType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32122,7 +32122,7 @@ func (instance *FillFormat) SetTransparency(value float64)  error {
 //   GradientFill  
 func (instance *FillFormat) GetGradientFill()  (*GradientFill,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALA(C.CString("FillFormat_GetGradientFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALC(C.CString("FillFormat_GetGradientFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -32138,7 +32138,7 @@ func (instance *FillFormat) GetGradientFill()  (*GradientFill,  error)  {
 //   TextureFill  
 func (instance *FillFormat) GetTextureFill()  (*TextureFill,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALB(C.CString("FillFormat_GetTextureFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALD(C.CString("FillFormat_GetTextureFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -32154,7 +32154,7 @@ func (instance *FillFormat) GetTextureFill()  (*TextureFill,  error)  {
 //   SolidFill  
 func (instance *FillFormat) GetSolidFill()  (*SolidFill,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALC(C.CString("FillFormat_GetSolidFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALE(C.CString("FillFormat_GetSolidFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -32170,7 +32170,7 @@ func (instance *FillFormat) GetSolidFill()  (*SolidFill,  error)  {
 //   PatternFill  
 func (instance *FillFormat) GetPatternFill()  (*PatternFill,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALD(C.CString("FillFormat_GetPatternFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALF(C.CString("FillFormat_GetPatternFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -32186,7 +32186,7 @@ func (instance *FillFormat) GetPatternFill()  (*PatternFill,  error)  {
 //   int32  
 func (instance *FillFormat) GetGradientColorType()  (GradientColorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALE(C.CString("FillFormat_GetGradientColorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALG(C.CString("FillFormat_GetGradientColorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -32280,7 +32280,7 @@ func (instance *FillFormat) GetGradientVariant()  (int32,  error)  {
 //   int32  
 func (instance *FillFormat) GetPresetColor()  (GradientPresetType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALF(C.CString("FillFormat_GetPresetColor"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALH(C.CString("FillFormat_GetPresetColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -32303,7 +32303,7 @@ func (instance *FillFormat) GetPresetColor()  (GradientPresetType,  error)  {
 //   void  
 func (instance *FillFormat) SetOneColorGradient(color *Color, degree float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALG(C.CString("FillFormat_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZALI(C.CString("FillFormat_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32343,7 +32343,7 @@ func (instance *FillFormat) SetTwoColorGradient_Color_Color_GradientStyleType_In
 //   void  
 func (instance *FillFormat) SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Int(color1 *Color, transparency1 float64, color2 *Color, transparency2 float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALH(C.CString("FillFormat_SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Integer"), instance.ptr, color1.ptr, C.double(transparency1), color2.ptr, C.double(transparency2), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZALJ(C.CString("FillFormat_SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Integer"), instance.ptr, color1.ptr, C.double(transparency1), color2.ptr, C.double(transparency2), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32361,7 +32361,7 @@ func (instance *FillFormat) SetTwoColorGradient_Color_Double_Color_Double_Gradie
 //   void  
 func (instance *FillFormat) SetPresetColorGradient(presetcolor GradientPresetType, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALI(C.CString("FillFormat_SetPresetColorGradient"), instance.ptr, C.int( int32(presetcolor)), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZALK(C.CString("FillFormat_SetPresetColorGradient"), instance.ptr, C.int( int32(presetcolor)), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32374,7 +32374,7 @@ func (instance *FillFormat) SetPresetColorGradient(presetcolor GradientPresetTyp
 //   int32  
 func (instance *FillFormat) GetTexture()  (TextureType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALJ(C.CString("FillFormat_GetTexture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALL(C.CString("FillFormat_GetTexture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -32393,7 +32393,7 @@ func (instance *FillFormat) GetTexture()  (TextureType,  error)  {
 //   void  
 func (instance *FillFormat) SetTexture(value TextureType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALK(C.CString("FillFormat_SetTexture"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZALM(C.CString("FillFormat_SetTexture"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32406,7 +32406,7 @@ func (instance *FillFormat) SetTexture(value TextureType)  error {
 //   int32  
 func (instance *FillFormat) GetPattern()  (FillPattern,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALL(C.CString("FillFormat_GetPattern"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALN(C.CString("FillFormat_GetPattern"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -32425,7 +32425,7 @@ func (instance *FillFormat) GetPattern()  (FillPattern,  error)  {
 //   void  
 func (instance *FillFormat) SetPattern(value FillPattern)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALM(C.CString("FillFormat_SetPattern"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZALO(C.CString("FillFormat_SetPattern"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32438,7 +32438,7 @@ func (instance *FillFormat) SetPattern(value FillPattern)  error {
 //   int32  
 func (instance *FillFormat) GetPictureFormatType()  (FillPictureType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALN(C.CString("FillFormat_GetPictureFormatType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALP(C.CString("FillFormat_GetPictureFormatType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -32457,7 +32457,7 @@ func (instance *FillFormat) GetPictureFormatType()  (FillPictureType,  error)  {
 //   void  
 func (instance *FillFormat) SetPictureFormatType(value FillPictureType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALO(C.CString("FillFormat_SetPictureFormatType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZALQ(C.CString("FillFormat_SetPictureFormatType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32594,7 +32594,7 @@ func (instance *Format3D) IsNull()  (bool,  error)  {
 //   Bevel  
 func (instance *Format3D) GetTopBevel()  (*Bevel,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALP(C.CString("Format3D_GetTopBevel"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALR(C.CString("Format3D_GetTopBevel"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -32625,7 +32625,7 @@ func (instance *Format3D) HasTopBevelData()  (bool,  error)  {
 //   int32  
 func (instance *Format3D) GetSurfaceMaterialType()  (PresetMaterialType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALQ(C.CString("Format3D_GetSurfaceMaterialType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALS(C.CString("Format3D_GetSurfaceMaterialType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -32645,7 +32645,7 @@ func (instance *Format3D) GetSurfaceMaterialType()  (PresetMaterialType,  error)
 //   void  
 func (instance *Format3D) SetSurfaceMaterialType(value PresetMaterialType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALR(C.CString("Format3D_SetSurfaceMaterialType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZALT(C.CString("Format3D_SetSurfaceMaterialType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32659,7 +32659,7 @@ func (instance *Format3D) SetSurfaceMaterialType(value PresetMaterialType)  erro
 //   int32  
 func (instance *Format3D) GetSurfaceLightingType()  (LightRigType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALS(C.CString("Format3D_GetSurfaceLightingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("Format3D_GetSurfaceLightingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -32679,7 +32679,7 @@ func (instance *Format3D) GetSurfaceLightingType()  (LightRigType,  error)  {
 //   void  
 func (instance *Format3D) SetSurfaceLightingType(value LightRigType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALT(C.CString("Format3D_SetSurfaceLightingType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZALV(C.CString("Format3D_SetSurfaceLightingType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32752,7 +32752,7 @@ func (instance *Geometry) IsNull()  (bool,  error)  {
 //   ShapeGuideCollection  
 func (instance *Geometry) GetShapeAdjustValues()  (*ShapeGuideCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKW(C.CString("Geometry_GetShapeAdjustValues"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKY(C.CString("Geometry_GetShapeAdjustValues"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -32823,7 +32823,7 @@ func (instance *GlowEffect) SetColor(value *CellsColor)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("GlowEffect_SetColor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALW(C.CString("GlowEffect_SetColor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32925,7 +32925,7 @@ func (instance *GradientFill) IsNull()  (bool,  error)  {
 //   GradientStopCollection  
 func (instance *GradientFill) GetGradientStops()  (*GradientStopCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALV(C.CString("GradientFill_GetGradientStops"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALX(C.CString("GradientFill_GetGradientStops"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -32945,7 +32945,7 @@ func (instance *GradientFill) GetGradientStops()  (*GradientStopCollection,  err
 //   void  
 func (instance *GradientFill) SetGradient(type_ GradientFillType, angle float64, direction GradientDirectionType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALW(C.CString("GradientFill_SetGradient"), instance.ptr, C.int( int32(type_)), C.double(angle), C.int( int32(direction)))
+	CGoReturnPtr := C.CellsGoFunctoinZALY(C.CString("GradientFill_SetGradient"), instance.ptr, C.int( int32(type_)), C.double(angle), C.int( int32(direction)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32958,7 +32958,7 @@ func (instance *GradientFill) SetGradient(type_ GradientFillType, angle float64,
 //   int32  
 func (instance *GradientFill) GetFillType()  (GradientFillType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALX(C.CString("GradientFill_GetFillType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMA(C.CString("GradientFill_GetFillType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -32975,7 +32975,7 @@ func (instance *GradientFill) GetFillType()  (GradientFillType,  error)  {
 //   int32  
 func (instance *GradientFill) GetDirectionType()  (GradientDirectionType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALY(C.CString("GradientFill_GetDirectionType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMB(C.CString("GradientFill_GetDirectionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -33008,7 +33008,7 @@ func (instance *GradientFill) GetAngle()  (float32,  error)  {
 //   void  
 func (instance *GradientFill) SetAngle(value float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMA(C.CString("GradientFill_SetAngle"), instance.ptr, C.float(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAMC(C.CString("GradientFill_SetAngle"), instance.ptr, C.float(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33024,7 +33024,7 @@ func (instance *GradientFill) SetAngle(value float32)  error {
 //   void  
 func (instance *GradientFill) SetPresetThemeGradient(gradienttype PresetThemeGradientType, themecolortype ThemeColorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMB(C.CString("GradientFill_SetPresetThemeGradient"), instance.ptr, C.int( int32(gradienttype)), C.int( int32(themecolortype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMD(C.CString("GradientFill_SetPresetThemeGradient"), instance.ptr, C.int( int32(gradienttype)), C.int( int32(themecolortype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33043,7 +33043,7 @@ func (instance *GradientFill) SetPresetThemeGradient(gradienttype PresetThemeGra
 //   void  
 func (instance *GradientFill) SetOneColorGradient(color *Color, degree float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALG(C.CString("GradientFill_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZALI(C.CString("GradientFill_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33083,7 +33083,7 @@ func (instance *GradientFill) SetTwoColorGradient_Color_Color_GradientStyleType_
 //   void  
 func (instance *GradientFill) SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Int(color1 *Color, transparency1 float64, color2 *Color, transparency2 float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALH(C.CString("GradientFill_SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Integer"), instance.ptr, color1.ptr, C.double(transparency1), color2.ptr, C.double(transparency2), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZALJ(C.CString("GradientFill_SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Integer"), instance.ptr, color1.ptr, C.double(transparency1), color2.ptr, C.double(transparency2), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33241,7 +33241,7 @@ func (instance *GradientStopCollection) Add_Double_CellsColor_Int(position float
 	  color_ptr =color.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAMC(C.CString("GradientStopCollection_Add_Double_CellsColor_Integer"), instance.ptr, C.double(position), color_ptr, C.int(alpha))
+	CGoReturnPtr := C.CellsGoFunctoinZAME(C.CString("GradientStopCollection_Add_Double_CellsColor_Integer"), instance.ptr, C.double(position), color_ptr, C.int(alpha))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33258,7 +33258,7 @@ func (instance *GradientStopCollection) Add_Double_CellsColor_Int(position float
 //   void  
 func (instance *GradientStopCollection) Add_Double_Color_Int(position float64, color *Color, alpha int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMD(C.CString("GradientStopCollection_Add_Double_Color_Integer"), instance.ptr, C.double(position), color.ptr, C.int(alpha))
+	CGoReturnPtr := C.CellsGoFunctoinZAMF(C.CString("GradientStopCollection_Add_Double_Color_Integer"), instance.ptr, C.double(position), color.ptr, C.int(alpha))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33273,7 +33273,7 @@ func (instance *GradientStopCollection) Add_Double_Color_Int(position float64, c
 //   GradientStop  
 func (instance *GradientStopCollection) Get(index int32)  (*GradientStop,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAME(C.CString("GradientStopCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAMG(C.CString("GradientStopCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -33297,7 +33297,7 @@ func (instance *GradientStopCollection) Set(value *GradientStop, index int32)  e
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAMF(C.CString("GradientStopCollection_Set"), instance.ptr, value_ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAMH(C.CString("GradientStopCollection_Set"), instance.ptr, value_ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33344,7 +33344,7 @@ func NewGroupBox(src *Shape) ( *GroupBox, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_GroupBox"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_GroupBox"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		groupbox.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(groupbox, DeleteGroupBox)
@@ -33592,7 +33592,7 @@ func (instance *GroupBox) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *GroupBox) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("GroupBox_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("GroupBox_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -33608,7 +33608,7 @@ func (instance *GroupBox) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *GroupBox) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("GroupBox_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("GroupBox_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -33624,7 +33624,7 @@ func (instance *GroupBox) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *GroupBox) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("GroupBox_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("GroupBox_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -33640,7 +33640,7 @@ func (instance *GroupBox) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *GroupBox) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("GroupBox_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("GroupBox_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -33656,7 +33656,7 @@ func (instance *GroupBox) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *GroupBox) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("GroupBox_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("GroupBox_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -33701,7 +33701,7 @@ func (instance *GroupBox) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *GroupBox) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("GroupBox_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("GroupBox_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -33717,7 +33717,7 @@ func (instance *GroupBox) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *GroupBox) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("GroupBox_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("GroupBox_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -33793,7 +33793,7 @@ func (instance *GroupBox) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *GroupBox) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("GroupBox_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("GroupBox_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -33810,7 +33810,7 @@ func (instance *GroupBox) GetLockedProperty(type_ ShapeLockType)  (bool,  error)
 //   void  
 func (instance *GroupBox) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("GroupBox_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("GroupBox_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33854,7 +33854,7 @@ func (instance *GroupBox) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *GroupBox) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("GroupBox_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("GroupBox_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -33883,7 +33883,7 @@ func (instance *GroupBox) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *GroupBox) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("GroupBox_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("GroupBox_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -34034,7 +34034,7 @@ func (instance *GroupBox) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *GroupBox) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("GroupBox_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("GroupBox_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -34112,7 +34112,7 @@ func (instance *GroupBox) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *GroupBox) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("GroupBox_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("GroupBox_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -34129,7 +34129,7 @@ func (instance *GroupBox) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *GroupBox) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("GroupBox_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("GroupBox_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -34148,7 +34148,7 @@ func (instance *GroupBox) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *GroupBox) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("GroupBox_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("GroupBox_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -34161,7 +34161,7 @@ func (instance *GroupBox) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *GroupBox) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("GroupBox_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("GroupBox_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -34180,7 +34180,7 @@ func (instance *GroupBox) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *GroupBox) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("GroupBox_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("GroupBox_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -34194,7 +34194,7 @@ func (instance *GroupBox) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *GroupBox) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("GroupBox_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("GroupBox_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -34214,7 +34214,7 @@ func (instance *GroupBox) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *GroupBox) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("GroupBox_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("GroupBox_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35221,7 +35221,7 @@ func (instance *GroupBox) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *GroupBox) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("GroupBox_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("GroupBox_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -35237,7 +35237,7 @@ func (instance *GroupBox) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *GroupBox) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("GroupBox_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("GroupBox_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -35384,7 +35384,7 @@ func (instance *GroupBox) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *GroupBox) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("GroupBox_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("GroupBox_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -35412,7 +35412,7 @@ func (instance *GroupBox) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *GroupBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("GroupBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("GroupBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -35435,7 +35435,7 @@ func (instance *GroupBox) ToImage_String_ImageOrPrintOptions(imagefile string, o
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("GroupBox_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("GroupBox_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35638,7 +35638,7 @@ func (instance *GroupBox) UpdateSelectedValue()  error {
 //   int32  
 func (instance *GroupBox) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("GroupBox_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("GroupBox_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -35657,7 +35657,7 @@ func (instance *GroupBox) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *GroupBox) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("GroupBox_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("GroupBox_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35670,7 +35670,7 @@ func (instance *GroupBox) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *GroupBox) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("GroupBox_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("GroupBox_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -35709,7 +35709,7 @@ func (instance *GroupBox) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("GroupBox_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("GroupBox_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35745,7 +35745,7 @@ func (instance *GroupBox) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("GroupBox_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("GroupBox_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35919,7 +35919,7 @@ func (instance *GroupBox) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *GroupBox) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("GroupBox_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("GroupBox_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -35938,7 +35938,7 @@ func (instance *GroupBox) GetTextVerticalOverflow()  (TextOverflowType,  error) 
 //   void  
 func (instance *GroupBox) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("GroupBox_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("GroupBox_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35951,7 +35951,7 @@ func (instance *GroupBox) SetTextVerticalOverflow(value TextOverflowType)  error
 //   int32  
 func (instance *GroupBox) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("GroupBox_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("GroupBox_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -35970,7 +35970,7 @@ func (instance *GroupBox) GetTextHorizontalOverflow()  (TextOverflowType,  error
 //   void  
 func (instance *GroupBox) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("GroupBox_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("GroupBox_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -36140,7 +36140,7 @@ func (instance *GroupBox) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *GroupBox) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("GroupBox_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("GroupBox_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -36171,7 +36171,7 @@ func (instance *GroupBox) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *GroupBox) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("GroupBox_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("GroupBox_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -36200,7 +36200,7 @@ func (instance *GroupBox) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *GroupBox) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("GroupBox_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("GroupBox_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -36216,7 +36216,7 @@ func (instance *GroupBox) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *GroupBox) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("GroupBox_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("GroupBox_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -36239,7 +36239,7 @@ func (instance *GroupBox) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("GroupBox_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("GroupBox_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -36259,7 +36259,7 @@ func (instance *GroupBox) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("GroupBox_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("GroupBox_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -36301,7 +36301,7 @@ func (instance *GroupBox) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *GroupBox) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("GroupBox_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("GroupBox_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -36335,7 +36335,7 @@ func (instance *GroupBox) FitToTextSize()  error {
 //   GroupShape  
 func (instance *GroupBox) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("GroupBox_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("GroupBox_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -36429,7 +36429,7 @@ func NewGroupShape(src *Shape) ( *GroupShape, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_GroupShape"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_GroupShape"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		groupshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(groupshape, DeleteGroupShape)
@@ -36462,7 +36462,7 @@ func (instance *GroupShape) IsNull()  (bool,  error)  {
 //   Shape  
 func (instance *GroupShape) Get(index int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMG(C.CString("GroupShape_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAMI(C.CString("GroupShape_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -36491,7 +36491,7 @@ func (instance *GroupShape) Ungroup()  error {
 //   []Shape  
 func (instance *GroupShape) GetGroupedShapes()  ([]Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMH(C.CString("GroupShape_GetGroupedShapes"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMJ(C.CString("GroupShape_GetGroupedShapes"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -36700,7 +36700,7 @@ func (instance *GroupShape) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *GroupShape) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("GroupShape_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("GroupShape_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -36716,7 +36716,7 @@ func (instance *GroupShape) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *GroupShape) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("GroupShape_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("GroupShape_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -36732,7 +36732,7 @@ func (instance *GroupShape) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *GroupShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("GroupShape_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("GroupShape_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -36748,7 +36748,7 @@ func (instance *GroupShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *GroupShape) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("GroupShape_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("GroupShape_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -36764,7 +36764,7 @@ func (instance *GroupShape) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *GroupShape) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("GroupShape_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("GroupShape_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -36809,7 +36809,7 @@ func (instance *GroupShape) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *GroupShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("GroupShape_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("GroupShape_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -36825,7 +36825,7 @@ func (instance *GroupShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *GroupShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("GroupShape_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("GroupShape_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -36901,7 +36901,7 @@ func (instance *GroupShape) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *GroupShape) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("GroupShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("GroupShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -36918,7 +36918,7 @@ func (instance *GroupShape) GetLockedProperty(type_ ShapeLockType)  (bool,  erro
 //   void  
 func (instance *GroupShape) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("GroupShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("GroupShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -36962,7 +36962,7 @@ func (instance *GroupShape) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *GroupShape) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("GroupShape_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("GroupShape_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -36991,7 +36991,7 @@ func (instance *GroupShape) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *GroupShape) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("GroupShape_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("GroupShape_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -37142,7 +37142,7 @@ func (instance *GroupShape) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *GroupShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("GroupShape_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("GroupShape_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -37220,7 +37220,7 @@ func (instance *GroupShape) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *GroupShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("GroupShape_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("GroupShape_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -37237,7 +37237,7 @@ func (instance *GroupShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *GroupShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("GroupShape_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("GroupShape_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -37256,7 +37256,7 @@ func (instance *GroupShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *GroupShape) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("GroupShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("GroupShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -37269,7 +37269,7 @@ func (instance *GroupShape) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *GroupShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("GroupShape_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("GroupShape_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -37288,7 +37288,7 @@ func (instance *GroupShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *GroupShape) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("GroupShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("GroupShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -37302,7 +37302,7 @@ func (instance *GroupShape) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *GroupShape) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("GroupShape_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("GroupShape_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -37322,7 +37322,7 @@ func (instance *GroupShape) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *GroupShape) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("GroupShape_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("GroupShape_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -38329,7 +38329,7 @@ func (instance *GroupShape) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *GroupShape) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("GroupShape_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("GroupShape_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -38345,7 +38345,7 @@ func (instance *GroupShape) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *GroupShape) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("GroupShape_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("GroupShape_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -38492,7 +38492,7 @@ func (instance *GroupShape) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *GroupShape) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("GroupShape_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("GroupShape_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -38520,7 +38520,7 @@ func (instance *GroupShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *GroupShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("GroupShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("GroupShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -38543,7 +38543,7 @@ func (instance *GroupShape) ToImage_String_ImageOrPrintOptions(imagefile string,
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("GroupShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("GroupShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -38746,7 +38746,7 @@ func (instance *GroupShape) UpdateSelectedValue()  error {
 //   int32  
 func (instance *GroupShape) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("GroupShape_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("GroupShape_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -38765,7 +38765,7 @@ func (instance *GroupShape) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *GroupShape) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("GroupShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("GroupShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -38778,7 +38778,7 @@ func (instance *GroupShape) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *GroupShape) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("GroupShape_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("GroupShape_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -38817,7 +38817,7 @@ func (instance *GroupShape) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("GroupShape_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("GroupShape_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -38853,7 +38853,7 @@ func (instance *GroupShape) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("GroupShape_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("GroupShape_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -39027,7 +39027,7 @@ func (instance *GroupShape) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *GroupShape) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("GroupShape_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("GroupShape_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -39046,7 +39046,7 @@ func (instance *GroupShape) GetTextVerticalOverflow()  (TextOverflowType,  error
 //   void  
 func (instance *GroupShape) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("GroupShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("GroupShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -39059,7 +39059,7 @@ func (instance *GroupShape) SetTextVerticalOverflow(value TextOverflowType)  err
 //   int32  
 func (instance *GroupShape) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("GroupShape_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("GroupShape_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -39078,7 +39078,7 @@ func (instance *GroupShape) GetTextHorizontalOverflow()  (TextOverflowType,  err
 //   void  
 func (instance *GroupShape) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("GroupShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("GroupShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -39248,7 +39248,7 @@ func (instance *GroupShape) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *GroupShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("GroupShape_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("GroupShape_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -39279,7 +39279,7 @@ func (instance *GroupShape) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *GroupShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("GroupShape_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("GroupShape_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -39308,7 +39308,7 @@ func (instance *GroupShape) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *GroupShape) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("GroupShape_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("GroupShape_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -39324,7 +39324,7 @@ func (instance *GroupShape) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *GroupShape) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("GroupShape_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("GroupShape_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -39347,7 +39347,7 @@ func (instance *GroupShape) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("GroupShape_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("GroupShape_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -39367,7 +39367,7 @@ func (instance *GroupShape) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("GroupShape_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("GroupShape_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -39409,7 +39409,7 @@ func (instance *GroupShape) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *GroupShape) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("GroupShape_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("GroupShape_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -39443,7 +39443,7 @@ func (instance *GroupShape) FitToTextSize()  error {
 //   GroupShape  
 func (instance *GroupShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("GroupShape_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("GroupShape_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -39506,7 +39506,7 @@ func NewLabel(src *Shape) ( *Label, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_Label"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_Label"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		label.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(label, DeleteLabel)
@@ -39725,7 +39725,7 @@ func (instance *Label) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *Label) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("Label_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("Label_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -39741,7 +39741,7 @@ func (instance *Label) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *Label) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("Label_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("Label_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -39757,7 +39757,7 @@ func (instance *Label) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *Label) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("Label_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("Label_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -39773,7 +39773,7 @@ func (instance *Label) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *Label) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("Label_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("Label_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -39789,7 +39789,7 @@ func (instance *Label) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *Label) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("Label_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("Label_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -39834,7 +39834,7 @@ func (instance *Label) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *Label) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("Label_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("Label_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -39850,7 +39850,7 @@ func (instance *Label) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *Label) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("Label_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("Label_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -39926,7 +39926,7 @@ func (instance *Label) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *Label) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("Label_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("Label_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -39943,7 +39943,7 @@ func (instance *Label) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 //   void  
 func (instance *Label) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("Label_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("Label_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -39987,7 +39987,7 @@ func (instance *Label) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *Label) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("Label_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("Label_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -40016,7 +40016,7 @@ func (instance *Label) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *Label) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("Label_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("Label_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -40167,7 +40167,7 @@ func (instance *Label) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *Label) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("Label_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Label_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -40245,7 +40245,7 @@ func (instance *Label) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *Label) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("Label_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Label_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -40262,7 +40262,7 @@ func (instance *Label) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *Label) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Label_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Label_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -40281,7 +40281,7 @@ func (instance *Label) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *Label) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Label_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Label_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -40294,7 +40294,7 @@ func (instance *Label) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *Label) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Label_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("Label_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -40313,7 +40313,7 @@ func (instance *Label) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *Label) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Label_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("Label_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -40327,7 +40327,7 @@ func (instance *Label) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *Label) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("Label_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Label_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -40347,7 +40347,7 @@ func (instance *Label) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *Label) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("Label_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("Label_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -41354,7 +41354,7 @@ func (instance *Label) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *Label) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Label_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Label_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -41370,7 +41370,7 @@ func (instance *Label) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *Label) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Label_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Label_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -41517,7 +41517,7 @@ func (instance *Label) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *Label) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("Label_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("Label_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -41545,7 +41545,7 @@ func (instance *Label) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Label) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Label_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("Label_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -41568,7 +41568,7 @@ func (instance *Label) ToImage_String_ImageOrPrintOptions(imagefile string, opti
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("Label_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("Label_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -41771,7 +41771,7 @@ func (instance *Label) UpdateSelectedValue()  error {
 //   int32  
 func (instance *Label) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Label_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Label_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -41790,7 +41790,7 @@ func (instance *Label) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *Label) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Label_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Label_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -41803,7 +41803,7 @@ func (instance *Label) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *Label) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("Label_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("Label_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -41842,7 +41842,7 @@ func (instance *Label) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("Label_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Label_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -41878,7 +41878,7 @@ func (instance *Label) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("Label_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Label_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -42052,7 +42052,7 @@ func (instance *Label) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *Label) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Label_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Label_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -42071,7 +42071,7 @@ func (instance *Label) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 //   void  
 func (instance *Label) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Label_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Label_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -42084,7 +42084,7 @@ func (instance *Label) SetTextVerticalOverflow(value TextOverflowType)  error {
 //   int32  
 func (instance *Label) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Label_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Label_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -42103,7 +42103,7 @@ func (instance *Label) GetTextHorizontalOverflow()  (TextOverflowType,  error)  
 //   void  
 func (instance *Label) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Label_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Label_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -42273,7 +42273,7 @@ func (instance *Label) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *Label) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Label_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("Label_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -42304,7 +42304,7 @@ func (instance *Label) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *Label) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Label_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("Label_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -42333,7 +42333,7 @@ func (instance *Label) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *Label) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("Label_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Label_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -42349,7 +42349,7 @@ func (instance *Label) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *Label) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("Label_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("Label_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -42372,7 +42372,7 @@ func (instance *Label) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Label_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Label_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -42392,7 +42392,7 @@ func (instance *Label) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Label_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Label_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -42434,7 +42434,7 @@ func (instance *Label) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *Label) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("Label_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("Label_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -42468,7 +42468,7 @@ func (instance *Label) FitToTextSize()  error {
 //   GroupShape  
 func (instance *Label) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Label_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Label_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -42541,7 +42541,7 @@ func (instance *Line) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *Line) GetCompoundType()  (MsoLineStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMI(C.CString("Line_GetCompoundType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMK(C.CString("Line_GetCompoundType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -42560,7 +42560,7 @@ func (instance *Line) GetCompoundType()  (MsoLineStyle,  error)  {
 //   void  
 func (instance *Line) SetCompoundType(value MsoLineStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMJ(C.CString("Line_SetCompoundType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAML(C.CString("Line_SetCompoundType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -42573,7 +42573,7 @@ func (instance *Line) SetCompoundType(value MsoLineStyle)  error {
 //   int32  
 func (instance *Line) GetDashType()  (MsoLineDashStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMK(C.CString("Line_GetDashType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMM(C.CString("Line_GetDashType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -42592,7 +42592,7 @@ func (instance *Line) GetDashType()  (MsoLineDashStyle,  error)  {
 //   void  
 func (instance *Line) SetDashType(value MsoLineDashStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAML(C.CString("Line_SetDashType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMN(C.CString("Line_SetDashType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -42605,7 +42605,7 @@ func (instance *Line) SetDashType(value MsoLineDashStyle)  error {
 //   int32  
 func (instance *Line) GetCapType()  (LineCapType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMM(C.CString("Line_GetCapType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMO(C.CString("Line_GetCapType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -42624,7 +42624,7 @@ func (instance *Line) GetCapType()  (LineCapType,  error)  {
 //   void  
 func (instance *Line) SetCapType(value LineCapType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMN(C.CString("Line_SetCapType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMP(C.CString("Line_SetCapType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -42637,7 +42637,7 @@ func (instance *Line) SetCapType(value LineCapType)  error {
 //   int32  
 func (instance *Line) GetJoinType()  (LineJoinType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMO(C.CString("Line_GetJoinType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMQ(C.CString("Line_GetJoinType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -42656,7 +42656,7 @@ func (instance *Line) GetJoinType()  (LineJoinType,  error)  {
 //   void  
 func (instance *Line) SetJoinType(value LineJoinType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMP(C.CString("Line_SetJoinType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMR(C.CString("Line_SetJoinType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -42669,7 +42669,7 @@ func (instance *Line) SetJoinType(value LineJoinType)  error {
 //   int32  
 func (instance *Line) GetBeginType()  (MsoArrowheadStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMQ(C.CString("Line_GetBeginType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMS(C.CString("Line_GetBeginType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -42688,7 +42688,7 @@ func (instance *Line) GetBeginType()  (MsoArrowheadStyle,  error)  {
 //   void  
 func (instance *Line) SetBeginType(value MsoArrowheadStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMR(C.CString("Line_SetBeginType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMT(C.CString("Line_SetBeginType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -42701,7 +42701,7 @@ func (instance *Line) SetBeginType(value MsoArrowheadStyle)  error {
 //   int32  
 func (instance *Line) GetEndType()  (MsoArrowheadStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMQ(C.CString("Line_GetEndType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMS(C.CString("Line_GetEndType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -42720,7 +42720,7 @@ func (instance *Line) GetEndType()  (MsoArrowheadStyle,  error)  {
 //   void  
 func (instance *Line) SetEndType(value MsoArrowheadStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMR(C.CString("Line_SetEndType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMT(C.CString("Line_SetEndType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -42733,7 +42733,7 @@ func (instance *Line) SetEndType(value MsoArrowheadStyle)  error {
 //   int32  
 func (instance *Line) GetBeginArrowLength()  (MsoArrowheadLength,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMS(C.CString("Line_GetBeginArrowLength"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMU(C.CString("Line_GetBeginArrowLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -42752,7 +42752,7 @@ func (instance *Line) GetBeginArrowLength()  (MsoArrowheadLength,  error)  {
 //   void  
 func (instance *Line) SetBeginArrowLength(value MsoArrowheadLength)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMT(C.CString("Line_SetBeginArrowLength"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMV(C.CString("Line_SetBeginArrowLength"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -42765,7 +42765,7 @@ func (instance *Line) SetBeginArrowLength(value MsoArrowheadLength)  error {
 //   int32  
 func (instance *Line) GetEndArrowLength()  (MsoArrowheadLength,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMS(C.CString("Line_GetEndArrowLength"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMU(C.CString("Line_GetEndArrowLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -42784,7 +42784,7 @@ func (instance *Line) GetEndArrowLength()  (MsoArrowheadLength,  error)  {
 //   void  
 func (instance *Line) SetEndArrowLength(value MsoArrowheadLength)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMT(C.CString("Line_SetEndArrowLength"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMV(C.CString("Line_SetEndArrowLength"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -42797,7 +42797,7 @@ func (instance *Line) SetEndArrowLength(value MsoArrowheadLength)  error {
 //   int32  
 func (instance *Line) GetBeginArrowWidth()  (MsoArrowheadWidth,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMU(C.CString("Line_GetBeginArrowWidth"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMW(C.CString("Line_GetBeginArrowWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -42816,7 +42816,7 @@ func (instance *Line) GetBeginArrowWidth()  (MsoArrowheadWidth,  error)  {
 //   void  
 func (instance *Line) SetBeginArrowWidth(value MsoArrowheadWidth)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMV(C.CString("Line_SetBeginArrowWidth"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMX(C.CString("Line_SetBeginArrowWidth"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -42829,7 +42829,7 @@ func (instance *Line) SetBeginArrowWidth(value MsoArrowheadWidth)  error {
 //   int32  
 func (instance *Line) GetEndArrowWidth()  (MsoArrowheadWidth,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMU(C.CString("Line_GetEndArrowWidth"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMW(C.CString("Line_GetEndArrowWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -42848,7 +42848,7 @@ func (instance *Line) GetEndArrowWidth()  (MsoArrowheadWidth,  error)  {
 //   void  
 func (instance *Line) SetEndArrowWidth(value MsoArrowheadWidth)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMV(C.CString("Line_SetEndArrowWidth"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMX(C.CString("Line_SetEndArrowWidth"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -42956,7 +42956,7 @@ func (instance *Line) SetTransparency(value float64)  error {
 //   int32  
 func (instance *Line) GetStyle()  (LineType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMW(C.CString("Line_GetStyle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMY(C.CString("Line_GetStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -42975,7 +42975,7 @@ func (instance *Line) GetStyle()  (LineType,  error)  {
 //   void  
 func (instance *Line) SetStyle(value LineType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMX(C.CString("Line_SetStyle"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZANA(C.CString("Line_SetStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -42988,7 +42988,7 @@ func (instance *Line) SetStyle(value LineType)  error {
 //   int32  
 func (instance *Line) GetWeight()  (WeightType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMY(C.CString("Line_GetWeight"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZANB(C.CString("Line_GetWeight"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -43007,7 +43007,7 @@ func (instance *Line) GetWeight()  (WeightType,  error)  {
 //   void  
 func (instance *Line) SetWeight(value WeightType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANA(C.CString("Line_SetWeight"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZANC(C.CString("Line_SetWeight"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43078,7 +43078,7 @@ func (instance *Line) SetWeightPx(value float64)  error {
 //   int32  
 func (instance *Line) GetFormattingType()  (ChartLineFormattingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANB(C.CString("Line_GetFormattingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAND(C.CString("Line_GetFormattingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -43097,7 +43097,7 @@ func (instance *Line) GetFormattingType()  (ChartLineFormattingType,  error)  {
 //   void  
 func (instance *Line) SetFormattingType(value ChartLineFormattingType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANC(C.CString("Line_SetFormattingType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZANE(C.CString("Line_SetFormattingType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43182,7 +43182,7 @@ func (instance *Line) SetIsAuto(value bool)  error {
 //   GradientFill  
 func (instance *Line) GetGradientFill()  (*GradientFill,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALA(C.CString("Line_GetGradientFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALC(C.CString("Line_GetGradientFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -43219,7 +43219,7 @@ func NewLineFormat(src *FillFormat) ( *LineFormat, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAND(C.CString("New_LineFormat"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZANF(C.CString("New_LineFormat"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		lineformat.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lineformat, DeleteLineFormat)
@@ -43285,7 +43285,7 @@ func (instance *LineFormat) Equals(obj *Object)  (bool,  error)  {
 //   int32  
 func (instance *LineFormat) GetCompoundType()  (MsoLineStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMI(C.CString("LineFormat_GetCompoundType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMK(C.CString("LineFormat_GetCompoundType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -43304,7 +43304,7 @@ func (instance *LineFormat) GetCompoundType()  (MsoLineStyle,  error)  {
 //   void  
 func (instance *LineFormat) SetCompoundType(value MsoLineStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMJ(C.CString("LineFormat_SetCompoundType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAML(C.CString("LineFormat_SetCompoundType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43317,7 +43317,7 @@ func (instance *LineFormat) SetCompoundType(value MsoLineStyle)  error {
 //   int32  
 func (instance *LineFormat) GetDashStyle()  (MsoLineDashStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMK(C.CString("LineFormat_GetDashStyle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMM(C.CString("LineFormat_GetDashStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -43336,7 +43336,7 @@ func (instance *LineFormat) GetDashStyle()  (MsoLineDashStyle,  error)  {
 //   void  
 func (instance *LineFormat) SetDashStyle(value MsoLineDashStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAML(C.CString("LineFormat_SetDashStyle"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMN(C.CString("LineFormat_SetDashStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43349,7 +43349,7 @@ func (instance *LineFormat) SetDashStyle(value MsoLineDashStyle)  error {
 //   int32  
 func (instance *LineFormat) GetCapType()  (LineCapType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMM(C.CString("LineFormat_GetCapType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMO(C.CString("LineFormat_GetCapType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -43368,7 +43368,7 @@ func (instance *LineFormat) GetCapType()  (LineCapType,  error)  {
 //   void  
 func (instance *LineFormat) SetCapType(value LineCapType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMN(C.CString("LineFormat_SetCapType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMP(C.CString("LineFormat_SetCapType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43381,7 +43381,7 @@ func (instance *LineFormat) SetCapType(value LineCapType)  error {
 //   int32  
 func (instance *LineFormat) GetJoinType()  (LineJoinType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMO(C.CString("LineFormat_GetJoinType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMQ(C.CString("LineFormat_GetJoinType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -43400,7 +43400,7 @@ func (instance *LineFormat) GetJoinType()  (LineJoinType,  error)  {
 //   void  
 func (instance *LineFormat) SetJoinType(value LineJoinType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMP(C.CString("LineFormat_SetJoinType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMR(C.CString("LineFormat_SetJoinType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43413,7 +43413,7 @@ func (instance *LineFormat) SetJoinType(value LineJoinType)  error {
 //   int32  
 func (instance *LineFormat) GetBeginArrowheadStyle()  (MsoArrowheadStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMQ(C.CString("LineFormat_GetBeginArrowheadStyle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMS(C.CString("LineFormat_GetBeginArrowheadStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -43432,7 +43432,7 @@ func (instance *LineFormat) GetBeginArrowheadStyle()  (MsoArrowheadStyle,  error
 //   void  
 func (instance *LineFormat) SetBeginArrowheadStyle(value MsoArrowheadStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMR(C.CString("LineFormat_SetBeginArrowheadStyle"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMT(C.CString("LineFormat_SetBeginArrowheadStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43445,7 +43445,7 @@ func (instance *LineFormat) SetBeginArrowheadStyle(value MsoArrowheadStyle)  err
 //   int32  
 func (instance *LineFormat) GetBeginArrowheadWidth()  (MsoArrowheadWidth,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMU(C.CString("LineFormat_GetBeginArrowheadWidth"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMW(C.CString("LineFormat_GetBeginArrowheadWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -43464,7 +43464,7 @@ func (instance *LineFormat) GetBeginArrowheadWidth()  (MsoArrowheadWidth,  error
 //   void  
 func (instance *LineFormat) SetBeginArrowheadWidth(value MsoArrowheadWidth)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMV(C.CString("LineFormat_SetBeginArrowheadWidth"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMX(C.CString("LineFormat_SetBeginArrowheadWidth"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43477,7 +43477,7 @@ func (instance *LineFormat) SetBeginArrowheadWidth(value MsoArrowheadWidth)  err
 //   int32  
 func (instance *LineFormat) GetBeginArrowheadLength()  (MsoArrowheadLength,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMS(C.CString("LineFormat_GetBeginArrowheadLength"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMU(C.CString("LineFormat_GetBeginArrowheadLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -43496,7 +43496,7 @@ func (instance *LineFormat) GetBeginArrowheadLength()  (MsoArrowheadLength,  err
 //   void  
 func (instance *LineFormat) SetBeginArrowheadLength(value MsoArrowheadLength)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMT(C.CString("LineFormat_SetBeginArrowheadLength"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMV(C.CString("LineFormat_SetBeginArrowheadLength"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43509,7 +43509,7 @@ func (instance *LineFormat) SetBeginArrowheadLength(value MsoArrowheadLength)  e
 //   int32  
 func (instance *LineFormat) GetEndArrowheadStyle()  (MsoArrowheadStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMQ(C.CString("LineFormat_GetEndArrowheadStyle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMS(C.CString("LineFormat_GetEndArrowheadStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -43528,7 +43528,7 @@ func (instance *LineFormat) GetEndArrowheadStyle()  (MsoArrowheadStyle,  error) 
 //   void  
 func (instance *LineFormat) SetEndArrowheadStyle(value MsoArrowheadStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMR(C.CString("LineFormat_SetEndArrowheadStyle"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMT(C.CString("LineFormat_SetEndArrowheadStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43541,7 +43541,7 @@ func (instance *LineFormat) SetEndArrowheadStyle(value MsoArrowheadStyle)  error
 //   int32  
 func (instance *LineFormat) GetEndArrowheadWidth()  (MsoArrowheadWidth,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMU(C.CString("LineFormat_GetEndArrowheadWidth"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMW(C.CString("LineFormat_GetEndArrowheadWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -43560,7 +43560,7 @@ func (instance *LineFormat) GetEndArrowheadWidth()  (MsoArrowheadWidth,  error) 
 //   void  
 func (instance *LineFormat) SetEndArrowheadWidth(value MsoArrowheadWidth)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMV(C.CString("LineFormat_SetEndArrowheadWidth"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMX(C.CString("LineFormat_SetEndArrowheadWidth"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43573,7 +43573,7 @@ func (instance *LineFormat) SetEndArrowheadWidth(value MsoArrowheadWidth)  error
 //   int32  
 func (instance *LineFormat) GetEndArrowheadLength()  (MsoArrowheadLength,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMS(C.CString("LineFormat_GetEndArrowheadLength"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMU(C.CString("LineFormat_GetEndArrowheadLength"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -43592,7 +43592,7 @@ func (instance *LineFormat) GetEndArrowheadLength()  (MsoArrowheadLength,  error
 //   void  
 func (instance *LineFormat) SetEndArrowheadLength(value MsoArrowheadLength)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMT(C.CString("LineFormat_SetEndArrowheadLength"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMV(C.CString("LineFormat_SetEndArrowheadLength"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43634,7 +43634,7 @@ func (instance *LineFormat) SetWeight(value float64)  error {
 //   int32  
 func (instance *LineFormat) GetFillType()  (FillType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKX(C.CString("LineFormat_GetFillType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALA(C.CString("LineFormat_GetFillType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -43653,7 +43653,7 @@ func (instance *LineFormat) GetFillType()  (FillType,  error)  {
 //   void  
 func (instance *LineFormat) SetFillType(value FillType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKY(C.CString("LineFormat_SetFillType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZALB(C.CString("LineFormat_SetFillType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43695,7 +43695,7 @@ func (instance *LineFormat) SetTransparency(value float64)  error {
 //   GradientFill  
 func (instance *LineFormat) GetGradientFill()  (*GradientFill,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALA(C.CString("LineFormat_GetGradientFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALC(C.CString("LineFormat_GetGradientFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -43711,7 +43711,7 @@ func (instance *LineFormat) GetGradientFill()  (*GradientFill,  error)  {
 //   TextureFill  
 func (instance *LineFormat) GetTextureFill()  (*TextureFill,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALB(C.CString("LineFormat_GetTextureFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALD(C.CString("LineFormat_GetTextureFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -43727,7 +43727,7 @@ func (instance *LineFormat) GetTextureFill()  (*TextureFill,  error)  {
 //   SolidFill  
 func (instance *LineFormat) GetSolidFill()  (*SolidFill,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALC(C.CString("LineFormat_GetSolidFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALE(C.CString("LineFormat_GetSolidFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -43743,7 +43743,7 @@ func (instance *LineFormat) GetSolidFill()  (*SolidFill,  error)  {
 //   PatternFill  
 func (instance *LineFormat) GetPatternFill()  (*PatternFill,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALD(C.CString("LineFormat_GetPatternFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALF(C.CString("LineFormat_GetPatternFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -43759,7 +43759,7 @@ func (instance *LineFormat) GetPatternFill()  (*PatternFill,  error)  {
 //   int32  
 func (instance *LineFormat) GetGradientColorType()  (GradientColorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALE(C.CString("LineFormat_GetGradientColorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALG(C.CString("LineFormat_GetGradientColorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -43853,7 +43853,7 @@ func (instance *LineFormat) GetGradientVariant()  (int32,  error)  {
 //   int32  
 func (instance *LineFormat) GetPresetColor()  (GradientPresetType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALF(C.CString("LineFormat_GetPresetColor"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALH(C.CString("LineFormat_GetPresetColor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -43876,7 +43876,7 @@ func (instance *LineFormat) GetPresetColor()  (GradientPresetType,  error)  {
 //   void  
 func (instance *LineFormat) SetOneColorGradient(color *Color, degree float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALG(C.CString("LineFormat_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZALI(C.CString("LineFormat_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43916,7 +43916,7 @@ func (instance *LineFormat) SetTwoColorGradient_Color_Color_GradientStyleType_In
 //   void  
 func (instance *LineFormat) SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Int(color1 *Color, transparency1 float64, color2 *Color, transparency2 float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALH(C.CString("LineFormat_SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Integer"), instance.ptr, color1.ptr, C.double(transparency1), color2.ptr, C.double(transparency2), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZALJ(C.CString("LineFormat_SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Integer"), instance.ptr, color1.ptr, C.double(transparency1), color2.ptr, C.double(transparency2), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43934,7 +43934,7 @@ func (instance *LineFormat) SetTwoColorGradient_Color_Double_Color_Double_Gradie
 //   void  
 func (instance *LineFormat) SetPresetColorGradient(presetcolor GradientPresetType, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALI(C.CString("LineFormat_SetPresetColorGradient"), instance.ptr, C.int( int32(presetcolor)), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZALK(C.CString("LineFormat_SetPresetColorGradient"), instance.ptr, C.int( int32(presetcolor)), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43947,7 +43947,7 @@ func (instance *LineFormat) SetPresetColorGradient(presetcolor GradientPresetTyp
 //   int32  
 func (instance *LineFormat) GetTexture()  (TextureType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALJ(C.CString("LineFormat_GetTexture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALL(C.CString("LineFormat_GetTexture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -43966,7 +43966,7 @@ func (instance *LineFormat) GetTexture()  (TextureType,  error)  {
 //   void  
 func (instance *LineFormat) SetTexture(value TextureType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALK(C.CString("LineFormat_SetTexture"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZALM(C.CString("LineFormat_SetTexture"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43979,7 +43979,7 @@ func (instance *LineFormat) SetTexture(value TextureType)  error {
 //   int32  
 func (instance *LineFormat) GetPattern()  (FillPattern,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALL(C.CString("LineFormat_GetPattern"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALN(C.CString("LineFormat_GetPattern"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -43998,7 +43998,7 @@ func (instance *LineFormat) GetPattern()  (FillPattern,  error)  {
 //   void  
 func (instance *LineFormat) SetPattern(value FillPattern)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALM(C.CString("LineFormat_SetPattern"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZALO(C.CString("LineFormat_SetPattern"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -44011,7 +44011,7 @@ func (instance *LineFormat) SetPattern(value FillPattern)  error {
 //   int32  
 func (instance *LineFormat) GetPictureFormatType()  (FillPictureType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALN(C.CString("LineFormat_GetPictureFormatType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALP(C.CString("LineFormat_GetPictureFormatType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -44030,7 +44030,7 @@ func (instance *LineFormat) GetPictureFormatType()  (FillPictureType,  error)  {
 //   void  
 func (instance *LineFormat) SetPictureFormatType(value FillPictureType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALO(C.CString("LineFormat_SetPictureFormatType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZALQ(C.CString("LineFormat_SetPictureFormatType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -44128,7 +44128,7 @@ func NewLineShape(src *Shape) ( *LineShape, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_LineShape"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_LineShape"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		lineshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(lineshape, DeleteLineShape)
@@ -44347,7 +44347,7 @@ func (instance *LineShape) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *LineShape) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("LineShape_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("LineShape_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -44363,7 +44363,7 @@ func (instance *LineShape) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *LineShape) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("LineShape_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("LineShape_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -44379,7 +44379,7 @@ func (instance *LineShape) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *LineShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("LineShape_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("LineShape_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -44395,7 +44395,7 @@ func (instance *LineShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *LineShape) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("LineShape_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("LineShape_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -44411,7 +44411,7 @@ func (instance *LineShape) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *LineShape) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("LineShape_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("LineShape_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -44456,7 +44456,7 @@ func (instance *LineShape) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *LineShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("LineShape_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("LineShape_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -44472,7 +44472,7 @@ func (instance *LineShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *LineShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("LineShape_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("LineShape_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -44548,7 +44548,7 @@ func (instance *LineShape) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *LineShape) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("LineShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("LineShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -44565,7 +44565,7 @@ func (instance *LineShape) GetLockedProperty(type_ ShapeLockType)  (bool,  error
 //   void  
 func (instance *LineShape) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("LineShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("LineShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -44609,7 +44609,7 @@ func (instance *LineShape) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *LineShape) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("LineShape_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("LineShape_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -44638,7 +44638,7 @@ func (instance *LineShape) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *LineShape) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("LineShape_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("LineShape_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -44789,7 +44789,7 @@ func (instance *LineShape) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *LineShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("LineShape_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("LineShape_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -44867,7 +44867,7 @@ func (instance *LineShape) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *LineShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("LineShape_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("LineShape_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -44884,7 +44884,7 @@ func (instance *LineShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *LineShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("LineShape_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("LineShape_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -44903,7 +44903,7 @@ func (instance *LineShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *LineShape) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("LineShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("LineShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -44916,7 +44916,7 @@ func (instance *LineShape) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *LineShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("LineShape_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("LineShape_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -44935,7 +44935,7 @@ func (instance *LineShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *LineShape) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("LineShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("LineShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -44949,7 +44949,7 @@ func (instance *LineShape) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *LineShape) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("LineShape_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("LineShape_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -44969,7 +44969,7 @@ func (instance *LineShape) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *LineShape) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("LineShape_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("LineShape_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -45976,7 +45976,7 @@ func (instance *LineShape) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *LineShape) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("LineShape_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("LineShape_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -45992,7 +45992,7 @@ func (instance *LineShape) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *LineShape) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("LineShape_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("LineShape_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -46139,7 +46139,7 @@ func (instance *LineShape) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *LineShape) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("LineShape_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("LineShape_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -46167,7 +46167,7 @@ func (instance *LineShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *LineShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("LineShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("LineShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -46190,7 +46190,7 @@ func (instance *LineShape) ToImage_String_ImageOrPrintOptions(imagefile string, 
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("LineShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("LineShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -46393,7 +46393,7 @@ func (instance *LineShape) UpdateSelectedValue()  error {
 //   int32  
 func (instance *LineShape) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("LineShape_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("LineShape_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -46412,7 +46412,7 @@ func (instance *LineShape) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *LineShape) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("LineShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("LineShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -46425,7 +46425,7 @@ func (instance *LineShape) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *LineShape) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("LineShape_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("LineShape_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -46464,7 +46464,7 @@ func (instance *LineShape) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("LineShape_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("LineShape_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -46500,7 +46500,7 @@ func (instance *LineShape) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("LineShape_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("LineShape_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -46674,7 +46674,7 @@ func (instance *LineShape) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *LineShape) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("LineShape_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("LineShape_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -46693,7 +46693,7 @@ func (instance *LineShape) GetTextVerticalOverflow()  (TextOverflowType,  error)
 //   void  
 func (instance *LineShape) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("LineShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("LineShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -46706,7 +46706,7 @@ func (instance *LineShape) SetTextVerticalOverflow(value TextOverflowType)  erro
 //   int32  
 func (instance *LineShape) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("LineShape_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("LineShape_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -46725,7 +46725,7 @@ func (instance *LineShape) GetTextHorizontalOverflow()  (TextOverflowType,  erro
 //   void  
 func (instance *LineShape) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("LineShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("LineShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -46895,7 +46895,7 @@ func (instance *LineShape) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *LineShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("LineShape_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("LineShape_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -46926,7 +46926,7 @@ func (instance *LineShape) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *LineShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("LineShape_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("LineShape_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -46955,7 +46955,7 @@ func (instance *LineShape) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *LineShape) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("LineShape_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("LineShape_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -46971,7 +46971,7 @@ func (instance *LineShape) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *LineShape) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("LineShape_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("LineShape_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -46994,7 +46994,7 @@ func (instance *LineShape) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("LineShape_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("LineShape_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -47014,7 +47014,7 @@ func (instance *LineShape) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("LineShape_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("LineShape_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -47056,7 +47056,7 @@ func (instance *LineShape) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *LineShape) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("LineShape_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("LineShape_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -47090,7 +47090,7 @@ func (instance *LineShape) FitToTextSize()  error {
 //   GroupShape  
 func (instance *LineShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("LineShape_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("LineShape_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -47153,7 +47153,7 @@ func NewListBox(src *Shape) ( *ListBox, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_ListBox"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_ListBox"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		listbox.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(listbox, DeleteListBox)
@@ -47262,7 +47262,7 @@ func (instance *ListBox) IsSelected(itemindex int32)  (bool,  error)  {
 //   []Cell  
 func (instance *ListBox) GetSelectedCells()  ([]Cell,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANE(C.CString("ListBox_GetSelectedCells"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZANG(C.CString("ListBox_GetSelectedCells"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -47312,7 +47312,7 @@ func (instance *ListBox) SetShadow(value bool)  error {
 //   int32  
 func (instance *ListBox) GetSelectionType()  (SelectionType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAIV(C.CString("ListBox_GetSelectionType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAIX(C.CString("ListBox_GetSelectionType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -47331,7 +47331,7 @@ func (instance *ListBox) GetSelectionType()  (SelectionType,  error)  {
 //   void  
 func (instance *ListBox) SetSelectionType(value SelectionType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAIW(C.CString("ListBox_SetSelectionType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAIY(C.CString("ListBox_SetSelectionType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -47563,7 +47563,7 @@ func (instance *ListBox) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *ListBox) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("ListBox_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("ListBox_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -47579,7 +47579,7 @@ func (instance *ListBox) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *ListBox) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("ListBox_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("ListBox_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -47595,7 +47595,7 @@ func (instance *ListBox) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *ListBox) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("ListBox_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("ListBox_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -47611,7 +47611,7 @@ func (instance *ListBox) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *ListBox) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("ListBox_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("ListBox_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -47627,7 +47627,7 @@ func (instance *ListBox) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *ListBox) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("ListBox_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("ListBox_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -47672,7 +47672,7 @@ func (instance *ListBox) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *ListBox) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("ListBox_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("ListBox_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -47688,7 +47688,7 @@ func (instance *ListBox) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *ListBox) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("ListBox_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("ListBox_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -47764,7 +47764,7 @@ func (instance *ListBox) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *ListBox) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("ListBox_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("ListBox_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -47781,7 +47781,7 @@ func (instance *ListBox) GetLockedProperty(type_ ShapeLockType)  (bool,  error) 
 //   void  
 func (instance *ListBox) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("ListBox_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("ListBox_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -47825,7 +47825,7 @@ func (instance *ListBox) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *ListBox) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("ListBox_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("ListBox_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -47854,7 +47854,7 @@ func (instance *ListBox) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *ListBox) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("ListBox_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("ListBox_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -48005,7 +48005,7 @@ func (instance *ListBox) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *ListBox) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("ListBox_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ListBox_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -48083,7 +48083,7 @@ func (instance *ListBox) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *ListBox) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("ListBox_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("ListBox_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -48100,7 +48100,7 @@ func (instance *ListBox) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *ListBox) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ListBox_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ListBox_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -48119,7 +48119,7 @@ func (instance *ListBox) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *ListBox) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("ListBox_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("ListBox_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -48132,7 +48132,7 @@ func (instance *ListBox) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *ListBox) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ListBox_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("ListBox_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -48151,7 +48151,7 @@ func (instance *ListBox) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *ListBox) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("ListBox_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("ListBox_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -48165,7 +48165,7 @@ func (instance *ListBox) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *ListBox) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("ListBox_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("ListBox_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -48185,7 +48185,7 @@ func (instance *ListBox) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *ListBox) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("ListBox_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("ListBox_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -49192,7 +49192,7 @@ func (instance *ListBox) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *ListBox) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("ListBox_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("ListBox_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -49208,7 +49208,7 @@ func (instance *ListBox) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *ListBox) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ListBox_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ListBox_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -49355,7 +49355,7 @@ func (instance *ListBox) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *ListBox) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("ListBox_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("ListBox_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -49383,7 +49383,7 @@ func (instance *ListBox) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *ListBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("ListBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("ListBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -49406,7 +49406,7 @@ func (instance *ListBox) ToImage_String_ImageOrPrintOptions(imagefile string, op
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("ListBox_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("ListBox_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -49609,7 +49609,7 @@ func (instance *ListBox) UpdateSelectedValue()  error {
 //   int32  
 func (instance *ListBox) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ListBox_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ListBox_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -49628,7 +49628,7 @@ func (instance *ListBox) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *ListBox) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("ListBox_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("ListBox_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -49641,7 +49641,7 @@ func (instance *ListBox) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *ListBox) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("ListBox_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("ListBox_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -49680,7 +49680,7 @@ func (instance *ListBox) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("ListBox_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("ListBox_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -49716,7 +49716,7 @@ func (instance *ListBox) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("ListBox_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("ListBox_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -49890,7 +49890,7 @@ func (instance *ListBox) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *ListBox) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("ListBox_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("ListBox_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -49909,7 +49909,7 @@ func (instance *ListBox) GetTextVerticalOverflow()  (TextOverflowType,  error)  
 //   void  
 func (instance *ListBox) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("ListBox_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("ListBox_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -49922,7 +49922,7 @@ func (instance *ListBox) SetTextVerticalOverflow(value TextOverflowType)  error 
 //   int32  
 func (instance *ListBox) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("ListBox_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("ListBox_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -49941,7 +49941,7 @@ func (instance *ListBox) GetTextHorizontalOverflow()  (TextOverflowType,  error)
 //   void  
 func (instance *ListBox) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("ListBox_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("ListBox_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -50111,7 +50111,7 @@ func (instance *ListBox) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *ListBox) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("ListBox_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("ListBox_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -50142,7 +50142,7 @@ func (instance *ListBox) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *ListBox) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("ListBox_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("ListBox_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -50171,7 +50171,7 @@ func (instance *ListBox) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *ListBox) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("ListBox_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("ListBox_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -50187,7 +50187,7 @@ func (instance *ListBox) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *ListBox) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("ListBox_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("ListBox_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -50210,7 +50210,7 @@ func (instance *ListBox) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("ListBox_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("ListBox_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -50230,7 +50230,7 @@ func (instance *ListBox) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("ListBox_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("ListBox_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -50272,7 +50272,7 @@ func (instance *ListBox) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *ListBox) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("ListBox_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("ListBox_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -50306,7 +50306,7 @@ func (instance *ListBox) FitToTextSize()  error {
 //   GroupShape  
 func (instance *ListBox) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("ListBox_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("ListBox_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -50503,7 +50503,7 @@ func (instance *MsoFillFormat) SetImageData(value []byte)  error {
 //   void  
 func (instance *MsoFillFormat) SetOneColorGradient(color *Color, degree float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALG(C.CString("MsoFillFormat_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZALI(C.CString("MsoFillFormat_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -50516,7 +50516,7 @@ func (instance *MsoFillFormat) SetOneColorGradient(color *Color, degree float64,
 //   int32  
 func (instance *MsoFillFormat) GetTexture()  (TextureType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALJ(C.CString("MsoFillFormat_GetTexture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALL(C.CString("MsoFillFormat_GetTexture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -50717,7 +50717,7 @@ func (instance *MsoFillFormatHelper) SetImageData(value []byte)  error {
 //   void  
 func (instance *MsoFillFormatHelper) SetOneColorGradient(color *Color, degree float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALG(C.CString("MsoFillFormatHelper_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZALI(C.CString("MsoFillFormatHelper_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -50730,7 +50730,7 @@ func (instance *MsoFillFormatHelper) SetOneColorGradient(color *Color, degree fl
 //   int32  
 func (instance *MsoFillFormatHelper) GetTexture()  (TextureType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALJ(C.CString("MsoFillFormatHelper_GetTexture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALL(C.CString("MsoFillFormatHelper_GetTexture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -51091,7 +51091,7 @@ func (instance *MsoFormatPicture) SetTransparentColor(value *CellsColor)  error 
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("MsoFormatPicture_SetTransparentColor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALW(C.CString("MsoFormatPicture_SetTransparentColor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -51343,7 +51343,7 @@ func (instance *MsoLineFormat) SetIsVisible(value bool)  error {
 //   int32  
 func (instance *MsoLineFormat) GetStyle()  (MsoLineStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMI(C.CString("MsoLineFormat_GetStyle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMK(C.CString("MsoLineFormat_GetStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -51362,7 +51362,7 @@ func (instance *MsoLineFormat) GetStyle()  (MsoLineStyle,  error)  {
 //   void  
 func (instance *MsoLineFormat) SetStyle(value MsoLineStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMJ(C.CString("MsoLineFormat_SetStyle"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAML(C.CString("MsoLineFormat_SetStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -51435,7 +51435,7 @@ func (instance *MsoLineFormat) SetBackColor(value *Color)  error {
 //   int32  
 func (instance *MsoLineFormat) GetDashStyle()  (MsoLineDashStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMK(C.CString("MsoLineFormat_GetDashStyle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMM(C.CString("MsoLineFormat_GetDashStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -51454,7 +51454,7 @@ func (instance *MsoLineFormat) GetDashStyle()  (MsoLineDashStyle,  error)  {
 //   void  
 func (instance *MsoLineFormat) SetDashStyle(value MsoLineDashStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAML(C.CString("MsoLineFormat_SetDashStyle"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMN(C.CString("MsoLineFormat_SetDashStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -51585,7 +51585,7 @@ func (instance *MsoLineFormatHelper) SetIsVisible(value bool)  error {
 //   int32  
 func (instance *MsoLineFormatHelper) GetStyle()  (MsoLineStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMI(C.CString("MsoLineFormatHelper_GetStyle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMK(C.CString("MsoLineFormatHelper_GetStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -51604,7 +51604,7 @@ func (instance *MsoLineFormatHelper) GetStyle()  (MsoLineStyle,  error)  {
 //   void  
 func (instance *MsoLineFormatHelper) SetStyle(value MsoLineStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMJ(C.CString("MsoLineFormatHelper_SetStyle"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAML(C.CString("MsoLineFormatHelper_SetStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -51677,7 +51677,7 @@ func (instance *MsoLineFormatHelper) SetBackColor(value *Color)  error {
 //   int32  
 func (instance *MsoLineFormatHelper) GetDashStyle()  (MsoLineDashStyle,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMK(C.CString("MsoLineFormatHelper_GetDashStyle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAMM(C.CString("MsoLineFormatHelper_GetDashStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -51696,7 +51696,7 @@ func (instance *MsoLineFormatHelper) GetDashStyle()  (MsoLineDashStyle,  error) 
 //   void  
 func (instance *MsoLineFormatHelper) SetDashStyle(value MsoLineDashStyle)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAML(C.CString("MsoLineFormatHelper_SetDashStyle"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAMN(C.CString("MsoLineFormatHelper_SetDashStyle"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -52053,7 +52053,7 @@ func NewOleObject(src *Shape) ( *OleObject, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_OleObject"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_OleObject"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		oleobject.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(oleobject, DeleteOleObject)
@@ -52090,7 +52090,7 @@ func (instance *OleObject) IsNull()  (bool,  error)  {
 //   void  
 func (instance *OleObject) SetEmbeddedObject_Bool_Stream_String_Bool_String(linktofile bool, objectdata []byte, sourcefilename string, displayasicon bool, label string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANF(C.CString("OleObject_SetEmbeddedObject_Boolean_Stream_String_Boolean_String"), instance.ptr, C.bool(linktofile), unsafe.Pointer(&objectdata[0]), C.int( len(objectdata)), C.CString(sourcefilename), C.bool(displayasicon), C.CString(label))
+	CGoReturnPtr := C.CellsGoFunctoinZANH(C.CString("OleObject_SetEmbeddedObject_Boolean_Stream_String_Boolean_String"), instance.ptr, C.bool(linktofile), unsafe.Pointer(&objectdata[0]), C.int( len(objectdata)), C.CString(sourcefilename), C.bool(displayasicon), C.CString(label))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -52110,7 +52110,7 @@ func (instance *OleObject) SetEmbeddedObject_Bool_Stream_String_Bool_String(link
 //   void  
 func (instance *OleObject) SetEmbeddedObject_Bool_Stream_String_Bool_String_Bool(linktofile bool, objectdata []byte, sourcefilename string, displayasicon bool, label string, updateicon bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANG(C.CString("OleObject_SetEmbeddedObject_Boolean_Stream_String_Boolean_String_Boolean"), instance.ptr, C.bool(linktofile), unsafe.Pointer(&objectdata[0]), C.int( len(objectdata)), C.CString(sourcefilename), C.bool(displayasicon), C.CString(label), C.bool(updateicon))
+	CGoReturnPtr := C.CellsGoFunctoinZANI(C.CString("OleObject_SetEmbeddedObject_Boolean_Stream_String_Boolean_String_Boolean"), instance.ptr, C.bool(linktofile), unsafe.Pointer(&objectdata[0]), C.int( len(objectdata)), C.CString(sourcefilename), C.bool(displayasicon), C.CString(label), C.bool(updateicon))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -52544,7 +52544,7 @@ func (instance *OleObject) SetClassIdentifier(value []byte)  error {
 //   int32  
 func (instance *OleObject) GetImageType()  (ImageType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANH(C.CString("OleObject_GetImageType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZANJ(C.CString("OleObject_GetImageType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -52749,7 +52749,7 @@ func (instance *OleObject) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *OleObject) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("OleObject_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("OleObject_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -52765,7 +52765,7 @@ func (instance *OleObject) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *OleObject) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("OleObject_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("OleObject_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -52781,7 +52781,7 @@ func (instance *OleObject) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *OleObject) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("OleObject_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("OleObject_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -52797,7 +52797,7 @@ func (instance *OleObject) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *OleObject) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("OleObject_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("OleObject_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -52813,7 +52813,7 @@ func (instance *OleObject) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *OleObject) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("OleObject_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("OleObject_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -52858,7 +52858,7 @@ func (instance *OleObject) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *OleObject) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("OleObject_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("OleObject_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -52874,7 +52874,7 @@ func (instance *OleObject) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *OleObject) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("OleObject_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("OleObject_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -52950,7 +52950,7 @@ func (instance *OleObject) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *OleObject) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("OleObject_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("OleObject_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -52967,7 +52967,7 @@ func (instance *OleObject) GetLockedProperty(type_ ShapeLockType)  (bool,  error
 //   void  
 func (instance *OleObject) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("OleObject_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("OleObject_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -53011,7 +53011,7 @@ func (instance *OleObject) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *OleObject) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("OleObject_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("OleObject_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -53040,7 +53040,7 @@ func (instance *OleObject) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *OleObject) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("OleObject_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("OleObject_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -53191,7 +53191,7 @@ func (instance *OleObject) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *OleObject) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("OleObject_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("OleObject_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -53269,7 +53269,7 @@ func (instance *OleObject) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *OleObject) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("OleObject_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("OleObject_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -53286,7 +53286,7 @@ func (instance *OleObject) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *OleObject) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("OleObject_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("OleObject_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -53305,7 +53305,7 @@ func (instance *OleObject) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *OleObject) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("OleObject_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("OleObject_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -53318,7 +53318,7 @@ func (instance *OleObject) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *OleObject) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("OleObject_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("OleObject_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -53337,7 +53337,7 @@ func (instance *OleObject) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *OleObject) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("OleObject_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("OleObject_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -53351,7 +53351,7 @@ func (instance *OleObject) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *OleObject) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("OleObject_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("OleObject_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -53371,7 +53371,7 @@ func (instance *OleObject) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *OleObject) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("OleObject_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("OleObject_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -54378,7 +54378,7 @@ func (instance *OleObject) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *OleObject) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("OleObject_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("OleObject_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -54394,7 +54394,7 @@ func (instance *OleObject) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *OleObject) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("OleObject_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("OleObject_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -54541,7 +54541,7 @@ func (instance *OleObject) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *OleObject) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("OleObject_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("OleObject_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -54569,7 +54569,7 @@ func (instance *OleObject) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *OleObject) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("OleObject_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("OleObject_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -54592,7 +54592,7 @@ func (instance *OleObject) ToImage_String_ImageOrPrintOptions(imagefile string, 
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("OleObject_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("OleObject_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -54795,7 +54795,7 @@ func (instance *OleObject) UpdateSelectedValue()  error {
 //   int32  
 func (instance *OleObject) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("OleObject_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("OleObject_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -54814,7 +54814,7 @@ func (instance *OleObject) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *OleObject) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("OleObject_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("OleObject_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -54827,7 +54827,7 @@ func (instance *OleObject) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *OleObject) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("OleObject_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("OleObject_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -54866,7 +54866,7 @@ func (instance *OleObject) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("OleObject_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("OleObject_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -54902,7 +54902,7 @@ func (instance *OleObject) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("OleObject_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("OleObject_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -55076,7 +55076,7 @@ func (instance *OleObject) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *OleObject) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("OleObject_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("OleObject_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -55095,7 +55095,7 @@ func (instance *OleObject) GetTextVerticalOverflow()  (TextOverflowType,  error)
 //   void  
 func (instance *OleObject) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("OleObject_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("OleObject_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -55108,7 +55108,7 @@ func (instance *OleObject) SetTextVerticalOverflow(value TextOverflowType)  erro
 //   int32  
 func (instance *OleObject) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("OleObject_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("OleObject_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -55127,7 +55127,7 @@ func (instance *OleObject) GetTextHorizontalOverflow()  (TextOverflowType,  erro
 //   void  
 func (instance *OleObject) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("OleObject_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("OleObject_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -55297,7 +55297,7 @@ func (instance *OleObject) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *OleObject) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("OleObject_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("OleObject_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -55328,7 +55328,7 @@ func (instance *OleObject) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *OleObject) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("OleObject_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("OleObject_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -55357,7 +55357,7 @@ func (instance *OleObject) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *OleObject) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("OleObject_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("OleObject_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -55373,7 +55373,7 @@ func (instance *OleObject) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *OleObject) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("OleObject_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("OleObject_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -55396,7 +55396,7 @@ func (instance *OleObject) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("OleObject_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("OleObject_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -55416,7 +55416,7 @@ func (instance *OleObject) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("OleObject_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("OleObject_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -55458,7 +55458,7 @@ func (instance *OleObject) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *OleObject) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("OleObject_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("OleObject_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -55492,7 +55492,7 @@ func (instance *OleObject) FitToTextSize()  error {
 //   GroupShape  
 func (instance *OleObject) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("OleObject_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("OleObject_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -55571,7 +55571,7 @@ func (instance *OleObjectCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *OleObjectCollection) Add_Int_Int_Int_Int_Stream(upperleftrow int32, upperleftcolumn int32, height int32, width int32, imagedata []byte)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANI(C.CString("OleObjectCollection_Add_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZANK(C.CString("OleObjectCollection_Add_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -55592,7 +55592,7 @@ func (instance *OleObjectCollection) Add_Int_Int_Int_Int_Stream(upperleftrow int
 //   int32  
 func (instance *OleObjectCollection) Add_Int_Int_Int_Int_Stream_String(upperleftrow int32, upperleftcolumn int32, height int32, width int32, imagedata []byte, linkedfile string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANJ(C.CString("OleObjectCollection_Add_Integer_Integer_Integer_Integer_Stream_String"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)), C.CString(linkedfile))
+	CGoReturnPtr := C.CellsGoFunctoinZANL(C.CString("OleObjectCollection_Add_Integer_Integer_Integer_Integer_Stream_String"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)), C.CString(linkedfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -55608,7 +55608,7 @@ func (instance *OleObjectCollection) Add_Int_Int_Int_Int_Stream_String(upperleft
 //   OleObject  
 func (instance *OleObjectCollection) Get(index int32)  (*OleObject,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANK(C.CString("OleObjectCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZANM(C.CString("OleObjectCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -55686,7 +55686,7 @@ func NewOval(src *Shape) ( *Oval, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_Oval"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_Oval"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		oval.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(oval, DeleteOval)
@@ -55905,7 +55905,7 @@ func (instance *Oval) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *Oval) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("Oval_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("Oval_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -55921,7 +55921,7 @@ func (instance *Oval) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *Oval) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("Oval_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("Oval_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -55937,7 +55937,7 @@ func (instance *Oval) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *Oval) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("Oval_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("Oval_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -55953,7 +55953,7 @@ func (instance *Oval) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *Oval) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("Oval_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("Oval_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -55969,7 +55969,7 @@ func (instance *Oval) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *Oval) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("Oval_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("Oval_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -56014,7 +56014,7 @@ func (instance *Oval) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *Oval) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("Oval_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("Oval_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -56030,7 +56030,7 @@ func (instance *Oval) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *Oval) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("Oval_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("Oval_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -56106,7 +56106,7 @@ func (instance *Oval) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *Oval) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("Oval_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("Oval_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -56123,7 +56123,7 @@ func (instance *Oval) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 //   void  
 func (instance *Oval) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("Oval_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("Oval_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -56167,7 +56167,7 @@ func (instance *Oval) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *Oval) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("Oval_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("Oval_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -56196,7 +56196,7 @@ func (instance *Oval) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *Oval) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("Oval_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("Oval_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -56347,7 +56347,7 @@ func (instance *Oval) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *Oval) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("Oval_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Oval_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -56425,7 +56425,7 @@ func (instance *Oval) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *Oval) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("Oval_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Oval_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -56442,7 +56442,7 @@ func (instance *Oval) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *Oval) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Oval_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Oval_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -56461,7 +56461,7 @@ func (instance *Oval) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *Oval) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Oval_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Oval_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -56474,7 +56474,7 @@ func (instance *Oval) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *Oval) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Oval_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("Oval_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -56493,7 +56493,7 @@ func (instance *Oval) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *Oval) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Oval_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("Oval_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -56507,7 +56507,7 @@ func (instance *Oval) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *Oval) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("Oval_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Oval_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -56527,7 +56527,7 @@ func (instance *Oval) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *Oval) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("Oval_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("Oval_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -57534,7 +57534,7 @@ func (instance *Oval) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *Oval) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Oval_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Oval_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -57550,7 +57550,7 @@ func (instance *Oval) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *Oval) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Oval_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Oval_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -57697,7 +57697,7 @@ func (instance *Oval) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *Oval) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("Oval_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("Oval_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -57725,7 +57725,7 @@ func (instance *Oval) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Oval) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Oval_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("Oval_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -57748,7 +57748,7 @@ func (instance *Oval) ToImage_String_ImageOrPrintOptions(imagefile string, optio
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("Oval_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("Oval_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -57951,7 +57951,7 @@ func (instance *Oval) UpdateSelectedValue()  error {
 //   int32  
 func (instance *Oval) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Oval_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Oval_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -57970,7 +57970,7 @@ func (instance *Oval) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *Oval) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Oval_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Oval_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -57983,7 +57983,7 @@ func (instance *Oval) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *Oval) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("Oval_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("Oval_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -58022,7 +58022,7 @@ func (instance *Oval) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("Oval_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Oval_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -58058,7 +58058,7 @@ func (instance *Oval) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("Oval_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Oval_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -58232,7 +58232,7 @@ func (instance *Oval) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *Oval) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Oval_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Oval_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -58251,7 +58251,7 @@ func (instance *Oval) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 //   void  
 func (instance *Oval) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Oval_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Oval_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -58264,7 +58264,7 @@ func (instance *Oval) SetTextVerticalOverflow(value TextOverflowType)  error {
 //   int32  
 func (instance *Oval) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Oval_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Oval_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -58283,7 +58283,7 @@ func (instance *Oval) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 //   void  
 func (instance *Oval) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Oval_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Oval_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -58453,7 +58453,7 @@ func (instance *Oval) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *Oval) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Oval_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("Oval_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -58484,7 +58484,7 @@ func (instance *Oval) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *Oval) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Oval_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("Oval_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -58513,7 +58513,7 @@ func (instance *Oval) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *Oval) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("Oval_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Oval_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -58529,7 +58529,7 @@ func (instance *Oval) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *Oval) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("Oval_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("Oval_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -58552,7 +58552,7 @@ func (instance *Oval) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Oval_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Oval_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -58572,7 +58572,7 @@ func (instance *Oval) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Oval_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Oval_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -58614,7 +58614,7 @@ func (instance *Oval) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *Oval) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("Oval_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("Oval_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -58648,7 +58648,7 @@ func (instance *Oval) FitToTextSize()  error {
 //   GroupShape  
 func (instance *Oval) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Oval_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Oval_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -58721,7 +58721,7 @@ func (instance *PatternFill) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *PatternFill) GetPattern()  (FillPattern,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALL(C.CString("PatternFill_GetPattern"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALN(C.CString("PatternFill_GetPattern"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -58740,7 +58740,7 @@ func (instance *PatternFill) GetPattern()  (FillPattern,  error)  {
 //   void  
 func (instance *PatternFill) SetPattern(value FillPattern)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALM(C.CString("PatternFill_SetPattern"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZALO(C.CString("PatternFill_SetPattern"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -58806,7 +58806,7 @@ func (instance *PatternFill) SetBackgroundCellsColor(value *CellsColor)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("PatternFill_SetBackgroundCellsColor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALW(C.CString("PatternFill_SetBackgroundCellsColor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -58872,7 +58872,7 @@ func (instance *PatternFill) SetForegroundCellsColor(value *CellsColor)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("PatternFill_SetForegroundCellsColor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALW(C.CString("PatternFill_SetForegroundCellsColor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -58988,7 +58988,7 @@ func (instance *PicFormatOption) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *PicFormatOption) GetType()  (FillPictureType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALN(C.CString("PicFormatOption_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALP(C.CString("PicFormatOption_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -59007,7 +59007,7 @@ func (instance *PicFormatOption) GetType()  (FillPictureType,  error)  {
 //   void  
 func (instance *PicFormatOption) SetType(value FillPictureType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALO(C.CString("PicFormatOption_SetType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZALQ(C.CString("PicFormatOption_SetType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -59186,7 +59186,7 @@ func NewPicture(src *Shape) ( *Picture, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_Picture"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_Picture"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		picture.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(picture, DeletePicture)
@@ -59229,7 +59229,7 @@ func (instance *Picture) Copy(source *Picture, options *CopyOptions)  error {
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZANL(C.CString("Picture_Copy"), instance.ptr, source_ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZANN(C.CString("Picture_Copy"), instance.ptr, source_ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -59566,7 +59566,7 @@ func (instance *Picture) SetDisplayAsIcon(value bool)  error {
 //   int32  
 func (instance *Picture) GetImageType()  (ImageType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANH(C.CString("Picture_GetImageType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZANJ(C.CString("Picture_GetImageType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -59639,7 +59639,7 @@ func (instance *Picture) GetOriginalWidthInch()  (float64,  error)  {
 //   SignatureLine  
 func (instance *Picture) GetSignatureLine()  (*SignatureLine,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANM(C.CString("Picture_GetSignatureLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZANO(C.CString("Picture_GetSignatureLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -59662,7 +59662,7 @@ func (instance *Picture) SetSignatureLine(value *SignatureLine)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZANN(C.CString("Picture_SetSignatureLine"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZANP(C.CString("Picture_SetSignatureLine"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -59884,7 +59884,7 @@ func (instance *Picture) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *Picture) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("Picture_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("Picture_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -59900,7 +59900,7 @@ func (instance *Picture) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *Picture) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("Picture_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("Picture_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -59916,7 +59916,7 @@ func (instance *Picture) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *Picture) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("Picture_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("Picture_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -59932,7 +59932,7 @@ func (instance *Picture) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *Picture) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("Picture_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("Picture_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -59948,7 +59948,7 @@ func (instance *Picture) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *Picture) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("Picture_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("Picture_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -59993,7 +59993,7 @@ func (instance *Picture) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *Picture) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("Picture_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("Picture_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -60009,7 +60009,7 @@ func (instance *Picture) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *Picture) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("Picture_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("Picture_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -60085,7 +60085,7 @@ func (instance *Picture) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *Picture) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("Picture_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("Picture_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -60102,7 +60102,7 @@ func (instance *Picture) GetLockedProperty(type_ ShapeLockType)  (bool,  error) 
 //   void  
 func (instance *Picture) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("Picture_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("Picture_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -60146,7 +60146,7 @@ func (instance *Picture) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *Picture) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("Picture_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("Picture_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -60175,7 +60175,7 @@ func (instance *Picture) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *Picture) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("Picture_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("Picture_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -60326,7 +60326,7 @@ func (instance *Picture) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *Picture) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("Picture_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Picture_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -60404,7 +60404,7 @@ func (instance *Picture) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *Picture) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("Picture_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Picture_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -60421,7 +60421,7 @@ func (instance *Picture) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *Picture) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Picture_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Picture_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -60440,7 +60440,7 @@ func (instance *Picture) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *Picture) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Picture_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Picture_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -60453,7 +60453,7 @@ func (instance *Picture) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *Picture) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Picture_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("Picture_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -60472,7 +60472,7 @@ func (instance *Picture) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *Picture) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Picture_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("Picture_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -60486,7 +60486,7 @@ func (instance *Picture) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *Picture) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("Picture_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Picture_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -60506,7 +60506,7 @@ func (instance *Picture) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *Picture) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("Picture_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("Picture_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -61513,7 +61513,7 @@ func (instance *Picture) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *Picture) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Picture_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Picture_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -61529,7 +61529,7 @@ func (instance *Picture) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *Picture) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Picture_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Picture_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -61676,7 +61676,7 @@ func (instance *Picture) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *Picture) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("Picture_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("Picture_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -61704,7 +61704,7 @@ func (instance *Picture) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Picture) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Picture_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("Picture_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -61727,7 +61727,7 @@ func (instance *Picture) ToImage_String_ImageOrPrintOptions(imagefile string, op
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("Picture_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("Picture_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -61930,7 +61930,7 @@ func (instance *Picture) UpdateSelectedValue()  error {
 //   int32  
 func (instance *Picture) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Picture_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Picture_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -61949,7 +61949,7 @@ func (instance *Picture) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *Picture) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Picture_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Picture_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -61962,7 +61962,7 @@ func (instance *Picture) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *Picture) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("Picture_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("Picture_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -62001,7 +62001,7 @@ func (instance *Picture) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("Picture_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Picture_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62037,7 +62037,7 @@ func (instance *Picture) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("Picture_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Picture_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62211,7 +62211,7 @@ func (instance *Picture) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *Picture) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Picture_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Picture_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -62230,7 +62230,7 @@ func (instance *Picture) GetTextVerticalOverflow()  (TextOverflowType,  error)  
 //   void  
 func (instance *Picture) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Picture_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Picture_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62243,7 +62243,7 @@ func (instance *Picture) SetTextVerticalOverflow(value TextOverflowType)  error 
 //   int32  
 func (instance *Picture) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Picture_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Picture_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -62262,7 +62262,7 @@ func (instance *Picture) GetTextHorizontalOverflow()  (TextOverflowType,  error)
 //   void  
 func (instance *Picture) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Picture_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Picture_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62432,7 +62432,7 @@ func (instance *Picture) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *Picture) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Picture_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("Picture_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -62463,7 +62463,7 @@ func (instance *Picture) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *Picture) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Picture_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("Picture_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -62492,7 +62492,7 @@ func (instance *Picture) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *Picture) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("Picture_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Picture_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -62508,7 +62508,7 @@ func (instance *Picture) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *Picture) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("Picture_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("Picture_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -62531,7 +62531,7 @@ func (instance *Picture) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Picture_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Picture_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62551,7 +62551,7 @@ func (instance *Picture) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Picture_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Picture_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62593,7 +62593,7 @@ func (instance *Picture) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *Picture) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("Picture_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("Picture_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -62627,7 +62627,7 @@ func (instance *Picture) FitToTextSize()  error {
 //   GroupShape  
 func (instance *Picture) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Picture_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Picture_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -62703,7 +62703,7 @@ func (instance *PictureCollection) Camera(row int32, column int32, range_ string
 //   int32  
 func (instance *PictureCollection) Add_Int_Int_Int_Int_Stream(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32, stream []byte)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANI(C.CString("PictureCollection_Add_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)))
+	CGoReturnPtr := C.CellsGoFunctoinZANK(C.CString("PictureCollection_Add_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -62741,7 +62741,7 @@ func (instance *PictureCollection) Add_Int_Int_Int_Int_String(upperleftrow int32
 //   int32  
 func (instance *PictureCollection) Add_Int_Int_Stream(upperleftrow int32, upperleftcolumn int32, stream []byte)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANO(C.CString("PictureCollection_Add_Integer_Integer_Stream"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)))
+	CGoReturnPtr := C.CellsGoFunctoinZANQ(C.CString("PictureCollection_Add_Integer_Integer_Stream"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -62779,7 +62779,7 @@ func (instance *PictureCollection) Add_Int_Int_String(upperleftrow int32, upperl
 //   int32  
 func (instance *PictureCollection) Add_Int_Int_Stream_Int_Int(upperleftrow int32, upperleftcolumn int32, stream []byte, widthscale int32, heightscale int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANP(C.CString("PictureCollection_Add_Integer_Integer_Stream_Integer_Integer"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int(widthscale), C.int(heightscale))
+	CGoReturnPtr := C.CellsGoFunctoinZANR(C.CString("PictureCollection_Add_Integer_Integer_Stream_Integer_Integer"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int(widthscale), C.int(heightscale))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -62799,7 +62799,7 @@ func (instance *PictureCollection) Add_Int_Int_Stream_Int_Int(upperleftrow int32
 //   int32  
 func (instance *PictureCollection) Add_Int_Int_String_Int_Int(upperleftrow int32, upperleftcolumn int32, filename string, widthscale int32, heightscale int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANQ(C.CString("PictureCollection_Add_Integer_Integer_String_Integer_Integer"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.CString(filename), C.int(widthscale), C.int(heightscale))
+	CGoReturnPtr := C.CellsGoFunctoinZANS(C.CString("PictureCollection_Add_Integer_Integer_String_Integer_Integer"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.CString(filename), C.int(widthscale), C.int(heightscale))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -62815,7 +62815,7 @@ func (instance *PictureCollection) Add_Int_Int_String_Int_Int(upperleftrow int32
 //   Picture  
 func (instance *PictureCollection) Get(index int32)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANR(C.CString("PictureCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZANT(C.CString("PictureCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -62893,7 +62893,7 @@ func NewRadioButton(src *Shape) ( *RadioButton, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_RadioButton"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_RadioButton"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		radiobutton.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(radiobutton, DeleteRadioButton)
@@ -62996,7 +62996,7 @@ func (instance *RadioButton) SetShadow(value bool)  error {
 //   GroupBox  
 func (instance *RadioButton) GetGroupBox()  (*GroupBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANS(C.CString("RadioButton_GetGroupBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZANU(C.CString("RadioButton_GetGroupBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -63200,7 +63200,7 @@ func (instance *RadioButton) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *RadioButton) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("RadioButton_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("RadioButton_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -63216,7 +63216,7 @@ func (instance *RadioButton) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *RadioButton) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("RadioButton_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("RadioButton_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -63232,7 +63232,7 @@ func (instance *RadioButton) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *RadioButton) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("RadioButton_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("RadioButton_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -63248,7 +63248,7 @@ func (instance *RadioButton) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *RadioButton) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("RadioButton_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("RadioButton_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -63264,7 +63264,7 @@ func (instance *RadioButton) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *RadioButton) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("RadioButton_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("RadioButton_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -63309,7 +63309,7 @@ func (instance *RadioButton) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *RadioButton) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("RadioButton_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("RadioButton_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -63325,7 +63325,7 @@ func (instance *RadioButton) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *RadioButton) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("RadioButton_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("RadioButton_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -63401,7 +63401,7 @@ func (instance *RadioButton) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *RadioButton) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("RadioButton_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("RadioButton_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -63418,7 +63418,7 @@ func (instance *RadioButton) GetLockedProperty(type_ ShapeLockType)  (bool,  err
 //   void  
 func (instance *RadioButton) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("RadioButton_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("RadioButton_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -63462,7 +63462,7 @@ func (instance *RadioButton) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *RadioButton) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("RadioButton_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("RadioButton_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -63491,7 +63491,7 @@ func (instance *RadioButton) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *RadioButton) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("RadioButton_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("RadioButton_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -63642,7 +63642,7 @@ func (instance *RadioButton) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *RadioButton) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("RadioButton_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("RadioButton_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -63720,7 +63720,7 @@ func (instance *RadioButton) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *RadioButton) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("RadioButton_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("RadioButton_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -63737,7 +63737,7 @@ func (instance *RadioButton) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *RadioButton) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("RadioButton_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("RadioButton_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -63756,7 +63756,7 @@ func (instance *RadioButton) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *RadioButton) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("RadioButton_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("RadioButton_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -63769,7 +63769,7 @@ func (instance *RadioButton) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *RadioButton) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("RadioButton_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("RadioButton_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -63788,7 +63788,7 @@ func (instance *RadioButton) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *RadioButton) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("RadioButton_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("RadioButton_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -63802,7 +63802,7 @@ func (instance *RadioButton) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *RadioButton) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("RadioButton_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("RadioButton_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -63822,7 +63822,7 @@ func (instance *RadioButton) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *RadioButton) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("RadioButton_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("RadioButton_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -64829,7 +64829,7 @@ func (instance *RadioButton) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *RadioButton) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("RadioButton_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("RadioButton_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -64845,7 +64845,7 @@ func (instance *RadioButton) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *RadioButton) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("RadioButton_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("RadioButton_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -64992,7 +64992,7 @@ func (instance *RadioButton) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *RadioButton) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("RadioButton_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("RadioButton_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -65020,7 +65020,7 @@ func (instance *RadioButton) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *RadioButton) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("RadioButton_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("RadioButton_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -65043,7 +65043,7 @@ func (instance *RadioButton) ToImage_String_ImageOrPrintOptions(imagefile string
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("RadioButton_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("RadioButton_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65246,7 +65246,7 @@ func (instance *RadioButton) UpdateSelectedValue()  error {
 //   int32  
 func (instance *RadioButton) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("RadioButton_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("RadioButton_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -65265,7 +65265,7 @@ func (instance *RadioButton) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *RadioButton) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("RadioButton_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("RadioButton_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65278,7 +65278,7 @@ func (instance *RadioButton) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *RadioButton) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("RadioButton_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("RadioButton_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -65317,7 +65317,7 @@ func (instance *RadioButton) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("RadioButton_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("RadioButton_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65353,7 +65353,7 @@ func (instance *RadioButton) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("RadioButton_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("RadioButton_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65527,7 +65527,7 @@ func (instance *RadioButton) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *RadioButton) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("RadioButton_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("RadioButton_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -65546,7 +65546,7 @@ func (instance *RadioButton) GetTextVerticalOverflow()  (TextOverflowType,  erro
 //   void  
 func (instance *RadioButton) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("RadioButton_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("RadioButton_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65559,7 +65559,7 @@ func (instance *RadioButton) SetTextVerticalOverflow(value TextOverflowType)  er
 //   int32  
 func (instance *RadioButton) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("RadioButton_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("RadioButton_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -65578,7 +65578,7 @@ func (instance *RadioButton) GetTextHorizontalOverflow()  (TextOverflowType,  er
 //   void  
 func (instance *RadioButton) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("RadioButton_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("RadioButton_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65748,7 +65748,7 @@ func (instance *RadioButton) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *RadioButton) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("RadioButton_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("RadioButton_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -65779,7 +65779,7 @@ func (instance *RadioButton) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *RadioButton) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("RadioButton_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("RadioButton_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -65808,7 +65808,7 @@ func (instance *RadioButton) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *RadioButton) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("RadioButton_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("RadioButton_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -65824,7 +65824,7 @@ func (instance *RadioButton) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *RadioButton) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("RadioButton_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("RadioButton_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -65847,7 +65847,7 @@ func (instance *RadioButton) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("RadioButton_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("RadioButton_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65867,7 +65867,7 @@ func (instance *RadioButton) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("RadioButton_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("RadioButton_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65909,7 +65909,7 @@ func (instance *RadioButton) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *RadioButton) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("RadioButton_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("RadioButton_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -65943,7 +65943,7 @@ func (instance *RadioButton) FitToTextSize()  error {
 //   GroupShape  
 func (instance *RadioButton) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("RadioButton_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("RadioButton_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -66006,7 +66006,7 @@ func NewRectangleShape(src *Shape) ( *RectangleShape, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_RectangleShape"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_RectangleShape"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		rectangleshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(rectangleshape, DeleteRectangleShape)
@@ -66225,7 +66225,7 @@ func (instance *RectangleShape) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *RectangleShape) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("RectangleShape_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("RectangleShape_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -66241,7 +66241,7 @@ func (instance *RectangleShape) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *RectangleShape) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("RectangleShape_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("RectangleShape_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -66257,7 +66257,7 @@ func (instance *RectangleShape) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *RectangleShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("RectangleShape_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("RectangleShape_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -66273,7 +66273,7 @@ func (instance *RectangleShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *RectangleShape) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("RectangleShape_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("RectangleShape_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -66289,7 +66289,7 @@ func (instance *RectangleShape) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *RectangleShape) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("RectangleShape_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("RectangleShape_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -66334,7 +66334,7 @@ func (instance *RectangleShape) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *RectangleShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("RectangleShape_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("RectangleShape_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -66350,7 +66350,7 @@ func (instance *RectangleShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *RectangleShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("RectangleShape_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("RectangleShape_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -66426,7 +66426,7 @@ func (instance *RectangleShape) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *RectangleShape) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("RectangleShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("RectangleShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -66443,7 +66443,7 @@ func (instance *RectangleShape) GetLockedProperty(type_ ShapeLockType)  (bool,  
 //   void  
 func (instance *RectangleShape) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("RectangleShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("RectangleShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -66487,7 +66487,7 @@ func (instance *RectangleShape) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *RectangleShape) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("RectangleShape_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("RectangleShape_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -66516,7 +66516,7 @@ func (instance *RectangleShape) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *RectangleShape) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("RectangleShape_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("RectangleShape_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -66667,7 +66667,7 @@ func (instance *RectangleShape) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *RectangleShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("RectangleShape_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("RectangleShape_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -66745,7 +66745,7 @@ func (instance *RectangleShape) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *RectangleShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("RectangleShape_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("RectangleShape_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -66762,7 +66762,7 @@ func (instance *RectangleShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *RectangleShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("RectangleShape_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("RectangleShape_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -66781,7 +66781,7 @@ func (instance *RectangleShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *RectangleShape) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("RectangleShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("RectangleShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -66794,7 +66794,7 @@ func (instance *RectangleShape) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *RectangleShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("RectangleShape_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("RectangleShape_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -66813,7 +66813,7 @@ func (instance *RectangleShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *RectangleShape) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("RectangleShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("RectangleShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -66827,7 +66827,7 @@ func (instance *RectangleShape) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *RectangleShape) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("RectangleShape_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("RectangleShape_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -66847,7 +66847,7 @@ func (instance *RectangleShape) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *RectangleShape) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("RectangleShape_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("RectangleShape_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -67854,7 +67854,7 @@ func (instance *RectangleShape) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *RectangleShape) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("RectangleShape_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("RectangleShape_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -67870,7 +67870,7 @@ func (instance *RectangleShape) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *RectangleShape) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("RectangleShape_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("RectangleShape_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -68017,7 +68017,7 @@ func (instance *RectangleShape) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *RectangleShape) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("RectangleShape_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("RectangleShape_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -68045,7 +68045,7 @@ func (instance *RectangleShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *RectangleShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("RectangleShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("RectangleShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -68068,7 +68068,7 @@ func (instance *RectangleShape) ToImage_String_ImageOrPrintOptions(imagefile str
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("RectangleShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("RectangleShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -68271,7 +68271,7 @@ func (instance *RectangleShape) UpdateSelectedValue()  error {
 //   int32  
 func (instance *RectangleShape) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("RectangleShape_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("RectangleShape_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -68290,7 +68290,7 @@ func (instance *RectangleShape) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *RectangleShape) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("RectangleShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("RectangleShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -68303,7 +68303,7 @@ func (instance *RectangleShape) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *RectangleShape) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("RectangleShape_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("RectangleShape_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -68342,7 +68342,7 @@ func (instance *RectangleShape) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("RectangleShape_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("RectangleShape_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -68378,7 +68378,7 @@ func (instance *RectangleShape) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("RectangleShape_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("RectangleShape_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -68552,7 +68552,7 @@ func (instance *RectangleShape) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *RectangleShape) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("RectangleShape_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("RectangleShape_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -68571,7 +68571,7 @@ func (instance *RectangleShape) GetTextVerticalOverflow()  (TextOverflowType,  e
 //   void  
 func (instance *RectangleShape) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("RectangleShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("RectangleShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -68584,7 +68584,7 @@ func (instance *RectangleShape) SetTextVerticalOverflow(value TextOverflowType) 
 //   int32  
 func (instance *RectangleShape) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("RectangleShape_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("RectangleShape_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -68603,7 +68603,7 @@ func (instance *RectangleShape) GetTextHorizontalOverflow()  (TextOverflowType, 
 //   void  
 func (instance *RectangleShape) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("RectangleShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("RectangleShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -68773,7 +68773,7 @@ func (instance *RectangleShape) SetTextDirection(value TextDirectionType)  error
 //   TextBoxOptions  
 func (instance *RectangleShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("RectangleShape_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("RectangleShape_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -68804,7 +68804,7 @@ func (instance *RectangleShape) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *RectangleShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("RectangleShape_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("RectangleShape_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -68833,7 +68833,7 @@ func (instance *RectangleShape) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *RectangleShape) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("RectangleShape_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("RectangleShape_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -68849,7 +68849,7 @@ func (instance *RectangleShape) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *RectangleShape) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("RectangleShape_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("RectangleShape_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -68872,7 +68872,7 @@ func (instance *RectangleShape) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("RectangleShape_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("RectangleShape_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -68892,7 +68892,7 @@ func (instance *RectangleShape) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("RectangleShape_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("RectangleShape_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -68934,7 +68934,7 @@ func (instance *RectangleShape) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *RectangleShape) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("RectangleShape_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("RectangleShape_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -68968,7 +68968,7 @@ func (instance *RectangleShape) FitToTextSize()  error {
 //   GroupShape  
 func (instance *RectangleShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("RectangleShape_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("RectangleShape_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -69041,7 +69041,7 @@ func (instance *ReflectionEffect) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ReflectionEffect) GetType()  (ReflectionEffectType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANT(C.CString("ReflectionEffect_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZANV(C.CString("ReflectionEffect_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -69060,7 +69060,7 @@ func (instance *ReflectionEffect) GetType()  (ReflectionEffectType,  error)  {
 //   void  
 func (instance *ReflectionEffect) SetType(value ReflectionEffectType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANU(C.CString("ReflectionEffect_SetType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZANW(C.CString("ReflectionEffect_SetType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -69297,7 +69297,7 @@ func NewScrollBar(src *Shape) ( *ScrollBar, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_ScrollBar"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_ScrollBar"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		scrollbar.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(scrollbar, DeleteScrollBar)
@@ -69719,7 +69719,7 @@ func (instance *ScrollBar) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *ScrollBar) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("ScrollBar_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("ScrollBar_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -69735,7 +69735,7 @@ func (instance *ScrollBar) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *ScrollBar) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("ScrollBar_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("ScrollBar_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -69751,7 +69751,7 @@ func (instance *ScrollBar) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *ScrollBar) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("ScrollBar_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("ScrollBar_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -69767,7 +69767,7 @@ func (instance *ScrollBar) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *ScrollBar) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("ScrollBar_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("ScrollBar_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -69783,7 +69783,7 @@ func (instance *ScrollBar) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *ScrollBar) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("ScrollBar_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("ScrollBar_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -69828,7 +69828,7 @@ func (instance *ScrollBar) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *ScrollBar) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("ScrollBar_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("ScrollBar_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -69844,7 +69844,7 @@ func (instance *ScrollBar) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *ScrollBar) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("ScrollBar_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("ScrollBar_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -69920,7 +69920,7 @@ func (instance *ScrollBar) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *ScrollBar) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("ScrollBar_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("ScrollBar_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -69937,7 +69937,7 @@ func (instance *ScrollBar) GetLockedProperty(type_ ShapeLockType)  (bool,  error
 //   void  
 func (instance *ScrollBar) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("ScrollBar_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("ScrollBar_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -69981,7 +69981,7 @@ func (instance *ScrollBar) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *ScrollBar) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("ScrollBar_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("ScrollBar_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -70010,7 +70010,7 @@ func (instance *ScrollBar) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *ScrollBar) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("ScrollBar_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("ScrollBar_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -70161,7 +70161,7 @@ func (instance *ScrollBar) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *ScrollBar) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("ScrollBar_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ScrollBar_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -70239,7 +70239,7 @@ func (instance *ScrollBar) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *ScrollBar) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("ScrollBar_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("ScrollBar_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -70256,7 +70256,7 @@ func (instance *ScrollBar) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *ScrollBar) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ScrollBar_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ScrollBar_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -70275,7 +70275,7 @@ func (instance *ScrollBar) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *ScrollBar) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("ScrollBar_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("ScrollBar_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -70288,7 +70288,7 @@ func (instance *ScrollBar) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *ScrollBar) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ScrollBar_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("ScrollBar_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -70307,7 +70307,7 @@ func (instance *ScrollBar) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *ScrollBar) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("ScrollBar_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("ScrollBar_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -70321,7 +70321,7 @@ func (instance *ScrollBar) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *ScrollBar) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("ScrollBar_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("ScrollBar_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -70341,7 +70341,7 @@ func (instance *ScrollBar) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *ScrollBar) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("ScrollBar_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("ScrollBar_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -71348,7 +71348,7 @@ func (instance *ScrollBar) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *ScrollBar) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("ScrollBar_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("ScrollBar_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -71364,7 +71364,7 @@ func (instance *ScrollBar) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *ScrollBar) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ScrollBar_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ScrollBar_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -71511,7 +71511,7 @@ func (instance *ScrollBar) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *ScrollBar) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("ScrollBar_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("ScrollBar_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -71539,7 +71539,7 @@ func (instance *ScrollBar) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *ScrollBar) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("ScrollBar_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("ScrollBar_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -71562,7 +71562,7 @@ func (instance *ScrollBar) ToImage_String_ImageOrPrintOptions(imagefile string, 
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("ScrollBar_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("ScrollBar_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -71765,7 +71765,7 @@ func (instance *ScrollBar) UpdateSelectedValue()  error {
 //   int32  
 func (instance *ScrollBar) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("ScrollBar_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("ScrollBar_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -71784,7 +71784,7 @@ func (instance *ScrollBar) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *ScrollBar) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("ScrollBar_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("ScrollBar_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -71797,7 +71797,7 @@ func (instance *ScrollBar) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *ScrollBar) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("ScrollBar_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("ScrollBar_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -71836,7 +71836,7 @@ func (instance *ScrollBar) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("ScrollBar_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("ScrollBar_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -71872,7 +71872,7 @@ func (instance *ScrollBar) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("ScrollBar_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("ScrollBar_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -72046,7 +72046,7 @@ func (instance *ScrollBar) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *ScrollBar) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("ScrollBar_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("ScrollBar_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -72065,7 +72065,7 @@ func (instance *ScrollBar) GetTextVerticalOverflow()  (TextOverflowType,  error)
 //   void  
 func (instance *ScrollBar) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("ScrollBar_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("ScrollBar_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -72078,7 +72078,7 @@ func (instance *ScrollBar) SetTextVerticalOverflow(value TextOverflowType)  erro
 //   int32  
 func (instance *ScrollBar) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("ScrollBar_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("ScrollBar_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -72097,7 +72097,7 @@ func (instance *ScrollBar) GetTextHorizontalOverflow()  (TextOverflowType,  erro
 //   void  
 func (instance *ScrollBar) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("ScrollBar_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("ScrollBar_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -72267,7 +72267,7 @@ func (instance *ScrollBar) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *ScrollBar) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("ScrollBar_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("ScrollBar_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -72298,7 +72298,7 @@ func (instance *ScrollBar) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *ScrollBar) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("ScrollBar_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("ScrollBar_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -72327,7 +72327,7 @@ func (instance *ScrollBar) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *ScrollBar) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("ScrollBar_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("ScrollBar_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -72343,7 +72343,7 @@ func (instance *ScrollBar) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *ScrollBar) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("ScrollBar_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("ScrollBar_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -72366,7 +72366,7 @@ func (instance *ScrollBar) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("ScrollBar_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("ScrollBar_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -72386,7 +72386,7 @@ func (instance *ScrollBar) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("ScrollBar_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("ScrollBar_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -72428,7 +72428,7 @@ func (instance *ScrollBar) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *ScrollBar) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("ScrollBar_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("ScrollBar_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -72462,7 +72462,7 @@ func (instance *ScrollBar) FitToTextSize()  error {
 //   GroupShape  
 func (instance *ScrollBar) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("ScrollBar_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("ScrollBar_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -72535,7 +72535,7 @@ func (instance *ShadowEffect) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ShadowEffect) GetPresetType()  (PresetShadowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANV(C.CString("ShadowEffect_GetPresetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZANX(C.CString("ShadowEffect_GetPresetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -72554,7 +72554,7 @@ func (instance *ShadowEffect) GetPresetType()  (PresetShadowType,  error)  {
 //   void  
 func (instance *ShadowEffect) SetPresetType(value PresetShadowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANW(C.CString("ShadowEffect_SetPresetType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZANY(C.CString("ShadowEffect_SetPresetType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -72590,7 +72590,7 @@ func (instance *ShadowEffect) SetColor(value *CellsColor)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("ShadowEffect_SetColor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALW(C.CString("ShadowEffect_SetColor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -72969,7 +72969,7 @@ func (instance *Shape) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *Shape) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("Shape_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("Shape_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -72985,7 +72985,7 @@ func (instance *Shape) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *Shape) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("Shape_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("Shape_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -73001,7 +73001,7 @@ func (instance *Shape) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *Shape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("Shape_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("Shape_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -73017,7 +73017,7 @@ func (instance *Shape) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *Shape) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("Shape_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("Shape_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -73033,7 +73033,7 @@ func (instance *Shape) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *Shape) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("Shape_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("Shape_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -73078,7 +73078,7 @@ func (instance *Shape) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *Shape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("Shape_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("Shape_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -73094,7 +73094,7 @@ func (instance *Shape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *Shape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("Shape_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("Shape_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -73170,7 +73170,7 @@ func (instance *Shape) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *Shape) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("Shape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("Shape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -73187,7 +73187,7 @@ func (instance *Shape) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 //   void  
 func (instance *Shape) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("Shape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("Shape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -73231,7 +73231,7 @@ func (instance *Shape) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *Shape) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("Shape_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("Shape_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -73260,7 +73260,7 @@ func (instance *Shape) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *Shape) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("Shape_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("Shape_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -73411,7 +73411,7 @@ func (instance *Shape) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *Shape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("Shape_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Shape_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -73489,7 +73489,7 @@ func (instance *Shape) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *Shape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("Shape_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Shape_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -73506,7 +73506,7 @@ func (instance *Shape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *Shape) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Shape_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Shape_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -73525,7 +73525,7 @@ func (instance *Shape) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *Shape) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Shape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Shape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -73538,7 +73538,7 @@ func (instance *Shape) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *Shape) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Shape_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("Shape_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -73557,7 +73557,7 @@ func (instance *Shape) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *Shape) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Shape_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("Shape_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -73571,7 +73571,7 @@ func (instance *Shape) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *Shape) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("Shape_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Shape_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -73591,7 +73591,7 @@ func (instance *Shape) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *Shape) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("Shape_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("Shape_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -74598,7 +74598,7 @@ func (instance *Shape) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *Shape) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Shape_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Shape_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -74614,7 +74614,7 @@ func (instance *Shape) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *Shape) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Shape_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Shape_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -74761,7 +74761,7 @@ func (instance *Shape) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *Shape) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("Shape_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("Shape_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -74789,7 +74789,7 @@ func (instance *Shape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Shape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Shape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("Shape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -74812,7 +74812,7 @@ func (instance *Shape) ToImage_String_ImageOrPrintOptions(imagefile string, opti
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("Shape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("Shape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -75015,7 +75015,7 @@ func (instance *Shape) UpdateSelectedValue()  error {
 //   int32  
 func (instance *Shape) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Shape_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Shape_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -75034,7 +75034,7 @@ func (instance *Shape) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *Shape) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Shape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Shape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -75047,7 +75047,7 @@ func (instance *Shape) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *Shape) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("Shape_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("Shape_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75086,7 +75086,7 @@ func (instance *Shape) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("Shape_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Shape_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -75122,7 +75122,7 @@ func (instance *Shape) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("Shape_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Shape_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -75296,7 +75296,7 @@ func (instance *Shape) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *Shape) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Shape_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Shape_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -75315,7 +75315,7 @@ func (instance *Shape) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 //   void  
 func (instance *Shape) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Shape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Shape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -75328,7 +75328,7 @@ func (instance *Shape) SetTextVerticalOverflow(value TextOverflowType)  error {
 //   int32  
 func (instance *Shape) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Shape_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Shape_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -75347,7 +75347,7 @@ func (instance *Shape) GetTextHorizontalOverflow()  (TextOverflowType,  error)  
 //   void  
 func (instance *Shape) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Shape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Shape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -75517,7 +75517,7 @@ func (instance *Shape) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *Shape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Shape_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("Shape_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75548,7 +75548,7 @@ func (instance *Shape) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *Shape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Shape_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("Shape_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75577,7 +75577,7 @@ func (instance *Shape) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *Shape) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("Shape_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Shape_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75593,7 +75593,7 @@ func (instance *Shape) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *Shape) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("Shape_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("Shape_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75616,7 +75616,7 @@ func (instance *Shape) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Shape_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Shape_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -75636,7 +75636,7 @@ func (instance *Shape) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Shape_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Shape_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -75678,7 +75678,7 @@ func (instance *Shape) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *Shape) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("Shape_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("Shape_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75712,7 +75712,7 @@ func (instance *Shape) FitToTextSize()  error {
 //   GroupShape  
 func (instance *Shape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Shape_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Shape_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75782,7 +75782,7 @@ func (instance *ShapeCollection) IsNull()  (bool,  error)  {
 //   Shape  
 func (instance *ShapeCollection) Get_Int(index int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAMG(C.CString("ShapeCollection_Get_Integer"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAMI(C.CString("ShapeCollection_Get_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75800,7 +75800,7 @@ func (instance *ShapeCollection) Get_Int(index int32)  (*Shape,  error)  {
 //   Shape  
 func (instance *ShapeCollection) Get_String(name string)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZANX(C.CString("ShapeCollection_Get_String"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZAOA(C.CString("ShapeCollection_Get_String"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75827,7 +75827,7 @@ func (instance *ShapeCollection) AddCopy(sourceshape *Shape, toprow int32, top i
 	  sourceshape_ptr =sourceshape.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZANY(C.CString("ShapeCollection_AddCopy"), instance.ptr, sourceshape_ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left))
+	CGoReturnPtr := C.CellsGoFunctoinZAOB(C.CString("ShapeCollection_AddCopy"), instance.ptr, sourceshape_ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75850,7 +75850,7 @@ func (instance *ShapeCollection) AddCopy(sourceshape *Shape, toprow int32, top i
 //   CheckBox  
 func (instance *ShapeCollection) AddCheckBox(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*CheckBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOA(C.CString("ShapeCollection_AddCheckBox"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAOC(C.CString("ShapeCollection_AddCheckBox"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75873,7 +75873,7 @@ func (instance *ShapeCollection) AddCheckBox(upperleftrow int32, top int32, uppe
 //   TextBox  
 func (instance *ShapeCollection) AddTextBox(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*TextBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOB(C.CString("ShapeCollection_AddTextBox"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAOD(C.CString("ShapeCollection_AddTextBox"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75896,7 +75896,7 @@ func (instance *ShapeCollection) AddTextBox(upperleftrow int32, top int32, upper
 //   TextBox  
 func (instance *ShapeCollection) AddEquation(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*TextBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOB(C.CString("ShapeCollection_AddEquation"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAOD(C.CString("ShapeCollection_AddEquation"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75919,7 +75919,7 @@ func (instance *ShapeCollection) AddEquation(toprow int32, top int32, leftcolumn
 //   Spinner  
 func (instance *ShapeCollection) AddSpinner(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*Spinner,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOC(C.CString("ShapeCollection_AddSpinner"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAOE(C.CString("ShapeCollection_AddSpinner"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75942,7 +75942,7 @@ func (instance *ShapeCollection) AddSpinner(upperleftrow int32, top int32, upper
 //   ScrollBar  
 func (instance *ShapeCollection) AddScrollBar(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*ScrollBar,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOD(C.CString("ShapeCollection_AddScrollBar"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAOF(C.CString("ShapeCollection_AddScrollBar"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75965,7 +75965,7 @@ func (instance *ShapeCollection) AddScrollBar(upperleftrow int32, top int32, upp
 //   RadioButton  
 func (instance *ShapeCollection) AddRadioButton(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*RadioButton,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOE(C.CString("ShapeCollection_AddRadioButton"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAOG(C.CString("ShapeCollection_AddRadioButton"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75988,7 +75988,7 @@ func (instance *ShapeCollection) AddRadioButton(upperleftrow int32, top int32, u
 //   ListBox  
 func (instance *ShapeCollection) AddListBox(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*ListBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOF(C.CString("ShapeCollection_AddListBox"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAOH(C.CString("ShapeCollection_AddListBox"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76011,7 +76011,7 @@ func (instance *ShapeCollection) AddListBox(upperleftrow int32, top int32, upper
 //   ComboBox  
 func (instance *ShapeCollection) AddComboBox(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*ComboBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOG(C.CString("ShapeCollection_AddComboBox"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAOI(C.CString("ShapeCollection_AddComboBox"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76034,7 +76034,7 @@ func (instance *ShapeCollection) AddComboBox(upperleftrow int32, top int32, uppe
 //   GroupBox  
 func (instance *ShapeCollection) AddGroupBox(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*GroupBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOH(C.CString("ShapeCollection_AddGroupBox"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAOJ(C.CString("ShapeCollection_AddGroupBox"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76057,7 +76057,7 @@ func (instance *ShapeCollection) AddGroupBox(upperleftrow int32, top int32, uppe
 //   Button  
 func (instance *ShapeCollection) AddButton(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*Button,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOI(C.CString("ShapeCollection_AddButton"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAOK(C.CString("ShapeCollection_AddButton"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76080,7 +76080,7 @@ func (instance *ShapeCollection) AddButton(upperleftrow int32, top int32, upperl
 //   Label  
 func (instance *ShapeCollection) AddLabel(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*Label,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOJ(C.CString("ShapeCollection_AddLabel"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAOL(C.CString("ShapeCollection_AddLabel"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76101,7 +76101,7 @@ func (instance *ShapeCollection) AddLabel(upperleftrow int32, top int32, upperle
 //   Label  
 func (instance *ShapeCollection) AddLabelInChart(top int32, left int32, height int32, width int32)  (*Label,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOK(C.CString("ShapeCollection_AddLabelInChart"), instance.ptr, C.int(top), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAOM(C.CString("ShapeCollection_AddLabelInChart"), instance.ptr, C.int(top), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76122,7 +76122,7 @@ func (instance *ShapeCollection) AddLabelInChart(top int32, left int32, height i
 //   TextBox  
 func (instance *ShapeCollection) AddTextBoxInChart(top int32, left int32, height int32, width int32)  (*TextBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOL(C.CString("ShapeCollection_AddTextBoxInChart"), instance.ptr, C.int(top), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAON(C.CString("ShapeCollection_AddTextBoxInChart"), instance.ptr, C.int(top), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76149,7 +76149,7 @@ func (instance *ShapeCollection) AddTextBoxInChart(top int32, left int32, height
 //   Shape  
 func (instance *ShapeCollection) AddTextEffectInChart(effect MsoPresetTextEffect, text string, fontname string, size int32, fontbold bool, fontitalic bool, top int32, left int32, height int32, width int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOM(C.CString("ShapeCollection_AddTextEffectInChart"), instance.ptr, C.int( int32(effect)), C.CString(text), C.CString(fontname), C.int(size), C.bool(fontbold), C.bool(fontitalic), C.int(top), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAOO(C.CString("ShapeCollection_AddTextEffectInChart"), instance.ptr, C.int( int32(effect)), C.CString(text), C.CString(fontname), C.int(size), C.bool(fontbold), C.bool(fontitalic), C.int(top), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76178,7 +76178,7 @@ func (instance *ShapeCollection) AddTextEffectInChart(effect MsoPresetTextEffect
 //   Shape  
 func (instance *ShapeCollection) AddTextEffect(effect MsoPresetTextEffect, text string, fontname string, size int32, fontbold bool, fontitalic bool, upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAON(C.CString("ShapeCollection_AddTextEffect"), instance.ptr, C.int( int32(effect)), C.CString(text), C.CString(fontname), C.int(size), C.bool(fontbold), C.bool(fontitalic), C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAOP(C.CString("ShapeCollection_AddTextEffect"), instance.ptr, C.int( int32(effect)), C.CString(text), C.CString(fontname), C.int(size), C.bool(fontbold), C.bool(fontitalic), C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76203,7 +76203,7 @@ func (instance *ShapeCollection) AddTextEffect(effect MsoPresetTextEffect, text 
 //   Shape  
 func (instance *ShapeCollection) AddWordArt(style PresetWordArtStyle, text string, upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOO(C.CString("ShapeCollection_AddWordArt"), instance.ptr, C.int( int32(style)), C.CString(text), C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAOQ(C.CString("ShapeCollection_AddWordArt"), instance.ptr, C.int( int32(style)), C.CString(text), C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76226,7 +76226,7 @@ func (instance *ShapeCollection) AddWordArt(style PresetWordArtStyle, text strin
 //   RectangleShape  
 func (instance *ShapeCollection) AddRectangle(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*RectangleShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOP(C.CString("ShapeCollection_AddRectangle"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAOR(C.CString("ShapeCollection_AddRectangle"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76249,7 +76249,7 @@ func (instance *ShapeCollection) AddRectangle(upperleftrow int32, top int32, upp
 //   Oval  
 func (instance *ShapeCollection) AddOval(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*Oval,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOQ(C.CString("ShapeCollection_AddOval"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAOS(C.CString("ShapeCollection_AddOval"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76272,7 +76272,7 @@ func (instance *ShapeCollection) AddOval(upperleftrow int32, top int32, upperlef
 //   LineShape  
 func (instance *ShapeCollection) AddLine(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*LineShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOR(C.CString("ShapeCollection_AddLine"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAOT(C.CString("ShapeCollection_AddLine"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76296,7 +76296,7 @@ func (instance *ShapeCollection) AddLine(upperleftrow int32, top int32, upperlef
 //   Shape  
 func (instance *ShapeCollection) AddFreeFloatingShape(type_ MsoDrawingType, top int32, left int32, height int32, width int32, imagedata []byte, isoriginalsize bool)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOS(C.CString("ShapeCollection_AddFreeFloatingShape"), instance.ptr, C.int( int32(type_)), C.int(top), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)), C.bool(isoriginalsize))
+	CGoReturnPtr := C.CellsGoFunctoinZAOU(C.CString("ShapeCollection_AddFreeFloatingShape"), instance.ptr, C.int( int32(type_)), C.int(top), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)), C.bool(isoriginalsize))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76320,7 +76320,7 @@ func (instance *ShapeCollection) AddFreeFloatingShape(type_ MsoDrawingType, top 
 //   Shape  
 func (instance *ShapeCollection) AddShapeInChart_MsoDrawingType_PlacementType_Int_Int_Int_Int_Stream(type_ MsoDrawingType, placement PlacementType, left int32, top int32, right int32, bottom int32, imagedata []byte)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOT(C.CString("ShapeCollection_AddShapeInChart_MsoDrawingType_PlacementType_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.int(left), C.int(top), C.int(right), C.int(bottom), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZAOV(C.CString("ShapeCollection_AddShapeInChart_MsoDrawingType_PlacementType_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.int(left), C.int(top), C.int(right), C.int(bottom), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76343,7 +76343,7 @@ func (instance *ShapeCollection) AddShapeInChart_MsoDrawingType_PlacementType_In
 //   Shape  
 func (instance *ShapeCollection) AddShapeInChart_MsoDrawingType_PlacementType_Int_Int_Int_Int(type_ MsoDrawingType, placement PlacementType, left int32, top int32, right int32, bottom int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOU(C.CString("ShapeCollection_AddShapeInChart_MsoDrawingType_PlacementType_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.int(left), C.int(top), C.int(right), C.int(bottom))
+	CGoReturnPtr := C.CellsGoFunctoinZAOW(C.CString("ShapeCollection_AddShapeInChart_MsoDrawingType_PlacementType_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.int(left), C.int(top), C.int(right), C.int(bottom))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76366,7 +76366,7 @@ func (instance *ShapeCollection) AddShapeInChart_MsoDrawingType_PlacementType_In
 //   Shape  
 func (instance *ShapeCollection) AddShapeInChartByScale_MsoDrawingType_PlacementType_Double_Double_Double_Double(type_ MsoDrawingType, placement PlacementType, left float64, top float64, right float64, bottom float64)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOV(C.CString("ShapeCollection_AddShapeInChartByScale_MsoDrawingType_PlacementType_Double_Double_Double_Double"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.double(left), C.double(top), C.double(right), C.double(bottom))
+	CGoReturnPtr := C.CellsGoFunctoinZAOX(C.CString("ShapeCollection_AddShapeInChartByScale_MsoDrawingType_PlacementType_Double_Double_Double_Double"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.double(left), C.double(top), C.double(right), C.double(bottom))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76390,7 +76390,7 @@ func (instance *ShapeCollection) AddShapeInChartByScale_MsoDrawingType_Placement
 //   Shape  
 func (instance *ShapeCollection) AddShapeInChartByScale_MsoDrawingType_PlacementType_Double_Double_Double_Double_Stream(type_ MsoDrawingType, placement PlacementType, left float64, top float64, right float64, bottom float64, imagedata []byte)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOW(C.CString("ShapeCollection_AddShapeInChartByScale_MsoDrawingType_PlacementType_Double_Double_Double_Double_Stream"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.double(left), C.double(top), C.double(right), C.double(bottom), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZAOY(C.CString("ShapeCollection_AddShapeInChartByScale_MsoDrawingType_PlacementType_Double_Double_Double_Double_Stream"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.double(left), C.double(top), C.double(right), C.double(bottom), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76413,7 +76413,7 @@ func (instance *ShapeCollection) AddShapeInChartByScale_MsoDrawingType_Placement
 //   ArcShape  
 func (instance *ShapeCollection) AddArc(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*ArcShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOX(C.CString("ShapeCollection_AddArc"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAPA(C.CString("ShapeCollection_AddArc"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76437,7 +76437,7 @@ func (instance *ShapeCollection) AddArc(upperleftrow int32, top int32, upperleft
 //   Shape  
 func (instance *ShapeCollection) AddShape(type_ MsoDrawingType, upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAOY(C.CString("ShapeCollection_AddShape"), instance.ptr, C.int( int32(type_)), C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAPB(C.CString("ShapeCollection_AddShape"), instance.ptr, C.int( int32(type_)), C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76461,7 +76461,7 @@ func (instance *ShapeCollection) AddShape(type_ MsoDrawingType, upperleftrow int
 //   Shape  
 func (instance *ShapeCollection) AddAutoShape(type_ AutoShapeType, upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPA(C.CString("ShapeCollection_AddAutoShape"), instance.ptr, C.int( int32(type_)), C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAPC(C.CString("ShapeCollection_AddAutoShape"), instance.ptr, C.int( int32(type_)), C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76483,7 +76483,7 @@ func (instance *ShapeCollection) AddAutoShape(type_ AutoShapeType, upperleftrow 
 //   Shape  
 func (instance *ShapeCollection) AddAutoShapeInChart(type_ AutoShapeType, top int32, left int32, height int32, width int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPB(C.CString("ShapeCollection_AddAutoShapeInChart"), instance.ptr, C.int( int32(type_)), C.int(top), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAPD(C.CString("ShapeCollection_AddAutoShapeInChart"), instance.ptr, C.int( int32(type_)), C.int(top), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76507,7 +76507,7 @@ func (instance *ShapeCollection) AddAutoShapeInChart(type_ AutoShapeType, top in
 //   Shape  
 func (instance *ShapeCollection) AddActiveXControl(type_ ControlType, toprow int32, top int32, leftcolumn int32, left int32, width int32, height int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPC(C.CString("ShapeCollection_AddActiveXControl"), instance.ptr, C.int( int32(type_)), C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(width), C.int(height))
+	CGoReturnPtr := C.CellsGoFunctoinZAPE(C.CString("ShapeCollection_AddActiveXControl"), instance.ptr, C.int( int32(type_)), C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(width), C.int(height))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76529,7 +76529,7 @@ func (instance *ShapeCollection) AddActiveXControl(type_ ControlType, toprow int
 //   Picture  
 func (instance *ShapeCollection) AddPicture_Int_Int_Int_Int_Stream(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32, stream []byte)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPD(C.CString("ShapeCollection_AddPicture_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)))
+	CGoReturnPtr := C.CellsGoFunctoinZAPF(C.CString("ShapeCollection_AddPicture_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76551,7 +76551,7 @@ func (instance *ShapeCollection) AddPicture_Int_Int_Int_Int_Stream(upperleftrow 
 //   Picture  
 func (instance *ShapeCollection) AddPicture_Int_Int_Stream_Int_Int(upperleftrow int32, upperleftcolumn int32, stream []byte, widthscale int32, heightscale int32)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPE(C.CString("ShapeCollection_AddPicture_Integer_Integer_Stream_Integer_Integer"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int(widthscale), C.int(heightscale))
+	CGoReturnPtr := C.CellsGoFunctoinZAPG(C.CString("ShapeCollection_AddPicture_Integer_Integer_Stream_Integer_Integer"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int(widthscale), C.int(heightscale))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76576,7 +76576,7 @@ func (instance *ShapeCollection) AddPicture_Int_Int_Stream_Int_Int(upperleftrow 
 //   Picture  
 func (instance *ShapeCollection) AddSvg(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32, svgdata []byte, compatibleimagedata []byte)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPF(C.CString("ShapeCollection_AddSvg"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&svgdata[0]), C.int( len(svgdata)), unsafe.Pointer(&compatibleimagedata[0]), C.int( len(compatibleimagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZAPH(C.CString("ShapeCollection_AddSvg"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&svgdata[0]), C.int( len(svgdata)), unsafe.Pointer(&compatibleimagedata[0]), C.int( len(compatibleimagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76601,7 +76601,7 @@ func (instance *ShapeCollection) AddSvg(upperleftrow int32, top int32, upperleft
 //   Picture  
 func (instance *ShapeCollection) AddIcons(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32, imagebytedata []byte, compatibleimagedata []byte)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPF(C.CString("ShapeCollection_AddIcons"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&imagebytedata[0]), C.int( len(imagebytedata)), unsafe.Pointer(&compatibleimagedata[0]), C.int( len(compatibleimagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZAPH(C.CString("ShapeCollection_AddIcons"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&imagebytedata[0]), C.int( len(imagebytedata)), unsafe.Pointer(&compatibleimagedata[0]), C.int( len(compatibleimagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76623,7 +76623,7 @@ func (instance *ShapeCollection) AddIcons(upperleftrow int32, top int32, upperle
 //   Picture  
 func (instance *ShapeCollection) AddLinkedPicture(upperleftrow int32, upperleftcolumn int32, height int32, width int32, sourcefullname string)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPG(C.CString("ShapeCollection_AddLinkedPicture"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(height), C.int(width), C.CString(sourcefullname))
+	CGoReturnPtr := C.CellsGoFunctoinZAPI(C.CString("ShapeCollection_AddLinkedPicture"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(height), C.int(width), C.CString(sourcefullname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76645,7 +76645,7 @@ func (instance *ShapeCollection) AddLinkedPicture(upperleftrow int32, upperleftc
 //   OleObject  
 func (instance *ShapeCollection) AddOleObjectWithLinkedImage(upperleftrow int32, upperleftcolumn int32, height int32, width int32, sourcefullname string)  (*OleObject,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPH(C.CString("ShapeCollection_AddOleObjectWithLinkedImage"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(height), C.int(width), C.CString(sourcefullname))
+	CGoReturnPtr := C.CellsGoFunctoinZAPJ(C.CString("ShapeCollection_AddOleObjectWithLinkedImage"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(height), C.int(width), C.CString(sourcefullname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76667,7 +76667,7 @@ func (instance *ShapeCollection) AddOleObjectWithLinkedImage(upperleftrow int32,
 //   Picture  
 func (instance *ShapeCollection) AddPictureInChart(top int32, left int32, stream []byte, widthscale int32, heightscale int32)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPE(C.CString("ShapeCollection_AddPictureInChart"), instance.ptr, C.int(top), C.int(left), unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int(widthscale), C.int(heightscale))
+	CGoReturnPtr := C.CellsGoFunctoinZAPG(C.CString("ShapeCollection_AddPictureInChart"), instance.ptr, C.int(top), C.int(left), unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int(widthscale), C.int(heightscale))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76691,7 +76691,7 @@ func (instance *ShapeCollection) AddPictureInChart(top int32, left int32, stream
 //   OleObject  
 func (instance *ShapeCollection) AddOleObject(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32, imagedata []byte)  (*OleObject,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPI(C.CString("ShapeCollection_AddOleObject"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZAPK(C.CString("ShapeCollection_AddOleObject"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76721,7 +76721,7 @@ func (instance *ShapeCollection) CopyCommentsInRange(shapes *ShapeCollection, ca
 	  ca_ptr =ca.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAPJ(C.CString("ShapeCollection_CopyCommentsInRange"), instance.ptr, shapes_ptr, ca_ptr, C.int(destrow), C.int(destcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZAPL(C.CString("ShapeCollection_CopyCommentsInRange"), instance.ptr, shapes_ptr, ca_ptr, C.int(destrow), C.int(destcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -76749,7 +76749,7 @@ func (instance *ShapeCollection) CopyInRange(sourceshapes *ShapeCollection, ca *
 	  ca_ptr =ca.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAPK(C.CString("ShapeCollection_CopyInRange"), instance.ptr, sourceshapes_ptr, ca_ptr, C.int(destrow), C.int(destcolumn), C.bool(iscontained))
+	CGoReturnPtr := C.CellsGoFunctoinZAPM(C.CString("ShapeCollection_CopyInRange"), instance.ptr, sourceshapes_ptr, ca_ptr, C.int(destrow), C.int(destcolumn), C.bool(iscontained))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -76789,7 +76789,7 @@ func (instance *ShapeCollection) DeleteShape(shape *Shape)  error {
 	  shape_ptr =shape.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAPL(C.CString("ShapeCollection_DeleteShape"), instance.ptr, shape_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAPN(C.CString("ShapeCollection_DeleteShape"), instance.ptr, shape_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -76811,7 +76811,7 @@ func (instance *ShapeCollection) Group(groupitems []Shape)  (*GroupShape,  error
 	}
 
 
-	CGoReturnPtr := C.CellsGoFunctoinZAPM(C.CString("ShapeCollection_Group"), instance.ptr, unsafe.Pointer(&vector_groupitems[0]), C.int( len(groupitems)))
+	CGoReturnPtr := C.CellsGoFunctoinZAPO(C.CString("ShapeCollection_Group"), instance.ptr, unsafe.Pointer(&vector_groupitems[0]), C.int( len(groupitems)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76834,7 +76834,7 @@ func (instance *ShapeCollection) Ungroup(group *GroupShape)  error {
 	  group_ptr =group.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAPN(C.CString("ShapeCollection_Ungroup"), instance.ptr, group_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAPP(C.CString("ShapeCollection_Ungroup"), instance.ptr, group_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -76869,7 +76869,7 @@ func (instance *ShapeCollection) Remove(shape *Shape)  error {
 	  shape_ptr =shape.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAPL(C.CString("ShapeCollection_Remove"), instance.ptr, shape_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAPN(C.CString("ShapeCollection_Remove"), instance.ptr, shape_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -76923,7 +76923,7 @@ func (instance *ShapeCollection) AddFreeform(upperleftrow int32, top int32, uppe
 	}
 
 
-	CGoReturnPtr := C.CellsGoFunctoinZAPO(C.CString("ShapeCollection_AddFreeform"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&vector_paths[0]), C.int( len(paths)))
+	CGoReturnPtr := C.CellsGoFunctoinZAPQ(C.CString("ShapeCollection_AddFreeform"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&vector_paths[0]), C.int( len(paths)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76948,7 +76948,7 @@ func (instance *ShapeCollection) AddSignatureLine(upperleftrow int32, upperleftc
 	  signatureline_ptr =signatureline.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAPP(C.CString("ShapeCollection_AddSignatureLine"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), signatureline_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAPR(C.CString("ShapeCollection_AddSignatureLine"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), signatureline_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76999,7 +76999,7 @@ func NewShapeGuide(src *BaseShapeGuide) ( *ShapeGuide, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAPQ(C.CString("New_ShapeGuide"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAPS(C.CString("New_ShapeGuide"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		shapeguide.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(shapeguide, DeleteShapeGuide)
@@ -77128,7 +77128,7 @@ func (instance *ShapeGuideCollection) Add(name string, val float64)  (int32,  er
 //   ShapeGuide  
 func (instance *ShapeGuideCollection) Get(index int32)  (*ShapeGuide,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPR(C.CString("ShapeGuideCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAPT(C.CString("ShapeGuideCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -77202,7 +77202,7 @@ func (instance *ShapePath) IsNull()  (bool,  error)  {
 //   ShapeSegmentPathCollection  
 func (instance *ShapePath) GetPathSegementList()  (*ShapeSegmentPathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPS(C.CString("ShapePath_GetPathSegementList"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAPU(C.CString("ShapePath_GetPathSegementList"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -77279,7 +77279,7 @@ func (instance *ShapePath) SetHeightPixel(value int32)  error {
 //   void  
 func (instance *ShapePath) MoveTo(x float32, y float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPT(C.CString("ShapePath_MoveTo"), instance.ptr, C.float(x), C.float(y))
+	CGoReturnPtr := C.CellsGoFunctoinZAPV(C.CString("ShapePath_MoveTo"), instance.ptr, C.float(x), C.float(y))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -77296,7 +77296,7 @@ func (instance *ShapePath) MoveTo(x float32, y float32)  error {
 //   void  
 func (instance *ShapePath) LineTo(x float32, y float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPT(C.CString("ShapePath_LineTo"), instance.ptr, C.float(x), C.float(y))
+	CGoReturnPtr := C.CellsGoFunctoinZAPV(C.CString("ShapePath_LineTo"), instance.ptr, C.float(x), C.float(y))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -77316,7 +77316,7 @@ func (instance *ShapePath) LineTo(x float32, y float32)  error {
 //   void  
 func (instance *ShapePath) CubicBezierTo(ctrx1 float32, ctry1 float32, ctrx2 float32, ctry2 float32, endx float32, endy float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPU(C.CString("ShapePath_CubicBezierTo"), instance.ptr, C.float(ctrx1), C.float(ctry1), C.float(ctrx2), C.float(ctry2), C.float(endx), C.float(endy))
+	CGoReturnPtr := C.CellsGoFunctoinZAPW(C.CString("ShapePath_CubicBezierTo"), instance.ptr, C.float(ctrx1), C.float(ctry1), C.float(ctrx2), C.float(ctry2), C.float(endx), C.float(endy))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -77334,7 +77334,7 @@ func (instance *ShapePath) CubicBezierTo(ctrx1 float32, ctry1 float32, ctrx2 flo
 //   void  
 func (instance *ShapePath) ArcTo(wr float32, hr float32, stang float32, swang float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPV(C.CString("ShapePath_ArcTo"), instance.ptr, C.float(wr), C.float(hr), C.float(stang), C.float(swang))
+	CGoReturnPtr := C.CellsGoFunctoinZAPX(C.CString("ShapePath_ArcTo"), instance.ptr, C.float(wr), C.float(hr), C.float(stang), C.float(swang))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -77407,7 +77407,7 @@ func (instance *ShapePathCollection) GetCount()  (int32,  error)  {
 //   ShapePath  
 func (instance *ShapePathCollection) Get(index int32)  (*ShapePath,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPW(C.CString("ShapePathCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAPY(C.CString("ShapePathCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -77586,7 +77586,7 @@ func (instance *ShapePathPoint) SetYAngle(value int32)  error {
 //   int32  
 func (instance *ShapePathPoint) GetType()  (ShapePathPointValueType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPX(C.CString("ShapePathPoint_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAQA(C.CString("ShapePathPoint_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -77650,7 +77650,7 @@ func (instance *ShapePathPointCollection) IsNull()  (bool,  error)  {
 //   ShapePathPoint  
 func (instance *ShapePathPointCollection) Get(index int32)  (*ShapePathPoint,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAPY(C.CString("ShapePathPointCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAQB(C.CString("ShapePathPointCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -77710,7 +77710,7 @@ func (instance *ShapePropertyCollection) IsNull()  (bool,  error)  {
 //   GlowEffect  
 func (instance *ShapePropertyCollection) GetGlowEffect()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("ShapePropertyCollection_GetGlowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("ShapePropertyCollection_GetGlowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -77753,7 +77753,7 @@ func (instance *ShapePropertyCollection) HasGlowEffect()  (bool,  error)  {
 //   Format3D  
 func (instance *ShapePropertyCollection) GetFormat3D()  (*Format3D,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQA(C.CString("ShapePropertyCollection_GetFormat3D"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAQC(C.CString("ShapePropertyCollection_GetFormat3D"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -77825,7 +77825,7 @@ func (instance *ShapePropertyCollection) SetSoftEdgeRadius(value float64)  error
 //   ShadowEffect  
 func (instance *ShapePropertyCollection) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("ShapePropertyCollection_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("ShapePropertyCollection_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -77899,7 +77899,7 @@ func (instance *ShapeSegmentPath) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ShapeSegmentPath) GetType()  (ShapePathType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQB(C.CString("ShapeSegmentPath_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAQD(C.CString("ShapeSegmentPath_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -77916,7 +77916,7 @@ func (instance *ShapeSegmentPath) GetType()  (ShapePathType,  error)  {
 //   ShapePathPointCollection  
 func (instance *ShapeSegmentPath) GetPoints()  (*ShapePathPointCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQC(C.CString("ShapeSegmentPath_GetPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAQE(C.CString("ShapeSegmentPath_GetPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -77979,7 +77979,7 @@ func (instance *ShapeSegmentPathCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ShapeSegmentPathCollection) Add(type_ ShapePathType)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQD(C.CString("ShapeSegmentPathCollection_Add"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAQF(C.CString("ShapeSegmentPathCollection_Add"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -77995,7 +77995,7 @@ func (instance *ShapeSegmentPathCollection) Add(type_ ShapePathType)  (int32,  e
 //   ShapeSegmentPath  
 func (instance *ShapeSegmentPathCollection) Get(index int32)  (*ShapeSegmentPath,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQE(C.CString("ShapeSegmentPathCollection_Get"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAQG(C.CString("ShapeSegmentPathCollection_Get"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -78076,7 +78076,7 @@ func (instance *SignatureLine) GetId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("SignatureLine_GetId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("SignatureLine_GetId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -78096,7 +78096,7 @@ func (instance *SignatureLine) SetId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("SignatureLine_SetId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("SignatureLine_SetId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -78116,7 +78116,7 @@ func (instance *SignatureLine) GetProviderId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("SignatureLine_GetProviderId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("SignatureLine_GetProviderId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -78136,7 +78136,7 @@ func (instance *SignatureLine) SetProviderId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("SignatureLine_SetProviderId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("SignatureLine_SetProviderId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -78355,7 +78355,7 @@ func (instance *SignatureLine) SetInstructions(value string)  error {
 //   int32  
 func (instance *SignatureLine) GetSignatureLineType()  (SignatureType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQF(C.CString("SignatureLine_GetSignatureLineType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAQH(C.CString("SignatureLine_GetSignatureLineType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -78377,7 +78377,7 @@ func (instance *SignatureLine) GetSignatureLineType()  (SignatureType,  error)  
 //   void  
 func (instance *SignatureLine) SetSignatureLineType(value SignatureType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQG(C.CString("SignatureLine_SetSignatureLineType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAQI(C.CString("SignatureLine_SetSignatureLineType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -78411,7 +78411,7 @@ func NewSlicerShape(src *Shape) ( *SlicerShape, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_SlicerShape"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_SlicerShape"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		slicershape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(slicershape, DeleteSlicerShape)
@@ -78630,7 +78630,7 @@ func (instance *SlicerShape) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *SlicerShape) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("SlicerShape_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("SlicerShape_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -78646,7 +78646,7 @@ func (instance *SlicerShape) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *SlicerShape) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("SlicerShape_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("SlicerShape_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -78662,7 +78662,7 @@ func (instance *SlicerShape) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *SlicerShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("SlicerShape_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("SlicerShape_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -78678,7 +78678,7 @@ func (instance *SlicerShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *SlicerShape) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("SlicerShape_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("SlicerShape_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -78694,7 +78694,7 @@ func (instance *SlicerShape) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *SlicerShape) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("SlicerShape_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("SlicerShape_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -78739,7 +78739,7 @@ func (instance *SlicerShape) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *SlicerShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("SlicerShape_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("SlicerShape_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -78755,7 +78755,7 @@ func (instance *SlicerShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *SlicerShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("SlicerShape_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("SlicerShape_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -78831,7 +78831,7 @@ func (instance *SlicerShape) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *SlicerShape) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("SlicerShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("SlicerShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -78848,7 +78848,7 @@ func (instance *SlicerShape) GetLockedProperty(type_ ShapeLockType)  (bool,  err
 //   void  
 func (instance *SlicerShape) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("SlicerShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("SlicerShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -78892,7 +78892,7 @@ func (instance *SlicerShape) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *SlicerShape) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("SlicerShape_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("SlicerShape_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -78921,7 +78921,7 @@ func (instance *SlicerShape) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *SlicerShape) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("SlicerShape_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("SlicerShape_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -79072,7 +79072,7 @@ func (instance *SlicerShape) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *SlicerShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("SlicerShape_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("SlicerShape_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -79150,7 +79150,7 @@ func (instance *SlicerShape) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *SlicerShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("SlicerShape_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("SlicerShape_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -79167,7 +79167,7 @@ func (instance *SlicerShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *SlicerShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("SlicerShape_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("SlicerShape_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -79186,7 +79186,7 @@ func (instance *SlicerShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *SlicerShape) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("SlicerShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("SlicerShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -79199,7 +79199,7 @@ func (instance *SlicerShape) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *SlicerShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("SlicerShape_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("SlicerShape_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -79218,7 +79218,7 @@ func (instance *SlicerShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *SlicerShape) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("SlicerShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("SlicerShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -79232,7 +79232,7 @@ func (instance *SlicerShape) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *SlicerShape) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("SlicerShape_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("SlicerShape_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -79252,7 +79252,7 @@ func (instance *SlicerShape) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *SlicerShape) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("SlicerShape_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("SlicerShape_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -80259,7 +80259,7 @@ func (instance *SlicerShape) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *SlicerShape) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("SlicerShape_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("SlicerShape_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -80275,7 +80275,7 @@ func (instance *SlicerShape) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *SlicerShape) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("SlicerShape_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("SlicerShape_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -80422,7 +80422,7 @@ func (instance *SlicerShape) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *SlicerShape) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("SlicerShape_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("SlicerShape_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -80450,7 +80450,7 @@ func (instance *SlicerShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *SlicerShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("SlicerShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("SlicerShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -80473,7 +80473,7 @@ func (instance *SlicerShape) ToImage_String_ImageOrPrintOptions(imagefile string
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("SlicerShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("SlicerShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -80676,7 +80676,7 @@ func (instance *SlicerShape) UpdateSelectedValue()  error {
 //   int32  
 func (instance *SlicerShape) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("SlicerShape_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("SlicerShape_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -80695,7 +80695,7 @@ func (instance *SlicerShape) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *SlicerShape) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("SlicerShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("SlicerShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -80708,7 +80708,7 @@ func (instance *SlicerShape) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *SlicerShape) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("SlicerShape_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("SlicerShape_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -80747,7 +80747,7 @@ func (instance *SlicerShape) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("SlicerShape_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("SlicerShape_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -80783,7 +80783,7 @@ func (instance *SlicerShape) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("SlicerShape_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("SlicerShape_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -80957,7 +80957,7 @@ func (instance *SlicerShape) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *SlicerShape) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("SlicerShape_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("SlicerShape_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -80976,7 +80976,7 @@ func (instance *SlicerShape) GetTextVerticalOverflow()  (TextOverflowType,  erro
 //   void  
 func (instance *SlicerShape) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("SlicerShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("SlicerShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -80989,7 +80989,7 @@ func (instance *SlicerShape) SetTextVerticalOverflow(value TextOverflowType)  er
 //   int32  
 func (instance *SlicerShape) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("SlicerShape_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("SlicerShape_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -81008,7 +81008,7 @@ func (instance *SlicerShape) GetTextHorizontalOverflow()  (TextOverflowType,  er
 //   void  
 func (instance *SlicerShape) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("SlicerShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("SlicerShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -81178,7 +81178,7 @@ func (instance *SlicerShape) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *SlicerShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("SlicerShape_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("SlicerShape_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -81209,7 +81209,7 @@ func (instance *SlicerShape) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *SlicerShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("SlicerShape_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("SlicerShape_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -81238,7 +81238,7 @@ func (instance *SlicerShape) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *SlicerShape) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("SlicerShape_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("SlicerShape_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -81254,7 +81254,7 @@ func (instance *SlicerShape) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *SlicerShape) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("SlicerShape_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("SlicerShape_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -81277,7 +81277,7 @@ func (instance *SlicerShape) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("SlicerShape_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("SlicerShape_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -81297,7 +81297,7 @@ func (instance *SlicerShape) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("SlicerShape_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("SlicerShape_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -81339,7 +81339,7 @@ func (instance *SlicerShape) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *SlicerShape) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("SlicerShape_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("SlicerShape_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -81373,7 +81373,7 @@ func (instance *SlicerShape) FitToTextSize()  error {
 //   GroupShape  
 func (instance *SlicerShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("SlicerShape_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("SlicerShape_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -81436,7 +81436,7 @@ func NewSmartArtShape(src *Shape) ( *SmartArtShape, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_SmartArtShape"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_SmartArtShape"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		smartartshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(smartartshape, DeleteSmartArtShape)
@@ -81467,7 +81467,7 @@ func (instance *SmartArtShape) IsNull()  (bool,  error)  {
 //   GroupShape  
 func (instance *SmartArtShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("SmartArtShape_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("SmartArtShape_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -81671,7 +81671,7 @@ func (instance *SmartArtShape) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *SmartArtShape) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("SmartArtShape_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("SmartArtShape_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -81687,7 +81687,7 @@ func (instance *SmartArtShape) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *SmartArtShape) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("SmartArtShape_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("SmartArtShape_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -81703,7 +81703,7 @@ func (instance *SmartArtShape) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *SmartArtShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("SmartArtShape_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("SmartArtShape_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -81719,7 +81719,7 @@ func (instance *SmartArtShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *SmartArtShape) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("SmartArtShape_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("SmartArtShape_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -81735,7 +81735,7 @@ func (instance *SmartArtShape) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *SmartArtShape) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("SmartArtShape_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("SmartArtShape_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -81780,7 +81780,7 @@ func (instance *SmartArtShape) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *SmartArtShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("SmartArtShape_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("SmartArtShape_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -81796,7 +81796,7 @@ func (instance *SmartArtShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *SmartArtShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("SmartArtShape_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("SmartArtShape_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -81872,7 +81872,7 @@ func (instance *SmartArtShape) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *SmartArtShape) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("SmartArtShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("SmartArtShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -81889,7 +81889,7 @@ func (instance *SmartArtShape) GetLockedProperty(type_ ShapeLockType)  (bool,  e
 //   void  
 func (instance *SmartArtShape) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("SmartArtShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("SmartArtShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -81933,7 +81933,7 @@ func (instance *SmartArtShape) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *SmartArtShape) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("SmartArtShape_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("SmartArtShape_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -81962,7 +81962,7 @@ func (instance *SmartArtShape) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *SmartArtShape) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("SmartArtShape_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("SmartArtShape_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -82113,7 +82113,7 @@ func (instance *SmartArtShape) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *SmartArtShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("SmartArtShape_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("SmartArtShape_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -82191,7 +82191,7 @@ func (instance *SmartArtShape) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *SmartArtShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("SmartArtShape_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("SmartArtShape_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -82208,7 +82208,7 @@ func (instance *SmartArtShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *SmartArtShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("SmartArtShape_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("SmartArtShape_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -82227,7 +82227,7 @@ func (instance *SmartArtShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *SmartArtShape) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("SmartArtShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("SmartArtShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -82240,7 +82240,7 @@ func (instance *SmartArtShape) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *SmartArtShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("SmartArtShape_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("SmartArtShape_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -82259,7 +82259,7 @@ func (instance *SmartArtShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *SmartArtShape) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("SmartArtShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("SmartArtShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -82273,7 +82273,7 @@ func (instance *SmartArtShape) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *SmartArtShape) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("SmartArtShape_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("SmartArtShape_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -82293,7 +82293,7 @@ func (instance *SmartArtShape) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *SmartArtShape) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("SmartArtShape_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("SmartArtShape_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -83300,7 +83300,7 @@ func (instance *SmartArtShape) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *SmartArtShape) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("SmartArtShape_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("SmartArtShape_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -83316,7 +83316,7 @@ func (instance *SmartArtShape) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *SmartArtShape) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("SmartArtShape_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("SmartArtShape_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -83463,7 +83463,7 @@ func (instance *SmartArtShape) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *SmartArtShape) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("SmartArtShape_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("SmartArtShape_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -83491,7 +83491,7 @@ func (instance *SmartArtShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *SmartArtShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("SmartArtShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("SmartArtShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -83514,7 +83514,7 @@ func (instance *SmartArtShape) ToImage_String_ImageOrPrintOptions(imagefile stri
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("SmartArtShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("SmartArtShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -83717,7 +83717,7 @@ func (instance *SmartArtShape) UpdateSelectedValue()  error {
 //   int32  
 func (instance *SmartArtShape) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("SmartArtShape_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("SmartArtShape_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -83736,7 +83736,7 @@ func (instance *SmartArtShape) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *SmartArtShape) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("SmartArtShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("SmartArtShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -83749,7 +83749,7 @@ func (instance *SmartArtShape) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *SmartArtShape) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("SmartArtShape_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("SmartArtShape_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -83788,7 +83788,7 @@ func (instance *SmartArtShape) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("SmartArtShape_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("SmartArtShape_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -83824,7 +83824,7 @@ func (instance *SmartArtShape) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("SmartArtShape_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("SmartArtShape_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -83998,7 +83998,7 @@ func (instance *SmartArtShape) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *SmartArtShape) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("SmartArtShape_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("SmartArtShape_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -84017,7 +84017,7 @@ func (instance *SmartArtShape) GetTextVerticalOverflow()  (TextOverflowType,  er
 //   void  
 func (instance *SmartArtShape) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("SmartArtShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("SmartArtShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -84030,7 +84030,7 @@ func (instance *SmartArtShape) SetTextVerticalOverflow(value TextOverflowType)  
 //   int32  
 func (instance *SmartArtShape) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("SmartArtShape_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("SmartArtShape_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -84049,7 +84049,7 @@ func (instance *SmartArtShape) GetTextHorizontalOverflow()  (TextOverflowType,  
 //   void  
 func (instance *SmartArtShape) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("SmartArtShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("SmartArtShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -84219,7 +84219,7 @@ func (instance *SmartArtShape) SetTextDirection(value TextDirectionType)  error 
 //   TextBoxOptions  
 func (instance *SmartArtShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("SmartArtShape_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("SmartArtShape_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -84250,7 +84250,7 @@ func (instance *SmartArtShape) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *SmartArtShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("SmartArtShape_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("SmartArtShape_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -84279,7 +84279,7 @@ func (instance *SmartArtShape) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *SmartArtShape) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("SmartArtShape_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("SmartArtShape_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -84295,7 +84295,7 @@ func (instance *SmartArtShape) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *SmartArtShape) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("SmartArtShape_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("SmartArtShape_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -84318,7 +84318,7 @@ func (instance *SmartArtShape) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("SmartArtShape_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("SmartArtShape_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -84338,7 +84338,7 @@ func (instance *SmartArtShape) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("SmartArtShape_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("SmartArtShape_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -84380,7 +84380,7 @@ func (instance *SmartArtShape) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *SmartArtShape) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("SmartArtShape_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("SmartArtShape_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -84524,7 +84524,7 @@ func (instance *SolidFill) SetCellsColor(value *CellsColor)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("SolidFill_SetCellsColor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALW(C.CString("SolidFill_SetCellsColor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -84621,7 +84621,7 @@ func NewSpinner(src *Shape) ( *Spinner, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_Spinner"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_Spinner"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		spinner.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(spinner, DeleteSpinner)
@@ -85014,7 +85014,7 @@ func (instance *Spinner) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *Spinner) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("Spinner_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("Spinner_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -85030,7 +85030,7 @@ func (instance *Spinner) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *Spinner) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("Spinner_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("Spinner_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -85046,7 +85046,7 @@ func (instance *Spinner) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *Spinner) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("Spinner_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("Spinner_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -85062,7 +85062,7 @@ func (instance *Spinner) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *Spinner) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("Spinner_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("Spinner_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -85078,7 +85078,7 @@ func (instance *Spinner) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *Spinner) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("Spinner_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("Spinner_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -85123,7 +85123,7 @@ func (instance *Spinner) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *Spinner) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("Spinner_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("Spinner_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -85139,7 +85139,7 @@ func (instance *Spinner) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *Spinner) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("Spinner_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("Spinner_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -85215,7 +85215,7 @@ func (instance *Spinner) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *Spinner) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("Spinner_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("Spinner_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -85232,7 +85232,7 @@ func (instance *Spinner) GetLockedProperty(type_ ShapeLockType)  (bool,  error) 
 //   void  
 func (instance *Spinner) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("Spinner_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("Spinner_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -85276,7 +85276,7 @@ func (instance *Spinner) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *Spinner) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("Spinner_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("Spinner_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -85305,7 +85305,7 @@ func (instance *Spinner) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *Spinner) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("Spinner_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("Spinner_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -85456,7 +85456,7 @@ func (instance *Spinner) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *Spinner) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("Spinner_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Spinner_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -85534,7 +85534,7 @@ func (instance *Spinner) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *Spinner) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("Spinner_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Spinner_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -85551,7 +85551,7 @@ func (instance *Spinner) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *Spinner) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Spinner_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Spinner_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -85570,7 +85570,7 @@ func (instance *Spinner) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *Spinner) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Spinner_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Spinner_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -85583,7 +85583,7 @@ func (instance *Spinner) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *Spinner) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Spinner_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("Spinner_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -85602,7 +85602,7 @@ func (instance *Spinner) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *Spinner) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Spinner_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("Spinner_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -85616,7 +85616,7 @@ func (instance *Spinner) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *Spinner) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("Spinner_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Spinner_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -85636,7 +85636,7 @@ func (instance *Spinner) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *Spinner) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("Spinner_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("Spinner_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -86643,7 +86643,7 @@ func (instance *Spinner) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *Spinner) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Spinner_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Spinner_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -86659,7 +86659,7 @@ func (instance *Spinner) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *Spinner) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Spinner_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Spinner_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -86806,7 +86806,7 @@ func (instance *Spinner) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *Spinner) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("Spinner_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("Spinner_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -86834,7 +86834,7 @@ func (instance *Spinner) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Spinner) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Spinner_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("Spinner_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -86857,7 +86857,7 @@ func (instance *Spinner) ToImage_String_ImageOrPrintOptions(imagefile string, op
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("Spinner_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("Spinner_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -87060,7 +87060,7 @@ func (instance *Spinner) UpdateSelectedValue()  error {
 //   int32  
 func (instance *Spinner) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("Spinner_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("Spinner_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -87079,7 +87079,7 @@ func (instance *Spinner) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *Spinner) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("Spinner_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("Spinner_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -87092,7 +87092,7 @@ func (instance *Spinner) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *Spinner) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("Spinner_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("Spinner_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -87131,7 +87131,7 @@ func (instance *Spinner) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("Spinner_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Spinner_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -87167,7 +87167,7 @@ func (instance *Spinner) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("Spinner_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Spinner_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -87341,7 +87341,7 @@ func (instance *Spinner) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *Spinner) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Spinner_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Spinner_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -87360,7 +87360,7 @@ func (instance *Spinner) GetTextVerticalOverflow()  (TextOverflowType,  error)  
 //   void  
 func (instance *Spinner) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Spinner_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Spinner_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -87373,7 +87373,7 @@ func (instance *Spinner) SetTextVerticalOverflow(value TextOverflowType)  error 
 //   int32  
 func (instance *Spinner) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("Spinner_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Spinner_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -87392,7 +87392,7 @@ func (instance *Spinner) GetTextHorizontalOverflow()  (TextOverflowType,  error)
 //   void  
 func (instance *Spinner) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("Spinner_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Spinner_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -87562,7 +87562,7 @@ func (instance *Spinner) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *Spinner) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("Spinner_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("Spinner_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -87593,7 +87593,7 @@ func (instance *Spinner) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *Spinner) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("Spinner_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("Spinner_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -87622,7 +87622,7 @@ func (instance *Spinner) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *Spinner) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("Spinner_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Spinner_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -87638,7 +87638,7 @@ func (instance *Spinner) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *Spinner) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("Spinner_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("Spinner_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -87661,7 +87661,7 @@ func (instance *Spinner) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Spinner_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Spinner_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -87681,7 +87681,7 @@ func (instance *Spinner) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("Spinner_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("Spinner_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -87723,7 +87723,7 @@ func (instance *Spinner) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *Spinner) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("Spinner_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("Spinner_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -87757,7 +87757,7 @@ func (instance *Spinner) FitToTextSize()  error {
 //   GroupShape  
 func (instance *Spinner) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("Spinner_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("Spinner_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -87820,7 +87820,7 @@ func NewTextBox(src *Shape) ( *TextBox, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_TextBox"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_TextBox"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		textbox.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(textbox, DeleteTextBox)
@@ -87856,7 +87856,7 @@ func (instance *TextBox) IsNull()  (bool,  error)  {
 //   EquationNode  
 func (instance *TextBox) GetEquationParagraph_Int(index int32)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAGW(C.CString("TextBox_GetEquationParagraph_Integer"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAGY(C.CString("TextBox_GetEquationParagraph_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -87872,7 +87872,7 @@ func (instance *TextBox) GetEquationParagraph_Int(index int32)  (*EquationNode, 
 //   EquationNode  
 func (instance *TextBox) GetEquationParagraph()  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAGS(C.CString("TextBox_GetEquationParagraph"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAGU(C.CString("TextBox_GetEquationParagraph"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -88076,7 +88076,7 @@ func (instance *TextBox) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *TextBox) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("TextBox_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("TextBox_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -88092,7 +88092,7 @@ func (instance *TextBox) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *TextBox) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("TextBox_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("TextBox_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -88108,7 +88108,7 @@ func (instance *TextBox) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *TextBox) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("TextBox_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("TextBox_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -88124,7 +88124,7 @@ func (instance *TextBox) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *TextBox) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("TextBox_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("TextBox_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -88140,7 +88140,7 @@ func (instance *TextBox) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *TextBox) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("TextBox_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("TextBox_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -88185,7 +88185,7 @@ func (instance *TextBox) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *TextBox) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("TextBox_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("TextBox_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -88201,7 +88201,7 @@ func (instance *TextBox) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *TextBox) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("TextBox_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("TextBox_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -88277,7 +88277,7 @@ func (instance *TextBox) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *TextBox) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("TextBox_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("TextBox_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -88294,7 +88294,7 @@ func (instance *TextBox) GetLockedProperty(type_ ShapeLockType)  (bool,  error) 
 //   void  
 func (instance *TextBox) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("TextBox_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("TextBox_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -88338,7 +88338,7 @@ func (instance *TextBox) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *TextBox) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("TextBox_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("TextBox_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -88367,7 +88367,7 @@ func (instance *TextBox) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *TextBox) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("TextBox_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("TextBox_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -88518,7 +88518,7 @@ func (instance *TextBox) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *TextBox) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("TextBox_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("TextBox_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -88596,7 +88596,7 @@ func (instance *TextBox) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *TextBox) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("TextBox_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("TextBox_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -88613,7 +88613,7 @@ func (instance *TextBox) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *TextBox) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("TextBox_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("TextBox_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -88632,7 +88632,7 @@ func (instance *TextBox) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *TextBox) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("TextBox_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("TextBox_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -88645,7 +88645,7 @@ func (instance *TextBox) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *TextBox) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("TextBox_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("TextBox_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -88664,7 +88664,7 @@ func (instance *TextBox) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *TextBox) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("TextBox_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("TextBox_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -88678,7 +88678,7 @@ func (instance *TextBox) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *TextBox) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("TextBox_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("TextBox_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -88698,7 +88698,7 @@ func (instance *TextBox) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *TextBox) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("TextBox_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("TextBox_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -89705,7 +89705,7 @@ func (instance *TextBox) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *TextBox) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("TextBox_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("TextBox_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -89721,7 +89721,7 @@ func (instance *TextBox) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *TextBox) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("TextBox_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("TextBox_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -89868,7 +89868,7 @@ func (instance *TextBox) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *TextBox) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("TextBox_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("TextBox_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -89896,7 +89896,7 @@ func (instance *TextBox) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *TextBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("TextBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("TextBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -89919,7 +89919,7 @@ func (instance *TextBox) ToImage_String_ImageOrPrintOptions(imagefile string, op
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("TextBox_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("TextBox_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -90122,7 +90122,7 @@ func (instance *TextBox) UpdateSelectedValue()  error {
 //   int32  
 func (instance *TextBox) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("TextBox_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("TextBox_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -90141,7 +90141,7 @@ func (instance *TextBox) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *TextBox) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("TextBox_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("TextBox_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -90154,7 +90154,7 @@ func (instance *TextBox) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *TextBox) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("TextBox_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("TextBox_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -90193,7 +90193,7 @@ func (instance *TextBox) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("TextBox_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("TextBox_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -90229,7 +90229,7 @@ func (instance *TextBox) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("TextBox_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("TextBox_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -90403,7 +90403,7 @@ func (instance *TextBox) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *TextBox) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("TextBox_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("TextBox_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -90422,7 +90422,7 @@ func (instance *TextBox) GetTextVerticalOverflow()  (TextOverflowType,  error)  
 //   void  
 func (instance *TextBox) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("TextBox_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("TextBox_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -90435,7 +90435,7 @@ func (instance *TextBox) SetTextVerticalOverflow(value TextOverflowType)  error 
 //   int32  
 func (instance *TextBox) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("TextBox_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("TextBox_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -90454,7 +90454,7 @@ func (instance *TextBox) GetTextHorizontalOverflow()  (TextOverflowType,  error)
 //   void  
 func (instance *TextBox) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("TextBox_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("TextBox_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -90624,7 +90624,7 @@ func (instance *TextBox) SetTextDirection(value TextDirectionType)  error {
 //   TextBoxOptions  
 func (instance *TextBox) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("TextBox_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("TextBox_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -90655,7 +90655,7 @@ func (instance *TextBox) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *TextBox) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("TextBox_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("TextBox_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -90684,7 +90684,7 @@ func (instance *TextBox) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *TextBox) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("TextBox_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("TextBox_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -90700,7 +90700,7 @@ func (instance *TextBox) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *TextBox) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("TextBox_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("TextBox_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -90723,7 +90723,7 @@ func (instance *TextBox) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("TextBox_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("TextBox_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -90743,7 +90743,7 @@ func (instance *TextBox) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("TextBox_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("TextBox_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -90785,7 +90785,7 @@ func (instance *TextBox) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *TextBox) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("TextBox_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("TextBox_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -90819,7 +90819,7 @@ func (instance *TextBox) FitToTextSize()  error {
 //   GroupShape  
 func (instance *TextBox) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("TextBox_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("TextBox_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -90894,7 +90894,7 @@ func (instance *TextBoxCollection) IsNull()  (bool,  error)  {
 //   TextBox  
 func (instance *TextBoxCollection) Get_Int(index int32)  (*TextBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQH(C.CString("TextBoxCollection_Get_Integer"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZAQJ(C.CString("TextBoxCollection_Get_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -90912,7 +90912,7 @@ func (instance *TextBoxCollection) Get_Int(index int32)  (*TextBox,  error)  {
 //   TextBox  
 func (instance *TextBoxCollection) Get_String(name string)  (*TextBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQI(C.CString("TextBoxCollection_Get_String"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZAQK(C.CString("TextBoxCollection_Get_String"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -90933,7 +90933,7 @@ func (instance *TextBoxCollection) Get_String(name string)  (*TextBox,  error)  
 //   int32  
 func (instance *TextBoxCollection) Add(upperleftrow int32, upperleftcolumn int32, height int32, width int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKR(C.CString("TextBoxCollection_Add"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZAKT(C.CString("TextBoxCollection_Add"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -91021,7 +91021,7 @@ func (instance *TextEffectFormat) IsNull()  (bool,  error)  {
 //   void  
 func (instance *TextEffectFormat) SetTextEffect(effect MsoPresetTextEffect)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQJ(C.CString("TextEffectFormat_SetTextEffect"), instance.ptr, C.int( int32(effect)))
+	CGoReturnPtr := C.CellsGoFunctoinZAQL(C.CString("TextEffectFormat_SetTextEffect"), instance.ptr, C.int( int32(effect)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -91208,7 +91208,7 @@ func (instance *TextEffectFormat) SetFontSize(value int32)  error {
 //   int32  
 func (instance *TextEffectFormat) GetPresetShape()  (MsoPresetTextEffectShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQK(C.CString("TextEffectFormat_GetPresetShape"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAQM(C.CString("TextEffectFormat_GetPresetShape"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -91227,7 +91227,7 @@ func (instance *TextEffectFormat) GetPresetShape()  (MsoPresetTextEffectShape,  
 //   void  
 func (instance *TextEffectFormat) SetPresetShape(value MsoPresetTextEffectShape)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQL(C.CString("TextEffectFormat_SetPresetShape"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAQN(C.CString("TextEffectFormat_SetPresetShape"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -91271,7 +91271,7 @@ func (instance *TextureFill) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *TextureFill) GetType()  (TextureType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALJ(C.CString("TextureFill_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALL(C.CString("TextureFill_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -91290,7 +91290,7 @@ func (instance *TextureFill) GetType()  (TextureType,  error)  {
 //   void  
 func (instance *TextureFill) SetType(value TextureType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALK(C.CString("TextureFill_SetType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZALM(C.CString("TextureFill_SetType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -91362,7 +91362,7 @@ func (instance *TextureFill) SetIsTiling(value bool)  error {
 //   PicFormatOption  
 func (instance *TextureFill) GetPicFormatOption()  (*PicFormatOption,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQM(C.CString("TextureFill_GetPicFormatOption"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAQO(C.CString("TextureFill_GetPicFormatOption"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -91385,7 +91385,7 @@ func (instance *TextureFill) SetPicFormatOption(value *PicFormatOption)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAQN(C.CString("TextureFill_SetPicFormatOption"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAQP(C.CString("TextureFill_SetPicFormatOption"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -91398,7 +91398,7 @@ func (instance *TextureFill) SetPicFormatOption(value *PicFormatOption)  error {
 //   TilePicOption  
 func (instance *TextureFill) GetTilePicOption()  (*TilePicOption,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQO(C.CString("TextureFill_GetTilePicOption"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAQQ(C.CString("TextureFill_GetTilePicOption"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -91421,7 +91421,7 @@ func (instance *TextureFill) SetTilePicOption(value *TilePicOption)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAQP(C.CString("TextureFill_SetTilePicOption"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAQR(C.CString("TextureFill_SetTilePicOption"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -91434,7 +91434,7 @@ func (instance *TextureFill) SetTilePicOption(value *TilePicOption)  error {
 //   int32  
 func (instance *TextureFill) GetPictureFormatType()  (FillPictureType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALN(C.CString("TextureFill_GetPictureFormatType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALP(C.CString("TextureFill_GetPictureFormatType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -91453,7 +91453,7 @@ func (instance *TextureFill) GetPictureFormatType()  (FillPictureType,  error)  
 //   void  
 func (instance *TextureFill) SetPictureFormatType(value FillPictureType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALO(C.CString("TextureFill_SetPictureFormatType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZALQ(C.CString("TextureFill_SetPictureFormatType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -91618,7 +91618,7 @@ func (instance *ThreeDFormat) SetBottomBevelHeight(value float64)  error {
 //   int32  
 func (instance *ThreeDFormat) GetBottomBevelType()  (BevelType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQQ(C.CString("ThreeDFormat_GetBottomBevelType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAQS(C.CString("ThreeDFormat_GetBottomBevelType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -91638,7 +91638,7 @@ func (instance *ThreeDFormat) GetBottomBevelType()  (BevelType,  error)  {
 //   void  
 func (instance *ThreeDFormat) SetBottomBevelType(value BevelType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQR(C.CString("ThreeDFormat_SetBottomBevelType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAQT(C.CString("ThreeDFormat_SetBottomBevelType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -91714,7 +91714,7 @@ func (instance *ThreeDFormat) SetTopBevelHeight(value float64)  error {
 //   int32  
 func (instance *ThreeDFormat) GetTopBevelType()  (BevelType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQQ(C.CString("ThreeDFormat_GetTopBevelType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAQS(C.CString("ThreeDFormat_GetTopBevelType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -91734,7 +91734,7 @@ func (instance *ThreeDFormat) GetTopBevelType()  (BevelType,  error)  {
 //   void  
 func (instance *ThreeDFormat) SetTopBevelType(value BevelType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQR(C.CString("ThreeDFormat_SetTopBevelType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAQT(C.CString("ThreeDFormat_SetTopBevelType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -91748,7 +91748,7 @@ func (instance *ThreeDFormat) SetTopBevelType(value BevelType)  error {
 //   int32  
 func (instance *ThreeDFormat) GetMaterial()  (PresetMaterialType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALQ(C.CString("ThreeDFormat_GetMaterial"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALS(C.CString("ThreeDFormat_GetMaterial"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -91768,7 +91768,7 @@ func (instance *ThreeDFormat) GetMaterial()  (PresetMaterialType,  error)  {
 //   void  
 func (instance *ThreeDFormat) SetMaterial(value PresetMaterialType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALR(C.CString("ThreeDFormat_SetMaterial"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZALT(C.CString("ThreeDFormat_SetMaterial"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -91804,7 +91804,7 @@ func (instance *ThreeDFormat) SetContourColor(value *CellsColor)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("ThreeDFormat_SetContourColor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALW(C.CString("ThreeDFormat_SetContourColor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -91869,7 +91869,7 @@ func (instance *ThreeDFormat) SetExtrusionColor(value *CellsColor)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("ThreeDFormat_SetExtrusionColor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALW(C.CString("ThreeDFormat_SetExtrusionColor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -91969,7 +91969,7 @@ func (instance *ThreeDFormat) SetLightAngle(value float64)  error {
 //   int32  
 func (instance *ThreeDFormat) GetLighting()  (LightRigType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALS(C.CString("ThreeDFormat_GetLighting"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZALU(C.CString("ThreeDFormat_GetLighting"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -91988,7 +91988,7 @@ func (instance *ThreeDFormat) GetLighting()  (LightRigType,  error)  {
 //   void  
 func (instance *ThreeDFormat) SetLighting(value LightRigType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZALT(C.CString("ThreeDFormat_SetLighting"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZALV(C.CString("ThreeDFormat_SetLighting"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -92001,7 +92001,7 @@ func (instance *ThreeDFormat) SetLighting(value LightRigType)  error {
 //   int32  
 func (instance *ThreeDFormat) GetLightingDirection()  (LightRigDirectionType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQS(C.CString("ThreeDFormat_GetLightingDirection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAQU(C.CString("ThreeDFormat_GetLightingDirection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -92020,7 +92020,7 @@ func (instance *ThreeDFormat) GetLightingDirection()  (LightRigDirectionType,  e
 //   void  
 func (instance *ThreeDFormat) SetLightingDirection(value LightRigDirectionType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQT(C.CString("ThreeDFormat_SetLightingDirection"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAQV(C.CString("ThreeDFormat_SetLightingDirection"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -92149,7 +92149,7 @@ func (instance *ThreeDFormat) SetRotationZ(value float64)  error {
 //   int32  
 func (instance *ThreeDFormat) GetPresetCameraType()  (PresetCameraType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQU(C.CString("ThreeDFormat_GetPresetCameraType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAQW(C.CString("ThreeDFormat_GetPresetCameraType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -92168,7 +92168,7 @@ func (instance *ThreeDFormat) GetPresetCameraType()  (PresetCameraType,  error) 
 //   void  
 func (instance *ThreeDFormat) SetPresetCameraType(value PresetCameraType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQV(C.CString("ThreeDFormat_SetPresetCameraType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAQX(C.CString("ThreeDFormat_SetPresetCameraType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -92376,7 +92376,7 @@ func (instance *TilePicOption) SetScaleY(value float64)  error {
 //   int32  
 func (instance *TilePicOption) GetMirrorType()  (MirrorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQW(C.CString("TilePicOption_GetMirrorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAQY(C.CString("TilePicOption_GetMirrorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -92395,7 +92395,7 @@ func (instance *TilePicOption) GetMirrorType()  (MirrorType,  error)  {
 //   void  
 func (instance *TilePicOption) SetMirrorType(value MirrorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQX(C.CString("TilePicOption_SetMirrorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZARA(C.CString("TilePicOption_SetMirrorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -92461,7 +92461,7 @@ func NewTimelineShape(src *Shape) ( *TimelineShape, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_TimelineShape"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_TimelineShape"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		timelineshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(timelineshape, DeleteTimelineShape)
@@ -92680,7 +92680,7 @@ func (instance *TimelineShape) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *TimelineShape) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("TimelineShape_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("TimelineShape_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -92696,7 +92696,7 @@ func (instance *TimelineShape) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *TimelineShape) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("TimelineShape_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("TimelineShape_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -92712,7 +92712,7 @@ func (instance *TimelineShape) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *TimelineShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("TimelineShape_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("TimelineShape_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -92728,7 +92728,7 @@ func (instance *TimelineShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *TimelineShape) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("TimelineShape_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("TimelineShape_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -92744,7 +92744,7 @@ func (instance *TimelineShape) GetReflection()  (*ReflectionEffect,  error)  {
 //   GlowEffect  
 func (instance *TimelineShape) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("TimelineShape_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("TimelineShape_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -92789,7 +92789,7 @@ func (instance *TimelineShape) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *TimelineShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("TimelineShape_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("TimelineShape_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -92805,7 +92805,7 @@ func (instance *TimelineShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *TimelineShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("TimelineShape_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("TimelineShape_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -92881,7 +92881,7 @@ func (instance *TimelineShape) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *TimelineShape) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("TimelineShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("TimelineShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -92898,7 +92898,7 @@ func (instance *TimelineShape) GetLockedProperty(type_ ShapeLockType)  (bool,  e
 //   void  
 func (instance *TimelineShape) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("TimelineShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("TimelineShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -92942,7 +92942,7 @@ func (instance *TimelineShape) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *TimelineShape) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("TimelineShape_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("TimelineShape_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -92971,7 +92971,7 @@ func (instance *TimelineShape) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *TimelineShape) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("TimelineShape_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("TimelineShape_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -93122,7 +93122,7 @@ func (instance *TimelineShape) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *TimelineShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("TimelineShape_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("TimelineShape_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -93200,7 +93200,7 @@ func (instance *TimelineShape) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *TimelineShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("TimelineShape_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("TimelineShape_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -93217,7 +93217,7 @@ func (instance *TimelineShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 //   int32  
 func (instance *TimelineShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("TimelineShape_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("TimelineShape_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -93236,7 +93236,7 @@ func (instance *TimelineShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *TimelineShape) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("TimelineShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("TimelineShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -93249,7 +93249,7 @@ func (instance *TimelineShape) SetAutoShapeType(value AutoShapeType)  error {
 //   int32  
 func (instance *TimelineShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("TimelineShape_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("TimelineShape_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -93268,7 +93268,7 @@ func (instance *TimelineShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *TimelineShape) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("TimelineShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("TimelineShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -93282,7 +93282,7 @@ func (instance *TimelineShape) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *TimelineShape) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("TimelineShape_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("TimelineShape_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -93302,7 +93302,7 @@ func (instance *TimelineShape) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *TimelineShape) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("TimelineShape_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("TimelineShape_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -94309,7 +94309,7 @@ func (instance *TimelineShape) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *TimelineShape) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("TimelineShape_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("TimelineShape_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -94325,7 +94325,7 @@ func (instance *TimelineShape) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *TimelineShape) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("TimelineShape_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("TimelineShape_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -94472,7 +94472,7 @@ func (instance *TimelineShape) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *TimelineShape) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("TimelineShape_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("TimelineShape_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -94500,7 +94500,7 @@ func (instance *TimelineShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *TimelineShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("TimelineShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("TimelineShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -94523,7 +94523,7 @@ func (instance *TimelineShape) ToImage_String_ImageOrPrintOptions(imagefile stri
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("TimelineShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("TimelineShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -94726,7 +94726,7 @@ func (instance *TimelineShape) UpdateSelectedValue()  error {
 //   int32  
 func (instance *TimelineShape) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("TimelineShape_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("TimelineShape_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -94745,7 +94745,7 @@ func (instance *TimelineShape) GetTextShapeType()  (AutoShapeType,  error)  {
 //   void  
 func (instance *TimelineShape) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("TimelineShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("TimelineShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -94758,7 +94758,7 @@ func (instance *TimelineShape) SetTextShapeType(value AutoShapeType)  error {
 //   FontSettingCollection  
 func (instance *TimelineShape) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("TimelineShape_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("TimelineShape_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -94797,7 +94797,7 @@ func (instance *TimelineShape) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("TimelineShape_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("TimelineShape_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -94833,7 +94833,7 @@ func (instance *TimelineShape) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("TimelineShape_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("TimelineShape_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -95007,7 +95007,7 @@ func (instance *TimelineShape) GetRichFormattings()  ([]FontSetting,  error)  {
 //   int32  
 func (instance *TimelineShape) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("TimelineShape_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("TimelineShape_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -95026,7 +95026,7 @@ func (instance *TimelineShape) GetTextVerticalOverflow()  (TextOverflowType,  er
 //   void  
 func (instance *TimelineShape) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("TimelineShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("TimelineShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -95039,7 +95039,7 @@ func (instance *TimelineShape) SetTextVerticalOverflow(value TextOverflowType)  
 //   int32  
 func (instance *TimelineShape) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("TimelineShape_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("TimelineShape_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -95058,7 +95058,7 @@ func (instance *TimelineShape) GetTextHorizontalOverflow()  (TextOverflowType,  
 //   void  
 func (instance *TimelineShape) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("TimelineShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("TimelineShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -95228,7 +95228,7 @@ func (instance *TimelineShape) SetTextDirection(value TextDirectionType)  error 
 //   TextBoxOptions  
 func (instance *TimelineShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("TimelineShape_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("TimelineShape_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -95259,7 +95259,7 @@ func (instance *TimelineShape) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *TimelineShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("TimelineShape_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("TimelineShape_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -95288,7 +95288,7 @@ func (instance *TimelineShape) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *TimelineShape) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("TimelineShape_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("TimelineShape_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -95304,7 +95304,7 @@ func (instance *TimelineShape) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *TimelineShape) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("TimelineShape_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("TimelineShape_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -95327,7 +95327,7 @@ func (instance *TimelineShape) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("TimelineShape_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("TimelineShape_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -95347,7 +95347,7 @@ func (instance *TimelineShape) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("TimelineShape_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("TimelineShape_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -95389,7 +95389,7 @@ func (instance *TimelineShape) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *TimelineShape) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("TimelineShape_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("TimelineShape_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -95423,7 +95423,7 @@ func (instance *TimelineShape) FitToTextSize()  error {
 //   GroupShape  
 func (instance *TimelineShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("TimelineShape_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("TimelineShape_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -95488,7 +95488,7 @@ func NewVmlShapeGuide(src *BaseShapeGuide) ( *VmlShapeGuide, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAPQ(C.CString("New_VmlShapeGuide"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAPS(C.CString("New_VmlShapeGuide"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		vmlshapeguide.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(vmlshapeguide, DeleteVmlShapeGuide)
@@ -95545,7 +95545,7 @@ func NewWebExtensionShape(src *Shape) ( *WebExtensionShape, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAJC(C.CString("New_WebExtensionShape"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("New_WebExtensionShape"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		webextensionshape.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(webextensionshape, DeleteWebExtensionShape)
@@ -95576,7 +95576,7 @@ func (instance *WebExtensionShape) IsNull()  (bool,  error)  {
 //   WebExtension  
 func (instance *WebExtensionShape) GetWebExtension()  (*WebExtension,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAQY(C.CString("WebExtensionShape_GetWebExtension"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARB(C.CString("WebExtensionShape_GetWebExtension"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -95599,7 +95599,7 @@ func (instance *WebExtensionShape) SetWebExtension(value *WebExtension)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZARA(C.CString("WebExtensionShape_SetWebExtension"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZARC(C.CString("WebExtensionShape_SetWebExtension"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -95800,7 +95800,7 @@ func (instance *WebExtensionShape) SetTitle(value string)  error {
 //   LineFormat  
 func (instance *WebExtensionShape) GetLine()  (*LineFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJD(C.CString("WebExtensionShape_GetLine"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("WebExtensionShape_GetLine"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -95816,7 +95816,7 @@ func (instance *WebExtensionShape) GetLine()  (*LineFormat,  error)  {
 //   FillFormat  
 func (instance *WebExtensionShape) GetFill()  (*FillFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJE(C.CString("WebExtensionShape_GetFill"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("WebExtensionShape_GetFill"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -95832,7 +95832,7 @@ func (instance *WebExtensionShape) GetFill()  (*FillFormat,  error)  {
 //   ShadowEffect  
 func (instance *WebExtensionShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJF(C.CString("WebExtensionShape_GetShadowEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("WebExtensionShape_GetShadowEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -95848,7 +95848,7 @@ func (instance *WebExtensionShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 //   ReflectionEffect  
 func (instance *WebExtensionShape) GetReflection()  (*ReflectionEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJG(C.CString("WebExtensionShape_GetReflection"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("WebExtensionShape_GetReflection"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -95864,7 +95864,7 @@ func (instance *WebExtensionShape) GetReflection()  (*ReflectionEffect,  error) 
 //   GlowEffect  
 func (instance *WebExtensionShape) GetGlow()  (*GlowEffect,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJH(C.CString("WebExtensionShape_GetGlow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("WebExtensionShape_GetGlow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -95909,7 +95909,7 @@ func (instance *WebExtensionShape) SetSoftEdges(value float64)  error {
 //   ThreeDFormat  
 func (instance *WebExtensionShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJI(C.CString("WebExtensionShape_GetThreeDFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("WebExtensionShape_GetThreeDFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -95925,7 +95925,7 @@ func (instance *WebExtensionShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 //   MsoFormatPicture  
 func (instance *WebExtensionShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJJ(C.CString("WebExtensionShape_GetFormatPicture"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("WebExtensionShape_GetFormatPicture"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -96001,7 +96001,7 @@ func (instance *WebExtensionShape) SetIsAspectRatioLocked(value bool)  error {
 //   bool  
 func (instance *WebExtensionShape) GetLockedProperty(type_ ShapeLockType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJK(C.CString("WebExtensionShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("WebExtensionShape_GetLockedProperty"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -96018,7 +96018,7 @@ func (instance *WebExtensionShape) GetLockedProperty(type_ ShapeLockType)  (bool
 //   void  
 func (instance *WebExtensionShape) SetLockedProperty(type_ ShapeLockType, value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJL(C.CString("WebExtensionShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("WebExtensionShape_SetLockedProperty"), instance.ptr, C.int( int32(type_)), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -96062,7 +96062,7 @@ func (instance *WebExtensionShape) SetRotationAngle(value float64)  error {
 //   Hyperlink  
 func (instance *WebExtensionShape) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJM(C.CString("WebExtensionShape_AddHyperlink"), instance.ptr, C.CString(address))
+	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("WebExtensionShape_AddHyperlink"), instance.ptr, C.CString(address))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -96091,7 +96091,7 @@ func (instance *WebExtensionShape) RemoveHyperlink()  error {
 //   Hyperlink  
 func (instance *WebExtensionShape) GetHyperlink()  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJN(C.CString("WebExtensionShape_GetHyperlink"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("WebExtensionShape_GetHyperlink"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -96242,7 +96242,7 @@ func (instance *WebExtensionShape) IsWordArt()  (bool,  error)  {
 //   TextEffectFormat  
 func (instance *WebExtensionShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJO(C.CString("WebExtensionShape_GetTextEffect"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("WebExtensionShape_GetTextEffect"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -96320,7 +96320,7 @@ func (instance *WebExtensionShape) SetIsPrintable(value bool)  error {
 //   int32  
 func (instance *WebExtensionShape) GetMsoDrawingType()  (MsoDrawingType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJP(C.CString("WebExtensionShape_GetMsoDrawingType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("WebExtensionShape_GetMsoDrawingType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -96337,7 +96337,7 @@ func (instance *WebExtensionShape) GetMsoDrawingType()  (MsoDrawingType,  error)
 //   int32  
 func (instance *WebExtensionShape) GetAutoShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("WebExtensionShape_GetAutoShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("WebExtensionShape_GetAutoShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -96356,7 +96356,7 @@ func (instance *WebExtensionShape) GetAutoShapeType()  (AutoShapeType,  error)  
 //   void  
 func (instance *WebExtensionShape) SetAutoShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("WebExtensionShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("WebExtensionShape_SetAutoShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -96369,7 +96369,7 @@ func (instance *WebExtensionShape) SetAutoShapeType(value AutoShapeType)  error 
 //   int32  
 func (instance *WebExtensionShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("WebExtensionShape_GetAnchorType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("WebExtensionShape_GetAnchorType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -96388,7 +96388,7 @@ func (instance *WebExtensionShape) GetAnchorType()  (ShapeAnchorType,  error)  {
 //   void  
 func (instance *WebExtensionShape) SetAnchorType(value ShapeAnchorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("WebExtensionShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("WebExtensionShape_SetAnchorType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -96402,7 +96402,7 @@ func (instance *WebExtensionShape) SetAnchorType(value ShapeAnchorType)  error {
 //   int32  
 func (instance *WebExtensionShape) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJU(C.CString("WebExtensionShape_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("WebExtensionShape_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -96422,7 +96422,7 @@ func (instance *WebExtensionShape) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *WebExtensionShape) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJV(C.CString("WebExtensionShape_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("WebExtensionShape_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -97429,7 +97429,7 @@ func (instance *WebExtensionShape) SetHeightInShape(value int32)  error {
 //   GroupShape  
 func (instance *WebExtensionShape) GetGroup()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("WebExtensionShape_GetGroup"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("WebExtensionShape_GetGroup"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -97445,7 +97445,7 @@ func (instance *WebExtensionShape) GetGroup()  (*GroupShape,  error)  {
 //   int32  
 func (instance *WebExtensionShape) GetType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("WebExtensionShape_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("WebExtensionShape_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -97592,7 +97592,7 @@ func (instance *WebExtensionShape) GetActualLowerRightRow()  (int32,  error)  {
 //   []Vector<float>  
 func (instance *WebExtensionShape) GetConnectionPoints()  ([][]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJX(C.CString("WebExtensionShape_GetConnectionPoints"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("WebExtensionShape_GetConnectionPoints"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -97620,7 +97620,7 @@ func (instance *WebExtensionShape) GetConnectionPoints()  ([][]float32,  error) 
 //   []byte  
 func (instance *WebExtensionShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("WebExtensionShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("WebExtensionShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -97643,7 +97643,7 @@ func (instance *WebExtensionShape) ToImage_String_ImageOrPrintOptions(imagefile 
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKA(C.CString("WebExtensionShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("WebExtensionShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -97846,7 +97846,7 @@ func (instance *WebExtensionShape) UpdateSelectedValue()  error {
 //   int32  
 func (instance *WebExtensionShape) GetTextShapeType()  (AutoShapeType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJQ(C.CString("WebExtensionShape_GetTextShapeType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJS(C.CString("WebExtensionShape_GetTextShapeType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -97865,7 +97865,7 @@ func (instance *WebExtensionShape) GetTextShapeType()  (AutoShapeType,  error)  
 //   void  
 func (instance *WebExtensionShape) SetTextShapeType(value AutoShapeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJR(C.CString("WebExtensionShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAJT(C.CString("WebExtensionShape_SetTextShapeType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -97878,7 +97878,7 @@ func (instance *WebExtensionShape) SetTextShapeType(value AutoShapeType)  error 
 //   FontSettingCollection  
 func (instance *WebExtensionShape) GetTextBody()  (*FontSettingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKB(C.CString("WebExtensionShape_GetTextBody"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("WebExtensionShape_GetTextBody"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -97917,7 +97917,7 @@ func (instance *WebExtensionShape) SetFont(value *Font)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKC(C.CString("WebExtensionShape_SetFont"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("WebExtensionShape_SetFont"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -97953,7 +97953,7 @@ func (instance *WebExtensionShape) SetTextOptions(value *TextOptions)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKD(C.CString("WebExtensionShape_SetTextOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("WebExtensionShape_SetTextOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -98127,7 +98127,7 @@ func (instance *WebExtensionShape) GetRichFormattings()  ([]FontSetting,  error)
 //   int32  
 func (instance *WebExtensionShape) GetTextVerticalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("WebExtensionShape_GetTextVerticalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("WebExtensionShape_GetTextVerticalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -98146,7 +98146,7 @@ func (instance *WebExtensionShape) GetTextVerticalOverflow()  (TextOverflowType,
 //   void  
 func (instance *WebExtensionShape) SetTextVerticalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("WebExtensionShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("WebExtensionShape_SetTextVerticalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -98159,7 +98159,7 @@ func (instance *WebExtensionShape) SetTextVerticalOverflow(value TextOverflowTyp
 //   int32  
 func (instance *WebExtensionShape) GetTextHorizontalOverflow()  (TextOverflowType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKE(C.CString("WebExtensionShape_GetTextHorizontalOverflow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("WebExtensionShape_GetTextHorizontalOverflow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -98178,7 +98178,7 @@ func (instance *WebExtensionShape) GetTextHorizontalOverflow()  (TextOverflowTyp
 //   void  
 func (instance *WebExtensionShape) SetTextHorizontalOverflow(value TextOverflowType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKF(C.CString("WebExtensionShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("WebExtensionShape_SetTextHorizontalOverflow"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -98348,7 +98348,7 @@ func (instance *WebExtensionShape) SetTextDirection(value TextDirectionType)  er
 //   TextBoxOptions  
 func (instance *WebExtensionShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKG(C.CString("WebExtensionShape_GetTextBoxOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("WebExtensionShape_GetTextBoxOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -98379,7 +98379,7 @@ func (instance *WebExtensionShape) GetControlData()  ([]byte,  error)  {
 //   ActiveXControl  
 func (instance *WebExtensionShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKH(C.CString("WebExtensionShape_GetActiveXControl"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("WebExtensionShape_GetActiveXControl"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -98408,7 +98408,7 @@ func (instance *WebExtensionShape) RemoveActiveXControl()  error {
 //   ShapePathCollection  
 func (instance *WebExtensionShape) GetPaths()  (*ShapePathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKI(C.CString("WebExtensionShape_GetPaths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("WebExtensionShape_GetPaths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -98424,7 +98424,7 @@ func (instance *WebExtensionShape) GetPaths()  (*ShapePathCollection,  error)  {
 //   Geometry  
 func (instance *WebExtensionShape) GetGeometry()  (*Geometry,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKJ(C.CString("WebExtensionShape_GetGeometry"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("WebExtensionShape_GetGeometry"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -98447,7 +98447,7 @@ func (instance *WebExtensionShape) GetCreateId(uuid *UUID)  error {
 	  uuid_ptr =uuid.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("WebExtensionShape_GetCreateId"), instance.ptr, uuid_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("WebExtensionShape_GetCreateId"), instance.ptr, uuid_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -98467,7 +98467,7 @@ func (instance *WebExtensionShape) SetCreateId(value *UUID)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAKK(C.CString("WebExtensionShape_SetCreateId"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKM(C.CString("WebExtensionShape_SetCreateId"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -98509,7 +98509,7 @@ func (instance *WebExtensionShape) SetIsDecorative(value bool)  error {
 //   []float  
 func (instance *WebExtensionShape) GetActualBox()  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAKL(C.CString("WebExtensionShape_GetActualBox"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAKN(C.CString("WebExtensionShape_GetActualBox"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -98543,7 +98543,7 @@ func (instance *WebExtensionShape) FitToTextSize()  error {
 //   GroupShape  
 func (instance *WebExtensionShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAJW(C.CString("WebExtensionShape_GetResultOfSmartArt"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZAJY(C.CString("WebExtensionShape_GetResultOfSmartArt"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err

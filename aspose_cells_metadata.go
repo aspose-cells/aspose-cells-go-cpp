@@ -58,7 +58,7 @@ type MetadataOptions struct {
 //   metadataType - int32 
 func NewMetadataOptions(metadatatype MetadataType) ( *MetadataOptions, error) {
 	metadataoptions := &MetadataOptions{}
-	CGoReturnPtr := C.CellsGoFunctoinZBII(C.CString("New_MetadataOptions"),C.int( int32(metadatatype)))
+	CGoReturnPtr := C.CellsGoFunctoinZBIK(C.CString("New_MetadataOptions"),C.int( int32(metadatatype)))
 	if CGoReturnPtr.error_no == 0 {
 		metadataoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(metadataoptions, DeleteMetadataOptions)
@@ -89,7 +89,7 @@ func (instance *MetadataOptions) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *MetadataOptions) GetMetadataType()  (MetadataType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBIJ(C.CString("MetadataOptions_GetMetadataType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBIL(C.CString("MetadataOptions_GetMetadataType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -186,7 +186,7 @@ func NewWorkbookMetadata_String_MetadataOptions(filename string, options *Metada
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZBIK(C.CString("New_WorkbookMetadata_String_MetadataOptions"),C.CString(filename), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBIM(C.CString("New_WorkbookMetadata_String_MetadataOptions"),C.CString(filename), options_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		workbookmetadata.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(workbookmetadata, DeleteWorkbookMetadata)
@@ -208,7 +208,7 @@ func NewWorkbookMetadata_Stream_MetadataOptions(stream []byte, options *Metadata
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZBIL(C.CString("New_WorkbookMetadata_Stream_MetadataOptions"),unsafe.Pointer(&stream[0]), C.int( len(stream)), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBIN(C.CString("New_WorkbookMetadata_Stream_MetadataOptions"),unsafe.Pointer(&stream[0]), C.int( len(stream)), options_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		workbookmetadata.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(workbookmetadata, DeleteWorkbookMetadata)
@@ -239,7 +239,7 @@ func (instance *WorkbookMetadata) IsNull()  (bool,  error)  {
 //   MetadataOptions  
 func (instance *WorkbookMetadata) GetOptions()  (*MetadataOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBIM(C.CString("WorkbookMetadata_GetOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZBIO(C.CString("WorkbookMetadata_GetOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
