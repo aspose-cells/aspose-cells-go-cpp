@@ -130,5 +130,5 @@ func main() {
 	ShowCellsHelper()
 	ReplaceCellValue()
 	Unlock()
-	PerformanceTesting1()
+	// PerformanceTesting()
 }
