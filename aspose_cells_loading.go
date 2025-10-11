@@ -83,7 +83,7 @@ func (instance *DbfLoadOptions) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *DbfLoadOptions) GetLoadFormat()  (LoadFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("DbfLoadOptions_GetLoadFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("DbfLoadOptions_GetLoadFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -100,7 +100,7 @@ func (instance *DbfLoadOptions) GetLoadFormat()  (LoadFormat,  error)  {
 //   string  
 func (instance *DbfLoadOptions) GetPassword()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("DbfLoadOptions_GetPassword"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("DbfLoadOptions_GetPassword"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -116,7 +116,7 @@ func (instance *DbfLoadOptions) GetPassword()  (string,  error)  {
 //   void  
 func (instance *DbfLoadOptions) SetPassword(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("DbfLoadOptions_SetPassword"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("DbfLoadOptions_SetPassword"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -191,7 +191,7 @@ func (instance *DbfLoadOptions) SetParsingPivotCachedRecords(value bool)  error 
 //   void  
 func (instance *DbfLoadOptions) SetPaperSize(type_ PaperSizeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZQ(C.CString("DbfLoadOptions_SetPaperSize"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("DbfLoadOptions_SetPaperSize"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -204,7 +204,7 @@ func (instance *DbfLoadOptions) SetPaperSize(type_ PaperSizeType)  error {
 //   int32  
 func (instance *DbfLoadOptions) GetLanguageCode()  (CountryCode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZR(C.CString("DbfLoadOptions_GetLanguageCode"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("DbfLoadOptions_GetLanguageCode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -223,7 +223,7 @@ func (instance *DbfLoadOptions) GetLanguageCode()  (CountryCode,  error)  {
 //   void  
 func (instance *DbfLoadOptions) SetLanguageCode(value CountryCode)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZS(C.CString("DbfLoadOptions_SetLanguageCode"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("DbfLoadOptions_SetLanguageCode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -236,7 +236,7 @@ func (instance *DbfLoadOptions) SetLanguageCode(value CountryCode)  error {
 //   int32  
 func (instance *DbfLoadOptions) GetRegion()  (CountryCode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZR(C.CString("DbfLoadOptions_GetRegion"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("DbfLoadOptions_GetRegion"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -255,7 +255,7 @@ func (instance *DbfLoadOptions) GetRegion()  (CountryCode,  error)  {
 //   void  
 func (instance *DbfLoadOptions) SetRegion(value CountryCode)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZS(C.CString("DbfLoadOptions_SetRegion"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("DbfLoadOptions_SetRegion"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -268,7 +268,7 @@ func (instance *DbfLoadOptions) SetRegion(value CountryCode)  error {
 //   DefaultStyleSettings  
 func (instance *DbfLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSettings,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZT(C.CString("DbfLoadOptions_GetDefaultStyleSettings"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("DbfLoadOptions_GetDefaultStyleSettings"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -284,7 +284,7 @@ func (instance *DbfLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSetting
 //   AbstractInterruptMonitor  
 func (instance *DbfLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonitor,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZU(C.CString("DbfLoadOptions_GetInterruptMonitor"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("DbfLoadOptions_GetInterruptMonitor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -307,7 +307,7 @@ func (instance *DbfLoadOptions) SetInterruptMonitor(value *AbstractInterruptMoni
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZV(C.CString("DbfLoadOptions_SetInterruptMonitor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("DbfLoadOptions_SetInterruptMonitor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -448,7 +448,7 @@ func (instance *DbfLoadOptions) SetKeepUnparsedData(value bool)  error {
 //   LoadFilter  
 func (instance *DbfLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZW(C.CString("DbfLoadOptions_GetLoadFilter"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("DbfLoadOptions_GetLoadFilter"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -471,7 +471,7 @@ func (instance *DbfLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZX(C.CString("DbfLoadOptions_SetLoadFilter"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("DbfLoadOptions_SetLoadFilter"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -484,7 +484,7 @@ func (instance *DbfLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 //   int32  
 func (instance *DbfLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZY(C.CString("DbfLoadOptions_GetMemorySetting"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("DbfLoadOptions_GetMemorySetting"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -503,7 +503,7 @@ func (instance *DbfLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
 //   void  
 func (instance *DbfLoadOptions) SetMemorySetting(value MemorySetting)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZAA(C.CString("DbfLoadOptions_SetMemorySetting"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("DbfLoadOptions_SetMemorySetting"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -516,7 +516,7 @@ func (instance *DbfLoadOptions) SetMemorySetting(value MemorySetting)  error {
 //   AutoFitterOptions  
 func (instance *DbfLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZAB(C.CString("DbfLoadOptions_GetAutoFitterOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("DbfLoadOptions_GetAutoFitterOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -539,7 +539,7 @@ func (instance *DbfLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZAC(C.CString("DbfLoadOptions_SetAutoFitterOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("DbfLoadOptions_SetAutoFitterOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -582,7 +582,7 @@ func (instance *DbfLoadOptions) SetAutoFilter(value bool)  error {
 //   IndividualFontConfigs  
 func (instance *DbfLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZAD(C.CString("DbfLoadOptions_GetFontConfigs"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("DbfLoadOptions_GetFontConfigs"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -606,7 +606,7 @@ func (instance *DbfLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  er
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZAE(C.CString("DbfLoadOptions_SetFontConfigs"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("DbfLoadOptions_SetFontConfigs"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -752,7 +752,7 @@ func (instance *DifLoadOptions) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *DifLoadOptions) GetLoadFormat()  (LoadFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("DifLoadOptions_GetLoadFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("DifLoadOptions_GetLoadFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -769,7 +769,7 @@ func (instance *DifLoadOptions) GetLoadFormat()  (LoadFormat,  error)  {
 //   string  
 func (instance *DifLoadOptions) GetPassword()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("DifLoadOptions_GetPassword"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("DifLoadOptions_GetPassword"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -785,7 +785,7 @@ func (instance *DifLoadOptions) GetPassword()  (string,  error)  {
 //   void  
 func (instance *DifLoadOptions) SetPassword(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("DifLoadOptions_SetPassword"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("DifLoadOptions_SetPassword"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -860,7 +860,7 @@ func (instance *DifLoadOptions) SetParsingPivotCachedRecords(value bool)  error 
 //   void  
 func (instance *DifLoadOptions) SetPaperSize(type_ PaperSizeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZQ(C.CString("DifLoadOptions_SetPaperSize"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("DifLoadOptions_SetPaperSize"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -873,7 +873,7 @@ func (instance *DifLoadOptions) SetPaperSize(type_ PaperSizeType)  error {
 //   int32  
 func (instance *DifLoadOptions) GetLanguageCode()  (CountryCode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZR(C.CString("DifLoadOptions_GetLanguageCode"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("DifLoadOptions_GetLanguageCode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -892,7 +892,7 @@ func (instance *DifLoadOptions) GetLanguageCode()  (CountryCode,  error)  {
 //   void  
 func (instance *DifLoadOptions) SetLanguageCode(value CountryCode)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZS(C.CString("DifLoadOptions_SetLanguageCode"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("DifLoadOptions_SetLanguageCode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -905,7 +905,7 @@ func (instance *DifLoadOptions) SetLanguageCode(value CountryCode)  error {
 //   int32  
 func (instance *DifLoadOptions) GetRegion()  (CountryCode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZR(C.CString("DifLoadOptions_GetRegion"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("DifLoadOptions_GetRegion"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -924,7 +924,7 @@ func (instance *DifLoadOptions) GetRegion()  (CountryCode,  error)  {
 //   void  
 func (instance *DifLoadOptions) SetRegion(value CountryCode)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZS(C.CString("DifLoadOptions_SetRegion"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("DifLoadOptions_SetRegion"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -937,7 +937,7 @@ func (instance *DifLoadOptions) SetRegion(value CountryCode)  error {
 //   DefaultStyleSettings  
 func (instance *DifLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSettings,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZT(C.CString("DifLoadOptions_GetDefaultStyleSettings"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("DifLoadOptions_GetDefaultStyleSettings"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -953,7 +953,7 @@ func (instance *DifLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSetting
 //   AbstractInterruptMonitor  
 func (instance *DifLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonitor,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZU(C.CString("DifLoadOptions_GetInterruptMonitor"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("DifLoadOptions_GetInterruptMonitor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -976,7 +976,7 @@ func (instance *DifLoadOptions) SetInterruptMonitor(value *AbstractInterruptMoni
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZV(C.CString("DifLoadOptions_SetInterruptMonitor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("DifLoadOptions_SetInterruptMonitor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1117,7 +1117,7 @@ func (instance *DifLoadOptions) SetKeepUnparsedData(value bool)  error {
 //   LoadFilter  
 func (instance *DifLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZW(C.CString("DifLoadOptions_GetLoadFilter"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("DifLoadOptions_GetLoadFilter"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1140,7 +1140,7 @@ func (instance *DifLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZX(C.CString("DifLoadOptions_SetLoadFilter"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("DifLoadOptions_SetLoadFilter"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1153,7 +1153,7 @@ func (instance *DifLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 //   int32  
 func (instance *DifLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZY(C.CString("DifLoadOptions_GetMemorySetting"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("DifLoadOptions_GetMemorySetting"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1172,7 +1172,7 @@ func (instance *DifLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
 //   void  
 func (instance *DifLoadOptions) SetMemorySetting(value MemorySetting)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZAA(C.CString("DifLoadOptions_SetMemorySetting"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("DifLoadOptions_SetMemorySetting"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1185,7 +1185,7 @@ func (instance *DifLoadOptions) SetMemorySetting(value MemorySetting)  error {
 //   AutoFitterOptions  
 func (instance *DifLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZAB(C.CString("DifLoadOptions_GetAutoFitterOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("DifLoadOptions_GetAutoFitterOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1208,7 +1208,7 @@ func (instance *DifLoadOptions) SetAutoFitterOptions(value *AutoFitterOptions)  
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZAC(C.CString("DifLoadOptions_SetAutoFitterOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("DifLoadOptions_SetAutoFitterOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1251,7 +1251,7 @@ func (instance *DifLoadOptions) SetAutoFilter(value bool)  error {
 //   IndividualFontConfigs  
 func (instance *DifLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZAD(C.CString("DifLoadOptions_GetFontConfigs"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("DifLoadOptions_GetFontConfigs"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1275,7 +1275,7 @@ func (instance *DifLoadOptions) SetFontConfigs(value *IndividualFontConfigs)  er
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZAE(C.CString("DifLoadOptions_SetFontConfigs"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("DifLoadOptions_SetFontConfigs"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

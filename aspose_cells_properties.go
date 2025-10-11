@@ -75,7 +75,7 @@ func NewBuiltInDocumentPropertyCollection(src *DocumentPropertyCollection) ( *Bu
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAXE(C.CString("New_BuiltInDocumentPropertyCollection"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("New_BuiltInDocumentPropertyCollection"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		builtindocumentpropertycollection.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(builtindocumentpropertycollection, DeleteBuiltInDocumentPropertyCollection)
@@ -108,7 +108,7 @@ func (instance *BuiltInDocumentPropertyCollection) IsNull()  (bool,  error)  {
 //   DocumentProperty  
 func (instance *BuiltInDocumentPropertyCollection) Get_String(name string)  (*DocumentProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXF(C.CString("BuiltInDocumentPropertyCollection_Get_String"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZBU(C.CString("BuiltInDocumentPropertyCollection_Get_String"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -126,7 +126,7 @@ func (instance *BuiltInDocumentPropertyCollection) Get_String(name string)  (*Do
 //   DocumentProperty  
 func (instance *BuiltInDocumentPropertyCollection) Get_Int(index int32)  (*DocumentProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXG(C.CString("BuiltInDocumentPropertyCollection_Get_Integer"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZAG(C.CString("BuiltInDocumentPropertyCollection_Get_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -142,7 +142,7 @@ func (instance *BuiltInDocumentPropertyCollection) Get_Int(index int32)  (*Docum
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetLanguage()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BuiltInDocumentPropertyCollection_GetLanguage"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("BuiltInDocumentPropertyCollection_GetLanguage"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -158,7 +158,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetLanguage()  (string,  erro
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetLanguage(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_SetLanguage"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_SetLanguage"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -171,7 +171,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetLanguage(value string)  er
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetAuthor()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BuiltInDocumentPropertyCollection_GetAuthor"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("BuiltInDocumentPropertyCollection_GetAuthor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -187,7 +187,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetAuthor()  (string,  error)
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetAuthor(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_SetAuthor"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_SetAuthor"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -200,7 +200,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetAuthor(value string)  erro
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetComments()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BuiltInDocumentPropertyCollection_GetComments"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("BuiltInDocumentPropertyCollection_GetComments"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -216,7 +216,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetComments()  (string,  erro
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetComments(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_SetComments"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_SetComments"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -229,7 +229,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetComments(value string)  er
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetCategory()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BuiltInDocumentPropertyCollection_GetCategory"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("BuiltInDocumentPropertyCollection_GetCategory"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -245,7 +245,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetCategory()  (string,  erro
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetCategory(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_SetCategory"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_SetCategory"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -258,7 +258,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetCategory(value string)  er
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetContentType()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BuiltInDocumentPropertyCollection_GetContentType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("BuiltInDocumentPropertyCollection_GetContentType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -274,7 +274,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetContentType()  (string,  e
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetContentType(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_SetContentType"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_SetContentType"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -287,7 +287,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetContentType(value string) 
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetContentStatus()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BuiltInDocumentPropertyCollection_GetContentStatus"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("BuiltInDocumentPropertyCollection_GetContentStatus"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -303,7 +303,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetContentStatus()  (string, 
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetContentStatus(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_SetContentStatus"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_SetContentStatus"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -316,7 +316,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetContentStatus(value string
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetCompany()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BuiltInDocumentPropertyCollection_GetCompany"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("BuiltInDocumentPropertyCollection_GetCompany"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -332,7 +332,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetCompany()  (string,  error
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetCompany(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_SetCompany"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_SetCompany"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -345,7 +345,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetCompany(value string)  err
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetHyperlinkBase()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BuiltInDocumentPropertyCollection_GetHyperlinkBase"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("BuiltInDocumentPropertyCollection_GetHyperlinkBase"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -361,7 +361,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetHyperlinkBase()  (string, 
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetHyperlinkBase(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_SetHyperlinkBase"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_SetHyperlinkBase"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -374,12 +374,12 @@ func (instance *BuiltInDocumentPropertyCollection) SetHyperlinkBase(value string
 //   Date  
 func (instance *BuiltInDocumentPropertyCollection) GetCreatedTime()  (time.Time,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCG(C.CString("BuiltInDocumentPropertyCollection_GetCreatedTime"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAD(C.CString("BuiltInDocumentPropertyCollection_GetCreatedTime"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  time.Unix(0, 0), err
 	}
-	result := time.Date(int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
+	result := time.Date(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
 
 	return result, nil 
 }
@@ -392,7 +392,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetCreatedTime(value time.Tim
 	
 	time_value := C.Get_Date( C.int(value.Year()), C.int(value.Month()) , C.int(value.Day()) , C.int(value.Hour()) , C.int(value.Minute()) , C.int(value.Second())  )
 
-	CGoReturnPtr := C.CellsGoFunctoinZZCF(C.CString("BuiltInDocumentPropertyCollection_SetCreatedTime"), instance.ptr, time_value)
+	CGoReturnPtr := C.CellsGoFunctoinZZAE(C.CString("BuiltInDocumentPropertyCollection_SetCreatedTime"), instance.ptr, time_value)
 	C.Delete_GetDate( time_value)
 
 	if CGoReturnPtr.error_no != 0 {
@@ -407,12 +407,12 @@ func (instance *BuiltInDocumentPropertyCollection) SetCreatedTime(value time.Tim
 //   Date  
 func (instance *BuiltInDocumentPropertyCollection) GetCreatedUniversalTime()  (time.Time,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCG(C.CString("BuiltInDocumentPropertyCollection_GetCreatedUniversalTime"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAD(C.CString("BuiltInDocumentPropertyCollection_GetCreatedUniversalTime"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  time.Unix(0, 0), err
 	}
-	result := time.Date(int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
+	result := time.Date(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
 
 	return result, nil 
 }
@@ -425,7 +425,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetCreatedUniversalTime(value
 	
 	time_value := C.Get_Date( C.int(value.Year()), C.int(value.Month()) , C.int(value.Day()) , C.int(value.Hour()) , C.int(value.Minute()) , C.int(value.Second())  )
 
-	CGoReturnPtr := C.CellsGoFunctoinZZCF(C.CString("BuiltInDocumentPropertyCollection_SetCreatedUniversalTime"), instance.ptr, time_value)
+	CGoReturnPtr := C.CellsGoFunctoinZZAE(C.CString("BuiltInDocumentPropertyCollection_SetCreatedUniversalTime"), instance.ptr, time_value)
 	C.Delete_GetDate( time_value)
 
 	if CGoReturnPtr.error_no != 0 {
@@ -440,7 +440,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetCreatedUniversalTime(value
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetKeywords()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BuiltInDocumentPropertyCollection_GetKeywords"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("BuiltInDocumentPropertyCollection_GetKeywords"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -456,7 +456,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetKeywords()  (string,  erro
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetKeywords(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_SetKeywords"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_SetKeywords"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -469,12 +469,12 @@ func (instance *BuiltInDocumentPropertyCollection) SetKeywords(value string)  er
 //   Date  
 func (instance *BuiltInDocumentPropertyCollection) GetLastPrinted()  (time.Time,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCG(C.CString("BuiltInDocumentPropertyCollection_GetLastPrinted"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAD(C.CString("BuiltInDocumentPropertyCollection_GetLastPrinted"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  time.Unix(0, 0), err
 	}
-	result := time.Date(int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
+	result := time.Date(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
 
 	return result, nil 
 }
@@ -487,7 +487,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetLastPrinted(value time.Tim
 	
 	time_value := C.Get_Date( C.int(value.Year()), C.int(value.Month()) , C.int(value.Day()) , C.int(value.Hour()) , C.int(value.Minute()) , C.int(value.Second())  )
 
-	CGoReturnPtr := C.CellsGoFunctoinZZCF(C.CString("BuiltInDocumentPropertyCollection_SetLastPrinted"), instance.ptr, time_value)
+	CGoReturnPtr := C.CellsGoFunctoinZZAE(C.CString("BuiltInDocumentPropertyCollection_SetLastPrinted"), instance.ptr, time_value)
 	C.Delete_GetDate( time_value)
 
 	if CGoReturnPtr.error_no != 0 {
@@ -502,12 +502,12 @@ func (instance *BuiltInDocumentPropertyCollection) SetLastPrinted(value time.Tim
 //   Date  
 func (instance *BuiltInDocumentPropertyCollection) GetLastPrintedUniversalTime()  (time.Time,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCG(C.CString("BuiltInDocumentPropertyCollection_GetLastPrintedUniversalTime"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAD(C.CString("BuiltInDocumentPropertyCollection_GetLastPrintedUniversalTime"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  time.Unix(0, 0), err
 	}
-	result := time.Date(int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
+	result := time.Date(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
 
 	return result, nil 
 }
@@ -520,7 +520,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetLastPrintedUniversalTime(v
 	
 	time_value := C.Get_Date( C.int(value.Year()), C.int(value.Month()) , C.int(value.Day()) , C.int(value.Hour()) , C.int(value.Minute()) , C.int(value.Second())  )
 
-	CGoReturnPtr := C.CellsGoFunctoinZZCF(C.CString("BuiltInDocumentPropertyCollection_SetLastPrintedUniversalTime"), instance.ptr, time_value)
+	CGoReturnPtr := C.CellsGoFunctoinZZAE(C.CString("BuiltInDocumentPropertyCollection_SetLastPrintedUniversalTime"), instance.ptr, time_value)
 	C.Delete_GetDate( time_value)
 
 	if CGoReturnPtr.error_no != 0 {
@@ -535,7 +535,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetLastPrintedUniversalTime(v
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetLastSavedBy()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BuiltInDocumentPropertyCollection_GetLastSavedBy"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("BuiltInDocumentPropertyCollection_GetLastSavedBy"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -551,7 +551,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetLastSavedBy()  (string,  e
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetLastSavedBy(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_SetLastSavedBy"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_SetLastSavedBy"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -564,12 +564,12 @@ func (instance *BuiltInDocumentPropertyCollection) SetLastSavedBy(value string) 
 //   Date  
 func (instance *BuiltInDocumentPropertyCollection) GetLastSavedTime()  (time.Time,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCG(C.CString("BuiltInDocumentPropertyCollection_GetLastSavedTime"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAD(C.CString("BuiltInDocumentPropertyCollection_GetLastSavedTime"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  time.Unix(0, 0), err
 	}
-	result := time.Date(int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
+	result := time.Date(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
 
 	return result, nil 
 }
@@ -582,7 +582,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetLastSavedTime(value time.T
 	
 	time_value := C.Get_Date( C.int(value.Year()), C.int(value.Month()) , C.int(value.Day()) , C.int(value.Hour()) , C.int(value.Minute()) , C.int(value.Second())  )
 
-	CGoReturnPtr := C.CellsGoFunctoinZZCF(C.CString("BuiltInDocumentPropertyCollection_SetLastSavedTime"), instance.ptr, time_value)
+	CGoReturnPtr := C.CellsGoFunctoinZZAE(C.CString("BuiltInDocumentPropertyCollection_SetLastSavedTime"), instance.ptr, time_value)
 	C.Delete_GetDate( time_value)
 
 	if CGoReturnPtr.error_no != 0 {
@@ -597,12 +597,12 @@ func (instance *BuiltInDocumentPropertyCollection) SetLastSavedTime(value time.T
 //   Date  
 func (instance *BuiltInDocumentPropertyCollection) GetLastSavedUniversalTime()  (time.Time,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCG(C.CString("BuiltInDocumentPropertyCollection_GetLastSavedUniversalTime"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAD(C.CString("BuiltInDocumentPropertyCollection_GetLastSavedUniversalTime"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  time.Unix(0, 0), err
 	}
-	result := time.Date(int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
+	result := time.Date(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
 
 	return result, nil 
 }
@@ -615,7 +615,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetLastSavedUniversalTime(val
 	
 	time_value := C.Get_Date( C.int(value.Year()), C.int(value.Month()) , C.int(value.Day()) , C.int(value.Hour()) , C.int(value.Minute()) , C.int(value.Second())  )
 
-	CGoReturnPtr := C.CellsGoFunctoinZZCF(C.CString("BuiltInDocumentPropertyCollection_SetLastSavedUniversalTime"), instance.ptr, time_value)
+	CGoReturnPtr := C.CellsGoFunctoinZZAE(C.CString("BuiltInDocumentPropertyCollection_SetLastSavedUniversalTime"), instance.ptr, time_value)
 	C.Delete_GetDate( time_value)
 
 	if CGoReturnPtr.error_no != 0 {
@@ -630,7 +630,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetLastSavedUniversalTime(val
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetManager()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BuiltInDocumentPropertyCollection_GetManager"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("BuiltInDocumentPropertyCollection_GetManager"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -646,7 +646,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetManager()  (string,  error
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetManager(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_SetManager"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_SetManager"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -659,7 +659,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetManager(value string)  err
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetNameOfApplication()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BuiltInDocumentPropertyCollection_GetNameOfApplication"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("BuiltInDocumentPropertyCollection_GetNameOfApplication"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -675,7 +675,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetNameOfApplication()  (stri
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetNameOfApplication(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_SetNameOfApplication"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_SetNameOfApplication"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -717,7 +717,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetPages(value int32)  error 
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetRevisionNumber()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BuiltInDocumentPropertyCollection_GetRevisionNumber"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("BuiltInDocumentPropertyCollection_GetRevisionNumber"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -733,7 +733,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetRevisionNumber()  (string,
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetRevisionNumber(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_SetRevisionNumber"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_SetRevisionNumber"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -746,7 +746,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetRevisionNumber(value strin
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetSubject()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BuiltInDocumentPropertyCollection_GetSubject"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("BuiltInDocumentPropertyCollection_GetSubject"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -762,7 +762,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetSubject()  (string,  error
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetSubject(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_SetSubject"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_SetSubject"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -775,7 +775,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetSubject(value string)  err
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetTemplate()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BuiltInDocumentPropertyCollection_GetTemplate"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("BuiltInDocumentPropertyCollection_GetTemplate"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -791,7 +791,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetTemplate()  (string,  erro
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetTemplate(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_SetTemplate"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_SetTemplate"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -804,7 +804,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetTemplate(value string)  er
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetTitle()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BuiltInDocumentPropertyCollection_GetTitle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("BuiltInDocumentPropertyCollection_GetTitle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -820,7 +820,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetTitle()  (string,  error) 
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetTitle(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_SetTitle"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_SetTitle"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -833,7 +833,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetTitle(value string)  error
 //   float64  
 func (instance *BuiltInDocumentPropertyCollection) GetTotalEditingTime()  (float64,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("BuiltInDocumentPropertyCollection_GetTotalEditingTime"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAB(C.CString("BuiltInDocumentPropertyCollection_GetTotalEditingTime"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -849,7 +849,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetTotalEditingTime()  (float
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetTotalEditingTime(value float64)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZBB(C.CString("BuiltInDocumentPropertyCollection_SetTotalEditingTime"), instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZAC(C.CString("BuiltInDocumentPropertyCollection_SetTotalEditingTime"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -862,7 +862,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetTotalEditingTime(value flo
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetVersion()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BuiltInDocumentPropertyCollection_GetVersion"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("BuiltInDocumentPropertyCollection_GetVersion"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -878,7 +878,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetVersion()  (string,  error
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetVersion(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_SetVersion"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_SetVersion"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -891,7 +891,7 @@ func (instance *BuiltInDocumentPropertyCollection) SetVersion(value string)  err
 //   string  
 func (instance *BuiltInDocumentPropertyCollection) GetDocumentVersion()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("BuiltInDocumentPropertyCollection_GetDocumentVersion"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("BuiltInDocumentPropertyCollection_GetDocumentVersion"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -907,7 +907,7 @@ func (instance *BuiltInDocumentPropertyCollection) GetDocumentVersion()  (string
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) SetDocumentVersion(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_SetDocumentVersion"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_SetDocumentVersion"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1025,7 +1025,7 @@ func (instance *BuiltInDocumentPropertyCollection) Contains(name string)  (bool,
 //   int32  
 func (instance *BuiltInDocumentPropertyCollection) IndexOf(name string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIB(C.CString("BuiltInDocumentPropertyCollection_IndexOf"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZEM(C.CString("BuiltInDocumentPropertyCollection_IndexOf"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1041,7 +1041,7 @@ func (instance *BuiltInDocumentPropertyCollection) IndexOf(name string)  (int32,
 //   void  
 func (instance *BuiltInDocumentPropertyCollection) Remove(name string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("BuiltInDocumentPropertyCollection_Remove"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("BuiltInDocumentPropertyCollection_Remove"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1118,7 +1118,7 @@ func (instance *ContentTypeProperty) IsNull()  (bool,  error)  {
 //   string  
 func (instance *ContentTypeProperty) GetName()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ContentTypeProperty_GetName"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ContentTypeProperty_GetName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1134,7 +1134,7 @@ func (instance *ContentTypeProperty) GetName()  (string,  error)  {
 //   void  
 func (instance *ContentTypeProperty) SetName(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ContentTypeProperty_SetName"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ContentTypeProperty_SetName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1147,7 +1147,7 @@ func (instance *ContentTypeProperty) SetName(value string)  error {
 //   string  
 func (instance *ContentTypeProperty) GetValue()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ContentTypeProperty_GetValue"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ContentTypeProperty_GetValue"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1163,7 +1163,7 @@ func (instance *ContentTypeProperty) GetValue()  (string,  error)  {
 //   void  
 func (instance *ContentTypeProperty) SetValue(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ContentTypeProperty_SetValue"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ContentTypeProperty_SetValue"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1176,7 +1176,7 @@ func (instance *ContentTypeProperty) SetValue(value string)  error {
 //   string  
 func (instance *ContentTypeProperty) GetType()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ContentTypeProperty_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ContentTypeProperty_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1192,7 +1192,7 @@ func (instance *ContentTypeProperty) GetType()  (string,  error)  {
 //   void  
 func (instance *ContentTypeProperty) SetType(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ContentTypeProperty_SetType"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ContentTypeProperty_SetType"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1268,7 +1268,7 @@ func (instance *ContentTypePropertyCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ContentTypePropertyCollection) Add_String_String(name string, value string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAAH(C.CString("ContentTypePropertyCollection_Add_String_String"), instance.ptr, C.CString(name), C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("ContentTypePropertyCollection_Add_String_String"), instance.ptr, C.CString(name), C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1286,7 +1286,7 @@ func (instance *ContentTypePropertyCollection) Add_String_String(name string, va
 //   int32  
 func (instance *ContentTypePropertyCollection) Add_String_String_String(name string, value string, type_ string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZXV(C.CString("ContentTypePropertyCollection_Add_String_String_String"), instance.ptr, C.CString(name), C.CString(value), C.CString(type_))
+	CGoReturnPtr := C.CellsGoFunctoinZZIU(C.CString("ContentTypePropertyCollection_Add_String_String_String"), instance.ptr, C.CString(name), C.CString(value), C.CString(type_))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1302,7 +1302,7 @@ func (instance *ContentTypePropertyCollection) Add_String_String_String(name str
 //   ContentTypeProperty  
 func (instance *ContentTypePropertyCollection) Get_Int(index int32)  (*ContentTypeProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXH(C.CString("ContentTypePropertyCollection_Get_Integer"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZAG(C.CString("ContentTypePropertyCollection_Get_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1320,7 +1320,7 @@ func (instance *ContentTypePropertyCollection) Get_Int(index int32)  (*ContentTy
 //   ContentTypeProperty  
 func (instance *ContentTypePropertyCollection) Get_String(name string)  (*ContentTypeProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXI(C.CString("ContentTypePropertyCollection_Get_String"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZBU(C.CString("ContentTypePropertyCollection_Get_String"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1370,7 +1370,7 @@ func NewCustomDocumentPropertyCollection(src *DocumentPropertyCollection) ( *Cus
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAXE(C.CString("New_CustomDocumentPropertyCollection"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("New_CustomDocumentPropertyCollection"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		customdocumentpropertycollection.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(customdocumentpropertycollection, DeleteCustomDocumentPropertyCollection)
@@ -1404,7 +1404,7 @@ func (instance *CustomDocumentPropertyCollection) IsNull()  (bool,  error)  {
 //   DocumentProperty  
 func (instance *CustomDocumentPropertyCollection) Add_String_String(name string, value string)  (*DocumentProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXJ(C.CString("CustomDocumentPropertyCollection_Add_String_String"), instance.ptr, C.CString(name), C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZBS(C.CString("CustomDocumentPropertyCollection_Add_String_String"), instance.ptr, C.CString(name), C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1423,7 +1423,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_String(name string,
 //   DocumentProperty  
 func (instance *CustomDocumentPropertyCollection) Add_String_Int(name string, value int32)  (*DocumentProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXK(C.CString("CustomDocumentPropertyCollection_Add_String_Integer"), instance.ptr, C.CString(name), C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZKG(C.CString("CustomDocumentPropertyCollection_Add_String_Integer"), instance.ptr, C.CString(name), C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1444,7 +1444,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_Date(name string, v
 	
 	time_value := C.Get_Date( C.int(value.Year()), C.int(value.Month()) , C.int(value.Day()) , C.int(value.Hour()) , C.int(value.Minute()) , C.int(value.Second())  )
 
-	CGoReturnPtr := C.CellsGoFunctoinZAXL(C.CString("CustomDocumentPropertyCollection_Add_String_Date"), instance.ptr, C.CString(name), time_value)
+	CGoReturnPtr := C.CellsGoFunctoinZZND(C.CString("CustomDocumentPropertyCollection_Add_String_Date"), instance.ptr, C.CString(name), time_value)
 	C.Delete_GetDate( time_value)
 
 	if CGoReturnPtr.error_no != 0 {
@@ -1465,7 +1465,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_Date(name string, v
 //   DocumentProperty  
 func (instance *CustomDocumentPropertyCollection) Add_String_Bool(name string, value bool)  (*DocumentProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXM(C.CString("CustomDocumentPropertyCollection_Add_String_Boolean"), instance.ptr, C.CString(name), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZNE(C.CString("CustomDocumentPropertyCollection_Add_String_Boolean"), instance.ptr, C.CString(name), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1484,7 +1484,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_Bool(name string, v
 //   DocumentProperty  
 func (instance *CustomDocumentPropertyCollection) Add_String_Double(name string, value float64)  (*DocumentProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXN(C.CString("CustomDocumentPropertyCollection_Add_String_Double"), instance.ptr, C.CString(name), C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZNF(C.CString("CustomDocumentPropertyCollection_Add_String_Double"), instance.ptr, C.CString(name), C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1503,7 +1503,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_Double(name string,
 //   DocumentProperty  
 func (instance *CustomDocumentPropertyCollection) AddLinkToContent(name string, source string)  (*DocumentProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXJ(C.CString("CustomDocumentPropertyCollection_AddLinkToContent"), instance.ptr, C.CString(name), C.CString(source))
+	CGoReturnPtr := C.CellsGoFunctoinZZBS(C.CString("CustomDocumentPropertyCollection_AddLinkToContent"), instance.ptr, C.CString(name), C.CString(source))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1520,7 +1520,7 @@ func (instance *CustomDocumentPropertyCollection) AddLinkToContent(name string, 
 //   void  
 func (instance *CustomDocumentPropertyCollection) UpdateLinkedPropertyValue()  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("CustomDocumentPropertyCollection_UpdateLinkedPropertyValue"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZX(C.CString("CustomDocumentPropertyCollection_UpdateLinkedPropertyValue"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1534,7 +1534,7 @@ func (instance *CustomDocumentPropertyCollection) UpdateLinkedPropertyValue()  e
 //   void  
 func (instance *CustomDocumentPropertyCollection) UpdateLinkedRange()  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("CustomDocumentPropertyCollection_UpdateLinkedRange"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZX(C.CString("CustomDocumentPropertyCollection_UpdateLinkedRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1549,7 +1549,7 @@ func (instance *CustomDocumentPropertyCollection) UpdateLinkedRange()  error {
 //   DocumentProperty  
 func (instance *CustomDocumentPropertyCollection) Get_Int(index int32)  (*DocumentProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXG(C.CString("CustomDocumentPropertyCollection_Get_Integer"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZAG(C.CString("CustomDocumentPropertyCollection_Get_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1583,7 +1583,7 @@ func (instance *CustomDocumentPropertyCollection) Contains(name string)  (bool, 
 //   int32  
 func (instance *CustomDocumentPropertyCollection) IndexOf(name string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIB(C.CString("CustomDocumentPropertyCollection_IndexOf"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZEM(C.CString("CustomDocumentPropertyCollection_IndexOf"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1599,7 +1599,7 @@ func (instance *CustomDocumentPropertyCollection) IndexOf(name string)  (int32, 
 //   void  
 func (instance *CustomDocumentPropertyCollection) Remove(name string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("CustomDocumentPropertyCollection_Remove"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("CustomDocumentPropertyCollection_Remove"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1629,7 +1629,7 @@ func (instance *CustomDocumentPropertyCollection) RemoveAt(index int32)  error {
 //   DocumentProperty  
 func (instance *CustomDocumentPropertyCollection) Get_String(name string)  (*DocumentProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXF(C.CString("CustomDocumentPropertyCollection_Get_String"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZBU(C.CString("CustomDocumentPropertyCollection_Get_String"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1708,7 +1708,7 @@ func (instance *CustomProperty) IsNull()  (bool,  error)  {
 //   string  
 func (instance *CustomProperty) GetName()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("CustomProperty_GetName"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("CustomProperty_GetName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1724,7 +1724,7 @@ func (instance *CustomProperty) GetName()  (string,  error)  {
 //   void  
 func (instance *CustomProperty) SetName(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("CustomProperty_SetName"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("CustomProperty_SetName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1737,7 +1737,7 @@ func (instance *CustomProperty) SetName(value string)  error {
 //   string  
 func (instance *CustomProperty) GetValue()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("CustomProperty_GetValue"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("CustomProperty_GetValue"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1753,7 +1753,7 @@ func (instance *CustomProperty) GetValue()  (string,  error)  {
 //   void  
 func (instance *CustomProperty) SetValue(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("CustomProperty_SetValue"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("CustomProperty_SetValue"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1800,7 +1800,7 @@ func (instance *CustomPropertyCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *CustomPropertyCollection) Add(name string, value string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAAH(C.CString("CustomPropertyCollection_Add"), instance.ptr, C.CString(name), C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("CustomPropertyCollection_Add"), instance.ptr, C.CString(name), C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1816,7 +1816,7 @@ func (instance *CustomPropertyCollection) Add(name string, value string)  (int32
 //   CustomProperty  
 func (instance *CustomPropertyCollection) Get_Int(index int32)  (*CustomProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXO(C.CString("CustomPropertyCollection_Get_Integer"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZAG(C.CString("CustomPropertyCollection_Get_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1834,7 +1834,7 @@ func (instance *CustomPropertyCollection) Get_Int(index int32)  (*CustomProperty
 //   CustomProperty  
 func (instance *CustomPropertyCollection) Get_String(name string)  (*CustomProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXP(C.CString("CustomPropertyCollection_Get_String"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZBU(C.CString("CustomPropertyCollection_Get_String"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1894,7 +1894,7 @@ func (instance *DocumentProperty) IsNull()  (bool,  error)  {
 //   string  
 func (instance *DocumentProperty) GetName()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("DocumentProperty_GetName"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("DocumentProperty_GetName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1908,7 +1908,7 @@ func (instance *DocumentProperty) GetName()  (string,  error)  {
 //   Object  
 func (instance *DocumentProperty) GetValue()  (*Object,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZBR(C.CString("DocumentProperty_GetValue"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("DocumentProperty_GetValue"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1931,7 +1931,7 @@ func (instance *DocumentProperty) SetValue(value *Object)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZBN(C.CString("DocumentProperty_SetValue"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("DocumentProperty_SetValue"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1958,7 +1958,7 @@ func (instance *DocumentProperty) IsLinkedToContent()  (bool,  error)  {
 //   string  
 func (instance *DocumentProperty) GetSource()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("DocumentProperty_GetSource"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("DocumentProperty_GetSource"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1972,7 +1972,7 @@ func (instance *DocumentProperty) GetSource()  (string,  error)  {
 //   int32  
 func (instance *DocumentProperty) GetType()  (PropertyType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXQ(C.CString("DocumentProperty_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("DocumentProperty_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2004,7 +2004,7 @@ func (instance *DocumentProperty) IsGeneratedName()  (bool,  error)  {
 //   string  
 func (instance *DocumentProperty) ToString()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("DocumentProperty_ToString"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("DocumentProperty_ToString"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -2032,7 +2032,7 @@ func (instance *DocumentProperty) ToInt()  (int32,  error)  {
 //   float64  
 func (instance *DocumentProperty) ToDouble()  (float64,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZBA(C.CString("DocumentProperty_ToDouble"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAB(C.CString("DocumentProperty_ToDouble"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2046,12 +2046,12 @@ func (instance *DocumentProperty) ToDouble()  (float64,  error)  {
 //   Date  
 func (instance *DocumentProperty) ToDateTime()  (time.Time,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCG(C.CString("DocumentProperty_ToDateTime"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZAD(C.CString("DocumentProperty_ToDateTime"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  time.Unix(0, 0), err
 	}
-	result := time.Date(int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZBLL(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
+	result := time.Date(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
 
 	return result, nil 
 }
@@ -2107,7 +2107,7 @@ func (instance *DocumentPropertyCollection) IsNull()  (bool,  error)  {
 //   DocumentProperty  
 func (instance *DocumentPropertyCollection) Get_Int(index int32)  (*DocumentProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXG(C.CString("DocumentPropertyCollection_Get_Integer"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZAG(C.CString("DocumentPropertyCollection_Get_Integer"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2141,7 +2141,7 @@ func (instance *DocumentPropertyCollection) Contains(name string)  (bool,  error
 //   int32  
 func (instance *DocumentPropertyCollection) IndexOf(name string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIB(C.CString("DocumentPropertyCollection_IndexOf"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZEM(C.CString("DocumentPropertyCollection_IndexOf"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2157,7 +2157,7 @@ func (instance *DocumentPropertyCollection) IndexOf(name string)  (int32,  error
 //   void  
 func (instance *DocumentPropertyCollection) Remove(name string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("DocumentPropertyCollection_Remove"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("DocumentPropertyCollection_Remove"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2187,7 +2187,7 @@ func (instance *DocumentPropertyCollection) RemoveAt(index int32)  error {
 //   DocumentProperty  
 func (instance *DocumentPropertyCollection) Get_String(name string)  (*DocumentProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAXF(C.CString("DocumentPropertyCollection_Get_String"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZBU(C.CString("DocumentPropertyCollection_Get_String"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err

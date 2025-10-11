@@ -103,7 +103,7 @@ func (instance *SensitivityLabel) IsNull()  (bool,  error)  {
 //   string  
 func (instance *SensitivityLabel) GetId()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("SensitivityLabel_GetId"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SensitivityLabel_GetId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -119,7 +119,7 @@ func (instance *SensitivityLabel) GetId()  (string,  error)  {
 //   void  
 func (instance *SensitivityLabel) SetId(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("SensitivityLabel_SetId"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("SensitivityLabel_SetId"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -161,7 +161,7 @@ func (instance *SensitivityLabel) SetIsEnabled(value bool)  error {
 //   int32  
 func (instance *SensitivityLabel) GetAssignmentType()  (SensitivityLabelAssignmentType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBJD(C.CString("SensitivityLabel_GetAssignmentType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("SensitivityLabel_GetAssignmentType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -180,7 +180,7 @@ func (instance *SensitivityLabel) GetAssignmentType()  (SensitivityLabelAssignme
 //   void  
 func (instance *SensitivityLabel) SetAssignmentType(value SensitivityLabelAssignmentType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBJE(C.CString("SensitivityLabel_SetAssignmentType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SensitivityLabel_SetAssignmentType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -193,7 +193,7 @@ func (instance *SensitivityLabel) SetAssignmentType(value SensitivityLabelAssign
 //   string  
 func (instance *SensitivityLabel) GetSiteId()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("SensitivityLabel_GetSiteId"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SensitivityLabel_GetSiteId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -209,7 +209,7 @@ func (instance *SensitivityLabel) GetSiteId()  (string,  error)  {
 //   void  
 func (instance *SensitivityLabel) SetSiteId(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("SensitivityLabel_SetSiteId"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("SensitivityLabel_SetSiteId"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -222,7 +222,7 @@ func (instance *SensitivityLabel) SetSiteId(value string)  error {
 //   int32  
 func (instance *SensitivityLabel) GetContentMarkType()  (SensitivityLabelMarkType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBJF(C.CString("SensitivityLabel_GetContentMarkType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("SensitivityLabel_GetContentMarkType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -241,7 +241,7 @@ func (instance *SensitivityLabel) GetContentMarkType()  (SensitivityLabelMarkTyp
 //   void  
 func (instance *SensitivityLabel) SetContentMarkType(value SensitivityLabelMarkType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBJG(C.CString("SensitivityLabel_SetContentMarkType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SensitivityLabel_SetContentMarkType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -334,7 +334,7 @@ func (instance *SensitivityLabelCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *SensitivityLabelCollection) Add(id string, isenabled bool, methodtype SensitivityLabelAssignmentType, siteid string, marktype SensitivityLabelMarkType)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZBJH(C.CString("SensitivityLabelCollection_Add"), instance.ptr, C.CString(id), C.bool(isenabled), C.int( int32(methodtype)), C.CString(siteid), C.int( int32(marktype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZPB(C.CString("SensitivityLabelCollection_Add"), instance.ptr, C.CString(id), C.bool(isenabled), C.int( int32(methodtype)), C.CString(siteid), C.int( int32(marktype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err

@@ -63,7 +63,7 @@ func (instance *PivotGlobalizationSettings) IsNull()  (bool,  error)  {
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfTotal()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PivotGlobalizationSettings_GetTextOfTotal"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotGlobalizationSettings_GetTextOfTotal"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -77,7 +77,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfTotal()  (string,  error)  
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfGrandTotal()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PivotGlobalizationSettings_GetTextOfGrandTotal"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotGlobalizationSettings_GetTextOfGrandTotal"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -91,7 +91,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfGrandTotal()  (string,  err
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfMultipleItems()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PivotGlobalizationSettings_GetTextOfMultipleItems"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotGlobalizationSettings_GetTextOfMultipleItems"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -105,7 +105,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfMultipleItems()  (string,  
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfAll()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PivotGlobalizationSettings_GetTextOfAll"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotGlobalizationSettings_GetTextOfAll"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -121,7 +121,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfAll()  (string,  error)  {
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfProtectedName(protectedname string)  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPH(C.CString("PivotGlobalizationSettings_GetTextOfProtectedName"), instance.ptr, C.CString(protectedname))
+	CGoReturnPtr := C.CellsGoFunctoinZZGN(C.CString("PivotGlobalizationSettings_GetTextOfProtectedName"), instance.ptr, C.CString(protectedname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -135,7 +135,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfProtectedName(protectedname
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfColumnLabels()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PivotGlobalizationSettings_GetTextOfColumnLabels"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotGlobalizationSettings_GetTextOfColumnLabels"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -149,7 +149,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfColumnLabels()  (string,  e
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfRowLabels()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PivotGlobalizationSettings_GetTextOfRowLabels"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotGlobalizationSettings_GetTextOfRowLabels"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -163,7 +163,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfRowLabels()  (string,  erro
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfEmptyData()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PivotGlobalizationSettings_GetTextOfEmptyData"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotGlobalizationSettings_GetTextOfEmptyData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -177,7 +177,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfEmptyData()  (string,  erro
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfDataFieldHeader()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PivotGlobalizationSettings_GetTextOfDataFieldHeader"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotGlobalizationSettings_GetTextOfDataFieldHeader"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -191,7 +191,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfDataFieldHeader()  (string,
 //   []string  
 func (instance *PivotGlobalizationSettings) GetShortTextOf12Months()  ([]string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZQY(C.CString("PivotGlobalizationSettings_GetShortTextOf12Months"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZY(C.CString("PivotGlobalizationSettings_GetShortTextOf12Months"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -212,7 +212,7 @@ func (instance *PivotGlobalizationSettings) GetShortTextOf12Months()  ([]string,
 //   []string  
 func (instance *PivotGlobalizationSettings) GetTextOf4Quaters()  ([]string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZQY(C.CString("PivotGlobalizationSettings_GetTextOf4Quaters"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZY(C.CString("PivotGlobalizationSettings_GetTextOf4Quaters"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -233,7 +233,7 @@ func (instance *PivotGlobalizationSettings) GetTextOf4Quaters()  ([]string,  err
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfYears()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PivotGlobalizationSettings_GetTextOfYears"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotGlobalizationSettings_GetTextOfYears"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -247,7 +247,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfYears()  (string,  error)  
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfQuarters()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PivotGlobalizationSettings_GetTextOfQuarters"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotGlobalizationSettings_GetTextOfQuarters"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -261,7 +261,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfQuarters()  (string,  error
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfMonths()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PivotGlobalizationSettings_GetTextOfMonths"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotGlobalizationSettings_GetTextOfMonths"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -275,7 +275,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfMonths()  (string,  error) 
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfDays()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PivotGlobalizationSettings_GetTextOfDays"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotGlobalizationSettings_GetTextOfDays"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -289,7 +289,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfDays()  (string,  error)  {
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfHours()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PivotGlobalizationSettings_GetTextOfHours"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotGlobalizationSettings_GetTextOfHours"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -303,7 +303,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfHours()  (string,  error)  
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfMinutes()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PivotGlobalizationSettings_GetTextOfMinutes"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotGlobalizationSettings_GetTextOfMinutes"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -317,7 +317,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfMinutes()  (string,  error)
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfSeconds()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PivotGlobalizationSettings_GetTextOfSeconds"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotGlobalizationSettings_GetTextOfSeconds"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -331,7 +331,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfSeconds()  (string,  error)
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfRange()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PivotGlobalizationSettings_GetTextOfRange"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotGlobalizationSettings_GetTextOfRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -345,7 +345,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfRange()  (string,  error)  
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfAllPeriods()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("PivotGlobalizationSettings_GetTextOfAllPeriods"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotGlobalizationSettings_GetTextOfAllPeriods"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -361,7 +361,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfAllPeriods()  (string,  err
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfSubTotal(subtotaltype PivotFieldSubtotalType)  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZXB(C.CString("PivotGlobalizationSettings_GetTextOfSubTotal"), instance.ptr, C.int( int32(subtotaltype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZAM(C.CString("PivotGlobalizationSettings_GetTextOfSubTotal"), instance.ptr, C.int( int32(subtotaltype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err

@@ -51,7 +51,7 @@ func (instance *ConversionUtility) IsNull()  (bool,  error)  {
 //   void  
 func ConversionUtility_Convert_String_String(source string, saveas string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZAFT(C.CString("ConversionUtility_Convert_String_String"),C.CString(source), C.CString(saveas))
+	CGoReturnPtr := C.CellsGoFunctoinZZKM(C.CString("ConversionUtility_Convert_String_String"),C.CString(source), C.CString(saveas))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -78,7 +78,7 @@ func ConversionUtility_Convert_String_LoadOptions_String_SaveOptions(source stri
 	  saveoptions_ptr =saveoptions.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAYQ(C.CString("ConversionUtility_Convert_String_LoadOptions_String_SaveOptions"),C.CString(source), loadoptions_ptr, C.CString(saveas), saveoptions_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZNG(C.CString("ConversionUtility_Convert_String_LoadOptions_String_SaveOptions"),C.CString(source), loadoptions_ptr, C.CString(saveas), saveoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -223,7 +223,7 @@ func (instance *ExportRangeToJsonOptions) SetExportEmptyCells(value bool)  error
 //   string  
 func (instance *ExportRangeToJsonOptions) GetIndent()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("ExportRangeToJsonOptions_GetIndent"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ExportRangeToJsonOptions_GetIndent"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -239,7 +239,7 @@ func (instance *ExportRangeToJsonOptions) GetIndent()  (string,  error)  {
 //   void  
 func (instance *ExportRangeToJsonOptions) SetIndent(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("ExportRangeToJsonOptions_SetIndent"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ExportRangeToJsonOptions_SetIndent"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -413,7 +413,7 @@ func (instance *JsonLayoutOptions) SetConvertNumericOrDate(value bool)  error {
 //   string  
 func (instance *JsonLayoutOptions) Get_NumberFormat()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("JsonLayoutOptions_Get_NumberFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("JsonLayoutOptions_Get_NumberFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -429,7 +429,7 @@ func (instance *JsonLayoutOptions) Get_NumberFormat()  (string,  error)  {
 //   void  
 func (instance *JsonLayoutOptions) SetNumberFormat(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("JsonLayoutOptions_SetNumberFormat"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("JsonLayoutOptions_SetNumberFormat"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -442,7 +442,7 @@ func (instance *JsonLayoutOptions) SetNumberFormat(value string)  error {
 //   string  
 func (instance *JsonLayoutOptions) Get_DateFormat()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("JsonLayoutOptions_Get_DateFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("JsonLayoutOptions_Get_DateFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -458,7 +458,7 @@ func (instance *JsonLayoutOptions) Get_DateFormat()  (string,  error)  {
 //   void  
 func (instance *JsonLayoutOptions) SetDateFormat(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("JsonLayoutOptions_SetDateFormat"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("JsonLayoutOptions_SetDateFormat"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -471,7 +471,7 @@ func (instance *JsonLayoutOptions) SetDateFormat(value string)  error {
 //   Style  
 func (instance *JsonLayoutOptions) GetTitleStyle()  (*Style,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCL(C.CString("JsonLayoutOptions_GetTitleStyle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("JsonLayoutOptions_GetTitleStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -494,7 +494,7 @@ func (instance *JsonLayoutOptions) SetTitleStyle(value *Style)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZCP(C.CString("JsonLayoutOptions_SetTitleStyle"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("JsonLayoutOptions_SetTitleStyle"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -596,7 +596,7 @@ func JsonUtility_ImportData(json string, cells *Cells, row int32, column int32, 
 	  option_ptr =option.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAYR(C.CString("JsonUtility_ImportData"),C.CString(json), cells_ptr, C.int(row), C.int(column), option_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZNH(C.CString("JsonUtility_ImportData"),C.CString(json), cells_ptr, C.int(row), C.int(column), option_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -629,7 +629,7 @@ func JsonUtility_ExportRangeToJson(range_ *Range, options *JsonSaveOptions)  (st
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZAYS(C.CString("JsonUtility_ExportRangeToJson"),range__ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIJ(C.CString("JsonUtility_ExportRangeToJson"),range__ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
