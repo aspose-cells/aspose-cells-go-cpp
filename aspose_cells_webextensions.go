@@ -89,7 +89,7 @@ func (instance *WebExtension) IsNull()  (bool,  error)  {
 //   string  
 func (instance *WebExtension) GetId()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("WebExtension_GetId"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtension_GetId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -105,7 +105,7 @@ func (instance *WebExtension) GetId()  (string,  error)  {
 //   void  
 func (instance *WebExtension) SetId(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtension_SetId"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("WebExtension_SetId"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -147,7 +147,7 @@ func (instance *WebExtension) SetIsFrozen(value bool)  error {
 //   WebExtensionReference  
 func (instance *WebExtension) GetReference()  (*WebExtensionReference,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("WebExtension_GetReference"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("WebExtension_GetReference"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -163,7 +163,7 @@ func (instance *WebExtension) GetReference()  (*WebExtensionReference,  error)  
 //   WebExtensionReferenceCollection  
 func (instance *WebExtension) GetAlterReferences()  (*WebExtensionReferenceCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("WebExtension_GetAlterReferences"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("WebExtension_GetAlterReferences"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -179,7 +179,7 @@ func (instance *WebExtension) GetAlterReferences()  (*WebExtensionReferenceColle
 //   WebExtensionPropertyCollection  
 func (instance *WebExtension) GetProperties()  (*WebExtensionPropertyCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("WebExtension_GetProperties"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("WebExtension_GetProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -195,7 +195,7 @@ func (instance *WebExtension) GetProperties()  (*WebExtensionPropertyCollection,
 //   WebExtensionBindingCollection  
 func (instance *WebExtension) GetBindings()  (*WebExtensionBindingCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("WebExtension_GetBindings"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("WebExtension_GetBindings"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -256,7 +256,7 @@ func (instance *WebExtensionBinding) IsNull()  (bool,  error)  {
 //   string  
 func (instance *WebExtensionBinding) GetId()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("WebExtensionBinding_GetId"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionBinding_GetId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -272,7 +272,7 @@ func (instance *WebExtensionBinding) GetId()  (string,  error)  {
 //   void  
 func (instance *WebExtensionBinding) SetId(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionBinding_SetId"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("WebExtensionBinding_SetId"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -285,7 +285,7 @@ func (instance *WebExtensionBinding) SetId(value string)  error {
 //   string  
 func (instance *WebExtensionBinding) GetType()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("WebExtensionBinding_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionBinding_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -301,7 +301,7 @@ func (instance *WebExtensionBinding) GetType()  (string,  error)  {
 //   void  
 func (instance *WebExtensionBinding) SetType(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionBinding_SetType"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("WebExtensionBinding_SetType"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -314,7 +314,7 @@ func (instance *WebExtensionBinding) SetType(value string)  error {
 //   string  
 func (instance *WebExtensionBinding) GetAppref()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("WebExtensionBinding_GetAppref"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionBinding_GetAppref"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -330,7 +330,7 @@ func (instance *WebExtensionBinding) GetAppref()  (string,  error)  {
 //   void  
 func (instance *WebExtensionBinding) SetAppref(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionBinding_SetAppref"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("WebExtensionBinding_SetAppref"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -501,7 +501,7 @@ func (instance *WebExtensionCollection) Add()  (int32,  error)  {
 //   int32  
 func (instance *WebExtensionCollection) AddWebVideoPlayer(url string, autoplay bool, starttime int32, endtime int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPN(C.CString("WebExtensionCollection_AddWebVideoPlayer"), instance.ptr, C.CString(url), C.bool(autoplay), C.int(starttime), C.int(endtime))
+	CGoReturnPtr := C.CellsGoFunctoinZZPO(C.CString("WebExtensionCollection_AddWebVideoPlayer"), instance.ptr, C.CString(url), C.bool(autoplay), C.int(starttime), C.int(endtime))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -574,7 +574,7 @@ func (instance *WebExtensionProperty) IsNull()  (bool,  error)  {
 //   string  
 func (instance *WebExtensionProperty) GetName()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("WebExtensionProperty_GetName"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionProperty_GetName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -590,7 +590,7 @@ func (instance *WebExtensionProperty) GetName()  (string,  error)  {
 //   void  
 func (instance *WebExtensionProperty) SetName(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionProperty_SetName"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("WebExtensionProperty_SetName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -603,7 +603,7 @@ func (instance *WebExtensionProperty) SetName(value string)  error {
 //   string  
 func (instance *WebExtensionProperty) GetValue()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("WebExtensionProperty_GetValue"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionProperty_GetValue"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -619,7 +619,7 @@ func (instance *WebExtensionProperty) GetValue()  (string,  error)  {
 //   void  
 func (instance *WebExtensionProperty) SetValue(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionProperty_SetValue"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("WebExtensionProperty_SetValue"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -716,7 +716,7 @@ func (instance *WebExtensionPropertyCollection) Get_String(name string)  (*WebEx
 //   int32  
 func (instance *WebExtensionPropertyCollection) Add(name string, value string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("WebExtensionPropertyCollection_Add"), instance.ptr, C.CString(name), C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("WebExtensionPropertyCollection_Add"), instance.ptr, C.CString(name), C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -732,7 +732,7 @@ func (instance *WebExtensionPropertyCollection) Add(name string, value string)  
 //   void  
 func (instance *WebExtensionPropertyCollection) RemoveAt(name string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionPropertyCollection_RemoveAt"), instance.ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("WebExtensionPropertyCollection_RemoveAt"), instance.ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -790,7 +790,7 @@ func (instance *WebExtensionReference) IsNull()  (bool,  error)  {
 //   string  
 func (instance *WebExtensionReference) GetId()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("WebExtensionReference_GetId"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionReference_GetId"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -807,7 +807,7 @@ func (instance *WebExtensionReference) GetId()  (string,  error)  {
 //   void  
 func (instance *WebExtensionReference) SetId(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionReference_SetId"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("WebExtensionReference_SetId"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -820,7 +820,7 @@ func (instance *WebExtensionReference) SetId(value string)  error {
 //   string  
 func (instance *WebExtensionReference) GetVersion()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("WebExtensionReference_GetVersion"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionReference_GetVersion"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -836,7 +836,7 @@ func (instance *WebExtensionReference) GetVersion()  (string,  error)  {
 //   void  
 func (instance *WebExtensionReference) SetVersion(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionReference_SetVersion"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("WebExtensionReference_SetVersion"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -849,7 +849,7 @@ func (instance *WebExtensionReference) SetVersion(value string)  error {
 //   string  
 func (instance *WebExtensionReference) GetStoreName()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("WebExtensionReference_GetStoreName"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionReference_GetStoreName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -865,7 +865,7 @@ func (instance *WebExtensionReference) GetStoreName()  (string,  error)  {
 //   void  
 func (instance *WebExtensionReference) SetStoreName(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionReference_SetStoreName"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("WebExtensionReference_SetStoreName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -878,7 +878,7 @@ func (instance *WebExtensionReference) SetStoreName(value string)  error {
 //   int32  
 func (instance *WebExtensionReference) GetStoreType()  (WebExtensionStoreType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("WebExtensionReference_GetStoreType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("WebExtensionReference_GetStoreType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -897,7 +897,7 @@ func (instance *WebExtensionReference) GetStoreType()  (WebExtensionStoreType,  
 //   void  
 func (instance *WebExtensionReference) SetStoreType(value WebExtensionStoreType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("WebExtensionReference_SetStoreType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("WebExtensionReference_SetStoreType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1031,7 +1031,7 @@ func (instance *WebExtensionTaskPane) IsNull()  (bool,  error)  {
 //   WebExtension  
 func (instance *WebExtensionTaskPane) GetWebExtension()  (*WebExtension,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("WebExtensionTaskPane_GetWebExtension"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("WebExtensionTaskPane_GetWebExtension"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1054,7 +1054,7 @@ func (instance *WebExtensionTaskPane) SetWebExtension(value *WebExtension)  erro
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("WebExtensionTaskPane_SetWebExtension"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("WebExtensionTaskPane_SetWebExtension"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1067,7 +1067,7 @@ func (instance *WebExtensionTaskPane) SetWebExtension(value *WebExtension)  erro
 //   string  
 func (instance *WebExtensionTaskPane) GetDockState()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("WebExtensionTaskPane_GetDockState"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionTaskPane_GetDockState"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1083,7 +1083,7 @@ func (instance *WebExtensionTaskPane) GetDockState()  (string,  error)  {
 //   void  
 func (instance *WebExtensionTaskPane) SetDockState(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WebExtensionTaskPane_SetDockState"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("WebExtensionTaskPane_SetDockState"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

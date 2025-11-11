@@ -89,7 +89,7 @@ func (instance *MetadataOptions) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *MetadataOptions) GetMetadataType()  (MetadataType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("MetadataOptions_GetMetadataType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("MetadataOptions_GetMetadataType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -106,7 +106,7 @@ func (instance *MetadataOptions) GetMetadataType()  (MetadataType,  error)  {
 //   string  
 func (instance *MetadataOptions) GetPassword()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("MetadataOptions_GetPassword"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("MetadataOptions_GetPassword"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -122,7 +122,7 @@ func (instance *MetadataOptions) GetPassword()  (string,  error)  {
 //   void  
 func (instance *MetadataOptions) SetPassword(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("MetadataOptions_SetPassword"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("MetadataOptions_SetPassword"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -186,7 +186,7 @@ func NewWorkbookMetadata_String_MetadataOptions(filename string, options *Metada
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZJA(C.CString("New_WorkbookMetadata_String_MetadataOptions"),C.CString(filename), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJB(C.CString("New_WorkbookMetadata_String_MetadataOptions"),C.CString(filename), options_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		workbookmetadata.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(workbookmetadata, DeleteWorkbookMetadata)
@@ -208,7 +208,7 @@ func NewWorkbookMetadata_Stream_MetadataOptions(stream []byte, options *Metadata
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZJB(C.CString("New_WorkbookMetadata_Stream_MetadataOptions"),unsafe.Pointer(&stream[0]), C.int( len(stream)), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJC(C.CString("New_WorkbookMetadata_Stream_MetadataOptions"),unsafe.Pointer(&stream[0]), C.int( len(stream)), options_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		workbookmetadata.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(workbookmetadata, DeleteWorkbookMetadata)
@@ -239,7 +239,7 @@ func (instance *WorkbookMetadata) IsNull()  (bool,  error)  {
 //   MetadataOptions  
 func (instance *WorkbookMetadata) GetOptions()  (*MetadataOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("WorkbookMetadata_GetOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("WorkbookMetadata_GetOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -255,7 +255,7 @@ func (instance *WorkbookMetadata) GetOptions()  (*MetadataOptions,  error)  {
 //   BuiltInDocumentPropertyCollection  
 func (instance *WorkbookMetadata) GetBuiltInDocumentProperties()  (*BuiltInDocumentPropertyCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("WorkbookMetadata_GetBuiltInDocumentProperties"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("WorkbookMetadata_GetBuiltInDocumentProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -271,7 +271,7 @@ func (instance *WorkbookMetadata) GetBuiltInDocumentProperties()  (*BuiltInDocum
 //   CustomDocumentPropertyCollection  
 func (instance *WorkbookMetadata) GetCustomDocumentProperties()  (*CustomDocumentPropertyCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("WorkbookMetadata_GetCustomDocumentProperties"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("WorkbookMetadata_GetCustomDocumentProperties"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -289,7 +289,7 @@ func (instance *WorkbookMetadata) GetCustomDocumentProperties()  (*CustomDocumen
 //   void  
 func (instance *WorkbookMetadata) Save_String(filename string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WorkbookMetadata_Save_String"), instance.ptr, C.CString(filename))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("WorkbookMetadata_Save_String"), instance.ptr, C.CString(filename))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

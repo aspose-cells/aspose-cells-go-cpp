@@ -133,6 +133,28 @@ func Int32ToHtmlEmbeddedFontType(value int32)(HtmlEmbeddedFontType ,error){
 	}
 }
 
+/**************Enum HtmlLayoutMode *****************/
+
+// Represents the layout mode for HTML rendering.
+type HtmlLayoutMode int32
+
+const(
+// Renders content like MS Excel.
+HtmlLayoutMode_Normal HtmlLayoutMode = 0 
+
+// Renders content in print layout mode.
+HtmlLayoutMode_Print HtmlLayoutMode = 1 
+)
+
+func Int32ToHtmlLayoutMode(value int32)(HtmlLayoutMode ,error){
+	switch value {
+		case 0:  return HtmlLayoutMode_Normal, nil  
+		case 1:  return HtmlLayoutMode_Print, nil  
+		default:
+			return 0 ,fmt.Errorf("invalid HtmlLayoutMode value: %d", value)
+	}
+}
+
 /**************Enum ImageBinarizationMethod *****************/
 
 // Specifies the method used to binarize image.
@@ -412,7 +434,7 @@ func (instance *CustomRenderSettings) IsNull()  (bool,  error)  {
 //   float32  
 func (instance *CustomRenderSettings) GetCellBorderWidth(bordertype CellBorderType)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZON(C.CString("CustomRenderSettings_GetCellBorderWidth"), instance.ptr, C.int( int32(bordertype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOO(C.CString("CustomRenderSettings_GetCellBorderWidth"), instance.ptr, C.int( int32(bordertype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -458,7 +480,7 @@ func (instance *DrawObject) IsNull()  (bool,  error)  {
 //   Cell  
 func (instance *DrawObject) GetCell()  (*Cell,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("DrawObject_GetCell"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("DrawObject_GetCell"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -475,7 +497,7 @@ func (instance *DrawObject) GetCell()  (*Cell,  error)  {
 //   Shape  
 func (instance *DrawObject) GetShape()  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("DrawObject_GetShape"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("DrawObject_GetShape"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -506,7 +528,7 @@ func (instance *DrawObject) GetImageBytes()  ([]byte,  error)  {
 //   int32  
 func (instance *DrawObject) GetType()  (DrawObjectEnum,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("DrawObject_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("DrawObject_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -595,7 +617,7 @@ func (instance *DrawObjectEventHandler) Draw(drawobject *DrawObject, x float32, 
 	  drawobject_ptr =drawobject.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOO(C.CString("DrawObjectEventHandler_Draw"), instance.ptr, drawobject_ptr, C.float(x), C.float(y), C.float(width), C.float(height))
+	CGoReturnPtr := C.CellsGoFunctoinZZOP(C.CString("DrawObjectEventHandler_Draw"), instance.ptr, drawobject_ptr, C.float(x), C.float(y), C.float(width), C.float(height))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -742,7 +764,7 @@ func (instance *ImageOrPrintOptions) SetVerticalResolution(value int32)  error {
 //   int32  
 func (instance *ImageOrPrintOptions) GetTiffCompression()  (TiffCompression,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ImageOrPrintOptions_GetTiffCompression"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ImageOrPrintOptions_GetTiffCompression"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -761,7 +783,7 @@ func (instance *ImageOrPrintOptions) GetTiffCompression()  (TiffCompression,  er
 //   void  
 func (instance *ImageOrPrintOptions) SetTiffCompression(value TiffCompression)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ImageOrPrintOptions_SetTiffCompression"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ImageOrPrintOptions_SetTiffCompression"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -774,7 +796,7 @@ func (instance *ImageOrPrintOptions) SetTiffCompression(value TiffCompression)  
 //   int32  
 func (instance *ImageOrPrintOptions) GetTiffColorDepth()  (ColorDepth,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ImageOrPrintOptions_GetTiffColorDepth"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ImageOrPrintOptions_GetTiffColorDepth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -793,7 +815,7 @@ func (instance *ImageOrPrintOptions) GetTiffColorDepth()  (ColorDepth,  error)  
 //   void  
 func (instance *ImageOrPrintOptions) SetTiffColorDepth(value ColorDepth)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ImageOrPrintOptions_SetTiffColorDepth"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ImageOrPrintOptions_SetTiffColorDepth"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -807,7 +829,7 @@ func (instance *ImageOrPrintOptions) SetTiffColorDepth(value ColorDepth)  error 
 //   int32  
 func (instance *ImageOrPrintOptions) GetTiffBinarizationMethod()  (ImageBinarizationMethod,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ImageOrPrintOptions_GetTiffBinarizationMethod"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ImageOrPrintOptions_GetTiffBinarizationMethod"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -827,7 +849,7 @@ func (instance *ImageOrPrintOptions) GetTiffBinarizationMethod()  (ImageBinariza
 //   void  
 func (instance *ImageOrPrintOptions) SetTiffBinarizationMethod(value ImageBinarizationMethod)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ImageOrPrintOptions_SetTiffBinarizationMethod"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ImageOrPrintOptions_SetTiffBinarizationMethod"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -840,7 +862,7 @@ func (instance *ImageOrPrintOptions) SetTiffBinarizationMethod(value ImageBinari
 //   int32  
 func (instance *ImageOrPrintOptions) GetPrintingPage()  (PrintingPageType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ImageOrPrintOptions_GetPrintingPage"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ImageOrPrintOptions_GetPrintingPage"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -859,7 +881,7 @@ func (instance *ImageOrPrintOptions) GetPrintingPage()  (PrintingPageType,  erro
 //   void  
 func (instance *ImageOrPrintOptions) SetPrintingPage(value PrintingPageType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ImageOrPrintOptions_SetPrintingPage"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ImageOrPrintOptions_SetPrintingPage"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -969,7 +991,7 @@ func (instance *ImageOrPrintOptions) SetAllColumnsInOnePagePerSheet(value bool) 
 //   DrawObjectEventHandler  
 func (instance *ImageOrPrintOptions) GetDrawObjectEventHandler()  (*DrawObjectEventHandler,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("ImageOrPrintOptions_GetDrawObjectEventHandler"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ImageOrPrintOptions_GetDrawObjectEventHandler"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -992,7 +1014,7 @@ func (instance *ImageOrPrintOptions) SetDrawObjectEventHandler(value *DrawObject
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("ImageOrPrintOptions_SetDrawObjectEventHandler"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("ImageOrPrintOptions_SetDrawObjectEventHandler"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1199,7 +1221,7 @@ func (instance *ImageOrPrintOptions) SetIsOptimized(value bool)  error {
 //   string  
 func (instance *ImageOrPrintOptions) GetDefaultFont()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ImageOrPrintOptions_GetDefaultFont"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ImageOrPrintOptions_GetDefaultFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1218,7 +1240,7 @@ func (instance *ImageOrPrintOptions) GetDefaultFont()  (string,  error)  {
 //   void  
 func (instance *ImageOrPrintOptions) SetDefaultFont(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ImageOrPrintOptions_SetDefaultFont"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("ImageOrPrintOptions_SetDefaultFont"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1293,7 +1315,7 @@ func (instance *ImageOrPrintOptions) SetOutputBlankPageWhenNothingToPrint(value 
 //   int32  
 func (instance *ImageOrPrintOptions) GetGridlineType()  (GridlineType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ImageOrPrintOptions_GetGridlineType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ImageOrPrintOptions_GetGridlineType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1312,7 +1334,7 @@ func (instance *ImageOrPrintOptions) GetGridlineType()  (GridlineType,  error)  
 //   void  
 func (instance *ImageOrPrintOptions) SetGridlineType(value GridlineType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ImageOrPrintOptions_SetGridlineType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ImageOrPrintOptions_SetGridlineType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1355,7 +1377,7 @@ func (instance *ImageOrPrintOptions) SetGridlineColor(value *Color)  error {
 //   int32  
 func (instance *ImageOrPrintOptions) GetTextCrossType()  (TextCrossType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ImageOrPrintOptions_GetTextCrossType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ImageOrPrintOptions_GetTextCrossType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1374,7 +1396,7 @@ func (instance *ImageOrPrintOptions) GetTextCrossType()  (TextCrossType,  error)
 //   void  
 func (instance *ImageOrPrintOptions) SetTextCrossType(value TextCrossType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ImageOrPrintOptions_SetTextCrossType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ImageOrPrintOptions_SetTextCrossType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1387,7 +1409,7 @@ func (instance *ImageOrPrintOptions) SetTextCrossType(value TextCrossType)  erro
 //   int32  
 func (instance *ImageOrPrintOptions) GetDefaultEditLanguage()  (DefaultEditLanguage,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ImageOrPrintOptions_GetDefaultEditLanguage"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ImageOrPrintOptions_GetDefaultEditLanguage"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1406,7 +1428,7 @@ func (instance *ImageOrPrintOptions) GetDefaultEditLanguage()  (DefaultEditLangu
 //   void  
 func (instance *ImageOrPrintOptions) SetDefaultEditLanguage(value DefaultEditLanguage)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ImageOrPrintOptions_SetDefaultEditLanguage"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ImageOrPrintOptions_SetDefaultEditLanguage"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1419,7 +1441,7 @@ func (instance *ImageOrPrintOptions) SetDefaultEditLanguage(value DefaultEditLan
 //   SheetSet  
 func (instance *ImageOrPrintOptions) GetSheetSet()  (*SheetSet,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("ImageOrPrintOptions_GetSheetSet"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ImageOrPrintOptions_GetSheetSet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1442,7 +1464,7 @@ func (instance *ImageOrPrintOptions) SetSheetSet(value *SheetSet)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("ImageOrPrintOptions_SetSheetSet"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("ImageOrPrintOptions_SetSheetSet"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1455,7 +1477,7 @@ func (instance *ImageOrPrintOptions) SetSheetSet(value *SheetSet)  error {
 //   int32  
 func (instance *ImageOrPrintOptions) GetEmfRenderSetting()  (EmfRenderSetting,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ImageOrPrintOptions_GetEmfRenderSetting"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ImageOrPrintOptions_GetEmfRenderSetting"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1474,7 +1496,7 @@ func (instance *ImageOrPrintOptions) GetEmfRenderSetting()  (EmfRenderSetting,  
 //   void  
 func (instance *ImageOrPrintOptions) SetEmfRenderSetting(value EmfRenderSetting)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ImageOrPrintOptions_SetEmfRenderSetting"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ImageOrPrintOptions_SetEmfRenderSetting"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1487,7 +1509,7 @@ func (instance *ImageOrPrintOptions) SetEmfRenderSetting(value EmfRenderSetting)
 //   CustomRenderSettings  
 func (instance *ImageOrPrintOptions) GetCustomRenderSettings()  (*CustomRenderSettings,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("ImageOrPrintOptions_GetCustomRenderSettings"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ImageOrPrintOptions_GetCustomRenderSettings"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1510,7 +1532,7 @@ func (instance *ImageOrPrintOptions) SetCustomRenderSettings(value *CustomRender
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("ImageOrPrintOptions_SetCustomRenderSettings"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("ImageOrPrintOptions_SetCustomRenderSettings"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1524,7 +1546,7 @@ func (instance *ImageOrPrintOptions) SetCustomRenderSettings(value *CustomRender
 //   int32  
 func (instance *ImageOrPrintOptions) GetImageType()  (ImageType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ImageOrPrintOptions_GetImageType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ImageOrPrintOptions_GetImageType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1544,7 +1566,7 @@ func (instance *ImageOrPrintOptions) GetImageType()  (ImageType,  error)  {
 //   void  
 func (instance *ImageOrPrintOptions) SetImageType(value ImageType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ImageOrPrintOptions_SetImageType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ImageOrPrintOptions_SetImageType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1578,7 +1600,7 @@ func NewPageEndSavingArgs(src *PageSavingArgs) ( *PageEndSavingArgs, error) {
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("New_PageEndSavingArgs"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("New_PageEndSavingArgs"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		pageendsavingargs.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(pageendsavingargs, DeletePageEndSavingArgs)
@@ -1753,7 +1775,7 @@ func NewPageStartSavingArgs(src *PageSavingArgs) ( *PageStartSavingArgs, error) 
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("New_PageStartSavingArgs"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("New_PageStartSavingArgs"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		pagestartsavingargs.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(pagestartsavingargs, DeletePageStartSavingArgs)
@@ -1895,7 +1917,7 @@ func (instance *PdfBookmarkEntry) IsNull()  (bool,  error)  {
 //   string  
 func (instance *PdfBookmarkEntry) GetText()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PdfBookmarkEntry_GetText"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("PdfBookmarkEntry_GetText"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1911,7 +1933,7 @@ func (instance *PdfBookmarkEntry) GetText()  (string,  error)  {
 //   void  
 func (instance *PdfBookmarkEntry) SetText(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("PdfBookmarkEntry_SetText"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("PdfBookmarkEntry_SetText"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1924,7 +1946,7 @@ func (instance *PdfBookmarkEntry) SetText(value string)  error {
 //   Cell  
 func (instance *PdfBookmarkEntry) GetDestination()  (*Cell,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("PdfBookmarkEntry_GetDestination"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("PdfBookmarkEntry_GetDestination"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1947,7 +1969,7 @@ func (instance *PdfBookmarkEntry) SetDestination(value *Cell)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("PdfBookmarkEntry_SetDestination"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("PdfBookmarkEntry_SetDestination"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1960,7 +1982,7 @@ func (instance *PdfBookmarkEntry) SetDestination(value *Cell)  error {
 //   string  
 func (instance *PdfBookmarkEntry) GetDestinationName()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PdfBookmarkEntry_GetDestinationName"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("PdfBookmarkEntry_GetDestinationName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1976,7 +1998,7 @@ func (instance *PdfBookmarkEntry) GetDestinationName()  (string,  error)  {
 //   void  
 func (instance *PdfBookmarkEntry) SetDestinationName(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("PdfBookmarkEntry_SetDestinationName"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("PdfBookmarkEntry_SetDestinationName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2064,7 +2086,7 @@ type RenderingFont struct {
 //   fontSize - float32 
 func NewRenderingFont(fontname string, fontsize float32) ( *RenderingFont, error) {
 	renderingfont := &RenderingFont{}
-	CGoReturnPtr := C.CellsGoFunctoinZZOP(C.CString("New_RenderingFont"),C.CString(fontname), C.float(fontsize))
+	CGoReturnPtr := C.CellsGoFunctoinZZOQ(C.CString("New_RenderingFont"),C.CString(fontname), C.float(fontsize))
 	if CGoReturnPtr.error_no == 0 {
 		renderingfont.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(renderingfont, DeleteRenderingFont)
@@ -2095,7 +2117,7 @@ func (instance *RenderingFont) IsNull()  (bool,  error)  {
 //   string  
 func (instance *RenderingFont) GetName()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("RenderingFont_GetName"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("RenderingFont_GetName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -2233,7 +2255,7 @@ func NewRenderingWatermark_String_RenderingFont(text string, renderingfont *Rend
 	  renderingfont_ptr =renderingfont.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZJA(C.CString("New_RenderingWatermark_String_RenderingFont"),C.CString(text), renderingfont_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJB(C.CString("New_RenderingWatermark_String_RenderingFont"),C.CString(text), renderingfont_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		renderingwatermark.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(renderingwatermark, DeleteRenderingWatermark)
@@ -2296,7 +2318,7 @@ func (instance *RenderingWatermark) GetRotation()  (float32,  error)  {
 //   void  
 func (instance *RenderingWatermark) SetRotation(value float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLA(C.CString("RenderingWatermark_SetRotation"), instance.ptr, C.float(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZLB(C.CString("RenderingWatermark_SetRotation"), instance.ptr, C.float(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2354,7 +2376,7 @@ func (instance *RenderingWatermark) GetOpacity()  (float32,  error)  {
 //   void  
 func (instance *RenderingWatermark) SetOpacity(value float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLA(C.CString("RenderingWatermark_SetOpacity"), instance.ptr, C.float(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZLB(C.CString("RenderingWatermark_SetOpacity"), instance.ptr, C.float(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2396,7 +2418,7 @@ func (instance *RenderingWatermark) SetIsBackground(value bool)  error {
 //   string  
 func (instance *RenderingWatermark) GetText()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("RenderingWatermark_GetText"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("RenderingWatermark_GetText"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -2410,7 +2432,7 @@ func (instance *RenderingWatermark) GetText()  (string,  error)  {
 //   RenderingFont  
 func (instance *RenderingWatermark) GetFont()  (*RenderingFont,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("RenderingWatermark_GetFont"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("RenderingWatermark_GetFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2441,7 +2463,7 @@ func (instance *RenderingWatermark) GetImage()  ([]byte,  error)  {
 //   int32  
 func (instance *RenderingWatermark) GetHAlignment()  (TextAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("RenderingWatermark_GetHAlignment"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("RenderingWatermark_GetHAlignment"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2460,7 +2482,7 @@ func (instance *RenderingWatermark) GetHAlignment()  (TextAlignmentType,  error)
 //   void  
 func (instance *RenderingWatermark) SetHAlignment(value TextAlignmentType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("RenderingWatermark_SetHAlignment"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("RenderingWatermark_SetHAlignment"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2473,7 +2495,7 @@ func (instance *RenderingWatermark) SetHAlignment(value TextAlignmentType)  erro
 //   int32  
 func (instance *RenderingWatermark) GetVAlignment()  (TextAlignmentType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("RenderingWatermark_GetVAlignment"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("RenderingWatermark_GetVAlignment"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2492,7 +2514,7 @@ func (instance *RenderingWatermark) GetVAlignment()  (TextAlignmentType,  error)
 //   void  
 func (instance *RenderingWatermark) SetVAlignment(value TextAlignmentType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("RenderingWatermark_SetVAlignment"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("RenderingWatermark_SetVAlignment"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2521,7 +2543,7 @@ func (instance *RenderingWatermark) GetOffsetX()  (float32,  error)  {
 //   void  
 func (instance *RenderingWatermark) SetOffsetX(value float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLA(C.CString("RenderingWatermark_SetOffsetX"), instance.ptr, C.float(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZLB(C.CString("RenderingWatermark_SetOffsetX"), instance.ptr, C.float(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2550,7 +2572,7 @@ func (instance *RenderingWatermark) GetOffsetY()  (float32,  error)  {
 //   void  
 func (instance *RenderingWatermark) SetOffsetY(value float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLA(C.CString("RenderingWatermark_SetOffsetY"), instance.ptr, C.float(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZLB(C.CString("RenderingWatermark_SetOffsetY"), instance.ptr, C.float(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2723,7 +2745,7 @@ func (instance *SheetRender) GetPageScale()  (float64,  error)  {
 //   []float  
 func (instance *SheetRender) GetPageSizeInch(pageindex int32)  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOQ(C.CString("SheetRender_GetPageSizeInch"), instance.ptr, C.int(pageindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZOR(C.CString("SheetRender_GetPageSizeInch"), instance.ptr, C.int(pageindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2747,7 +2769,7 @@ func (instance *SheetRender) GetPageSizeInch(pageindex int32)  ([]float32,  erro
 //   void  
 func (instance *SheetRender) ToImage_Int_String(pageindex int32, filename string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("SheetRender_ToImage_Integer_String"), instance.ptr, C.int(pageindex), C.CString(filename))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("SheetRender_ToImage_Integer_String"), instance.ptr, C.int(pageindex), C.CString(filename))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2762,7 +2784,7 @@ func (instance *SheetRender) ToImage_Int_String(pageindex int32, filename string
 //   []byte  
 func (instance *SheetRender) ToImage_Int(pageindex int32)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOR(C.CString("SheetRender_ToImage_Integer"), instance.ptr, C.int(pageindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZOS(C.CString("SheetRender_ToImage_Integer"), instance.ptr, C.int(pageindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2794,7 +2816,7 @@ func (instance *SheetRender) ToTiff()  ([]byte,  error)  {
 //   void  
 func (instance *SheetRender) ToTiff_String(filename string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("SheetRender_ToTiff_String"), instance.ptr, C.CString(filename))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("SheetRender_ToTiff_String"), instance.ptr, C.CString(filename))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2807,7 +2829,7 @@ func (instance *SheetRender) ToTiff_String(filename string)  error {
 //   void  
 func (instance *SheetRender) Dispose()  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZX(C.CString("SheetRender_Dispose"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZF(C.CString("SheetRender_Dispose"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2836,7 +2858,7 @@ type SheetSet struct {
 //   sheetIndexes - []int32_t 
 func NewSheetSet_int32Array(sheetindexes []int32) ( *SheetSet, error) {
 	sheetset := &SheetSet{}
-	CGoReturnPtr := C.CellsGoFunctoinZZHP(C.CString("New_SheetSet_int32_tArray"),unsafe.Pointer(&sheetindexes[0]), C.int( len(sheetindexes)))
+	CGoReturnPtr := C.CellsGoFunctoinZZHQ(C.CString("New_SheetSet_int32_tArray"),unsafe.Pointer(&sheetindexes[0]), C.int( len(sheetindexes)))
 	if CGoReturnPtr.error_no == 0 {
 		sheetset.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(sheetset, DeleteSheetSet)
@@ -2859,7 +2881,7 @@ func NewSheetSet_stringArray(sheetnames []string) ( *SheetSet, error) {
 	vector_sheetnames[i] = cStr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZHP(C.CString("New_SheetSet_U16StringArray"),unsafe.Pointer(&vector_sheetnames[0]), C.int( len(sheetnames)))
+	CGoReturnPtr := C.CellsGoFunctoinZZHQ(C.CString("New_SheetSet_U16StringArray"),unsafe.Pointer(&vector_sheetnames[0]), C.int( len(sheetnames)))
 	if CGoReturnPtr.error_no == 0 {
 		sheetset.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(sheetset, DeleteSheetSet)
@@ -2973,7 +2995,7 @@ func NewSvgImageOptions_ImageOrPrintOptions(src *ImageOrPrintOptions) ( *SvgImag
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("New_SvgImageOptions_ImageOrPrintOptions"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("New_SvgImageOptions_ImageOrPrintOptions"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		svgimageoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(svgimageoptions, DeleteSvgImageOptions)
@@ -3005,7 +3027,7 @@ func (instance *SvgImageOptions) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *SvgImageOptions) GetImageType()  (ImageType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("SvgImageOptions_GetImageType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_GetImageType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3025,7 +3047,7 @@ func (instance *SvgImageOptions) GetImageType()  (ImageType,  error)  {
 //   void  
 func (instance *SvgImageOptions) SetImageType(value ImageType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_SetImageType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SvgImageOptions_SetImageType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3067,7 +3089,7 @@ func (instance *SvgImageOptions) SetFitToViewPort(value bool)  error {
 //   string  
 func (instance *SvgImageOptions) GetCssPrefix()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SvgImageOptions_GetCssPrefix"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("SvgImageOptions_GetCssPrefix"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -3083,7 +3105,7 @@ func (instance *SvgImageOptions) GetCssPrefix()  (string,  error)  {
 //   void  
 func (instance *SvgImageOptions) SetCssPrefix(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("SvgImageOptions_SetCssPrefix"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("SvgImageOptions_SetCssPrefix"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3096,7 +3118,7 @@ func (instance *SvgImageOptions) SetCssPrefix(value string)  error {
 //   int32  
 func (instance *SvgImageOptions) GetEmbeddedFontType()  (SvgEmbeddedFontType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("SvgImageOptions_GetEmbeddedFontType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_GetEmbeddedFontType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3115,7 +3137,7 @@ func (instance *SvgImageOptions) GetEmbeddedFontType()  (SvgEmbeddedFontType,  e
 //   void  
 func (instance *SvgImageOptions) SetEmbeddedFontType(value SvgEmbeddedFontType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_SetEmbeddedFontType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SvgImageOptions_SetEmbeddedFontType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3217,7 +3239,7 @@ func (instance *SvgImageOptions) SetVerticalResolution(value int32)  error {
 //   int32  
 func (instance *SvgImageOptions) GetTiffCompression()  (TiffCompression,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("SvgImageOptions_GetTiffCompression"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_GetTiffCompression"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3236,7 +3258,7 @@ func (instance *SvgImageOptions) GetTiffCompression()  (TiffCompression,  error)
 //   void  
 func (instance *SvgImageOptions) SetTiffCompression(value TiffCompression)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_SetTiffCompression"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SvgImageOptions_SetTiffCompression"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3249,7 +3271,7 @@ func (instance *SvgImageOptions) SetTiffCompression(value TiffCompression)  erro
 //   int32  
 func (instance *SvgImageOptions) GetTiffColorDepth()  (ColorDepth,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("SvgImageOptions_GetTiffColorDepth"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_GetTiffColorDepth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3268,7 +3290,7 @@ func (instance *SvgImageOptions) GetTiffColorDepth()  (ColorDepth,  error)  {
 //   void  
 func (instance *SvgImageOptions) SetTiffColorDepth(value ColorDepth)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_SetTiffColorDepth"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SvgImageOptions_SetTiffColorDepth"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3282,7 +3304,7 @@ func (instance *SvgImageOptions) SetTiffColorDepth(value ColorDepth)  error {
 //   int32  
 func (instance *SvgImageOptions) GetTiffBinarizationMethod()  (ImageBinarizationMethod,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("SvgImageOptions_GetTiffBinarizationMethod"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_GetTiffBinarizationMethod"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3302,7 +3324,7 @@ func (instance *SvgImageOptions) GetTiffBinarizationMethod()  (ImageBinarization
 //   void  
 func (instance *SvgImageOptions) SetTiffBinarizationMethod(value ImageBinarizationMethod)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_SetTiffBinarizationMethod"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SvgImageOptions_SetTiffBinarizationMethod"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3315,7 +3337,7 @@ func (instance *SvgImageOptions) SetTiffBinarizationMethod(value ImageBinarizati
 //   int32  
 func (instance *SvgImageOptions) GetPrintingPage()  (PrintingPageType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("SvgImageOptions_GetPrintingPage"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_GetPrintingPage"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3334,7 +3356,7 @@ func (instance *SvgImageOptions) GetPrintingPage()  (PrintingPageType,  error)  
 //   void  
 func (instance *SvgImageOptions) SetPrintingPage(value PrintingPageType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_SetPrintingPage"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SvgImageOptions_SetPrintingPage"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3444,7 +3466,7 @@ func (instance *SvgImageOptions) SetAllColumnsInOnePagePerSheet(value bool)  err
 //   DrawObjectEventHandler  
 func (instance *SvgImageOptions) GetDrawObjectEventHandler()  (*DrawObjectEventHandler,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("SvgImageOptions_GetDrawObjectEventHandler"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("SvgImageOptions_GetDrawObjectEventHandler"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3467,7 +3489,7 @@ func (instance *SvgImageOptions) SetDrawObjectEventHandler(value *DrawObjectEven
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("SvgImageOptions_SetDrawObjectEventHandler"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("SvgImageOptions_SetDrawObjectEventHandler"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3674,7 +3696,7 @@ func (instance *SvgImageOptions) SetIsOptimized(value bool)  error {
 //   string  
 func (instance *SvgImageOptions) GetDefaultFont()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SvgImageOptions_GetDefaultFont"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("SvgImageOptions_GetDefaultFont"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -3693,7 +3715,7 @@ func (instance *SvgImageOptions) GetDefaultFont()  (string,  error)  {
 //   void  
 func (instance *SvgImageOptions) SetDefaultFont(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("SvgImageOptions_SetDefaultFont"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("SvgImageOptions_SetDefaultFont"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3768,7 +3790,7 @@ func (instance *SvgImageOptions) SetOutputBlankPageWhenNothingToPrint(value bool
 //   int32  
 func (instance *SvgImageOptions) GetGridlineType()  (GridlineType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("SvgImageOptions_GetGridlineType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_GetGridlineType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3787,7 +3809,7 @@ func (instance *SvgImageOptions) GetGridlineType()  (GridlineType,  error)  {
 //   void  
 func (instance *SvgImageOptions) SetGridlineType(value GridlineType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_SetGridlineType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SvgImageOptions_SetGridlineType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3830,7 +3852,7 @@ func (instance *SvgImageOptions) SetGridlineColor(value *Color)  error {
 //   int32  
 func (instance *SvgImageOptions) GetTextCrossType()  (TextCrossType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("SvgImageOptions_GetTextCrossType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_GetTextCrossType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3849,7 +3871,7 @@ func (instance *SvgImageOptions) GetTextCrossType()  (TextCrossType,  error)  {
 //   void  
 func (instance *SvgImageOptions) SetTextCrossType(value TextCrossType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_SetTextCrossType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SvgImageOptions_SetTextCrossType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3862,7 +3884,7 @@ func (instance *SvgImageOptions) SetTextCrossType(value TextCrossType)  error {
 //   int32  
 func (instance *SvgImageOptions) GetDefaultEditLanguage()  (DefaultEditLanguage,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("SvgImageOptions_GetDefaultEditLanguage"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_GetDefaultEditLanguage"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3881,7 +3903,7 @@ func (instance *SvgImageOptions) GetDefaultEditLanguage()  (DefaultEditLanguage,
 //   void  
 func (instance *SvgImageOptions) SetDefaultEditLanguage(value DefaultEditLanguage)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_SetDefaultEditLanguage"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SvgImageOptions_SetDefaultEditLanguage"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3894,7 +3916,7 @@ func (instance *SvgImageOptions) SetDefaultEditLanguage(value DefaultEditLanguag
 //   SheetSet  
 func (instance *SvgImageOptions) GetSheetSet()  (*SheetSet,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("SvgImageOptions_GetSheetSet"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("SvgImageOptions_GetSheetSet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3917,7 +3939,7 @@ func (instance *SvgImageOptions) SetSheetSet(value *SheetSet)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("SvgImageOptions_SetSheetSet"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("SvgImageOptions_SetSheetSet"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3930,7 +3952,7 @@ func (instance *SvgImageOptions) SetSheetSet(value *SheetSet)  error {
 //   int32  
 func (instance *SvgImageOptions) GetEmfRenderSetting()  (EmfRenderSetting,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("SvgImageOptions_GetEmfRenderSetting"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_GetEmfRenderSetting"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3949,7 +3971,7 @@ func (instance *SvgImageOptions) GetEmfRenderSetting()  (EmfRenderSetting,  erro
 //   void  
 func (instance *SvgImageOptions) SetEmfRenderSetting(value EmfRenderSetting)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SvgImageOptions_SetEmfRenderSetting"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SvgImageOptions_SetEmfRenderSetting"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3962,7 +3984,7 @@ func (instance *SvgImageOptions) SetEmfRenderSetting(value EmfRenderSetting)  er
 //   CustomRenderSettings  
 func (instance *SvgImageOptions) GetCustomRenderSettings()  (*CustomRenderSettings,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("SvgImageOptions_GetCustomRenderSettings"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("SvgImageOptions_GetCustomRenderSettings"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3985,7 +4007,7 @@ func (instance *SvgImageOptions) SetCustomRenderSettings(value *CustomRenderSett
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("SvgImageOptions_SetCustomRenderSettings"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("SvgImageOptions_SetCustomRenderSettings"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4148,7 +4170,7 @@ func (instance *WorkbookRender) GetPageCount()  (int32,  error)  {
 //   []float  
 func (instance *WorkbookRender) GetPageSizeInch(pageindex int32)  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOQ(C.CString("WorkbookRender_GetPageSizeInch"), instance.ptr, C.int(pageindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZOR(C.CString("WorkbookRender_GetPageSizeInch"), instance.ptr, C.int(pageindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4186,7 +4208,7 @@ func (instance *WorkbookRender) ToImage()  ([]byte,  error)  {
 //   void  
 func (instance *WorkbookRender) ToImage_String(filename string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("WorkbookRender_ToImage_String"), instance.ptr, C.CString(filename))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("WorkbookRender_ToImage_String"), instance.ptr, C.CString(filename))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4202,7 +4224,7 @@ func (instance *WorkbookRender) ToImage_String(filename string)  error {
 //   void  
 func (instance *WorkbookRender) ToImage_Int_String(pageindex int32, filename string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZO(C.CString("WorkbookRender_ToImage_Integer_String"), instance.ptr, C.int(pageindex), C.CString(filename))
+	CGoReturnPtr := C.CellsGoFunctoinZZZP(C.CString("WorkbookRender_ToImage_Integer_String"), instance.ptr, C.int(pageindex), C.CString(filename))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4217,7 +4239,7 @@ func (instance *WorkbookRender) ToImage_Int_String(pageindex int32, filename str
 //   []byte  
 func (instance *WorkbookRender) ToImage_Int(pageindex int32)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOR(C.CString("WorkbookRender_ToImage_Integer"), instance.ptr, C.int(pageindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZOS(C.CString("WorkbookRender_ToImage_Integer"), instance.ptr, C.int(pageindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4232,7 +4254,7 @@ func (instance *WorkbookRender) ToImage_Int(pageindex int32)  ([]byte,  error)  
 //   void  
 func (instance *WorkbookRender) Dispose()  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZX(C.CString("WorkbookRender_Dispose"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZF(C.CString("WorkbookRender_Dispose"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

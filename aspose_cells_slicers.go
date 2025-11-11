@@ -186,7 +186,7 @@ func (instance *Slicer) AddPivotConnection(pivot *PivotTable)  error {
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("Slicer_AddPivotConnection"), instance.ptr, pivot_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("Slicer_AddPivotConnection"), instance.ptr, pivot_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -206,7 +206,7 @@ func (instance *Slicer) RemovePivotConnection(pivot *PivotTable)  error {
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("Slicer_RemovePivotConnection"), instance.ptr, pivot_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("Slicer_RemovePivotConnection"), instance.ptr, pivot_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -219,7 +219,7 @@ func (instance *Slicer) RemovePivotConnection(pivot *PivotTable)  error {
 //   string  
 func (instance *Slicer) GetTitle()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("Slicer_GetTitle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("Slicer_GetTitle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -235,7 +235,7 @@ func (instance *Slicer) GetTitle()  (string,  error)  {
 //   void  
 func (instance *Slicer) SetTitle(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("Slicer_SetTitle"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("Slicer_SetTitle"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -248,7 +248,7 @@ func (instance *Slicer) SetTitle(value string)  error {
 //   string  
 func (instance *Slicer) GetAlternativeText()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("Slicer_GetAlternativeText"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("Slicer_GetAlternativeText"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -264,7 +264,7 @@ func (instance *Slicer) GetAlternativeText()  (string,  error)  {
 //   void  
 func (instance *Slicer) SetAlternativeText(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("Slicer_SetAlternativeText"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("Slicer_SetAlternativeText"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -336,7 +336,7 @@ func (instance *Slicer) SetIsLocked(value bool)  error {
 //   int32  
 func (instance *Slicer) GetPlacement()  (PlacementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("Slicer_GetPlacement"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("Slicer_GetPlacement"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -356,7 +356,7 @@ func (instance *Slicer) GetPlacement()  (PlacementType,  error)  {
 //   void  
 func (instance *Slicer) SetPlacement(value PlacementType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("Slicer_SetPlacement"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("Slicer_SetPlacement"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -427,7 +427,7 @@ func (instance *Slicer) SetLockedPosition(value bool)  error {
 //   void  
 func (instance *Slicer) Refresh()  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZX(C.CString("Slicer_Refresh"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZF(C.CString("Slicer_Refresh"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -440,7 +440,7 @@ func (instance *Slicer) Refresh()  error {
 //   SlicerShape  
 func (instance *Slicer) GetShape()  (*SlicerShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("Slicer_GetShape"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("Slicer_GetShape"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -456,7 +456,7 @@ func (instance *Slicer) GetShape()  (*SlicerShape,  error)  {
 //   SlicerCache  
 func (instance *Slicer) GetSlicerCache()  (*SlicerCache,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("Slicer_GetSlicerCache"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("Slicer_GetSlicerCache"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -472,7 +472,7 @@ func (instance *Slicer) GetSlicerCache()  (*SlicerCache,  error)  {
 //   Worksheet  
 func (instance *Slicer) GetParent()  (*Worksheet,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("Slicer_GetParent"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("Slicer_GetParent"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -489,7 +489,7 @@ func (instance *Slicer) GetParent()  (*Worksheet,  error)  {
 //   int32  
 func (instance *Slicer) GetStyleType()  (SlicerStyleType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("Slicer_GetStyleType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("Slicer_GetStyleType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -509,7 +509,7 @@ func (instance *Slicer) GetStyleType()  (SlicerStyleType,  error)  {
 //   void  
 func (instance *Slicer) SetStyleType(value SlicerStyleType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("Slicer_SetStyleType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("Slicer_SetStyleType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -522,7 +522,7 @@ func (instance *Slicer) SetStyleType(value SlicerStyleType)  error {
 //   string  
 func (instance *Slicer) GetName()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("Slicer_GetName"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("Slicer_GetName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -538,7 +538,7 @@ func (instance *Slicer) GetName()  (string,  error)  {
 //   void  
 func (instance *Slicer) SetName(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("Slicer_SetName"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("Slicer_SetName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -551,7 +551,7 @@ func (instance *Slicer) SetName(value string)  error {
 //   string  
 func (instance *Slicer) GetCaption()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("Slicer_GetCaption"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("Slicer_GetCaption"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -567,7 +567,7 @@ func (instance *Slicer) GetCaption()  (string,  error)  {
 //   void  
 func (instance *Slicer) SetCaption(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("Slicer_SetCaption"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("Slicer_SetCaption"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -788,7 +788,7 @@ func (instance *SlicerCache) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *SlicerCache) GetCrossFilterType()  (SlicerCacheCrossFilterType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("SlicerCache_GetCrossFilterType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SlicerCache_GetCrossFilterType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -808,7 +808,7 @@ func (instance *SlicerCache) GetCrossFilterType()  (SlicerCacheCrossFilterType, 
 //   void  
 func (instance *SlicerCache) SetCrossFilterType(value SlicerCacheCrossFilterType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SlicerCache_SetCrossFilterType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SlicerCache_SetCrossFilterType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -835,7 +835,7 @@ func (instance *SlicerCache) GetList()  (bool,  error)  {
 //   SlicerCacheItemCollection  
 func (instance *SlicerCache) GetSlicerCacheItems()  (*SlicerCacheItemCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("SlicerCache_GetSlicerCacheItems"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("SlicerCache_GetSlicerCacheItems"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -851,7 +851,7 @@ func (instance *SlicerCache) GetSlicerCacheItems()  (*SlicerCacheItemCollection,
 //   string  
 func (instance *SlicerCache) GetName()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SlicerCache_GetName"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("SlicerCache_GetName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -865,7 +865,7 @@ func (instance *SlicerCache) GetName()  (string,  error)  {
 //   string  
 func (instance *SlicerCache) GetSourceName()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SlicerCache_GetSourceName"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("SlicerCache_GetSourceName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -939,7 +939,7 @@ func (instance *SlicerCacheItem) SetSelected(value bool)  error {
 //   string  
 func (instance *SlicerCacheItem) GetValue()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SlicerCacheItem_GetValue"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("SlicerCacheItem_GetValue"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1090,7 +1090,7 @@ func (instance *SlicerCollection) Remove(slicer *Slicer)  error {
 	  slicer_ptr =slicer.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("SlicerCollection_Remove"), instance.ptr, slicer_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("SlicerCollection_Remove"), instance.ptr, slicer_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1118,7 +1118,7 @@ func (instance *SlicerCollection) RemoveAt(index int32)  error {
 //   void  
 func (instance *SlicerCollection) Clear()  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZX(C.CString("SlicerCollection_Clear"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZF(C.CString("SlicerCollection_Clear"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1140,7 +1140,7 @@ func (instance *SlicerCollection) Add_PivotTable_String_String(pivot *PivotTable
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOI(C.CString("SlicerCollection_Add_PivotTable_String_String"), instance.ptr, pivot_ptr, C.CString(destcellname), C.CString(basefieldname))
+	CGoReturnPtr := C.CellsGoFunctoinZZOJ(C.CString("SlicerCollection_Add_PivotTable_String_String"), instance.ptr, pivot_ptr, C.CString(destcellname), C.CString(basefieldname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1164,7 +1164,7 @@ func (instance *SlicerCollection) Add_PivotTable_Int_Int_String(pivot *PivotTabl
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOJ(C.CString("SlicerCollection_Add_PivotTable_Integer_Integer_String"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.CString(basefieldname))
+	CGoReturnPtr := C.CellsGoFunctoinZZOK(C.CString("SlicerCollection_Add_PivotTable_Integer_Integer_String"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.CString(basefieldname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1188,7 +1188,7 @@ func (instance *SlicerCollection) Add_PivotTable_Int_Int_Int(pivot *PivotTable, 
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPC(C.CString("SlicerCollection_Add_PivotTable_Integer_Integer_Integer"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.int(basefieldindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZPD(C.CString("SlicerCollection_Add_PivotTable_Integer_Integer_Integer"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.int(basefieldindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1211,7 +1211,7 @@ func (instance *SlicerCollection) Add_PivotTable_String_Int(pivot *PivotTable, d
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPD(C.CString("SlicerCollection_Add_PivotTable_String_Integer"), instance.ptr, pivot_ptr, C.CString(destcellname), C.int(basefieldindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZPE(C.CString("SlicerCollection_Add_PivotTable_String_Integer"), instance.ptr, pivot_ptr, C.CString(destcellname), C.int(basefieldindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1239,7 +1239,7 @@ func (instance *SlicerCollection) Add_PivotTable_Int_Int_PivotField(pivot *Pivot
 	  basefield_ptr =basefield.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPE(C.CString("SlicerCollection_Add_PivotTable_Integer_Integer_PivotField"), instance.ptr, pivot_ptr, C.int(row), C.int(column), basefield_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPF(C.CString("SlicerCollection_Add_PivotTable_Integer_Integer_PivotField"), instance.ptr, pivot_ptr, C.int(row), C.int(column), basefield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1266,7 +1266,7 @@ func (instance *SlicerCollection) Add_PivotTable_String_PivotField(pivot *PivotT
 	  basefield_ptr =basefield.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPF(C.CString("SlicerCollection_Add_PivotTable_String_PivotField"), instance.ptr, pivot_ptr, C.CString(destcellname), basefield_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPG(C.CString("SlicerCollection_Add_PivotTable_String_PivotField"), instance.ptr, pivot_ptr, C.CString(destcellname), basefield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1289,7 +1289,7 @@ func (instance *SlicerCollection) Add_ListObject_Int_String(table *ListObject, i
 	  table_ptr =table.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPG(C.CString("SlicerCollection_Add_ListObject_Integer_String"), instance.ptr, table_ptr, C.int(index), C.CString(destcellname))
+	CGoReturnPtr := C.CellsGoFunctoinZZPH(C.CString("SlicerCollection_Add_ListObject_Integer_String"), instance.ptr, table_ptr, C.int(index), C.CString(destcellname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1316,7 +1316,7 @@ func (instance *SlicerCollection) Add_ListObject_ListColumn_String(table *ListOb
 	  listcolumn_ptr =listcolumn.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPH(C.CString("SlicerCollection_Add_ListObject_ListColumn_String"), instance.ptr, table_ptr, listcolumn_ptr, C.CString(destcellname))
+	CGoReturnPtr := C.CellsGoFunctoinZZPI(C.CString("SlicerCollection_Add_ListObject_ListColumn_String"), instance.ptr, table_ptr, listcolumn_ptr, C.CString(destcellname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1344,7 +1344,7 @@ func (instance *SlicerCollection) Add_ListObject_ListColumn_Int_Int(table *ListO
 	  listcolumn_ptr =listcolumn.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPI(C.CString("SlicerCollection_Add_ListObject_ListColumn_Integer_Integer"), instance.ptr, table_ptr, listcolumn_ptr, C.int(row), C.int(column))
+	CGoReturnPtr := C.CellsGoFunctoinZZPJ(C.CString("SlicerCollection_Add_ListObject_ListColumn_Integer_Integer"), instance.ptr, table_ptr, listcolumn_ptr, C.int(row), C.int(column))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err

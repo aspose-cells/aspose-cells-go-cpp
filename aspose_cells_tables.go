@@ -191,9 +191,10 @@ func Int32ToTableStyleElementType(value int32)(TableStyleElementType ,error){
 type TableStyleType int32
 
 const(
+// No style.
 TableStyleType_None TableStyleType = 0 
 
-
+// Table Style Light 1
 TableStyleType_TableStyleLight1 TableStyleType = 1 
 
 
@@ -526,7 +527,7 @@ func (instance *ListColumn) IsNull()  (bool,  error)  {
 //   string  
 func (instance *ListColumn) GetName()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ListColumn_GetName"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ListColumn_GetName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -542,7 +543,7 @@ func (instance *ListColumn) GetName()  (string,  error)  {
 //   void  
 func (instance *ListColumn) SetName(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ListColumn_SetName"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("ListColumn_SetName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -555,7 +556,7 @@ func (instance *ListColumn) SetName(value string)  error {
 //   int32  
 func (instance *ListColumn) GetTotalsCalculation()  (TotalsCalculation,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ListColumn_GetTotalsCalculation"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ListColumn_GetTotalsCalculation"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -574,7 +575,7 @@ func (instance *ListColumn) GetTotalsCalculation()  (TotalsCalculation,  error) 
 //   void  
 func (instance *ListColumn) SetTotalsCalculation(value TotalsCalculation)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ListColumn_SetTotalsCalculation"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ListColumn_SetTotalsCalculation"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -587,7 +588,7 @@ func (instance *ListColumn) SetTotalsCalculation(value TotalsCalculation)  error
 //   Range  
 func (instance *ListColumn) GetRange()  (*Range,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("ListColumn_GetRange"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ListColumn_GetRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -651,7 +652,7 @@ func (instance *ListColumn) IsArrayFormula()  (bool,  error)  {
 //   string  
 func (instance *ListColumn) GetFormula()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ListColumn_GetFormula"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ListColumn_GetFormula"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -667,7 +668,7 @@ func (instance *ListColumn) GetFormula()  (string,  error)  {
 //   void  
 func (instance *ListColumn) SetFormula(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ListColumn_SetFormula"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("ListColumn_SetFormula"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -714,7 +715,7 @@ func (instance *ListColumn) SetCustomCalculatedFormula(formula string, isr1c1 bo
 //   string  
 func (instance *ListColumn) GetTotalsRowLabel()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ListColumn_GetTotalsRowLabel"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ListColumn_GetTotalsRowLabel"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -730,7 +731,7 @@ func (instance *ListColumn) GetTotalsRowLabel()  (string,  error)  {
 //   void  
 func (instance *ListColumn) SetTotalsRowLabel(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ListColumn_SetTotalsRowLabel"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("ListColumn_SetTotalsRowLabel"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -743,7 +744,7 @@ func (instance *ListColumn) SetTotalsRowLabel(value string)  error {
 //   Style  
 func (instance *ListColumn) GetDataStyle()  (*Style,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("ListColumn_GetDataStyle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ListColumn_GetDataStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -766,7 +767,7 @@ func (instance *ListColumn) SetDataStyle(style *Style)  error {
 	  style_ptr =style.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("ListColumn_SetDataStyle"), instance.ptr, style_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("ListColumn_SetDataStyle"), instance.ptr, style_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -785,7 +786,7 @@ func DeleteListColumn(listcolumn *ListColumn){
 
 // Class ListColumnCollection 
 
-// Represents A collection of all the <see cref="ListColumn"/> objects in the specified ListObject object.
+// Represents a list of all the <see cref="ListColumn"/> objects in the table.
 type ListColumnCollection struct {
 	ptr unsafe.Pointer
 }
@@ -865,9 +866,7 @@ func DeleteListColumnCollection(listcolumncollection *ListColumnCollection){
 
 // Class ListObject 
 
-// Represents a list object on a worksheet.
-// The ListObject object is a member of the ListObjects collection.
-// The ListObjects collection contains all the list objects on a worksheet.
+// Represents a table in a worksheet.
 type ListObject struct {
 	ptr unsafe.Pointer
 }
@@ -943,12 +942,12 @@ func (instance *ListObject) GetEndColumn()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets ListColumns of the ListObject.
+// Gets the <see cref="ListColumn"/> list of this table.
 // Returns:
 //   ListColumnCollection  
 func (instance *ListObject) GetListColumns()  (*ListColumnCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("ListObject_GetListColumns"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ListObject_GetListColumns"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1015,7 +1014,7 @@ func (instance *ListObject) PutCellValue_Int_Int_Object_Bool(rowoffset int32, co
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOW(C.CString("ListObject_PutCellValue_Integer_Integer_Object_Boolean"), instance.ptr, C.int(rowoffset), C.int(columnoffset), value_ptr, C.bool(istotalsrowlabel))
+	CGoReturnPtr := C.CellsGoFunctoinZZOX(C.CString("ListObject_PutCellValue_Integer_Integer_Object_Boolean"), instance.ptr, C.int(rowoffset), C.int(columnoffset), value_ptr, C.bool(istotalsrowlabel))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1032,7 +1031,7 @@ func (instance *ListObject) PutCellValue_Int_Int_Object_Bool(rowoffset int32, co
 //   void  
 func (instance *ListObject) PutCellFormula_Int_Int_String(rowoffset int32, columnoffset int32, formula string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZML(C.CString("ListObject_PutCellFormula_Integer_Integer_String"), instance.ptr, C.int(rowoffset), C.int(columnoffset), C.CString(formula))
+	CGoReturnPtr := C.CellsGoFunctoinZZMM(C.CString("ListObject_PutCellFormula_Integer_Integer_String"), instance.ptr, C.int(rowoffset), C.int(columnoffset), C.CString(formula))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1050,7 +1049,7 @@ func (instance *ListObject) PutCellFormula_Int_Int_String(rowoffset int32, colum
 //   void  
 func (instance *ListObject) PutCellFormula_Int_Int_String_Bool(rowoffset int32, columnoffset int32, formula string, istotalsrowformula bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOX(C.CString("ListObject_PutCellFormula_Integer_Integer_String_Boolean"), instance.ptr, C.int(rowoffset), C.int(columnoffset), C.CString(formula), C.bool(istotalsrowformula))
+	CGoReturnPtr := C.CellsGoFunctoinZZOY(C.CString("ListObject_PutCellFormula_Integer_Integer_String_Boolean"), instance.ptr, C.int(rowoffset), C.int(columnoffset), C.CString(formula), C.bool(istotalsrowformula))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1058,7 +1057,7 @@ func (instance *ListObject) PutCellFormula_Int_Int_String_Bool(rowoffset int32, 
 
 	return nil 
 }
-// Gets and sets whether this ListObject show header row.
+// Gets and sets whether this Table shows header row.
 // Returns:
 //   bool  
 func (instance *ListObject) GetShowHeaderRow()  (bool,  error)  {
@@ -1072,7 +1071,7 @@ func (instance *ListObject) GetShowHeaderRow()  (bool,  error)  {
 
 	return result, nil 
 }
-// Gets and sets whether this ListObject show header row.
+// Gets and sets whether this Table shows header row.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -1087,7 +1086,7 @@ func (instance *ListObject) SetShowHeaderRow(value bool)  error {
 
 	return nil 
 }
-// Gets and sets whether this ListObject show total row.
+// Gets and sets whether this TAble shows total row.
 // Returns:
 //   bool  
 func (instance *ListObject) GetShowTotals()  (bool,  error)  {
@@ -1101,7 +1100,7 @@ func (instance *ListObject) GetShowTotals()  (bool,  error)  {
 
 	return result, nil 
 }
-// Gets and sets whether this ListObject show total row.
+// Gets and sets whether this TAble shows total row.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -1116,12 +1115,12 @@ func (instance *ListObject) SetShowTotals(value bool)  error {
 
 	return nil 
 }
-// Gets the data range of the ListObject.
+// Gets the data range of the Table.
 // Returns:
 //   Range  
 func (instance *ListObject) GetDataRange()  (*Range,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("ListObject_GetDataRange"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ListObject_GetDataRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1132,12 +1131,12 @@ func (instance *ListObject) GetDataRange()  (*Range,  error)  {
 
 	return result, nil 
 }
-// Updates all list columns' name from the worksheet.
+// Updates all list columns' name to cells in the table.
 // Returns:
 //   void  
 func (instance *ListObject) UpdateColumnName()  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZX(C.CString("ListObject_UpdateColumnName"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZF(C.CString("ListObject_UpdateColumnName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1150,7 +1149,7 @@ func (instance *ListObject) UpdateColumnName()  error {
 //   QueryTable  
 func (instance *ListObject) GetQueryTable()  (*QueryTable,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("ListObject_GetQueryTable"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ListObject_GetQueryTable"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1166,7 +1165,7 @@ func (instance *ListObject) GetQueryTable()  (*QueryTable,  error)  {
 //   int32  
 func (instance *ListObject) GetDataSourceType()  (TableDataSourceType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ListObject_GetDataSourceType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ListObject_GetDataSourceType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1178,28 +1177,54 @@ func (instance *ListObject) GetDataSourceType()  (TableDataSourceType,  error)  
 
 	return result, nil 
 }
-// Filter the table.
+// Indicates whether auto filter is applied to this table.
 // Returns:
-//   AutoFilter  
-func (instance *ListObject) Filter()  (*AutoFilter,  error)  {
+//   bool  
+func (instance *ListObject) GetHasAutoFilter()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("ListObject_Filter"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("ListObject_GetHasAutoFilter"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
+		return  true, err
 	}
-	result := &AutoFilter{}
-	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteAutoFilter) 
+	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
-// Gets auto filter.
+// Indicates whether auto filter is applied to this table.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *ListObject) SetHasAutoFilter(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ListObject_SetHasAutoFilter"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Removes auto filter which is applied to this table.
+// Returns:
+//   void  
+func (instance *ListObject) RemoveAutoFilter()  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZF(C.CString("ListObject_RemoveAutoFilter"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets auto filter of this table.
 // Returns:
 //   AutoFilter  
 func (instance *ListObject) GetAutoFilter()  (*AutoFilter,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("ListObject_GetAutoFilter"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ListObject_GetAutoFilter"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1210,12 +1235,12 @@ func (instance *ListObject) GetAutoFilter()  (*AutoFilter,  error)  {
 
 	return result, nil 
 }
-// Gets and sets the display name.
+// Gets and sets the display name of the table.
 // Returns:
 //   string  
 func (instance *ListObject) GetDisplayName()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ListObject_GetDisplayName"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ListObject_GetDisplayName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1224,14 +1249,14 @@ func (instance *ListObject) GetDisplayName()  (string,  error)  {
 
 	return result, nil 
 }
-// Gets and sets the display name.
+// Gets and sets the display name of the table.
 // Parameters:
 //   value - string 
 // Returns:
 //   void  
 func (instance *ListObject) SetDisplayName(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ListObject_SetDisplayName"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("ListObject_SetDisplayName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1244,7 +1269,7 @@ func (instance *ListObject) SetDisplayName(value string)  error {
 //   string  
 func (instance *ListObject) GetComment()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ListObject_GetComment"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ListObject_GetComment"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1260,7 +1285,7 @@ func (instance *ListObject) GetComment()  (string,  error)  {
 //   void  
 func (instance *ListObject) SetComment(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ListObject_SetComment"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("ListObject_SetComment"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1268,7 +1293,7 @@ func (instance *ListObject) SetComment(value string)  error {
 
 	return nil 
 }
-// Indicates whether the first column in the table should have the style applied.
+// Indicates whether the first column in the table is the style applied to.
 // Returns:
 //   bool  
 func (instance *ListObject) GetShowTableStyleFirstColumn()  (bool,  error)  {
@@ -1282,7 +1307,7 @@ func (instance *ListObject) GetShowTableStyleFirstColumn()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether the first column in the table should have the style applied.
+// Indicates whether the first column in the table is the style applied to.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -1297,7 +1322,7 @@ func (instance *ListObject) SetShowTableStyleFirstColumn(value bool)  error {
 
 	return nil 
 }
-// Indicates whether the last column in the table should have the style applied.
+// Indicates whether the last column in the table is the style applied to.
 // Returns:
 //   bool  
 func (instance *ListObject) GetShowTableStyleLastColumn()  (bool,  error)  {
@@ -1311,7 +1336,7 @@ func (instance *ListObject) GetShowTableStyleLastColumn()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether the last column in the table should have the style applied.
+// Indicates whether the last column in the table is the style applied to.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -1326,7 +1351,7 @@ func (instance *ListObject) SetShowTableStyleLastColumn(value bool)  error {
 
 	return nil 
 }
-// Indicates whether row stripe formatting is applied.
+// Indicates whether row stripe formatting is applied to.
 // Returns:
 //   bool  
 func (instance *ListObject) GetShowTableStyleRowStripes()  (bool,  error)  {
@@ -1340,7 +1365,7 @@ func (instance *ListObject) GetShowTableStyleRowStripes()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether row stripe formatting is applied.
+// Indicates whether row stripe formatting is applied to.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -1355,7 +1380,7 @@ func (instance *ListObject) SetShowTableStyleRowStripes(value bool)  error {
 
 	return nil 
 }
-// Indicates whether column stripe formatting is applied.
+// Indicates whether column stripe formatting is applied to.
 // Returns:
 //   bool  
 func (instance *ListObject) GetShowTableStyleColumnStripes()  (bool,  error)  {
@@ -1369,7 +1394,7 @@ func (instance *ListObject) GetShowTableStyleColumnStripes()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether column stripe formatting is applied.
+// Indicates whether column stripe formatting is applied to.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -1389,7 +1414,7 @@ func (instance *ListObject) SetShowTableStyleColumnStripes(value bool)  error {
 //   void  
 func (instance *ListObject) ApplyStyleToRange()  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZX(C.CString("ListObject_ApplyStyleToRange"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZF(C.CString("ListObject_ApplyStyleToRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1402,7 +1427,7 @@ func (instance *ListObject) ApplyStyleToRange()  error {
 //   void  
 func (instance *ListObject) ConvertToRange()  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZX(C.CString("ListObject_ConvertToRange"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZF(C.CString("ListObject_ConvertToRange"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1422,7 +1447,7 @@ func (instance *ListObject) ConvertToRange_TableToRangeOptions(options *TableToR
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("ListObject_ConvertToRange_TableToRangeOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("ListObject_ConvertToRange_TableToRangeOptions"), instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1435,7 +1460,7 @@ func (instance *ListObject) ConvertToRange_TableToRangeOptions(options *TableToR
 //   int32  
 func (instance *ListObject) GetTableStyleType()  (TableStyleType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ListObject_GetTableStyleType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ListObject_GetTableStyleType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1454,7 +1479,7 @@ func (instance *ListObject) GetTableStyleType()  (TableStyleType,  error)  {
 //   void  
 func (instance *ListObject) SetTableStyleType(value TableStyleType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ListObject_SetTableStyleType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ListObject_SetTableStyleType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1467,7 +1492,7 @@ func (instance *ListObject) SetTableStyleType(value TableStyleType)  error {
 //   string  
 func (instance *ListObject) GetTableStyleName()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ListObject_GetTableStyleName"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ListObject_GetTableStyleName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1483,7 +1508,7 @@ func (instance *ListObject) GetTableStyleName()  (string,  error)  {
 //   void  
 func (instance *ListObject) SetTableStyleName(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ListObject_SetTableStyleName"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("ListObject_SetTableStyleName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1496,7 +1521,7 @@ func (instance *ListObject) SetTableStyleName(value string)  error {
 //   XmlMap  
 func (instance *ListObject) GetXmlMap()  (*XmlMap,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("ListObject_GetXmlMap"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ListObject_GetXmlMap"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1512,7 +1537,7 @@ func (instance *ListObject) GetXmlMap()  (*XmlMap,  error)  {
 //   string  
 func (instance *ListObject) GetAlternativeText()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ListObject_GetAlternativeText"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ListObject_GetAlternativeText"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1528,7 +1553,7 @@ func (instance *ListObject) GetAlternativeText()  (string,  error)  {
 //   void  
 func (instance *ListObject) SetAlternativeText(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ListObject_SetAlternativeText"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("ListObject_SetAlternativeText"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1541,7 +1566,7 @@ func (instance *ListObject) SetAlternativeText(value string)  error {
 //   string  
 func (instance *ListObject) GetAlternativeDescription()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ListObject_GetAlternativeDescription"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ListObject_GetAlternativeDescription"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1557,7 +1582,7 @@ func (instance *ListObject) GetAlternativeDescription()  (string,  error)  {
 //   void  
 func (instance *ListObject) SetAlternativeDescription(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("ListObject_SetAlternativeDescription"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("ListObject_SetAlternativeDescription"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1643,7 +1668,7 @@ func (instance *ListObjectCollection) Get_String(tablename string)  (*ListObject
 //   int32  
 func (instance *ListObjectCollection) Add_Int_Int_Int_Int_Bool(startrow int32, startcolumn int32, endrow int32, endcolumn int32, hasheaders bool)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOY(C.CString("ListObjectCollection_Add_Integer_Integer_Integer_Integer_Boolean"), instance.ptr, C.int(startrow), C.int(startcolumn), C.int(endrow), C.int(endcolumn), C.bool(hasheaders))
+	CGoReturnPtr := C.CellsGoFunctoinZZPA(C.CString("ListObjectCollection_Add_Integer_Integer_Integer_Integer_Boolean"), instance.ptr, C.int(startrow), C.int(startcolumn), C.int(endrow), C.int(endcolumn), C.bool(hasheaders))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1675,7 +1700,7 @@ func (instance *ListObjectCollection) Add_String_String_Bool(startcell string, e
 //   void  
 func (instance *ListObjectCollection) UpdateColumnName()  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZX(C.CString("ListObjectCollection_UpdateColumnName"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZF(C.CString("ListObjectCollection_UpdateColumnName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1707,7 +1732,7 @@ func DeleteListObjectCollection(listobjectcollection *ListObjectCollection){
 
 // Class TableStyle 
 
-// Represents the table style.
+// Represents the style of the table.
 type TableStyle struct {
 	ptr unsafe.Pointer
 }
@@ -1732,7 +1757,7 @@ func (instance *TableStyle) IsNull()  (bool,  error)  {
 //   string  
 func (instance *TableStyle) GetName()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("TableStyle_GetName"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("TableStyle_GetName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1746,7 +1771,7 @@ func (instance *TableStyle) GetName()  (string,  error)  {
 //   TableStyleElementCollection  
 func (instance *TableStyle) GetTableStyleElements()  (*TableStyleElementCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("TableStyle_GetTableStyleElements"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("TableStyle_GetTableStyleElements"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1793,7 +1818,7 @@ func (instance *TableStyleCollection) IsNull()  (bool,  error)  {
 //   string  
 func (instance *TableStyleCollection) GetDefaultTableStyleName()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("TableStyleCollection_GetDefaultTableStyleName"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("TableStyleCollection_GetDefaultTableStyleName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1809,7 +1834,7 @@ func (instance *TableStyleCollection) GetDefaultTableStyleName()  (string,  erro
 //   void  
 func (instance *TableStyleCollection) SetDefaultTableStyleName(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("TableStyleCollection_SetDefaultTableStyleName"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("TableStyleCollection_SetDefaultTableStyleName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1822,7 +1847,7 @@ func (instance *TableStyleCollection) SetDefaultTableStyleName(value string)  er
 //   string  
 func (instance *TableStyleCollection) GetDefaultPivotStyleName()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("TableStyleCollection_GetDefaultPivotStyleName"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("TableStyleCollection_GetDefaultPivotStyleName"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -1838,7 +1863,7 @@ func (instance *TableStyleCollection) GetDefaultPivotStyleName()  (string,  erro
 //   void  
 func (instance *TableStyleCollection) SetDefaultPivotStyleName(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("TableStyleCollection_SetDefaultPivotStyleName"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("TableStyleCollection_SetDefaultPivotStyleName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2012,7 +2037,7 @@ func (instance *TableStyleElement) SetSize(value int32)  error {
 //   int32  
 func (instance *TableStyleElement) GetType()  (TableStyleElementType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("TableStyleElement_GetType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("TableStyleElement_GetType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2029,7 +2054,7 @@ func (instance *TableStyleElement) GetType()  (TableStyleElementType,  error)  {
 //   Style  
 func (instance *TableStyleElement) GetElementStyle()  (*Style,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("TableStyleElement_GetElementStyle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("TableStyleElement_GetElementStyle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2052,7 +2077,7 @@ func (instance *TableStyleElement) SetElementStyle(style *Style)  error {
 	  style_ptr =style.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("TableStyleElement_SetElementStyle"), instance.ptr, style_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("TableStyleElement_SetElementStyle"), instance.ptr, style_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

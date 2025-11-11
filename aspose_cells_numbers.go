@@ -76,7 +76,7 @@ func NewNumbersLoadOptions_LoadOptions(src *LoadOptions) ( *NumbersLoadOptions, 
 	  src_ptr =src.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("New_NumbersLoadOptions_LoadOptions"),src_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("New_NumbersLoadOptions_LoadOptions"),src_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		numbersloadoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(numbersloadoptions, DeleteNumbersLoadOptions)
@@ -107,7 +107,7 @@ func (instance *NumbersLoadOptions) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *NumbersLoadOptions) GetLoadTableType()  (LoadNumbersTableType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("NumbersLoadOptions_GetLoadTableType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("NumbersLoadOptions_GetLoadTableType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -126,7 +126,7 @@ func (instance *NumbersLoadOptions) GetLoadTableType()  (LoadNumbersTableType,  
 //   void  
 func (instance *NumbersLoadOptions) SetLoadTableType(value LoadNumbersTableType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("NumbersLoadOptions_SetLoadTableType"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("NumbersLoadOptions_SetLoadTableType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -139,7 +139,7 @@ func (instance *NumbersLoadOptions) SetLoadTableType(value LoadNumbersTableType)
 //   int32  
 func (instance *NumbersLoadOptions) GetLoadFormat()  (LoadFormat,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("NumbersLoadOptions_GetLoadFormat"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("NumbersLoadOptions_GetLoadFormat"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -156,7 +156,7 @@ func (instance *NumbersLoadOptions) GetLoadFormat()  (LoadFormat,  error)  {
 //   string  
 func (instance *NumbersLoadOptions) GetPassword()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("NumbersLoadOptions_GetPassword"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("NumbersLoadOptions_GetPassword"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -172,7 +172,7 @@ func (instance *NumbersLoadOptions) GetPassword()  (string,  error)  {
 //   void  
 func (instance *NumbersLoadOptions) SetPassword(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("NumbersLoadOptions_SetPassword"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("NumbersLoadOptions_SetPassword"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -247,7 +247,7 @@ func (instance *NumbersLoadOptions) SetParsingPivotCachedRecords(value bool)  er
 //   void  
 func (instance *NumbersLoadOptions) SetPaperSize(type_ PaperSizeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("NumbersLoadOptions_SetPaperSize"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("NumbersLoadOptions_SetPaperSize"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -260,7 +260,7 @@ func (instance *NumbersLoadOptions) SetPaperSize(type_ PaperSizeType)  error {
 //   int32  
 func (instance *NumbersLoadOptions) GetLanguageCode()  (CountryCode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("NumbersLoadOptions_GetLanguageCode"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("NumbersLoadOptions_GetLanguageCode"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -279,7 +279,7 @@ func (instance *NumbersLoadOptions) GetLanguageCode()  (CountryCode,  error)  {
 //   void  
 func (instance *NumbersLoadOptions) SetLanguageCode(value CountryCode)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("NumbersLoadOptions_SetLanguageCode"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("NumbersLoadOptions_SetLanguageCode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -292,7 +292,7 @@ func (instance *NumbersLoadOptions) SetLanguageCode(value CountryCode)  error {
 //   int32  
 func (instance *NumbersLoadOptions) GetRegion()  (CountryCode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("NumbersLoadOptions_GetRegion"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("NumbersLoadOptions_GetRegion"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -311,7 +311,7 @@ func (instance *NumbersLoadOptions) GetRegion()  (CountryCode,  error)  {
 //   void  
 func (instance *NumbersLoadOptions) SetRegion(value CountryCode)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("NumbersLoadOptions_SetRegion"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("NumbersLoadOptions_SetRegion"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -324,7 +324,7 @@ func (instance *NumbersLoadOptions) SetRegion(value CountryCode)  error {
 //   DefaultStyleSettings  
 func (instance *NumbersLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSettings,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("NumbersLoadOptions_GetDefaultStyleSettings"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("NumbersLoadOptions_GetDefaultStyleSettings"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -340,7 +340,7 @@ func (instance *NumbersLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSet
 //   AbstractInterruptMonitor  
 func (instance *NumbersLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonitor,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("NumbersLoadOptions_GetInterruptMonitor"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("NumbersLoadOptions_GetInterruptMonitor"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -363,7 +363,7 @@ func (instance *NumbersLoadOptions) SetInterruptMonitor(value *AbstractInterrupt
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("NumbersLoadOptions_SetInterruptMonitor"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("NumbersLoadOptions_SetInterruptMonitor"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -504,7 +504,7 @@ func (instance *NumbersLoadOptions) SetKeepUnparsedData(value bool)  error {
 //   LoadFilter  
 func (instance *NumbersLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("NumbersLoadOptions_GetLoadFilter"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("NumbersLoadOptions_GetLoadFilter"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -527,7 +527,7 @@ func (instance *NumbersLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("NumbersLoadOptions_SetLoadFilter"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("NumbersLoadOptions_SetLoadFilter"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -540,7 +540,7 @@ func (instance *NumbersLoadOptions) SetLoadFilter(value *LoadFilter)  error {
 //   int32  
 func (instance *NumbersLoadOptions) GetMemorySetting()  (MemorySetting,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("NumbersLoadOptions_GetMemorySetting"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("NumbersLoadOptions_GetMemorySetting"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -559,7 +559,7 @@ func (instance *NumbersLoadOptions) GetMemorySetting()  (MemorySetting,  error) 
 //   void  
 func (instance *NumbersLoadOptions) SetMemorySetting(value MemorySetting)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("NumbersLoadOptions_SetMemorySetting"), instance.ptr, C.int( int32(value)))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("NumbersLoadOptions_SetMemorySetting"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -572,7 +572,7 @@ func (instance *NumbersLoadOptions) SetMemorySetting(value MemorySetting)  error
 //   AutoFitterOptions  
 func (instance *NumbersLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("NumbersLoadOptions_GetAutoFitterOptions"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("NumbersLoadOptions_GetAutoFitterOptions"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -595,7 +595,7 @@ func (instance *NumbersLoadOptions) SetAutoFitterOptions(value *AutoFitterOption
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("NumbersLoadOptions_SetAutoFitterOptions"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("NumbersLoadOptions_SetAutoFitterOptions"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -638,7 +638,7 @@ func (instance *NumbersLoadOptions) SetAutoFilter(value bool)  error {
 //   IndividualFontConfigs  
 func (instance *NumbersLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("NumbersLoadOptions_GetFontConfigs"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("NumbersLoadOptions_GetFontConfigs"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -662,7 +662,7 @@ func (instance *NumbersLoadOptions) SetFontConfigs(value *IndividualFontConfigs)
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("NumbersLoadOptions_SetFontConfigs"), instance.ptr, value_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("NumbersLoadOptions_SetFontConfigs"), instance.ptr, value_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

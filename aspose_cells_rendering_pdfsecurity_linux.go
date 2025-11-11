@@ -63,7 +63,7 @@ func (instance *PdfSecurityOptions) IsNull()  (bool,  error)  {
 //   string  
 func (instance *PdfSecurityOptions) GetUserPassword()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PdfSecurityOptions_GetUserPassword"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("PdfSecurityOptions_GetUserPassword"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -79,7 +79,7 @@ func (instance *PdfSecurityOptions) GetUserPassword()  (string,  error)  {
 //   void  
 func (instance *PdfSecurityOptions) SetUserPassword(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("PdfSecurityOptions_SetUserPassword"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("PdfSecurityOptions_SetUserPassword"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -92,7 +92,7 @@ func (instance *PdfSecurityOptions) SetUserPassword(value string)  error {
 //   string  
 func (instance *PdfSecurityOptions) GetOwnerPassword()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PdfSecurityOptions_GetOwnerPassword"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("PdfSecurityOptions_GetOwnerPassword"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -108,7 +108,7 @@ func (instance *PdfSecurityOptions) GetOwnerPassword()  (string,  error)  {
 //   void  
 func (instance *PdfSecurityOptions) SetOwnerPassword(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("PdfSecurityOptions_SetOwnerPassword"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("PdfSecurityOptions_SetOwnerPassword"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
