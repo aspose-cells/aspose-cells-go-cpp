@@ -25,7 +25,9 @@ jobs:
     - name: Build Aspose.Cells for Go via C++
       env:
           PATH: ${{ github.workspace }}/lib/win_x86_64;${env:PATH}        
-      run: go build -v ./...
+      run: |
+        dir "${{ github.workspace }}/"
+        go build -v .
 
     - name: Run Example Code.
       env:
