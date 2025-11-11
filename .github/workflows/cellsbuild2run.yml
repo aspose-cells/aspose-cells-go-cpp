@@ -24,10 +24,6 @@ jobs:
 
     - name: Build Aspose.Cells for Go via C++
       env:
-          CGO_ENABLED: 1
-          CGO_CFLAGS: -I"${{ github.workspace }}"
-          CGO_CXXFLAGS: -I"${{ github.workspace }}"
-          CGO_LDFLAGS: -L"${{ github.workspace }}/lib/win_x86_64" -lAspose.Cells.CWrapper
           PATH: ${{ github.workspace }}/lib/win_x86_64;${env:PATH}        
       run: go build -v ./...
 
