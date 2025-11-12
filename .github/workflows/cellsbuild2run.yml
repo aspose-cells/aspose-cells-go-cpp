@@ -28,6 +28,8 @@ jobs:
         set CC=cl.exe
         set CXX=cl.exe
         set PATH=%CD%\lib\win_x86_64;%PATH%
+        set CGO_CFLAGS=
+        set CGO_CXXFLAGS=
         echo "Current dir: $(pwd)"
         dir "${{ github.workspace }}/lib/win_x86_64"
         cd samples
