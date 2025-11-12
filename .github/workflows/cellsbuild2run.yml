@@ -23,12 +23,14 @@ jobs:
         go-version: '1.20'
     - name: Setup MSVC environment
       uses: ilammy/msvc-dev-cmd@v1
+      with:
+        arch: x64
     - name: Run Example Code
       env:
         CGO_ENABLED: 1    
+        CC: cl.exe
+        CXX: cl.exe
         PATH: ${{ github.workspace }}/lib/win_x86_64;${env:PATH}
-        CGO_LDFLAGS: -Wl,-rpath,"${{ github.workspace }}/lib/win_x86_64" -L"${SRCDIR}/lib/win_x86_64" -lAspose.Cells.CWrapper 
-        CGO_CXXFLAGS: -I"${{ github.workspace }}
       run: |
         echo "Current dir: $(Get-Location)"
         dir "${{ github.workspace }}/lib/win_x86_64"
