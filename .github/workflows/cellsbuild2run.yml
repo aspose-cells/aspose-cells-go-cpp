@@ -27,7 +27,8 @@ jobs:
           PATH: ${{ github.workspace }}/lib/win_x86_64;${env:PATH}        
       run: |
         dir "${{ github.workspace }}/"
-        go build -v .
+        echo "PATH: ${env:PATH}"
+        go build -v ./...
 
     - name: Run Example Code.
       env:
