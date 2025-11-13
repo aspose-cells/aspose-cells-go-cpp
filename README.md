@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/aspose.cells%20for%20Go%20via%20C++-v25.11.1-green?style=for-the-badge&logo=go) [![License](https://img.shields.io/github/license/aspose-cells/aspose-cells-go-cpp?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells/aspose-cells-go-cpp/blob/master/LICENSE?style=for-the-badge)  [![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.com/cells/go-cpp/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.com/cells/go-cpp/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.com/cells/go-cpp/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells/aspose-cells-go-cpp/tree/main/samples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.com/categories/aspose.cells-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.com/c/cells/9) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells/aspose-cells-go-cpp/v25.11.1?style=for-the-badge)
+![](https://img.shields.io/badge/aspose.cells%20for%20Go%20via%20C++-v25.11.2-green?style=for-the-badge&logo=go) [![License](https://img.shields.io/github/license/aspose-cells/aspose-cells-go-cpp?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells/aspose-cells-go-cpp/blob/master/LICENSE?style=for-the-badge)  [![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.com/cells/go-cpp/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.com/cells/go-cpp/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.com/cells/go-cpp/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells/aspose-cells-go-cpp/tree/main/samples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.com/categories/aspose.cells-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.com/c/cells/9) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells/aspose-cells-go-cpp/v25.11.2?style=for-the-badge)
 
 # Aspose.Cells for Go via C++
 
@@ -65,7 +65,7 @@ If Aspose.Cells for Go via C++ is not installed in the development environment, 
 
 ```cmd
 
-set PATH=%PATH%;%GOPATH%\github.com\aspose-cells\aspose-cells-go-cpp\v25@v25.11.1\lib\win_x86_64\
+set PATH=%PATH%;%GOPATH%\github.com\aspose-cells\aspose-cells-go-cpp\v25@v25.11.2\lib\win_x86_64\
 
 ```
 
@@ -73,14 +73,14 @@ Or in your powershell
 
 ```powershell
 
-$env:Path = $env:Path+ ";${env:GOPATH}\github.com\aspose-cells\aspose-cells-go-cpp\v25@v25.11.1\lib\win_x86_64\"
+$env:Path = $env:Path+ ";${env:GOPATH}\github.com\aspose-cells\aspose-cells-go-cpp\v25@v25.11.2\lib\win_x86_64\"
 
 ```
 
 Or in your linux bash
 
 ```bash
-export PATH=$PATH:$GOPATH/github.com/aspose-cells/aspose-cells-go-cpp/v25@v25.11.1/lib/linux_x86_64/
+export PATH=$PATH:$GOPATH/github.com/aspose-cells/aspose-cells-go-cpp/v25@v25.11.2/lib/linux_x86_64/
 
 ```
 
@@ -189,7 +189,7 @@ go install github.com/aspose-cells/aspose-cells-go-cpp/v25@latest
 
 ```go
 
-go get github.com/aspose-cells/aspose-cells-go-cpp/v25@v25.11.1
+go get github.com/aspose-cells/aspose-cells-go-cpp/v25@v25.11.2
 
 ```
 
