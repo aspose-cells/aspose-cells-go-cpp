@@ -1024,7 +1024,7 @@ func (instance *FontSettingCollection) InsertText(index int32, text string)  err
 //   void  
 func (instance *FontSettingCollection) Replace_Int_Int_String(index int32, count int32, text string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMM(C.CString("FontSettingCollection_Replace_Integer_Integer_String"), instance.ptr, C.int(index), C.int(count), C.CString(text))
+	CGoReturnPtr := C.CellsGoFunctoinZZMO(C.CString("FontSettingCollection_Replace_Integer_Integer_String"), instance.ptr, C.int(index), C.int(count), C.CString(text))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3965,7 +3965,7 @@ func (instance *TextTabStopCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *TextTabStopCollection) Add(tabalignment TextTabAlignmentType, tabposition float64)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMN(C.CString("TextTabStopCollection_Add"), instance.ptr, C.int( int32(tabalignment)), C.double(tabposition))
+	CGoReturnPtr := C.CellsGoFunctoinZZMP(C.CString("TextTabStopCollection_Add"), instance.ptr, C.int( int32(tabalignment)), C.double(tabposition))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err

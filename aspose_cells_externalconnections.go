@@ -763,7 +763,7 @@ func (instance *ConnectionParameterCollection) Set(value *ConnectionParameter, i
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZLF(C.CString("ConnectionParameterCollection_Set"), instance.ptr, value_ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZLG(C.CString("ConnectionParameterCollection_Set"), instance.ptr, value_ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3255,7 +3255,7 @@ func (instance *ExternalConnectionCollection) Set(value *ExternalConnection, ind
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZLF(C.CString("ExternalConnectionCollection_Set"), instance.ptr, value_ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZLG(C.CString("ExternalConnectionCollection_Set"), instance.ptr, value_ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

@@ -941,7 +941,7 @@ func (instance *AccentEquationNode) AddChild_EquationNode(node *EquationNode)  e
 //   EquationNode  
 func (instance *AccentEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("AccentEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("AccentEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1102,7 +1102,7 @@ func AccentEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("AccentEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("AccentEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1398,7 +1398,7 @@ func (instance *ArrayEquationNode) AddChild_EquationNode(node *EquationNode)  er
 //   EquationNode  
 func (instance *ArrayEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("ArrayEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("ArrayEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1559,7 +1559,7 @@ func ArrayEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workb
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("ArrayEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("ArrayEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1887,7 +1887,7 @@ func (instance *BarEquationNode) AddChild_EquationNode(node *EquationNode)  erro
 //   EquationNode  
 func (instance *BarEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("BarEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("BarEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2048,7 +2048,7 @@ func BarEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workboo
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("BarEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("BarEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2344,7 +2344,7 @@ func (instance *BorderBoxEquationNode) AddChild_EquationNode(node *EquationNode)
 //   EquationNode  
 func (instance *BorderBoxEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("BorderBoxEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("BorderBoxEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2505,7 +2505,7 @@ func BorderBoxEquationNode_CreateNode(equationtype EquationNodeType, workbook *W
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("BorderBoxEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("BorderBoxEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2801,7 +2801,7 @@ func (instance *BoxEquationNode) AddChild_EquationNode(node *EquationNode)  erro
 //   EquationNode  
 func (instance *BoxEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("BoxEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("BoxEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2962,7 +2962,7 @@ func BoxEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workboo
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("BoxEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("BoxEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3407,7 +3407,7 @@ func (instance *DelimiterEquationNode) AddChild_EquationNode(node *EquationNode)
 //   EquationNode  
 func (instance *DelimiterEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("DelimiterEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("DelimiterEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3568,7 +3568,7 @@ func DelimiterEquationNode_CreateNode(equationtype EquationNodeType, workbook *W
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("DelimiterEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("DelimiterEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3867,7 +3867,7 @@ func (instance *EquationComponentNode) AddChild_EquationNode(node *EquationNode)
 //   EquationNode  
 func (instance *EquationComponentNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("EquationComponentNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("EquationComponentNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4028,7 +4028,7 @@ func EquationComponentNode_CreateNode(equationtype EquationNodeType, workbook *W
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("EquationComponentNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("EquationComponentNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4211,7 +4211,7 @@ func (instance *EquationNode) AddChild_EquationNode(node *EquationNode)  error {
 //   EquationNode  
 func (instance *EquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("EquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("EquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4410,7 +4410,7 @@ func EquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, 
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("EquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("EquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4808,7 +4808,7 @@ func (instance *EquationNodeParagraph) AddChild_EquationNode(node *EquationNode)
 //   EquationNode  
 func (instance *EquationNodeParagraph) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("EquationNodeParagraph_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("EquationNodeParagraph_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4969,7 +4969,7 @@ func EquationNodeParagraph_CreateNode(equationtype EquationNodeType, workbook *W
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("EquationNodeParagraph_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("EquationNodeParagraph_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5297,7 +5297,7 @@ func (instance *FractionEquationNode) AddChild_EquationNode(node *EquationNode) 
 //   EquationNode  
 func (instance *FractionEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("FractionEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("FractionEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5458,7 +5458,7 @@ func FractionEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wo
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("FractionEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("FractionEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5755,7 +5755,7 @@ func (instance *FunctionEquationNode) AddChild_EquationNode(node *EquationNode) 
 //   EquationNode  
 func (instance *FunctionEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("FunctionEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("FunctionEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5916,7 +5916,7 @@ func FunctionEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wo
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("FunctionEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("FunctionEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6341,7 +6341,7 @@ func (instance *GroupCharacterEquationNode) AddChild_EquationNode(node *Equation
 //   EquationNode  
 func (instance *GroupCharacterEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("GroupCharacterEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("GroupCharacterEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6502,7 +6502,7 @@ func GroupCharacterEquationNode_CreateNode(equationtype EquationNodeType, workbo
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("GroupCharacterEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("GroupCharacterEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6798,7 +6798,7 @@ func (instance *LimLowUppEquationNode) AddChild_EquationNode(node *EquationNode)
 //   EquationNode  
 func (instance *LimLowUppEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("LimLowUppEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("LimLowUppEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6959,7 +6959,7 @@ func LimLowUppEquationNode_CreateNode(equationtype EquationNodeType, workbook *W
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("LimLowUppEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("LimLowUppEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7255,7 +7255,7 @@ func (instance *MathematicalEquationNode) AddChild_EquationNode(node *EquationNo
 //   EquationNode  
 func (instance *MathematicalEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("MathematicalEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("MathematicalEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7416,7 +7416,7 @@ func MathematicalEquationNode_CreateNode(equationtype EquationNodeType, workbook
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("MathematicalEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("MathematicalEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7773,7 +7773,7 @@ func (instance *MatrixEquationNode) AddChild_EquationNode(node *EquationNode)  e
 //   EquationNode  
 func (instance *MatrixEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("MatrixEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("MatrixEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7934,7 +7934,7 @@ func MatrixEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("MatrixEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("MatrixEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8414,7 +8414,7 @@ func (instance *NaryEquationNode) AddChild_EquationNode(node *EquationNode)  err
 //   EquationNode  
 func (instance *NaryEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("NaryEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("NaryEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8575,7 +8575,7 @@ func NaryEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbo
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("NaryEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("NaryEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8900,7 +8900,7 @@ func (instance *RadicalEquationNode) AddChild_EquationNode(node *EquationNode)  
 //   EquationNode  
 func (instance *RadicalEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("RadicalEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("RadicalEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9061,7 +9061,7 @@ func RadicalEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wor
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("RadicalEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("RadicalEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9358,7 +9358,7 @@ func (instance *SubSupEquationNode) AddChild_EquationNode(node *EquationNode)  e
 //   EquationNode  
 func (instance *SubSupEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("SubSupEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("SubSupEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9519,7 +9519,7 @@ func SubSupEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("SubSupEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("SubSupEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9845,7 +9845,7 @@ func (instance *TextRunEquationNode) AddChild_EquationNode(node *EquationNode)  
 //   EquationNode  
 func (instance *TextRunEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("TextRunEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("TextRunEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10006,7 +10006,7 @@ func TextRunEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wor
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("TextRunEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("TextRunEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10302,7 +10302,7 @@ func (instance *UnknowEquationNode) AddChild_EquationNode(node *EquationNode)  e
 //   EquationNode  
 func (instance *UnknowEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("UnknowEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("UnknowEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10463,7 +10463,7 @@ func UnknowEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("UnknowEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("UnknowEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err

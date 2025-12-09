@@ -221,7 +221,7 @@ func (instance *AbstractLowCodeProtectionProvider) GetWorksheetPassword(sheetnam
 //   int32  
 func (instance *AbstractLowCodeProtectionProvider) GetWorksheetProtectionType(sheetname string)  (ProtectionType,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKM(C.CString("AbstractLowCodeProtectionProvider_GetWorksheetProtectionType"), instance.ptr, C.CString(sheetname))
+	CGoReturnPtr := C.CellsGoFunctoinZZKN(C.CString("AbstractLowCodeProtectionProvider_GetWorksheetProtectionType"), instance.ptr, C.CString(sheetname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -350,7 +350,7 @@ func (instance *HtmlConverter) IsNull()  (bool,  error)  {
 //   void  
 func HtmlConverter_Process_String_String(templatefile string, resultfile string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKN(C.CString("HtmlConverter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
+	CGoReturnPtr := C.CellsGoFunctoinZZKO(C.CString("HtmlConverter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -422,7 +422,7 @@ func (instance *ImageConverter) IsNull()  (bool,  error)  {
 //   void  
 func ImageConverter_Process_String_String(templatefile string, resultfile string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKN(C.CString("ImageConverter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
+	CGoReturnPtr := C.CellsGoFunctoinZZKO(C.CString("ImageConverter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -524,7 +524,7 @@ func (instance *JsonConverter) IsNull()  (bool,  error)  {
 //   void  
 func JsonConverter_Process_String_String(templatefile string, resultfile string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKN(C.CString("JsonConverter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
+	CGoReturnPtr := C.CellsGoFunctoinZZKO(C.CString("JsonConverter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2560,7 +2560,7 @@ func (instance *PdfConverter) IsNull()  (bool,  error)  {
 //   void  
 func PdfConverter_Process_String_String(templatefile string, resultfile string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKN(C.CString("PdfConverter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
+	CGoReturnPtr := C.CellsGoFunctoinZZKO(C.CString("PdfConverter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2707,7 +2707,7 @@ func (instance *SpreadsheetConverter) IsNull()  (bool,  error)  {
 //   void  
 func SpreadsheetConverter_Process_String_String(templatefile string, resultfile string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKN(C.CString("SpreadsheetConverter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
+	CGoReturnPtr := C.CellsGoFunctoinZZKO(C.CString("SpreadsheetConverter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2781,7 +2781,7 @@ func (instance *SpreadsheetLocker) IsNull()  (bool,  error)  {
 //   void  
 func SpreadsheetLocker_Process_String_String_String_String(templatefile string, resultfile string, openpassword string, writepassword string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKO(C.CString("SpreadsheetLocker_Process_String_String_String_String"),C.CString(templatefile), C.CString(resultfile), C.CString(openpassword), C.CString(writepassword))
+	CGoReturnPtr := C.CellsGoFunctoinZZKP(C.CString("SpreadsheetLocker_Process_String_String_String_String"),C.CString(templatefile), C.CString(resultfile), C.CString(openpassword), C.CString(writepassword))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2808,7 +2808,7 @@ func SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_Stri
 	  saveoptions_ptr =saveoptions.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKP(C.CString("SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_String"),loadoptions_ptr, saveoptions_ptr, C.CString(openpassword), C.CString(writepassword))
+	CGoReturnPtr := C.CellsGoFunctoinZZKQ(C.CString("SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_String"),loadoptions_ptr, saveoptions_ptr, C.CString(openpassword), C.CString(writepassword))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2837,7 +2837,7 @@ func SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_Stri
 	  saveoptions_ptr =saveoptions.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKQ(C.CString("SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_String_String_ProtectionType"),loadoptions_ptr, saveoptions_ptr, C.CString(openpassword), C.CString(writepassword), C.CString(workbookpassword), C.int( int32(workbooktype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKR(C.CString("SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_String_String_String_ProtectionType"),loadoptions_ptr, saveoptions_ptr, C.CString(openpassword), C.CString(writepassword), C.CString(workbookpassword), C.int( int32(workbooktype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2921,7 +2921,7 @@ func SpreadsheetMerger_Process_stringArray_String(templatefiles []string, result
 	vector_templatefiles[i] = cStr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKR(C.CString("SpreadsheetMerger_Process_U16StringArray_String"),unsafe.Pointer(&vector_templatefiles[0]), C.int( len(templatefiles)), C.CString(resultfile))
+	CGoReturnPtr := C.CellsGoFunctoinZZKS(C.CString("SpreadsheetMerger_Process_U16StringArray_String"),unsafe.Pointer(&vector_templatefiles[0]), C.int( len(templatefiles)), C.CString(resultfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2988,7 +2988,7 @@ func (instance *SpreadsheetSplitter) IsNull()  (bool,  error)  {
 //   void  
 func SpreadsheetSplitter_Process_String_String(templatefile string, resultfile string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKN(C.CString("SpreadsheetSplitter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
+	CGoReturnPtr := C.CellsGoFunctoinZZKO(C.CString("SpreadsheetSplitter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3055,7 +3055,7 @@ func (instance *TextConverter) IsNull()  (bool,  error)  {
 //   void  
 func TextConverter_Process_String_String(templatefile string, resultfile string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKN(C.CString("TextConverter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
+	CGoReturnPtr := C.CellsGoFunctoinZZKO(C.CString("TextConverter_Process_String_String"),C.CString(templatefile), C.CString(resultfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

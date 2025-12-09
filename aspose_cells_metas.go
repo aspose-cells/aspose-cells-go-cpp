@@ -334,7 +334,7 @@ func (instance *SensitivityLabelCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *SensitivityLabelCollection) Add(id string, isenabled bool, methodtype SensitivityLabelAssignmentType, siteid string, marktype SensitivityLabelMarkType)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPC(C.CString("SensitivityLabelCollection_Add"), instance.ptr, C.CString(id), C.bool(isenabled), C.int( int32(methodtype)), C.CString(siteid), C.int( int32(marktype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZPF(C.CString("SensitivityLabelCollection_Add"), instance.ptr, C.CString(id), C.bool(isenabled), C.int( int32(methodtype)), C.CString(siteid), C.int( int32(marktype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err

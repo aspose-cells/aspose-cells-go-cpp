@@ -186,7 +186,7 @@ func NewWorkbookMetadata_String_MetadataOptions(filename string, options *Metada
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZJB(C.CString("New_WorkbookMetadata_String_MetadataOptions"),C.CString(filename), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJC(C.CString("New_WorkbookMetadata_String_MetadataOptions"),C.CString(filename), options_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		workbookmetadata.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(workbookmetadata, DeleteWorkbookMetadata)
@@ -208,7 +208,7 @@ func NewWorkbookMetadata_Stream_MetadataOptions(stream []byte, options *Metadata
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZJC(C.CString("New_WorkbookMetadata_Stream_MetadataOptions"),unsafe.Pointer(&stream[0]), C.int( len(stream)), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJD(C.CString("New_WorkbookMetadata_Stream_MetadataOptions"),unsafe.Pointer(&stream[0]), C.int( len(stream)), options_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		workbookmetadata.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(workbookmetadata, DeleteWorkbookMetadata)

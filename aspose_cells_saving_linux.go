@@ -2424,7 +2424,7 @@ func (instance *EbookSaveOptions) SetEncodeEntityAsCode(value bool)  error {
 
 	return nil 
 }
-// Indicates how export OfficeMath objects to HTML, Default value is Image.
+// Indicates how OfficeMath objects are exported to HTML, Default value is Image.
 // Returns:
 //   int32  
 func (instance *EbookSaveOptions) GetOfficeMathOutputMode()  (HtmlOfficeMathOutputType,  error)  {
@@ -2441,7 +2441,7 @@ func (instance *EbookSaveOptions) GetOfficeMathOutputMode()  (HtmlOfficeMathOutp
 
 	return result, nil 
 }
-// Indicates how export OfficeMath objects to HTML, Default value is Image.
+// Indicates how OfficeMath objects are exported to HTML, Default value is Image.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -2682,6 +2682,71 @@ func (instance *EbookSaveOptions) GetEmbeddedFontType()  (HtmlEmbeddedFontType, 
 func (instance *EbookSaveOptions) SetEmbeddedFontType(value HtmlEmbeddedFontType)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("EbookSaveOptions_SetEmbeddedFontType"), instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to export anchor elements  generated for named ranges when saving to HTML.
+// Default value is true.
+// Returns:
+//   bool  
+func (instance *EbookSaveOptions) GetExportNamedRangeAnchors()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("EbookSaveOptions_GetExportNamedRangeAnchors"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to export anchor elements  generated for named ranges when saving to HTML.
+// Default value is true.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *EbookSaveOptions) SetExportNamedRangeAnchors(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("EbookSaveOptions_SetExportNamedRangeAnchors"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to display the DataBar as an image when saving to HTML..
+// Default value is <see cref="DataBarRenderMode.BackgroundColor">.
+// Returns:
+//   int32  
+func (instance *EbookSaveOptions) GetDataBarRenderMode()  (DataBarRenderMode,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("EbookSaveOptions_GetDataBarRenderMode"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToDataBarRenderMode(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Indicates whether to display the DataBar as an image when saving to HTML..
+// Default value is <see cref="DataBarRenderMode.BackgroundColor">.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *EbookSaveOptions) SetDataBarRenderMode(value DataBarRenderMode)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("EbookSaveOptions_SetDataBarRenderMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

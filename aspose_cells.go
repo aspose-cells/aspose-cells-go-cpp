@@ -105,7 +105,7 @@ AutoFillType_Copy AutoFillType = 1
 // Automatically fills the target area with the value and format.
 AutoFillType_Default AutoFillType = 0 
 
-// Copies only the format of the source area to the target area,
+// Only copies the format of the source area to the target area.
 AutoFillType_Formats AutoFillType = 3 
 
 // Extend the value in the source area to the target area in the form of a series and copy format to the target area.
@@ -5871,7 +5871,7 @@ type Color struct {
 
 func NewColor() ( *Color, error) {
 	color := &Color{}
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("New_Color"))
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("New_Color"))
 	if CGoReturnPtr.error_no == 0 {
 		color.ptr = CGoReturnPtr.return_value
 		return color, nil
@@ -5883,11 +5883,11 @@ func NewColor() ( *Color, error) {
 }
 
 func (color *Color) Set_Color_A(value byte ) {
-	C.CellsGoFunctoinZZPR(C.CString("Color_Set_a"),color.ptr, C.uint8_t( value ))
+	C.CellsGoFunctoinZZPU(C.CString("Color_Set_a"),color.ptr, C.uint8_t( value ))
 }
 
 func (color *Color) Get_Color_A() (byte , error) {
-	CGoReturnPtr := C.CellsGoFunctoinZZPQ(C.CString("Color_Get_a"),color.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPT(C.CString("Color_Get_a"),color.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return 0, err
@@ -5898,11 +5898,11 @@ func (color *Color) Get_Color_A() (byte , error) {
 
 
 func (color *Color) Set_Color_R(value byte ) {
-	C.CellsGoFunctoinZZPR(C.CString("Color_Set_r"),color.ptr, C.uint8_t( value ))
+	C.CellsGoFunctoinZZPU(C.CString("Color_Set_r"),color.ptr, C.uint8_t( value ))
 }
 
 func (color *Color) Get_Color_R() (byte , error) {
-	CGoReturnPtr := C.CellsGoFunctoinZZPQ(C.CString("Color_Get_r"),color.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPT(C.CString("Color_Get_r"),color.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return 0, err
@@ -5913,11 +5913,11 @@ func (color *Color) Get_Color_R() (byte , error) {
 
 
 func (color *Color) Set_Color_G(value byte ) {
-	C.CellsGoFunctoinZZPR(C.CString("Color_Set_g"),color.ptr, C.uint8_t( value ))
+	C.CellsGoFunctoinZZPU(C.CString("Color_Set_g"),color.ptr, C.uint8_t( value ))
 }
 
 func (color *Color) Get_Color_G() (byte , error) {
-	CGoReturnPtr := C.CellsGoFunctoinZZPQ(C.CString("Color_Get_g"),color.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPT(C.CString("Color_Get_g"),color.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return 0, err
@@ -5928,11 +5928,11 @@ func (color *Color) Get_Color_G() (byte , error) {
 
 
 func (color *Color) Set_Color_B(value byte ) {
-	C.CellsGoFunctoinZZPR(C.CString("Color_Set_b"),color.ptr, C.uint8_t( value ))
+	C.CellsGoFunctoinZZPU(C.CString("Color_Set_b"),color.ptr, C.uint8_t( value ))
 }
 
 func (color *Color) Get_Color_B() (byte , error) {
-	CGoReturnPtr := C.CellsGoFunctoinZZPQ(C.CString("Color_Get_b"),color.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPT(C.CString("Color_Get_b"),color.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return 0, err
@@ -5945,7 +5945,7 @@ func (color *Color) Get_Color_B() (byte , error) {
 //   Color  
 func Color_Black()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Black"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Black"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5959,7 +5959,7 @@ func Color_Black()  (*Color,  error)  {
 //   Color  
 func Color_Navy()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Navy"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Navy"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5973,7 +5973,7 @@ func Color_Navy()  (*Color,  error)  {
 //   Color  
 func Color_DarkBlue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DarkBlue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DarkBlue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5987,7 +5987,7 @@ func Color_DarkBlue()  (*Color,  error)  {
 //   Color  
 func Color_MediumBlue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_MediumBlue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_MediumBlue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6001,7 +6001,7 @@ func Color_MediumBlue()  (*Color,  error)  {
 //   Color  
 func Color_Blue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Blue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Blue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6015,7 +6015,7 @@ func Color_Blue()  (*Color,  error)  {
 //   Color  
 func Color_DarkGreen()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DarkGreen"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DarkGreen"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6029,7 +6029,7 @@ func Color_DarkGreen()  (*Color,  error)  {
 //   Color  
 func Color_Green()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Green"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Green"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6043,7 +6043,7 @@ func Color_Green()  (*Color,  error)  {
 //   Color  
 func Color_Teal()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Teal"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Teal"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6057,7 +6057,7 @@ func Color_Teal()  (*Color,  error)  {
 //   Color  
 func Color_DarkCyan()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DarkCyan"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DarkCyan"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6071,7 +6071,7 @@ func Color_DarkCyan()  (*Color,  error)  {
 //   Color  
 func Color_DeepSkyBlue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DeepSkyBlue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DeepSkyBlue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6085,7 +6085,7 @@ func Color_DeepSkyBlue()  (*Color,  error)  {
 //   Color  
 func Color_DarkTurquoise()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DarkTurquoise"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DarkTurquoise"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6099,7 +6099,7 @@ func Color_DarkTurquoise()  (*Color,  error)  {
 //   Color  
 func Color_MediumSpringGreen()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_MediumSpringGreen"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_MediumSpringGreen"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6113,7 +6113,7 @@ func Color_MediumSpringGreen()  (*Color,  error)  {
 //   Color  
 func Color_Lime()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Lime"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Lime"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6127,7 +6127,7 @@ func Color_Lime()  (*Color,  error)  {
 //   Color  
 func Color_SpringGreen()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_SpringGreen"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_SpringGreen"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6141,7 +6141,7 @@ func Color_SpringGreen()  (*Color,  error)  {
 //   Color  
 func Color_Aqua()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Aqua"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Aqua"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6155,7 +6155,7 @@ func Color_Aqua()  (*Color,  error)  {
 //   Color  
 func Color_Cyan()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Cyan"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Cyan"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6169,7 +6169,7 @@ func Color_Cyan()  (*Color,  error)  {
 //   Color  
 func Color_MidnightBlue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_MidnightBlue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_MidnightBlue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6183,7 +6183,7 @@ func Color_MidnightBlue()  (*Color,  error)  {
 //   Color  
 func Color_DodgerBlue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DodgerBlue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DodgerBlue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6197,7 +6197,7 @@ func Color_DodgerBlue()  (*Color,  error)  {
 //   Color  
 func Color_LightSeaGreen()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_LightSeaGreen"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_LightSeaGreen"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6211,7 +6211,7 @@ func Color_LightSeaGreen()  (*Color,  error)  {
 //   Color  
 func Color_ForestGreen()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_ForestGreen"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_ForestGreen"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6225,7 +6225,7 @@ func Color_ForestGreen()  (*Color,  error)  {
 //   Color  
 func Color_SeaGreen()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_SeaGreen"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_SeaGreen"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6239,7 +6239,7 @@ func Color_SeaGreen()  (*Color,  error)  {
 //   Color  
 func Color_DarkSlateGray()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DarkSlateGray"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DarkSlateGray"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6253,7 +6253,7 @@ func Color_DarkSlateGray()  (*Color,  error)  {
 //   Color  
 func Color_LimeGreen()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_LimeGreen"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_LimeGreen"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6267,7 +6267,7 @@ func Color_LimeGreen()  (*Color,  error)  {
 //   Color  
 func Color_MediumSeaGreen()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_MediumSeaGreen"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_MediumSeaGreen"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6281,7 +6281,7 @@ func Color_MediumSeaGreen()  (*Color,  error)  {
 //   Color  
 func Color_Turquoise()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Turquoise"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Turquoise"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6295,7 +6295,7 @@ func Color_Turquoise()  (*Color,  error)  {
 //   Color  
 func Color_RoyalBlue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_RoyalBlue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_RoyalBlue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6309,7 +6309,7 @@ func Color_RoyalBlue()  (*Color,  error)  {
 //   Color  
 func Color_SteelBlue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_SteelBlue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_SteelBlue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6323,7 +6323,7 @@ func Color_SteelBlue()  (*Color,  error)  {
 //   Color  
 func Color_DarkSlateBlue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DarkSlateBlue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DarkSlateBlue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6337,7 +6337,7 @@ func Color_DarkSlateBlue()  (*Color,  error)  {
 //   Color  
 func Color_MediumTurquoise()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_MediumTurquoise"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_MediumTurquoise"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6351,7 +6351,7 @@ func Color_MediumTurquoise()  (*Color,  error)  {
 //   Color  
 func Color_Indigo()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Indigo"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Indigo"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6365,7 +6365,7 @@ func Color_Indigo()  (*Color,  error)  {
 //   Color  
 func Color_DarkOliveGreen()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DarkOliveGreen"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DarkOliveGreen"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6379,7 +6379,7 @@ func Color_DarkOliveGreen()  (*Color,  error)  {
 //   Color  
 func Color_CadetBlue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_CadetBlue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_CadetBlue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6393,7 +6393,7 @@ func Color_CadetBlue()  (*Color,  error)  {
 //   Color  
 func Color_CornflowerBlue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_CornflowerBlue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_CornflowerBlue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6407,7 +6407,7 @@ func Color_CornflowerBlue()  (*Color,  error)  {
 //   Color  
 func Color_MediumAquaMarine()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_MediumAquaMarine"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_MediumAquaMarine"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6421,7 +6421,7 @@ func Color_MediumAquaMarine()  (*Color,  error)  {
 //   Color  
 func Color_DimGray()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DimGray"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DimGray"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6435,7 +6435,7 @@ func Color_DimGray()  (*Color,  error)  {
 //   Color  
 func Color_SlateBlue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_SlateBlue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_SlateBlue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6449,7 +6449,7 @@ func Color_SlateBlue()  (*Color,  error)  {
 //   Color  
 func Color_OliveDrab()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_OliveDrab"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_OliveDrab"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6463,7 +6463,7 @@ func Color_OliveDrab()  (*Color,  error)  {
 //   Color  
 func Color_SlateGray()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_SlateGray"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_SlateGray"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6477,7 +6477,7 @@ func Color_SlateGray()  (*Color,  error)  {
 //   Color  
 func Color_LightSlateGray()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_LightSlateGray"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_LightSlateGray"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6491,7 +6491,7 @@ func Color_LightSlateGray()  (*Color,  error)  {
 //   Color  
 func Color_MediumSlateBlue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_MediumSlateBlue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_MediumSlateBlue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6505,7 +6505,7 @@ func Color_MediumSlateBlue()  (*Color,  error)  {
 //   Color  
 func Color_LawnGreen()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_LawnGreen"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_LawnGreen"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6519,7 +6519,7 @@ func Color_LawnGreen()  (*Color,  error)  {
 //   Color  
 func Color_Chartreuse()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Chartreuse"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Chartreuse"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6533,7 +6533,7 @@ func Color_Chartreuse()  (*Color,  error)  {
 //   Color  
 func Color_Aquamarine()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Aquamarine"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Aquamarine"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6547,7 +6547,7 @@ func Color_Aquamarine()  (*Color,  error)  {
 //   Color  
 func Color_Maroon()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Maroon"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Maroon"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6561,7 +6561,7 @@ func Color_Maroon()  (*Color,  error)  {
 //   Color  
 func Color_Purple()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Purple"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Purple"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6575,7 +6575,7 @@ func Color_Purple()  (*Color,  error)  {
 //   Color  
 func Color_Olive()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Olive"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Olive"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6589,7 +6589,7 @@ func Color_Olive()  (*Color,  error)  {
 //   Color  
 func Color_Gray()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Gray"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Gray"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6603,7 +6603,7 @@ func Color_Gray()  (*Color,  error)  {
 //   Color  
 func Color_SkyBlue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_SkyBlue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_SkyBlue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6617,7 +6617,7 @@ func Color_SkyBlue()  (*Color,  error)  {
 //   Color  
 func Color_LightSkyBlue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_LightSkyBlue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_LightSkyBlue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6631,7 +6631,7 @@ func Color_LightSkyBlue()  (*Color,  error)  {
 //   Color  
 func Color_BlueViolet()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_BlueViolet"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_BlueViolet"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6645,7 +6645,7 @@ func Color_BlueViolet()  (*Color,  error)  {
 //   Color  
 func Color_DarkRed()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DarkRed"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DarkRed"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6659,7 +6659,7 @@ func Color_DarkRed()  (*Color,  error)  {
 //   Color  
 func Color_DarkMagenta()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DarkMagenta"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DarkMagenta"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6673,7 +6673,7 @@ func Color_DarkMagenta()  (*Color,  error)  {
 //   Color  
 func Color_SaddleBrown()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_SaddleBrown"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_SaddleBrown"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6687,7 +6687,7 @@ func Color_SaddleBrown()  (*Color,  error)  {
 //   Color  
 func Color_DarkSeaGreen()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DarkSeaGreen"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DarkSeaGreen"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6701,7 +6701,7 @@ func Color_DarkSeaGreen()  (*Color,  error)  {
 //   Color  
 func Color_LightGreen()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_LightGreen"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_LightGreen"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6715,7 +6715,7 @@ func Color_LightGreen()  (*Color,  error)  {
 //   Color  
 func Color_MediumPurple()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_MediumPurple"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_MediumPurple"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6729,7 +6729,7 @@ func Color_MediumPurple()  (*Color,  error)  {
 //   Color  
 func Color_DarkViolet()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DarkViolet"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DarkViolet"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6743,7 +6743,7 @@ func Color_DarkViolet()  (*Color,  error)  {
 //   Color  
 func Color_PaleGreen()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_PaleGreen"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_PaleGreen"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6757,7 +6757,7 @@ func Color_PaleGreen()  (*Color,  error)  {
 //   Color  
 func Color_DarkOrchid()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DarkOrchid"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DarkOrchid"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6771,7 +6771,7 @@ func Color_DarkOrchid()  (*Color,  error)  {
 //   Color  
 func Color_YellowGreen()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_YellowGreen"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_YellowGreen"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6785,7 +6785,7 @@ func Color_YellowGreen()  (*Color,  error)  {
 //   Color  
 func Color_Sienna()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Sienna"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Sienna"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6799,7 +6799,7 @@ func Color_Sienna()  (*Color,  error)  {
 //   Color  
 func Color_Brown()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Brown"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Brown"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6813,7 +6813,7 @@ func Color_Brown()  (*Color,  error)  {
 //   Color  
 func Color_DarkGray()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DarkGray"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DarkGray"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6827,7 +6827,7 @@ func Color_DarkGray()  (*Color,  error)  {
 //   Color  
 func Color_LightBlue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_LightBlue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_LightBlue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6841,7 +6841,7 @@ func Color_LightBlue()  (*Color,  error)  {
 //   Color  
 func Color_GreenYellow()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_GreenYellow"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_GreenYellow"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6855,7 +6855,7 @@ func Color_GreenYellow()  (*Color,  error)  {
 //   Color  
 func Color_PaleTurquoise()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_PaleTurquoise"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_PaleTurquoise"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6869,7 +6869,7 @@ func Color_PaleTurquoise()  (*Color,  error)  {
 //   Color  
 func Color_LightSteelBlue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_LightSteelBlue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_LightSteelBlue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6883,7 +6883,7 @@ func Color_LightSteelBlue()  (*Color,  error)  {
 //   Color  
 func Color_PowderBlue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_PowderBlue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_PowderBlue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6897,7 +6897,7 @@ func Color_PowderBlue()  (*Color,  error)  {
 //   Color  
 func Color_FireBrick()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_FireBrick"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_FireBrick"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6911,7 +6911,7 @@ func Color_FireBrick()  (*Color,  error)  {
 //   Color  
 func Color_DarkGoldenRod()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DarkGoldenRod"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DarkGoldenRod"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6925,7 +6925,7 @@ func Color_DarkGoldenRod()  (*Color,  error)  {
 //   Color  
 func Color_MediumOrchid()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_MediumOrchid"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_MediumOrchid"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6939,7 +6939,7 @@ func Color_MediumOrchid()  (*Color,  error)  {
 //   Color  
 func Color_RosyBrown()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_RosyBrown"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_RosyBrown"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6953,7 +6953,7 @@ func Color_RosyBrown()  (*Color,  error)  {
 //   Color  
 func Color_DarkKhaki()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DarkKhaki"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DarkKhaki"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6967,7 +6967,7 @@ func Color_DarkKhaki()  (*Color,  error)  {
 //   Color  
 func Color_Silver()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Silver"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Silver"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6981,7 +6981,7 @@ func Color_Silver()  (*Color,  error)  {
 //   Color  
 func Color_MediumVioletRed()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_MediumVioletRed"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_MediumVioletRed"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6995,7 +6995,7 @@ func Color_MediumVioletRed()  (*Color,  error)  {
 //   Color  
 func Color_IndianRed()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_IndianRed"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_IndianRed"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7009,7 +7009,7 @@ func Color_IndianRed()  (*Color,  error)  {
 //   Color  
 func Color_Peru()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Peru"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Peru"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7023,7 +7023,7 @@ func Color_Peru()  (*Color,  error)  {
 //   Color  
 func Color_Chocolate()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Chocolate"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Chocolate"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7037,7 +7037,7 @@ func Color_Chocolate()  (*Color,  error)  {
 //   Color  
 func Color_Tan()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Tan"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Tan"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7051,7 +7051,7 @@ func Color_Tan()  (*Color,  error)  {
 //   Color  
 func Color_LightGray()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_LightGray"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_LightGray"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7065,7 +7065,7 @@ func Color_LightGray()  (*Color,  error)  {
 //   Color  
 func Color_Thistle()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Thistle"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Thistle"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7079,7 +7079,7 @@ func Color_Thistle()  (*Color,  error)  {
 //   Color  
 func Color_Orchid()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Orchid"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Orchid"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7093,7 +7093,7 @@ func Color_Orchid()  (*Color,  error)  {
 //   Color  
 func Color_GoldenRod()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_GoldenRod"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_GoldenRod"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7107,7 +7107,7 @@ func Color_GoldenRod()  (*Color,  error)  {
 //   Color  
 func Color_PaleVioletRed()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_PaleVioletRed"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_PaleVioletRed"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7121,7 +7121,7 @@ func Color_PaleVioletRed()  (*Color,  error)  {
 //   Color  
 func Color_Crimson()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Crimson"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Crimson"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7135,7 +7135,7 @@ func Color_Crimson()  (*Color,  error)  {
 //   Color  
 func Color_Gainsboro()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Gainsboro"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Gainsboro"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7149,7 +7149,7 @@ func Color_Gainsboro()  (*Color,  error)  {
 //   Color  
 func Color_Plum()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Plum"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Plum"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7163,7 +7163,7 @@ func Color_Plum()  (*Color,  error)  {
 //   Color  
 func Color_BurlyWood()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_BurlyWood"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_BurlyWood"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7177,7 +7177,7 @@ func Color_BurlyWood()  (*Color,  error)  {
 //   Color  
 func Color_LightCyan()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_LightCyan"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_LightCyan"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7191,7 +7191,7 @@ func Color_LightCyan()  (*Color,  error)  {
 //   Color  
 func Color_Lavender()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Lavender"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Lavender"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7205,7 +7205,7 @@ func Color_Lavender()  (*Color,  error)  {
 //   Color  
 func Color_DarkSalmon()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DarkSalmon"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DarkSalmon"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7219,7 +7219,7 @@ func Color_DarkSalmon()  (*Color,  error)  {
 //   Color  
 func Color_Violet()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Violet"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Violet"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7233,7 +7233,7 @@ func Color_Violet()  (*Color,  error)  {
 //   Color  
 func Color_PaleGoldenRod()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_PaleGoldenRod"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_PaleGoldenRod"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7247,7 +7247,7 @@ func Color_PaleGoldenRod()  (*Color,  error)  {
 //   Color  
 func Color_LightCoral()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_LightCoral"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_LightCoral"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7261,7 +7261,7 @@ func Color_LightCoral()  (*Color,  error)  {
 //   Color  
 func Color_Khaki()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Khaki"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Khaki"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7275,7 +7275,7 @@ func Color_Khaki()  (*Color,  error)  {
 //   Color  
 func Color_AliceBlue()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_AliceBlue"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_AliceBlue"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7289,7 +7289,7 @@ func Color_AliceBlue()  (*Color,  error)  {
 //   Color  
 func Color_HoneyDew()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_HoneyDew"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_HoneyDew"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7303,7 +7303,7 @@ func Color_HoneyDew()  (*Color,  error)  {
 //   Color  
 func Color_Azure()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Azure"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Azure"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7317,7 +7317,7 @@ func Color_Azure()  (*Color,  error)  {
 //   Color  
 func Color_SandyBrown()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_SandyBrown"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_SandyBrown"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7331,7 +7331,7 @@ func Color_SandyBrown()  (*Color,  error)  {
 //   Color  
 func Color_Wheat()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Wheat"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Wheat"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7345,7 +7345,7 @@ func Color_Wheat()  (*Color,  error)  {
 //   Color  
 func Color_Beige()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Beige"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Beige"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7359,7 +7359,7 @@ func Color_Beige()  (*Color,  error)  {
 //   Color  
 func Color_WhiteSmoke()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_WhiteSmoke"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_WhiteSmoke"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7373,7 +7373,7 @@ func Color_WhiteSmoke()  (*Color,  error)  {
 //   Color  
 func Color_MintCream()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_MintCream"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_MintCream"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7387,7 +7387,7 @@ func Color_MintCream()  (*Color,  error)  {
 //   Color  
 func Color_GhostWhite()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_GhostWhite"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_GhostWhite"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7401,7 +7401,7 @@ func Color_GhostWhite()  (*Color,  error)  {
 //   Color  
 func Color_Salmon()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Salmon"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Salmon"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7415,7 +7415,7 @@ func Color_Salmon()  (*Color,  error)  {
 //   Color  
 func Color_AntiqueWhite()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_AntiqueWhite"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_AntiqueWhite"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7429,7 +7429,7 @@ func Color_AntiqueWhite()  (*Color,  error)  {
 //   Color  
 func Color_Linen()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Linen"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Linen"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7443,7 +7443,7 @@ func Color_Linen()  (*Color,  error)  {
 //   Color  
 func Color_LightGoldenRodYellow()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_LightGoldenRodYellow"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_LightGoldenRodYellow"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7457,7 +7457,7 @@ func Color_LightGoldenRodYellow()  (*Color,  error)  {
 //   Color  
 func Color_OldLace()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_OldLace"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_OldLace"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7471,7 +7471,7 @@ func Color_OldLace()  (*Color,  error)  {
 //   Color  
 func Color_Red()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Red"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Red"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7485,7 +7485,7 @@ func Color_Red()  (*Color,  error)  {
 //   Color  
 func Color_Fuchsia()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Fuchsia"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Fuchsia"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7499,7 +7499,7 @@ func Color_Fuchsia()  (*Color,  error)  {
 //   Color  
 func Color_Magenta()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Magenta"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Magenta"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7513,7 +7513,7 @@ func Color_Magenta()  (*Color,  error)  {
 //   Color  
 func Color_DeepPink()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DeepPink"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DeepPink"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7527,7 +7527,7 @@ func Color_DeepPink()  (*Color,  error)  {
 //   Color  
 func Color_OrangeRed()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_OrangeRed"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_OrangeRed"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7541,7 +7541,7 @@ func Color_OrangeRed()  (*Color,  error)  {
 //   Color  
 func Color_Tomato()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Tomato"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Tomato"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7555,7 +7555,7 @@ func Color_Tomato()  (*Color,  error)  {
 //   Color  
 func Color_HotPink()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_HotPink"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_HotPink"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7569,7 +7569,7 @@ func Color_HotPink()  (*Color,  error)  {
 //   Color  
 func Color_Coral()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Coral"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Coral"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7583,7 +7583,7 @@ func Color_Coral()  (*Color,  error)  {
 //   Color  
 func Color_DarkOrange()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_DarkOrange"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_DarkOrange"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7597,7 +7597,7 @@ func Color_DarkOrange()  (*Color,  error)  {
 //   Color  
 func Color_LightSalmon()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_LightSalmon"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_LightSalmon"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7611,7 +7611,7 @@ func Color_LightSalmon()  (*Color,  error)  {
 //   Color  
 func Color_Orange()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Orange"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Orange"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7625,7 +7625,7 @@ func Color_Orange()  (*Color,  error)  {
 //   Color  
 func Color_LightPink()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_LightPink"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_LightPink"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7639,7 +7639,7 @@ func Color_LightPink()  (*Color,  error)  {
 //   Color  
 func Color_Pink()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Pink"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Pink"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7653,7 +7653,7 @@ func Color_Pink()  (*Color,  error)  {
 //   Color  
 func Color_Gold()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Gold"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Gold"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7667,7 +7667,7 @@ func Color_Gold()  (*Color,  error)  {
 //   Color  
 func Color_PeachPuff()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_PeachPuff"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_PeachPuff"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7681,7 +7681,7 @@ func Color_PeachPuff()  (*Color,  error)  {
 //   Color  
 func Color_NavajoWhite()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_NavajoWhite"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_NavajoWhite"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7695,7 +7695,7 @@ func Color_NavajoWhite()  (*Color,  error)  {
 //   Color  
 func Color_Moccasin()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Moccasin"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Moccasin"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7709,7 +7709,7 @@ func Color_Moccasin()  (*Color,  error)  {
 //   Color  
 func Color_Bisque()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Bisque"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Bisque"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7723,7 +7723,7 @@ func Color_Bisque()  (*Color,  error)  {
 //   Color  
 func Color_MistyRose()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_MistyRose"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_MistyRose"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7737,7 +7737,7 @@ func Color_MistyRose()  (*Color,  error)  {
 //   Color  
 func Color_BlanchedAlmond()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_BlanchedAlmond"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_BlanchedAlmond"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7751,7 +7751,7 @@ func Color_BlanchedAlmond()  (*Color,  error)  {
 //   Color  
 func Color_PapayaWhip()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_PapayaWhip"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_PapayaWhip"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7765,7 +7765,7 @@ func Color_PapayaWhip()  (*Color,  error)  {
 //   Color  
 func Color_LavenderBlush()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_LavenderBlush"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_LavenderBlush"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7779,7 +7779,7 @@ func Color_LavenderBlush()  (*Color,  error)  {
 //   Color  
 func Color_SeaShell()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_SeaShell"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_SeaShell"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7793,7 +7793,7 @@ func Color_SeaShell()  (*Color,  error)  {
 //   Color  
 func Color_Cornsilk()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Cornsilk"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Cornsilk"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7807,7 +7807,7 @@ func Color_Cornsilk()  (*Color,  error)  {
 //   Color  
 func Color_LemonChiffon()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_LemonChiffon"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_LemonChiffon"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7821,7 +7821,7 @@ func Color_LemonChiffon()  (*Color,  error)  {
 //   Color  
 func Color_FloralWhite()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_FloralWhite"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_FloralWhite"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7835,7 +7835,7 @@ func Color_FloralWhite()  (*Color,  error)  {
 //   Color  
 func Color_Snow()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Snow"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Snow"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7849,7 +7849,7 @@ func Color_Snow()  (*Color,  error)  {
 //   Color  
 func Color_Yellow()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Yellow"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Yellow"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7863,7 +7863,7 @@ func Color_Yellow()  (*Color,  error)  {
 //   Color  
 func Color_LightYellow()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_LightYellow"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_LightYellow"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7877,7 +7877,7 @@ func Color_LightYellow()  (*Color,  error)  {
 //   Color  
 func Color_Ivory()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_Ivory"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_Ivory"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7891,7 +7891,7 @@ func Color_Ivory()  (*Color,  error)  {
 //   Color  
 func Color_White()  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("Color_White"),)
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Color_White"),)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7908,7 +7908,7 @@ func Color_White()  (*Color,  error)  {
 //   Color  
 func Color_FromArgb(value int32)  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("Color_FromArgb"),C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("Color_FromArgb"),C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -33286,7 +33286,7 @@ func (instance *HtmlSaveOptions) SetEncodeEntityAsCode(value bool)  error {
 
 	return nil 
 }
-// Indicates how export OfficeMath objects to HTML, Default value is Image.
+// Indicates how OfficeMath objects are exported to HTML, Default value is Image.
 // Returns:
 //   int32  
 func (instance *HtmlSaveOptions) GetOfficeMathOutputMode()  (HtmlOfficeMathOutputType,  error)  {
@@ -33303,7 +33303,7 @@ func (instance *HtmlSaveOptions) GetOfficeMathOutputMode()  (HtmlOfficeMathOutpu
 
 	return result, nil 
 }
-// Indicates how export OfficeMath objects to HTML, Default value is Image.
+// Indicates how OfficeMath objects are exported to HTML, Default value is Image.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -33544,6 +33544,71 @@ func (instance *HtmlSaveOptions) GetEmbeddedFontType()  (HtmlEmbeddedFontType,  
 func (instance *HtmlSaveOptions) SetEmbeddedFontType(value HtmlEmbeddedFontType)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("HtmlSaveOptions_SetEmbeddedFontType"), instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to export anchor elements  generated for named ranges when saving to HTML.
+// Default value is true.
+// Returns:
+//   bool  
+func (instance *HtmlSaveOptions) GetExportNamedRangeAnchors()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("HtmlSaveOptions_GetExportNamedRangeAnchors"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to export anchor elements  generated for named ranges when saving to HTML.
+// Default value is true.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *HtmlSaveOptions) SetExportNamedRangeAnchors(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("HtmlSaveOptions_SetExportNamedRangeAnchors"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to display the DataBar as an image when saving to HTML..
+// Default value is <see cref="DataBarRenderMode.BackgroundColor">.
+// Returns:
+//   int32  
+func (instance *HtmlSaveOptions) GetDataBarRenderMode()  (DataBarRenderMode,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("HtmlSaveOptions_GetDataBarRenderMode"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToDataBarRenderMode(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Indicates whether to display the DataBar as an image when saving to HTML..
+// Default value is <see cref="DataBarRenderMode.BackgroundColor">.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *HtmlSaveOptions) SetDataBarRenderMode(value DataBarRenderMode)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("HtmlSaveOptions_SetDataBarRenderMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -40093,7 +40158,7 @@ func (instance *MarkdownSaveOptions) SetSplitTablesByBlankRow(value bool)  error
 
 	return nil 
 }
-// Indicates how export OfficeMath objects to Markdown, Default value is Image.
+// Indicates how OfficeMath objects are exported to Markdown, Default value is Image.
 // Returns:
 //   int32  
 func (instance *MarkdownSaveOptions) GetOfficeMathOutputType()  (HtmlOfficeMathOutputType,  error)  {
@@ -40110,7 +40175,7 @@ func (instance *MarkdownSaveOptions) GetOfficeMathOutputType()  (HtmlOfficeMathO
 
 	return result, nil 
 }
-// Indicates how export OfficeMath objects to Markdown, Default value is Image.
+// Indicates how OfficeMath objects are exported to Markdown, Default value is Image.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -40708,7 +40773,7 @@ func (instance *MultipleFilterCollection) Get(index int32)  (*Object,  error)  {
 
 	return result, nil 
 }
-// Adds a label filter.
+// Adds a label filter criteria.
 // Parameters:
 //   filter - string 
 // Returns:
@@ -40734,6 +40799,27 @@ func (instance *MultipleFilterCollection) Add_String(filter string)  error {
 func (instance *MultipleFilterCollection) Add_DateTimeGroupingType_Int_Int_Int(type_ DateTimeGroupingType, year int32, month int32, day int32)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZHC(C.CString("MultipleFilterCollection_Add_DateTimeGroupingType_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.int(year), C.int(month), C.int(day))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Adds a date time filter criteria value.
+// Parameters:
+//   type - int32 
+//   year - int32 
+//   month - int32 
+//   day - int32 
+//   hour - int32 
+//   minute - int32 
+//   second - int32 
+// Returns:
+//   void  
+func (instance *MultipleFilterCollection) Add_DateTimeGroupingType_Int_Int_Int_Int_Int_Int(type_ DateTimeGroupingType, year int32, month int32, day int32, hour int32, minute int32, second int32)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZHD(C.CString("MultipleFilterCollection_Add_DateTimeGroupingType_Integer_Integer_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.int(year), C.int(month), C.int(day), C.int(hour), C.int(minute), C.int(second))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -41169,7 +41255,7 @@ func (instance *Name) GetRange_Bool(recalculate bool)  (*Range,  error)  {
 //   Range  
 func (instance *Name) GetRange_Int_Int_Int(sheetindex int32, row int32, column int32)  (*Range,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHD(C.CString("Name_GetRange_Integer_Integer_Integer"), instance.ptr, C.int(sheetindex), C.int(row), C.int(column))
+	CGoReturnPtr := C.CellsGoFunctoinZZHE(C.CString("Name_GetRange_Integer_Integer_Integer"), instance.ptr, C.int(sheetindex), C.int(row), C.int(column))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -41253,7 +41339,7 @@ func (instance *NameCollection) Get_Int(index int32)  (*Name,  error)  {
 //   []Name  
 func (instance *NameCollection) Filter(type_ NameScopeType, sheetindex int32)  ([]Name,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHE(C.CString("NameCollection_Filter"), instance.ptr, C.int( int32(type_)), C.int(sheetindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZHF(C.CString("NameCollection_Filter"), instance.ptr, C.int( int32(type_)), C.int(sheetindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -41598,7 +41684,7 @@ func NewObject_Bool(value bool) ( *Object, error) {
 //   value - int8 
 func NewObject_Integer8(value int8) ( *Object, error) {
 	object := &Object{}
-	CGoReturnPtr := C.CellsGoFunctoinZZHF(C.CString("New_Object_Integer8"),C.schar(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHG(C.CString("New_Object_Integer8"),C.schar(value))
 	if CGoReturnPtr.error_no == 0 {
 		object.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(object, DeleteObject)
@@ -41614,7 +41700,7 @@ func NewObject_Integer8(value int8) ( *Object, error) {
 //   value - byte 
 func NewObject_Byte(value byte) ( *Object, error) {
 	object := &Object{}
-	CGoReturnPtr := C.CellsGoFunctoinZZHG(C.CString("New_Object_Byte"),C.uint8_t(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHH(C.CString("New_Object_Byte"),C.uint8_t(value))
 	if CGoReturnPtr.error_no == 0 {
 		object.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(object, DeleteObject)
@@ -41630,7 +41716,7 @@ func NewObject_Byte(value byte) ( *Object, error) {
 //   value - int16 
 func NewObject_Int16(value int16) ( *Object, error) {
 	object := &Object{}
-	CGoReturnPtr := C.CellsGoFunctoinZZHH(C.CString("New_Object_Integer16"),C.short(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHI(C.CString("New_Object_Integer16"),C.short(value))
 	if CGoReturnPtr.error_no == 0 {
 		object.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(object, DeleteObject)
@@ -41646,7 +41732,7 @@ func NewObject_Int16(value int16) ( *Object, error) {
 //   value - uint16 
 func NewObject_UInteger16(value uint16) ( *Object, error) {
 	object := &Object{}
-	CGoReturnPtr := C.CellsGoFunctoinZZHI(C.CString("New_Object_UInteger16"),C.ushort(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHJ(C.CString("New_Object_UInteger16"),C.ushort(value))
 	if CGoReturnPtr.error_no == 0 {
 		object.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(object, DeleteObject)
@@ -41662,7 +41748,7 @@ func NewObject_UInteger16(value uint16) ( *Object, error) {
 //   value - int32 
 func NewObject_Int(value int32) ( *Object, error) {
 	object := &Object{}
-	CGoReturnPtr := C.CellsGoFunctoinZZHJ(C.CString("New_Object_Integer"),C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHK(C.CString("New_Object_Integer"),C.int(value))
 	if CGoReturnPtr.error_no == 0 {
 		object.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(object, DeleteObject)
@@ -41678,7 +41764,7 @@ func NewObject_Int(value int32) ( *Object, error) {
 //   value - uint32 
 func NewObject_UInteger(value uint32) ( *Object, error) {
 	object := &Object{}
-	CGoReturnPtr := C.CellsGoFunctoinZZHK(C.CString("New_Object_UInteger"),C.uint(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHL(C.CString("New_Object_UInteger"),C.uint(value))
 	if CGoReturnPtr.error_no == 0 {
 		object.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(object, DeleteObject)
@@ -41694,7 +41780,7 @@ func NewObject_UInteger(value uint32) ( *Object, error) {
 //   value - int64 
 func NewObject_Int64(value int64) ( *Object, error) {
 	object := &Object{}
-	CGoReturnPtr := C.CellsGoFunctoinZZHL(C.CString("New_Object_Long"),C.longlong(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHM(C.CString("New_Object_Long"),C.longlong(value))
 	if CGoReturnPtr.error_no == 0 {
 		object.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(object, DeleteObject)
@@ -41710,7 +41796,7 @@ func NewObject_Int64(value int64) ( *Object, error) {
 //   value - uint64 
 func NewObject_ULong(value uint64) ( *Object, error) {
 	object := &Object{}
-	CGoReturnPtr := C.CellsGoFunctoinZZHM(C.CString("New_Object_ULong"),C.ulonglong(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHN(C.CString("New_Object_ULong"),C.ulonglong(value))
 	if CGoReturnPtr.error_no == 0 {
 		object.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(object, DeleteObject)
@@ -41726,7 +41812,7 @@ func NewObject_ULong(value uint64) ( *Object, error) {
 //   value - float32 
 func NewObject_Float(value float32) ( *Object, error) {
 	object := &Object{}
-	CGoReturnPtr := C.CellsGoFunctoinZZHN(C.CString("New_Object_Floating"),C.float(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHO(C.CString("New_Object_Floating"),C.float(value))
 	if CGoReturnPtr.error_no == 0 {
 		object.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(object, DeleteObject)
@@ -41742,7 +41828,7 @@ func NewObject_Float(value float32) ( *Object, error) {
 //   value - float64 
 func NewObject_Double(value float64) ( *Object, error) {
 	object := &Object{}
-	CGoReturnPtr := C.CellsGoFunctoinZZHO(C.CString("New_Object_Double"),C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHP(C.CString("New_Object_Double"),C.double(value))
 	if CGoReturnPtr.error_no == 0 {
 		object.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(object, DeleteObject)
@@ -41760,7 +41846,7 @@ func NewObject_Date(value time.Time) ( *Object, error) {
 	object := &Object{}
 	time_value := C.Get_Date( C.int(value.Year()), C.int(value.Month()) , C.int(value.Day()) , C.int(value.Hour()) , C.int(value.Minute()) , C.int(value.Second())  )
 
-	CGoReturnPtr := C.CellsGoFunctoinZZHP(C.CString("New_Object_Date"),time_value)
+	CGoReturnPtr := C.CellsGoFunctoinZZHQ(C.CString("New_Object_Date"),time_value)
 	C.Delete_GetDate( time_value)
 
 	if CGoReturnPtr.error_no == 0 {
@@ -41778,7 +41864,7 @@ func NewObject_Date(value time.Time) ( *Object, error) {
 //   value - Color 
 func NewObject_Color(value *Color) ( *Object, error) {
 	object := &Object{}
-	CGoReturnPtr := C.CellsGoFunctoinZZHP(C.CString("New_Object_Color"),value.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZHQ(C.CString("New_Object_Color"),value.ptr)
 	if CGoReturnPtr.error_no == 0 {
 		object.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(object, DeleteObject)
@@ -41833,7 +41919,7 @@ func NewObject_ObjectArray(value []interface{}) ( *Object, error) {
 	object := &Object{}
 	vector_value, value_row_length := toObjectArray(value)
 
-	CGoReturnPtr := C.CellsGoFunctoinZZHQ(C.CString("New_Object_ObjectArray"),unsafe.Pointer(&vector_value[0]), C.int(value_row_length))
+	CGoReturnPtr := C.CellsGoFunctoinZZHR(C.CString("New_Object_ObjectArray"),unsafe.Pointer(&vector_value[0]), C.int(value_row_length))
 	if CGoReturnPtr.error_no == 0 {
 		object.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(object, DeleteObject)
@@ -41851,7 +41937,7 @@ func NewObject_Object2Array(value [][]interface{}) ( *Object, error) {
 	object := &Object{}
 	vector_value, value_row_length, value_column_length := toObject2Array(value)
 
-	CGoReturnPtr := C.CellsGoFunctoinZZHR(C.CString("New_Object_Object2Array"),unsafe.Pointer(&vector_value[0]), C.int(value_row_length), C.int( value_column_length))
+	CGoReturnPtr := C.CellsGoFunctoinZZHS(C.CString("New_Object_Object2Array"),unsafe.Pointer(&vector_value[0]), C.int(value_row_length), C.int( value_column_length))
 	if CGoReturnPtr.error_no == 0 {
 		object.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(object, DeleteObject)
@@ -42094,7 +42180,7 @@ func (instance *Object) ToBool()  (bool,  error)  {
 //   int8  
 func (instance *Object) ToInt8()  (int8,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHS(C.CString("Object_ToInt8"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZHT(C.CString("Object_ToInt8"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -42122,7 +42208,7 @@ func (instance *Object) ToUInt8()  (byte,  error)  {
 //   int16  
 func (instance *Object) ToInt16()  (int16,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHT(C.CString("Object_ToInt16"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZHU(C.CString("Object_ToInt16"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -42136,7 +42222,7 @@ func (instance *Object) ToInt16()  (int16,  error)  {
 //   uint16  
 func (instance *Object) ToUInt16()  (uint16,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHU(C.CString("Object_ToUInt16"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZHV(C.CString("Object_ToUInt16"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -42164,7 +42250,7 @@ func (instance *Object) ToInt32()  (int32,  error)  {
 //   uint32  
 func (instance *Object) ToUInt32()  (uint32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHV(C.CString("Object_ToUInt32"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZHW(C.CString("Object_ToUInt32"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -42192,7 +42278,7 @@ func (instance *Object) ToInt64()  (int64,  error)  {
 //   uint64  
 func (instance *Object) ToUInt64()  (uint64,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHW(C.CString("Object_ToUInt64"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZHX(C.CString("Object_ToUInt64"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -45313,7 +45399,7 @@ func (instance *PageSetup) GetPaperHeight()  (float64,  error)  {
 //   void  
 func (instance *PageSetup) CustomPaperSize(width float64, height float64)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHX(C.CString("PageSetup_CustomPaperSize"), instance.ptr, C.double(width), C.double(height))
+	CGoReturnPtr := C.CellsGoFunctoinZZHY(C.CString("PageSetup_CustomPaperSize"), instance.ptr, C.double(width), C.double(height))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -45954,7 +46040,7 @@ func (instance *PageSetup) SetIsHFAlignMargins(value bool)  error {
 //   Picture  
 func (instance *PageSetup) SetHeaderPicture(section int32, headerpicture []byte)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHY(C.CString("PageSetup_SetHeaderPicture"), instance.ptr, C.int(section), unsafe.Pointer(&headerpicture[0]), C.int( len(headerpicture)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIA(C.CString("PageSetup_SetHeaderPicture"), instance.ptr, C.int(section), unsafe.Pointer(&headerpicture[0]), C.int( len(headerpicture)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -45973,7 +46059,7 @@ func (instance *PageSetup) SetHeaderPicture(section int32, headerpicture []byte)
 //   Picture  
 func (instance *PageSetup) SetFooterPicture(section int32, footerpicture []byte)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHY(C.CString("PageSetup_SetFooterPicture"), instance.ptr, C.int(section), unsafe.Pointer(&footerpicture[0]), C.int( len(footerpicture)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIA(C.CString("PageSetup_SetFooterPicture"), instance.ptr, C.int(section), unsafe.Pointer(&footerpicture[0]), C.int( len(footerpicture)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -45995,7 +46081,7 @@ func (instance *PageSetup) SetFooterPicture(section int32, footerpicture []byte)
 //   Picture  
 func (instance *PageSetup) SetPicture(isfirst bool, iseven bool, isheader bool, section int32, imagedata []byte)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIA(C.CString("PageSetup_SetPicture"), instance.ptr, C.bool(isfirst), C.bool(iseven), C.bool(isheader), C.int(section), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIB(C.CString("PageSetup_SetPicture"), instance.ptr, C.bool(isfirst), C.bool(iseven), C.bool(isheader), C.int(section), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -46014,7 +46100,7 @@ func (instance *PageSetup) SetPicture(isfirst bool, iseven bool, isheader bool, 
 //   Picture  
 func (instance *PageSetup) GetPicture_Bool_Int(isheader bool, section int32)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIB(C.CString("PageSetup_GetPicture_Boolean_Integer"), instance.ptr, C.bool(isheader), C.int(section))
+	CGoReturnPtr := C.CellsGoFunctoinZZIC(C.CString("PageSetup_GetPicture_Boolean_Integer"), instance.ptr, C.bool(isheader), C.int(section))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -46035,7 +46121,7 @@ func (instance *PageSetup) GetPicture_Bool_Int(isheader bool, section int32)  (*
 //   Picture  
 func (instance *PageSetup) GetPicture_Bool_Bool_Bool_Int(isfirst bool, iseven bool, isheader bool, section int32)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIC(C.CString("PageSetup_GetPicture_Boolean_Boolean_Boolean_Integer"), instance.ptr, C.bool(isfirst), C.bool(iseven), C.bool(isheader), C.int(section))
+	CGoReturnPtr := C.CellsGoFunctoinZZID(C.CString("PageSetup_GetPicture_Boolean_Boolean_Boolean_Integer"), instance.ptr, C.bool(isfirst), C.bool(iseven), C.bool(isheader), C.int(section))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -51505,7 +51591,7 @@ func (instance *ProtectedRangeCollection) Get(index int32)  (*ProtectedRange,  e
 //   int32  
 func (instance *ProtectedRangeCollection) Add(name string, startrow int32, startcolumn int32, endrow int32, endcolumn int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZID(C.CString("ProtectedRangeCollection_Add"), instance.ptr, C.CString(name), C.int(startrow), C.int(startcolumn), C.int(endrow), C.int(endcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZIE(C.CString("ProtectedRangeCollection_Add"), instance.ptr, C.CString(name), C.int(startrow), C.int(startcolumn), C.int(endrow), C.int(endcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -52445,7 +52531,7 @@ func (instance *Range) GetHyperlinks()  ([]Hyperlink,  error)  {
 //   Hyperlink  
 func (instance *Range) AddHyperlink(address string, texttodisplay string, screentip string)  (*Hyperlink,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIE(C.CString("Range_AddHyperlink"), instance.ptr, C.CString(address), C.CString(texttodisplay), C.CString(screentip))
+	CGoReturnPtr := C.CellsGoFunctoinZZIF(C.CString("Range_AddHyperlink"), instance.ptr, C.CString(address), C.CString(texttodisplay), C.CString(screentip))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -52531,7 +52617,7 @@ func (instance *Range) UnionRanges(ranges []Range)  (*UnionRange,  error)  {
 	}
 
 
-	CGoReturnPtr := C.CellsGoFunctoinZZIF(C.CString("Range_UnionRanges"), instance.ptr, unsafe.Pointer(&vector_ranges[0]), C.int( len(ranges)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIG(C.CString("Range_UnionRanges"), instance.ptr, unsafe.Pointer(&vector_ranges[0]), C.int( len(ranges)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -52899,7 +52985,7 @@ func (instance *Range) SetOutlineBorders_CellBorderType_CellsColor(borderstyle C
 //   void  
 func (instance *Range) SetOutlineBorders_CellBorderType_Color(borderstyle CellBorderType, bordercolor *Color)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIG(C.CString("Range_SetOutlineBorders_CellBorderType_Color"), instance.ptr, C.int( int32(borderstyle)), bordercolor.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIH(C.CString("Range_SetOutlineBorders_CellBorderType_Color"), instance.ptr, C.int( int32(borderstyle)), bordercolor.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -52922,7 +53008,7 @@ func (instance *Range) SetOutlineBorders_CellBorderTypeArray_ColorArray(borderst
 	}
 
 
-	CGoReturnPtr := C.CellsGoFunctoinZZIH(C.CString("Range_SetOutlineBorders_CellBorderTypeArray_ColorArray"), instance.ptr, unsafe.Pointer(&borderstyles[0]), C.int( len(borderstyles)), unsafe.Pointer(&vector_bordercolors[0]), C.int( len(bordercolors)))
+	CGoReturnPtr := C.CellsGoFunctoinZZII(C.CString("Range_SetOutlineBorders_CellBorderTypeArray_ColorArray"), instance.ptr, unsafe.Pointer(&borderstyles[0]), C.int( len(borderstyles)), unsafe.Pointer(&vector_bordercolors[0]), C.int( len(bordercolors)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -52944,7 +53030,7 @@ func (instance *Range) SetOutlineBorder_BorderType_CellBorderType_CellsColor(bor
 	  bordercolor_ptr =bordercolor.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZII(C.CString("Range_SetOutlineBorder_BorderType_CellBorderType_CellsColor"), instance.ptr, C.int( int32(borderedge)), C.int( int32(borderstyle)), bordercolor_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIJ(C.CString("Range_SetOutlineBorder_BorderType_CellBorderType_CellsColor"), instance.ptr, C.int( int32(borderedge)), C.int( int32(borderstyle)), bordercolor_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -52961,7 +53047,7 @@ func (instance *Range) SetOutlineBorder_BorderType_CellBorderType_CellsColor(bor
 //   void  
 func (instance *Range) SetOutlineBorder_BorderType_CellBorderType_Color(borderedge BorderType, borderstyle CellBorderType, bordercolor *Color)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIJ(C.CString("Range_SetOutlineBorder_BorderType_CellBorderType_Color"), instance.ptr, C.int( int32(borderedge)), C.int( int32(borderstyle)), bordercolor.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIK(C.CString("Range_SetOutlineBorder_BorderType_CellBorderType_Color"), instance.ptr, C.int( int32(borderedge)), C.int( int32(borderstyle)), bordercolor.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -52983,7 +53069,7 @@ func (instance *Range) SetInsideBorders(borderedge BorderType, linestyle CellBor
 	  bordercolor_ptr =bordercolor.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZII(C.CString("Range_SetInsideBorders"), instance.ptr, C.int( int32(borderedge)), C.int( int32(linestyle)), bordercolor_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIJ(C.CString("Range_SetInsideBorders"), instance.ptr, C.int( int32(borderedge)), C.int( int32(linestyle)), bordercolor_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -53336,7 +53422,7 @@ func (instance *Range) ToJson(options *JsonSaveOptions)  (string,  error)  {
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZIK(C.CString("Range_ToJson"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("Range_ToJson"), instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -54182,7 +54268,7 @@ func (instance *Row) GetEnumerator()  (*CellEnumerator,  error)  {
 //   unsafe.Pointer  
 func (instance *Row) GetEnumerator_Bool_Bool(reversed bool, sync bool)  (*CellEnumerator,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("Row_GetEnumerator_Boolean_Boolean"), instance.ptr, C.bool(reversed), C.bool(sync))
+	CGoReturnPtr := C.CellsGoFunctoinZZIM(C.CString("Row_GetEnumerator_Boolean_Boolean"), instance.ptr, C.bool(reversed), C.bool(sync))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -54645,7 +54731,7 @@ func (instance *RowCollection) GetEnumerator()  (*RowEnumerator,  error)  {
 //   unsafe.Pointer  
 func (instance *RowCollection) GetEnumerator_Bool_Bool(reversed bool, sync bool)  (*RowEnumerator,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIL(C.CString("RowCollection_GetEnumerator_Boolean_Boolean"), instance.ptr, C.bool(reversed), C.bool(sync))
+	CGoReturnPtr := C.CellsGoFunctoinZZIM(C.CString("RowCollection_GetEnumerator_Boolean_Boolean"), instance.ptr, C.bool(reversed), C.bool(sync))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -55598,7 +55684,7 @@ func (instance *ScenarioInputCellCollection) Get(index int32)  (*ScenarioInputCe
 //   int32  
 func (instance *ScenarioInputCellCollection) Add(row int32, column int32, value string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIM(C.CString("ScenarioInputCellCollection_Add"), instance.ptr, C.int(row), C.int(column), C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZIN(C.CString("ScenarioInputCellCollection_Add"), instance.ptr, C.int(row), C.int(column), C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -55892,7 +55978,7 @@ func (instance *SettableChartGlobalizationSettings) GetAxisUnitName(type_ Displa
 //   void  
 func (instance *SettableChartGlobalizationSettings) SetAxisUnitName(type_ DisplayUnitType, name string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIN(C.CString("SettableChartGlobalizationSettings_SetAxisUnitName"), instance.ptr, C.int( int32(type_)), C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZIO(C.CString("SettableChartGlobalizationSettings_SetAxisUnitName"), instance.ptr, C.int( int32(type_)), C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -55969,7 +56055,7 @@ func (instance *SettableGlobalizationSettings) GetTotalName(functiontype Consoli
 //   void  
 func (instance *SettableGlobalizationSettings) SetTotalName(functiontype ConsolidationFunction, name string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIN(C.CString("SettableGlobalizationSettings_SetTotalName"), instance.ptr, C.int( int32(functiontype)), C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZIO(C.CString("SettableGlobalizationSettings_SetTotalName"), instance.ptr, C.int( int32(functiontype)), C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -56001,7 +56087,7 @@ func (instance *SettableGlobalizationSettings) GetGrandTotalName(functiontype Co
 //   void  
 func (instance *SettableGlobalizationSettings) SetGrandTotalName(functiontype ConsolidationFunction, name string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIN(C.CString("SettableGlobalizationSettings_SetGrandTotalName"), instance.ptr, C.int( int32(functiontype)), C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZIO(C.CString("SettableGlobalizationSettings_SetGrandTotalName"), instance.ptr, C.int( int32(functiontype)), C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -56196,7 +56282,7 @@ func (instance *SettableGlobalizationSettings) GetBooleanValueString(bv bool)  (
 //   void  
 func (instance *SettableGlobalizationSettings) SetBooleanValueString(bv bool, name string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIO(C.CString("SettableGlobalizationSettings_SetBooleanValueString"), instance.ptr, C.bool(bv), C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("SettableGlobalizationSettings_SetBooleanValueString"), instance.ptr, C.bool(bv), C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -56229,7 +56315,7 @@ func (instance *SettableGlobalizationSettings) GetLocalFunctionName(standardname
 //   void  
 func (instance *SettableGlobalizationSettings) SetLocalFunctionName(standardname string, localname string, bidirectional bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("SettableGlobalizationSettings_SetLocalFunctionName"), instance.ptr, C.CString(standardname), C.CString(localname), C.bool(bidirectional))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("SettableGlobalizationSettings_SetLocalFunctionName"), instance.ptr, C.CString(standardname), C.CString(localname), C.bool(bidirectional))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -56262,7 +56348,7 @@ func (instance *SettableGlobalizationSettings) GetStandardFunctionName(localname
 //   void  
 func (instance *SettableGlobalizationSettings) SetStandardFunctionName(localname string, standardname string, bidirectional bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("SettableGlobalizationSettings_SetStandardFunctionName"), instance.ptr, C.CString(localname), C.CString(standardname), C.bool(bidirectional))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("SettableGlobalizationSettings_SetStandardFunctionName"), instance.ptr, C.CString(localname), C.CString(standardname), C.bool(bidirectional))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -56295,7 +56381,7 @@ func (instance *SettableGlobalizationSettings) GetLocalBuiltInName(standardname 
 //   void  
 func (instance *SettableGlobalizationSettings) SetLocalBuiltInName(standardname string, localname string, bidirectional bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("SettableGlobalizationSettings_SetLocalBuiltInName"), instance.ptr, C.CString(standardname), C.CString(localname), C.bool(bidirectional))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("SettableGlobalizationSettings_SetLocalBuiltInName"), instance.ptr, C.CString(standardname), C.CString(localname), C.bool(bidirectional))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -56328,7 +56414,7 @@ func (instance *SettableGlobalizationSettings) GetStandardBuiltInName(localname 
 //   void  
 func (instance *SettableGlobalizationSettings) SetStandardBuiltInName(localname string, standardname string, bidirectional bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("SettableGlobalizationSettings_SetStandardBuiltInName"), instance.ptr, C.CString(localname), C.CString(standardname), C.bool(bidirectional))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("SettableGlobalizationSettings_SetStandardBuiltInName"), instance.ptr, C.CString(localname), C.CString(standardname), C.bool(bidirectional))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -56479,7 +56565,7 @@ func (instance *SettableGlobalizationSettings) GetCommentTitleName(type_ Comment
 //   void  
 func (instance *SettableGlobalizationSettings) SetCommentTitleName(type_ CommentTitleType, name string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIN(C.CString("SettableGlobalizationSettings_SetCommentTitleName"), instance.ptr, C.int( int32(type_)), C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZIO(C.CString("SettableGlobalizationSettings_SetCommentTitleName"), instance.ptr, C.int( int32(type_)), C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -56821,7 +56907,7 @@ func (instance *SettablePivotGlobalizationSettings) GetTextOfSubTotal(subtotalty
 //   void  
 func (instance *SettablePivotGlobalizationSettings) SetTextOfSubTotal(subtotaltype PivotFieldSubtotalType, text string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIN(C.CString("SettablePivotGlobalizationSettings_SetTextOfSubTotal"), instance.ptr, C.int( int32(subtotaltype)), C.CString(text))
+	CGoReturnPtr := C.CellsGoFunctoinZZIO(C.CString("SettablePivotGlobalizationSettings_SetTextOfSubTotal"), instance.ptr, C.int( int32(subtotaltype)), C.CString(text))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -57505,7 +57591,7 @@ func (instance *Style) SetPattern(value BackgroundType)  error {
 //   void  
 func (instance *Style) SetPatternColor(pattern BackgroundType, color1 *Color, color2 *Color)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("Style_SetPatternColor"), instance.ptr, C.int( int32(pattern)), color1.ptr, color2.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIR(C.CString("Style_SetPatternColor"), instance.ptr, C.int( int32(pattern)), color1.ptr, color2.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -58143,7 +58229,7 @@ func (instance *Style) SetNumber(value int32)  error {
 //   bool  
 func (instance *Style) SetBorder_BorderType_CellBorderType_Color(bordertype BorderType, borderstyle CellBorderType, bordercolor *Color)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIR(C.CString("Style_SetBorder_BorderType_CellBorderType_Color"), instance.ptr, C.int( int32(bordertype)), C.int( int32(borderstyle)), bordercolor.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIS(C.CString("Style_SetBorder_BorderType_CellBorderType_Color"), instance.ptr, C.int( int32(bordertype)), C.int( int32(borderstyle)), bordercolor.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -58166,7 +58252,7 @@ func (instance *Style) SetBorder_BorderType_CellBorderType_CellsColor(bordertype
 	  bordercolor_ptr =bordercolor.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZIS(C.CString("Style_SetBorder_BorderType_CellBorderType_CellsColor"), instance.ptr, C.int( int32(bordertype)), C.int( int32(borderstyle)), bordercolor_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIT(C.CString("Style_SetBorder_BorderType_CellBorderType_CellsColor"), instance.ptr, C.int( int32(bordertype)), C.int( int32(borderstyle)), bordercolor_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -58487,7 +58573,7 @@ func (instance *Style) SetIsGradient(value bool)  error {
 //   void  
 func (instance *Style) SetTwoColorGradient(color1 *Color, color2 *Color, gradientstyletype GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIT(C.CString("Style_SetTwoColorGradient"), instance.ptr, color1.ptr, color2.ptr, C.int( int32(gradientstyletype)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZIU(C.CString("Style_SetTwoColorGradient"), instance.ptr, color1.ptr, color2.ptr, C.int( int32(gradientstyletype)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -59678,7 +59764,7 @@ type ThemeColor struct {
 //   tint - float64 
 func NewThemeColor(type_ ThemeColorType, tint float64) ( *ThemeColor, error) {
 	themecolor := &ThemeColor{}
-	CGoReturnPtr := C.CellsGoFunctoinZZIU(C.CString("New_ThemeColor"),C.int( int32(type_)), C.double(tint))
+	CGoReturnPtr := C.CellsGoFunctoinZZIV(C.CString("New_ThemeColor"),C.int( int32(type_)), C.double(tint))
 	if CGoReturnPtr.error_no == 0 {
 		themecolor.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(themecolor, DeleteThemeColor)
@@ -60187,7 +60273,7 @@ func (instance *ThreadedCommentAuthorCollection) Get_String(name string)  (*Thre
 //   int32  
 func (instance *ThreadedCommentAuthorCollection) Add(name string, userid string, providerid string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIV(C.CString("ThreadedCommentAuthorCollection_Add"), instance.ptr, C.CString(name), C.CString(userid), C.CString(providerid))
+	CGoReturnPtr := C.CellsGoFunctoinZZIW(C.CString("ThreadedCommentAuthorCollection_Add"), instance.ptr, C.CString(name), C.CString(userid), C.CString(providerid))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -60271,7 +60357,7 @@ func (instance *ThreadedCommentCollection) Add(text string, author *ThreadedComm
 	  author_ptr =author.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZIW(C.CString("ThreadedCommentCollection_Add"), instance.ptr, C.CString(text), author_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIX(C.CString("ThreadedCommentCollection_Add"), instance.ptr, C.CString(text), author_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -60615,7 +60701,7 @@ type TwoColorGradient struct {
 //   variant - int32 
 func NewTwoColorGradient(color1 *Color, color2 *Color, gradientstyletype GradientStyleType, variant int32) ( *TwoColorGradient, error) {
 	twocolorgradient := &TwoColorGradient{}
-	CGoReturnPtr := C.CellsGoFunctoinZZIX(C.CString("New_TwoColorGradient"),color1.ptr, color2.ptr, C.int( int32(gradientstyletype)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZIY(C.CString("New_TwoColorGradient"),color1.ptr, color2.ptr, C.int( int32(gradientstyletype)), C.int(variant))
 	if CGoReturnPtr.error_no == 0 {
 		twocolorgradient.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(twocolorgradient, DeleteTwoColorGradient)
@@ -63159,7 +63245,7 @@ func (instance *UnionRange) SetOutlineBorders_CellBorderTypeArray_ColorArray(bor
 	}
 
 
-	CGoReturnPtr := C.CellsGoFunctoinZZIH(C.CString("UnionRange_SetOutlineBorders_CellBorderTypeArray_ColorArray"), instance.ptr, unsafe.Pointer(&borderstyles[0]), C.int( len(borderstyles)), unsafe.Pointer(&vector_bordercolors[0]), C.int( len(bordercolors)))
+	CGoReturnPtr := C.CellsGoFunctoinZZII(C.CString("UnionRange_SetOutlineBorders_CellBorderTypeArray_ColorArray"), instance.ptr, unsafe.Pointer(&borderstyles[0]), C.int( len(borderstyles)), unsafe.Pointer(&vector_bordercolors[0]), C.int( len(bordercolors)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -63175,7 +63261,7 @@ func (instance *UnionRange) SetOutlineBorders_CellBorderTypeArray_ColorArray(bor
 //   void  
 func (instance *UnionRange) SetOutlineBorders_CellBorderType_Color(borderstyle CellBorderType, bordercolor *Color)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIG(C.CString("UnionRange_SetOutlineBorders_CellBorderType_Color"), instance.ptr, C.int( int32(borderstyle)), bordercolor.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIH(C.CString("UnionRange_SetOutlineBorders_CellBorderType_Color"), instance.ptr, C.int( int32(borderstyle)), bordercolor.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -63238,7 +63324,7 @@ func (instance *UnionRange) Intersect_RangeArray(ranges []Range)  (*UnionRange, 
 	}
 
 
-	CGoReturnPtr := C.CellsGoFunctoinZZIF(C.CString("UnionRange_Intersect_RangeArray"), instance.ptr, unsafe.Pointer(&vector_ranges[0]), C.int( len(ranges)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIG(C.CString("UnionRange_Intersect_RangeArray"), instance.ptr, unsafe.Pointer(&vector_ranges[0]), C.int( len(ranges)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -63304,7 +63390,7 @@ func (instance *UnionRange) Union_RangeArray(ranges []Range)  (*UnionRange,  err
 	}
 
 
-	CGoReturnPtr := C.CellsGoFunctoinZZIF(C.CString("UnionRange_Union_RangeArray"), instance.ptr, unsafe.Pointer(&vector_ranges[0]), C.int( len(ranges)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIG(C.CString("UnionRange_Union_RangeArray"), instance.ptr, unsafe.Pointer(&vector_ranges[0]), C.int( len(ranges)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -64004,7 +64090,7 @@ func (instance *Validation) AddArea_CellArea_Bool_Bool(cellarea *CellArea, check
 	  cellarea_ptr =cellarea.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZIY(C.CString("Validation_AddArea_CellArea_Boolean_Boolean"), instance.ptr, cellarea_ptr, C.bool(checkintersection), C.bool(checkedge))
+	CGoReturnPtr := C.CellsGoFunctoinZZJA(C.CString("Validation_AddArea_CellArea_Boolean_Boolean"), instance.ptr, cellarea_ptr, C.bool(checkintersection), C.bool(checkedge))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -64028,7 +64114,7 @@ func (instance *Validation) AddAreas(areas []CellArea, checkintersection bool, c
 	}
 
 
-	CGoReturnPtr := C.CellsGoFunctoinZZJA(C.CString("Validation_AddAreas"), instance.ptr, unsafe.Pointer(&vector_areas[0]), C.int( len(areas)), C.bool(checkintersection), C.bool(checkedge))
+	CGoReturnPtr := C.CellsGoFunctoinZZJB(C.CString("Validation_AddAreas"), instance.ptr, unsafe.Pointer(&vector_areas[0]), C.int( len(areas)), C.bool(checkintersection), C.bool(checkedge))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -64695,7 +64781,7 @@ func NewWorkbook_String_LoadOptions(file string, loadoptions *LoadOptions) ( *Wo
 	  loadoptions_ptr =loadoptions.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZJB(C.CString("New_Workbook_String_LoadOptions"),C.CString(file), loadoptions_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJC(C.CString("New_Workbook_String_LoadOptions"),C.CString(file), loadoptions_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		workbook.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(workbook, DeleteWorkbook)
@@ -64717,7 +64803,7 @@ func NewWorkbook_Stream_LoadOptions(stream []byte, loadoptions *LoadOptions) ( *
 	  loadoptions_ptr =loadoptions.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZJC(C.CString("New_Workbook_Stream_LoadOptions"),unsafe.Pointer(&stream[0]), C.int( len(stream)), loadoptions_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJD(C.CString("New_Workbook_Stream_LoadOptions"),unsafe.Pointer(&stream[0]), C.int( len(stream)), loadoptions_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		workbook.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(workbook, DeleteWorkbook)
@@ -64812,7 +64898,7 @@ func (instance *Workbook) CloseAccessCache(opts AccessCacheOptions)  error {
 //   void  
 func (instance *Workbook) Save_String_SaveFormat(filename string, saveformat SaveFormat)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJD(C.CString("Workbook_Save_String_SaveFormat"), instance.ptr, C.CString(filename), C.int( int32(saveformat)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("Workbook_Save_String_SaveFormat"), instance.ptr, C.CString(filename), C.int( int32(saveformat)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -64863,7 +64949,7 @@ func (instance *Workbook) Save_String_SaveOptions(filename string, saveoptions *
 //   []byte  
 func (instance *Workbook) Save_SaveFormat(saveformat SaveFormat)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("Workbook_Save_SaveFormat"), instance.ptr, C.int( int32(saveformat)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("Workbook_Save_SaveFormat"), instance.ptr, C.int( int32(saveformat)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -65029,7 +65115,7 @@ func (instance *Workbook) CreateCellsColor()  (*CellsColor,  error)  {
 //   int32  
 func (instance *Workbook) Replace_String_String(placeholder string, newvalue string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("Workbook_Replace_String_String"), instance.ptr, C.CString(placeholder), C.CString(newvalue))
+	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("Workbook_Replace_String_String"), instance.ptr, C.CString(placeholder), C.CString(newvalue))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -65063,7 +65149,7 @@ func (instance *Workbook) Replace_String_Int(placeholder string, newvalue int32)
 //   int32  
 func (instance *Workbook) Replace_String_Double(placeholder string, newvalue float64)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("Workbook_Replace_String_Double"), instance.ptr, C.CString(placeholder), C.double(newvalue))
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("Workbook_Replace_String_Double"), instance.ptr, C.CString(placeholder), C.double(newvalue))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -65088,7 +65174,7 @@ func (instance *Workbook) Replace_String_stringArray_Bool(placeholder string, ne
 	vector_newvalues[i] = cStr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("Workbook_Replace_String_U16StringArray_Boolean"), instance.ptr, C.CString(placeholder), unsafe.Pointer(&vector_newvalues[0]), C.int( len(newvalues)), C.bool(isvertical))
+	CGoReturnPtr := C.CellsGoFunctoinZZJI(C.CString("Workbook_Replace_String_U16StringArray_Boolean"), instance.ptr, C.CString(placeholder), unsafe.Pointer(&vector_newvalues[0]), C.int( len(newvalues)), C.bool(isvertical))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -65106,7 +65192,7 @@ func (instance *Workbook) Replace_String_stringArray_Bool(placeholder string, ne
 //   int32  
 func (instance *Workbook) Replace_String_int32Array_Bool(placeholder string, newvalues []int32, isvertical bool)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("Workbook_Replace_String_int32_tArray_Boolean"), instance.ptr, C.CString(placeholder), unsafe.Pointer(&newvalues[0]), C.int( len(newvalues)), C.bool(isvertical))
+	CGoReturnPtr := C.CellsGoFunctoinZZJI(C.CString("Workbook_Replace_String_int32_tArray_Boolean"), instance.ptr, C.CString(placeholder), unsafe.Pointer(&newvalues[0]), C.int( len(newvalues)), C.bool(isvertical))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -65124,7 +65210,7 @@ func (instance *Workbook) Replace_String_int32Array_Bool(placeholder string, new
 //   int32  
 func (instance *Workbook) Replace_String_float64Array_Bool(placeholder string, newvalues []float64, isvertical bool)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("Workbook_Replace_String_doubleArray_Boolean"), instance.ptr, C.CString(placeholder), unsafe.Pointer(&newvalues[0]), C.int( len(newvalues)), C.bool(isvertical))
+	CGoReturnPtr := C.CellsGoFunctoinZZJI(C.CString("Workbook_Replace_String_doubleArray_Boolean"), instance.ptr, C.CString(placeholder), unsafe.Pointer(&newvalues[0]), C.int( len(newvalues)), C.bool(isvertical))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -65146,7 +65232,7 @@ func (instance *Workbook) Replace_Bool_Object(boolvalue bool, newvalue *Object) 
 	  newvalue_ptr =newvalue.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZJI(C.CString("Workbook_Replace_Boolean_Object"), instance.ptr, C.bool(boolvalue), newvalue_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJJ(C.CString("Workbook_Replace_Boolean_Object"), instance.ptr, C.bool(boolvalue), newvalue_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -65168,7 +65254,7 @@ func (instance *Workbook) Replace_Int_Object(intvalue int32, newvalue *Object)  
 	  newvalue_ptr =newvalue.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZJJ(C.CString("Workbook_Replace_Integer_Object"), instance.ptr, C.int(intvalue), newvalue_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJK(C.CString("Workbook_Replace_Integer_Object"), instance.ptr, C.int(intvalue), newvalue_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -65387,7 +65473,7 @@ func (instance *Workbook) MergeNamedStyles(source *Workbook)  error {
 //   void  
 func (instance *Workbook) ChangePalette(color *Color, index int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJK(C.CString("Workbook_ChangePalette"), instance.ptr, color.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZJL(C.CString("Workbook_ChangePalette"), instance.ptr, color.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65402,7 +65488,7 @@ func (instance *Workbook) ChangePalette(color *Color, index int32)  error {
 //   bool  
 func (instance *Workbook) IsColorInPalette(color *Color)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJL(C.CString("Workbook_IsColorInPalette"), instance.ptr, color.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJM(C.CString("Workbook_IsColorInPalette"), instance.ptr, color.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -65488,7 +65574,7 @@ func (instance *Workbook) RefreshDynamicArrayFormulas_Bool_CalculationOptions(ca
 	  copts_ptr =copts.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZJM(C.CString("Workbook_RefreshDynamicArrayFormulas_Boolean_CalculationOptions"), instance.ptr, C.bool(calculate), copts_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJN(C.CString("Workbook_RefreshDynamicArrayFormulas_Boolean_CalculationOptions"), instance.ptr, C.bool(calculate), copts_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65539,7 +65625,7 @@ func (instance *Workbook) SetDefaultStyle(value *Style)  error {
 //   Color  
 func (instance *Workbook) GetMatchingColor(rawcolor *Color)  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJN(C.CString("Workbook_GetMatchingColor"), instance.ptr, rawcolor.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJO(C.CString("Workbook_GetMatchingColor"), instance.ptr, rawcolor.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -65571,7 +65657,7 @@ func (instance *Workbook) IsDigitallySigned()  (bool,  error)  {
 //   void  
 func (instance *Workbook) SetEncryptionOptions(encryptiontype EncryptionType, keylength int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJO(C.CString("Workbook_SetEncryptionOptions"), instance.ptr, C.int( int32(encryptiontype)), C.int(keylength))
+	CGoReturnPtr := C.CellsGoFunctoinZZJP(C.CString("Workbook_SetEncryptionOptions"), instance.ptr, C.int( int32(encryptiontype)), C.int(keylength))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65587,7 +65673,7 @@ func (instance *Workbook) SetEncryptionOptions(encryptiontype EncryptionType, ke
 //   void  
 func (instance *Workbook) Protect(protectiontype ProtectionType, password string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIN(C.CString("Workbook_Protect"), instance.ptr, C.int( int32(protectiontype)), C.CString(password))
+	CGoReturnPtr := C.CellsGoFunctoinZZIO(C.CString("Workbook_Protect"), instance.ptr, C.int( int32(protectiontype)), C.CString(password))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65789,7 +65875,7 @@ func (instance *Workbook) GetDataSorter()  (*DataSorter,  error)  {
 //   Color  
 func (instance *Workbook) GetThemeColor(type_ ThemeColorType)  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJP(C.CString("Workbook_GetThemeColor"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJQ(C.CString("Workbook_GetThemeColor"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -65807,7 +65893,7 @@ func (instance *Workbook) GetThemeColor(type_ ThemeColorType)  (*Color,  error) 
 //   void  
 func (instance *Workbook) SetThemeColor(type_ ThemeColorType, color *Color)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIG(C.CString("Workbook_SetThemeColor"), instance.ptr, C.int( int32(type_)), color.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZIH(C.CString("Workbook_SetThemeColor"), instance.ptr, C.int( int32(type_)), color.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -66182,7 +66268,7 @@ func (instance *Workbook) GetDataConnections()  (*ExternalConnectionCollection, 
 //   void  
 func (instance *Workbook) ImportXml_String_String_Int_Int(url string, sheetname string, row int32, col int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJQ(C.CString("Workbook_ImportXml_String_String_Integer_Integer"), instance.ptr, C.CString(url), C.CString(sheetname), C.int(row), C.int(col))
+	CGoReturnPtr := C.CellsGoFunctoinZZJR(C.CString("Workbook_ImportXml_String_String_Integer_Integer"), instance.ptr, C.CString(url), C.CString(sheetname), C.int(row), C.int(col))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -66200,7 +66286,7 @@ func (instance *Workbook) ImportXml_String_String_Int_Int(url string, sheetname 
 //   void  
 func (instance *Workbook) ImportXml_Stream_String_Int_Int(stream []byte, sheetname string, row int32, col int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJR(C.CString("Workbook_ImportXml_Stream_String_Integer_Integer"), instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.CString(sheetname), C.int(row), C.int(col))
+	CGoReturnPtr := C.CellsGoFunctoinZZJS(C.CString("Workbook_ImportXml_Stream_String_Integer_Integer"), instance.ptr, unsafe.Pointer(&stream[0]), C.int( len(stream)), C.CString(sheetname), C.int(row), C.int(col))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -66231,7 +66317,7 @@ func (instance *Workbook) ExportXml_String_String(mapname string, path string)  
 //   []byte  
 func (instance *Workbook) ExportXml_String(mapname string)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJS(C.CString("Workbook_ExportXml_String"), instance.ptr, C.CString(mapname))
+	CGoReturnPtr := C.CellsGoFunctoinZZJT(C.CString("Workbook_ExportXml_String"), instance.ptr, C.CString(mapname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -68642,7 +68728,7 @@ func (instance *Worksheet) GetFreezedPanes()  (bool, int32, int32, int32, int32,
 	var freezedcolumns int32
 	cfreezedcolumns := (*C.int)(unsafe.Pointer(&freezedcolumns))
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJT(C.CString("Worksheet_GetFreezedPanes"), instance.ptr, (crow), (ccolumn), (cfreezedrows), (cfreezedcolumns))
+	CGoReturnPtr := C.CellsGoFunctoinZZJU(C.CString("Worksheet_GetFreezedPanes"), instance.ptr, (crow), (ccolumn), (cfreezedrows), (cfreezedcolumns))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, 0, 0, 0, 0, err
@@ -69013,7 +69099,7 @@ func (instance *Worksheet) AutoFitColumns_Int_Int_Int_Int_AutoFitterOptions(firs
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZJU(C.CString("Worksheet_AutoFitColumns_Integer_Integer_Integer_Integer_AutoFitterOptions"), instance.ptr, C.int(firstrow), C.int(firstcolumn), C.int(lastrow), C.int(lastcolumn), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJV(C.CString("Worksheet_AutoFitColumns_Integer_Integer_Integer_Integer_AutoFitterOptions"), instance.ptr, C.int(firstrow), C.int(firstcolumn), C.int(lastrow), C.int(lastcolumn), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -69053,7 +69139,7 @@ func (instance *Worksheet) AutoFitRow_Int_Int_Int_AutoFitterOptions(rowindex int
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZJV(C.CString("Worksheet_AutoFitRow_Integer_Integer_Integer_AutoFitterOptions"), instance.ptr, C.int(rowindex), C.int(firstcolumn), C.int(lastcolumn), options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJW(C.CString("Worksheet_AutoFitRow_Integer_Integer_Integer_AutoFitterOptions"), instance.ptr, C.int(rowindex), C.int(firstcolumn), C.int(lastcolumn), options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -69259,7 +69345,7 @@ func (instance *Worksheet) GetAdvancedFilter()  (*AdvancedFilter,  error)  {
 //   void  
 func (instance *Worksheet) Advanced_Filter(isfilter bool, listrange string, criteriarange string, copyto string, uniquerecordonly bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJW(C.CString("Worksheet_Advanced_Filter"), instance.ptr, C.bool(isfilter), C.CString(listrange), C.CString(criteriarange), C.CString(copyto), C.bool(uniquerecordonly))
+	CGoReturnPtr := C.CellsGoFunctoinZZJX(C.CString("Worksheet_Advanced_Filter"), instance.ptr, C.bool(isfilter), C.CString(listrange), C.CString(criteriarange), C.CString(copyto), C.bool(uniquerecordonly))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -69392,7 +69478,7 @@ func (instance *Worksheet) SetVisibilityType(value VisibilityType)  error {
 //   void  
 func (instance *Worksheet) SetVisible(isvisible bool, ignoreerror bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJX(C.CString("Worksheet_SetVisible"), instance.ptr, C.bool(isvisible), C.bool(ignoreerror))
+	CGoReturnPtr := C.CellsGoFunctoinZZJY(C.CString("Worksheet_SetVisible"), instance.ptr, C.bool(isvisible), C.bool(ignoreerror))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -69658,7 +69744,7 @@ func (instance *Worksheet) Protect_ProtectionType(type_ ProtectionType)  error {
 //   void  
 func (instance *Worksheet) Protect_ProtectionType_String_String(type_ ProtectionType, password string, oldpassword string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJY(C.CString("Worksheet_Protect_ProtectionType_String_String"), instance.ptr, C.int( int32(type_)), C.CString(password), C.CString(oldpassword))
+	CGoReturnPtr := C.CellsGoFunctoinZZKA(C.CString("Worksheet_Protect_ProtectionType_String_String"), instance.ptr, C.int( int32(type_)), C.CString(password), C.CString(oldpassword))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -69867,7 +69953,7 @@ func (instance *Worksheet) SetFirstVisibleColumn(value int32)  error {
 //   int32  
 func (instance *Worksheet) Replace(oldstring string, newstring string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("Worksheet_Replace"), instance.ptr, C.CString(oldstring), C.CString(newstring))
+	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("Worksheet_Replace"), instance.ptr, C.CString(oldstring), C.CString(newstring))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -70209,7 +70295,7 @@ func (instance *Worksheet) GetPrintingPageBreaks(options *ImageOrPrintOptions)  
 	  options_ptr =options.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKA(C.CString("Worksheet_GetPrintingPageBreaks"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKB(C.CString("Worksheet_GetPrintingPageBreaks"), instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -70311,7 +70397,7 @@ func (instance *Worksheet) CloseAccessCache(opts AccessCacheOptions)  error {
 //   string  
 func (instance *Worksheet) ConvertFormulaReferenceStyle(formula string, tor1c1 bool, basecellrow int32, basecellcolumn int32)  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKB(C.CString("Worksheet_ConvertFormulaReferenceStyle"), instance.ptr, C.CString(formula), C.bool(tor1c1), C.int(basecellrow), C.int(basecellcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZKC(C.CString("Worksheet_ConvertFormulaReferenceStyle"), instance.ptr, C.CString(formula), C.bool(tor1c1), C.int(basecellrow), C.int(basecellcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -70351,7 +70437,7 @@ func (instance *Worksheet) CalculateFormula_String_CalculationOptions(formula st
 	  opts_ptr =opts.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKC(C.CString("Worksheet_CalculateFormula_String_CalculationOptions"), instance.ptr, C.CString(formula), opts_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKD(C.CString("Worksheet_CalculateFormula_String_CalculationOptions"), instance.ptr, C.CString(formula), opts_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -70387,7 +70473,7 @@ func (instance *Worksheet) CalculateFormula_String_FormulaParseOptions_Calculati
 	  calculationdata_ptr =calculationdata.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKD(C.CString("Worksheet_CalculateFormula_String_FormulaParseOptions_CalculationOptions_Integer_Integer_CalculationData"), instance.ptr, C.CString(formula), popts_ptr, copts_ptr, C.int(basecellrow), C.int(basecellcolumn), calculationdata_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKE(C.CString("Worksheet_CalculateFormula_String_FormulaParseOptions_CalculationOptions_Integer_Integer_CalculationData"), instance.ptr, C.CString(formula), popts_ptr, copts_ptr, C.int(basecellrow), C.int(basecellcolumn), calculationdata_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -70411,7 +70497,7 @@ func (instance *Worksheet) CalculateArrayFormula_String_CalculationOptions(formu
 	  opts_ptr =opts.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKE(C.CString("Worksheet_CalculateArrayFormula_String_CalculationOptions"), instance.ptr, C.CString(formula), opts_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKF(C.CString("Worksheet_CalculateArrayFormula_String_CalculationOptions"), instance.ptr, C.CString(formula), opts_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -70447,7 +70533,7 @@ func (instance *Worksheet) CalculateArrayFormula_String_CalculationOptions_Int_I
 	  opts_ptr =opts.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKF(C.CString("Worksheet_CalculateArrayFormula_String_CalculationOptions_Integer_Integer"), instance.ptr, C.CString(formula), opts_ptr, C.int(maxrowcount), C.int(maxcolumncount))
+	CGoReturnPtr := C.CellsGoFunctoinZZKG(C.CString("Worksheet_CalculateArrayFormula_String_CalculationOptions_Integer_Integer"), instance.ptr, C.CString(formula), opts_ptr, C.int(maxrowcount), C.int(maxcolumncount))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -70495,7 +70581,7 @@ func (instance *Worksheet) CalculateArrayFormula_String_FormulaParseOptions_Calc
 	  calculationdata_ptr =calculationdata.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKG(C.CString("Worksheet_CalculateArrayFormula_String_FormulaParseOptions_CalculationOptions_Integer_Integer_Integer_Integer_CalculationData"), instance.ptr, C.CString(formula), popts_ptr, copts_ptr, C.int(basecellrow), C.int(basecellcolumn), C.int(maxrowcount), C.int(maxcolumncount), calculationdata_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKH(C.CString("Worksheet_CalculateArrayFormula_String_FormulaParseOptions_CalculationOptions_Integer_Integer_Integer_Integer_CalculationData"), instance.ptr, C.CString(formula), popts_ptr, copts_ptr, C.int(basecellrow), C.int(basecellcolumn), C.int(maxrowcount), C.int(maxcolumncount), calculationdata_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -70703,7 +70789,7 @@ func (instance *WorksheetCollection) SetIsRefreshAllConnections(value bool)  err
 //   Range  
 func (instance *WorksheetCollection) CreateRange(address string, sheetindex int32)  (*Range,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKH(C.CString("WorksheetCollection_CreateRange"), instance.ptr, C.CString(address), C.int(sheetindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("WorksheetCollection_CreateRange"), instance.ptr, C.CString(address), C.int(sheetindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -70722,7 +70808,7 @@ func (instance *WorksheetCollection) CreateRange(address string, sheetindex int3
 //   UnionRange  
 func (instance *WorksheetCollection) CreateUnionRange(address string, sheetindex int32)  (*UnionRange,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKH(C.CString("WorksheetCollection_CreateUnionRange"), instance.ptr, C.CString(address), C.int(sheetindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("WorksheetCollection_CreateUnionRange"), instance.ptr, C.CString(address), C.int(sheetindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -70882,7 +70968,7 @@ func (instance *WorksheetCollection) SortNames()  error {
 //   Worksheet  
 func (instance *WorksheetCollection) Insert_Int_SheetType(index int32, sheettype SheetType)  (*Worksheet,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("WorksheetCollection_Insert_Integer_SheetType"), instance.ptr, C.int(index), C.int( int32(sheettype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("WorksheetCollection_Insert_Integer_SheetType"), instance.ptr, C.int(index), C.int( int32(sheettype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -70902,7 +70988,7 @@ func (instance *WorksheetCollection) Insert_Int_SheetType(index int32, sheettype
 //   Worksheet  
 func (instance *WorksheetCollection) Insert_Int_SheetType_String(index int32, sheettype SheetType, sheetname string)  (*Worksheet,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("WorksheetCollection_Insert_Integer_SheetType_String"), instance.ptr, C.int(index), C.int( int32(sheettype)), C.CString(sheetname))
+	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("WorksheetCollection_Insert_Integer_SheetType_String"), instance.ptr, C.int(index), C.int( int32(sheettype)), C.CString(sheetname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -71003,7 +71089,7 @@ func (instance *WorksheetCollection) RegisterAddInFunction_String_String_Bool(ad
 //   string  
 func (instance *WorksheetCollection) RegisterAddInFunction_Int_String(id int32, functionname string)  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("WorksheetCollection_RegisterAddInFunction_Integer_String"), instance.ptr, C.int(id), C.CString(functionname))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("WorksheetCollection_RegisterAddInFunction_Integer_String"), instance.ptr, C.int(id), C.CString(functionname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -71108,7 +71194,7 @@ func (instance *WorksheetCollection) AddCopy_WorksheetArray_stringArray(source [
 	vector_destsheetnames[i] = cStr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZIH(C.CString("WorksheetCollection_AddCopy_WorksheetArray_U16StringArray"), instance.ptr, unsafe.Pointer(&vector_source[0]), C.int( len(source)), unsafe.Pointer(&vector_destsheetnames[0]), C.int( len(destsheetnames)))
+	CGoReturnPtr := C.CellsGoFunctoinZZII(C.CString("WorksheetCollection_AddCopy_WorksheetArray_U16StringArray"), instance.ptr, unsafe.Pointer(&vector_source[0]), C.int( len(source)), unsafe.Pointer(&vector_destsheetnames[0]), C.int( len(destsheetnames)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -71159,7 +71245,7 @@ func (instance *WorksheetCollection) GetRangeByName_String(rangename string)  (*
 //   Range  
 func (instance *WorksheetCollection) GetRangeByName_String_Int_Bool(rangename string, currentsheetindex int32, includetable bool)  (*Range,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("WorksheetCollection_GetRangeByName_String_Integer_Boolean"), instance.ptr, C.CString(rangename), C.int(currentsheetindex), C.bool(includetable))
+	CGoReturnPtr := C.CellsGoFunctoinZZKM(C.CString("WorksheetCollection_GetRangeByName_String_Integer_Boolean"), instance.ptr, C.CString(rangename), C.int(currentsheetindex), C.bool(includetable))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err

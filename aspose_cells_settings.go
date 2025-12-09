@@ -370,6 +370,24 @@ func (instance *PivotGlobalizationSettings) GetTextOfSubTotal(subtotaltype Pivot
 
 	return result, nil 
 }
+// Gets the display name of data pivot field.
+// The default format is "Sum Of Field".
+// Parameters:
+//   function - int32 
+//   name - string 
+// Returns:
+//   string  
+func (instance *PivotGlobalizationSettings) GetNameOfDataField(function ConsolidationFunction, name string)  (string,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZPE(C.CString("PivotGlobalizationSettings_GetNameOfDataField"), instance.ptr, C.int( int32(function)), C.CString(name))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
 
 
 

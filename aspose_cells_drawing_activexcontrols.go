@@ -11772,7 +11772,7 @@ func (instance *UnknownControl) IsNull()  (bool,  error)  {
 //   []byte  
 func (instance *UnknownControl) GetRelationshipData(relid string)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJS(C.CString("UnknownControl_GetRelationshipData"), instance.ptr, C.CString(relid))
+	CGoReturnPtr := C.CellsGoFunctoinZZJT(C.CString("UnknownControl_GetRelationshipData"), instance.ptr, C.CString(relid))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err

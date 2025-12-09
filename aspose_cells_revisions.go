@@ -141,7 +141,7 @@ type HighlightChangesOptions struct {
 //   listOnNewSheet - bool 
 func NewHighlightChangesOptions(highlightonscreen bool, listonnewsheet bool) ( *HighlightChangesOptions, error) {
 	highlightchangesoptions := &HighlightChangesOptions{}
-	CGoReturnPtr := C.CellsGoFunctoinZZOW(C.CString("New_HighlightChangesOptions"),C.bool(highlightonscreen), C.bool(listonnewsheet))
+	CGoReturnPtr := C.CellsGoFunctoinZZOY(C.CString("New_HighlightChangesOptions"),C.bool(highlightonscreen), C.bool(listonnewsheet))
 	if CGoReturnPtr.error_no == 0 {
 		highlightchangesoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(highlightchangesoptions, DeleteHighlightChangesOptions)

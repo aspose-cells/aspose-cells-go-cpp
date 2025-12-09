@@ -196,7 +196,7 @@ func (instance *CustomXmlPartCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *CustomXmlPartCollection) Add(data []byte, shemadata []byte)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOT(C.CString("CustomXmlPartCollection_Add"), instance.ptr, unsafe.Pointer(&data[0]), C.int( len(data)), unsafe.Pointer(&shemadata[0]), C.int( len(shemadata)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOV(C.CString("CustomXmlPartCollection_Add"), instance.ptr, unsafe.Pointer(&data[0]), C.int( len(data)), unsafe.Pointer(&shemadata[0]), C.int( len(shemadata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -479,7 +479,7 @@ func (instance *SmartTagCollection) Get(index int32)  (*SmartTag,  error)  {
 //   int32  
 func (instance *SmartTagCollection) Add(uri string, name string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("SmartTagCollection_Add"), instance.ptr, C.CString(uri), C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("SmartTagCollection_Add"), instance.ptr, C.CString(uri), C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -785,7 +785,7 @@ func (instance *SmartTagPropertyCollection) Get_String(name string)  (*SmartTagP
 //   int32  
 func (instance *SmartTagPropertyCollection) Add(name string, value string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("SmartTagPropertyCollection_Add"), instance.ptr, C.CString(name), C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("SmartTagPropertyCollection_Add"), instance.ptr, C.CString(name), C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err

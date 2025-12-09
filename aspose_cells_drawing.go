@@ -4481,15 +4481,15 @@ func (instance *ArcShape) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *ArcShape) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *ArcShape) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("ArcShape_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("ArcShape_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5997,7 +5997,7 @@ func (instance *ArcShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *ArcShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("ArcShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("ArcShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7892,15 +7892,15 @@ func (instance *Button) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *Button) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *Button) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("Button_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("Button_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9408,7 +9408,7 @@ func (instance *Button) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Button) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("Button_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("Button_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10917,15 +10917,15 @@ func (instance *CellsDrawing) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *CellsDrawing) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *CellsDrawing) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("CellsDrawing_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("CellsDrawing_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -12433,7 +12433,7 @@ func (instance *CellsDrawing) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *CellsDrawing) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("CellsDrawing_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("CellsDrawing_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -13959,15 +13959,15 @@ func (instance *ChartShape) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *ChartShape) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *ChartShape) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("ChartShape_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("ChartShape_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15475,7 +15475,7 @@ func (instance *ChartShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *ChartShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("ChartShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("ChartShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -17074,15 +17074,15 @@ func (instance *CheckBox) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *CheckBox) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *CheckBox) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("CheckBox_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("CheckBox_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -18590,7 +18590,7 @@ func (instance *CheckBox) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *CheckBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("CheckBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("CheckBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -19583,15 +19583,15 @@ func (instance *CheckBoxCollection) IsNull()  (bool,  error)  {
 }
 // Adds a checkBox to the collection.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   int32  
-func (instance *CheckBoxCollection) Add(upperleftrow int32, upperleftcolumn int32, height int32, width int32)  (int32,  error)  {
+func (instance *CheckBoxCollection) Add(toprow int32, leftcolumn int32, height int32, width int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("CheckBoxCollection_Add"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("CheckBoxCollection_Add"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19669,7 +19669,7 @@ func (instance *ColorHelper) IsNull()  (bool,  error)  {
 //   Color  
 func ColorHelper_FromOleColor(olecolor int32)  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("ColorHelper_FromOleColor"),C.int(olecolor))
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("ColorHelper_FromOleColor"),C.int(olecolor))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -19692,7 +19692,7 @@ func ColorHelper_ToOleColor(color *Color, workbook *Workbook)  (int32,  error)  
 	  workbook_ptr =workbook.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("ColorHelper_ToOleColor"),color.ptr, workbook_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKW(C.CString("ColorHelper_ToOleColor"),color.ptr, workbook_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -20369,15 +20369,15 @@ func (instance *ComboBox) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *ComboBox) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *ComboBox) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("ComboBox_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("ComboBox_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -21885,7 +21885,7 @@ func (instance *ComboBox) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *ComboBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("ComboBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("ComboBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -23410,15 +23410,15 @@ func (instance *CommentShape) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *CommentShape) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *CommentShape) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("CommentShape_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("CommentShape_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -24926,7 +24926,7 @@ func (instance *CommentShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *CommentShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("CommentShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("CommentShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -26524,15 +26524,15 @@ func (instance *CustomXmlShape) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *CustomXmlShape) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *CustomXmlShape) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("CustomXmlShape_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("CustomXmlShape_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -28040,7 +28040,7 @@ func (instance *CustomXmlShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *CustomXmlShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("CustomXmlShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("CustomXmlShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -29549,15 +29549,15 @@ func (instance *Dialog_Box) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *Dialog_Box) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *Dialog_Box) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("Dialog_Box_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("Dialog_Box_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -31065,7 +31065,7 @@ func (instance *Dialog_Box) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Dialog_Box) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("Dialog_Box_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("Dialog_Box_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -32303,7 +32303,7 @@ func (instance *FillFormat) GetPresetColor()  (GradientPresetType,  error)  {
 //   void  
 func (instance *FillFormat) SetOneColorGradient(color *Color, degree float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKW(C.CString("FillFormat_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZKX(C.CString("FillFormat_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32322,7 +32322,7 @@ func (instance *FillFormat) SetOneColorGradient(color *Color, degree float64, st
 //   void  
 func (instance *FillFormat) SetTwoColorGradient_Color_Color_GradientStyleType_Int(color1 *Color, color2 *Color, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIT(C.CString("FillFormat_SetTwoColorGradient_Color_Color_GradientStyleType_Integer"), instance.ptr, color1.ptr, color2.ptr, C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZIU(C.CString("FillFormat_SetTwoColorGradient_Color_Color_GradientStyleType_Integer"), instance.ptr, color1.ptr, color2.ptr, C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32343,7 +32343,7 @@ func (instance *FillFormat) SetTwoColorGradient_Color_Color_GradientStyleType_In
 //   void  
 func (instance *FillFormat) SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Int(color1 *Color, transparency1 float64, color2 *Color, transparency2 float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKX(C.CString("FillFormat_SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Integer"), instance.ptr, color1.ptr, C.double(transparency1), color2.ptr, C.double(transparency2), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZKY(C.CString("FillFormat_SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Integer"), instance.ptr, color1.ptr, C.double(transparency1), color2.ptr, C.double(transparency2), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32361,7 +32361,7 @@ func (instance *FillFormat) SetTwoColorGradient_Color_Double_Color_Double_Gradie
 //   void  
 func (instance *FillFormat) SetPresetColorGradient(presetcolor GradientPresetType, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKY(C.CString("FillFormat_SetPresetColorGradient"), instance.ptr, C.int( int32(presetcolor)), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZLA(C.CString("FillFormat_SetPresetColorGradient"), instance.ptr, C.int( int32(presetcolor)), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32945,7 +32945,7 @@ func (instance *GradientFill) GetGradientStops()  (*GradientStopCollection,  err
 //   void  
 func (instance *GradientFill) SetGradient(type_ GradientFillType, angle float64, direction GradientDirectionType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLA(C.CString("GradientFill_SetGradient"), instance.ptr, C.int( int32(type_)), C.double(angle), C.int( int32(direction)))
+	CGoReturnPtr := C.CellsGoFunctoinZZLB(C.CString("GradientFill_SetGradient"), instance.ptr, C.int( int32(type_)), C.double(angle), C.int( int32(direction)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33008,7 +33008,7 @@ func (instance *GradientFill) GetAngle()  (float32,  error)  {
 //   void  
 func (instance *GradientFill) SetAngle(value float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLB(C.CString("GradientFill_SetAngle"), instance.ptr, C.float(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZLC(C.CString("GradientFill_SetAngle"), instance.ptr, C.float(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33024,7 +33024,7 @@ func (instance *GradientFill) SetAngle(value float32)  error {
 //   void  
 func (instance *GradientFill) SetPresetThemeGradient(gradienttype PresetThemeGradientType, themecolortype ThemeColorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLC(C.CString("GradientFill_SetPresetThemeGradient"), instance.ptr, C.int( int32(gradienttype)), C.int( int32(themecolortype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZLD(C.CString("GradientFill_SetPresetThemeGradient"), instance.ptr, C.int( int32(gradienttype)), C.int( int32(themecolortype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33043,7 +33043,7 @@ func (instance *GradientFill) SetPresetThemeGradient(gradienttype PresetThemeGra
 //   void  
 func (instance *GradientFill) SetOneColorGradient(color *Color, degree float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKW(C.CString("GradientFill_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZKX(C.CString("GradientFill_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33062,7 +33062,7 @@ func (instance *GradientFill) SetOneColorGradient(color *Color, degree float64, 
 //   void  
 func (instance *GradientFill) SetTwoColorGradient_Color_Color_GradientStyleType_Int(color1 *Color, color2 *Color, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIT(C.CString("GradientFill_SetTwoColorGradient_Color_Color_GradientStyleType_Integer"), instance.ptr, color1.ptr, color2.ptr, C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZIU(C.CString("GradientFill_SetTwoColorGradient_Color_Color_GradientStyleType_Integer"), instance.ptr, color1.ptr, color2.ptr, C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33083,7 +33083,7 @@ func (instance *GradientFill) SetTwoColorGradient_Color_Color_GradientStyleType_
 //   void  
 func (instance *GradientFill) SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Int(color1 *Color, transparency1 float64, color2 *Color, transparency2 float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKX(C.CString("GradientFill_SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Integer"), instance.ptr, color1.ptr, C.double(transparency1), color2.ptr, C.double(transparency2), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZKY(C.CString("GradientFill_SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Integer"), instance.ptr, color1.ptr, C.double(transparency1), color2.ptr, C.double(transparency2), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33241,7 +33241,7 @@ func (instance *GradientStopCollection) Add_Double_CellsColor_Int(position float
 	  color_ptr =color.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZLD(C.CString("GradientStopCollection_Add_Double_CellsColor_Integer"), instance.ptr, C.double(position), color_ptr, C.int(alpha))
+	CGoReturnPtr := C.CellsGoFunctoinZZLE(C.CString("GradientStopCollection_Add_Double_CellsColor_Integer"), instance.ptr, C.double(position), color_ptr, C.int(alpha))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33258,7 +33258,7 @@ func (instance *GradientStopCollection) Add_Double_CellsColor_Int(position float
 //   void  
 func (instance *GradientStopCollection) Add_Double_Color_Int(position float64, color *Color, alpha int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLE(C.CString("GradientStopCollection_Add_Double_Color_Integer"), instance.ptr, C.double(position), color.ptr, C.int(alpha))
+	CGoReturnPtr := C.CellsGoFunctoinZZLF(C.CString("GradientStopCollection_Add_Double_Color_Integer"), instance.ptr, C.double(position), color.ptr, C.int(alpha))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33297,7 +33297,7 @@ func (instance *GradientStopCollection) Set(value *GradientStop, index int32)  e
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZLF(C.CString("GradientStopCollection_Set"), instance.ptr, value_ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZLG(C.CString("GradientStopCollection_Set"), instance.ptr, value_ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33896,15 +33896,15 @@ func (instance *GroupBox) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *GroupBox) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *GroupBox) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("GroupBox_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("GroupBox_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -35412,7 +35412,7 @@ func (instance *GroupBox) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *GroupBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("GroupBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("GroupBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -37004,15 +37004,15 @@ func (instance *GroupShape) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *GroupShape) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *GroupShape) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("GroupShape_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("GroupShape_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -38520,7 +38520,7 @@ func (instance *GroupShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *GroupShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("GroupShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("GroupShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -40029,15 +40029,15 @@ func (instance *Label) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *Label) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *Label) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("Label_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("Label_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -41545,7 +41545,7 @@ func (instance *Label) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Label) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("Label_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("Label_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -43876,7 +43876,7 @@ func (instance *LineFormat) GetPresetColor()  (GradientPresetType,  error)  {
 //   void  
 func (instance *LineFormat) SetOneColorGradient(color *Color, degree float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKW(C.CString("LineFormat_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZKX(C.CString("LineFormat_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43895,7 +43895,7 @@ func (instance *LineFormat) SetOneColorGradient(color *Color, degree float64, st
 //   void  
 func (instance *LineFormat) SetTwoColorGradient_Color_Color_GradientStyleType_Int(color1 *Color, color2 *Color, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIT(C.CString("LineFormat_SetTwoColorGradient_Color_Color_GradientStyleType_Integer"), instance.ptr, color1.ptr, color2.ptr, C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZIU(C.CString("LineFormat_SetTwoColorGradient_Color_Color_GradientStyleType_Integer"), instance.ptr, color1.ptr, color2.ptr, C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43916,7 +43916,7 @@ func (instance *LineFormat) SetTwoColorGradient_Color_Color_GradientStyleType_In
 //   void  
 func (instance *LineFormat) SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Int(color1 *Color, transparency1 float64, color2 *Color, transparency2 float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKX(C.CString("LineFormat_SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Integer"), instance.ptr, color1.ptr, C.double(transparency1), color2.ptr, C.double(transparency2), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZKY(C.CString("LineFormat_SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Integer"), instance.ptr, color1.ptr, C.double(transparency1), color2.ptr, C.double(transparency2), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43934,7 +43934,7 @@ func (instance *LineFormat) SetTwoColorGradient_Color_Double_Color_Double_Gradie
 //   void  
 func (instance *LineFormat) SetPresetColorGradient(presetcolor GradientPresetType, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKY(C.CString("LineFormat_SetPresetColorGradient"), instance.ptr, C.int( int32(presetcolor)), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZLA(C.CString("LineFormat_SetPresetColorGradient"), instance.ptr, C.int( int32(presetcolor)), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -44651,15 +44651,15 @@ func (instance *LineShape) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *LineShape) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *LineShape) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("LineShape_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("LineShape_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -46167,7 +46167,7 @@ func (instance *LineShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *LineShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("LineShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("LineShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -47867,15 +47867,15 @@ func (instance *ListBox) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *ListBox) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *ListBox) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("ListBox_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("ListBox_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -49383,7 +49383,7 @@ func (instance *ListBox) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *ListBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("ListBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("ListBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -50503,7 +50503,7 @@ func (instance *MsoFillFormat) SetImageData(value []byte)  error {
 //   void  
 func (instance *MsoFillFormat) SetOneColorGradient(color *Color, degree float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKW(C.CString("MsoFillFormat_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZKX(C.CString("MsoFillFormat_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -50717,7 +50717,7 @@ func (instance *MsoFillFormatHelper) SetImageData(value []byte)  error {
 //   void  
 func (instance *MsoFillFormatHelper) SetOneColorGradient(color *Color, degree float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKW(C.CString("MsoFillFormatHelper_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZKX(C.CString("MsoFillFormatHelper_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -52090,7 +52090,7 @@ func (instance *OleObject) IsNull()  (bool,  error)  {
 //   void  
 func (instance *OleObject) SetEmbeddedObject_Bool_Stream_String_Bool_String(linktofile bool, objectdata []byte, sourcefilename string, displayasicon bool, label string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLG(C.CString("OleObject_SetEmbeddedObject_Boolean_Stream_String_Boolean_String"), instance.ptr, C.bool(linktofile), unsafe.Pointer(&objectdata[0]), C.int( len(objectdata)), C.CString(sourcefilename), C.bool(displayasicon), C.CString(label))
+	CGoReturnPtr := C.CellsGoFunctoinZZLH(C.CString("OleObject_SetEmbeddedObject_Boolean_Stream_String_Boolean_String"), instance.ptr, C.bool(linktofile), unsafe.Pointer(&objectdata[0]), C.int( len(objectdata)), C.CString(sourcefilename), C.bool(displayasicon), C.CString(label))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -52110,7 +52110,7 @@ func (instance *OleObject) SetEmbeddedObject_Bool_Stream_String_Bool_String(link
 //   void  
 func (instance *OleObject) SetEmbeddedObject_Bool_Stream_String_Bool_String_Bool(linktofile bool, objectdata []byte, sourcefilename string, displayasicon bool, label string, updateicon bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLH(C.CString("OleObject_SetEmbeddedObject_Boolean_Stream_String_Boolean_String_Boolean"), instance.ptr, C.bool(linktofile), unsafe.Pointer(&objectdata[0]), C.int( len(objectdata)), C.CString(sourcefilename), C.bool(displayasicon), C.CString(label), C.bool(updateicon))
+	CGoReturnPtr := C.CellsGoFunctoinZZLI(C.CString("OleObject_SetEmbeddedObject_Boolean_Stream_String_Boolean_String_Boolean"), instance.ptr, C.bool(linktofile), unsafe.Pointer(&objectdata[0]), C.int( len(objectdata)), C.CString(sourcefilename), C.bool(displayasicon), C.CString(label), C.bool(updateicon))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -53053,15 +53053,15 @@ func (instance *OleObject) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *OleObject) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *OleObject) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("OleObject_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("OleObject_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -54569,7 +54569,7 @@ func (instance *OleObject) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *OleObject) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("OleObject_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("OleObject_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -55562,16 +55562,16 @@ func (instance *OleObjectCollection) IsNull()  (bool,  error)  {
 }
 // Adds an OleObject to the collection.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
 //   height - int32 
 //   width - int32 
 //   imageData - []byte 
 // Returns:
 //   int32  
-func (instance *OleObjectCollection) Add_Int_Int_Int_Int_Stream(upperleftrow int32, upperleftcolumn int32, height int32, width int32, imagedata []byte)  (int32,  error)  {
+func (instance *OleObjectCollection) Add_Int_Int_Int_Int_Stream(toprow int32, leftcolumn int32, height int32, width int32, imagedata []byte)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLI(C.CString("OleObjectCollection_Add_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZZLJ(C.CString("OleObjectCollection_Add_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -55582,17 +55582,17 @@ func (instance *OleObjectCollection) Add_Int_Int_Int_Int_Stream(upperleftrow int
 }
 // Adds a linked OleObject to the collection.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
 //   height - int32 
 //   width - int32 
 //   imageData - []byte 
 //   linkedFile - string 
 // Returns:
 //   int32  
-func (instance *OleObjectCollection) Add_Int_Int_Int_Int_Stream_String(upperleftrow int32, upperleftcolumn int32, height int32, width int32, imagedata []byte, linkedfile string)  (int32,  error)  {
+func (instance *OleObjectCollection) Add_Int_Int_Int_Int_Stream_String(toprow int32, leftcolumn int32, height int32, width int32, imagedata []byte, linkedfile string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLJ(C.CString("OleObjectCollection_Add_Integer_Integer_Integer_Integer_Stream_String"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)), C.CString(linkedfile))
+	CGoReturnPtr := C.CellsGoFunctoinZZLK(C.CString("OleObjectCollection_Add_Integer_Integer_Integer_Integer_Stream_String"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)), C.CString(linkedfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -56209,15 +56209,15 @@ func (instance *Oval) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *Oval) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *Oval) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("Oval_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("Oval_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -57725,7 +57725,7 @@ func (instance *Oval) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Oval) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("Oval_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("Oval_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -59239,13 +59239,13 @@ func (instance *Picture) Copy(source *Picture, options *CopyOptions)  error {
 }
 // Moves the picture to a specified location.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
 // Returns:
 //   void  
-func (instance *Picture) Move(upperleftrow int32, upperleftcolumn int32)  error {
+func (instance *Picture) Move(toprow int32, leftcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCH(C.CString("Picture_Move"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCH(C.CString("Picture_Move"), instance.ptr, C.int(toprow), C.int(leftcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -60188,15 +60188,15 @@ func (instance *Picture) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *Picture) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *Picture) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("Picture_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("Picture_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -61704,7 +61704,7 @@ func (instance *Picture) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Picture) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("Picture_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("Picture_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -62683,7 +62683,7 @@ func (instance *PictureCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *PictureCollection) Camera(row int32, column int32, range_ string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIM(C.CString("PictureCollection_Camera"), instance.ptr, C.int(row), C.int(column), C.CString(range_))
+	CGoReturnPtr := C.CellsGoFunctoinZZIN(C.CString("PictureCollection_Camera"), instance.ptr, C.int(row), C.int(column), C.CString(range_))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -62694,16 +62694,16 @@ func (instance *PictureCollection) Camera(row int32, column int32, range_ string
 }
 // Adds a picture to the collection.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 //   stream - []byte 
 // Returns:
 //   int32  
-func (instance *PictureCollection) Add_Int_Int_Int_Int_Stream(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32, stream []byte)  (int32,  error)  {
+func (instance *PictureCollection) Add_Int_Int_Int_Int_Stream(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32, stream []byte)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLI(C.CString("PictureCollection_Add_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)))
+	CGoReturnPtr := C.CellsGoFunctoinZZLJ(C.CString("PictureCollection_Add_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -62714,16 +62714,16 @@ func (instance *PictureCollection) Add_Int_Int_Int_Int_Stream(upperleftrow int32
 }
 // Adds a picture to the collection.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 //   fileName - string 
 // Returns:
 //   int32  
-func (instance *PictureCollection) Add_Int_Int_Int_Int_String(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32, filename string)  (int32,  error)  {
+func (instance *PictureCollection) Add_Int_Int_Int_Int_String(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32, filename string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGT(C.CString("PictureCollection_Add_Integer_Integer_Integer_Integer_String"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn), C.CString(filename))
+	CGoReturnPtr := C.CellsGoFunctoinZZGT(C.CString("PictureCollection_Add_Integer_Integer_Integer_Integer_String"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn), C.CString(filename))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -62734,14 +62734,14 @@ func (instance *PictureCollection) Add_Int_Int_Int_Int_String(upperleftrow int32
 }
 // Adds a picture to the collection.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
 //   stream - []byte 
 // Returns:
 //   int32  
-func (instance *PictureCollection) Add_Int_Int_Stream(upperleftrow int32, upperleftcolumn int32, stream []byte)  (int32,  error)  {
+func (instance *PictureCollection) Add_Int_Int_Stream(toprow int32, leftcolumn int32, stream []byte)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLK(C.CString("PictureCollection_Add_Integer_Integer_Stream"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)))
+	CGoReturnPtr := C.CellsGoFunctoinZZLL(C.CString("PictureCollection_Add_Integer_Integer_Stream"), instance.ptr, C.int(toprow), C.int(leftcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -62752,14 +62752,14 @@ func (instance *PictureCollection) Add_Int_Int_Stream(upperleftrow int32, upperl
 }
 // Adds a picture to the collection.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
 //   fileName - string 
 // Returns:
 //   int32  
-func (instance *PictureCollection) Add_Int_Int_String(upperleftrow int32, upperleftcolumn int32, filename string)  (int32,  error)  {
+func (instance *PictureCollection) Add_Int_Int_String(toprow int32, leftcolumn int32, filename string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIM(C.CString("PictureCollection_Add_Integer_Integer_String"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.CString(filename))
+	CGoReturnPtr := C.CellsGoFunctoinZZIN(C.CString("PictureCollection_Add_Integer_Integer_String"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.CString(filename))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -62770,16 +62770,16 @@ func (instance *PictureCollection) Add_Int_Int_String(upperleftrow int32, upperl
 }
 // Adds a picture to the collection.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
 //   stream - []byte 
 //   widthScale - int32 
 //   heightScale - int32 
 // Returns:
 //   int32  
-func (instance *PictureCollection) Add_Int_Int_Stream_Int_Int(upperleftrow int32, upperleftcolumn int32, stream []byte, widthscale int32, heightscale int32)  (int32,  error)  {
+func (instance *PictureCollection) Add_Int_Int_Stream_Int_Int(toprow int32, leftcolumn int32, stream []byte, widthscale int32, heightscale int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLL(C.CString("PictureCollection_Add_Integer_Integer_Stream_Integer_Integer"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int(widthscale), C.int(heightscale))
+	CGoReturnPtr := C.CellsGoFunctoinZZLM(C.CString("PictureCollection_Add_Integer_Integer_Stream_Integer_Integer"), instance.ptr, C.int(toprow), C.int(leftcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int(widthscale), C.int(heightscale))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -62790,16 +62790,16 @@ func (instance *PictureCollection) Add_Int_Int_Stream_Int_Int(upperleftrow int32
 }
 // Adds a picture to the collection.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
 //   fileName - string 
 //   widthScale - int32 
 //   heightScale - int32 
 // Returns:
 //   int32  
-func (instance *PictureCollection) Add_Int_Int_String_Int_Int(upperleftrow int32, upperleftcolumn int32, filename string, widthscale int32, heightscale int32)  (int32,  error)  {
+func (instance *PictureCollection) Add_Int_Int_String_Int_Int(toprow int32, leftcolumn int32, filename string, widthscale int32, heightscale int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLM(C.CString("PictureCollection_Add_Integer_Integer_String_Integer_Integer"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.CString(filename), C.int(widthscale), C.int(heightscale))
+	CGoReturnPtr := C.CellsGoFunctoinZZLN(C.CString("PictureCollection_Add_Integer_Integer_String_Integer_Integer"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.CString(filename), C.int(widthscale), C.int(heightscale))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -63504,15 +63504,15 @@ func (instance *RadioButton) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *RadioButton) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *RadioButton) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("RadioButton_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("RadioButton_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -65020,7 +65020,7 @@ func (instance *RadioButton) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *RadioButton) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("RadioButton_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("RadioButton_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -66529,15 +66529,15 @@ func (instance *RectangleShape) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *RectangleShape) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *RectangleShape) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("RectangleShape_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("RectangleShape_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -68045,7 +68045,7 @@ func (instance *RectangleShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *RectangleShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("RectangleShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("RectangleShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -70023,15 +70023,15 @@ func (instance *ScrollBar) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *ScrollBar) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *ScrollBar) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("ScrollBar_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("ScrollBar_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -71539,7 +71539,7 @@ func (instance *ScrollBar) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *ScrollBar) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("ScrollBar_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("ScrollBar_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -73273,15 +73273,15 @@ func (instance *Shape) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *Shape) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *Shape) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("Shape_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("Shape_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -74789,7 +74789,7 @@ func (instance *Shape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Shape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("Shape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("Shape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75827,7 +75827,7 @@ func (instance *ShapeCollection) AddCopy(sourceshape *Shape, toprow int32, top i
 	  sourceshape_ptr =sourceshape.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZLN(C.CString("ShapeCollection_AddCopy"), instance.ptr, sourceshape_ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left))
+	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("ShapeCollection_AddCopy"), instance.ptr, sourceshape_ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75840,17 +75840,17 @@ func (instance *ShapeCollection) AddCopy(sourceshape *Shape, toprow int32, top i
 }
 // Adds a checkbox to the worksheet.
 // Parameters:
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   CheckBox  
-func (instance *ShapeCollection) AddCheckBox(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*CheckBox,  error)  {
+func (instance *ShapeCollection) AddCheckBox(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*CheckBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("ShapeCollection_AddCheckBox"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLP(C.CString("ShapeCollection_AddCheckBox"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75863,17 +75863,17 @@ func (instance *ShapeCollection) AddCheckBox(upperleftrow int32, top int32, uppe
 }
 // Adds a text box to the worksheet.
 // Parameters:
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   TextBox  
-func (instance *ShapeCollection) AddTextBox(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*TextBox,  error)  {
+func (instance *ShapeCollection) AddTextBox(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*TextBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("ShapeCollection_AddTextBox"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLP(C.CString("ShapeCollection_AddTextBox"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75884,7 +75884,7 @@ func (instance *ShapeCollection) AddTextBox(upperleftrow int32, top int32, upper
 
 	return result, nil 
 }
-// Add an equation object to the worksheet.
+// Adds an equation object to the worksheet.
 // Parameters:
 //   topRow - int32 
 //   top - int32 
@@ -75896,7 +75896,31 @@ func (instance *ShapeCollection) AddTextBox(upperleftrow int32, top int32, upper
 //   TextBox  
 func (instance *ShapeCollection) AddEquation(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*TextBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("ShapeCollection_AddEquation"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLP(C.CString("ShapeCollection_AddEquation"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TextBox{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTextBox) 
+
+	return result, nil 
+}
+// Adds an equation object to the worksheet using LaTeX format strings.
+// Parameters:
+//   topRow - int32 
+//   top - int32 
+//   leftColumn - int32 
+//   left - int32 
+//   height - int32 
+//   width - int32 
+//   latex - string 
+// Returns:
+//   TextBox  
+func (instance *ShapeCollection) AddLaTeXEquation(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32, latex string)  (*TextBox,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZLQ(C.CString("ShapeCollection_AddLaTeXEquation"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width), C.CString(latex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75909,17 +75933,17 @@ func (instance *ShapeCollection) AddEquation(toprow int32, top int32, leftcolumn
 }
 // Adds a Spinner to the worksheet.
 // Parameters:
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   Spinner  
-func (instance *ShapeCollection) AddSpinner(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*Spinner,  error)  {
+func (instance *ShapeCollection) AddSpinner(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*Spinner,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("ShapeCollection_AddSpinner"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLP(C.CString("ShapeCollection_AddSpinner"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75932,17 +75956,17 @@ func (instance *ShapeCollection) AddSpinner(upperleftrow int32, top int32, upper
 }
 // Adds a ScrollBar to the worksheet.
 // Parameters:
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   ScrollBar  
-func (instance *ShapeCollection) AddScrollBar(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*ScrollBar,  error)  {
+func (instance *ShapeCollection) AddScrollBar(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*ScrollBar,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("ShapeCollection_AddScrollBar"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLP(C.CString("ShapeCollection_AddScrollBar"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75955,17 +75979,17 @@ func (instance *ShapeCollection) AddScrollBar(upperleftrow int32, top int32, upp
 }
 // Adds a RadioButton to the worksheet.
 // Parameters:
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   RadioButton  
-func (instance *ShapeCollection) AddRadioButton(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*RadioButton,  error)  {
+func (instance *ShapeCollection) AddRadioButton(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*RadioButton,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("ShapeCollection_AddRadioButton"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLP(C.CString("ShapeCollection_AddRadioButton"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75978,17 +76002,17 @@ func (instance *ShapeCollection) AddRadioButton(upperleftrow int32, top int32, u
 }
 // Adds a ListBox to the worksheet.
 // Parameters:
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   ListBox  
-func (instance *ShapeCollection) AddListBox(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*ListBox,  error)  {
+func (instance *ShapeCollection) AddListBox(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*ListBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("ShapeCollection_AddListBox"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLP(C.CString("ShapeCollection_AddListBox"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76001,17 +76025,17 @@ func (instance *ShapeCollection) AddListBox(upperleftrow int32, top int32, upper
 }
 // Adds a ComboBox to the worksheet.
 // Parameters:
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   ComboBox  
-func (instance *ShapeCollection) AddComboBox(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*ComboBox,  error)  {
+func (instance *ShapeCollection) AddComboBox(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*ComboBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("ShapeCollection_AddComboBox"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLP(C.CString("ShapeCollection_AddComboBox"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76024,17 +76048,17 @@ func (instance *ShapeCollection) AddComboBox(upperleftrow int32, top int32, uppe
 }
 // Adds a GroupBox to the worksheet.
 // Parameters:
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   GroupBox  
-func (instance *ShapeCollection) AddGroupBox(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*GroupBox,  error)  {
+func (instance *ShapeCollection) AddGroupBox(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*GroupBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("ShapeCollection_AddGroupBox"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLP(C.CString("ShapeCollection_AddGroupBox"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76047,17 +76071,17 @@ func (instance *ShapeCollection) AddGroupBox(upperleftrow int32, top int32, uppe
 }
 // Adds a Button to the worksheet.
 // Parameters:
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   Button  
-func (instance *ShapeCollection) AddButton(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*Button,  error)  {
+func (instance *ShapeCollection) AddButton(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*Button,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("ShapeCollection_AddButton"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLP(C.CString("ShapeCollection_AddButton"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76070,17 +76094,17 @@ func (instance *ShapeCollection) AddButton(upperleftrow int32, top int32, upperl
 }
 // Adds a Label to the worksheet.
 // Parameters:
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   Label  
-func (instance *ShapeCollection) AddLabel(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*Label,  error)  {
+func (instance *ShapeCollection) AddLabel(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*Label,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("ShapeCollection_AddLabel"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLP(C.CString("ShapeCollection_AddLabel"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76149,7 +76173,7 @@ func (instance *ShapeCollection) AddTextBoxInChart(top int32, left int32, height
 //   Shape  
 func (instance *ShapeCollection) AddTextEffectInChart(effect MsoPresetTextEffect, text string, fontname string, size int32, fontbold bool, fontitalic bool, top int32, left int32, height int32, width int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLP(C.CString("ShapeCollection_AddTextEffectInChart"), instance.ptr, C.int( int32(effect)), C.CString(text), C.CString(fontname), C.int(size), C.bool(fontbold), C.bool(fontitalic), C.int(top), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLR(C.CString("ShapeCollection_AddTextEffectInChart"), instance.ptr, C.int( int32(effect)), C.CString(text), C.CString(fontname), C.int(size), C.bool(fontbold), C.bool(fontitalic), C.int(top), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76168,17 +76192,17 @@ func (instance *ShapeCollection) AddTextEffectInChart(effect MsoPresetTextEffect
 //   size - int32 
 //   fontBold - bool 
 //   fontItalic - bool 
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   Shape  
-func (instance *ShapeCollection) AddTextEffect(effect MsoPresetTextEffect, text string, fontname string, size int32, fontbold bool, fontitalic bool, upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*Shape,  error)  {
+func (instance *ShapeCollection) AddTextEffect(effect MsoPresetTextEffect, text string, fontname string, size int32, fontbold bool, fontitalic bool, toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLQ(C.CString("ShapeCollection_AddTextEffect"), instance.ptr, C.int( int32(effect)), C.CString(text), C.CString(fontname), C.int(size), C.bool(fontbold), C.bool(fontitalic), C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLS(C.CString("ShapeCollection_AddTextEffect"), instance.ptr, C.int( int32(effect)), C.CString(text), C.CString(fontname), C.int(size), C.bool(fontbold), C.bool(fontitalic), C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76193,17 +76217,17 @@ func (instance *ShapeCollection) AddTextEffect(effect MsoPresetTextEffect, text 
 // Parameters:
 //   style - int32 
 //   text - string 
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   Shape  
-func (instance *ShapeCollection) AddWordArt(style PresetWordArtStyle, text string, upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*Shape,  error)  {
+func (instance *ShapeCollection) AddWordArt(style PresetWordArtStyle, text string, toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLR(C.CString("ShapeCollection_AddWordArt"), instance.ptr, C.int( int32(style)), C.CString(text), C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLT(C.CString("ShapeCollection_AddWordArt"), instance.ptr, C.int( int32(style)), C.CString(text), C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76216,17 +76240,17 @@ func (instance *ShapeCollection) AddWordArt(style PresetWordArtStyle, text strin
 }
 // Adds a RectangleShape to the worksheet.
 // Parameters:
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   RectangleShape  
-func (instance *ShapeCollection) AddRectangle(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*RectangleShape,  error)  {
+func (instance *ShapeCollection) AddRectangle(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*RectangleShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("ShapeCollection_AddRectangle"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLP(C.CString("ShapeCollection_AddRectangle"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76239,17 +76263,17 @@ func (instance *ShapeCollection) AddRectangle(upperleftrow int32, top int32, upp
 }
 // Adds a Oval to the worksheet.
 // Parameters:
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   Oval  
-func (instance *ShapeCollection) AddOval(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*Oval,  error)  {
+func (instance *ShapeCollection) AddOval(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*Oval,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("ShapeCollection_AddOval"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLP(C.CString("ShapeCollection_AddOval"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76262,17 +76286,17 @@ func (instance *ShapeCollection) AddOval(upperleftrow int32, top int32, upperlef
 }
 // Adds a LineShape to the worksheet.
 // Parameters:
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   LineShape  
-func (instance *ShapeCollection) AddLine(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*LineShape,  error)  {
+func (instance *ShapeCollection) AddLine(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*LineShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("ShapeCollection_AddLine"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLP(C.CString("ShapeCollection_AddLine"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76296,7 +76320,7 @@ func (instance *ShapeCollection) AddLine(upperleftrow int32, top int32, upperlef
 //   Shape  
 func (instance *ShapeCollection) AddFreeFloatingShape(type_ MsoDrawingType, top int32, left int32, height int32, width int32, imagedata []byte, isoriginalsize bool)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLS(C.CString("ShapeCollection_AddFreeFloatingShape"), instance.ptr, C.int( int32(type_)), C.int(top), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)), C.bool(isoriginalsize))
+	CGoReturnPtr := C.CellsGoFunctoinZZLU(C.CString("ShapeCollection_AddFreeFloatingShape"), instance.ptr, C.int( int32(type_)), C.int(top), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)), C.bool(isoriginalsize))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76320,7 +76344,7 @@ func (instance *ShapeCollection) AddFreeFloatingShape(type_ MsoDrawingType, top 
 //   Shape  
 func (instance *ShapeCollection) AddShapeInChart_MsoDrawingType_PlacementType_Int_Int_Int_Int_Stream(type_ MsoDrawingType, placement PlacementType, left int32, top int32, right int32, bottom int32, imagedata []byte)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLT(C.CString("ShapeCollection_AddShapeInChart_MsoDrawingType_PlacementType_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.int(left), C.int(top), C.int(right), C.int(bottom), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZZLV(C.CString("ShapeCollection_AddShapeInChart_MsoDrawingType_PlacementType_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.int(left), C.int(top), C.int(right), C.int(bottom), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76343,7 +76367,7 @@ func (instance *ShapeCollection) AddShapeInChart_MsoDrawingType_PlacementType_In
 //   Shape  
 func (instance *ShapeCollection) AddShapeInChart_MsoDrawingType_PlacementType_Int_Int_Int_Int(type_ MsoDrawingType, placement PlacementType, left int32, top int32, right int32, bottom int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLU(C.CString("ShapeCollection_AddShapeInChart_MsoDrawingType_PlacementType_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.int(left), C.int(top), C.int(right), C.int(bottom))
+	CGoReturnPtr := C.CellsGoFunctoinZZLW(C.CString("ShapeCollection_AddShapeInChart_MsoDrawingType_PlacementType_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.int(left), C.int(top), C.int(right), C.int(bottom))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76366,7 +76390,7 @@ func (instance *ShapeCollection) AddShapeInChart_MsoDrawingType_PlacementType_In
 //   Shape  
 func (instance *ShapeCollection) AddShapeInChartByScale_MsoDrawingType_PlacementType_Double_Double_Double_Double(type_ MsoDrawingType, placement PlacementType, left float64, top float64, right float64, bottom float64)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLV(C.CString("ShapeCollection_AddShapeInChartByScale_MsoDrawingType_PlacementType_Double_Double_Double_Double"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.double(left), C.double(top), C.double(right), C.double(bottom))
+	CGoReturnPtr := C.CellsGoFunctoinZZLX(C.CString("ShapeCollection_AddShapeInChartByScale_MsoDrawingType_PlacementType_Double_Double_Double_Double"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.double(left), C.double(top), C.double(right), C.double(bottom))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76390,7 +76414,7 @@ func (instance *ShapeCollection) AddShapeInChartByScale_MsoDrawingType_Placement
 //   Shape  
 func (instance *ShapeCollection) AddShapeInChartByScale_MsoDrawingType_PlacementType_Double_Double_Double_Double_Stream(type_ MsoDrawingType, placement PlacementType, left float64, top float64, right float64, bottom float64, imagedata []byte)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLW(C.CString("ShapeCollection_AddShapeInChartByScale_MsoDrawingType_PlacementType_Double_Double_Double_Double_Stream"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.double(left), C.double(top), C.double(right), C.double(bottom), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZZLY(C.CString("ShapeCollection_AddShapeInChartByScale_MsoDrawingType_PlacementType_Double_Double_Double_Double_Stream"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.double(left), C.double(top), C.double(right), C.double(bottom), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76403,17 +76427,17 @@ func (instance *ShapeCollection) AddShapeInChartByScale_MsoDrawingType_Placement
 }
 // Adds a ArcShape to the worksheet.
 // Parameters:
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   ArcShape  
-func (instance *ShapeCollection) AddArc(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*ArcShape,  error)  {
+func (instance *ShapeCollection) AddArc(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*ArcShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("ShapeCollection_AddArc"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLP(C.CString("ShapeCollection_AddArc"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76427,17 +76451,17 @@ func (instance *ShapeCollection) AddArc(upperleftrow int32, top int32, upperleft
 // Adds a Shape to the worksheet.
 // Parameters:
 //   type - int32 
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   Shape  
-func (instance *ShapeCollection) AddShape(type_ MsoDrawingType, upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*Shape,  error)  {
+func (instance *ShapeCollection) AddShape(type_ MsoDrawingType, toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLX(C.CString("ShapeCollection_AddShape"), instance.ptr, C.int( int32(type_)), C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZMA(C.CString("ShapeCollection_AddShape"), instance.ptr, C.int( int32(type_)), C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76451,17 +76475,17 @@ func (instance *ShapeCollection) AddShape(type_ MsoDrawingType, upperleftrow int
 // Adds a AutoShape to the worksheet.
 // Parameters:
 //   type - int32 
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   Shape  
-func (instance *ShapeCollection) AddAutoShape(type_ AutoShapeType, upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32)  (*Shape,  error)  {
+func (instance *ShapeCollection) AddAutoShape(type_ AutoShapeType, toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLX(C.CString("ShapeCollection_AddAutoShape"), instance.ptr, C.int( int32(type_)), C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZMA(C.CString("ShapeCollection_AddAutoShape"), instance.ptr, C.int( int32(type_)), C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76483,7 +76507,7 @@ func (instance *ShapeCollection) AddAutoShape(type_ AutoShapeType, upperleftrow 
 //   Shape  
 func (instance *ShapeCollection) AddAutoShapeInChart(type_ AutoShapeType, top int32, left int32, height int32, width int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLY(C.CString("ShapeCollection_AddAutoShapeInChart"), instance.ptr, C.int( int32(type_)), C.int(top), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZMB(C.CString("ShapeCollection_AddAutoShapeInChart"), instance.ptr, C.int( int32(type_)), C.int(top), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76507,7 +76531,7 @@ func (instance *ShapeCollection) AddAutoShapeInChart(type_ AutoShapeType, top in
 //   Shape  
 func (instance *ShapeCollection) AddActiveXControl(type_ ControlType, toprow int32, top int32, leftcolumn int32, left int32, width int32, height int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLX(C.CString("ShapeCollection_AddActiveXControl"), instance.ptr, C.int( int32(type_)), C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(width), C.int(height))
+	CGoReturnPtr := C.CellsGoFunctoinZZMA(C.CString("ShapeCollection_AddActiveXControl"), instance.ptr, C.int( int32(type_)), C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(width), C.int(height))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76520,16 +76544,16 @@ func (instance *ShapeCollection) AddActiveXControl(type_ ControlType, toprow int
 }
 // Adds a picture to the collection.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 //   stream - []byte 
 // Returns:
 //   Picture  
-func (instance *ShapeCollection) AddPicture_Int_Int_Int_Int_Stream(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32, stream []byte)  (*Picture,  error)  {
+func (instance *ShapeCollection) AddPicture_Int_Int_Int_Int_Stream(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32, stream []byte)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMA(C.CString("ShapeCollection_AddPicture_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)))
+	CGoReturnPtr := C.CellsGoFunctoinZZMC(C.CString("ShapeCollection_AddPicture_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76542,16 +76566,16 @@ func (instance *ShapeCollection) AddPicture_Int_Int_Int_Int_Stream(upperleftrow 
 }
 // Adds a picture to the collection.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
 //   stream - []byte 
 //   widthScale - int32 
 //   heightScale - int32 
 // Returns:
 //   Picture  
-func (instance *ShapeCollection) AddPicture_Int_Int_Stream_Int_Int(upperleftrow int32, upperleftcolumn int32, stream []byte, widthscale int32, heightscale int32)  (*Picture,  error)  {
+func (instance *ShapeCollection) AddPicture_Int_Int_Stream_Int_Int(toprow int32, leftcolumn int32, stream []byte, widthscale int32, heightscale int32)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMB(C.CString("ShapeCollection_AddPicture_Integer_Integer_Stream_Integer_Integer"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int(widthscale), C.int(heightscale))
+	CGoReturnPtr := C.CellsGoFunctoinZZMD(C.CString("ShapeCollection_AddPicture_Integer_Integer_Stream_Integer_Integer"), instance.ptr, C.int(toprow), C.int(leftcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int(widthscale), C.int(heightscale))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76564,9 +76588,9 @@ func (instance *ShapeCollection) AddPicture_Int_Int_Stream_Int_Int(upperleftrow 
 }
 // Adds svg image.
 // Parameters:
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
@@ -76574,9 +76598,9 @@ func (instance *ShapeCollection) AddPicture_Int_Int_Stream_Int_Int(upperleftrow 
 //   compatibleImageData - []byte 
 // Returns:
 //   Picture  
-func (instance *ShapeCollection) AddSvg(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32, svgdata []byte, compatibleimagedata []byte)  (*Picture,  error)  {
+func (instance *ShapeCollection) AddSvg(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32, svgdata []byte, compatibleimagedata []byte)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMC(C.CString("ShapeCollection_AddSvg"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&svgdata[0]), C.int( len(svgdata)), unsafe.Pointer(&compatibleimagedata[0]), C.int( len(compatibleimagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZZME(C.CString("ShapeCollection_AddSvg"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&svgdata[0]), C.int( len(svgdata)), unsafe.Pointer(&compatibleimagedata[0]), C.int( len(compatibleimagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76589,9 +76613,9 @@ func (instance *ShapeCollection) AddSvg(upperleftrow int32, top int32, upperleft
 }
 // Adds svg image.
 // Parameters:
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
@@ -76599,9 +76623,9 @@ func (instance *ShapeCollection) AddSvg(upperleftrow int32, top int32, upperleft
 //   compatibleImageData - []byte 
 // Returns:
 //   Picture  
-func (instance *ShapeCollection) AddIcons(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32, imagebytedata []byte, compatibleimagedata []byte)  (*Picture,  error)  {
+func (instance *ShapeCollection) AddIcons(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32, imagebytedata []byte, compatibleimagedata []byte)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMC(C.CString("ShapeCollection_AddIcons"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&imagebytedata[0]), C.int( len(imagebytedata)), unsafe.Pointer(&compatibleimagedata[0]), C.int( len(compatibleimagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZZME(C.CString("ShapeCollection_AddIcons"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&imagebytedata[0]), C.int( len(imagebytedata)), unsafe.Pointer(&compatibleimagedata[0]), C.int( len(compatibleimagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76614,16 +76638,16 @@ func (instance *ShapeCollection) AddIcons(upperleftrow int32, top int32, upperle
 }
 // Add a linked picture.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
 //   height - int32 
 //   width - int32 
 //   sourceFullName - string 
 // Returns:
 //   Picture  
-func (instance *ShapeCollection) AddLinkedPicture(upperleftrow int32, upperleftcolumn int32, height int32, width int32, sourcefullname string)  (*Picture,  error)  {
+func (instance *ShapeCollection) AddLinkedPicture(toprow int32, leftcolumn int32, height int32, width int32, sourcefullname string)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMD(C.CString("ShapeCollection_AddLinkedPicture"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(height), C.int(width), C.CString(sourcefullname))
+	CGoReturnPtr := C.CellsGoFunctoinZZMF(C.CString("ShapeCollection_AddLinkedPicture"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(height), C.int(width), C.CString(sourcefullname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76636,16 +76660,16 @@ func (instance *ShapeCollection) AddLinkedPicture(upperleftrow int32, upperleftc
 }
 // Add a linked picture.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
 //   height - int32 
 //   width - int32 
 //   sourceFullName - string 
 // Returns:
 //   OleObject  
-func (instance *ShapeCollection) AddOleObjectWithLinkedImage(upperleftrow int32, upperleftcolumn int32, height int32, width int32, sourcefullname string)  (*OleObject,  error)  {
+func (instance *ShapeCollection) AddOleObjectWithLinkedImage(toprow int32, leftcolumn int32, height int32, width int32, sourcefullname string)  (*OleObject,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMD(C.CString("ShapeCollection_AddOleObjectWithLinkedImage"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(height), C.int(width), C.CString(sourcefullname))
+	CGoReturnPtr := C.CellsGoFunctoinZZMF(C.CString("ShapeCollection_AddOleObjectWithLinkedImage"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(height), C.int(width), C.CString(sourcefullname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76667,7 +76691,7 @@ func (instance *ShapeCollection) AddOleObjectWithLinkedImage(upperleftrow int32,
 //   Picture  
 func (instance *ShapeCollection) AddPictureInChart(top int32, left int32, stream []byte, widthscale int32, heightscale int32)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMB(C.CString("ShapeCollection_AddPictureInChart"), instance.ptr, C.int(top), C.int(left), unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int(widthscale), C.int(heightscale))
+	CGoReturnPtr := C.CellsGoFunctoinZZMD(C.CString("ShapeCollection_AddPictureInChart"), instance.ptr, C.int(top), C.int(left), unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int(widthscale), C.int(heightscale))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76680,18 +76704,18 @@ func (instance *ShapeCollection) AddPictureInChart(top int32, left int32, stream
 }
 // Adds an OleObject.
 // Parameters:
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 //   imageData - []byte 
 // Returns:
 //   OleObject  
-func (instance *ShapeCollection) AddOleObject(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32, imagedata []byte)  (*OleObject,  error)  {
+func (instance *ShapeCollection) AddOleObject(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32, imagedata []byte)  (*OleObject,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZME(C.CString("ShapeCollection_AddOleObject"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZZMG(C.CString("ShapeCollection_AddOleObject"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76721,7 +76745,7 @@ func (instance *ShapeCollection) CopyCommentsInRange(shapes *ShapeCollection, ca
 	  ca_ptr =ca.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZMF(C.CString("ShapeCollection_CopyCommentsInRange"), instance.ptr, shapes_ptr, ca_ptr, C.int(destrow), C.int(destcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZMH(C.CString("ShapeCollection_CopyCommentsInRange"), instance.ptr, shapes_ptr, ca_ptr, C.int(destrow), C.int(destcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -76749,7 +76773,7 @@ func (instance *ShapeCollection) CopyInRange(sourceshapes *ShapeCollection, ca *
 	  ca_ptr =ca.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZMG(C.CString("ShapeCollection_CopyInRange"), instance.ptr, sourceshapes_ptr, ca_ptr, C.int(destrow), C.int(destcolumn), C.bool(iscontained))
+	CGoReturnPtr := C.CellsGoFunctoinZZMI(C.CString("ShapeCollection_CopyInRange"), instance.ptr, sourceshapes_ptr, ca_ptr, C.int(destrow), C.int(destcolumn), C.bool(iscontained))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -76811,7 +76835,7 @@ func (instance *ShapeCollection) Group(groupitems []Shape)  (*GroupShape,  error
 	}
 
 
-	CGoReturnPtr := C.CellsGoFunctoinZZIF(C.CString("ShapeCollection_Group"), instance.ptr, unsafe.Pointer(&vector_groupitems[0]), C.int( len(groupitems)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIG(C.CString("ShapeCollection_Group"), instance.ptr, unsafe.Pointer(&vector_groupitems[0]), C.int( len(groupitems)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76905,16 +76929,16 @@ func (instance *ShapeCollection) UpdateSelectedValue()  error {
 }
 // Adds a freeform shape to the worksheet.
 // Parameters:
-//   upperLeftRow - int32 
+//   topRow - int32 
 //   top - int32 
-//   upperLeftColumn - int32 
+//   leftColumn - int32 
 //   left - int32 
 //   height - int32 
 //   width - int32 
 //   paths - []ShapePath 
 // Returns:
 //   Shape  
-func (instance *ShapeCollection) AddFreeform(upperleftrow int32, top int32, upperleftcolumn int32, left int32, height int32, width int32, paths []ShapePath)  (*Shape,  error)  {
+func (instance *ShapeCollection) AddFreeform(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32, paths []ShapePath)  (*Shape,  error)  {
 	
 	paths_length := len(paths)
 	vector_paths:= make([]unsafe.Pointer, paths_length)
@@ -76923,7 +76947,7 @@ func (instance *ShapeCollection) AddFreeform(upperleftrow int32, top int32, uppe
 	}
 
 
-	CGoReturnPtr := C.CellsGoFunctoinZZMH(C.CString("ShapeCollection_AddFreeform"), instance.ptr, C.int(upperleftrow), C.int(top), C.int(upperleftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&vector_paths[0]), C.int( len(paths)))
+	CGoReturnPtr := C.CellsGoFunctoinZZMJ(C.CString("ShapeCollection_AddFreeform"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&vector_paths[0]), C.int( len(paths)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76936,19 +76960,19 @@ func (instance *ShapeCollection) AddFreeform(upperleftrow int32, top int32, uppe
 }
 // Adds a Signature Line to the worksheet.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
 //   signatureLine - SignatureLine 
 // Returns:
 //   Picture  
-func (instance *ShapeCollection) AddSignatureLine(upperleftrow int32, upperleftcolumn int32, signatureline *SignatureLine)  (*Picture,  error)  {
+func (instance *ShapeCollection) AddSignatureLine(toprow int32, leftcolumn int32, signatureline *SignatureLine)  (*Picture,  error)  {
 	
 	var signatureline_ptr unsafe.Pointer = nil
 	if signatureline != nil {
 	  signatureline_ptr =signatureline.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZMI(C.CString("ShapeCollection_AddSignatureLine"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), signatureline_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZMK(C.CString("ShapeCollection_AddSignatureLine"), instance.ptr, C.int(toprow), C.int(leftcolumn), signatureline_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -77112,7 +77136,7 @@ func (instance *ShapeGuideCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ShapeGuideCollection) Add(name string, val float64)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("ShapeGuideCollection_Add"), instance.ptr, C.CString(name), C.double(val))
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("ShapeGuideCollection_Add"), instance.ptr, C.CString(name), C.double(val))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -77279,7 +77303,7 @@ func (instance *ShapePath) SetHeightPixel(value int32)  error {
 //   void  
 func (instance *ShapePath) MoveTo(x float32, y float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMJ(C.CString("ShapePath_MoveTo"), instance.ptr, C.float(x), C.float(y))
+	CGoReturnPtr := C.CellsGoFunctoinZZML(C.CString("ShapePath_MoveTo"), instance.ptr, C.float(x), C.float(y))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -77296,7 +77320,7 @@ func (instance *ShapePath) MoveTo(x float32, y float32)  error {
 //   void  
 func (instance *ShapePath) LineTo(x float32, y float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMJ(C.CString("ShapePath_LineTo"), instance.ptr, C.float(x), C.float(y))
+	CGoReturnPtr := C.CellsGoFunctoinZZML(C.CString("ShapePath_LineTo"), instance.ptr, C.float(x), C.float(y))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -77316,7 +77340,7 @@ func (instance *ShapePath) LineTo(x float32, y float32)  error {
 //   void  
 func (instance *ShapePath) CubicBezierTo(ctrx1 float32, ctry1 float32, ctrx2 float32, ctry2 float32, endx float32, endy float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMK(C.CString("ShapePath_CubicBezierTo"), instance.ptr, C.float(ctrx1), C.float(ctry1), C.float(ctrx2), C.float(ctry2), C.float(endx), C.float(endy))
+	CGoReturnPtr := C.CellsGoFunctoinZZMM(C.CString("ShapePath_CubicBezierTo"), instance.ptr, C.float(ctrx1), C.float(ctry1), C.float(ctrx2), C.float(ctry2), C.float(endx), C.float(endy))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -77334,7 +77358,7 @@ func (instance *ShapePath) CubicBezierTo(ctrx1 float32, ctry1 float32, ctrx2 flo
 //   void  
 func (instance *ShapePath) ArcTo(wr float32, hr float32, stang float32, swang float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZML(C.CString("ShapePath_ArcTo"), instance.ptr, C.float(wr), C.float(hr), C.float(stang), C.float(swang))
+	CGoReturnPtr := C.CellsGoFunctoinZZMN(C.CString("ShapePath_ArcTo"), instance.ptr, C.float(wr), C.float(hr), C.float(stang), C.float(swang))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -78934,15 +78958,15 @@ func (instance *SlicerShape) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *SlicerShape) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *SlicerShape) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("SlicerShape_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("SlicerShape_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -80450,7 +80474,7 @@ func (instance *SlicerShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *SlicerShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("SlicerShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("SlicerShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -81975,15 +81999,15 @@ func (instance *SmartArtShape) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *SmartArtShape) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *SmartArtShape) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("SmartArtShape_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("SmartArtShape_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -83491,7 +83515,7 @@ func (instance *SmartArtShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *SmartArtShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("SmartArtShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("SmartArtShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -85318,15 +85342,15 @@ func (instance *Spinner) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *Spinner) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *Spinner) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("Spinner_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("Spinner_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -86834,7 +86858,7 @@ func (instance *Spinner) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Spinner) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("Spinner_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("Spinner_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -88380,15 +88404,15 @@ func (instance *TextBox) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *TextBox) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *TextBox) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("TextBox_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("TextBox_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -89896,7 +89920,7 @@ func (instance *TextBox) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *TextBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("TextBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("TextBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -90925,15 +90949,15 @@ func (instance *TextBoxCollection) Get_String(name string)  (*TextBox,  error)  
 }
 // Adds a textbox to the collection.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
 //   height - int32 
 //   width - int32 
 // Returns:
 //   int32  
-func (instance *TextBoxCollection) Add(upperleftrow int32, upperleftcolumn int32, height int32, width int32)  (int32,  error)  {
+func (instance *TextBoxCollection) Add(toprow int32, leftcolumn int32, height int32, width int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKT(C.CString("TextBoxCollection_Add"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("TextBoxCollection_Add"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -92984,15 +93008,15 @@ func (instance *TimelineShape) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *TimelineShape) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *TimelineShape) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("TimelineShape_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("TimelineShape_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -94500,7 +94524,7 @@ func (instance *TimelineShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *TimelineShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("TimelineShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("TimelineShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -96104,15 +96128,15 @@ func (instance *WebExtensionShape) GetHyperlink()  (*Hyperlink,  error)  {
 }
 // Moves the shape to a specified range.
 // Parameters:
-//   upperLeftRow - int32 
-//   upperLeftColumn - int32 
-//   lowerRightRow - int32 
-//   lowerRightColumn - int32 
+//   topRow - int32 
+//   leftColumn - int32 
+//   bottomRow - int32 
+//   rightColumn - int32 
 // Returns:
 //   void  
-func (instance *WebExtensionShape) MoveToRange(upperleftrow int32, upperleftcolumn int32, lowerrightrow int32, lowerrightcolumn int32)  error {
+func (instance *WebExtensionShape) MoveToRange(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("WebExtensionShape_MoveToRange"), instance.ptr, C.int(upperleftrow), C.int(upperleftcolumn), C.int(lowerrightrow), C.int(lowerrightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZCD(C.CString("WebExtensionShape_MoveToRange"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -97620,7 +97644,7 @@ func (instance *WebExtensionShape) GetConnectionPoints()  ([][]float32,  error) 
 //   []byte  
 func (instance *WebExtensionShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("WebExtensionShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("WebExtensionShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err

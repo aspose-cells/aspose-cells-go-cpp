@@ -1014,7 +1014,7 @@ func (instance *ListObject) PutCellValue_Int_Int_Object_Bool(rowoffset int32, co
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOX(C.CString("ListObject_PutCellValue_Integer_Integer_Object_Boolean"), instance.ptr, C.int(rowoffset), C.int(columnoffset), value_ptr, C.bool(istotalsrowlabel))
+	CGoReturnPtr := C.CellsGoFunctoinZZPA(C.CString("ListObject_PutCellValue_Integer_Integer_Object_Boolean"), instance.ptr, C.int(rowoffset), C.int(columnoffset), value_ptr, C.bool(istotalsrowlabel))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1031,7 +1031,7 @@ func (instance *ListObject) PutCellValue_Int_Int_Object_Bool(rowoffset int32, co
 //   void  
 func (instance *ListObject) PutCellFormula_Int_Int_String(rowoffset int32, columnoffset int32, formula string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMM(C.CString("ListObject_PutCellFormula_Integer_Integer_String"), instance.ptr, C.int(rowoffset), C.int(columnoffset), C.CString(formula))
+	CGoReturnPtr := C.CellsGoFunctoinZZMO(C.CString("ListObject_PutCellFormula_Integer_Integer_String"), instance.ptr, C.int(rowoffset), C.int(columnoffset), C.CString(formula))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1049,7 +1049,7 @@ func (instance *ListObject) PutCellFormula_Int_Int_String(rowoffset int32, colum
 //   void  
 func (instance *ListObject) PutCellFormula_Int_Int_String_Bool(rowoffset int32, columnoffset int32, formula string, istotalsrowformula bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOY(C.CString("ListObject_PutCellFormula_Integer_Integer_String_Boolean"), instance.ptr, C.int(rowoffset), C.int(columnoffset), C.CString(formula), C.bool(istotalsrowformula))
+	CGoReturnPtr := C.CellsGoFunctoinZZPB(C.CString("ListObject_PutCellFormula_Integer_Integer_String_Boolean"), instance.ptr, C.int(rowoffset), C.int(columnoffset), C.CString(formula), C.bool(istotalsrowformula))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1668,7 +1668,7 @@ func (instance *ListObjectCollection) Get_String(tablename string)  (*ListObject
 //   int32  
 func (instance *ListObjectCollection) Add_Int_Int_Int_Int_Bool(startrow int32, startcolumn int32, endrow int32, endcolumn int32, hasheaders bool)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPA(C.CString("ListObjectCollection_Add_Integer_Integer_Integer_Integer_Boolean"), instance.ptr, C.int(startrow), C.int(startcolumn), C.int(endrow), C.int(endcolumn), C.bool(hasheaders))
+	CGoReturnPtr := C.CellsGoFunctoinZZPC(C.CString("ListObjectCollection_Add_Integer_Integer_Integer_Integer_Boolean"), instance.ptr, C.int(startrow), C.int(startcolumn), C.int(endrow), C.int(endcolumn), C.bool(hasheaders))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err

@@ -501,7 +501,7 @@ func (instance *WebExtensionCollection) Add()  (int32,  error)  {
 //   int32  
 func (instance *WebExtensionCollection) AddWebVideoPlayer(url string, autoplay bool, starttime int32, endtime int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPO(C.CString("WebExtensionCollection_AddWebVideoPlayer"), instance.ptr, C.CString(url), C.bool(autoplay), C.int(starttime), C.int(endtime))
+	CGoReturnPtr := C.CellsGoFunctoinZZPR(C.CString("WebExtensionCollection_AddWebVideoPlayer"), instance.ptr, C.CString(url), C.bool(autoplay), C.int(starttime), C.int(endtime))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -716,7 +716,7 @@ func (instance *WebExtensionPropertyCollection) Get_String(name string)  (*WebEx
 //   int32  
 func (instance *WebExtensionPropertyCollection) Add(name string, value string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("WebExtensionPropertyCollection_Add"), instance.ptr, C.CString(name), C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("WebExtensionPropertyCollection_Add"), instance.ptr, C.CString(name), C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
