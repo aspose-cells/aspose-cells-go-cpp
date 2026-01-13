@@ -21,25 +21,45 @@ import (
 	"unsafe" 
 )
 
+/**************Enum ItemsWithNoDataShowMode *****************/
+
+// Represent the type how to show items with no data for slicer.
+type ItemsWithNoDataShowMode int32
+
+const(
+// Hide items with no data.
+ItemsWithNoDataShowMode_None ItemsWithNoDataShowMode = 0 
+
+// Show items with no data last.
+ItemsWithNoDataShowMode_Last ItemsWithNoDataShowMode = 1 
+
+// Show items with no data with natural order.
+ItemsWithNoDataShowMode_Natural ItemsWithNoDataShowMode = 2 
+)
+
+func Int32ToItemsWithNoDataShowMode(value int32)(ItemsWithNoDataShowMode ,error){
+	switch value {
+		case 0:  return ItemsWithNoDataShowMode_None, nil  
+		case 1:  return ItemsWithNoDataShowMode_Last, nil  
+		case 2:  return ItemsWithNoDataShowMode_Natural, nil  
+		default:
+			return 0 ,fmt.Errorf("invalid ItemsWithNoDataShowMode value: %d", value)
+	}
+}
+
 /**************Enum SlicerCacheCrossFilterType *****************/
 
-// Represent the type of SlicerCacheCrossFilterType
+// Represent the type how to show items with no data for slicer.
 type SlicerCacheCrossFilterType int32
 
 const(
-// The table style element of the slicer style for slicer items
-// with no data is not applied to slicer items with no data, and slicer items
-// with no data are not sorted separately in the list of slicer items in the slicer view
+// Hide items with no data.
 SlicerCacheCrossFilterType_None SlicerCacheCrossFilterType = 0 
 
-// The table style element of the slicer style for slicer items with
-// no data is applied to slicer items with no data, and slicer items
-// with no data are sorted at the bottom in the list of slicer items in the slicer view
+// Show items with data at top.
 SlicerCacheCrossFilterType_ShowItemsWithDataAtTop SlicerCacheCrossFilterType = 1 
 
-// The table style element of the slicer style for slicer items with no data
-// is applied to slicer items with no data, and slicer items with no data
-// are not sorted separately in the list of slicer items in the slicer view.
+// Show items with no data with natural order.
 SlicerCacheCrossFilterType_ShowItemsWithNoData SlicerCacheCrossFilterType = 2 
 )
 
@@ -50,32 +70,6 @@ func Int32ToSlicerCacheCrossFilterType(value int32)(SlicerCacheCrossFilterType ,
 		case 2:  return SlicerCacheCrossFilterType_ShowItemsWithNoData, nil  
 		default:
 			return 0 ,fmt.Errorf("invalid SlicerCacheCrossFilterType value: %d", value)
-	}
-}
-
-/**************Enum SlicerCacheItemSortType *****************/
-
-// Specify the sort type of SlicerCacheItem
-type SlicerCacheItemSortType int32
-
-const(
-// Original data order.
-SlicerCacheItemSortType_Natural SlicerCacheItemSortType = 0 
-
-// Ascending sort type
-SlicerCacheItemSortType_Ascending SlicerCacheItemSortType = 1 
-
-// Descending sort type
-SlicerCacheItemSortType_Descending SlicerCacheItemSortType = 2 
-)
-
-func Int32ToSlicerCacheItemSortType(value int32)(SlicerCacheItemSortType ,error){
-	switch value {
-		case 0:  return SlicerCacheItemSortType_Natural, nil  
-		case 1:  return SlicerCacheItemSortType_Ascending, nil  
-		case 2:  return SlicerCacheItemSortType_Descending, nil  
-		default:
-			return 0 ,fmt.Errorf("invalid SlicerCacheItemSortType value: %d", value)
 	}
 }
 
@@ -174,6 +168,130 @@ func (instance *Slicer) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
+// Indicates the type of sorting items.
+// Returns:
+//   int32  
+func (instance *Slicer) GetSortOrderType()  (SortOrder,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("Slicer_GetSortOrderType"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToSortOrder(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Indicates the type of sorting items.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Slicer) SetSortOrderType(value SortOrder)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("Slicer_SetSortOrderType"), instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to show items deteleted from the data source.
+// Returns:
+//   bool  
+func (instance *Slicer) GetShowMissing()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("Slicer_GetShowMissing"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to show items deteleted from the data source.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *Slicer) SetShowMissing(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("Slicer_SetShowMissing"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to show items deteleted from the data source.
+// Returns:
+//   int32  
+func (instance *Slicer) GetShowTypeOfItemsWithNoData()  (ItemsWithNoDataShowMode,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("Slicer_GetShowTypeOfItemsWithNoData"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToItemsWithNoDataShowMode(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Indicates whether to show items deteleted from the data source.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Slicer) SetShowTypeOfItemsWithNoData(value ItemsWithNoDataShowMode)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("Slicer_SetShowTypeOfItemsWithNoData"), instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to show all items even if there are no data or they are deleted.
+// Default value is true;
+// Returns:
+//   bool  
+func (instance *Slicer) GetShowAllItems()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("Slicer_GetShowAllItems"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to show all items even if there are no data or they are deleted.
+// Default value is true;
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *Slicer) SetShowAllItems(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("Slicer_SetShowAllItems"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Adds PivotTable connection.
 // Parameters:
 //   pivot - PivotTable 
@@ -214,185 +332,6 @@ func (instance *Slicer) RemovePivotConnection(pivot *PivotTable)  error {
 
 	return nil 
 }
-// Specifies the title of the current Slicer object.
-// Returns:
-//   string  
-func (instance *Slicer) GetTitle()  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("Slicer_GetTitle"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Specifies the title of the current Slicer object.
-// Parameters:
-//   value - string 
-// Returns:
-//   void  
-func (instance *Slicer) SetTitle(value string)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("Slicer_SetTitle"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Returns or sets the descriptive (alternative) text string of the Slicer object.
-// Returns:
-//   string  
-func (instance *Slicer) GetAlternativeText()  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("Slicer_GetAlternativeText"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Returns or sets the descriptive (alternative) text string of the Slicer object.
-// Parameters:
-//   value - string 
-// Returns:
-//   void  
-func (instance *Slicer) SetAlternativeText(value string)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("Slicer_SetAlternativeText"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Indicates whether the slicer object is printable.
-// Returns:
-//   bool  
-func (instance *Slicer) IsPrintable()  (bool,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("Slicer_IsPrintable"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  true, err
-	}
-	result := bool(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Indicates whether the slicer object is printable.
-// Parameters:
-//   value - bool 
-// Returns:
-//   void  
-func (instance *Slicer) SetIsPrintable(value bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("Slicer_SetIsPrintable"), instance.ptr, C.bool(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Indicates whether the slicer shape is locked.
-// Returns:
-//   bool  
-func (instance *Slicer) IsLocked()  (bool,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("Slicer_IsLocked"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  true, err
-	}
-	result := bool(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Indicates whether the slicer shape is locked.
-// Parameters:
-//   value - bool 
-// Returns:
-//   void  
-func (instance *Slicer) SetIsLocked(value bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("Slicer_SetIsLocked"), instance.ptr, C.bool(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Represents the way the drawing object is attached to the cells below it.
-// The property controls the placement of an object on a worksheet.
-// Returns:
-//   int32  
-func (instance *Slicer) GetPlacement()  (PlacementType,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("Slicer_GetPlacement"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToPlacementType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
-// Represents the way the drawing object is attached to the cells below it.
-// The property controls the placement of an object on a worksheet.
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *Slicer) SetPlacement(value PlacementType)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("Slicer_SetPlacement"), instance.ptr, C.int( int32(value)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Indicates whether locking aspect ratio.
-// Returns:
-//   bool  
-func (instance *Slicer) GetLockedAspectRatio()  (bool,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("Slicer_GetLockedAspectRatio"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  true, err
-	}
-	result := bool(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Indicates whether locking aspect ratio.
-// Parameters:
-//   value - bool 
-// Returns:
-//   void  
-func (instance *Slicer) SetLockedAspectRatio(value bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("Slicer_SetLockedAspectRatio"), instance.ptr, C.bool(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Indicates whether the specified slicer can be moved or resized by using the user interface.
 // Returns:
 //   bool  
@@ -422,7 +361,8 @@ func (instance *Slicer) SetLockedPosition(value bool)  error {
 
 	return nil 
 }
-// Refreshing the slicer.Meanwhile, Refreshing and Calculating  relative PivotTables.
+// Refreshing the slicer.
+// Meanwhile, Refreshing and Calculating PivotTables which this slicer based on.
 // Returns:
 //   void  
 func (instance *Slicer) Refresh()  error {
@@ -470,9 +410,9 @@ func (instance *Slicer) GetSlicerCache()  (*SlicerCache,  error)  {
 // Returns the <see cref="Worksheet"/> object which contains this slicer. Read-only.
 // Returns:
 //   Worksheet  
-func (instance *Slicer) GetParent()  (*Worksheet,  error)  {
+func (instance *Slicer) GetWorksheet()  (*Worksheet,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("Slicer_GetParent"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("Slicer_GetWorksheet"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -483,8 +423,8 @@ func (instance *Slicer) GetParent()  (*Worksheet,  error)  {
 
 	return result, nil 
 }
-// Specify the type of Built-in slicer style
-// the default type is SlicerStyleLight1
+// Specify the type of Built-in slicer style.
+// The default type is SlicerStyleLight1.
 // Returns:
 //   int32  
 func (instance *Slicer) GetStyleType()  (SlicerStyleType,  error)  {
@@ -501,8 +441,8 @@ func (instance *Slicer) GetStyleType()  (SlicerStyleType,  error)  {
 
 	return result, nil 
 }
-// Specify the type of Built-in slicer style
-// the default type is SlicerStyleLight1
+// Specify the type of Built-in slicer style.
+// The default type is SlicerStyleLight1.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -575,13 +515,42 @@ func (instance *Slicer) SetCaption(value string)  error {
 
 	return nil 
 }
-// Returns or sets whether the header that displays the slicer Caption is visible
-// the default value is true
+// Specifies the zero-based index of the first slicer item.
+// Returns:
+//   int32  
+func (instance *Slicer) GetFirstItemIndex()  (int32,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("Slicer_GetFirstItemIndex"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Specifies the zero-based index of the first slicer item.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Slicer) SetFirstItemIndex(value int32)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("Slicer_SetFirstItemIndex"), instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the header of the slicer is visible.
+// The default value is true
 // Returns:
 //   bool  
-func (instance *Slicer) GetCaptionVisible()  (bool,  error)  {
+func (instance *Slicer) GetShowCaption()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("Slicer_GetCaptionVisible"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("Slicer_GetShowCaption"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -590,15 +559,15 @@ func (instance *Slicer) GetCaptionVisible()  (bool,  error)  {
 
 	return result, nil 
 }
-// Returns or sets whether the header that displays the slicer Caption is visible
-// the default value is true
+// Indicates whether the header of the slicer is visible.
+// The default value is true
 // Parameters:
 //   value - bool 
 // Returns:
 //   void  
-func (instance *Slicer) SetCaptionVisible(value bool)  error {
+func (instance *Slicer) SetShowCaption(value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("Slicer_SetCaptionVisible"), instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("Slicer_SetShowCaption"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -607,6 +576,7 @@ func (instance *Slicer) SetCaptionVisible(value bool)  error {
 	return nil 
 }
 // Returns or sets the number of columns in the specified slicer.
+// The default value is 1.
 // Returns:
 //   int32  
 func (instance *Slicer) GetNumberOfColumns()  (int32,  error)  {
@@ -621,6 +591,7 @@ func (instance *Slicer) GetNumberOfColumns()  (int32,  error)  {
 	return result, nil 
 }
 // Returns or sets the number of columns in the specified slicer.
+// The default value is 1.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -664,7 +635,7 @@ func (instance *Slicer) SetColumnWidthPixel(value int32)  error {
 
 	return nil 
 }
-// Returns or sets the width, in points, of each column in the slicer.
+// Returns or sets the width of each column in the slicer in unit of points.
 // Returns:
 //   float64  
 func (instance *Slicer) GetColumnWidth()  (float64,  error)  {
@@ -678,7 +649,7 @@ func (instance *Slicer) GetColumnWidth()  (float64,  error)  {
 
 	return result, nil 
 }
-// Returns or sets the width, in points, of each column in the slicer.
+// Returns or sets the width of each column in the slicer in unit of points.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -693,7 +664,7 @@ func (instance *Slicer) SetColumnWidth(value float64)  error {
 
 	return nil 
 }
-// Returns or sets the height, in pixels, of each row in the specified slicer.
+// Returns or sets the height of each row in the specified slicer, in unit of pixels.
 // Returns:
 //   int32  
 func (instance *Slicer) GetRowHeightPixel()  (int32,  error)  {
@@ -707,7 +678,7 @@ func (instance *Slicer) GetRowHeightPixel()  (int32,  error)  {
 
 	return result, nil 
 }
-// Returns or sets the height, in pixels, of each row in the specified slicer.
+// Returns or sets the height of each row in the specified slicer, in unit of pixels.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -722,7 +693,7 @@ func (instance *Slicer) SetRowHeightPixel(value int32)  error {
 
 	return nil 
 }
-// Returns or sets the height, in points, of each row in the specified slicer.
+// Returns or sets the height of each row in the specified slicer in unit of points.
 // Returns:
 //   float64  
 func (instance *Slicer) GetRowHeight()  (float64,  error)  {
@@ -736,7 +707,7 @@ func (instance *Slicer) GetRowHeight()  (float64,  error)  {
 
 	return result, nil 
 }
-// Returns or sets the height, in points, of each row in the specified slicer.
+// Returns or sets the height of each row in the specified slicer in unit of points.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -782,41 +753,7 @@ func (instance *SlicerCache) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Returns or sets whether a slicer is participating in cross filtering with other slicers
-// that share the same slicer cache, and how cross filtering is displayed. Read/write
-// Returns:
-//   int32  
-func (instance *SlicerCache) GetCrossFilterType()  (SlicerCacheCrossFilterType,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("SlicerCache_GetCrossFilterType"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToSlicerCacheCrossFilterType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
-// Returns or sets whether a slicer is participating in cross filtering with other slicers
-// that share the same slicer cache, and how cross filtering is displayed. Read/write
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *SlicerCache) SetCrossFilterType(value SlicerCacheCrossFilterType)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("SlicerCache_SetCrossFilterType"), instance.ptr, C.int( int32(value)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Returns whether the slicer associated with the specified slicer cache is based on an Non-OLAP data source. Read-only
+// Indicates whether the slicer associated with the specified slicer cache is based on an Non-OLAP data source.
 // Returns:
 //   bool  
 func (instance *SlicerCache) GetList()  (bool,  error)  {
@@ -934,7 +871,7 @@ func (instance *SlicerCacheItem) SetSelected(value bool)  error {
 
 	return nil 
 }
-// Returns the label text for the slicer item. Read-only.
+// Returns the label text for the slicer item.
 // Returns:
 //   string  
 func (instance *SlicerCacheItem) GetValue()  (string,  error)  {
@@ -1140,7 +1077,7 @@ func (instance *SlicerCollection) Add_PivotTable_String_String(pivot *PivotTable
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOL(C.CString("SlicerCollection_Add_PivotTable_String_String"), instance.ptr, pivot_ptr, C.CString(destcellname), C.CString(basefieldname))
+	CGoReturnPtr := C.CellsGoFunctoinZZON(C.CString("SlicerCollection_Add_PivotTable_String_String"), instance.ptr, pivot_ptr, C.CString(destcellname), C.CString(basefieldname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1164,7 +1101,7 @@ func (instance *SlicerCollection) Add_PivotTable_Int_Int_String(pivot *PivotTabl
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOM(C.CString("SlicerCollection_Add_PivotTable_Integer_Integer_String"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.CString(basefieldname))
+	CGoReturnPtr := C.CellsGoFunctoinZZOO(C.CString("SlicerCollection_Add_PivotTable_Integer_Integer_String"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.CString(basefieldname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1188,7 +1125,7 @@ func (instance *SlicerCollection) Add_PivotTable_Int_Int_Int(pivot *PivotTable, 
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPG(C.CString("SlicerCollection_Add_PivotTable_Integer_Integer_Integer"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.int(basefieldindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZPI(C.CString("SlicerCollection_Add_PivotTable_Integer_Integer_Integer"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.int(basefieldindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1211,7 +1148,7 @@ func (instance *SlicerCollection) Add_PivotTable_String_Int(pivot *PivotTable, d
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPH(C.CString("SlicerCollection_Add_PivotTable_String_Integer"), instance.ptr, pivot_ptr, C.CString(destcellname), C.int(basefieldindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZPJ(C.CString("SlicerCollection_Add_PivotTable_String_Integer"), instance.ptr, pivot_ptr, C.CString(destcellname), C.int(basefieldindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1239,7 +1176,7 @@ func (instance *SlicerCollection) Add_PivotTable_Int_Int_PivotField(pivot *Pivot
 	  basefield_ptr =basefield.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPI(C.CString("SlicerCollection_Add_PivotTable_Integer_Integer_PivotField"), instance.ptr, pivot_ptr, C.int(row), C.int(column), basefield_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPK(C.CString("SlicerCollection_Add_PivotTable_Integer_Integer_PivotField"), instance.ptr, pivot_ptr, C.int(row), C.int(column), basefield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1266,7 +1203,7 @@ func (instance *SlicerCollection) Add_PivotTable_String_PivotField(pivot *PivotT
 	  basefield_ptr =basefield.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPJ(C.CString("SlicerCollection_Add_PivotTable_String_PivotField"), instance.ptr, pivot_ptr, C.CString(destcellname), basefield_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPL(C.CString("SlicerCollection_Add_PivotTable_String_PivotField"), instance.ptr, pivot_ptr, C.CString(destcellname), basefield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1289,7 +1226,7 @@ func (instance *SlicerCollection) Add_ListObject_Int_String(table *ListObject, i
 	  table_ptr =table.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPK(C.CString("SlicerCollection_Add_ListObject_Integer_String"), instance.ptr, table_ptr, C.int(index), C.CString(destcellname))
+	CGoReturnPtr := C.CellsGoFunctoinZZPM(C.CString("SlicerCollection_Add_ListObject_Integer_String"), instance.ptr, table_ptr, C.int(index), C.CString(destcellname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1316,7 +1253,7 @@ func (instance *SlicerCollection) Add_ListObject_ListColumn_String(table *ListOb
 	  listcolumn_ptr =listcolumn.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPL(C.CString("SlicerCollection_Add_ListObject_ListColumn_String"), instance.ptr, table_ptr, listcolumn_ptr, C.CString(destcellname))
+	CGoReturnPtr := C.CellsGoFunctoinZZPN(C.CString("SlicerCollection_Add_ListObject_ListColumn_String"), instance.ptr, table_ptr, listcolumn_ptr, C.CString(destcellname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1344,7 +1281,7 @@ func (instance *SlicerCollection) Add_ListObject_ListColumn_Int_Int(table *ListO
 	  listcolumn_ptr =listcolumn.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPM(C.CString("SlicerCollection_Add_ListObject_ListColumn_Integer_Integer"), instance.ptr, table_ptr, listcolumn_ptr, C.int(row), C.int(column))
+	CGoReturnPtr := C.CellsGoFunctoinZZPO(C.CString("SlicerCollection_Add_ListObject_ListColumn_Integer_Integer"), instance.ptr, table_ptr, listcolumn_ptr, C.int(row), C.int(column))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err

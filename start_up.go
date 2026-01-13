@@ -25,8 +25,8 @@ func init() {
 }
 
 func Version() string {
-	println("---Version: v25.12.0---")
-	return "v25.12.0"
+	println("---Version: v26.1.0---")
+	return "v26.1.0"
 } 
 type UUID struct {
 	ptr unsafe.Pointer

@@ -831,7 +831,7 @@ func (instance *CharacterBulletValue) GetType()  (BulletType,  error)  {
 //   byte  
 func (instance *CharacterBulletValue) GetCharacter()  (byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGO(C.CString("CharacterBulletValue_GetCharacter"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZGP(C.CString("CharacterBulletValue_GetCharacter"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -847,7 +847,7 @@ func (instance *CharacterBulletValue) GetCharacter()  (byte,  error)  {
 //   void  
 func (instance *CharacterBulletValue) SetCharacter(value byte)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHB(C.CString("CharacterBulletValue_SetCharacter"), instance.ptr, C.char(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHC(C.CString("CharacterBulletValue_SetCharacter"), instance.ptr, C.char(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1024,7 +1024,7 @@ func (instance *FontSettingCollection) InsertText(index int32, text string)  err
 //   void  
 func (instance *FontSettingCollection) Replace_Int_Int_String(index int32, count int32, text string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMO(C.CString("FontSettingCollection_Replace_Integer_Integer_String"), instance.ptr, C.int(index), C.int(count), C.CString(text))
+	CGoReturnPtr := C.CellsGoFunctoinZZMN(C.CString("FontSettingCollection_Replace_Integer_Integer_String"), instance.ptr, C.int(index), C.int(count), C.CString(text))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2290,9 +2290,9 @@ func (instance *TextOptions) GetName()  (string,  error)  {
 //   value - string 
 // Returns:
 //   void  
-func (instance *TextOptions) SetName(value string)  error {
+func (instance *TextOptions) SetName_String(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("TextOptions_SetName"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("TextOptions_SetName_String"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2532,6 +2532,67 @@ func (instance *TextOptions) SetSpacing(value float64)  error {
 
 	return nil 
 }
+// Indicates whether the normalization of height that is to be applied to the text run.
+// Returns:
+//   bool  
+func (instance *TextOptions) IsNormalizeHeights()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextOptions_IsNormalizeHeights"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the normalization of height that is to be applied to the text run.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *TextOptions) SetIsNormalizeHeights(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextOptions_SetIsNormalizeHeights"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the text caps type.
+// Returns:
+//   int32  
+func (instance *TextOptions) GetCapsType()  (TextCapsType,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("TextOptions_GetCapsType"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTextCapsType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the text caps type.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *TextOptions) SetCapsType(value TextCapsType)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("TextOptions_SetCapsType"), instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Represent the character set.
 // Returns:
 //   int32  
@@ -2612,38 +2673,6 @@ func (instance *TextOptions) IsBold()  (bool,  error)  {
 func (instance *TextOptions) SetIsBold(value bool)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextOptions_SetIsBold"), instance.ptr, C.bool(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets and sets the text caps type.
-// Returns:
-//   int32  
-func (instance *TextOptions) GetCapsType()  (TextCapsType,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("TextOptions_GetCapsType"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToTextCapsType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
-// Gets and sets the text caps type.
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *TextOptions) SetCapsType(value TextCapsType)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("TextOptions_SetCapsType"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2831,6 +2860,22 @@ func (instance *TextOptions) SetUnderline(value FontUnderlineType)  error {
 
 	return nil 
 }
+// Sets name and scheme of the font.
+// Parameters:
+//   name - string 
+//   type - int32 
+// Returns:
+//   void  
+func (instance *TextOptions) SetName_String_FontSchemeType(name string, type_ FontSchemeType)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZFY(C.CString("TextOptions_SetName_String_FontSchemeType"), instance.ptr, C.CString(name), C.int( int32(type_)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Gets and sets the double size of the font.
 // Returns:
 //   float64  
@@ -3004,35 +3049,6 @@ func (instance *TextOptions) Equals(font *Font)  (bool,  error)  {
 	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
-}
-// Indicates whether the normalization of height that is to be applied to the text run.
-// Returns:
-//   bool  
-func (instance *TextOptions) IsNormalizeHeights()  (bool,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("TextOptions_IsNormalizeHeights"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  true, err
-	}
-	result := bool(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Indicates whether the normalization of height that is to be applied to the text run.
-// Parameters:
-//   value - bool 
-// Returns:
-//   void  
-func (instance *TextOptions) SetIsNormalizeHeights(value bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("TextOptions_SetIsNormalizeHeights"), instance.ptr, C.bool(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
 }
 // Gets and sets the scheme type of the font.
 // Returns:
@@ -3965,7 +3981,7 @@ func (instance *TextTabStopCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *TextTabStopCollection) Add(tabalignment TextTabAlignmentType, tabposition float64)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMP(C.CString("TextTabStopCollection_Add"), instance.ptr, C.int( int32(tabalignment)), C.double(tabposition))
+	CGoReturnPtr := C.CellsGoFunctoinZZMO(C.CString("TextTabStopCollection_Add"), instance.ptr, C.int( int32(tabalignment)), C.double(tabposition))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err

@@ -196,7 +196,7 @@ func (instance *CustomXmlPartCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *CustomXmlPartCollection) Add(data []byte, shemadata []byte)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOV(C.CString("CustomXmlPartCollection_Add"), instance.ptr, unsafe.Pointer(&data[0]), C.int( len(data)), unsafe.Pointer(&shemadata[0]), C.int( len(shemadata)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOX(C.CString("CustomXmlPartCollection_Add"), instance.ptr, unsafe.Pointer(&data[0]), C.int( len(data)), unsafe.Pointer(&shemadata[0]), C.int( len(shemadata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err

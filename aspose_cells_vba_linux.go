@@ -195,7 +195,7 @@ func (instance *VbaModuleCollection) IsNull()  (bool,  error)  {
 //   void  
 func (instance *VbaModuleCollection) AddDesignerStorage(name string, data []byte)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPN(C.CString("VbaModuleCollection_AddDesignerStorage"), instance.ptr, C.CString(name), unsafe.Pointer(&data[0]), C.int( len(data)))
+	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("VbaModuleCollection_AddDesignerStorage"), instance.ptr, C.CString(name), unsafe.Pointer(&data[0]), C.int( len(data)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -232,7 +232,7 @@ func (instance *VbaModuleCollection) Add_Worksheet(sheet *Worksheet)  (int32,  e
 	  sheet_ptr =sheet.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZEW(C.CString("VbaModuleCollection_Add_Worksheet"), instance.ptr, sheet_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZFM(C.CString("VbaModuleCollection_Add_Worksheet"), instance.ptr, sheet_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -254,7 +254,7 @@ func (instance *VbaModuleCollection) Add_VbaModuleType_String(type_ *VbaModuleTy
 	  type__ptr =type_.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPO(C.CString("VbaModuleCollection_Add_VbaModuleType_String"), instance.ptr, type__ptr, C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZPQ(C.CString("VbaModuleCollection_Add_VbaModuleType_String"), instance.ptr, type__ptr, C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -272,7 +272,7 @@ func (instance *VbaModuleCollection) Add_VbaModuleType_String(type_ *VbaModuleTy
 //   int32  
 func (instance *VbaModuleCollection) AddUserForm(name string, codes string, designerstorage []byte)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPP(C.CString("VbaModuleCollection_AddUserForm"), instance.ptr, C.CString(name), C.CString(codes), unsafe.Pointer(&designerstorage[0]), C.int( len(designerstorage)))
+	CGoReturnPtr := C.CellsGoFunctoinZZPR(C.CString("VbaModuleCollection_AddUserForm"), instance.ptr, C.CString(name), C.CString(codes), unsafe.Pointer(&designerstorage[0]), C.int( len(designerstorage)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -545,7 +545,7 @@ func (instance *VbaProject) IsSigned()  (bool,  error)  {
 //   void  
 func (instance *VbaProject) Protect(islockedforviewing bool, password string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("VbaProject_Protect"), instance.ptr, C.bool(islockedforviewing), C.CString(password))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("VbaProject_Protect"), instance.ptr, C.bool(islockedforviewing), C.CString(password))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -937,7 +937,7 @@ func (instance *VbaProjectReferenceCollection) AddRegisteredReference(name strin
 //   int32  
 func (instance *VbaProjectReferenceCollection) AddControlRefrernce(name string, libid string, twiddledlibid string, extendedlibid string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPQ(C.CString("VbaProjectReferenceCollection_AddControlRefrernce"), instance.ptr, C.CString(name), C.CString(libid), C.CString(twiddledlibid), C.CString(extendedlibid))
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("VbaProjectReferenceCollection_AddControlRefrernce"), instance.ptr, C.CString(name), C.CString(libid), C.CString(twiddledlibid), C.CString(extendedlibid))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -955,7 +955,7 @@ func (instance *VbaProjectReferenceCollection) AddControlRefrernce(name string, 
 //   int32  
 func (instance *VbaProjectReferenceCollection) AddProjectRefrernce(name string, absolutelibid string, relativelibid string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIW(C.CString("VbaProjectReferenceCollection_AddProjectRefrernce"), instance.ptr, C.CString(name), C.CString(absolutelibid), C.CString(relativelibid))
+	CGoReturnPtr := C.CellsGoFunctoinZZIX(C.CString("VbaProjectReferenceCollection_AddProjectRefrernce"), instance.ptr, C.CString(name), C.CString(absolutelibid), C.CString(relativelibid))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err

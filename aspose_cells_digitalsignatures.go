@@ -59,7 +59,7 @@ func NewDigitalSignature_Stream_String_String_Date(rawdata []byte, password stri
 	digitalsignature := &DigitalSignature{}
 	time_signtime := C.Get_Date( C.int(signtime.Year()), C.int(signtime.Month()) , C.int(signtime.Day()) , C.int(signtime.Hour()) , C.int(signtime.Minute()) , C.int(signtime.Second())  )
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOW(C.CString("New_DigitalSignature_Stream_String_String_Date"),unsafe.Pointer(&rawdata[0]), C.int( len(rawdata)), C.CString(password), C.CString(comments), time_signtime)
+	CGoReturnPtr := C.CellsGoFunctoinZZOY(C.CString("New_DigitalSignature_Stream_String_String_Date"),unsafe.Pointer(&rawdata[0]), C.int( len(rawdata)), C.CString(password), C.CString(comments), time_signtime)
 	C.Delete_GetDate( time_signtime)
 
 	if CGoReturnPtr.error_no == 0 {
@@ -82,7 +82,7 @@ func NewDigitalSignature_String_String_String_Date(filename string, password str
 	digitalsignature := &DigitalSignature{}
 	time_signtime := C.Get_Date( C.int(signtime.Year()), C.int(signtime.Month()) , C.int(signtime.Day()) , C.int(signtime.Hour()) , C.int(signtime.Minute()) , C.int(signtime.Second())  )
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOX(C.CString("New_DigitalSignature_String_String_String_Date"),C.CString(filename), C.CString(password), C.CString(comments), time_signtime)
+	CGoReturnPtr := C.CellsGoFunctoinZZPA(C.CString("New_DigitalSignature_String_String_String_Date"),C.CString(filename), C.CString(password), C.CString(comments), time_signtime)
 	C.Delete_GetDate( time_signtime)
 
 	if CGoReturnPtr.error_no == 0 {

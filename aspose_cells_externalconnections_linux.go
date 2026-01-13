@@ -750,27 +750,6 @@ func (instance *ConnectionParameterCollection) Get_Int(index int32)  (*Connectio
 
 	return result, nil 
 }
-// Gets the <see cref="ConnectionParameter"/> element at the specified index.
-// Parameters:
-//   value - ConnectionParameter 
-//   index - int32 
-// Returns:
-//   void  
-func (instance *ConnectionParameterCollection) Set(value *ConnectionParameter, index int32)  error {
-	
-	var value_ptr unsafe.Pointer = nil
-	if value != nil {
-	  value_ptr =value.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZLG(C.CString("ConnectionParameterCollection_Set"), instance.ptr, value_ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Gets the <see cref="ConnectionParameter"/> element with the specified name.
 // Parameters:
 //   connParamName - string 
@@ -3241,27 +3220,6 @@ func (instance *ExternalConnectionCollection) Get_Int(index int32)  (*ExternalCo
 	runtime.SetFinalizer(result, DeleteExternalConnection) 
 
 	return result, nil 
-}
-// Gets the <see cref="ExternalConnection"/> element at the specified index.
-// Parameters:
-//   value - ExternalConnection 
-//   index - int32 
-// Returns:
-//   void  
-func (instance *ExternalConnectionCollection) Set(value *ExternalConnection, index int32)  error {
-	
-	var value_ptr unsafe.Pointer = nil
-	if value != nil {
-	  value_ptr =value.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZLG(C.CString("ExternalConnectionCollection_Set"), instance.ptr, value_ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
 }
 // Gets the <see cref="ExternalConnection"/> element with the specified name.
 // Parameters:

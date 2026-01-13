@@ -121,7 +121,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfAll()  (string,  error)  {
 //   string  
 func (instance *PivotGlobalizationSettings) GetTextOfProtectedName(protectedname string)  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGN(C.CString("PivotGlobalizationSettings_GetTextOfProtectedName"), instance.ptr, C.CString(protectedname))
+	CGoReturnPtr := C.CellsGoFunctoinZZGO(C.CString("PivotGlobalizationSettings_GetTextOfProtectedName"), instance.ptr, C.CString(protectedname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
@@ -379,7 +379,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfSubTotal(subtotaltype Pivot
 //   string  
 func (instance *PivotGlobalizationSettings) GetNameOfDataField(function ConsolidationFunction, name string)  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPE(C.CString("PivotGlobalizationSettings_GetNameOfDataField"), instance.ptr, C.int( int32(function)), C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZPG(C.CString("PivotGlobalizationSettings_GetNameOfDataField"), instance.ptr, C.int( int32(function)), C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err

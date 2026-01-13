@@ -538,7 +538,7 @@ func NewEbookSaveOptions() ( *EbookSaveOptions, error) {
 //   saveFormat - int32 
 func NewEbookSaveOptions_SaveFormat(saveformat SaveFormat) ( *EbookSaveOptions, error) {
 	ebooksaveoptions := &EbookSaveOptions{}
-	CGoReturnPtr := C.CellsGoFunctoinZZFK(C.CString("New_EbookSaveOptions_SaveFormat"),C.int( int32(saveformat)))
+	CGoReturnPtr := C.CellsGoFunctoinZZFJ(C.CString("New_EbookSaveOptions_SaveFormat"),C.int( int32(saveformat)))
 	if CGoReturnPtr.error_no == 0 {
 		ebooksaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(ebooksaveoptions, DeleteEbookSaveOptions)
@@ -2689,7 +2689,7 @@ func (instance *EbookSaveOptions) SetEmbeddedFontType(value HtmlEmbeddedFontType
 
 	return nil 
 }
-// Indicates whether to export anchor elements  generated for named ranges when saving to HTML.
+// Indicates whether to export anchor elements for named ranges when saving as HTML.
 // Default value is true.
 // Returns:
 //   bool  
@@ -2704,7 +2704,7 @@ func (instance *EbookSaveOptions) GetExportNamedRangeAnchors()  (bool,  error)  
 
 	return result, nil 
 }
-// Indicates whether to export anchor elements  generated for named ranges when saving to HTML.
+// Indicates whether to export anchor elements for named ranges when saving as HTML.
 // Default value is true.
 // Parameters:
 //   value - bool 
@@ -2720,8 +2720,8 @@ func (instance *EbookSaveOptions) SetExportNamedRangeAnchors(value bool)  error 
 
 	return nil 
 }
-// Indicates whether to display the DataBar as an image when saving to HTML..
-// Default value is <see cref="DataBarRenderMode.BackgroundColor">.
+// Represents the mode of how to render DataBar when converting Excel files to html files.
+// Default value is <see cref="DataBarRenderMode.BackgroundColor"/>.
 // Returns:
 //   int32  
 func (instance *EbookSaveOptions) GetDataBarRenderMode()  (DataBarRenderMode,  error)  {
@@ -2738,8 +2738,8 @@ func (instance *EbookSaveOptions) GetDataBarRenderMode()  (DataBarRenderMode,  e
 
 	return result, nil 
 }
-// Indicates whether to display the DataBar as an image when saving to HTML..
-// Default value is <see cref="DataBarRenderMode.BackgroundColor">.
+// Represents the mode of how to render DataBar when converting Excel files to html files.
+// Default value is <see cref="DataBarRenderMode.BackgroundColor"/>.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -3375,7 +3375,7 @@ func (instance *SqlScriptSaveOptions) SetAddBlankLineBetweenRows(value bool)  er
 //   byte  
 func (instance *SqlScriptSaveOptions) GetSeparator()  (byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGO(C.CString("SqlScriptSaveOptions_GetSeparator"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZGP(C.CString("SqlScriptSaveOptions_GetSeparator"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3391,7 +3391,7 @@ func (instance *SqlScriptSaveOptions) GetSeparator()  (byte,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetSeparator(value byte)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHB(C.CString("SqlScriptSaveOptions_SetSeparator"), instance.ptr, C.char(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHC(C.CString("SqlScriptSaveOptions_SetSeparator"), instance.ptr, C.char(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

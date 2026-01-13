@@ -1882,7 +1882,7 @@ func (instance *CheckBoxActiveXControl) SetPicture(value []byte)  error {
 //   byte  
 func (instance *CheckBoxActiveXControl) GetAccelerator()  (byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGO(C.CString("CheckBoxActiveXControl_GetAccelerator"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZGP(C.CString("CheckBoxActiveXControl_GetAccelerator"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1898,7 +1898,7 @@ func (instance *CheckBoxActiveXControl) GetAccelerator()  (byte,  error)  {
 //   void  
 func (instance *CheckBoxActiveXControl) SetAccelerator(value byte)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHB(C.CString("CheckBoxActiveXControl_SetAccelerator"), instance.ptr, C.char(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHC(C.CString("CheckBoxActiveXControl_SetAccelerator"), instance.ptr, C.char(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3929,7 +3929,7 @@ func (instance *CommandButtonActiveXControl) SetPicture(value []byte)  error {
 //   byte  
 func (instance *CommandButtonActiveXControl) GetAccelerator()  (byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGO(C.CString("CommandButtonActiveXControl_GetAccelerator"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZGP(C.CString("CommandButtonActiveXControl_GetAccelerator"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3945,7 +3945,7 @@ func (instance *CommandButtonActiveXControl) GetAccelerator()  (byte,  error)  {
 //   void  
 func (instance *CommandButtonActiveXControl) SetAccelerator(value byte)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHB(C.CString("CommandButtonActiveXControl_SetAccelerator"), instance.ptr, C.char(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHC(C.CString("CommandButtonActiveXControl_SetAccelerator"), instance.ptr, C.char(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -5616,7 +5616,7 @@ func (instance *LabelActiveXControl) SetPicture(value []byte)  error {
 //   byte  
 func (instance *LabelActiveXControl) GetAccelerator()  (byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGO(C.CString("LabelActiveXControl_GetAccelerator"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZGP(C.CString("LabelActiveXControl_GetAccelerator"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5632,7 +5632,7 @@ func (instance *LabelActiveXControl) GetAccelerator()  (byte,  error)  {
 //   void  
 func (instance *LabelActiveXControl) SetAccelerator(value byte)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHB(C.CString("LabelActiveXControl_SetAccelerator"), instance.ptr, C.char(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHC(C.CString("LabelActiveXControl_SetAccelerator"), instance.ptr, C.char(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8063,7 +8063,7 @@ func (instance *RadioButtonActiveXControl) SetPicture(value []byte)  error {
 //   byte  
 func (instance *RadioButtonActiveXControl) GetAccelerator()  (byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGO(C.CString("RadioButtonActiveXControl_GetAccelerator"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZGP(C.CString("RadioButtonActiveXControl_GetAccelerator"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -8079,7 +8079,7 @@ func (instance *RadioButtonActiveXControl) GetAccelerator()  (byte,  error)  {
 //   void  
 func (instance *RadioButtonActiveXControl) SetAccelerator(value byte)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHB(C.CString("RadioButtonActiveXControl_SetAccelerator"), instance.ptr, C.char(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHC(C.CString("RadioButtonActiveXControl_SetAccelerator"), instance.ptr, C.char(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9921,7 +9921,7 @@ func (instance *TextBoxActiveXControl) SetScrollBars(value ControlScrollBarType)
 //   byte  
 func (instance *TextBoxActiveXControl) GetPasswordChar()  (byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGO(C.CString("TextBoxActiveXControl_GetPasswordChar"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZGP(C.CString("TextBoxActiveXControl_GetPasswordChar"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9937,7 +9937,7 @@ func (instance *TextBoxActiveXControl) GetPasswordChar()  (byte,  error)  {
 //   void  
 func (instance *TextBoxActiveXControl) SetPasswordChar(value byte)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHB(C.CString("TextBoxActiveXControl_SetPasswordChar"), instance.ptr, C.char(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHC(C.CString("TextBoxActiveXControl_SetPasswordChar"), instance.ptr, C.char(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -11097,7 +11097,7 @@ func (instance *ToggleButtonActiveXControl) SetPicture(value []byte)  error {
 //   byte  
 func (instance *ToggleButtonActiveXControl) GetAccelerator()  (byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGO(C.CString("ToggleButtonActiveXControl_GetAccelerator"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZGP(C.CString("ToggleButtonActiveXControl_GetAccelerator"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -11113,7 +11113,7 @@ func (instance *ToggleButtonActiveXControl) GetAccelerator()  (byte,  error)  {
 //   void  
 func (instance *ToggleButtonActiveXControl) SetAccelerator(value byte)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHB(C.CString("ToggleButtonActiveXControl_SetAccelerator"), instance.ptr, C.char(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHC(C.CString("ToggleButtonActiveXControl_SetAccelerator"), instance.ptr, C.char(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

@@ -14,13 +14,42 @@ package asposecells
 // #include <CellsFunctionMap.h>
 import "C"
 import (
- 
- 	
+	"fmt"  
+	"time"  	
 	"errors"	
 	"runtime"
 	"unsafe" 
 )
 
+/**************Enum TimelineLevelType *****************/
+
+// Represents the level type of <see cref="Timeline"/>
+type TimelineLevelType int32
+
+const(
+// Year
+TimelineLevelType_Year TimelineLevelType = 0 
+
+// Quarter
+TimelineLevelType_Quarter TimelineLevelType = 1 
+
+// Month
+TimelineLevelType_Month TimelineLevelType = 2 
+
+// Day
+TimelineLevelType_Day TimelineLevelType = 3 
+)
+
+func Int32ToTimelineLevelType(value int32)(TimelineLevelType ,error){
+	switch value {
+		case 0:  return TimelineLevelType_Year, nil  
+		case 1:  return TimelineLevelType_Quarter, nil  
+		case 2:  return TimelineLevelType_Month, nil  
+		case 3:  return TimelineLevelType_Day, nil  
+		default:
+			return 0 ,fmt.Errorf("invalid TimelineLevelType value: %d", value)
+	}
+}
 // Class Timeline 
 
 // Summary description of Timeline View
@@ -44,7 +73,220 @@ func (instance *Timeline) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Returns or sets the caption of the specified Timeline.
+// Indicates whether to display the header.
+// Returns:
+//   bool  
+func (instance *Timeline) GetShowHeader()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("Timeline_GetShowHeader"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to display the header.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *Timeline) SetShowHeader(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("Timeline_SetShowHeader"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to display the selction label.
+// Returns:
+//   bool  
+func (instance *Timeline) GetShowSelectionLabel()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("Timeline_GetShowSelectionLabel"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to display the selction label.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *Timeline) SetShowSelectionLabel(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("Timeline_SetShowSelectionLabel"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to display the time level.
+// Returns:
+//   bool  
+func (instance *Timeline) GetShowTimeLevel()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("Timeline_GetShowTimeLevel"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to display the time level.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *Timeline) SetShowTimeLevel(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("Timeline_SetShowTimeLevel"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether to display the horizontal ccroll bar.
+// Returns:
+//   bool  
+func (instance *Timeline) GetShowHorizontalScrollbar()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("Timeline_GetShowHorizontalScrollbar"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to display the horizontal ccroll bar.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *Timeline) SetShowHorizontalScrollbar(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("Timeline_SetShowHorizontalScrollbar"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the start date of the timespan scrolling position of this <see cref="Timeline"/>.
+// Returns:
+//   Date  
+func (instance *Timeline) GetStartDate()  (time.Time,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZAD(C.CString("Timeline_GetStartDate"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  time.Unix(0, 0), err
+	}
+	result := time.Date(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
+
+	return result, nil 
+}
+// Gets and sets the start date of the timespan scrolling position of this <see cref="Timeline"/>.
+// Parameters:
+//   value - Date 
+// Returns:
+//   void  
+func (instance *Timeline) SetStartDate(value time.Time)  error {
+	
+	time_value := C.Get_Date( C.int(value.Year()), C.int(value.Month()) , C.int(value.Day()) , C.int(value.Hour()) , C.int(value.Minute()) , C.int(value.Second())  )
+
+	CGoReturnPtr := C.CellsGoFunctoinZZAE(C.CString("Timeline_SetStartDate"), instance.ptr, time_value)
+	C.Delete_GetDate( time_value)
+
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// The current time level of the Timeline.
+// Returns:
+//   int32  
+func (instance *Timeline) GetCurrentLevel()  (TimelineLevelType,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("Timeline_GetCurrentLevel"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTimelineLevelType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// The current time level of the Timeline.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Timeline) SetCurrentLevel(value TimelineLevelType)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("Timeline_SetCurrentLevel"), instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets and sets the time level at which the current selection was made for the Timeline.
+// Returns:
+//   int32  
+func (instance *Timeline) GetSelectionLevel()  (TimelineLevelType,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("Timeline_GetSelectionLevel"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToTimelineLevelType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets and sets the time level at which the current selection was made for the Timeline.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *Timeline) SetSelectionLevel(value TimelineLevelType)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("Timeline_SetSelectionLevel"), instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the caption of this Timeline.
 // Returns:
 //   string  
 func (instance *Timeline) GetCaption()  (string,  error)  {
@@ -58,7 +300,7 @@ func (instance *Timeline) GetCaption()  (string,  error)  {
 
 	return result, nil 
 }
-// Returns or sets the caption of the specified Timeline.
+// Gets or sets the caption of this Timeline.
 // Parameters:
 //   value - string 
 // Returns:
@@ -73,7 +315,7 @@ func (instance *Timeline) SetCaption(value string)  error {
 
 	return nil 
 }
-// Returns the <see cref="TimelineShape"/> object associated with this Timeline. Read-only.
+// Returns the <see cref="TimelineShape"/> object associated with this Timeline.
 // Returns:
 //   TimelineShape  
 func (instance *Timeline) GetShape()  (*TimelineShape,  error)  {
@@ -201,7 +443,7 @@ func (instance *TimelineCollection) Add_PivotTable_Int_Int_String(pivot *PivotTa
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOM(C.CString("TimelineCollection_Add_PivotTable_Integer_Integer_String"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.CString(basefieldname))
+	CGoReturnPtr := C.CellsGoFunctoinZZOO(C.CString("TimelineCollection_Add_PivotTable_Integer_Integer_String"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.CString(basefieldname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -224,7 +466,7 @@ func (instance *TimelineCollection) Add_PivotTable_String_String(pivot *PivotTab
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOL(C.CString("TimelineCollection_Add_PivotTable_String_String"), instance.ptr, pivot_ptr, C.CString(destcellname), C.CString(basefieldname))
+	CGoReturnPtr := C.CellsGoFunctoinZZON(C.CString("TimelineCollection_Add_PivotTable_String_String"), instance.ptr, pivot_ptr, C.CString(destcellname), C.CString(basefieldname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -248,7 +490,7 @@ func (instance *TimelineCollection) Add_PivotTable_Int_Int_Int(pivot *PivotTable
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPG(C.CString("TimelineCollection_Add_PivotTable_Integer_Integer_Integer"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.int(basefieldindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZPI(C.CString("TimelineCollection_Add_PivotTable_Integer_Integer_Integer"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.int(basefieldindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -271,7 +513,7 @@ func (instance *TimelineCollection) Add_PivotTable_String_Int(pivot *PivotTable,
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPH(C.CString("TimelineCollection_Add_PivotTable_String_Integer"), instance.ptr, pivot_ptr, C.CString(destcellname), C.int(basefieldindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZPJ(C.CString("TimelineCollection_Add_PivotTable_String_Integer"), instance.ptr, pivot_ptr, C.CString(destcellname), C.int(basefieldindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -299,7 +541,7 @@ func (instance *TimelineCollection) Add_PivotTable_Int_Int_PivotField(pivot *Piv
 	  basefield_ptr =basefield.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPI(C.CString("TimelineCollection_Add_PivotTable_Integer_Integer_PivotField"), instance.ptr, pivot_ptr, C.int(row), C.int(column), basefield_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPK(C.CString("TimelineCollection_Add_PivotTable_Integer_Integer_PivotField"), instance.ptr, pivot_ptr, C.int(row), C.int(column), basefield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -326,7 +568,7 @@ func (instance *TimelineCollection) Add_PivotTable_String_PivotField(pivot *Pivo
 	  basefield_ptr =basefield.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPJ(C.CString("TimelineCollection_Add_PivotTable_String_PivotField"), instance.ptr, pivot_ptr, C.CString(destcellname), basefield_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPL(C.CString("TimelineCollection_Add_PivotTable_String_PivotField"), instance.ptr, pivot_ptr, C.CString(destcellname), basefield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err

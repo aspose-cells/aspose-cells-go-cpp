@@ -205,7 +205,7 @@ func (instance *AbstractLowCodeProtectionProvider) GetWorkbookProtectionType()  
 //   string  
 func (instance *AbstractLowCodeProtectionProvider) GetWorksheetPassword(sheetname string)  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGN(C.CString("AbstractLowCodeProtectionProvider_GetWorksheetPassword"), instance.ptr, C.CString(sheetname))
+	CGoReturnPtr := C.CellsGoFunctoinZZGO(C.CString("AbstractLowCodeProtectionProvider_GetWorksheetPassword"), instance.ptr, C.CString(sheetname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err
