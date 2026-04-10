@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	. "github.com/aspose-cells/aspose-cells-go-cpp/v25"
+	. "github.com/aspose-cells/aspose-cells-go-cpp/v26"
 )
 
 type ReportGenerator struct {

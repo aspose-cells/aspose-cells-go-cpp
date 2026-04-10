@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/aspose.cells%20for%20Go%20via%20C++-v26.1.0-green?style=for-the-badge&logo=go) [![License](https://img.shields.io/github/license/aspose-cells/aspose-cells-go-cpp?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells/aspose-cells-go-cpp/blob/master/LICENSE?style=for-the-badge)  [![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.com/cells/go-cpp/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.com/cells/go-cpp/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.com/cells/go-cpp/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells/aspose-cells-go-cpp/tree/main/samples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.com/categories/aspose.cells-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.com/c/cells/9) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells/aspose-cells-go-cpp/v26.1.0?style=for-the-badge)
+![](https://img.shields.io/badge/aspose.cells%20for%20Go%20via%20C++-v26.4.0-green?style=for-the-badge&logo=go) [![License](https://img.shields.io/github/license/aspose-cells/aspose-cells-go-cpp?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells/aspose-cells-go-cpp/blob/master/LICENSE?style=for-the-badge) [![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.com/cells/go-cpp/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.com/cells/go-cpp/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.com/cells/go-cpp/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells/aspose-cells-go-cpp/tree/main/samples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.com/categories/aspose.cells-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.com/c/cells/9) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells/aspose-cells-go-cpp/v26.4.0?style=for-the-badge)
 
 # Aspose.Cells for Go via C++
 
@@ -17,7 +17,7 @@ Aspose.Cells for Go via C++ is a native Go library that creates, edits, calculat
 package main
 
 import (
- . "github.com/aspose-cells/aspose-cells-go-cpp/v25"
+ . "github.com/aspose-cells/aspose-cells-go-cpp/v26"
  "fmt"
 )
 
@@ -65,7 +65,7 @@ If Aspose.Cells for Go via C++ is not installed in the development environment, 
 
 ```cmd
 
-set PATH=%PATH%;%GOPATH%\github.com\aspose-cells\aspose-cells-go-cpp\v25@v26.1.0\lib\win_x86_64\
+set PATH=%PATH%;%GOPATH%\github.com\aspose-cells\aspose-cells-go-cpp\v25@v26.4.0\lib\win_x86_64\
 
 ```
 
@@ -73,14 +73,14 @@ Or in your powershell
 
 ```powershell
 
-$env:Path = $env:Path+ ";${env:GOPATH}\github.com\aspose-cells\aspose-cells-go-cpp\v25@v26.1.0\lib\win_x86_64\"
+$env:Path = $env:Path+ ";${env:GOPATH}\github.com\aspose-cells\aspose-cells-go-cpp\v25@v26.4.0\lib\win_x86_64\"
 
 ```
 
 Or in your linux bash
 
 ```bash
-export PATH=$PATH:$GOPATH/github.com/aspose-cells/aspose-cells-go-cpp/v25@v26.1.0/lib/linux_x86_64/
+export PATH=$PATH:$GOPATH/github.com/aspose-cells/aspose-cells-go-cpp/v26@v26.4.0/lib/linux_x86_64/
 
 ```
 
@@ -100,8 +100,8 @@ Aspose.Cells for Go via C++ is a native Go library designed for Go developers to
 
 ## Supported platforms
 
-- *Windows x64*  
-- *Linux x64*
+- _Windows x64_
+- _Linux x64_
 
 ## Environments and versions
 
@@ -127,43 +127,43 @@ Aspose.Cells for Go via C++ offers a wide arrange of features for creating, conv
 
 ## Support file format
 
-|**Format**|**Description**|**Load**|**Save**|
-| :- | :- | :- | :- |
-|[XLS](https://docs.fileformat.com/spreadsheet/xls/)|Excel 95/5.0 - 2003 Workbook.|&radic;|&radic;|
-|[XLSX](https://docs.fileformat.com/spreadsheet/xlsx/)|Office Open XML SpreadsheetML Workbook or template file, with or without macros.|&radic;|&radic;|
-|[XLSB](https://docs.fileformat.com/spreadsheet/xlsb/)|Excel Binary Workbook.|&radic;|&radic;|
-|[XLSM](https://docs.fileformat.com/spreadsheet/xlsm/)|Excel Macro-Enabled Workbook.|&radic;|&radic;|
-|[XLT](https://docs.fileformat.com/spreadsheet/xlt/)|Excel 97 - Excel 2003 Template.|&radic;|&radic;|
-|[XLTX](https://docs.fileformat.com/spreadsheet/xltx/)|Excel Template.|&radic;|&radic;|
-|[XLTM](https://docs.fileformat.com/spreadsheet/xltm/)|Excel Macro-Enabled Template.|&radic;|&radic;|
-|[XLAM](https://docs.fileformat.com/spreadsheet/xlam/)|An Excel Macro-Enabled Add-In file that's used to add new functions to Excel.| |&radic;|
-|[CSV](https://docs.fileformat.com/spreadsheet/csv/)|CSV (Comma Separated Value) file.|&radic;|&radic;|
-|[TSV](https://docs.fileformat.com/spreadsheet/tsv/)|TSV (Tab-separated values) file.|&radic;|&radic;|
-|[TXT](https://docs.fileformat.com/word-processing/txt/)|Delimited plain text file.|&radic;|&radic;|
-|[HTML](https://docs.fileformat.com/web/html/)|HTML format.|&radic;|&radic;|
-|[MHTML](https://docs.fileformat.com/web/mhtml/)|MHTML file.|&radic;|&radic;|
-|[ODS](https://docs.fileformat.com/spreadsheet/ods/)|ODS (OpenDocument Spreadsheet).|&radic;|&radic;|
-|[JSON](https://docs.fileformat.com/web/json/)|JavaScript Object Notation|&radic;|&radic;|
-|[DIF](https://docs.fileformat.com/spreadsheet/dif/)|Data Interchange Format.| |&radic;|
-|[PDF](https://docs.fileformat.com/pdf/)|Adobe Portable Document Format.| |&radic;|
-|[XPS](https://docs.fileformat.com/page-description-language/xps/)|XML Paper Specification Format.| |&radic;|
-|[SVG](https://docs.fileformat.com/page-description-language/svg/)|Scalable Vector Graphics Format.| |&radic;|
-|[TIFF](https://docs.fileformat.com/image/tiff/)|Tagged Image File Format| |&radic;|
-|[PNG](https://docs.fileformat.com/image/png/)|Portable Network Graphics Format| |&radic;|
-|[BMP](https://docs.fileformat.com/image/bmp/)|Bitmap Image Format| |&radic;|
-|[EMF](https://docs.fileformat.com/image/emf/)|Enhanced metafile Format| |&radic;|
-|[JPEG](https://docs.fileformat.com/image/jpeg/)|JPEG is a type of image format that is saved using the method of lossy compression.| |&radic;|
-|[GIF](https://docs.fileformat.com/image/gif/)|Graphical Interchange Format| |&radic;|
-|[MARKDOWN](https://docs.fileformat.com/word-processing/md/)|Represents a markdown document.| |&radic;|
-|[SXC](https://docs.fileformat.com/spreadsheet/sxc/)|An XML based format used by OpenOffice and StarOffice|&radic;|&radic;|
-|[FODS](https://docs.fileformat.com/spreadsheet/fods/)|This is an Open Document format stored as flat XML.|&radic;|&radic;|
-|[DOCX](https://docs.fileformat.com/word-processing/docx/)|A well-known format for Microsoft Word documents that is a combination of XML and binary files.||&radic;|
-|[PPTX](https://docs.fileformat.com/presentation/pptx/)|The PPTX format is based on the Microsoft PowerPoint open XML presentation file format.||&radic;|
+| **Format**                                                        | **Description**                                                                                 | **Load** | **Save** |
+| :---------------------------------------------------------------- | :---------------------------------------------------------------------------------------------- | :------- | :------- |
+| [XLS](https://docs.fileformat.com/spreadsheet/xls/)               | Excel 95/5.0 - 2003 Workbook.                                                                   | &radic;  | &radic;  |
+| [XLSX](https://docs.fileformat.com/spreadsheet/xlsx/)             | Office Open XML SpreadsheetML Workbook or template file, with or without macros.                | &radic;  | &radic;  |
+| [XLSB](https://docs.fileformat.com/spreadsheet/xlsb/)             | Excel Binary Workbook.                                                                          | &radic;  | &radic;  |
+| [XLSM](https://docs.fileformat.com/spreadsheet/xlsm/)             | Excel Macro-Enabled Workbook.                                                                   | &radic;  | &radic;  |
+| [XLT](https://docs.fileformat.com/spreadsheet/xlt/)               | Excel 97 - Excel 2003 Template.                                                                 | &radic;  | &radic;  |
+| [XLTX](https://docs.fileformat.com/spreadsheet/xltx/)             | Excel Template.                                                                                 | &radic;  | &radic;  |
+| [XLTM](https://docs.fileformat.com/spreadsheet/xltm/)             | Excel Macro-Enabled Template.                                                                   | &radic;  | &radic;  |
+| [XLAM](https://docs.fileformat.com/spreadsheet/xlam/)             | An Excel Macro-Enabled Add-In file that's used to add new functions to Excel.                   |          | &radic;  |
+| [CSV](https://docs.fileformat.com/spreadsheet/csv/)               | CSV (Comma Separated Value) file.                                                               | &radic;  | &radic;  |
+| [TSV](https://docs.fileformat.com/spreadsheet/tsv/)               | TSV (Tab-separated values) file.                                                                | &radic;  | &radic;  |
+| [TXT](https://docs.fileformat.com/word-processing/txt/)           | Delimited plain text file.                                                                      | &radic;  | &radic;  |
+| [HTML](https://docs.fileformat.com/web/html/)                     | HTML format.                                                                                    | &radic;  | &radic;  |
+| [MHTML](https://docs.fileformat.com/web/mhtml/)                   | MHTML file.                                                                                     | &radic;  | &radic;  |
+| [ODS](https://docs.fileformat.com/spreadsheet/ods/)               | ODS (OpenDocument Spreadsheet).                                                                 | &radic;  | &radic;  |
+| [JSON](https://docs.fileformat.com/web/json/)                     | JavaScript Object Notation                                                                      | &radic;  | &radic;  |
+| [DIF](https://docs.fileformat.com/spreadsheet/dif/)               | Data Interchange Format.                                                                        |          | &radic;  |
+| [PDF](https://docs.fileformat.com/pdf/)                           | Adobe Portable Document Format.                                                                 |          | &radic;  |
+| [XPS](https://docs.fileformat.com/page-description-language/xps/) | XML Paper Specification Format.                                                                 |          | &radic;  |
+| [SVG](https://docs.fileformat.com/page-description-language/svg/) | Scalable Vector Graphics Format.                                                                |          | &radic;  |
+| [TIFF](https://docs.fileformat.com/image/tiff/)                   | Tagged Image File Format                                                                        |          | &radic;  |
+| [PNG](https://docs.fileformat.com/image/png/)                     | Portable Network Graphics Format                                                                |          | &radic;  |
+| [BMP](https://docs.fileformat.com/image/bmp/)                     | Bitmap Image Format                                                                             |          | &radic;  |
+| [EMF](https://docs.fileformat.com/image/emf/)                     | Enhanced metafile Format                                                                        |          | &radic;  |
+| [JPEG](https://docs.fileformat.com/image/jpeg/)                   | JPEG is a type of image format that is saved using the method of lossy compression.             |          | &radic;  |
+| [GIF](https://docs.fileformat.com/image/gif/)                     | Graphical Interchange Format                                                                    |          | &radic;  |
+| [MARKDOWN](https://docs.fileformat.com/word-processing/md/)       | Represents a markdown document.                                                                 |          | &radic;  |
+| [SXC](https://docs.fileformat.com/spreadsheet/sxc/)               | An XML based format used by OpenOffice and StarOffice                                           | &radic;  | &radic;  |
+| [FODS](https://docs.fileformat.com/spreadsheet/fods/)             | This is an Open Document format stored as flat XML.                                             | &radic;  | &radic;  |
+| [DOCX](https://docs.fileformat.com/word-processing/docx/)         | A well-known format for Microsoft Word documents that is a combination of XML and binary files. |          | &radic;  |
+| [PPTX](https://docs.fileformat.com/presentation/pptx/)            | The PPTX format is based on the Microsoft PowerPoint open XML presentation file format.         |          | &radic;  |
 
 # Evaluate Aspose.Cells for Go via C++
 
 You can use Aspose.Cells for Go via C++ free of cost for evaluation.The evaluation version provides almost all functionality of the product with certain limitations. The same evaluation version becomes licensed when you purchase a license and add a couple of lines of code to apply the license.
-If you want to test Aspose.Cells for Go via C++ without evaluation version limitations, you can also try a 30-Day Temporary License. Please refer to  <a href="https://purchase.aspose.com/temporary-license/"> How to get a Temporary License</a>?
+If you want to test Aspose.Cells for Go via C++ without evaluation version limitations, you can also try a 30-Day Temporary License. Please refer to <a href="https://purchase.aspose.com/temporary-license/"> How to get a Temporary License</a>?
 
 # Limitations of Evaluation version
 
@@ -181,7 +181,7 @@ A commercial license key is required in a production environment. Please contact
 
 ```go
 
-go install github.com/aspose-cells/aspose-cells-go-cpp/v25@latest
+go install github.com/aspose-cells/aspose-cells-go-cpp/v26@latest
 
 ```
 
@@ -189,7 +189,7 @@ go install github.com/aspose-cells/aspose-cells-go-cpp/v25@latest
 
 ```go
 
-go get github.com/aspose-cells/aspose-cells-go-cpp/v25@v26.1.0
+go get github.com/aspose-cells/aspose-cells-go-cpp/v26@v26.4.0
 
 ```
 
