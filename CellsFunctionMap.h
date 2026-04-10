@@ -677,13 +677,20 @@ ASPOSE_CELLS_API c_return_int_value* CellsGoFunctoinZZPM(const char *name ,void*
 ASPOSE_CELLS_API c_return_int_value* CellsGoFunctoinZZPN(const char *name ,void* param1,void* param2,void* param3,char* param4 );
 ASPOSE_CELLS_API c_return_int_value* CellsGoFunctoinZZPO(const char *name ,void* param1,void* param2,void* param3,int32_t param4,int32_t param5 );
 ASPOSE_CELLS_API c_return_void_value* CellsGoFunctoinZZPP(const char *name ,void* param1,char* param2,void* param3,int32_t param4 );
-ASPOSE_CELLS_API c_return_int_value* CellsGoFunctoinZZPQ(const char *name ,void* param1,void* param2,char* param3 );
-ASPOSE_CELLS_API c_return_int_value* CellsGoFunctoinZZPR(const char *name ,void* param1,char* param2,char* param3,void* param4,int32_t param5 );
-ASPOSE_CELLS_API c_return_int_value* CellsGoFunctoinZZPS(const char *name ,void* param1,char* param2,char* param3,char* param4,char* param5 );
-ASPOSE_CELLS_API c_return_int_value* CellsGoFunctoinZZPT(const char *name ,void* param1,char* param2,bool param3,int32_t param4,int32_t param5 );
-ASPOSE_CELLS_API c_return_ptr_value* CellsGoFunctoinZZPU(const char *name  );
-ASPOSE_CELLS_API c_return_int_value* CellsGoFunctoinZZPV(const char *name ,void* param1 );
-ASPOSE_CELLS_API c_return_void_value* CellsGoFunctoinZZPW(const char *name ,void* param1,uint8_t param2 );
+ASPOSE_CELLS_API c_return_int_value* CellsGoFunctoinZZPQ(const char *name ,void* param1,char* param2,char* param3,void* param4,int32_t param5 );
+ASPOSE_CELLS_API c_return_int_value* CellsGoFunctoinZZPR(const char *name ,void* param1,char* param2,char* param3,char* param4,char* param5 );
+ASPOSE_CELLS_API c_return_int_value* CellsGoFunctoinZZPS(const char *name ,void* param1,char* param2,bool param3,int32_t param4,int32_t param5 );
+ASPOSE_CELLS_API c_return_ptr_value* CellsGoFunctoinZZPT(const char *name  );
+ASPOSE_CELLS_API c_return_int_value* CellsGoFunctoinZZPU(const char *name ,void* param1 );
+ASPOSE_CELLS_API c_return_void_value* CellsGoFunctoinZZPV(const char *name ,void* param1,uint8_t param2 );
+ASPOSE_CELLS_API c_return_ptr_value* CellsGoFunctoinZZPW(const char *name ,char* param1 );
+ASPOSE_CELLS_API c_return_ptr_value* CellsGoFunctoinZZPX(const char *name ,void* param1,double param2 );
+ASPOSE_CELLS_API c_return_ptr_value* CellsGoFunctoinZZPY(const char *name ,void* param1,int32_t param2 );
+ASPOSE_CELLS_API c_return_ptr_value* CellsGoFunctoinZZQA(const char *name ,int64_t param1 );
+ASPOSE_CELLS_API c_return_ptr_value* CellsGoFunctoinZZQB(const char *name ,char* param1,char* param2 );
+ASPOSE_CELLS_API c_return_long_value* CellsGoFunctoinZZQC(const char *name ,void* param1 );
+ASPOSE_CELLS_API c_return_void_value* CellsGoFunctoinZZQD(const char *name ,void* param1,int64_t param2 );
+ASPOSE_CELLS_API c_return_ptr_value* CellsGoFunctoinZZQE(const char *name ,double param1 );
 ASPOSE_CELLS_API void Delete_CObject(const char* name , void* instance_ptr);
 #ifdef __cplusplus
 }

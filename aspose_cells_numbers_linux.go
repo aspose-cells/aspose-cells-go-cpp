@@ -102,6 +102,35 @@ func (instance *NumbersLoadOptions) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
+// Indicates whether to preserve table names when importing from Numbers.
+// Returns:
+//   bool  
+func (instance *NumbersLoadOptions) GetPreserveTableName()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("NumbersLoadOptions_GetPreserveTableName"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to preserve table names when importing from Numbers.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *NumbersLoadOptions) SetPreserveTableName(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("NumbersLoadOptions_SetPreserveTableName"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Gets and sets the type of loading multiple tables in one worksheet.
 // Returns:
 //   int32  

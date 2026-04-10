@@ -2561,7 +2561,7 @@ func (instance *TextOptions) SetIsNormalizeHeights(value bool)  error {
 
 	return nil 
 }
-// Gets and sets the text caps type.
+// Gets and sets the caps type for texts of the shape.
 // Returns:
 //   int32  
 func (instance *TextOptions) GetCapsType()  (TextCapsType,  error)  {
@@ -2578,7 +2578,7 @@ func (instance *TextOptions) GetCapsType()  (TextCapsType,  error)  {
 
 	return result, nil 
 }
-// Gets and sets the text caps type.
+// Gets and sets the caps type for texts of the shape.
 // Parameters:
 //   value - int32 
 // Returns:

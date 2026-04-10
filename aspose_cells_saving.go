@@ -374,7 +374,7 @@ func (instance *DbfSaveOptions) SetSortExternalNames(value bool)  error {
 
 	return nil 
 }
-// Indicates whether refreshing chart cache data
+// Indicates whether to cache the latest data of the chart.
 // Returns:
 //   bool  
 func (instance *DbfSaveOptions) GetRefreshChartCache()  (bool,  error)  {
@@ -388,7 +388,7 @@ func (instance *DbfSaveOptions) GetRefreshChartCache()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether refreshing chart cache data
+// Indicates whether to cache the latest data of the chart.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -2974,7 +2974,7 @@ func (instance *EbookSaveOptions) SetSortExternalNames(value bool)  error {
 
 	return nil 
 }
-// Indicates whether refreshing chart cache data
+// Indicates whether to cache the latest data of the chart.
 // Returns:
 //   bool  
 func (instance *EbookSaveOptions) GetRefreshChartCache()  (bool,  error)  {
@@ -2988,7 +2988,7 @@ func (instance *EbookSaveOptions) GetRefreshChartCache()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether refreshing chart cache data
+// Indicates whether to cache the latest data of the chart.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -3926,7 +3926,7 @@ func (instance *SqlScriptSaveOptions) SetSortExternalNames(value bool)  error {
 
 	return nil 
 }
-// Indicates whether refreshing chart cache data
+// Indicates whether to cache the latest data of the chart.
 // Returns:
 //   bool  
 func (instance *SqlScriptSaveOptions) GetRefreshChartCache()  (bool,  error)  {
@@ -3940,7 +3940,7 @@ func (instance *SqlScriptSaveOptions) GetRefreshChartCache()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether refreshing chart cache data
+// Indicates whether to cache the latest data of the chart.
 // Parameters:
 //   value - bool 
 // Returns:

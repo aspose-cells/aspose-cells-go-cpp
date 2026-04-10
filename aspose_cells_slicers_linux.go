@@ -575,7 +575,7 @@ func (instance *Slicer) SetShowCaption(value bool)  error {
 
 	return nil 
 }
-// Returns or sets the number of columns in the specified slicer.
+// Returns or sets the number of columns in the slicer.
 // The default value is 1.
 // Returns:
 //   int32  
@@ -590,7 +590,7 @@ func (instance *Slicer) GetNumberOfColumns()  (int32,  error)  {
 
 	return result, nil 
 }
-// Returns or sets the number of columns in the specified slicer.
+// Returns or sets the number of columns in the slicer.
 // The default value is 1.
 // Parameters:
 //   value - int32 

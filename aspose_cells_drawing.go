@@ -59232,12 +59232,28 @@ func (instance *Picture) Move(toprow int32, leftcolumn int32)  error {
 
 	return nil 
 }
-// Place this picture in the cell
+// Indicates whether to place the image in cell or over cells.
+// Returns:
+//   bool  
+func (instance *Picture) IsPlacedInCell()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("Picture_IsPlacedInCell"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to place the image in cell or over cells.
+// Parameters:
+//   value - bool 
 // Returns:
 //   void  
-func (instance *Picture) PlaceInCell()  error {
+func (instance *Picture) SetIsPlacedInCell(value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZF(C.CString("Picture_PlaceInCell"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("Picture_SetIsPlacedInCell"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

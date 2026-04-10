@@ -6396,6 +6396,42 @@ func (instance *PivotTable) GetRefreshDate()  (time.Time,  error)  {
 
 	return result, nil 
 }
+// Gets <see cref="TableStyle"/> settings of this pivot table.
+// Returns:
+//   TableStyle  
+func (instance *PivotTable) GetPivotTableStyle()  (*TableStyle,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("PivotTable_GetPivotTableStyle"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TableStyle{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTableStyle) 
+
+	return result, nil 
+}
+// Gets <see cref="TableStyle"/> settings of this pivot table.
+// Parameters:
+//   value - TableStyle 
+// Returns:
+//   void  
+func (instance *PivotTable) SetPivotTableStyle(value *TableStyle)  error {
+	
+	var value_ptr unsafe.Pointer = nil
+	if value != nil {
+	  value_ptr =value.ptr
+	}
+
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("PivotTable_SetPivotTableStyle"), instance.ptr, value_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Gets and sets the pivottable style name.
 // Returns:
 //   string  
@@ -6801,6 +6837,56 @@ func (instance *PivotTable) GetPivotFilters()  (*PivotFilterCollection,  error) 
 	result := &PivotFilterCollection{}
 	result.ptr = CGoReturnPtr.return_value 
 	runtime.SetFinalizer(result, DeletePivotFilterCollection) 
+
+	return result, nil 
+}
+// Gets the area contains field button.
+// Parameters:
+//   axisType - int32 
+// Returns:
+//   CellArea  
+func (instance *PivotTable) GetButtonArea(axistype PivotFieldType)  (*CellArea,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZAF(C.CString("PivotTable_GetButtonArea"), instance.ptr, C.int( int32(axistype)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CellArea{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteCellArea) 
+
+	return result, nil 
+}
+// Represents the blank area at the top-right of the PivotTable (top-left for RTL sheets).
+// Returns:
+//   CellArea  
+func (instance *PivotTable) GetTopRightArea()  (*CellArea,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("PivotTable_GetTopRightArea"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CellArea{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteCellArea) 
+
+	return result, nil 
+}
+// Gets the area of filter region.
+// Returns:
+//   CellArea  
+func (instance *PivotTable) GetFilterArea()  (*CellArea,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("PivotTable_GetFilterArea"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &CellArea{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteCellArea) 
 
 	return result, nil 
 }

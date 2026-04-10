@@ -177,6 +177,28 @@ func Int32ToHtmlLayoutMode(value int32)(HtmlLayoutMode ,error){
 	}
 }
 
+/**************Enum HtmlParagraphLayoutMode *****************/
+
+// Specifies how HTML &lt;p&gt; elements are rendered when loading HTML.
+type HtmlParagraphLayoutMode int32
+
+const(
+// Treat &lt;p&gt; inside &lt;td&gt; as inline content in a single cell.
+HtmlParagraphLayoutMode_Normal HtmlParagraphLayoutMode = 0 
+
+// Starts a new row for each &lt;p&gt; element.
+HtmlParagraphLayoutMode_AsRow HtmlParagraphLayoutMode = 1 
+)
+
+func Int32ToHtmlParagraphLayoutMode(value int32)(HtmlParagraphLayoutMode ,error){
+	switch value {
+		case 0:  return HtmlParagraphLayoutMode_Normal, nil  
+		case 1:  return HtmlParagraphLayoutMode_AsRow, nil  
+		default:
+			return 0 ,fmt.Errorf("invalid HtmlParagraphLayoutMode value: %d", value)
+	}
+}
+
 /**************Enum ImageBinarizationMethod *****************/
 
 // Specifies the method used to binarize image.

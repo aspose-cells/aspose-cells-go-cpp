@@ -141,11 +141,20 @@ TableStyleElementType_ThirdSubtotalColumn TableStyleElementType = 17
 // Table style element that applies to PivotTable's third subtotal row.
 TableStyleElementType_ThirdSubtotalRow TableStyleElementType = 21 
 
-// Table style element that applies to table's total row.
+// Table style element that applies to Table's total row.
 TableStyleElementType_TotalRow TableStyleElementType = 10 
 
 // Table style element that applies to table's entire content.
 TableStyleElementType_WholeTable TableStyleElementType = 0 
+
+// Table style element that applies to pivot table's last column field.
+TableStyleElementType_LastColumnSubheading TableStyleElementType = 130 
+
+// Table style element that applies to pivot table's last row field.
+TableStyleElementType_LastRowSubheading TableStyleElementType = 131 
+
+// Table style element that applies to pivot table's last subtotal row field.
+TableStyleElementType_LastSubtotalRow TableStyleElementType = 133 
 )
 
 func Int32ToTableStyleElementType(value int32)(TableStyleElementType ,error){
@@ -180,6 +189,9 @@ func Int32ToTableStyleElementType(value int32)(TableStyleElementType ,error){
 		case 21:  return TableStyleElementType_ThirdSubtotalRow, nil  
 		case 10:  return TableStyleElementType_TotalRow, nil  
 		case 0:  return TableStyleElementType_WholeTable, nil  
+		case 130:  return TableStyleElementType_LastColumnSubheading, nil  
+		case 131:  return TableStyleElementType_LastRowSubheading, nil  
+		case 133:  return TableStyleElementType_LastSubtotalRow, nil  
 		default:
 			return 0 ,fmt.Errorf("invalid TableStyleElementType value: %d", value)
 	}
@@ -1779,6 +1791,30 @@ func (instance *TableStyle) GetTableStyleElements()  (*TableStyleElementCollecti
 	result := &TableStyleElementCollection{}
 	result.ptr = CGoReturnPtr.return_value 
 	runtime.SetFinalizer(result, DeleteTableStyleElementCollection) 
+
+	return result, nil 
+}
+// Creates an empty table/pivot table style.
+// Parameters:
+//   name - string 
+//   sheets - WorksheetCollection 
+// Returns:
+//   TableStyle  
+func TableStyle_Create(name string, sheets *WorksheetCollection)  (*TableStyle,  error)  {
+	
+	var sheets_ptr unsafe.Pointer = nil
+	if sheets != nil {
+	  sheets_ptr =sheets.ptr
+	}
+
+	CGoReturnPtr := C.CellsGoFunctoinZZJD(C.CString("TableStyle_Create"),C.CString(name), sheets_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result := &TableStyle{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeleteTableStyle) 
 
 	return result, nil 
 }

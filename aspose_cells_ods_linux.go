@@ -188,6 +188,9 @@ OpenDocumentFormatVersionType_Odf12 OpenDocumentFormatVersionType = 2
 
 // ODF Version 1.3
 OpenDocumentFormatVersionType_Odf13 OpenDocumentFormatVersionType = 3 
+
+// ODF Version 1.4
+OpenDocumentFormatVersionType_Odf14 OpenDocumentFormatVersionType = 4 
 )
 
 func Int32ToOpenDocumentFormatVersionType(value int32)(OpenDocumentFormatVersionType ,error){
@@ -196,6 +199,7 @@ func Int32ToOpenDocumentFormatVersionType(value int32)(OpenDocumentFormatVersion
 		case 1:  return OpenDocumentFormatVersionType_Odf11, nil  
 		case 2:  return OpenDocumentFormatVersionType_Odf12, nil  
 		case 3:  return OpenDocumentFormatVersionType_Odf13, nil  
+		case 4:  return OpenDocumentFormatVersionType_Odf14, nil  
 		default:
 			return 0 ,fmt.Errorf("invalid OpenDocumentFormatVersionType value: %d", value)
 	}

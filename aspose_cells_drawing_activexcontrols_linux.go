@@ -180,7 +180,7 @@ ControlMousePointerType_UpArrow ControlMousePointerType = 10
 // Hourglass.
 ControlMousePointerType_HourGlass ControlMousePointerType = 11 
 
-// "Not” symbol (circle with a diagonal line) on top of the object being dragged.
+// "Not" symbol (circle with a diagonal line) on top of the object being dragged.
 ControlMousePointerType_NoDrop ControlMousePointerType = 12 
 
 // Arrow with an hourglass.
@@ -189,7 +189,7 @@ ControlMousePointerType_AppStarting ControlMousePointerType = 13
 // Arrow with a question mark.
 ControlMousePointerType_Help ControlMousePointerType = 14 
 
-// "Size-all” cursor (arrows pointing north, south, east, and west).
+// "Size-all" cursor (arrows pointing north, south, east, and west).
 ControlMousePointerType_SizeAll ControlMousePointerType = 15 
 
 // Uses the icon specified by the MouseIcon property.

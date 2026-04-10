@@ -161,7 +161,7 @@ func Int32ToCategoryType(value int32)(CategoryType ,error){
 
 /**************Enum ChartColorPaletteType *****************/
 
-// Enumerates all Monochromatic Palettes used in Excel chart.
+// Enumerates all Monochromatic Palettes used in an Excel chart.
 type ChartColorPaletteType int32
 
 const(
@@ -373,10 +373,10 @@ ChartTextDirectionType_Horizontal ChartTextDirectionType = 0
 // Vertical direction type.
 ChartTextDirectionType_Vertical ChartTextDirectionType = 1 
 
-// Rotate 90 angle.
+// Rotate 90-degree angle.
 ChartTextDirectionType_Rotate90 ChartTextDirectionType = 2 
 
-// Rotate 270 angle.
+// Rotate 270-degree angle.
 ChartTextDirectionType_Rotate270 ChartTextDirectionType = 3 
 
 // Stacked text.
@@ -967,7 +967,7 @@ func Int32ToFormattingType(value int32)(FormattingType ,error){
 type LabelPositionType int32
 
 const(
-// Applies only to bar, 2d/3d pie charts
+// Applies only to bar, 2D/3D pie charts
 LabelPositionType_Center LabelPositionType = 0 
 
 // Applies only to bar, 2d/3d pie charts
@@ -991,10 +991,10 @@ LabelPositionType_Left LabelPositionType = 6
 // Applies only to line charts
 LabelPositionType_Right LabelPositionType = 7 
 
-// Applies only to 2d/3d pie charts
+// Applies only to 2D/3D pie charts
 LabelPositionType_BestFit LabelPositionType = 8 
 
-// User moved the data labels, Only for reading chart from template file.
+// User moved the data labels only for reading the chart from the template file.
 LabelPositionType_Moved LabelPositionType = 9 
 )
 
@@ -1059,7 +1059,7 @@ func Int32ToLegendPositionType(value int32)(LegendPositionType ,error){
 type MapChartLabelLayout int32
 
 const(
-// Only best fit.
+// Only the best fit.
 MapChartLabelLayout_BestFitOnly MapChartLabelLayout = 0 
 
 // Shows all labels.
@@ -1081,7 +1081,7 @@ func Int32ToMapChartLabelLayout(value int32)(MapChartLabelLayout ,error){
 
 /**************Enum MapChartProjectionType *****************/
 
-// Represents projection type of the map chart.
+// Represents the projection type of the map chart.
 type MapChartProjectionType int32
 
 const(
@@ -1409,7 +1409,7 @@ SparklineType_Line SparklineType = 0
 // Column sparkline.
 SparklineType_Column SparklineType = 1 
 
-// Win/Loss sparkline.
+// Represents a Win/Loss sparkline.
 SparklineType_Stacked SparklineType = 2 
 )
 
@@ -1429,13 +1429,13 @@ func Int32ToSparklineType(value int32)(SparklineType ,error){
 type TickLabelAlignmentType int32
 
 const(
-// Represents the text shall be centered.
+// Represents that the text shall be centered.
 TickLabelAlignmentType_Center TickLabelAlignmentType = 0 
 
-// Represents the text shall be left justified.
+// Represents the text that shall be left justified.
 TickLabelAlignmentType_Left TickLabelAlignmentType = 1 
 
-// Represents the text shall be right justified.
+// Represents that the text shall be right justified.
 TickLabelAlignmentType_Right TickLabelAlignmentType = 2 
 )
 
@@ -2310,7 +2310,7 @@ func (instance *Axis) SetCustomDisplayUnit(value float64)  error {
 	return nil 
 }
 // Represents a unit label on an axis in the specified chart.
-// Unit labels are useful for charting large values— for example, in the millions or billions.
+// Unit labels are useful for charting large values - for example, in the millions or billions.
 // Returns:
 //   DisplayUnitLabel  
 func (instance *Axis) GetDisplayUnitLabel()  (*DisplayUnitLabel,  error)  {
@@ -2657,7 +2657,7 @@ func (instance *AxisBins) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether grouping data by category
+// Indicates whether grouping data by category is enabled.
 // Returns:
 //   bool  
 func (instance *AxisBins) IsByCategory()  (bool,  error)  {
@@ -2671,7 +2671,7 @@ func (instance *AxisBins) IsByCategory()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether grouping data by category
+// Indicates whether grouping data by category is enabled.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -2715,7 +2715,7 @@ func (instance *AxisBins) SetIsAutomatic(value bool)  error {
 
 	return nil 
 }
-// Gets or sets the width of axis bin
+// Gets or sets the width of the axis bin.
 // Returns:
 //   float64  
 func (instance *AxisBins) GetWidth()  (float64,  error)  {
@@ -2729,7 +2729,7 @@ func (instance *AxisBins) GetWidth()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the width of axis bin
+// Gets or sets the width of the axis bin.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -2744,7 +2744,7 @@ func (instance *AxisBins) SetWidth(value float64)  error {
 
 	return nil 
 }
-// Gets or set the count of axis bins
+// Gets or sets the count of axis bins
 // Returns:
 //   int32  
 func (instance *AxisBins) GetCount()  (int32,  error)  {
@@ -2758,7 +2758,7 @@ func (instance *AxisBins) GetCount()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or set the count of axis bins
+// Gets or sets the count of axis bins
 // Parameters:
 //   value - int32 
 // Returns:
@@ -2773,7 +2773,7 @@ func (instance *AxisBins) SetCount(value int32)  error {
 
 	return nil 
 }
-// Gets or set the overflow of axis bins
+// Gets or sets the overflow of axis bins
 // Returns:
 //   float64  
 func (instance *AxisBins) GetOverflow()  (float64,  error)  {
@@ -2787,7 +2787,7 @@ func (instance *AxisBins) GetOverflow()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or set the overflow of axis bins
+// Gets or sets the overflow of axis bins
 // Parameters:
 //   value - float64 
 // Returns:
@@ -2802,7 +2802,7 @@ func (instance *AxisBins) SetOverflow(value float64)  error {
 
 	return nil 
 }
-// Gets or set the underflow of axis bins
+// Gets or sets the underflow of axis bins
 // Returns:
 //   float64  
 func (instance *AxisBins) GetUnderflow()  (float64,  error)  {
@@ -2816,7 +2816,7 @@ func (instance *AxisBins) GetUnderflow()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or set the underflow of axis bins
+// Gets or sets the underflow of axis bins
 // Parameters:
 //   value - float64 
 // Returns:
@@ -4600,38 +4600,6 @@ func (instance *ChartArea) SetIsInnerMode(value bool)  error {
 
 	return nil 
 }
-// Gets and sets the display mode of the background
-// Returns:
-//   int32  
-func (instance *ChartArea) GetBackgroundMode()  (BackgroundMode,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ChartArea_GetBackgroundMode"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToBackgroundMode(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
-// Gets and sets the display mode of the background
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *ChartArea) SetBackgroundMode(value BackgroundMode)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ChartArea_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // True if the frame has a shadow.
 // Returns:
 //   bool  
@@ -4998,7 +4966,7 @@ func DeleteChartArea(chartarea *ChartArea){
 
 // Class ChartCalculateOptions 
 
-// Represents the options for calculating chart.
+// Represents the options for calculating the chart.
 type ChartCalculateOptions struct {
 	ptr unsafe.Pointer
 }
@@ -5672,38 +5640,6 @@ func (instance *ChartFrame) IsInnerMode()  (bool,  error)  {
 func (instance *ChartFrame) SetIsInnerMode(value bool)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ChartFrame_SetIsInnerMode"), instance.ptr, C.bool(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets and sets the display mode of the background
-// Returns:
-//   int32  
-func (instance *ChartFrame) GetBackgroundMode()  (BackgroundMode,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ChartFrame_GetBackgroundMode"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToBackgroundMode(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
-// Gets and sets the display mode of the background
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *ChartFrame) SetBackgroundMode(value BackgroundMode)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ChartFrame_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7073,7 +7009,8 @@ func (instance *ChartPoint) GetOnCategoryAxisPointCount()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets x-coordinate of the point on category axis after calls Chart.Calculate() method. Only applies to Area chart.
+// Gets x-coordinate of the point on category axis after calls Chart.Calculate() method.
+// Only applies to Area chart.
 // Parameters:
 //   index - int32 
 // Returns:
@@ -7265,7 +7202,7 @@ func (instance *ChartTextFrame) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether this data labels is deleted.
+// Indicates whether this data labels are deleted.
 // Returns:
 //   bool  
 func (instance *ChartTextFrame) IsDeleted()  (bool,  error)  {
@@ -7279,7 +7216,7 @@ func (instance *ChartTextFrame) IsDeleted()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether this data labels is deleted.
+// Indicates whether this data labels are deleted.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -7358,7 +7295,7 @@ func (instance *ChartTextFrame) SetTextVerticalAlignment(value TextAlignmentType
 
 	return nil 
 }
-// Represents text rotation angle.
+// Represents the text rotation angle.
 // Returns:
 //   int32  
 func (instance *ChartTextFrame) GetRotationAngle()  (int32,  error)  {
@@ -7372,7 +7309,7 @@ func (instance *ChartTextFrame) GetRotationAngle()  (int32,  error)  {
 
 	return result, nil 
 }
-// Represents text rotation angle.
+// Represents the text rotation angle.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -7655,38 +7592,6 @@ func (instance *ChartTextFrame) IsInnerMode()  (bool,  error)  {
 func (instance *ChartTextFrame) SetIsInnerMode(value bool)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("ChartTextFrame_SetIsInnerMode"), instance.ptr, C.bool(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets and sets the display mode of the background
-// Returns:
-//   int32  
-func (instance *ChartTextFrame) GetBackgroundMode()  (BackgroundMode,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("ChartTextFrame_GetBackgroundMode"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToBackgroundMode(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
-// Gets and sets the display mode of the background
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *ChartTextFrame) SetBackgroundMode(value BackgroundMode)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("ChartTextFrame_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8834,7 +8739,8 @@ func (instance *DataLabels) SetPosition(value LabelPositionType)  error {
 
 	return nil 
 }
-// Indicates whether the datalabels display never overlap. (For Pie chart)
+// Indicates whether datalabels never overlap when performing Pie Chart to image.
+// Note: this property is only meaningful when Pie Chart to image.
 // Returns:
 //   bool  
 func (instance *DataLabels) IsNeverOverlap()  (bool,  error)  {
@@ -8848,7 +8754,8 @@ func (instance *DataLabels) IsNeverOverlap()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether the datalabels display never overlap. (For Pie chart)
+// Indicates whether datalabels never overlap when performing Pie Chart to image.
+// Note: this property is only meaningful when Pie Chart to image.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -9360,7 +9267,7 @@ func (instance *DataLabels) SetPositionAuto()  error {
 
 	return nil 
 }
-// Indicates whether this data labels is deleted.
+// Indicates whether this data labels are deleted.
 // Returns:
 //   bool  
 func (instance *DataLabels) IsDeleted()  (bool,  error)  {
@@ -9374,7 +9281,7 @@ func (instance *DataLabels) IsDeleted()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether this data labels is deleted.
+// Indicates whether this data labels are deleted.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -9453,7 +9360,7 @@ func (instance *DataLabels) SetTextVerticalAlignment(value TextAlignmentType)  e
 
 	return nil 
 }
-// Represents text rotation angle.
+// Represents the text rotation angle.
 // Returns:
 //   int32  
 func (instance *DataLabels) GetRotationAngle()  (int32,  error)  {
@@ -9467,7 +9374,7 @@ func (instance *DataLabels) GetRotationAngle()  (int32,  error)  {
 
 	return result, nil 
 }
-// Represents text rotation angle.
+// Represents the text rotation angle.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -9767,38 +9674,6 @@ func (instance *DisplayUnitLabel) IsInnerMode()  (bool,  error)  {
 func (instance *DisplayUnitLabel) SetIsInnerMode(value bool)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("DisplayUnitLabel_SetIsInnerMode"), instance.ptr, C.bool(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets and sets the display mode of the background
-// Returns:
-//   int32  
-func (instance *DisplayUnitLabel) GetBackgroundMode()  (BackgroundMode,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("DisplayUnitLabel_GetBackgroundMode"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToBackgroundMode(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
-// Gets and sets the display mode of the background
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *DisplayUnitLabel) SetBackgroundMode(value BackgroundMode)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("DisplayUnitLabel_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10243,7 +10118,7 @@ func (instance *DisplayUnitLabel) SetPositionAuto()  error {
 
 	return nil 
 }
-// Indicates whether this data labels is deleted.
+// Indicates whether this data labels are deleted.
 // Returns:
 //   bool  
 func (instance *DisplayUnitLabel) IsDeleted()  (bool,  error)  {
@@ -10257,7 +10132,7 @@ func (instance *DisplayUnitLabel) IsDeleted()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether this data labels is deleted.
+// Indicates whether this data labels are deleted.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -10336,7 +10211,7 @@ func (instance *DisplayUnitLabel) SetTextVerticalAlignment(value TextAlignmentTy
 
 	return nil 
 }
-// Represents text rotation angle.
+// Represents the text rotation angle.
 // Returns:
 //   int32  
 func (instance *DisplayUnitLabel) GetRotationAngle()  (int32,  error)  {
@@ -10350,7 +10225,7 @@ func (instance *DisplayUnitLabel) GetRotationAngle()  (int32,  error)  {
 
 	return result, nil 
 }
-// Represents text rotation angle.
+// Represents the text rotation angle.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -11991,38 +11866,6 @@ func (instance *Legend) SetIsInnerMode(value bool)  error {
 
 	return nil 
 }
-// Gets and sets the display mode of the background
-// Returns:
-//   int32  
-func (instance *Legend) GetBackgroundMode()  (BackgroundMode,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("Legend_GetBackgroundMode"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToBackgroundMode(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
-// Gets and sets the display mode of the background
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *Legend) SetBackgroundMode(value BackgroundMode)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("Legend_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // True if the frame has a shadow.
 // Returns:
 //   bool  
@@ -12505,7 +12348,7 @@ func (instance *Legend) SetPositionAuto()  error {
 
 	return nil 
 }
-// Indicates whether this data labels is deleted.
+// Indicates whether this data labels are deleted.
 // Returns:
 //   bool  
 func (instance *Legend) IsDeleted()  (bool,  error)  {
@@ -12519,7 +12362,7 @@ func (instance *Legend) IsDeleted()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether this data labels is deleted.
+// Indicates whether this data labels are deleted.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -12598,7 +12441,7 @@ func (instance *Legend) SetTextVerticalAlignment(value TextAlignmentType)  error
 
 	return nil 
 }
-// Represents text rotation angle.
+// Represents the text rotation angle.
 // Returns:
 //   int32  
 func (instance *Legend) GetRotationAngle()  (int32,  error)  {
@@ -12612,7 +12455,7 @@ func (instance *Legend) GetRotationAngle()  (int32,  error)  {
 
 	return result, nil 
 }
-// Represents text rotation angle.
+// Represents the text rotation angle.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -13419,6 +13262,35 @@ func (instance *PivotOptions) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
+// Gets or sets a value indicating whether to show expand/collapse field buttons
+// Returns:
+//   bool  
+func (instance *PivotOptions) GetShowExpandCollapseFieldButtons()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotOptions_GetShowExpandCollapseFieldButtons"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets a value indicating whether to show expand/collapse field buttons
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PivotOptions) SetShowExpandCollapseFieldButtons(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotOptions_SetShowExpandCollapseFieldButtons"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Specifies whether a control for each PivotTable field on the PivotTable page axis
 // of the source PivotTable appears on the chart when dropZonesVisible is set to true.
 // Returns:
@@ -13624,7 +13496,7 @@ func (instance *PlotArea) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Gets or gets the x coordinate of the upper left corner of plot-area bounding box in units of ratio of the chart area.
+// Gets or sets the x coordinate of the upper left corner of the plot area bounding box as a ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *PlotArea) GetXRatioToChart()  (float64,  error)  {
@@ -13638,7 +13510,7 @@ func (instance *PlotArea) GetXRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or gets the x coordinate of the upper left corner of plot-area bounding box in units of ratio of the chart area.
+// Gets or sets the x coordinate of the upper left corner of the plot area bounding box as a ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -13653,7 +13525,7 @@ func (instance *PlotArea) SetXRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets or gets the y coordinate of the upper top corner  of plot-area bounding box in units of ratio of the chart area.
+// Gets or sets the y coordinate of the upper top corner of the plot-area bounding box as a ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *PlotArea) GetYRatioToChart()  (float64,  error)  {
@@ -13667,7 +13539,7 @@ func (instance *PlotArea) GetYRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or gets the y coordinate of the upper top corner  of plot-area bounding box in units of ratio of the chart area.
+// Gets or sets the y coordinate of the upper top corner of the plot-area bounding box as a ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -13682,7 +13554,7 @@ func (instance *PlotArea) SetYRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets or sets the height of plot-area bounding box in units of ratio of the chart area.
+// Gets or sets the height of the plot-area bounding box in units of the ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *PlotArea) GetHeightRatioToChart()  (float64,  error)  {
@@ -13696,7 +13568,7 @@ func (instance *PlotArea) GetHeightRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the height of plot-area bounding box in units of ratio of the chart area.
+// Gets or sets the height of the plot-area bounding box in units of the ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -13711,7 +13583,7 @@ func (instance *PlotArea) SetHeightRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets or sets the width of plot-area bounding box in units of ratio of the chart area.
+// Gets or sets the width of plot-area bounding box in units of the ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *PlotArea) GetWidthRatioToChart()  (float64,  error)  {
@@ -13725,7 +13597,7 @@ func (instance *PlotArea) GetWidthRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the width of plot-area bounding box in units of ratio of the chart area.
+// Gets or sets the width of plot-area bounding box in units of the ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -13740,7 +13612,7 @@ func (instance *PlotArea) SetWidthRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets or gets the x coordinate of the upper top corner of plot area in units of ratio of the chart area.
+// Gets or gets the x coordinate of the upper top corner of plot area in units of the ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *PlotArea) GetInnerXRatioToChart()  (float64,  error)  {
@@ -13754,7 +13626,7 @@ func (instance *PlotArea) GetInnerXRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or gets the x coordinate of the upper top corner of plot area in units of ratio of the chart area.
+// Gets or gets the x coordinate of the upper top corner of plot area in units of the ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -13769,7 +13641,7 @@ func (instance *PlotArea) SetInnerXRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets or gets the x coordinate of the upper top corner of plot area in units of ratio of the chart area.
+// Gets or gets the x coordinate of the upper top corner of plot area in units of the ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *PlotArea) GetInnerYRatioToChart()  (float64,  error)  {
@@ -13783,7 +13655,7 @@ func (instance *PlotArea) GetInnerYRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or gets the x coordinate of the upper top corner of plot area in units of ratio of the chart area.
+// Gets or gets the x coordinate of the upper top corner of plot area in units of the ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -13827,7 +13699,7 @@ func (instance *PlotArea) SetInnerHeightRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets or sets the width  of plot area in units of ratio of the chart area.
+// Gets or sets the width of the plot area in units of the ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *PlotArea) GetInnerWidthRatioToChart()  (float64,  error)  {
@@ -13841,7 +13713,7 @@ func (instance *PlotArea) GetInnerWidthRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the width  of plot area in units of ratio of the chart area.
+// Gets or sets the width of the plot area in units of the ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -13856,7 +13728,7 @@ func (instance *PlotArea) SetInnerWidthRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Set position of the plot area to automatic
+// Set the position of the plot area to automatic
 // Returns:
 //   void  
 func (instance *PlotArea) SetPositionAuto()  error {
@@ -13869,7 +13741,7 @@ func (instance *PlotArea) SetPositionAuto()  error {
 
 	return nil 
 }
-// Indicates whether the plot area is automatic sized.
+// Indicates whether the plot area is automatically sized.
 // Returns:
 //   bool  
 func (instance *PlotArea) IsAutomaticSize()  (bool,  error)  {
@@ -13883,7 +13755,7 @@ func (instance *PlotArea) IsAutomaticSize()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether the plot area is automatic sized.
+// Indicates whether the plot area is automatically sized.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -13922,38 +13794,6 @@ func (instance *PlotArea) IsInnerMode()  (bool,  error)  {
 func (instance *PlotArea) SetIsInnerMode(value bool)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PlotArea_SetIsInnerMode"), instance.ptr, C.bool(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets and sets the display mode of the background
-// Returns:
-//   int32  
-func (instance *PlotArea) GetBackgroundMode()  (BackgroundMode,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("PlotArea_GetBackgroundMode"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToBackgroundMode(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
-// Gets and sets the display mode of the background
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *PlotArea) SetBackgroundMode(value BackgroundMode)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PlotArea_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14321,7 +14161,8 @@ func (instance *Series) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether the series is selected or filtered.True represents this series is filtered, and it will not be displayed on the chart.
+// Indicates whether the series is selected or filtered.
+// True represents that this series is filtered, and it will not be displayed on the chart.
 // Returns:
 //   bool  
 func (instance *Series) IsFiltered()  (bool,  error)  {
@@ -14335,7 +14176,8 @@ func (instance *Series) IsFiltered()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether the series is selected or filtered.True represents this series is filtered, and it will not be displayed on the chart.
+// Indicates whether the series is selected or filtered.
+// True represents that this series is filtered, and it will not be displayed on the chart.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -14397,7 +14239,7 @@ func (instance *Series) GetPoints()  (*ChartPointCollection,  error)  {
 
 	return result, nil 
 }
-// Represents the background area of Series object.
+// Represents the background area of the Series object.
 // Returns:
 //   Area  
 func (instance *Series) GetArea()  (*Area,  error)  {
@@ -14413,7 +14255,7 @@ func (instance *Series) GetArea()  (*Area,  error)  {
 
 	return result, nil 
 }
-// Represents border of Series object.
+// Represents the border of a Series object.
 // Returns:
 //   Line  
 func (instance *Series) GetBorder()  (*Line,  error)  {
@@ -14578,7 +14420,7 @@ func (instance *Series) GetCategoryValues()  ([][]ChartDataValue,  error)  {
 
 	return result, nil 
 }
-// Represents format code of Values's NumberList.
+// Represents format code of Values' NumberList.
 // Returns:
 //   string  
 func (instance *Series) GetValuesFormatCode()  (string,  error)  {
@@ -14592,7 +14434,7 @@ func (instance *Series) GetValuesFormatCode()  (string,  error)  {
 
 	return result, nil 
 }
-// Represents format code of Values's NumberList.
+// Represents format code of Values' NumberList.
 // Parameters:
 //   value - string 
 // Returns:
@@ -14607,7 +14449,7 @@ func (instance *Series) SetValuesFormatCode(value string)  error {
 
 	return nil 
 }
-// Represents format code of X Values's NumberList.
+// Represents format code of X Values' NumberList.
 // Returns:
 //   string  
 func (instance *Series) GetXValuesFormatCode()  (string,  error)  {
@@ -14621,7 +14463,7 @@ func (instance *Series) GetXValuesFormatCode()  (string,  error)  {
 
 	return result, nil 
 }
-// Represents format code of X Values's NumberList.
+// Represents format code of X Values' NumberList.
 // Parameters:
 //   value - string 
 // Returns:
@@ -14773,7 +14615,6 @@ func (instance *Series) SetShadow(value bool)  error {
 	return nil 
 }
 // True if the series has a three-dimensional appearance.
-// Applies only to bubble charts.
 // Returns:
 //   bool  
 func (instance *Series) GetHas3DEffect()  (bool,  error)  {
@@ -14788,7 +14629,6 @@ func (instance *Series) GetHas3DEffect()  (bool,  error)  {
 	return result, nil 
 }
 // True if the series has a three-dimensional appearance.
-// Applies only to bubble charts.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -15172,7 +15012,7 @@ func (instance *Series) GetDownBars()  (*DropBars,  error)  {
 	return result, nil 
 }
 // Represents if the color of points is varied.
-// The chart must contain only one series.
+// The chart must contain only one series or this chart is a pie chart.
 // Returns:
 //   bool  
 func (instance *Series) IsColorVaried()  (bool,  error)  {
@@ -15187,7 +15027,7 @@ func (instance *Series) IsColorVaried()  (bool,  error)  {
 	return result, nil 
 }
 // Represents if the color of points is varied.
-// The chart must contain only one series.
+// The chart must contain only one series or this chart is a pie chart.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -15265,7 +15105,7 @@ func (instance *Series) SetFirstSliceAngle(value int16)  error {
 	return nil 
 }
 // Specifies how bars and columns are positioned.
-// Can be a value between – 100 and 100.
+// Can be a value between -100 and 100.
 // Applies only to 2-D bar and 2-D column charts.
 // Returns:
 //   int16  
@@ -15281,7 +15121,7 @@ func (instance *Series) GetOverlap()  (int16,  error)  {
 	return result, nil 
 }
 // Specifies how bars and columns are positioned.
-// Can be a value between – 100 and 100.
+// Can be a value between -100 and 100.
 // Applies only to 2-D bar and 2-D column charts.
 // Parameters:
 //   value - int16 
@@ -15624,7 +15464,7 @@ func (instance *Series) SetHasLeaderLines(value bool)  error {
 	return nil 
 }
 // Represents leader lines on a chart. Leader lines connect data labels to data points.
-// This object isn’t a collection; there’s no object that represents a single leader line.
+// This object isn't a collection; there's no object that represents a single leader line.
 // Returns:
 //   Line  
 func (instance *Series) GetLeaderLines()  (*Line,  error)  {
@@ -15790,7 +15630,7 @@ func (instance *SeriesCollection) SetCategoryData(value string)  error {
 // Gets or sets the range of second category Axis values.
 // It can be a range of cells (such as, "d1:e10"),
 // or a sequence of values (such as,"{2,6,8,10}").
-// Only effects when some ASerieses plot on the second axis.
+// Only effects when some series were plotted on the second axis.
 // Returns:
 //   string  
 func (instance *SeriesCollection) GetSecondCategoryData()  (string,  error)  {
@@ -15807,7 +15647,7 @@ func (instance *SeriesCollection) GetSecondCategoryData()  (string,  error)  {
 // Gets or sets the range of second category Axis values.
 // It can be a range of cells (such as, "d1:e10"),
 // or a sequence of values (such as,"{2,6,8,10}").
-// Only effects when some ASerieses plot on the second axis.
+// Only effects when some series were plotted on the second axis.
 // Parameters:
 //   value - string 
 // Returns:
@@ -15874,13 +15714,13 @@ func (instance *SeriesCollection) AddR1C1(area string, isvertical bool)  (int32,
 }
 // Adds the <see cref="Series"/> collection to a chart.
 // Parameters:
-//   area - string 
+//   dataArea - string 
 //   isVertical - bool 
 // Returns:
 //   int32  
-func (instance *SeriesCollection) Add_String_Bool(area string, isvertical bool)  (int32,  error)  {
+func (instance *SeriesCollection) Add_String_Bool(dataarea string, isvertical bool)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("SeriesCollection_Add_String_Boolean"), instance.ptr, C.CString(area), C.bool(isvertical))
+	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("SeriesCollection_Add_String_Boolean"), instance.ptr, C.CString(dataarea), C.bool(isvertical))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -16022,7 +15862,7 @@ func (instance *SeriesLayoutProperties) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether showing connector lines between data points.
+// Indicates whether connector lines are shown between data points.
 // Returns:
 //   bool  
 func (instance *SeriesLayoutProperties) GetShowConnectorLines()  (bool,  error)  {
@@ -16036,7 +15876,7 @@ func (instance *SeriesLayoutProperties) GetShowConnectorLines()  (bool,  error) 
 
 	return result, nil 
 }
-// Indicates whether showing connector lines between data points.
+// Indicates whether connector lines are shown between data points.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -16051,7 +15891,7 @@ func (instance *SeriesLayoutProperties) SetShowConnectorLines(value bool)  error
 
 	return nil 
 }
-// Indicates whether showing the line connecting all mean points.
+// Indicates whether to show the line connecting all mean points.
 // Returns:
 //   bool  
 func (instance *SeriesLayoutProperties) GetShowMeanLine()  (bool,  error)  {
@@ -16065,7 +15905,7 @@ func (instance *SeriesLayoutProperties) GetShowMeanLine()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether showing the line connecting all mean points.
+// Indicates whether to show the line connecting all mean points.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -16080,7 +15920,7 @@ func (instance *SeriesLayoutProperties) SetShowMeanLine(value bool)  error {
 
 	return nil 
 }
-// Indicates whether showing outlier data points.
+// Indicates whether outlier data points are shown.
 // Returns:
 //   bool  
 func (instance *SeriesLayoutProperties) GetShowOutlierPoints()  (bool,  error)  {
@@ -16094,7 +15934,7 @@ func (instance *SeriesLayoutProperties) GetShowOutlierPoints()  (bool,  error)  
 
 	return result, nil 
 }
-// Indicates whether showing outlier data points.
+// Indicates whether outlier data points are shown.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -16109,7 +15949,7 @@ func (instance *SeriesLayoutProperties) SetShowOutlierPoints(value bool)  error 
 
 	return nil 
 }
-// Indicates whether showing markers denoting the mean.
+// Indicates whether markers denoting the mean are shown.
 // Returns:
 //   bool  
 func (instance *SeriesLayoutProperties) GetShowMeanMarker()  (bool,  error)  {
@@ -16123,7 +15963,7 @@ func (instance *SeriesLayoutProperties) GetShowMeanMarker()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether showing markers denoting the mean.
+// Indicates whether markers denoting the mean are shown.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -16138,7 +15978,7 @@ func (instance *SeriesLayoutProperties) SetShowMeanMarker(value bool)  error {
 
 	return nil 
 }
-// Indicates whether showing non-outlier data points.
+// Indicates whether to show non-outlier data points.
 // Returns:
 //   bool  
 func (instance *SeriesLayoutProperties) GetShowInnerPoints()  (bool,  error)  {
@@ -16152,7 +15992,7 @@ func (instance *SeriesLayoutProperties) GetShowInnerPoints()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether showing non-outlier data points.
+// Indicates whether to show non-outlier data points.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -16602,7 +16442,8 @@ func DeleteSparklineCollection(sparklinecollection *SparklineCollection){
 
 // Class SparklineGroup 
 
-// <see cref="Sparkline"/> is organized into sparkline group. A SparklineGroup contains a variable number of sparkline items.
+// <see cref="Sparkline"/> is organized into a sparkline group.
+// A SparklineGroup contains a variable number of sparkline items.
 // A sparkline group specifies the type, display settings and axis settings for the sparklines.
 type SparklineGroup struct {
 	ptr unsafe.Pointer
@@ -17554,7 +17395,7 @@ func (instance *SparklineGroupCollection) Add_SparklineType(type_ SparklineType)
 
 	return result, nil 
 }
-// Adds an <see cref="SparklineGroup"/> with <see cref="Sparkline"/> to the collection.
+// Adds an <see cref="SparklineGroup"/> with some <see cref="Sparkline"/> to the collection.
 // Parameters:
 //   type - int32 
 //   dataRange - string 
@@ -17578,7 +17419,7 @@ func (instance *SparklineGroupCollection) Add_SparklineType_String_Bool_CellArea
 
 	return result, nil 
 }
-// Clears the sparklines that is inside an area of cells.
+// Clears the sparklines that are inside an area of cells.
 // Parameters:
 //   cellArea - CellArea 
 // Returns:
@@ -17598,7 +17439,7 @@ func (instance *SparklineGroupCollection) ClearSparklines(cellarea *CellArea)  e
 
 	return nil 
 }
-// Clears the sparkline groups that overlaps an area of cells.
+// Clears the sparkline groups that overlap an area of cells.
 // Parameters:
 //   cellArea - CellArea 
 // Returns:
@@ -17662,7 +17503,7 @@ func (instance *TickLabelItem) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// X coordinates of Ticklabel item in ratio of chart width.
+// X coordinates of Ticklabel item as a ratio of chart width.
 // Returns:
 //   float64  
 func (instance *TickLabelItem) GetX()  (float64,  error)  {
@@ -17676,7 +17517,7 @@ func (instance *TickLabelItem) GetX()  (float64,  error)  {
 
 	return result, nil 
 }
-// Y coordinates of Ticklabel item in ratio of chart height.
+// Y coordinates of Ticklabel item as a ratio of the chart height.
 // Returns:
 //   float64  
 func (instance *TickLabelItem) GetY()  (float64,  error)  {
@@ -17690,7 +17531,7 @@ func (instance *TickLabelItem) GetY()  (float64,  error)  {
 
 	return result, nil 
 }
-// Width of Ticklabel item in ratio of chart width.
+// Width of Ticklabel item as a ratio of chart width.
 // Returns:
 //   float64  
 func (instance *TickLabelItem) GetWidth()  (float64,  error)  {
@@ -17704,7 +17545,7 @@ func (instance *TickLabelItem) GetWidth()  (float64,  error)  {
 
 	return result, nil 
 }
-// Height of Ticklabel item in ratio of chart height.
+// Height of Ticklabel item as a ratio of chart height.
 // Returns:
 //   float64  
 func (instance *TickLabelItem) GetHeight()  (float64,  error)  {
@@ -18407,38 +18248,6 @@ func (instance *Title) SetIsInnerMode(value bool)  error {
 
 	return nil 
 }
-// Gets and sets the display mode of the background
-// Returns:
-//   int32  
-func (instance *Title) GetBackgroundMode()  (BackgroundMode,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("Title_GetBackgroundMode"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToBackgroundMode(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
-// Gets and sets the display mode of the background
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *Title) SetBackgroundMode(value BackgroundMode)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("Title_SetBackgroundMode"), instance.ptr, C.int( int32(value)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // True if the frame has a shadow.
 // Returns:
 //   bool  
@@ -18863,7 +18672,7 @@ func (instance *Title) SetPositionAuto()  error {
 
 	return nil 
 }
-// Indicates whether this data labels is deleted.
+// Indicates whether this data labels are deleted.
 // Returns:
 //   bool  
 func (instance *Title) IsDeleted()  (bool,  error)  {
@@ -18877,7 +18686,7 @@ func (instance *Title) IsDeleted()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether this data labels is deleted.
+// Indicates whether this data labels are deleted.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -18956,7 +18765,7 @@ func (instance *Title) SetTextVerticalAlignment(value TextAlignmentType)  error 
 
 	return nil 
 }
-// Represents text rotation angle.
+// Represents the text rotation angle.
 // Returns:
 //   int32  
 func (instance *Title) GetRotationAngle()  (int32,  error)  {
@@ -18970,7 +18779,7 @@ func (instance *Title) GetRotationAngle()  (int32,  error)  {
 
 	return result, nil 
 }
-// Represents text rotation angle.
+// Represents the text rotation angle.
 // Parameters:
 //   value - int32 
 // Returns:
