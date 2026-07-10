@@ -423,7 +423,7 @@ func (instance *OdsCellFieldCollection) Get_Int_Int(row int32, column int32)  (*
 //   int32  
 func (instance *OdsCellFieldCollection) Add(row int32, column int32, fieldtype OdsCellFieldType, format string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPF(C.CString("OdsCellFieldCollection_Add"), instance.ptr, C.int(row), C.int(column), C.int( int32(fieldtype)), C.CString(format))
+	CGoReturnPtr := C.CellsGoFunctoinZZPI(C.CString("OdsCellFieldCollection_Add"), instance.ptr, C.int(row), C.int(column), C.int( int32(fieldtype)), C.CString(format))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -445,6 +445,7 @@ func (instance *OdsCellFieldCollection) UpdateFieldsValue()  error {
 
 	return nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *OdsCellFieldCollection) GetCount()  (int32,  error)  {

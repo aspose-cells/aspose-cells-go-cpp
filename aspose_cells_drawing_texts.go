@@ -831,7 +831,7 @@ func (instance *CharacterBulletValue) GetType()  (BulletType,  error)  {
 //   byte  
 func (instance *CharacterBulletValue) GetCharacter()  (byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGP(C.CString("CharacterBulletValue_GetCharacter"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZGS(C.CString("CharacterBulletValue_GetCharacter"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -847,7 +847,7 @@ func (instance *CharacterBulletValue) GetCharacter()  (byte,  error)  {
 //   void  
 func (instance *CharacterBulletValue) SetCharacter(value byte)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHC(C.CString("CharacterBulletValue_SetCharacter"), instance.ptr, C.char(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHF(C.CString("CharacterBulletValue_SetCharacter"), instance.ptr, C.char(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1024,7 +1024,7 @@ func (instance *FontSettingCollection) InsertText(index int32, text string)  err
 //   void  
 func (instance *FontSettingCollection) Replace_Int_Int_String(index int32, count int32, text string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMN(C.CString("FontSettingCollection_Replace_Integer_Integer_String"), instance.ptr, C.int(index), C.int(count), C.CString(text))
+	CGoReturnPtr := C.CellsGoFunctoinZZMP(C.CString("FontSettingCollection_Replace_Integer_Integer_String"), instance.ptr, C.int(index), C.int(count), C.CString(text))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1040,7 +1040,7 @@ func (instance *FontSettingCollection) Replace_Int_Int_String(index int32, count
 //   void  
 func (instance *FontSettingCollection) Replace_String_String(oldvalue string, newvalue string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZFN(C.CString("FontSettingCollection_Replace_String_String"), instance.ptr, C.CString(oldvalue), C.CString(newvalue))
+	CGoReturnPtr := C.CellsGoFunctoinZZFO(C.CString("FontSettingCollection_Replace_String_String"), instance.ptr, C.CString(oldvalue), C.CString(newvalue))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1184,6 +1184,7 @@ func (instance *FontSettingCollection) GetHashCode()  (int32,  error)  {
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *FontSettingCollection) GetCount()  (int32,  error)  {
@@ -2868,7 +2869,7 @@ func (instance *TextOptions) SetUnderline(value FontUnderlineType)  error {
 //   void  
 func (instance *TextOptions) SetName_String_FontSchemeType(name string, type_ FontSchemeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZFY(C.CString("TextOptions_SetName_String_FontSchemeType"), instance.ptr, C.CString(name), C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZZGC(C.CString("TextOptions_SetName_String_FontSchemeType"), instance.ptr, C.CString(name), C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3981,7 +3982,7 @@ func (instance *TextTabStopCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *TextTabStopCollection) Add(tabalignment TextTabAlignmentType, tabposition float64)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMO(C.CString("TextTabStopCollection_Add"), instance.ptr, C.int( int32(tabalignment)), C.double(tabposition))
+	CGoReturnPtr := C.CellsGoFunctoinZZMQ(C.CString("TextTabStopCollection_Add"), instance.ptr, C.int( int32(tabalignment)), C.double(tabposition))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4008,6 +4009,7 @@ func (instance *TextTabStopCollection) Get(index int32)  (*TextTabStop,  error) 
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *TextTabStopCollection) GetCount()  (int32,  error)  {

@@ -768,6 +768,7 @@ func (instance *ConnectionParameterCollection) Get_String(connparamname string) 
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *ConnectionParameterCollection) GetCount()  (int32,  error)  {
@@ -3257,6 +3258,7 @@ func (instance *ExternalConnectionCollection) GetExternalConnectionById(connid i
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *ExternalConnectionCollection) GetCount()  (int32,  error)  {

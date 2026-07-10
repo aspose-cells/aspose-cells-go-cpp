@@ -21,6 +21,40 @@ import (
 	"unsafe" 
 )
 
+/**************Enum PowerQueryFormulaItemType *****************/
+
+// Represents the type of a Power Query formula item.
+type PowerQueryFormulaItemType int32
+
+const(
+// Unknown or default type.
+PowerQueryFormulaItemType_Unknown PowerQueryFormulaItemType = 0 
+
+// The item is a function (contains => arrow).
+PowerQueryFormulaItemType_Function PowerQueryFormulaItemType = 1 
+
+// The item is a parameter.
+PowerQueryFormulaItemType_Parameter PowerQueryFormulaItemType = 2 
+
+// The item is a list (starts with {).
+PowerQueryFormulaItemType_List PowerQueryFormulaItemType = 3 
+
+// The item is a literal value (string, number, boolean, null).
+PowerQueryFormulaItemType_Literal PowerQueryFormulaItemType = 4 
+)
+
+func Int32ToPowerQueryFormulaItemType(value int32)(PowerQueryFormulaItemType ,error){
+	switch value {
+		case 0:  return PowerQueryFormulaItemType_Unknown, nil  
+		case 1:  return PowerQueryFormulaItemType_Function, nil  
+		case 2:  return PowerQueryFormulaItemType_Parameter, nil  
+		case 3:  return PowerQueryFormulaItemType_List, nil  
+		case 4:  return PowerQueryFormulaItemType_Literal, nil  
+		default:
+			return 0 ,fmt.Errorf("invalid PowerQueryFormulaItemType value: %d", value)
+	}
+}
+
 /**************Enum PowerQueryFormulaType *****************/
 
 // Represents the type of power query formula.
@@ -316,6 +350,7 @@ func (instance *PowerQueryFormulaCollection) RemoveBy(name string)  error {
 
 	return nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *PowerQueryFormulaCollection) GetCount()  (int32,  error)  {
@@ -608,6 +643,37 @@ func (instance *PowerQueryFormulaItem) SetValue(value string)  error {
 
 	return nil 
 }
+// Gets the text value of the item.
+// Returns:
+//   string  
+func (instance *PowerQueryFormulaItem) GetTextValue()  (string,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("PowerQueryFormulaItem_GetTextValue"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the type of this item (Function, Parameter, List, Literal, or Unknown).
+// Returns:
+//   int32  
+func (instance *PowerQueryFormulaItem) GetItemType()  (PowerQueryFormulaItemType,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("PowerQueryFormulaItem_GetItemType"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToPowerQueryFormulaItemType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
 
 
 
@@ -675,6 +741,7 @@ func (instance *PowerQueryFormulaItemCollection) Get_String(name string)  (*Powe
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *PowerQueryFormulaItemCollection) GetCount()  (int32,  error)  {
@@ -974,6 +1041,7 @@ func (instance *PowerQueryFormulaParameterCollection) Get_String(name string)  (
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *PowerQueryFormulaParameterCollection) GetCount()  (int32,  error)  {

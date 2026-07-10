@@ -854,6 +854,22 @@ func (instance *ListColumnCollection) Get_String(name string)  (*ListColumn,  er
 
 	return result, nil 
 }
+// Remove <see cref="ListColumn"/> by index.
+// Parameters:
+//   index - int32 
+// Returns:
+//   void  
+func (instance *ListColumnCollection) RemoveAt(index int32)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ListColumnCollection_RemoveAt"), instance.ptr, C.int(index))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *ListColumnCollection) GetCount()  (int32,  error)  {
@@ -1026,7 +1042,7 @@ func (instance *ListObject) PutCellValue_Int_Int_Object_Bool(rowoffset int32, co
 	  value_ptr =value.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPC(C.CString("ListObject_PutCellValue_Integer_Integer_Object_Boolean"), instance.ptr, C.int(rowoffset), C.int(columnoffset), value_ptr, C.bool(istotalsrowlabel))
+	CGoReturnPtr := C.CellsGoFunctoinZZPF(C.CString("ListObject_PutCellValue_Integer_Integer_Object_Boolean"), instance.ptr, C.int(rowoffset), C.int(columnoffset), value_ptr, C.bool(istotalsrowlabel))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1043,7 +1059,7 @@ func (instance *ListObject) PutCellValue_Int_Int_Object_Bool(rowoffset int32, co
 //   void  
 func (instance *ListObject) PutCellFormula_Int_Int_String(rowoffset int32, columnoffset int32, formula string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMN(C.CString("ListObject_PutCellFormula_Integer_Integer_String"), instance.ptr, C.int(rowoffset), C.int(columnoffset), C.CString(formula))
+	CGoReturnPtr := C.CellsGoFunctoinZZMP(C.CString("ListObject_PutCellFormula_Integer_Integer_String"), instance.ptr, C.int(rowoffset), C.int(columnoffset), C.CString(formula))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1061,7 +1077,7 @@ func (instance *ListObject) PutCellFormula_Int_Int_String(rowoffset int32, colum
 //   void  
 func (instance *ListObject) PutCellFormula_Int_Int_String_Bool(rowoffset int32, columnoffset int32, formula string, istotalsrowformula bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPD(C.CString("ListObject_PutCellFormula_Integer_Integer_String_Boolean"), instance.ptr, C.int(rowoffset), C.int(columnoffset), C.CString(formula), C.bool(istotalsrowformula))
+	CGoReturnPtr := C.CellsGoFunctoinZZPG(C.CString("ListObject_PutCellFormula_Integer_Integer_String_Boolean"), instance.ptr, C.int(rowoffset), C.int(columnoffset), C.CString(formula), C.bool(istotalsrowformula))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1680,7 +1696,7 @@ func (instance *ListObjectCollection) Get_String(tablename string)  (*ListObject
 //   int32  
 func (instance *ListObjectCollection) Add_Int_Int_Int_Int_Bool(startrow int32, startcolumn int32, endrow int32, endcolumn int32, hasheaders bool)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPE(C.CString("ListObjectCollection_Add_Integer_Integer_Integer_Integer_Boolean"), instance.ptr, C.int(startrow), C.int(startcolumn), C.int(endrow), C.int(endcolumn), C.bool(hasheaders))
+	CGoReturnPtr := C.CellsGoFunctoinZZPH(C.CString("ListObjectCollection_Add_Integer_Integer_Integer_Integer_Boolean"), instance.ptr, C.int(startrow), C.int(startcolumn), C.int(endrow), C.int(endcolumn), C.bool(hasheaders))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1698,7 +1714,7 @@ func (instance *ListObjectCollection) Add_Int_Int_Int_Int_Bool(startrow int32, s
 //   int32  
 func (instance *ListObjectCollection) Add_String_String_Bool(startcell string, endcell string, hasheaders bool)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGQ(C.CString("ListObjectCollection_Add_String_String_Boolean"), instance.ptr, C.CString(startcell), C.CString(endcell), C.bool(hasheaders))
+	CGoReturnPtr := C.CellsGoFunctoinZZGT(C.CString("ListObjectCollection_Add_String_String_Boolean"), instance.ptr, C.CString(startcell), C.CString(endcell), C.bool(hasheaders))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1706,6 +1722,21 @@ func (instance *ListObjectCollection) Add_String_String_Bool(startcell string, e
 	result := int32(CGoReturnPtr.return_value) 
 
 	return result, nil 
+}
+// Remove <see cref="ListObject"/> by index.
+// Parameters:
+//   index - int32 
+// Returns:
+//   void  
+func (instance *ListObjectCollection) RemoveAt(index int32)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ListObjectCollection_RemoveAt"), instance.ptr, C.int(index))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
 }
 // Update all column name of the tables.
 // Returns:
@@ -1720,6 +1751,7 @@ func (instance *ListObjectCollection) UpdateColumnName()  error {
 
 	return nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *ListObjectCollection) GetCount()  (int32,  error)  {
@@ -1807,7 +1839,7 @@ func TableStyle_Create(name string, sheets *WorksheetCollection)  (*TableStyle, 
 	  sheets_ptr =sheets.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZJD(C.CString("TableStyle_Create"),C.CString(name), sheets_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("TableStyle_Create"),C.CString(name), sheets_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1993,6 +2025,7 @@ func (instance *TableStyleCollection) GetBuiltinTableStyle(type_ TableStyleType)
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *TableStyleCollection) GetCount()  (int32,  error)  {
@@ -2195,7 +2228,7 @@ func (instance *TableStyleElementCollection) Get_TableStyleElementType(type_ Tab
 //   int32  
 func (instance *TableStyleElementCollection) Add(type_ TableStyleElementType)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGN(C.CString("TableStyleElementCollection_Add"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZZGQ(C.CString("TableStyleElementCollection_Add"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2204,6 +2237,7 @@ func (instance *TableStyleElementCollection) Add(type_ TableStyleElementType)  (
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *TableStyleElementCollection) GetCount()  (int32,  error)  {

@@ -415,6 +415,7 @@ func (instance *WebExtensionBindingCollection) Add()  (int32,  error)  {
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *WebExtensionBindingCollection) GetCount()  (int32,  error)  {
@@ -501,7 +502,7 @@ func (instance *WebExtensionCollection) Add()  (int32,  error)  {
 //   int32  
 func (instance *WebExtensionCollection) AddWebVideoPlayer(url string, autoplay bool, starttime int32, endtime int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("WebExtensionCollection_AddWebVideoPlayer"), instance.ptr, C.CString(url), C.bool(autoplay), C.int(starttime), C.int(endtime))
+	CGoReturnPtr := C.CellsGoFunctoinZZPW(C.CString("WebExtensionCollection_AddWebVideoPlayer"), instance.ptr, C.CString(url), C.bool(autoplay), C.int(starttime), C.int(endtime))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -525,6 +526,7 @@ func (instance *WebExtensionCollection) RemoveAt(index int32)  error {
 
 	return nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *WebExtensionCollection) GetCount()  (int32,  error)  {
@@ -716,7 +718,7 @@ func (instance *WebExtensionPropertyCollection) Get_String(name string)  (*WebEx
 //   int32  
 func (instance *WebExtensionPropertyCollection) Add(name string, value string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("WebExtensionPropertyCollection_Add"), instance.ptr, C.CString(name), C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("WebExtensionPropertyCollection_Add"), instance.ptr, C.CString(name), C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -740,6 +742,7 @@ func (instance *WebExtensionPropertyCollection) RemoveAt(name string)  error {
 
 	return nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *WebExtensionPropertyCollection) GetCount()  (int32,  error)  {
@@ -982,6 +985,7 @@ func (instance *WebExtensionReferenceCollection) Add()  (int32,  error)  {
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *WebExtensionReferenceCollection) GetCount()  (int32,  error)  {
@@ -1270,6 +1274,7 @@ func (instance *WebExtensionTaskPaneCollection) Add()  (int32,  error)  {
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *WebExtensionTaskPaneCollection) GetCount()  (int32,  error)  {

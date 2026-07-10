@@ -141,7 +141,7 @@ type HighlightChangesOptions struct {
 //   listOnNewSheet - bool 
 func NewHighlightChangesOptions(highlightonscreen bool, listonnewsheet bool) ( *HighlightChangesOptions, error) {
 	highlightchangesoptions := &HighlightChangesOptions{}
-	CGoReturnPtr := C.CellsGoFunctoinZZPB(C.CString("New_HighlightChangesOptions"),C.bool(highlightonscreen), C.bool(listonnewsheet))
+	CGoReturnPtr := C.CellsGoFunctoinZZPE(C.CString("New_HighlightChangesOptions"),C.bool(highlightonscreen), C.bool(listonnewsheet))
 	if CGoReturnPtr.error_no == 0 {
 		highlightchangesoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(highlightchangesoptions, DeleteHighlightChangesOptions)
@@ -1052,6 +1052,7 @@ func (instance *RevisionCollection) Get(index int32)  (*Revision,  error)  {
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *RevisionCollection) GetCount()  (int32,  error)  {
@@ -2064,6 +2065,7 @@ func (instance *RevisionLogCollection) HighlightChanges(options *HighlightChange
 
 	return nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *RevisionLogCollection) GetCount()  (int32,  error)  {

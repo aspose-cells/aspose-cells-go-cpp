@@ -117,7 +117,7 @@ func Int32ToBar3DShapeType(value int32)(Bar3DShapeType ,error){
 type BubbleSizeRepresents int32
 
 const(
-// Represents the value of <see cref="Series.BubbleSizes"/> is area of the bubble.
+// Represents the value of <see cref="Series.BubbleSizes"/>, which is the area of the bubble.
 BubbleSizeRepresents_SizeIsArea BubbleSizeRepresents = 0 
 
 // Represents the value of <see cref="Series.BubbleSizes"/> is width of the bubble.
@@ -323,9 +323,8 @@ func Int32ToChartMarkerType(value int32)(ChartMarkerType ,error){
 type ChartSplitType int32
 
 const(
-// Represents the data points shall be split between the pie
-// and the second chart by putting the last Split Position
-// of the data points in the second chart
+// Represents the data points.
+// The data points shall be split between the pie and the second chart by putting the last split position of the data points in the second chart.
 ChartSplitType_Position ChartSplitType = 0 
 
 // Represents the data points shall be split between the pie
@@ -333,10 +332,7 @@ ChartSplitType_Position ChartSplitType = 0
 // value less than Split Position in the second chart.
 ChartSplitType_Value ChartSplitType = 1 
 
-// Represents the data points shall be split between the pie
-// and the second chart by putting the points with
-// percentage less than Split Position percent in the
-// second chart.
+// Represents the data points that shall be split between the pie and the second chart by putting the points with a percentage less than the Split Position percent in the second chart.
 ChartSplitType_PercentValue ChartSplitType = 2 
 
 // Represents the data points shall be split between the pie
@@ -344,8 +340,7 @@ ChartSplitType_PercentValue ChartSplitType = 2
 // values.
 ChartSplitType_Custom ChartSplitType = 3 
 
-// Represents the data points shall be split using the default
-// mechanism for this chart type.
+// Represents the data points that shall be split using the default mechanism for this chart type.
 ChartSplitType_Auto ChartSplitType = 4 
 )
 
@@ -373,7 +368,7 @@ ChartTextDirectionType_Horizontal ChartTextDirectionType = 0
 // Vertical direction type.
 ChartTextDirectionType_Vertical ChartTextDirectionType = 1 
 
-// Rotate 90-degree angle.
+// Rotate by a ninety-degree angle.
 ChartTextDirectionType_Rotate90 ChartTextDirectionType = 2 
 
 // Rotate 270-degree angle.
@@ -401,7 +396,7 @@ func Int32ToChartTextDirectionType(value int32)(ChartTextDirectionType ,error){
 type ChartType int32
 
 const(
-// Represents Area Chart.
+// Represents an Area Chart.
 ChartType_Area ChartType = 0 
 
 // Represents Stacked Area Chart.
@@ -419,7 +414,7 @@ ChartType_Area3DStacked ChartType = 4
 // Represents 3D 100% Stacked Area Chart.
 ChartType_Area3D100PercentStacked ChartType = 5 
 
-// Represents Bar Chart: Clustered Bar Chart.
+// Represents a Bar Chart: Clustered Bar Chart.
 ChartType_Bar ChartType = 6 
 
 // Represents Stacked Bar Chart.
@@ -437,7 +432,7 @@ ChartType_Bar3DStacked ChartType = 10
 // Represents 3D 100% Stacked Bar Chart.
 ChartType_Bar3D100PercentStacked ChartType = 11 
 
-// Represents Bubble Chart.
+// Represents a Bubble Chart.
 ChartType_Bubble ChartType = 12 
 
 // Represents 3D Bubble Chart.
@@ -449,7 +444,7 @@ ChartType_Column ChartType = 14
 // Represents Stacked Column Chart.
 ChartType_ColumnStacked ChartType = 15 
 
-// Represents 100% Stacked Column Chart.
+// Represents a 100% Stacked Column Chart.
 ChartType_Column100PercentStacked ChartType = 16 
 
 // Represents 3D Column Chart.
@@ -479,19 +474,19 @@ ChartType_ConicalBar ChartType = 24
 // Represents Stacked Conical Bar Chart.
 ChartType_ConicalBarStacked ChartType = 25 
 
-// Represents 100% Stacked Conical Bar Chart.
+// Represents a 100% Stacked Conical Bar Chart.
 ChartType_ConicalBar100PercentStacked ChartType = 26 
 
 // Represents 3D Conical Column Chart.
 ChartType_ConicalColumn3D ChartType = 27 
 
-// Represents Cylinder Chart.
+// Represents a Cylinder Chart.
 ChartType_Cylinder ChartType = 28 
 
 // Represents Stacked Cylinder Chart.
 ChartType_CylinderStacked ChartType = 29 
 
-// Represents 100% Stacked Cylinder Chart.
+// Represents a 100% Stacked Cylinder Chart.
 ChartType_Cylinder100PercentStacked ChartType = 30 
 
 // Represents Cylindrical Bar Chart.
@@ -539,7 +534,7 @@ ChartType_Pie ChartType = 44
 // Represents 3D Pie Chart.
 ChartType_Pie3D ChartType = 45 
 
-// Represents Pie of Pie Chart.
+// Represents the pie of a pie chart.
 ChartType_PiePie ChartType = 46 
 
 // Represents Exploded Pie Chart.
@@ -551,7 +546,7 @@ ChartType_Pie3DExploded ChartType = 48
 // Represents Bar of Pie Chart.
 ChartType_PieBar ChartType = 49 
 
-// Represents Pyramid Chart.
+// Represents a Pyramid Chart.
 ChartType_Pyramid ChartType = 50 
 
 // Represents Stacked Pyramid Chart.
@@ -575,19 +570,19 @@ ChartType_PyramidColumn3D ChartType = 56
 // Represents Radar Chart.
 ChartType_Radar ChartType = 57 
 
-// Represents Radar Chart with data markers.
+// Represents a Radar Chart with data markers.
 ChartType_RadarWithDataMarkers ChartType = 58 
 
 // Represents Filled Radar Chart.
 ChartType_RadarFilled ChartType = 59 
 
-// Represents Scatter Chart.
+// Represents a Scatter Chart.
 ChartType_Scatter ChartType = 60 
 
 // Represents Scatter Chart connected by curves, with data markers.
 ChartType_ScatterConnectedByCurvesWithDataMarker ChartType = 61 
 
-// Represents Scatter Chart connected by curves, without data markers.
+// Represents a Scatter Chart connected by curves, without data markers.
 ChartType_ScatterConnectedByCurvesWithoutDataMarker ChartType = 62 
 
 // Represents Scatter Chart connected by lines, with data markers.
@@ -778,7 +773,7 @@ DataLabelsSeparatorType_Space DataLabelsSeparatorType = 1
 // Represents comma(",")
 DataLabelsSeparatorType_Comma DataLabelsSeparatorType = 2 
 
-// Represents semicolon(";")
+// Represents a semicolon(";")
 DataLabelsSeparatorType_Semicolon DataLabelsSeparatorType = 3 
 
 // Represents period(".")
@@ -814,31 +809,31 @@ const(
 // Display unit is None.
 DisplayUnitType_None DisplayUnitType = 0 
 
-// Specifies the values on the chart shall be divided by 100.
+// Specifies that the values on the chart shall be divided by 100.
 DisplayUnitType_Hundreds DisplayUnitType = 1 
 
 // Specifies the values on the chart shall be divided by 1,000.
 DisplayUnitType_Thousands DisplayUnitType = 2 
 
-// Specifies the values on the chart shall be divided by 10,000.
+// Specifies that the values on the chart shall be divided by 10,000.
 DisplayUnitType_TenThousands DisplayUnitType = 3 
 
 // Specifies the values on the chart shall be divided by 100,000.
 DisplayUnitType_HundredThousands DisplayUnitType = 4 
 
-// Specifies the values on the chart shall be divided by 1,000,000.
+// Specifies that the values on the chart shall be divided by 1,000,000.
 DisplayUnitType_Millions DisplayUnitType = 5 
 
 // Specifies the values on the chart shall be divided by 10,000,000.
 DisplayUnitType_TenMillions DisplayUnitType = 6 
 
-// Specifies the values on the chart shall be divided by 100,000,000.
+// Specifies that the values on the chart shall be divided by 100,000,000.
 DisplayUnitType_HundredMillions DisplayUnitType = 7 
 
 // Specifies the values on the chart shall be divided by 1,000,000,000.
 DisplayUnitType_Billions DisplayUnitType = 8 
 
-// Specifies the values on the chart shall be divided by 1,000,000,000,000.
+// Specifies that the values on the chart shall be divided by 1,000,000,000,000.
 DisplayUnitType_Trillions DisplayUnitType = 9 
 
 // The values on the chart shall be divided by 0.01.
@@ -970,7 +965,7 @@ const(
 // Applies only to bar, 2D/3D pie charts
 LabelPositionType_Center LabelPositionType = 0 
 
-// Applies only to bar, 2d/3d pie charts
+// Applies only to bar, 2D/3D pie charts
 LabelPositionType_InsideBase LabelPositionType = 1 
 
 // Applies only to bar charts
@@ -994,7 +989,8 @@ LabelPositionType_Right LabelPositionType = 7
 // Applies only to 2D/3D pie charts
 LabelPositionType_BestFit LabelPositionType = 8 
 
-// User moved the data labels only for reading the chart from the template file.
+// User moved the data labels.
+// This is only for reading the chart from the template file.
 LabelPositionType_Moved LabelPositionType = 9 
 )
 
@@ -1024,19 +1020,19 @@ const(
 // Displays the legend to the bottom of the chart's plot area.
 LegendPositionType_Bottom LegendPositionType = 0 
 
-// Displays the legend to the corner of the chart's plot area.
+// Displays the legend in the corner of the chart's plot area.
 LegendPositionType_Corner LegendPositionType = 1 
 
 // Displays the legend to the left of the chart's plot area.
 LegendPositionType_Left LegendPositionType = 4 
 
-// Represents that the legend is not docked.
+// Indicates that the legend is not docked.
 LegendPositionType_NotDocked LegendPositionType = 7 
 
 // Displays the legend to the right of the chart's plot area.
 LegendPositionType_Right LegendPositionType = 3 
 
-// Displays the legend to the top of the chart's plot area.
+// Displays the legend at the top of the chart's plot area.
 LegendPositionType_Top LegendPositionType = 2 
 )
 
@@ -1059,13 +1055,13 @@ func Int32ToLegendPositionType(value int32)(LegendPositionType ,error){
 type MapChartLabelLayout int32
 
 const(
-// Only the best fit.
+// Only the best fit is used.
 MapChartLabelLayout_BestFitOnly MapChartLabelLayout = 0 
 
 // Shows all labels.
 MapChartLabelLayout_ShowAll MapChartLabelLayout = 1 
 
-// No labels.
+// There are no labels.
 MapChartLabelLayout_None MapChartLabelLayout = 2 
 )
 
@@ -1118,7 +1114,7 @@ const(
 // Automatic
 MapChartRegionType_Automatic MapChartRegionType = 0 
 
-// Only Data.
+// Contains only data.
 MapChartRegionType_DataOnly MapChartRegionType = 1 
 
 // Country region list.
@@ -1145,7 +1141,7 @@ func Int32ToMapChartRegionType(value int32)(MapChartRegionType ,error){
 type PlotDataByType int32
 
 const(
-// By row.
+// Sorted by row.
 PlotDataByType_Row PlotDataByType = 0 
 
 // By column.
@@ -1163,7 +1159,7 @@ func Int32ToPlotDataByType(value int32)(PlotDataByType ,error){
 
 /**************Enum PlotEmptyCellsType *****************/
 
-// Represents all plot empty cells type of a chart.
+// Represents all plot empty cell types of a chart.
 type PlotEmptyCellsType int32
 
 const(
@@ -1410,14 +1406,14 @@ SparklineType_Line SparklineType = 0
 SparklineType_Column SparklineType = 1 
 
 // Represents a Win/Loss sparkline.
-SparklineType_Stacked SparklineType = 2 
+SparklineType_WinLoss SparklineType = 2 
 )
 
 func Int32ToSparklineType(value int32)(SparklineType ,error){
 	switch value {
 		case 0:  return SparklineType_Line, nil  
 		case 1:  return SparklineType_Column, nil  
-		case 2:  return SparklineType_Stacked, nil  
+		case 2:  return SparklineType_WinLoss, nil  
 		default:
 			return 0 ,fmt.Errorf("invalid SparklineType value: %d", value)
 	}
@@ -1429,13 +1425,13 @@ func Int32ToSparklineType(value int32)(SparklineType ,error){
 type TickLabelAlignmentType int32
 
 const(
-// Represents that the text shall be centered.
+// Specifies that the text is centered.
 TickLabelAlignmentType_Center TickLabelAlignmentType = 0 
 
-// Represents the text that shall be left justified.
+// Specifies that the text is left-aligned.
 TickLabelAlignmentType_Left TickLabelAlignmentType = 1 
 
-// Represents that the text shall be right justified.
+// Specifies that the text is right-aligned..
 TickLabelAlignmentType_Right TickLabelAlignmentType = 2 
 )
 
@@ -1461,7 +1457,7 @@ TickLabelPositionType_High TickLabelPositionType = 0
 // Position type is low.
 TickLabelPositionType_Low TickLabelPositionType = 1 
 
-// Position type is next to axis.
+// Position type is next to the axis.
 TickLabelPositionType_NextToAxis TickLabelPositionType = 2 
 
 // Position type is none.
@@ -1574,7 +1570,7 @@ func Int32ToTrendlineType(value int32)(TrendlineType ,error){
 }
 // Class Axis 
 
-// Encapsulates the object that represents an axis of chart.
+// Encapsulates the object that represents an axis of a chart.
 type Axis struct {
 	ptr unsafe.Pointer
 }
@@ -2992,7 +2988,7 @@ func (instance *Chart) SetPivotSource(value string)  error {
 //   bool  
 func (instance *Chart) IsCellReferedByChart(sheetindex int32, rowindex int32, columnindex int32)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMP(C.CString("Chart_IsCellReferedByChart"), instance.ptr, C.int(sheetindex), C.int(rowindex), C.int(columnindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZMR(C.CString("Chart_IsCellReferedByChart"), instance.ptr, C.int(sheetindex), C.int(rowindex), C.int(columnindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3106,7 +3102,7 @@ func (instance *Chart) SetPlotVisibleCellsOnly(value bool)  error {
 
 	return nil 
 }
-// Indicates whether displaying #N/A as blank value.
+// Indicates whether to display #N/A as a blank value.
 // Returns:
 //   bool  
 func (instance *Chart) GetDisplayNaAsBlank()  (bool,  error)  {
@@ -3120,7 +3116,7 @@ func (instance *Chart) GetDisplayNaAsBlank()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether displaying #N/A as blank value.
+// Indicates whether to display #N/A as a blank value.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -3257,7 +3253,7 @@ func (instance *Chart) SetPrintSize(value PrintSizeType)  error {
 
 	return nil 
 }
-// Change chart type with preset template.
+// Change chart type with a preset template.
 // Parameters:
 //   data - []byte 
 // Returns:
@@ -3371,7 +3367,7 @@ func (instance *Chart) GetTitle()  (*Title,  error)  {
 	return result, nil 
 }
 // Gets the chart's sub-title.
-// Only for ODS format file.
+// Only applies to ODS files.
 // Returns:
 //   Title  
 func (instance *Chart) GetSubTitle()  (*Title,  error)  {
@@ -3713,7 +3709,7 @@ func (instance *Chart) SetGapDepth(value int32)  error {
 
 	return nil 
 }
-// Calculates the custom position of plot area, axes if the position of them are auto assigned.
+// Calculates the custom positions of the plot area and axes if their positions are auto-assigned.
 // Returns:
 //   void  
 func (instance *Chart) Calculate()  error {
@@ -3986,13 +3982,14 @@ func (instance *Chart) SetHeightPercent(value int32)  error {
 
 	return nil 
 }
-// Returns or sets the perspective for the 3-D chart view. Must be between 0 and 100.
+// Returns or sets the perspective for the three‑dimensional chart view.
+// Must be between 0 and 100.
 // This property is ignored if the RightAngleAxes property is True.
 // Returns:
 //   int16  
 func (instance *Chart) GetPerspective()  (int16,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHV(C.CString("Chart_GetPerspective"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZHW(C.CString("Chart_GetPerspective"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4001,7 +3998,8 @@ func (instance *Chart) GetPerspective()  (int16,  error)  {
 
 	return result, nil 
 }
-// Returns or sets the perspective for the 3-D chart view. Must be between 0 and 100.
+// Returns or sets the perspective for the three‑dimensional chart view.
+// Must be between 0 and 100.
 // This property is ignored if the RightAngleAxes property is True.
 // Parameters:
 //   value - int16 
@@ -4009,7 +4007,7 @@ func (instance *Chart) GetPerspective()  (int16,  error)  {
 //   void  
 func (instance *Chart) SetPerspective(value int16)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMQ(C.CString("Chart_SetPerspective"), instance.ptr, C.short(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZMS(C.CString("Chart_SetPerspective"), instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4084,7 +4082,7 @@ func (instance *Chart) ToImage_String(imagefile string)  error {
 //   void  
 func (instance *Chart) ToImage_String_ImageType(imagefile string, imagetype ImageType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZFY(C.CString("Chart_ToImage_String_ImageType"), instance.ptr, C.CString(imagefile), C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZGC(C.CString("Chart_ToImage_String_ImageType"), instance.ptr, C.CString(imagefile), C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4099,7 +4097,7 @@ func (instance *Chart) ToImage_String_ImageType(imagefile string, imagetype Imag
 //   []byte  
 func (instance *Chart) ToImage_Int64(jpegquality int64)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMR(C.CString("Chart_ToImage_Long"), instance.ptr, C.longlong(jpegquality))
+	CGoReturnPtr := C.CellsGoFunctoinZZMT(C.CString("Chart_ToImage_Long"), instance.ptr, C.longlong(jpegquality))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4116,7 +4114,7 @@ func (instance *Chart) ToImage_Int64(jpegquality int64)  ([]byte,  error)  {
 //   []byte  
 func (instance *Chart) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJF(C.CString("Chart_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("Chart_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4152,7 +4150,7 @@ func (instance *Chart) ToPdf_String(filename string)  error {
 //   void  
 func (instance *Chart) ToPdf_String_Float_Float_PageLayoutAlignmentType_PageLayoutAlignmentType(filename string, desiredpagewidth float32, desiredpageheight float32, halignmenttype PageLayoutAlignmentType, valignmenttype PageLayoutAlignmentType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMS(C.CString("Chart_ToPdf_String_Floating_Floating_PageLayoutAlignmentType_PageLayoutAlignmentType"), instance.ptr, C.CString(filename), C.float(desiredpagewidth), C.float(desiredpageheight), C.int( int32(halignmenttype)), C.int( int32(valignmenttype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZMU(C.CString("Chart_ToPdf_String_Floating_Floating_PageLayoutAlignmentType_PageLayoutAlignmentType"), instance.ptr, C.CString(filename), C.float(desiredpagewidth), C.float(desiredpageheight), C.int( int32(halignmenttype)), C.int( int32(valignmenttype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4160,7 +4158,7 @@ func (instance *Chart) ToPdf_String_Float_Float_PageLayoutAlignmentType_PageLayo
 
 	return nil 
 }
-// Creates the chart pdf and saves it to a stream.
+// Creates the chart PDF and saves it to a stream.
 // Returns:
 //   []byte  
 func (instance *Chart) ToPdf()  ([]byte,  error)  {
@@ -4185,7 +4183,7 @@ func (instance *Chart) ToPdf()  ([]byte,  error)  {
 //   []byte  
 func (instance *Chart) ToPdf_Float_Float_PageLayoutAlignmentType_PageLayoutAlignmentType(desiredpagewidth float32, desiredpageheight float32, halignmenttype PageLayoutAlignmentType, valignmenttype PageLayoutAlignmentType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMT(C.CString("Chart_ToPdf_Floating_Floating_PageLayoutAlignmentType_PageLayoutAlignmentType"), instance.ptr, C.float(desiredpagewidth), C.float(desiredpageheight), C.int( int32(halignmenttype)), C.int( int32(valignmenttype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZMV(C.CString("Chart_ToPdf_Floating_Floating_PageLayoutAlignmentType_PageLayoutAlignmentType"), instance.ptr, C.float(desiredpagewidth), C.float(desiredpageheight), C.int( int32(halignmenttype)), C.int( int32(valignmenttype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4316,7 +4314,7 @@ func (instance *Chart) GetPageSetup()  (*PageSetup,  error)  {
 //   bool  
 func (instance *Chart) HasAxis(aixstype AxisType, isprimary bool)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMU(C.CString("Chart_HasAxis"), instance.ptr, C.int( int32(aixstype)), C.bool(isprimary))
+	CGoReturnPtr := C.CellsGoFunctoinZZMW(C.CString("Chart_HasAxis"), instance.ptr, C.int( int32(aixstype)), C.bool(isprimary))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4437,7 +4435,7 @@ func (instance *ChartArea) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Gets or gets the horizontal offset from its upper left corner column, in units of ratio of the chart area.
+// Gets or sets the horizontal offset from the upper-left corner column, as a ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *ChartArea) GetXRatioToChart()  (float64,  error)  {
@@ -4451,7 +4449,7 @@ func (instance *ChartArea) GetXRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or gets the horizontal offset from its upper left corner column, in units of ratio of the chart area.
+// Gets or sets the horizontal offset from the upper-left corner column, as a ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -4553,7 +4551,7 @@ func (instance *ChartArea) SetWidthRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets a <see cref="Font"/> object of the specified chartarea object.
+// Gets a <see cref=Font"/> object of the specified ChartArea object.
 // Returns:
 //   Font  
 func (instance *ChartArea) GetFont()  (*Font,  error)  {
@@ -4645,7 +4643,7 @@ func (instance *ChartArea) GetShapeProperties()  (*ShapePropertyCollection,  err
 
 	return result, nil 
 }
-// Indicates whether default position(DefaultX, DefaultY, DefaultWidth and DefaultHeight) are set.
+// Indicates whether default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
 // Returns:
 //   bool  
 func (instance *ChartArea) IsDefaultPosBeSet()  (bool,  error)  {
@@ -4673,7 +4671,7 @@ func (instance *ChartArea) GetDefaultXRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents y of default position in units of Fraction of the chart area.
+// Represents y of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *ChartArea) GetDefaultYRatioToChart()  (float64,  error)  {
@@ -4701,7 +4699,7 @@ func (instance *ChartArea) GetDefaultWidthRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents height of default position in units of Fraction of the chart area.
+// Represents height of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *ChartArea) GetDefaultHeightRatioToChart()  (float64,  error)  {
@@ -4850,7 +4848,7 @@ func (instance *ChartArea) SetXPixel(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Gets or sets the y coordinate of the upper left corner in units of pixels.
 // Returns:
 //   int32  
 func (instance *ChartArea) GetYPixel()  (int32,  error)  {
@@ -4864,7 +4862,7 @@ func (instance *ChartArea) GetYPixel()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Gets or sets the y coordinate of the upper left corner in units of pixels.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -4908,7 +4906,7 @@ func (instance *ChartArea) SetWidthPixel(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of Pixel.
+// Gets or sets the height of the frame in units of pixels.
 // Returns:
 //   int32  
 func (instance *ChartArea) GetHeightPixel()  (int32,  error)  {
@@ -4922,7 +4920,7 @@ func (instance *ChartArea) GetHeightPixel()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of Pixel.
+// Gets or sets the height of the frame in units of pixels.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -4966,7 +4964,7 @@ func DeleteChartArea(chartarea *ChartArea){
 
 // Class ChartCalculateOptions 
 
-// Represents the options for calculating the chart.
+// Represents the options for calculating a chart.
 type ChartCalculateOptions struct {
 	ptr unsafe.Pointer
 }
@@ -5075,7 +5073,7 @@ func (instance *ChartCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ChartCollection) AddFloatingChart(type_ ChartType, left int32, top int32, width int32, height int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMV(C.CString("ChartCollection_AddFloatingChart"), instance.ptr, C.int( int32(type_)), C.int(left), C.int(top), C.int(width), C.int(height))
+	CGoReturnPtr := C.CellsGoFunctoinZZMX(C.CString("ChartCollection_AddFloatingChart"), instance.ptr, C.int( int32(type_)), C.int(left), C.int(top), C.int(width), C.int(height))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5095,7 +5093,7 @@ func (instance *ChartCollection) AddFloatingChart(type_ ChartType, left int32, t
 //   int32  
 func (instance *ChartCollection) Add_ChartType_Int_Int_Int_Int(type_ ChartType, toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMV(C.CString("ChartCollection_Add_ChartType_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZMX(C.CString("ChartCollection_Add_ChartType_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5117,7 +5115,7 @@ func (instance *ChartCollection) Add_ChartType_Int_Int_Int_Int(type_ ChartType, 
 //   int32  
 func (instance *ChartCollection) Add_Stream_String_Bool_Int_Int_Int_Int(data []byte, datarange string, isvertical bool, toprow int32, leftcolumn int32, rightrow int32, bottomcolumn int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMW(C.CString("ChartCollection_Add_Stream_String_Boolean_Integer_Integer_Integer_Integer"), instance.ptr, unsafe.Pointer(&data[0]), C.int( len(data)), C.CString(datarange), C.bool(isvertical), C.int(toprow), C.int(leftcolumn), C.int(rightrow), C.int(bottomcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZMY(C.CString("ChartCollection_Add_Stream_String_Boolean_Integer_Integer_Integer_Integer"), instance.ptr, unsafe.Pointer(&data[0]), C.int( len(data)), C.CString(datarange), C.bool(isvertical), C.int(toprow), C.int(leftcolumn), C.int(rightrow), C.int(bottomcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5139,7 +5137,7 @@ func (instance *ChartCollection) Add_Stream_String_Bool_Int_Int_Int_Int(data []b
 //   int32  
 func (instance *ChartCollection) Add_ChartType_String_Bool_Int_Int_Int_Int(type_ ChartType, datarange string, isvertical bool, toprow int32, leftcolumn int32, rightrow int32, bottomcolumn int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMX(C.CString("ChartCollection_Add_ChartType_String_Boolean_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.CString(datarange), C.bool(isvertical), C.int(toprow), C.int(leftcolumn), C.int(rightrow), C.int(bottomcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZNA(C.CString("ChartCollection_Add_ChartType_String_Boolean_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.CString(datarange), C.bool(isvertical), C.int(toprow), C.int(leftcolumn), C.int(rightrow), C.int(bottomcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5212,6 +5210,7 @@ func (instance *ChartCollection) Clear()  error {
 
 	return nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *ChartCollection) GetCount()  (int32,  error)  {
@@ -5692,7 +5691,7 @@ func (instance *ChartFrame) GetShapeProperties()  (*ShapePropertyCollection,  er
 
 	return result, nil 
 }
-// Indicates whether default position(DefaultX, DefaultY, DefaultWidth and DefaultHeight) are set.
+// Indicates whether default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
 // Returns:
 //   bool  
 func (instance *ChartFrame) IsDefaultPosBeSet()  (bool,  error)  {
@@ -5720,7 +5719,7 @@ func (instance *ChartFrame) GetDefaultXRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents y of default position in units of Fraction of the chart area.
+// Represents y of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *ChartFrame) GetDefaultYRatioToChart()  (float64,  error)  {
@@ -5748,7 +5747,7 @@ func (instance *ChartFrame) GetDefaultWidthRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents height of default position in units of Fraction of the chart area.
+// Represents height of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *ChartFrame) GetDefaultHeightRatioToChart()  (float64,  error)  {
@@ -5913,7 +5912,7 @@ func (instance *ChartFrame) SetXRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of the ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *ChartFrame) GetYRatioToChart()  (float64,  error)  {
@@ -5927,7 +5926,7 @@ func (instance *ChartFrame) GetYRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of the ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -5971,7 +5970,7 @@ func (instance *ChartFrame) SetWidthRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of ratio of the chart area.
+// Gets or sets the height of the frame in units of the ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *ChartFrame) GetHeightRatioToChart()  (float64,  error)  {
@@ -5985,7 +5984,7 @@ func (instance *ChartFrame) GetHeightRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of ratio of the chart area.
+// Gets or sets the height of the frame in units of the ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -6029,7 +6028,7 @@ func (instance *ChartFrame) SetXPixel(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Gets or sets the y coordinate of the upper left corner in units of pixels.
 // Returns:
 //   int32  
 func (instance *ChartFrame) GetYPixel()  (int32,  error)  {
@@ -6043,7 +6042,7 @@ func (instance *ChartFrame) GetYPixel()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Gets or sets the y coordinate of the upper left corner in units of pixels.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -6087,7 +6086,7 @@ func (instance *ChartFrame) SetWidthPixel(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of Pixel.
+// Gets or sets the height of the frame in units of pixels.
 // Returns:
 //   int32  
 func (instance *ChartFrame) GetHeightPixel()  (int32,  error)  {
@@ -6101,7 +6100,7 @@ func (instance *ChartFrame) GetHeightPixel()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of Pixel.
+// Gets or sets the height of the frame in units of pixels.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -6594,7 +6593,7 @@ func (instance *ChartPoint) SetIsInSecondaryPlot(value bool)  error {
 
 	return nil 
 }
-// Gets the x coordinate of the upper left corner in units of 1/4000 of chart's width after calls Chart.Calculate() method.
+// Gets the x coordinate of the upper left corner in units of 1/4000 of chart's width after calling the Chart.Calculate() method.
 // Returns:
 //   int32  
 func (instance *ChartPoint) GetShapeX()  (int32,  error)  {
@@ -6622,7 +6621,7 @@ func (instance *ChartPoint) GetShapeY()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the width in units of 1/4000 of chart's width after calls Chart.Calculate() method.
+// Gets the width in units of 1/4000 of the chart's width after calling the Chart.Calculate() method.
 // Returns:
 //   int32  
 func (instance *ChartPoint) GetShapeWidth()  (int32,  error)  {
@@ -6650,7 +6649,7 @@ func (instance *ChartPoint) GetShapeHeight()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the x coordinate of the upper left corner in units of pixels after calls Chart.Calculate() method.
+// Gets the x coordinate of the upper left corner in units of pixels after calling the Chart.Calculate() method.
 // Returns:
 //   int32  
 func (instance *ChartPoint) GetShapeXPx()  (int32,  error)  {
@@ -6678,7 +6677,7 @@ func (instance *ChartPoint) GetShapeYPx()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the width in units of pixels after calls Chart.Calculate() method.
+// Gets the width in units of pixels after calling the Chart.Calculate() method.
 // Returns:
 //   int32  
 func (instance *ChartPoint) GetShapeWidthPx()  (int32,  error)  {
@@ -6706,7 +6705,7 @@ func (instance *ChartPoint) GetShapeHeightPx()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the width of border in units of pixels after calls Chart.Calculate() method.
+// Gets the width of border in units of pixels after calling the Chart.Calculate() method.
 // Returns:
 //   int32  
 func (instance *ChartPoint) GetBorderWidthPx()  (int32,  error)  {
@@ -6734,7 +6733,7 @@ func (instance *ChartPoint) GetRadiusPx()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the inner radius of doughnut slice in units of pixels after calls Chart.Calculate() method.
+// Gets the inner radius of doughnut slice in units of pixels after calling the Chart.Calculate() method.
 // Applies to Doughnut chart.
 // Returns:
 //   int32  
@@ -6749,7 +6748,7 @@ func (instance *ChartPoint) GetDoughnutInnerRadius()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the starting angle for the pie section, measured in degrees clockwise from the x-axis after calls Chart.Calculate() method.
+// Gets the starting angle for the pie section, measured in degrees clockwise from the x-axis after calling the Chart.Calculate() method.
 // Applies to Pie chart.
 // Returns:
 //   float32  
@@ -6779,8 +6778,8 @@ func (instance *ChartPoint) GetEndAngle()  (float32,  error)  {
 
 	return result, nil 
 }
-// Gets the x coordinate of starting point for the pie section after calls Chart.Calculate() method.
-// Applies to Pie and Doughnut  chart.
+// Gets the x coordinate of starting point for the pie section after calling the Chart.Calculate() method.
+// Applies to Pie and Doughnut charts.
 // Returns:
 //   float32  
 func (instance *ChartPoint) GetArcStartPointXPx()  (float32,  error)  {
@@ -6809,8 +6808,8 @@ func (instance *ChartPoint) GetArcStartPointYPx()  (float32,  error)  {
 
 	return result, nil 
 }
-// Gets the x coordinate of ending point for the pie section after calls Chart.Calculate() method.
-// Applies to Pie and Doughnut  chart.
+// Gets the x coordinate of the ending point for the pie section after calling the Chart.Calculate() method.
+// Applies to Pie and Doughnut charts.
 // Returns:
 //   float32  
 func (instance *ChartPoint) GetArcEndPointXPx()  (float32,  error)  {
@@ -6839,8 +6838,8 @@ func (instance *ChartPoint) GetArcEndPointYPx()  (float32,  error)  {
 
 	return result, nil 
 }
-// Gets the x coordinate of starting point for the pie section after calls Chart.Calculate() method.
-// Applies to Doughnut chart.
+// Gets the x coordinate of the starting point for the pie section after calling the Chart.Calculate() method.
+// Applies to the Doughnut chart.
 // Returns:
 //   float32  
 func (instance *ChartPoint) GetInnerArcStartPointXPx()  (float32,  error)  {
@@ -6869,8 +6868,8 @@ func (instance *ChartPoint) GetInnerArcStartPointYPx()  (float32,  error)  {
 
 	return result, nil 
 }
-// Gets the x coordinate of ending point for the pie section after calls Chart.Calculate() method.
-// Applies to Doughnut chart.
+// Gets the x coordinate of the ending point for the pie section after calling the Chart.Calculate() method.
+// Applies to Doughnut charts.
 // Returns:
 //   float32  
 func (instance *ChartPoint) GetInnerArcEndPointXPx()  (float32,  error)  {
@@ -6899,7 +6898,7 @@ func (instance *ChartPoint) GetInnerArcEndPointYPx()  (float32,  error)  {
 
 	return result, nil 
 }
-// Gets the number of top points after calls Chart.Calculate() method.
+// Gets the number of top points after calling the Chart.Calculate() method.
 // Returns:
 //   int32  
 func (instance *ChartPoint) GetTopPointCount()  (int32,  error)  {
@@ -6921,7 +6920,7 @@ func (instance *ChartPoint) GetTopPointCount()  (int32,  error)  {
 //   float32  
 func (instance *ChartPoint) GetTopPointXPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMY(C.CString("ChartPoint_GetTopPointXPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("ChartPoint_GetTopPointXPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6930,15 +6929,15 @@ func (instance *ChartPoint) GetTopPointXPx(index int32)  (float32,  error)  {
 
 	return result, nil 
 }
-// Gets y-coordinate of the top point of shape after calls Chart.Calculate() method.
-// Applies 3D charts: Column3D, Bar3D, Cone, Cylinder, Pyramid and Area3D
+// Gets y-coordinate of the top point of the shape after calling the Chart.Calculate() method.
+// Applies 3D charts: Column3D, Bar3D, Cone, Cylinder, Pyramid, and Area3D.
 // Parameters:
 //   index - int32 
 // Returns:
 //   float32  
 func (instance *ChartPoint) GetTopPointYPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMY(C.CString("ChartPoint_GetTopPointYPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("ChartPoint_GetTopPointYPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6961,7 +6960,7 @@ func (instance *ChartPoint) GetBottomPointCount()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets x-coordinate of the bottom point of shape after calls Chart.Calculate() method.
+// Gets x-coordinate of the bottom point of shape after calling the Chart.Calculate() method.
 // Applies 3D charts: Column3D, Bar3D, Cone, Cylinder, Pyramid
 // Parameters:
 //   index - int32 
@@ -6969,7 +6968,7 @@ func (instance *ChartPoint) GetBottomPointCount()  (int32,  error)  {
 //   float32  
 func (instance *ChartPoint) GetBottomPointXPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMY(C.CString("ChartPoint_GetBottomPointXPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("ChartPoint_GetBottomPointXPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6986,7 +6985,7 @@ func (instance *ChartPoint) GetBottomPointXPx(index int32)  (float32,  error)  {
 //   float32  
 func (instance *ChartPoint) GetBottomPointYPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMY(C.CString("ChartPoint_GetBottomPointYPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("ChartPoint_GetBottomPointYPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6995,7 +6994,8 @@ func (instance *ChartPoint) GetBottomPointYPx(index int32)  (float32,  error)  {
 
 	return result, nil 
 }
-// Gets the number of the points on category axis after calls Chart.Calculate() method. Only applies to area chart.
+// Gets the number of the points on the category axis after calling the Chart.Calculate() method.
+// Only applies to area charts.
 // Returns:
 //   int32  
 func (instance *ChartPoint) GetOnCategoryAxisPointCount()  (int32,  error)  {
@@ -7017,7 +7017,7 @@ func (instance *ChartPoint) GetOnCategoryAxisPointCount()  (int32,  error)  {
 //   float32  
 func (instance *ChartPoint) GetOnCategoryAxisPointXPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMY(C.CString("ChartPoint_GetOnCategoryAxisPointXPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("ChartPoint_GetOnCategoryAxisPointXPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7026,14 +7026,15 @@ func (instance *ChartPoint) GetOnCategoryAxisPointXPx(index int32)  (float32,  e
 
 	return result, nil 
 }
-// Gets y-coordinate of the point on category axis after calls Chart.Calculate() method. Only applies to Area chart.
+// Gets y-coordinate of the point on category axis after calling the Chart.Calculate() method.
+// Only applies to Area chart.
 // Parameters:
 //   index - int32 
 // Returns:
 //   float32  
 func (instance *ChartPoint) GetOnCategoryAxisPointYPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMY(C.CString("ChartPoint_GetOnCategoryAxisPointYPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("ChartPoint_GetOnCategoryAxisPointYPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7103,7 +7104,7 @@ func (instance *ChartPointCollection) Clear()  error {
 
 	return nil 
 }
-// Removes point at the index of the series..
+// Removes point at the index of the series.
 // Parameters:
 //   index - int32 
 // Returns:
@@ -7202,7 +7203,7 @@ func (instance *ChartTextFrame) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether this data labels are deleted.
+// Indicates whether this data label is deleted.
 // Returns:
 //   bool  
 func (instance *ChartTextFrame) IsDeleted()  (bool,  error)  {
@@ -7216,7 +7217,7 @@ func (instance *ChartTextFrame) IsDeleted()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether this data labels are deleted.
+// Indicates whether this data label is deleted.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -7644,7 +7645,7 @@ func (instance *ChartTextFrame) GetShapeProperties()  (*ShapePropertyCollection,
 
 	return result, nil 
 }
-// Indicates whether default position(DefaultX, DefaultY, DefaultWidth and DefaultHeight) are set.
+// Indicates whether default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
 // Returns:
 //   bool  
 func (instance *ChartTextFrame) IsDefaultPosBeSet()  (bool,  error)  {
@@ -7672,7 +7673,7 @@ func (instance *ChartTextFrame) GetDefaultXRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents y of default position in units of Fraction of the chart area.
+// Represents y of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *ChartTextFrame) GetDefaultYRatioToChart()  (float64,  error)  {
@@ -7700,7 +7701,7 @@ func (instance *ChartTextFrame) GetDefaultWidthRatioToChart()  (float64,  error)
 
 	return result, nil 
 }
-// Represents height of default position in units of Fraction of the chart area.
+// Represents height of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *ChartTextFrame) GetDefaultHeightRatioToChart()  (float64,  error)  {
@@ -7865,7 +7866,7 @@ func (instance *ChartTextFrame) SetXRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of the ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *ChartTextFrame) GetYRatioToChart()  (float64,  error)  {
@@ -7879,7 +7880,7 @@ func (instance *ChartTextFrame) GetYRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of the ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -7923,7 +7924,7 @@ func (instance *ChartTextFrame) SetWidthRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of ratio of the chart area.
+// Gets or sets the height of the frame in units of the ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *ChartTextFrame) GetHeightRatioToChart()  (float64,  error)  {
@@ -7937,7 +7938,7 @@ func (instance *ChartTextFrame) GetHeightRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of ratio of the chart area.
+// Gets or sets the height of the frame in units of the ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -7981,7 +7982,7 @@ func (instance *ChartTextFrame) SetXPixel(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Gets or sets the y coordinate of the upper left corner in units of pixels.
 // Returns:
 //   int32  
 func (instance *ChartTextFrame) GetYPixel()  (int32,  error)  {
@@ -7995,7 +7996,7 @@ func (instance *ChartTextFrame) GetYPixel()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Gets or sets the y coordinate of the upper left corner in units of pixels.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -8039,7 +8040,7 @@ func (instance *ChartTextFrame) SetWidthPixel(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of Pixel.
+// Gets or sets the height of the frame in units of pixels.
 // Returns:
 //   int32  
 func (instance *ChartTextFrame) GetHeightPixel()  (int32,  error)  {
@@ -8053,7 +8054,7 @@ func (instance *ChartTextFrame) GetHeightPixel()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of Pixel.
+// Gets or sets the height of the frame in units of pixels.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -8231,7 +8232,7 @@ func (instance *DataLabels) SetDirectionType(value ChartTextDirectionType)  erro
 
 	return nil 
 }
-// Gets or sets the text of data label.
+// Gets or sets the text of the data label.
 // Returns:
 //   string  
 func (instance *DataLabels) GetText()  (string,  error)  {
@@ -8245,7 +8246,7 @@ func (instance *DataLabels) GetText()  (string,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the text of data label.
+// Gets or sets the text of the data label.
 // Parameters:
 //   value - string 
 // Returns:
@@ -8350,7 +8351,7 @@ func (instance *DataLabels) SetShowValue(value bool)  error {
 
 	return nil 
 }
-// Indicates whether showing cell range as the data labels.
+// Indicates whether to show cell range as the data labels.
 // Returns:
 //   bool  
 func (instance *DataLabels) GetShowCellRange()  (bool,  error)  {
@@ -8364,7 +8365,7 @@ func (instance *DataLabels) GetShowCellRange()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether showing cell range as the data labels.
+// Indicates whether to show cell range as the data labels.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -8408,7 +8409,9 @@ func (instance *DataLabels) SetShowPercentage(value bool)  error {
 
 	return nil 
 }
-// Represents a specified chart's data label percentage value display behavior. True displays the percentage value. False to hide.
+// Represents a specified chart's data label percentage value display behavior.
+// True displays the percentage value.
+// False hides the percentage value.
 // Returns:
 //   bool  
 func (instance *DataLabels) GetShowBubbleSize()  (bool,  error)  {
@@ -8422,7 +8425,9 @@ func (instance *DataLabels) GetShowBubbleSize()  (bool,  error)  {
 
 	return result, nil 
 }
-// Represents a specified chart's data label percentage value display behavior. True displays the percentage value. False to hide.
+// Represents a specified chart's data label percentage value display behavior.
+// True displays the percentage value.
+// False hides the percentage value.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -8466,8 +8471,9 @@ func (instance *DataLabels) SetShowCategoryName(value bool)  error {
 
 	return nil 
 }
-// Indicates whether the series name displays for the data labels on a chart.
-// True to show the series name. False to hide.
+// Indicates whether the series name displays on the data labels on a chart.
+// True to show the series name.
+// False to hide.
 // Returns:
 //   bool  
 func (instance *DataLabels) GetShowSeriesName()  (bool,  error)  {
@@ -8481,8 +8487,9 @@ func (instance *DataLabels) GetShowSeriesName()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether the series name displays for the data labels on a chart.
-// True to show the series name. False to hide.
+// Indicates whether the series name displays on the data labels on a chart.
+// True to show the series name.
+// False to hide.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -8739,8 +8746,8 @@ func (instance *DataLabels) SetPosition(value LabelPositionType)  error {
 
 	return nil 
 }
-// Indicates whether datalabels never overlap when performing Pie Chart to image.
-// Note: this property is only meaningful when Pie Chart to image.
+// Indicates whether Datalabels never overlap when performing a Pie Chart to image.
+// Note: this property is only meaningful when a Pie Chart to image.
 // Returns:
 //   bool  
 func (instance *DataLabels) IsNeverOverlap()  (bool,  error)  {
@@ -8754,8 +8761,8 @@ func (instance *DataLabels) IsNeverOverlap()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether datalabels never overlap when performing Pie Chart to image.
-// Note: this property is only meaningful when Pie Chart to image.
+// Indicates whether Datalabels never overlap when performing a Pie Chart to image.
+// Note: this property is only meaningful when a Pie Chart to image.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -8878,7 +8885,7 @@ func (instance *DataLabels) GetShapeProperties()  (*ShapePropertyCollection,  er
 
 	return result, nil 
 }
-// Indicates whether default position(DefaultX, DefaultY, DefaultWidth and DefaultHeight) are set.
+// Indicates whether default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
 // Returns:
 //   bool  
 func (instance *DataLabels) IsDefaultPosBeSet()  (bool,  error)  {
@@ -8906,7 +8913,7 @@ func (instance *DataLabels) GetDefaultXRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents y of default position in units of Fraction of the chart area.
+// Represents y of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *DataLabels) GetDefaultYRatioToChart()  (float64,  error)  {
@@ -8934,7 +8941,7 @@ func (instance *DataLabels) GetDefaultWidthRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents height of default position in units of Fraction of the chart area.
+// Represents height of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *DataLabels) GetDefaultHeightRatioToChart()  (float64,  error)  {
@@ -9051,7 +9058,7 @@ func (instance *DataLabels) SetXRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of the ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *DataLabels) GetYRatioToChart()  (float64,  error)  {
@@ -9065,7 +9072,7 @@ func (instance *DataLabels) GetYRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of the ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -9109,7 +9116,7 @@ func (instance *DataLabels) SetWidthRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of ratio of the chart area.
+// Gets or sets the height of the frame in units of the ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *DataLabels) GetHeightRatioToChart()  (float64,  error)  {
@@ -9123,7 +9130,7 @@ func (instance *DataLabels) GetHeightRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of ratio of the chart area.
+// Gets or sets the height of the frame in units of the ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -9167,7 +9174,7 @@ func (instance *DataLabels) SetXPixel(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Gets or sets the y coordinate of the upper left corner in units of pixels.
 // Returns:
 //   int32  
 func (instance *DataLabels) GetYPixel()  (int32,  error)  {
@@ -9181,7 +9188,7 @@ func (instance *DataLabels) GetYPixel()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Gets or sets the y coordinate of the upper left corner in units of pixels.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -9225,7 +9232,7 @@ func (instance *DataLabels) SetWidthPixel(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of Pixel.
+// Gets or sets the height of the frame in units of pixels.
 // Returns:
 //   int32  
 func (instance *DataLabels) GetHeightPixel()  (int32,  error)  {
@@ -9239,7 +9246,7 @@ func (instance *DataLabels) GetHeightPixel()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of Pixel.
+// Gets or sets the height of the frame in units of pixels.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -9267,7 +9274,7 @@ func (instance *DataLabels) SetPositionAuto()  error {
 
 	return nil 
 }
-// Indicates whether this data labels are deleted.
+// Indicates whether this data label is deleted.
 // Returns:
 //   bool  
 func (instance *DataLabels) IsDeleted()  (bool,  error)  {
@@ -9281,7 +9288,7 @@ func (instance *DataLabels) IsDeleted()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether this data labels are deleted.
+// Indicates whether this data label is deleted.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -9726,7 +9733,7 @@ func (instance *DisplayUnitLabel) GetShapeProperties()  (*ShapePropertyCollectio
 
 	return result, nil 
 }
-// Indicates whether default position(DefaultX, DefaultY, DefaultWidth and DefaultHeight) are set.
+// Indicates whether default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
 // Returns:
 //   bool  
 func (instance *DisplayUnitLabel) IsDefaultPosBeSet()  (bool,  error)  {
@@ -9754,7 +9761,7 @@ func (instance *DisplayUnitLabel) GetDefaultXRatioToChart()  (float64,  error)  
 
 	return result, nil 
 }
-// Represents y of default position in units of Fraction of the chart area.
+// Represents y of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *DisplayUnitLabel) GetDefaultYRatioToChart()  (float64,  error)  {
@@ -9782,7 +9789,7 @@ func (instance *DisplayUnitLabel) GetDefaultWidthRatioToChart()  (float64,  erro
 
 	return result, nil 
 }
-// Represents height of default position in units of Fraction of the chart area.
+// Represents height of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *DisplayUnitLabel) GetDefaultHeightRatioToChart()  (float64,  error)  {
@@ -9902,7 +9909,7 @@ func (instance *DisplayUnitLabel) SetXRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of the ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *DisplayUnitLabel) GetYRatioToChart()  (float64,  error)  {
@@ -9916,7 +9923,7 @@ func (instance *DisplayUnitLabel) GetYRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of the ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -9960,7 +9967,7 @@ func (instance *DisplayUnitLabel) SetWidthRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of ratio of the chart area.
+// Gets or sets the height of the frame in units of the ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *DisplayUnitLabel) GetHeightRatioToChart()  (float64,  error)  {
@@ -9974,7 +9981,7 @@ func (instance *DisplayUnitLabel) GetHeightRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of ratio of the chart area.
+// Gets or sets the height of the frame in units of the ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -10018,7 +10025,7 @@ func (instance *DisplayUnitLabel) SetXPixel(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Gets or sets the y coordinate of the upper left corner in units of pixels.
 // Returns:
 //   int32  
 func (instance *DisplayUnitLabel) GetYPixel()  (int32,  error)  {
@@ -10032,7 +10039,7 @@ func (instance *DisplayUnitLabel) GetYPixel()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Gets or sets the y coordinate of the upper left corner in units of pixels.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -10076,7 +10083,7 @@ func (instance *DisplayUnitLabel) SetWidthPixel(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of Pixel.
+// Gets or sets the height of the frame in units of pixels.
 // Returns:
 //   int32  
 func (instance *DisplayUnitLabel) GetHeightPixel()  (int32,  error)  {
@@ -10090,7 +10097,7 @@ func (instance *DisplayUnitLabel) GetHeightPixel()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of Pixel.
+// Gets or sets the height of the frame in units of pixels.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -10118,7 +10125,7 @@ func (instance *DisplayUnitLabel) SetPositionAuto()  error {
 
 	return nil 
 }
-// Indicates whether this data labels are deleted.
+// Indicates whether this data label is deleted.
 // Returns:
 //   bool  
 func (instance *DisplayUnitLabel) IsDeleted()  (bool,  error)  {
@@ -10132,7 +10139,7 @@ func (instance *DisplayUnitLabel) IsDeleted()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether this data labels are deleted.
+// Indicates whether this data label is deleted.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -10476,7 +10483,7 @@ func DeleteDisplayUnitLabel(displayunitlabel *DisplayUnitLabel){
 
 // Class DropBars 
 
-// Represents the up/down bars in a chart.
+// Represents the up and down bars in a chart.
 type DropBars struct {
 	ptr unsafe.Pointer
 }
@@ -10644,7 +10651,7 @@ func (instance *ErrorBar) SetDisplayType(value ErrorBarDisplayType)  error {
 
 	return nil 
 }
-// Represents amount of error bar.
+// Represents the amount of error bar.
 // Returns:
 //   float64  
 func (instance *ErrorBar) GetAmount()  (float64,  error)  {
@@ -10658,7 +10665,7 @@ func (instance *ErrorBar) GetAmount()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents amount of error bar.
+// Represents the amount of error bar.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -11911,7 +11918,7 @@ func (instance *Legend) GetShapeProperties()  (*ShapePropertyCollection,  error)
 
 	return result, nil 
 }
-// Indicates whether default position(DefaultX, DefaultY, DefaultWidth and DefaultHeight) are set.
+// Indicates whether default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
 // Returns:
 //   bool  
 func (instance *Legend) IsDefaultPosBeSet()  (bool,  error)  {
@@ -11939,7 +11946,7 @@ func (instance *Legend) GetDefaultXRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents y of default position in units of Fraction of the chart area.
+// Represents y of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *Legend) GetDefaultYRatioToChart()  (float64,  error)  {
@@ -11967,7 +11974,7 @@ func (instance *Legend) GetDefaultWidthRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents height of default position in units of Fraction of the chart area.
+// Represents height of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *Legend) GetDefaultHeightRatioToChart()  (float64,  error)  {
@@ -12132,7 +12139,7 @@ func (instance *Legend) SetXRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of the ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *Legend) GetYRatioToChart()  (float64,  error)  {
@@ -12146,7 +12153,7 @@ func (instance *Legend) GetYRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of ratio of the chart area.
+// Gets or sets the y coordinate of the upper left corner in units of the ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -12190,7 +12197,7 @@ func (instance *Legend) SetWidthRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of ratio of the chart area.
+// Gets or sets the height of the frame in units of the ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *Legend) GetHeightRatioToChart()  (float64,  error)  {
@@ -12204,7 +12211,7 @@ func (instance *Legend) GetHeightRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of ratio of the chart area.
+// Gets or sets the height of the frame in units of the ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -12248,7 +12255,7 @@ func (instance *Legend) SetXPixel(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Gets or sets the y coordinate of the upper left corner in units of pixels.
 // Returns:
 //   int32  
 func (instance *Legend) GetYPixel()  (int32,  error)  {
@@ -12262,7 +12269,7 @@ func (instance *Legend) GetYPixel()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Gets or sets the y coordinate of the upper left corner in units of pixels.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -12306,7 +12313,7 @@ func (instance *Legend) SetWidthPixel(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of Pixel.
+// Gets or sets the height of the frame in units of pixels.
 // Returns:
 //   int32  
 func (instance *Legend) GetHeightPixel()  (int32,  error)  {
@@ -12320,7 +12327,7 @@ func (instance *Legend) GetHeightPixel()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of Pixel.
+// Gets or sets the height of the frame in units of pixels.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -12348,7 +12355,7 @@ func (instance *Legend) SetPositionAuto()  error {
 
 	return nil 
 }
-// Indicates whether this data labels are deleted.
+// Indicates whether this data label is deleted.
 // Returns:
 //   bool  
 func (instance *Legend) IsDeleted()  (bool,  error)  {
@@ -12362,7 +12369,7 @@ func (instance *Legend) IsDeleted()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether this data labels are deleted.
+// Indicates whether this data label is deleted.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -12941,6 +12948,7 @@ func (instance *LegendEntryCollection) Get(index int32)  (*LegendEntry,  error) 
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *LegendEntryCollection) GetCount()  (int32,  error)  {
@@ -13017,7 +13025,8 @@ func (instance *Marker) GetArea()  (*Area,  error)  {
 
 	return result, nil 
 }
-// Represents the marker style. Applies to line chart, scatter chart, or radar chart.
+// Represents the marker style.
+// Applies to a line chart, a scatter chart, or a radar chart.
 // Returns:
 //   int32  
 func (instance *Marker) GetMarkerStyle()  (ChartMarkerType,  error)  {
@@ -13034,7 +13043,8 @@ func (instance *Marker) GetMarkerStyle()  (ChartMarkerType,  error)  {
 
 	return result, nil 
 }
-// Represents the marker style. Applies to line chart, scatter chart, or radar chart.
+// Represents the marker style.
+// Applies to a line chart, a scatter chart, or a radar chart.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -13078,7 +13088,8 @@ func (instance *Marker) SetMarkerSize(value int32)  error {
 
 	return nil 
 }
-// Represents the marker size in unit of pixels. Applies to line chart, scatter chart, or radar chart.
+// Represents the marker size in units of pixels.
+// Applies to line charts, scatter charts, or radar charts.
 // Returns:
 //   int32  
 func (instance *Marker) GetMarkerSizePx()  (int32,  error)  {
@@ -13092,7 +13103,8 @@ func (instance *Marker) GetMarkerSizePx()  (int32,  error)  {
 
 	return result, nil 
 }
-// Represents the marker size in unit of pixels. Applies to line chart, scatter chart, or radar chart.
+// Represents the marker size in units of pixels.
+// Applies to line charts, scatter charts, or radar charts.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -13262,7 +13274,7 @@ func (instance *PivotOptions) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Gets or sets a value indicating whether to show expand/collapse field buttons
+// Gets or sets a value indicating whether to show expand or collapse field buttons
 // Returns:
 //   bool  
 func (instance *PivotOptions) GetShowExpandCollapseFieldButtons()  (bool,  error)  {
@@ -13276,7 +13288,7 @@ func (instance *PivotOptions) GetShowExpandCollapseFieldButtons()  (bool,  error
 
 	return result, nil 
 }
-// Gets or sets a value indicating whether to show expand/collapse field buttons
+// Gets or sets a value indicating whether to show expand or collapse field buttons
 // Parameters:
 //   value - bool 
 // Returns:
@@ -13554,7 +13566,7 @@ func (instance *PlotArea) SetYRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets or sets the height of the plot-area bounding box in units of the ratio of the chart area.
+// Gets or sets the height of the plot area bounding box in units of the ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *PlotArea) GetHeightRatioToChart()  (float64,  error)  {
@@ -13568,7 +13580,7 @@ func (instance *PlotArea) GetHeightRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the height of the plot-area bounding box in units of the ratio of the chart area.
+// Gets or sets the height of the plot area bounding box in units of the ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -13846,7 +13858,7 @@ func (instance *PlotArea) GetShapeProperties()  (*ShapePropertyCollection,  erro
 
 	return result, nil 
 }
-// Indicates whether default position(DefaultX, DefaultY, DefaultWidth and DefaultHeight) are set.
+// Indicates whether default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
 // Returns:
 //   bool  
 func (instance *PlotArea) IsDefaultPosBeSet()  (bool,  error)  {
@@ -13874,7 +13886,7 @@ func (instance *PlotArea) GetDefaultXRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents y of default position in units of Fraction of the chart area.
+// Represents y of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *PlotArea) GetDefaultYRatioToChart()  (float64,  error)  {
@@ -13902,7 +13914,7 @@ func (instance *PlotArea) GetDefaultWidthRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents height of default position in units of Fraction of the chart area.
+// Represents height of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *PlotArea) GetDefaultHeightRatioToChart()  (float64,  error)  {
@@ -14038,7 +14050,7 @@ func (instance *PlotArea) SetXPixel(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Gets or sets the y coordinate of the upper left corner in units of pixels.
 // Returns:
 //   int32  
 func (instance *PlotArea) GetYPixel()  (int32,  error)  {
@@ -14052,7 +14064,7 @@ func (instance *PlotArea) GetYPixel()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Gets or sets the y coordinate of the upper left corner in units of pixels.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -14096,7 +14108,7 @@ func (instance *PlotArea) SetWidthPixel(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of Pixel.
+// Gets or sets the height of the frame in units of pixels.
 // Returns:
 //   int32  
 func (instance *PlotArea) GetHeightPixel()  (int32,  error)  {
@@ -14110,7 +14122,7 @@ func (instance *PlotArea) GetHeightPixel()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of Pixel.
+// Gets or sets the height of the frame in units of pixels.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -14162,7 +14174,7 @@ func (instance *Series) IsNull()  (bool,  error)  {
 	return result, nil 
 }
 // Indicates whether the series is selected or filtered.
-// True represents that this series is filtered, and it will not be displayed on the chart.
+// True indicates that this series is filtered, and it will not be displayed on the chart.
 // Returns:
 //   bool  
 func (instance *Series) IsFiltered()  (bool,  error)  {
@@ -14177,7 +14189,7 @@ func (instance *Series) IsFiltered()  (bool,  error)  {
 	return result, nil 
 }
 // Indicates whether the series is selected or filtered.
-// True represents that this series is filtered, and it will not be displayed on the chart.
+// True indicates that this series is filtered, and it will not be displayed on the chart.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -14420,7 +14432,7 @@ func (instance *Series) GetCategoryValues()  ([][]ChartDataValue,  error)  {
 
 	return result, nil 
 }
-// Represents format code of Values' NumberList.
+// Represents the format code of the Values NumberList.
 // Returns:
 //   string  
 func (instance *Series) GetValuesFormatCode()  (string,  error)  {
@@ -14434,7 +14446,7 @@ func (instance *Series) GetValuesFormatCode()  (string,  error)  {
 
 	return result, nil 
 }
-// Represents format code of Values' NumberList.
+// Represents the format code of the Values NumberList.
 // Parameters:
 //   value - string 
 // Returns:
@@ -14507,7 +14519,7 @@ func (instance *Series) SetXValues(value string)  error {
 
 	return nil 
 }
-// Gets or sets the bubble sizes values of the chart series.
+// Gets or sets the bubble size values of the chart series.
 // Returns:
 //   string  
 func (instance *Series) GetBubbleSizes()  (string,  error)  {
@@ -14521,7 +14533,7 @@ func (instance *Series) GetBubbleSizes()  (string,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the bubble sizes values of the chart series.
+// Gets or sets the bubble size values of the chart series.
 // Parameters:
 //   value - string 
 // Returns:
@@ -14554,7 +14566,7 @@ func (instance *Series) GetTrendLines()  (*TrendlineCollection,  error)  {
 }
 // Represents curve smoothing.
 // True if curve smoothing is turned on for the line chart or scatter chart.
-// Applies only to line and scatter connected by lines charts.
+// Applies only to line charts and scatter charts with lines.
 // Returns:
 //   bool  
 func (instance *Series) GetSmooth()  (bool,  error)  {
@@ -14570,7 +14582,7 @@ func (instance *Series) GetSmooth()  (bool,  error)  {
 }
 // Represents curve smoothing.
 // True if curve smoothing is turned on for the line chart or scatter chart.
-// Applies only to line and scatter connected by lines charts.
+// Applies only to line charts and scatter charts with lines.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -14739,7 +14751,7 @@ func (instance *Series) GetMarker()  (*Marker,  error)  {
 
 	return result, nil 
 }
-// Indicates if this series is plotted on second value axis.
+// Indicates if this series is plotted on the second value axis.
 // Returns:
 //   bool  
 func (instance *Series) GetPlotOnSecondAxis()  (bool,  error)  {
@@ -14753,7 +14765,7 @@ func (instance *Series) GetPlotOnSecondAxis()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates if this series is plotted on second value axis.
+// Indicates if this series is plotted on the second value axis.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -14930,7 +14942,7 @@ func (instance *Series) SetHasDropLines(value bool)  error {
 	return nil 
 }
 // Returns a <see cref="Line"/> object that represents the drop lines for a series on the line chart or area chart.
-// Applies only to line chart or area charts.
+// Applies only to line charts or area charts.
 // Returns:
 //   Line  
 func (instance *Series) GetDropLines()  (*Line,  error)  {
@@ -14977,7 +14989,7 @@ func (instance *Series) SetHasUpDownBars(value bool)  error {
 
 	return nil 
 }
-// Returns an DropBars object that represents the up bars on a line chart.
+// Returns a DropBars object that represents the up bars on a line chart.
 // Applies only to line charts.
 // Returns:
 //   DropBars  
@@ -15011,7 +15023,7 @@ func (instance *Series) GetDownBars()  (*DropBars,  error)  {
 
 	return result, nil 
 }
-// Represents if the color of points is varied.
+// Represents whether the color of points is varied.
 // The chart must contain only one series or this chart is a pie chart.
 // Returns:
 //   bool  
@@ -15026,7 +15038,7 @@ func (instance *Series) IsColorVaried()  (bool,  error)  {
 
 	return result, nil 
 }
-// Represents if the color of points is varied.
+// Represents whether the color of points is varied.
 // The chart must contain only one series or this chart is a pie chart.
 // Parameters:
 //   value - bool 
@@ -15048,7 +15060,7 @@ func (instance *Series) SetIsColorVaried(value bool)  error {
 //   int16  
 func (instance *Series) GetGapWidth()  (int16,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHV(C.CString("Series_GetGapWidth"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZHW(C.CString("Series_GetGapWidth"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -15065,7 +15077,7 @@ func (instance *Series) GetGapWidth()  (int16,  error)  {
 //   void  
 func (instance *Series) SetGapWidth(value int16)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMQ(C.CString("Series_SetGapWidth"), instance.ptr, C.short(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZMS(C.CString("Series_SetGapWidth"), instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15074,12 +15086,12 @@ func (instance *Series) SetGapWidth(value int16)  error {
 	return nil 
 }
 // Gets or sets the angle of the first pie-chart or doughnut-chart slice, in degrees (clockwise from vertical).
-// Applies only to pie, 3-D pie, and doughnut charts, 0 to 360.
+// Applies only to pie, 3-D pie, and doughnut charts, with values from 0 to 360.
 // Returns:
 //   int16  
 func (instance *Series) GetFirstSliceAngle()  (int16,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHV(C.CString("Series_GetFirstSliceAngle"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZHW(C.CString("Series_GetFirstSliceAngle"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -15089,14 +15101,14 @@ func (instance *Series) GetFirstSliceAngle()  (int16,  error)  {
 	return result, nil 
 }
 // Gets or sets the angle of the first pie-chart or doughnut-chart slice, in degrees (clockwise from vertical).
-// Applies only to pie, 3-D pie, and doughnut charts, 0 to 360.
+// Applies only to pie, 3-D pie, and doughnut charts, with values from 0 to 360.
 // Parameters:
 //   value - int16 
 // Returns:
 //   void  
 func (instance *Series) SetFirstSliceAngle(value int16)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMQ(C.CString("Series_SetFirstSliceAngle"), instance.ptr, C.short(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZMS(C.CString("Series_SetFirstSliceAngle"), instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15111,7 +15123,7 @@ func (instance *Series) SetFirstSliceAngle(value int16)  error {
 //   int16  
 func (instance *Series) GetOverlap()  (int16,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHV(C.CString("Series_GetOverlap"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZHW(C.CString("Series_GetOverlap"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -15129,7 +15141,7 @@ func (instance *Series) GetOverlap()  (int16,  error)  {
 //   void  
 func (instance *Series) SetOverlap(value int16)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMQ(C.CString("Series_SetOverlap"), instance.ptr, C.short(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZMS(C.CString("Series_SetOverlap"), instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15144,7 +15156,7 @@ func (instance *Series) SetOverlap(value int16)  error {
 //   int16  
 func (instance *Series) GetSecondPlotSize()  (int16,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHV(C.CString("Series_GetSecondPlotSize"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZHW(C.CString("Series_GetSecondPlotSize"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -15162,7 +15174,7 @@ func (instance *Series) GetSecondPlotSize()  (int16,  error)  {
 //   void  
 func (instance *Series) SetSecondPlotSize(value int16)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMQ(C.CString("Series_SetSecondPlotSize"), instance.ptr, C.short(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZMS(C.CString("Series_SetSecondPlotSize"), instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15595,8 +15607,7 @@ func (instance *SeriesCollection) RemoveAt(index int32)  error {
 	return nil 
 }
 // Gets or sets the range of category Axis values.
-// It can be a range of cells (such as, "d1:e10"),
-// or a sequence of values (such as,"{2,6,8,10}").
+// It can be a range of cells (such as "d1:e10") or a sequence of values (such as "{2,6,8,10}").
 // Returns:
 //   string  
 func (instance *SeriesCollection) GetCategoryData()  (string,  error)  {
@@ -15611,8 +15622,7 @@ func (instance *SeriesCollection) GetCategoryData()  (string,  error)  {
 	return result, nil 
 }
 // Gets or sets the range of category Axis values.
-// It can be a range of cells (such as, "d1:e10"),
-// or a sequence of values (such as,"{2,6,8,10}").
+// It can be a range of cells (such as "d1:e10") or a sequence of values (such as "{2,6,8,10}").
 // Parameters:
 //   value - string 
 // Returns:
@@ -15678,7 +15688,7 @@ func (instance *SeriesCollection) SwapSeries(sourceindex int32, destindex int32)
 
 	return nil 
 }
-// Sets the name of all the serieses in the chart.
+// Sets the names of all the series in the chart.
 // Parameters:
 //   startIndex - int32 
 //   area - string 
@@ -15687,7 +15697,7 @@ func (instance *SeriesCollection) SwapSeries(sourceindex int32, destindex int32)
 //   void  
 func (instance *SeriesCollection) SetSeriesNames(startindex int32, area string, isvertical bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNA(C.CString("SeriesCollection_SetSeriesNames"), instance.ptr, C.int(startindex), C.CString(area), C.bool(isvertical))
+	CGoReturnPtr := C.CellsGoFunctoinZZNC(C.CString("SeriesCollection_SetSeriesNames"), instance.ptr, C.int(startindex), C.CString(area), C.bool(isvertical))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15703,7 +15713,7 @@ func (instance *SeriesCollection) SetSeriesNames(startindex int32, area string, 
 //   int32  
 func (instance *SeriesCollection) AddR1C1(area string, isvertical bool)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("SeriesCollection_AddR1C1"), instance.ptr, C.CString(area), C.bool(isvertical))
+	CGoReturnPtr := C.CellsGoFunctoinZZND(C.CString("SeriesCollection_AddR1C1"), instance.ptr, C.CString(area), C.bool(isvertical))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -15720,7 +15730,7 @@ func (instance *SeriesCollection) AddR1C1(area string, isvertical bool)  (int32,
 //   int32  
 func (instance *SeriesCollection) Add_String_Bool(dataarea string, isvertical bool)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("SeriesCollection_Add_String_Boolean"), instance.ptr, C.CString(dataarea), C.bool(isvertical))
+	CGoReturnPtr := C.CellsGoFunctoinZZND(C.CString("SeriesCollection_Add_String_Boolean"), instance.ptr, C.CString(dataarea), C.bool(isvertical))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -15738,7 +15748,7 @@ func (instance *SeriesCollection) Add_String_Bool(dataarea string, isvertical bo
 //   int32  
 func (instance *SeriesCollection) Add_String_Bool_Bool(area string, isvertical bool, checklabels bool)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNC(C.CString("SeriesCollection_Add_String_Boolean_Boolean"), instance.ptr, C.CString(area), C.bool(isvertical), C.bool(checklabels))
+	CGoReturnPtr := C.CellsGoFunctoinZZNE(C.CString("SeriesCollection_Add_String_Boolean_Boolean"), instance.ptr, C.CString(area), C.bool(isvertical), C.bool(checklabels))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -15804,6 +15814,7 @@ func (instance *SeriesCollection) ChangeColors(type_ ChartColorPaletteType)  err
 
 	return nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *SeriesCollection) GetCount()  (int32,  error)  {
@@ -15862,7 +15873,7 @@ func (instance *SeriesLayoutProperties) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether connector lines are shown between data points.
+// Indicates whether connector lines are displayed between data points.
 // Returns:
 //   bool  
 func (instance *SeriesLayoutProperties) GetShowConnectorLines()  (bool,  error)  {
@@ -15876,7 +15887,7 @@ func (instance *SeriesLayoutProperties) GetShowConnectorLines()  (bool,  error) 
 
 	return result, nil 
 }
-// Indicates whether connector lines are shown between data points.
+// Indicates whether connector lines are displayed between data points.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -16389,7 +16400,7 @@ func (instance *SparklineCollection) Get(index int32)  (*Sparkline,  error)  {
 //   int32  
 func (instance *SparklineCollection) Add(datarange string, row int32, column int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGT(C.CString("SparklineCollection_Add"), instance.ptr, C.CString(datarange), C.int(row), C.int(column))
+	CGoReturnPtr := C.CellsGoFunctoinZZGW(C.CString("SparklineCollection_Add"), instance.ptr, C.CString(datarange), C.int(row), C.int(column))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -16418,6 +16429,7 @@ func (instance *SparklineCollection) RemoveSparkline(o *Sparkline)  error {
 
 	return nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *SparklineCollection) GetCount()  (int32,  error)  {
@@ -16479,7 +16491,7 @@ func (instance *SparklineGroup) ResetRanges(datarange string, isvertical bool, l
 	  locationrange_ptr =locationrange.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZND(C.CString("SparklineGroup_ResetRanges"), instance.ptr, C.CString(datarange), C.bool(isvertical), locationrange_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZNF(C.CString("SparklineGroup_ResetRanges"), instance.ptr, C.CString(datarange), C.bool(isvertical), locationrange_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17259,9 +17271,41 @@ func (instance *SparklineGroup) GetVerticalAxisMaxValue()  (float64,  error)  {
 //   value - float64 
 // Returns:
 //   void  
-func (instance *SparklineGroup) SetVerticalAxisMaxValue(value float64)  error {
+func (instance *SparklineGroup) SetVerticalAxisMaxValue_Double(value float64)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZAC(C.CString("SparklineGroup_SetVerticalAxisMaxValue"), instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZAC(C.CString("SparklineGroup_SetVerticalAxisMaxValue_Double"), instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Sets the custom maximum value for the sparkline vertical axis with the specified axis value type.
+// Parameters:
+//   type - int32 
+//   value - float64 
+// Returns:
+//   void  
+func (instance *SparklineGroup) SetVerticalAxisMaxValue_SparklineAxisMinMaxType_Double(type_ SparklineAxisMinMaxType, value float64)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZNG(C.CString("SparklineGroup_SetVerticalAxisMaxValue_SparklineAxisMinMaxType_Double"), instance.ptr, C.int( int32(type_)), C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Sets the custom minimum value for the sparkline vertical axis with the specified axis value type.
+// Parameters:
+//   type - int32 
+//   value - float64 
+// Returns:
+//   void  
+func (instance *SparklineGroup) SetVerticalAxisMinValue_SparklineAxisMinMaxType_Double(type_ SparklineAxisMinMaxType, value float64)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZNG(C.CString("SparklineGroup_SetVerticalAxisMinValue_SparklineAxisMinMaxType_Double"), instance.ptr, C.int( int32(type_)), C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17320,9 +17364,9 @@ func (instance *SparklineGroup) GetVerticalAxisMinValue()  (float64,  error)  {
 //   value - float64 
 // Returns:
 //   void  
-func (instance *SparklineGroup) SetVerticalAxisMinValue(value float64)  error {
+func (instance *SparklineGroup) SetVerticalAxisMinValue_Double(value float64)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZAC(C.CString("SparklineGroup_SetVerticalAxisMinValue"), instance.ptr, C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZAC(C.CString("SparklineGroup_SetVerticalAxisMinValue_Double"), instance.ptr, C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17386,7 +17430,7 @@ func (instance *SparklineGroupCollection) Get(index int32)  (*SparklineGroup,  e
 //   int32  
 func (instance *SparklineGroupCollection) Add_SparklineType(type_ SparklineType)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGN(C.CString("SparklineGroupCollection_Add_SparklineType"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZZGQ(C.CString("SparklineGroupCollection_Add_SparklineType"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -17410,7 +17454,7 @@ func (instance *SparklineGroupCollection) Add_SparklineType_String_Bool_CellArea
 	  locationrange_ptr =locationrange.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZNE(C.CString("SparklineGroupCollection_Add_SparklineType_String_Boolean_CellArea"), instance.ptr, C.int( int32(type_)), C.CString(datarange), C.bool(isvertical), locationrange_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZNH(C.CString("SparklineGroupCollection_Add_SparklineType_String_Boolean_CellArea"), instance.ptr, C.int( int32(type_)), C.CString(datarange), C.bool(isvertical), locationrange_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -17459,6 +17503,7 @@ func (instance *SparklineGroupCollection) ClearSparklineGroups(cellarea *CellAre
 
 	return nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *SparklineGroupCollection) GetCount()  (int32,  error)  {
@@ -17667,7 +17712,7 @@ func (instance *TickLabels) SetBackgroundMode(value BackgroundMode)  error {
 
 	return nil 
 }
-// Represents text rotation angle in clockwise.
+// Represents text rotation angle clockwise.
 // Returns:
 //   int32  
 func (instance *TickLabels) GetRotationAngle()  (int32,  error)  {
@@ -17681,7 +17726,7 @@ func (instance *TickLabels) GetRotationAngle()  (int32,  error)  {
 
 	return result, nil 
 }
-// Represents text rotation angle in clockwise.
+// Represents text rotation angle clockwise.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -17829,7 +17874,7 @@ func (instance *TickLabels) GetDisplayNumberFormat()  (string,  error)  {
 	return result, nil 
 }
 // Gets and sets the distance of labels from the category axis.
-// Only for category (x) axis.
+// This applies only to the category (x) axis.
 // Returns:
 //   int32  
 func (instance *TickLabels) GetOffset()  (int32,  error)  {
@@ -17844,7 +17889,7 @@ func (instance *TickLabels) GetOffset()  (int32,  error)  {
 	return result, nil 
 }
 // Gets and sets the distance of labels from the category axis.
-// Only for category (x) axis.
+// This applies only to the category (x) axis.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -18028,7 +18073,7 @@ func (instance *Title) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the text of display unit label.
+// Gets or sets the text of the display unit label.
 // Returns:
 //   string  
 func (instance *Title) GetText()  (string,  error)  {
@@ -18042,7 +18087,7 @@ func (instance *Title) GetText()  (string,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the text of display unit label.
+// Gets or sets the text of the display unit label.
 // Parameters:
 //   value - string 
 // Returns:
@@ -18148,7 +18193,7 @@ func (instance *Title) SetYRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Represents overlay centered title on chart without resizing chart.
+// Represents an overlay centered title on a chart without resizing the chart.
 // Returns:
 //   bool  
 func (instance *Title) GetOverLay()  (bool,  error)  {
@@ -18162,7 +18207,7 @@ func (instance *Title) GetOverLay()  (bool,  error)  {
 
 	return result, nil 
 }
-// Represents overlay centered title on chart without resizing chart.
+// Represents an overlay centered title on a chart without resizing the chart.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -18293,7 +18338,7 @@ func (instance *Title) GetShapeProperties()  (*ShapePropertyCollection,  error) 
 
 	return result, nil 
 }
-// Indicates whether default position(DefaultX, DefaultY, DefaultWidth and DefaultHeight) are set.
+// Indicates whether default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
 // Returns:
 //   bool  
 func (instance *Title) IsDefaultPosBeSet()  (bool,  error)  {
@@ -18321,7 +18366,7 @@ func (instance *Title) GetDefaultXRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents y of default position in units of Fraction of the chart area.
+// Represents y of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *Title) GetDefaultYRatioToChart()  (float64,  error)  {
@@ -18349,7 +18394,7 @@ func (instance *Title) GetDefaultWidthRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents height of default position in units of Fraction of the chart area.
+// Represents height of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *Title) GetDefaultHeightRatioToChart()  (float64,  error)  {
@@ -18514,7 +18559,7 @@ func (instance *Title) SetWidthRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of ratio of the chart area.
+// Gets or sets the height of the frame in units of the ratio of the chart area.
 // Returns:
 //   float64  
 func (instance *Title) GetHeightRatioToChart()  (float64,  error)  {
@@ -18528,7 +18573,7 @@ func (instance *Title) GetHeightRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of ratio of the chart area.
+// Gets or sets the height of the frame in units of the ratio of the chart area.
 // Parameters:
 //   value - float64 
 // Returns:
@@ -18572,7 +18617,7 @@ func (instance *Title) SetXPixel(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Gets or sets the y coordinate of the upper left corner in units of pixels.
 // Returns:
 //   int32  
 func (instance *Title) GetYPixel()  (int32,  error)  {
@@ -18586,7 +18631,7 @@ func (instance *Title) GetYPixel()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the y coordinate of the upper left corner in units of Pixel.
+// Gets or sets the y coordinate of the upper left corner in units of pixels.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -18630,7 +18675,7 @@ func (instance *Title) SetWidthPixel(value int32)  error {
 
 	return nil 
 }
-// Gets or sets the height of frame in units of Pixel.
+// Gets or sets the height of the frame in units of pixels.
 // Returns:
 //   int32  
 func (instance *Title) GetHeightPixel()  (int32,  error)  {
@@ -18644,7 +18689,7 @@ func (instance *Title) GetHeightPixel()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets or sets the height of frame in units of Pixel.
+// Gets or sets the height of the frame in units of pixels.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -18672,7 +18717,7 @@ func (instance *Title) SetPositionAuto()  error {
 
 	return nil 
 }
-// Indicates whether this data labels are deleted.
+// Indicates whether this data label is deleted.
 // Returns:
 //   bool  
 func (instance *Title) IsDeleted()  (bool,  error)  {
@@ -18686,7 +18731,7 @@ func (instance *Title) IsDeleted()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether this data labels are deleted.
+// Indicates whether this data label is deleted.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -20063,14 +20108,14 @@ func (instance *TrendlineCollection) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Adds a <see cref="Trendline"/> object to this collection with specified type.
+// Adds a <see cref="Trendline"/> object to this collection with the specified type.
 // Parameters:
 //   type - int32 
 // Returns:
 //   int32  
 func (instance *TrendlineCollection) Add_TrendlineType(type_ TrendlineType)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGN(C.CString("TrendlineCollection_Add_TrendlineType"), instance.ptr, C.int( int32(type_)))
+	CGoReturnPtr := C.CellsGoFunctoinZZGQ(C.CString("TrendlineCollection_Add_TrendlineType"), instance.ptr, C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -20114,6 +20159,7 @@ func (instance *TrendlineCollection) Get(index int32)  (*Trendline,  error)  {
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *TrendlineCollection) GetCount()  (int32,  error)  {
@@ -20193,7 +20239,7 @@ func (instance *Walls) GetCenterX()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the y coordinate of the left-bottom corner of Wall center in units of 1/4000 of chart's height after calls Chart.Calculate() method.
+// Gets the y coordinate of the left-bottom corner of Wall center in units of 1/4000 of chart's height after calling the Chart.Calculate() method.
 // Returns:
 //   int32  
 func (instance *Walls) GetCenterY()  (int32,  error)  {
@@ -20221,7 +20267,7 @@ func (instance *Walls) GetWidth()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the depth front to back in units of 1/4000 of chart's width after calls Chart.Calculate() method.
+// Gets the depth front to back in units of 1/4000 of chart's width after calling the Chart.Calculate() method.
 // Returns:
 //   int32  
 func (instance *Walls) GetDepth()  (int32,  error)  {
@@ -20249,7 +20295,7 @@ func (instance *Walls) GetHeight()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the x coordinate of the left-bottom corner of Wall center in units of pixels after calls Chart.Calculate() method.
+// Gets the x coordinate of the left-bottom corner of Wall center in units of pixels after calling the Chart.Calculate() method.
 // Returns:
 //   int32  
 func (instance *Walls) GetCenterXPx()  (int32,  error)  {
@@ -20277,7 +20323,7 @@ func (instance *Walls) GetCenterYPx()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the width of left to right in units of pixels after calls Chart.Calculate() method.
+// Gets the width of left to right in units of pixels after calling the Chart.Calculate() method.
 // Returns:
 //   int32  
 func (instance *Walls) GetWidthPx()  (int32,  error)  {
@@ -20305,7 +20351,7 @@ func (instance *Walls) GetDepthPx()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the height of top to bottom in units of pixels after calls Chart.Calculate() method.
+// Gets the height from top to bottom in units of pixels after calling the Chart.Calculate() method.
 // Returns:
 //   int32  
 func (instance *Walls) GetHeightPx()  (int32,  error)  {
@@ -20333,7 +20379,7 @@ func (instance *Walls) GetCubePointCount()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets x-coordinate of the apex point of walls cube after calls Chart.Calculate() method.
+// Gets x-coordinate of the apex point of walls cube after calling the Chart.Calculate() method.
 // The number of apex points of walls cube is eight
 // Parameters:
 //   index - int32 
@@ -20341,7 +20387,7 @@ func (instance *Walls) GetCubePointCount()  (int32,  error)  {
 //   float32  
 func (instance *Walls) GetCubePointXPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMY(C.CString("Walls_GetCubePointXPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("Walls_GetCubePointXPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -20358,7 +20404,7 @@ func (instance *Walls) GetCubePointXPx(index int32)  (float32,  error)  {
 //   float32  
 func (instance *Walls) GetCubePointYPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMY(C.CString("Walls_GetCubePointYPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("Walls_GetCubePointYPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err

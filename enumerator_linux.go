@@ -1,10 +1,10 @@
+//go:build linux
 // +build linux
 
 /* ----------------------------------------------------------------
  * Copyright (c) 2001-2025 Aspose Pty Ltd. All Rights Reserved.
  * Powered by Aspose.Cells.
  * ---------------------------------------------------------------*/
-
 
 package asposecells
 
@@ -14,14 +14,13 @@ package asposecells
 // #include <CellsFunctionMap.h>
 import "C"
 import (
-"errors"
-"runtime"
-"unsafe" 
-"time"
+	"errors"
+	"runtime"
+	"time"
+	"unsafe"
 )
 
-
-/**************Enum ReferredAreaEnumerator *****************/ 
+/**************Enum ReferredAreaEnumerator *****************/
 type ReferredAreaEnumerator struct {
 	ptr unsafe.Pointer
 }
@@ -58,14 +57,13 @@ func (instance *ReferredAreaEnumerator) MoveNext() (bool, error) {
 	return result, nil
 }
 
-func DeleteReferredAreaEnumerator(referredareaEnumerator *ReferredAreaEnumerator){
+func DeleteReferredAreaEnumerator(referredareaEnumerator *ReferredAreaEnumerator) {
 	runtime.SetFinalizer(referredareaEnumerator, nil)
 	C.Delete_ReferredAreaEnumerator(referredareaEnumerator.ptr)
 	referredareaEnumerator.ptr = nil
 }
 
-
-/**************Enum CellEnumerator *****************/ 
+/**************Enum CellEnumerator *****************/
 type CellEnumerator struct {
 	ptr unsafe.Pointer
 }
@@ -102,14 +100,13 @@ func (instance *CellEnumerator) MoveNext() (bool, error) {
 	return result, nil
 }
 
-func DeleteCellEnumerator(cellEnumerator *CellEnumerator){
+func DeleteCellEnumerator(cellEnumerator *CellEnumerator) {
 	runtime.SetFinalizer(cellEnumerator, nil)
 	C.Delete_CellEnumerator(cellEnumerator.ptr)
 	cellEnumerator.ptr = nil
 }
 
-
-/**************Enum ExternalLinkEnumerator *****************/ 
+/**************Enum ExternalLinkEnumerator *****************/
 type ExternalLinkEnumerator struct {
 	ptr unsafe.Pointer
 }
@@ -146,14 +143,56 @@ func (instance *ExternalLinkEnumerator) MoveNext() (bool, error) {
 	return result, nil
 }
 
-func DeleteExternalLinkEnumerator(externallinkEnumerator *ExternalLinkEnumerator){
+func DeleteExternalLinkEnumerator(externallinkEnumerator *ExternalLinkEnumerator) {
 	runtime.SetFinalizer(externallinkEnumerator, nil)
 	C.Delete_ExternalLinkEnumerator(externallinkEnumerator.ptr)
 	externallinkEnumerator.ptr = nil
 }
 
+/**************Enum FilterValueEnumerator *****************/
+type FilterValueEnumerator struct {
+	ptr unsafe.Pointer
+}
 
-/**************Enum RowEnumerator *****************/ 
+func (instance *FilterValueEnumerator) GetCurrent() (*FilterValue, error) {
+	CGoReturnPtr := C.FilterValueEnumerator_GetCurrent(instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return nil, err
+	}
+	result := &FilterValue{}
+	result.ptr = CGoReturnPtr.return_value
+	runtime.SetFinalizer(result, DeleteFilterValue)
+	return result, nil
+}
+
+func (instance *FilterValueEnumerator) Reset() error {
+	CGoReturnPtr := C.FilterValueEnumerator_Reset(instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return err
+	}
+	return nil
+}
+
+func (instance *FilterValueEnumerator) MoveNext() (bool, error) {
+	CGoReturnPtr := C.FilterValueEnumerator_MoveNext(instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return false, err
+	}
+	result := bool(CGoReturnPtr.return_value)
+
+	return result, nil
+}
+
+func DeleteFilterValueEnumerator(filtervalueEnumerator *FilterValueEnumerator) {
+	runtime.SetFinalizer(filtervalueEnumerator, nil)
+	C.Delete_FilterValueEnumerator(filtervalueEnumerator.ptr)
+	filtervalueEnumerator.ptr = nil
+}
+
+/**************Enum RowEnumerator *****************/
 type RowEnumerator struct {
 	ptr unsafe.Pointer
 }
@@ -190,14 +229,13 @@ func (instance *RowEnumerator) MoveNext() (bool, error) {
 	return result, nil
 }
 
-func DeleteRowEnumerator(rowEnumerator *RowEnumerator){
+func DeleteRowEnumerator(rowEnumerator *RowEnumerator) {
 	runtime.SetFinalizer(rowEnumerator, nil)
 	C.Delete_RowEnumerator(rowEnumerator.ptr)
 	rowEnumerator.ptr = nil
 }
 
-
-/**************Enum TextParagraphEnumerator *****************/ 
+/**************Enum TextParagraphEnumerator *****************/
 type TextParagraphEnumerator struct {
 	ptr unsafe.Pointer
 }
@@ -234,14 +272,13 @@ func (instance *TextParagraphEnumerator) MoveNext() (bool, error) {
 	return result, nil
 }
 
-func DeleteTextParagraphEnumerator(textparagraphEnumerator *TextParagraphEnumerator){
+func DeleteTextParagraphEnumerator(textparagraphEnumerator *TextParagraphEnumerator) {
 	runtime.SetFinalizer(textparagraphEnumerator, nil)
 	C.Delete_TextParagraphEnumerator(textparagraphEnumerator.ptr)
 	textparagraphEnumerator.ptr = nil
 }
 
-
-/**************Enum ChartPointEnumerator *****************/ 
+/**************Enum ChartPointEnumerator *****************/
 type ChartPointEnumerator struct {
 	ptr unsafe.Pointer
 }
@@ -278,14 +315,13 @@ func (instance *ChartPointEnumerator) MoveNext() (bool, error) {
 	return result, nil
 }
 
-func DeleteChartPointEnumerator(chartpointEnumerator *ChartPointEnumerator){
+func DeleteChartPointEnumerator(chartpointEnumerator *ChartPointEnumerator) {
 	runtime.SetFinalizer(chartpointEnumerator, nil)
 	C.Delete_ChartPointEnumerator(chartpointEnumerator.ptr)
 	chartpointEnumerator.ptr = nil
 }
 
-
-/**************Enum PivotFieldEnumerator *****************/ 
+/**************Enum PivotFieldEnumerator *****************/
 type PivotFieldEnumerator struct {
 	ptr unsafe.Pointer
 }
@@ -322,14 +358,13 @@ func (instance *PivotFieldEnumerator) MoveNext() (bool, error) {
 	return result, nil
 }
 
-func DeletePivotFieldEnumerator(pivotfieldEnumerator *PivotFieldEnumerator){
+func DeletePivotFieldEnumerator(pivotfieldEnumerator *PivotFieldEnumerator) {
 	runtime.SetFinalizer(pivotfieldEnumerator, nil)
 	C.Delete_PivotFieldEnumerator(pivotfieldEnumerator.ptr)
 	pivotfieldEnumerator.ptr = nil
 }
 
-
-/**************Enum PivotItemEnumerator *****************/ 
+/**************Enum PivotItemEnumerator *****************/
 type PivotItemEnumerator struct {
 	ptr unsafe.Pointer
 }
@@ -366,14 +401,13 @@ func (instance *PivotItemEnumerator) MoveNext() (bool, error) {
 	return result, nil
 }
 
-func DeletePivotItemEnumerator(pivotitemEnumerator *PivotItemEnumerator){
+func DeletePivotItemEnumerator(pivotitemEnumerator *PivotItemEnumerator) {
 	runtime.SetFinalizer(pivotitemEnumerator, nil)
 	C.Delete_PivotItemEnumerator(pivotitemEnumerator.ptr)
 	pivotitemEnumerator.ptr = nil
 }
 
-
-/**************Enum DigitalSignatureEnumerator *****************/ 
+/**************Enum DigitalSignatureEnumerator *****************/
 type DigitalSignatureEnumerator struct {
 	ptr unsafe.Pointer
 }
@@ -410,27 +444,29 @@ func (instance *DigitalSignatureEnumerator) MoveNext() (bool, error) {
 	return result, nil
 }
 
-func DeleteDigitalSignatureEnumerator(digitalsignatureEnumerator *DigitalSignatureEnumerator){
+func DeleteDigitalSignatureEnumerator(digitalsignatureEnumerator *DigitalSignatureEnumerator) {
 	runtime.SetFinalizer(digitalsignatureEnumerator, nil)
 	C.Delete_DigitalSignatureEnumerator(digitalsignatureEnumerator.ptr)
 	digitalsignatureEnumerator.ptr = nil
 }
 
-
 // Puts a boolean value into the cell.
 // Parameters:
-//   boolValue - bool 
+//
+//	boolValue - bool
+//
 // Returns:
-//   void  
-func (instance *Cell) PutValue_Null()  error {
+//
+//	void
+func (instance *Cell) PutValue_Null() error {
 
-	CGoReturnPtr := C.Cell_PutValue_Null( instance.ptr)
+	CGoReturnPtr := C.Cell_PutValue_Null(instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return err
 	}
 
-	return nil 
+	return nil
 }
 
 // Constructs from nil.

@@ -196,7 +196,7 @@ func (instance *CustomXmlPartCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *CustomXmlPartCollection) Add(data []byte, shemadata []byte)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOX(C.CString("CustomXmlPartCollection_Add"), instance.ptr, unsafe.Pointer(&data[0]), C.int( len(data)), unsafe.Pointer(&shemadata[0]), C.int( len(shemadata)))
+	CGoReturnPtr := C.CellsGoFunctoinZZPB(C.CString("CustomXmlPartCollection_Add"), instance.ptr, unsafe.Pointer(&data[0]), C.int( len(data)), unsafe.Pointer(&shemadata[0]), C.int( len(shemadata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -241,6 +241,7 @@ func (instance *CustomXmlPartCollection) SelectByID(id string)  (*CustomXmlPart,
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *CustomXmlPartCollection) GetCount()  (int32,  error)  {
@@ -386,7 +387,7 @@ func (instance *SmartTag) GetName()  (string,  error)  {
 //   void  
 func (instance *SmartTag) SetLink(uri string, name string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZFN(C.CString("SmartTag_SetLink"), instance.ptr, C.CString(uri), C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZFO(C.CString("SmartTag_SetLink"), instance.ptr, C.CString(uri), C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -479,7 +480,7 @@ func (instance *SmartTagCollection) Get(index int32)  (*SmartTag,  error)  {
 //   int32  
 func (instance *SmartTagCollection) Add(uri string, name string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("SmartTagCollection_Add"), instance.ptr, C.CString(uri), C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("SmartTagCollection_Add"), instance.ptr, C.CString(uri), C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -488,6 +489,7 @@ func (instance *SmartTagCollection) Add(uri string, name string)  (int32,  error
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *SmartTagCollection) GetCount()  (int32,  error)  {
@@ -785,7 +787,7 @@ func (instance *SmartTagPropertyCollection) Get_String(name string)  (*SmartTagP
 //   int32  
 func (instance *SmartTagPropertyCollection) Add(name string, value string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("SmartTagPropertyCollection_Add"), instance.ptr, C.CString(name), C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("SmartTagPropertyCollection_Add"), instance.ptr, C.CString(name), C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -794,6 +796,7 @@ func (instance *SmartTagPropertyCollection) Add(name string, value string)  (int
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *SmartTagPropertyCollection) GetCount()  (int32,  error)  {
@@ -926,6 +929,7 @@ func (instance *SmartTagSetting) Get_String(cellname string)  (*SmartTagCollecti
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *SmartTagSetting) GetCount()  (int32,  error)  {

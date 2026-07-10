@@ -1064,6 +1064,7 @@ func (instance *BuiltInDocumentPropertyCollection) RemoveAt(index int32)  error 
 
 	return nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *BuiltInDocumentPropertyCollection) GetCount()  (int32,  error)  {
@@ -1268,7 +1269,7 @@ func (instance *ContentTypePropertyCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ContentTypePropertyCollection) Add_String_String(name string, value string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("ContentTypePropertyCollection_Add_String_String"), instance.ptr, C.CString(name), C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("ContentTypePropertyCollection_Add_String_String"), instance.ptr, C.CString(name), C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1286,7 +1287,7 @@ func (instance *ContentTypePropertyCollection) Add_String_String(name string, va
 //   int32  
 func (instance *ContentTypePropertyCollection) Add_String_String_String(name string, value string, type_ string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIX(C.CString("ContentTypePropertyCollection_Add_String_String_String"), instance.ptr, C.CString(name), C.CString(value), C.CString(type_))
+	CGoReturnPtr := C.CellsGoFunctoinZZIY(C.CString("ContentTypePropertyCollection_Add_String_String_String"), instance.ptr, C.CString(name), C.CString(value), C.CString(type_))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1331,6 +1332,7 @@ func (instance *ContentTypePropertyCollection) Get_String(name string)  (*Conten
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *ContentTypePropertyCollection) GetCount()  (int32,  error)  {
@@ -1423,7 +1425,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_String(name string,
 //   DocumentProperty  
 func (instance *CustomDocumentPropertyCollection) Add_String_Int(name string, value int32)  (*DocumentProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKI(C.CString("CustomDocumentPropertyCollection_Add_String_Integer"), instance.ptr, C.CString(name), C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZKJ(C.CString("CustomDocumentPropertyCollection_Add_String_Integer"), instance.ptr, C.CString(name), C.int(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1444,7 +1446,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_Date(name string, v
 	
 	time_value := C.Get_Date( C.int(value.Year()), C.int(value.Month()) , C.int(value.Day()) , C.int(value.Hour()) , C.int(value.Minute()) , C.int(value.Second())  )
 
-	CGoReturnPtr := C.CellsGoFunctoinZZNF(C.CString("CustomDocumentPropertyCollection_Add_String_Date"), instance.ptr, C.CString(name), time_value)
+	CGoReturnPtr := C.CellsGoFunctoinZZNI(C.CString("CustomDocumentPropertyCollection_Add_String_Date"), instance.ptr, C.CString(name), time_value)
 	C.Delete_GetDate( time_value)
 
 	if CGoReturnPtr.error_no != 0 {
@@ -1465,7 +1467,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_Date(name string, v
 //   DocumentProperty  
 func (instance *CustomDocumentPropertyCollection) Add_String_Bool(name string, value bool)  (*DocumentProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNG(C.CString("CustomDocumentPropertyCollection_Add_String_Boolean"), instance.ptr, C.CString(name), C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZNJ(C.CString("CustomDocumentPropertyCollection_Add_String_Boolean"), instance.ptr, C.CString(name), C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1484,7 +1486,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_Bool(name string, v
 //   DocumentProperty  
 func (instance *CustomDocumentPropertyCollection) Add_String_Double(name string, value float64)  (*DocumentProperty,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNH(C.CString("CustomDocumentPropertyCollection_Add_String_Double"), instance.ptr, C.CString(name), C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZNK(C.CString("CustomDocumentPropertyCollection_Add_String_Double"), instance.ptr, C.CString(name), C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1640,6 +1642,7 @@ func (instance *CustomDocumentPropertyCollection) Get_String(name string)  (*Doc
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *CustomDocumentPropertyCollection) GetCount()  (int32,  error)  {
@@ -1816,7 +1819,7 @@ func (instance *CustomPropertyCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *CustomPropertyCollection) Add(name string, value string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("CustomPropertyCollection_Add"), instance.ptr, C.CString(name), C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("CustomPropertyCollection_Add"), instance.ptr, C.CString(name), C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -1861,6 +1864,7 @@ func (instance *CustomPropertyCollection) Get_String(name string)  (*CustomPrope
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *CustomPropertyCollection) GetCount()  (int32,  error)  {
@@ -2214,6 +2218,7 @@ func (instance *DocumentPropertyCollection) Get_String(name string)  (*DocumentP
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *DocumentPropertyCollection) GetCount()  (int32,  error)  {

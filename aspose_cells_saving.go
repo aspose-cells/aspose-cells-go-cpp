@@ -538,7 +538,7 @@ func NewEbookSaveOptions() ( *EbookSaveOptions, error) {
 //   saveFormat - int32 
 func NewEbookSaveOptions_SaveFormat(saveformat SaveFormat) ( *EbookSaveOptions, error) {
 	ebooksaveoptions := &EbookSaveOptions{}
-	CGoReturnPtr := C.CellsGoFunctoinZZFJ(C.CString("New_EbookSaveOptions_SaveFormat"),C.int( int32(saveformat)))
+	CGoReturnPtr := C.CellsGoFunctoinZZFK(C.CString("New_EbookSaveOptions_SaveFormat"),C.int( int32(saveformat)))
 	if CGoReturnPtr.error_no == 0 {
 		ebooksaveoptions.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(ebooksaveoptions, DeleteEbookSaveOptions)
@@ -2754,6 +2754,42 @@ func (instance *EbookSaveOptions) SetDataBarRenderMode(value DataBarRenderMode) 
 
 	return nil 
 }
+// Indicates how spaces are rendered in HTML output.
+// This option is currently applied only to numeric formats (e.g. accounting format).
+// The default value is <see cref="HtmlSpaceMode.Css"/>.
+// Returns:
+//   int32  
+func (instance *EbookSaveOptions) GetSpaceMode()  (HtmlSpaceMode,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("EbookSaveOptions_GetSpaceMode"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToHtmlSpaceMode(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Indicates how spaces are rendered in HTML output.
+// This option is currently applied only to numeric formats (e.g. accounting format).
+// The default value is <see cref="HtmlSpaceMode.Css"/>.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *EbookSaveOptions) SetSpaceMode(value HtmlSpaceMode)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("EbookSaveOptions_SetSpaceMode"), instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Gets the save file format.
 // Returns:
 //   int32  
@@ -3375,7 +3411,7 @@ func (instance *SqlScriptSaveOptions) SetAddBlankLineBetweenRows(value bool)  er
 //   byte  
 func (instance *SqlScriptSaveOptions) GetSeparator()  (byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGP(C.CString("SqlScriptSaveOptions_GetSeparator"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZGS(C.CString("SqlScriptSaveOptions_GetSeparator"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -3391,7 +3427,7 @@ func (instance *SqlScriptSaveOptions) GetSeparator()  (byte,  error)  {
 //   void  
 func (instance *SqlScriptSaveOptions) SetSeparator(value byte)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZHC(C.CString("SqlScriptSaveOptions_SetSeparator"), instance.ptr, C.char(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZHF(C.CString("SqlScriptSaveOptions_SetSeparator"), instance.ptr, C.char(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

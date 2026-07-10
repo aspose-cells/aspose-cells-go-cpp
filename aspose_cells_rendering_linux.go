@@ -199,6 +199,28 @@ func Int32ToHtmlParagraphLayoutMode(value int32)(HtmlParagraphLayoutMode ,error)
 	}
 }
 
+/**************Enum HtmlSpaceMode *****************/
+
+// Specifies how whitespace is represented in the generated HTML.
+type HtmlSpaceMode int32
+
+const(
+// Use HTML character entities(such as &amp;nbsp;, &amp;ensp) to represent whitespace
+HtmlSpaceMode_Character HtmlSpaceMode = 0 
+
+// Uses CSS properties such as padding to represent whitespace.
+HtmlSpaceMode_Css HtmlSpaceMode = 1 
+)
+
+func Int32ToHtmlSpaceMode(value int32)(HtmlSpaceMode ,error){
+	switch value {
+		case 0:  return HtmlSpaceMode_Character, nil  
+		case 1:  return HtmlSpaceMode_Css, nil  
+		default:
+			return 0 ,fmt.Errorf("invalid HtmlSpaceMode value: %d", value)
+	}
+}
+
 /**************Enum ImageBinarizationMethod *****************/
 
 // Specifies the method used to binarize image.
@@ -380,6 +402,40 @@ func Int32ToPdfOptimizationType(value int32)(PdfOptimizationType ,error){
 	}
 }
 
+/**************Enum PdfZoomBehavior *****************/
+
+// Specifies the initial view mode when the generated PDF document is opened.
+type PdfZoomBehavior int32
+
+const(
+// Uses the PDF viewer's default behavior.
+PdfZoomBehavior_None PdfZoomBehavior = 0 
+
+// Opens the document at a specific zoom percentage.
+PdfZoomBehavior_ZoomFactor PdfZoomBehavior = 1 
+
+// Fits the entire page within the viewer window.
+PdfZoomBehavior_FitPage PdfZoomBehavior = 2 
+
+// Fits the page width within the viewer window.
+PdfZoomBehavior_FitWidth PdfZoomBehavior = 3 
+
+// Fits the page height within the viewer window.
+PdfZoomBehavior_FitHeight PdfZoomBehavior = 4 
+)
+
+func Int32ToPdfZoomBehavior(value int32)(PdfZoomBehavior ,error){
+	switch value {
+		case 0:  return PdfZoomBehavior_None, nil  
+		case 1:  return PdfZoomBehavior_ZoomFactor, nil  
+		case 2:  return PdfZoomBehavior_FitPage, nil  
+		case 3:  return PdfZoomBehavior_FitWidth, nil  
+		case 4:  return PdfZoomBehavior_FitHeight, nil  
+		default:
+			return 0 ,fmt.Errorf("invalid PdfZoomBehavior value: %d", value)
+	}
+}
+
 /**************Enum SvgEmbeddedFontType *****************/
 
 // Represents the embedded font type in Svg image.
@@ -478,7 +534,7 @@ func (instance *CustomRenderSettings) IsNull()  (bool,  error)  {
 //   float32  
 func (instance *CustomRenderSettings) GetCellBorderWidth(bordertype CellBorderType)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOS(C.CString("CustomRenderSettings_GetCellBorderWidth"), instance.ptr, C.int( int32(bordertype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOV(C.CString("CustomRenderSettings_GetCellBorderWidth"), instance.ptr, C.int( int32(bordertype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -661,7 +717,7 @@ func (instance *DrawObjectEventHandler) Draw(drawobject *DrawObject, x float32, 
 	  drawobject_ptr =drawobject.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOT(C.CString("DrawObjectEventHandler_Draw"), instance.ptr, drawobject_ptr, C.float(x), C.float(y), C.float(width), C.float(height))
+	CGoReturnPtr := C.CellsGoFunctoinZZOW(C.CString("DrawObjectEventHandler_Draw"), instance.ptr, drawobject_ptr, C.float(x), C.float(y), C.float(width), C.float(height))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2130,7 +2186,7 @@ type RenderingFont struct {
 //   fontSize - float32 
 func NewRenderingFont(fontname string, fontsize float32) ( *RenderingFont, error) {
 	renderingfont := &RenderingFont{}
-	CGoReturnPtr := C.CellsGoFunctoinZZOU(C.CString("New_RenderingFont"),C.CString(fontname), C.float(fontsize))
+	CGoReturnPtr := C.CellsGoFunctoinZZOX(C.CString("New_RenderingFont"),C.CString(fontname), C.float(fontsize))
 	if CGoReturnPtr.error_no == 0 {
 		renderingfont.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(renderingfont, DeleteRenderingFont)
@@ -2299,7 +2355,7 @@ func NewRenderingWatermark_String_RenderingFont(text string, renderingfont *Rend
 	  renderingfont_ptr =renderingfont.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZJD(C.CString("New_RenderingWatermark_String_RenderingFont"),C.CString(text), renderingfont_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJE(C.CString("New_RenderingWatermark_String_RenderingFont"),C.CString(text), renderingfont_ptr)
 	if CGoReturnPtr.error_no == 0 {
 		renderingwatermark.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(renderingwatermark, DeleteRenderingWatermark)
@@ -2315,7 +2371,7 @@ func NewRenderingWatermark_String_RenderingFont(text string, renderingfont *Rend
 //   imageData - []byte 
 func NewRenderingWatermark_Stream(imagedata []byte) ( *RenderingWatermark, error) {
 	renderingwatermark := &RenderingWatermark{}
-	CGoReturnPtr := C.CellsGoFunctoinZZFR(C.CString("New_RenderingWatermark_Stream"),unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZZFS(C.CString("New_RenderingWatermark_Stream"),unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
 	if CGoReturnPtr.error_no == 0 {
 		renderingwatermark.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(renderingwatermark, DeleteRenderingWatermark)
@@ -2362,7 +2418,7 @@ func (instance *RenderingWatermark) GetRotation()  (float32,  error)  {
 //   void  
 func (instance *RenderingWatermark) SetRotation(value float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLC(C.CString("RenderingWatermark_SetRotation"), instance.ptr, C.float(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZLD(C.CString("RenderingWatermark_SetRotation"), instance.ptr, C.float(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2420,7 +2476,7 @@ func (instance *RenderingWatermark) GetOpacity()  (float32,  error)  {
 //   void  
 func (instance *RenderingWatermark) SetOpacity(value float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLC(C.CString("RenderingWatermark_SetOpacity"), instance.ptr, C.float(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZLD(C.CString("RenderingWatermark_SetOpacity"), instance.ptr, C.float(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2587,7 +2643,7 @@ func (instance *RenderingWatermark) GetOffsetX()  (float32,  error)  {
 //   void  
 func (instance *RenderingWatermark) SetOffsetX(value float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLC(C.CString("RenderingWatermark_SetOffsetX"), instance.ptr, C.float(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZLD(C.CString("RenderingWatermark_SetOffsetX"), instance.ptr, C.float(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2616,7 +2672,7 @@ func (instance *RenderingWatermark) GetOffsetY()  (float32,  error)  {
 //   void  
 func (instance *RenderingWatermark) SetOffsetY(value float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLC(C.CString("RenderingWatermark_SetOffsetY"), instance.ptr, C.float(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZLD(C.CString("RenderingWatermark_SetOffsetY"), instance.ptr, C.float(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2789,7 +2845,7 @@ func (instance *SheetRender) GetPageScale()  (float64,  error)  {
 //   []float  
 func (instance *SheetRender) GetPageSizeInch(pageindex int32)  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOV(C.CString("SheetRender_GetPageSizeInch"), instance.ptr, C.int(pageindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZOY(C.CString("SheetRender_GetPageSizeInch"), instance.ptr, C.int(pageindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2828,7 +2884,7 @@ func (instance *SheetRender) ToImage_Int_String(pageindex int32, filename string
 //   []byte  
 func (instance *SheetRender) ToImage_Int(pageindex int32)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOW(C.CString("SheetRender_ToImage_Integer"), instance.ptr, C.int(pageindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZPA(C.CString("SheetRender_ToImage_Integer"), instance.ptr, C.int(pageindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2902,7 +2958,7 @@ type SheetSet struct {
 //   sheetIndexes - []int32_t 
 func NewSheetSet_int32Array(sheetindexes []int32) ( *SheetSet, error) {
 	sheetset := &SheetSet{}
-	CGoReturnPtr := C.CellsGoFunctoinZZHS(C.CString("New_SheetSet_int32_tArray"),unsafe.Pointer(&sheetindexes[0]), C.int( len(sheetindexes)))
+	CGoReturnPtr := C.CellsGoFunctoinZZHT(C.CString("New_SheetSet_int32_tArray"),unsafe.Pointer(&sheetindexes[0]), C.int( len(sheetindexes)))
 	if CGoReturnPtr.error_no == 0 {
 		sheetset.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(sheetset, DeleteSheetSet)
@@ -2925,7 +2981,7 @@ func NewSheetSet_stringArray(sheetnames []string) ( *SheetSet, error) {
 	vector_sheetnames[i] = cStr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZHS(C.CString("New_SheetSet_U16StringArray"),unsafe.Pointer(&vector_sheetnames[0]), C.int( len(sheetnames)))
+	CGoReturnPtr := C.CellsGoFunctoinZZHT(C.CString("New_SheetSet_U16StringArray"),unsafe.Pointer(&vector_sheetnames[0]), C.int( len(sheetnames)))
 	if CGoReturnPtr.error_no == 0 {
 		sheetset.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(sheetset, DeleteSheetSet)
@@ -4214,7 +4270,7 @@ func (instance *WorkbookRender) GetPageCount()  (int32,  error)  {
 //   []float  
 func (instance *WorkbookRender) GetPageSizeInch(pageindex int32)  ([]float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOV(C.CString("WorkbookRender_GetPageSizeInch"), instance.ptr, C.int(pageindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZOY(C.CString("WorkbookRender_GetPageSizeInch"), instance.ptr, C.int(pageindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4283,7 +4339,7 @@ func (instance *WorkbookRender) ToImage_Int_String(pageindex int32, filename str
 //   []byte  
 func (instance *WorkbookRender) ToImage_Int(pageindex int32)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOW(C.CString("WorkbookRender_ToImage_Integer"), instance.ptr, C.int(pageindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZPA(C.CString("WorkbookRender_ToImage_Integer"), instance.ptr, C.int(pageindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err

@@ -73,7 +73,7 @@ func (instance *Timeline) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether to display the header.
+// Indicates whether to display the header of this timeline.
 // Returns:
 //   bool  
 func (instance *Timeline) GetShowHeader()  (bool,  error)  {
@@ -87,7 +87,7 @@ func (instance *Timeline) GetShowHeader()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether to display the header.
+// Indicates whether to display the header of this timeline.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -131,7 +131,7 @@ func (instance *Timeline) SetShowSelectionLabel(value bool)  error {
 
 	return nil 
 }
-// Indicates whether to display the time level.
+// Indicates whether to display the drop-down selection box of the time level.
 // Returns:
 //   bool  
 func (instance *Timeline) GetShowTimeLevel()  (bool,  error)  {
@@ -145,7 +145,7 @@ func (instance *Timeline) GetShowTimeLevel()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether to display the time level.
+// Indicates whether to display the drop-down selection box of the time level.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -160,7 +160,7 @@ func (instance *Timeline) SetShowTimeLevel(value bool)  error {
 
 	return nil 
 }
-// Indicates whether to display the horizontal ccroll bar.
+// Indicates whether to display the horizontal scroll bar.
 // Returns:
 //   bool  
 func (instance *Timeline) GetShowHorizontalScrollbar()  (bool,  error)  {
@@ -174,7 +174,7 @@ func (instance *Timeline) GetShowHorizontalScrollbar()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether to display the horizontal ccroll bar.
+// Indicates whether to display the horizontal scroll bar.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -279,6 +279,48 @@ func (instance *Timeline) GetSelectionLevel()  (TimelineLevelType,  error)  {
 func (instance *Timeline) SetSelectionLevel(value TimelineLevelType)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("Timeline_SetSelectionLevel"), instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets the selected range of date time.
+// Returns:
+//   []Date  
+func (instance *Timeline) GetSelectedDateTimeRange()  ([]time.Time,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZY(C.CString("Timeline_GetSelectedDateTimeRange"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result:= make([]time.Time, CGoReturnPtr.column_length)
+	for i := 0; i < int(CGoReturnPtr.column_length); i++ {
+	   offset := uintptr(C.size_t(i)) * uintptr(CGoReturnPtr.size)
+	   goObjectPtr := unsafe.Pointer(uintptr( unsafe.Pointer(CGoReturnPtr.return_value)) + offset)
+	result[i] = time.Date(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_year"), goObjectPtr).return_value ),time.Month(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_month"), goObjectPtr).return_value )),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_day"), goObjectPtr).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_hour"), goObjectPtr).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_minute"), goObjectPtr).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_second"), goObjectPtr).return_value ), 0, time.UTC)}
+	 
+
+	return result, nil 
+}
+// Select item between the date time.
+// Parameters:
+//   start - Date 
+//   end - Date 
+//   calculate - bool 
+// Returns:
+//   void  
+func (instance *Timeline) Select(start time.Time, end time.Time, calculate bool)  error {
+	
+	time_start := C.Get_Date( C.int(start.Year()), C.int(start.Month()) , C.int(start.Day()) , C.int(start.Hour()) , C.int(start.Minute()) , C.int(start.Second())  )
+	time_end := C.Get_Date( C.int(end.Year()), C.int(end.Month()) , C.int(end.Day()) , C.int(end.Hour()) , C.int(end.Minute()) , C.int(end.Second())  )
+
+	CGoReturnPtr := C.CellsGoFunctoinZZPS(C.CString("Timeline_Select"), instance.ptr, time_start, time_end, C.bool(calculate))
+	C.Delete_GetDate( time_start)
+	C.Delete_GetDate( time_end)
+
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -443,7 +485,7 @@ func (instance *TimelineCollection) Add_PivotTable_Int_Int_String(pivot *PivotTa
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOO(C.CString("TimelineCollection_Add_PivotTable_Integer_Integer_String"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.CString(basefieldname))
+	CGoReturnPtr := C.CellsGoFunctoinZZOR(C.CString("TimelineCollection_Add_PivotTable_Integer_Integer_String"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.CString(basefieldname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -466,7 +508,7 @@ func (instance *TimelineCollection) Add_PivotTable_String_String(pivot *PivotTab
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZON(C.CString("TimelineCollection_Add_PivotTable_String_String"), instance.ptr, pivot_ptr, C.CString(destcellname), C.CString(basefieldname))
+	CGoReturnPtr := C.CellsGoFunctoinZZOQ(C.CString("TimelineCollection_Add_PivotTable_String_String"), instance.ptr, pivot_ptr, C.CString(destcellname), C.CString(basefieldname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -490,7 +532,7 @@ func (instance *TimelineCollection) Add_PivotTable_Int_Int_Int(pivot *PivotTable
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPI(C.CString("TimelineCollection_Add_PivotTable_Integer_Integer_Integer"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.int(basefieldindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZPL(C.CString("TimelineCollection_Add_PivotTable_Integer_Integer_Integer"), instance.ptr, pivot_ptr, C.int(row), C.int(column), C.int(basefieldindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -513,7 +555,7 @@ func (instance *TimelineCollection) Add_PivotTable_String_Int(pivot *PivotTable,
 	  pivot_ptr =pivot.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPJ(C.CString("TimelineCollection_Add_PivotTable_String_Integer"), instance.ptr, pivot_ptr, C.CString(destcellname), C.int(basefieldindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZPM(C.CString("TimelineCollection_Add_PivotTable_String_Integer"), instance.ptr, pivot_ptr, C.CString(destcellname), C.int(basefieldindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -541,7 +583,7 @@ func (instance *TimelineCollection) Add_PivotTable_Int_Int_PivotField(pivot *Piv
 	  basefield_ptr =basefield.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPK(C.CString("TimelineCollection_Add_PivotTable_Integer_Integer_PivotField"), instance.ptr, pivot_ptr, C.int(row), C.int(column), basefield_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPN(C.CString("TimelineCollection_Add_PivotTable_Integer_Integer_PivotField"), instance.ptr, pivot_ptr, C.int(row), C.int(column), basefield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -568,7 +610,7 @@ func (instance *TimelineCollection) Add_PivotTable_String_PivotField(pivot *Pivo
 	  basefield_ptr =basefield.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZPL(C.CString("TimelineCollection_Add_PivotTable_String_PivotField"), instance.ptr, pivot_ptr, C.CString(destcellname), basefield_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZPO(C.CString("TimelineCollection_Add_PivotTable_String_PivotField"), instance.ptr, pivot_ptr, C.CString(destcellname), basefield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -577,6 +619,7 @@ func (instance *TimelineCollection) Add_PivotTable_String_PivotField(pivot *Pivo
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *TimelineCollection) GetCount()  (int32,  error)  {

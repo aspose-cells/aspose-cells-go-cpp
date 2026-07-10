@@ -211,6 +211,7 @@ func (instance *DataModelRelationshipCollection) Get(index int32)  (*DataModelRe
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *DataModelRelationshipCollection) GetCount()  (int32,  error)  {
@@ -364,6 +365,7 @@ func (instance *DataModelTableCollection) Get_String(name string)  (*DataModelTa
 
 	return result, nil 
 }
+// Gets the number of elements contained in the instance.
 // Returns:
 //   int32  
 func (instance *DataModelTableCollection) GetCount()  (int32,  error)  {
