@@ -207,12 +207,85 @@ func (instance *PivotGlobalizationSettings) GetShortTextOf12Months()  ([]string,
 
 	return result, nil 
 }
-// Gets the local text of 4 Quaters.
+// Gets all local formatted string of 24 hours.
+// The default value is 12 AM, 1 AM, 2 AM, 3 AM, 4 AM, 5 AM, 6 AM, 7 AM, 8 AM, 9 AM, 10 AM, 11 AM, 12 PM, 1 PM, 2 PM, 3 PM, 4 PM, 5 PM, 6 PM, 7 PM, 8 PM, 9 PM, 10 PM, 11 PM.
+// Returns:
+//   []string  
+func (instance *PivotGlobalizationSettings) GetTextOf24Hours()  ([]string,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZY(C.CString("PivotGlobalizationSettings_GetTextOf24Hours"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result:= make([]string, CGoReturnPtr.column_length)
+	for i := 0; i < int(CGoReturnPtr.column_length); i++ {
+	   offset := uintptr(C.size_t(i)) * uintptr(CGoReturnPtr.size)
+	   cObject := *(*C.char)(unsafe.Pointer( uintptr( unsafe.Pointer(CGoReturnPtr.return_value)) + offset))
+	   goObject :=string(cObject)
+	   result[i] = goObject
+	}
+	 
+
+	return result, nil 
+}
+// Gets all local formatted string of "or".
+// Returns:
+//   string  
+func (instance *PivotGlobalizationSettings) GetTextOfOr()  (string,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("PivotGlobalizationSettings_GetTextOfOr"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the number format of pivot day group.
+// Only used when grouping the pivot field by days.
+// The default vaule is "d-MMM";
+// Returns:
+//   string  
+func (instance *PivotGlobalizationSettings) GetFormatOfDayGroup()  (string,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("PivotGlobalizationSettings_GetFormatOfDayGroup"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the local text of 4 Quarters.
 // Returns:
 //   []string  
 func (instance *PivotGlobalizationSettings) GetTextOf4Quaters()  ([]string,  error)  {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZY(C.CString("PivotGlobalizationSettings_GetTextOf4Quaters"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result:= make([]string, CGoReturnPtr.column_length)
+	for i := 0; i < int(CGoReturnPtr.column_length); i++ {
+	   offset := uintptr(C.size_t(i)) * uintptr(CGoReturnPtr.size)
+	   cObject := *(*C.char)(unsafe.Pointer( uintptr( unsafe.Pointer(CGoReturnPtr.return_value)) + offset))
+	   goObject :=string(cObject)
+	   result[i] = goObject
+	}
+	 
+
+	return result, nil 
+}
+// Gets the local text of 4 Quaters.
+// Returns:
+//   []string  
+func (instance *PivotGlobalizationSettings) GetTextOf4Quarters()  ([]string,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZY(C.CString("PivotGlobalizationSettings_GetTextOf4Quarters"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -379,7 +452,7 @@ func (instance *PivotGlobalizationSettings) GetTextOfSubTotal(subtotaltype Pivot
 //   string  
 func (instance *PivotGlobalizationSettings) GetNameOfDataField(function ConsolidationFunction, name string)  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPJ(C.CString("PivotGlobalizationSettings_GetNameOfDataField"), instance.ptr, C.int( int32(function)), C.CString(name))
+	CGoReturnPtr := C.CellsGoFunctoinZZPE(C.CString("PivotGlobalizationSettings_GetNameOfDataField"), instance.ptr, C.int( int32(function)), C.CString(name))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err

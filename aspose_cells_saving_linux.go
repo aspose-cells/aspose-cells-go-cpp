@@ -2520,7 +2520,7 @@ func (instance *EbookSaveOptions) SetDisableCss(value bool)  error {
 
 	return nil 
 }
-// Optimize the output of html by using CSS custom properties. For example, for the scenario that there are multiple occurences for one base64 image, with custom property the image data only needs to be saved once so the performance of the resultant html can be improved.
+// Optimize the output of html by using CSS custom properties. For example, for the scenario that there are multiple occurrences for one base64 image, with custom property the image data only needs to be saved once so the performance of the resultant html can be improved.
 // The default value is false.
 // Returns:
 //   bool  
@@ -2535,7 +2535,7 @@ func (instance *EbookSaveOptions) GetEnableCssCustomProperties()  (bool,  error)
 
 	return result, nil 
 }
-// Optimize the output of html by using CSS custom properties. For example, for the scenario that there are multiple occurences for one base64 image, with custom property the image data only needs to be saved once so the performance of the resultant html can be improved.
+// Optimize the output of html by using CSS custom properties. For example, for the scenario that there are multiple occurrences for one base64 image, with custom property the image data only needs to be saved once so the performance of the resultant html can be improved.
 // The default value is false.
 // Parameters:
 //   value - bool 
@@ -3206,9 +3206,9 @@ func (instance *SqlScriptColumnTypeMap) GetStringType()  (string,  error)  {
 // Gets numeric type in the database.
 // Returns:
 //   string  
-func (instance *SqlScriptColumnTypeMap) GetNumbericType()  (string,  error)  {
+func (instance *SqlScriptColumnTypeMap) GetNumberType()  (string,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("SqlScriptColumnTypeMap_GetNumbericType"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("SqlScriptColumnTypeMap_GetNumberType"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  "", err

@@ -207,8 +207,8 @@ PivotFieldGroupType_None PivotFieldGroupType = 0
 // Grouped by DateTime range.
 PivotFieldGroupType_DateTimeRange PivotFieldGroupType = 1 
 
-// Grouped by numberic range.
-PivotFieldGroupType_NumbericRange PivotFieldGroupType = 2 
+// Grouped by numeric range.
+PivotFieldGroupType_NumericRange PivotFieldGroupType = 2 
 
 // Grouped by discrete points.
 PivotFieldGroupType_Discrete PivotFieldGroupType = 3 
@@ -218,7 +218,7 @@ func Int32ToPivotFieldGroupType(value int32)(PivotFieldGroupType ,error){
 	switch value {
 		case 0:  return PivotFieldGroupType_None, nil  
 		case 1:  return PivotFieldGroupType_DateTimeRange, nil  
-		case 2:  return PivotFieldGroupType_NumbericRange, nil  
+		case 2:  return PivotFieldGroupType_NumericRange, nil  
 		case 3:  return PivotFieldGroupType_Discrete, nil  
 		default:
 			return 0 ,fmt.Errorf("invalid PivotFieldGroupType value: %d", value)
@@ -614,40 +614,44 @@ type PivotGroupByType int32
 
 const(
 // Group by numbers.
-PivotGroupByType_Numbers PivotGroupByType = 0 
+PivotGroupByType_Numbers PivotGroupByType = 1 
 
 // Presents Seconds groupby type.
-PivotGroupByType_Seconds PivotGroupByType = 1 
+PivotGroupByType_Seconds PivotGroupByType = 2 
 
 // Presents Minutes groupby type.
-PivotGroupByType_Minutes PivotGroupByType = 2 
+PivotGroupByType_Minutes PivotGroupByType = 4 
 
 // Presents Hours groupby type.
-PivotGroupByType_Hours PivotGroupByType = 3 
+PivotGroupByType_Hours PivotGroupByType = 8 
 
 // Presents Days groupby type.
-PivotGroupByType_Days PivotGroupByType = 4 
+PivotGroupByType_Days PivotGroupByType = 16 
 
 // Presents Months groupby type.
-PivotGroupByType_Months PivotGroupByType = 5 
+PivotGroupByType_Months PivotGroupByType = 32 
 
 // Presents Quarters groupby type.
-PivotGroupByType_Quarters PivotGroupByType = 6 
+PivotGroupByType_Quarters PivotGroupByType = 64 
 
 // Presents Years groupby type.
-PivotGroupByType_Years PivotGroupByType = 7 
+PivotGroupByType_Years PivotGroupByType = 128 
+
+// Presents all group type of date times.
+PivotGroupByType_DateTimes PivotGroupByType = 254 
 )
 
 func Int32ToPivotGroupByType(value int32)(PivotGroupByType ,error){
 	switch value {
-		case 0:  return PivotGroupByType_Numbers, nil  
-		case 1:  return PivotGroupByType_Seconds, nil  
-		case 2:  return PivotGroupByType_Minutes, nil  
-		case 3:  return PivotGroupByType_Hours, nil  
-		case 4:  return PivotGroupByType_Days, nil  
-		case 5:  return PivotGroupByType_Months, nil  
-		case 6:  return PivotGroupByType_Quarters, nil  
-		case 7:  return PivotGroupByType_Years, nil  
+		case 1:  return PivotGroupByType_Numbers, nil  
+		case 2:  return PivotGroupByType_Seconds, nil  
+		case 4:  return PivotGroupByType_Minutes, nil  
+		case 8:  return PivotGroupByType_Hours, nil  
+		case 16:  return PivotGroupByType_Days, nil  
+		case 32:  return PivotGroupByType_Months, nil  
+		case 64:  return PivotGroupByType_Quarters, nil  
+		case 128:  return PivotGroupByType_Years, nil  
+		case 254:  return PivotGroupByType_DateTimes, nil  
 		default:
 			return 0 ,fmt.Errorf("invalid PivotGroupByType value: %d", value)
 	}
@@ -1341,7 +1345,7 @@ type CustomPiovtFieldGroupItem struct {
 //   itemIndexes - []int32_t 
 func NewCustomPiovtFieldGroupItem(name string, itemindexes []int32) ( *CustomPiovtFieldGroupItem, error) {
 	custompiovtfieldgroupitem := &CustomPiovtFieldGroupItem{}
-	CGoReturnPtr := C.CellsGoFunctoinZZNN(C.CString("New_CustomPiovtFieldGroupItem"),C.CString(name), unsafe.Pointer(&itemindexes[0]), C.int( len(itemindexes)))
+	CGoReturnPtr := C.CellsGoFunctoinZZNO(C.CString("New_CustomPiovtFieldGroupItem"),C.CString(name), unsafe.Pointer(&itemindexes[0]), C.int( len(itemindexes)))
 	if CGoReturnPtr.error_no == 0 {
 		custompiovtfieldgroupitem.ptr = CGoReturnPtr.return_value
 		runtime.SetFinalizer(custompiovtfieldgroupitem, DeleteCustomPiovtFieldGroupItem)
@@ -1376,9 +1380,57 @@ func DeleteCustomPiovtFieldGroupItem(custompiovtfieldgroupitem *CustomPiovtField
 	custompiovtfieldgroupitem.ptr = nil
 }
 
+// Class DiscreteGroupItem 
+
+// Represents an item of custom grouped field.
+type DiscreteGroupItem struct {
+	ptr unsafe.Pointer
+}
+
+// The constructor of custom group item of pivot field.
+// Parameters:
+//   name - string 
+//   itemIndexes - []int32_t 
+func NewDiscreteGroupItem(name string, itemindexes []int32) ( *DiscreteGroupItem, error) {
+	discretegroupitem := &DiscreteGroupItem{}
+	CGoReturnPtr := C.CellsGoFunctoinZZNO(C.CString("New_DiscreteGroupItem"),C.CString(name), unsafe.Pointer(&itemindexes[0]), C.int( len(itemindexes)))
+	if CGoReturnPtr.error_no == 0 {
+		discretegroupitem.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(discretegroupitem, DeleteDiscreteGroupItem)
+		return discretegroupitem, nil
+	} else {
+		discretegroupitem.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return discretegroupitem, err
+	}	
+}
+
+// Checks whether the implementation object is nullptr.
+// Returns:
+//   bool  
+func (instance *DiscreteGroupItem) IsNull()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("DiscreteGroupItem_IsNull"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+
+
+
+func DeleteDiscreteGroupItem(discretegroupitem *DiscreteGroupItem){
+	runtime.SetFinalizer(discretegroupitem, nil)
+	C.Delete_CObject(C.CString("Delete_DiscreteGroupItem"),discretegroupitem.ptr)
+	discretegroupitem.ptr = nil
+}
+
 // Class PivotArea 
 
-// Presents the selected area of the PivotTable.
+// Presents the selected area of the pivot table.
 type PivotArea struct {
 	ptr unsafe.Pointer
 }
@@ -1444,7 +1496,7 @@ func (instance *PivotArea) GetFilters()  (*PivotAreaFilterCollection,  error)  {
 //   void  
 func (instance *PivotArea) Select(axistype PivotFieldType, fieldposition int32, selectiontype PivotTableSelectionType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNO(C.CString("PivotArea_Select"), instance.ptr, C.int( int32(axistype)), C.int(fieldposition), C.int( int32(selectiontype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZNP(C.CString("PivotArea_Select"), instance.ptr, C.int( int32(axistype)), C.int(fieldposition), C.int( int32(selectiontype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1460,7 +1512,7 @@ func (instance *PivotArea) Select(axistype PivotFieldType, fieldposition int32, 
 //   void  
 func (instance *PivotArea) SelectField_PivotFieldType_String(axistype PivotFieldType, fieldname string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("PivotArea_SelectField_PivotFieldType_String"), instance.ptr, C.int( int32(axistype)), C.CString(fieldname))
+	CGoReturnPtr := C.CellsGoFunctoinZZIR(C.CString("PivotArea_SelectField_PivotFieldType_String"), instance.ptr, C.int( int32(axistype)), C.CString(fieldname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -1917,7 +1969,7 @@ func (instance *PivotAreaFilter) SetSubtotals(subtotaltype PivotFieldSubtotalTyp
 
 	return nil 
 }
-// Gets the index of the field which this filter refers to.
+// Gets the index of the field in the source fields which this filter refers to.
 // A value of -2 indicates the values field.
 // Returns:
 //   int32  
@@ -2071,6 +2123,39 @@ func (instance *PivotCache) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
+// Gets and sets the number of unused items to allow before discarding unused items.
+// This value MUST be greater than -2 and less than 1048577.
+// <see cref="PivotCacheMissingItemsLimitConst"/>;
+// Returns:
+//   int32  
+func (instance *PivotCache) GetMissingItemsLimit()  (int32,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("PivotCache_GetMissingItemsLimit"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the number of unused items to allow before discarding unused items.
+// This value MUST be greater than -2 and less than 1048577.
+// <see cref="PivotCacheMissingItemsLimitConst"/>;
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *PivotCache) SetMissingItemsLimit(value int32)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("PivotCache_SetMissingItemsLimit"), instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Refreshes data from the data source and calculates data for the view of all pivottables which data source is this pivot cache.
 // Parameters:
 //   option - PivotTableRefreshOption 
@@ -2083,7 +2168,7 @@ func (instance *PivotCache) Refresh_PivotTableRefreshOption(option *PivotTableRe
 	  option_ptr =option.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZNP(C.CString("PivotCache_Refresh_PivotTableRefreshOption"), instance.ptr, option_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZNQ(C.CString("PivotCache_Refresh_PivotTableRefreshOption"), instance.ptr, option_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -2249,6 +2334,52 @@ func DeletePivotCacheCollection(pivotcachecollection *PivotCacheCollection){
 	pivotcachecollection.ptr = nil
 }
 
+// Class PivotCacheMissingItemsLimitConst 
+
+// Constants for PivotCache missingItemsLimit (citmGhostMax)
+// 4-byte signed integer threshold for unused cache item eviction
+type PivotCacheMissingItemsLimitConst struct {
+	ptr unsafe.Pointer
+}
+
+// Default constructor.
+func NewPivotCacheMissingItemsLimitConst() ( *PivotCacheMissingItemsLimitConst, error) {
+	pivotcachemissingitemslimitconst := &PivotCacheMissingItemsLimitConst{}
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_PivotCacheMissingItemsLimitConst"),)
+	if CGoReturnPtr.error_no == 0 {
+		pivotcachemissingitemslimitconst.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(pivotcachemissingitemslimitconst, DeletePivotCacheMissingItemsLimitConst)
+		return pivotcachemissingitemslimitconst, nil
+	} else {
+		pivotcachemissingitemslimitconst.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return pivotcachemissingitemslimitconst, err
+	}	
+}
+
+// Checks whether the implementation object is nullptr.
+// Returns:
+//   bool  
+func (instance *PivotCacheMissingItemsLimitConst) IsNull()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotCacheMissingItemsLimitConst_IsNull"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+
+
+
+func DeletePivotCacheMissingItemsLimitConst(pivotcachemissingitemslimitconst *PivotCacheMissingItemsLimitConst){
+	runtime.SetFinalizer(pivotcachemissingitemslimitconst, nil)
+	C.Delete_CObject(C.CString("Delete_PivotCacheMissingItemsLimitConst"),pivotcachemissingitemslimitconst.ptr)
+	pivotcachemissingitemslimitconst.ptr = nil
+}
+
 // Class PivotConditionalFormat 
 
 // Represents a PivotTable Format Condition in PivotFormatCondition Collection.
@@ -2338,7 +2469,7 @@ func (instance *PivotConditionalFormat) AddCellArea(ca *CellArea)  error {
 //   void  
 func (instance *PivotConditionalFormat) ApplyTo(row int32, column int32, scope PivotConditionFormatScopeType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNQ(C.CString("PivotConditionalFormat_ApplyTo"), instance.ptr, C.int(row), C.int(column), C.int( int32(scope)))
+	CGoReturnPtr := C.CellsGoFunctoinZZNR(C.CString("PivotConditionalFormat_ApplyTo"), instance.ptr, C.int(row), C.int(column), C.int( int32(scope)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2354,7 +2485,7 @@ func (instance *PivotConditionalFormat) ApplyTo(row int32, column int32, scope P
 //   void  
 func (instance *PivotConditionalFormat) AddFieldArea_PivotFieldType_String(axistype PivotFieldType, fieldname string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("PivotConditionalFormat_AddFieldArea_PivotFieldType_String"), instance.ptr, C.int( int32(axistype)), C.CString(fieldname))
+	CGoReturnPtr := C.CellsGoFunctoinZZIR(C.CString("PivotConditionalFormat_AddFieldArea_PivotFieldType_String"), instance.ptr, C.int( int32(axistype)), C.CString(fieldname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2763,18 +2894,18 @@ func (instance *PivotDiscreteGroupSettings) GetType()  (PivotFieldGroupType,  er
 }
 // Gets the discrete items.
 // Returns:
-//   []CustomPiovtFieldGroupItem  
-func (instance *PivotDiscreteGroupSettings) GetItems()  ([]CustomPiovtFieldGroupItem,  error)  {
+//   []DiscreteGroupItem  
+func (instance *PivotDiscreteGroupSettings) GetDiscreteItems()  ([]DiscreteGroupItem,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZY(C.CString("PivotDiscreteGroupSettings_GetItems"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZY(C.CString("PivotDiscreteGroupSettings_GetDiscreteItems"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
 	}
-	result:= make([]CustomPiovtFieldGroupItem, CGoReturnPtr.column_length)
+	result:= make([]DiscreteGroupItem, CGoReturnPtr.column_length)
 	for i := 0; i < int(CGoReturnPtr.column_length); i++ {
 	   offset := uintptr(C.size_t(i)) * uintptr(CGoReturnPtr.size)
-	   goObject := &CustomPiovtFieldGroupItem{}
+	   goObject := &DiscreteGroupItem{}
 	   goObject.ptr =unsafe.Pointer(uintptr( unsafe.Pointer(CGoReturnPtr.return_value)) + offset)
 	   result[i] = *goObject
 	}
@@ -2895,57 +3026,12 @@ func (instance *PivotField) InitPivotItems()  error {
 
 	return nil 
 }
-// Automatically group the field with internal
-// Parameters:
-//   interval - float64 
-//   newField - bool 
-// Returns:
-//   void  
-func (instance *PivotField) GroupBy_Double_Bool(interval float64, newfield bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZNR(C.CString("PivotField_GroupBy_Double_Boolean"), instance.ptr, C.double(interval), C.bool(newfield))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Automatically group the field with internal
-// Parameters:
-//   groups - []PivotGroupByType 
-//   interval - float64 
-//   newField - bool 
-// Returns:
-//   void  
-func (instance *PivotField) GroupBy_PivotGroupByTypeArray_Double_Bool(groups []PivotGroupByType, interval float64, newfield bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZNS(C.CString("PivotField_GroupBy_PivotGroupByTypeArray_Double_Boolean"), instance.ptr, unsafe.Pointer(&groups[0]), C.int( len(groups)), C.double(interval), C.bool(newfield))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Group the file by the date group types.
-// Parameters:
-//   start - Date 
-//   end - Date 
-//   groups - []PivotGroupByType 
-//   interval - float64 
-//   firstAsNewField - bool 
+// Automatically group the field.
 // Returns:
 //   bool  
-func (instance *PivotField) GroupBy_Date_Date_PivotGroupByTypeArray_Double_Bool(start time.Time, end time.Time, groups []PivotGroupByType, interval float64, firstasnewfield bool)  (bool,  error)  {
+func (instance *PivotField) Group()  (bool,  error)  {
 	
-	time_start := C.Get_Date( C.int(start.Year()), C.int(start.Month()) , C.int(start.Day()) , C.int(start.Hour()) , C.int(start.Minute()) , C.int(start.Second())  )
-	time_end := C.Get_Date( C.int(end.Year()), C.int(end.Month()) , C.int(end.Day()) , C.int(end.Hour()) , C.int(end.Minute()) , C.int(end.Second())  )
-
-	CGoReturnPtr := C.CellsGoFunctoinZZNT(C.CString("PivotField_GroupBy_Date_Date_PivotGroupByTypeArray_Double_Boolean"), instance.ptr, time_start, time_end, unsafe.Pointer(&groups[0]), C.int( len(groups)), C.double(interval), C.bool(firstasnewfield))
-	C.Delete_GetDate( time_start)
-	C.Delete_GetDate( time_end)
-
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotField_Group"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -2954,66 +3040,19 @@ func (instance *PivotField) GroupBy_Date_Date_PivotGroupByTypeArray_Double_Bool(
 
 	return result, nil 
 }
-// Group the file by the date group types.
+// Groups the pivot field with options.
 // Parameters:
-//   isAutoStart - bool 
-//   start - Date 
-//   isAutoEnd - bool 
-//   end - Date 
-//   groups - []PivotGroupByType 
-//   interval - float64 
-//   firstAsNewField - bool 
+//   options - PivotFieldGroupOptions 
 // Returns:
 //   bool  
-func (instance *PivotField) GroupBy_Bool_Date_Bool_Date_PivotGroupByTypeArray_Double_Bool(isautostart bool, start time.Time, isautoend bool, end time.Time, groups []PivotGroupByType, interval float64, firstasnewfield bool)  (bool,  error)  {
+func (instance *PivotField) Group_PivotFieldGroupOptions(options *PivotFieldGroupOptions)  (bool,  error)  {
 	
-	time_start := C.Get_Date( C.int(start.Year()), C.int(start.Month()) , C.int(start.Day()) , C.int(start.Hour()) , C.int(start.Minute()) , C.int(start.Second())  )
-	time_end := C.Get_Date( C.int(end.Year()), C.int(end.Month()) , C.int(end.Day()) , C.int(end.Hour()) , C.int(end.Minute()) , C.int(end.Second())  )
-
-	CGoReturnPtr := C.CellsGoFunctoinZZNU(C.CString("PivotField_GroupBy_Boolean_Date_Boolean_Date_PivotGroupByTypeArray_Double_Boolean"), instance.ptr, C.bool(isautostart), time_start, C.bool(isautoend), time_end, unsafe.Pointer(&groups[0]), C.int( len(groups)), C.double(interval), C.bool(firstasnewfield))
-	C.Delete_GetDate( time_start)
-	C.Delete_GetDate( time_end)
-
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  true, err
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
 	}
-	result := bool(CGoReturnPtr.return_value) 
 
-	return result, nil 
-}
-// Group the file by number.
-// Parameters:
-//   start - float64 
-//   end - float64 
-//   interval - float64 
-//   newField - bool 
-// Returns:
-//   bool  
-func (instance *PivotField) GroupBy_Double_Double_Double_Bool(start float64, end float64, interval float64, newfield bool)  (bool,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZNV(C.CString("PivotField_GroupBy_Double_Double_Double_Boolean"), instance.ptr, C.double(start), C.double(end), C.double(interval), C.bool(newfield))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  true, err
-	}
-	result := bool(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Group the file by number.
-// Parameters:
-//   isAutoStart - bool 
-//   start - float64 
-//   isAutoEnd - bool 
-//   end - float64 
-//   interval - float64 
-//   newField - bool 
-// Returns:
-//   bool  
-func (instance *PivotField) GroupBy_Bool_Double_Bool_Double_Double_Bool(isautostart bool, start float64, isautoend bool, end float64, interval float64, newfield bool)  (bool,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZNW(C.CString("PivotField_GroupBy_Boolean_Double_Boolean_Double_Double_Boolean"), instance.ptr, C.bool(isautostart), C.double(start), C.bool(isautoend), C.double(end), C.double(interval), C.bool(newfield))
+	CGoReturnPtr := C.CellsGoFunctoinZZBJ(C.CString("PivotField_Group_PivotFieldGroupOptions"), instance.ptr, options_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3024,11 +3063,11 @@ func (instance *PivotField) GroupBy_Bool_Double_Bool_Double_Double_Bool(isautost
 }
 // Custom group the field.
 // Parameters:
-//   customGroupItems - []CustomPiovtFieldGroupItem 
+//   customGroupItems - []DiscreteGroupItem 
 //   newField - bool 
 // Returns:
 //   bool  
-func (instance *PivotField) GroupBy_CustomPiovtFieldGroupItemArray_Bool(customgroupitems []CustomPiovtFieldGroupItem, newfield bool)  (bool,  error)  {
+func (instance *PivotField) GroupBy(customgroupitems []DiscreteGroupItem, newfield bool)  (bool,  error)  {
 	
 	customgroupitems_length := len(customgroupitems)
 	vector_customgroupitems:= make([]unsafe.Pointer, customgroupitems_length)
@@ -3037,7 +3076,7 @@ func (instance *PivotField) GroupBy_CustomPiovtFieldGroupItemArray_Bool(customgr
 	}
 
 
-	CGoReturnPtr := C.CellsGoFunctoinZZNX(C.CString("PivotField_GroupBy_CustomPiovtFieldGroupItemArray_Boolean"), instance.ptr, unsafe.Pointer(&vector_customgroupitems[0]), C.int( len(customgroupitems)), C.bool(newfield))
+	CGoReturnPtr := C.CellsGoFunctoinZZNS(C.CString("PivotField_GroupBy"), instance.ptr, unsafe.Pointer(&vector_customgroupitems[0]), C.int( len(customgroupitems)), C.bool(newfield))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3121,7 +3160,7 @@ func (instance *PivotField) ClearFilter()  error {
 //   PivotFilter  
 func (instance *PivotField) FilterTop10(valuefieldindex int32, type_ PivotFilterType, istop bool, itemcount int32)  (*PivotFilter,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNY(C.CString("PivotField_FilterTop10"), instance.ptr, C.int(valuefieldindex), C.int( int32(type_)), C.bool(istop), C.int(itemcount))
+	CGoReturnPtr := C.CellsGoFunctoinZZNT(C.CString("PivotField_FilterTop10"), instance.ptr, C.int(valuefieldindex), C.int( int32(type_)), C.bool(istop), C.int(itemcount))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3142,7 +3181,7 @@ func (instance *PivotField) FilterTop10(valuefieldindex int32, type_ PivotFilter
 //   PivotFilter  
 func (instance *PivotField) FilterByValue(valuefieldindex int32, type_ PivotFilterType, value1 float64, value2 float64)  (*PivotFilter,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOA(C.CString("PivotField_FilterByValue"), instance.ptr, C.int(valuefieldindex), C.int( int32(type_)), C.double(value1), C.double(value2))
+	CGoReturnPtr := C.CellsGoFunctoinZZNU(C.CString("PivotField_FilterByValue"), instance.ptr, C.int(valuefieldindex), C.int( int32(type_)), C.double(value1), C.double(value2))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3162,7 +3201,7 @@ func (instance *PivotField) FilterByValue(valuefieldindex int32, type_ PivotFilt
 //   PivotFilter  
 func (instance *PivotField) FilterByLabel(type_ PivotFilterType, label1 string, label2 string)  (*PivotFilter,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOB(C.CString("PivotField_FilterByLabel"), instance.ptr, C.int( int32(type_)), C.CString(label1), C.CString(label2))
+	CGoReturnPtr := C.CellsGoFunctoinZZNV(C.CString("PivotField_FilterByLabel"), instance.ptr, C.int( int32(type_)), C.CString(label1), C.CString(label2))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3185,7 +3224,7 @@ func (instance *PivotField) FilterByDate(type_ PivotFilterType, datetime1 time.T
 	time_datetime1 := C.Get_Date( C.int(datetime1.Year()), C.int(datetime1.Month()) , C.int(datetime1.Day()) , C.int(datetime1.Hour()) , C.int(datetime1.Minute()) , C.int(datetime1.Second())  )
 	time_datetime2 := C.Get_Date( C.int(datetime2.Year()), C.int(datetime2.Month()) , C.int(datetime2.Day()) , C.int(datetime2.Hour()) , C.int(datetime2.Minute()) , C.int(datetime2.Second())  )
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOC(C.CString("PivotField_FilterByDate"), instance.ptr, C.int( int32(type_)), time_datetime1, time_datetime2)
+	CGoReturnPtr := C.CellsGoFunctoinZZNW(C.CString("PivotField_FilterByDate"), instance.ptr, C.int( int32(type_)), time_datetime1, time_datetime2)
 	C.Delete_GetDate( time_datetime1)
 	C.Delete_GetDate( time_datetime2)
 
@@ -3285,7 +3324,7 @@ func (instance *PivotField) GetPosition()  (int32,  error)  {
 
 	return result, nil 
 }
-// Specifies the region of the PivotTable that this field is displayed.
+// Specifies the region of the pivot table that this field is displayed.
 // Returns:
 //   int32  
 func (instance *PivotField) GetRegionType()  (PivotFieldType,  error)  {
@@ -3366,9 +3405,9 @@ func (instance *PivotField) SetDisplayName(value string)  error {
 //   shown - bool 
 // Returns:
 //   void  
-func (instance *PivotField) SetSubtotals(subtotaltype PivotFieldSubtotalType, shown bool)  error {
+func (instance *PivotField) SetSubtotals_PivotFieldSubtotalType_Bool(subtotaltype PivotFieldSubtotalType, shown bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZFM(C.CString("PivotField_SetSubtotals"), instance.ptr, C.int( int32(subtotaltype)), C.bool(shown))
+	CGoReturnPtr := C.CellsGoFunctoinZZFM(C.CString("PivotField_SetSubtotals_PivotFieldSubtotalType_Boolean"), instance.ptr, C.int( int32(subtotaltype)), C.bool(shown))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3381,9 +3420,9 @@ func (instance *PivotField) SetSubtotals(subtotaltype PivotFieldSubtotalType, sh
 //   subtotalType - int32 
 // Returns:
 //   bool  
-func (instance *PivotField) GetSubtotals(subtotaltype PivotFieldSubtotalType)  (bool,  error)  {
+func (instance *PivotField) GetSubtotals_PivotFieldSubtotalType(subtotaltype PivotFieldSubtotalType)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZFL(C.CString("PivotField_GetSubtotals"), instance.ptr, C.int( int32(subtotaltype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZFL(C.CString("PivotField_GetSubtotals_PivotFieldSubtotalType"), instance.ptr, C.int( int32(subtotaltype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3391,6 +3430,38 @@ func (instance *PivotField) GetSubtotals(subtotaltype PivotFieldSubtotalType)  (
 	result := bool(CGoReturnPtr.return_value) 
 
 	return result, nil 
+}
+// Gets or sets the subtotals of the field. Only for Row or Column pivot field.
+// Returns:
+//   int32  
+func (instance *PivotField) GetSubtotals()  (PivotFieldSubtotalType,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("PivotField_GetSubtotals"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToPivotFieldSubtotalType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the subtotals of the field. Only for Row or Column pivot field.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *PivotField) SetSubtotals_PivotFieldSubtotalType(value PivotFieldSubtotalType)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotField_SetSubtotals_PivotFieldSubtotalType"), instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
 }
 // Indicates whether the specified field shows automatic subtotals. Default is true.
 // Returns:
@@ -3421,75 +3492,13 @@ func (instance *PivotField) SetIsAutoSubtotals(value bool)  error {
 
 	return nil 
 }
-// Indicates whether the specified field can be dragged to the column position.
-// The default value is true.
-// Returns:
-//   bool  
-func (instance *PivotField) GetDragToColumn()  (bool,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotField_GetDragToColumn"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  true, err
-	}
-	result := bool(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Indicates whether the specified field can be dragged to the column position.
-// The default value is true.
-// Parameters:
-//   value - bool 
-// Returns:
-//   void  
-func (instance *PivotField) SetDragToColumn(value bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotField_SetDragToColumn"), instance.ptr, C.bool(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Indicates whether the specified field can be dragged to the hide region.
-// The default value is true.
-// Returns:
-//   bool  
-func (instance *PivotField) GetDragToHide()  (bool,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotField_GetDragToHide"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  true, err
-	}
-	result := bool(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Indicates whether the specified field can be dragged to the hide region.
-// The default value is true.
-// Parameters:
-//   value - bool 
-// Returns:
-//   void  
-func (instance *PivotField) SetDragToHide(value bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotField_SetDragToHide"), instance.ptr, C.bool(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Indicates whether the specified field can be dragged to the row region.
 // The default value is true.
 // Returns:
 //   bool  
-func (instance *PivotField) GetDragToRow()  (bool,  error)  {
+func (instance *PivotField) GetAllowDraggingToRow()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotField_GetDragToRow"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotField_GetAllowDraggingToRow"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3504,9 +3513,9 @@ func (instance *PivotField) GetDragToRow()  (bool,  error)  {
 //   value - bool 
 // Returns:
 //   void  
-func (instance *PivotField) SetDragToRow(value bool)  error {
+func (instance *PivotField) SetAllowDraggingToRow(value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotField_SetDragToRow"), instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotField_SetAllowDraggingToRow"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3514,13 +3523,13 @@ func (instance *PivotField) SetDragToRow(value bool)  error {
 
 	return nil 
 }
-// Indicates whether the specified field can be dragged to the page position.
+// Indicates whether the specified field can be dragged to the column region.
 // The default value is true.
 // Returns:
 //   bool  
-func (instance *PivotField) GetDragToPage()  (bool,  error)  {
+func (instance *PivotField) GetAllowDraggingToColumn()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotField_GetDragToPage"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotField_GetAllowDraggingToColumn"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3529,15 +3538,77 @@ func (instance *PivotField) GetDragToPage()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether the specified field can be dragged to the page position.
+// Indicates whether the specified field can be dragged to the column region.
 // The default value is true.
 // Parameters:
 //   value - bool 
 // Returns:
 //   void  
-func (instance *PivotField) SetDragToPage(value bool)  error {
+func (instance *PivotField) SetAllowDraggingToColumn(value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotField_SetDragToPage"), instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotField_SetAllowDraggingToColumn"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the specified field can be dragged to the page region.
+// The default value is true.
+// Returns:
+//   bool  
+func (instance *PivotField) GetAllowDraggingToPage()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotField_GetAllowDraggingToPage"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the specified field can be dragged to the page region.
+// The default value is true.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PivotField) SetAllowDraggingToPage(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotField_SetAllowDraggingToPage"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether this pivot field can be removed from the PivotTable view.
+// The default value is true.
+// Returns:
+//   bool  
+func (instance *PivotField) GetAllowRemovingFromView()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotField_GetAllowRemovingFromView"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether this pivot field can be removed from the PivotTable view.
+// The default value is true.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PivotField) SetAllowRemovingFromView(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotField_SetAllowRemovingFromView"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3549,9 +3620,9 @@ func (instance *PivotField) SetDragToPage(value bool)  error {
 // The default value is true.
 // Returns:
 //   bool  
-func (instance *PivotField) GetDragToData()  (bool,  error)  {
+func (instance *PivotField) GetAllowDraggingToData()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotField_GetDragToData"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotField_GetAllowDraggingToData"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -3566,9 +3637,9 @@ func (instance *PivotField) GetDragToData()  (bool,  error)  {
 //   value - bool 
 // Returns:
 //   void  
-func (instance *PivotField) SetDragToData(value bool)  error {
+func (instance *PivotField) SetAllowDraggingToData(value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotField_SetDragToData"), instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotField_SetAllowDraggingToData"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3736,12 +3807,11 @@ func (instance *PivotField) SetShowAllItems(value bool)  error {
 // Sorts this pivot field.
 // Parameters:
 //   sortType - int32 
-//   fieldSortedBy - int32 
 // Returns:
 //   void  
-func (instance *PivotField) SortBy_SortOrder_Int(sorttype SortOrder, fieldsortedby int32)  error {
+func (instance *PivotField) SortBy_SortOrder(sorttype SortOrder)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJQ(C.CString("PivotField_SortBy_SortOrder_Integer"), instance.ptr, C.int( int32(sorttype)), C.int(fieldsortedby))
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotField_SortBy_SortOrder"), instance.ptr, C.int( int32(sorttype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3753,100 +3823,12 @@ func (instance *PivotField) SortBy_SortOrder_Int(sorttype SortOrder, fieldsorted
 // Parameters:
 //   sortType - int32 
 //   fieldSortedBy - int32 
-//   dataType - int32 
 //   cellName - string 
 // Returns:
 //   void  
-func (instance *PivotField) SortBy_SortOrder_Int_PivotLineType_String(sorttype SortOrder, fieldsortedby int32, datatype PivotLineType, cellname string)  error {
+func (instance *PivotField) SortBy_SortOrder_Int_String(sorttype SortOrder, fieldsortedby int32, cellname string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOD(C.CString("PivotField_SortBy_SortOrder_Integer_PivotLineType_String"), instance.ptr, C.int( int32(sorttype)), C.int(fieldsortedby), C.int( int32(datatype)), C.CString(cellname))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Indicates whether a sort operation that will be applied to this pivot field is an autosort operation or a simple data sort.
-// Returns:
-//   bool  
-func (instance *PivotField) GetNonAutoSortDefault()  (bool,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotField_GetNonAutoSortDefault"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  true, err
-	}
-	result := bool(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Indicates whether a sort operation that will be applied to this pivot field is an autosort operation or a simple data sort.
-// Parameters:
-//   value - bool 
-// Returns:
-//   void  
-func (instance *PivotField) SetNonAutoSortDefault(value bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotField_SetNonAutoSortDefault"), instance.ptr, C.bool(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Indicates whether the items of this PivotTable field are automatically sorted.
-// Returns:
-//   bool  
-func (instance *PivotField) IsAutoSort()  (bool,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotField_IsAutoSort"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  true, err
-	}
-	result := bool(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Indicates whether the items of this PivotTable field are automatically sorted.
-// Parameters:
-//   value - bool 
-// Returns:
-//   void  
-func (instance *PivotField) SetIsAutoSort(value bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotField_SetIsAutoSort"), instance.ptr, C.bool(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Indicates whether the items of this pivot field is autosorted ascending.
-// Returns:
-//   bool  
-func (instance *PivotField) IsAscendSort()  (bool,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotField_IsAscendSort"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  true, err
-	}
-	result := bool(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Indicates whether the items of this pivot field is autosorted ascending.
-// Parameters:
-//   value - bool 
-// Returns:
-//   void  
-func (instance *PivotField) SetIsAscendSort(value bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotField_SetIsAscendSort"), instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZNX(C.CString("PivotField_SortBy_SortOrder_Integer_String"), instance.ptr, C.int( int32(sorttype)), C.int(fieldsortedby), C.CString(cellname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3870,150 +3852,33 @@ func (instance *PivotField) GetSortSetting()  (*PivotFieldSortSetting,  error)  
 
 	return result, nil 
 }
-// Represents the index of field which is auto sorted.
-// -1 means PivotField itself,others means the position of the data fields.
+// Gets the Top 10 AutoShow settings for a pivot field.
 // Returns:
-//   int32  
-func (instance *PivotField) GetAutoSortField()  (int32,  error)  {
+//   PivotFieldTop10AutoShowSettings  
+func (instance *PivotField) GetTop10AutoShowSettings()  (*PivotFieldTop10AutoShowSettings,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("PivotField_GetAutoSortField"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("PivotField_GetTop10AutoShowSettings"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
+		return  nil, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := &PivotFieldTop10AutoShowSettings{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeletePivotFieldTop10AutoShowSettings) 
 
 	return result, nil 
 }
-// Represents the index of field which is auto sorted.
-// -1 means PivotField itself,others means the position of the data fields.
+// Configures Top10 AutoShow settings for this pivot field.
 // Parameters:
-//   value - int32 
+//   isAutoShow - bool 
+//   isTop - bool 
+//   count - int32 
+//   rankBy - int32 
 // Returns:
 //   void  
-func (instance *PivotField) SetAutoSortField(value int32)  error {
+func (instance *PivotField) Top10AutoShow(isautoshow bool, istop bool, count int32, rankby int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("PivotField_SetAutoSortField"), instance.ptr, C.int(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Indicates whether the specified PivotTable field is automatically shown.
-// Returns:
-//   bool  
-func (instance *PivotField) IsAutoShow()  (bool,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotField_IsAutoShow"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  true, err
-	}
-	result := bool(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Indicates whether the specified PivotTable field is automatically shown.
-// Parameters:
-//   value - bool 
-// Returns:
-//   void  
-func (instance *PivotField) SetIsAutoShow(value bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotField_SetIsAutoShow"), instance.ptr, C.bool(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Indicates whether the specified PivotTable field is autoshown ascending.
-// Returns:
-//   bool  
-func (instance *PivotField) IsAscendShow()  (bool,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotField_IsAscendShow"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  true, err
-	}
-	result := bool(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Indicates whether the specified PivotTable field is autoshown ascending.
-// Parameters:
-//   value - bool 
-// Returns:
-//   void  
-func (instance *PivotField) SetIsAscendShow(value bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotField_SetIsAscendShow"), instance.ptr, C.bool(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Represent the number of top or bottom items
-// that are automatically shown in the specified PivotTable field.
-// Returns:
-//   int32  
-func (instance *PivotField) GetAutoShowCount()  (int32,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("PivotField_GetAutoShowCount"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result := int32(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Represent the number of top or bottom items
-// that are automatically shown in the specified PivotTable field.
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *PivotField) SetAutoShowCount(value int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("PivotField_SetAutoShowCount"), instance.ptr, C.int(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Represents auto show field index. -1 means PivotField itself.
-// It should be the index of the data fields.
-// Returns:
-//   int32  
-func (instance *PivotField) GetAutoShowField()  (int32,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("PivotField_GetAutoShowField"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result := int32(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Represents auto show field index. -1 means PivotField itself.
-// It should be the index of the data fields.
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *PivotField) SetAutoShowField(value int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("PivotField_SetAutoShowField"), instance.ptr, C.int(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZNY(C.CString("PivotField_Top10AutoShow"), instance.ptr, C.bool(isautoshow), C.bool(istop), C.int(count), C.int(rankby))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4063,7 +3928,7 @@ func (instance *PivotField) SetFunction(value ConsolidationFunction)  error {
 //   void  
 func (instance *PivotField) ShowValuesAs(displayformat PivotFieldDataDisplayFormat, basefield int32, baseitempositiontype PivotItemPositionType, baseitem int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("PivotField_ShowValuesAs"), instance.ptr, C.int( int32(displayformat)), C.int(basefield), C.int( int32(baseitempositiontype)), C.int(baseitem))
+	CGoReturnPtr := C.CellsGoFunctoinZZOA(C.CString("PivotField_ShowValuesAs"), instance.ptr, C.int( int32(displayformat)), C.int(basefield), C.int( int32(baseitempositiontype)), C.int(baseitem))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4110,7 +3975,7 @@ func (instance *PivotField) GetCurrentPageItem()  (int16,  error)  {
 //   void  
 func (instance *PivotField) SetCurrentPageItem(value int16)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMS(C.CString("PivotField_SetCurrentPageItem"), instance.ptr, C.short(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZMT(C.CString("PivotField_SetCurrentPageItem"), instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4119,6 +3984,7 @@ func (instance *PivotField) SetCurrentPageItem(value int16)  error {
 	return nil 
 }
 // Indicates whether to insert a blank line after each item.
+// Only for row fields.
 // Returns:
 //   bool  
 func (instance *PivotField) GetInsertBlankRow()  (bool,  error)  {
@@ -4133,6 +3999,7 @@ func (instance *PivotField) GetInsertBlankRow()  (bool,  error)  {
 	return result, nil 
 }
 // Indicates whether to insert a blank line after each item.
+// Only for row fields.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -4263,31 +4130,12 @@ func (instance *PivotField) SetNumberFormat(value string)  error {
 
 	return nil 
 }
-// Gets whether the specific PivotItem is hidden.
-// Parameters:
-//   index - int32 
-// Returns:
-//   bool  
-func (instance *PivotField) IsHiddenItem(index int32)  (bool,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZBR(C.CString("PivotField_IsHiddenItem"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  true, err
-	}
-	result := bool(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets whether the specific PivotItem in a data field is hidden.
-// Parameters:
-//   index - int32 
-//   isHidden - bool 
+// Hides all details
 // Returns:
 //   void  
-func (instance *PivotField) HideItem_Int_Bool(index int32, ishidden bool)  error {
+func (instance *PivotField) HideAllDetails()  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCU(C.CString("PivotField_HideItem_Integer_Boolean"), instance.ptr, C.int(index), C.bool(ishidden))
+	CGoReturnPtr := C.CellsGoFunctoinZZZF(C.CString("PivotField_HideAllDetails"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4295,63 +4143,12 @@ func (instance *PivotField) HideItem_Int_Bool(index int32, ishidden bool)  error
 
 	return nil 
 }
-// Gets whether to hide the detail of the specific PivotItem..
-// Parameters:
-//   index - int32 
-// Returns:
-//   bool  
-func (instance *PivotField) IsHiddenItemDetail(index int32)  (bool,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZBR(C.CString("PivotField_IsHiddenItemDetail"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  true, err
-	}
-	result := bool(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets whether the specific PivotItem in a pivot field is hidden detail.
-// Parameters:
-//   index - int32 
-//   isHiddenDetail - bool 
+// Show all details
 // Returns:
 //   void  
-func (instance *PivotField) HideItemDetail(index int32, ishiddendetail bool)  error {
+func (instance *PivotField) ShowAllDetails()  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZCU(C.CString("PivotField_HideItemDetail"), instance.ptr, C.int(index), C.bool(ishiddendetail))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Sets whether the detail of all PivotItems in a pivot field are hidden.
-// That is collapse/expand this field.
-// Parameters:
-//   isHiddenDetail - bool 
-// Returns:
-//   void  
-func (instance *PivotField) HideDetail(ishiddendetail bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotField_HideDetail"), instance.ptr, C.bool(ishiddendetail))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Sets whether the specific PivotItem in a data field is hidden.
-// Parameters:
-//   itemValue - string 
-//   isHidden - bool 
-// Returns:
-//   void  
-func (instance *PivotField) HideItem_String_Bool(itemvalue string, ishidden bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAL(C.CString("PivotField_HideItem_String_Boolean"), instance.ptr, C.CString(itemvalue), C.bool(ishidden))
+	CGoReturnPtr := C.CellsGoFunctoinZZZF(C.CString("PivotField_ShowAllDetails"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4398,20 +4195,6 @@ func (instance *PivotField) GetOriginalItems()  ([]string,  error)  {
 	   result[i] = goObject
 	}
 	 
-
-	return result, nil 
-}
-// Gets the count of the base items in this pivot field.
-// Returns:
-//   int32  
-func (instance *PivotField) GetItemCount()  (int32,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("PivotField_GetItemCount"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result := int32(CGoReturnPtr.return_value) 
 
 	return result, nil 
 }
@@ -4471,8 +4254,7 @@ func DeletePivotField(pivotfield *PivotField){
 
 // Class PivotFieldCollection 
 
-// Represents a collection of all the PivotField objects
-// in the PivotTable's specific PivotFields type.
+// Represents a collection of all the PivotField objects in the different regions of the pivot table.
 type PivotFieldCollection struct {
 	ptr unsafe.Pointer
 }
@@ -4506,37 +4288,6 @@ func (instance *PivotFieldCollection) GetType()  (PivotFieldType,  error)  {
 	if err != nil {
 		return 0, err
 	}
-
-	return result, nil 
-}
-// Gets the count of the pivotFields.
-// Returns:
-//   int32  
-func (instance *PivotFieldCollection) GetCount()  (int32,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("PivotFieldCollection_GetCount"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result := int32(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Gets an enumerator over the elements in this collection in proper sequence.
-// Returns:
-//   unsafe.Pointer  
-func (instance *PivotFieldCollection) GetEnumerator()  (*PivotFieldEnumerator,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAW(C.CString("PivotFieldCollection_GetEnumerator"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := &PivotFieldEnumerator{}
-	result.ptr = CGoReturnPtr.return_value
-	runtime.SetFinalizer(result, DeletePivotFieldEnumerator)
-	 
 
 	return result, nil 
 }
@@ -4576,6 +4327,22 @@ func (instance *PivotFieldCollection) Get_String(name string)  (*PivotField,  er
 
 	return result, nil 
 }
+// Removes field by the index.
+// Only for filter,row,column,data region.
+// Parameters:
+//   index - int32 
+// Returns:
+//   void  
+func (instance *PivotFieldCollection) RemoveAt(index int32)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("PivotFieldCollection_RemoveAt"), instance.ptr, C.int(index))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Adds a PivotField Object to the specific type PivotFields.
 // Parameters:
 //   baseFieldIndex - int32 
@@ -4613,12 +4380,53 @@ func (instance *PivotFieldCollection) Add(pivotfield *PivotField)  (int32,  erro
 
 	return result, nil 
 }
+// Insert a pivot field at specific index.
+// Parameters:
+//   index - int32 
+//   pivotField - PivotField 
+// Returns:
+//   void  
+func (instance *PivotFieldCollection) Insert(index int32, pivotfield *PivotField)  error {
+	
+	var pivotfield_ptr unsafe.Pointer = nil
+	if pivotfield != nil {
+	  pivotfield_ptr =pivotfield.ptr
+	}
+
+	CGoReturnPtr := C.CellsGoFunctoinZZZT(C.CString("PivotFieldCollection_Insert"), instance.ptr, C.int(index), pivotfield_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // clear all fields of PivotFieldCollection
 // Returns:
 //   void  
 func (instance *PivotFieldCollection) Clear()  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZF(C.CString("PivotFieldCollection_Clear"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Removes field from the current region.
+// Parameters:
+//   pivotField - PivotField 
+// Returns:
+//   void  
+func (instance *PivotFieldCollection) Remove(pivotfield *PivotField)  error {
+	
+	var pivotfield_ptr unsafe.Pointer = nil
+	if pivotfield != nil {
+	  pivotfield_ptr =pivotfield.ptr
+	}
+
+	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("PivotFieldCollection_Remove"), instance.ptr, pivotfield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4642,6 +4450,20 @@ func (instance *PivotFieldCollection) Move(currpos int32, destpos int32)  error 
 
 	return nil 
 }
+// Gets the number of elements contained in the instance.
+// Returns:
+//   int32  
+func (instance *PivotFieldCollection) GetCount()  (int32,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("PivotFieldCollection_GetCount"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
 
 
 
@@ -4649,6 +4471,360 @@ func DeletePivotFieldCollection(pivotfieldcollection *PivotFieldCollection){
 	runtime.SetFinalizer(pivotfieldcollection, nil)
 	C.Delete_CObject(C.CString("Delete_PivotFieldCollection"),pivotfieldcollection.ptr)
 	pivotfieldcollection.ptr = nil
+}
+
+// Class PivotFieldGroupOptions 
+
+// Options for pivot field grouping settings.
+type PivotFieldGroupOptions struct {
+	ptr unsafe.Pointer
+}
+
+// Default constructor.
+func NewPivotFieldGroupOptions() ( *PivotFieldGroupOptions, error) {
+	pivotfieldgroupoptions := &PivotFieldGroupOptions{}
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_PivotFieldGroupOptions"),)
+	if CGoReturnPtr.error_no == 0 {
+		pivotfieldgroupoptions.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(pivotfieldgroupoptions, DeletePivotFieldGroupOptions)
+		return pivotfieldgroupoptions, nil
+	} else {
+		pivotfieldgroupoptions.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return pivotfieldgroupoptions, err
+	}	
+}
+
+// Checks whether the implementation object is nullptr.
+// Returns:
+//   bool  
+func (instance *PivotFieldGroupOptions) IsNull()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotFieldGroupOptions_IsNull"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets a value indicating whether the start value is automatically determined.
+// Returns:
+//   bool  
+func (instance *PivotFieldGroupOptions) IsAutoStart()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotFieldGroupOptions_IsAutoStart"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets a value indicating whether the start value is automatically determined.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PivotFieldGroupOptions) SetIsAutoStart(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotFieldGroupOptions_SetIsAutoStart"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets a value indicating whether the end value is automatically determined.
+// Returns:
+//   bool  
+func (instance *PivotFieldGroupOptions) IsAutoEnd()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotFieldGroupOptions_IsAutoEnd"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets a value indicating whether the end value is automatically determined.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PivotFieldGroupOptions) SetIsAutoEnd(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotFieldGroupOptions_SetIsAutoEnd"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the start value of the grouping range.
+// Returns:
+//   float64  
+func (instance *PivotFieldGroupOptions) GetStartNumber()  (float64,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZAB(C.CString("PivotFieldGroupOptions_GetStartNumber"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the start value of the grouping range.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *PivotFieldGroupOptions) SetStartNumber(value float64)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZAC(C.CString("PivotFieldGroupOptions_SetStartNumber"), instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the end value of the grouping range.
+// Returns:
+//   float64  
+func (instance *PivotFieldGroupOptions) GetEndNumber()  (float64,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZAB(C.CString("PivotFieldGroupOptions_GetEndNumber"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the end value of the grouping range.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *PivotFieldGroupOptions) SetEndNumber(value float64)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZAC(C.CString("PivotFieldGroupOptions_SetEndNumber"), instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the start value of the grouping range.
+// Returns:
+//   Date  
+func (instance *PivotFieldGroupOptions) GetStartDate()  (time.Time,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZAD(C.CString("PivotFieldGroupOptions_GetStartDate"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  time.Unix(0, 0), err
+	}
+	result := time.Date(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
+
+	return result, nil 
+}
+// Gets or sets the start value of the grouping range.
+// Parameters:
+//   value - Date 
+// Returns:
+//   void  
+func (instance *PivotFieldGroupOptions) SetStartDate(value time.Time)  error {
+	
+	time_value := C.Get_Date( C.int(value.Year()), C.int(value.Month()) , C.int(value.Day()) , C.int(value.Hour()) , C.int(value.Minute()) , C.int(value.Second())  )
+
+	CGoReturnPtr := C.CellsGoFunctoinZZAE(C.CString("PivotFieldGroupOptions_SetStartDate"), instance.ptr, time_value)
+	C.Delete_GetDate( time_value)
+
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the end value of the grouping range.
+// Returns:
+//   Date  
+func (instance *PivotFieldGroupOptions) GetEndDate()  (time.Time,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZAD(C.CString("PivotFieldGroupOptions_GetEndDate"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  time.Unix(0, 0), err
+	}
+	result := time.Date(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_year"), CGoReturnPtr.return_value).return_value ),time.Month(int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_month"), CGoReturnPtr.return_value).return_value )),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_day"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_hour"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_minute"), CGoReturnPtr.return_value).return_value ),int( C.CellsGoFunctoinZZBO(C.CString("Date_Get_second"), CGoReturnPtr.return_value).return_value ), 0, time.UTC) 
+
+	return result, nil 
+}
+// Gets or sets the end value of the grouping range.
+// Parameters:
+//   value - Date 
+// Returns:
+//   void  
+func (instance *PivotFieldGroupOptions) SetEndDate(value time.Time)  error {
+	
+	time_value := C.Get_Date( C.int(value.Year()), C.int(value.Month()) , C.int(value.Day()) , C.int(value.Hour()) , C.int(value.Minute()) , C.int(value.Second())  )
+
+	CGoReturnPtr := C.CellsGoFunctoinZZAE(C.CString("PivotFieldGroupOptions_SetEndDate"), instance.ptr, time_value)
+	C.Delete_GetDate( time_value)
+
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the interval size for each group.
+// Returns:
+//   float64  
+func (instance *PivotFieldGroupOptions) GetInterval()  (float64,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZAB(C.CString("PivotFieldGroupOptions_GetInterval"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the interval size for each group.
+// Parameters:
+//   value - float64 
+// Returns:
+//   void  
+func (instance *PivotFieldGroupOptions) SetInterval(value float64)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZAC(C.CString("PivotFieldGroupOptions_SetInterval"), instance.ptr, C.double(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the grouping type for pivot field.
+// Only for grouping date time pivot field.
+// Returns:
+//   int32  
+func (instance *PivotFieldGroupOptions) GetGroupType()  (PivotGroupByType,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("PivotFieldGroupOptions_GetGroupType"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToPivotGroupByType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets or sets the grouping type for pivot field.
+// Only for grouping date time pivot field.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *PivotFieldGroupOptions) SetGroupType(value PivotGroupByType)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotFieldGroupOptions_SetGroupType"), instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets the grouping type for pivot field.
+// Returns:
+//   []PivotGroupByType  
+func (instance *PivotFieldGroupOptions) GetGroupTypes()  ([]PivotGroupByType,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZY(C.CString("PivotFieldGroupOptions_GetGroupTypes"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  nil, err
+	}
+	result:= make([]PivotGroupByType, CGoReturnPtr.column_length)
+	for i := 0; i < int(CGoReturnPtr.column_length); i++ {
+	   offset := uintptr(C.size_t(i)) * uintptr(CGoReturnPtr.size)
+	   goObject, _ := Int32ToPivotGroupByType(int32(*(*C.int)(unsafe.Pointer(uintptr( unsafe.Pointer(CGoReturnPtr.return_value)) + offset))))
+	   result[i] = goObject
+	}
+	 
+
+	return result, nil 
+}
+// Gets or sets the grouping type for pivot field.
+// Parameters:
+//   value - []PivotGroupByType 
+// Returns:
+//   void  
+func (instance *PivotFieldGroupOptions) SetGroupTypes(value []PivotGroupByType)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZAJ(C.CString("PivotFieldGroupOptions_SetGroupTypes"), instance.ptr, unsafe.Pointer(&value[0]), C.int( len(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets a value indicating whether new pivot fields should be created after grouping.
+// Returns:
+//   bool  
+func (instance *PivotFieldGroupOptions) GetNewPivotField()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotFieldGroupOptions_GetNewPivotField"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets a value indicating whether new pivot fields should be created after grouping.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PivotFieldGroupOptions) SetNewPivotField(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotFieldGroupOptions_SetNewPivotField"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+
+
+
+func DeletePivotFieldGroupOptions(pivotfieldgroupoptions *PivotFieldGroupOptions){
+	runtime.SetFinalizer(pivotfieldgroupoptions, nil)
+	C.Delete_CObject(C.CString("Delete_PivotFieldGroupOptions"),pivotfieldgroupoptions.ptr)
+	pivotfieldgroupoptions.ptr = nil
 }
 
 // Class PivotFieldGroupSettings 
@@ -4752,6 +4928,21 @@ func (instance *PivotFieldSortSetting) GetSortType()  (SortOrder,  error)  {
 
 	return result, nil 
 }
+// Represents the <see cref="SortOrder"/>.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *PivotFieldSortSetting) SetSortType(value SortOrder)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotFieldSortSetting_SetSortType"), instance.ptr, C.int( int32(value)))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Indicates whether to sort the field by itself or data field.
 // Returns:
 //   bool  
@@ -4767,12 +4958,13 @@ func (instance *PivotFieldSortSetting) IsSortByLabels()  (bool,  error)  {
 	return result, nil 
 }
 // Represents the index of the field sorted by.
-// -1 means sorting the PivotField by the labels,others means sorting by the data field.
+// A value of -1 indicates sorting by the pivot item's own values.
+// When greater than or equal to zero, it represents the index of data field in the data region.
 // Returns:
 //   int32  
-func (instance *PivotFieldSortSetting) GetFieldIndex()  (int32,  error)  {
+func (instance *PivotFieldSortSetting) GetSortBy()  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("PivotFieldSortSetting_GetFieldIndex"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("PivotFieldSortSetting_GetSortBy"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -4780,6 +4972,23 @@ func (instance *PivotFieldSortSetting) GetFieldIndex()  (int32,  error)  {
 	result := int32(CGoReturnPtr.return_value) 
 
 	return result, nil 
+}
+// Represents the index of the field sorted by.
+// A value of -1 indicates sorting by the pivot item's own values.
+// When greater than or equal to zero, it represents the index of data field in the data region.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *PivotFieldSortSetting) SetSortBy(value int32)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("PivotFieldSortSetting_SetSortBy"), instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
 }
 // The pivot line type sorted by.
 // Returns:
@@ -4812,6 +5021,21 @@ func (instance *PivotFieldSortSetting) IsSimpleSort()  (bool,  error)  {
 
 	return result, nil 
 }
+// Indicates whether a simple data sort operation will be applied.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PivotFieldSortSetting) SetIsSimpleSort(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotFieldSortSetting_SetIsSimpleSort"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Sorts by the values in which row or column.
 // Returns:
 //   string  
@@ -4833,6 +5057,159 @@ func DeletePivotFieldSortSetting(pivotfieldsortsetting *PivotFieldSortSetting){
 	runtime.SetFinalizer(pivotfieldsortsetting, nil)
 	C.Delete_CObject(C.CString("Delete_PivotFieldSortSetting"),pivotfieldsortsetting.ptr)
 	pivotfieldsortsetting.ptr = nil
+}
+
+// Class PivotFieldTop10AutoShowSettings 
+
+// Represents the Top 10 AutoShow settings for a pivot field.
+type PivotFieldTop10AutoShowSettings struct {
+	ptr unsafe.Pointer
+}
+
+
+// Checks whether the implementation object is nullptr.
+// Returns:
+//   bool  
+func (instance *PivotFieldTop10AutoShowSettings) IsNull()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotFieldTop10AutoShowSettings_IsNull"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether an "Top 10 AutoShow" filter is applied to this field.
+// Returns:
+//   bool  
+func (instance *PivotFieldTop10AutoShowSettings) IsAutoShow()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotFieldTop10AutoShowSettings_IsAutoShow"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether an "Top 10 AutoShow" filter is applied to this field.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PivotFieldTop10AutoShowSettings) SetIsAutoShow(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotFieldTop10AutoShowSettings_SetIsAutoShow"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates whether the specified PivotTable field is autoshown ascending.
+// Returns:
+//   bool  
+func (instance *PivotFieldTop10AutoShowSettings) IsTop()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotFieldTop10AutoShowSettings_IsTop"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether the specified PivotTable field is autoshown ascending.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PivotFieldTop10AutoShowSettings) SetIsTop(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotFieldTop10AutoShowSettings_SetIsTop"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Represent the number of top or bottom items
+// that are automatically shown in the specified PivotTable field.
+// Returns:
+//   int32  
+func (instance *PivotFieldTop10AutoShowSettings) GetAutoShowCount()  (int32,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("PivotFieldTop10AutoShowSettings_GetAutoShowCount"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Represent the number of top or bottom items
+// that are automatically shown in the specified PivotTable field.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *PivotFieldTop10AutoShowSettings) SetAutoShowCount(value int32)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("PivotFieldTop10AutoShowSettings_SetAutoShowCount"), instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Specifies the index of data field for AutoShow ranking.
+// Represents auto show field index. -1 means PivotField itself.
+// It should be the index of the data fields.
+// Returns:
+//   int32  
+func (instance *PivotFieldTop10AutoShowSettings) GetRankBy()  (int32,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("PivotFieldTop10AutoShowSettings_GetRankBy"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Specifies the index of data field for AutoShow ranking.
+// Represents auto show field index. -1 means PivotField itself.
+// It should be the index of the data fields.
+// Parameters:
+//   value - int32 
+// Returns:
+//   void  
+func (instance *PivotFieldTop10AutoShowSettings) SetRankBy(value int32)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("PivotFieldTop10AutoShowSettings_SetRankBy"), instance.ptr, C.int(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+
+
+
+func DeletePivotFieldTop10AutoShowSettings(pivotfieldtop10autoshowsettings *PivotFieldTop10AutoShowSettings){
+	runtime.SetFinalizer(pivotfieldtop10autoshowsettings, nil)
+	C.Delete_CObject(C.CString("Delete_PivotFieldTop10AutoShowSettings"),pivotfieldtop10autoshowsettings.ptr)
+	pivotfieldtop10autoshowsettings.ptr = nil
 }
 
 // Class PivotFilter 
@@ -5260,7 +5637,7 @@ func (instance *PivotFilterCollection) Get(index int32)  (*PivotFilter,  error) 
 //   PivotFilter  
 func (instance *PivotFilterCollection) AddTop10Filter(basefieldindex int32, valuefieldindex int32, type_ PivotFilterType, istop bool, itemcount int32)  (*PivotFilter,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("PivotFilterCollection_AddTop10Filter"), instance.ptr, C.int(basefieldindex), C.int(valuefieldindex), C.int( int32(type_)), C.bool(istop), C.int(itemcount))
+	CGoReturnPtr := C.CellsGoFunctoinZZOB(C.CString("PivotFilterCollection_AddTop10Filter"), instance.ptr, C.int(basefieldindex), C.int(valuefieldindex), C.int( int32(type_)), C.bool(istop), C.int(itemcount))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5282,7 +5659,7 @@ func (instance *PivotFilterCollection) AddTop10Filter(basefieldindex int32, valu
 //   PivotFilter  
 func (instance *PivotFilterCollection) AddValueFilter(basefieldindex int32, valuefieldindex int32, type_ PivotFilterType, value1 float64, value2 float64)  (*PivotFilter,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("PivotFilterCollection_AddValueFilter"), instance.ptr, C.int(basefieldindex), C.int(valuefieldindex), C.int( int32(type_)), C.double(value1), C.double(value2))
+	CGoReturnPtr := C.CellsGoFunctoinZZOC(C.CString("PivotFilterCollection_AddValueFilter"), instance.ptr, C.int(basefieldindex), C.int(valuefieldindex), C.int( int32(type_)), C.double(value1), C.double(value2))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5303,7 +5680,7 @@ func (instance *PivotFilterCollection) AddValueFilter(basefieldindex int32, valu
 //   PivotFilter  
 func (instance *PivotFilterCollection) AddLabelFilter(basefieldindex int32, type_ PivotFilterType, label1 string, label2 string)  (*PivotFilter,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOH(C.CString("PivotFilterCollection_AddLabelFilter"), instance.ptr, C.int(basefieldindex), C.int( int32(type_)), C.CString(label1), C.CString(label2))
+	CGoReturnPtr := C.CellsGoFunctoinZZOD(C.CString("PivotFilterCollection_AddLabelFilter"), instance.ptr, C.int(basefieldindex), C.int( int32(type_)), C.CString(label1), C.CString(label2))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5327,7 +5704,7 @@ func (instance *PivotFilterCollection) AddDateFilter(basefieldindex int32, type_
 	time_datetime1 := C.Get_Date( C.int(datetime1.Year()), C.int(datetime1.Month()) , C.int(datetime1.Day()) , C.int(datetime1.Hour()) , C.int(datetime1.Minute()) , C.int(datetime1.Second())  )
 	time_datetime2 := C.Get_Date( C.int(datetime2.Year()), C.int(datetime2.Month()) , C.int(datetime2.Day()) , C.int(datetime2.Hour()) , C.int(datetime2.Minute()) , C.int(datetime2.Second())  )
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOI(C.CString("PivotFilterCollection_AddDateFilter"), instance.ptr, C.int(basefieldindex), C.int( int32(type_)), time_datetime1, time_datetime2)
+	CGoReturnPtr := C.CellsGoFunctoinZZOE(C.CString("PivotFilterCollection_AddDateFilter"), instance.ptr, C.int(basefieldindex), C.int( int32(type_)), time_datetime1, time_datetime2)
 	C.Delete_GetDate( time_datetime1)
 	C.Delete_GetDate( time_datetime2)
 
@@ -5751,7 +6128,7 @@ func (instance *PivotItem) SetIsHidden(value bool)  error {
 
 	return nil 
 }
-// Specifying the position index in all the PivotItems,not the PivotItems under the same parent node.
+// Specifying the index of this item in all the PivotItems of the field.
 // Returns:
 //   int32  
 func (instance *PivotItem) GetPosition()  (int32,  error)  {
@@ -5765,7 +6142,7 @@ func (instance *PivotItem) GetPosition()  (int32,  error)  {
 
 	return result, nil 
 }
-// Specifying the position index in all the PivotItems,not the PivotItems under the same parent node.
+// Specifying the index of this item in all the PivotItems of the field.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -5869,7 +6246,7 @@ func (instance *PivotItem) IsCalculatedItem()  (bool,  error)  {
 	return result, nil 
 }
 // Gets the formula of this calculated item.
-// Only works when this item is calculated item.
+// Only works when this item is a calculated item.
 // Returns:
 //   string  
 func (instance *PivotItem) GetFormula()  (string,  error)  {
@@ -5883,7 +6260,7 @@ func (instance *PivotItem) GetFormula()  (string,  error)  {
 
 	return result, nil 
 }
-// Indicates whether the item is removed from the data source.
+// Indicates whether the item was removed from the data source.
 // Returns:
 //   bool  
 func (instance *PivotItem) IsMissing()  (bool,  error)  {
@@ -5987,35 +6364,6 @@ func (instance *PivotItem) SetName(value string)  error {
 
 	return nil 
 }
-// Gets the index of the pivot item in cache field.
-// Returns:
-//   int32  
-func (instance *PivotItem) GetIndex()  (int32,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("PivotItem_GetIndex"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result := int32(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Gets the index of the pivot item in cache field.
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *PivotItem) SetIndex(value int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("PivotItem_SetIndex"), instance.ptr, C.int(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 
 
 
@@ -6047,23 +6395,6 @@ func (instance *PivotItemCollection) IsNull()  (bool,  error)  {
 
 	return result, nil 
 }
-// Gets an enumerator over the elements in this collection in proper sequence.
-// Returns:
-//   unsafe.Pointer  
-func (instance *PivotItemCollection) GetEnumerator()  (*PivotItemEnumerator,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAW(C.CString("PivotItemCollection_GetEnumerator"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := &PivotItemEnumerator{}
-	result.ptr = CGoReturnPtr.return_value
-	runtime.SetFinalizer(result, DeletePivotItemEnumerator)
-	 
-
-	return result, nil 
-}
 // Gets the PivotItem Object at the specific index.
 // Parameters:
 //   index - int32 
@@ -6081,6 +6412,22 @@ func (instance *PivotItemCollection) Get_Int(index int32)  (*PivotItem,  error) 
 	runtime.SetFinalizer(result, DeletePivotItem) 
 
 	return result, nil 
+}
+// Sets whether to hide all detail of all PivotItems in a pivot field.
+// That is collapse/expand this field.
+// Parameters:
+//   isHiddenDetail - bool 
+// Returns:
+//   void  
+func (instance *PivotItemCollection) HideAllDetail(ishiddendetail bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotItemCollection_HideAllDetail"), instance.ptr, C.bool(ishiddendetail))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
 }
 // Gets the <see cref="PivotItem"/> by the specific name.
 // Parameters:
@@ -6100,20 +6447,6 @@ func (instance *PivotItemCollection) Get_String(itemvalue string)  (*PivotItem, 
 
 	return result, nil 
 }
-// Gets the count of the pivot items.
-// Returns:
-//   int32  
-func (instance *PivotItemCollection) GetCount()  (int32,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("PivotItemCollection_GetCount"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result := int32(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
 // Directly swap two items.
 // Parameters:
 //   index1 - int32 
@@ -6130,6 +6463,20 @@ func (instance *PivotItemCollection) SwapItem(index1 int32, index2 int32)  error
 
 	return nil 
 }
+// Gets the number of elements contained in the instance.
+// Returns:
+//   int32  
+func (instance *PivotItemCollection) GetCount()  (int32,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZD(C.CString("PivotItemCollection_GetCount"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := int32(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
 
 
 
@@ -6141,15 +6488,15 @@ func DeletePivotItemCollection(pivotitemcollection *PivotItemCollection){
 
 // Class PivotNumbericRangeGroupSettings 
 
-// Represents the numberic range group of the pivot field.
+// Represents the numeric range group of the pivot field.
 type PivotNumbericRangeGroupSettings struct {
 	ptr unsafe.Pointer
 }
 
 // Constructs from a parent object.
 // Parameters:
-//   src - PivotFieldGroupSettings 
-func NewPivotNumbericRangeGroupSettings(src *PivotFieldGroupSettings) ( *PivotNumbericRangeGroupSettings, error) {
+//   src - PivotNumericRangeGroupSettings 
+func NewPivotNumbericRangeGroupSettings(src *PivotNumericRangeGroupSettings) ( *PivotNumbericRangeGroupSettings, error) {
 	pivotnumbericrangegroupsettings := &PivotNumbericRangeGroupSettings{}
 	var src_ptr unsafe.Pointer = nil
 	if src != nil {
@@ -6243,6 +6590,11 @@ func (instance *PivotNumbericRangeGroupSettings) GetInterval()  (float64,  error
 }
 
 
+func (instance *PivotNumbericRangeGroupSettings) ToPivotNumericRangeGroupSettings() *PivotNumericRangeGroupSettings {
+	parentClass := &PivotNumericRangeGroupSettings{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
 func (instance *PivotNumbericRangeGroupSettings) ToPivotFieldGroupSettings() *PivotFieldGroupSettings {
 	parentClass := &PivotFieldGroupSettings{}
 	parentClass.ptr = instance.ptr
@@ -6253,6 +6605,122 @@ func DeletePivotNumbericRangeGroupSettings(pivotnumbericrangegroupsettings *Pivo
 	runtime.SetFinalizer(pivotnumbericrangegroupsettings, nil)
 	C.Delete_CObject(C.CString("Delete_PivotNumbericRangeGroupSettings"),pivotnumbericrangegroupsettings.ptr)
 	pivotnumbericrangegroupsettings.ptr = nil
+}
+
+// Class PivotNumericRangeGroupSettings 
+
+// Represents the numeric range group of the pivot field.
+type PivotNumericRangeGroupSettings struct {
+	ptr unsafe.Pointer
+}
+
+// Constructs from a parent object.
+// Parameters:
+//   src - PivotFieldGroupSettings 
+func NewPivotNumericRangeGroupSettings(src *PivotFieldGroupSettings) ( *PivotNumericRangeGroupSettings, error) {
+	pivotnumericrangegroupsettings := &PivotNumericRangeGroupSettings{}
+	var src_ptr unsafe.Pointer = nil
+	if src != nil {
+	  src_ptr =src.ptr
+	}
+
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("New_PivotNumericRangeGroupSettings"),src_ptr)
+	if CGoReturnPtr.error_no == 0 {
+		pivotnumericrangegroupsettings.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(pivotnumericrangegroupsettings, DeletePivotNumericRangeGroupSettings)
+		return pivotnumericrangegroupsettings, nil
+	} else {
+		pivotnumericrangegroupsettings.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return pivotnumericrangegroupsettings, err
+	}	
+}
+
+// Checks whether the implementation object is nullptr.
+// Returns:
+//   bool  
+func (instance *PivotNumericRangeGroupSettings) IsNull()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotNumericRangeGroupSettings_IsNull"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the group type.
+// Returns:
+//   int32  
+func (instance *PivotNumericRangeGroupSettings) GetType()  (PivotFieldGroupType,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("PivotNumericRangeGroupSettings_GetType"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToPivotFieldGroupType(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
+
+	return result, nil 
+}
+// Gets the start number of the group.
+// Returns:
+//   float64  
+func (instance *PivotNumericRangeGroupSettings) GetStart()  (float64,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZAB(C.CString("PivotNumericRangeGroupSettings_GetStart"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the end number of the group.
+// Returns:
+//   float64  
+func (instance *PivotNumericRangeGroupSettings) GetEnd()  (float64,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZAB(C.CString("PivotNumericRangeGroupSettings_GetEnd"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets the interval of the group.
+// Returns:
+//   float64  
+func (instance *PivotNumericRangeGroupSettings) GetInterval()  (float64,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZAB(C.CString("PivotNumericRangeGroupSettings_GetInterval"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result := float64(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+
+
+func (instance *PivotNumericRangeGroupSettings) ToPivotFieldGroupSettings() *PivotFieldGroupSettings {
+	parentClass := &PivotFieldGroupSettings{}
+	parentClass.ptr = instance.ptr
+	return parentClass
+}
+
+func DeletePivotNumericRangeGroupSettings(pivotnumericrangegroupsettings *PivotNumericRangeGroupSettings){
+	runtime.SetFinalizer(pivotnumericrangegroupsettings, nil)
+	C.Delete_CObject(C.CString("Delete_PivotNumericRangeGroupSettings"),pivotnumericrangegroupsettings.ptr)
+	pivotnumericrangegroupsettings.ptr = nil
 }
 
 // Class PivotPageFields 
@@ -6338,7 +6806,7 @@ func (instance *PivotPageFields) GetPageFieldCount()  (int32,  error)  {
 //   void  
 func (instance *PivotPageFields) AddIdentify(rangeindex int32, pageitemindex []int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOJ(C.CString("PivotPageFields_AddIdentify"), instance.ptr, C.int(rangeindex), unsafe.Pointer(&pageitemindex[0]), C.int( len(pageitemindex)))
+	CGoReturnPtr := C.CellsGoFunctoinZZOF(C.CString("PivotPageFields_AddIdentify"), instance.ptr, C.int(rangeindex), unsafe.Pointer(&pageitemindex[0]), C.int( len(pageitemindex)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6667,7 +7135,7 @@ func (instance *PivotTable) SetPivotTableStyle(value *TableStyle)  error {
 
 	return nil 
 }
-// Gets and sets the pivottable style name.
+// Gets or sets style name of the pivot table.
 // Returns:
 //   string  
 func (instance *PivotTable) GetPivotTableStyleName()  (string,  error)  {
@@ -6681,7 +7149,7 @@ func (instance *PivotTable) GetPivotTableStyleName()  (string,  error)  {
 
 	return result, nil 
 }
-// Gets and sets the pivottable style name.
+// Gets or sets style name of the pivot table.
 // Parameters:
 //   value - string 
 // Returns:
@@ -6806,7 +7274,7 @@ func (instance *PivotTable) ShowReportFilterPageByIndex(posindex int32)  error {
 //   void  
 func (instance *PivotTable) RemoveField_PivotFieldType_String(fieldtype PivotFieldType, fieldname string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("PivotTable_RemoveField_PivotFieldType_String"), instance.ptr, C.int( int32(fieldtype)), C.CString(fieldname))
+	CGoReturnPtr := C.CellsGoFunctoinZZIR(C.CString("PivotTable_RemoveField_PivotFieldType_String"), instance.ptr, C.int( int32(fieldtype)), C.CString(fieldname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6814,7 +7282,7 @@ func (instance *PivotTable) RemoveField_PivotFieldType_String(fieldtype PivotFie
 
 	return nil 
 }
-// Removes a field from specific field area
+// Removes a field from specific pivot region.
 // Parameters:
 //   fieldType - int32 
 //   baseFieldIndex - int32 
@@ -6822,7 +7290,7 @@ func (instance *PivotTable) RemoveField_PivotFieldType_String(fieldtype PivotFie
 //   void  
 func (instance *PivotTable) RemoveField_PivotFieldType_Int(fieldtype PivotFieldType, basefieldindex int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJQ(C.CString("PivotTable_RemoveField_PivotFieldType_Integer"), instance.ptr, C.int( int32(fieldtype)), C.int(basefieldindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZJR(C.CString("PivotTable_RemoveField_PivotFieldType_Integer"), instance.ptr, C.int( int32(fieldtype)), C.int(basefieldindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -6898,7 +7366,7 @@ func (instance *PivotTable) AddFieldToArea_PivotFieldType_PivotField(fieldtype P
 	  pivotfield_ptr =pivotfield.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOK(C.CString("PivotTable_AddFieldToArea_PivotFieldType_PivotField"), instance.ptr, C.int( int32(fieldtype)), pivotfield_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOG(C.CString("PivotTable_AddFieldToArea_PivotFieldType_PivotField"), instance.ptr, C.int( int32(fieldtype)), pivotfield_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6916,7 +7384,7 @@ func (instance *PivotTable) AddFieldToArea_PivotFieldType_PivotField(fieldtype P
 //   void  
 func (instance *PivotTable) AddCalculatedField_String_String_Bool(name string, formula string, dragtodataarea bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIS(C.CString("PivotTable_AddCalculatedField_String_String_Boolean"), instance.ptr, C.CString(name), C.CString(formula), C.bool(dragtodataarea))
+	CGoReturnPtr := C.CellsGoFunctoinZZIT(C.CString("PivotTable_AddCalculatedField_String_String_Boolean"), instance.ptr, C.CString(name), C.CString(formula), C.bool(dragtodataarea))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7228,6 +7696,23 @@ func (instance *PivotTable) MoveTo_Int_Int(row int32, column int32)  error {
 }
 // Moves the PivotTable to a different location in the worksheet.
 // Parameters:
+//   sheetIndex - int32 
+//   row - int32 
+//   column - int32 
+// Returns:
+//   void  
+func (instance *PivotTable) MoveTo_Int_Int_Int(sheetindex int32, row int32, column int32)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZH(C.CString("PivotTable_MoveTo_Integer_Integer_Integer"), instance.ptr, C.int(sheetindex), C.int(row), C.int(column))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Moves the PivotTable to a different location in the worksheet.
+// Parameters:
 //   destCellName - string 
 // Returns:
 //   void  
@@ -7510,7 +7995,7 @@ func (instance *PivotTable) SetIsAutoFormat(value bool)  error {
 
 	return nil 
 }
-// Indicates whether autofitting column width on update
+// Indicates whether to autofit column width on update
 // Returns:
 //   bool  
 func (instance *PivotTable) GetAutofitColumnWidthOnUpdate()  (bool,  error)  {
@@ -7524,7 +8009,7 @@ func (instance *PivotTable) GetAutofitColumnWidthOnUpdate()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether autofitting column width on update
+// Indicates whether to autofit column width on update
 // Parameters:
 //   value - bool 
 // Returns:
@@ -7600,12 +8085,12 @@ func (instance *PivotTable) SetMergeLabels(value bool)  error {
 
 	return nil 
 }
-// Indicates whether formatting is preserved when the PivotTable is refreshed or recalculated.
+// Indicates whether to preserve cell formatting (<see cref="PivotTableFormat"/>) when the pivot table is refreshed or recalculated.
 // Returns:
 //   bool  
-func (instance *PivotTable) GetPreserveFormatting()  (bool,  error)  {
+func (instance *PivotTable) GetPreserveCellFormattingOnUpdate()  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotTable_GetPreserveFormatting"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotTable_GetPreserveCellFormattingOnUpdate"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -7614,14 +8099,14 @@ func (instance *PivotTable) GetPreserveFormatting()  (bool,  error)  {
 
 	return result, nil 
 }
-// Indicates whether formatting is preserved when the PivotTable is refreshed or recalculated.
+// Indicates whether to preserve cell formatting (<see cref="PivotTableFormat"/>) when the pivot table is refreshed or recalculated.
 // Parameters:
 //   value - bool 
 // Returns:
 //   void  
-func (instance *PivotTable) SetPreserveFormatting(value bool)  error {
+func (instance *PivotTable) SetPreserveCellFormattingOnUpdate(value bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotTable_SetPreserveFormatting"), instance.ptr, C.bool(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotTable_SetPreserveCellFormattingOnUpdate"), instance.ptr, C.bool(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7658,7 +8143,7 @@ func (instance *PivotTable) SetShowDrill(value bool)  error {
 
 	return nil 
 }
-// Gets whether drilldown is enabled.
+// Indicates whether drilldown is enabled.
 // Returns:
 //   bool  
 func (instance *PivotTable) GetEnableDrilldown()  (bool,  error)  {
@@ -7672,7 +8157,7 @@ func (instance *PivotTable) GetEnableDrilldown()  (bool,  error)  {
 
 	return result, nil 
 }
-// Gets whether drilldown is enabled.
+// Indicates whether drilldown is enabled.
 // Parameters:
 //   value - bool 
 // Returns:
@@ -7891,38 +8376,6 @@ func (instance *PivotTable) GetAllowMultipleFiltersPerField()  (bool,  error)  {
 func (instance *PivotTable) SetAllowMultipleFiltersPerField(value bool)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotTable_SetAllowMultipleFiltersPerField"), instance.ptr, C.bool(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Specifies a boolean value that indicates whether the fields of a PivotTable can have multiple filters set on them.
-// Returns:
-//   int32  
-func (instance *PivotTable) GetMissingItemsLimit()  (PivotMissingItemLimitType,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZK(C.CString("PivotTable_GetMissingItemsLimit"), instance.ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result , err := Int32ToPivotMissingItemLimitType(int32(CGoReturnPtr.return_value)) 
-	if err != nil {
-		return 0, err
-	}
-
-	return result, nil 
-}
-// Specifies a boolean value that indicates whether the fields of a PivotTable can have multiple filters set on them.
-// Parameters:
-//   value - int32 
-// Returns:
-//   void  
-func (instance *PivotTable) SetMissingItemsLimit(value PivotMissingItemLimitType)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("PivotTable_SetMissingItemsLimit"), instance.ptr, C.int( int32(value)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -8340,6 +8793,35 @@ func (instance *PivotTable) SetRowHeaderCaption(value string)  error {
 
 	return nil 
 }
+// Whether to show data field captions and pivot field captions on the row axis and the column axis in the PivotTable view.
+// Returns:
+//   bool  
+func (instance *PivotTable) GetShowHeaders()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotTable_GetShowHeaders"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Whether to show data field captions and pivot field captions on the row axis and the column axis in the PivotTable view.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PivotTable) SetShowHeaders(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotTable_SetShowHeaders"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 // Indicates whether consider built-in custom list when sort data
 // Returns:
 //   bool  
@@ -8635,7 +9117,7 @@ func (instance *PivotTable) SetDataSource(value []string)  error {
 
 	return nil 
 }
-// Change data source of the pivottable.
+// Change data source of the pivot table.
 // Parameters:
 //   source - []string 
 // Returns:
@@ -8657,7 +9139,7 @@ func (instance *PivotTable) ChangeDataSource(source []string)  error {
 
 	return nil 
 }
-// Get the data source of this pivottable.
+// Get the data source of this pivot table.
 // Returns:
 //   []string  
 func (instance *PivotTable) GetSource()  ([]string,  error)  {
@@ -8678,7 +9160,7 @@ func (instance *PivotTable) GetSource()  ([]string,  error)  {
 
 	return result, nil 
 }
-// Get the data source of this pivottable.
+// Get the data source of this pivot table.
 // Parameters:
 //   isOriginal - bool 
 // Returns:
@@ -8698,6 +9180,30 @@ func (instance *PivotTable) GetSource_Bool(isoriginal bool)  ([]string,  error) 
 	   result[i] = goObject
 	}
 	 
+
+	return result, nil 
+}
+// Refresh <see cref="PivotCache"/> from data source and calculate data and style for pivot view.
+// Parameters:
+//   option - PivotTableRefreshOption 
+// Returns:
+//   int32  
+func (instance *PivotTable) Refresh(option *PivotTableRefreshOption)  (PivotRefreshState,  error)  {
+	
+	var option_ptr unsafe.Pointer = nil
+	if option != nil {
+	  option_ptr =option.ptr
+	}
+
+	CGoReturnPtr := C.CellsGoFunctoinZZNQ(C.CString("PivotTable_Refresh"), instance.ptr, option_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  0, err
+	}
+	result , err := Int32ToPivotRefreshState(int32(CGoReturnPtr.return_value)) 
+	if err != nil {
+		return 0, err
+	}
 
 	return result, nil 
 }
@@ -8726,7 +9232,7 @@ func (instance *PivotTable) CalculateData_PivotTableCalculateOption(option *Pivo
 	  option_ptr =option.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKC(C.CString("PivotTable_CalculateData_PivotTableCalculateOption"), instance.ptr, option_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKD(C.CString("PivotTable_CalculateData_PivotTableCalculateOption"), instance.ptr, option_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8962,7 +9468,7 @@ func (instance *PivotTable) SelectArea(ca *CellArea)  (*PivotAreaCollection,  er
 //   void  
 func (instance *PivotTable) ShowDetail(rowoffset int32, columnoffset int32, newsheet bool, destrow int32, destcolumn int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOL(C.CString("PivotTable_ShowDetail"), instance.ptr, C.int(rowoffset), C.int(columnoffset), C.bool(newsheet), C.int(destrow), C.int(destcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZOH(C.CString("PivotTable_ShowDetail"), instance.ptr, C.int(rowoffset), C.int(columnoffset), C.bool(newsheet), C.int(destrow), C.int(destcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -9350,6 +9856,27 @@ func (instance *PivotTable) GetDependentPivotTables()  ([]PivotTable,  error)  {
 
 	return result, nil 
 }
+// Exports pivot view as JSON.
+// Parameters:
+//   options - PivotViewToJsonOptions 
+// Returns:
+//   string  
+func (instance *PivotTable) ExportViewToJson(options *PivotViewToJsonOptions)  (string,  error)  {
+	
+	var options_ptr unsafe.Pointer = nil
+	if options != nil {
+	  options_ptr =options.ptr
+	}
+
+	CGoReturnPtr := C.CellsGoFunctoinZZIO(C.CString("PivotTable_ExportViewToJson"), instance.ptr, options_ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
 
 
 
@@ -9566,83 +10093,27 @@ func (instance *PivotTableCollection) Dispose()  error {
 
 	return nil 
 }
-// Adds a new PivotTable.
-// Parameters:
-//   sourceData - string 
-//   destCellName - string 
-//   tableName - string 
-// Returns:
-//   int32  
-func (instance *PivotTableCollection) Add_String_String_String(sourcedata string, destcellname string, tablename string)  (int32,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZIY(C.CString("PivotTableCollection_Add_String_String_String"), instance.ptr, C.CString(sourcedata), C.CString(destcellname), C.CString(tablename))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result := int32(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Adds a new PivotTable.
-// Parameters:
-//   sourceData - string 
-//   destCellName - string 
-//   tableName - string 
-//   useSameSource - bool 
-// Returns:
-//   int32  
-func (instance *PivotTableCollection) Add_String_String_String_Bool(sourcedata string, destcellname string, tablename string, usesamesource bool)  (int32,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZOM(C.CString("PivotTableCollection_Add_String_String_String_Boolean"), instance.ptr, C.CString(sourcedata), C.CString(destcellname), C.CString(tablename), C.bool(usesamesource))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result := int32(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Adds a new PivotTable.
+// Adds a new PivotTable at the specified worksheet row and column position with default options.
 // Parameters:
 //   sourceData - string 
 //   row - int32 
 //   column - int32 
-//   tableName - string 
 // Returns:
-//   int32  
-func (instance *PivotTableCollection) Add_String_Int_Int_String(sourcedata string, row int32, column int32, tablename string)  (int32,  error)  {
+//   PivotTable  
+func (instance *PivotTableCollection) Add_String_Int_Int(sourcedata string, row int32, column int32)  (*PivotTable,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZGY(C.CString("PivotTableCollection_Add_String_Integer_Integer_String"), instance.ptr, C.CString(sourcedata), C.int(row), C.int(column), C.CString(tablename))
+	CGoReturnPtr := C.CellsGoFunctoinZZOI(C.CString("PivotTableCollection_Add_String_Integer_Integer"), instance.ptr, C.CString(sourcedata), C.int(row), C.int(column))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
+		return  nil, err
 	}
-	result := int32(CGoReturnPtr.return_value) 
+	result := &PivotTable{}
+	result.ptr = CGoReturnPtr.return_value 
+	runtime.SetFinalizer(result, DeletePivotTable) 
 
 	return result, nil 
 }
-// Adds a new PivotTable.
-// Parameters:
-//   sourceData - string 
-//   row - int32 
-//   column - int32 
-//   tableName - string 
-//   useSameSource - bool 
-// Returns:
-//   int32  
-func (instance *PivotTableCollection) Add_String_Int_Int_String_Bool(sourcedata string, row int32, column int32, tablename string, usesamesource bool)  (int32,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZON(C.CString("PivotTableCollection_Add_String_Integer_Integer_String_Boolean"), instance.ptr, C.CString(sourcedata), C.int(row), C.int(column), C.CString(tablename), C.bool(usesamesource))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  0, err
-	}
-	result := int32(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Adds a new PivotTable.
+// Adds a new PivotTable with legacy Excel 97-2003 layout and style.
 // Parameters:
 //   sourceData - string 
 //   row - int32 
@@ -9654,7 +10125,7 @@ func (instance *PivotTableCollection) Add_String_Int_Int_String_Bool(sourcedata 
 //   int32  
 func (instance *PivotTableCollection) Add_String_Int_Int_String_Bool_Bool(sourcedata string, row int32, column int32, tablename string, usesamesource bool, isxlsclassic bool)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOO(C.CString("PivotTableCollection_Add_String_Integer_Integer_String_Boolean_Boolean"), instance.ptr, C.CString(sourcedata), C.int(row), C.int(column), C.CString(tablename), C.bool(usesamesource), C.bool(isxlsclassic))
+	CGoReturnPtr := C.CellsGoFunctoinZZOJ(C.CString("PivotTableCollection_Add_String_Integer_Integer_String_Boolean_Boolean"), instance.ptr, C.CString(sourcedata), C.int(row), C.int(column), C.CString(tablename), C.bool(usesamesource), C.bool(isxlsclassic))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9674,7 +10145,7 @@ func (instance *PivotTableCollection) Add_String_Int_Int_String_Bool_Bool(source
 //   int32  
 func (instance *PivotTableCollection) Add_String_String_String_Bool_Bool(sourcedata string, cell string, tablename string, usesamesource bool, isxlsclassic bool)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZOP(C.CString("PivotTableCollection_Add_String_String_String_Boolean_Boolean"), instance.ptr, C.CString(sourcedata), C.CString(cell), C.CString(tablename), C.bool(usesamesource), C.bool(isxlsclassic))
+	CGoReturnPtr := C.CellsGoFunctoinZZOK(C.CString("PivotTableCollection_Add_String_String_String_Boolean_Boolean"), instance.ptr, C.CString(sourcedata), C.CString(cell), C.CString(tablename), C.bool(usesamesource), C.bool(isxlsclassic))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9697,7 +10168,7 @@ func (instance *PivotTableCollection) Add_PivotTable_String_String(pivottable *P
 	  pivottable_ptr =pivottable.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOQ(C.CString("PivotTableCollection_Add_PivotTable_String_String"), instance.ptr, pivottable_ptr, C.CString(destcellname), C.CString(tablename))
+	CGoReturnPtr := C.CellsGoFunctoinZZOL(C.CString("PivotTableCollection_Add_PivotTable_String_String"), instance.ptr, pivottable_ptr, C.CString(destcellname), C.CString(tablename))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9721,7 +10192,7 @@ func (instance *PivotTableCollection) Add_PivotTable_Int_Int_String(pivottable *
 	  pivottable_ptr =pivottable.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOR(C.CString("PivotTableCollection_Add_PivotTable_Integer_Integer_String"), instance.ptr, pivottable_ptr, C.int(row), C.int(column), C.CString(tablename))
+	CGoReturnPtr := C.CellsGoFunctoinZZOM(C.CString("PivotTableCollection_Add_PivotTable_Integer_Integer_String"), instance.ptr, pivottable_ptr, C.int(row), C.int(column), C.CString(tablename))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9752,7 +10223,7 @@ func (instance *PivotTableCollection) Add_stringArray_Bool_PivotPageFields_Strin
 	  pagefields_ptr =pagefields.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOS(C.CString("PivotTableCollection_Add_U16StringArray_Boolean_PivotPageFields_String_String"), instance.ptr, unsafe.Pointer(&vector_sourcedata[0]), C.int( len(sourcedata)), C.bool(isautopage), pagefields_ptr, C.CString(destcellname), C.CString(tablename))
+	CGoReturnPtr := C.CellsGoFunctoinZZON(C.CString("PivotTableCollection_Add_U16StringArray_Boolean_PivotPageFields_String_String"), instance.ptr, unsafe.Pointer(&vector_sourcedata[0]), C.int( len(sourcedata)), C.bool(isautopage), pagefields_ptr, C.CString(destcellname), C.CString(tablename))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9784,7 +10255,7 @@ func (instance *PivotTableCollection) Add_stringArray_Bool_PivotPageFields_Int_I
 	  pagefields_ptr =pagefields.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOT(C.CString("PivotTableCollection_Add_U16StringArray_Boolean_PivotPageFields_Integer_Integer_String"), instance.ptr, unsafe.Pointer(&vector_sourcedata[0]), C.int( len(sourcedata)), C.bool(isautopage), pagefields_ptr, C.int(row), C.int(column), C.CString(tablename))
+	CGoReturnPtr := C.CellsGoFunctoinZZOO(C.CString("PivotTableCollection_Add_U16StringArray_Boolean_PivotPageFields_Integer_Integer_String"), instance.ptr, unsafe.Pointer(&vector_sourcedata[0]), C.int( len(sourcedata)), C.bool(isautopage), pagefields_ptr, C.int(row), C.int(column), C.CString(tablename))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -9956,6 +10427,140 @@ func DeletePivotTableCollection(pivottablecollection *PivotTableCollection){
 	pivottablecollection.ptr = nil
 }
 
+// Class PivotTableCreateOptions 
+
+// Options for creating a new PivotTable.
+type PivotTableCreateOptions struct {
+	ptr unsafe.Pointer
+}
+
+// Default constructor.
+func NewPivotTableCreateOptions() ( *PivotTableCreateOptions, error) {
+	pivottablecreateoptions := &PivotTableCreateOptions{}
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_PivotTableCreateOptions"),)
+	if CGoReturnPtr.error_no == 0 {
+		pivottablecreateoptions.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(pivottablecreateoptions, DeletePivotTableCreateOptions)
+		return pivottablecreateoptions, nil
+	} else {
+		pivottablecreateoptions.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return pivottablecreateoptions, err
+	}	
+}
+
+// Checks whether the implementation object is nullptr.
+// Returns:
+//   bool  
+func (instance *PivotTableCreateOptions) IsNull()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotTableCreateOptions_IsNull"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the name of the new PivotTable report.
+// Returns:
+//   string  
+func (instance *PivotTableCreateOptions) GetTableName()  (string,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("PivotTableCreateOptions_GetTableName"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets the name of the new PivotTable report.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *PivotTableCreateOptions) SetTableName(value string)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("PivotTableCreateOptions_SetTableName"), instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets a value indicating whether to share the same data source with existing pivot tables.
+// Default value is true.
+// Returns:
+//   bool  
+func (instance *PivotTableCreateOptions) GetUseSameSource()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotTableCreateOptions_GetUseSameSource"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets a value indicating whether to share the same data source with existing pivot tables.
+// Default value is true.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PivotTableCreateOptions) SetUseSameSource(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotTableCreateOptions_SetUseSameSource"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Gets or sets a value indicating whether to create classic Excel 97-2003 style PivotTable.
+// Returns:
+//   bool  
+func (instance *PivotTableCreateOptions) IsXlsClassic()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotTableCreateOptions_IsXlsClassic"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets or sets a value indicating whether to create classic Excel 97-2003 style PivotTable.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PivotTableCreateOptions) SetIsXlsClassic(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotTableCreateOptions_SetIsXlsClassic"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+
+
+
+func DeletePivotTableCreateOptions(pivottablecreateoptions *PivotTableCreateOptions){
+	runtime.SetFinalizer(pivottablecreateoptions, nil)
+	C.Delete_CObject(C.CString("Delete_PivotTableCreateOptions"),pivottablecreateoptions.ptr)
+	pivottablecreateoptions.ptr = nil
+}
+
 // Class PivotTableFormat 
 
 // Represents the format defined in the PivotTable.
@@ -10111,7 +10716,7 @@ func (instance *PivotTableFormatCollection) FormatArea(axistype PivotFieldType, 
 	  style_ptr =style.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZOU(C.CString("PivotTableFormatCollection_FormatArea"), instance.ptr, C.int( int32(axistype)), C.int(fieldposition), C.int( int32(subtotaltype)), C.int( int32(selectiontype)), C.bool(isgrandrow), C.bool(isgrandcolumn), style_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZOP(C.CString("PivotTableFormatCollection_FormatArea"), instance.ptr, C.int( int32(axistype)), C.int(fieldposition), C.int( int32(subtotaltype)), C.int( int32(selectiontype)), C.bool(isgrandrow), C.bool(isgrandcolumn), style_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10242,6 +10847,37 @@ func (instance *PivotTableRefreshOption) SetIsKeepOriginalOrder(value bool)  err
 
 	return nil 
 }
+// Indicates whether to keep cached local group data if the maximum and minimum values remain unchanged.
+// The default value is false which means refreshing group with local setting.
+// Returns:
+//   bool  
+func (instance *PivotTableRefreshOption) GetKeepCachedLocalGroupData()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotTableRefreshOption_GetKeepCachedLocalGroupData"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates whether to keep cached local group data if the maximum and minimum values remain unchanged.
+// The default value is false which means refreshing group with local setting.
+// Parameters:
+//   value - bool 
+// Returns:
+//   void  
+func (instance *PivotTableRefreshOption) SetKeepCachedLocalGroupData(value bool)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZC(C.CString("PivotTableRefreshOption_SetKeepCachedLocalGroupData"), instance.ptr, C.bool(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
 
 
 
@@ -10249,4 +10885,107 @@ func DeletePivotTableRefreshOption(pivottablerefreshoption *PivotTableRefreshOpt
 	runtime.SetFinalizer(pivottablerefreshoption, nil)
 	C.Delete_CObject(C.CString("Delete_PivotTableRefreshOption"),pivottablerefreshoption.ptr)
 	pivottablerefreshoption.ptr = nil
+}
+
+// Class PivotViewToJsonOptions 
+
+// The options of exporting pivot view as json.
+type PivotViewToJsonOptions struct {
+	ptr unsafe.Pointer
+}
+
+// The options for exporting pivot view to JSON.
+func NewPivotViewToJsonOptions() ( *PivotViewToJsonOptions, error) {
+	pivotviewtojsonoptions := &PivotViewToJsonOptions{}
+	CGoReturnPtr := C.CellsGoFunctoinZZZA(C.CString("New_PivotViewToJsonOptions"),)
+	if CGoReturnPtr.error_no == 0 {
+		pivotviewtojsonoptions.ptr = CGoReturnPtr.return_value
+		runtime.SetFinalizer(pivotviewtojsonoptions, DeletePivotViewToJsonOptions)
+		return pivotviewtojsonoptions, nil
+	} else {
+		pivotviewtojsonoptions.ptr = nil
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))
+		return pivotviewtojsonoptions, err
+	}	
+}
+
+// Checks whether the implementation object is nullptr.
+// Returns:
+//   bool  
+func (instance *PivotViewToJsonOptions) IsNull()  (bool,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZB(C.CString("PivotViewToJsonOptions_IsNull"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  true, err
+	}
+	result := bool(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the file which stores exported JSON.
+// Returns:
+//   string  
+func (instance *PivotViewToJsonOptions) GetFileName()  (string,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("PivotViewToJsonOptions_GetFileName"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Gets and sets the file which stores exported JSON.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *PivotViewToJsonOptions) SetFileName(value string)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("PivotViewToJsonOptions_SetFileName"), instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+// Indicates the indent.
+// Returns:
+//   string  
+func (instance *PivotViewToJsonOptions) GetIndent()  (string,  error)  {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZM(C.CString("PivotViewToJsonOptions_GetIndent"), instance.ptr)
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  "", err
+	}
+	result := C.GoString(CGoReturnPtr.return_value) 
+
+	return result, nil 
+}
+// Indicates the indent.
+// Parameters:
+//   value - string 
+// Returns:
+//   void  
+func (instance *PivotViewToJsonOptions) SetIndent(value string)  error {
+	
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("PivotViewToJsonOptions_SetIndent"), instance.ptr, C.CString(value))
+	if CGoReturnPtr.error_no != 0 {
+		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
+		return  err
+	}
+
+	return nil 
+}
+
+
+
+func DeletePivotViewToJsonOptions(pivotviewtojsonoptions *PivotViewToJsonOptions){
+	runtime.SetFinalizer(pivotviewtojsonoptions, nil)
+	C.Delete_CObject(C.CString("Delete_PivotViewToJsonOptions"),pivotviewtojsonoptions.ptr)
+	pivotviewtojsonoptions.ptr = nil
 }

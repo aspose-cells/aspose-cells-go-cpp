@@ -146,40 +146,40 @@ AutoShapeType_CurvedConnector4 AutoShapeType = 39
 
 AutoShapeType_CurvedConnector5 AutoShapeType = 40 
 
-// Specifies the "Line Callout 2(No Border)" type of the Ms Excel 97-2003 version or the "Callout: Line with No Border" type of the Ms Excel 2007 version.
+// Specifies the "Line Callout 2(No Border)" type of the MS Excel 97-2003 version or the "Callout: Line with No Border" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutNoBorder2 AutoShapeType = 41 
 
-// Specifies the "Line Callout 3(No Border)" type of the Ms Excel 97-2003 version or the "Callout: Bent Line with No Border" type of the Ms Excel 2007 version.
+// Specifies the "Line Callout 3(No Border)" type of the MS Excel 97-2003 version or the "Callout: Bent Line with No Border" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutNoBorder3 AutoShapeType = 42 
 
-// Specifies the "Line Callout 4(No Border)" type of the Ms Excel 97-2003 version or the "Callout: Double Bent Line with No Border" type of the Ms Excel 2007 version.
+// Specifies the "Line Callout 4(No Border)" type of the MS Excel 97-2003 version or the "Callout: Double Bent Line with No Border" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutNoBorder4 AutoShapeType = 43 
 
-// Specifies the "Line Callout 2(Accent Bar)" type of the Ms Excel 97-2003 version or the "Callout: Line with Accent Bar" type of the Ms Excel 2007 version.
+// Specifies the "Line Callout 2(Accent Bar)" type of the MS Excel 97-2003 version or the "Callout: Line with Accent Bar" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutWithAccentBar2 AutoShapeType = 44 
 
-// Specifies the "Line Callout 3(Accent Bar)" type of the Ms Excel 97-2003 version or the "Callout: Bent Line with Accent Bar" type of the Ms Excel 2007 version.
+// Specifies the "Line Callout 3(Accent Bar)" type of the MS Excel 97-2003 version or the "Callout: Bent Line with Accent Bar" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutWithAccentBar3 AutoShapeType = 45 
 
-// Specifies the "Line Callout 4(Accent Bar)" type of the Ms Excel 97-2003 version or the "Callout: Double Bent Line with Accent Bar" type of the Ms Excel 2007 version.
+// Specifies the "Line Callout 4(Accent Bar)" type of the MS Excel 97-2003 version or the "Callout: Double Bent Line with Accent Bar" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutWithAccentBar4 AutoShapeType = 46 
 
-// Specifies the "Line Callout 2" type of the Ms Excel 97-2003 version or the "Callout: Line" type of the Ms Excel 2007 version.
+// Specifies the "Line Callout 2" type of the MS Excel 97-2003 version or the "Callout: Line" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutWithBorder2 AutoShapeType = 47 
 
-// Specifies the "Line Callout 3" type of the Ms Excel 97-2003 version or the "Callout: Bent Line" type of the Ms Excel 2007 version.
+// Specifies the "Line Callout 3" type of the MS Excel 97-2003 version or the "Callout: Bent Line" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutWithBorder3 AutoShapeType = 48 
 
-// Specifies the "Line Callout 4" type of the Ms Excel 97-2003 version or the "Callout: Double Bent Line" type of the Ms Excel 2007 version.
+// Specifies the "Line Callout 4" type of the MS Excel 97-2003 version or the "Callout: Double Bent Line" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutWithBorder4 AutoShapeType = 49 
 
-// Specifies the "Line Callout 2(Border and Accent Bar)" type of the Ms Excel 97-2003 version or the "Callout: Line with Border and Accent Bar" type of the Ms Excel 2007 version.
+// Specifies the "Line Callout 2(Border and Accent Bar)" type of the MS Excel 97-2003 version or the "Callout: Line with Border and Accent Bar" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutWithBorderAndAccentBar2 AutoShapeType = 50 
 
-// Specifies the "Line Callout 3(Border and Accent Bar)" type of the Ms Excel 97-2003 version or the "Callout: Bent Line with Border and Accent Bar" type of the Ms Excel 2007 version.
+// Specifies the "Line Callout 3(Border and Accent Bar)" type of the MS Excel 97-2003 version or the "Callout: Bent Line with Border and Accent Bar" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutWithBorderAndAccentBar3 AutoShapeType = 51 
 
-// Specifies the "Line Callout 4(Border and Accent Bar)" type of the Ms Excel 97-2003 version or the "Callout: Double Bent Line with Border and Accent Bar" type of the Ms Excel 2007 version.
+// Specifies the "Line Callout 4(Border and Accent Bar)" type of the MS Excel 97-2003 version or the "Callout: Double Bent Line with Border and Accent Bar" type of the Ms Excel 2007 version.
 AutoShapeType_LineCalloutWithBorderAndAccentBar4 AutoShapeType = 52 
 
 
@@ -557,16 +557,16 @@ AutoShapeType_FlowChartAlternateProcess AutoShapeType = 176
 
 AutoShapeType_FlowChartOffpageConnector AutoShapeType = 177 
 
-// Specifies the "Line Callout 1(No Border)" type of the Ms Excel 97-2003 version.
+// Specifies the "Line Callout 1(No Border)" type of the MS Excel 97-2003 version.
 AutoShapeType_LineCalloutNoBorder1 AutoShapeType = 178 
 
-// Specifies the "Line Callout 1(Accent Bar)" type of the Ms Excel 97-2003 version.
+// Specifies the "Line Callout 1(Accent Bar)" type of the MS Excel 97-2003 version.
 AutoShapeType_LineCalloutWithAccentBar1 AutoShapeType = 179 
 
-// Specifies the "Line Callout 1" type of the Ms Excel 97-2003 version.
+// Specifies the "Line Callout 1" type of the MS Excel 97-2003 version.
 AutoShapeType_LineCalloutWithBorder1 AutoShapeType = 180 
 
-// Specifies the "Line Callout 1(Border and Accent Bar)" type of the Ms Excel 97-2003 version.
+// Specifies the "Line Callout 1(Border and Accent Bar)" type of the MS Excel 97-2003 version.
 AutoShapeType_LineCalloutWithBorderAndAccentBar1 AutoShapeType = 181 
 
 
@@ -4555,7 +4555,7 @@ func (instance *ArcShape) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *ArcShape) GetWorksheet()  (*Worksheet,  error)  {
@@ -5997,50 +5997,7 @@ func (instance *ArcShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *ArcShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("ArcShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *ArcShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("ArcShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *ArcShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("ArcShape_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("ArcShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6130,74 +6087,6 @@ func (instance *ArcShape) GetInputRange()  (string,  error)  {
 func (instance *ArcShape) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("ArcShape_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *ArcShape) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("ArcShape_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *ArcShape) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("ArcShape_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *ArcShape) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("ArcShape_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *ArcShape) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("ArcShape_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -7966,7 +7855,7 @@ func (instance *Button) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *Button) GetWorksheet()  (*Worksheet,  error)  {
@@ -9408,50 +9297,7 @@ func (instance *Button) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Button) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("Button_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *Button) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("Button_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *Button) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("Button_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("Button_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9541,74 +9387,6 @@ func (instance *Button) GetInputRange()  (string,  error)  {
 func (instance *Button) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("Button_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *Button) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("Button_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *Button) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("Button_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *Button) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("Button_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *Button) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("Button_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -10991,7 +10769,7 @@ func (instance *CellsDrawing) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *CellsDrawing) GetWorksheet()  (*Worksheet,  error)  {
@@ -12433,50 +12211,7 @@ func (instance *CellsDrawing) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *CellsDrawing) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("CellsDrawing_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *CellsDrawing) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("CellsDrawing_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *CellsDrawing) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("CellsDrawing_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("CellsDrawing_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -12566,74 +12301,6 @@ func (instance *CellsDrawing) GetInputRange()  (string,  error)  {
 func (instance *CellsDrawing) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("CellsDrawing_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *CellsDrawing) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("CellsDrawing_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *CellsDrawing) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("CellsDrawing_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *CellsDrawing) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("CellsDrawing_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *CellsDrawing) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("CellsDrawing_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -14033,7 +13700,7 @@ func (instance *ChartShape) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *ChartShape) GetWorksheet()  (*Worksheet,  error)  {
@@ -15475,50 +15142,7 @@ func (instance *ChartShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *ChartShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("ChartShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *ChartShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("ChartShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *ChartShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("ChartShape_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("ChartShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -15608,74 +15232,6 @@ func (instance *ChartShape) GetInputRange()  (string,  error)  {
 func (instance *ChartShape) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("ChartShape_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *ChartShape) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("ChartShape_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *ChartShape) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("ChartShape_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *ChartShape) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("ChartShape_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *ChartShape) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("ChartShape_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17148,7 +16704,7 @@ func (instance *CheckBox) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *CheckBox) GetWorksheet()  (*Worksheet,  error)  {
@@ -18590,50 +18146,7 @@ func (instance *CheckBox) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *CheckBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("CheckBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *CheckBox) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("CheckBox_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *CheckBox) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("CheckBox_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("CheckBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -18723,74 +18236,6 @@ func (instance *CheckBox) GetInputRange()  (string,  error)  {
 func (instance *CheckBox) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("CheckBox_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *CheckBox) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("CheckBox_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *CheckBox) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("CheckBox_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *CheckBox) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("CheckBox_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *CheckBox) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("CheckBox_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -19591,7 +19036,7 @@ func (instance *CheckBoxCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *CheckBoxCollection) Add(toprow int32, leftcolumn int32, height int32, width int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("CheckBoxCollection_Add"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZKW(C.CString("CheckBoxCollection_Add"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -19670,7 +19115,7 @@ func (instance *ColorHelper) IsNull()  (bool,  error)  {
 //   Color  
 func ColorHelper_FromOleColor(olecolor int32)  (*Color,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKW(C.CString("ColorHelper_FromOleColor"),C.int(olecolor))
+	CGoReturnPtr := C.CellsGoFunctoinZZKX(C.CString("ColorHelper_FromOleColor"),C.int(olecolor))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -19693,7 +19138,7 @@ func ColorHelper_ToOleColor(color *Color, workbook *Workbook)  (int32,  error)  
 	  workbook_ptr =workbook.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKX(C.CString("ColorHelper_ToOleColor"),color.ptr, workbook_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKY(C.CString("ColorHelper_ToOleColor"),color.ptr, workbook_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -20444,7 +19889,7 @@ func (instance *ComboBox) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *ComboBox) GetWorksheet()  (*Worksheet,  error)  {
@@ -21886,50 +21331,7 @@ func (instance *ComboBox) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *ComboBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("ComboBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *ComboBox) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("ComboBox_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *ComboBox) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("ComboBox_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("ComboBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -22019,74 +21421,6 @@ func (instance *ComboBox) GetInputRange()  (string,  error)  {
 func (instance *ComboBox) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("ComboBox_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *ComboBox) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("ComboBox_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *ComboBox) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("ComboBox_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *ComboBox) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("ComboBox_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *ComboBox) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("ComboBox_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -23485,7 +22819,7 @@ func (instance *CommentShape) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *CommentShape) GetWorksheet()  (*Worksheet,  error)  {
@@ -24927,50 +24261,7 @@ func (instance *CommentShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *CommentShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("CommentShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *CommentShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("CommentShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *CommentShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("CommentShape_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("CommentShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -25060,74 +24351,6 @@ func (instance *CommentShape) GetInputRange()  (string,  error)  {
 func (instance *CommentShape) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("CommentShape_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *CommentShape) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("CommentShape_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *CommentShape) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("CommentShape_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *CommentShape) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("CommentShape_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *CommentShape) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("CommentShape_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -26599,7 +25822,7 @@ func (instance *CustomXmlShape) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *CustomXmlShape) GetWorksheet()  (*Worksheet,  error)  {
@@ -28041,50 +27264,7 @@ func (instance *CustomXmlShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *CustomXmlShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("CustomXmlShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *CustomXmlShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("CustomXmlShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *CustomXmlShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("CustomXmlShape_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("CustomXmlShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -28174,74 +27354,6 @@ func (instance *CustomXmlShape) GetInputRange()  (string,  error)  {
 func (instance *CustomXmlShape) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("CustomXmlShape_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *CustomXmlShape) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("CustomXmlShape_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *CustomXmlShape) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("CustomXmlShape_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *CustomXmlShape) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("CustomXmlShape_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *CustomXmlShape) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("CustomXmlShape_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -29624,7 +28736,7 @@ func (instance *Dialog_Box) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *Dialog_Box) GetWorksheet()  (*Worksheet,  error)  {
@@ -31066,50 +30178,7 @@ func (instance *Dialog_Box) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Dialog_Box) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("Dialog_Box_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *Dialog_Box) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("Dialog_Box_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *Dialog_Box) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("Dialog_Box_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("Dialog_Box_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -31199,74 +30268,6 @@ func (instance *Dialog_Box) GetInputRange()  (string,  error)  {
 func (instance *Dialog_Box) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("Dialog_Box_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *Dialog_Box) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("Dialog_Box_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *Dialog_Box) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("Dialog_Box_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *Dialog_Box) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("Dialog_Box_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *Dialog_Box) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("Dialog_Box_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32304,7 +31305,7 @@ func (instance *FillFormat) GetPresetColor()  (GradientPresetType,  error)  {
 //   void  
 func (instance *FillFormat) SetOneColorGradient(color *Color, degree float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKY(C.CString("FillFormat_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZLA(C.CString("FillFormat_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32323,7 +31324,7 @@ func (instance *FillFormat) SetOneColorGradient(color *Color, degree float64, st
 //   void  
 func (instance *FillFormat) SetTwoColorGradient_Color_Color_GradientStyleType_Int(color1 *Color, color2 *Color, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIW(C.CString("FillFormat_SetTwoColorGradient_Color_Color_GradientStyleType_Integer"), instance.ptr, color1.ptr, color2.ptr, C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZIX(C.CString("FillFormat_SetTwoColorGradient_Color_Color_GradientStyleType_Integer"), instance.ptr, color1.ptr, color2.ptr, C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32344,7 +31345,7 @@ func (instance *FillFormat) SetTwoColorGradient_Color_Color_GradientStyleType_In
 //   void  
 func (instance *FillFormat) SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Int(color1 *Color, transparency1 float64, color2 *Color, transparency2 float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLA(C.CString("FillFormat_SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Integer"), instance.ptr, color1.ptr, C.double(transparency1), color2.ptr, C.double(transparency2), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZLB(C.CString("FillFormat_SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Integer"), instance.ptr, color1.ptr, C.double(transparency1), color2.ptr, C.double(transparency2), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32362,7 +31363,7 @@ func (instance *FillFormat) SetTwoColorGradient_Color_Double_Color_Double_Gradie
 //   void  
 func (instance *FillFormat) SetPresetColorGradient(presetcolor GradientPresetType, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLB(C.CString("FillFormat_SetPresetColorGradient"), instance.ptr, C.int( int32(presetcolor)), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZLC(C.CString("FillFormat_SetPresetColorGradient"), instance.ptr, C.int( int32(presetcolor)), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -32946,7 +31947,7 @@ func (instance *GradientFill) GetGradientStops()  (*GradientStopCollection,  err
 //   void  
 func (instance *GradientFill) SetGradient(type_ GradientFillType, angle float64, direction GradientDirectionType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLC(C.CString("GradientFill_SetGradient"), instance.ptr, C.int( int32(type_)), C.double(angle), C.int( int32(direction)))
+	CGoReturnPtr := C.CellsGoFunctoinZZLD(C.CString("GradientFill_SetGradient"), instance.ptr, C.int( int32(type_)), C.double(angle), C.int( int32(direction)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33009,7 +32010,7 @@ func (instance *GradientFill) GetAngle()  (float32,  error)  {
 //   void  
 func (instance *GradientFill) SetAngle(value float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLD(C.CString("GradientFill_SetAngle"), instance.ptr, C.float(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZLE(C.CString("GradientFill_SetAngle"), instance.ptr, C.float(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33025,7 +32026,7 @@ func (instance *GradientFill) SetAngle(value float32)  error {
 //   void  
 func (instance *GradientFill) SetPresetThemeGradient(gradienttype PresetThemeGradientType, themecolortype ThemeColorType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLE(C.CString("GradientFill_SetPresetThemeGradient"), instance.ptr, C.int( int32(gradienttype)), C.int( int32(themecolortype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZLF(C.CString("GradientFill_SetPresetThemeGradient"), instance.ptr, C.int( int32(gradienttype)), C.int( int32(themecolortype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33044,7 +32045,7 @@ func (instance *GradientFill) SetPresetThemeGradient(gradienttype PresetThemeGra
 //   void  
 func (instance *GradientFill) SetOneColorGradient(color *Color, degree float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKY(C.CString("GradientFill_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZLA(C.CString("GradientFill_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33063,7 +32064,7 @@ func (instance *GradientFill) SetOneColorGradient(color *Color, degree float64, 
 //   void  
 func (instance *GradientFill) SetTwoColorGradient_Color_Color_GradientStyleType_Int(color1 *Color, color2 *Color, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIW(C.CString("GradientFill_SetTwoColorGradient_Color_Color_GradientStyleType_Integer"), instance.ptr, color1.ptr, color2.ptr, C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZIX(C.CString("GradientFill_SetTwoColorGradient_Color_Color_GradientStyleType_Integer"), instance.ptr, color1.ptr, color2.ptr, C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33084,7 +32085,7 @@ func (instance *GradientFill) SetTwoColorGradient_Color_Color_GradientStyleType_
 //   void  
 func (instance *GradientFill) SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Int(color1 *Color, transparency1 float64, color2 *Color, transparency2 float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLA(C.CString("GradientFill_SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Integer"), instance.ptr, color1.ptr, C.double(transparency1), color2.ptr, C.double(transparency2), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZLB(C.CString("GradientFill_SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Integer"), instance.ptr, color1.ptr, C.double(transparency1), color2.ptr, C.double(transparency2), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33242,7 +32243,7 @@ func (instance *GradientStopCollection) Add_Double_CellsColor_Int(position float
 	  color_ptr =color.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZLF(C.CString("GradientStopCollection_Add_Double_CellsColor_Integer"), instance.ptr, C.double(position), color_ptr, C.int(alpha))
+	CGoReturnPtr := C.CellsGoFunctoinZZLG(C.CString("GradientStopCollection_Add_Double_CellsColor_Integer"), instance.ptr, C.double(position), color_ptr, C.int(alpha))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33259,7 +32260,7 @@ func (instance *GradientStopCollection) Add_Double_CellsColor_Int(position float
 //   void  
 func (instance *GradientStopCollection) Add_Double_Color_Int(position float64, color *Color, alpha int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLG(C.CString("GradientStopCollection_Add_Double_Color_Integer"), instance.ptr, C.double(position), color.ptr, C.int(alpha))
+	CGoReturnPtr := C.CellsGoFunctoinZZLH(C.CString("GradientStopCollection_Add_Double_Color_Integer"), instance.ptr, C.double(position), color.ptr, C.int(alpha))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -33951,7 +32952,7 @@ func (instance *GroupBox) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *GroupBox) GetWorksheet()  (*Worksheet,  error)  {
@@ -35393,50 +34394,7 @@ func (instance *GroupBox) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *GroupBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("GroupBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *GroupBox) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("GroupBox_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *GroupBox) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("GroupBox_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("GroupBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -35526,74 +34484,6 @@ func (instance *GroupBox) GetInputRange()  (string,  error)  {
 func (instance *GroupBox) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("GroupBox_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *GroupBox) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("GroupBox_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *GroupBox) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("GroupBox_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *GroupBox) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("GroupBox_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *GroupBox) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("GroupBox_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -37059,7 +35949,7 @@ func (instance *GroupShape) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *GroupShape) GetWorksheet()  (*Worksheet,  error)  {
@@ -38501,50 +37391,7 @@ func (instance *GroupShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *GroupShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("GroupShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *GroupShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("GroupShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *GroupShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("GroupShape_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("GroupShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -38634,74 +37481,6 @@ func (instance *GroupShape) GetInputRange()  (string,  error)  {
 func (instance *GroupShape) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("GroupShape_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *GroupShape) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("GroupShape_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *GroupShape) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("GroupShape_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *GroupShape) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("GroupShape_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *GroupShape) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("GroupShape_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -40084,7 +38863,7 @@ func (instance *Label) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *Label) GetWorksheet()  (*Worksheet,  error)  {
@@ -41526,50 +40305,7 @@ func (instance *Label) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Label) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("Label_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *Label) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("Label_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *Label) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("Label_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("Label_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -41659,74 +40395,6 @@ func (instance *Label) GetInputRange()  (string,  error)  {
 func (instance *Label) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("Label_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *Label) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("Label_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *Label) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("Label_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *Label) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("Label_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *Label) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("Label_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43857,7 +42525,7 @@ func (instance *LineFormat) GetPresetColor()  (GradientPresetType,  error)  {
 //   void  
 func (instance *LineFormat) SetOneColorGradient(color *Color, degree float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKY(C.CString("LineFormat_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZLA(C.CString("LineFormat_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43876,28 +42544,7 @@ func (instance *LineFormat) SetOneColorGradient(color *Color, degree float64, st
 //   void  
 func (instance *LineFormat) SetTwoColorGradient_Color_Color_GradientStyleType_Int(color1 *Color, color2 *Color, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIW(C.CString("LineFormat_SetTwoColorGradient_Color_Color_GradientStyleType_Integer"), instance.ptr, color1.ptr, color2.ptr, C.int( int32(style)), C.int(variant))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Sets the specified fill to a two-color gradient.
-// Only applies for Excel 2007.
-// Parameters:
-//   color1 - Color 
-//   transparency1 - float64 
-//   color2 - Color 
-//   transparency2 - float64 
-//   style - int32 
-//   variant - int32 
-// Returns:
-//   void  
-func (instance *LineFormat) SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Int(color1 *Color, transparency1 float64, color2 *Color, transparency2 float64, style GradientStyleType, variant int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZLA(C.CString("LineFormat_SetTwoColorGradient_Color_Double_Color_Double_GradientStyleType_Integer"), instance.ptr, color1.ptr, C.double(transparency1), color2.ptr, C.double(transparency2), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZIX(C.CString("LineFormat_SetTwoColorGradient_Color_Color_GradientStyleType_Integer"), instance.ptr, color1.ptr, color2.ptr, C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -43915,7 +42562,7 @@ func (instance *LineFormat) SetTwoColorGradient_Color_Double_Color_Double_Gradie
 //   void  
 func (instance *LineFormat) SetPresetColorGradient(presetcolor GradientPresetType, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLB(C.CString("LineFormat_SetPresetColorGradient"), instance.ptr, C.int( int32(presetcolor)), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZLC(C.CString("LineFormat_SetPresetColorGradient"), instance.ptr, C.int( int32(presetcolor)), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -44706,7 +43353,7 @@ func (instance *LineShape) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *LineShape) GetWorksheet()  (*Worksheet,  error)  {
@@ -46148,50 +44795,7 @@ func (instance *LineShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *LineShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("LineShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *LineShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("LineShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *LineShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("LineShape_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("LineShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -46281,74 +44885,6 @@ func (instance *LineShape) GetInputRange()  (string,  error)  {
 func (instance *LineShape) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("LineShape_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *LineShape) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("LineShape_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *LineShape) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("LineShape_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *LineShape) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("LineShape_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *LineShape) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("LineShape_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -47922,7 +46458,7 @@ func (instance *ListBox) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *ListBox) GetWorksheet()  (*Worksheet,  error)  {
@@ -49364,50 +47900,7 @@ func (instance *ListBox) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *ListBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("ListBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *ListBox) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("ListBox_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *ListBox) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("ListBox_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("ListBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -49497,74 +47990,6 @@ func (instance *ListBox) GetInputRange()  (string,  error)  {
 func (instance *ListBox) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("ListBox_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *ListBox) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("ListBox_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *ListBox) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("ListBox_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *ListBox) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("ListBox_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *ListBox) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("ListBox_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -50484,7 +48909,7 @@ func (instance *MsoFillFormat) SetImageData(value []byte)  error {
 //   void  
 func (instance *MsoFillFormat) SetOneColorGradient(color *Color, degree float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKY(C.CString("MsoFillFormat_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZLA(C.CString("MsoFillFormat_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -50698,7 +49123,7 @@ func (instance *MsoFillFormatHelper) SetImageData(value []byte)  error {
 //   void  
 func (instance *MsoFillFormatHelper) SetOneColorGradient(color *Color, degree float64, style GradientStyleType, variant int32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKY(C.CString("MsoFillFormatHelper_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
+	CGoReturnPtr := C.CellsGoFunctoinZZLA(C.CString("MsoFillFormatHelper_SetOneColorGradient"), instance.ptr, color.ptr, C.double(degree), C.int( int32(style)), C.int(variant))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -52071,7 +50496,7 @@ func (instance *OleObject) IsNull()  (bool,  error)  {
 //   void  
 func (instance *OleObject) SetEmbeddedObject_Bool_Stream_String_Bool_String(linktofile bool, objectdata []byte, sourcefilename string, displayasicon bool, label string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLH(C.CString("OleObject_SetEmbeddedObject_Boolean_Stream_String_Boolean_String"), instance.ptr, C.bool(linktofile), unsafe.Pointer(&objectdata[0]), C.int( len(objectdata)), C.CString(sourcefilename), C.bool(displayasicon), C.CString(label))
+	CGoReturnPtr := C.CellsGoFunctoinZZLI(C.CString("OleObject_SetEmbeddedObject_Boolean_Stream_String_Boolean_String"), instance.ptr, C.bool(linktofile), unsafe.Pointer(&objectdata[0]), C.int( len(objectdata)), C.CString(sourcefilename), C.bool(displayasicon), C.CString(label))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -52091,7 +50516,7 @@ func (instance *OleObject) SetEmbeddedObject_Bool_Stream_String_Bool_String(link
 //   void  
 func (instance *OleObject) SetEmbeddedObject_Bool_Stream_String_Bool_String_Bool(linktofile bool, objectdata []byte, sourcefilename string, displayasicon bool, label string, updateicon bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLI(C.CString("OleObject_SetEmbeddedObject_Boolean_Stream_String_Boolean_String_Boolean"), instance.ptr, C.bool(linktofile), unsafe.Pointer(&objectdata[0]), C.int( len(objectdata)), C.CString(sourcefilename), C.bool(displayasicon), C.CString(label), C.bool(updateicon))
+	CGoReturnPtr := C.CellsGoFunctoinZZLJ(C.CString("OleObject_SetEmbeddedObject_Boolean_Stream_String_Boolean_String_Boolean"), instance.ptr, C.bool(linktofile), unsafe.Pointer(&objectdata[0]), C.int( len(objectdata)), C.CString(sourcefilename), C.bool(displayasicon), C.CString(label), C.bool(updateicon))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -53108,7 +51533,7 @@ func (instance *OleObject) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *OleObject) GetWorksheet()  (*Worksheet,  error)  {
@@ -54550,50 +52975,7 @@ func (instance *OleObject) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *OleObject) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("OleObject_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *OleObject) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("OleObject_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *OleObject) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("OleObject_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("OleObject_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -54683,74 +53065,6 @@ func (instance *OleObject) GetInputRange()  (string,  error)  {
 func (instance *OleObject) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("OleObject_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *OleObject) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("OleObject_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *OleObject) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("OleObject_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *OleObject) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("OleObject_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *OleObject) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("OleObject_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -55552,7 +53866,7 @@ func (instance *OleObjectCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *OleObjectCollection) Add_Int_Int_Int_Int_Stream(toprow int32, leftcolumn int32, height int32, width int32, imagedata []byte)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLJ(C.CString("OleObjectCollection_Add_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZZLK(C.CString("OleObjectCollection_Add_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -55573,7 +53887,7 @@ func (instance *OleObjectCollection) Add_Int_Int_Int_Int_Stream(toprow int32, le
 //   int32  
 func (instance *OleObjectCollection) Add_Int_Int_Int_Int_Stream_String(toprow int32, leftcolumn int32, height int32, width int32, imagedata []byte, linkedfile string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLK(C.CString("OleObjectCollection_Add_Integer_Integer_Integer_Integer_Stream_String"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)), C.CString(linkedfile))
+	CGoReturnPtr := C.CellsGoFunctoinZZLL(C.CString("OleObjectCollection_Add_Integer_Integer_Integer_Integer_Stream_String"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)), C.CString(linkedfile))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -56265,7 +54579,7 @@ func (instance *Oval) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *Oval) GetWorksheet()  (*Worksheet,  error)  {
@@ -57707,50 +56021,7 @@ func (instance *Oval) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Oval) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("Oval_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *Oval) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("Oval_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *Oval) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("Oval_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("Oval_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -57840,74 +56111,6 @@ func (instance *Oval) GetInputRange()  (string,  error)  {
 func (instance *Oval) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("Oval_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *Oval) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("Oval_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *Oval) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("Oval_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *Oval) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("Oval_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *Oval) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("Oval_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -60260,7 +58463,7 @@ func (instance *Picture) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *Picture) GetWorksheet()  (*Worksheet,  error)  {
@@ -61702,50 +59905,7 @@ func (instance *Picture) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Picture) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("Picture_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *Picture) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("Picture_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *Picture) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("Picture_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("Picture_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -61835,74 +59995,6 @@ func (instance *Picture) GetInputRange()  (string,  error)  {
 func (instance *Picture) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("Picture_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *Picture) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("Picture_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *Picture) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("Picture_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *Picture) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("Picture_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *Picture) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("Picture_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -62681,7 +60773,7 @@ func (instance *PictureCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *PictureCollection) Camera(row int32, column int32, range_ string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("PictureCollection_Camera"), instance.ptr, C.int(row), C.int(column), C.CString(range_))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("PictureCollection_Camera"), instance.ptr, C.int(row), C.int(column), C.CString(range_))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -62701,7 +60793,7 @@ func (instance *PictureCollection) Camera(row int32, column int32, range_ string
 //   int32  
 func (instance *PictureCollection) Add_Int_Int_Int_Int_Stream(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32, stream []byte)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLJ(C.CString("PictureCollection_Add_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)))
+	CGoReturnPtr := C.CellsGoFunctoinZZLK(C.CString("PictureCollection_Add_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -62739,7 +60831,7 @@ func (instance *PictureCollection) Add_Int_Int_Int_Int_String(toprow int32, left
 //   int32  
 func (instance *PictureCollection) Add_Int_Int_Stream(toprow int32, leftcolumn int32, stream []byte)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLL(C.CString("PictureCollection_Add_Integer_Integer_Stream"), instance.ptr, C.int(toprow), C.int(leftcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)))
+	CGoReturnPtr := C.CellsGoFunctoinZZLM(C.CString("PictureCollection_Add_Integer_Integer_Stream"), instance.ptr, C.int(toprow), C.int(leftcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -62757,7 +60849,7 @@ func (instance *PictureCollection) Add_Int_Int_Stream(toprow int32, leftcolumn i
 //   int32  
 func (instance *PictureCollection) Add_Int_Int_String(toprow int32, leftcolumn int32, filename string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZIP(C.CString("PictureCollection_Add_Integer_Integer_String"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.CString(filename))
+	CGoReturnPtr := C.CellsGoFunctoinZZIQ(C.CString("PictureCollection_Add_Integer_Integer_String"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.CString(filename))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -62777,7 +60869,7 @@ func (instance *PictureCollection) Add_Int_Int_String(toprow int32, leftcolumn i
 //   int32  
 func (instance *PictureCollection) Add_Int_Int_Stream_Int_Int(toprow int32, leftcolumn int32, stream []byte, widthscale int32, heightscale int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLM(C.CString("PictureCollection_Add_Integer_Integer_Stream_Integer_Integer"), instance.ptr, C.int(toprow), C.int(leftcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int(widthscale), C.int(heightscale))
+	CGoReturnPtr := C.CellsGoFunctoinZZLN(C.CString("PictureCollection_Add_Integer_Integer_Stream_Integer_Integer"), instance.ptr, C.int(toprow), C.int(leftcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int(widthscale), C.int(heightscale))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -62797,7 +60889,7 @@ func (instance *PictureCollection) Add_Int_Int_Stream_Int_Int(toprow int32, left
 //   int32  
 func (instance *PictureCollection) Add_Int_Int_String_Int_Int(toprow int32, leftcolumn int32, filename string, widthscale int32, heightscale int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLN(C.CString("PictureCollection_Add_Integer_Integer_String_Integer_Integer"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.CString(filename), C.int(widthscale), C.int(heightscale))
+	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("PictureCollection_Add_Integer_Integer_String_Integer_Integer"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.CString(filename), C.int(widthscale), C.int(heightscale))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -63577,7 +61669,7 @@ func (instance *RadioButton) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *RadioButton) GetWorksheet()  (*Worksheet,  error)  {
@@ -65019,50 +63111,7 @@ func (instance *RadioButton) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *RadioButton) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("RadioButton_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *RadioButton) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("RadioButton_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *RadioButton) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("RadioButton_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("RadioButton_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -65152,74 +63201,6 @@ func (instance *RadioButton) GetInputRange()  (string,  error)  {
 func (instance *RadioButton) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("RadioButton_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *RadioButton) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("RadioButton_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *RadioButton) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("RadioButton_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *RadioButton) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("RadioButton_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *RadioButton) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("RadioButton_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -66602,7 +64583,7 @@ func (instance *RectangleShape) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *RectangleShape) GetWorksheet()  (*Worksheet,  error)  {
@@ -68044,50 +66025,7 @@ func (instance *RectangleShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *RectangleShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("RectangleShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *RectangleShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("RectangleShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *RectangleShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("RectangleShape_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("RectangleShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -68177,74 +66115,6 @@ func (instance *RectangleShape) GetInputRange()  (string,  error)  {
 func (instance *RectangleShape) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("RectangleShape_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *RectangleShape) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("RectangleShape_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *RectangleShape) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("RectangleShape_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *RectangleShape) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("RectangleShape_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *RectangleShape) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("RectangleShape_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -70096,7 +67966,7 @@ func (instance *ScrollBar) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *ScrollBar) GetWorksheet()  (*Worksheet,  error)  {
@@ -71538,50 +69408,7 @@ func (instance *ScrollBar) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *ScrollBar) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("ScrollBar_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *ScrollBar) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("ScrollBar_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *ScrollBar) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("ScrollBar_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("ScrollBar_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -71671,74 +69498,6 @@ func (instance *ScrollBar) GetInputRange()  (string,  error)  {
 func (instance *ScrollBar) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("ScrollBar_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *ScrollBar) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("ScrollBar_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *ScrollBar) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("ScrollBar_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *ScrollBar) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("ScrollBar_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *ScrollBar) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("ScrollBar_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -73346,7 +71105,7 @@ func (instance *Shape) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *Shape) GetWorksheet()  (*Worksheet,  error)  {
@@ -74788,7 +72547,7 @@ func (instance *Shape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Shape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("Shape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("Shape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75826,7 +73585,7 @@ func (instance *ShapeCollection) AddCopy_Shape_Int_Int_Int_Int(sourceshape *Shap
 	  sourceshape_ptr =sourceshape.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZLO(C.CString("ShapeCollection_AddCopy_Shape_Integer_Integer_Integer_Integer"), instance.ptr, sourceshape_ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left))
+	CGoReturnPtr := C.CellsGoFunctoinZZLP(C.CString("ShapeCollection_AddCopy_Shape_Integer_Integer_Integer_Integer"), instance.ptr, sourceshape_ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75858,7 +73617,7 @@ func (instance *ShapeCollection) AddCopy_Shape_Int_Int_Int_Int_CopyOptions(sourc
 	  copyoptions_ptr =copyoptions.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZLP(C.CString("ShapeCollection_AddCopy_Shape_Integer_Integer_Integer_Integer_CopyOptions"), instance.ptr, sourceshape_ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), copyoptions_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZLQ(C.CString("ShapeCollection_AddCopy_Shape_Integer_Integer_Integer_Integer_CopyOptions"), instance.ptr, sourceshape_ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), copyoptions_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75881,7 +73640,7 @@ func (instance *ShapeCollection) AddCopy_Shape_Int_Int_Int_Int_CopyOptions(sourc
 //   CheckBox  
 func (instance *ShapeCollection) AddCheckBox(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*CheckBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLQ(C.CString("ShapeCollection_AddCheckBox"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLR(C.CString("ShapeCollection_AddCheckBox"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75904,7 +73663,7 @@ func (instance *ShapeCollection) AddCheckBox(toprow int32, top int32, leftcolumn
 //   TextBox  
 func (instance *ShapeCollection) AddTextBox(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*TextBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLQ(C.CString("ShapeCollection_AddTextBox"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLR(C.CString("ShapeCollection_AddTextBox"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75927,7 +73686,7 @@ func (instance *ShapeCollection) AddTextBox(toprow int32, top int32, leftcolumn 
 //   TextBox  
 func (instance *ShapeCollection) AddEquation(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*TextBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLQ(C.CString("ShapeCollection_AddEquation"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLR(C.CString("ShapeCollection_AddEquation"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75951,7 +73710,7 @@ func (instance *ShapeCollection) AddEquation(toprow int32, top int32, leftcolumn
 //   TextBox  
 func (instance *ShapeCollection) AddLaTeXEquation(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32, latex string)  (*TextBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLR(C.CString("ShapeCollection_AddLaTeXEquation"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width), C.CString(latex))
+	CGoReturnPtr := C.CellsGoFunctoinZZLS(C.CString("ShapeCollection_AddLaTeXEquation"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width), C.CString(latex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75974,7 +73733,7 @@ func (instance *ShapeCollection) AddLaTeXEquation(toprow int32, top int32, leftc
 //   Spinner  
 func (instance *ShapeCollection) AddSpinner(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*Spinner,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLQ(C.CString("ShapeCollection_AddSpinner"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLR(C.CString("ShapeCollection_AddSpinner"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -75997,7 +73756,7 @@ func (instance *ShapeCollection) AddSpinner(toprow int32, top int32, leftcolumn 
 //   ScrollBar  
 func (instance *ShapeCollection) AddScrollBar(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*ScrollBar,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLQ(C.CString("ShapeCollection_AddScrollBar"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLR(C.CString("ShapeCollection_AddScrollBar"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76020,7 +73779,7 @@ func (instance *ShapeCollection) AddScrollBar(toprow int32, top int32, leftcolum
 //   RadioButton  
 func (instance *ShapeCollection) AddRadioButton(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*RadioButton,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLQ(C.CString("ShapeCollection_AddRadioButton"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLR(C.CString("ShapeCollection_AddRadioButton"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76043,7 +73802,7 @@ func (instance *ShapeCollection) AddRadioButton(toprow int32, top int32, leftcol
 //   ListBox  
 func (instance *ShapeCollection) AddListBox(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*ListBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLQ(C.CString("ShapeCollection_AddListBox"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLR(C.CString("ShapeCollection_AddListBox"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76066,7 +73825,7 @@ func (instance *ShapeCollection) AddListBox(toprow int32, top int32, leftcolumn 
 //   ComboBox  
 func (instance *ShapeCollection) AddComboBox(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*ComboBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLQ(C.CString("ShapeCollection_AddComboBox"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLR(C.CString("ShapeCollection_AddComboBox"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76089,7 +73848,7 @@ func (instance *ShapeCollection) AddComboBox(toprow int32, top int32, leftcolumn
 //   GroupBox  
 func (instance *ShapeCollection) AddGroupBox(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*GroupBox,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLQ(C.CString("ShapeCollection_AddGroupBox"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLR(C.CString("ShapeCollection_AddGroupBox"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76112,7 +73871,7 @@ func (instance *ShapeCollection) AddGroupBox(toprow int32, top int32, leftcolumn
 //   Button  
 func (instance *ShapeCollection) AddButton(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*Button,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLQ(C.CString("ShapeCollection_AddButton"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLR(C.CString("ShapeCollection_AddButton"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76135,7 +73894,7 @@ func (instance *ShapeCollection) AddButton(toprow int32, top int32, leftcolumn i
 //   Label  
 func (instance *ShapeCollection) AddLabel(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*Label,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLQ(C.CString("ShapeCollection_AddLabel"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLR(C.CString("ShapeCollection_AddLabel"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76204,7 +73963,7 @@ func (instance *ShapeCollection) AddTextBoxInChart(top int32, left int32, height
 //   Shape  
 func (instance *ShapeCollection) AddTextEffectInChart(effect MsoPresetTextEffect, text string, fontname string, size int32, fontbold bool, fontitalic bool, top int32, left int32, height int32, width int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLS(C.CString("ShapeCollection_AddTextEffectInChart"), instance.ptr, C.int( int32(effect)), C.CString(text), C.CString(fontname), C.int(size), C.bool(fontbold), C.bool(fontitalic), C.int(top), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLT(C.CString("ShapeCollection_AddTextEffectInChart"), instance.ptr, C.int( int32(effect)), C.CString(text), C.CString(fontname), C.int(size), C.bool(fontbold), C.bool(fontitalic), C.int(top), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76233,7 +73992,7 @@ func (instance *ShapeCollection) AddTextEffectInChart(effect MsoPresetTextEffect
 //   Shape  
 func (instance *ShapeCollection) AddTextEffect(effect MsoPresetTextEffect, text string, fontname string, size int32, fontbold bool, fontitalic bool, toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLT(C.CString("ShapeCollection_AddTextEffect"), instance.ptr, C.int( int32(effect)), C.CString(text), C.CString(fontname), C.int(size), C.bool(fontbold), C.bool(fontitalic), C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLU(C.CString("ShapeCollection_AddTextEffect"), instance.ptr, C.int( int32(effect)), C.CString(text), C.CString(fontname), C.int(size), C.bool(fontbold), C.bool(fontitalic), C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76258,7 +74017,7 @@ func (instance *ShapeCollection) AddTextEffect(effect MsoPresetTextEffect, text 
 //   Shape  
 func (instance *ShapeCollection) AddWordArt(style PresetWordArtStyle, text string, toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLU(C.CString("ShapeCollection_AddWordArt"), instance.ptr, C.int( int32(style)), C.CString(text), C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLV(C.CString("ShapeCollection_AddWordArt"), instance.ptr, C.int( int32(style)), C.CString(text), C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76281,7 +74040,7 @@ func (instance *ShapeCollection) AddWordArt(style PresetWordArtStyle, text strin
 //   RectangleShape  
 func (instance *ShapeCollection) AddRectangle(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*RectangleShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLQ(C.CString("ShapeCollection_AddRectangle"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLR(C.CString("ShapeCollection_AddRectangle"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76304,7 +74063,7 @@ func (instance *ShapeCollection) AddRectangle(toprow int32, top int32, leftcolum
 //   Oval  
 func (instance *ShapeCollection) AddOval(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*Oval,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLQ(C.CString("ShapeCollection_AddOval"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLR(C.CString("ShapeCollection_AddOval"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76327,7 +74086,7 @@ func (instance *ShapeCollection) AddOval(toprow int32, top int32, leftcolumn int
 //   LineShape  
 func (instance *ShapeCollection) AddLine(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*LineShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLQ(C.CString("ShapeCollection_AddLine"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLR(C.CString("ShapeCollection_AddLine"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76351,7 +74110,7 @@ func (instance *ShapeCollection) AddLine(toprow int32, top int32, leftcolumn int
 //   Shape  
 func (instance *ShapeCollection) AddFreeFloatingShape(type_ MsoDrawingType, top int32, left int32, height int32, width int32, imagedata []byte, isoriginalsize bool)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLV(C.CString("ShapeCollection_AddFreeFloatingShape"), instance.ptr, C.int( int32(type_)), C.int(top), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)), C.bool(isoriginalsize))
+	CGoReturnPtr := C.CellsGoFunctoinZZLW(C.CString("ShapeCollection_AddFreeFloatingShape"), instance.ptr, C.int( int32(type_)), C.int(top), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)), C.bool(isoriginalsize))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76375,7 +74134,7 @@ func (instance *ShapeCollection) AddFreeFloatingShape(type_ MsoDrawingType, top 
 //   Shape  
 func (instance *ShapeCollection) AddShapeInChart_MsoDrawingType_PlacementType_Int_Int_Int_Int_Stream(type_ MsoDrawingType, placement PlacementType, left int32, top int32, right int32, bottom int32, imagedata []byte)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLW(C.CString("ShapeCollection_AddShapeInChart_MsoDrawingType_PlacementType_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.int(left), C.int(top), C.int(right), C.int(bottom), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZZLX(C.CString("ShapeCollection_AddShapeInChart_MsoDrawingType_PlacementType_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.int(left), C.int(top), C.int(right), C.int(bottom), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76398,7 +74157,7 @@ func (instance *ShapeCollection) AddShapeInChart_MsoDrawingType_PlacementType_In
 //   Shape  
 func (instance *ShapeCollection) AddShapeInChart_MsoDrawingType_PlacementType_Int_Int_Int_Int(type_ MsoDrawingType, placement PlacementType, left int32, top int32, right int32, bottom int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLX(C.CString("ShapeCollection_AddShapeInChart_MsoDrawingType_PlacementType_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.int(left), C.int(top), C.int(right), C.int(bottom))
+	CGoReturnPtr := C.CellsGoFunctoinZZLY(C.CString("ShapeCollection_AddShapeInChart_MsoDrawingType_PlacementType_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.int(left), C.int(top), C.int(right), C.int(bottom))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76421,7 +74180,7 @@ func (instance *ShapeCollection) AddShapeInChart_MsoDrawingType_PlacementType_In
 //   Shape  
 func (instance *ShapeCollection) AddShapeInChartByScale_MsoDrawingType_PlacementType_Double_Double_Double_Double(type_ MsoDrawingType, placement PlacementType, left float64, top float64, right float64, bottom float64)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLY(C.CString("ShapeCollection_AddShapeInChartByScale_MsoDrawingType_PlacementType_Double_Double_Double_Double"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.double(left), C.double(top), C.double(right), C.double(bottom))
+	CGoReturnPtr := C.CellsGoFunctoinZZMA(C.CString("ShapeCollection_AddShapeInChartByScale_MsoDrawingType_PlacementType_Double_Double_Double_Double"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.double(left), C.double(top), C.double(right), C.double(bottom))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76445,7 +74204,7 @@ func (instance *ShapeCollection) AddShapeInChartByScale_MsoDrawingType_Placement
 //   Shape  
 func (instance *ShapeCollection) AddShapeInChartByScale_MsoDrawingType_PlacementType_Double_Double_Double_Double_Stream(type_ MsoDrawingType, placement PlacementType, left float64, top float64, right float64, bottom float64, imagedata []byte)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMA(C.CString("ShapeCollection_AddShapeInChartByScale_MsoDrawingType_PlacementType_Double_Double_Double_Double_Stream"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.double(left), C.double(top), C.double(right), C.double(bottom), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZZMB(C.CString("ShapeCollection_AddShapeInChartByScale_MsoDrawingType_PlacementType_Double_Double_Double_Double_Stream"), instance.ptr, C.int( int32(type_)), C.int( int32(placement)), C.double(left), C.double(top), C.double(right), C.double(bottom), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76468,7 +74227,7 @@ func (instance *ShapeCollection) AddShapeInChartByScale_MsoDrawingType_Placement
 //   ArcShape  
 func (instance *ShapeCollection) AddArc(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*ArcShape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZLQ(C.CString("ShapeCollection_AddArc"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZLR(C.CString("ShapeCollection_AddArc"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76492,7 +74251,7 @@ func (instance *ShapeCollection) AddArc(toprow int32, top int32, leftcolumn int3
 //   Shape  
 func (instance *ShapeCollection) AddShape(type_ MsoDrawingType, toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMB(C.CString("ShapeCollection_AddShape"), instance.ptr, C.int( int32(type_)), C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZMC(C.CString("ShapeCollection_AddShape"), instance.ptr, C.int( int32(type_)), C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76516,7 +74275,7 @@ func (instance *ShapeCollection) AddShape(type_ MsoDrawingType, toprow int32, to
 //   Shape  
 func (instance *ShapeCollection) AddAutoShape(type_ AutoShapeType, toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMB(C.CString("ShapeCollection_AddAutoShape"), instance.ptr, C.int( int32(type_)), C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZMC(C.CString("ShapeCollection_AddAutoShape"), instance.ptr, C.int( int32(type_)), C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76538,7 +74297,7 @@ func (instance *ShapeCollection) AddAutoShape(type_ AutoShapeType, toprow int32,
 //   Shape  
 func (instance *ShapeCollection) AddAutoShapeInChart(type_ AutoShapeType, top int32, left int32, height int32, width int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMC(C.CString("ShapeCollection_AddAutoShapeInChart"), instance.ptr, C.int( int32(type_)), C.int(top), C.int(left), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZMD(C.CString("ShapeCollection_AddAutoShapeInChart"), instance.ptr, C.int( int32(type_)), C.int(top), C.int(left), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76562,7 +74321,7 @@ func (instance *ShapeCollection) AddAutoShapeInChart(type_ AutoShapeType, top in
 //   Shape  
 func (instance *ShapeCollection) AddActiveXControl(type_ ControlType, toprow int32, top int32, leftcolumn int32, left int32, width int32, height int32)  (*Shape,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMB(C.CString("ShapeCollection_AddActiveXControl"), instance.ptr, C.int( int32(type_)), C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(width), C.int(height))
+	CGoReturnPtr := C.CellsGoFunctoinZZMC(C.CString("ShapeCollection_AddActiveXControl"), instance.ptr, C.int( int32(type_)), C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(width), C.int(height))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76584,7 +74343,7 @@ func (instance *ShapeCollection) AddActiveXControl(type_ ControlType, toprow int
 //   Picture  
 func (instance *ShapeCollection) AddPicture_Int_Int_Int_Int_Stream(toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32, stream []byte)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMD(C.CString("ShapeCollection_AddPicture_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)))
+	CGoReturnPtr := C.CellsGoFunctoinZZME(C.CString("ShapeCollection_AddPicture_Integer_Integer_Integer_Integer_Stream"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76606,7 +74365,7 @@ func (instance *ShapeCollection) AddPicture_Int_Int_Int_Int_Stream(toprow int32,
 //   Picture  
 func (instance *ShapeCollection) AddPicture_Int_Int_Stream_Int_Int(toprow int32, leftcolumn int32, stream []byte, widthscale int32, heightscale int32)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZME(C.CString("ShapeCollection_AddPicture_Integer_Integer_Stream_Integer_Integer"), instance.ptr, C.int(toprow), C.int(leftcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int(widthscale), C.int(heightscale))
+	CGoReturnPtr := C.CellsGoFunctoinZZMF(C.CString("ShapeCollection_AddPicture_Integer_Integer_Stream_Integer_Integer"), instance.ptr, C.int(toprow), C.int(leftcolumn), unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int(widthscale), C.int(heightscale))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76631,7 +74390,7 @@ func (instance *ShapeCollection) AddPicture_Int_Int_Stream_Int_Int(toprow int32,
 //   Picture  
 func (instance *ShapeCollection) AddSvg(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32, svgdata []byte, compatibleimagedata []byte)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMF(C.CString("ShapeCollection_AddSvg"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&svgdata[0]), C.int( len(svgdata)), unsafe.Pointer(&compatibleimagedata[0]), C.int( len(compatibleimagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZZMG(C.CString("ShapeCollection_AddSvg"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&svgdata[0]), C.int( len(svgdata)), unsafe.Pointer(&compatibleimagedata[0]), C.int( len(compatibleimagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76656,7 +74415,7 @@ func (instance *ShapeCollection) AddSvg(toprow int32, top int32, leftcolumn int3
 //   Picture  
 func (instance *ShapeCollection) AddIcons(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32, imagebytedata []byte, compatibleimagedata []byte)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMF(C.CString("ShapeCollection_AddIcons"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&imagebytedata[0]), C.int( len(imagebytedata)), unsafe.Pointer(&compatibleimagedata[0]), C.int( len(compatibleimagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZZMG(C.CString("ShapeCollection_AddIcons"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&imagebytedata[0]), C.int( len(imagebytedata)), unsafe.Pointer(&compatibleimagedata[0]), C.int( len(compatibleimagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76678,7 +74437,7 @@ func (instance *ShapeCollection) AddIcons(toprow int32, top int32, leftcolumn in
 //   Picture  
 func (instance *ShapeCollection) AddLinkedPicture(toprow int32, leftcolumn int32, height int32, width int32, sourcefullname string)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMG(C.CString("ShapeCollection_AddLinkedPicture"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(height), C.int(width), C.CString(sourcefullname))
+	CGoReturnPtr := C.CellsGoFunctoinZZMH(C.CString("ShapeCollection_AddLinkedPicture"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(height), C.int(width), C.CString(sourcefullname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76700,7 +74459,7 @@ func (instance *ShapeCollection) AddLinkedPicture(toprow int32, leftcolumn int32
 //   OleObject  
 func (instance *ShapeCollection) AddOleObjectWithLinkedImage(toprow int32, leftcolumn int32, height int32, width int32, sourcefullname string)  (*OleObject,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMG(C.CString("ShapeCollection_AddOleObjectWithLinkedImage"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(height), C.int(width), C.CString(sourcefullname))
+	CGoReturnPtr := C.CellsGoFunctoinZZMH(C.CString("ShapeCollection_AddOleObjectWithLinkedImage"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(height), C.int(width), C.CString(sourcefullname))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76722,7 +74481,7 @@ func (instance *ShapeCollection) AddOleObjectWithLinkedImage(toprow int32, leftc
 //   Picture  
 func (instance *ShapeCollection) AddPictureInChart(top int32, left int32, stream []byte, widthscale int32, heightscale int32)  (*Picture,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZME(C.CString("ShapeCollection_AddPictureInChart"), instance.ptr, C.int(top), C.int(left), unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int(widthscale), C.int(heightscale))
+	CGoReturnPtr := C.CellsGoFunctoinZZMF(C.CString("ShapeCollection_AddPictureInChart"), instance.ptr, C.int(top), C.int(left), unsafe.Pointer(&stream[0]), C.int( len(stream)), C.int(widthscale), C.int(heightscale))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76746,7 +74505,7 @@ func (instance *ShapeCollection) AddPictureInChart(top int32, left int32, stream
 //   OleObject  
 func (instance *ShapeCollection) AddOleObject(toprow int32, top int32, leftcolumn int32, left int32, height int32, width int32, imagedata []byte)  (*OleObject,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMH(C.CString("ShapeCollection_AddOleObject"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
+	CGoReturnPtr := C.CellsGoFunctoinZZMI(C.CString("ShapeCollection_AddOleObject"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&imagedata[0]), C.int( len(imagedata)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76776,7 +74535,7 @@ func (instance *ShapeCollection) CopyCommentsInRange(shapes *ShapeCollection, ca
 	  ca_ptr =ca.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZMI(C.CString("ShapeCollection_CopyCommentsInRange"), instance.ptr, shapes_ptr, ca_ptr, C.int(destrow), C.int(destcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZMJ(C.CString("ShapeCollection_CopyCommentsInRange"), instance.ptr, shapes_ptr, ca_ptr, C.int(destrow), C.int(destcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -76804,7 +74563,7 @@ func (instance *ShapeCollection) CopyInRange(sourceshapes *ShapeCollection, ca *
 	  ca_ptr =ca.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZMJ(C.CString("ShapeCollection_CopyInRange"), instance.ptr, sourceshapes_ptr, ca_ptr, C.int(destrow), C.int(destcolumn), C.bool(iscontained))
+	CGoReturnPtr := C.CellsGoFunctoinZZMK(C.CString("ShapeCollection_CopyInRange"), instance.ptr, sourceshapes_ptr, ca_ptr, C.int(destrow), C.int(destcolumn), C.bool(iscontained))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -76866,7 +74625,7 @@ func (instance *ShapeCollection) Group(groupitems []Shape)  (*GroupShape,  error
 	}
 
 
-	CGoReturnPtr := C.CellsGoFunctoinZZII(C.CString("ShapeCollection_Group"), instance.ptr, unsafe.Pointer(&vector_groupitems[0]), C.int( len(groupitems)))
+	CGoReturnPtr := C.CellsGoFunctoinZZIJ(C.CString("ShapeCollection_Group"), instance.ptr, unsafe.Pointer(&vector_groupitems[0]), C.int( len(groupitems)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -76978,7 +74737,7 @@ func (instance *ShapeCollection) AddFreeform(toprow int32, top int32, leftcolumn
 	}
 
 
-	CGoReturnPtr := C.CellsGoFunctoinZZMK(C.CString("ShapeCollection_AddFreeform"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&vector_paths[0]), C.int( len(paths)))
+	CGoReturnPtr := C.CellsGoFunctoinZZML(C.CString("ShapeCollection_AddFreeform"), instance.ptr, C.int(toprow), C.int(top), C.int(leftcolumn), C.int(left), C.int(height), C.int(width), unsafe.Pointer(&vector_paths[0]), C.int( len(paths)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -77003,7 +74762,7 @@ func (instance *ShapeCollection) AddSignatureLine(toprow int32, leftcolumn int32
 	  signatureline_ptr =signatureline.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZML(C.CString("ShapeCollection_AddSignatureLine"), instance.ptr, C.int(toprow), C.int(leftcolumn), signatureline_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZMM(C.CString("ShapeCollection_AddSignatureLine"), instance.ptr, C.int(toprow), C.int(leftcolumn), signatureline_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -77168,7 +74927,7 @@ func (instance *ShapeGuideCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ShapeGuideCollection) Add(name string, val float64)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJI(C.CString("ShapeGuideCollection_Add"), instance.ptr, C.CString(name), C.double(val))
+	CGoReturnPtr := C.CellsGoFunctoinZZJJ(C.CString("ShapeGuideCollection_Add"), instance.ptr, C.CString(name), C.double(val))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -77257,9 +75016,9 @@ func (instance *ShapePath) IsNull()  (bool,  error)  {
 // Gets <see cref="ShapeSegmentPathCollection"/> list
 // Returns:
 //   ShapeSegmentPathCollection  
-func (instance *ShapePath) GetPathSegementList()  (*ShapeSegmentPathCollection,  error)  {
+func (instance *ShapePath) GetPathSegments()  (*ShapeSegmentPathCollection,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ShapePath_GetPathSegementList"), instance.ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZZJ(C.CString("ShapePath_GetPathSegments"), instance.ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -77336,7 +75095,7 @@ func (instance *ShapePath) SetHeightPixel(value int32)  error {
 //   void  
 func (instance *ShapePath) MoveTo(x float32, y float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMM(C.CString("ShapePath_MoveTo"), instance.ptr, C.float(x), C.float(y))
+	CGoReturnPtr := C.CellsGoFunctoinZZMN(C.CString("ShapePath_MoveTo"), instance.ptr, C.float(x), C.float(y))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -77353,7 +75112,7 @@ func (instance *ShapePath) MoveTo(x float32, y float32)  error {
 //   void  
 func (instance *ShapePath) LineTo(x float32, y float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMM(C.CString("ShapePath_LineTo"), instance.ptr, C.float(x), C.float(y))
+	CGoReturnPtr := C.CellsGoFunctoinZZMN(C.CString("ShapePath_LineTo"), instance.ptr, C.float(x), C.float(y))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -77373,7 +75132,7 @@ func (instance *ShapePath) LineTo(x float32, y float32)  error {
 //   void  
 func (instance *ShapePath) CubicBezierTo(ctrx1 float32, ctry1 float32, ctrx2 float32, ctry2 float32, endx float32, endy float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMN(C.CString("ShapePath_CubicBezierTo"), instance.ptr, C.float(ctrx1), C.float(ctry1), C.float(ctrx2), C.float(ctry2), C.float(endx), C.float(endy))
+	CGoReturnPtr := C.CellsGoFunctoinZZMO(C.CString("ShapePath_CubicBezierTo"), instance.ptr, C.float(ctrx1), C.float(ctry1), C.float(ctrx2), C.float(ctry2), C.float(endx), C.float(endy))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -77391,7 +75150,7 @@ func (instance *ShapePath) CubicBezierTo(ctrx1 float32, ctry1 float32, ctrx2 flo
 //   void  
 func (instance *ShapePath) ArcTo(wr float32, hr float32, stang float32, swang float32)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMO(C.CString("ShapePath_ArcTo"), instance.ptr, C.float(wr), C.float(hr), C.float(stang), C.float(swang))
+	CGoReturnPtr := C.CellsGoFunctoinZZMP(C.CString("ShapePath_ArcTo"), instance.ptr, C.float(wr), C.float(hr), C.float(stang), C.float(swang))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -79067,7 +76826,7 @@ func (instance *SlicerShape) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *SlicerShape) GetWorksheet()  (*Worksheet,  error)  {
@@ -80509,50 +78268,7 @@ func (instance *SlicerShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *SlicerShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("SlicerShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *SlicerShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("SlicerShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *SlicerShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("SlicerShape_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("SlicerShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -80642,74 +78358,6 @@ func (instance *SlicerShape) GetInputRange()  (string,  error)  {
 func (instance *SlicerShape) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("SlicerShape_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *SlicerShape) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("SlicerShape_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *SlicerShape) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("SlicerShape_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *SlicerShape) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("SlicerShape_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *SlicerShape) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("SlicerShape_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -82108,7 +79756,7 @@ func (instance *SmartArtShape) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *SmartArtShape) GetWorksheet()  (*Worksheet,  error)  {
@@ -83550,50 +81198,7 @@ func (instance *SmartArtShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *SmartArtShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("SmartArtShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *SmartArtShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("SmartArtShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *SmartArtShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("SmartArtShape_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("SmartArtShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -83683,74 +81288,6 @@ func (instance *SmartArtShape) GetInputRange()  (string,  error)  {
 func (instance *SmartArtShape) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("SmartArtShape_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *SmartArtShape) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("SmartArtShape_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *SmartArtShape) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("SmartArtShape_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *SmartArtShape) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("SmartArtShape_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *SmartArtShape) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("SmartArtShape_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -85451,7 +82988,7 @@ func (instance *Spinner) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *Spinner) GetWorksheet()  (*Worksheet,  error)  {
@@ -86893,50 +84430,7 @@ func (instance *Spinner) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *Spinner) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("Spinner_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *Spinner) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("Spinner_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *Spinner) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("Spinner_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("Spinner_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -87026,74 +84520,6 @@ func (instance *Spinner) GetInputRange()  (string,  error)  {
 func (instance *Spinner) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("Spinner_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *Spinner) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("Spinner_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *Spinner) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("Spinner_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *Spinner) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("Spinner_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *Spinner) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("Spinner_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -88513,7 +85939,7 @@ func (instance *TextBox) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *TextBox) GetWorksheet()  (*Worksheet,  error)  {
@@ -89955,50 +87381,7 @@ func (instance *TextBox) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *TextBox) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("TextBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *TextBox) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("TextBox_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *TextBox) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("TextBox_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("TextBox_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -90088,74 +87471,6 @@ func (instance *TextBox) GetInputRange()  (string,  error)  {
 func (instance *TextBox) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("TextBox_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *TextBox) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("TextBox_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *TextBox) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("TextBox_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *TextBox) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("TextBox_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *TextBox) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("TextBox_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -90992,7 +88307,7 @@ func (instance *TextBoxCollection) Get_String(name string)  (*TextBox,  error)  
 //   int32  
 func (instance *TextBoxCollection) Add(toprow int32, leftcolumn int32, height int32, width int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("TextBoxCollection_Add"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(height), C.int(width))
+	CGoReturnPtr := C.CellsGoFunctoinZZKW(C.CString("TextBoxCollection_Add"), instance.ptr, C.int(toprow), C.int(leftcolumn), C.int(height), C.int(width))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -93118,7 +90433,7 @@ func (instance *TimelineShape) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *TimelineShape) GetWorksheet()  (*Worksheet,  error)  {
@@ -94560,50 +91875,7 @@ func (instance *TimelineShape) GetConnectionPoints()  ([][]float32,  error)  {
 //   []byte  
 func (instance *TimelineShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("TimelineShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *TimelineShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("TimelineShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *TimelineShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("TimelineShape_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("TimelineShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -94693,74 +91965,6 @@ func (instance *TimelineShape) GetInputRange()  (string,  error)  {
 func (instance *TimelineShape) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("TimelineShape_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *TimelineShape) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("TimelineShape_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *TimelineShape) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("TimelineShape_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *TimelineShape) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("TimelineShape_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *TimelineShape) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("TimelineShape_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -96238,7 +93442,7 @@ func (instance *WebExtensionShape) GetSpt()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the <see cref="Worksheet"/> object which contains this shape.
+// Gets the <see cref="Aspose.Cells.Worksheet"/> object which contains this shape.
 // Returns:
 //   Worksheet  
 func (instance *WebExtensionShape) GetWorksheet()  (*Worksheet,  error)  {
@@ -97680,50 +94884,7 @@ func (instance *WebExtensionShape) GetConnectionPoints()  ([][]float32,  error) 
 //   []byte  
 func (instance *WebExtensionShape) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("WebExtensionShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  nil, err
-	}
-	result := C.GoBytes(unsafe.Pointer(CGoReturnPtr.return_value), C.int(CGoReturnPtr.column_length))
-	 
-
-	return result, nil 
-}
-// Saves the shape to a file.
-// Parameters:
-//   imageFile - string 
-//   options - ImageOrPrintOptions 
-// Returns:
-//   void  
-func (instance *WebExtensionShape) ToImage_String_ImageOrPrintOptions(imagefile string, options *ImageOrPrintOptions)  error {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZAQ(C.CString("WebExtensionShape_ToImage_String_ImageOrPrintOptions"), instance.ptr, C.CString(imagefile), options_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Saves the shape to a stream.
-// Parameters:
-//   options - ImageOrPrintOptions 
-// Returns:
-//   []byte  
-func (instance *WebExtensionShape) ToImage_ImageOrPrintOptions(options *ImageOrPrintOptions)  ([]byte,  error)  {
-	
-	var options_ptr unsafe.Pointer = nil
-	if options != nil {
-	  options_ptr =options.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZET(C.CString("WebExtensionShape_ToImage_ImageOrPrintOptions"), instance.ptr, options_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("WebExtensionShape_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -97813,74 +94974,6 @@ func (instance *WebExtensionShape) GetInputRange()  (string,  error)  {
 func (instance *WebExtensionShape) SetInputRange_String(value string)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("WebExtensionShape_SetInputRange_String"), instance.ptr, C.CString(value))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range linked to the control's value.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *WebExtensionShape) GetLinkedCell_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("WebExtensionShape_GetLinkedCell_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range linked to the control's value.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *WebExtensionShape) SetLinkedCell_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("WebExtensionShape_SetLinkedCell_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Gets the range used to fill the control.
-// Parameters:
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   string  
-func (instance *WebExtensionShape) GetInputRange_Bool_Bool(isr1c1 bool, islocal bool)  (string,  error)  {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAR(C.CString("WebExtensionShape_GetInputRange_Boolean_Boolean"), instance.ptr, C.bool(isr1c1), C.bool(islocal))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  "", err
-	}
-	result := C.GoString(CGoReturnPtr.return_value) 
-
-	return result, nil 
-}
-// Sets the range used to fill the control.
-// Parameters:
-//   formula - string 
-//   isR1C1 - bool 
-//   isLocal - bool 
-// Returns:
-//   void  
-func (instance *WebExtensionShape) SetInputRange_String_Bool_Bool(formula string, isr1c1 bool, islocal bool)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZAK(C.CString("WebExtensionShape_SetInputRange_String_Boolean_Boolean"), instance.ptr, C.CString(formula), C.bool(isr1c1), C.bool(islocal))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err

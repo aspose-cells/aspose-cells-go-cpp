@@ -3,7 +3,7 @@ package main
 func HideRowsInPivotTable() {
 	workbook, worksheet, cells := create_table_data()
 	pivotTables, _ := worksheet.GetPivotTables()
-	pivotTableIndex, _ := pivotTables.Add_String_String_String("=Sheet1!A1:F6", "A12", "TestPivotTable")
+	pivotTableIndex, _ := pivotTables.Add_String_String_String_Bool_Bool("=Sheet1!A1:F6", "A12", "TestPivotTable", true, false)
 	pivotTable, _ := pivotTables.Get_Int(pivotTableIndex)
 	println("pivotTable 0.")
 	dataBodyRange, _ := pivotTable.GetDataBodyRange()

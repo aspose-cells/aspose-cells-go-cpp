@@ -2948,8 +2948,8 @@ func (instance *Chart) GetPivotOptions()  (*PivotOptions,  error)  {
 
 	return result, nil 
 }
-// The source is the data of the pivotTable.
-// If PivotSource is not empty ,the chart is PivotChart.
+// The source is the data of the pivot table.
+// If PivotSource is not empty, the chart is PivotChart.
 // Returns:
 //   string  
 func (instance *Chart) GetPivotSource()  (string,  error)  {
@@ -2963,8 +2963,8 @@ func (instance *Chart) GetPivotSource()  (string,  error)  {
 
 	return result, nil 
 }
-// The source is the data of the pivotTable.
-// If PivotSource is not empty ,the chart is PivotChart.
+// The source is the data of the pivot table.
+// If PivotSource is not empty, the chart is PivotChart.
 // Parameters:
 //   value - string 
 // Returns:
@@ -2988,7 +2988,7 @@ func (instance *Chart) SetPivotSource(value string)  error {
 //   bool  
 func (instance *Chart) IsCellReferedByChart(sheetindex int32, rowindex int32, columnindex int32)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMR(C.CString("Chart_IsCellReferedByChart"), instance.ptr, C.int(sheetindex), C.int(rowindex), C.int(columnindex))
+	CGoReturnPtr := C.CellsGoFunctoinZZMS(C.CString("Chart_IsCellReferedByChart"), instance.ptr, C.int(sheetindex), C.int(rowindex), C.int(columnindex))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4007,7 +4007,7 @@ func (instance *Chart) GetPerspective()  (int16,  error)  {
 //   void  
 func (instance *Chart) SetPerspective(value int16)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMS(C.CString("Chart_SetPerspective"), instance.ptr, C.short(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZMT(C.CString("Chart_SetPerspective"), instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4097,7 +4097,7 @@ func (instance *Chart) ToImage_String_ImageType(imagefile string, imagetype Imag
 //   []byte  
 func (instance *Chart) ToImage_Int64(jpegquality int64)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMT(C.CString("Chart_ToImage_Long"), instance.ptr, C.longlong(jpegquality))
+	CGoReturnPtr := C.CellsGoFunctoinZZMU(C.CString("Chart_ToImage_Long"), instance.ptr, C.longlong(jpegquality))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4114,7 +4114,7 @@ func (instance *Chart) ToImage_Int64(jpegquality int64)  ([]byte,  error)  {
 //   []byte  
 func (instance *Chart) ToImage_ImageType(imagetype ImageType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZJG(C.CString("Chart_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZJH(C.CString("Chart_ToImage_ImageType"), instance.ptr, C.int( int32(imagetype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4150,7 +4150,7 @@ func (instance *Chart) ToPdf_String(filename string)  error {
 //   void  
 func (instance *Chart) ToPdf_String_Float_Float_PageLayoutAlignmentType_PageLayoutAlignmentType(filename string, desiredpagewidth float32, desiredpageheight float32, halignmenttype PageLayoutAlignmentType, valignmenttype PageLayoutAlignmentType)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMU(C.CString("Chart_ToPdf_String_Floating_Floating_PageLayoutAlignmentType_PageLayoutAlignmentType"), instance.ptr, C.CString(filename), C.float(desiredpagewidth), C.float(desiredpageheight), C.int( int32(halignmenttype)), C.int( int32(valignmenttype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZMV(C.CString("Chart_ToPdf_String_Floating_Floating_PageLayoutAlignmentType_PageLayoutAlignmentType"), instance.ptr, C.CString(filename), C.float(desiredpagewidth), C.float(desiredpageheight), C.int( int32(halignmenttype)), C.int( int32(valignmenttype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -4183,7 +4183,7 @@ func (instance *Chart) ToPdf()  ([]byte,  error)  {
 //   []byte  
 func (instance *Chart) ToPdf_Float_Float_PageLayoutAlignmentType_PageLayoutAlignmentType(desiredpagewidth float32, desiredpageheight float32, halignmenttype PageLayoutAlignmentType, valignmenttype PageLayoutAlignmentType)  ([]byte,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMV(C.CString("Chart_ToPdf_Floating_Floating_PageLayoutAlignmentType_PageLayoutAlignmentType"), instance.ptr, C.float(desiredpagewidth), C.float(desiredpageheight), C.int( int32(halignmenttype)), C.int( int32(valignmenttype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZMW(C.CString("Chart_ToPdf_Floating_Floating_PageLayoutAlignmentType_PageLayoutAlignmentType"), instance.ptr, C.float(desiredpagewidth), C.float(desiredpageheight), C.int( int32(halignmenttype)), C.int( int32(valignmenttype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4314,7 +4314,7 @@ func (instance *Chart) GetPageSetup()  (*PageSetup,  error)  {
 //   bool  
 func (instance *Chart) HasAxis(aixstype AxisType, isprimary bool)  (bool,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMW(C.CString("Chart_HasAxis"), instance.ptr, C.int( int32(aixstype)), C.bool(isprimary))
+	CGoReturnPtr := C.CellsGoFunctoinZZMX(C.CString("Chart_HasAxis"), instance.ptr, C.int( int32(aixstype)), C.bool(isprimary))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  true, err
@@ -4551,7 +4551,7 @@ func (instance *ChartArea) SetWidthRatioToChart(value float64)  error {
 
 	return nil 
 }
-// Gets a <see cref=Font"/> object of the specified ChartArea object.
+// Gets a <see cref="Font"/> object of the specified ChartArea object.
 // Returns:
 //   Font  
 func (instance *ChartArea) GetFont()  (*Font,  error)  {
@@ -4643,7 +4643,7 @@ func (instance *ChartArea) GetShapeProperties()  (*ShapePropertyCollection,  err
 
 	return result, nil 
 }
-// Indicates whether default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
+// Indicates whether the default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
 // Returns:
 //   bool  
 func (instance *ChartArea) IsDefaultPosBeSet()  (bool,  error)  {
@@ -4699,7 +4699,7 @@ func (instance *ChartArea) GetDefaultWidthRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents height of the default position in units of the fraction of the chart area.
+// Represents the height of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *ChartArea) GetDefaultHeightRatioToChart()  (float64,  error)  {
@@ -5073,7 +5073,7 @@ func (instance *ChartCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *ChartCollection) AddFloatingChart(type_ ChartType, left int32, top int32, width int32, height int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMX(C.CString("ChartCollection_AddFloatingChart"), instance.ptr, C.int( int32(type_)), C.int(left), C.int(top), C.int(width), C.int(height))
+	CGoReturnPtr := C.CellsGoFunctoinZZMY(C.CString("ChartCollection_AddFloatingChart"), instance.ptr, C.int( int32(type_)), C.int(left), C.int(top), C.int(width), C.int(height))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5093,7 +5093,7 @@ func (instance *ChartCollection) AddFloatingChart(type_ ChartType, left int32, t
 //   int32  
 func (instance *ChartCollection) Add_ChartType_Int_Int_Int_Int(type_ ChartType, toprow int32, leftcolumn int32, bottomrow int32, rightcolumn int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMX(C.CString("ChartCollection_Add_ChartType_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZMY(C.CString("ChartCollection_Add_ChartType_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.int(toprow), C.int(leftcolumn), C.int(bottomrow), C.int(rightcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5115,7 +5115,7 @@ func (instance *ChartCollection) Add_ChartType_Int_Int_Int_Int(type_ ChartType, 
 //   int32  
 func (instance *ChartCollection) Add_Stream_String_Bool_Int_Int_Int_Int(data []byte, datarange string, isvertical bool, toprow int32, leftcolumn int32, rightrow int32, bottomcolumn int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMY(C.CString("ChartCollection_Add_Stream_String_Boolean_Integer_Integer_Integer_Integer"), instance.ptr, unsafe.Pointer(&data[0]), C.int( len(data)), C.CString(datarange), C.bool(isvertical), C.int(toprow), C.int(leftcolumn), C.int(rightrow), C.int(bottomcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZNA(C.CString("ChartCollection_Add_Stream_String_Boolean_Integer_Integer_Integer_Integer"), instance.ptr, unsafe.Pointer(&data[0]), C.int( len(data)), C.CString(datarange), C.bool(isvertical), C.int(toprow), C.int(leftcolumn), C.int(rightrow), C.int(bottomcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5137,7 +5137,7 @@ func (instance *ChartCollection) Add_Stream_String_Bool_Int_Int_Int_Int(data []b
 //   int32  
 func (instance *ChartCollection) Add_ChartType_String_Bool_Int_Int_Int_Int(type_ ChartType, datarange string, isvertical bool, toprow int32, leftcolumn int32, rightrow int32, bottomcolumn int32)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNA(C.CString("ChartCollection_Add_ChartType_String_Boolean_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.CString(datarange), C.bool(isvertical), C.int(toprow), C.int(leftcolumn), C.int(rightrow), C.int(bottomcolumn))
+	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("ChartCollection_Add_ChartType_String_Boolean_Integer_Integer_Integer_Integer"), instance.ptr, C.int( int32(type_)), C.CString(datarange), C.bool(isvertical), C.int(toprow), C.int(leftcolumn), C.int(rightrow), C.int(bottomcolumn))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -5691,7 +5691,7 @@ func (instance *ChartFrame) GetShapeProperties()  (*ShapePropertyCollection,  er
 
 	return result, nil 
 }
-// Indicates whether default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
+// Indicates whether the default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
 // Returns:
 //   bool  
 func (instance *ChartFrame) IsDefaultPosBeSet()  (bool,  error)  {
@@ -5747,7 +5747,7 @@ func (instance *ChartFrame) GetDefaultWidthRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents height of the default position in units of the fraction of the chart area.
+// Represents the height of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *ChartFrame) GetDefaultHeightRatioToChart()  (float64,  error)  {
@@ -6778,7 +6778,7 @@ func (instance *ChartPoint) GetEndAngle()  (float32,  error)  {
 
 	return result, nil 
 }
-// Gets the x coordinate of starting point for the pie section after calling the Chart.Calculate() method.
+// Gets the x coordinate of the starting point for the pie section after calling the Chart.Calculate() method.
 // Applies to Pie and Doughnut charts.
 // Returns:
 //   float32  
@@ -6920,7 +6920,7 @@ func (instance *ChartPoint) GetTopPointCount()  (int32,  error)  {
 //   float32  
 func (instance *ChartPoint) GetTopPointXPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("ChartPoint_GetTopPointXPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZNC(C.CString("ChartPoint_GetTopPointXPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6937,7 +6937,7 @@ func (instance *ChartPoint) GetTopPointXPx(index int32)  (float32,  error)  {
 //   float32  
 func (instance *ChartPoint) GetTopPointYPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("ChartPoint_GetTopPointYPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZNC(C.CString("ChartPoint_GetTopPointYPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6960,15 +6960,15 @@ func (instance *ChartPoint) GetBottomPointCount()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets x-coordinate of the bottom point of shape after calling the Chart.Calculate() method.
-// Applies 3D charts: Column3D, Bar3D, Cone, Cylinder, Pyramid
+// Gets x-coordinate of the bottom point of the shape after calling the Chart.Calculate() method.
+// Applies to 3D charts: Column3D, Bar3D, Cone, Cylinder, Pyramid
 // Parameters:
 //   index - int32 
 // Returns:
 //   float32  
 func (instance *ChartPoint) GetBottomPointXPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("ChartPoint_GetBottomPointXPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZNC(C.CString("ChartPoint_GetBottomPointXPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -6985,7 +6985,7 @@ func (instance *ChartPoint) GetBottomPointXPx(index int32)  (float32,  error)  {
 //   float32  
 func (instance *ChartPoint) GetBottomPointYPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("ChartPoint_GetBottomPointYPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZNC(C.CString("ChartPoint_GetBottomPointYPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7017,7 +7017,7 @@ func (instance *ChartPoint) GetOnCategoryAxisPointCount()  (int32,  error)  {
 //   float32  
 func (instance *ChartPoint) GetOnCategoryAxisPointXPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("ChartPoint_GetOnCategoryAxisPointXPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZNC(C.CString("ChartPoint_GetOnCategoryAxisPointXPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7034,7 +7034,7 @@ func (instance *ChartPoint) GetOnCategoryAxisPointXPx(index int32)  (float32,  e
 //   float32  
 func (instance *ChartPoint) GetOnCategoryAxisPointYPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("ChartPoint_GetOnCategoryAxisPointYPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZNC(C.CString("ChartPoint_GetOnCategoryAxisPointYPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -7645,7 +7645,7 @@ func (instance *ChartTextFrame) GetShapeProperties()  (*ShapePropertyCollection,
 
 	return result, nil 
 }
-// Indicates whether default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
+// Indicates whether the default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
 // Returns:
 //   bool  
 func (instance *ChartTextFrame) IsDefaultPosBeSet()  (bool,  error)  {
@@ -7701,7 +7701,7 @@ func (instance *ChartTextFrame) GetDefaultWidthRatioToChart()  (float64,  error)
 
 	return result, nil 
 }
-// Represents height of the default position in units of the fraction of the chart area.
+// Represents the height of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *ChartTextFrame) GetDefaultHeightRatioToChart()  (float64,  error)  {
@@ -8885,7 +8885,7 @@ func (instance *DataLabels) GetShapeProperties()  (*ShapePropertyCollection,  er
 
 	return result, nil 
 }
-// Indicates whether default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
+// Indicates whether the default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
 // Returns:
 //   bool  
 func (instance *DataLabels) IsDefaultPosBeSet()  (bool,  error)  {
@@ -8941,7 +8941,7 @@ func (instance *DataLabels) GetDefaultWidthRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents height of the default position in units of the fraction of the chart area.
+// Represents the height of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *DataLabels) GetDefaultHeightRatioToChart()  (float64,  error)  {
@@ -9733,7 +9733,7 @@ func (instance *DisplayUnitLabel) GetShapeProperties()  (*ShapePropertyCollectio
 
 	return result, nil 
 }
-// Indicates whether default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
+// Indicates whether the default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
 // Returns:
 //   bool  
 func (instance *DisplayUnitLabel) IsDefaultPosBeSet()  (bool,  error)  {
@@ -9789,7 +9789,7 @@ func (instance *DisplayUnitLabel) GetDefaultWidthRatioToChart()  (float64,  erro
 
 	return result, nil 
 }
-// Represents height of the default position in units of the fraction of the chart area.
+// Represents the height of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *DisplayUnitLabel) GetDefaultHeightRatioToChart()  (float64,  error)  {
@@ -11918,7 +11918,7 @@ func (instance *Legend) GetShapeProperties()  (*ShapePropertyCollection,  error)
 
 	return result, nil 
 }
-// Indicates whether default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
+// Indicates whether the default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
 // Returns:
 //   bool  
 func (instance *Legend) IsDefaultPosBeSet()  (bool,  error)  {
@@ -11974,7 +11974,7 @@ func (instance *Legend) GetDefaultWidthRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents height of the default position in units of the fraction of the chart area.
+// Represents the height of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *Legend) GetDefaultHeightRatioToChart()  (float64,  error)  {
@@ -13858,7 +13858,7 @@ func (instance *PlotArea) GetShapeProperties()  (*ShapePropertyCollection,  erro
 
 	return result, nil 
 }
-// Indicates whether default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
+// Indicates whether the default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
 // Returns:
 //   bool  
 func (instance *PlotArea) IsDefaultPosBeSet()  (bool,  error)  {
@@ -13914,7 +13914,7 @@ func (instance *PlotArea) GetDefaultWidthRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents height of the default position in units of the fraction of the chart area.
+// Represents the height of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *PlotArea) GetDefaultHeightRatioToChart()  (float64,  error)  {
@@ -15077,7 +15077,7 @@ func (instance *Series) GetGapWidth()  (int16,  error)  {
 //   void  
 func (instance *Series) SetGapWidth(value int16)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMS(C.CString("Series_SetGapWidth"), instance.ptr, C.short(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZMT(C.CString("Series_SetGapWidth"), instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15108,7 +15108,7 @@ func (instance *Series) GetFirstSliceAngle()  (int16,  error)  {
 //   void  
 func (instance *Series) SetFirstSliceAngle(value int16)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMS(C.CString("Series_SetFirstSliceAngle"), instance.ptr, C.short(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZMT(C.CString("Series_SetFirstSliceAngle"), instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15141,7 +15141,7 @@ func (instance *Series) GetOverlap()  (int16,  error)  {
 //   void  
 func (instance *Series) SetOverlap(value int16)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMS(C.CString("Series_SetOverlap"), instance.ptr, C.short(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZMT(C.CString("Series_SetOverlap"), instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15174,7 +15174,7 @@ func (instance *Series) GetSecondPlotSize()  (int16,  error)  {
 //   void  
 func (instance *Series) SetSecondPlotSize(value int16)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMS(C.CString("Series_SetSecondPlotSize"), instance.ptr, C.short(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZMT(C.CString("Series_SetSecondPlotSize"), instance.ptr, C.short(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15697,7 +15697,7 @@ func (instance *SeriesCollection) SwapSeries(sourceindex int32, destindex int32)
 //   void  
 func (instance *SeriesCollection) SetSeriesNames(startindex int32, area string, isvertical bool)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNC(C.CString("SeriesCollection_SetSeriesNames"), instance.ptr, C.int(startindex), C.CString(area), C.bool(isvertical))
+	CGoReturnPtr := C.CellsGoFunctoinZZND(C.CString("SeriesCollection_SetSeriesNames"), instance.ptr, C.int(startindex), C.CString(area), C.bool(isvertical))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -15713,7 +15713,7 @@ func (instance *SeriesCollection) SetSeriesNames(startindex int32, area string, 
 //   int32  
 func (instance *SeriesCollection) AddR1C1(area string, isvertical bool)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZND(C.CString("SeriesCollection_AddR1C1"), instance.ptr, C.CString(area), C.bool(isvertical))
+	CGoReturnPtr := C.CellsGoFunctoinZZNE(C.CString("SeriesCollection_AddR1C1"), instance.ptr, C.CString(area), C.bool(isvertical))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -15730,7 +15730,7 @@ func (instance *SeriesCollection) AddR1C1(area string, isvertical bool)  (int32,
 //   int32  
 func (instance *SeriesCollection) Add_String_Bool(dataarea string, isvertical bool)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZND(C.CString("SeriesCollection_Add_String_Boolean"), instance.ptr, C.CString(dataarea), C.bool(isvertical))
+	CGoReturnPtr := C.CellsGoFunctoinZZNE(C.CString("SeriesCollection_Add_String_Boolean"), instance.ptr, C.CString(dataarea), C.bool(isvertical))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -15748,7 +15748,7 @@ func (instance *SeriesCollection) Add_String_Bool(dataarea string, isvertical bo
 //   int32  
 func (instance *SeriesCollection) Add_String_Bool_Bool(area string, isvertical bool, checklabels bool)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNE(C.CString("SeriesCollection_Add_String_Boolean_Boolean"), instance.ptr, C.CString(area), C.bool(isvertical), C.bool(checklabels))
+	CGoReturnPtr := C.CellsGoFunctoinZZNF(C.CString("SeriesCollection_Add_String_Boolean_Boolean"), instance.ptr, C.CString(area), C.bool(isvertical), C.bool(checklabels))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -16491,7 +16491,7 @@ func (instance *SparklineGroup) ResetRanges(datarange string, isvertical bool, l
 	  locationrange_ptr =locationrange.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZNF(C.CString("SparklineGroup_ResetRanges"), instance.ptr, C.CString(datarange), C.bool(isvertical), locationrange_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZNG(C.CString("SparklineGroup_ResetRanges"), instance.ptr, C.CString(datarange), C.bool(isvertical), locationrange_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17289,7 +17289,7 @@ func (instance *SparklineGroup) SetVerticalAxisMaxValue_Double(value float64)  e
 //   void  
 func (instance *SparklineGroup) SetVerticalAxisMaxValue_SparklineAxisMinMaxType_Double(type_ SparklineAxisMinMaxType, value float64)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNG(C.CString("SparklineGroup_SetVerticalAxisMaxValue_SparklineAxisMinMaxType_Double"), instance.ptr, C.int( int32(type_)), C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZNH(C.CString("SparklineGroup_SetVerticalAxisMaxValue_SparklineAxisMinMaxType_Double"), instance.ptr, C.int( int32(type_)), C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17305,7 +17305,7 @@ func (instance *SparklineGroup) SetVerticalAxisMaxValue_SparklineAxisMinMaxType_
 //   void  
 func (instance *SparklineGroup) SetVerticalAxisMinValue_SparklineAxisMinMaxType_Double(type_ SparklineAxisMinMaxType, value float64)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNG(C.CString("SparklineGroup_SetVerticalAxisMinValue_SparklineAxisMinMaxType_Double"), instance.ptr, C.int( int32(type_)), C.double(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZNH(C.CString("SparklineGroup_SetVerticalAxisMinValue_SparklineAxisMinMaxType_Double"), instance.ptr, C.int( int32(type_)), C.double(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -17454,7 +17454,7 @@ func (instance *SparklineGroupCollection) Add_SparklineType_String_Bool_CellArea
 	  locationrange_ptr =locationrange.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZNH(C.CString("SparklineGroupCollection_Add_SparklineType_String_Boolean_CellArea"), instance.ptr, C.int( int32(type_)), C.CString(datarange), C.bool(isvertical), locationrange_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZNI(C.CString("SparklineGroupCollection_Add_SparklineType_String_Boolean_CellArea"), instance.ptr, C.int( int32(type_)), C.CString(datarange), C.bool(isvertical), locationrange_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -17712,7 +17712,7 @@ func (instance *TickLabels) SetBackgroundMode(value BackgroundMode)  error {
 
 	return nil 
 }
-// Represents text rotation angle clockwise.
+// Represents the text rotation angle clockwise.
 // Returns:
 //   int32  
 func (instance *TickLabels) GetRotationAngle()  (int32,  error)  {
@@ -17726,7 +17726,7 @@ func (instance *TickLabels) GetRotationAngle()  (int32,  error)  {
 
 	return result, nil 
 }
-// Represents text rotation angle clockwise.
+// Represents the text rotation angle clockwise.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -18338,7 +18338,7 @@ func (instance *Title) GetShapeProperties()  (*ShapePropertyCollection,  error) 
 
 	return result, nil 
 }
-// Indicates whether default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
+// Indicates whether the default position (DefaultX, DefaultY, DefaultWidth and DefaultHeight) is set.
 // Returns:
 //   bool  
 func (instance *Title) IsDefaultPosBeSet()  (bool,  error)  {
@@ -18394,7 +18394,7 @@ func (instance *Title) GetDefaultWidthRatioToChart()  (float64,  error)  {
 
 	return result, nil 
 }
-// Represents height of the default position in units of the fraction of the chart area.
+// Represents the height of the default position in units of the fraction of the chart area.
 // Returns:
 //   float64  
 func (instance *Title) GetDefaultHeightRatioToChart()  (float64,  error)  {
@@ -20239,7 +20239,7 @@ func (instance *Walls) GetCenterX()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the y coordinate of the left-bottom corner of Wall center in units of 1/4000 of chart's height after calling the Chart.Calculate() method.
+// Gets the y coordinate of the left-bottom corner of the Wall center in units of 1/4000 of chart's height after calling the Chart.Calculate() method.
 // Returns:
 //   int32  
 func (instance *Walls) GetCenterY()  (int32,  error)  {
@@ -20295,7 +20295,7 @@ func (instance *Walls) GetHeight()  (int32,  error)  {
 
 	return result, nil 
 }
-// Gets the x coordinate of the left-bottom corner of Wall center in units of pixels after calling the Chart.Calculate() method.
+// Gets the x coordinate of the bottom-left corner of Wall center in units of pixels after calling the Chart.Calculate() method.
 // Returns:
 //   int32  
 func (instance *Walls) GetCenterXPx()  (int32,  error)  {
@@ -20387,7 +20387,7 @@ func (instance *Walls) GetCubePointCount()  (int32,  error)  {
 //   float32  
 func (instance *Walls) GetCubePointXPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("Walls_GetCubePointXPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZNC(C.CString("Walls_GetCubePointXPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err
@@ -20404,7 +20404,7 @@ func (instance *Walls) GetCubePointXPx(index int32)  (float32,  error)  {
 //   float32  
 func (instance *Walls) GetCubePointYPx(index int32)  (float32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZNB(C.CString("Walls_GetCubePointYPx"), instance.ptr, C.int(index))
+	CGoReturnPtr := C.CellsGoFunctoinZZNC(C.CString("Walls_GetCubePointYPx"), instance.ptr, C.int(index))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err

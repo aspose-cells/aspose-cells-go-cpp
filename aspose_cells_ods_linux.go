@@ -287,7 +287,7 @@ func (instance *OdsCellField) SetFieldType(value OdsCellFieldType)  error {
 
 	return nil 
 }
-// Get and sets the row index of the cell.
+// Gets and sets the row index of the cell.
 // Returns:
 //   int32  
 func (instance *OdsCellField) GetRow()  (int32,  error)  {
@@ -301,7 +301,7 @@ func (instance *OdsCellField) GetRow()  (int32,  error)  {
 
 	return result, nil 
 }
-// Get and sets the row index of the cell.
+// Gets and sets the row index of the cell.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -316,7 +316,7 @@ func (instance *OdsCellField) SetRow(value int32)  error {
 
 	return nil 
 }
-// Get and sets the column index of the cell.
+// Gets and sets the column index of the cell.
 // Returns:
 //   int32  
 func (instance *OdsCellField) GetColumn()  (int32,  error)  {
@@ -330,7 +330,7 @@ func (instance *OdsCellField) GetColumn()  (int32,  error)  {
 
 	return result, nil 
 }
-// Get and sets the column index of the cell.
+// Gets and sets the column index of the cell.
 // Parameters:
 //   value - int32 
 // Returns:
@@ -423,7 +423,7 @@ func (instance *OdsCellFieldCollection) Get_Int_Int(row int32, column int32)  (*
 //   int32  
 func (instance *OdsCellFieldCollection) Add(row int32, column int32, fieldtype OdsCellFieldType, format string)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZPI(C.CString("OdsCellFieldCollection_Add"), instance.ptr, C.int(row), C.int(column), C.int( int32(fieldtype)), C.CString(format))
+	CGoReturnPtr := C.CellsGoFunctoinZZPD(C.CString("OdsCellFieldCollection_Add"), instance.ptr, C.int(row), C.int(column), C.int( int32(fieldtype)), C.CString(format))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err

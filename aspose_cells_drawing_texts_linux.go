@@ -666,7 +666,7 @@ func (instance *Bullet) SetType(value BulletType)  error {
 
 	return nil 
 }
-// Get and sets the name of the font.
+// Gets and sets the name of the font.
 // Returns:
 //   string  
 func (instance *Bullet) GetFontName()  (string,  error)  {
@@ -680,7 +680,7 @@ func (instance *Bullet) GetFontName()  (string,  error)  {
 
 	return result, nil 
 }
-// Get and sets the name of the font.
+// Gets and sets the name of the font.
 // Parameters:
 //   value - string 
 // Returns:
@@ -1024,7 +1024,7 @@ func (instance *FontSettingCollection) InsertText(index int32, text string)  err
 //   void  
 func (instance *FontSettingCollection) Replace_Int_Int_String(index int32, count int32, text string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMP(C.CString("FontSettingCollection_Replace_Integer_Integer_String"), instance.ptr, C.int(index), C.int(count), C.CString(text))
+	CGoReturnPtr := C.CellsGoFunctoinZZMQ(C.CString("FontSettingCollection_Replace_Integer_Integer_String"), instance.ptr, C.int(index), C.int(count), C.CString(text))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2291,9 +2291,9 @@ func (instance *TextOptions) GetName()  (string,  error)  {
 //   value - string 
 // Returns:
 //   void  
-func (instance *TextOptions) SetName_String(value string)  error {
+func (instance *TextOptions) SetName(value string)  error {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("TextOptions_SetName_String"), instance.ptr, C.CString(value))
+	CGoReturnPtr := C.CellsGoFunctoinZZZN(C.CString("TextOptions_SetName"), instance.ptr, C.CString(value))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -2854,22 +2854,6 @@ func (instance *TextOptions) GetUnderline()  (FontUnderlineType,  error)  {
 func (instance *TextOptions) SetUnderline(value FontUnderlineType)  error {
 	
 	CGoReturnPtr := C.CellsGoFunctoinZZZL(C.CString("TextOptions_SetUnderline"), instance.ptr, C.int( int32(value)))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
-// Sets name and scheme of the font.
-// Parameters:
-//   name - string 
-//   type - int32 
-// Returns:
-//   void  
-func (instance *TextOptions) SetName_String_FontSchemeType(name string, type_ FontSchemeType)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZGC(C.CString("TextOptions_SetName_String_FontSchemeType"), instance.ptr, C.CString(name), C.int( int32(type_)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  err
@@ -3982,7 +3966,7 @@ func (instance *TextTabStopCollection) IsNull()  (bool,  error)  {
 //   int32  
 func (instance *TextTabStopCollection) Add(tabalignment TextTabAlignmentType, tabposition float64)  (int32,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZMQ(C.CString("TextTabStopCollection_Add"), instance.ptr, C.int( int32(tabalignment)), C.double(tabposition))
+	CGoReturnPtr := C.CellsGoFunctoinZZMR(C.CString("TextTabStopCollection_Add"), instance.ptr, C.int( int32(tabalignment)), C.double(tabposition))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  0, err

@@ -913,26 +913,6 @@ func (instance *AccentEquationNode) AddChild_EquationNodeType(equationtype Equat
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *AccentEquationNode) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("AccentEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -941,7 +921,7 @@ func (instance *AccentEquationNode) AddChild_EquationNode(node *EquationNode)  e
 //   EquationNode  
 func (instance *AccentEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("AccentEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("AccentEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1039,21 +1019,6 @@ func (instance *AccentEquationNode) RemoveChild_EquationNode(node *EquationNode)
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *AccentEquationNode) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("AccentEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -1102,7 +1067,7 @@ func AccentEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("AccentEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("AccentEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1370,26 +1335,6 @@ func (instance *ArrayEquationNode) AddChild_EquationNodeType(equationtype Equati
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *ArrayEquationNode) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("ArrayEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -1398,7 +1343,7 @@ func (instance *ArrayEquationNode) AddChild_EquationNode(node *EquationNode)  er
 //   EquationNode  
 func (instance *ArrayEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("ArrayEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("ArrayEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1496,21 +1441,6 @@ func (instance *ArrayEquationNode) RemoveChild_EquationNode(node *EquationNode) 
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *ArrayEquationNode) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("ArrayEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -1559,7 +1489,7 @@ func ArrayEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workb
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("ArrayEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("ArrayEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1859,26 +1789,6 @@ func (instance *BarEquationNode) AddChild_EquationNodeType(equationtype Equation
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *BarEquationNode) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("BarEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -1887,7 +1797,7 @@ func (instance *BarEquationNode) AddChild_EquationNode(node *EquationNode)  erro
 //   EquationNode  
 func (instance *BarEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("BarEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("BarEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -1985,21 +1895,6 @@ func (instance *BarEquationNode) RemoveChild_EquationNode(node *EquationNode)  e
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *BarEquationNode) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("BarEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -2048,7 +1943,7 @@ func BarEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workboo
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("BarEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("BarEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2316,26 +2211,6 @@ func (instance *BorderBoxEquationNode) AddChild_EquationNodeType(equationtype Eq
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *BorderBoxEquationNode) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("BorderBoxEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -2344,7 +2219,7 @@ func (instance *BorderBoxEquationNode) AddChild_EquationNode(node *EquationNode)
 //   EquationNode  
 func (instance *BorderBoxEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("BorderBoxEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("BorderBoxEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2442,21 +2317,6 @@ func (instance *BorderBoxEquationNode) RemoveChild_EquationNode(node *EquationNo
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *BorderBoxEquationNode) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("BorderBoxEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -2505,7 +2365,7 @@ func BorderBoxEquationNode_CreateNode(equationtype EquationNodeType, workbook *W
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("BorderBoxEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("BorderBoxEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2773,26 +2633,6 @@ func (instance *BoxEquationNode) AddChild_EquationNodeType(equationtype Equation
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *BoxEquationNode) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("BoxEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -2801,7 +2641,7 @@ func (instance *BoxEquationNode) AddChild_EquationNode(node *EquationNode)  erro
 //   EquationNode  
 func (instance *BoxEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("BoxEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("BoxEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -2899,21 +2739,6 @@ func (instance *BoxEquationNode) RemoveChild_EquationNode(node *EquationNode)  e
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *BoxEquationNode) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("BoxEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -2962,7 +2787,7 @@ func BoxEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workboo
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("BoxEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("BoxEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3379,26 +3204,6 @@ func (instance *DelimiterEquationNode) AddChild_EquationNodeType(equationtype Eq
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *DelimiterEquationNode) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("DelimiterEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -3407,7 +3212,7 @@ func (instance *DelimiterEquationNode) AddChild_EquationNode(node *EquationNode)
 //   EquationNode  
 func (instance *DelimiterEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("DelimiterEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("DelimiterEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3505,21 +3310,6 @@ func (instance *DelimiterEquationNode) RemoveChild_EquationNode(node *EquationNo
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *DelimiterEquationNode) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("DelimiterEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -3568,7 +3358,7 @@ func DelimiterEquationNode_CreateNode(equationtype EquationNodeType, workbook *W
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("DelimiterEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("DelimiterEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3839,26 +3629,6 @@ func (instance *EquationComponentNode) AddChild_EquationNodeType(equationtype Eq
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *EquationComponentNode) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("EquationComponentNode_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -3867,7 +3637,7 @@ func (instance *EquationComponentNode) AddChild_EquationNode(node *EquationNode)
 //   EquationNode  
 func (instance *EquationComponentNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("EquationComponentNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("EquationComponentNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -3965,21 +3735,6 @@ func (instance *EquationComponentNode) RemoveChild_EquationNode(node *EquationNo
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *EquationComponentNode) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("EquationComponentNode_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -4028,7 +3783,7 @@ func EquationComponentNode_CreateNode(equationtype EquationNodeType, workbook *W
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("EquationComponentNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("EquationComponentNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4211,7 +3966,7 @@ func (instance *EquationNode) AddChild_EquationNode(node *EquationNode)  error {
 //   EquationNode  
 func (instance *EquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("EquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("EquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4410,7 +4165,7 @@ func EquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, 
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("EquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("EquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4780,26 +4535,6 @@ func (instance *EquationNodeParagraph) AddChild_EquationNodeType(equationtype Eq
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *EquationNodeParagraph) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("EquationNodeParagraph_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -4808,7 +4543,7 @@ func (instance *EquationNodeParagraph) AddChild_EquationNode(node *EquationNode)
 //   EquationNode  
 func (instance *EquationNodeParagraph) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("EquationNodeParagraph_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("EquationNodeParagraph_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -4906,21 +4641,6 @@ func (instance *EquationNodeParagraph) RemoveChild_EquationNode(node *EquationNo
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *EquationNodeParagraph) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("EquationNodeParagraph_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -4969,7 +4689,7 @@ func EquationNodeParagraph_CreateNode(equationtype EquationNodeType, workbook *W
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("EquationNodeParagraph_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("EquationNodeParagraph_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5269,26 +4989,6 @@ func (instance *FractionEquationNode) AddChild_EquationNodeType(equationtype Equ
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *FractionEquationNode) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("FractionEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -5297,7 +4997,7 @@ func (instance *FractionEquationNode) AddChild_EquationNode(node *EquationNode) 
 //   EquationNode  
 func (instance *FractionEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("FractionEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("FractionEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5395,21 +5095,6 @@ func (instance *FractionEquationNode) RemoveChild_EquationNode(node *EquationNod
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *FractionEquationNode) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("FractionEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -5458,7 +5143,7 @@ func FractionEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wo
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("FractionEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("FractionEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5727,26 +5412,6 @@ func (instance *FunctionEquationNode) AddChild_EquationNodeType(equationtype Equ
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *FunctionEquationNode) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("FunctionEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -5755,7 +5420,7 @@ func (instance *FunctionEquationNode) AddChild_EquationNode(node *EquationNode) 
 //   EquationNode  
 func (instance *FunctionEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("FunctionEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("FunctionEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -5853,21 +5518,6 @@ func (instance *FunctionEquationNode) RemoveChild_EquationNode(node *EquationNod
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *FunctionEquationNode) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("FunctionEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -5916,7 +5566,7 @@ func FunctionEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wo
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("FunctionEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("FunctionEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6313,26 +5963,6 @@ func (instance *GroupCharacterEquationNode) AddChild_EquationNodeType(equationty
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *GroupCharacterEquationNode) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("GroupCharacterEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -6341,7 +5971,7 @@ func (instance *GroupCharacterEquationNode) AddChild_EquationNode(node *Equation
 //   EquationNode  
 func (instance *GroupCharacterEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("GroupCharacterEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("GroupCharacterEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6439,21 +6069,6 @@ func (instance *GroupCharacterEquationNode) RemoveChild_EquationNode(node *Equat
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *GroupCharacterEquationNode) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("GroupCharacterEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -6502,7 +6117,7 @@ func GroupCharacterEquationNode_CreateNode(equationtype EquationNodeType, workbo
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("GroupCharacterEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("GroupCharacterEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6770,26 +6385,6 @@ func (instance *LimLowUppEquationNode) AddChild_EquationNodeType(equationtype Eq
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *LimLowUppEquationNode) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("LimLowUppEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -6798,7 +6393,7 @@ func (instance *LimLowUppEquationNode) AddChild_EquationNode(node *EquationNode)
 //   EquationNode  
 func (instance *LimLowUppEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("LimLowUppEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("LimLowUppEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -6896,21 +6491,6 @@ func (instance *LimLowUppEquationNode) RemoveChild_EquationNode(node *EquationNo
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *LimLowUppEquationNode) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("LimLowUppEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -6959,7 +6539,7 @@ func LimLowUppEquationNode_CreateNode(equationtype EquationNodeType, workbook *W
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("LimLowUppEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("LimLowUppEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7227,26 +6807,6 @@ func (instance *MathematicalEquationNode) AddChild_EquationNodeType(equationtype
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *MathematicalEquationNode) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("MathematicalEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -7255,7 +6815,7 @@ func (instance *MathematicalEquationNode) AddChild_EquationNode(node *EquationNo
 //   EquationNode  
 func (instance *MathematicalEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("MathematicalEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("MathematicalEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7353,21 +6913,6 @@ func (instance *MathematicalEquationNode) RemoveChild_EquationNode(node *Equatio
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *MathematicalEquationNode) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("MathematicalEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -7416,7 +6961,7 @@ func MathematicalEquationNode_CreateNode(equationtype EquationNodeType, workbook
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("MathematicalEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("MathematicalEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7745,26 +7290,6 @@ func (instance *MatrixEquationNode) AddChild_EquationNodeType(equationtype Equat
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *MatrixEquationNode) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("MatrixEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -7773,7 +7298,7 @@ func (instance *MatrixEquationNode) AddChild_EquationNode(node *EquationNode)  e
 //   EquationNode  
 func (instance *MatrixEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("MatrixEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("MatrixEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -7871,21 +7396,6 @@ func (instance *MatrixEquationNode) RemoveChild_EquationNode(node *EquationNode)
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *MatrixEquationNode) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("MatrixEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -7934,7 +7444,7 @@ func MatrixEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("MatrixEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("MatrixEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8386,26 +7896,6 @@ func (instance *NaryEquationNode) AddChild_EquationNodeType(equationtype Equatio
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *NaryEquationNode) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("NaryEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -8414,7 +7904,7 @@ func (instance *NaryEquationNode) AddChild_EquationNode(node *EquationNode)  err
 //   EquationNode  
 func (instance *NaryEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("NaryEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("NaryEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8512,21 +8002,6 @@ func (instance *NaryEquationNode) RemoveChild_EquationNode(node *EquationNode)  
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *NaryEquationNode) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("NaryEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -8575,7 +8050,7 @@ func NaryEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbo
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("NaryEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("NaryEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8872,26 +8347,6 @@ func (instance *RadicalEquationNode) AddChild_EquationNodeType(equationtype Equa
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *RadicalEquationNode) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("RadicalEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -8900,7 +8355,7 @@ func (instance *RadicalEquationNode) AddChild_EquationNode(node *EquationNode)  
 //   EquationNode  
 func (instance *RadicalEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("RadicalEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("RadicalEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -8998,21 +8453,6 @@ func (instance *RadicalEquationNode) RemoveChild_EquationNode(node *EquationNode
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *RadicalEquationNode) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("RadicalEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -9061,7 +8501,7 @@ func RadicalEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wor
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("RadicalEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("RadicalEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9330,26 +8770,6 @@ func (instance *SubSupEquationNode) AddChild_EquationNodeType(equationtype Equat
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *SubSupEquationNode) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("SubSupEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -9358,7 +8778,7 @@ func (instance *SubSupEquationNode) AddChild_EquationNode(node *EquationNode)  e
 //   EquationNode  
 func (instance *SubSupEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("SubSupEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("SubSupEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9456,21 +8876,6 @@ func (instance *SubSupEquationNode) RemoveChild_EquationNode(node *EquationNode)
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *SubSupEquationNode) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("SubSupEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -9519,7 +8924,7 @@ func SubSupEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("SubSupEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("SubSupEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9817,26 +9222,6 @@ func (instance *TextRunEquationNode) AddChild_EquationNodeType(equationtype Equa
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *TextRunEquationNode) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("TextRunEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -9845,7 +9230,7 @@ func (instance *TextRunEquationNode) AddChild_EquationNode(node *EquationNode)  
 //   EquationNode  
 func (instance *TextRunEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("TextRunEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("TextRunEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -9943,21 +9328,6 @@ func (instance *TextRunEquationNode) RemoveChild_EquationNode(node *EquationNode
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *TextRunEquationNode) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("TextRunEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -10006,7 +9376,7 @@ func TextRunEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wor
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("TextRunEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("TextRunEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10274,26 +9644,6 @@ func (instance *UnknowEquationNode) AddChild_EquationNodeType(equationtype Equat
 
 	return result, nil 
 }
-// Inserts the specified node at the end of the current node's list of child nodes.
-// Parameters:
-//   node - EquationNode 
-// Returns:
-//   void  
-func (instance *UnknowEquationNode) AddChild_EquationNode(node *EquationNode)  error {
-	
-	var node_ptr unsafe.Pointer = nil
-	if node != nil {
-	  node_ptr =node.ptr
-	}
-
-	CGoReturnPtr := C.CellsGoFunctoinZZZI(C.CString("UnknowEquationNode_AddChild_EquationNode"), instance.ptr, node_ptr)
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Inserts a node of the specified type at the specified index position in the current node's child node list.
 // Parameters:
 //   index - int32 
@@ -10302,7 +9652,7 @@ func (instance *UnknowEquationNode) AddChild_EquationNode(node *EquationNode)  e
 //   EquationNode  
 func (instance *UnknowEquationNode) InsertChild(index int32, equationtype EquationNodeType)  (*EquationNode,  error)  {
 	
-	CGoReturnPtr := C.CellsGoFunctoinZZKK(C.CString("UnknowEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
+	CGoReturnPtr := C.CellsGoFunctoinZZKL(C.CString("UnknowEquationNode_InsertChild"), instance.ptr, C.int(index), C.int( int32(equationtype)))
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
@@ -10400,21 +9750,6 @@ func (instance *UnknowEquationNode) RemoveChild_EquationNode(node *EquationNode)
 
 	return nil 
 }
-// Removes the node at the specified index from the current node's children.
-// Parameters:
-//   index - int32 
-// Returns:
-//   void  
-func (instance *UnknowEquationNode) RemoveChild_Int(index int32)  error {
-	
-	CGoReturnPtr := C.CellsGoFunctoinZZZE(C.CString("UnknowEquationNode_RemoveChild_Integer"), instance.ptr, C.int(index))
-	if CGoReturnPtr.error_no != 0 {
-		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
-		return  err
-	}
-
-	return nil 
-}
 // Removes all the child nodes of the current node.
 // Returns:
 //   void  
@@ -10463,7 +9798,7 @@ func UnknowEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	  parent_ptr =parent.ptr
 	}
 
-	CGoReturnPtr := C.CellsGoFunctoinZZKU(C.CString("UnknowEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
+	CGoReturnPtr := C.CellsGoFunctoinZZKV(C.CString("UnknowEquationNode_CreateNode"),C.int( int32(equationtype)), workbook_ptr, parent_ptr)
 	if CGoReturnPtr.error_no != 0 {
 		err := errors.New(C.GoString(CGoReturnPtr.error_message))	
 		return  nil, err
