@@ -132,4 +132,5 @@ func main() {
 	Unlock()
 	GenerateReport()
 	// PerformanceTesting()
+	Cleanup()
 }
