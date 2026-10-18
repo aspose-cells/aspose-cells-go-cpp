@@ -360,7 +360,7 @@ func (instance *NumbersLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSet
 	}
 	result := &DefaultStyleSettings{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDefaultStyleSettings) 
+	 runtime.SetFinalizer(result, DeleteDefaultStyleSettings) 
 
 	return result, nil 
 }
@@ -376,7 +376,7 @@ func (instance *NumbersLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMo
 	}
 	result := &AbstractInterruptMonitor{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteAbstractInterruptMonitor) 
+	 runtime.SetFinalizer(result, DeleteAbstractInterruptMonitor) 
 
 	return result, nil 
 }
@@ -540,7 +540,7 @@ func (instance *NumbersLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 	}
 	result := &LoadFilter{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLoadFilter) 
+	 runtime.SetFinalizer(result, DeleteLoadFilter) 
 
 	return result, nil 
 }
@@ -608,7 +608,7 @@ func (instance *NumbersLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,
 	}
 	result := &AutoFitterOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteAutoFitterOptions) 
+	 runtime.SetFinalizer(result, DeleteAutoFitterOptions) 
 
 	return result, nil 
 }
@@ -674,7 +674,7 @@ func (instance *NumbersLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  
 	}
 	result := &IndividualFontConfigs{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteIndividualFontConfigs) 
+	 runtime.SetFinalizer(result, DeleteIndividualFontConfigs) 
 
 	return result, nil 
 }
@@ -770,6 +770,10 @@ func (instance *NumbersLoadOptions) ToLoadOptions() *LoadOptions {
 }
 
 func DeleteNumbersLoadOptions(numbersloadoptions *NumbersLoadOptions){
+	println("Delete numbersloadoptions")
+	if numbersloadoptions == nil || numbersloadoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(numbersloadoptions, nil)
 	C.Delete_CObject(C.CString("Delete_NumbersLoadOptions"),numbersloadoptions.ptr)
 	numbersloadoptions.ptr = nil

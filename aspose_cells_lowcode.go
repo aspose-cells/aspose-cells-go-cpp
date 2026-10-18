@@ -70,7 +70,7 @@ func (instance *AbstractLowCodeLoadOptionsProvider) GetCurrent()  (*LowCodeLoadO
 	}
 	result := &LowCodeLoadOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLowCodeLoadOptions) 
+	 runtime.SetFinalizer(result, DeleteLowCodeLoadOptions) 
 
 	return result, nil 
 }
@@ -98,6 +98,10 @@ func (instance *AbstractLowCodeLoadOptionsProvider) Finish(part *LowCodeLoadOpti
 
 
 func DeleteAbstractLowCodeLoadOptionsProvider(abstractlowcodeloadoptionsprovider *AbstractLowCodeLoadOptionsProvider){
+	println("Delete abstractlowcodeloadoptionsprovider")
+	if abstractlowcodeloadoptionsprovider == nil || abstractlowcodeloadoptionsprovider.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(abstractlowcodeloadoptionsprovider, nil)
 	C.Delete_CObject(C.CString("Delete_AbstractLowCodeLoadOptionsProvider"),abstractlowcodeloadoptionsprovider.ptr)
 	abstractlowcodeloadoptionsprovider.ptr = nil
@@ -237,6 +241,10 @@ func (instance *AbstractLowCodeProtectionProvider) GetWorksheetProtectionType(sh
 
 
 func DeleteAbstractLowCodeProtectionProvider(abstractlowcodeprotectionprovider *AbstractLowCodeProtectionProvider){
+	println("Delete abstractlowcodeprotectionprovider")
+	if abstractlowcodeprotectionprovider == nil || abstractlowcodeprotectionprovider.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(abstractlowcodeprotectionprovider, nil)
 	C.Delete_CObject(C.CString("Delete_AbstractLowCodeProtectionProvider"),abstractlowcodeprotectionprovider.ptr)
 	abstractlowcodeprotectionprovider.ptr = nil
@@ -287,7 +295,7 @@ func (instance *AbstractLowCodeSaveOptionsProvider) GetSaveOptions(part *SplitPa
 	}
 	result := &LowCodeSaveOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLowCodeSaveOptions) 
+	 runtime.SetFinalizer(result, DeleteLowCodeSaveOptions) 
 
 	return result, nil 
 }
@@ -315,6 +323,10 @@ func (instance *AbstractLowCodeSaveOptionsProvider) Finish(part *LowCodeSaveOpti
 
 
 func DeleteAbstractLowCodeSaveOptionsProvider(abstractlowcodesaveoptionsprovider *AbstractLowCodeSaveOptionsProvider){
+	println("Delete abstractlowcodesaveoptionsprovider")
+	if abstractlowcodesaveoptionsprovider == nil || abstractlowcodesaveoptionsprovider.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(abstractlowcodesaveoptionsprovider, nil)
 	C.Delete_CObject(C.CString("Delete_AbstractLowCodeSaveOptionsProvider"),abstractlowcodesaveoptionsprovider.ptr)
 	abstractlowcodesaveoptionsprovider.ptr = nil
@@ -387,6 +399,10 @@ func HtmlConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *Lo
 
 
 func DeleteHtmlConverter(htmlconverter *HtmlConverter){
+	println("Delete htmlconverter")
+	if htmlconverter == nil || htmlconverter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(htmlconverter, nil)
 	C.Delete_CObject(C.CString("Delete_HtmlConverter"),htmlconverter.ptr)
 	htmlconverter.ptr = nil
@@ -489,6 +505,10 @@ func ImageConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLowCod
 
 
 func DeleteImageConverter(imageconverter *ImageConverter){
+	println("Delete imageconverter")
+	if imageconverter == nil || imageconverter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(imageconverter, nil)
 	C.Delete_CObject(C.CString("Delete_ImageConverter"),imageconverter.ptr)
 	imageconverter.ptr = nil
@@ -561,6 +581,10 @@ func JsonConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *Lo
 
 
 func DeleteJsonConverter(jsonconverter *JsonConverter){
+	println("Delete jsonconverter")
+	if jsonconverter == nil || jsonconverter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(jsonconverter, nil)
 	C.Delete_CObject(C.CString("Delete_JsonConverter"),jsonconverter.ptr)
 	jsonconverter.ptr = nil
@@ -667,7 +691,7 @@ func (instance *LowCodeHtmlSaveOptions) GetHtmlOptions()  (*HtmlSaveOptions,  er
 	}
 	result := &HtmlSaveOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHtmlSaveOptions) 
+	 runtime.SetFinalizer(result, DeleteHtmlSaveOptions) 
 
 	return result, nil 
 }
@@ -763,6 +787,10 @@ func (instance *LowCodeHtmlSaveOptions) ToLowCodeSaveOptions() *LowCodeSaveOptio
 }
 
 func DeleteLowCodeHtmlSaveOptions(lowcodehtmlsaveoptions *LowCodeHtmlSaveOptions){
+	println("Delete lowcodehtmlsaveoptions")
+	if lowcodehtmlsaveoptions == nil || lowcodehtmlsaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(lowcodehtmlsaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_LowCodeHtmlSaveOptions"),lowcodehtmlsaveoptions.ptr)
 	lowcodehtmlsaveoptions.ptr = nil
@@ -869,7 +897,7 @@ func (instance *LowCodeImageSaveOptions) GetImageOptions()  (*ImageOrPrintOption
 	}
 	result := &ImageOrPrintOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteImageOrPrintOptions) 
+	 runtime.SetFinalizer(result, DeleteImageOrPrintOptions) 
 
 	return result, nil 
 }
@@ -905,7 +933,7 @@ func (instance *LowCodeImageSaveOptions) GetSaveOptionsProvider()  (*AbstractLow
 	}
 	result := &AbstractLowCodeSaveOptionsProvider{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteAbstractLowCodeSaveOptionsProvider) 
+	 runtime.SetFinalizer(result, DeleteAbstractLowCodeSaveOptionsProvider) 
 
 	return result, nil 
 }
@@ -1001,6 +1029,10 @@ func (instance *LowCodeImageSaveOptions) ToLowCodeSaveOptions() *LowCodeSaveOpti
 }
 
 func DeleteLowCodeImageSaveOptions(lowcodeimagesaveoptions *LowCodeImageSaveOptions){
+	println("Delete lowcodeimagesaveoptions")
+	if lowcodeimagesaveoptions == nil || lowcodeimagesaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(lowcodeimagesaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_LowCodeImageSaveOptions"),lowcodeimagesaveoptions.ptr)
 	lowcodeimagesaveoptions.ptr = nil
@@ -1105,6 +1137,10 @@ func (instance *LowCodeLoadOptions) SetInputStream(value []byte)  error {
 
 
 func DeleteLowCodeLoadOptions(lowcodeloadoptions *LowCodeLoadOptions){
+	println("Delete lowcodeloadoptions")
+	if lowcodeloadoptions == nil || lowcodeloadoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(lowcodeloadoptions, nil)
 	C.Delete_CObject(C.CString("Delete_LowCodeLoadOptions"),lowcodeloadoptions.ptr)
 	lowcodeloadoptions.ptr = nil
@@ -1158,7 +1194,7 @@ func (instance *LowCodeMergeOptions) GetSaveOptions()  (*LowCodeSaveOptions,  er
 	}
 	result := &LowCodeSaveOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLowCodeSaveOptions) 
+	 runtime.SetFinalizer(result, DeleteLowCodeSaveOptions) 
 
 	return result, nil 
 }
@@ -1194,7 +1230,7 @@ func (instance *LowCodeMergeOptions) GetLoadOptionsProvider()  (*AbstractLowCode
 	}
 	result := &AbstractLowCodeLoadOptionsProvider{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteAbstractLowCodeLoadOptionsProvider) 
+	 runtime.SetFinalizer(result, DeleteAbstractLowCodeLoadOptionsProvider) 
 
 	return result, nil 
 }
@@ -1222,6 +1258,10 @@ func (instance *LowCodeMergeOptions) SetLoadOptionsProvider(value *AbstractLowCo
 
 
 func DeleteLowCodeMergeOptions(lowcodemergeoptions *LowCodeMergeOptions){
+	println("Delete lowcodemergeoptions")
+	if lowcodemergeoptions == nil || lowcodemergeoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(lowcodemergeoptions, nil)
 	C.Delete_CObject(C.CString("Delete_LowCodeMergeOptions"),lowcodemergeoptions.ptr)
 	lowcodemergeoptions.ptr = nil
@@ -1330,7 +1370,7 @@ func (instance *LowCodePdfSaveOptions) GetPdfOptions()  (*PdfSaveOptions,  error
 	}
 	result := &PdfSaveOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePdfSaveOptions) 
+	 runtime.SetFinalizer(result, DeletePdfSaveOptions) 
 
 	return result, nil 
 }
@@ -1426,6 +1466,10 @@ func (instance *LowCodePdfSaveOptions) ToLowCodeSaveOptions() *LowCodeSaveOption
 }
 
 func DeleteLowCodePdfSaveOptions(lowcodepdfsaveoptions *LowCodePdfSaveOptions){
+	println("Delete lowcodepdfsaveoptions")
+	if lowcodepdfsaveoptions == nil || lowcodepdfsaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(lowcodepdfsaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_LowCodePdfSaveOptions"),lowcodepdfsaveoptions.ptr)
 	lowcodepdfsaveoptions.ptr = nil
@@ -1572,6 +1616,10 @@ func (instance *LowCodeSaveOptions) SetSaveFormat(value SaveFormat)  error {
 
 
 func DeleteLowCodeSaveOptions(lowcodesaveoptions *LowCodeSaveOptions){
+	println("Delete lowcodesaveoptions")
+	if lowcodesaveoptions == nil || lowcodesaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(lowcodesaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_LowCodeSaveOptions"),lowcodesaveoptions.ptr)
 	lowcodesaveoptions.ptr = nil
@@ -1924,7 +1972,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) GetSaveOptionsTemplate()
 	}
 	result := &LowCodeSaveOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLowCodeSaveOptions) 
+	 runtime.SetFinalizer(result, DeleteLowCodeSaveOptions) 
 
 	return result, nil 
 }
@@ -1967,7 +2015,7 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) GetSaveOptions(part *Spl
 	}
 	result := &LowCodeSaveOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLowCodeSaveOptions) 
+	 runtime.SetFinalizer(result, DeleteLowCodeSaveOptions) 
 
 	return result, nil 
 }
@@ -2000,6 +2048,10 @@ func (instance *LowCodeSaveOptionsProviderOfAssembling) ToAbstractLowCodeSaveOpt
 }
 
 func DeleteLowCodeSaveOptionsProviderOfAssembling(lowcodesaveoptionsproviderofassembling *LowCodeSaveOptionsProviderOfAssembling){
+	println("Delete lowcodesaveoptionsproviderofassembling")
+	if lowcodesaveoptionsproviderofassembling == nil || lowcodesaveoptionsproviderofassembling.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(lowcodesaveoptionsproviderofassembling, nil)
 	C.Delete_CObject(C.CString("Delete_LowCodeSaveOptionsProviderOfAssembling"),lowcodesaveoptionsproviderofassembling.ptr)
 	lowcodesaveoptionsproviderofassembling.ptr = nil
@@ -2296,7 +2348,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetSaveOptionsTemplate
 	}
 	result := &LowCodeSaveOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLowCodeSaveOptions) 
+	 runtime.SetFinalizer(result, DeleteLowCodeSaveOptions) 
 
 	return result, nil 
 }
@@ -2339,7 +2391,7 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) GetSaveOptions(part *S
 	}
 	result := &LowCodeSaveOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLowCodeSaveOptions) 
+	 runtime.SetFinalizer(result, DeleteLowCodeSaveOptions) 
 
 	return result, nil 
 }
@@ -2372,6 +2424,10 @@ func (instance *LowCodeSaveOptionsProviderOfPlaceHolders) ToAbstractLowCodeSaveO
 }
 
 func DeleteLowCodeSaveOptionsProviderOfPlaceHolders(lowcodesaveoptionsproviderofplaceholders *LowCodeSaveOptionsProviderOfPlaceHolders){
+	println("Delete lowcodesaveoptionsproviderofplaceholders")
+	if lowcodesaveoptionsproviderofplaceholders == nil || lowcodesaveoptionsproviderofplaceholders.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(lowcodesaveoptionsproviderofplaceholders, nil)
 	C.Delete_CObject(C.CString("Delete_LowCodeSaveOptionsProviderOfPlaceHolders"),lowcodesaveoptionsproviderofplaceholders.ptr)
 	lowcodesaveoptionsproviderofplaceholders.ptr = nil
@@ -2425,7 +2481,7 @@ func (instance *LowCodeSplitOptions) GetLoadOptions()  (*LowCodeLoadOptions,  er
 	}
 	result := &LowCodeLoadOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLowCodeLoadOptions) 
+	 runtime.SetFinalizer(result, DeleteLowCodeLoadOptions) 
 
 	return result, nil 
 }
@@ -2461,7 +2517,7 @@ func (instance *LowCodeSplitOptions) GetSaveOptions()  (*LowCodeSaveOptions,  er
 	}
 	result := &LowCodeSaveOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLowCodeSaveOptions) 
+	 runtime.SetFinalizer(result, DeleteLowCodeSaveOptions) 
 
 	return result, nil 
 }
@@ -2497,7 +2553,7 @@ func (instance *LowCodeSplitOptions) GetSaveOptionsProvider()  (*AbstractLowCode
 	}
 	result := &AbstractLowCodeSaveOptionsProvider{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteAbstractLowCodeSaveOptionsProvider) 
+	 runtime.SetFinalizer(result, DeleteAbstractLowCodeSaveOptionsProvider) 
 
 	return result, nil 
 }
@@ -2525,6 +2581,10 @@ func (instance *LowCodeSplitOptions) SetSaveOptionsProvider(value *AbstractLowCo
 
 
 func DeleteLowCodeSplitOptions(lowcodesplitoptions *LowCodeSplitOptions){
+	println("Delete lowcodesplitoptions")
+	if lowcodesplitoptions == nil || lowcodesplitoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(lowcodesplitoptions, nil)
 	C.Delete_CObject(C.CString("Delete_LowCodeSplitOptions"),lowcodesplitoptions.ptr)
 	lowcodesplitoptions.ptr = nil
@@ -2597,6 +2657,10 @@ func PdfConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *Low
 
 
 func DeletePdfConverter(pdfconverter *PdfConverter){
+	println("Delete pdfconverter")
+	if pdfconverter == nil || pdfconverter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pdfconverter, nil)
 	C.Delete_CObject(C.CString("Delete_PdfConverter"),pdfconverter.ptr)
 	pdfconverter.ptr = nil
@@ -2672,6 +2736,10 @@ func (instance *SplitPartInfo) GetSheetName()  (string,  error)  {
 
 
 func DeleteSplitPartInfo(splitpartinfo *SplitPartInfo){
+	println("Delete splitpartinfo")
+	if splitpartinfo == nil || splitpartinfo.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(splitpartinfo, nil)
 	C.Delete_CObject(C.CString("Delete_SplitPartInfo"),splitpartinfo.ptr)
 	splitpartinfo.ptr = nil
@@ -2744,6 +2812,10 @@ func SpreadsheetConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadopti
 
 
 func DeleteSpreadsheetConverter(spreadsheetconverter *SpreadsheetConverter){
+	println("Delete spreadsheetconverter")
+	if spreadsheetconverter == nil || spreadsheetconverter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(spreadsheetconverter, nil)
 	C.Delete_CObject(C.CString("Delete_SpreadsheetConverter"),spreadsheetconverter.ptr)
 	spreadsheetconverter.ptr = nil
@@ -2879,6 +2951,10 @@ func SpreadsheetLocker_Process_LowCodeLoadOptions_LowCodeSaveOptions_AbstractLow
 
 
 func DeleteSpreadsheetLocker(spreadsheetlocker *SpreadsheetLocker){
+	println("Delete spreadsheetlocker")
+	if spreadsheetlocker == nil || spreadsheetlocker.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(spreadsheetlocker, nil)
 	C.Delete_CObject(C.CString("Delete_SpreadsheetLocker"),spreadsheetlocker.ptr)
 	spreadsheetlocker.ptr = nil
@@ -2953,6 +3029,10 @@ func SpreadsheetMerger_Process_LowCodeMergeOptions(options *LowCodeMergeOptions)
 
 
 func DeleteSpreadsheetMerger(spreadsheetmerger *SpreadsheetMerger){
+	println("Delete spreadsheetmerger")
+	if spreadsheetmerger == nil || spreadsheetmerger.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(spreadsheetmerger, nil)
 	C.Delete_CObject(C.CString("Delete_SpreadsheetMerger"),spreadsheetmerger.ptr)
 	spreadsheetmerger.ptr = nil
@@ -3020,6 +3100,10 @@ func SpreadsheetSplitter_Process_LowCodeSplitOptions(options *LowCodeSplitOption
 
 
 func DeleteSpreadsheetSplitter(spreadsheetsplitter *SpreadsheetSplitter){
+	println("Delete spreadsheetsplitter")
+	if spreadsheetsplitter == nil || spreadsheetsplitter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(spreadsheetsplitter, nil)
 	C.Delete_CObject(C.CString("Delete_SpreadsheetSplitter"),spreadsheetsplitter.ptr)
 	spreadsheetsplitter.ptr = nil
@@ -3092,6 +3176,10 @@ func TextConverter_Process_LowCodeLoadOptions_LowCodeSaveOptions(loadoptions *Lo
 
 
 func DeleteTextConverter(textconverter *TextConverter){
+	println("Delete textconverter")
+	if textconverter == nil || textconverter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(textconverter, nil)
 	C.Delete_CObject(C.CString("Delete_TextConverter"),textconverter.ptr)
 	textconverter.ptr = nil

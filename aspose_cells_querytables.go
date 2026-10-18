@@ -114,7 +114,7 @@ func (instance *DataMashup) GetPowerQueryFormulas()  (*PowerQueryFormulaCollecti
 	}
 	result := &PowerQueryFormulaCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePowerQueryFormulaCollection) 
+	 runtime.SetFinalizer(result, DeletePowerQueryFormulaCollection) 
 
 	return result, nil 
 }
@@ -122,6 +122,10 @@ func (instance *DataMashup) GetPowerQueryFormulas()  (*PowerQueryFormulaCollecti
 
 
 func DeleteDataMashup(datamashup *DataMashup){
+	println("Delete datamashup")
+	if datamashup == nil || datamashup.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(datamashup, nil)
 	C.Delete_CObject(C.CString("Delete_DataMashup"),datamashup.ptr)
 	datamashup.ptr = nil
@@ -233,7 +237,7 @@ func (instance *PowerQueryFormula) GetPowerQueryFormulaItems()  (*PowerQueryForm
 	}
 	result := &PowerQueryFormulaItemCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePowerQueryFormulaItemCollection) 
+	 runtime.SetFinalizer(result, DeletePowerQueryFormulaItemCollection) 
 
 	return result, nil 
 }
@@ -272,6 +276,10 @@ func (instance *PowerQueryFormula) GetFormulaDefinition()  (string,  error)  {
 
 
 func DeletePowerQueryFormula(powerqueryformula *PowerQueryFormula){
+	println("Delete powerqueryformula")
+	if powerqueryformula == nil || powerqueryformula.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(powerqueryformula, nil)
 	C.Delete_CObject(C.CString("Delete_PowerQueryFormula"),powerqueryformula.ptr)
 	powerqueryformula.ptr = nil
@@ -313,7 +321,7 @@ func (instance *PowerQueryFormulaCollection) Get_Int(index int32)  (*PowerQueryF
 	}
 	result := &PowerQueryFormula{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePowerQueryFormula) 
+	 runtime.SetFinalizer(result, DeletePowerQueryFormula) 
 
 	return result, nil 
 }
@@ -331,7 +339,7 @@ func (instance *PowerQueryFormulaCollection) Get_String(name string)  (*PowerQue
 	}
 	result := &PowerQueryFormula{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePowerQueryFormula) 
+	 runtime.SetFinalizer(result, DeletePowerQueryFormula) 
 
 	return result, nil 
 }
@@ -368,6 +376,10 @@ func (instance *PowerQueryFormulaCollection) GetCount()  (int32,  error)  {
 
 
 func DeletePowerQueryFormulaCollection(powerqueryformulacollection *PowerQueryFormulaCollection){
+	println("Delete powerqueryformulacollection")
+	if powerqueryformulacollection == nil || powerqueryformulacollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(powerqueryformulacollection, nil)
 	C.Delete_CObject(C.CString("Delete_PowerQueryFormulaCollection"),powerqueryformulacollection.ptr)
 	powerqueryformulacollection.ptr = nil
@@ -546,7 +558,7 @@ func (instance *PowerQueryFormulaFunction) GetPowerQueryFormulaItems()  (*PowerQ
 	}
 	result := &PowerQueryFormulaItemCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePowerQueryFormulaItemCollection) 
+	 runtime.SetFinalizer(result, DeletePowerQueryFormulaItemCollection) 
 
 	return result, nil 
 }
@@ -573,6 +585,10 @@ func (instance *PowerQueryFormulaFunction) ToPowerQueryFormula() *PowerQueryForm
 }
 
 func DeletePowerQueryFormulaFunction(powerqueryformulafunction *PowerQueryFormulaFunction){
+	println("Delete powerqueryformulafunction")
+	if powerqueryformulafunction == nil || powerqueryformulafunction.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(powerqueryformulafunction, nil)
 	C.Delete_CObject(C.CString("Delete_PowerQueryFormulaFunction"),powerqueryformulafunction.ptr)
 	powerqueryformulafunction.ptr = nil
@@ -678,6 +694,10 @@ func (instance *PowerQueryFormulaItem) GetItemType()  (PowerQueryFormulaItemType
 
 
 func DeletePowerQueryFormulaItem(powerqueryformulaitem *PowerQueryFormulaItem){
+	println("Delete powerqueryformulaitem")
+	if powerqueryformulaitem == nil || powerqueryformulaitem.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(powerqueryformulaitem, nil)
 	C.Delete_CObject(C.CString("Delete_PowerQueryFormulaItem"),powerqueryformulaitem.ptr)
 	powerqueryformulaitem.ptr = nil
@@ -719,7 +739,7 @@ func (instance *PowerQueryFormulaItemCollection) Get_Int(index int32)  (*PowerQu
 	}
 	result := &PowerQueryFormulaItem{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePowerQueryFormulaItem) 
+	 runtime.SetFinalizer(result, DeletePowerQueryFormulaItem) 
 
 	return result, nil 
 }
@@ -737,7 +757,7 @@ func (instance *PowerQueryFormulaItemCollection) Get_String(name string)  (*Powe
 	}
 	result := &PowerQueryFormulaItem{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePowerQueryFormulaItem) 
+	 runtime.SetFinalizer(result, DeletePowerQueryFormulaItem) 
 
 	return result, nil 
 }
@@ -759,6 +779,10 @@ func (instance *PowerQueryFormulaItemCollection) GetCount()  (int32,  error)  {
 
 
 func DeletePowerQueryFormulaItemCollection(powerqueryformulaitemcollection *PowerQueryFormulaItemCollection){
+	println("Delete powerqueryformulaitemcollection")
+	if powerqueryformulaitemcollection == nil || powerqueryformulaitemcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(powerqueryformulaitemcollection, nil)
 	C.Delete_CObject(C.CString("Delete_PowerQueryFormulaItemCollection"),powerqueryformulaitemcollection.ptr)
 	powerqueryformulaitemcollection.ptr = nil
@@ -951,7 +975,7 @@ func (instance *PowerQueryFormulaParameter) GetPowerQueryFormulaItems()  (*Power
 	}
 	result := &PowerQueryFormulaItemCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePowerQueryFormulaItemCollection) 
+	 runtime.SetFinalizer(result, DeletePowerQueryFormulaItemCollection) 
 
 	return result, nil 
 }
@@ -964,6 +988,10 @@ func (instance *PowerQueryFormulaParameter) ToPowerQueryFormula() *PowerQueryFor
 }
 
 func DeletePowerQueryFormulaParameter(powerqueryformulaparameter *PowerQueryFormulaParameter){
+	println("Delete powerqueryformulaparameter")
+	if powerqueryformulaparameter == nil || powerqueryformulaparameter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(powerqueryformulaparameter, nil)
 	C.Delete_CObject(C.CString("Delete_PowerQueryFormulaParameter"),powerqueryformulaparameter.ptr)
 	powerqueryformulaparameter.ptr = nil
@@ -1019,7 +1047,7 @@ func (instance *PowerQueryFormulaParameterCollection) Get_Int(index int32)  (*Po
 	}
 	result := &PowerQueryFormulaParameter{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePowerQueryFormulaParameter) 
+	 runtime.SetFinalizer(result, DeletePowerQueryFormulaParameter) 
 
 	return result, nil 
 }
@@ -1037,7 +1065,7 @@ func (instance *PowerQueryFormulaParameterCollection) Get_String(name string)  (
 	}
 	result := &PowerQueryFormulaParameter{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePowerQueryFormulaParameter) 
+	 runtime.SetFinalizer(result, DeletePowerQueryFormulaParameter) 
 
 	return result, nil 
 }
@@ -1059,6 +1087,10 @@ func (instance *PowerQueryFormulaParameterCollection) GetCount()  (int32,  error
 
 
 func DeletePowerQueryFormulaParameterCollection(powerqueryformulaparametercollection *PowerQueryFormulaParameterCollection){
+	println("Delete powerqueryformulaparametercollection")
+	if powerqueryformulaparametercollection == nil || powerqueryformulaparametercollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(powerqueryformulaparametercollection, nil)
 	C.Delete_CObject(C.CString("Delete_PowerQueryFormulaParameterCollection"),powerqueryformulaparametercollection.ptr)
 	powerqueryformulaparametercollection.ptr = nil

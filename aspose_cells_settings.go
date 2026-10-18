@@ -465,6 +465,10 @@ func (instance *PivotGlobalizationSettings) GetNameOfDataField(function Consolid
 
 
 func DeletePivotGlobalizationSettings(pivotglobalizationsettings *PivotGlobalizationSettings){
+	println("Delete pivotglobalizationsettings")
+	if pivotglobalizationsettings == nil || pivotglobalizationsettings.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotglobalizationsettings, nil)
 	C.Delete_CObject(C.CString("Delete_PivotGlobalizationSettings"),pivotglobalizationsettings.ptr)
 	pivotglobalizationsettings.ptr = nil

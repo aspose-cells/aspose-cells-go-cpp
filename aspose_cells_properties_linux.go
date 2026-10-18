@@ -1087,6 +1087,9 @@ func (instance *BuiltInDocumentPropertyCollection) ToDocumentPropertyCollection(
 }
 
 func DeleteBuiltInDocumentPropertyCollection(builtindocumentpropertycollection *BuiltInDocumentPropertyCollection){
+	if builtindocumentpropertycollection == nil || builtindocumentpropertycollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(builtindocumentpropertycollection, nil)
 	C.Delete_CObject(C.CString("Delete_BuiltInDocumentPropertyCollection"),builtindocumentpropertycollection.ptr)
 	builtindocumentpropertycollection.ptr = nil
@@ -1234,6 +1237,9 @@ func (instance *ContentTypeProperty) SetIsNillable(value bool)  error {
 
 
 func DeleteContentTypeProperty(contenttypeproperty *ContentTypeProperty){
+	if contenttypeproperty == nil || contenttypeproperty.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(contenttypeproperty, nil)
 	C.Delete_CObject(C.CString("Delete_ContentTypeProperty"),contenttypeproperty.ptr)
 	contenttypeproperty.ptr = nil
@@ -1350,6 +1356,9 @@ func (instance *ContentTypePropertyCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteContentTypePropertyCollection(contenttypepropertycollection *ContentTypePropertyCollection){
+	if contenttypepropertycollection == nil || contenttypepropertycollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(contenttypepropertycollection, nil)
 	C.Delete_CObject(C.CString("Delete_ContentTypePropertyCollection"),contenttypepropertycollection.ptr)
 	contenttypepropertycollection.ptr = nil
@@ -1647,6 +1656,9 @@ func (instance *CustomDocumentPropertyCollection) ToDocumentPropertyCollection()
 }
 
 func DeleteCustomDocumentPropertyCollection(customdocumentpropertycollection *CustomDocumentPropertyCollection){
+	if customdocumentpropertycollection == nil || customdocumentpropertycollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(customdocumentpropertycollection, nil)
 	C.Delete_CObject(C.CString("Delete_CustomDocumentPropertyCollection"),customdocumentpropertycollection.ptr)
 	customdocumentpropertycollection.ptr = nil
@@ -1766,6 +1778,9 @@ func (instance *CustomProperty) SetBinaryValue(value []byte)  error {
 
 
 func DeleteCustomProperty(customproperty *CustomProperty){
+	if customproperty == nil || customproperty.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(customproperty, nil)
 	C.Delete_CObject(C.CString("Delete_CustomProperty"),customproperty.ptr)
 	customproperty.ptr = nil
@@ -1864,6 +1879,9 @@ func (instance *CustomPropertyCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteCustomPropertyCollection(custompropertycollection *CustomPropertyCollection){
+	if custompropertycollection == nil || custompropertycollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(custompropertycollection, nil)
 	C.Delete_CObject(C.CString("Delete_CustomPropertyCollection"),custompropertycollection.ptr)
 	custompropertycollection.ptr = nil
@@ -2075,6 +2093,9 @@ func (instance *DocumentProperty) ToBool()  (bool,  error)  {
 
 
 func DeleteDocumentProperty(documentproperty *DocumentProperty){
+	if documentproperty == nil || documentproperty.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(documentproperty, nil)
 	C.Delete_CObject(C.CString("Delete_DocumentProperty"),documentproperty.ptr)
 	documentproperty.ptr = nil
@@ -2218,6 +2239,9 @@ func (instance *DocumentPropertyCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteDocumentPropertyCollection(documentpropertycollection *DocumentPropertyCollection){
+	if documentpropertycollection == nil || documentpropertycollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(documentpropertycollection, nil)
 	C.Delete_CObject(C.CString("Delete_DocumentPropertyCollection"),documentpropertycollection.ptr)
 	documentpropertycollection.ptr = nil

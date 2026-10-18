@@ -1092,6 +1092,9 @@ func (instance *AccentEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteAccentEquationNode(accentequationnode *AccentEquationNode){
+	if accentequationnode == nil || accentequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(accentequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_AccentEquationNode"),accentequationnode.ptr)
 	accentequationnode.ptr = nil
@@ -1514,6 +1517,9 @@ func (instance *ArrayEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteArrayEquationNode(arrayequationnode *ArrayEquationNode){
+	if arrayequationnode == nil || arrayequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(arrayequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_ArrayEquationNode"),arrayequationnode.ptr)
 	arrayequationnode.ptr = nil
@@ -1968,6 +1974,9 @@ func (instance *BarEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteBarEquationNode(barequationnode *BarEquationNode){
+	if barequationnode == nil || barequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(barequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_BarEquationNode"),barequationnode.ptr)
 	barequationnode.ptr = nil
@@ -2390,6 +2399,9 @@ func (instance *BorderBoxEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteBorderBoxEquationNode(borderboxequationnode *BorderBoxEquationNode){
+	if borderboxequationnode == nil || borderboxequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(borderboxequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_BorderBoxEquationNode"),borderboxequationnode.ptr)
 	borderboxequationnode.ptr = nil
@@ -2812,6 +2824,9 @@ func (instance *BoxEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteBoxEquationNode(boxequationnode *BoxEquationNode){
+	if boxequationnode == nil || boxequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(boxequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_BoxEquationNode"),boxequationnode.ptr)
 	boxequationnode.ptr = nil
@@ -3383,6 +3398,9 @@ func (instance *DelimiterEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteDelimiterEquationNode(delimiterequationnode *DelimiterEquationNode){
+	if delimiterequationnode == nil || delimiterequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(delimiterequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_DelimiterEquationNode"),delimiterequationnode.ptr)
 	delimiterequationnode.ptr = nil
@@ -3808,6 +3826,9 @@ func (instance *EquationComponentNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteEquationComponentNode(equationcomponentnode *EquationComponentNode){
+	if equationcomponentnode == nil || equationcomponentnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(equationcomponentnode, nil)
 	C.Delete_CObject(C.CString("Delete_EquationComponentNode"),equationcomponentnode.ptr)
 	equationcomponentnode.ptr = nil
@@ -4260,6 +4281,9 @@ func (instance *EquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteEquationNode(equationnode *EquationNode){
+	if equationnode == nil || equationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(equationnode, nil)
 	C.Delete_CObject(C.CString("Delete_EquationNode"),equationnode.ptr)
 	equationnode.ptr = nil
@@ -4714,6 +4738,9 @@ func (instance *EquationNodeParagraph) ToFontSetting() *FontSetting {
 }
 
 func DeleteEquationNodeParagraph(equationnodeparagraph *EquationNodeParagraph){
+	if equationnodeparagraph == nil || equationnodeparagraph.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(equationnodeparagraph, nil)
 	C.Delete_CObject(C.CString("Delete_EquationNodeParagraph"),equationnodeparagraph.ptr)
 	equationnodeparagraph.ptr = nil
@@ -5168,6 +5195,9 @@ func (instance *FractionEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteFractionEquationNode(fractionequationnode *FractionEquationNode){
+	if fractionequationnode == nil || fractionequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(fractionequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_FractionEquationNode"),fractionequationnode.ptr)
 	fractionequationnode.ptr = nil
@@ -5591,6 +5621,9 @@ func (instance *FunctionEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteFunctionEquationNode(functionequationnode *FunctionEquationNode){
+	if functionequationnode == nil || functionequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(functionequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_FunctionEquationNode"),functionequationnode.ptr)
 	functionequationnode.ptr = nil
@@ -6142,6 +6175,9 @@ func (instance *GroupCharacterEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteGroupCharacterEquationNode(groupcharacterequationnode *GroupCharacterEquationNode){
+	if groupcharacterequationnode == nil || groupcharacterequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(groupcharacterequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_GroupCharacterEquationNode"),groupcharacterequationnode.ptr)
 	groupcharacterequationnode.ptr = nil
@@ -6564,6 +6600,9 @@ func (instance *LimLowUppEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteLimLowUppEquationNode(limlowuppequationnode *LimLowUppEquationNode){
+	if limlowuppequationnode == nil || limlowuppequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(limlowuppequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_LimLowUppEquationNode"),limlowuppequationnode.ptr)
 	limlowuppequationnode.ptr = nil
@@ -6986,6 +7025,9 @@ func (instance *MathematicalEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteMathematicalEquationNode(mathematicalequationnode *MathematicalEquationNode){
+	if mathematicalequationnode == nil || mathematicalequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(mathematicalequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_MathematicalEquationNode"),mathematicalequationnode.ptr)
 	mathematicalequationnode.ptr = nil
@@ -7469,6 +7511,9 @@ func (instance *MatrixEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteMatrixEquationNode(matrixequationnode *MatrixEquationNode){
+	if matrixequationnode == nil || matrixequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(matrixequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_MatrixEquationNode"),matrixequationnode.ptr)
 	matrixequationnode.ptr = nil
@@ -8075,6 +8120,9 @@ func (instance *NaryEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteNaryEquationNode(naryequationnode *NaryEquationNode){
+	if naryequationnode == nil || naryequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(naryequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_NaryEquationNode"),naryequationnode.ptr)
 	naryequationnode.ptr = nil
@@ -8526,6 +8574,9 @@ func (instance *RadicalEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteRadicalEquationNode(radicalequationnode *RadicalEquationNode){
+	if radicalequationnode == nil || radicalequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(radicalequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_RadicalEquationNode"),radicalequationnode.ptr)
 	radicalequationnode.ptr = nil
@@ -8949,6 +9000,9 @@ func (instance *SubSupEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteSubSupEquationNode(subsupequationnode *SubSupEquationNode){
+	if subsupequationnode == nil || subsupequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(subsupequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_SubSupEquationNode"),subsupequationnode.ptr)
 	subsupequationnode.ptr = nil
@@ -9401,6 +9455,9 @@ func (instance *TextRunEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteTextRunEquationNode(textrunequationnode *TextRunEquationNode){
+	if textrunequationnode == nil || textrunequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(textrunequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_TextRunEquationNode"),textrunequationnode.ptr)
 	textrunequationnode.ptr = nil
@@ -9823,6 +9880,9 @@ func (instance *UnknowEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteUnknowEquationNode(unknowequationnode *UnknowEquationNode){
+	if unknowequationnode == nil || unknowequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(unknowequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_UnknowEquationNode"),unknowequationnode.ptr)
 	unknowequationnode.ptr = nil

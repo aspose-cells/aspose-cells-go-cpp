@@ -705,6 +705,9 @@ func (instance *ConnectionParameter) SetValue(value *Object)  error {
 
 
 func DeleteConnectionParameter(connectionparameter *ConnectionParameter){
+	if connectionparameter == nil || connectionparameter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(connectionparameter, nil)
 	C.Delete_CObject(C.CString("Delete_ConnectionParameter"),connectionparameter.ptr)
 	connectionparameter.ptr = nil
@@ -786,6 +789,9 @@ func (instance *ConnectionParameterCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteConnectionParameterCollection(connectionparametercollection *ConnectionParameterCollection){
+	if connectionparametercollection == nil || connectionparametercollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(connectionparametercollection, nil)
 	C.Delete_CObject(C.CString("Delete_ConnectionParameterCollection"),connectionparametercollection.ptr)
 	connectionparametercollection.ptr = nil
@@ -1585,6 +1591,9 @@ func (instance *DataModelConnection) ToExternalConnection() *ExternalConnection 
 }
 
 func DeleteDataModelConnection(datamodelconnection *DataModelConnection){
+	if datamodelconnection == nil || datamodelconnection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(datamodelconnection, nil)
 	C.Delete_CObject(C.CString("Delete_DataModelConnection"),datamodelconnection.ptr)
 	datamodelconnection.ptr = nil
@@ -2394,6 +2403,9 @@ func (instance *DBConnection) ToExternalConnection() *ExternalConnection {
 }
 
 func DeleteDBConnection(dbconnection *DBConnection){
+	if dbconnection == nil || dbconnection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(dbconnection, nil)
 	C.Delete_CObject(C.CString("Delete_DBConnection"),dbconnection.ptr)
 	dbconnection.ptr = nil
@@ -3177,6 +3189,9 @@ func (instance *ExternalConnection) SetSecondCommand(value string)  error {
 
 
 func DeleteExternalConnection(externalconnection *ExternalConnection){
+	if externalconnection == nil || externalconnection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(externalconnection, nil)
 	C.Delete_CObject(C.CString("Delete_ExternalConnection"),externalconnection.ptr)
 	externalconnection.ptr = nil
@@ -3276,6 +3291,9 @@ func (instance *ExternalConnectionCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteExternalConnectionCollection(externalconnectioncollection *ExternalConnectionCollection){
+	if externalconnectioncollection == nil || externalconnectioncollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(externalconnectioncollection, nil)
 	C.Delete_CObject(C.CString("Delete_ExternalConnectionCollection"),externalconnectioncollection.ptr)
 	externalconnectioncollection.ptr = nil
@@ -4491,6 +4509,9 @@ func (instance *WebQueryConnection) ToExternalConnection() *ExternalConnection {
 }
 
 func DeleteWebQueryConnection(webqueryconnection *WebQueryConnection){
+	if webqueryconnection == nil || webqueryconnection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(webqueryconnection, nil)
 	C.Delete_CObject(C.CString("Delete_WebQueryConnection"),webqueryconnection.ptr)
 	webqueryconnection.ptr = nil

@@ -163,6 +163,9 @@ func (instance *MetadataOptions) SetKeyLength(value int32)  error {
 
 
 func DeleteMetadataOptions(metadataoptions *MetadataOptions){
+	if metadataoptions == nil || metadataoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(metadataoptions, nil)
 	C.Delete_CObject(C.CString("Delete_MetadataOptions"),metadataoptions.ptr)
 	metadataoptions.ptr = nil
@@ -316,6 +319,9 @@ func (instance *WorkbookMetadata) Save_Stream(stream []byte)  error {
 
 
 func DeleteWorkbookMetadata(workbookmetadata *WorkbookMetadata){
+	if workbookmetadata == nil || workbookmetadata.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(workbookmetadata, nil)
 	C.Delete_CObject(C.CString("Delete_WorkbookMetadata"),workbookmetadata.ptr)
 	workbookmetadata.ptr = nil

@@ -2626,6 +2626,9 @@ func (instance *Axis) GetBins()  (*AxisBins,  error)  {
 
 
 func DeleteAxis(axis *Axis){
+	if axis == nil || axis.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(axis, nil)
 	C.Delete_CObject(C.CString("Delete_Axis"),axis.ptr)
 	axis.ptr = nil
@@ -2831,6 +2834,9 @@ func (instance *AxisBins) SetUnderflow(value float64)  error {
 
 
 func DeleteAxisBins(axisbins *AxisBins){
+	if axisbins == nil || axisbins.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(axisbins, nil)
 	C.Delete_CObject(C.CString("Delete_AxisBins"),axisbins.ptr)
 	axisbins.ptr = nil
@@ -4387,6 +4393,9 @@ func (instance *Chart) GetLine()  (*Line,  error)  {
 
 
 func DeleteChart(chart *Chart){
+	if chart == nil || chart.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(chart, nil)
 	C.Delete_CObject(C.CString("Delete_Chart"),chart.ptr)
 	chart.ptr = nil
@@ -4957,6 +4966,9 @@ func (instance *ChartArea) ToChartFrame() *ChartFrame {
 }
 
 func DeleteChartArea(chartarea *ChartArea){
+	if chartarea == nil || chartarea.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(chartarea, nil)
 	C.Delete_CObject(C.CString("Delete_ChartArea"),chartarea.ptr)
 	chartarea.ptr = nil
@@ -5035,6 +5047,9 @@ func (instance *ChartCalculateOptions) SetUpdateAllPoints(value bool)  error {
 
 
 func DeleteChartCalculateOptions(chartcalculateoptions *ChartCalculateOptions){
+	if chartcalculateoptions == nil || chartcalculateoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(chartcalculateoptions, nil)
 	C.Delete_CObject(C.CString("Delete_ChartCalculateOptions"),chartcalculateoptions.ptr)
 	chartcalculateoptions.ptr = nil
@@ -5228,6 +5243,9 @@ func (instance *ChartCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteChartCollection(chartcollection *ChartCollection){
+	if chartcollection == nil || chartcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(chartcollection, nil)
 	C.Delete_CObject(C.CString("Delete_ChartCollection"),chartcollection.ptr)
 	chartcollection.ptr = nil
@@ -5470,6 +5488,9 @@ func (instance *ChartDataTable) GetBorder()  (*Line,  error)  {
 
 
 func DeleteChartDataTable(chartdatatable *ChartDataTable){
+	if chartdatatable == nil || chartdatatable.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(chartdatatable, nil)
 	C.Delete_CObject(C.CString("Delete_ChartDataTable"),chartdatatable.ptr)
 	chartdatatable.ptr = nil
@@ -5588,6 +5609,9 @@ func (instance *ChartDataValue) GetBoolValue()  (bool,  error)  {
 
 
 func DeleteChartDataValue(chartdatavalue *ChartDataValue){
+	if chartdatavalue == nil || chartdatavalue.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(chartdatavalue, nil)
 	C.Delete_CObject(C.CString("Delete_ChartDataValue"),chartdatavalue.ptr)
 	chartdatavalue.ptr = nil
@@ -6132,6 +6156,9 @@ func (instance *ChartFrame) SetPositionAuto()  error {
 
 
 func DeleteChartFrame(chartframe *ChartFrame){
+	if chartframe == nil || chartframe.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(chartframe, nil)
 	C.Delete_CObject(C.CString("Delete_ChartFrame"),chartframe.ptr)
 	chartframe.ptr = nil
@@ -6291,6 +6318,9 @@ func (instance *ChartGlobalizationSettings) GetAxisUnitName(type_ DisplayUnitTyp
 
 
 func DeleteChartGlobalizationSettings(chartglobalizationsettings *ChartGlobalizationSettings){
+	if chartglobalizationsettings == nil || chartglobalizationsettings.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(chartglobalizationsettings, nil)
 	C.Delete_CObject(C.CString("Delete_ChartGlobalizationSettings"),chartglobalizationsettings.ptr)
 	chartglobalizationsettings.ptr = nil
@@ -7047,6 +7077,9 @@ func (instance *ChartPoint) GetOnCategoryAxisPointYPx(index int32)  (float32,  e
 
 
 func DeleteChartPoint(chartpoint *ChartPoint){
+	if chartpoint == nil || chartpoint.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(chartpoint, nil)
 	C.Delete_CObject(C.CString("Delete_ChartPoint"),chartpoint.ptr)
 	chartpoint.ptr = nil
@@ -7155,6 +7188,9 @@ func (instance *ChartPointCollection) Get(index int32)  (*ChartPoint,  error)  {
 
 
 func DeleteChartPointCollection(chartpointcollection *ChartPointCollection){
+	if chartpointcollection == nil || chartpointcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(chartpointcollection, nil)
 	C.Delete_CObject(C.CString("Delete_ChartPointCollection"),chartpointcollection.ptr)
 	chartpointcollection.ptr = nil
@@ -8091,6 +8127,9 @@ func (instance *ChartTextFrame) ToChartFrame() *ChartFrame {
 }
 
 func DeleteChartTextFrame(charttextframe *ChartTextFrame){
+	if charttextframe == nil || charttextframe.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(charttextframe, nil)
 	C.Delete_CObject(C.CString("Delete_ChartTextFrame"),charttextframe.ptr)
 	charttextframe.ptr = nil
@@ -9535,6 +9574,9 @@ func (instance *DataLabels) ToChartFrame() *ChartFrame {
 }
 
 func DeleteDataLabels(datalabels *DataLabels){
+	if datalabels == nil || datalabels.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(datalabels, nil)
 	C.Delete_CObject(C.CString("Delete_DataLabels"),datalabels.ptr)
 	datalabels.ptr = nil
@@ -10476,6 +10518,9 @@ func (instance *DisplayUnitLabel) ToChartFrame() *ChartFrame {
 }
 
 func DeleteDisplayUnitLabel(displayunitlabel *DisplayUnitLabel){
+	if displayunitlabel == nil || displayunitlabel.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(displayunitlabel, nil)
 	C.Delete_CObject(C.CString("Delete_DisplayUnitLabel"),displayunitlabel.ptr)
 	displayunitlabel.ptr = nil
@@ -10539,6 +10584,9 @@ func (instance *DropBars) GetArea()  (*Area,  error)  {
 
 
 func DeleteDropBars(dropbars *DropBars){
+	if dropbars == nil || dropbars.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(dropbars, nil)
 	C.Delete_CObject(C.CString("Delete_DropBars"),dropbars.ptr)
 	dropbars.ptr = nil
@@ -11433,6 +11481,9 @@ func (instance *ErrorBar) ToLine() *Line {
 }
 
 func DeleteErrorBar(errorbar *ErrorBar){
+	if errorbar == nil || errorbar.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(errorbar, nil)
 	C.Delete_CObject(C.CString("Delete_ErrorBar"),errorbar.ptr)
 	errorbar.ptr = nil
@@ -11694,6 +11745,9 @@ func (instance *Floor) ToArea() *Area {
 }
 
 func DeleteFloor(floor *Floor){
+	if floor == nil || floor.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(floor, nil)
 	C.Delete_CObject(C.CString("Delete_Floor"),floor.ptr)
 	floor.ptr = nil
@@ -12735,6 +12789,9 @@ func (instance *Legend) ToChartFrame() *ChartFrame {
 }
 
 func DeleteLegend(legend *Legend){
+	if legend == nil || legend.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(legend, nil)
 	C.Delete_CObject(C.CString("Delete_Legend"),legend.ptr)
 	legend.ptr = nil
@@ -12903,6 +12960,9 @@ func (instance *LegendEntry) SetBackgroundMode(value BackgroundMode)  error {
 
 
 func DeleteLegendEntry(legendentry *LegendEntry){
+	if legendentry == nil || legendentry.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(legendentry, nil)
 	C.Delete_CObject(C.CString("Delete_LegendEntry"),legendentry.ptr)
 	legendentry.ptr = nil
@@ -12966,6 +13026,9 @@ func (instance *LegendEntryCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteLegendEntryCollection(legendentrycollection *LegendEntryCollection){
+	if legendentrycollection == nil || legendentrycollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(legendentrycollection, nil)
 	C.Delete_CObject(C.CString("Delete_LegendEntryCollection"),legendentrycollection.ptr)
 	legendentrycollection.ptr = nil
@@ -13247,6 +13310,9 @@ func (instance *Marker) SetBackgroundColorSetType(value FormattingType)  error {
 
 
 func DeleteMarker(marker *Marker){
+	if marker == nil || marker.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(marker, nil)
 	C.Delete_CObject(C.CString("Delete_Marker"),marker.ptr)
 	marker.ptr = nil
@@ -13460,6 +13526,9 @@ func (instance *PivotOptions) SetDropZonesVisible(value bool)  error {
 
 
 func DeletePivotOptions(pivotoptions *PivotOptions){
+	if pivotoptions == nil || pivotoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotoptions, nil)
 	C.Delete_CObject(C.CString("Delete_PivotOptions"),pivotoptions.ptr)
 	pivotoptions.ptr = nil
@@ -14146,6 +14215,9 @@ func (instance *PlotArea) ToChartFrame() *ChartFrame {
 }
 
 func DeletePlotArea(plotarea *PlotArea){
+	if plotarea == nil || plotarea.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(plotarea, nil)
 	C.Delete_CObject(C.CString("Delete_PlotArea"),plotarea.ptr)
 	plotarea.ptr = nil
@@ -15528,6 +15600,9 @@ func (instance *Series) GetShapeProperties()  (*ShapePropertyCollection,  error)
 
 
 func DeleteSeries(series *Series){
+	if series == nil || series.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(series, nil)
 	C.Delete_CObject(C.CString("Delete_Series"),series.ptr)
 	series.ptr = nil
@@ -15832,6 +15907,9 @@ func (instance *SeriesCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteSeriesCollection(seriescollection *SeriesCollection){
+	if seriescollection == nil || seriescollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(seriescollection, nil)
 	C.Delete_CObject(C.CString("Delete_SeriesCollection"),seriescollection.ptr)
 	seriescollection.ptr = nil
@@ -16215,6 +16293,9 @@ func (instance *SeriesLayoutProperties) SetMapChartProjectionType(value MapChart
 
 
 func DeleteSeriesLayoutProperties(serieslayoutproperties *SeriesLayoutProperties){
+	if serieslayoutproperties == nil || serieslayoutproperties.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(serieslayoutproperties, nil)
 	C.Delete_CObject(C.CString("Delete_SeriesLayoutProperties"),serieslayoutproperties.ptr)
 	serieslayoutproperties.ptr = nil
@@ -16346,6 +16427,9 @@ func (instance *Sparkline) ToImage_ImageOrPrintOptions(options *ImageOrPrintOpti
 
 
 func DeleteSparkline(sparkline *Sparkline){
+	if sparkline == nil || sparkline.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(sparkline, nil)
 	C.Delete_CObject(C.CString("Delete_Sparkline"),sparkline.ptr)
 	sparkline.ptr = nil
@@ -16447,6 +16531,9 @@ func (instance *SparklineCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteSparklineCollection(sparklinecollection *SparklineCollection){
+	if sparklinecollection == nil || sparklinecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(sparklinecollection, nil)
 	C.Delete_CObject(C.CString("Delete_SparklineCollection"),sparklinecollection.ptr)
 	sparklinecollection.ptr = nil
@@ -17378,6 +17465,9 @@ func (instance *SparklineGroup) SetVerticalAxisMinValue_Double(value float64)  e
 
 
 func DeleteSparklineGroup(sparklinegroup *SparklineGroup){
+	if sparklinegroup == nil || sparklinegroup.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(sparklinegroup, nil)
 	C.Delete_CObject(C.CString("Delete_SparklineGroup"),sparklinegroup.ptr)
 	sparklinegroup.ptr = nil
@@ -17521,6 +17611,9 @@ func (instance *SparklineGroupCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteSparklineGroupCollection(sparklinegroupcollection *SparklineGroupCollection){
+	if sparklinegroupcollection == nil || sparklinegroupcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(sparklinegroupcollection, nil)
 	C.Delete_CObject(C.CString("Delete_SparklineGroupCollection"),sparklinegroupcollection.ptr)
 	sparklinegroupcollection.ptr = nil
@@ -17608,6 +17701,9 @@ func (instance *TickLabelItem) GetHeight()  (float64,  error)  {
 
 
 func DeleteTickLabelItem(ticklabelitem *TickLabelItem){
+	if ticklabelitem == nil || ticklabelitem.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(ticklabelitem, nil)
 	C.Delete_CObject(C.CString("Delete_TickLabelItem"),ticklabelitem.ptr)
 	ticklabelitem.ptr = nil
@@ -18025,6 +18121,9 @@ func (instance *TickLabels) SetAlignmentType(value TickLabelAlignmentType)  erro
 
 
 func DeleteTickLabels(ticklabels *TickLabels){
+	if ticklabels == nil || ticklabels.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(ticklabels, nil)
 	C.Delete_CObject(C.CString("Delete_TickLabels"),ticklabels.ptr)
 	ticklabels.ptr = nil
@@ -19049,6 +19148,9 @@ func (instance *Title) ToChartFrame() *ChartFrame {
 }
 
 func DeleteTitle(title *Title){
+	if title == nil || title.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(title, nil)
 	C.Delete_CObject(C.CString("Delete_Title"),title.ptr)
 	title.ptr = nil
@@ -20081,6 +20183,9 @@ func (instance *Trendline) ToLine() *Line {
 }
 
 func DeleteTrendline(trendline *Trendline){
+	if trendline == nil || trendline.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(trendline, nil)
 	C.Delete_CObject(C.CString("Delete_Trendline"),trendline.ptr)
 	trendline.ptr = nil
@@ -20177,6 +20282,9 @@ func (instance *TrendlineCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteTrendlineCollection(trendlinecollection *TrendlineCollection){
+	if trendlinecollection == nil || trendlinecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(trendlinecollection, nil)
 	C.Delete_CObject(C.CString("Delete_TrendlineCollection"),trendlinecollection.ptr)
 	trendlinecollection.ptr = nil
@@ -20631,6 +20739,9 @@ func (instance *Walls) ToArea() *Area {
 }
 
 func DeleteWalls(walls *Walls){
+	if walls == nil || walls.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(walls, nil)
 	C.Delete_CObject(C.CString("Delete_Walls"),walls.ptr)
 	walls.ptr = nil

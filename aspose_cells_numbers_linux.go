@@ -770,6 +770,9 @@ func (instance *NumbersLoadOptions) ToLoadOptions() *LoadOptions {
 }
 
 func DeleteNumbersLoadOptions(numbersloadoptions *NumbersLoadOptions){
+	if numbersloadoptions == nil || numbersloadoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(numbersloadoptions, nil)
 	C.Delete_CObject(C.CString("Delete_NumbersLoadOptions"),numbersloadoptions.ptr)
 	numbersloadoptions.ptr = nil

@@ -591,6 +591,9 @@ func (instance *AutoNumberedBulletValue) ToBulletValue() *BulletValue {
 }
 
 func DeleteAutoNumberedBulletValue(autonumberedbulletvalue *AutoNumberedBulletValue){
+	if autonumberedbulletvalue == nil || autonumberedbulletvalue.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(autonumberedbulletvalue, nil)
 	C.Delete_CObject(C.CString("Delete_AutoNumberedBulletValue"),autonumberedbulletvalue.ptr)
 	autonumberedbulletvalue.ptr = nil
@@ -699,6 +702,9 @@ func (instance *Bullet) SetFontName(value string)  error {
 
 
 func DeleteBullet(bullet *Bullet){
+	if bullet == nil || bullet.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(bullet, nil)
 	C.Delete_CObject(C.CString("Delete_Bullet"),bullet.ptr)
 	bullet.ptr = nil
@@ -747,6 +753,9 @@ func (instance *BulletValue) GetType()  (BulletType,  error)  {
 
 
 func DeleteBulletValue(bulletvalue *BulletValue){
+	if bulletvalue == nil || bulletvalue.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(bulletvalue, nil)
 	C.Delete_CObject(C.CString("Delete_BulletValue"),bulletvalue.ptr)
 	bulletvalue.ptr = nil
@@ -864,6 +873,9 @@ func (instance *CharacterBulletValue) ToBulletValue() *BulletValue {
 }
 
 func DeleteCharacterBulletValue(characterbulletvalue *CharacterBulletValue){
+	if characterbulletvalue == nil || characterbulletvalue.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(characterbulletvalue, nil)
 	C.Delete_CObject(C.CString("Delete_CharacterBulletValue"),characterbulletvalue.ptr)
 	characterbulletvalue.ptr = nil
@@ -1202,6 +1214,9 @@ func (instance *FontSettingCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteFontSettingCollection(fontsettingcollection *FontSettingCollection){
+	if fontsettingcollection == nil || fontsettingcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(fontsettingcollection, nil)
 	C.Delete_CObject(C.CString("Delete_FontSettingCollection"),fontsettingcollection.ptr)
 	fontsettingcollection.ptr = nil
@@ -1290,6 +1305,9 @@ func (instance *NoneBulletValue) ToBulletValue() *BulletValue {
 }
 
 func DeleteNoneBulletValue(nonebulletvalue *NoneBulletValue){
+	if nonebulletvalue == nil || nonebulletvalue.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(nonebulletvalue, nil)
 	C.Delete_CObject(C.CString("Delete_NoneBulletValue"),nonebulletvalue.ptr)
 	nonebulletvalue.ptr = nil
@@ -1408,6 +1426,9 @@ func (instance *PictureBulletValue) ToBulletValue() *BulletValue {
 }
 
 func DeletePictureBulletValue(picturebulletvalue *PictureBulletValue){
+	if picturebulletvalue == nil || picturebulletvalue.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(picturebulletvalue, nil)
 	C.Delete_CObject(C.CString("Delete_PictureBulletValue"),picturebulletvalue.ptr)
 	picturebulletvalue.ptr = nil
@@ -1920,6 +1941,9 @@ func (instance *ShapeTextAlignment) GetHashCode()  (int32,  error)  {
 
 
 func DeleteShapeTextAlignment(shapetextalignment *ShapeTextAlignment){
+	if shapetextalignment == nil || shapetextalignment.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(shapetextalignment, nil)
 	C.Delete_CObject(C.CString("Delete_ShapeTextAlignment"),shapetextalignment.ptr)
 	shapetextalignment.ptr = nil
@@ -2224,6 +2248,9 @@ func (instance *TextBoxOptions) SetWrapTextInShape(value bool)  error {
 
 
 func DeleteTextBoxOptions(textboxoptions *TextBoxOptions){
+	if textboxoptions == nil || textboxoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(textboxoptions, nil)
 	C.Delete_CObject(C.CString("Delete_TextBoxOptions"),textboxoptions.ptr)
 	textboxoptions.ptr = nil
@@ -3090,6 +3117,9 @@ func (instance *TextOptions) ToFont() *Font {
 }
 
 func DeleteTextOptions(textoptions *TextOptions){
+	if textoptions == nil || textoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(textoptions, nil)
 	C.Delete_CObject(C.CString("Delete_TextOptions"),textoptions.ptr)
 	textoptions.ptr = nil
@@ -3745,6 +3775,9 @@ func (instance *TextParagraph) ToFontSetting() *FontSetting {
 }
 
 func DeleteTextParagraph(textparagraph *TextParagraph){
+	if textparagraph == nil || textparagraph.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(textparagraph, nil)
 	C.Delete_CObject(C.CString("Delete_TextParagraph"),textparagraph.ptr)
 	textparagraph.ptr = nil
@@ -3825,6 +3858,9 @@ func (instance *TextParagraphCollection) GetEnumerator()  (*TextParagraphEnumera
 
 
 func DeleteTextParagraphCollection(textparagraphcollection *TextParagraphCollection){
+	if textparagraphcollection == nil || textparagraphcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(textparagraphcollection, nil)
 	C.Delete_CObject(C.CString("Delete_TextParagraphCollection"),textparagraphcollection.ptr)
 	textparagraphcollection.ptr = nil
@@ -3917,6 +3953,9 @@ func (instance *TextTabStop) SetTabPosition(value float64)  error {
 
 
 func DeleteTextTabStop(texttabstop *TextTabStop){
+	if texttabstop == nil || texttabstop.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(texttabstop, nil)
 	C.Delete_CObject(C.CString("Delete_TextTabStop"),texttabstop.ptr)
 	texttabstop.ptr = nil
@@ -4011,6 +4050,9 @@ func (instance *TextTabStopCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteTextTabStopCollection(texttabstopcollection *TextTabStopCollection){
+	if texttabstopcollection == nil || texttabstopcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(texttabstopcollection, nil)
 	C.Delete_CObject(C.CString("Delete_TextTabStopCollection"),texttabstopcollection.ptr)
 	texttabstopcollection.ptr = nil

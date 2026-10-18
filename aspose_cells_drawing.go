@@ -4184,7 +4184,7 @@ func (instance *ArcShape) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -4200,7 +4200,7 @@ func (instance *ArcShape) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -4216,7 +4216,7 @@ func (instance *ArcShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -4232,7 +4232,7 @@ func (instance *ArcShape) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -4248,7 +4248,7 @@ func (instance *ArcShape) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -4293,7 +4293,7 @@ func (instance *ArcShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -4309,7 +4309,7 @@ func (instance *ArcShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -4446,7 +4446,7 @@ func (instance *ArcShape) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -4475,7 +4475,7 @@ func (instance *ArcShape) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -4567,7 +4567,7 @@ func (instance *ArcShape) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -4626,7 +4626,7 @@ func (instance *ArcShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -5813,7 +5813,7 @@ func (instance *ArcShape) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -6151,7 +6151,7 @@ func (instance *ArcShape) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -6167,7 +6167,7 @@ func (instance *ArcShape) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -6203,7 +6203,7 @@ func (instance *ArcShape) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -6362,7 +6362,7 @@ func (instance *ArcShape) Characters(startindex int32, length int32)  (*FontSett
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -6621,7 +6621,7 @@ func (instance *ArcShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -6652,7 +6652,7 @@ func (instance *ArcShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -6681,7 +6681,7 @@ func (instance *ArcShape) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -6697,7 +6697,7 @@ func (instance *ArcShape) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -6816,7 +6816,7 @@ func (instance *ArcShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -6850,6 +6850,10 @@ func (instance *ArcShape) ToShape() *Shape {
 }
 
 func DeleteArcShape(arcshape *ArcShape){
+	println("Delete arcshape")
+	if arcshape == nil || arcshape.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(arcshape, nil)
 	C.Delete_CObject(C.CString("Delete_ArcShape"),arcshape.ptr)
 	arcshape.ptr = nil
@@ -7012,7 +7016,7 @@ func (instance *Area) GetFillFormat()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -7049,6 +7053,10 @@ func (instance *Area) SetTransparency(value float64)  error {
 
 
 func DeleteArea(area *Area){
+	println("Delete area")
+	if area == nil || area.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(area, nil)
 	C.Delete_CObject(C.CString("Delete_Area"),area.ptr)
 	area.ptr = nil
@@ -7080,6 +7088,10 @@ func (instance *AutomaticFill) IsNull()  (bool,  error)  {
 
 
 func DeleteAutomaticFill(automaticfill *AutomaticFill){
+	println("Delete automaticfill")
+	if automaticfill == nil || automaticfill.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(automaticfill, nil)
 	C.Delete_CObject(C.CString("Delete_AutomaticFill"),automaticfill.ptr)
 	automaticfill.ptr = nil
@@ -7111,6 +7123,10 @@ func (instance *BaseShapeGuide) IsNull()  (bool,  error)  {
 
 
 func DeleteBaseShapeGuide(baseshapeguide *BaseShapeGuide){
+	println("Delete baseshapeguide")
+	if baseshapeguide == nil || baseshapeguide.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(baseshapeguide, nil)
 	C.Delete_CObject(C.CString("Delete_BaseShapeGuide"),baseshapeguide.ptr)
 	baseshapeguide.ptr = nil
@@ -7236,6 +7252,10 @@ func (instance *Bevel) SetType(value BevelPresetType)  error {
 
 
 func DeleteBevel(bevel *Bevel){
+	println("Delete bevel")
+	if bevel == nil || bevel.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(bevel, nil)
 	C.Delete_CObject(C.CString("Delete_Bevel"),bevel.ptr)
 	bevel.ptr = nil
@@ -7484,7 +7504,7 @@ func (instance *Button) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -7500,7 +7520,7 @@ func (instance *Button) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -7516,7 +7536,7 @@ func (instance *Button) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -7532,7 +7552,7 @@ func (instance *Button) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -7548,7 +7568,7 @@ func (instance *Button) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -7593,7 +7613,7 @@ func (instance *Button) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -7609,7 +7629,7 @@ func (instance *Button) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -7746,7 +7766,7 @@ func (instance *Button) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -7775,7 +7795,7 @@ func (instance *Button) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -7867,7 +7887,7 @@ func (instance *Button) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -7926,7 +7946,7 @@ func (instance *Button) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -9113,7 +9133,7 @@ func (instance *Button) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -9451,7 +9471,7 @@ func (instance *Button) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -9467,7 +9487,7 @@ func (instance *Button) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -9503,7 +9523,7 @@ func (instance *Button) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -9662,7 +9682,7 @@ func (instance *Button) Characters(startindex int32, length int32)  (*FontSettin
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -9921,7 +9941,7 @@ func (instance *Button) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -9952,7 +9972,7 @@ func (instance *Button) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -9981,7 +10001,7 @@ func (instance *Button) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -9997,7 +10017,7 @@ func (instance *Button) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -10116,7 +10136,7 @@ func (instance *Button) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -10150,6 +10170,10 @@ func (instance *Button) ToShape() *Shape {
 }
 
 func DeleteButton(button *Button){
+	println("Delete button")
+	if button == nil || button.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(button, nil)
 	C.Delete_CObject(C.CString("Delete_Button"),button.ptr)
 	button.ptr = nil
@@ -10398,7 +10422,7 @@ func (instance *CellsDrawing) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -10414,7 +10438,7 @@ func (instance *CellsDrawing) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -10430,7 +10454,7 @@ func (instance *CellsDrawing) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -10446,7 +10470,7 @@ func (instance *CellsDrawing) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -10462,7 +10486,7 @@ func (instance *CellsDrawing) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -10507,7 +10531,7 @@ func (instance *CellsDrawing) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -10523,7 +10547,7 @@ func (instance *CellsDrawing) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -10660,7 +10684,7 @@ func (instance *CellsDrawing) AddHyperlink(address string)  (*Hyperlink,  error)
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -10689,7 +10713,7 @@ func (instance *CellsDrawing) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -10781,7 +10805,7 @@ func (instance *CellsDrawing) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -10840,7 +10864,7 @@ func (instance *CellsDrawing) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -12027,7 +12051,7 @@ func (instance *CellsDrawing) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -12365,7 +12389,7 @@ func (instance *CellsDrawing) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -12381,7 +12405,7 @@ func (instance *CellsDrawing) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -12417,7 +12441,7 @@ func (instance *CellsDrawing) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -12576,7 +12600,7 @@ func (instance *CellsDrawing) Characters(startindex int32, length int32)  (*Font
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -12835,7 +12859,7 @@ func (instance *CellsDrawing) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -12866,7 +12890,7 @@ func (instance *CellsDrawing) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -12895,7 +12919,7 @@ func (instance *CellsDrawing) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -12911,7 +12935,7 @@ func (instance *CellsDrawing) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -13030,7 +13054,7 @@ func (instance *CellsDrawing) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -13064,6 +13088,10 @@ func (instance *CellsDrawing) ToShape() *Shape {
 }
 
 func DeleteCellsDrawing(cellsdrawing *CellsDrawing){
+	println("Delete cellsdrawing")
+	if cellsdrawing == nil || cellsdrawing.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(cellsdrawing, nil)
 	C.Delete_CObject(C.CString("Delete_CellsDrawing"),cellsdrawing.ptr)
 	cellsdrawing.ptr = nil
@@ -13125,7 +13153,7 @@ func (instance *ChartShape) GetChart()  (*Chart,  error)  {
 	}
 	result := &Chart{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteChart) 
+	 runtime.SetFinalizer(result, DeleteChart) 
 
 	return result, nil 
 }
@@ -13329,7 +13357,7 @@ func (instance *ChartShape) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -13345,7 +13373,7 @@ func (instance *ChartShape) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -13361,7 +13389,7 @@ func (instance *ChartShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -13377,7 +13405,7 @@ func (instance *ChartShape) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -13393,7 +13421,7 @@ func (instance *ChartShape) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -13438,7 +13466,7 @@ func (instance *ChartShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -13454,7 +13482,7 @@ func (instance *ChartShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -13591,7 +13619,7 @@ func (instance *ChartShape) AddHyperlink(address string)  (*Hyperlink,  error)  
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -13620,7 +13648,7 @@ func (instance *ChartShape) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -13712,7 +13740,7 @@ func (instance *ChartShape) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -13771,7 +13799,7 @@ func (instance *ChartShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -14958,7 +14986,7 @@ func (instance *ChartShape) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -15296,7 +15324,7 @@ func (instance *ChartShape) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -15312,7 +15340,7 @@ func (instance *ChartShape) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -15348,7 +15376,7 @@ func (instance *ChartShape) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -15507,7 +15535,7 @@ func (instance *ChartShape) Characters(startindex int32, length int32)  (*FontSe
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -15766,7 +15794,7 @@ func (instance *ChartShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -15797,7 +15825,7 @@ func (instance *ChartShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -15826,7 +15854,7 @@ func (instance *ChartShape) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -15842,7 +15870,7 @@ func (instance *ChartShape) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -15961,7 +15989,7 @@ func (instance *ChartShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -15995,6 +16023,10 @@ func (instance *ChartShape) ToShape() *Shape {
 }
 
 func DeleteChartShape(chartshape *ChartShape){
+	println("Delete chartshape")
+	if chartshape == nil || chartshape.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(chartshape, nil)
 	C.Delete_CObject(C.CString("Delete_ChartShape"),chartshape.ptr)
 	chartshape.ptr = nil
@@ -16333,7 +16365,7 @@ func (instance *CheckBox) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -16349,7 +16381,7 @@ func (instance *CheckBox) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -16365,7 +16397,7 @@ func (instance *CheckBox) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -16381,7 +16413,7 @@ func (instance *CheckBox) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -16397,7 +16429,7 @@ func (instance *CheckBox) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -16442,7 +16474,7 @@ func (instance *CheckBox) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -16458,7 +16490,7 @@ func (instance *CheckBox) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -16595,7 +16627,7 @@ func (instance *CheckBox) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -16624,7 +16656,7 @@ func (instance *CheckBox) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -16716,7 +16748,7 @@ func (instance *CheckBox) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -16775,7 +16807,7 @@ func (instance *CheckBox) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -17962,7 +17994,7 @@ func (instance *CheckBox) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -18300,7 +18332,7 @@ func (instance *CheckBox) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -18316,7 +18348,7 @@ func (instance *CheckBox) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -18352,7 +18384,7 @@ func (instance *CheckBox) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -18511,7 +18543,7 @@ func (instance *CheckBox) Characters(startindex int32, length int32)  (*FontSett
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -18770,7 +18802,7 @@ func (instance *CheckBox) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -18801,7 +18833,7 @@ func (instance *CheckBox) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -18830,7 +18862,7 @@ func (instance *CheckBox) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -18846,7 +18878,7 @@ func (instance *CheckBox) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -18965,7 +18997,7 @@ func (instance *CheckBox) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -18999,6 +19031,10 @@ func (instance *CheckBox) ToShape() *Shape {
 }
 
 func DeleteCheckBox(checkbox *CheckBox){
+	println("Delete checkbox")
+	if checkbox == nil || checkbox.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(checkbox, nil)
 	C.Delete_CObject(C.CString("Delete_CheckBox"),checkbox.ptr)
 	checkbox.ptr = nil
@@ -19059,7 +19095,7 @@ func (instance *CheckBoxCollection) Get(index int32)  (*CheckBox,  error)  {
 	}
 	result := &CheckBox{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCheckBox) 
+	 runtime.SetFinalizer(result, DeleteCheckBox) 
 
 	return result, nil 
 }
@@ -19081,6 +19117,10 @@ func (instance *CheckBoxCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteCheckBoxCollection(checkboxcollection *CheckBoxCollection){
+	println("Delete checkboxcollection")
+	if checkboxcollection == nil || checkboxcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(checkboxcollection, nil)
 	C.Delete_CObject(C.CString("Delete_CheckBoxCollection"),checkboxcollection.ptr)
 	checkboxcollection.ptr = nil
@@ -19151,6 +19191,10 @@ func ColorHelper_ToOleColor(color *Color, workbook *Workbook)  (int32,  error)  
 
 
 func DeleteColorHelper(colorhelper *ColorHelper){
+	println("Delete colorhelper")
+	if colorhelper == nil || colorhelper.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(colorhelper, nil)
 	C.Delete_CObject(C.CString("Delete_ColorHelper"),colorhelper.ptr)
 	colorhelper.ptr = nil
@@ -19256,7 +19300,7 @@ func (instance *ComboBox) GetSelectedCell()  (*Cell,  error)  {
 	}
 	result := &Cell{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCell) 
+	 runtime.SetFinalizer(result, DeleteCell) 
 
 	return result, nil 
 }
@@ -19518,7 +19562,7 @@ func (instance *ComboBox) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -19534,7 +19578,7 @@ func (instance *ComboBox) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -19550,7 +19594,7 @@ func (instance *ComboBox) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -19566,7 +19610,7 @@ func (instance *ComboBox) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -19582,7 +19626,7 @@ func (instance *ComboBox) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -19627,7 +19671,7 @@ func (instance *ComboBox) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -19643,7 +19687,7 @@ func (instance *ComboBox) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -19780,7 +19824,7 @@ func (instance *ComboBox) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -19809,7 +19853,7 @@ func (instance *ComboBox) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -19901,7 +19945,7 @@ func (instance *ComboBox) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -19960,7 +20004,7 @@ func (instance *ComboBox) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -21147,7 +21191,7 @@ func (instance *ComboBox) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -21485,7 +21529,7 @@ func (instance *ComboBox) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -21501,7 +21545,7 @@ func (instance *ComboBox) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -21537,7 +21581,7 @@ func (instance *ComboBox) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -21696,7 +21740,7 @@ func (instance *ComboBox) Characters(startindex int32, length int32)  (*FontSett
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -21955,7 +21999,7 @@ func (instance *ComboBox) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -21986,7 +22030,7 @@ func (instance *ComboBox) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -22015,7 +22059,7 @@ func (instance *ComboBox) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -22031,7 +22075,7 @@ func (instance *ComboBox) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -22150,7 +22194,7 @@ func (instance *ComboBox) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -22184,6 +22228,10 @@ func (instance *ComboBox) ToShape() *Shape {
 }
 
 func DeleteComboBox(combobox *ComboBox){
+	println("Delete combobox")
+	if combobox == nil || combobox.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(combobox, nil)
 	C.Delete_CObject(C.CString("Delete_ComboBox"),combobox.ptr)
 	combobox.ptr = nil
@@ -22244,7 +22292,7 @@ func (instance *CommentShape) GetComment()  (*Comment,  error)  {
 	}
 	result := &Comment{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteComment) 
+	 runtime.SetFinalizer(result, DeleteComment) 
 
 	return result, nil 
 }
@@ -22448,7 +22496,7 @@ func (instance *CommentShape) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -22464,7 +22512,7 @@ func (instance *CommentShape) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -22480,7 +22528,7 @@ func (instance *CommentShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -22496,7 +22544,7 @@ func (instance *CommentShape) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -22512,7 +22560,7 @@ func (instance *CommentShape) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -22557,7 +22605,7 @@ func (instance *CommentShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -22573,7 +22621,7 @@ func (instance *CommentShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -22710,7 +22758,7 @@ func (instance *CommentShape) AddHyperlink(address string)  (*Hyperlink,  error)
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -22739,7 +22787,7 @@ func (instance *CommentShape) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -22831,7 +22879,7 @@ func (instance *CommentShape) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -22890,7 +22938,7 @@ func (instance *CommentShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -24077,7 +24125,7 @@ func (instance *CommentShape) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -24415,7 +24463,7 @@ func (instance *CommentShape) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -24431,7 +24479,7 @@ func (instance *CommentShape) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -24467,7 +24515,7 @@ func (instance *CommentShape) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -24626,7 +24674,7 @@ func (instance *CommentShape) Characters(startindex int32, length int32)  (*Font
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -24885,7 +24933,7 @@ func (instance *CommentShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -24916,7 +24964,7 @@ func (instance *CommentShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -24945,7 +24993,7 @@ func (instance *CommentShape) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -24961,7 +25009,7 @@ func (instance *CommentShape) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -25080,7 +25128,7 @@ func (instance *CommentShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -25114,6 +25162,10 @@ func (instance *CommentShape) ToShape() *Shape {
 }
 
 func DeleteCommentShape(commentshape *CommentShape){
+	println("Delete commentshape")
+	if commentshape == nil || commentshape.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(commentshape, nil)
 	C.Delete_CObject(C.CString("Delete_CommentShape"),commentshape.ptr)
 	commentshape.ptr = nil
@@ -25174,7 +25226,7 @@ func (instance *CustomGeometry) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -25190,7 +25242,7 @@ func (instance *CustomGeometry) GetShapeAdjustValues()  (*ShapeGuideCollection, 
 	}
 	result := &ShapeGuideCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapeGuideCollection) 
+	 runtime.SetFinalizer(result, DeleteShapeGuideCollection) 
 
 	return result, nil 
 }
@@ -25203,6 +25255,10 @@ func (instance *CustomGeometry) ToGeometry() *Geometry {
 }
 
 func DeleteCustomGeometry(customgeometry *CustomGeometry){
+	println("Delete customgeometry")
+	if customgeometry == nil || customgeometry.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(customgeometry, nil)
 	C.Delete_CObject(C.CString("Delete_CustomGeometry"),customgeometry.ptr)
 	customgeometry.ptr = nil
@@ -25451,7 +25507,7 @@ func (instance *CustomXmlShape) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -25467,7 +25523,7 @@ func (instance *CustomXmlShape) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -25483,7 +25539,7 @@ func (instance *CustomXmlShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -25499,7 +25555,7 @@ func (instance *CustomXmlShape) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -25515,7 +25571,7 @@ func (instance *CustomXmlShape) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -25560,7 +25616,7 @@ func (instance *CustomXmlShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -25576,7 +25632,7 @@ func (instance *CustomXmlShape) GetFormatPicture()  (*MsoFormatPicture,  error) 
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -25713,7 +25769,7 @@ func (instance *CustomXmlShape) AddHyperlink(address string)  (*Hyperlink,  erro
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -25742,7 +25798,7 @@ func (instance *CustomXmlShape) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -25834,7 +25890,7 @@ func (instance *CustomXmlShape) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -25893,7 +25949,7 @@ func (instance *CustomXmlShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -27080,7 +27136,7 @@ func (instance *CustomXmlShape) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -27418,7 +27474,7 @@ func (instance *CustomXmlShape) GetTextBody()  (*FontSettingCollection,  error) 
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -27434,7 +27490,7 @@ func (instance *CustomXmlShape) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -27470,7 +27526,7 @@ func (instance *CustomXmlShape) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -27629,7 +27685,7 @@ func (instance *CustomXmlShape) Characters(startindex int32, length int32)  (*Fo
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -27888,7 +27944,7 @@ func (instance *CustomXmlShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -27919,7 +27975,7 @@ func (instance *CustomXmlShape) GetActiveXControl()  (*ActiveXControl,  error)  
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -27948,7 +28004,7 @@ func (instance *CustomXmlShape) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -27964,7 +28020,7 @@ func (instance *CustomXmlShape) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -28083,7 +28139,7 @@ func (instance *CustomXmlShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -28117,6 +28173,10 @@ func (instance *CustomXmlShape) ToShape() *Shape {
 }
 
 func DeleteCustomXmlShape(customxmlshape *CustomXmlShape){
+	println("Delete customxmlshape")
+	if customxmlshape == nil || customxmlshape.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(customxmlshape, nil)
 	C.Delete_CObject(C.CString("Delete_CustomXmlShape"),customxmlshape.ptr)
 	customxmlshape.ptr = nil
@@ -28365,7 +28425,7 @@ func (instance *Dialog_Box) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -28381,7 +28441,7 @@ func (instance *Dialog_Box) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -28397,7 +28457,7 @@ func (instance *Dialog_Box) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -28413,7 +28473,7 @@ func (instance *Dialog_Box) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -28429,7 +28489,7 @@ func (instance *Dialog_Box) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -28474,7 +28534,7 @@ func (instance *Dialog_Box) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -28490,7 +28550,7 @@ func (instance *Dialog_Box) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -28627,7 +28687,7 @@ func (instance *Dialog_Box) AddHyperlink(address string)  (*Hyperlink,  error)  
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -28656,7 +28716,7 @@ func (instance *Dialog_Box) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -28748,7 +28808,7 @@ func (instance *Dialog_Box) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -28807,7 +28867,7 @@ func (instance *Dialog_Box) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -29994,7 +30054,7 @@ func (instance *Dialog_Box) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -30332,7 +30392,7 @@ func (instance *Dialog_Box) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -30348,7 +30408,7 @@ func (instance *Dialog_Box) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -30384,7 +30444,7 @@ func (instance *Dialog_Box) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -30543,7 +30603,7 @@ func (instance *Dialog_Box) Characters(startindex int32, length int32)  (*FontSe
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -30802,7 +30862,7 @@ func (instance *Dialog_Box) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -30833,7 +30893,7 @@ func (instance *Dialog_Box) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -30862,7 +30922,7 @@ func (instance *Dialog_Box) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -30878,7 +30938,7 @@ func (instance *Dialog_Box) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -30997,7 +31057,7 @@ func (instance *Dialog_Box) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -31031,6 +31091,10 @@ func (instance *Dialog_Box) ToShape() *Shape {
 }
 
 func DeleteDialog_Box(dialog_box *Dialog_Box){
+	println("Delete dialog_box")
+	if dialog_box == nil || dialog_box.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(dialog_box, nil)
 	C.Delete_CObject(C.CString("Delete_Dialog_Box"),dialog_box.ptr)
 	dialog_box.ptr = nil
@@ -31131,7 +31195,7 @@ func (instance *FillFormat) GetGradientFill()  (*GradientFill,  error)  {
 	}
 	result := &GradientFill{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGradientFill) 
+	 runtime.SetFinalizer(result, DeleteGradientFill) 
 
 	return result, nil 
 }
@@ -31147,7 +31211,7 @@ func (instance *FillFormat) GetTextureFill()  (*TextureFill,  error)  {
 	}
 	result := &TextureFill{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextureFill) 
+	 runtime.SetFinalizer(result, DeleteTextureFill) 
 
 	return result, nil 
 }
@@ -31163,7 +31227,7 @@ func (instance *FillFormat) GetSolidFill()  (*SolidFill,  error)  {
 	}
 	result := &SolidFill{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteSolidFill) 
+	 runtime.SetFinalizer(result, DeleteSolidFill) 
 
 	return result, nil 
 }
@@ -31179,7 +31243,7 @@ func (instance *FillFormat) GetPatternFill()  (*PatternFill,  error)  {
 	}
 	result := &PatternFill{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePatternFill) 
+	 runtime.SetFinalizer(result, DeletePatternFill) 
 
 	return result, nil 
 }
@@ -31564,6 +31628,10 @@ func (instance *FillFormat) GetHashCode()  (int32,  error)  {
 
 
 func DeleteFillFormat(fillformat *FillFormat){
+	println("Delete fillformat")
+	if fillformat == nil || fillformat.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(fillformat, nil)
 	C.Delete_CObject(C.CString("Delete_FillFormat"),fillformat.ptr)
 	fillformat.ptr = nil
@@ -31603,7 +31671,7 @@ func (instance *Format3D) GetTopBevel()  (*Bevel,  error)  {
 	}
 	result := &Bevel{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteBevel) 
+	 runtime.SetFinalizer(result, DeleteBevel) 
 
 	return result, nil 
 }
@@ -31722,6 +31790,10 @@ func (instance *Format3D) SetLightingAngle(value float64)  error {
 
 
 func DeleteFormat3D(format3d *Format3D){
+	println("Delete format3d")
+	if format3d == nil || format3d.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(format3d, nil)
 	C.Delete_CObject(C.CString("Delete_Format3D"),format3d.ptr)
 	format3d.ptr = nil
@@ -31761,7 +31833,7 @@ func (instance *Geometry) GetShapeAdjustValues()  (*ShapeGuideCollection,  error
 	}
 	result := &ShapeGuideCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapeGuideCollection) 
+	 runtime.SetFinalizer(result, DeleteShapeGuideCollection) 
 
 	return result, nil 
 }
@@ -31769,6 +31841,10 @@ func (instance *Geometry) GetShapeAdjustValues()  (*ShapeGuideCollection,  error
 
 
 func DeleteGeometry(geometry *Geometry){
+	println("Delete geometry")
+	if geometry == nil || geometry.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(geometry, nil)
 	C.Delete_CObject(C.CString("Delete_Geometry"),geometry.ptr)
 	geometry.ptr = nil
@@ -31809,7 +31885,7 @@ func (instance *GlowEffect) GetColor()  (*CellsColor,  error)  {
 	}
 	result := &CellsColor{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCellsColor) 
+	 runtime.SetFinalizer(result, DeleteCellsColor) 
 
 	return result, nil 
 }
@@ -31895,6 +31971,10 @@ func (instance *GlowEffect) SetTransparency(value float64)  error {
 
 
 func DeleteGlowEffect(gloweffect *GlowEffect){
+	println("Delete gloweffect")
+	if gloweffect == nil || gloweffect.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(gloweffect, nil)
 	C.Delete_CObject(C.CString("Delete_GlowEffect"),gloweffect.ptr)
 	gloweffect.ptr = nil
@@ -31934,7 +32014,7 @@ func (instance *GradientFill) GetGradientStops()  (*GradientStopCollection,  err
 	}
 	result := &GradientStopCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGradientStopCollection) 
+	 runtime.SetFinalizer(result, DeleteGradientStopCollection) 
 
 	return result, nil 
 }
@@ -32097,6 +32177,10 @@ func (instance *GradientFill) SetTwoColorGradient_Color_Double_Color_Double_Grad
 
 
 func DeleteGradientFill(gradientfill *GradientFill){
+	println("Delete gradientfill")
+	if gradientfill == nil || gradientfill.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(gradientfill, nil)
 	C.Delete_CObject(C.CString("Delete_GradientFill"),gradientfill.ptr)
 	gradientfill.ptr = nil
@@ -32165,7 +32249,7 @@ func (instance *GradientStop) GetCellsColor()  (*CellsColor,  error)  {
 	}
 	result := &CellsColor{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCellsColor) 
+	 runtime.SetFinalizer(result, DeleteCellsColor) 
 
 	return result, nil 
 }
@@ -32202,6 +32286,10 @@ func (instance *GradientStop) SetTransparency(value float64)  error {
 
 
 func DeleteGradientStop(gradientstop *GradientStop){
+	println("Delete gradientstop")
+	if gradientstop == nil || gradientstop.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(gradientstop, nil)
 	C.Delete_CObject(C.CString("Delete_GradientStop"),gradientstop.ptr)
 	gradientstop.ptr = nil
@@ -32282,7 +32370,7 @@ func (instance *GradientStopCollection) Get(index int32)  (*GradientStop,  error
 	}
 	result := &GradientStop{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGradientStop) 
+	 runtime.SetFinalizer(result, DeleteGradientStop) 
 
 	return result, nil 
 }
@@ -32304,6 +32392,10 @@ func (instance *GradientStopCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteGradientStopCollection(gradientstopcollection *GradientStopCollection){
+	println("Delete gradientstopcollection")
+	if gradientstopcollection == nil || gradientstopcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(gradientstopcollection, nil)
 	C.Delete_CObject(C.CString("Delete_GradientStopCollection"),gradientstopcollection.ptr)
 	gradientstopcollection.ptr = nil
@@ -32581,7 +32673,7 @@ func (instance *GroupBox) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -32597,7 +32689,7 @@ func (instance *GroupBox) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -32613,7 +32705,7 @@ func (instance *GroupBox) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -32629,7 +32721,7 @@ func (instance *GroupBox) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -32645,7 +32737,7 @@ func (instance *GroupBox) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -32690,7 +32782,7 @@ func (instance *GroupBox) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -32706,7 +32798,7 @@ func (instance *GroupBox) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -32843,7 +32935,7 @@ func (instance *GroupBox) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -32872,7 +32964,7 @@ func (instance *GroupBox) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -32964,7 +33056,7 @@ func (instance *GroupBox) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -33023,7 +33115,7 @@ func (instance *GroupBox) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -34210,7 +34302,7 @@ func (instance *GroupBox) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -34548,7 +34640,7 @@ func (instance *GroupBox) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -34564,7 +34656,7 @@ func (instance *GroupBox) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -34600,7 +34692,7 @@ func (instance *GroupBox) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -34759,7 +34851,7 @@ func (instance *GroupBox) Characters(startindex int32, length int32)  (*FontSett
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -35018,7 +35110,7 @@ func (instance *GroupBox) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -35049,7 +35141,7 @@ func (instance *GroupBox) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -35078,7 +35170,7 @@ func (instance *GroupBox) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -35094,7 +35186,7 @@ func (instance *GroupBox) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -35213,7 +35305,7 @@ func (instance *GroupBox) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -35247,6 +35339,10 @@ func (instance *GroupBox) ToShape() *Shape {
 }
 
 func DeleteGroupBox(groupbox *GroupBox){
+	println("Delete groupbox")
+	if groupbox == nil || groupbox.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(groupbox, nil)
 	C.Delete_CObject(C.CString("Delete_GroupBox"),groupbox.ptr)
 	groupbox.ptr = nil
@@ -35278,6 +35374,10 @@ func (instance *GroupFill) IsNull()  (bool,  error)  {
 
 
 func DeleteGroupFill(groupfill *GroupFill){
+	println("Delete groupfill")
+	if groupfill == nil || groupfill.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(groupfill, nil)
 	C.Delete_CObject(C.CString("Delete_GroupFill"),groupfill.ptr)
 	groupfill.ptr = nil
@@ -35340,7 +35440,7 @@ func (instance *GroupShape) Get(index int32)  (*Shape,  error)  {
 	}
 	result := &Shape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShape) 
+	 runtime.SetFinalizer(result, DeleteShape) 
 
 	return result, nil 
 }
@@ -35578,7 +35678,7 @@ func (instance *GroupShape) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -35594,7 +35694,7 @@ func (instance *GroupShape) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -35610,7 +35710,7 @@ func (instance *GroupShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -35626,7 +35726,7 @@ func (instance *GroupShape) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -35642,7 +35742,7 @@ func (instance *GroupShape) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -35687,7 +35787,7 @@ func (instance *GroupShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -35703,7 +35803,7 @@ func (instance *GroupShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -35840,7 +35940,7 @@ func (instance *GroupShape) AddHyperlink(address string)  (*Hyperlink,  error)  
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -35869,7 +35969,7 @@ func (instance *GroupShape) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -35961,7 +36061,7 @@ func (instance *GroupShape) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -36020,7 +36120,7 @@ func (instance *GroupShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -37207,7 +37307,7 @@ func (instance *GroupShape) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -37545,7 +37645,7 @@ func (instance *GroupShape) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -37561,7 +37661,7 @@ func (instance *GroupShape) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -37597,7 +37697,7 @@ func (instance *GroupShape) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -37756,7 +37856,7 @@ func (instance *GroupShape) Characters(startindex int32, length int32)  (*FontSe
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -38015,7 +38115,7 @@ func (instance *GroupShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -38046,7 +38146,7 @@ func (instance *GroupShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -38075,7 +38175,7 @@ func (instance *GroupShape) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -38091,7 +38191,7 @@ func (instance *GroupShape) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -38210,7 +38310,7 @@ func (instance *GroupShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -38244,6 +38344,10 @@ func (instance *GroupShape) ToShape() *Shape {
 }
 
 func DeleteGroupShape(groupshape *GroupShape){
+	println("Delete groupshape")
+	if groupshape == nil || groupshape.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(groupshape, nil)
 	C.Delete_CObject(C.CString("Delete_GroupShape"),groupshape.ptr)
 	groupshape.ptr = nil
@@ -38492,7 +38596,7 @@ func (instance *Label) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -38508,7 +38612,7 @@ func (instance *Label) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -38524,7 +38628,7 @@ func (instance *Label) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -38540,7 +38644,7 @@ func (instance *Label) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -38556,7 +38660,7 @@ func (instance *Label) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -38601,7 +38705,7 @@ func (instance *Label) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -38617,7 +38721,7 @@ func (instance *Label) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -38754,7 +38858,7 @@ func (instance *Label) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -38783,7 +38887,7 @@ func (instance *Label) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -38875,7 +38979,7 @@ func (instance *Label) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -38934,7 +39038,7 @@ func (instance *Label) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -40121,7 +40225,7 @@ func (instance *Label) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -40459,7 +40563,7 @@ func (instance *Label) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -40475,7 +40579,7 @@ func (instance *Label) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -40511,7 +40615,7 @@ func (instance *Label) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -40670,7 +40774,7 @@ func (instance *Label) Characters(startindex int32, length int32)  (*FontSetting
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -40929,7 +41033,7 @@ func (instance *Label) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -40960,7 +41064,7 @@ func (instance *Label) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -40989,7 +41093,7 @@ func (instance *Label) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -41005,7 +41109,7 @@ func (instance *Label) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -41124,7 +41228,7 @@ func (instance *Label) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -41158,6 +41262,10 @@ func (instance *Label) ToShape() *Shape {
 }
 
 func DeleteLabel(label *Label){
+	println("Delete label")
+	if label == nil || label.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(label, nil)
 	C.Delete_CObject(C.CString("Delete_Label"),label.ptr)
 	label.ptr = nil
@@ -41517,7 +41625,7 @@ func (instance *Line) GetThemeColor()  (*ThemeColor,  error)  {
 	}
 	result := &ThemeColor{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThemeColor) 
+	 runtime.SetFinalizer(result, DeleteThemeColor) 
 
 	return result, nil 
 }
@@ -41838,7 +41946,7 @@ func (instance *Line) GetGradientFill()  (*GradientFill,  error)  {
 	}
 	result := &GradientFill{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGradientFill) 
+	 runtime.SetFinalizer(result, DeleteGradientFill) 
 
 	return result, nil 
 }
@@ -41846,6 +41954,10 @@ func (instance *Line) GetGradientFill()  (*GradientFill,  error)  {
 
 
 func DeleteLine(line *Line){
+	println("Delete line")
+	if line == nil || line.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(line, nil)
 	C.Delete_CObject(C.CString("Delete_Line"),line.ptr)
 	line.ptr = nil
@@ -42351,7 +42463,7 @@ func (instance *LineFormat) GetGradientFill()  (*GradientFill,  error)  {
 	}
 	result := &GradientFill{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGradientFill) 
+	 runtime.SetFinalizer(result, DeleteGradientFill) 
 
 	return result, nil 
 }
@@ -42367,7 +42479,7 @@ func (instance *LineFormat) GetTextureFill()  (*TextureFill,  error)  {
 	}
 	result := &TextureFill{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextureFill) 
+	 runtime.SetFinalizer(result, DeleteTextureFill) 
 
 	return result, nil 
 }
@@ -42383,7 +42495,7 @@ func (instance *LineFormat) GetSolidFill()  (*SolidFill,  error)  {
 	}
 	result := &SolidFill{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteSolidFill) 
+	 runtime.SetFinalizer(result, DeleteSolidFill) 
 
 	return result, nil 
 }
@@ -42399,7 +42511,7 @@ func (instance *LineFormat) GetPatternFill()  (*PatternFill,  error)  {
 	}
 	result := &PatternFill{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePatternFill) 
+	 runtime.SetFinalizer(result, DeletePatternFill) 
 
 	return result, nil 
 }
@@ -42734,6 +42846,10 @@ func (instance *LineFormat) ToFillFormat() *FillFormat {
 }
 
 func DeleteLineFormat(lineformat *LineFormat){
+	println("Delete lineformat")
+	if lineformat == nil || lineformat.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(lineformat, nil)
 	C.Delete_CObject(C.CString("Delete_LineFormat"),lineformat.ptr)
 	lineformat.ptr = nil
@@ -42982,7 +43098,7 @@ func (instance *LineShape) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -42998,7 +43114,7 @@ func (instance *LineShape) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -43014,7 +43130,7 @@ func (instance *LineShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -43030,7 +43146,7 @@ func (instance *LineShape) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -43046,7 +43162,7 @@ func (instance *LineShape) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -43091,7 +43207,7 @@ func (instance *LineShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -43107,7 +43223,7 @@ func (instance *LineShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -43244,7 +43360,7 @@ func (instance *LineShape) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -43273,7 +43389,7 @@ func (instance *LineShape) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -43365,7 +43481,7 @@ func (instance *LineShape) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -43424,7 +43540,7 @@ func (instance *LineShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -44611,7 +44727,7 @@ func (instance *LineShape) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -44949,7 +45065,7 @@ func (instance *LineShape) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -44965,7 +45081,7 @@ func (instance *LineShape) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -45001,7 +45117,7 @@ func (instance *LineShape) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -45160,7 +45276,7 @@ func (instance *LineShape) Characters(startindex int32, length int32)  (*FontSet
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -45419,7 +45535,7 @@ func (instance *LineShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -45450,7 +45566,7 @@ func (instance *LineShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -45479,7 +45595,7 @@ func (instance *LineShape) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -45495,7 +45611,7 @@ func (instance *LineShape) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -45614,7 +45730,7 @@ func (instance *LineShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -45648,6 +45764,10 @@ func (instance *LineShape) ToShape() *Shape {
 }
 
 func DeleteLineShape(lineshape *LineShape){
+	println("Delete lineshape")
+	if lineshape == nil || lineshape.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(lineshape, nil)
 	C.Delete_CObject(C.CString("Delete_LineShape"),lineshape.ptr)
 	lineshape.ptr = nil
@@ -46087,7 +46207,7 @@ func (instance *ListBox) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -46103,7 +46223,7 @@ func (instance *ListBox) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -46119,7 +46239,7 @@ func (instance *ListBox) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -46135,7 +46255,7 @@ func (instance *ListBox) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -46151,7 +46271,7 @@ func (instance *ListBox) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -46196,7 +46316,7 @@ func (instance *ListBox) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -46212,7 +46332,7 @@ func (instance *ListBox) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -46349,7 +46469,7 @@ func (instance *ListBox) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -46378,7 +46498,7 @@ func (instance *ListBox) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -46470,7 +46590,7 @@ func (instance *ListBox) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -46529,7 +46649,7 @@ func (instance *ListBox) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -47716,7 +47836,7 @@ func (instance *ListBox) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -48054,7 +48174,7 @@ func (instance *ListBox) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -48070,7 +48190,7 @@ func (instance *ListBox) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -48106,7 +48226,7 @@ func (instance *ListBox) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -48265,7 +48385,7 @@ func (instance *ListBox) Characters(startindex int32, length int32)  (*FontSetti
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -48524,7 +48644,7 @@ func (instance *ListBox) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -48555,7 +48675,7 @@ func (instance *ListBox) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -48584,7 +48704,7 @@ func (instance *ListBox) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -48600,7 +48720,7 @@ func (instance *ListBox) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -48719,7 +48839,7 @@ func (instance *ListBox) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -48753,6 +48873,10 @@ func (instance *ListBox) ToShape() *Shape {
 }
 
 func DeleteListBox(listbox *ListBox){
+	println("Delete listbox")
+	if listbox == nil || listbox.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(listbox, nil)
 	C.Delete_CObject(C.CString("Delete_ListBox"),listbox.ptr)
 	listbox.ptr = nil
@@ -48967,6 +49091,10 @@ func (instance *MsoFillFormat) SetIsVisible(value bool)  error {
 
 
 func DeleteMsoFillFormat(msofillformat *MsoFillFormat){
+	println("Delete msofillformat")
+	if msofillformat == nil || msofillformat.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(msofillformat, nil)
 	C.Delete_CObject(C.CString("Delete_MsoFillFormat"),msofillformat.ptr)
 	msofillformat.ptr = nil
@@ -49181,6 +49309,10 @@ func (instance *MsoFillFormatHelper) SetIsVisible(value bool)  error {
 
 
 func DeleteMsoFillFormatHelper(msofillformathelper *MsoFillFormatHelper){
+	println("Delete msofillformathelper")
+	if msofillformathelper == nil || msofillformathelper.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(msofillformathelper, nil)
 	C.Delete_CObject(C.CString("Delete_MsoFillFormatHelper"),msofillformathelper.ptr)
 	msofillformathelper.ptr = nil
@@ -49481,7 +49613,7 @@ func (instance *MsoFormatPicture) GetTransparentColor()  (*CellsColor,  error)  
 	}
 	result := &CellsColor{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCellsColor) 
+	 runtime.SetFinalizer(result, DeleteCellsColor) 
 
 	return result, nil 
 }
@@ -49688,6 +49820,10 @@ func (instance *MsoFormatPicture) Equals(obj *Object)  (bool,  error)  {
 
 
 func DeleteMsoFormatPicture(msoformatpicture *MsoFormatPicture){
+	println("Delete msoformatpicture")
+	if msoformatpicture == nil || msoformatpicture.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(msoformatpicture, nil)
 	C.Delete_CObject(C.CString("Delete_MsoFormatPicture"),msoformatpicture.ptr)
 	msoformatpicture.ptr = nil
@@ -49930,6 +50066,10 @@ func (instance *MsoLineFormat) SetWeight(value float64)  error {
 
 
 func DeleteMsoLineFormat(msolineformat *MsoLineFormat){
+	println("Delete msolineformat")
+	if msolineformat == nil || msolineformat.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(msolineformat, nil)
 	C.Delete_CObject(C.CString("Delete_MsoLineFormat"),msolineformat.ptr)
 	msolineformat.ptr = nil
@@ -50172,6 +50312,10 @@ func (instance *MsoLineFormatHelper) SetWeight(value float64)  error {
 
 
 func DeleteMsoLineFormatHelper(msolineformathelper *MsoLineFormatHelper){
+	println("Delete msolineformathelper")
+	if msolineformathelper == nil || msolineformathelper.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(msolineformathelper, nil)
 	C.Delete_CObject(C.CString("Delete_MsoLineFormatHelper"),msolineformathelper.ptr)
 	msolineformathelper.ptr = nil
@@ -50406,6 +50550,10 @@ func (instance *MsoTextFrame) SetBottomMarginPt(value float64)  error {
 
 
 func DeleteMsoTextFrame(msotextframe *MsoTextFrame){
+	println("Delete msotextframe")
+	if msotextframe == nil || msotextframe.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(msotextframe, nil)
 	C.Delete_CObject(C.CString("Delete_MsoTextFrame"),msotextframe.ptr)
 	msotextframe.ptr = nil
@@ -50437,6 +50585,10 @@ func (instance *NoneFill) IsNull()  (bool,  error)  {
 
 
 func DeleteNoneFill(nonefill *NoneFill){
+	println("Delete nonefill")
+	if nonefill == nil || nonefill.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(nonefill, nil)
 	C.Delete_CObject(C.CString("Delete_NoneFill"),nonefill.ptr)
 	nonefill.ptr = nil
@@ -51162,7 +51314,7 @@ func (instance *OleObject) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -51178,7 +51330,7 @@ func (instance *OleObject) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -51194,7 +51346,7 @@ func (instance *OleObject) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -51210,7 +51362,7 @@ func (instance *OleObject) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -51226,7 +51378,7 @@ func (instance *OleObject) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -51271,7 +51423,7 @@ func (instance *OleObject) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -51287,7 +51439,7 @@ func (instance *OleObject) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -51424,7 +51576,7 @@ func (instance *OleObject) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -51453,7 +51605,7 @@ func (instance *OleObject) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -51545,7 +51697,7 @@ func (instance *OleObject) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -51604,7 +51756,7 @@ func (instance *OleObject) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -52791,7 +52943,7 @@ func (instance *OleObject) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -53129,7 +53281,7 @@ func (instance *OleObject) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -53145,7 +53297,7 @@ func (instance *OleObject) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -53181,7 +53333,7 @@ func (instance *OleObject) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -53340,7 +53492,7 @@ func (instance *OleObject) Characters(startindex int32, length int32)  (*FontSet
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -53599,7 +53751,7 @@ func (instance *OleObject) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -53630,7 +53782,7 @@ func (instance *OleObject) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -53659,7 +53811,7 @@ func (instance *OleObject) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -53675,7 +53827,7 @@ func (instance *OleObject) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -53794,7 +53946,7 @@ func (instance *OleObject) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -53828,6 +53980,10 @@ func (instance *OleObject) ToShape() *Shape {
 }
 
 func DeleteOleObject(oleobject *OleObject){
+	println("Delete oleobject")
+	if oleobject == nil || oleobject.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(oleobject, nil)
 	C.Delete_CObject(C.CString("Delete_OleObject"),oleobject.ptr)
 	oleobject.ptr = nil
@@ -53910,7 +54066,7 @@ func (instance *OleObjectCollection) Get(index int32)  (*OleObject,  error)  {
 	}
 	result := &OleObject{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteOleObject) 
+	 runtime.SetFinalizer(result, DeleteOleObject) 
 
 	return result, nil 
 }
@@ -53960,6 +54116,10 @@ func (instance *OleObjectCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteOleObjectCollection(oleobjectcollection *OleObjectCollection){
+	println("Delete oleobjectcollection")
+	if oleobjectcollection == nil || oleobjectcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(oleobjectcollection, nil)
 	C.Delete_CObject(C.CString("Delete_OleObjectCollection"),oleobjectcollection.ptr)
 	oleobjectcollection.ptr = nil
@@ -54208,7 +54368,7 @@ func (instance *Oval) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -54224,7 +54384,7 @@ func (instance *Oval) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -54240,7 +54400,7 @@ func (instance *Oval) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -54256,7 +54416,7 @@ func (instance *Oval) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -54272,7 +54432,7 @@ func (instance *Oval) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -54317,7 +54477,7 @@ func (instance *Oval) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -54333,7 +54493,7 @@ func (instance *Oval) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -54470,7 +54630,7 @@ func (instance *Oval) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -54499,7 +54659,7 @@ func (instance *Oval) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -54591,7 +54751,7 @@ func (instance *Oval) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -54650,7 +54810,7 @@ func (instance *Oval) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -55837,7 +55997,7 @@ func (instance *Oval) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -56175,7 +56335,7 @@ func (instance *Oval) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -56191,7 +56351,7 @@ func (instance *Oval) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -56227,7 +56387,7 @@ func (instance *Oval) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -56386,7 +56546,7 @@ func (instance *Oval) Characters(startindex int32, length int32)  (*FontSetting,
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -56645,7 +56805,7 @@ func (instance *Oval) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -56676,7 +56836,7 @@ func (instance *Oval) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -56705,7 +56865,7 @@ func (instance *Oval) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -56721,7 +56881,7 @@ func (instance *Oval) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -56840,7 +57000,7 @@ func (instance *Oval) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -56874,6 +57034,10 @@ func (instance *Oval) ToShape() *Shape {
 }
 
 func DeleteOval(oval *Oval){
+	println("Delete oval")
+	if oval == nil || oval.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(oval, nil)
 	C.Delete_CObject(C.CString("Delete_Oval"),oval.ptr)
 	oval.ptr = nil
@@ -56975,7 +57139,7 @@ func (instance *PatternFill) GetBackgroundCellsColor()  (*CellsColor,  error)  {
 	}
 	result := &CellsColor{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCellsColor) 
+	 runtime.SetFinalizer(result, DeleteCellsColor) 
 
 	return result, nil 
 }
@@ -57041,7 +57205,7 @@ func (instance *PatternFill) GetForegroundCellsColor()  (*CellsColor,  error)  {
 	}
 	result := &CellsColor{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCellsColor) 
+	 runtime.SetFinalizer(result, DeleteCellsColor) 
 
 	return result, nil 
 }
@@ -57127,6 +57291,10 @@ func (instance *PatternFill) SetBackTransparency(value float64)  error {
 
 
 func DeletePatternFill(patternfill *PatternFill){
+	println("Delete patternfill")
+	if patternfill == nil || patternfill.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(patternfill, nil)
 	C.Delete_CObject(C.CString("Delete_PatternFill"),patternfill.ptr)
 	patternfill.ptr = nil
@@ -57349,6 +57517,10 @@ func (instance *PicFormatOption) SetRight(value float64)  error {
 
 
 func DeletePicFormatOption(picformatoption *PicFormatOption){
+	println("Delete picformatoption")
+	if picformatoption == nil || picformatoption.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(picformatoption, nil)
 	C.Delete_CObject(C.CString("Delete_PicFormatOption"),picformatoption.ptr)
 	picformatoption.ptr = nil
@@ -57847,7 +58019,7 @@ func (instance *Picture) GetSignatureLine()  (*SignatureLine,  error)  {
 	}
 	result := &SignatureLine{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteSignatureLine) 
+	 runtime.SetFinalizer(result, DeleteSignatureLine) 
 
 	return result, nil 
 }
@@ -58092,7 +58264,7 @@ func (instance *Picture) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -58108,7 +58280,7 @@ func (instance *Picture) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -58124,7 +58296,7 @@ func (instance *Picture) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -58140,7 +58312,7 @@ func (instance *Picture) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -58156,7 +58328,7 @@ func (instance *Picture) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -58201,7 +58373,7 @@ func (instance *Picture) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -58217,7 +58389,7 @@ func (instance *Picture) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -58354,7 +58526,7 @@ func (instance *Picture) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -58383,7 +58555,7 @@ func (instance *Picture) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -58475,7 +58647,7 @@ func (instance *Picture) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -58534,7 +58706,7 @@ func (instance *Picture) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -59721,7 +59893,7 @@ func (instance *Picture) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -60059,7 +60231,7 @@ func (instance *Picture) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -60075,7 +60247,7 @@ func (instance *Picture) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -60111,7 +60283,7 @@ func (instance *Picture) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -60270,7 +60442,7 @@ func (instance *Picture) Characters(startindex int32, length int32)  (*FontSetti
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -60529,7 +60701,7 @@ func (instance *Picture) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -60560,7 +60732,7 @@ func (instance *Picture) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -60589,7 +60761,7 @@ func (instance *Picture) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -60605,7 +60777,7 @@ func (instance *Picture) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -60724,7 +60896,7 @@ func (instance *Picture) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -60737,6 +60909,10 @@ func (instance *Picture) ToShape() *Shape {
 }
 
 func DeletePicture(picture *Picture){
+	println("Delete picture")
+	if picture == nil || picture.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(picture, nil)
 	C.Delete_CObject(C.CString("Delete_Picture"),picture.ptr)
 	picture.ptr = nil
@@ -60912,7 +61088,7 @@ func (instance *PictureCollection) Get(index int32)  (*Picture,  error)  {
 	}
 	result := &Picture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePicture) 
+	 runtime.SetFinalizer(result, DeletePicture) 
 
 	return result, nil 
 }
@@ -60962,6 +61138,10 @@ func (instance *PictureCollection) GetCount()  (int32,  error)  {
 
 
 func DeletePictureCollection(picturecollection *PictureCollection){
+	println("Delete picturecollection")
+	if picturecollection == nil || picturecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(picturecollection, nil)
 	C.Delete_CObject(C.CString("Delete_PictureCollection"),picturecollection.ptr)
 	picturecollection.ptr = nil
@@ -61094,7 +61274,7 @@ func (instance *RadioButton) GetGroupBox()  (*GroupBox,  error)  {
 	}
 	result := &GroupBox{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupBox) 
+	 runtime.SetFinalizer(result, DeleteGroupBox) 
 
 	return result, nil 
 }
@@ -61298,7 +61478,7 @@ func (instance *RadioButton) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -61314,7 +61494,7 @@ func (instance *RadioButton) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -61330,7 +61510,7 @@ func (instance *RadioButton) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -61346,7 +61526,7 @@ func (instance *RadioButton) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -61362,7 +61542,7 @@ func (instance *RadioButton) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -61407,7 +61587,7 @@ func (instance *RadioButton) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -61423,7 +61603,7 @@ func (instance *RadioButton) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -61560,7 +61740,7 @@ func (instance *RadioButton) AddHyperlink(address string)  (*Hyperlink,  error) 
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -61589,7 +61769,7 @@ func (instance *RadioButton) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -61681,7 +61861,7 @@ func (instance *RadioButton) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -61740,7 +61920,7 @@ func (instance *RadioButton) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -62927,7 +63107,7 @@ func (instance *RadioButton) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -63265,7 +63445,7 @@ func (instance *RadioButton) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -63281,7 +63461,7 @@ func (instance *RadioButton) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -63317,7 +63497,7 @@ func (instance *RadioButton) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -63476,7 +63656,7 @@ func (instance *RadioButton) Characters(startindex int32, length int32)  (*FontS
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -63735,7 +63915,7 @@ func (instance *RadioButton) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -63766,7 +63946,7 @@ func (instance *RadioButton) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -63795,7 +63975,7 @@ func (instance *RadioButton) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -63811,7 +63991,7 @@ func (instance *RadioButton) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -63930,7 +64110,7 @@ func (instance *RadioButton) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -63964,6 +64144,10 @@ func (instance *RadioButton) ToShape() *Shape {
 }
 
 func DeleteRadioButton(radiobutton *RadioButton){
+	println("Delete radiobutton")
+	if radiobutton == nil || radiobutton.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(radiobutton, nil)
 	C.Delete_CObject(C.CString("Delete_RadioButton"),radiobutton.ptr)
 	radiobutton.ptr = nil
@@ -64212,7 +64396,7 @@ func (instance *RectangleShape) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -64228,7 +64412,7 @@ func (instance *RectangleShape) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -64244,7 +64428,7 @@ func (instance *RectangleShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -64260,7 +64444,7 @@ func (instance *RectangleShape) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -64276,7 +64460,7 @@ func (instance *RectangleShape) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -64321,7 +64505,7 @@ func (instance *RectangleShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -64337,7 +64521,7 @@ func (instance *RectangleShape) GetFormatPicture()  (*MsoFormatPicture,  error) 
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -64474,7 +64658,7 @@ func (instance *RectangleShape) AddHyperlink(address string)  (*Hyperlink,  erro
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -64503,7 +64687,7 @@ func (instance *RectangleShape) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -64595,7 +64779,7 @@ func (instance *RectangleShape) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -64654,7 +64838,7 @@ func (instance *RectangleShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -65841,7 +66025,7 @@ func (instance *RectangleShape) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -66179,7 +66363,7 @@ func (instance *RectangleShape) GetTextBody()  (*FontSettingCollection,  error) 
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -66195,7 +66379,7 @@ func (instance *RectangleShape) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -66231,7 +66415,7 @@ func (instance *RectangleShape) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -66390,7 +66574,7 @@ func (instance *RectangleShape) Characters(startindex int32, length int32)  (*Fo
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -66649,7 +66833,7 @@ func (instance *RectangleShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -66680,7 +66864,7 @@ func (instance *RectangleShape) GetActiveXControl()  (*ActiveXControl,  error)  
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -66709,7 +66893,7 @@ func (instance *RectangleShape) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -66725,7 +66909,7 @@ func (instance *RectangleShape) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -66844,7 +67028,7 @@ func (instance *RectangleShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -66878,6 +67062,10 @@ func (instance *RectangleShape) ToShape() *Shape {
 }
 
 func DeleteRectangleShape(rectangleshape *RectangleShape){
+	println("Delete rectangleshape")
+	if rectangleshape == nil || rectangleshape.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(rectangleshape, nil)
 	C.Delete_CObject(C.CString("Delete_RectangleShape"),rectangleshape.ptr)
 	rectangleshape.ptr = nil
@@ -67144,6 +67332,10 @@ func (instance *ReflectionEffect) SetRotWithShape(value bool)  error {
 
 
 func DeleteReflectionEffect(reflectioneffect *ReflectionEffect){
+	println("Delete reflectioneffect")
+	if reflectioneffect == nil || reflectioneffect.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(reflectioneffect, nil)
 	C.Delete_CObject(C.CString("Delete_ReflectionEffect"),reflectioneffect.ptr)
 	reflectioneffect.ptr = nil
@@ -67595,7 +67787,7 @@ func (instance *ScrollBar) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -67611,7 +67803,7 @@ func (instance *ScrollBar) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -67627,7 +67819,7 @@ func (instance *ScrollBar) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -67643,7 +67835,7 @@ func (instance *ScrollBar) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -67659,7 +67851,7 @@ func (instance *ScrollBar) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -67704,7 +67896,7 @@ func (instance *ScrollBar) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -67720,7 +67912,7 @@ func (instance *ScrollBar) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -67857,7 +68049,7 @@ func (instance *ScrollBar) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -67886,7 +68078,7 @@ func (instance *ScrollBar) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -67978,7 +68170,7 @@ func (instance *ScrollBar) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -68037,7 +68229,7 @@ func (instance *ScrollBar) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -69224,7 +69416,7 @@ func (instance *ScrollBar) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -69562,7 +69754,7 @@ func (instance *ScrollBar) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -69578,7 +69770,7 @@ func (instance *ScrollBar) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -69614,7 +69806,7 @@ func (instance *ScrollBar) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -69773,7 +69965,7 @@ func (instance *ScrollBar) Characters(startindex int32, length int32)  (*FontSet
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -70032,7 +70224,7 @@ func (instance *ScrollBar) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -70063,7 +70255,7 @@ func (instance *ScrollBar) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -70092,7 +70284,7 @@ func (instance *ScrollBar) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -70108,7 +70300,7 @@ func (instance *ScrollBar) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -70227,7 +70419,7 @@ func (instance *ScrollBar) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -70261,6 +70453,10 @@ func (instance *ScrollBar) ToShape() *Shape {
 }
 
 func DeleteScrollBar(scrollbar *ScrollBar){
+	println("Delete scrollbar")
+	if scrollbar == nil || scrollbar.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(scrollbar, nil)
 	C.Delete_CObject(C.CString("Delete_ScrollBar"),scrollbar.ptr)
 	scrollbar.ptr = nil
@@ -70332,7 +70528,7 @@ func (instance *ShadowEffect) GetColor()  (*CellsColor,  error)  {
 	}
 	result := &CellsColor{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCellsColor) 
+	 runtime.SetFinalizer(result, DeleteCellsColor) 
 
 	return result, nil 
 }
@@ -70507,6 +70703,10 @@ func (instance *ShadowEffect) SetDistance(value float64)  error {
 
 
 func DeleteShadowEffect(shadoweffect *ShadowEffect){
+	println("Delete shadoweffect")
+	if shadoweffect == nil || shadoweffect.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(shadoweffect, nil)
 	C.Delete_CObject(C.CString("Delete_ShadowEffect"),shadoweffect.ptr)
 	shadoweffect.ptr = nil
@@ -70734,7 +70934,7 @@ func (instance *Shape) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -70750,7 +70950,7 @@ func (instance *Shape) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -70766,7 +70966,7 @@ func (instance *Shape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -70782,7 +70982,7 @@ func (instance *Shape) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -70798,7 +70998,7 @@ func (instance *Shape) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -70843,7 +71043,7 @@ func (instance *Shape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -70859,7 +71059,7 @@ func (instance *Shape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -70996,7 +71196,7 @@ func (instance *Shape) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -71025,7 +71225,7 @@ func (instance *Shape) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -71117,7 +71317,7 @@ func (instance *Shape) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -71176,7 +71376,7 @@ func (instance *Shape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -72363,7 +72563,7 @@ func (instance *Shape) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -72812,7 +73012,7 @@ func (instance *Shape) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -72828,7 +73028,7 @@ func (instance *Shape) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -72864,7 +73064,7 @@ func (instance *Shape) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -73023,7 +73223,7 @@ func (instance *Shape) Characters(startindex int32, length int32)  (*FontSetting
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -73282,7 +73482,7 @@ func (instance *Shape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -73313,7 +73513,7 @@ func (instance *Shape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -73342,7 +73542,7 @@ func (instance *Shape) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -73358,7 +73558,7 @@ func (instance *Shape) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -73477,7 +73677,7 @@ func (instance *Shape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -73506,6 +73706,10 @@ func (instance *Shape) IsSameSetting(obj *Object)  (bool,  error)  {
 
 
 func DeleteShape(shape *Shape){
+	println("Delete shape")
+	if shape == nil || shape.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(shape, nil)
 	C.Delete_CObject(C.CString("Delete_Shape"),shape.ptr)
 	shape.ptr = nil
@@ -73547,7 +73751,7 @@ func (instance *ShapeCollection) Get_Int(index int32)  (*Shape,  error)  {
 	}
 	result := &Shape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShape) 
+	 runtime.SetFinalizer(result, DeleteShape) 
 
 	return result, nil 
 }
@@ -73565,7 +73769,7 @@ func (instance *ShapeCollection) Get_String(name string)  (*Shape,  error)  {
 	}
 	result := &Shape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShape) 
+	 runtime.SetFinalizer(result, DeleteShape) 
 
 	return result, nil 
 }
@@ -73592,7 +73796,7 @@ func (instance *ShapeCollection) AddCopy_Shape_Int_Int_Int_Int(sourceshape *Shap
 	}
 	result := &Shape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShape) 
+	 runtime.SetFinalizer(result, DeleteShape) 
 
 	return result, nil 
 }
@@ -73624,7 +73828,7 @@ func (instance *ShapeCollection) AddCopy_Shape_Int_Int_Int_Int_CopyOptions(sourc
 	}
 	result := &Shape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShape) 
+	 runtime.SetFinalizer(result, DeleteShape) 
 
 	return result, nil 
 }
@@ -73647,7 +73851,7 @@ func (instance *ShapeCollection) AddCheckBox(toprow int32, top int32, leftcolumn
 	}
 	result := &CheckBox{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCheckBox) 
+	 runtime.SetFinalizer(result, DeleteCheckBox) 
 
 	return result, nil 
 }
@@ -73670,7 +73874,7 @@ func (instance *ShapeCollection) AddTextBox(toprow int32, top int32, leftcolumn 
 	}
 	result := &TextBox{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBox) 
+	 runtime.SetFinalizer(result, DeleteTextBox) 
 
 	return result, nil 
 }
@@ -73693,7 +73897,7 @@ func (instance *ShapeCollection) AddEquation(toprow int32, top int32, leftcolumn
 	}
 	result := &TextBox{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBox) 
+	 runtime.SetFinalizer(result, DeleteTextBox) 
 
 	return result, nil 
 }
@@ -73717,7 +73921,7 @@ func (instance *ShapeCollection) AddLaTeXEquation(toprow int32, top int32, leftc
 	}
 	result := &TextBox{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBox) 
+	 runtime.SetFinalizer(result, DeleteTextBox) 
 
 	return result, nil 
 }
@@ -73740,7 +73944,7 @@ func (instance *ShapeCollection) AddSpinner(toprow int32, top int32, leftcolumn 
 	}
 	result := &Spinner{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteSpinner) 
+	 runtime.SetFinalizer(result, DeleteSpinner) 
 
 	return result, nil 
 }
@@ -73763,7 +73967,7 @@ func (instance *ShapeCollection) AddScrollBar(toprow int32, top int32, leftcolum
 	}
 	result := &ScrollBar{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteScrollBar) 
+	 runtime.SetFinalizer(result, DeleteScrollBar) 
 
 	return result, nil 
 }
@@ -73786,7 +73990,7 @@ func (instance *ShapeCollection) AddRadioButton(toprow int32, top int32, leftcol
 	}
 	result := &RadioButton{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteRadioButton) 
+	 runtime.SetFinalizer(result, DeleteRadioButton) 
 
 	return result, nil 
 }
@@ -73809,7 +74013,7 @@ func (instance *ShapeCollection) AddListBox(toprow int32, top int32, leftcolumn 
 	}
 	result := &ListBox{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteListBox) 
+	 runtime.SetFinalizer(result, DeleteListBox) 
 
 	return result, nil 
 }
@@ -73832,7 +74036,7 @@ func (instance *ShapeCollection) AddComboBox(toprow int32, top int32, leftcolumn
 	}
 	result := &ComboBox{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteComboBox) 
+	 runtime.SetFinalizer(result, DeleteComboBox) 
 
 	return result, nil 
 }
@@ -73855,7 +74059,7 @@ func (instance *ShapeCollection) AddGroupBox(toprow int32, top int32, leftcolumn
 	}
 	result := &GroupBox{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupBox) 
+	 runtime.SetFinalizer(result, DeleteGroupBox) 
 
 	return result, nil 
 }
@@ -73878,7 +74082,7 @@ func (instance *ShapeCollection) AddButton(toprow int32, top int32, leftcolumn i
 	}
 	result := &Button{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteButton) 
+	 runtime.SetFinalizer(result, DeleteButton) 
 
 	return result, nil 
 }
@@ -73901,7 +74105,7 @@ func (instance *ShapeCollection) AddLabel(toprow int32, top int32, leftcolumn in
 	}
 	result := &Label{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLabel) 
+	 runtime.SetFinalizer(result, DeleteLabel) 
 
 	return result, nil 
 }
@@ -73922,7 +74126,7 @@ func (instance *ShapeCollection) AddLabelInChart(top int32, left int32, height i
 	}
 	result := &Label{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLabel) 
+	 runtime.SetFinalizer(result, DeleteLabel) 
 
 	return result, nil 
 }
@@ -73943,7 +74147,7 @@ func (instance *ShapeCollection) AddTextBoxInChart(top int32, left int32, height
 	}
 	result := &TextBox{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBox) 
+	 runtime.SetFinalizer(result, DeleteTextBox) 
 
 	return result, nil 
 }
@@ -73970,7 +74174,7 @@ func (instance *ShapeCollection) AddTextEffectInChart(effect MsoPresetTextEffect
 	}
 	result := &Shape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShape) 
+	 runtime.SetFinalizer(result, DeleteShape) 
 
 	return result, nil 
 }
@@ -73999,7 +74203,7 @@ func (instance *ShapeCollection) AddTextEffect(effect MsoPresetTextEffect, text 
 	}
 	result := &Shape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShape) 
+	 runtime.SetFinalizer(result, DeleteShape) 
 
 	return result, nil 
 }
@@ -74024,7 +74228,7 @@ func (instance *ShapeCollection) AddWordArt(style PresetWordArtStyle, text strin
 	}
 	result := &Shape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShape) 
+	 runtime.SetFinalizer(result, DeleteShape) 
 
 	return result, nil 
 }
@@ -74047,7 +74251,7 @@ func (instance *ShapeCollection) AddRectangle(toprow int32, top int32, leftcolum
 	}
 	result := &RectangleShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteRectangleShape) 
+	 runtime.SetFinalizer(result, DeleteRectangleShape) 
 
 	return result, nil 
 }
@@ -74070,7 +74274,7 @@ func (instance *ShapeCollection) AddOval(toprow int32, top int32, leftcolumn int
 	}
 	result := &Oval{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteOval) 
+	 runtime.SetFinalizer(result, DeleteOval) 
 
 	return result, nil 
 }
@@ -74093,7 +74297,7 @@ func (instance *ShapeCollection) AddLine(toprow int32, top int32, leftcolumn int
 	}
 	result := &LineShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineShape) 
+	 runtime.SetFinalizer(result, DeleteLineShape) 
 
 	return result, nil 
 }
@@ -74117,7 +74321,7 @@ func (instance *ShapeCollection) AddFreeFloatingShape(type_ MsoDrawingType, top 
 	}
 	result := &Shape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShape) 
+	 runtime.SetFinalizer(result, DeleteShape) 
 
 	return result, nil 
 }
@@ -74141,7 +74345,7 @@ func (instance *ShapeCollection) AddShapeInChart_MsoDrawingType_PlacementType_In
 	}
 	result := &Shape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShape) 
+	 runtime.SetFinalizer(result, DeleteShape) 
 
 	return result, nil 
 }
@@ -74164,7 +74368,7 @@ func (instance *ShapeCollection) AddShapeInChart_MsoDrawingType_PlacementType_In
 	}
 	result := &Shape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShape) 
+	 runtime.SetFinalizer(result, DeleteShape) 
 
 	return result, nil 
 }
@@ -74187,7 +74391,7 @@ func (instance *ShapeCollection) AddShapeInChartByScale_MsoDrawingType_Placement
 	}
 	result := &Shape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShape) 
+	 runtime.SetFinalizer(result, DeleteShape) 
 
 	return result, nil 
 }
@@ -74211,7 +74415,7 @@ func (instance *ShapeCollection) AddShapeInChartByScale_MsoDrawingType_Placement
 	}
 	result := &Shape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShape) 
+	 runtime.SetFinalizer(result, DeleteShape) 
 
 	return result, nil 
 }
@@ -74234,7 +74438,7 @@ func (instance *ShapeCollection) AddArc(toprow int32, top int32, leftcolumn int3
 	}
 	result := &ArcShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteArcShape) 
+	 runtime.SetFinalizer(result, DeleteArcShape) 
 
 	return result, nil 
 }
@@ -74258,7 +74462,7 @@ func (instance *ShapeCollection) AddShape(type_ MsoDrawingType, toprow int32, to
 	}
 	result := &Shape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShape) 
+	 runtime.SetFinalizer(result, DeleteShape) 
 
 	return result, nil 
 }
@@ -74282,7 +74486,7 @@ func (instance *ShapeCollection) AddAutoShape(type_ AutoShapeType, toprow int32,
 	}
 	result := &Shape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShape) 
+	 runtime.SetFinalizer(result, DeleteShape) 
 
 	return result, nil 
 }
@@ -74304,7 +74508,7 @@ func (instance *ShapeCollection) AddAutoShapeInChart(type_ AutoShapeType, top in
 	}
 	result := &Shape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShape) 
+	 runtime.SetFinalizer(result, DeleteShape) 
 
 	return result, nil 
 }
@@ -74328,7 +74532,7 @@ func (instance *ShapeCollection) AddActiveXControl(type_ ControlType, toprow int
 	}
 	result := &Shape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShape) 
+	 runtime.SetFinalizer(result, DeleteShape) 
 
 	return result, nil 
 }
@@ -74350,7 +74554,7 @@ func (instance *ShapeCollection) AddPicture_Int_Int_Int_Int_Stream(toprow int32,
 	}
 	result := &Picture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePicture) 
+	 runtime.SetFinalizer(result, DeletePicture) 
 
 	return result, nil 
 }
@@ -74372,7 +74576,7 @@ func (instance *ShapeCollection) AddPicture_Int_Int_Stream_Int_Int(toprow int32,
 	}
 	result := &Picture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePicture) 
+	 runtime.SetFinalizer(result, DeletePicture) 
 
 	return result, nil 
 }
@@ -74397,7 +74601,7 @@ func (instance *ShapeCollection) AddSvg(toprow int32, top int32, leftcolumn int3
 	}
 	result := &Picture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePicture) 
+	 runtime.SetFinalizer(result, DeletePicture) 
 
 	return result, nil 
 }
@@ -74422,7 +74626,7 @@ func (instance *ShapeCollection) AddIcons(toprow int32, top int32, leftcolumn in
 	}
 	result := &Picture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePicture) 
+	 runtime.SetFinalizer(result, DeletePicture) 
 
 	return result, nil 
 }
@@ -74444,7 +74648,7 @@ func (instance *ShapeCollection) AddLinkedPicture(toprow int32, leftcolumn int32
 	}
 	result := &Picture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePicture) 
+	 runtime.SetFinalizer(result, DeletePicture) 
 
 	return result, nil 
 }
@@ -74466,7 +74670,7 @@ func (instance *ShapeCollection) AddOleObjectWithLinkedImage(toprow int32, leftc
 	}
 	result := &OleObject{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteOleObject) 
+	 runtime.SetFinalizer(result, DeleteOleObject) 
 
 	return result, nil 
 }
@@ -74488,7 +74692,7 @@ func (instance *ShapeCollection) AddPictureInChart(top int32, left int32, stream
 	}
 	result := &Picture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePicture) 
+	 runtime.SetFinalizer(result, DeletePicture) 
 
 	return result, nil 
 }
@@ -74512,7 +74716,7 @@ func (instance *ShapeCollection) AddOleObject(toprow int32, top int32, leftcolum
 	}
 	result := &OleObject{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteOleObject) 
+	 runtime.SetFinalizer(result, DeleteOleObject) 
 
 	return result, nil 
 }
@@ -74632,7 +74836,7 @@ func (instance *ShapeCollection) Group(groupitems []Shape)  (*GroupShape,  error
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -74744,7 +74948,7 @@ func (instance *ShapeCollection) AddFreeform(toprow int32, top int32, leftcolumn
 	}
 	result := &Shape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShape) 
+	 runtime.SetFinalizer(result, DeleteShape) 
 
 	return result, nil 
 }
@@ -74769,7 +74973,7 @@ func (instance *ShapeCollection) AddSignatureLine(toprow int32, leftcolumn int32
 	}
 	result := &Picture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePicture) 
+	 runtime.SetFinalizer(result, DeletePicture) 
 
 	return result, nil 
 }
@@ -74791,6 +74995,10 @@ func (instance *ShapeCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteShapeCollection(shapecollection *ShapeCollection){
+	println("Delete shapecollection")
+	if shapecollection == nil || shapecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(shapecollection, nil)
 	C.Delete_CObject(C.CString("Delete_ShapeCollection"),shapecollection.ptr)
 	shapecollection.ptr = nil
@@ -74878,6 +75086,10 @@ func (instance *ShapeGuide) ToBaseShapeGuide() *BaseShapeGuide {
 }
 
 func DeleteShapeGuide(shapeguide *ShapeGuide){
+	println("Delete shapeguide")
+	if shapeguide == nil || shapeguide.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(shapeguide, nil)
 	C.Delete_CObject(C.CString("Delete_ShapeGuide"),shapeguide.ptr)
 	shapeguide.ptr = nil
@@ -74950,7 +75162,7 @@ func (instance *ShapeGuideCollection) Get(index int32)  (*ShapeGuide,  error)  {
 	}
 	result := &ShapeGuide{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapeGuide) 
+	 runtime.SetFinalizer(result, DeleteShapeGuide) 
 
 	return result, nil 
 }
@@ -74972,6 +75184,10 @@ func (instance *ShapeGuideCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteShapeGuideCollection(shapeguidecollection *ShapeGuideCollection){
+	println("Delete shapeguidecollection")
+	if shapeguidecollection == nil || shapeguidecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(shapeguidecollection, nil)
 	C.Delete_CObject(C.CString("Delete_ShapeGuideCollection"),shapeguidecollection.ptr)
 	shapeguidecollection.ptr = nil
@@ -75025,7 +75241,7 @@ func (instance *ShapePath) GetPathSegments()  (*ShapeSegmentPathCollection,  err
 	}
 	result := &ShapeSegmentPathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapeSegmentPathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapeSegmentPathCollection) 
 
 	return result, nil 
 }
@@ -75175,6 +75391,10 @@ func (instance *ShapePath) Close()  error {
 
 
 func DeleteShapePath(shapepath *ShapePath){
+	println("Delete shapepath")
+	if shapepath == nil || shapepath.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(shapepath, nil)
 	C.Delete_CObject(C.CString("Delete_ShapePath"),shapepath.ptr)
 	shapepath.ptr = nil
@@ -75230,7 +75450,7 @@ func (instance *ShapePathCollection) Get(index int32)  (*ShapePath,  error)  {
 	}
 	result := &ShapePath{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePath) 
+	 runtime.SetFinalizer(result, DeleteShapePath) 
 
 	return result, nil 
 }
@@ -75252,6 +75472,10 @@ func (instance *ShapePathCollection) Add()  (int32,  error)  {
 
 
 func DeleteShapePathCollection(shapepathcollection *ShapePathCollection){
+	println("Delete shapepathcollection")
+	if shapepathcollection == nil || shapepathcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(shapepathcollection, nil)
 	C.Delete_CObject(C.CString("Delete_ShapePathCollection"),shapepathcollection.ptr)
 	shapepathcollection.ptr = nil
@@ -75418,6 +75642,10 @@ func (instance *ShapePathPoint) GetType()  (ShapePathPointValueType,  error)  {
 
 
 func DeleteShapePathPoint(shapepathpoint *ShapePathPoint){
+	println("Delete shapepathpoint")
+	if shapepathpoint == nil || shapepathpoint.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(shapepathpoint, nil)
 	C.Delete_CObject(C.CString("Delete_ShapePathPoint"),shapepathpoint.ptr)
 	shapepathpoint.ptr = nil
@@ -75473,7 +75701,7 @@ func (instance *ShapePathPointCollection) Get(index int32)  (*ShapePathPoint,  e
 	}
 	result := &ShapePathPoint{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathPoint) 
+	 runtime.SetFinalizer(result, DeleteShapePathPoint) 
 
 	return result, nil 
 }
@@ -75495,6 +75723,10 @@ func (instance *ShapePathPointCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteShapePathPointCollection(shapepathpointcollection *ShapePathPointCollection){
+	println("Delete shapepathpointcollection")
+	if shapepathpointcollection == nil || shapepathpointcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(shapepathpointcollection, nil)
 	C.Delete_CObject(C.CString("Delete_ShapePathPointCollection"),shapepathpointcollection.ptr)
 	shapepathpointcollection.ptr = nil
@@ -75534,7 +75766,7 @@ func (instance *ShapePropertyCollection) GetGlowEffect()  (*GlowEffect,  error) 
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -75577,7 +75809,7 @@ func (instance *ShapePropertyCollection) GetFormat3D()  (*Format3D,  error)  {
 	}
 	result := &Format3D{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFormat3D) 
+	 runtime.SetFinalizer(result, DeleteFormat3D) 
 
 	return result, nil 
 }
@@ -75649,7 +75881,7 @@ func (instance *ShapePropertyCollection) GetShadowEffect()  (*ShadowEffect,  err
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -75684,6 +75916,10 @@ func (instance *ShapePropertyCollection) HasShadowEffect()  (bool,  error)  {
 
 
 func DeleteShapePropertyCollection(shapepropertycollection *ShapePropertyCollection){
+	println("Delete shapepropertycollection")
+	if shapepropertycollection == nil || shapepropertycollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(shapepropertycollection, nil)
 	C.Delete_CObject(C.CString("Delete_ShapePropertyCollection"),shapepropertycollection.ptr)
 	shapepropertycollection.ptr = nil
@@ -75740,7 +75976,7 @@ func (instance *ShapeSegmentPath) GetPoints()  (*ShapePathPointCollection,  erro
 	}
 	result := &ShapePathPointCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathPointCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathPointCollection) 
 
 	return result, nil 
 }
@@ -75748,6 +75984,10 @@ func (instance *ShapeSegmentPath) GetPoints()  (*ShapePathPointCollection,  erro
 
 
 func DeleteShapeSegmentPath(shapesegmentpath *ShapeSegmentPath){
+	println("Delete shapesegmentpath")
+	if shapesegmentpath == nil || shapesegmentpath.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(shapesegmentpath, nil)
 	C.Delete_CObject(C.CString("Delete_ShapeSegmentPath"),shapesegmentpath.ptr)
 	shapesegmentpath.ptr = nil
@@ -75819,7 +76059,7 @@ func (instance *ShapeSegmentPathCollection) Get(index int32)  (*ShapeSegmentPath
 	}
 	result := &ShapeSegmentPath{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapeSegmentPath) 
+	 runtime.SetFinalizer(result, DeleteShapeSegmentPath) 
 
 	return result, nil 
 }
@@ -75841,6 +76081,10 @@ func (instance *ShapeSegmentPathCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteShapeSegmentPathCollection(shapesegmentpathcollection *ShapeSegmentPathCollection){
+	println("Delete shapesegmentpathcollection")
+	if shapesegmentpathcollection == nil || shapesegmentpathcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(shapesegmentpathcollection, nil)
 	C.Delete_CObject(C.CString("Delete_ShapeSegmentPathCollection"),shapesegmentpathcollection.ptr)
 	shapesegmentpathcollection.ptr = nil
@@ -76207,6 +76451,10 @@ func (instance *SignatureLine) SetSignatureLineType(value SignatureType)  error 
 
 
 func DeleteSignatureLine(signatureline *SignatureLine){
+	println("Delete signatureline")
+	if signatureline == nil || signatureline.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(signatureline, nil)
 	C.Delete_CObject(C.CString("Delete_SignatureLine"),signatureline.ptr)
 	signatureline.ptr = nil
@@ -76455,7 +76703,7 @@ func (instance *SlicerShape) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -76471,7 +76719,7 @@ func (instance *SlicerShape) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -76487,7 +76735,7 @@ func (instance *SlicerShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -76503,7 +76751,7 @@ func (instance *SlicerShape) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -76519,7 +76767,7 @@ func (instance *SlicerShape) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -76564,7 +76812,7 @@ func (instance *SlicerShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -76580,7 +76828,7 @@ func (instance *SlicerShape) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -76717,7 +76965,7 @@ func (instance *SlicerShape) AddHyperlink(address string)  (*Hyperlink,  error) 
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -76746,7 +76994,7 @@ func (instance *SlicerShape) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -76838,7 +77086,7 @@ func (instance *SlicerShape) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -76897,7 +77145,7 @@ func (instance *SlicerShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -78084,7 +78332,7 @@ func (instance *SlicerShape) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -78422,7 +78670,7 @@ func (instance *SlicerShape) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -78438,7 +78686,7 @@ func (instance *SlicerShape) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -78474,7 +78722,7 @@ func (instance *SlicerShape) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -78633,7 +78881,7 @@ func (instance *SlicerShape) Characters(startindex int32, length int32)  (*FontS
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -78892,7 +79140,7 @@ func (instance *SlicerShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -78923,7 +79171,7 @@ func (instance *SlicerShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -78952,7 +79200,7 @@ func (instance *SlicerShape) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -78968,7 +79216,7 @@ func (instance *SlicerShape) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -79087,7 +79335,7 @@ func (instance *SlicerShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -79121,6 +79369,10 @@ func (instance *SlicerShape) ToShape() *Shape {
 }
 
 func DeleteSlicerShape(slicershape *SlicerShape){
+	println("Delete slicershape")
+	if slicershape == nil || slicershape.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(slicershape, nil)
 	C.Delete_CObject(C.CString("Delete_SlicerShape"),slicershape.ptr)
 	slicershape.ptr = nil
@@ -79181,7 +79433,7 @@ func (instance *SmartArtShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -79385,7 +79637,7 @@ func (instance *SmartArtShape) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -79401,7 +79653,7 @@ func (instance *SmartArtShape) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -79417,7 +79669,7 @@ func (instance *SmartArtShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -79433,7 +79685,7 @@ func (instance *SmartArtShape) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -79449,7 +79701,7 @@ func (instance *SmartArtShape) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -79494,7 +79746,7 @@ func (instance *SmartArtShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -79510,7 +79762,7 @@ func (instance *SmartArtShape) GetFormatPicture()  (*MsoFormatPicture,  error)  
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -79647,7 +79899,7 @@ func (instance *SmartArtShape) AddHyperlink(address string)  (*Hyperlink,  error
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -79676,7 +79928,7 @@ func (instance *SmartArtShape) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -79768,7 +80020,7 @@ func (instance *SmartArtShape) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -79827,7 +80079,7 @@ func (instance *SmartArtShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -81014,7 +81266,7 @@ func (instance *SmartArtShape) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -81352,7 +81604,7 @@ func (instance *SmartArtShape) GetTextBody()  (*FontSettingCollection,  error)  
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -81368,7 +81620,7 @@ func (instance *SmartArtShape) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -81404,7 +81656,7 @@ func (instance *SmartArtShape) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -81563,7 +81815,7 @@ func (instance *SmartArtShape) Characters(startindex int32, length int32)  (*Fon
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -81822,7 +82074,7 @@ func (instance *SmartArtShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -81853,7 +82105,7 @@ func (instance *SmartArtShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -81882,7 +82134,7 @@ func (instance *SmartArtShape) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -81898,7 +82150,7 @@ func (instance *SmartArtShape) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -82035,6 +82287,10 @@ func (instance *SmartArtShape) ToShape() *Shape {
 }
 
 func DeleteSmartArtShape(smartartshape *SmartArtShape){
+	println("Delete smartartshape")
+	if smartartshape == nil || smartartshape.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(smartartshape, nil)
 	C.Delete_CObject(C.CString("Delete_SmartArtShape"),smartartshape.ptr)
 	smartartshape.ptr = nil
@@ -82104,7 +82360,7 @@ func (instance *SolidFill) GetCellsColor()  (*CellsColor,  error)  {
 	}
 	result := &CellsColor{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCellsColor) 
+	 runtime.SetFinalizer(result, DeleteCellsColor) 
 
 	return result, nil 
 }
@@ -82195,6 +82451,10 @@ func (instance *SolidFill) Equals(obj *Object)  (bool,  error)  {
 
 
 func DeleteSolidFill(solidfill *SolidFill){
+	println("Delete solidfill")
+	if solidfill == nil || solidfill.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(solidfill, nil)
 	C.Delete_CObject(C.CString("Delete_SolidFill"),solidfill.ptr)
 	solidfill.ptr = nil
@@ -82617,7 +82877,7 @@ func (instance *Spinner) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -82633,7 +82893,7 @@ func (instance *Spinner) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -82649,7 +82909,7 @@ func (instance *Spinner) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -82665,7 +82925,7 @@ func (instance *Spinner) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -82681,7 +82941,7 @@ func (instance *Spinner) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -82726,7 +82986,7 @@ func (instance *Spinner) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -82742,7 +83002,7 @@ func (instance *Spinner) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -82879,7 +83139,7 @@ func (instance *Spinner) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -82908,7 +83168,7 @@ func (instance *Spinner) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -83000,7 +83260,7 @@ func (instance *Spinner) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -83059,7 +83319,7 @@ func (instance *Spinner) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -84246,7 +84506,7 @@ func (instance *Spinner) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -84584,7 +84844,7 @@ func (instance *Spinner) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -84600,7 +84860,7 @@ func (instance *Spinner) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -84636,7 +84896,7 @@ func (instance *Spinner) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -84795,7 +85055,7 @@ func (instance *Spinner) Characters(startindex int32, length int32)  (*FontSetti
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -85054,7 +85314,7 @@ func (instance *Spinner) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -85085,7 +85345,7 @@ func (instance *Spinner) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -85114,7 +85374,7 @@ func (instance *Spinner) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -85130,7 +85390,7 @@ func (instance *Spinner) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -85249,7 +85509,7 @@ func (instance *Spinner) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -85283,6 +85543,10 @@ func (instance *Spinner) ToShape() *Shape {
 }
 
 func DeleteSpinner(spinner *Spinner){
+	println("Delete spinner")
+	if spinner == nil || spinner.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(spinner, nil)
 	C.Delete_CObject(C.CString("Delete_Spinner"),spinner.ptr)
 	spinner.ptr = nil
@@ -85348,7 +85612,7 @@ func (instance *TextBox) GetEquationParagraph_Int(index int32)  (*EquationNode, 
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -85364,7 +85628,7 @@ func (instance *TextBox) GetEquationParagraph()  (*EquationNode,  error)  {
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -85568,7 +85832,7 @@ func (instance *TextBox) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -85584,7 +85848,7 @@ func (instance *TextBox) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -85600,7 +85864,7 @@ func (instance *TextBox) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -85616,7 +85880,7 @@ func (instance *TextBox) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -85632,7 +85896,7 @@ func (instance *TextBox) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -85677,7 +85941,7 @@ func (instance *TextBox) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -85693,7 +85957,7 @@ func (instance *TextBox) GetFormatPicture()  (*MsoFormatPicture,  error)  {
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -85830,7 +86094,7 @@ func (instance *TextBox) AddHyperlink(address string)  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -85859,7 +86123,7 @@ func (instance *TextBox) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -85951,7 +86215,7 @@ func (instance *TextBox) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -86010,7 +86274,7 @@ func (instance *TextBox) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -87197,7 +87461,7 @@ func (instance *TextBox) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -87535,7 +87799,7 @@ func (instance *TextBox) GetTextBody()  (*FontSettingCollection,  error)  {
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -87551,7 +87815,7 @@ func (instance *TextBox) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -87587,7 +87851,7 @@ func (instance *TextBox) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -87746,7 +88010,7 @@ func (instance *TextBox) Characters(startindex int32, length int32)  (*FontSetti
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -88005,7 +88269,7 @@ func (instance *TextBox) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -88036,7 +88300,7 @@ func (instance *TextBox) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -88065,7 +88329,7 @@ func (instance *TextBox) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -88081,7 +88345,7 @@ func (instance *TextBox) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -88200,7 +88464,7 @@ func (instance *TextBox) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -88234,6 +88498,10 @@ func (instance *TextBox) ToShape() *Shape {
 }
 
 func DeleteTextBox(textbox *TextBox){
+	println("Delete textbox")
+	if textbox == nil || textbox.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(textbox, nil)
 	C.Delete_CObject(C.CString("Delete_TextBox"),textbox.ptr)
 	textbox.ptr = nil
@@ -88275,7 +88543,7 @@ func (instance *TextBoxCollection) Get_Int(index int32)  (*TextBox,  error)  {
 	}
 	result := &TextBox{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBox) 
+	 runtime.SetFinalizer(result, DeleteTextBox) 
 
 	return result, nil 
 }
@@ -88293,7 +88561,7 @@ func (instance *TextBoxCollection) Get_String(name string)  (*TextBox,  error)  
 	}
 	result := &TextBox{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBox) 
+	 runtime.SetFinalizer(result, DeleteTextBox) 
 
 	return result, nil 
 }
@@ -88362,6 +88630,10 @@ func (instance *TextBoxCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteTextBoxCollection(textboxcollection *TextBoxCollection){
+	println("Delete textboxcollection")
+	if textboxcollection == nil || textboxcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(textboxcollection, nil)
 	C.Delete_CObject(C.CString("Delete_TextBoxCollection"),textboxcollection.ptr)
 	textboxcollection.ptr = nil
@@ -88614,6 +88886,10 @@ func (instance *TextEffectFormat) SetPresetShape(value MsoPresetTextEffectShape)
 
 
 func DeleteTextEffectFormat(texteffectformat *TextEffectFormat){
+	println("Delete texteffectformat")
+	if texteffectformat == nil || texteffectformat.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(texteffectformat, nil)
 	C.Delete_CObject(C.CString("Delete_TextEffectFormat"),texteffectformat.ptr)
 	texteffectformat.ptr = nil
@@ -88744,7 +89020,7 @@ func (instance *TextureFill) GetPicFormatOption()  (*PicFormatOption,  error)  {
 	}
 	result := &PicFormatOption{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePicFormatOption) 
+	 runtime.SetFinalizer(result, DeletePicFormatOption) 
 
 	return result, nil 
 }
@@ -88780,7 +89056,7 @@ func (instance *TextureFill) GetTilePicOption()  (*TilePicOption,  error)  {
 	}
 	result := &TilePicOption{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTilePicOption) 
+	 runtime.SetFinalizer(result, DeleteTilePicOption) 
 
 	return result, nil 
 }
@@ -88898,6 +89174,10 @@ func (instance *TextureFill) SetTransparency(value float64)  error {
 
 
 func DeleteTextureFill(texturefill *TextureFill){
+	println("Delete texturefill")
+	if texturefill == nil || texturefill.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(texturefill, nil)
 	C.Delete_CObject(C.CString("Delete_TextureFill"),texturefill.ptr)
 	texturefill.ptr = nil
@@ -89163,7 +89443,7 @@ func (instance *ThreeDFormat) GetContourColor()  (*CellsColor,  error)  {
 	}
 	result := &CellsColor{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCellsColor) 
+	 runtime.SetFinalizer(result, DeleteCellsColor) 
 
 	return result, nil 
 }
@@ -89228,7 +89508,7 @@ func (instance *ThreeDFormat) GetExtrusionColor()  (*CellsColor,  error)  {
 	}
 	result := &CellsColor{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCellsColor) 
+	 runtime.SetFinalizer(result, DeleteCellsColor) 
 
 	return result, nil 
 }
@@ -89589,6 +89869,10 @@ func (instance *ThreeDFormat) Equals(obj *Object)  (bool,  error)  {
 
 
 func DeleteThreeDFormat(threedformat *ThreeDFormat){
+	println("Delete threedformat")
+	if threedformat == nil || threedformat.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(threedformat, nil)
 	C.Delete_CObject(C.CString("Delete_ThreeDFormat"),threedformat.ptr)
 	threedformat.ptr = nil
@@ -89814,6 +90098,10 @@ func (instance *TilePicOption) SetAlignmentType(value RectangleAlignmentType)  e
 
 
 func DeleteTilePicOption(tilepicoption *TilePicOption){
+	println("Delete tilepicoption")
+	if tilepicoption == nil || tilepicoption.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(tilepicoption, nil)
 	C.Delete_CObject(C.CString("Delete_TilePicOption"),tilepicoption.ptr)
 	tilepicoption.ptr = nil
@@ -90062,7 +90350,7 @@ func (instance *TimelineShape) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -90078,7 +90366,7 @@ func (instance *TimelineShape) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -90094,7 +90382,7 @@ func (instance *TimelineShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -90110,7 +90398,7 @@ func (instance *TimelineShape) GetReflection()  (*ReflectionEffect,  error)  {
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -90126,7 +90414,7 @@ func (instance *TimelineShape) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -90171,7 +90459,7 @@ func (instance *TimelineShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -90187,7 +90475,7 @@ func (instance *TimelineShape) GetFormatPicture()  (*MsoFormatPicture,  error)  
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -90324,7 +90612,7 @@ func (instance *TimelineShape) AddHyperlink(address string)  (*Hyperlink,  error
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -90353,7 +90641,7 @@ func (instance *TimelineShape) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -90445,7 +90733,7 @@ func (instance *TimelineShape) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -90504,7 +90792,7 @@ func (instance *TimelineShape) GetTextEffect()  (*TextEffectFormat,  error)  {
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -91691,7 +91979,7 @@ func (instance *TimelineShape) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -92029,7 +92317,7 @@ func (instance *TimelineShape) GetTextBody()  (*FontSettingCollection,  error)  
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -92045,7 +92333,7 @@ func (instance *TimelineShape) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -92081,7 +92369,7 @@ func (instance *TimelineShape) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -92240,7 +92528,7 @@ func (instance *TimelineShape) Characters(startindex int32, length int32)  (*Fon
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -92499,7 +92787,7 @@ func (instance *TimelineShape) GetTextBoxOptions()  (*TextBoxOptions,  error)  {
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -92530,7 +92818,7 @@ func (instance *TimelineShape) GetActiveXControl()  (*ActiveXControl,  error)  {
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -92559,7 +92847,7 @@ func (instance *TimelineShape) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -92575,7 +92863,7 @@ func (instance *TimelineShape) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -92694,7 +92982,7 @@ func (instance *TimelineShape) GetResultOfSmartArt()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -92728,6 +93016,10 @@ func (instance *TimelineShape) ToShape() *Shape {
 }
 
 func DeleteTimelineShape(timelineshape *TimelineShape){
+	println("Delete timelineshape")
+	if timelineshape == nil || timelineshape.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(timelineshape, nil)
 	C.Delete_CObject(C.CString("Delete_TimelineShape"),timelineshape.ptr)
 	timelineshape.ptr = nil
@@ -92787,6 +93079,10 @@ func (instance *VmlShapeGuide) ToBaseShapeGuide() *BaseShapeGuide {
 }
 
 func DeleteVmlShapeGuide(vmlshapeguide *VmlShapeGuide){
+	println("Delete vmlshapeguide")
+	if vmlshapeguide == nil || vmlshapeguide.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(vmlshapeguide, nil)
 	C.Delete_CObject(C.CString("Delete_VmlShapeGuide"),vmlshapeguide.ptr)
 	vmlshapeguide.ptr = nil
@@ -92847,7 +93143,7 @@ func (instance *WebExtensionShape) GetWebExtension()  (*WebExtension,  error)  {
 	}
 	result := &WebExtension{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWebExtension) 
+	 runtime.SetFinalizer(result, DeleteWebExtension) 
 
 	return result, nil 
 }
@@ -93071,7 +93367,7 @@ func (instance *WebExtensionShape) GetLine()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -93087,7 +93383,7 @@ func (instance *WebExtensionShape) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -93103,7 +93399,7 @@ func (instance *WebExtensionShape) GetShadowEffect()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -93119,7 +93415,7 @@ func (instance *WebExtensionShape) GetReflection()  (*ReflectionEffect,  error) 
 	}
 	result := &ReflectionEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteReflectionEffect) 
+	 runtime.SetFinalizer(result, DeleteReflectionEffect) 
 
 	return result, nil 
 }
@@ -93135,7 +93431,7 @@ func (instance *WebExtensionShape) GetGlow()  (*GlowEffect,  error)  {
 	}
 	result := &GlowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGlowEffect) 
+	 runtime.SetFinalizer(result, DeleteGlowEffect) 
 
 	return result, nil 
 }
@@ -93180,7 +93476,7 @@ func (instance *WebExtensionShape) GetThreeDFormat()  (*ThreeDFormat,  error)  {
 	}
 	result := &ThreeDFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThreeDFormat) 
+	 runtime.SetFinalizer(result, DeleteThreeDFormat) 
 
 	return result, nil 
 }
@@ -93196,7 +93492,7 @@ func (instance *WebExtensionShape) GetFormatPicture()  (*MsoFormatPicture,  erro
 	}
 	result := &MsoFormatPicture{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
+	 runtime.SetFinalizer(result, DeleteMsoFormatPicture) 
 
 	return result, nil 
 }
@@ -93333,7 +93629,7 @@ func (instance *WebExtensionShape) AddHyperlink(address string)  (*Hyperlink,  e
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -93362,7 +93658,7 @@ func (instance *WebExtensionShape) GetHyperlink()  (*Hyperlink,  error)  {
 	}
 	result := &Hyperlink{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteHyperlink) 
+	 runtime.SetFinalizer(result, DeleteHyperlink) 
 
 	return result, nil 
 }
@@ -93454,7 +93750,7 @@ func (instance *WebExtensionShape) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -93513,7 +93809,7 @@ func (instance *WebExtensionShape) GetTextEffect()  (*TextEffectFormat,  error) 
 	}
 	result := &TextEffectFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextEffectFormat) 
+	 runtime.SetFinalizer(result, DeleteTextEffectFormat) 
 
 	return result, nil 
 }
@@ -94700,7 +94996,7 @@ func (instance *WebExtensionShape) GetGroup()  (*GroupShape,  error)  {
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -95038,7 +95334,7 @@ func (instance *WebExtensionShape) GetTextBody()  (*FontSettingCollection,  erro
 	}
 	result := &FontSettingCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSettingCollection) 
+	 runtime.SetFinalizer(result, DeleteFontSettingCollection) 
 
 	return result, nil 
 }
@@ -95054,7 +95350,7 @@ func (instance *WebExtensionShape) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -95090,7 +95386,7 @@ func (instance *WebExtensionShape) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -95249,7 +95545,7 @@ func (instance *WebExtensionShape) Characters(startindex int32, length int32)  (
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -95508,7 +95804,7 @@ func (instance *WebExtensionShape) GetTextBoxOptions()  (*TextBoxOptions,  error
 	}
 	result := &TextBoxOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextBoxOptions) 
+	 runtime.SetFinalizer(result, DeleteTextBoxOptions) 
 
 	return result, nil 
 }
@@ -95539,7 +95835,7 @@ func (instance *WebExtensionShape) GetActiveXControl()  (*ActiveXControl,  error
 	}
 	result := &ActiveXControl{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteActiveXControl) 
+	 runtime.SetFinalizer(result, DeleteActiveXControl) 
 
 	return result, nil 
 }
@@ -95568,7 +95864,7 @@ func (instance *WebExtensionShape) GetPaths()  (*ShapePathCollection,  error)  {
 	}
 	result := &ShapePathCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapePathCollection) 
+	 runtime.SetFinalizer(result, DeleteShapePathCollection) 
 
 	return result, nil 
 }
@@ -95584,7 +95880,7 @@ func (instance *WebExtensionShape) GetGeometry()  (*Geometry,  error)  {
 	}
 	result := &Geometry{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGeometry) 
+	 runtime.SetFinalizer(result, DeleteGeometry) 
 
 	return result, nil 
 }
@@ -95703,7 +95999,7 @@ func (instance *WebExtensionShape) GetResultOfSmartArt()  (*GroupShape,  error) 
 	}
 	result := &GroupShape{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteGroupShape) 
+	 runtime.SetFinalizer(result, DeleteGroupShape) 
 
 	return result, nil 
 }
@@ -95737,6 +96033,10 @@ func (instance *WebExtensionShape) ToShape() *Shape {
 }
 
 func DeleteWebExtensionShape(webextensionshape *WebExtensionShape){
+	println("Delete webextensionshape")
+	if webextensionshape == nil || webextensionshape.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(webextensionshape, nil)
 	C.Delete_CObject(C.CString("Delete_WebExtensionShape"),webextensionshape.ptr)
 	webextensionshape.ptr = nil

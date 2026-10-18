@@ -115,7 +115,7 @@ func (instance *BuiltInDocumentPropertyCollection) Get_String(name string)  (*Do
 	}
 	result := &DocumentProperty{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDocumentProperty) 
+	 runtime.SetFinalizer(result, DeleteDocumentProperty) 
 
 	return result, nil 
 }
@@ -133,7 +133,7 @@ func (instance *BuiltInDocumentPropertyCollection) Get_Int(index int32)  (*Docum
 	}
 	result := &DocumentProperty{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDocumentProperty) 
+	 runtime.SetFinalizer(result, DeleteDocumentProperty) 
 
 	return result, nil 
 }
@@ -1087,6 +1087,10 @@ func (instance *BuiltInDocumentPropertyCollection) ToDocumentPropertyCollection(
 }
 
 func DeleteBuiltInDocumentPropertyCollection(builtindocumentpropertycollection *BuiltInDocumentPropertyCollection){
+	println("Delete builtindocumentpropertycollection")
+	if builtindocumentpropertycollection == nil || builtindocumentpropertycollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(builtindocumentpropertycollection, nil)
 	C.Delete_CObject(C.CString("Delete_BuiltInDocumentPropertyCollection"),builtindocumentpropertycollection.ptr)
 	builtindocumentpropertycollection.ptr = nil
@@ -1234,6 +1238,10 @@ func (instance *ContentTypeProperty) SetIsNillable(value bool)  error {
 
 
 func DeleteContentTypeProperty(contenttypeproperty *ContentTypeProperty){
+	println("Delete contenttypeproperty")
+	if contenttypeproperty == nil || contenttypeproperty.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(contenttypeproperty, nil)
 	C.Delete_CObject(C.CString("Delete_ContentTypeProperty"),contenttypeproperty.ptr)
 	contenttypeproperty.ptr = nil
@@ -1310,7 +1318,7 @@ func (instance *ContentTypePropertyCollection) Get_Int(index int32)  (*ContentTy
 	}
 	result := &ContentTypeProperty{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteContentTypeProperty) 
+	 runtime.SetFinalizer(result, DeleteContentTypeProperty) 
 
 	return result, nil 
 }
@@ -1328,7 +1336,7 @@ func (instance *ContentTypePropertyCollection) Get_String(name string)  (*Conten
 	}
 	result := &ContentTypeProperty{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteContentTypeProperty) 
+	 runtime.SetFinalizer(result, DeleteContentTypeProperty) 
 
 	return result, nil 
 }
@@ -1350,6 +1358,10 @@ func (instance *ContentTypePropertyCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteContentTypePropertyCollection(contenttypepropertycollection *ContentTypePropertyCollection){
+	println("Delete contenttypepropertycollection")
+	if contenttypepropertycollection == nil || contenttypepropertycollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(contenttypepropertycollection, nil)
 	C.Delete_CObject(C.CString("Delete_ContentTypePropertyCollection"),contenttypepropertycollection.ptr)
 	contenttypepropertycollection.ptr = nil
@@ -1413,7 +1425,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_String(name string,
 	}
 	result := &DocumentProperty{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDocumentProperty) 
+	 runtime.SetFinalizer(result, DeleteDocumentProperty) 
 
 	return result, nil 
 }
@@ -1432,7 +1444,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_Int(name string, va
 	}
 	result := &DocumentProperty{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDocumentProperty) 
+	 runtime.SetFinalizer(result, DeleteDocumentProperty) 
 
 	return result, nil 
 }
@@ -1455,7 +1467,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_Date(name string, v
 	}
 	result := &DocumentProperty{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDocumentProperty) 
+	 runtime.SetFinalizer(result, DeleteDocumentProperty) 
 
 	return result, nil 
 }
@@ -1474,7 +1486,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_Bool(name string, v
 	}
 	result := &DocumentProperty{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDocumentProperty) 
+	 runtime.SetFinalizer(result, DeleteDocumentProperty) 
 
 	return result, nil 
 }
@@ -1493,7 +1505,7 @@ func (instance *CustomDocumentPropertyCollection) Add_String_Double(name string,
 	}
 	result := &DocumentProperty{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDocumentProperty) 
+	 runtime.SetFinalizer(result, DeleteDocumentProperty) 
 
 	return result, nil 
 }
@@ -1512,7 +1524,7 @@ func (instance *CustomDocumentPropertyCollection) AddLinkToContent(name string, 
 	}
 	result := &DocumentProperty{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDocumentProperty) 
+	 runtime.SetFinalizer(result, DeleteDocumentProperty) 
 
 	return result, nil 
 }
@@ -1558,7 +1570,7 @@ func (instance *CustomDocumentPropertyCollection) Get_Int(index int32)  (*Docume
 	}
 	result := &DocumentProperty{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDocumentProperty) 
+	 runtime.SetFinalizer(result, DeleteDocumentProperty) 
 
 	return result, nil 
 }
@@ -1647,6 +1659,10 @@ func (instance *CustomDocumentPropertyCollection) ToDocumentPropertyCollection()
 }
 
 func DeleteCustomDocumentPropertyCollection(customdocumentpropertycollection *CustomDocumentPropertyCollection){
+	println("Delete customdocumentpropertycollection")
+	if customdocumentpropertycollection == nil || customdocumentpropertycollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(customdocumentpropertycollection, nil)
 	C.Delete_CObject(C.CString("Delete_CustomDocumentPropertyCollection"),customdocumentpropertycollection.ptr)
 	customdocumentpropertycollection.ptr = nil
@@ -1766,6 +1782,10 @@ func (instance *CustomProperty) SetBinaryValue(value []byte)  error {
 
 
 func DeleteCustomProperty(customproperty *CustomProperty){
+	println("Delete customproperty")
+	if customproperty == nil || customproperty.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(customproperty, nil)
 	C.Delete_CObject(C.CString("Delete_CustomProperty"),customproperty.ptr)
 	customproperty.ptr = nil
@@ -1824,7 +1844,7 @@ func (instance *CustomPropertyCollection) Get_Int(index int32)  (*CustomProperty
 	}
 	result := &CustomProperty{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCustomProperty) 
+	 runtime.SetFinalizer(result, DeleteCustomProperty) 
 
 	return result, nil 
 }
@@ -1842,7 +1862,7 @@ func (instance *CustomPropertyCollection) Get_String(name string)  (*CustomPrope
 	}
 	result := &CustomProperty{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCustomProperty) 
+	 runtime.SetFinalizer(result, DeleteCustomProperty) 
 
 	return result, nil 
 }
@@ -1864,6 +1884,10 @@ func (instance *CustomPropertyCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteCustomPropertyCollection(custompropertycollection *CustomPropertyCollection){
+	println("Delete custompropertycollection")
+	if custompropertycollection == nil || custompropertycollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(custompropertycollection, nil)
 	C.Delete_CObject(C.CString("Delete_CustomPropertyCollection"),custompropertycollection.ptr)
 	custompropertycollection.ptr = nil
@@ -1917,7 +1941,7 @@ func (instance *DocumentProperty) GetValue()  (*Object,  error)  {
 	}
 	result := &Object{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteObject) 
+	 runtime.SetFinalizer(result, DeleteObject) 
 
 	return result, nil 
 }
@@ -2075,6 +2099,10 @@ func (instance *DocumentProperty) ToBool()  (bool,  error)  {
 
 
 func DeleteDocumentProperty(documentproperty *DocumentProperty){
+	println("Delete documentproperty")
+	if documentproperty == nil || documentproperty.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(documentproperty, nil)
 	C.Delete_CObject(C.CString("Delete_DocumentProperty"),documentproperty.ptr)
 	documentproperty.ptr = nil
@@ -2116,7 +2144,7 @@ func (instance *DocumentPropertyCollection) Get_Int(index int32)  (*DocumentProp
 	}
 	result := &DocumentProperty{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDocumentProperty) 
+	 runtime.SetFinalizer(result, DeleteDocumentProperty) 
 
 	return result, nil 
 }
@@ -2196,7 +2224,7 @@ func (instance *DocumentPropertyCollection) Get_String(name string)  (*DocumentP
 	}
 	result := &DocumentProperty{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDocumentProperty) 
+	 runtime.SetFinalizer(result, DeleteDocumentProperty) 
 
 	return result, nil 
 }
@@ -2218,6 +2246,10 @@ func (instance *DocumentPropertyCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteDocumentPropertyCollection(documentpropertycollection *DocumentPropertyCollection){
+	println("Delete documentpropertycollection")
+	if documentpropertycollection == nil || documentpropertycollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(documentpropertycollection, nil)
 	C.Delete_CObject(C.CString("Delete_DocumentPropertyCollection"),documentpropertycollection.ptr)
 	documentpropertycollection.ptr = nil

@@ -575,6 +575,9 @@ func (instance *CustomRenderSettings) GetCellBorderWidth(bordertype CellBorderTy
 
 
 func DeleteCustomRenderSettings(customrendersettings *CustomRenderSettings){
+	if customrendersettings == nil || customrendersettings.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(customrendersettings, nil)
 	C.Delete_CObject(C.CString("Delete_CustomRenderSettings"),customrendersettings.ptr)
 	customrendersettings.ptr = nil
@@ -716,6 +719,9 @@ func (instance *DrawObject) GetSheetIndex()  (int32,  error)  {
 
 
 func DeleteDrawObject(drawobject *DrawObject){
+	if drawobject == nil || drawobject.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(drawobject, nil)
 	C.Delete_CObject(C.CString("Delete_DrawObject"),drawobject.ptr)
 	drawobject.ptr = nil
@@ -757,6 +763,9 @@ func (instance *DrawObjectEventHandler) Draw(drawobject *DrawObject, x float32, 
 
 
 func DeleteDrawObjectEventHandler(drawobjecteventhandler *DrawObjectEventHandler){
+	if drawobjecteventhandler == nil || drawobjecteventhandler.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(drawobjecteventhandler, nil)
 	C.Delete_CObject(C.CString("Delete_DrawObjectEventHandler"),drawobjecteventhandler.ptr)
 	drawobjecteventhandler.ptr = nil
@@ -1706,6 +1715,9 @@ func (instance *ImageOrPrintOptions) SetImageType(value ImageType)  error {
 
 
 func DeleteImageOrPrintOptions(imageorprintoptions *ImageOrPrintOptions){
+	if imageorprintoptions == nil || imageorprintoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(imageorprintoptions, nil)
 	C.Delete_CObject(C.CString("Delete_ImageOrPrintOptions"),imageorprintoptions.ptr)
 	imageorprintoptions.ptr = nil
@@ -1822,6 +1834,9 @@ func (instance *PageEndSavingArgs) ToPageSavingArgs() *PageSavingArgs {
 }
 
 func DeletePageEndSavingArgs(pageendsavingargs *PageEndSavingArgs){
+	if pageendsavingargs == nil || pageendsavingargs.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pageendsavingargs, nil)
 	C.Delete_CObject(C.CString("Delete_PageEndSavingArgs"),pageendsavingargs.ptr)
 	pageendsavingargs.ptr = nil
@@ -1881,6 +1896,9 @@ func (instance *PageSavingArgs) GetPageCount()  (int32,  error)  {
 
 
 func DeletePageSavingArgs(pagesavingargs *PageSavingArgs){
+	if pagesavingargs == nil || pagesavingargs.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pagesavingargs, nil)
 	C.Delete_CObject(C.CString("Delete_PageSavingArgs"),pagesavingargs.ptr)
 	pagesavingargs.ptr = nil
@@ -1997,6 +2015,9 @@ func (instance *PageStartSavingArgs) ToPageSavingArgs() *PageSavingArgs {
 }
 
 func DeletePageStartSavingArgs(pagestartsavingargs *PageStartSavingArgs){
+	if pagestartsavingargs == nil || pagestartsavingargs.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pagestartsavingargs, nil)
 	C.Delete_CObject(C.CString("Delete_PageStartSavingArgs"),pagestartsavingargs.ptr)
 	pagestartsavingargs.ptr = nil
@@ -2196,6 +2217,9 @@ func (instance *PdfBookmarkEntry) SetIsCollapse(value bool)  error {
 
 
 func DeletePdfBookmarkEntry(pdfbookmarkentry *PdfBookmarkEntry){
+	if pdfbookmarkentry == nil || pdfbookmarkentry.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pdfbookmarkentry, nil)
 	C.Delete_CObject(C.CString("Delete_PdfBookmarkEntry"),pdfbookmarkentry.ptr)
 	pdfbookmarkentry.ptr = nil
@@ -2360,6 +2384,9 @@ func (instance *RenderingFont) SetColor(value *Color)  error {
 
 
 func DeleteRenderingFont(renderingfont *RenderingFont){
+	if renderingfont == nil || renderingfont.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(renderingfont, nil)
 	C.Delete_CObject(C.CString("Delete_RenderingFont"),renderingfont.ptr)
 	renderingfont.ptr = nil
@@ -2712,6 +2739,9 @@ func (instance *RenderingWatermark) SetOffsetY(value float32)  error {
 
 
 func DeleteRenderingWatermark(renderingwatermark *RenderingWatermark){
+	if renderingwatermark == nil || renderingwatermark.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(renderingwatermark, nil)
 	C.Delete_CObject(C.CString("Delete_RenderingWatermark"),renderingwatermark.ptr)
 	renderingwatermark.ptr = nil
@@ -2783,6 +2813,9 @@ func (instance *SheetPrintingPreview) GetEvaluatedPageCount()  (int32,  error)  
 
 
 func DeleteSheetPrintingPreview(sheetprintingpreview *SheetPrintingPreview){
+	if sheetprintingpreview == nil || sheetprintingpreview.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(sheetprintingpreview, nil)
 	C.Delete_CObject(C.CString("Delete_SheetPrintingPreview"),sheetprintingpreview.ptr)
 	sheetprintingpreview.ptr = nil
@@ -2969,6 +3002,9 @@ func (instance *SheetRender) Dispose()  error {
 
 
 func DeleteSheetRender(sheetrender *SheetRender){
+	if sheetrender == nil || sheetrender.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(sheetrender, nil)
 	C.Delete_CObject(C.CString("Delete_SheetRender"),sheetrender.ptr)
 	sheetrender.ptr = nil
@@ -3087,6 +3123,9 @@ func SheetSet_GetAll()  (*SheetSet,  error)  {
 
 
 func DeleteSheetSet(sheetset *SheetSet){
+	if sheetset == nil || sheetset.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(sheetset, nil)
 	C.Delete_CObject(C.CString("Delete_SheetSet"),sheetset.ptr)
 	sheetset.ptr = nil
@@ -4152,6 +4191,9 @@ func (instance *SvgImageOptions) ToImageOrPrintOptions() *ImageOrPrintOptions {
 }
 
 func DeleteSvgImageOptions(svgimageoptions *SvgImageOptions){
+	if svgimageoptions == nil || svgimageoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(svgimageoptions, nil)
 	C.Delete_CObject(C.CString("Delete_SvgImageOptions"),svgimageoptions.ptr)
 	svgimageoptions.ptr = nil
@@ -4223,6 +4265,9 @@ func (instance *WorkbookPrintingPreview) GetEvaluatedPageCount()  (int32,  error
 
 
 func DeleteWorkbookPrintingPreview(workbookprintingpreview *WorkbookPrintingPreview){
+	if workbookprintingpreview == nil || workbookprintingpreview.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(workbookprintingpreview, nil)
 	C.Delete_CObject(C.CString("Delete_WorkbookPrintingPreview"),workbookprintingpreview.ptr)
 	workbookprintingpreview.ptr = nil
@@ -4394,6 +4439,9 @@ func (instance *WorkbookRender) Dispose()  error {
 
 
 func DeleteWorkbookRender(workbookrender *WorkbookRender){
+	if workbookrender == nil || workbookrender.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(workbookrender, nil)
 	C.Delete_CObject(C.CString("Delete_WorkbookRender"),workbookrender.ptr)
 	workbookrender.ptr = nil

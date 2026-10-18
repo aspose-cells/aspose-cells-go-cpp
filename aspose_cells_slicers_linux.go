@@ -782,6 +782,9 @@ func (instance *Slicer) SetRowHeight(value float64)  error {
 
 
 func DeleteSlicer(slicer *Slicer){
+	if slicer == nil || slicer.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(slicer, nil)
 	C.Delete_CObject(C.CString("Delete_Slicer"),slicer.ptr)
 	slicer.ptr = nil
@@ -871,6 +874,9 @@ func (instance *SlicerCache) GetSourceName()  (string,  error)  {
 
 
 func DeleteSlicerCache(slicercache *SlicerCache){
+	if slicercache == nil || slicercache.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(slicercache, nil)
 	C.Delete_CObject(C.CString("Delete_SlicerCache"),slicercache.ptr)
 	slicercache.ptr = nil
@@ -945,6 +951,9 @@ func (instance *SlicerCacheItem) GetValue()  (string,  error)  {
 
 
 func DeleteSlicerCacheItem(slicercacheitem *SlicerCacheItem){
+	if slicercacheitem == nil || slicercacheitem.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(slicercacheitem, nil)
 	C.Delete_CObject(C.CString("Delete_SlicerCacheItem"),slicercacheitem.ptr)
 	slicercacheitem.ptr = nil
@@ -1008,6 +1017,9 @@ func (instance *SlicerCacheItemCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteSlicerCacheItemCollection(slicercacheitemcollection *SlicerCacheItemCollection){
+	if slicercacheitemcollection == nil || slicercacheitemcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(slicercacheitemcollection, nil)
 	C.Delete_CObject(C.CString("Delete_SlicerCacheItemCollection"),slicercacheitemcollection.ptr)
 	slicercacheitemcollection.ptr = nil
@@ -1364,6 +1376,9 @@ func (instance *SlicerCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteSlicerCollection(slicercollection *SlicerCollection){
+	if slicercollection == nil || slicercollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(slicercollection, nil)
 	C.Delete_CObject(C.CString("Delete_SlicerCollection"),slicercollection.ptr)
 	slicercollection.ptr = nil

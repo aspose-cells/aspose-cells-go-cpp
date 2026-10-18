@@ -161,6 +161,10 @@ func (instance *CustomXmlPart) SetID(value string)  error {
 
 
 func DeleteCustomXmlPart(customxmlpart *CustomXmlPart){
+	println("Delete customxmlpart")
+	if customxmlpart == nil || customxmlpart.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(customxmlpart, nil)
 	C.Delete_CObject(C.CString("Delete_CustomXmlPart"),customxmlpart.ptr)
 	customxmlpart.ptr = nil
@@ -219,7 +223,7 @@ func (instance *CustomXmlPartCollection) Get(index int32)  (*CustomXmlPart,  err
 	}
 	result := &CustomXmlPart{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCustomXmlPart) 
+	 runtime.SetFinalizer(result, DeleteCustomXmlPart) 
 
 	return result, nil 
 }
@@ -237,7 +241,7 @@ func (instance *CustomXmlPartCollection) SelectByID(id string)  (*CustomXmlPart,
 	}
 	result := &CustomXmlPart{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCustomXmlPart) 
+	 runtime.SetFinalizer(result, DeleteCustomXmlPart) 
 
 	return result, nil 
 }
@@ -259,6 +263,10 @@ func (instance *CustomXmlPartCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteCustomXmlPartCollection(customxmlpartcollection *CustomXmlPartCollection){
+	println("Delete customxmlpartcollection")
+	if customxmlpartcollection == nil || customxmlpartcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(customxmlpartcollection, nil)
 	C.Delete_CObject(C.CString("Delete_CustomXmlPartCollection"),customxmlpartcollection.ptr)
 	customxmlpartcollection.ptr = nil
@@ -327,7 +335,7 @@ func (instance *SmartTag) GetProperties()  (*SmartTagPropertyCollection,  error)
 	}
 	result := &SmartTagPropertyCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteSmartTagPropertyCollection) 
+	 runtime.SetFinalizer(result, DeleteSmartTagPropertyCollection) 
 
 	return result, nil 
 }
@@ -399,6 +407,10 @@ func (instance *SmartTag) SetLink(uri string, name string)  error {
 
 
 func DeleteSmartTag(smarttag *SmartTag){
+	println("Delete smarttag")
+	if smarttag == nil || smarttag.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(smarttag, nil)
 	C.Delete_CObject(C.CString("Delete_SmartTag"),smarttag.ptr)
 	smarttag.ptr = nil
@@ -468,7 +480,7 @@ func (instance *SmartTagCollection) Get(index int32)  (*SmartTag,  error)  {
 	}
 	result := &SmartTag{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteSmartTag) 
+	 runtime.SetFinalizer(result, DeleteSmartTag) 
 
 	return result, nil 
 }
@@ -507,6 +519,10 @@ func (instance *SmartTagCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteSmartTagCollection(smarttagcollection *SmartTagCollection){
+	println("Delete smarttagcollection")
+	if smarttagcollection == nil || smarttagcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(smarttagcollection, nil)
 	C.Delete_CObject(C.CString("Delete_SmartTagCollection"),smarttagcollection.ptr)
 	smarttagcollection.ptr = nil
@@ -613,6 +629,10 @@ func (instance *SmartTagOptions) SetShowType(value SmartTagShowType)  error {
 
 
 func DeleteSmartTagOptions(smarttagoptions *SmartTagOptions){
+	println("Delete smarttagoptions")
+	if smarttagoptions == nil || smarttagoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(smarttagoptions, nil)
 	C.Delete_CObject(C.CString("Delete_SmartTagOptions"),smarttagoptions.ptr)
 	smarttagoptions.ptr = nil
@@ -702,6 +722,10 @@ func (instance *SmartTagProperty) SetValue(value string)  error {
 
 
 func DeleteSmartTagProperty(smarttagproperty *SmartTagProperty){
+	println("Delete smarttagproperty")
+	if smarttagproperty == nil || smarttagproperty.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(smarttagproperty, nil)
 	C.Delete_CObject(C.CString("Delete_SmartTagProperty"),smarttagproperty.ptr)
 	smarttagproperty.ptr = nil
@@ -757,7 +781,7 @@ func (instance *SmartTagPropertyCollection) Get_Int(index int32)  (*SmartTagProp
 	}
 	result := &SmartTagProperty{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteSmartTagProperty) 
+	 runtime.SetFinalizer(result, DeleteSmartTagProperty) 
 
 	return result, nil 
 }
@@ -775,7 +799,7 @@ func (instance *SmartTagPropertyCollection) Get_String(name string)  (*SmartTagP
 	}
 	result := &SmartTagProperty{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteSmartTagProperty) 
+	 runtime.SetFinalizer(result, DeleteSmartTagProperty) 
 
 	return result, nil 
 }
@@ -814,6 +838,10 @@ func (instance *SmartTagPropertyCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteSmartTagPropertyCollection(smarttagpropertycollection *SmartTagPropertyCollection){
+	println("Delete smarttagpropertycollection")
+	if smarttagpropertycollection == nil || smarttagpropertycollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(smarttagpropertycollection, nil)
 	C.Delete_CObject(C.CString("Delete_SmartTagPropertyCollection"),smarttagpropertycollection.ptr)
 	smarttagpropertycollection.ptr = nil
@@ -888,7 +916,7 @@ func (instance *SmartTagSetting) Get_Int(index int32)  (*SmartTagCollection,  er
 	}
 	result := &SmartTagCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteSmartTagCollection) 
+	 runtime.SetFinalizer(result, DeleteSmartTagCollection) 
 
 	return result, nil 
 }
@@ -907,7 +935,7 @@ func (instance *SmartTagSetting) Get_Int_Int(row int32, column int32)  (*SmartTa
 	}
 	result := &SmartTagCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteSmartTagCollection) 
+	 runtime.SetFinalizer(result, DeleteSmartTagCollection) 
 
 	return result, nil 
 }
@@ -925,7 +953,7 @@ func (instance *SmartTagSetting) Get_String(cellname string)  (*SmartTagCollecti
 	}
 	result := &SmartTagCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteSmartTagCollection) 
+	 runtime.SetFinalizer(result, DeleteSmartTagCollection) 
 
 	return result, nil 
 }
@@ -947,6 +975,10 @@ func (instance *SmartTagSetting) GetCount()  (int32,  error)  {
 
 
 func DeleteSmartTagSetting(smarttagsetting *SmartTagSetting){
+	println("Delete smarttagsetting")
+	if smarttagsetting == nil || smarttagsetting.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(smarttagsetting, nil)
 	C.Delete_CObject(C.CString("Delete_SmartTagSetting"),smarttagsetting.ptr)
 	smarttagsetting.ptr = nil

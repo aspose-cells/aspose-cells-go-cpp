@@ -676,7 +676,7 @@ func (instance *ConnectionParameter) GetValue()  (*Object,  error)  {
 	}
 	result := &Object{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteObject) 
+	 runtime.SetFinalizer(result, DeleteObject) 
 
 	return result, nil 
 }
@@ -705,6 +705,10 @@ func (instance *ConnectionParameter) SetValue(value *Object)  error {
 
 
 func DeleteConnectionParameter(connectionparameter *ConnectionParameter){
+	println("Delete connectionparameter")
+	if connectionparameter == nil || connectionparameter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(connectionparameter, nil)
 	C.Delete_CObject(C.CString("Delete_ConnectionParameter"),connectionparameter.ptr)
 	connectionparameter.ptr = nil
@@ -746,7 +750,7 @@ func (instance *ConnectionParameterCollection) Get_Int(index int32)  (*Connectio
 	}
 	result := &ConnectionParameter{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteConnectionParameter) 
+	 runtime.SetFinalizer(result, DeleteConnectionParameter) 
 
 	return result, nil 
 }
@@ -764,7 +768,7 @@ func (instance *ConnectionParameterCollection) Get_String(connparamname string) 
 	}
 	result := &ConnectionParameter{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteConnectionParameter) 
+	 runtime.SetFinalizer(result, DeleteConnectionParameter) 
 
 	return result, nil 
 }
@@ -786,6 +790,10 @@ func (instance *ConnectionParameterCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteConnectionParameterCollection(connectionparametercollection *ConnectionParameterCollection){
+	println("Delete connectionparametercollection")
+	if connectionparametercollection == nil || connectionparametercollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(connectionparametercollection, nil)
 	C.Delete_CObject(C.CString("Delete_ConnectionParameterCollection"),connectionparametercollection.ptr)
 	connectionparametercollection.ptr = nil
@@ -1505,7 +1513,7 @@ func (instance *DataModelConnection) GetParameters()  (*ConnectionParameterColle
 	}
 	result := &ConnectionParameterCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteConnectionParameterCollection) 
+	 runtime.SetFinalizer(result, DeleteConnectionParameterCollection) 
 
 	return result, nil 
 }
@@ -1521,7 +1529,7 @@ func (instance *DataModelConnection) GetPowerQueryFormula()  (*PowerQueryFormula
 	}
 	result := &PowerQueryFormula{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePowerQueryFormula) 
+	 runtime.SetFinalizer(result, DeletePowerQueryFormula) 
 
 	return result, nil 
 }
@@ -1585,6 +1593,10 @@ func (instance *DataModelConnection) ToExternalConnection() *ExternalConnection 
 }
 
 func DeleteDataModelConnection(datamodelconnection *DataModelConnection){
+	println("Delete datamodelconnection")
+	if datamodelconnection == nil || datamodelconnection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(datamodelconnection, nil)
 	C.Delete_CObject(C.CString("Delete_DataModelConnection"),datamodelconnection.ptr)
 	datamodelconnection.ptr = nil
@@ -1691,7 +1703,7 @@ func (instance *DBConnection) GetPowerQueryFormula()  (*PowerQueryFormula,  erro
 	}
 	result := &PowerQueryFormula{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePowerQueryFormula) 
+	 runtime.SetFinalizer(result, DeletePowerQueryFormula) 
 
 	return result, nil 
 }
@@ -2367,7 +2379,7 @@ func (instance *DBConnection) GetParameters()  (*ConnectionParameterCollection, 
 	}
 	result := &ConnectionParameterCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteConnectionParameterCollection) 
+	 runtime.SetFinalizer(result, DeleteConnectionParameterCollection) 
 
 	return result, nil 
 }
@@ -2394,6 +2406,10 @@ func (instance *DBConnection) ToExternalConnection() *ExternalConnection {
 }
 
 func DeleteDBConnection(dbconnection *DBConnection){
+	println("Delete dbconnection")
+	if dbconnection == nil || dbconnection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(dbconnection, nil)
 	C.Delete_CObject(C.CString("Delete_DBConnection"),dbconnection.ptr)
 	dbconnection.ptr = nil
@@ -2983,7 +2999,7 @@ func (instance *ExternalConnection) GetParameters()  (*ConnectionParameterCollec
 	}
 	result := &ConnectionParameterCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteConnectionParameterCollection) 
+	 runtime.SetFinalizer(result, DeleteConnectionParameterCollection) 
 
 	return result, nil 
 }
@@ -3016,7 +3032,7 @@ func (instance *ExternalConnection) GetPowerQueryFormula()  (*PowerQueryFormula,
 	}
 	result := &PowerQueryFormula{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePowerQueryFormula) 
+	 runtime.SetFinalizer(result, DeletePowerQueryFormula) 
 
 	return result, nil 
 }
@@ -3177,6 +3193,10 @@ func (instance *ExternalConnection) SetSecondCommand(value string)  error {
 
 
 func DeleteExternalConnection(externalconnection *ExternalConnection){
+	println("Delete externalconnection")
+	if externalconnection == nil || externalconnection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(externalconnection, nil)
 	C.Delete_CObject(C.CString("Delete_ExternalConnection"),externalconnection.ptr)
 	externalconnection.ptr = nil
@@ -3218,7 +3238,7 @@ func (instance *ExternalConnectionCollection) Get_Int(index int32)  (*ExternalCo
 	}
 	result := &ExternalConnection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteExternalConnection) 
+	 runtime.SetFinalizer(result, DeleteExternalConnection) 
 
 	return result, nil 
 }
@@ -3236,7 +3256,7 @@ func (instance *ExternalConnectionCollection) Get_String(connectionname string) 
 	}
 	result := &ExternalConnection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteExternalConnection) 
+	 runtime.SetFinalizer(result, DeleteExternalConnection) 
 
 	return result, nil 
 }
@@ -3254,7 +3274,7 @@ func (instance *ExternalConnectionCollection) GetExternalConnectionById(connid i
 	}
 	result := &ExternalConnection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteExternalConnection) 
+	 runtime.SetFinalizer(result, DeleteExternalConnection) 
 
 	return result, nil 
 }
@@ -3276,6 +3296,10 @@ func (instance *ExternalConnectionCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteExternalConnectionCollection(externalconnectioncollection *ExternalConnectionCollection){
+	println("Delete externalconnectioncollection")
+	if externalconnectioncollection == nil || externalconnectioncollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(externalconnectioncollection, nil)
 	C.Delete_CObject(C.CString("Delete_ExternalConnectionCollection"),externalconnectioncollection.ptr)
 	externalconnectioncollection.ptr = nil
@@ -4323,7 +4347,7 @@ func (instance *WebQueryConnection) GetParameters()  (*ConnectionParameterCollec
 	}
 	result := &ConnectionParameterCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteConnectionParameterCollection) 
+	 runtime.SetFinalizer(result, DeleteConnectionParameterCollection) 
 
 	return result, nil 
 }
@@ -4339,7 +4363,7 @@ func (instance *WebQueryConnection) GetPowerQueryFormula()  (*PowerQueryFormula,
 	}
 	result := &PowerQueryFormula{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeletePowerQueryFormula) 
+	 runtime.SetFinalizer(result, DeletePowerQueryFormula) 
 
 	return result, nil 
 }
@@ -4491,6 +4515,10 @@ func (instance *WebQueryConnection) ToExternalConnection() *ExternalConnection {
 }
 
 func DeleteWebQueryConnection(webqueryconnection *WebQueryConnection){
+	println("Delete webqueryconnection")
+	if webqueryconnection == nil || webqueryconnection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(webqueryconnection, nil)
 	C.Delete_CObject(C.CString("Delete_WebQueryConnection"),webqueryconnection.ptr)
 	webqueryconnection.ptr = nil

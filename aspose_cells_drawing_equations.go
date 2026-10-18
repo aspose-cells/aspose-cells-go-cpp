@@ -779,7 +779,7 @@ func (instance *AccentEquationNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -810,7 +810,7 @@ func (instance *AccentEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -843,7 +843,7 @@ func (instance *AccentEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -909,7 +909,7 @@ func (instance *AccentEquationNode) AddChild_EquationNodeType(equationtype Equat
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -928,7 +928,7 @@ func (instance *AccentEquationNode) InsertChild(index int32, equationtype Equati
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -946,7 +946,7 @@ func (instance *AccentEquationNode) InsertAfter(equationtype EquationNodeType)  
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -964,7 +964,7 @@ func (instance *AccentEquationNode) InsertBefore(equationtype EquationNodeType) 
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -982,7 +982,7 @@ func (instance *AccentEquationNode) GetChild(index int32)  (*EquationNode,  erro
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -1074,7 +1074,7 @@ func AccentEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -1092,6 +1092,10 @@ func (instance *AccentEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteAccentEquationNode(accentequationnode *AccentEquationNode){
+	println("Delete accentequationnode")
+	if accentequationnode == nil || accentequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(accentequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_AccentEquationNode"),accentequationnode.ptr)
 	accentequationnode.ptr = nil
@@ -1201,7 +1205,7 @@ func (instance *ArrayEquationNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -1232,7 +1236,7 @@ func (instance *ArrayEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -1265,7 +1269,7 @@ func (instance *ArrayEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -1331,7 +1335,7 @@ func (instance *ArrayEquationNode) AddChild_EquationNodeType(equationtype Equati
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -1350,7 +1354,7 @@ func (instance *ArrayEquationNode) InsertChild(index int32, equationtype Equatio
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -1368,7 +1372,7 @@ func (instance *ArrayEquationNode) InsertAfter(equationtype EquationNodeType)  (
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -1386,7 +1390,7 @@ func (instance *ArrayEquationNode) InsertBefore(equationtype EquationNodeType)  
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -1404,7 +1408,7 @@ func (instance *ArrayEquationNode) GetChild(index int32)  (*EquationNode,  error
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -1496,7 +1500,7 @@ func ArrayEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workb
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -1514,6 +1518,10 @@ func (instance *ArrayEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteArrayEquationNode(arrayequationnode *ArrayEquationNode){
+	println("Delete arrayequationnode")
+	if arrayequationnode == nil || arrayequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(arrayequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_ArrayEquationNode"),arrayequationnode.ptr)
 	arrayequationnode.ptr = nil
@@ -1655,7 +1663,7 @@ func (instance *BarEquationNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -1686,7 +1694,7 @@ func (instance *BarEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -1719,7 +1727,7 @@ func (instance *BarEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -1785,7 +1793,7 @@ func (instance *BarEquationNode) AddChild_EquationNodeType(equationtype Equation
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -1804,7 +1812,7 @@ func (instance *BarEquationNode) InsertChild(index int32, equationtype EquationN
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -1822,7 +1830,7 @@ func (instance *BarEquationNode) InsertAfter(equationtype EquationNodeType)  (*E
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -1840,7 +1848,7 @@ func (instance *BarEquationNode) InsertBefore(equationtype EquationNodeType)  (*
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -1858,7 +1866,7 @@ func (instance *BarEquationNode) GetChild(index int32)  (*EquationNode,  error) 
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -1950,7 +1958,7 @@ func BarEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workboo
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -1968,6 +1976,10 @@ func (instance *BarEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteBarEquationNode(barequationnode *BarEquationNode){
+	println("Delete barequationnode")
+	if barequationnode == nil || barequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(barequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_BarEquationNode"),barequationnode.ptr)
 	barequationnode.ptr = nil
@@ -2077,7 +2089,7 @@ func (instance *BorderBoxEquationNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -2108,7 +2120,7 @@ func (instance *BorderBoxEquationNode) GetTextOptions()  (*TextOptions,  error) 
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -2141,7 +2153,7 @@ func (instance *BorderBoxEquationNode) GetParentNode()  (*EquationNode,  error) 
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -2207,7 +2219,7 @@ func (instance *BorderBoxEquationNode) AddChild_EquationNodeType(equationtype Eq
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -2226,7 +2238,7 @@ func (instance *BorderBoxEquationNode) InsertChild(index int32, equationtype Equ
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -2244,7 +2256,7 @@ func (instance *BorderBoxEquationNode) InsertAfter(equationtype EquationNodeType
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -2262,7 +2274,7 @@ func (instance *BorderBoxEquationNode) InsertBefore(equationtype EquationNodeTyp
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -2280,7 +2292,7 @@ func (instance *BorderBoxEquationNode) GetChild(index int32)  (*EquationNode,  e
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -2372,7 +2384,7 @@ func BorderBoxEquationNode_CreateNode(equationtype EquationNodeType, workbook *W
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -2390,6 +2402,10 @@ func (instance *BorderBoxEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteBorderBoxEquationNode(borderboxequationnode *BorderBoxEquationNode){
+	println("Delete borderboxequationnode")
+	if borderboxequationnode == nil || borderboxequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(borderboxequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_BorderBoxEquationNode"),borderboxequationnode.ptr)
 	borderboxequationnode.ptr = nil
@@ -2499,7 +2515,7 @@ func (instance *BoxEquationNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -2530,7 +2546,7 @@ func (instance *BoxEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -2563,7 +2579,7 @@ func (instance *BoxEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -2629,7 +2645,7 @@ func (instance *BoxEquationNode) AddChild_EquationNodeType(equationtype Equation
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -2648,7 +2664,7 @@ func (instance *BoxEquationNode) InsertChild(index int32, equationtype EquationN
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -2666,7 +2682,7 @@ func (instance *BoxEquationNode) InsertAfter(equationtype EquationNodeType)  (*E
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -2684,7 +2700,7 @@ func (instance *BoxEquationNode) InsertBefore(equationtype EquationNodeType)  (*
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -2702,7 +2718,7 @@ func (instance *BoxEquationNode) GetChild(index int32)  (*EquationNode,  error) 
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -2794,7 +2810,7 @@ func BoxEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workboo
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -2812,6 +2828,10 @@ func (instance *BoxEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteBoxEquationNode(boxequationnode *BoxEquationNode){
+	println("Delete boxequationnode")
+	if boxequationnode == nil || boxequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(boxequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_BoxEquationNode"),boxequationnode.ptr)
 	boxequationnode.ptr = nil
@@ -3070,7 +3090,7 @@ func (instance *DelimiterEquationNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -3101,7 +3121,7 @@ func (instance *DelimiterEquationNode) GetTextOptions()  (*TextOptions,  error) 
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -3134,7 +3154,7 @@ func (instance *DelimiterEquationNode) GetParentNode()  (*EquationNode,  error) 
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -3200,7 +3220,7 @@ func (instance *DelimiterEquationNode) AddChild_EquationNodeType(equationtype Eq
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -3219,7 +3239,7 @@ func (instance *DelimiterEquationNode) InsertChild(index int32, equationtype Equ
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -3237,7 +3257,7 @@ func (instance *DelimiterEquationNode) InsertAfter(equationtype EquationNodeType
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -3255,7 +3275,7 @@ func (instance *DelimiterEquationNode) InsertBefore(equationtype EquationNodeTyp
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -3273,7 +3293,7 @@ func (instance *DelimiterEquationNode) GetChild(index int32)  (*EquationNode,  e
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -3365,7 +3385,7 @@ func DelimiterEquationNode_CreateNode(equationtype EquationNodeType, workbook *W
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -3383,6 +3403,10 @@ func (instance *DelimiterEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteDelimiterEquationNode(delimiterequationnode *DelimiterEquationNode){
+	println("Delete delimiterequationnode")
+	if delimiterequationnode == nil || delimiterequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(delimiterequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_DelimiterEquationNode"),delimiterequationnode.ptr)
 	delimiterequationnode.ptr = nil
@@ -3495,7 +3519,7 @@ func (instance *EquationComponentNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -3526,7 +3550,7 @@ func (instance *EquationComponentNode) GetTextOptions()  (*TextOptions,  error) 
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -3559,7 +3583,7 @@ func (instance *EquationComponentNode) GetParentNode()  (*EquationNode,  error) 
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -3625,7 +3649,7 @@ func (instance *EquationComponentNode) AddChild_EquationNodeType(equationtype Eq
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -3644,7 +3668,7 @@ func (instance *EquationComponentNode) InsertChild(index int32, equationtype Equ
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -3662,7 +3686,7 @@ func (instance *EquationComponentNode) InsertAfter(equationtype EquationNodeType
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -3680,7 +3704,7 @@ func (instance *EquationComponentNode) InsertBefore(equationtype EquationNodeTyp
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -3698,7 +3722,7 @@ func (instance *EquationComponentNode) GetChild(index int32)  (*EquationNode,  e
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -3790,7 +3814,7 @@ func EquationComponentNode_CreateNode(equationtype EquationNodeType, workbook *W
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -3808,6 +3832,10 @@ func (instance *EquationComponentNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteEquationComponentNode(equationcomponentnode *EquationComponentNode){
+	println("Delete equationcomponentnode")
+	if equationcomponentnode == nil || equationcomponentnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(equationcomponentnode, nil)
 	C.Delete_CObject(C.CString("Delete_EquationComponentNode"),equationcomponentnode.ptr)
 	equationcomponentnode.ptr = nil
@@ -3868,7 +3896,7 @@ func (instance *EquationNode) GetParentNode()  (*EquationNode,  error)  {
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -3934,7 +3962,7 @@ func (instance *EquationNode) AddChild_EquationNodeType(equationtype EquationNod
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -3973,7 +4001,7 @@ func (instance *EquationNode) InsertChild(index int32, equationtype EquationNode
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -3991,7 +4019,7 @@ func (instance *EquationNode) InsertAfter(equationtype EquationNodeType)  (*Equa
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -4009,7 +4037,7 @@ func (instance *EquationNode) InsertBefore(equationtype EquationNodeType)  (*Equ
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -4027,7 +4055,7 @@ func (instance *EquationNode) GetChild(index int32)  (*EquationNode,  error)  {
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -4172,7 +4200,7 @@ func EquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbook, 
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -4216,7 +4244,7 @@ func (instance *EquationNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -4247,7 +4275,7 @@ func (instance *EquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -4260,6 +4288,10 @@ func (instance *EquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteEquationNode(equationnode *EquationNode){
+	println("Delete equationnode")
+	if equationnode == nil || equationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(equationnode, nil)
 	C.Delete_CObject(C.CString("Delete_EquationNode"),equationnode.ptr)
 	equationnode.ptr = nil
@@ -4401,7 +4433,7 @@ func (instance *EquationNodeParagraph) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -4432,7 +4464,7 @@ func (instance *EquationNodeParagraph) GetTextOptions()  (*TextOptions,  error) 
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -4465,7 +4497,7 @@ func (instance *EquationNodeParagraph) GetParentNode()  (*EquationNode,  error) 
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -4531,7 +4563,7 @@ func (instance *EquationNodeParagraph) AddChild_EquationNodeType(equationtype Eq
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -4550,7 +4582,7 @@ func (instance *EquationNodeParagraph) InsertChild(index int32, equationtype Equ
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -4568,7 +4600,7 @@ func (instance *EquationNodeParagraph) InsertAfter(equationtype EquationNodeType
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -4586,7 +4618,7 @@ func (instance *EquationNodeParagraph) InsertBefore(equationtype EquationNodeTyp
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -4604,7 +4636,7 @@ func (instance *EquationNodeParagraph) GetChild(index int32)  (*EquationNode,  e
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -4696,7 +4728,7 @@ func EquationNodeParagraph_CreateNode(equationtype EquationNodeType, workbook *W
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -4714,6 +4746,10 @@ func (instance *EquationNodeParagraph) ToFontSetting() *FontSetting {
 }
 
 func DeleteEquationNodeParagraph(equationnodeparagraph *EquationNodeParagraph){
+	println("Delete equationnodeparagraph")
+	if equationnodeparagraph == nil || equationnodeparagraph.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(equationnodeparagraph, nil)
 	C.Delete_CObject(C.CString("Delete_EquationNodeParagraph"),equationnodeparagraph.ptr)
 	equationnodeparagraph.ptr = nil
@@ -4855,7 +4891,7 @@ func (instance *FractionEquationNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -4886,7 +4922,7 @@ func (instance *FractionEquationNode) GetTextOptions()  (*TextOptions,  error)  
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -4919,7 +4955,7 @@ func (instance *FractionEquationNode) GetParentNode()  (*EquationNode,  error)  
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -4985,7 +5021,7 @@ func (instance *FractionEquationNode) AddChild_EquationNodeType(equationtype Equ
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -5004,7 +5040,7 @@ func (instance *FractionEquationNode) InsertChild(index int32, equationtype Equa
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -5022,7 +5058,7 @@ func (instance *FractionEquationNode) InsertAfter(equationtype EquationNodeType)
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -5040,7 +5076,7 @@ func (instance *FractionEquationNode) InsertBefore(equationtype EquationNodeType
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -5058,7 +5094,7 @@ func (instance *FractionEquationNode) GetChild(index int32)  (*EquationNode,  er
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -5150,7 +5186,7 @@ func FractionEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wo
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -5168,6 +5204,10 @@ func (instance *FractionEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteFractionEquationNode(fractionequationnode *FractionEquationNode){
+	println("Delete fractionequationnode")
+	if fractionequationnode == nil || fractionequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(fractionequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_FractionEquationNode"),fractionequationnode.ptr)
 	fractionequationnode.ptr = nil
@@ -5278,7 +5318,7 @@ func (instance *FunctionEquationNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -5309,7 +5349,7 @@ func (instance *FunctionEquationNode) GetTextOptions()  (*TextOptions,  error)  
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -5342,7 +5382,7 @@ func (instance *FunctionEquationNode) GetParentNode()  (*EquationNode,  error)  
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -5408,7 +5448,7 @@ func (instance *FunctionEquationNode) AddChild_EquationNodeType(equationtype Equ
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -5427,7 +5467,7 @@ func (instance *FunctionEquationNode) InsertChild(index int32, equationtype Equa
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -5445,7 +5485,7 @@ func (instance *FunctionEquationNode) InsertAfter(equationtype EquationNodeType)
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -5463,7 +5503,7 @@ func (instance *FunctionEquationNode) InsertBefore(equationtype EquationNodeType
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -5481,7 +5521,7 @@ func (instance *FunctionEquationNode) GetChild(index int32)  (*EquationNode,  er
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -5573,7 +5613,7 @@ func FunctionEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wo
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -5591,6 +5631,10 @@ func (instance *FunctionEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteFunctionEquationNode(functionequationnode *FunctionEquationNode){
+	println("Delete functionequationnode")
+	if functionequationnode == nil || functionequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(functionequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_FunctionEquationNode"),functionequationnode.ptr)
 	functionequationnode.ptr = nil
@@ -5829,7 +5873,7 @@ func (instance *GroupCharacterEquationNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -5860,7 +5904,7 @@ func (instance *GroupCharacterEquationNode) GetTextOptions()  (*TextOptions,  er
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -5893,7 +5937,7 @@ func (instance *GroupCharacterEquationNode) GetParentNode()  (*EquationNode,  er
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -5959,7 +6003,7 @@ func (instance *GroupCharacterEquationNode) AddChild_EquationNodeType(equationty
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -5978,7 +6022,7 @@ func (instance *GroupCharacterEquationNode) InsertChild(index int32, equationtyp
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -5996,7 +6040,7 @@ func (instance *GroupCharacterEquationNode) InsertAfter(equationtype EquationNod
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -6014,7 +6058,7 @@ func (instance *GroupCharacterEquationNode) InsertBefore(equationtype EquationNo
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -6032,7 +6076,7 @@ func (instance *GroupCharacterEquationNode) GetChild(index int32)  (*EquationNod
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -6124,7 +6168,7 @@ func GroupCharacterEquationNode_CreateNode(equationtype EquationNodeType, workbo
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -6142,6 +6186,10 @@ func (instance *GroupCharacterEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteGroupCharacterEquationNode(groupcharacterequationnode *GroupCharacterEquationNode){
+	println("Delete groupcharacterequationnode")
+	if groupcharacterequationnode == nil || groupcharacterequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(groupcharacterequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_GroupCharacterEquationNode"),groupcharacterequationnode.ptr)
 	groupcharacterequationnode.ptr = nil
@@ -6251,7 +6299,7 @@ func (instance *LimLowUppEquationNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -6282,7 +6330,7 @@ func (instance *LimLowUppEquationNode) GetTextOptions()  (*TextOptions,  error) 
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -6315,7 +6363,7 @@ func (instance *LimLowUppEquationNode) GetParentNode()  (*EquationNode,  error) 
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -6381,7 +6429,7 @@ func (instance *LimLowUppEquationNode) AddChild_EquationNodeType(equationtype Eq
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -6400,7 +6448,7 @@ func (instance *LimLowUppEquationNode) InsertChild(index int32, equationtype Equ
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -6418,7 +6466,7 @@ func (instance *LimLowUppEquationNode) InsertAfter(equationtype EquationNodeType
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -6436,7 +6484,7 @@ func (instance *LimLowUppEquationNode) InsertBefore(equationtype EquationNodeTyp
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -6454,7 +6502,7 @@ func (instance *LimLowUppEquationNode) GetChild(index int32)  (*EquationNode,  e
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -6546,7 +6594,7 @@ func LimLowUppEquationNode_CreateNode(equationtype EquationNodeType, workbook *W
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -6564,6 +6612,10 @@ func (instance *LimLowUppEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteLimLowUppEquationNode(limlowuppequationnode *LimLowUppEquationNode){
+	println("Delete limlowuppequationnode")
+	if limlowuppequationnode == nil || limlowuppequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(limlowuppequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_LimLowUppEquationNode"),limlowuppequationnode.ptr)
 	limlowuppequationnode.ptr = nil
@@ -6673,7 +6725,7 @@ func (instance *MathematicalEquationNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -6704,7 +6756,7 @@ func (instance *MathematicalEquationNode) GetTextOptions()  (*TextOptions,  erro
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -6737,7 +6789,7 @@ func (instance *MathematicalEquationNode) GetParentNode()  (*EquationNode,  erro
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -6803,7 +6855,7 @@ func (instance *MathematicalEquationNode) AddChild_EquationNodeType(equationtype
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -6822,7 +6874,7 @@ func (instance *MathematicalEquationNode) InsertChild(index int32, equationtype 
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -6840,7 +6892,7 @@ func (instance *MathematicalEquationNode) InsertAfter(equationtype EquationNodeT
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -6858,7 +6910,7 @@ func (instance *MathematicalEquationNode) InsertBefore(equationtype EquationNode
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -6876,7 +6928,7 @@ func (instance *MathematicalEquationNode) GetChild(index int32)  (*EquationNode,
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -6968,7 +7020,7 @@ func MathematicalEquationNode_CreateNode(equationtype EquationNodeType, workbook
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -6986,6 +7038,10 @@ func (instance *MathematicalEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteMathematicalEquationNode(mathematicalequationnode *MathematicalEquationNode){
+	println("Delete mathematicalequationnode")
+	if mathematicalequationnode == nil || mathematicalequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(mathematicalequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_MathematicalEquationNode"),mathematicalequationnode.ptr)
 	mathematicalequationnode.ptr = nil
@@ -7156,7 +7212,7 @@ func (instance *MatrixEquationNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -7187,7 +7243,7 @@ func (instance *MatrixEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -7220,7 +7276,7 @@ func (instance *MatrixEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -7286,7 +7342,7 @@ func (instance *MatrixEquationNode) AddChild_EquationNodeType(equationtype Equat
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -7305,7 +7361,7 @@ func (instance *MatrixEquationNode) InsertChild(index int32, equationtype Equati
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -7323,7 +7379,7 @@ func (instance *MatrixEquationNode) InsertAfter(equationtype EquationNodeType)  
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -7341,7 +7397,7 @@ func (instance *MatrixEquationNode) InsertBefore(equationtype EquationNodeType) 
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -7359,7 +7415,7 @@ func (instance *MatrixEquationNode) GetChild(index int32)  (*EquationNode,  erro
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -7451,7 +7507,7 @@ func MatrixEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -7469,6 +7525,10 @@ func (instance *MatrixEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteMatrixEquationNode(matrixequationnode *MatrixEquationNode){
+	println("Delete matrixequationnode")
+	if matrixequationnode == nil || matrixequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(matrixequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_MatrixEquationNode"),matrixequationnode.ptr)
 	matrixequationnode.ptr = nil
@@ -7762,7 +7822,7 @@ func (instance *NaryEquationNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -7793,7 +7853,7 @@ func (instance *NaryEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -7826,7 +7886,7 @@ func (instance *NaryEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -7892,7 +7952,7 @@ func (instance *NaryEquationNode) AddChild_EquationNodeType(equationtype Equatio
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -7911,7 +7971,7 @@ func (instance *NaryEquationNode) InsertChild(index int32, equationtype Equation
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -7929,7 +7989,7 @@ func (instance *NaryEquationNode) InsertAfter(equationtype EquationNodeType)  (*
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -7947,7 +8007,7 @@ func (instance *NaryEquationNode) InsertBefore(equationtype EquationNodeType)  (
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -7965,7 +8025,7 @@ func (instance *NaryEquationNode) GetChild(index int32)  (*EquationNode,  error)
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -8057,7 +8117,7 @@ func NaryEquationNode_CreateNode(equationtype EquationNodeType, workbook *Workbo
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -8075,6 +8135,10 @@ func (instance *NaryEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteNaryEquationNode(naryequationnode *NaryEquationNode){
+	println("Delete naryequationnode")
+	if naryequationnode == nil || naryequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(naryequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_NaryEquationNode"),naryequationnode.ptr)
 	naryequationnode.ptr = nil
@@ -8213,7 +8277,7 @@ func (instance *RadicalEquationNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -8244,7 +8308,7 @@ func (instance *RadicalEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -8277,7 +8341,7 @@ func (instance *RadicalEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -8343,7 +8407,7 @@ func (instance *RadicalEquationNode) AddChild_EquationNodeType(equationtype Equa
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -8362,7 +8426,7 @@ func (instance *RadicalEquationNode) InsertChild(index int32, equationtype Equat
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -8380,7 +8444,7 @@ func (instance *RadicalEquationNode) InsertAfter(equationtype EquationNodeType) 
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -8398,7 +8462,7 @@ func (instance *RadicalEquationNode) InsertBefore(equationtype EquationNodeType)
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -8416,7 +8480,7 @@ func (instance *RadicalEquationNode) GetChild(index int32)  (*EquationNode,  err
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -8508,7 +8572,7 @@ func RadicalEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wor
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -8526,6 +8590,10 @@ func (instance *RadicalEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteRadicalEquationNode(radicalequationnode *RadicalEquationNode){
+	println("Delete radicalequationnode")
+	if radicalequationnode == nil || radicalequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(radicalequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_RadicalEquationNode"),radicalequationnode.ptr)
 	radicalequationnode.ptr = nil
@@ -8636,7 +8704,7 @@ func (instance *SubSupEquationNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -8667,7 +8735,7 @@ func (instance *SubSupEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -8700,7 +8768,7 @@ func (instance *SubSupEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -8766,7 +8834,7 @@ func (instance *SubSupEquationNode) AddChild_EquationNodeType(equationtype Equat
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -8785,7 +8853,7 @@ func (instance *SubSupEquationNode) InsertChild(index int32, equationtype Equati
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -8803,7 +8871,7 @@ func (instance *SubSupEquationNode) InsertAfter(equationtype EquationNodeType)  
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -8821,7 +8889,7 @@ func (instance *SubSupEquationNode) InsertBefore(equationtype EquationNodeType) 
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -8839,7 +8907,7 @@ func (instance *SubSupEquationNode) GetChild(index int32)  (*EquationNode,  erro
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -8931,7 +8999,7 @@ func SubSupEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -8949,6 +9017,10 @@ func (instance *SubSupEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteSubSupEquationNode(subsupequationnode *SubSupEquationNode){
+	println("Delete subsupequationnode")
+	if subsupequationnode == nil || subsupequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(subsupequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_SubSupEquationNode"),subsupequationnode.ptr)
 	subsupequationnode.ptr = nil
@@ -9088,7 +9160,7 @@ func (instance *TextRunEquationNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -9119,7 +9191,7 @@ func (instance *TextRunEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -9152,7 +9224,7 @@ func (instance *TextRunEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -9218,7 +9290,7 @@ func (instance *TextRunEquationNode) AddChild_EquationNodeType(equationtype Equa
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -9237,7 +9309,7 @@ func (instance *TextRunEquationNode) InsertChild(index int32, equationtype Equat
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -9255,7 +9327,7 @@ func (instance *TextRunEquationNode) InsertAfter(equationtype EquationNodeType) 
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -9273,7 +9345,7 @@ func (instance *TextRunEquationNode) InsertBefore(equationtype EquationNodeType)
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -9291,7 +9363,7 @@ func (instance *TextRunEquationNode) GetChild(index int32)  (*EquationNode,  err
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -9383,7 +9455,7 @@ func TextRunEquationNode_CreateNode(equationtype EquationNodeType, workbook *Wor
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -9401,6 +9473,10 @@ func (instance *TextRunEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteTextRunEquationNode(textrunequationnode *TextRunEquationNode){
+	println("Delete textrunequationnode")
+	if textrunequationnode == nil || textrunequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(textrunequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_TextRunEquationNode"),textrunequationnode.ptr)
 	textrunequationnode.ptr = nil
@@ -9510,7 +9586,7 @@ func (instance *UnknowEquationNode) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -9541,7 +9617,7 @@ func (instance *UnknowEquationNode) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -9574,7 +9650,7 @@ func (instance *UnknowEquationNode) GetParentNode()  (*EquationNode,  error)  {
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -9640,7 +9716,7 @@ func (instance *UnknowEquationNode) AddChild_EquationNodeType(equationtype Equat
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -9659,7 +9735,7 @@ func (instance *UnknowEquationNode) InsertChild(index int32, equationtype Equati
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -9677,7 +9753,7 @@ func (instance *UnknowEquationNode) InsertAfter(equationtype EquationNodeType)  
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -9695,7 +9771,7 @@ func (instance *UnknowEquationNode) InsertBefore(equationtype EquationNodeType) 
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -9713,7 +9789,7 @@ func (instance *UnknowEquationNode) GetChild(index int32)  (*EquationNode,  erro
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -9805,7 +9881,7 @@ func UnknowEquationNode_CreateNode(equationtype EquationNodeType, workbook *Work
 	}
 	result := &EquationNode{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteEquationNode) 
+	 runtime.SetFinalizer(result, DeleteEquationNode) 
 
 	return result, nil 
 }
@@ -9823,6 +9899,10 @@ func (instance *UnknowEquationNode) ToFontSetting() *FontSetting {
 }
 
 func DeleteUnknowEquationNode(unknowequationnode *UnknowEquationNode){
+	println("Delete unknowequationnode")
+	if unknowequationnode == nil || unknowequationnode.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(unknowequationnode, nil)
 	C.Delete_CObject(C.CString("Delete_UnknowEquationNode"),unknowequationnode.ptr)
 	unknowequationnode.ptr = nil

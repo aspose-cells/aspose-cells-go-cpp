@@ -79,6 +79,9 @@ func (instance *DataModel) GetTables()  (*DataModelTableCollection,  error)  {
 
 
 func DeleteDataModel(datamodel *DataModel){
+	if datamodel == nil || datamodel.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(datamodel, nil)
 	C.Delete_CObject(C.CString("Delete_DataModel"),datamodel.ptr)
 	datamodel.ptr = nil
@@ -166,6 +169,9 @@ func (instance *DataModelRelationship) GetPrimaryKeyColumn()  (string,  error)  
 
 
 func DeleteDataModelRelationship(datamodelrelationship *DataModelRelationship){
+	if datamodelrelationship == nil || datamodelrelationship.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(datamodelrelationship, nil)
 	C.Delete_CObject(C.CString("Delete_DataModelRelationship"),datamodelrelationship.ptr)
 	datamodelrelationship.ptr = nil
@@ -229,6 +235,9 @@ func (instance *DataModelRelationshipCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteDataModelRelationshipCollection(datamodelrelationshipcollection *DataModelRelationshipCollection){
+	if datamodelrelationshipcollection == nil || datamodelrelationshipcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(datamodelrelationshipcollection, nil)
 	C.Delete_CObject(C.CString("Delete_DataModelRelationshipCollection"),datamodelrelationshipcollection.ptr)
 	datamodelrelationshipcollection.ptr = nil
@@ -302,6 +311,9 @@ func (instance *DataModelTable) GetConnectionName()  (string,  error)  {
 
 
 func DeleteDataModelTable(datamodeltable *DataModelTable){
+	if datamodeltable == nil || datamodeltable.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(datamodeltable, nil)
 	C.Delete_CObject(C.CString("Delete_DataModelTable"),datamodeltable.ptr)
 	datamodeltable.ptr = nil
@@ -383,6 +395,9 @@ func (instance *DataModelTableCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteDataModelTableCollection(datamodeltablecollection *DataModelTableCollection){
+	if datamodeltablecollection == nil || datamodeltablecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(datamodeltablecollection, nil)
 	C.Delete_CObject(C.CString("Delete_DataModelTableCollection"),datamodeltablecollection.ptr)
 	datamodeltablecollection.ptr = nil

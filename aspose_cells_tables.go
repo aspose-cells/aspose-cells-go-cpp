@@ -607,7 +607,7 @@ func (instance *ListColumn) GetRange()  (*Range,  error)  {
 	}
 	result := &Range{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteRange) 
+	 runtime.SetFinalizer(result, DeleteRange) 
 
 	return result, nil 
 }
@@ -763,7 +763,7 @@ func (instance *ListColumn) GetDataStyle()  (*Style,  error)  {
 	}
 	result := &Style{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteStyle) 
+	 runtime.SetFinalizer(result, DeleteStyle) 
 
 	return result, nil 
 }
@@ -791,6 +791,10 @@ func (instance *ListColumn) SetDataStyle(style *Style)  error {
 
 
 func DeleteListColumn(listcolumn *ListColumn){
+	println("Delete listcolumn")
+	if listcolumn == nil || listcolumn.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(listcolumn, nil)
 	C.Delete_CObject(C.CString("Delete_ListColumn"),listcolumn.ptr)
 	listcolumn.ptr = nil
@@ -832,7 +836,7 @@ func (instance *ListColumnCollection) Get_Int(index int32)  (*ListColumn,  error
 	}
 	result := &ListColumn{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteListColumn) 
+	 runtime.SetFinalizer(result, DeleteListColumn) 
 
 	return result, nil 
 }
@@ -850,7 +854,7 @@ func (instance *ListColumnCollection) Get_String(name string)  (*ListColumn,  er
 	}
 	result := &ListColumn{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteListColumn) 
+	 runtime.SetFinalizer(result, DeleteListColumn) 
 
 	return result, nil 
 }
@@ -887,6 +891,10 @@ func (instance *ListColumnCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteListColumnCollection(listcolumncollection *ListColumnCollection){
+	println("Delete listcolumncollection")
+	if listcolumncollection == nil || listcolumncollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(listcolumncollection, nil)
 	C.Delete_CObject(C.CString("Delete_ListColumnCollection"),listcolumncollection.ptr)
 	listcolumncollection.ptr = nil
@@ -982,7 +990,7 @@ func (instance *ListObject) GetListColumns()  (*ListColumnCollection,  error)  {
 	}
 	result := &ListColumnCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteListColumnCollection) 
+	 runtime.SetFinalizer(result, DeleteListColumnCollection) 
 
 	return result, nil 
 }
@@ -1155,7 +1163,7 @@ func (instance *ListObject) GetDataRange()  (*Range,  error)  {
 	}
 	result := &Range{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteRange) 
+	 runtime.SetFinalizer(result, DeleteRange) 
 
 	return result, nil 
 }
@@ -1184,7 +1192,7 @@ func (instance *ListObject) GetQueryTable()  (*QueryTable,  error)  {
 	}
 	result := &QueryTable{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteQueryTable) 
+	 runtime.SetFinalizer(result, DeleteQueryTable) 
 
 	return result, nil 
 }
@@ -1259,7 +1267,7 @@ func (instance *ListObject) GetAutoFilter()  (*AutoFilter,  error)  {
 	}
 	result := &AutoFilter{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteAutoFilter) 
+	 runtime.SetFinalizer(result, DeleteAutoFilter) 
 
 	return result, nil 
 }
@@ -1556,7 +1564,7 @@ func (instance *ListObject) GetXmlMap()  (*XmlMap,  error)  {
 	}
 	result := &XmlMap{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteXmlMap) 
+	 runtime.SetFinalizer(result, DeleteXmlMap) 
 
 	return result, nil 
 }
@@ -1622,6 +1630,10 @@ func (instance *ListObject) SetAlternativeDescription(value string)  error {
 
 
 func DeleteListObject(listobject *ListObject){
+	println("Delete listobject")
+	if listobject == nil || listobject.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(listobject, nil)
 	C.Delete_CObject(C.CString("Delete_ListObject"),listobject.ptr)
 	listobject.ptr = nil
@@ -1663,7 +1675,7 @@ func (instance *ListObjectCollection) Get_Int(index int32)  (*ListObject,  error
 	}
 	result := &ListObject{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteListObject) 
+	 runtime.SetFinalizer(result, DeleteListObject) 
 
 	return result, nil 
 }
@@ -1681,7 +1693,7 @@ func (instance *ListObjectCollection) Get_String(tablename string)  (*ListObject
 	}
 	result := &ListObject{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteListObject) 
+	 runtime.SetFinalizer(result, DeleteListObject) 
 
 	return result, nil 
 }
@@ -1769,6 +1781,10 @@ func (instance *ListObjectCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteListObjectCollection(listobjectcollection *ListObjectCollection){
+	println("Delete listobjectcollection")
+	if listobjectcollection == nil || listobjectcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(listobjectcollection, nil)
 	C.Delete_CObject(C.CString("Delete_ListObjectCollection"),listobjectcollection.ptr)
 	listobjectcollection.ptr = nil
@@ -1822,7 +1838,7 @@ func (instance *TableStyle) GetTableStyleElements()  (*TableStyleElementCollecti
 	}
 	result := &TableStyleElementCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTableStyleElementCollection) 
+	 runtime.SetFinalizer(result, DeleteTableStyleElementCollection) 
 
 	return result, nil 
 }
@@ -1846,7 +1862,7 @@ func TableStyle_Create(name string, sheets *WorksheetCollection)  (*TableStyle, 
 	}
 	result := &TableStyle{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTableStyle) 
+	 runtime.SetFinalizer(result, DeleteTableStyle) 
 
 	return result, nil 
 }
@@ -1854,6 +1870,10 @@ func TableStyle_Create(name string, sheets *WorksheetCollection)  (*TableStyle, 
 
 
 func DeleteTableStyle(tablestyle *TableStyle){
+	println("Delete tablestyle")
+	if tablestyle == nil || tablestyle.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(tablestyle, nil)
 	C.Delete_CObject(C.CString("Delete_TableStyle"),tablestyle.ptr)
 	tablestyle.ptr = nil
@@ -1985,7 +2005,7 @@ func (instance *TableStyleCollection) Get_Int(index int32)  (*TableStyle,  error
 	}
 	result := &TableStyle{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTableStyle) 
+	 runtime.SetFinalizer(result, DeleteTableStyle) 
 
 	return result, nil 
 }
@@ -2003,7 +2023,7 @@ func (instance *TableStyleCollection) Get_String(name string)  (*TableStyle,  er
 	}
 	result := &TableStyle{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTableStyle) 
+	 runtime.SetFinalizer(result, DeleteTableStyle) 
 
 	return result, nil 
 }
@@ -2021,7 +2041,7 @@ func (instance *TableStyleCollection) GetBuiltinTableStyle(type_ TableStyleType)
 	}
 	result := &TableStyle{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTableStyle) 
+	 runtime.SetFinalizer(result, DeleteTableStyle) 
 
 	return result, nil 
 }
@@ -2043,6 +2063,10 @@ func (instance *TableStyleCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteTableStyleCollection(tablestylecollection *TableStyleCollection){
+	println("Delete tablestylecollection")
+	if tablestylecollection == nil || tablestylecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(tablestylecollection, nil)
 	C.Delete_CObject(C.CString("Delete_TableStyleCollection"),tablestylecollection.ptr)
 	tablestylecollection.ptr = nil
@@ -2130,7 +2154,7 @@ func (instance *TableStyleElement) GetElementStyle()  (*Style,  error)  {
 	}
 	result := &Style{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteStyle) 
+	 runtime.SetFinalizer(result, DeleteStyle) 
 
 	return result, nil 
 }
@@ -2158,6 +2182,10 @@ func (instance *TableStyleElement) SetElementStyle(style *Style)  error {
 
 
 func DeleteTableStyleElement(tablestyleelement *TableStyleElement){
+	println("Delete tablestyleelement")
+	if tablestyleelement == nil || tablestyleelement.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(tablestyleelement, nil)
 	C.Delete_CObject(C.CString("Delete_TableStyleElement"),tablestyleelement.ptr)
 	tablestyleelement.ptr = nil
@@ -2199,7 +2227,7 @@ func (instance *TableStyleElementCollection) Get_Int(index int32)  (*TableStyleE
 	}
 	result := &TableStyleElement{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTableStyleElement) 
+	 runtime.SetFinalizer(result, DeleteTableStyleElement) 
 
 	return result, nil 
 }
@@ -2217,7 +2245,7 @@ func (instance *TableStyleElementCollection) Get_TableStyleElementType(type_ Tab
 	}
 	result := &TableStyleElement{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTableStyleElement) 
+	 runtime.SetFinalizer(result, DeleteTableStyleElement) 
 
 	return result, nil 
 }
@@ -2255,6 +2283,10 @@ func (instance *TableStyleElementCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteTableStyleElementCollection(tablestyleelementcollection *TableStyleElementCollection){
+	println("Delete tablestyleelementcollection")
+	if tablestyleelementcollection == nil || tablestyleelementcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(tablestyleelementcollection, nil)
 	C.Delete_CObject(C.CString("Delete_TableStyleElementCollection"),tablestyleelementcollection.ptr)
 	tablestyleelementcollection.ptr = nil
@@ -2329,6 +2361,10 @@ func (instance *TableToRangeOptions) SetLastRow(value int32)  error {
 
 
 func DeleteTableToRangeOptions(tabletorangeoptions *TableToRangeOptions){
+	println("Delete tabletorangeoptions")
+	if tabletorangeoptions == nil || tabletorangeoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(tabletorangeoptions, nil)
 	C.Delete_CObject(C.CString("Delete_TableToRangeOptions"),tabletorangeoptions.ptr)
 	tabletorangeoptions.ptr = nil

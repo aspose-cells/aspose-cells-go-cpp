@@ -9435,7 +9435,11 @@ func Color_White() (*Color, error) {
 }
 
 func DeleteColor(color *Color) {
+	if color == nil || color.ptr == nil {
+		return
+	}
 	C.Delete_CObject(C.CString("Delete_Color"), color.ptr)
+	color.ptr = nil
 }
 
 // Struct Duration
@@ -9753,7 +9757,11 @@ func Duration_FromTicks(value int64) (*Duration, error) {
 }
 
 func DeleteDuration(duration *Duration) {
+	if duration == nil || duration.ptr == nil {
+		return
+	}
 	C.Delete_CObject(C.CString("Delete_Duration"), duration.ptr)
+	duration.ptr = nil
 }
 
 // Class AboveAverage
@@ -9920,6 +9928,9 @@ func (instance *AboveAverage) SetStdDev(value int32) error {
 }
 
 func DeleteAboveAverage(aboveaverage *AboveAverage) {
+	if aboveaverage == nil || aboveaverage.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(aboveaverage, nil)
 	C.Delete_CObject(C.CString("Delete_AboveAverage"), aboveaverage.ptr)
 	aboveaverage.ptr = nil
@@ -10023,6 +10034,9 @@ func (instance *AbstractCalculationEngine) ForceRecalculate(functionname string)
 }
 
 func DeleteAbstractCalculationEngine(abstractcalculationengine *AbstractCalculationEngine) {
+	if abstractcalculationengine == nil || abstractcalculationengine.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(abstractcalculationengine, nil)
 	C.Delete_CObject(C.CString("Delete_AbstractCalculationEngine"), abstractcalculationengine.ptr)
 	abstractcalculationengine.ptr = nil
@@ -10081,6 +10095,9 @@ func (instance *AbstractFormulaChangeMonitor) OnFormatConditionFormulaChanged(fc
 }
 
 func DeleteAbstractFormulaChangeMonitor(abstractformulachangemonitor *AbstractFormulaChangeMonitor) {
+	if abstractformulachangemonitor == nil || abstractformulachangemonitor.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(abstractformulachangemonitor, nil)
 	C.Delete_CObject(C.CString("Delete_AbstractFormulaChangeMonitor"), abstractformulachangemonitor.ptr)
 	abstractformulachangemonitor.ptr = nil
@@ -10112,6 +10129,9 @@ func (instance *AbstractInterruptMonitor) GetTerminateWithoutException() (bool, 
 }
 
 func DeleteAbstractInterruptMonitor(abstractinterruptmonitor *AbstractInterruptMonitor) {
+	if abstractinterruptmonitor == nil || abstractinterruptmonitor.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(abstractinterruptmonitor, nil)
 	C.Delete_CObject(C.CString("Delete_AbstractInterruptMonitor"), abstractinterruptmonitor.ptr)
 	abstractinterruptmonitor.ptr = nil
@@ -11063,6 +11083,9 @@ func (instance *AbstractTextLoadOptions) ToLoadOptions() *LoadOptions {
 }
 
 func DeleteAbstractTextLoadOptions(abstracttextloadoptions *AbstractTextLoadOptions) {
+	if abstracttextloadoptions == nil || abstracttextloadoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(abstracttextloadoptions, nil)
 	C.Delete_CObject(C.CString("Delete_AbstractTextLoadOptions"), abstracttextloadoptions.ptr)
 	abstracttextloadoptions.ptr = nil
@@ -11140,6 +11163,9 @@ func (instance *AdvancedFilter) GetCopyToRange() (string, error) {
 }
 
 func DeleteAdvancedFilter(advancedfilter *AdvancedFilter) {
+	if advancedfilter == nil || advancedfilter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(advancedfilter, nil)
 	C.Delete_CObject(C.CString("Delete_AdvancedFilter"), advancedfilter.ptr)
 	advancedfilter.ptr = nil
@@ -11746,6 +11772,9 @@ func (instance *AutoFilter) GetFilterColumns() (*FilterColumnCollection, error) 
 }
 
 func DeleteAutoFilter(autofilter *AutoFilter) {
+	if autofilter == nil || autofilter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(autofilter, nil)
 	C.Delete_CObject(C.CString("Delete_AutoFilter"), autofilter.ptr)
 	autofilter.ptr = nil
@@ -12082,6 +12111,9 @@ func (instance *AutoFitterOptions) SetForRendering(value bool) error {
 }
 
 func DeleteAutoFitterOptions(autofitteroptions *AutoFitterOptions) {
+	if autofitteroptions == nil || autofitteroptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(autofitteroptions, nil)
 	C.Delete_CObject(C.CString("Delete_AutoFitterOptions"), autofitteroptions.ptr)
 	autofitteroptions.ptr = nil
@@ -12262,6 +12294,9 @@ func (instance *Border) SetLineStyle(value CellBorderType) error {
 }
 
 func DeleteBorder(border *Border) {
+	if border == nil || border.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(border, nil)
 	C.Delete_CObject(C.CString("Delete_Border"), border.ptr)
 	border.ptr = nil
@@ -12462,6 +12497,9 @@ func (instance *BorderCollection) SetDiagonalStyle(value CellBorderType) error {
 }
 
 func DeleteBorderCollection(bordercollection *BorderCollection) {
+	if bordercollection == nil || bordercollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(bordercollection, nil)
 	C.Delete_CObject(C.CString("Delete_BorderCollection"), bordercollection.ptr)
 	bordercollection.ptr = nil
@@ -12601,6 +12639,9 @@ func (instance *CalculationCell) GetCell() (*Cell, error) {
 }
 
 func DeleteCalculationCell(calculationcell *CalculationCell) {
+	if calculationcell == nil || calculationcell.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(calculationcell, nil)
 	C.Delete_CObject(C.CString("Delete_CalculationCell"), calculationcell.ptr)
 	calculationcell.ptr = nil
@@ -12866,6 +12907,9 @@ func (instance *CalculationData) GetParamText(index int32) (string, error) {
 }
 
 func DeleteCalculationData(calculationdata *CalculationData) {
+	if calculationdata == nil || calculationdata.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(calculationdata, nil)
 	C.Delete_CObject(C.CString("Delete_CalculationData"), calculationdata.ptr)
 	calculationdata.ptr = nil
@@ -13244,6 +13288,9 @@ func (instance *CalculationOptions) SetCharacterEncoding(value EncodingType) err
 }
 
 func DeleteCalculationOptions(calculationoptions *CalculationOptions) {
+	if calculationoptions == nil || calculationoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(calculationoptions, nil)
 	C.Delete_CObject(C.CString("Delete_CalculationOptions"), calculationoptions.ptr)
 	calculationoptions.ptr = nil
@@ -15451,6 +15498,9 @@ func (instance *Cell) Dispose() error {
 }
 
 func DeleteCell(cell *Cell) {
+	if cell == nil || cell.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(cell, nil)
 	C.Delete_CObject(C.CString("Delete_Cell"), cell.ptr)
 	cell.ptr = nil
@@ -15599,6 +15649,9 @@ func (cellarea *CellArea) Get_EndColumn() (int32, error) {
 }
 
 func DeleteCellArea(cellarea *CellArea) {
+	if cellarea == nil || cellarea.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(cellarea, nil)
 	C.Delete_CObject(C.CString("Delete_CellArea"), cellarea.ptr)
 	cellarea.ptr = nil
@@ -15698,6 +15751,9 @@ func (instance *CellRichValue) SetAltText(value string) error {
 }
 
 func DeleteCellRichValue(cellrichvalue *CellRichValue) {
+	if cellrichvalue == nil || cellrichvalue.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(cellrichvalue, nil)
 	C.Delete_CObject(C.CString("Delete_CellRichValue"), cellrichvalue.ptr)
 	cellrichvalue.ptr = nil
@@ -19543,6 +19599,9 @@ func (instance *Cells) GetCellDisplayStyle_Int_Int_BorderType(row int32, column 
 }
 
 func DeleteCells(cells *Cells) {
+	if cells == nil || cells.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(cells, nil)
 	C.Delete_CObject(C.CString("Delete_Cells"), cells.ptr)
 	cells.ptr = nil
@@ -19828,6 +19887,9 @@ func (instance *CellsColor) SetTintOfShapeColor(tint float64) error {
 }
 
 func DeleteCellsColor(cellscolor *CellsColor) {
+	if cellscolor == nil || cellscolor.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(cellscolor, nil)
 	C.Delete_CObject(C.CString("Delete_CellsColor"), cellscolor.ptr)
 	cellscolor.ptr = nil
@@ -19890,6 +19952,9 @@ func (instance *CellsFactory) CreateStyle() (*Style, error) {
 }
 
 func DeleteCellsFactory(cellsfactory *CellsFactory) {
+	if cellsfactory == nil || cellsfactory.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(cellsfactory, nil)
 	C.Delete_CObject(C.CString("Delete_CellsFactory"), cellsfactory.ptr)
 	cellsfactory.ptr = nil
@@ -20494,6 +20559,9 @@ func CellsHelper_SetIsCloudPlatform(value bool) error {
 }
 
 func DeleteCellsHelper(cellshelper *CellsHelper) {
+	if cellshelper == nil || cellshelper.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(cellshelper, nil)
 	C.Delete_CObject(C.CString("Delete_CellsHelper"), cellshelper.ptr)
 	cellshelper.ptr = nil
@@ -20618,6 +20686,9 @@ func (instance *CellValue) SetValue(value *Object) error {
 }
 
 func DeleteCellValue(cellvalue *CellValue) {
+	if cellvalue == nil || cellvalue.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(cellvalue, nil)
 	C.Delete_CObject(C.CString("Delete_CellValue"), cellvalue.ptr)
 	cellvalue.ptr = nil
@@ -20767,6 +20838,9 @@ func (instance *CellWatch) SetCellName(value string) error {
 }
 
 func DeleteCellWatch(cellwatch *CellWatch) {
+	if cellwatch == nil || cellwatch.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(cellwatch, nil)
 	C.Delete_CObject(C.CString("Delete_CellWatch"), cellwatch.ptr)
 	cellwatch.ptr = nil
@@ -20912,6 +20986,9 @@ func (instance *CellWatchCollection) GetCount() (int32, error) {
 }
 
 func DeleteCellWatchCollection(cellwatchcollection *CellWatchCollection) {
+	if cellwatchcollection == nil || cellwatchcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(cellwatchcollection, nil)
 	C.Delete_CObject(C.CString("Delete_CellWatchCollection"), cellwatchcollection.ptr)
 	cellwatchcollection.ptr = nil
@@ -21043,6 +21120,9 @@ func (instance *ColorFilter) GetColor(sheets *WorksheetCollection) (*Color, erro
 }
 
 func DeleteColorFilter(colorfilter *ColorFilter) {
+	if colorfilter == nil || colorfilter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(colorfilter, nil)
 	C.Delete_CObject(C.CString("Delete_ColorFilter"), colorfilter.ptr)
 	colorfilter.ptr = nil
@@ -21273,6 +21353,9 @@ func (instance *ColorScale) SetMaxColor(value *Color) error {
 }
 
 func DeleteColorScale(colorscale *ColorScale) {
+	if colorscale == nil || colorscale.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(colorscale, nil)
 	C.Delete_CObject(C.CString("Delete_ColorScale"), colorscale.ptr)
 	colorscale.ptr = nil
@@ -21545,6 +21628,9 @@ func (instance *Column) SetIsCollapsed(value bool) error {
 }
 
 func DeleteColumn(column *Column) {
+	if column == nil || column.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(column, nil)
 	C.Delete_CObject(C.CString("Delete_Column"), column.ptr)
 	column.ptr = nil
@@ -21639,6 +21725,9 @@ func (instance *ColumnCollection) GetCount() (int32, error) {
 }
 
 func DeleteColumnCollection(columncollection *ColumnCollection) {
+	if columncollection == nil || columncollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(columncollection, nil)
 	C.Delete_CObject(C.CString("Delete_ColumnCollection"), columncollection.ptr)
 	columncollection.ptr = nil
@@ -22348,6 +22437,9 @@ func (instance *Comment) SetHeightInch(value float64) error {
 }
 
 func DeleteComment(comment *Comment) {
+	if comment == nil || comment.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(comment, nil)
 	C.Delete_CObject(C.CString("Delete_Comment"), comment.ptr)
 	comment.ptr = nil
@@ -22655,6 +22747,9 @@ func (instance *CommentCollection) GetCount() (int32, error) {
 }
 
 func DeleteCommentCollection(commentcollection *CommentCollection) {
+	if commentcollection == nil || commentcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(commentcollection, nil)
 	C.Delete_CObject(C.CString("Delete_CommentCollection"), commentcollection.ptr)
 	commentcollection.ptr = nil
@@ -22784,6 +22879,9 @@ func (instance *ConditionalFormattingCollection) GetCount() (int32, error) {
 }
 
 func DeleteConditionalFormattingCollection(conditionalformattingcollection *ConditionalFormattingCollection) {
+	if conditionalformattingcollection == nil || conditionalformattingcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(conditionalformattingcollection, nil)
 	C.Delete_CObject(C.CString("Delete_ConditionalFormattingCollection"), conditionalformattingcollection.ptr)
 	conditionalformattingcollection.ptr = nil
@@ -22948,6 +23046,9 @@ func ConditionalFormattingIcon_GetIconImageData(type_ IconSetType, index int32) 
 }
 
 func DeleteConditionalFormattingIcon(conditionalformattingicon *ConditionalFormattingIcon) {
+	if conditionalformattingicon == nil || conditionalformattingicon.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(conditionalformattingicon, nil)
 	C.Delete_CObject(C.CString("Delete_ConditionalFormattingIcon"), conditionalformattingicon.ptr)
 	conditionalformattingicon.ptr = nil
@@ -23036,6 +23137,9 @@ func (instance *ConditionalFormattingIconCollection) GetCount() (int32, error) {
 }
 
 func DeleteConditionalFormattingIconCollection(conditionalformattingiconcollection *ConditionalFormattingIconCollection) {
+	if conditionalformattingiconcollection == nil || conditionalformattingiconcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(conditionalformattingiconcollection, nil)
 	C.Delete_CObject(C.CString("Delete_ConditionalFormattingIconCollection"), conditionalformattingiconcollection.ptr)
 	conditionalformattingiconcollection.ptr = nil
@@ -23154,6 +23258,9 @@ func (instance *ConditionalFormattingResult) GetColorScaleResult() (*Color, erro
 }
 
 func DeleteConditionalFormattingResult(conditionalformattingresult *ConditionalFormattingResult) {
+	if conditionalformattingresult == nil || conditionalformattingresult.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(conditionalformattingresult, nil)
 	C.Delete_CObject(C.CString("Delete_ConditionalFormattingResult"), conditionalformattingresult.ptr)
 	conditionalformattingresult.ptr = nil
@@ -23312,6 +23419,9 @@ func (instance *ConditionalFormattingValue) SetIsGTE(value bool) error {
 }
 
 func DeleteConditionalFormattingValue(conditionalformattingvalue *ConditionalFormattingValue) {
+	if conditionalformattingvalue == nil || conditionalformattingvalue.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(conditionalformattingvalue, nil)
 	C.Delete_CObject(C.CString("Delete_ConditionalFormattingValue"), conditionalformattingvalue.ptr)
 	conditionalformattingvalue.ptr = nil
@@ -23401,6 +23511,9 @@ func (instance *ConditionalFormattingValueCollection) GetCount() (int32, error) 
 }
 
 func DeleteConditionalFormattingValueCollection(conditionalformattingvaluecollection *ConditionalFormattingValueCollection) {
+	if conditionalformattingvaluecollection == nil || conditionalformattingvaluecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(conditionalformattingvaluecollection, nil)
 	C.Delete_CObject(C.CString("Delete_ConditionalFormattingValueCollection"), conditionalformattingvaluecollection.ptr)
 	conditionalformattingvaluecollection.ptr = nil
@@ -23737,6 +23850,9 @@ func (instance *CopyOptions) SetUpdateInvalidReferencesToTargetSheet(value bool)
 }
 
 func DeleteCopyOptions(copyoptions *CopyOptions) {
+	if copyoptions == nil || copyoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(copyoptions, nil)
 	C.Delete_CObject(C.CString("Delete_CopyOptions"), copyoptions.ptr)
 	copyoptions.ptr = nil
@@ -23871,6 +23987,9 @@ func (instance *CustomFilter) SetCriteria_FilterOperatorType_Object(filteroperat
 }
 
 func DeleteCustomFilter(customfilter *CustomFilter) {
+	if customfilter == nil || customfilter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(customfilter, nil)
 	C.Delete_CObject(C.CString("Delete_CustomFilter"), customfilter.ptr)
 	customfilter.ptr = nil
@@ -24046,6 +24165,9 @@ func (instance *CustomFilterCollection) GetCount() (int32, error) {
 }
 
 func DeleteCustomFilterCollection(customfiltercollection *CustomFilterCollection) {
+	if customfiltercollection == nil || customfiltercollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(customfiltercollection, nil)
 	C.Delete_CObject(C.CString("Delete_CustomFilterCollection"), customfiltercollection.ptr)
 	customfiltercollection.ptr = nil
@@ -24116,6 +24238,9 @@ func (instance *CustomFunctionDefinition) GetArrayModeParameters(functionname st
 }
 
 func DeleteCustomFunctionDefinition(customfunctiondefinition *CustomFunctionDefinition) {
+	if customfunctiondefinition == nil || customfunctiondefinition.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(customfunctiondefinition, nil)
 	C.Delete_CObject(C.CString("Delete_CustomFunctionDefinition"), customfunctiondefinition.ptr)
 	customfunctiondefinition.ptr = nil
@@ -24544,6 +24669,9 @@ func (instance *DataBar) ToImage(cell *Cell, imgopts *ImageOrPrintOptions) ([]by
 }
 
 func DeleteDataBar(databar *DataBar) {
+	if databar == nil || databar.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(databar, nil)
 	C.Delete_CObject(C.CString("Delete_DataBar"), databar.ptr)
 	databar.ptr = nil
@@ -24647,6 +24775,9 @@ func (instance *DataBarBorder) SetType(value DataBarBorderType) error {
 }
 
 func DeleteDataBarBorder(databarborder *DataBarBorder) {
+	if databarborder == nil || databarborder.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(databarborder, nil)
 	C.Delete_CObject(C.CString("Delete_DataBarBorder"), databarborder.ptr)
 	databarborder.ptr = nil
@@ -25283,6 +25414,9 @@ func (instance *DataSorter) Sort() ([]int32, error) {
 }
 
 func DeleteDataSorter(datasorter *DataSorter) {
+	if datasorter == nil || datasorter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(datasorter, nil)
 	C.Delete_CObject(C.CString("Delete_DataSorter"), datasorter.ptr)
 	datasorter.ptr = nil
@@ -25418,6 +25552,9 @@ func (instance *DataSorterKey) GetColor() (*Color, error) {
 }
 
 func DeleteDataSorterKey(datasorterkey *DataSorterKey) {
+	if datasorterkey == nil || datasorterkey.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(datasorterkey, nil)
 	C.Delete_CObject(C.CString("Delete_DataSorterKey"), datasorterkey.ptr)
 	datasorterkey.ptr = nil
@@ -25500,6 +25637,9 @@ func (instance *DataSorterKeyCollection) GetCount() (int32, error) {
 }
 
 func DeleteDataSorterKeyCollection(datasorterkeycollection *DataSorterKeyCollection) {
+	if datasorterkeycollection == nil || datasorterkeycollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(datasorterkeycollection, nil)
 	C.Delete_CObject(C.CString("Delete_DataSorterKeyCollection"), datasorterkeycollection.ptr)
 	datasorterkeycollection.ptr = nil
@@ -25857,6 +25997,9 @@ func (instance *DateTimeGroupItem) SetSecond(value int32) error {
 }
 
 func DeleteDateTimeGroupItem(datetimegroupitem *DateTimeGroupItem) {
+	if datetimegroupitem == nil || datetimegroupitem.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(datetimegroupitem, nil)
 	C.Delete_CObject(C.CString("Delete_DateTimeGroupItem"), datetimegroupitem.ptr)
 	datetimegroupitem.ptr = nil
@@ -26069,6 +26212,9 @@ func (instance *DefaultStyleSettings) SetVerticalAlignment(value TextAlignmentTy
 }
 
 func DeleteDefaultStyleSettings(defaultstylesettings *DefaultStyleSettings) {
+	if defaultstylesettings == nil || defaultstylesettings.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(defaultstylesettings, nil)
 	C.Delete_CObject(C.CString("Delete_DefaultStyleSettings"), defaultstylesettings.ptr)
 	defaultstylesettings.ptr = nil
@@ -26440,6 +26586,9 @@ func (instance *DeleteBlankOptions) ToDeleteOptions() *DeleteOptions {
 }
 
 func DeleteDeleteBlankOptions(deleteblankoptions *DeleteBlankOptions) {
+	if deleteblankoptions == nil || deleteblankoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(deleteblankoptions, nil)
 	C.Delete_CObject(C.CString("Delete_DeleteBlankOptions"), deleteblankoptions.ptr)
 	deleteblankoptions.ptr = nil
@@ -26561,6 +26710,9 @@ func (instance *DeleteOptions) SetFormulaChangeMonitor(value *AbstractFormulaCha
 }
 
 func DeleteDeleteOptions(deleteoptions *DeleteOptions) {
+	if deleteoptions == nil || deleteoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(deleteoptions, nil)
 	C.Delete_CObject(C.CString("Delete_DeleteOptions"), deleteoptions.ptr)
 	deleteoptions.ptr = nil
@@ -27046,6 +27198,9 @@ func (instance *DifSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeleteDifSaveOptions(difsaveoptions *DifSaveOptions) {
+	if difsaveoptions == nil || difsaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(difsaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_DifSaveOptions"), difsaveoptions.ptr)
 	difsaveoptions.ptr = nil
@@ -28496,6 +28651,9 @@ func (instance *DocxSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeleteDocxSaveOptions(docxsaveoptions *DocxSaveOptions) {
+	if docxsaveoptions == nil || docxsaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(docxsaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_DocxSaveOptions"), docxsaveoptions.ptr)
 	docxsaveoptions.ptr = nil
@@ -28563,6 +28721,9 @@ func (instance *DxfCollection) GetCount() (int32, error) {
 }
 
 func DeleteDxfCollection(dxfcollection *DxfCollection) {
+	if dxfcollection == nil || dxfcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(dxfcollection, nil)
 	C.Delete_CObject(C.CString("Delete_DxfCollection"), dxfcollection.ptr)
 	dxfcollection.ptr = nil
@@ -28755,6 +28916,9 @@ func (instance *DynamicFilter) SetMaxValue(value *Object) error {
 }
 
 func DeleteDynamicFilter(dynamicfilter *DynamicFilter) {
+	if dynamicfilter == nil || dynamicfilter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(dynamicfilter, nil)
 	C.Delete_CObject(C.CString("Delete_DynamicFilter"), dynamicfilter.ptr)
 	dynamicfilter.ptr = nil
@@ -30078,6 +30242,9 @@ func (instance *EbookLoadOptions) ToLoadOptions() *LoadOptions {
 }
 
 func DeleteEbookLoadOptions(ebookloadoptions *EbookLoadOptions) {
+	if ebookloadoptions == nil || ebookloadoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(ebookloadoptions, nil)
 	C.Delete_CObject(C.CString("Delete_EbookLoadOptions"), ebookloadoptions.ptr)
 	ebookloadoptions.ptr = nil
@@ -30229,6 +30396,9 @@ func (instance *ErrorCheckOption) RemoveRange(index int32) error {
 }
 
 func DeleteErrorCheckOption(errorcheckoption *ErrorCheckOption) {
+	if errorcheckoption == nil || errorcheckoption.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(errorcheckoption, nil)
 	C.Delete_CObject(C.CString("Delete_ErrorCheckOption"), errorcheckoption.ptr)
 	errorcheckoption.ptr = nil
@@ -30312,6 +30482,9 @@ func (instance *ErrorCheckOptionCollection) GetCount() (int32, error) {
 }
 
 func DeleteErrorCheckOptionCollection(errorcheckoptioncollection *ErrorCheckOptionCollection) {
+	if errorcheckoptioncollection == nil || errorcheckoptioncollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(errorcheckoptioncollection, nil)
 	C.Delete_CObject(C.CString("Delete_ErrorCheckOptionCollection"), errorcheckoptioncollection.ptr)
 	errorcheckoptioncollection.ptr = nil
@@ -30498,6 +30671,9 @@ func (instance *ExternalLink) IsVisible() (bool, error) {
 }
 
 func DeleteExternalLink(externallink *ExternalLink) {
+	if externallink == nil || externallink.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(externallink, nil)
 	C.Delete_CObject(C.CString("Delete_ExternalLink"), externallink.ptr)
 	externallink.ptr = nil
@@ -30713,6 +30889,9 @@ func (instance *ExternalLinkCollection) GetEnumerator() (*ExternalLinkEnumerator
 }
 
 func DeleteExternalLinkCollection(externallinkcollection *ExternalLinkCollection) {
+	if externallinkcollection == nil || externallinkcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(externallinkcollection, nil)
 	C.Delete_CObject(C.CString("Delete_ExternalLinkCollection"), externallinkcollection.ptr)
 	externallinkcollection.ptr = nil
@@ -30824,6 +31003,9 @@ func (instance *FileFontSource) ToFontSourceBase() *FontSourceBase {
 }
 
 func DeleteFileFontSource(filefontsource *FileFontSource) {
+	if filefontsource == nil || filefontsource.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(filefontsource, nil)
 	C.Delete_CObject(C.CString("Delete_FileFontSource"), filefontsource.ptr)
 	filefontsource.ptr = nil
@@ -30938,6 +31120,9 @@ func (instance *FileFormatInfo) GetLoadFormat() (LoadFormat, error) {
 }
 
 func DeleteFileFormatInfo(fileformatinfo *FileFormatInfo) {
+	if fileformatinfo == nil || fileformatinfo.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(fileformatinfo, nil)
 	C.Delete_CObject(C.CString("Delete_FileFormatInfo"), fileformatinfo.ptr)
 	fileformatinfo.ptr = nil
@@ -31214,6 +31399,9 @@ func FileFormatUtil_SaveFormatToLoadFormat(saveformat SaveFormat) (LoadFormat, e
 }
 
 func DeleteFileFormatUtil(fileformatutil *FileFormatUtil) {
+	if fileformatutil == nil || fileformatutil.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(fileformatutil, nil)
 	C.Delete_CObject(C.CString("Delete_FileFormatUtil"), fileformatutil.ptr)
 	fileformatutil.ptr = nil
@@ -31498,6 +31686,9 @@ func (instance *FilterColumn) SelectAll() error {
 }
 
 func DeleteFilterColumn(filtercolumn *FilterColumn) {
+	if filtercolumn == nil || filtercolumn.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(filtercolumn, nil)
 	C.Delete_CObject(C.CString("Delete_FilterColumn"), filtercolumn.ptr)
 	filtercolumn.ptr = nil
@@ -31605,6 +31796,9 @@ func (instance *FilterColumnCollection) GetCount() (int32, error) {
 }
 
 func DeleteFilterColumnCollection(filtercolumncollection *FilterColumnCollection) {
+	if filtercolumncollection == nil || filtercolumncollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(filtercolumncollection, nil)
 	C.Delete_CObject(C.CString("Delete_FilterColumnCollection"), filtercolumncollection.ptr)
 	filtercolumncollection.ptr = nil
@@ -31687,6 +31881,9 @@ func (instance *FilterValue) GetValueType() (FilterValueType, error) {
 }
 
 func DeleteFilterValue(filtervalue *FilterValue) {
+	if filtervalue == nil || filtervalue.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(filtervalue, nil)
 	C.Delete_CObject(C.CString("Delete_FilterValue"), filtervalue.ptr)
 	filtervalue.ptr = nil
@@ -31855,6 +32052,9 @@ func (instance *FilterValueCollection) GetCount() (int32, error) {
 }
 
 func DeleteFilterValueCollection(filtervaluecollection *FilterValueCollection) {
+	if filtervaluecollection == nil || filtervaluecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(filtervaluecollection, nil)
 	C.Delete_CObject(C.CString("Delete_FilterValueCollection"), filtervaluecollection.ptr)
 	filtervaluecollection.ptr = nil
@@ -32289,6 +32489,9 @@ func (instance *FindOptions) SetConvertNumericData(value bool) error {
 }
 
 func DeleteFindOptions(findoptions *FindOptions) {
+	if findoptions == nil || findoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(findoptions, nil)
 	C.Delete_CObject(C.CString("Delete_FindOptions"), findoptions.ptr)
 	findoptions.ptr = nil
@@ -32417,6 +32620,9 @@ func (instance *FolderFontSource) ToFontSourceBase() *FontSourceBase {
 }
 
 func DeleteFolderFontSource(folderfontsource *FolderFontSource) {
+	if folderfontsource == nil || folderfontsource.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(folderfontsource, nil)
 	C.Delete_CObject(C.CString("Delete_FolderFontSource"), folderfontsource.ptr)
 	folderfontsource.ptr = nil
@@ -33084,6 +33290,9 @@ func (instance *Font) SetName_String(value string) error {
 }
 
 func DeleteFont(font *Font) {
+	if font == nil || font.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(font, nil)
 	C.Delete_CObject(C.CString("Delete_Font"), font.ptr)
 	font.ptr = nil
@@ -33394,6 +33603,9 @@ func FontConfigs_GetFontSources() ([]FontSourceBase, error) {
 }
 
 func DeleteFontConfigs(fontconfigs *FontConfigs) {
+	if fontconfigs == nil || fontconfigs.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(fontconfigs, nil)
 	C.Delete_CObject(C.CString("Delete_FontConfigs"), fontconfigs.ptr)
 	fontconfigs.ptr = nil
@@ -33458,6 +33670,9 @@ func (instance *FontFileDataInfo) GetFormatType() (FontFileFormatType, error) {
 }
 
 func DeleteFontFileDataInfo(fontfiledatainfo *FontFileDataInfo) {
+	if fontfiledatainfo == nil || fontfiledatainfo.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(fontfiledatainfo, nil)
 	C.Delete_CObject(C.CString("Delete_FontFileDataInfo"), fontfiledatainfo.ptr)
 	fontfiledatainfo.ptr = nil
@@ -33617,6 +33832,9 @@ func (instance *FontSetting) GetType() (TextNodeType, error) {
 }
 
 func DeleteFontSetting(fontsetting *FontSetting) {
+	if fontsetting == nil || fontsetting.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(fontsetting, nil)
 	C.Delete_CObject(C.CString("Delete_FontSetting"), fontsetting.ptr)
 	fontsetting.ptr = nil
@@ -33665,6 +33883,9 @@ func (instance *FontSourceBase) GetType() (FontSourceType, error) {
 }
 
 func DeleteFontSourceBase(fontsourcebase *FontSourceBase) {
+	if fontsourcebase == nil || fontsourcebase.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(fontsourcebase, nil)
 	C.Delete_CObject(C.CString("Delete_FontSourceBase"), fontsourcebase.ptr)
 	fontsourcebase.ptr = nil
@@ -34335,6 +34556,9 @@ func (instance *FormatCondition) SetTimePeriod(value TimePeriodType) error {
 }
 
 func DeleteFormatCondition(formatcondition *FormatCondition) {
+	if formatcondition == nil || formatcondition.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(formatcondition, nil)
 	C.Delete_CObject(C.CString("Delete_FormatCondition"), formatcondition.ptr)
 	formatcondition.ptr = nil
@@ -34607,6 +34831,9 @@ func (instance *FormatConditionCollection) RemoveCondition(index int32) error {
 }
 
 func DeleteFormatConditionCollection(formatconditioncollection *FormatConditionCollection) {
+	if formatconditioncollection == nil || formatconditioncollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(formatconditioncollection, nil)
 	C.Delete_CObject(C.CString("Delete_FormatConditionCollection"), formatconditioncollection.ptr)
 	formatconditioncollection.ptr = nil
@@ -34839,6 +35066,9 @@ func (instance *FormulaParseOptions) SetCustomFunctionDefinition(value *CustomFu
 }
 
 func DeleteFormulaParseOptions(formulaparseoptions *FormulaParseOptions) {
+	if formulaparseoptions == nil || formulaparseoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(formulaparseoptions, nil)
 	C.Delete_CObject(C.CString("Delete_FormulaParseOptions"), formulaparseoptions.ptr)
 	formulaparseoptions.ptr = nil
@@ -35260,6 +35490,9 @@ func (instance *FormulaSettings) SetPreservePaddingSpaces(value bool) error {
 }
 
 func DeleteFormulaSettings(formulasettings *FormulaSettings) {
+	if formulasettings == nil || formulasettings.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(formulasettings, nil)
 	C.Delete_CObject(C.CString("Delete_FormulaSettings"), formulasettings.ptr)
 	formulasettings.ptr = nil
@@ -35760,6 +35993,9 @@ func (instance *GlobalizationSettings) Compare(v1 string, v2 string, ignorecase 
 }
 
 func DeleteGlobalizationSettings(globalizationsettings *GlobalizationSettings) {
+	if globalizationsettings == nil || globalizationsettings.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(globalizationsettings, nil)
 	C.Delete_CObject(C.CString("Delete_GlobalizationSettings"), globalizationsettings.ptr)
 	globalizationsettings.ptr = nil
@@ -35842,6 +36078,9 @@ func (instance *HeaderFooterCommand) GetText() (string, error) {
 }
 
 func DeleteHeaderFooterCommand(headerfootercommand *HeaderFooterCommand) {
+	if headerfootercommand == nil || headerfootercommand.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(headerfootercommand, nil)
 	C.Delete_CObject(C.CString("Delete_HeaderFooterCommand"), headerfootercommand.ptr)
 	headerfootercommand.ptr = nil
@@ -35919,6 +36158,9 @@ func (instance *HorizontalPageBreak) GetRow() (int32, error) {
 }
 
 func DeleteHorizontalPageBreak(horizontalpagebreak *HorizontalPageBreak) {
+	if horizontalpagebreak == nil || horizontalpagebreak.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(horizontalpagebreak, nil)
 	C.Delete_CObject(C.CString("Delete_HorizontalPageBreak"), horizontalpagebreak.ptr)
 	horizontalpagebreak.ptr = nil
@@ -36110,6 +36352,9 @@ func (instance *HorizontalPageBreakCollection) GetCount() (int32, error) {
 }
 
 func DeleteHorizontalPageBreakCollection(horizontalpagebreakcollection *HorizontalPageBreakCollection) {
+	if horizontalpagebreakcollection == nil || horizontalpagebreakcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(horizontalpagebreakcollection, nil)
 	C.Delete_CObject(C.CString("Delete_HorizontalPageBreakCollection"), horizontalpagebreakcollection.ptr)
 	horizontalpagebreakcollection.ptr = nil
@@ -37428,6 +37673,9 @@ func (instance *HtmlLoadOptions) ToLoadOptions() *LoadOptions {
 }
 
 func DeleteHtmlLoadOptions(htmlloadoptions *HtmlLoadOptions) {
+	if htmlloadoptions == nil || htmlloadoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(htmlloadoptions, nil)
 	C.Delete_CObject(C.CString("Delete_HtmlLoadOptions"), htmlloadoptions.ptr)
 	htmlloadoptions.ptr = nil
@@ -40552,6 +40800,9 @@ func (instance *HtmlSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeleteHtmlSaveOptions(htmlsaveoptions *HtmlSaveOptions) {
+	if htmlsaveoptions == nil || htmlsaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(htmlsaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_HtmlSaveOptions"), htmlsaveoptions.ptr)
 	htmlsaveoptions.ptr = nil
@@ -40773,6 +41024,9 @@ func (instance *HtmlTableLoadOption) SetTableToListObject(value bool) error {
 }
 
 func DeleteHtmlTableLoadOption(htmltableloadoption *HtmlTableLoadOption) {
+	if htmltableloadoption == nil || htmltableloadoption.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(htmltableloadoption, nil)
 	C.Delete_CObject(C.CString("Delete_HtmlTableLoadOption"), htmltableloadoption.ptr)
 	htmltableloadoption.ptr = nil
@@ -41043,6 +41297,9 @@ func (instance *HtmlTableLoadOptionCollection) GetCount() (int32, error) {
 }
 
 func DeleteHtmlTableLoadOptionCollection(htmltableloadoptioncollection *HtmlTableLoadOptionCollection) {
+	if htmltableloadoptioncollection == nil || htmltableloadoptioncollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(htmltableloadoptioncollection, nil)
 	C.Delete_CObject(C.CString("Delete_HtmlTableLoadOptionCollection"), htmltableloadoptioncollection.ptr)
 	htmltableloadoptioncollection.ptr = nil
@@ -41229,6 +41486,9 @@ func (instance *Hyperlink) Delete() error {
 }
 
 func DeleteHyperlink(hyperlink *Hyperlink) {
+	if hyperlink == nil || hyperlink.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(hyperlink, nil)
 	C.Delete_CObject(C.CString("Delete_Hyperlink"), hyperlink.ptr)
 	hyperlink.ptr = nil
@@ -41401,6 +41661,9 @@ func (instance *HyperlinkCollection) GetCount() (int32, error) {
 }
 
 func DeleteHyperlinkCollection(hyperlinkcollection *HyperlinkCollection) {
+	if hyperlinkcollection == nil || hyperlinkcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(hyperlinkcollection, nil)
 	C.Delete_CObject(C.CString("Delete_HyperlinkCollection"), hyperlinkcollection.ptr)
 	hyperlinkcollection.ptr = nil
@@ -41544,6 +41807,9 @@ func (instance *IconFilter) SetIconId(value int32) error {
 }
 
 func DeleteIconFilter(iconfilter *IconFilter) {
+	if iconfilter == nil || iconfilter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(iconfilter, nil)
 	C.Delete_CObject(C.CString("Delete_IconFilter"), iconfilter.ptr)
 	iconfilter.ptr = nil
@@ -41746,6 +42012,9 @@ func (instance *IconSet) SetReverse(value bool) error {
 }
 
 func DeleteIconSet(iconset *IconSet) {
+	if iconset == nil || iconset.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(iconset, nil)
 	C.Delete_CObject(C.CString("Delete_IconSet"), iconset.ptr)
 	iconset.ptr = nil
@@ -42268,6 +42537,9 @@ func (instance *ImageSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeleteImageSaveOptions(imagesaveoptions *ImageSaveOptions) {
+	if imagesaveoptions == nil || imagesaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(imagesaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_ImageSaveOptions"), imagesaveoptions.ptr)
 	imagesaveoptions.ptr = nil
@@ -42917,6 +43189,9 @@ func (instance *ImportTableOptions) SetCheckMergedCells(value bool) error {
 }
 
 func DeleteImportTableOptions(importtableoptions *ImportTableOptions) {
+	if importtableoptions == nil || importtableoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(importtableoptions, nil)
 	C.Delete_CObject(C.CString("Delete_ImportTableOptions"), importtableoptions.ptr)
 	importtableoptions.ptr = nil
@@ -43108,6 +43383,9 @@ func (instance *IndividualFontConfigs) GetFontSources() ([]FontSourceBase, error
 }
 
 func DeleteIndividualFontConfigs(individualfontconfigs *IndividualFontConfigs) {
+	if individualfontconfigs == nil || individualfontconfigs.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(individualfontconfigs, nil)
 	C.Delete_CObject(C.CString("Delete_IndividualFontConfigs"), individualfontconfigs.ptr)
 	individualfontconfigs.ptr = nil
@@ -43265,6 +43543,9 @@ func (instance *InsertOptions) SetFormulaChangeMonitor(value *AbstractFormulaCha
 }
 
 func DeleteInsertOptions(insertoptions *InsertOptions) {
+	if insertoptions == nil || insertoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(insertoptions, nil)
 	C.Delete_CObject(C.CString("Delete_InsertOptions"), insertoptions.ptr)
 	insertoptions.ptr = nil
@@ -43340,6 +43621,9 @@ func (instance *InterruptMonitor) Interrupt() error {
 }
 
 func DeleteInterruptMonitor(interruptmonitor *InterruptMonitor) {
+	if interruptmonitor == nil || interruptmonitor.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(interruptmonitor, nil)
 	C.Delete_CObject(C.CString("Delete_InterruptMonitor"), interruptmonitor.ptr)
 	interruptmonitor.ptr = nil
@@ -44268,6 +44552,9 @@ func (instance *JsonLoadOptions) ToLoadOptions() *LoadOptions {
 }
 
 func DeleteJsonLoadOptions(jsonloadoptions *JsonLoadOptions) {
+	if jsonloadoptions == nil || jsonloadoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(jsonloadoptions, nil)
 	C.Delete_CObject(C.CString("Delete_JsonLoadOptions"), jsonloadoptions.ptr)
 	jsonloadoptions.ptr = nil
@@ -45237,6 +45524,9 @@ func (instance *JsonSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeleteJsonSaveOptions(jsonsaveoptions *JsonSaveOptions) {
+	if jsonsaveoptions == nil || jsonsaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(jsonsaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_JsonSaveOptions"), jsonsaveoptions.ptr)
 	jsonsaveoptions.ptr = nil
@@ -45319,6 +45609,9 @@ func (instance *License) SetLicense_Stream(stream []byte) error {
 }
 
 func DeleteLicense(license *License) {
+	if license == nil || license.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(license, nil)
 	C.Delete_CObject(C.CString("Delete_License"), license.ptr)
 	license.ptr = nil
@@ -45483,6 +45776,9 @@ func (loadfilter *LoadFilter) Get__loadDataFilterOptions() (int32, error) {
 }
 
 func DeleteLoadFilter(loadfilter *LoadFilter) {
+	if loadfilter == nil || loadfilter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(loadfilter, nil)
 	C.Delete_CObject(C.CString("Delete_LoadFilter"), loadfilter.ptr)
 	loadfilter.ptr = nil
@@ -46253,6 +46549,9 @@ func (instance *LoadOptions) SetPreservePaddingSpacesInFormula(value bool) error
 }
 
 func DeleteLoadOptions(loadoptions *LoadOptions) {
+	if loadoptions == nil || loadoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(loadoptions, nil)
 	C.Delete_CObject(C.CString("Delete_LoadOptions"), loadoptions.ptr)
 	loadoptions.ptr = nil
@@ -47259,6 +47558,9 @@ func (instance *MarkdownLoadOptions) ToLoadOptions() *LoadOptions {
 }
 
 func DeleteMarkdownLoadOptions(markdownloadoptions *MarkdownLoadOptions) {
+	if markdownloadoptions == nil || markdownloadoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(markdownloadoptions, nil)
 	C.Delete_CObject(C.CString("Delete_MarkdownLoadOptions"), markdownloadoptions.ptr)
 	markdownloadoptions.ptr = nil
@@ -48176,6 +48478,9 @@ func (instance *MarkdownSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeleteMarkdownSaveOptions(markdownsaveoptions *MarkdownSaveOptions) {
+	if markdownsaveoptions == nil || markdownsaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(markdownsaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_MarkdownSaveOptions"), markdownsaveoptions.ptr)
 	markdownsaveoptions.ptr = nil
@@ -48287,6 +48592,9 @@ func (instance *MemoryFontSource) ToFontSourceBase() *FontSourceBase {
 }
 
 func DeleteMemoryFontSource(memoryfontsource *MemoryFontSource) {
+	if memoryfontsource == nil || memoryfontsource.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(memoryfontsource, nil)
 	C.Delete_CObject(C.CString("Delete_MemoryFontSource"), memoryfontsource.ptr)
 	memoryfontsource.ptr = nil
@@ -48514,6 +48822,9 @@ func (instance *MultipleFilterCollection) GetEnumerator() (*FilterValueEnumerato
 }
 
 func DeleteMultipleFilterCollection(multiplefiltercollection *MultipleFilterCollection) {
+	if multiplefiltercollection == nil || multiplefiltercollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(multiplefiltercollection, nil)
 	C.Delete_CObject(C.CString("Delete_MultipleFilterCollection"), multiplefiltercollection.ptr)
 	multiplefiltercollection.ptr = nil
@@ -49009,6 +49320,9 @@ func (instance *Name) GetRange_Int_Int_Int(sheetindex int32, row int32, column i
 }
 
 func DeleteName(name *Name) {
+	if name == nil || name.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(name, nil)
 	C.Delete_CObject(C.CString("Delete_Name"), name.ptr)
 	name.ptr = nil
@@ -49255,6 +49569,9 @@ func (instance *NameCollection) GetCount() (int32, error) {
 }
 
 func DeleteNameCollection(namecollection *NameCollection) {
+	if namecollection == nil || namecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(namecollection, nil)
 	C.Delete_CObject(C.CString("Delete_NameCollection"), namecollection.ptr)
 	namecollection.ptr = nil
@@ -49432,6 +49749,9 @@ func (instance *NegativeBarFormat) SetColorType(value DataBarNegativeColorType) 
 }
 
 func DeleteNegativeBarFormat(negativebarformat *NegativeBarFormat) {
+	if negativebarformat == nil || negativebarformat.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(negativebarformat, nil)
 	C.Delete_CObject(C.CString("Delete_NegativeBarFormat"), negativebarformat.ptr)
 	negativebarformat.ptr = nil
@@ -50367,6 +50687,9 @@ func (instance *Object) ToArray2D() ([][]Object, error) {
 }
 
 func DeleteObject(object *Object) {
+	if object == nil || object.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(object, nil)
 	C.Delete_CObject(C.CString("Delete_Object"), object.ptr)
 	object.ptr = nil
@@ -51271,6 +51594,9 @@ func (instance *OdsLoadOptions) ToLoadOptions() *LoadOptions {
 }
 
 func DeleteOdsLoadOptions(odsloadoptions *OdsLoadOptions) {
+	if odsloadoptions == nil || odsloadoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(odsloadoptions, nil)
 	C.Delete_CObject(C.CString("Delete_OdsLoadOptions"), odsloadoptions.ptr)
 	odsloadoptions.ptr = nil
@@ -51885,6 +52211,9 @@ func (instance *OdsSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeleteOdsSaveOptions(odssaveoptions *OdsSaveOptions) {
+	if odssaveoptions == nil || odssaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(odssaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_OdsSaveOptions"), odssaveoptions.ptr)
 	odssaveoptions.ptr = nil
@@ -53135,6 +53464,9 @@ func (instance *OfdSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeleteOfdSaveOptions(ofdsaveoptions *OfdSaveOptions) {
+	if ofdsaveoptions == nil || ofdsaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(ofdsaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_OfdSaveOptions"), ofdsaveoptions.ptr)
 	ofdsaveoptions.ptr = nil
@@ -53859,6 +54191,9 @@ func (instance *OoxmlSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeleteOoxmlSaveOptions(ooxmlsaveoptions *OoxmlSaveOptions) {
+	if ooxmlsaveoptions == nil || ooxmlsaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(ooxmlsaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_OoxmlSaveOptions"), ooxmlsaveoptions.ptr)
 	ooxmlsaveoptions.ptr = nil
@@ -53958,6 +54293,9 @@ func (instance *Outline) SetSummaryColumnRight(value bool) error {
 }
 
 func DeleteOutline(outline *Outline) {
+	if outline == nil || outline.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(outline, nil)
 	C.Delete_CObject(C.CString("Delete_Outline"), outline.ptr)
 	outline.ptr = nil
@@ -55919,6 +56257,9 @@ func (instance *PageSetup) GetPicture_Bool_Bool_Bool_Int(isfirst bool, iseven bo
 }
 
 func DeletePageSetup(pagesetup *PageSetup) {
+	if pagesetup == nil || pagesetup.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pagesetup, nil)
 	C.Delete_CObject(C.CString("Delete_PageSetup"), pagesetup.ptr)
 	pagesetup.ptr = nil
@@ -57149,6 +57490,9 @@ func (instance *PaginatedSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeletePaginatedSaveOptions(paginatedsaveoptions *PaginatedSaveOptions) {
+	if paginatedsaveoptions == nil || paginatedsaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(paginatedsaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_PaginatedSaveOptions"), paginatedsaveoptions.ptr)
 	paginatedsaveoptions.ptr = nil
@@ -57286,6 +57630,9 @@ func (instance *PaneCollection) SetActivePaneType(value RectangleAlignmentType) 
 }
 
 func DeletePaneCollection(panecollection *PaneCollection) {
+	if panecollection == nil || panecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(panecollection, nil)
 	C.Delete_CObject(C.CString("Delete_PaneCollection"), panecollection.ptr)
 	panecollection.ptr = nil
@@ -57616,6 +57963,9 @@ func (instance *PasteOptions) SetIgnoreLinksToOriginalFile(value bool) error {
 }
 
 func DeletePasteOptions(pasteoptions *PasteOptions) {
+	if pasteoptions == nil || pasteoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pasteoptions, nil)
 	C.Delete_CObject(C.CString("Delete_PasteOptions"), pasteoptions.ptr)
 	pasteoptions.ptr = nil
@@ -58921,6 +59271,9 @@ func (instance *PclSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeletePclSaveOptions(pclsaveoptions *PclSaveOptions) {
+	if pclsaveoptions == nil || pclsaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pclsaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_PclSaveOptions"), pclsaveoptions.ptr)
 	pclsaveoptions.ptr = nil
@@ -60843,6 +61196,9 @@ func (instance *PdfSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeletePdfSaveOptions(pdfsaveoptions *PdfSaveOptions) {
+	if pdfsaveoptions == nil || pdfsaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pdfsaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_PdfSaveOptions"), pdfsaveoptions.ptr)
 	pdfsaveoptions.ptr = nil
@@ -62329,6 +62685,9 @@ func (instance *PptxSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeletePptxSaveOptions(pptxsaveoptions *PptxSaveOptions) {
+	if pptxsaveoptions == nil || pptxsaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pptxsaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_PptxSaveOptions"), pptxsaveoptions.ptr)
 	pptxsaveoptions.ptr = nil
@@ -62541,6 +62900,9 @@ func (instance *ProtectedRange) SetSecurityDescriptor(value string) error {
 }
 
 func DeleteProtectedRange(protectedrange *ProtectedRange) {
+	if protectedrange == nil || protectedrange.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(protectedrange, nil)
 	C.Delete_CObject(C.CString("Delete_ProtectedRange"), protectedrange.ptr)
 	protectedrange.ptr = nil
@@ -62632,6 +62994,9 @@ func (instance *ProtectedRangeCollection) GetCount() (int32, error) {
 }
 
 func DeleteProtectedRangeCollection(protectedrangecollection *ProtectedRangeCollection) {
+	if protectedrangecollection == nil || protectedrangecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(protectedrangecollection, nil)
 	C.Delete_CObject(C.CString("Delete_ProtectedRangeCollection"), protectedrangecollection.ptr)
 	protectedrangecollection.ptr = nil
@@ -63332,6 +63697,9 @@ func (instance *Protection) GetPasswordHash() (int32, error) {
 }
 
 func DeleteProtection(protection *Protection) {
+	if protection == nil || protection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(protection, nil)
 	C.Delete_CObject(C.CString("Delete_Protection"), protection.ptr)
 	protection.ptr = nil
@@ -63499,6 +63867,9 @@ func (instance *QueryTable) SetAdjustColumnWidth(value bool) error {
 }
 
 func DeleteQueryTable(querytable *QueryTable) {
+	if querytable == nil || querytable.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(querytable, nil)
 	C.Delete_CObject(C.CString("Delete_QueryTable"), querytable.ptr)
 	querytable.ptr = nil
@@ -63566,6 +63937,9 @@ func (instance *QueryTableCollection) GetCount() (int32, error) {
 }
 
 func DeleteQueryTableCollection(querytablecollection *QueryTableCollection) {
+	if querytablecollection == nil || querytablecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(querytablecollection, nil)
 	C.Delete_CObject(C.CString("Delete_QueryTableCollection"), querytablecollection.ptr)
 	querytablecollection.ptr = nil
@@ -64911,6 +65285,9 @@ func (instance *Range) ClearHyperlinks(clearformat bool) error {
 }
 
 func DeleteRange(range_ *Range) {
+	if range_ == nil || range_.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(range_, nil)
 	C.Delete_CObject(C.CString("Delete_Range"), range_.ptr)
 	range_.ptr = nil
@@ -65003,6 +65380,9 @@ func (instance *RangeCollection) GetCount() (int32, error) {
 }
 
 func DeleteRangeCollection(rangecollection *RangeCollection) {
+	if rangecollection == nil || rangecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(rangecollection, nil)
 	C.Delete_CObject(C.CString("Delete_RangeCollection"), rangecollection.ptr)
 	rangecollection.ptr = nil
@@ -65318,6 +65698,9 @@ func (instance *ReferredArea) ToString() (string, error) {
 }
 
 func DeleteReferredArea(referredarea *ReferredArea) {
+	if referredarea == nil || referredarea.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(referredarea, nil)
 	C.Delete_CObject(C.CString("Delete_ReferredArea"), referredarea.ptr)
 	referredarea.ptr = nil
@@ -65384,6 +65767,9 @@ func (instance *ReferredAreaCollection) GetCount() (int32, error) {
 }
 
 func DeleteReferredAreaCollection(referredareacollection *ReferredAreaCollection) {
+	if referredareacollection == nil || referredareacollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(referredareacollection, nil)
 	C.Delete_CObject(C.CString("Delete_ReferredAreaCollection"), referredareacollection.ptr)
 	referredareacollection.ptr = nil
@@ -65627,6 +66013,9 @@ func (instance *ReplaceOptions) SetStyleFlags(value []StyleFlag) error {
 }
 
 func DeleteReplaceOptions(replaceoptions *ReplaceOptions) {
+	if replaceoptions == nil || replaceoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(replaceoptions, nil)
 	C.Delete_CObject(C.CString("Delete_ReplaceOptions"), replaceoptions.ptr)
 	replaceoptions.ptr = nil
@@ -66206,6 +66595,9 @@ func (instance *Row) Equals_Row(row *Row) (bool, error) {
 }
 
 func DeleteRow(row *Row) {
+	if row == nil || row.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(row, nil)
 	C.Delete_CObject(C.CString("Delete_Row"), row.ptr)
 	row.ptr = nil
@@ -66370,6 +66762,9 @@ func (instance *RowCollection) RemoveAt(index int32) error {
 }
 
 func DeleteRowCollection(rowcollection *RowCollection) {
+	if rowcollection == nil || rowcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(rowcollection, nil)
 	C.Delete_CObject(C.CString("Delete_RowCollection"), rowcollection.ptr)
 	rowcollection.ptr = nil
@@ -66811,6 +67206,9 @@ func (instance *SaveOptions) SetEncryptDocumentProperties(value bool) error {
 }
 
 func DeleteSaveOptions(saveoptions *SaveOptions) {
+	if saveoptions == nil || saveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(saveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_SaveOptions"), saveoptions.ptr)
 	saveoptions.ptr = nil
@@ -67014,6 +67412,9 @@ func (instance *Scenario) GetInputCells() (*ScenarioInputCellCollection, error) 
 }
 
 func DeleteScenario(scenario *Scenario) {
+	if scenario == nil || scenario.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(scenario, nil)
 	C.Delete_CObject(C.CString("Delete_Scenario"), scenario.ptr)
 	scenario.ptr = nil
@@ -67171,6 +67572,9 @@ func (instance *ScenarioCollection) GetCount() (int32, error) {
 }
 
 func DeleteScenarioCollection(scenariocollection *ScenarioCollection) {
+	if scenariocollection == nil || scenariocollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(scenariocollection, nil)
 	C.Delete_CObject(C.CString("Delete_ScenarioCollection"), scenariocollection.ptr)
 	scenariocollection.ptr = nil
@@ -67318,6 +67722,9 @@ func (instance *ScenarioInputCell) SetIsDeleted(value bool) error {
 }
 
 func DeleteScenarioInputCell(scenarioinputcell *ScenarioInputCell) {
+	if scenarioinputcell == nil || scenarioinputcell.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(scenarioinputcell, nil)
 	C.Delete_CObject(C.CString("Delete_ScenarioInputCell"), scenarioinputcell.ptr)
 	scenarioinputcell.ptr = nil
@@ -67407,6 +67814,9 @@ func (instance *ScenarioInputCellCollection) GetCount() (int32, error) {
 }
 
 func DeleteScenarioInputCellCollection(scenarioinputcellcollection *ScenarioInputCellCollection) {
+	if scenarioinputcellcollection == nil || scenarioinputcellcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(scenarioinputcellcollection, nil)
 	C.Delete_CObject(C.CString("Delete_ScenarioInputCellCollection"), scenarioinputcellcollection.ptr)
 	scenarioinputcellcollection.ptr = nil
@@ -67736,6 +68146,9 @@ func (instance *SettableChartGlobalizationSettings) SetAxisUnitName(type_ Displa
 }
 
 func DeleteSettableChartGlobalizationSettings(settablechartglobalizationsettings *SettableChartGlobalizationSettings) {
+	if settablechartglobalizationsettings == nil || settablechartglobalizationsettings.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(settablechartglobalizationsettings, nil)
 	C.Delete_CObject(C.CString("Delete_SettableChartGlobalizationSettings"), settablechartglobalizationsettings.ptr)
 	settablechartglobalizationsettings.ptr = nil
@@ -68446,6 +68859,9 @@ func (instance *SettableGlobalizationSettings) SetCommentTitleName(type_ Comment
 }
 
 func DeleteSettableGlobalizationSettings(settableglobalizationsettings *SettableGlobalizationSettings) {
+	if settableglobalizationsettings == nil || settableglobalizationsettings.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(settableglobalizationsettings, nil)
 	C.Delete_CObject(C.CString("Delete_SettableGlobalizationSettings"), settableglobalizationsettings.ptr)
 	settableglobalizationsettings.ptr = nil
@@ -68851,6 +69267,9 @@ func (instance *SettablePivotGlobalizationSettings) SetTextOfSubTotal(subtotalty
 }
 
 func DeleteSettablePivotGlobalizationSettings(settablepivotglobalizationsettings *SettablePivotGlobalizationSettings) {
+	if settablepivotglobalizationsettings == nil || settablepivotglobalizationsettings.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(settablepivotglobalizationsettings, nil)
 	C.Delete_CObject(C.CString("Delete_SettablePivotGlobalizationSettings"), settablepivotglobalizationsettings.ptr)
 	settablepivotglobalizationsettings.ptr = nil
@@ -69441,6 +69860,9 @@ func (instance *SpreadsheetML2003SaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeleteSpreadsheetML2003SaveOptions(spreadsheetml2003saveoptions *SpreadsheetML2003SaveOptions) {
+	if spreadsheetml2003saveoptions == nil || spreadsheetml2003saveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(spreadsheetml2003saveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_SpreadsheetML2003SaveOptions"), spreadsheetml2003saveoptions.ptr)
 	spreadsheetml2003saveoptions.ptr = nil
@@ -71041,6 +71463,9 @@ func (instance *Style) GetBottomBorder() (*Border, error) {
 }
 
 func DeleteStyle(style *Style) {
+	if style == nil || style.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(style, nil)
 	C.Delete_CObject(C.CString("Delete_Style"), style.ptr)
 	style.ptr = nil
@@ -72135,6 +72560,9 @@ func (instance *StyleFlag) SetQuotePrefix(value bool) error {
 }
 
 func DeleteStyleFlag(styleflag *StyleFlag) {
+	if styleflag == nil || styleflag.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(styleflag, nil)
 	C.Delete_CObject(C.CString("Delete_StyleFlag"), styleflag.ptr)
 	styleflag.ptr = nil
@@ -72237,6 +72665,9 @@ func (instance *SubtotalSetting) GetSummaryBelowData() (bool, error) {
 }
 
 func DeleteSubtotalSetting(subtotalsetting *SubtotalSetting) {
+	if subtotalsetting == nil || subtotalsetting.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(subtotalsetting, nil)
 	C.Delete_CObject(C.CString("Delete_SubtotalSetting"), subtotalsetting.ptr)
 	subtotalsetting.ptr = nil
@@ -72337,6 +72768,9 @@ func (instance *SystemTimeInterruptMonitor) GetTerminateWithoutException() (bool
 }
 
 func DeleteSystemTimeInterruptMonitor(systemtimeinterruptmonitor *SystemTimeInterruptMonitor) {
+	if systemtimeinterruptmonitor == nil || systemtimeinterruptmonitor.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(systemtimeinterruptmonitor, nil)
 	C.Delete_CObject(C.CString("Delete_SystemTimeInterruptMonitor"), systemtimeinterruptmonitor.ptr)
 	systemtimeinterruptmonitor.ptr = nil
@@ -72457,6 +72891,9 @@ func (instance *ThemeColor) SetTint(value float64) error {
 }
 
 func DeleteThemeColor(themecolor *ThemeColor) {
+	if themecolor == nil || themecolor.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(themecolor, nil)
 	C.Delete_CObject(C.CString("Delete_ThemeColor"), themecolor.ptr)
 	themecolor.ptr = nil
@@ -72634,6 +73071,9 @@ func (instance *ThreadedComment) SetCreatedTime(value time.Time) error {
 }
 
 func DeleteThreadedComment(threadedcomment *ThreadedComment) {
+	if threadedcomment == nil || threadedcomment.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(threadedcomment, nil)
 	C.Delete_CObject(C.CString("Delete_ThreadedComment"), threadedcomment.ptr)
 	threadedcomment.ptr = nil
@@ -72768,6 +73208,9 @@ func (instance *ThreadedCommentAuthor) SetProviderId(value string) error {
 }
 
 func DeleteThreadedCommentAuthor(threadedcommentauthor *ThreadedCommentAuthor) {
+	if threadedcommentauthor == nil || threadedcommentauthor.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(threadedcommentauthor, nil)
 	C.Delete_CObject(C.CString("Delete_ThreadedCommentAuthor"), threadedcommentauthor.ptr)
 	threadedcommentauthor.ptr = nil
@@ -72961,6 +73404,9 @@ func (instance *ThreadedCommentAuthorCollection) GetCount() (int32, error) {
 }
 
 func DeleteThreadedCommentAuthorCollection(threadedcommentauthorcollection *ThreadedCommentAuthorCollection) {
+	if threadedcommentauthorcollection == nil || threadedcommentauthorcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(threadedcommentauthorcollection, nil)
 	C.Delete_CObject(C.CString("Delete_ThreadedCommentAuthorCollection"), threadedcommentauthorcollection.ptr)
 	threadedcommentauthorcollection.ptr = nil
@@ -73054,6 +73500,9 @@ func (instance *ThreadedCommentCollection) GetCount() (int32, error) {
 }
 
 func DeleteThreadedCommentCollection(threadedcommentcollection *ThreadedCommentCollection) {
+	if threadedcommentcollection == nil || threadedcommentcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(threadedcommentcollection, nil)
 	C.Delete_CObject(C.CString("Delete_ThreadedCommentCollection"), threadedcommentcollection.ptr)
 	threadedcommentcollection.ptr = nil
@@ -73215,6 +73664,9 @@ func (instance *Top10) SetRank(value int32) error {
 }
 
 func DeleteTop10(top10 *Top10) {
+	if top10 == nil || top10.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(top10, nil)
 	C.Delete_CObject(C.CString("Delete_Top10"), top10.ptr)
 	top10.ptr = nil
@@ -73390,6 +73842,9 @@ func (instance *Top10Filter) SetItems(value int32) error {
 }
 
 func DeleteTop10Filter(top10filter *Top10Filter) {
+	if top10filter == nil || top10filter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(top10filter, nil)
 	C.Delete_CObject(C.CString("Delete_Top10Filter"), top10filter.ptr)
 	top10filter.ptr = nil
@@ -73584,6 +74039,9 @@ func (instance *TwoColorGradient) SetVariant(value int32) error {
 }
 
 func DeleteTwoColorGradient(twocolorgradient *TwoColorGradient) {
+	if twocolorgradient == nil || twocolorgradient.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(twocolorgradient, nil)
 	C.Delete_CObject(C.CString("Delete_TwoColorGradient"), twocolorgradient.ptr)
 	twocolorgradient.ptr = nil
@@ -75034,6 +75492,9 @@ func (instance *TxtLoadOptions) ToLoadOptions() *LoadOptions {
 }
 
 func DeleteTxtLoadOptions(txtloadoptions *TxtLoadOptions) {
+	if txtloadoptions == nil || txtloadoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(txtloadoptions, nil)
 	C.Delete_CObject(C.CString("Delete_TxtLoadOptions"), txtloadoptions.ptr)
 	txtloadoptions.ptr = nil
@@ -75946,6 +76407,9 @@ func (instance *TxtSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeleteTxtSaveOptions(txtsaveoptions *TxtSaveOptions) {
+	if txtsaveoptions == nil || txtsaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(txtsaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_TxtSaveOptions"), txtsaveoptions.ptr)
 	txtsaveoptions.ptr = nil
@@ -76575,6 +77039,9 @@ func (instance *UnionRange) Union_RangeArray(ranges []Range) (*UnionRange, error
 }
 
 func DeleteUnionRange(unionrange *UnionRange) {
+	if unionrange == nil || unionrange.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(unionrange, nil)
 	C.Delete_CObject(C.CString("Delete_UnionRange"), unionrange.ptr)
 	unionrange.ptr = nil
@@ -77526,6 +77993,9 @@ func (instance *Validation) Copy(source *Validation, copyoption *CopyOptions) er
 }
 
 func DeleteValidation(validation *Validation) {
+	if validation == nil || validation.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(validation, nil)
 	C.Delete_CObject(C.CString("Delete_Validation"), validation.ptr)
 	validation.ptr = nil
@@ -77685,6 +78155,9 @@ func (instance *ValidationCollection) GetCount() (int32, error) {
 }
 
 func DeleteValidationCollection(validationcollection *ValidationCollection) {
+	if validationcollection == nil || validationcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(validationcollection, nil)
 	C.Delete_CObject(C.CString("Delete_ValidationCollection"), validationcollection.ptr)
 	validationcollection.ptr = nil
@@ -77762,6 +78235,9 @@ func (instance *VerticalPageBreak) GetColumn() (int32, error) {
 }
 
 func DeleteVerticalPageBreak(verticalpagebreak *VerticalPageBreak) {
+	if verticalpagebreak == nil || verticalpagebreak.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(verticalpagebreak, nil)
 	C.Delete_CObject(C.CString("Delete_VerticalPageBreak"), verticalpagebreak.ptr)
 	verticalpagebreak.ptr = nil
@@ -77953,6 +78429,9 @@ func (instance *VerticalPageBreakCollection) GetCount() (int32, error) {
 }
 
 func DeleteVerticalPageBreakCollection(verticalpagebreakcollection *VerticalPageBreakCollection) {
+	if verticalpagebreakcollection == nil || verticalpagebreakcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(verticalpagebreakcollection, nil)
 	C.Delete_CObject(C.CString("Delete_VerticalPageBreakCollection"), verticalpagebreakcollection.ptr)
 	verticalpagebreakcollection.ptr = nil
@@ -78077,6 +78556,9 @@ func (instance *WarningInfo) SetCorrectedObject(value *Object) error {
 }
 
 func DeleteWarningInfo(warninginfo *WarningInfo) {
+	if warninginfo == nil || warninginfo.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(warninginfo, nil)
 	C.Delete_CObject(C.CString("Delete_WarningInfo"), warninginfo.ptr)
 	warninginfo.ptr = nil
@@ -80150,6 +80632,9 @@ func (instance *Workbook) Dispose() error {
 }
 
 func DeleteWorkbook(workbook *Workbook) {
+	if workbook == nil || workbook.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(workbook, nil)
 	C.Delete_CObject(C.CString("Delete_Workbook"), workbook.ptr)
 	workbook.ptr = nil
@@ -82400,6 +82885,9 @@ func (instance *WorkbookSettings) SetWpsCompatibility(value bool) error {
 }
 
 func DeleteWorkbookSettings(workbooksettings *WorkbookSettings) {
+	if workbooksettings == nil || workbooksettings.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(workbooksettings, nil)
 	C.Delete_CObject(C.CString("Delete_WorkbookSettings"), workbooksettings.ptr)
 	workbooksettings.ptr = nil
@@ -85323,6 +85811,9 @@ func (instance *Worksheet) RefreshPivotTables_PivotTableRefreshOption(option *Pi
 }
 
 func DeleteWorksheet(worksheet *Worksheet) {
+	if worksheet == nil || worksheet.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(worksheet, nil)
 	C.Delete_CObject(C.CString("Delete_Worksheet"), worksheet.ptr)
 	worksheet.ptr = nil
@@ -86361,6 +86852,9 @@ func (instance *WorksheetCollection) GetCount() (int32, error) {
 }
 
 func DeleteWorksheetCollection(worksheetcollection *WorksheetCollection) {
+	if worksheetcollection == nil || worksheetcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(worksheetcollection, nil)
 	C.Delete_CObject(C.CString("Delete_WorksheetCollection"), worksheetcollection.ptr)
 	worksheetcollection.ptr = nil
@@ -86531,6 +87025,9 @@ func (instance *WriteProtection) ValidatePassword(password string) (bool, error)
 }
 
 func DeleteWriteProtection(writeprotection *WriteProtection) {
+	if writeprotection == nil || writeprotection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(writeprotection, nil)
 	C.Delete_CObject(C.CString("Delete_WriteProtection"), writeprotection.ptr)
 	writeprotection.ptr = nil
@@ -87089,6 +87586,9 @@ func (instance *XlsbSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeleteXlsbSaveOptions(xlsbsaveoptions *XlsbSaveOptions) {
+	if xlsbsaveoptions == nil || xlsbsaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(xlsbsaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_XlsbSaveOptions"), xlsbsaveoptions.ptr)
 	xlsbsaveoptions.ptr = nil
@@ -87627,6 +88127,9 @@ func (instance *XlsSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeleteXlsSaveOptions(xlssaveoptions *XlsSaveOptions) {
+	if xlssaveoptions == nil || xlssaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(xlssaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_XlsSaveOptions"), xlssaveoptions.ptr)
 	xlssaveoptions.ptr = nil
@@ -87672,6 +88175,9 @@ func (instance *XmlDataBinding) GetUrl() (string, error) {
 }
 
 func DeleteXmlDataBinding(xmldatabinding *XmlDataBinding) {
+	if xmldatabinding == nil || xmldatabinding.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(xmldatabinding, nil)
 	C.Delete_CObject(C.CString("Delete_XmlDataBinding"), xmldatabinding.ptr)
 	xmldatabinding.ptr = nil
@@ -88718,6 +89224,9 @@ func (instance *XmlLoadOptions) ToLoadOptions() *LoadOptions {
 }
 
 func DeleteXmlLoadOptions(xmlloadoptions *XmlLoadOptions) {
+	if xmlloadoptions == nil || xmlloadoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(xmlloadoptions, nil)
 	C.Delete_CObject(C.CString("Delete_XmlLoadOptions"), xmlloadoptions.ptr)
 	xmlloadoptions.ptr = nil
@@ -88816,6 +89325,9 @@ func (instance *XmlMap) GetDataBinding() (*XmlDataBinding, error) {
 }
 
 func DeleteXmlMap(xmlmap *XmlMap) {
+	if xmlmap == nil || xmlmap.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(xmlmap, nil)
 	C.Delete_CObject(C.CString("Delete_XmlMap"), xmlmap.ptr)
 	xmlmap.ptr = nil
@@ -88918,6 +89430,9 @@ func (instance *XmlMapCollection) GetCount() (int32, error) {
 }
 
 func DeleteXmlMapCollection(xmlmapcollection *XmlMapCollection) {
+	if xmlmapcollection == nil || xmlmapcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(xmlmapcollection, nil)
 	C.Delete_CObject(C.CString("Delete_XmlMapCollection"), xmlmapcollection.ptr)
 	xmlmapcollection.ptr = nil
@@ -89626,6 +90141,9 @@ func (instance *XmlSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeleteXmlSaveOptions(xmlsaveoptions *XmlSaveOptions) {
+	if xmlsaveoptions == nil || xmlsaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(xmlsaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_XmlSaveOptions"), xmlsaveoptions.ptr)
 	xmlsaveoptions.ptr = nil
@@ -90876,6 +91394,9 @@ func (instance *XpsSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeleteXpsSaveOptions(xpssaveoptions *XpsSaveOptions) {
+	if xpssaveoptions == nil || xpssaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(xpssaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_XpsSaveOptions"), xpssaveoptions.ptr)
 	xpssaveoptions.ptr = nil

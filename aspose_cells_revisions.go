@@ -171,6 +171,10 @@ func (instance *HighlightChangesOptions) IsNull()  (bool,  error)  {
 
 
 func DeleteHighlightChangesOptions(highlightchangesoptions *HighlightChangesOptions){
+	println("Delete highlightchangesoptions")
+	if highlightchangesoptions == nil || highlightchangesoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(highlightchangesoptions, nil)
 	C.Delete_CObject(C.CString("Delete_HighlightChangesOptions"),highlightchangesoptions.ptr)
 	highlightchangesoptions.ptr = nil
@@ -210,7 +214,7 @@ func (instance *Revision) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -249,6 +253,10 @@ func (instance *Revision) GetType()  (RevisionType,  error)  {
 
 
 func DeleteRevision(revision *Revision){
+	println("Delete revision")
+	if revision == nil || revision.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(revision, nil)
 	C.Delete_CObject(C.CString("Delete_Revision"),revision.ptr)
 	revision.ptr = nil
@@ -326,7 +334,7 @@ func (instance *RevisionAutoFormat) GetCellArea()  (*CellArea,  error)  {
 	}
 	result := &CellArea{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCellArea) 
+	 runtime.SetFinalizer(result, DeleteCellArea) 
 
 	return result, nil 
 }
@@ -342,7 +350,7 @@ func (instance *RevisionAutoFormat) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -369,6 +377,10 @@ func (instance *RevisionAutoFormat) ToRevision() *Revision {
 }
 
 func DeleteRevisionAutoFormat(revisionautoformat *RevisionAutoFormat){
+	println("Delete revisionautoformat")
+	if revisionautoformat == nil || revisionautoformat.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(revisionautoformat, nil)
 	C.Delete_CObject(C.CString("Delete_RevisionAutoFormat"),revisionautoformat.ptr)
 	revisionautoformat.ptr = nil
@@ -530,7 +542,7 @@ func (instance *RevisionCellChange) GetOldValue()  (*Object,  error)  {
 	}
 	result := &Object{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteObject) 
+	 runtime.SetFinalizer(result, DeleteObject) 
 
 	return result, nil 
 }
@@ -546,7 +558,7 @@ func (instance *RevisionCellChange) GetNewValue()  (*Object,  error)  {
 	}
 	result := &Object{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteObject) 
+	 runtime.SetFinalizer(result, DeleteObject) 
 
 	return result, nil 
 }
@@ -576,7 +588,7 @@ func (instance *RevisionCellChange) GetNewStyle()  (*Style,  error)  {
 	}
 	result := &Style{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteStyle) 
+	 runtime.SetFinalizer(result, DeleteStyle) 
 
 	return result, nil 
 }
@@ -592,7 +604,7 @@ func (instance *RevisionCellChange) GetOldStyle()  (*Style,  error)  {
 	}
 	result := &Style{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteStyle) 
+	 runtime.SetFinalizer(result, DeleteStyle) 
 
 	return result, nil 
 }
@@ -608,7 +620,7 @@ func (instance *RevisionCellChange) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -635,6 +647,10 @@ func (instance *RevisionCellChange) ToRevision() *Revision {
 }
 
 func DeleteRevisionCellChange(revisioncellchange *RevisionCellChange){
+	println("Delete revisioncellchange")
+	if revisioncellchange == nil || revisioncellchange.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(revisioncellchange, nil)
 	C.Delete_CObject(C.CString("Delete_RevisionCellChange"),revisioncellchange.ptr)
 	revisioncellchange.ptr = nil
@@ -828,7 +844,7 @@ func (instance *RevisionCellComment) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -855,6 +871,10 @@ func (instance *RevisionCellComment) ToRevision() *Revision {
 }
 
 func DeleteRevisionCellComment(revisioncellcomment *RevisionCellComment){
+	println("Delete revisioncellcomment")
+	if revisioncellcomment == nil || revisioncellcomment.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(revisioncellcomment, nil)
 	C.Delete_CObject(C.CString("Delete_RevisionCellComment"),revisioncellcomment.ptr)
 	revisioncellcomment.ptr = nil
@@ -932,7 +952,7 @@ func (instance *RevisionCellMove) GetSourceArea()  (*CellArea,  error)  {
 	}
 	result := &CellArea{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCellArea) 
+	 runtime.SetFinalizer(result, DeleteCellArea) 
 
 	return result, nil 
 }
@@ -948,7 +968,7 @@ func (instance *RevisionCellMove) GetDestinationArea()  (*CellArea,  error)  {
 	}
 	result := &CellArea{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCellArea) 
+	 runtime.SetFinalizer(result, DeleteCellArea) 
 
 	return result, nil 
 }
@@ -964,7 +984,7 @@ func (instance *RevisionCellMove) GetSourceWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -980,7 +1000,7 @@ func (instance *RevisionCellMove) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -1007,6 +1027,10 @@ func (instance *RevisionCellMove) ToRevision() *Revision {
 }
 
 func DeleteRevisionCellMove(revisioncellmove *RevisionCellMove){
+	println("Delete revisioncellmove")
+	if revisioncellmove == nil || revisioncellmove.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(revisioncellmove, nil)
 	C.Delete_CObject(C.CString("Delete_RevisionCellMove"),revisioncellmove.ptr)
 	revisioncellmove.ptr = nil
@@ -1048,7 +1072,7 @@ func (instance *RevisionCollection) Get(index int32)  (*Revision,  error)  {
 	}
 	result := &Revision{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteRevision) 
+	 runtime.SetFinalizer(result, DeleteRevision) 
 
 	return result, nil 
 }
@@ -1070,6 +1094,10 @@ func (instance *RevisionCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteRevisionCollection(revisioncollection *RevisionCollection){
+	println("Delete revisioncollection")
+	if revisioncollection == nil || revisioncollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(revisioncollection, nil)
 	C.Delete_CObject(C.CString("Delete_RevisionCollection"),revisioncollection.ptr)
 	revisioncollection.ptr = nil
@@ -1184,7 +1212,7 @@ func (instance *RevisionCustomView) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -1211,6 +1239,10 @@ func (instance *RevisionCustomView) ToRevision() *Revision {
 }
 
 func DeleteRevisionCustomView(revisioncustomview *RevisionCustomView){
+	println("Delete revisioncustomview")
+	if revisioncustomview == nil || revisioncustomview.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(revisioncustomview, nil)
 	C.Delete_CObject(C.CString("Delete_RevisionCustomView"),revisioncustomview.ptr)
 	revisioncustomview.ptr = nil
@@ -1330,7 +1362,7 @@ func (instance *RevisionDefinedName) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -1357,6 +1389,10 @@ func (instance *RevisionDefinedName) ToRevision() *Revision {
 }
 
 func DeleteRevisionDefinedName(revisiondefinedname *RevisionDefinedName){
+	println("Delete revisiondefinedname")
+	if revisiondefinedname == nil || revisiondefinedname.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(revisiondefinedname, nil)
 	C.Delete_CObject(C.CString("Delete_RevisionDefinedName"),revisiondefinedname.ptr)
 	revisiondefinedname.ptr = nil
@@ -1455,7 +1491,7 @@ func (instance *RevisionFormat) GetStyle()  (*Style,  error)  {
 	}
 	result := &Style{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteStyle) 
+	 runtime.SetFinalizer(result, DeleteStyle) 
 
 	return result, nil 
 }
@@ -1471,7 +1507,7 @@ func (instance *RevisionFormat) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -1498,6 +1534,10 @@ func (instance *RevisionFormat) ToRevision() *Revision {
 }
 
 func DeleteRevisionFormat(revisionformat *RevisionFormat){
+	println("Delete revisionformat")
+	if revisionformat == nil || revisionformat.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(revisionformat, nil)
 	C.Delete_CObject(C.CString("Delete_RevisionFormat"),revisionformat.ptr)
 	revisionformat.ptr = nil
@@ -1605,6 +1645,10 @@ func (instance *RevisionHeader) SetUserName(value string)  error {
 
 
 func DeleteRevisionHeader(revisionheader *RevisionHeader){
+	println("Delete revisionheader")
+	if revisionheader == nil || revisionheader.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(revisionheader, nil)
 	C.Delete_CObject(C.CString("Delete_RevisionHeader"),revisionheader.ptr)
 	revisionheader.ptr = nil
@@ -1682,7 +1726,7 @@ func (instance *RevisionInsertDelete) GetCellArea()  (*CellArea,  error)  {
 	}
 	result := &CellArea{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCellArea) 
+	 runtime.SetFinalizer(result, DeleteCellArea) 
 
 	return result, nil 
 }
@@ -1715,7 +1759,7 @@ func (instance *RevisionInsertDelete) GetRevisions()  (*RevisionCollection,  err
 	}
 	result := &RevisionCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteRevisionCollection) 
+	 runtime.SetFinalizer(result, DeleteRevisionCollection) 
 
 	return result, nil 
 }
@@ -1731,7 +1775,7 @@ func (instance *RevisionInsertDelete) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -1758,6 +1802,10 @@ func (instance *RevisionInsertDelete) ToRevision() *Revision {
 }
 
 func DeleteRevisionInsertDelete(revisioninsertdelete *RevisionInsertDelete){
+	println("Delete revisioninsertdelete")
+	if revisioninsertdelete == nil || revisioninsertdelete.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(revisioninsertdelete, nil)
 	C.Delete_CObject(C.CString("Delete_RevisionInsertDelete"),revisioninsertdelete.ptr)
 	revisioninsertdelete.ptr = nil
@@ -1880,7 +1928,7 @@ func (instance *RevisionInsertSheet) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -1907,6 +1955,10 @@ func (instance *RevisionInsertSheet) ToRevision() *Revision {
 }
 
 func DeleteRevisionInsertSheet(revisioninsertsheet *RevisionInsertSheet){
+	println("Delete revisioninsertsheet")
+	if revisioninsertsheet == nil || revisioninsertsheet.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(revisioninsertsheet, nil)
 	C.Delete_CObject(C.CString("Delete_RevisionInsertSheet"),revisioninsertsheet.ptr)
 	revisioninsertsheet.ptr = nil
@@ -1947,7 +1999,7 @@ func (instance *RevisionLog) GetMetadataTable()  (*RevisionHeader,  error)  {
 	}
 	result := &RevisionHeader{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteRevisionHeader) 
+	 runtime.SetFinalizer(result, DeleteRevisionHeader) 
 
 	return result, nil 
 }
@@ -1963,7 +2015,7 @@ func (instance *RevisionLog) GetRevisions()  (*RevisionCollection,  error)  {
 	}
 	result := &RevisionCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteRevisionCollection) 
+	 runtime.SetFinalizer(result, DeleteRevisionCollection) 
 
 	return result, nil 
 }
@@ -1971,6 +2023,10 @@ func (instance *RevisionLog) GetRevisions()  (*RevisionCollection,  error)  {
 
 
 func DeleteRevisionLog(revisionlog *RevisionLog){
+	println("Delete revisionlog")
+	if revisionlog == nil || revisionlog.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(revisionlog, nil)
 	C.Delete_CObject(C.CString("Delete_RevisionLog"),revisionlog.ptr)
 	revisionlog.ptr = nil
@@ -2041,7 +2097,7 @@ func (instance *RevisionLogCollection) Get(index int32)  (*RevisionLog,  error) 
 	}
 	result := &RevisionLog{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteRevisionLog) 
+	 runtime.SetFinalizer(result, DeleteRevisionLog) 
 
 	return result, nil 
 }
@@ -2083,6 +2139,10 @@ func (instance *RevisionLogCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteRevisionLogCollection(revisionlogcollection *RevisionLogCollection){
+	println("Delete revisionlogcollection")
+	if revisionlogcollection == nil || revisionlogcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(revisionlogcollection, nil)
 	C.Delete_CObject(C.CString("Delete_RevisionLogCollection"),revisionlogcollection.ptr)
 	revisionlogcollection.ptr = nil
@@ -2160,7 +2220,7 @@ func (instance *RevisionMergeConflict) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -2187,6 +2247,10 @@ func (instance *RevisionMergeConflict) ToRevision() *Revision {
 }
 
 func DeleteRevisionMergeConflict(revisionmergeconflict *RevisionMergeConflict){
+	println("Delete revisionmergeconflict")
+	if revisionmergeconflict == nil || revisionmergeconflict.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(revisionmergeconflict, nil)
 	C.Delete_CObject(C.CString("Delete_RevisionMergeConflict"),revisionmergeconflict.ptr)
 	revisionmergeconflict.ptr = nil
@@ -2264,7 +2328,7 @@ func (instance *RevisionQueryTable) GetCellArea()  (*CellArea,  error)  {
 	}
 	result := &CellArea{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCellArea) 
+	 runtime.SetFinalizer(result, DeleteCellArea) 
 
 	return result, nil 
 }
@@ -2294,7 +2358,7 @@ func (instance *RevisionQueryTable) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -2321,6 +2385,10 @@ func (instance *RevisionQueryTable) ToRevision() *Revision {
 }
 
 func DeleteRevisionQueryTable(revisionquerytable *RevisionQueryTable){
+	println("Delete revisionquerytable")
+	if revisionquerytable == nil || revisionquerytable.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(revisionquerytable, nil)
 	C.Delete_CObject(C.CString("Delete_RevisionQueryTable"),revisionquerytable.ptr)
 	revisionquerytable.ptr = nil
@@ -2426,7 +2494,7 @@ func (instance *RevisionRenameSheet) GetWorksheet()  (*Worksheet,  error)  {
 	}
 	result := &Worksheet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteWorksheet) 
+	 runtime.SetFinalizer(result, DeleteWorksheet) 
 
 	return result, nil 
 }
@@ -2453,6 +2521,10 @@ func (instance *RevisionRenameSheet) ToRevision() *Revision {
 }
 
 func DeleteRevisionRenameSheet(revisionrenamesheet *RevisionRenameSheet){
+	println("Delete revisionrenamesheet")
+	if revisionrenamesheet == nil || revisionrenamesheet.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(revisionrenamesheet, nil)
 	C.Delete_CObject(C.CString("Delete_RevisionRenameSheet"),revisionrenamesheet.ptr)
 	revisionrenamesheet.ptr = nil

@@ -406,6 +406,9 @@ func (instance *Timeline) SetName(value string)  error {
 
 
 func DeleteTimeline(timeline *Timeline){
+	if timeline == nil || timeline.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(timeline, nil)
 	C.Delete_CObject(C.CString("Delete_Timeline"),timeline.ptr)
 	timeline.ptr = nil
@@ -637,6 +640,9 @@ func (instance *TimelineCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteTimelineCollection(timelinecollection *TimelineCollection){
+	if timelinecollection == nil || timelinecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(timelinecollection, nil)
 	C.Delete_CObject(C.CString("Delete_TimelineCollection"),timelinecollection.ptr)
 	timelinecollection.ptr = nil

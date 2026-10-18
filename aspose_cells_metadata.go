@@ -163,6 +163,10 @@ func (instance *MetadataOptions) SetKeyLength(value int32)  error {
 
 
 func DeleteMetadataOptions(metadataoptions *MetadataOptions){
+	println("Delete metadataoptions")
+	if metadataoptions == nil || metadataoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(metadataoptions, nil)
 	C.Delete_CObject(C.CString("Delete_MetadataOptions"),metadataoptions.ptr)
 	metadataoptions.ptr = nil
@@ -246,7 +250,7 @@ func (instance *WorkbookMetadata) GetOptions()  (*MetadataOptions,  error)  {
 	}
 	result := &MetadataOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteMetadataOptions) 
+	 runtime.SetFinalizer(result, DeleteMetadataOptions) 
 
 	return result, nil 
 }
@@ -262,7 +266,7 @@ func (instance *WorkbookMetadata) GetBuiltInDocumentProperties()  (*BuiltInDocum
 	}
 	result := &BuiltInDocumentPropertyCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteBuiltInDocumentPropertyCollection) 
+	 runtime.SetFinalizer(result, DeleteBuiltInDocumentPropertyCollection) 
 
 	return result, nil 
 }
@@ -278,7 +282,7 @@ func (instance *WorkbookMetadata) GetCustomDocumentProperties()  (*CustomDocumen
 	}
 	result := &CustomDocumentPropertyCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCustomDocumentPropertyCollection) 
+	 runtime.SetFinalizer(result, DeleteCustomDocumentPropertyCollection) 
 
 	return result, nil 
 }
@@ -316,6 +320,10 @@ func (instance *WorkbookMetadata) Save_Stream(stream []byte)  error {
 
 
 func DeleteWorkbookMetadata(workbookmetadata *WorkbookMetadata){
+	println("Delete workbookmetadata")
+	if workbookmetadata == nil || workbookmetadata.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(workbookmetadata, nil)
 	C.Delete_CObject(C.CString("Delete_WorkbookMetadata"),workbookmetadata.ptr)
 	workbookmetadata.ptr = nil

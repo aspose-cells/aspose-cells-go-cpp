@@ -55,7 +55,7 @@ func (instance *DataModel) GetRelationships()  (*DataModelRelationshipCollection
 	}
 	result := &DataModelRelationshipCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDataModelRelationshipCollection) 
+	 runtime.SetFinalizer(result, DeleteDataModelRelationshipCollection) 
 
 	return result, nil 
 }
@@ -71,7 +71,7 @@ func (instance *DataModel) GetTables()  (*DataModelTableCollection,  error)  {
 	}
 	result := &DataModelTableCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDataModelTableCollection) 
+	 runtime.SetFinalizer(result, DeleteDataModelTableCollection) 
 
 	return result, nil 
 }
@@ -79,6 +79,10 @@ func (instance *DataModel) GetTables()  (*DataModelTableCollection,  error)  {
 
 
 func DeleteDataModel(datamodel *DataModel){
+	println("Delete datamodel")
+	if datamodel == nil || datamodel.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(datamodel, nil)
 	C.Delete_CObject(C.CString("Delete_DataModel"),datamodel.ptr)
 	datamodel.ptr = nil
@@ -166,6 +170,10 @@ func (instance *DataModelRelationship) GetPrimaryKeyColumn()  (string,  error)  
 
 
 func DeleteDataModelRelationship(datamodelrelationship *DataModelRelationship){
+	println("Delete datamodelrelationship")
+	if datamodelrelationship == nil || datamodelrelationship.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(datamodelrelationship, nil)
 	C.Delete_CObject(C.CString("Delete_DataModelRelationship"),datamodelrelationship.ptr)
 	datamodelrelationship.ptr = nil
@@ -207,7 +215,7 @@ func (instance *DataModelRelationshipCollection) Get(index int32)  (*DataModelRe
 	}
 	result := &DataModelRelationship{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDataModelRelationship) 
+	 runtime.SetFinalizer(result, DeleteDataModelRelationship) 
 
 	return result, nil 
 }
@@ -229,6 +237,10 @@ func (instance *DataModelRelationshipCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteDataModelRelationshipCollection(datamodelrelationshipcollection *DataModelRelationshipCollection){
+	println("Delete datamodelrelationshipcollection")
+	if datamodelrelationshipcollection == nil || datamodelrelationshipcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(datamodelrelationshipcollection, nil)
 	C.Delete_CObject(C.CString("Delete_DataModelRelationshipCollection"),datamodelrelationshipcollection.ptr)
 	datamodelrelationshipcollection.ptr = nil
@@ -302,6 +314,10 @@ func (instance *DataModelTable) GetConnectionName()  (string,  error)  {
 
 
 func DeleteDataModelTable(datamodeltable *DataModelTable){
+	println("Delete datamodeltable")
+	if datamodeltable == nil || datamodeltable.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(datamodeltable, nil)
 	C.Delete_CObject(C.CString("Delete_DataModelTable"),datamodeltable.ptr)
 	datamodeltable.ptr = nil
@@ -343,7 +359,7 @@ func (instance *DataModelTableCollection) Get_Int(index int32)  (*DataModelTable
 	}
 	result := &DataModelTable{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDataModelTable) 
+	 runtime.SetFinalizer(result, DeleteDataModelTable) 
 
 	return result, nil 
 }
@@ -361,7 +377,7 @@ func (instance *DataModelTableCollection) Get_String(name string)  (*DataModelTa
 	}
 	result := &DataModelTable{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDataModelTable) 
+	 runtime.SetFinalizer(result, DeleteDataModelTable) 
 
 	return result, nil 
 }
@@ -383,6 +399,10 @@ func (instance *DataModelTableCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteDataModelTableCollection(datamodeltablecollection *DataModelTableCollection){
+	println("Delete datamodeltablecollection")
+	if datamodeltablecollection == nil || datamodeltablecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(datamodeltablecollection, nil)
 	C.Delete_CObject(C.CString("Delete_DataModelTableCollection"),datamodeltablecollection.ptr)
 	datamodeltablecollection.ptr = nil

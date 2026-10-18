@@ -507,6 +507,10 @@ func (instance *DbfSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeleteDbfSaveOptions(dbfsaveoptions *DbfSaveOptions){
+	println("Delete dbfsaveoptions")
+	if dbfsaveoptions == nil || dbfsaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(dbfsaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_DbfSaveOptions"),dbfsaveoptions.ptr)
 	dbfsaveoptions.ptr = nil
@@ -1123,7 +1127,7 @@ func (instance *EbookSaveOptions) GetExportArea()  (*CellArea,  error)  {
 	}
 	result := &CellArea{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCellArea) 
+	 runtime.SetFinalizer(result, DeleteCellArea) 
 
 	return result, nil 
 }
@@ -1332,7 +1336,7 @@ func (instance *EbookSaveOptions) GetImageOptions()  (*ImageOrPrintOptions,  err
 	}
 	result := &ImageOrPrintOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteImageOrPrintOptions) 
+	 runtime.SetFinalizer(result, DeleteImageOrPrintOptions) 
 
 	return result, nil 
 }
@@ -2597,7 +2601,7 @@ func (instance *EbookSaveOptions) GetSheetSet()  (*SheetSet,  error)  {
 	}
 	result := &SheetSet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteSheetSet) 
+	 runtime.SetFinalizer(result, DeleteSheetSet) 
 
 	return result, nil 
 }
@@ -3148,6 +3152,10 @@ func (instance *EbookSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeleteEbookSaveOptions(ebooksaveoptions *EbookSaveOptions){
+	println("Delete ebooksaveoptions")
+	if ebooksaveoptions == nil || ebooksaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(ebooksaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_EbookSaveOptions"),ebooksaveoptions.ptr)
 	ebooksaveoptions.ptr = nil
@@ -3221,6 +3229,10 @@ func (instance *SqlScriptColumnTypeMap) GetNumberType()  (string,  error)  {
 
 
 func DeleteSqlScriptColumnTypeMap(sqlscriptcolumntypemap *SqlScriptColumnTypeMap){
+	println("Delete sqlscriptcolumntypemap")
+	if sqlscriptcolumntypemap == nil || sqlscriptcolumntypemap.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(sqlscriptcolumntypemap, nil)
 	C.Delete_CObject(C.CString("Delete_SqlScriptColumnTypeMap"),sqlscriptcolumntypemap.ptr)
 	sqlscriptcolumntypemap.ptr = nil
@@ -3324,7 +3336,7 @@ func (instance *SqlScriptSaveOptions) GetColumnTypeMap()  (*SqlScriptColumnTypeM
 	}
 	result := &SqlScriptColumnTypeMap{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteSqlScriptColumnTypeMap) 
+	 runtime.SetFinalizer(result, DeleteSqlScriptColumnTypeMap) 
 
 	return result, nil 
 }
@@ -3689,7 +3701,7 @@ func (instance *SqlScriptSaveOptions) GetExportArea()  (*CellArea,  error)  {
 	}
 	result := &CellArea{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCellArea) 
+	 runtime.SetFinalizer(result, DeleteCellArea) 
 
 	return result, nil 
 }
@@ -4095,6 +4107,10 @@ func (instance *SqlScriptSaveOptions) ToSaveOptions() *SaveOptions {
 }
 
 func DeleteSqlScriptSaveOptions(sqlscriptsaveoptions *SqlScriptSaveOptions){
+	println("Delete sqlscriptsaveoptions")
+	if sqlscriptsaveoptions == nil || sqlscriptsaveoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(sqlscriptsaveoptions, nil)
 	C.Delete_CObject(C.CString("Delete_SqlScriptSaveOptions"),sqlscriptsaveoptions.ptr)
 	sqlscriptsaveoptions.ptr = nil

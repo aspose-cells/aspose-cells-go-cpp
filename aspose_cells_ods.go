@@ -349,6 +349,10 @@ func (instance *OdsCellField) SetColumn(value int32)  error {
 
 
 func DeleteOdsCellField(odscellfield *OdsCellField){
+	println("Delete odscellfield")
+	if odscellfield == nil || odscellfield.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(odscellfield, nil)
 	C.Delete_CObject(C.CString("Delete_OdsCellField"),odscellfield.ptr)
 	odscellfield.ptr = nil
@@ -390,7 +394,7 @@ func (instance *OdsCellFieldCollection) Get_Int(index int32)  (*OdsCellField,  e
 	}
 	result := &OdsCellField{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteOdsCellField) 
+	 runtime.SetFinalizer(result, DeleteOdsCellField) 
 
 	return result, nil 
 }
@@ -409,7 +413,7 @@ func (instance *OdsCellFieldCollection) Get_Int_Int(row int32, column int32)  (*
 	}
 	result := &OdsCellField{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteOdsCellField) 
+	 runtime.SetFinalizer(result, DeleteOdsCellField) 
 
 	return result, nil 
 }
@@ -463,6 +467,10 @@ func (instance *OdsCellFieldCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteOdsCellFieldCollection(odscellfieldcollection *OdsCellFieldCollection){
+	println("Delete odscellfieldcollection")
+	if odscellfieldcollection == nil || odscellfieldcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(odscellfieldcollection, nil)
 	C.Delete_CObject(C.CString("Delete_OdsCellFieldCollection"),odscellfieldcollection.ptr)
 	odscellfieldcollection.ptr = nil
@@ -707,6 +715,10 @@ func (instance *OdsPageBackground) SetGraphicData(value []byte)  error {
 
 
 func DeleteOdsPageBackground(odspagebackground *OdsPageBackground){
+	println("Delete odspagebackground")
+	if odspagebackground == nil || odspagebackground.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(odspagebackground, nil)
 	C.Delete_CObject(C.CString("Delete_OdsPageBackground"),odspagebackground.ptr)
 	odspagebackground.ptr = nil

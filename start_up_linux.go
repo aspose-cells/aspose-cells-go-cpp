@@ -23,7 +23,9 @@ func init() {
 		C.Startup()
 	}
 }
-
+func Cleanup() {
+	C.Cleanup()
+}
 func Version() string {
 	println("---Version: v26.10.0---")
 	return "v26.10.0"

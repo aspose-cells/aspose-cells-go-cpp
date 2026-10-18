@@ -275,7 +275,7 @@ func (instance *DbfLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSetting
 	}
 	result := &DefaultStyleSettings{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDefaultStyleSettings) 
+	 runtime.SetFinalizer(result, DeleteDefaultStyleSettings) 
 
 	return result, nil 
 }
@@ -291,7 +291,7 @@ func (instance *DbfLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonito
 	}
 	result := &AbstractInterruptMonitor{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteAbstractInterruptMonitor) 
+	 runtime.SetFinalizer(result, DeleteAbstractInterruptMonitor) 
 
 	return result, nil 
 }
@@ -455,7 +455,7 @@ func (instance *DbfLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 	}
 	result := &LoadFilter{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLoadFilter) 
+	 runtime.SetFinalizer(result, DeleteLoadFilter) 
 
 	return result, nil 
 }
@@ -523,7 +523,7 @@ func (instance *DbfLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  er
 	}
 	result := &AutoFitterOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteAutoFitterOptions) 
+	 runtime.SetFinalizer(result, DeleteAutoFitterOptions) 
 
 	return result, nil 
 }
@@ -589,7 +589,7 @@ func (instance *DbfLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  erro
 	}
 	result := &IndividualFontConfigs{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteIndividualFontConfigs) 
+	 runtime.SetFinalizer(result, DeleteIndividualFontConfigs) 
 
 	return result, nil 
 }
@@ -685,6 +685,10 @@ func (instance *DbfLoadOptions) ToLoadOptions() *LoadOptions {
 }
 
 func DeleteDbfLoadOptions(dbfloadoptions *DbfLoadOptions){
+	println("Delete dbfloadoptions")
+	if dbfloadoptions == nil || dbfloadoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(dbfloadoptions, nil)
 	C.Delete_CObject(C.CString("Delete_DbfLoadOptions"),dbfloadoptions.ptr)
 	dbfloadoptions.ptr = nil
@@ -944,7 +948,7 @@ func (instance *DifLoadOptions) GetDefaultStyleSettings()  (*DefaultStyleSetting
 	}
 	result := &DefaultStyleSettings{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteDefaultStyleSettings) 
+	 runtime.SetFinalizer(result, DeleteDefaultStyleSettings) 
 
 	return result, nil 
 }
@@ -960,7 +964,7 @@ func (instance *DifLoadOptions) GetInterruptMonitor()  (*AbstractInterruptMonito
 	}
 	result := &AbstractInterruptMonitor{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteAbstractInterruptMonitor) 
+	 runtime.SetFinalizer(result, DeleteAbstractInterruptMonitor) 
 
 	return result, nil 
 }
@@ -1124,7 +1128,7 @@ func (instance *DifLoadOptions) GetLoadFilter()  (*LoadFilter,  error)  {
 	}
 	result := &LoadFilter{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLoadFilter) 
+	 runtime.SetFinalizer(result, DeleteLoadFilter) 
 
 	return result, nil 
 }
@@ -1192,7 +1196,7 @@ func (instance *DifLoadOptions) GetAutoFitterOptions()  (*AutoFitterOptions,  er
 	}
 	result := &AutoFitterOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteAutoFitterOptions) 
+	 runtime.SetFinalizer(result, DeleteAutoFitterOptions) 
 
 	return result, nil 
 }
@@ -1258,7 +1262,7 @@ func (instance *DifLoadOptions) GetFontConfigs()  (*IndividualFontConfigs,  erro
 	}
 	result := &IndividualFontConfigs{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteIndividualFontConfigs) 
+	 runtime.SetFinalizer(result, DeleteIndividualFontConfigs) 
 
 	return result, nil 
 }
@@ -1354,6 +1358,10 @@ func (instance *DifLoadOptions) ToLoadOptions() *LoadOptions {
 }
 
 func DeleteDifLoadOptions(difloadoptions *DifLoadOptions){
+	println("Delete difloadoptions")
+	if difloadoptions == nil || difloadoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(difloadoptions, nil)
 	C.Delete_CObject(C.CString("Delete_DifLoadOptions"),difloadoptions.ptr)
 	difloadoptions.ptr = nil

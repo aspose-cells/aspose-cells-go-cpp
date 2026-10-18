@@ -198,6 +198,7 @@ extern "C" {
 #endif
 
 ASPOSE_CELLS_API void Startup();
+ASPOSE_CELLS_API void Cleanup();
 /*****************Class Stream ****************/
 ASPOSE_CELLS_API void* Get_Date(int year, int month, int day, int hour, int minute, int second);
 ASPOSE_CELLS_API void Delete_GetDate(void* date);

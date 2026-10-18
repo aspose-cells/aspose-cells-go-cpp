@@ -372,6 +372,9 @@ func (instance *DigitalSignature) SetXAdESType(value XAdESType)  error {
 
 
 func DeleteDigitalSignature(digitalsignature *DigitalSignature){
+	if digitalsignature == nil || digitalsignature.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(digitalsignature, nil)
 	C.Delete_CObject(C.CString("Delete_DigitalSignature"),digitalsignature.ptr)
 	digitalsignature.ptr = nil
@@ -455,6 +458,9 @@ func (instance *DigitalSignatureCollection) GetEnumerator()  (*DigitalSignatureE
 
 
 func DeleteDigitalSignatureCollection(digitalsignaturecollection *DigitalSignatureCollection){
+	if digitalsignaturecollection == nil || digitalsignaturecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(digitalsignaturecollection, nil)
 	C.Delete_CObject(C.CString("Delete_DigitalSignatureCollection"),digitalsignaturecollection.ptr)
 	digitalsignaturecollection.ptr = nil

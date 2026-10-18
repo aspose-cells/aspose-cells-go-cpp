@@ -188,6 +188,10 @@ func (instance *VbaModule) SetCodes(value string)  error {
 
 
 func DeleteVbaModule(vbamodule *VbaModule){
+	println("Delete vbamodule")
+	if vbamodule == nil || vbamodule.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(vbamodule, nil)
 	C.Delete_CObject(C.CString("Delete_VbaModule"),vbamodule.ptr)
 	vbamodule.ptr = nil
@@ -317,7 +321,7 @@ func (instance *VbaModuleCollection) Get_Int(index int32)  (*VbaModule,  error) 
 	}
 	result := &VbaModule{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteVbaModule) 
+	 runtime.SetFinalizer(result, DeleteVbaModule) 
 
 	return result, nil 
 }
@@ -370,7 +374,7 @@ func (instance *VbaModuleCollection) Get_String(name string)  (*VbaModule,  erro
 	}
 	result := &VbaModule{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteVbaModule) 
+	 runtime.SetFinalizer(result, DeleteVbaModule) 
 
 	return result, nil 
 }
@@ -392,6 +396,10 @@ func (instance *VbaModuleCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteVbaModuleCollection(vbamodulecollection *VbaModuleCollection){
+	println("Delete vbamodulecollection")
+	if vbamodulecollection == nil || vbamodulecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(vbamodulecollection, nil)
 	C.Delete_CObject(C.CString("Delete_VbaModuleCollection"),vbamodulecollection.ptr)
 	vbamodulecollection.ptr = nil
@@ -620,7 +628,7 @@ func (instance *VbaProject) GetModules()  (*VbaModuleCollection,  error)  {
 	}
 	result := &VbaModuleCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteVbaModuleCollection) 
+	 runtime.SetFinalizer(result, DeleteVbaModuleCollection) 
 
 	return result, nil 
 }
@@ -636,7 +644,7 @@ func (instance *VbaProject) GetReferences()  (*VbaProjectReferenceCollection,  e
 	}
 	result := &VbaProjectReferenceCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteVbaProjectReferenceCollection) 
+	 runtime.SetFinalizer(result, DeleteVbaProjectReferenceCollection) 
 
 	return result, nil 
 }
@@ -660,6 +668,10 @@ func (instance *VbaProject) ValidatePassword(password string)  (bool,  error)  {
 
 
 func DeleteVbaProject(vbaproject *VbaProject){
+	println("Delete vbaproject")
+	if vbaproject == nil || vbaproject.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(vbaproject, nil)
 	C.Delete_CObject(C.CString("Delete_VbaProject"),vbaproject.ptr)
 	vbaproject.ptr = nil
@@ -872,6 +884,10 @@ func (instance *VbaProjectReference) SetRelativeLibid(value string)  error {
 
 
 func DeleteVbaProjectReference(vbaprojectreference *VbaProjectReference){
+	println("Delete vbaprojectreference")
+	if vbaprojectreference == nil || vbaprojectreference.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(vbaprojectreference, nil)
 	C.Delete_CObject(C.CString("Delete_VbaProjectReference"),vbaprojectreference.ptr)
 	vbaprojectreference.ptr = nil
@@ -913,7 +929,7 @@ func (instance *VbaProjectReferenceCollection) Get(i int32)  (*VbaProjectReferen
 	}
 	result := &VbaProjectReference{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteVbaProjectReference) 
+	 runtime.SetFinalizer(result, DeleteVbaProjectReference) 
 
 	return result, nil 
 }
@@ -1009,6 +1025,10 @@ func (instance *VbaProjectReferenceCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteVbaProjectReferenceCollection(vbaprojectreferencecollection *VbaProjectReferenceCollection){
+	println("Delete vbaprojectreferencecollection")
+	if vbaprojectreferencecollection == nil || vbaprojectreferencecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(vbaprojectreferencecollection, nil)
 	C.Delete_CObject(C.CString("Delete_VbaProjectReferenceCollection"),vbaprojectreferencecollection.ptr)
 	vbaprojectreferencecollection.ptr = nil

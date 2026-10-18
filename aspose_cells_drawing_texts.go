@@ -591,6 +591,10 @@ func (instance *AutoNumberedBulletValue) ToBulletValue() *BulletValue {
 }
 
 func DeleteAutoNumberedBulletValue(autonumberedbulletvalue *AutoNumberedBulletValue){
+	println("Delete autonumberedbulletvalue")
+	if autonumberedbulletvalue == nil || autonumberedbulletvalue.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(autonumberedbulletvalue, nil)
 	C.Delete_CObject(C.CString("Delete_AutoNumberedBulletValue"),autonumberedbulletvalue.ptr)
 	autonumberedbulletvalue.ptr = nil
@@ -630,7 +634,7 @@ func (instance *Bullet) GetBulletValue()  (*BulletValue,  error)  {
 	}
 	result := &BulletValue{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteBulletValue) 
+	 runtime.SetFinalizer(result, DeleteBulletValue) 
 
 	return result, nil 
 }
@@ -699,6 +703,10 @@ func (instance *Bullet) SetFontName(value string)  error {
 
 
 func DeleteBullet(bullet *Bullet){
+	println("Delete bullet")
+	if bullet == nil || bullet.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(bullet, nil)
 	C.Delete_CObject(C.CString("Delete_Bullet"),bullet.ptr)
 	bullet.ptr = nil
@@ -747,6 +755,10 @@ func (instance *BulletValue) GetType()  (BulletType,  error)  {
 
 
 func DeleteBulletValue(bulletvalue *BulletValue){
+	println("Delete bulletvalue")
+	if bulletvalue == nil || bulletvalue.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(bulletvalue, nil)
 	C.Delete_CObject(C.CString("Delete_BulletValue"),bulletvalue.ptr)
 	bulletvalue.ptr = nil
@@ -864,6 +876,10 @@ func (instance *CharacterBulletValue) ToBulletValue() *BulletValue {
 }
 
 func DeleteCharacterBulletValue(characterbulletvalue *CharacterBulletValue){
+	println("Delete characterbulletvalue")
+	if characterbulletvalue == nil || characterbulletvalue.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(characterbulletvalue, nil)
 	C.Delete_CObject(C.CString("Delete_CharacterBulletValue"),characterbulletvalue.ptr)
 	characterbulletvalue.ptr = nil
@@ -918,7 +934,7 @@ func (instance *FontSettingCollection) GetTextAlignment()  (*ShapeTextAlignment,
 	}
 	result := &ShapeTextAlignment{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShapeTextAlignment) 
+	 runtime.SetFinalizer(result, DeleteShapeTextAlignment) 
 
 	return result, nil 
 }
@@ -934,7 +950,7 @@ func (instance *FontSettingCollection) GetTextParagraphs()  (*TextParagraphColle
 	}
 	result := &TextParagraphCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextParagraphCollection) 
+	 runtime.SetFinalizer(result, DeleteTextParagraphCollection) 
 
 	return result, nil 
 }
@@ -1134,7 +1150,7 @@ func (instance *FontSettingCollection) Get(index int32)  (*FontSetting,  error) 
 	}
 	result := &FontSetting{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFontSetting) 
+	 runtime.SetFinalizer(result, DeleteFontSetting) 
 
 	return result, nil 
 }
@@ -1202,6 +1218,10 @@ func (instance *FontSettingCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteFontSettingCollection(fontsettingcollection *FontSettingCollection){
+	println("Delete fontsettingcollection")
+	if fontsettingcollection == nil || fontsettingcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(fontsettingcollection, nil)
 	C.Delete_CObject(C.CString("Delete_FontSettingCollection"),fontsettingcollection.ptr)
 	fontsettingcollection.ptr = nil
@@ -1290,6 +1310,10 @@ func (instance *NoneBulletValue) ToBulletValue() *BulletValue {
 }
 
 func DeleteNoneBulletValue(nonebulletvalue *NoneBulletValue){
+	println("Delete nonebulletvalue")
+	if nonebulletvalue == nil || nonebulletvalue.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(nonebulletvalue, nil)
 	C.Delete_CObject(C.CString("Delete_NoneBulletValue"),nonebulletvalue.ptr)
 	nonebulletvalue.ptr = nil
@@ -1408,6 +1432,10 @@ func (instance *PictureBulletValue) ToBulletValue() *BulletValue {
 }
 
 func DeletePictureBulletValue(picturebulletvalue *PictureBulletValue){
+	println("Delete picturebulletvalue")
+	if picturebulletvalue == nil || picturebulletvalue.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(picturebulletvalue, nil)
 	C.Delete_CObject(C.CString("Delete_PictureBulletValue"),picturebulletvalue.ptr)
 	picturebulletvalue.ptr = nil
@@ -1920,6 +1948,10 @@ func (instance *ShapeTextAlignment) GetHashCode()  (int32,  error)  {
 
 
 func DeleteShapeTextAlignment(shapetextalignment *ShapeTextAlignment){
+	println("Delete shapetextalignment")
+	if shapetextalignment == nil || shapetextalignment.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(shapetextalignment, nil)
 	C.Delete_CObject(C.CString("Delete_ShapeTextAlignment"),shapetextalignment.ptr)
 	shapetextalignment.ptr = nil
@@ -2224,6 +2256,10 @@ func (instance *TextBoxOptions) SetWrapTextInShape(value bool)  error {
 
 
 func DeleteTextBoxOptions(textboxoptions *TextBoxOptions){
+	println("Delete textboxoptions")
+	if textboxoptions == nil || textboxoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(textboxoptions, nil)
 	C.Delete_CObject(C.CString("Delete_TextBoxOptions"),textboxoptions.ptr)
 	textboxoptions.ptr = nil
@@ -2403,7 +2439,7 @@ func (instance *TextOptions) GetFill()  (*FillFormat,  error)  {
 	}
 	result := &FillFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFillFormat) 
+	 runtime.SetFinalizer(result, DeleteFillFormat) 
 
 	return result, nil 
 }
@@ -2419,7 +2455,7 @@ func (instance *TextOptions) GetOutline()  (*LineFormat,  error)  {
 	}
 	result := &LineFormat{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteLineFormat) 
+	 runtime.SetFinalizer(result, DeleteLineFormat) 
 
 	return result, nil 
 }
@@ -2435,7 +2471,7 @@ func (instance *TextOptions) GetShadow()  (*ShadowEffect,  error)  {
 	}
 	result := &ShadowEffect{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteShadowEffect) 
+	 runtime.SetFinalizer(result, DeleteShadowEffect) 
 
 	return result, nil 
 }
@@ -2451,7 +2487,7 @@ func (instance *TextOptions) GetUnderlineColor()  (*CellsColor,  error)  {
 	}
 	result := &CellsColor{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteCellsColor) 
+	 runtime.SetFinalizer(result, DeleteCellsColor) 
 
 	return result, nil 
 }
@@ -2931,7 +2967,7 @@ func (instance *TextOptions) GetThemeColor()  (*ThemeColor,  error)  {
 	}
 	result := &ThemeColor{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteThemeColor) 
+	 runtime.SetFinalizer(result, DeleteThemeColor) 
 
 	return result, nil 
 }
@@ -3090,6 +3126,10 @@ func (instance *TextOptions) ToFont() *Font {
 }
 
 func DeleteTextOptions(textoptions *TextOptions){
+	println("Delete textoptions")
+	if textoptions == nil || textoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(textoptions, nil)
 	C.Delete_CObject(C.CString("Delete_TextOptions"),textoptions.ptr)
 	textoptions.ptr = nil
@@ -3150,7 +3190,7 @@ func (instance *TextParagraph) GetBullet()  (*Bullet,  error)  {
 	}
 	result := &Bullet{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteBullet) 
+	 runtime.SetFinalizer(result, DeleteBullet) 
 
 	return result, nil 
 }
@@ -3366,7 +3406,7 @@ func (instance *TextParagraph) GetStops()  (*TextTabStopCollection,  error)  {
 	}
 	result := &TextTabStopCollection{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextTabStopCollection) 
+	 runtime.SetFinalizer(result, DeleteTextTabStopCollection) 
 
 	return result, nil 
 }
@@ -3701,7 +3741,7 @@ func (instance *TextParagraph) GetFont()  (*Font,  error)  {
 	}
 	result := &Font{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteFont) 
+	 runtime.SetFinalizer(result, DeleteFont) 
 
 	return result, nil 
 }
@@ -3732,7 +3772,7 @@ func (instance *TextParagraph) GetTextOptions()  (*TextOptions,  error)  {
 	}
 	result := &TextOptions{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextOptions) 
+	 runtime.SetFinalizer(result, DeleteTextOptions) 
 
 	return result, nil 
 }
@@ -3745,6 +3785,10 @@ func (instance *TextParagraph) ToFontSetting() *FontSetting {
 }
 
 func DeleteTextParagraph(textparagraph *TextParagraph){
+	println("Delete textparagraph")
+	if textparagraph == nil || textparagraph.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(textparagraph, nil)
 	C.Delete_CObject(C.CString("Delete_TextParagraph"),textparagraph.ptr)
 	textparagraph.ptr = nil
@@ -3800,7 +3844,7 @@ func (instance *TextParagraphCollection) Get(index int32)  (*TextParagraph,  err
 	}
 	result := &TextParagraph{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextParagraph) 
+	 runtime.SetFinalizer(result, DeleteTextParagraph) 
 
 	return result, nil 
 }
@@ -3825,6 +3869,10 @@ func (instance *TextParagraphCollection) GetEnumerator()  (*TextParagraphEnumera
 
 
 func DeleteTextParagraphCollection(textparagraphcollection *TextParagraphCollection){
+	println("Delete textparagraphcollection")
+	if textparagraphcollection == nil || textparagraphcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(textparagraphcollection, nil)
 	C.Delete_CObject(C.CString("Delete_TextParagraphCollection"),textparagraphcollection.ptr)
 	textparagraphcollection.ptr = nil
@@ -3917,6 +3965,10 @@ func (instance *TextTabStop) SetTabPosition(value float64)  error {
 
 
 func DeleteTextTabStop(texttabstop *TextTabStop){
+	println("Delete texttabstop")
+	if texttabstop == nil || texttabstop.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(texttabstop, nil)
 	C.Delete_CObject(C.CString("Delete_TextTabStop"),texttabstop.ptr)
 	texttabstop.ptr = nil
@@ -3989,7 +4041,7 @@ func (instance *TextTabStopCollection) Get(index int32)  (*TextTabStop,  error) 
 	}
 	result := &TextTabStop{}
 	result.ptr = CGoReturnPtr.return_value 
-	runtime.SetFinalizer(result, DeleteTextTabStop) 
+	 runtime.SetFinalizer(result, DeleteTextTabStop) 
 
 	return result, nil 
 }
@@ -4011,6 +4063,10 @@ func (instance *TextTabStopCollection) GetCount()  (int32,  error)  {
 
 
 func DeleteTextTabStopCollection(texttabstopcollection *TextTabStopCollection){
+	println("Delete texttabstopcollection")
+	if texttabstopcollection == nil || texttabstopcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(texttabstopcollection, nil)
 	C.Delete_CObject(C.CString("Delete_TextTabStopCollection"),texttabstopcollection.ptr)
 	texttabstopcollection.ptr = nil

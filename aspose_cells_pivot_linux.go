@@ -1375,6 +1375,9 @@ func (instance *CustomPiovtFieldGroupItem) IsNull()  (bool,  error)  {
 
 
 func DeleteCustomPiovtFieldGroupItem(custompiovtfieldgroupitem *CustomPiovtFieldGroupItem){
+	if custompiovtfieldgroupitem == nil || custompiovtfieldgroupitem.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(custompiovtfieldgroupitem, nil)
 	C.Delete_CObject(C.CString("Delete_CustomPiovtFieldGroupItem"),custompiovtfieldgroupitem.ptr)
 	custompiovtfieldgroupitem.ptr = nil
@@ -1423,6 +1426,9 @@ func (instance *DiscreteGroupItem) IsNull()  (bool,  error)  {
 
 
 func DeleteDiscreteGroupItem(discretegroupitem *DiscreteGroupItem){
+	if discretegroupitem == nil || discretegroupitem.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(discretegroupitem, nil)
 	C.Delete_CObject(C.CString("Delete_DiscreteGroupItem"),discretegroupitem.ptr)
 	discretegroupitem.ptr = nil
@@ -1777,6 +1783,9 @@ func (instance *PivotArea) GetCellAreas()  ([]CellArea,  error)  {
 
 
 func DeletePivotArea(pivotarea *PivotArea){
+	if pivotarea == nil || pivotarea.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotarea, nil)
 	C.Delete_CObject(C.CString("Delete_PivotArea"),pivotarea.ptr)
 	pivotarea.ptr = nil
@@ -1896,6 +1905,9 @@ func (instance *PivotAreaCollection) GetCount()  (int32,  error)  {
 
 
 func DeletePivotAreaCollection(pivotareacollection *PivotAreaCollection){
+	if pivotareacollection == nil || pivotareacollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotareacollection, nil)
 	C.Delete_CObject(C.CString("Delete_PivotAreaCollection"),pivotareacollection.ptr)
 	pivotareacollection.ptr = nil
@@ -2019,6 +2031,9 @@ func (instance *PivotAreaFilter) SetSelected(value bool)  error {
 
 
 func DeletePivotAreaFilter(pivotareafilter *PivotAreaFilter){
+	if pivotareafilter == nil || pivotareafilter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotareafilter, nil)
 	C.Delete_CObject(C.CString("Delete_PivotAreaFilter"),pivotareafilter.ptr)
 	pivotareafilter.ptr = nil
@@ -2096,6 +2111,9 @@ func (instance *PivotAreaFilterCollection) GetCount()  (int32,  error)  {
 
 
 func DeletePivotAreaFilterCollection(pivotareafiltercollection *PivotAreaFilterCollection){
+	if pivotareafiltercollection == nil || pivotareafiltercollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotareafiltercollection, nil)
 	C.Delete_CObject(C.CString("Delete_PivotAreaFilterCollection"),pivotareafiltercollection.ptr)
 	pivotareafiltercollection.ptr = nil
@@ -2252,6 +2270,9 @@ func (instance *PivotCache) GetSourceType()  (PivotTableSourceType,  error)  {
 
 
 func DeletePivotCache(pivotcache *PivotCache){
+	if pivotcache == nil || pivotcache.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotcache, nil)
 	C.Delete_CObject(C.CString("Delete_PivotCache"),pivotcache.ptr)
 	pivotcache.ptr = nil
@@ -2329,6 +2350,9 @@ func (instance *PivotCacheCollection) GetCount()  (int32,  error)  {
 
 
 func DeletePivotCacheCollection(pivotcachecollection *PivotCacheCollection){
+	if pivotcachecollection == nil || pivotcachecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotcachecollection, nil)
 	C.Delete_CObject(C.CString("Delete_PivotCacheCollection"),pivotcachecollection.ptr)
 	pivotcachecollection.ptr = nil
@@ -2375,6 +2399,9 @@ func (instance *PivotCacheMissingItemsLimitConst) IsNull()  (bool,  error)  {
 
 
 func DeletePivotCacheMissingItemsLimitConst(pivotcachemissingitemslimitconst *PivotCacheMissingItemsLimitConst){
+	if pivotcachemissingitemslimitconst == nil || pivotcachemissingitemslimitconst.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotcachemissingitemslimitconst, nil)
 	C.Delete_CObject(C.CString("Delete_PivotCacheMissingItemsLimitConst"),pivotcachemissingitemslimitconst.ptr)
 	pivotcachemissingitemslimitconst.ptr = nil
@@ -2598,6 +2625,9 @@ func (instance *PivotConditionalFormat) SetRuleType(value PivotConditionFormatRu
 
 
 func DeletePivotConditionalFormat(pivotconditionalformat *PivotConditionalFormat){
+	if pivotconditionalformat == nil || pivotconditionalformat.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotconditionalformat, nil)
 	C.Delete_CObject(C.CString("Delete_PivotConditionalFormat"),pivotconditionalformat.ptr)
 	pivotconditionalformat.ptr = nil
@@ -2675,6 +2705,9 @@ func (instance *PivotConditionalFormatCollection) GetCount()  (int32,  error)  {
 
 
 func DeletePivotConditionalFormatCollection(pivotconditionalformatcollection *PivotConditionalFormatCollection){
+	if pivotconditionalformatcollection == nil || pivotconditionalformatcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotconditionalformatcollection, nil)
 	C.Delete_CObject(C.CString("Delete_PivotConditionalFormatCollection"),pivotconditionalformatcollection.ptr)
 	pivotconditionalformatcollection.ptr = nil
@@ -2827,6 +2860,9 @@ func (instance *PivotDateTimeRangeGroupSettings) ToPivotFieldGroupSettings() *Pi
 }
 
 func DeletePivotDateTimeRangeGroupSettings(pivotdatetimerangegroupsettings *PivotDateTimeRangeGroupSettings){
+	if pivotdatetimerangegroupsettings == nil || pivotdatetimerangegroupsettings.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotdatetimerangegroupsettings, nil)
 	C.Delete_CObject(C.CString("Delete_PivotDateTimeRangeGroupSettings"),pivotdatetimerangegroupsettings.ptr)
 	pivotdatetimerangegroupsettings.ptr = nil
@@ -2922,6 +2958,9 @@ func (instance *PivotDiscreteGroupSettings) ToPivotFieldGroupSettings() *PivotFi
 }
 
 func DeletePivotDiscreteGroupSettings(pivotdiscretegroupsettings *PivotDiscreteGroupSettings){
+	if pivotdiscretegroupsettings == nil || pivotdiscretegroupsettings.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotdiscretegroupsettings, nil)
 	C.Delete_CObject(C.CString("Delete_PivotDiscreteGroupSettings"),pivotdiscretegroupsettings.ptr)
 	pivotdiscretegroupsettings.ptr = nil
@@ -4247,6 +4286,9 @@ func (instance *PivotField) SetShowCompact(value bool)  error {
 
 
 func DeletePivotField(pivotfield *PivotField){
+	if pivotfield == nil || pivotfield.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotfield, nil)
 	C.Delete_CObject(C.CString("Delete_PivotField"),pivotfield.ptr)
 	pivotfield.ptr = nil
@@ -4468,6 +4510,9 @@ func (instance *PivotFieldCollection) GetCount()  (int32,  error)  {
 
 
 func DeletePivotFieldCollection(pivotfieldcollection *PivotFieldCollection){
+	if pivotfieldcollection == nil || pivotfieldcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotfieldcollection, nil)
 	C.Delete_CObject(C.CString("Delete_PivotFieldCollection"),pivotfieldcollection.ptr)
 	pivotfieldcollection.ptr = nil
@@ -4822,6 +4867,9 @@ func (instance *PivotFieldGroupOptions) SetNewPivotField(value bool)  error {
 
 
 func DeletePivotFieldGroupOptions(pivotfieldgroupoptions *PivotFieldGroupOptions){
+	if pivotfieldgroupoptions == nil || pivotfieldgroupoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotfieldgroupoptions, nil)
 	C.Delete_CObject(C.CString("Delete_PivotFieldGroupOptions"),pivotfieldgroupoptions.ptr)
 	pivotfieldgroupoptions.ptr = nil
@@ -4884,6 +4932,9 @@ func (instance *PivotFieldGroupSettings) GetType()  (PivotFieldGroupType,  error
 
 
 func DeletePivotFieldGroupSettings(pivotfieldgroupsettings *PivotFieldGroupSettings){
+	if pivotfieldgroupsettings == nil || pivotfieldgroupsettings.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotfieldgroupsettings, nil)
 	C.Delete_CObject(C.CString("Delete_PivotFieldGroupSettings"),pivotfieldgroupsettings.ptr)
 	pivotfieldgroupsettings.ptr = nil
@@ -5054,6 +5105,9 @@ func (instance *PivotFieldSortSetting) GetCell()  (string,  error)  {
 
 
 func DeletePivotFieldSortSetting(pivotfieldsortsetting *PivotFieldSortSetting){
+	if pivotfieldsortsetting == nil || pivotfieldsortsetting.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotfieldsortsetting, nil)
 	C.Delete_CObject(C.CString("Delete_PivotFieldSortSetting"),pivotfieldsortsetting.ptr)
 	pivotfieldsortsetting.ptr = nil
@@ -5207,6 +5261,9 @@ func (instance *PivotFieldTop10AutoShowSettings) SetRankBy(value int32)  error {
 
 
 func DeletePivotFieldTop10AutoShowSettings(pivotfieldtop10autoshowsettings *PivotFieldTop10AutoShowSettings){
+	if pivotfieldtop10autoshowsettings == nil || pivotfieldtop10autoshowsettings.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotfieldtop10autoshowsettings, nil)
 	C.Delete_CObject(C.CString("Delete_PivotFieldTop10AutoShowSettings"),pivotfieldtop10autoshowsettings.ptr)
 	pivotfieldtop10autoshowsettings.ptr = nil
@@ -5581,6 +5638,9 @@ func (instance *PivotFilter) SetEvaluationOrder(value int32)  error {
 
 
 func DeletePivotFilter(pivotfilter *PivotFilter){
+	if pivotfilter == nil || pivotfilter.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotfilter, nil)
 	C.Delete_CObject(C.CString("Delete_PivotFilter"),pivotfilter.ptr)
 	pivotfilter.ptr = nil
@@ -5751,6 +5811,9 @@ func (instance *PivotFilterCollection) GetCount()  (int32,  error)  {
 
 
 func DeletePivotFilterCollection(pivotfiltercollection *PivotFilterCollection){
+	if pivotfiltercollection == nil || pivotfiltercollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotfiltercollection, nil)
 	C.Delete_CObject(C.CString("Delete_PivotFilterCollection"),pivotfiltercollection.ptr)
 	pivotfiltercollection.ptr = nil
@@ -5980,6 +6043,9 @@ func (instance *PivotFormatCondition) GetFormatConditions()  (*FormatConditionCo
 
 
 func DeletePivotFormatCondition(pivotformatcondition *PivotFormatCondition){
+	if pivotformatcondition == nil || pivotformatcondition.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotformatcondition, nil)
 	C.Delete_CObject(C.CString("Delete_PivotFormatCondition"),pivotformatcondition.ptr)
 	pivotformatcondition.ptr = nil
@@ -6072,6 +6138,9 @@ func (instance *PivotFormatConditionCollection) Get(index int32)  (*PivotFormatC
 
 
 func DeletePivotFormatConditionCollection(pivotformatconditioncollection *PivotFormatConditionCollection){
+	if pivotformatconditioncollection == nil || pivotformatconditioncollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotformatconditioncollection, nil)
 	C.Delete_CObject(C.CString("Delete_PivotFormatConditionCollection"),pivotformatconditioncollection.ptr)
 	pivotformatconditioncollection.ptr = nil
@@ -6368,6 +6437,9 @@ func (instance *PivotItem) SetName(value string)  error {
 
 
 func DeletePivotItem(pivotitem *PivotItem){
+	if pivotitem == nil || pivotitem.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotitem, nil)
 	C.Delete_CObject(C.CString("Delete_PivotItem"),pivotitem.ptr)
 	pivotitem.ptr = nil
@@ -6481,6 +6553,9 @@ func (instance *PivotItemCollection) GetCount()  (int32,  error)  {
 
 
 func DeletePivotItemCollection(pivotitemcollection *PivotItemCollection){
+	if pivotitemcollection == nil || pivotitemcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotitemcollection, nil)
 	C.Delete_CObject(C.CString("Delete_PivotItemCollection"),pivotitemcollection.ptr)
 	pivotitemcollection.ptr = nil
@@ -6602,6 +6677,9 @@ func (instance *PivotNumbericRangeGroupSettings) ToPivotFieldGroupSettings() *Pi
 }
 
 func DeletePivotNumbericRangeGroupSettings(pivotnumbericrangegroupsettings *PivotNumbericRangeGroupSettings){
+	if pivotnumbericrangegroupsettings == nil || pivotnumbericrangegroupsettings.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotnumbericrangegroupsettings, nil)
 	C.Delete_CObject(C.CString("Delete_PivotNumbericRangeGroupSettings"),pivotnumbericrangegroupsettings.ptr)
 	pivotnumbericrangegroupsettings.ptr = nil
@@ -6718,6 +6796,9 @@ func (instance *PivotNumericRangeGroupSettings) ToPivotFieldGroupSettings() *Piv
 }
 
 func DeletePivotNumericRangeGroupSettings(pivotnumericrangegroupsettings *PivotNumericRangeGroupSettings){
+	if pivotnumericrangegroupsettings == nil || pivotnumericrangegroupsettings.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotnumericrangegroupsettings, nil)
 	C.Delete_CObject(C.CString("Delete_PivotNumericRangeGroupSettings"),pivotnumericrangegroupsettings.ptr)
 	pivotnumericrangegroupsettings.ptr = nil
@@ -6818,6 +6899,9 @@ func (instance *PivotPageFields) AddIdentify(rangeindex int32, pageitemindex []i
 
 
 func DeletePivotPageFields(pivotpagefields *PivotPageFields){
+	if pivotpagefields == nil || pivotpagefields.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotpagefields, nil)
 	C.Delete_CObject(C.CString("Delete_PivotPageFields"),pivotpagefields.ptr)
 	pivotpagefields.ptr = nil
@@ -6979,6 +7063,9 @@ func (instance *PivotShowValuesSetting) SetBaseItemIndex(value int32)  error {
 
 
 func DeletePivotShowValuesSetting(pivotshowvaluessetting *PivotShowValuesSetting){
+	if pivotshowvaluessetting == nil || pivotshowvaluessetting.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotshowvaluessetting, nil)
 	C.Delete_CObject(C.CString("Delete_PivotShowValuesSetting"),pivotshowvaluessetting.ptr)
 	pivotshowvaluessetting.ptr = nil
@@ -9881,6 +9968,9 @@ func (instance *PivotTable) ExportViewToJson(options *PivotViewToJsonOptions)  (
 
 
 func DeletePivotTable(pivottable *PivotTable){
+	if pivottable == nil || pivottable.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivottable, nil)
 	C.Delete_CObject(C.CString("Delete_PivotTable"),pivottable.ptr)
 	pivottable.ptr = nil
@@ -10052,6 +10142,9 @@ func (instance *PivotTableCalculateOption) SetRefreshOption(value *PivotTableRef
 
 
 func DeletePivotTableCalculateOption(pivottablecalculateoption *PivotTableCalculateOption){
+	if pivottablecalculateoption == nil || pivottablecalculateoption.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivottablecalculateoption, nil)
 	C.Delete_CObject(C.CString("Delete_PivotTableCalculateOption"),pivottablecalculateoption.ptr)
 	pivottablecalculateoption.ptr = nil
@@ -10422,6 +10515,9 @@ func (instance *PivotTableCollection) GetCount()  (int32,  error)  {
 
 
 func DeletePivotTableCollection(pivottablecollection *PivotTableCollection){
+	if pivottablecollection == nil || pivottablecollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivottablecollection, nil)
 	C.Delete_CObject(C.CString("Delete_PivotTableCollection"),pivottablecollection.ptr)
 	pivottablecollection.ptr = nil
@@ -10556,6 +10652,9 @@ func (instance *PivotTableCreateOptions) SetIsXlsClassic(value bool)  error {
 
 
 func DeletePivotTableCreateOptions(pivottablecreateoptions *PivotTableCreateOptions){
+	if pivottablecreateoptions == nil || pivottablecreateoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivottablecreateoptions, nil)
 	C.Delete_CObject(C.CString("Delete_PivotTableCreateOptions"),pivottablecreateoptions.ptr)
 	pivottablecreateoptions.ptr = nil
@@ -10639,6 +10738,9 @@ func (instance *PivotTableFormat) SetStyle(style *Style)  error {
 
 
 func DeletePivotTableFormat(pivottableformat *PivotTableFormat){
+	if pivottableformat == nil || pivottableformat.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivottableformat, nil)
 	C.Delete_CObject(C.CString("Delete_PivotTableFormat"),pivottableformat.ptr)
 	pivottableformat.ptr = nil
@@ -10745,6 +10847,9 @@ func (instance *PivotTableFormatCollection) GetCount()  (int32,  error)  {
 
 
 func DeletePivotTableFormatCollection(pivottableformatcollection *PivotTableFormatCollection){
+	if pivottableformatcollection == nil || pivottableformatcollection.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivottableformatcollection, nil)
 	C.Delete_CObject(C.CString("Delete_PivotTableFormatCollection"),pivottableformatcollection.ptr)
 	pivottableformatcollection.ptr = nil
@@ -10882,6 +10987,9 @@ func (instance *PivotTableRefreshOption) SetKeepCachedLocalGroupData(value bool)
 
 
 func DeletePivotTableRefreshOption(pivottablerefreshoption *PivotTableRefreshOption){
+	if pivottablerefreshoption == nil || pivottablerefreshoption.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivottablerefreshoption, nil)
 	C.Delete_CObject(C.CString("Delete_PivotTableRefreshOption"),pivottablerefreshoption.ptr)
 	pivottablerefreshoption.ptr = nil
@@ -10985,6 +11093,9 @@ func (instance *PivotViewToJsonOptions) SetIndent(value string)  error {
 
 
 func DeletePivotViewToJsonOptions(pivotviewtojsonoptions *PivotViewToJsonOptions){
+	if pivotviewtojsonoptions == nil || pivotviewtojsonoptions.ptr == nil {
+		return
+	}
 	runtime.SetFinalizer(pivotviewtojsonoptions, nil)
 	C.Delete_CObject(C.CString("Delete_PivotViewToJsonOptions"),pivotviewtojsonoptions.ptr)
 	pivotviewtojsonoptions.ptr = nil
